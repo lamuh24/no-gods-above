@@ -2,6 +2,17 @@
 
 ## Keyboard Layout
 
+## Character Select
+
+| Key | Action |
+|---|---|
+| A / 1 | Choose Kairo Final |
+| D / 2 | Choose Vanta Reign |
+| W / 3 | Choose Nyx |
+| Enter | Confirm selection |
+
+## Training Mode
+
 | Key | Action |
 |---|---|
 | A | Move Left |
@@ -14,9 +25,9 @@
 | K | Medium Attack |
 | L | Heavy Attack |
 | U | Special Modifier |
-| U + J | Special 1 — Godless Dash Cut |
-| U + K | Special 2 — Chain Heretic Pull |
-| U + L | Special 3 — Anti-Halo Rising Slash |
+| U + J | Special 1 |
+| U + K | Special 2 |
+| U + L | Special 3 |
 | I + O | Ultimate — No Gods Above Me |
 | T | Taunt |
 | P | Pause |

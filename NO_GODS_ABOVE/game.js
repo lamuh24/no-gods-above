@@ -98,11 +98,244 @@
     vantaFinalEnd: { cols: 6, rows: 5, baselineRatio: 0.94, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter" }
   };
 
+  const baselineMovementStats = {
+    walkForward: WALK_FORWARD,
+    walkBack: WALK_BACK,
+    dashSpeed: DASH_SPEED,
+    dashDuration: DASH_DURATION,
+    dashCooldown: DASH_COOLDOWN,
+    superDashSpeed: SUPER_DASH_SPEED,
+    superDashCooldown: SUPER_DASH_COOLDOWN
+  };
+
+  const baselineJumpStats = {
+    jumpVelocity: JUMP_VELOCITY,
+    gravity: GRAVITY,
+    juggleGravity: JUGGLE_GRAVITY,
+    airRecoveryGravity: AIR_RECOVERY_GRAVITY,
+    airRecoveryDuration: AIR_RECOVERY_DURATION,
+    landingRecovery: LANDING_RECOVERY
+  };
+
+  const baselineAirDashStats = {
+    speed: AIR_DASH_SPEED,
+    duration: AIR_DASH_DURATION,
+    cooldown: AIR_DASH_COOLDOWN
+  };
+
+  const baselineHitboxes = {
+    light: { w: 86, h: 58, ox: 42, oy: -76 },
+    medium: { w: 112, h: 64, ox: 50, oy: -82 },
+    heavy: { w: 142, h: 88, ox: 58, oy: -96 },
+    low: { w: 104, h: 42, ox: 42, oy: -42 },
+    jump: { w: 106, h: 70, ox: 42, oy: -88 },
+    chain: { w: 185, h: 58, ox: 58, oy: -84 },
+    ultimate: { w: 320, h: 150, ox: 90, oy: -115 }
+  };
+
+  const baselinePlayerAttacks = {
+    neutral_light: attackDef(32, 3, 7, 5, 20, 10, -20, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 100 }),
+    neutral_medium: attackDef(58, 5, 7, 9, 31, 22, -80, "medium", { cancelOnHit: ["neutral_heavy", "special_1", "special_2", "special_3"], jumpCancel: true, dashCancel: true, stepForward: 120 }),
+    neutral_heavy: attackDef(88, 9, 5, 17, 50, 74, -535, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    forward_light: attackDef(38, 4, 4, 8, 22, 44, -18, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true }),
+    forward_medium: attackDef(66, 6, 4, 11, 32, 78, -68, "medium", { cancelOnHit: ["forward_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true }),
+    forward_heavy: attackDef(104, 10, 5, 18, 47, 104, -430, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    back_light: attackDef(34, 4, 4, 8, 21, 38, -18, "light", { cancelOnHit: ["back_medium", "neutral_medium"], dashCancel: true }),
+    back_medium: attackDef(62, 6, 4, 11, 31, 66, -72, "medium", { cancelOnHit: ["back_heavy", "special_2"], jumpCancel: true, dashCancel: true }),
+    back_heavy: attackDef(92, 9, 5, 18, 50, 60, -545, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    down_light: attackDef(28, 3, 4, 7, 19, 38, 0, "low", { cancelOnHit: ["down_medium", "neutral_medium"] }),
+    down_medium: attackDef(54, 5, 4, 10, 30, 58, -38, "low", { cancelOnHit: ["down_heavy"], jumpCancel: true, dashCancel: true }),
+    down_heavy: attackDef(78, 8, 5, 18, 50, 64, -565, "low", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    jump_light: attackDef(30, 3, 5, 4, 24, 32, -16, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
+    jump_medium: attackDef(56, 5, 6, 8, 34, 48, -32, "jump", { air: true, cancelOnHit: ["jump_heavy", "special_1"], dashCancel: true }),
+    jump_heavy: attackDef(82, 7, 6, 13, 42, 56, 220, "jump", { air: true, softKnockdown: true, dashCancel: true }),
+    special_1: attackDef(102, 7, 7, 15, 36, 118, -150, "chain", { dash: true, dashCancel: true, softKnockdown: true, meter: 16 }),
+    special_2: attackDef(78, 8, 10, 14, 34, 125, -70, "medium", { projectile: true, projectileSpeed: 700, noHit: true, meter: 14 }),
+    special_3: attackDef(116, 7, 7, 22, 50, 76, -555, "heavy", { rise: true, launcher: true, hardKnockdown: true, meter: 18 }),
+    super_dash: attackDef(68, 2, 24, 8, 34, 120, -260, "chain", { superDash: true, dashCancel: true, anim: "dash", blockstun: 22, meter: 10 }),
+    ultimate: attackDef(260, 10, 20, 32, 56, 330, -260, "ultimate", { ultimate: true, hardKnockdown: true }),
+    taunt: attackDef(0, 0, 0, 32, 0, 0, 0, "light", { noHit: true })
+  };
+
+  const baselineEnemyAttacks = {
+    enemy_light_attack: attackDef(34, 5, 4, 10, 22, 58, -15, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
+    enemy_medium_attack: attackDef(58, 7, 4, 13, 30, 90, -65, "medium", { enemy: true, cancelOnHit: ["enemy_heavy_attack"] }),
+    enemy_heavy_attack: attackDef(82, 10, 5, 19, 44, 110, -410, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_forward_heavy: attackDef(96, 11, 5, 20, 44, 132, -365, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_special_1: attackDef(96, 7, 7, 17, 36, 165, -130, "chain", { enemy: true, dash: true, softKnockdown: true }),
+    enemy_special_2: attackDef(66, 10, 8, 20, 30, 135, -40, "medium", { enemy: true, projectile: true, projectileSpeed: 620, noHit: true }),
+    enemy_special_3: attackDef(108, 8, 7, 23, 48, 96, -500, "heavy", { enemy: true, rise: true, launcher: true, hardKnockdown: true }),
+    enemy_ultimate: attackDef(220, 13, 18, 34, 52, 280, -180, "ultimate", { enemy: true, ultimate: true, hardKnockdown: true })
+  };
+
+  const baselineComboRoutes = {
+    autoCombos: {
+      neutral_light: "neutral_medium",
+      neutral_medium: "neutral_heavy"
+    },
+    airCombos: {
+      jump_light: "jump_medium",
+      jump_medium: "jump_heavy"
+    }
+  };
+
+  const baselineSpecialMoves = {
+    special_1: { type: "dashStrike", attack: "special_1" },
+    special_2: { type: "projectile", attack: "special_2", projectileWidth: 92, projectileHeight: 22, projectileLife: 1.1, spawnOffsetX: 112, spawnOffsetY: -86 },
+    special_3: { type: "risingLauncher", attack: "special_3" },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  const baselineEnemyAI = {
+    walkSpeed: ENEMY_AI_WALK_SPEED,
+    attackRange: ENEMY_AI_ATTACK_RANGE,
+    minCooldown: ENEMY_AI_MIN_COOLDOWN,
+    maxCooldown: ENEMY_AI_MAX_COOLDOWN,
+    farRange: 270,
+    farAttack: "enemy_special_2",
+    weightedAttacks: [
+      { threshold: 0.42, move: "enemy_light_attack" },
+      { threshold: 0.66, move: "enemy_medium_attack" },
+      { threshold: 0.82, move: "enemy_heavy_attack" },
+      { threshold: 0.93, move: "enemy_special_1" }
+    ],
+    fallbackAttack: "enemy_special_3"
+  };
+
+  const nyxMovementStats = {
+    ...cloneData(baselineMovementStats),
+    walkForward: 285,
+    walkBack: 215,
+    dashSpeed: 930,
+    dashDuration: 14 / 60,
+    dashCooldown: 17 / 60,
+    superDashSpeed: 980,
+    superDashCooldown: 25 / 60
+  };
+
+  const nyxJumpStats = {
+    ...cloneData(baselineJumpStats),
+    jumpVelocity: -760,
+    gravity: 1720,
+    juggleGravity: 1160,
+    airRecoveryGravity: 1560,
+    airRecoveryDuration: 14 / 60,
+    landingRecovery: 5 / 60
+  };
+
+  const nyxAirDashStats = {
+    speed: 875,
+    duration: 12 / 60,
+    cooldown: 10 / 60
+  };
+
+  const nyxHitboxes = {
+    light: { w: 78, h: 54, ox: 38, oy: -74 },
+    medium: { w: 104, h: 62, ox: 46, oy: -82 },
+    heavy: { w: 132, h: 78, ox: 56, oy: -92 },
+    low: { w: 96, h: 40, ox: 40, oy: -40 },
+    jump: { w: 102, h: 66, ox: 42, oy: -86 },
+    chain: { w: 170, h: 58, ox: 54, oy: -82 },
+    dive: { w: 118, h: 96, ox: 48, oy: -106 },
+    flurry: { w: 150, h: 66, ox: 48, oy: -84 },
+    ultimate: { w: 300, h: 140, ox: 86, oy: -112 }
+  };
+
+  const nyxPlayerAttacks = {
+    neutral_light: attackDef(24, 2, 6, 4, 19, 12, -18, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 115 }),
+    neutral_medium: attackDef(44, 4, 7, 8, 32, 20, -70, "medium", { cancelOnHit: ["neutral_heavy", "down_heavy", "special_1", "special_2", "special_3"], jumpCancel: true, dashCancel: true, stepForward: 135 }),
+    neutral_heavy: attackDef(70, 7, 5, 14, 42, 86, -245, "heavy", { cancelOnHit: ["down_heavy", "special_3"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    forward_light: attackDef(28, 3, 4, 6, 20, 46, -18, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true, stepForward: 125 }),
+    forward_medium: attackDef(48, 5, 5, 9, 32, 70, -62, "medium", { cancelOnHit: ["forward_heavy", "down_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true }),
+    forward_heavy: attackDef(76, 8, 5, 15, 43, 106, -280, "heavy", { cancelOnHit: ["down_heavy", "special_3"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    back_light: attackDef(26, 3, 4, 7, 20, 36, -18, "light", { cancelOnHit: ["back_medium", "neutral_medium"], dashCancel: true }),
+    back_medium: attackDef(46, 5, 5, 9, 31, 58, -66, "medium", { cancelOnHit: ["back_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true }),
+    back_heavy: attackDef(68, 7, 5, 15, 42, 58, -390, "heavy", { cancelOnHit: ["down_heavy", "special_3"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    down_light: attackDef(22, 2, 4, 6, 18, 34, 0, "low", { cancelOnHit: ["down_medium", "neutral_medium"], dashCancel: true }),
+    down_medium: attackDef(40, 4, 5, 8, 30, 50, -34, "low", { cancelOnHit: ["down_heavy", "special_2"], jumpCancel: true, dashCancel: true }),
+    down_heavy: attackDef(62, 6, 5, 15, 48, 52, -545, "low", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    jump_light: attackDef(22, 2, 5, 3, 24, 28, -16, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
+    jump_medium: attackDef(42, 4, 6, 7, 35, 36, -46, "jump", { air: true, cancelOnHit: ["jump_heavy", "special_2"], dashCancel: true }),
+    jump_heavy: attackDef(64, 6, 6, 11, 40, 44, 215, "jump", { air: true, softKnockdown: true, dashCancel: true }),
+    special_1: attackDef(52, 3, 8, 10, 31, 60, -58, "chain", { shadowStep: true, shadowStepSpeed: 980, shadowStepOffset: 82, dashCancel: true, jumpCancel: true, cancelOnHit: ["neutral_medium", "special_3"], softKnockdown: true, meter: 12 }),
+    special_2: attackDef(58, 5, 7, 13, 36, 48, 245, "dive", { air: true, dive: true, diveSpeedX: 610, diveSpeedY: 560, dashCancel: true, softKnockdown: true, meter: 14 }),
+    special_3: attackDef(18, 4, 22, 16, 18, 20, -32, "flurry", { dash: true, multiHit: { maxHits: 4, intervalFrames: 5 }, cancelOnHit: ["down_heavy", "super_dash"], dashCancel: true, meter: 18 }),
+    super_dash: attackDef(54, 2, 23, 7, 33, 105, -245, "chain", { superDash: true, dashCancel: true, anim: "dash", blockstun: 21, meter: 10 }),
+    ultimate: attackDef(220, 9, 19, 30, 54, 300, -245, "ultimate", { ultimate: true, hardKnockdown: true }),
+    taunt: attackDef(0, 0, 0, 28, 0, 0, 0, "light", { noHit: true })
+  };
+
+  const nyxEnemyAttacks = {
+    enemy_light_attack: attackDef(26, 3, 4, 8, 20, 52, -15, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
+    enemy_medium_attack: attackDef(44, 5, 5, 11, 30, 78, -55, "medium", { enemy: true, cancelOnHit: ["enemy_heavy_attack", "enemy_special_3"] }),
+    enemy_heavy_attack: attackDef(64, 8, 5, 16, 40, 100, -310, "heavy", { enemy: true, cancelOnHit: ["enemy_forward_heavy"], softKnockdown: true }),
+    enemy_forward_heavy: attackDef(68, 8, 5, 16, 44, 70, -500, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_special_1: attackDef(50, 4, 8, 12, 30, 88, -58, "chain", { enemy: true, shadowStep: true, shadowStepSpeed: 900, shadowStepOffset: 86, dash: true, softKnockdown: true }),
+    enemy_special_2: attackDef(56, 6, 7, 15, 34, 58, 230, "dive", { enemy: true, dive: true, diveSpeedX: 560, diveSpeedY: 520, softKnockdown: true }),
+    enemy_special_3: attackDef(17, 5, 20, 18, 17, 24, -25, "flurry", { enemy: true, dash: true, multiHit: { maxHits: 3, intervalFrames: 6 }, softKnockdown: true }),
+    enemy_ultimate: attackDef(190, 12, 17, 32, 50, 250, -170, "ultimate", { enemy: true, ultimate: true, hardKnockdown: true })
+  };
+
+  const nyxComboRoutes = {
+    autoCombos: {
+      neutral_light: "neutral_medium",
+      neutral_medium: "neutral_heavy"
+    },
+    airCombos: {
+      jump_light: "jump_medium",
+      jump_medium: "jump_heavy"
+    }
+  };
+
+  const nyxSpecialMoves = {
+    special_1: { type: "shadowStep", attack: "special_1" },
+    special_2: { type: "diveKick", attack: "special_2" },
+    special_3: { type: "rapidFlurry", attack: "special_3", maxHits: 4 },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  const nyxEnemyAI = {
+    ...cloneData(baselineEnemyAI),
+    walkSpeed: 172,
+    attackRange: 292,
+    minCooldown: 0.86,
+    maxCooldown: 1.45,
+    farRange: 250,
+    farAttack: "enemy_special_1",
+    weightedAttacks: [
+      { threshold: 0.36, move: "enemy_light_attack" },
+      { threshold: 0.62, move: "enemy_medium_attack" },
+      { threshold: 0.78, move: "enemy_heavy_attack" },
+      { threshold: 0.91, move: "enemy_special_3" }
+    ],
+    fallbackAttack: "enemy_special_2"
+  };
+
   const characterProfiles = {
     kairo: {
       id: "kairo",
       name: "KAIRO FINAL",
       shortName: "KAIRO",
+      health: PLAYER_MAX_HP,
+      movement: cloneData(baselineMovementStats),
+      jump: cloneData(baselineJumpStats),
+      airDash: cloneData(baselineAirDashStats),
+      attacks: {
+        player: cloneData(baselinePlayerAttacks),
+        enemy: cloneData(baselineEnemyAttacks)
+      },
+      comboRoutes: cloneData(baselineComboRoutes),
+      hitboxes: cloneData(baselineHitboxes),
+      hurtboxes: {
+        standing: { w: 66, h: 164 },
+        crouching: { w: 66, h: 94 },
+        dead: { w: 66, h: 62 }
+      },
+      specialMoves: cloneData(baselineSpecialMoves),
+      ai: cloneData(baselineEnemyAI),
+      effects: { dashTrail: true },
       projectileColor: "#7fd6ff",
       trailColor: "#8c3aa8",
       hurtboxWidth: 66,
@@ -124,6 +357,24 @@
       id: "vanta",
       name: "VANTA REIGN",
       shortName: "VANTA",
+      health: ENEMY_MAX_HP,
+      movement: cloneData(baselineMovementStats),
+      jump: cloneData(baselineJumpStats),
+      airDash: cloneData(baselineAirDashStats),
+      attacks: {
+        player: cloneData(baselinePlayerAttacks),
+        enemy: cloneData(baselineEnemyAttacks)
+      },
+      comboRoutes: cloneData(baselineComboRoutes),
+      hitboxes: cloneData(baselineHitboxes),
+      hurtboxes: {
+        standing: { w: 74, h: 164 },
+        crouching: { w: 74, h: 94 },
+        dead: { w: 74, h: 62 }
+      },
+      specialMoves: cloneData(baselineSpecialMoves),
+      ai: cloneData(baselineEnemyAI),
+      effects: { dashTrail: false },
       projectileColor: "#ff2d45",
       trailColor: "#6e1838",
       hurtboxWidth: 74,
@@ -140,65 +391,55 @@
       },
       buildPlayerAnimations: buildFinalFighterPlayerAnimations,
       buildEnemyAnimations: buildFinalFighterEnemyAnimations
+    },
+    nyx: {
+      id: "nyx",
+      name: "NYX",
+      shortName: "NYX",
+      health: 860,
+      movement: cloneData(nyxMovementStats),
+      jump: cloneData(nyxJumpStats),
+      airDash: cloneData(nyxAirDashStats),
+      attacks: {
+        player: cloneData(nyxPlayerAttacks),
+        enemy: cloneData(nyxEnemyAttacks)
+      },
+      comboRoutes: cloneData(nyxComboRoutes),
+      hitboxes: cloneData(nyxHitboxes),
+      hurtboxes: {
+        standing: { w: 58, h: 154 },
+        crouching: { w: 58, h: 88 },
+        dead: { w: 58, h: 58 }
+      },
+      specialMoves: cloneData(nyxSpecialMoves),
+      ai: cloneData(nyxEnemyAI),
+      effects: { dashTrail: true },
+      projectileColor: "#d78cff",
+      trailColor: "#4b194f",
+      hurtboxWidth: 58,
+      playable: true,
+      futurePlayer2: true,
+      placeholderArt: "kairoFinal",
+      sheets: {
+        basic: "kairoFinalBasic",
+        defense: "kairoFinalDefense",
+        coreA: "kairoFinalCoreA",
+        coreB: "kairoFinalCoreB",
+        lowAir: "kairoFinalLowAir",
+        specials: "kairoFinalSpecials",
+        end: "kairoFinalEnd"
+      },
+      buildPlayerAnimations: buildFinalFighterPlayerAnimations,
+      buildEnemyAnimations: buildFinalFighterEnemyAnimations
     }
   };
 
   for (const profile of Object.values(characterProfiles)) {
-    profile.playerAnimations = (profile.buildPlayerAnimations || buildPlayerAnimations)(profile.sheets);
-    profile.enemyAnimations = (profile.buildEnemyAnimations || buildEnemyAnimations)(profile.sheets);
+    hydrateCharacterProfile(profile);
   }
 
-  const moves = {
-    neutral_light: move(32, 3, 7, 5, 20, 10, -20, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 100 }),
-    neutral_medium: move(58, 5, 7, 9, 31, 22, -80, "medium", { cancelOnHit: ["neutral_heavy", "special_1", "special_2", "special_3"], jumpCancel: true, dashCancel: true, stepForward: 120 }),
-    neutral_heavy: move(88, 9, 5, 17, 50, 74, -535, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
-    forward_light: move(38, 4, 4, 8, 22, 44, -18, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true }),
-    forward_medium: move(66, 6, 4, 11, 32, 78, -68, "medium", { cancelOnHit: ["forward_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true }),
-    forward_heavy: move(104, 10, 5, 18, 47, 104, -430, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
-    back_light: move(34, 4, 4, 8, 21, 38, -18, "light", { cancelOnHit: ["back_medium", "neutral_medium"], dashCancel: true }),
-    back_medium: move(62, 6, 4, 11, 31, 66, -72, "medium", { cancelOnHit: ["back_heavy", "special_2"], jumpCancel: true, dashCancel: true }),
-    back_heavy: move(92, 9, 5, 18, 50, 60, -545, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
-    down_light: move(28, 3, 4, 7, 19, 38, 0, "low", { cancelOnHit: ["down_medium", "neutral_medium"] }),
-    down_medium: move(54, 5, 4, 10, 30, 58, -38, "low", { cancelOnHit: ["down_heavy"], jumpCancel: true, dashCancel: true }),
-    down_heavy: move(78, 8, 5, 18, 50, 64, -565, "low", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
-    jump_light: move(30, 3, 5, 4, 24, 32, -16, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
-    jump_medium: move(56, 5, 6, 8, 34, 48, -32, "jump", { air: true, cancelOnHit: ["jump_heavy", "special_1"], dashCancel: true }),
-    jump_heavy: move(82, 7, 6, 13, 42, 56, 220, "jump", { air: true, softKnockdown: true, dashCancel: true }),
-    special_1: move(102, 7, 7, 15, 36, 118, -150, "chain", { dash: true, dashCancel: true, softKnockdown: true, meter: 16 }),
-    special_2: move(78, 8, 10, 14, 34, 125, -70, "medium", { projectile: true, projectileSpeed: 700, noHit: true, meter: 14 }),
-    special_3: move(116, 7, 7, 22, 50, 76, -555, "heavy", { rise: true, launcher: true, hardKnockdown: true, meter: 18 }),
-    super_dash: move(68, 2, 24, 8, 34, 120, -260, "chain", { superDash: true, dashCancel: true, anim: "dash", blockstun: 22, meter: 10 }),
-    ultimate: move(260, 10, 20, 32, 56, 330, -260, "ultimate", { ultimate: true, hardKnockdown: true }),
-    taunt: move(0, 0, 0, 32, 0, 0, 0, "light", { noHit: true }),
-    enemy_light_attack: move(34, 5, 4, 10, 22, 58, -15, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
-    enemy_medium_attack: move(58, 7, 4, 13, 30, 90, -65, "medium", { enemy: true, cancelOnHit: ["enemy_heavy_attack"] }),
-    enemy_heavy_attack: move(82, 10, 5, 19, 44, 110, -410, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
-    enemy_forward_heavy: move(96, 11, 5, 20, 44, 132, -365, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
-    enemy_special_1: move(96, 7, 7, 17, 36, 165, -130, "chain", { enemy: true, dash: true, softKnockdown: true }),
-    enemy_special_2: move(66, 10, 8, 20, 30, 135, -40, "medium", { enemy: true, projectile: true, projectileSpeed: 620, noHit: true }),
-    enemy_special_3: move(108, 8, 7, 23, 48, 96, -500, "heavy", { enemy: true, rise: true, launcher: true, hardKnockdown: true }),
-    enemy_ultimate: move(220, 13, 18, 34, 52, 280, -180, "ultimate", { enemy: true, ultimate: true, hardKnockdown: true })
-  };
-
-  const autoCombos = {
-    neutral_light: "neutral_medium",
-    neutral_medium: "neutral_heavy"
-  };
-
-  const airComboRoutes = {
-    jump_light: "jump_medium",
-    jump_medium: "jump_heavy"
-  };
-
-  const boxDefaults = {
-    light: { w: 86, h: 58, ox: 42, oy: -76 },
-    medium: { w: 112, h: 64, ox: 50, oy: -82 },
-    heavy: { w: 142, h: 88, ox: 58, oy: -96 },
-    low: { w: 104, h: 42, ox: 42, oy: -42 },
-    jump: { w: 106, h: 70, ox: 42, oy: -88 },
-    chain: { w: 185, h: 58, ox: 58, oy: -84 },
-    ultimate: { w: 320, h: 150, ox: 90, oy: -115 }
-  };
+  const selectableCharacterIds = ["kairo", "vanta", "nyx"];
+  const moves = characterProfiles.kairo.moves.player;
 
   const state = {
     mode: "loading",
@@ -226,6 +467,76 @@
       displayTimer: 0
     }
   };
+
+  function cloneData(value) {
+    if (Array.isArray(value)) return value.map(cloneData);
+    if (value && typeof value === "object") {
+      return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, cloneData(entry)]));
+    }
+    return value;
+  }
+
+  function attackDef(damage, startup, active, recovery, hitstun, knockbackX, knockbackY, boxType, flags = {}) {
+    const blockstun = flags.blockstun ?? Math.max(8, Math.round(hitstun * 0.58));
+    return {
+      damage,
+      startup,
+      active,
+      recovery,
+      hitstun,
+      blockstun,
+      knockbackX,
+      knockbackY,
+      knockback: { x: knockbackX, y: knockbackY },
+      launch: {
+        launcher: flags.launcher === true,
+        rise: flags.rise === true,
+        softKnockdown: flags.softKnockdown === true,
+        hardKnockdown: flags.hardKnockdown === true
+      },
+      cancel: {
+        cancelOnHit: cloneData(flags.cancelOnHit || []),
+        jumpCancel: flags.jumpCancel === true,
+        dashCancel: flags.dashCancel === true,
+        autoCombo: flags.autoCombo === true
+      },
+      boxType,
+      flags
+    };
+  }
+
+  function compileMoveSet(attackDefinitions) {
+    return Object.fromEntries(Object.entries(attackDefinitions).map(([key, def]) => {
+      return [key, move(def.damage, def.startup, def.active, def.recovery, def.hitstun, def.knockbackX, def.knockbackY, def.boxType, cloneData(def.flags || {}))];
+    }));
+  }
+
+  function hydrateCharacterProfile(profile) {
+    profile.attackDefinitions = profile.attacks;
+    profile.damageValues = extractAttackValues(profile.attacks, "damage");
+    profile.hitstunValues = extractAttackValues(profile.attacks, "hitstun");
+    profile.blockstunValues = extractAttackValues(profile.attacks, "blockstun");
+    profile.knockbackValues = extractAttackValues(profile.attacks, "knockback");
+    profile.launchProperties = extractAttackValues(profile.attacks, "launch");
+    profile.cancelWindows = extractAttackValues(profile.attacks, "cancel");
+    profile.playerAnimations = (profile.buildPlayerAnimations || buildPlayerAnimations)(profile.sheets);
+    profile.enemyAnimations = (profile.buildEnemyAnimations || buildEnemyAnimations)(profile.sheets);
+    profile.animationReferences = {
+      player: profile.playerAnimations,
+      enemy: profile.enemyAnimations
+    };
+    profile.moves = {
+      player: compileMoveSet(profile.attacks.player),
+      enemy: compileMoveSet(profile.attacks.enemy)
+    };
+  }
+
+  function extractAttackValues(attacks, field) {
+    return {
+      player: Object.fromEntries(Object.entries(attacks.player).map(([key, def]) => [key, cloneData(def[field])])),
+      enemy: Object.fromEntries(Object.entries(attacks.enemy).map(([key, def]) => [key, cloneData(def[field])]))
+    };
+  }
 
   function move(damage, startup, active, recovery, hitstun, kx, ky, boxType, flags = {}) {
     const hitstunSeconds = hitstun / 60;
@@ -401,8 +712,39 @@
     return characterProfiles[characterId] || characterProfiles.kairo;
   }
 
+  function getMoveSet(f) {
+    const role = f?.kind === "enemy" ? "enemy" : "player";
+    return f?.profile?.moves?.[role] || moves;
+  }
+
+  function getMove(f, key = f?.activeMove) {
+    return key ? getMoveSet(f)[key] : null;
+  }
+
+  function getComboRoutes(f) {
+    return f?.profile?.comboRoutes || baselineComboRoutes;
+  }
+
+  function getHitboxDefinition(f, boxType) {
+    return f?.profile?.hitboxes?.[boxType] || baselineHitboxes[boxType];
+  }
+
+  function getMovementStats(f) {
+    return f?.profile?.movement || baselineMovementStats;
+  }
+
+  function getJumpStats(f) {
+    return f?.profile?.jump || baselineJumpStats;
+  }
+
+  function getAirDashStats(f) {
+    return f?.profile?.airDash || baselineAirDashStats;
+  }
+
   function getOpponentId(characterId) {
-    return characterId === "vanta" ? "kairo" : "vanta";
+    if (characterId === "nyx") return "kairo";
+    if (characterId === "vanta") return "nyx";
+    return "vanta";
   }
 
   function makeFighter(kind, x, facing, characterId) {
@@ -416,8 +758,8 @@
       vx: 0,
       vy: 0,
       facing,
-      hp: kind === "player" ? PLAYER_MAX_HP : ENEMY_MAX_HP,
-      maxHp: kind === "player" ? PLAYER_MAX_HP : ENEMY_MAX_HP,
+      hp: profile.health,
+      maxHp: profile.health,
       meter: kind === "player" ? 0 : 0,
       grounded: true,
       crouching: false,
@@ -441,6 +783,8 @@
       aiCooldown: kind === "enemy" ? 0.4 : 0,
       activeMove: null,
       hasHit: false,
+      hitCount: 0,
+      lastHitTime: -Infinity,
       spawnedProjectile: false,
       cancelUnlocked: false,
       bufferedMove: null,
@@ -967,7 +1311,7 @@
   }
 
   function startTraining(characterId = state.selectedPlayerId) {
-    state.selectedPlayerId = characterProfiles[characterId] ? characterId : "kairo";
+    state.selectedPlayerId = selectableCharacterIds.includes(characterId) ? characterId : "kairo";
     titleScreen.classList.add("hidden");
     characterSelect.classList.add("hidden");
     hud.classList.remove("hidden");
@@ -977,7 +1321,7 @@
   }
 
   function updateCharacterSelectFocus(characterId) {
-    state.selectedPlayerId = characterProfiles[characterId] ? characterId : "kairo";
+    state.selectedPlayerId = selectableCharacterIds.includes(characterId) ? characterId : "kairo";
     characterButtons.forEach((button) => {
       const selected = button.dataset.character === state.selectedPlayerId;
       button.classList.toggle("selected", selected);
@@ -986,7 +1330,7 @@
   }
 
   function handleCharacterSelectKey(e) {
-    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "Enter", "Escape"].includes(e.code);
+    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "Enter", "Escape"].includes(e.code);
     if (!handled) return false;
 
     e.preventDefault();
@@ -994,6 +1338,7 @@
 
     if (["KeyA", "ArrowLeft", "Digit1", "Numpad1"].includes(e.code)) updateCharacterSelectFocus("kairo");
     if (["KeyD", "ArrowRight", "Digit2", "Numpad2"].includes(e.code)) updateCharacterSelectFocus("vanta");
+    if (["KeyW", "ArrowUp", "Digit3", "Numpad3"].includes(e.code)) updateCharacterSelectFocus("nyx");
     if (e.code === "Enter") startTraining(state.selectedPlayerId);
     if (e.code === "Escape") {
       characterSelect.classList.add("hidden");
@@ -1073,7 +1418,7 @@
       p.vx *= 0.42;
       if (Math.abs(p.vx) < 8) p.vx = 0;
       integrate(p, dt);
-      if (p.hitstun <= 0 && !p.grounded) p.recoveryTimer = Math.max(p.recoveryTimer, AIR_RECOVERY_DURATION);
+      if (p.hitstun <= 0 && !p.grounded) p.recoveryTimer = Math.max(p.recoveryTimer, getJumpStats(p).airRecoveryDuration);
       return;
     }
 
@@ -1101,14 +1446,16 @@
       return;
     }
 
+    const movement = getMovementStats(p);
+    const airDash = getAirDashStats(p);
     if (p.airDashTimer > 0) {
       p.airDashTimer = Math.max(0, p.airDashTimer - dt);
-      p.vx = p.dashDirection * AIR_DASH_SPEED;
+      p.vx = p.dashDirection * airDash.speed;
       p.vy = 0;
       p.anim = "dash";
     } else if (p.dashTimer > 0) {
       p.dashTimer = Math.max(0, p.dashTimer - dt);
-      p.vx = p.dashDirection * DASH_SPEED;
+      p.vx = p.dashDirection * movement.dashSpeed;
       p.anim = "dash";
     } else if (p.action) {
       updateAction(p, dt);
@@ -1125,6 +1472,7 @@
     const holdingForward = state.keys.has(forward);
     const holdingBack = state.keys.has(back);
     const holdingDown = state.keys.has("KeyS");
+    const movement = getMovementStats(p);
 
     p.vx = 0;
 
@@ -1136,19 +1484,19 @@
 
     if (holdingBack && p.grounded) {
       p.blocking = true;
-      p.vx = -p.facing * WALK_BACK;
+      p.vx = -p.facing * movement.walkBack;
       p.anim = "block";
       return;
     }
 
     if (holdingForward) {
-      p.vx = p.facing * WALK_FORWARD;
+      p.vx = p.facing * movement.walkForward;
       p.anim = "walk_forward";
       return;
     }
 
     if (holdingBack) {
-      p.vx = -p.facing * WALK_BACK;
+      p.vx = -p.facing * movement.walkBack;
       p.anim = "walk_back";
       return;
     }
@@ -1185,7 +1533,7 @@
       e.anim = e.grounded ? "enemy_damaged" : "enemy_knockback";
       e.vx *= 0.36;
       if (Math.abs(e.vx) < 8) e.vx = 0;
-      if (e.hitstun <= 0 && !e.grounded) e.recoveryTimer = Math.max(e.recoveryTimer, AIR_RECOVERY_DURATION);
+      if (e.hitstun <= 0 && !e.grounded) e.recoveryTimer = Math.max(e.recoveryTimer, getJumpStats(e).airRecoveryDuration);
     } else if (e.knockdownTimer > 0) {
       e.knockdownTimer = Math.max(0, e.knockdownTimer - dt);
       e.anim = e.knockdownTimer > 0.16 ? "enemy_knockback" : "enemy_get_up";
@@ -1218,6 +1566,7 @@
 
   function updateEnemyAI(e, p, dt) {
     const distance = Math.abs(p.x - e.x);
+    const ai = e.profile.ai || baselineEnemyAI;
     e.aiCooldown = Math.max(0, e.aiCooldown - dt);
     e.facing = e.x <= p.x ? 1 : -1;
 
@@ -1227,8 +1576,8 @@
       return;
     }
 
-    if (distance > ENEMY_AI_ATTACK_RANGE) {
-      e.vx = e.facing * ENEMY_AI_WALK_SPEED;
+    if (distance > ai.attackRange) {
+      e.vx = e.facing * ai.walkSpeed;
       e.anim = "enemy_walk_forward";
       return;
     }
@@ -1240,35 +1589,41 @@
     if (e.aiCooldown <= 0) {
       const attack = chooseEnemyAttack(distance);
       startEnemyMove(attack);
-      e.aiCooldown = ENEMY_AI_MIN_COOLDOWN + Math.random() * (ENEMY_AI_MAX_COOLDOWN - ENEMY_AI_MIN_COOLDOWN);
+      e.aiCooldown = ai.minCooldown + Math.random() * (ai.maxCooldown - ai.minCooldown);
     }
   }
 
   function chooseEnemyAttack(distance) {
-    if (distance > 270) return "enemy_special_2";
+    const ai = state.enemy?.profile?.ai || baselineEnemyAI;
+    if (distance > ai.farRange) return ai.farAttack;
     const roll = Math.random();
-    if (roll < 0.42) return "enemy_light_attack";
-    if (roll < 0.66) return "enemy_medium_attack";
-    if (roll < 0.82) return "enemy_heavy_attack";
-    if (roll < 0.93) return "enemy_special_1";
-    return "enemy_special_3";
+    for (const route of ai.weightedAttacks) {
+      if (roll < route.threshold) return route.move;
+    }
+    return ai.fallbackAttack;
   }
 
   function updateAction(f, dt) {
-    const moveData = moves[f.activeMove];
+    const moveData = getMove(f);
     f.actionTime += dt;
     f.vx *= moveData.flags.dash ? 0.98 : f.grounded ? 0.46 : 0.88;
 
     if (moveData.flags.superDash) updateSuperDashVelocity(f);
-    if (moveData.flags.dash && f.actionTime < 0.18) f.vx = f.facing * 620;
+    if (moveData.flags.shadowStep && f.actionTime < 0.16) updateShadowStepVelocity(f, moveData);
+    else if (moveData.flags.dash && f.actionTime < 0.18) f.vx = f.facing * 620;
+    if (moveData.flags.dive && f.actionTime < 0.22) updateDiveVelocity(f, moveData);
     if (moveData.flags.stepForward && f.actionTime < moveData.startup + moveData.active) f.vx = f.facing * moveData.flags.stepForward;
     if (moveData.flags.rise && f.actionTime < 0.2) f.vy = Math.min(f.vy, -360);
     if (moveData.flags.projectile && !f.spawnedProjectile && f.actionTime >= moveData.startup) {
       spawnProjectile(f, moveData);
       f.spawnedProjectile = true;
     }
-    if (!moveData.flags.noHit && isMoveActive(f) && !f.hasHit) {
-      tryHit(f, f.kind === "player" ? state.enemy : state.player, moveData);
+    if (!moveData.flags.noHit && isMoveActive(f)) {
+      if (moveData.flags.multiHit) {
+        tryMultiHit(f, moveData);
+      } else if (!f.hasHit) {
+        tryHit(f, f.kind === "player" ? state.enemy : state.player, moveData);
+      }
     }
 
     if (tryBufferedMove(f)) return;
@@ -1278,6 +1633,8 @@
       f.action = null;
       f.activeMove = null;
       f.hasHit = false;
+      f.hitCount = 0;
+      f.lastHitTime = -Infinity;
       f.spawnedProjectile = false;
       f.cancelUnlocked = false;
       if (buffered && f.kind === "player") {
@@ -1290,7 +1647,8 @@
   function integrate(f, dt) {
     const wasGrounded = f.grounded;
     if (!f.grounded || f.vy < 0) {
-      const gravity = !f.grounded && f.hitstun > 0 ? JUGGLE_GRAVITY : !f.grounded && f.recoveryTimer > 0 ? AIR_RECOVERY_GRAVITY : GRAVITY;
+      const jumpStats = getJumpStats(f);
+      const gravity = !f.grounded && f.hitstun > 0 ? jumpStats.juggleGravity : !f.grounded && f.recoveryTimer > 0 ? jumpStats.airRecoveryGravity : jumpStats.gravity;
       f.vy += gravity * dt;
       if (!f.grounded && f.hitstun > 0) {
         f.vx *= Math.pow(0.72, dt * 60);
@@ -1312,7 +1670,7 @@
           f.vx *= 0.24;
           spawnLandingDust(f);
         } else if (!f.action && f.hitstun <= 0) {
-          f.landingTimer = Math.max(f.landingTimer, LANDING_RECOVERY);
+          f.landingTimer = Math.max(f.landingTimer, getJumpStats(f).landingRecovery);
           f.vx *= 0.42;
         }
       }
@@ -1344,7 +1702,7 @@
       flashStatus("METER NEEDED", 0.8);
       return;
     }
-    const data = moves[key];
+    const data = getMove(p, key);
     if (!data) return;
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0 || p.landingTimer > 0) return;
 
@@ -1362,18 +1720,20 @@
 
   function startEnemyMove(key) {
     const e = state.enemy;
-    const data = moves[key];
+    const data = getMove(e, key);
     if (!data || e.dead || e.action || e.hitstun > 0 || e.blockstun > 0 || e.knockdownTimer > 0 || e.recoveryTimer > 0) return;
     beginMove(e, key);
   }
 
   function beginMove(f, key) {
-    const data = moves[key];
+    const data = getMove(f, key);
     if (!data) return;
     f.action = "attack";
     f.actionTime = 0;
     f.activeMove = key;
     f.hasHit = false;
+    f.hitCount = 0;
+    f.lastHitTime = -Infinity;
     f.spawnedProjectile = false;
     f.cancelUnlocked = false;
     f.bufferedMove = null;
@@ -1382,7 +1742,7 @@
       f.vx = 0;
     }
     if (data.flags.superDash) {
-      f.superDashCooldown = SUPER_DASH_COOLDOWN;
+      f.superDashCooldown = getMovementStats(f).superDashCooldown;
       f.vy = 0;
       spawnBurst(f.x + f.facing * 62, f.y - 82, f.profile.projectileColor, 18);
     }
@@ -1399,14 +1759,15 @@
   }
 
   function canCancelInto(f, nextKey) {
-    const current = moves[f.activeMove];
-    const next = moves[nextKey];
+    const current = getMove(f);
+    const next = getMove(f, nextKey);
     if (!current || !next) return false;
+    const routes = getComboRoutes(f);
     const lateCancel = f.actionTime >= current.cancelTime;
     const basicChainReady = f.actionTime >= current.startup + current.active * 0.34;
     const hitCancelReady = f.actionTime >= current.startup + current.active * 0.38;
-    if (autoCombos[f.activeMove] === nextKey && f.grounded && basicChainReady) return true;
-    if (airComboRoutes[f.activeMove] === nextKey && !f.grounded && basicChainReady) return true;
+    if (routes.autoCombos[f.activeMove] === nextKey && f.grounded && basicChainReady) return true;
+    if (routes.airCombos[f.activeMove] === nextKey && !f.grounded && basicChainReady) return true;
     if (!f.cancelUnlocked) return false;
     if (current.flags.superDash && !next.flags.ultimate) return hitCancelReady;
     if (current.flags.cancelOnHit?.includes(nextKey)) return hitCancelReady;
@@ -1426,12 +1787,47 @@
   function updateSuperDashVelocity(f) {
     const target = f.kind === "player" ? state.enemy : state.player;
     if (!target || target.dead) return;
+    const movement = getMovementStats(f);
     const dx = target.x - f.x;
     const dy = (target.y - 76) - (f.y - 76);
     const len = Math.max(1, Math.hypot(dx, dy));
-    f.vx = (dx / len) * SUPER_DASH_SPEED;
-    f.vy = (dy / len) * SUPER_DASH_SPEED;
+    f.vx = (dx / len) * movement.superDashSpeed;
+    f.vy = (dy / len) * movement.superDashSpeed;
     f.facing = dx >= 0 ? 1 : -1;
+  }
+
+  function updateShadowStepVelocity(f, moveData) {
+    const target = f.kind === "player" ? state.enemy : state.player;
+    if (!target || target.dead) {
+      f.vx = f.facing * (moveData.flags.shadowStepSpeed || 860);
+      return;
+    }
+    const offset = moveData.flags.shadowStepOffset || 84;
+    const nearEnoughToSlipBehind = Math.abs(target.x - f.x) < 135;
+    const targetX = nearEnoughToSlipBehind ? target.x + f.facing * offset : target.x - f.facing * offset;
+    const dir = Math.sign(targetX - f.x) || f.facing;
+    f.vx = dir * (moveData.flags.shadowStepSpeed || 860);
+  }
+
+  function updateDiveVelocity(f, moveData) {
+    f.vx = f.facing * (moveData.flags.diveSpeedX || 540);
+    if (!f.grounded) {
+      f.vy = Math.max(f.vy, moveData.flags.diveSpeedY || 480);
+    }
+  }
+
+  function tryMultiHit(f, moveData) {
+    const multi = moveData.flags.multiHit;
+    const maxHits = multi.maxHits || 2;
+    const interval = (multi.intervalFrames || 5) / 60;
+    if (f.hitCount >= maxHits) return;
+    if (f.actionTime - f.lastHitTime < interval) return;
+    const defender = f.kind === "player" ? state.enemy : state.player;
+    if (tryHit(f, defender, moveData)) {
+      f.hitCount += 1;
+      f.lastHitTime = f.actionTime;
+      f.hasHit = false;
+    }
   }
 
   function startDash() {
@@ -1442,21 +1838,23 @@
       clearAction(p);
     }
     const direction = getDashDirection(p);
+    const movement = getMovementStats(p);
+    const airDash = getAirDashStats(p);
     if (!p.grounded) {
       if (p.airDashUsed || p.airDashCooldown > 0) return;
-      p.airDashTimer = AIR_DASH_DURATION;
-      p.airDashCooldown = AIR_DASH_COOLDOWN;
+      p.airDashTimer = airDash.duration;
+      p.airDashCooldown = airDash.cooldown;
       p.airDashUsed = true;
       p.dashDirection = direction;
       p.vy = 0;
     } else {
       if (p.dashCooldown > 0) return;
-      p.dashTimer = DASH_DURATION;
-      p.dashCooldown = DASH_COOLDOWN;
+      p.dashTimer = movement.dashDuration;
+      p.dashCooldown = movement.dashCooldown;
       p.dashDirection = direction;
     }
     p.anim = "dash";
-    if (p.profile.id !== "vanta") {
+    if (p.profile.effects?.dashTrail) {
       spawnTrail(p.x, p.y - 80);
     }
   }
@@ -1474,7 +1872,7 @@
   }
 
   function canDashCancel(f) {
-    const current = moves[f.activeMove];
+    const current = getMove(f);
     if (!current) return false;
     return current.flags.dashCancel && (f.cancelUnlocked || f.actionTime >= current.cancelTime);
   }
@@ -1495,13 +1893,13 @@
       clearAction(p);
     }
     if (!p.grounded) return;
-    p.vy = JUMP_VELOCITY;
+    p.vy = getJumpStats(p).jumpVelocity;
     p.grounded = false;
     p.landingTimer = 0;
   }
 
   function canJumpCancel(f) {
-    const current = moves[f.activeMove];
+    const current = getMove(f);
     if (!current) return false;
     return current.flags.jumpCancel && (f.cancelUnlocked || f.actionTime >= current.cancelTime);
   }
@@ -1510,6 +1908,8 @@
     f.action = null;
     f.activeMove = null;
     f.hasHit = false;
+    f.hitCount = 0;
+    f.lastHitTime = -Infinity;
     f.spawnedProjectile = false;
     f.cancelUnlocked = false;
     f.bufferedMove = null;
@@ -1629,10 +2029,10 @@
   }
 
   function tryHit(attacker, defender, moveData) {
-    if (!defender || defender.dead) return;
+    if (!defender || defender.dead) return false;
     const hitbox = getHitbox(attacker, moveData);
     const hurtbox = getHurtbox(defender);
-    if (!intersects(hitbox, hurtbox)) return;
+    if (!intersects(hitbox, hurtbox)) return false;
 
     attacker.hasHit = true;
     attacker.cancelUnlocked = true;
@@ -1685,18 +2085,20 @@
       defender.anim = defender.kind === "enemy" ? "enemy_death" : "death";
       flashStatus(defender.kind === "enemy" ? `${defender.profile.shortName} DEFEATED` : `${defender.profile.shortName} DOWN`, 2.4);
     }
+    return true;
   }
 
   function spawnProjectile(owner, moveData) {
     const direction = owner.facing;
+    const special = owner.profile.specialMoves?.[owner.activeMove] || {};
     state.projectiles.push({
       ownerKind: owner.kind,
-      x: owner.x + direction * 112,
-      y: owner.y - 86,
+      x: owner.x + direction * (special.spawnOffsetX || 112),
+      y: owner.y + (special.spawnOffsetY || -86),
       vx: direction * (moveData.flags.projectileSpeed || 520),
       facing: direction,
-      w: 92,
-      h: 22,
+      w: special.projectileWidth || 92,
+      h: special.projectileHeight || 22,
       damage: moveData.damage,
       hitstun: moveData.hitstun,
       blockstun: moveData.blockstun,
@@ -1704,7 +2106,7 @@
       knockbackY: moveData.knockbackY,
       boxType: moveData.boxType,
       flags: { projectileImpact: true },
-      life: 1.1,
+      life: special.projectileLife || 1.1,
       color: owner.profile.projectileColor
     });
     spawnBurst(owner.x + direction * 72, owner.y - 78, owner.profile.projectileColor, 18);
@@ -1763,12 +2165,12 @@
   }
 
   function isMoveActive(f) {
-    const m = moves[f.activeMove];
+    const m = getMove(f);
     return f.actionTime >= m.startup && f.actionTime <= m.startup + m.active;
   }
 
   function getHitbox(f, moveData) {
-    const base = boxDefaults[moveData.boxType];
+    const base = getHitboxDefinition(f, moveData.boxType);
     const x = f.x + f.facing * base.ox;
     return {
       x: f.facing === 1 ? x : x - base.w,
@@ -1781,8 +2183,10 @@
   function getHurtbox(f) {
     const crouch = f.crouching || f.anim === "crouch";
     const dead = f.dead;
-    const h = dead ? 62 : crouch ? 94 : 164;
-    const w = f.profile?.hurtboxWidth || (f.kind === "enemy" ? 74 : 66);
+    const hurtboxes = f.profile?.hurtboxes;
+    const box = dead ? hurtboxes?.dead : crouch ? hurtboxes?.crouching : hurtboxes?.standing;
+    const w = box?.w || f.profile?.hurtboxWidth || (f.kind === "enemy" ? 74 : 66);
+    const h = box?.h || (dead ? 62 : crouch ? 94 : 164);
     return { x: f.x - w / 2, y: f.y - h, w, h };
   }
 
@@ -1973,7 +2377,7 @@
 
     const row = entry[1];
     const frameCount = meta.cols;
-    const frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(moves[f.activeMove]?.duration || 0.5, 0.1)) * frameCount)) : Math.floor(state.time * 8) % frameCount;
+    const frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(getMove(f)?.duration || 0.5, 0.1)) * frameCount)) : Math.floor(state.time * 8) % frameCount;
     const fw = image.width / meta.cols;
     const rh = image.height / meta.rows;
     const analyzedRow = state.frameBoxes[entry[0]]?.[row];
@@ -2029,7 +2433,8 @@
   function drawKairoPlaceholder(f) {
     const hurt = getHurtbox(f);
     const crouch = f.crouching || f.anim === "crouch";
-    const attackReach = f.activeMove ? Math.min(92, boxDefaults[moves[f.activeMove].boxType].w * 0.55) : 0;
+    const moveData = getMove(f);
+    const attackReach = moveData ? Math.min(92, getHitboxDefinition(f, moveData.boxType).w * 0.55) : 0;
 
     ctx.save();
     ctx.translate(f.x, f.y);
@@ -2206,10 +2611,10 @@
     drawBox(getHurtbox(p), "rgba(54, 156, 255, 0.28)", "#5ac8ff");
     drawBox(getHurtbox(e), "rgba(54, 156, 255, 0.28)", "#5ac8ff");
     if (p.activeMove && isMoveActive(p)) {
-      drawBox(getHitbox(p, moves[p.activeMove]), "rgba(255, 45, 85, 0.32)", "#ff3b63");
+      drawBox(getHitbox(p, getMove(p)), "rgba(255, 45, 85, 0.32)", "#ff3b63");
     }
     if (e.activeMove && isMoveActive(e)) {
-      drawBox(getHitbox(e, moves[e.activeMove]), "rgba(255, 149, 0, 0.3)", "#ffb15c");
+      drawBox(getHitbox(e, getMove(e)), "rgba(255, 149, 0, 0.3)", "#ffb15c");
     }
     for (const projectile of state.projectiles) {
       drawBox(getProjectileBox(projectile), "rgba(255, 45, 69, 0.24)", "#ff2d45");
@@ -2295,6 +2700,7 @@
   function chooseLightAttack() {
     const p = state.player;
     if (!p) return "neutral_light";
+    const autoCombos = getComboRoutes(p).autoCombos;
     if (p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
     if (p.grounded && !isHoldingDirectionalModifier(p)) return "neutral_light";
     return chooseAttack("light");

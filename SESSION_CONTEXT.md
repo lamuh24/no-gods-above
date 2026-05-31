@@ -5,6 +5,21 @@ Agent: Codex
 Date: 2026-05-31
 
 ## What Was Done
+- Created the stable Nyx gameplay checkpoint named `nyx-gameplay-placeholder-v1` after the placeholder-sprite Nyx implementation was verified.
+- No gameplay values, Kairo data, Vanta data, global combat system behavior, stage art, sprites, or UI layout were changed for this checkpoint pass.
+- Added Nyx as a third playable fighter using the existing reusable character config system.
+- Nyx is a lower-health fast rushdown/aerial-pressure fighter with faster walk/dash/air dash, medium-high jump, lighter aerial gravity, smaller hurtboxes, lower per-hit damage, high combo routes, a launcher, air chain, Super Dash support, Shadow Step, Dive Kick/Falling Slash, and capped Rapid Flurry multi-hit behavior.
+- Nyx currently uses Kairo Final sprite sheets and portrait as placeholder references only; no new sprites, sprite sheets, stage art, or character art were created.
+- Added Nyx to character select with a third card and minimal selection controls. Training defaults are now Kairo -> Vanta, Vanta -> Nyx, and Nyx -> Kairo so Kairo/Vanta still works and Nyx can be tested against both existing fighters.
+- Added Nyx-only `shadowStep`, `dive`, and finite `multiHit` move flags in `game.js`; Kairo and Vanta do not use these flags and their baseline move values were not changed.
+- Updated `NO_GODS_ABOVE\docs\controls.md` and `NO_GODS_ABOVE\docs\character_architecture.md` for Nyx selection and the next-character workflow.
+- Added `NO_GODS_ABOVE\docs\nyx_character_config.md` to document Nyx's real gameplay identity, temporary placeholder sprite mappings, and the exact real Nyx sheet set needed later.
+- Verified `node --check NO_GODS_ABOVE\game.js`, local HTTP `200`, baseline Kairo/Vanta move-value comparison unchanged, real Chrome CDP smoke screenshots for Kairo vs Vanta / Vanta vs Nyx / Nyx vs Kairo, and VM combat checks for Kairo vs Nyx, Vanta vs Nyx, Nyx hit sparks, hit stop, camera shake, launcher, combo counter, air dash, Super Dash, knockdown-capable attacks, and Rapid Flurry max-hit behavior.
+- Refactored the current Kairo/Vanta fighter setup into a reusable data-driven character config architecture without changing combat feel, attack balance, sprites, UI layout, or stage art.
+- Added per-character config sections in `NO_GODS_ABOVE\game.js` for health, movement, jump, air dash, raw attack definitions, damage/hitstun/blockstun summaries, launch properties, knockback values, cancel windows, combo routes, animation references, hitboxes, hurtboxes, special moves, AI, and effect colors.
+- Routed runtime combat lookups through active-fighter helpers such as `getMove()`, `getMovementStats()`, `getJumpStats()`, `getAirDashStats()`, `getComboRoutes()`, and `getHitboxDefinition()` so future fighters can override values per character.
+- Added `NO_GODS_ABOVE\docs\character_architecture.md` with exact steps for adding a new character config and preserving the current baseline when copying Kairo/Vanta values.
+- Verified the refactor with `node --check NO_GODS_ABOVE\game.js`, local HTTP `200`, and a lightweight Node VM runtime-init harness. Playwright browser automation was unavailable in the local Node environment.
 - Locked the current FighterZ-style combat tuning as the stable baseline named `fighterz-combat-baseline-v1`.
 - No combat values, sprites, stage art, UI layout, or gameplay logic were changed during the baseline lock pass.
 - This baseline preserves the current ground combo, air combo, launcher, hit stop, hit spark, camera shake, combo counter, knockdown/recovery, damage scaling, and hitstun decay behavior for future comparison.
@@ -113,6 +128,8 @@ Date: 2026-05-31
 - Rebuilt and browser-verified Vanta idle, Shift, and U+J with cache disabled. The new animation rows no longer appear oversized. Screenshots: `NO_GODS_ABOVE\vanta_scale_fix_idle.png`, `NO_GODS_ABOVE\vanta_scale_fix_shift.png`, `NO_GODS_ABOVE\vanta_scale_fix_uj_mid.png`.
 
 ## In Progress
+- Nyx is playable with placeholder Kairo Final visuals; future art can replace only Nyx's `sheets` and select portrait without changing the combat system.
+- Character config architecture is now implemented in `game.js`; future fighter additions should start from `docs\character_architecture.md`.
 - `fighterz-combat-baseline-v1` is the current stable combat baseline. Future combat changes should be made only when explicitly requested and should be compared against this checkpoint.
 - First playable Canvas Training Mode prototype is built and served locally on port 8010.
 - Kairo Final and Vanta Final are canonical selectable fighter runtime packs. Vanta Reign is the default right-side rival when Kairo is selected and can also be Player 1.
@@ -126,6 +143,11 @@ Date: 2026-05-31
 - Fighter Atlas Factory skill is installed locally and valid.
 
 ## Key Decisions
+- Treat `nyx-gameplay-placeholder-v1` as the stable Nyx placeholder-gameplay baseline. Future Nyx tuning or real-art integration should branch from this checkpoint and avoid changing Kairo/Vanta/global combat unless explicitly requested.
+- Nyx-specific speed, health, damage, hitboxes, hurtboxes, combo routes, and special behavior live only in the Nyx character config.
+- Nyx placeholder art intentionally points at existing Kairo Final sheets/portrait until real Nyx artwork is available.
+- Kairo Final and Vanta Reign currently share the same baseline combat config values. Future differences should be made in that character's config, not by changing global combat behavior.
+- The reusable character system stays inside `game.js` for now to avoid module-loading or build-step changes in the plain Canvas prototype.
 - Treat `fighterz-combat-baseline-v1` as the locked stable FighterZ-style combat baseline. Do not change combat values unless the user specifically requests another tuning pass.
 - Build with plain HTML, CSS, and JavaScript Canvas only.
 - Prioritize a playable prototype over perfect AI-generated sprite slicing.
@@ -145,6 +167,8 @@ Date: 2026-05-31
 - Character select uses responsive DOM cards inspired by the supplied artwork; do not return to a full-screen pasted image/hotspot layout.
 
 ## What's Next
+- Replace Nyx's placeholder Kairo art with Nyx-specific sprite sheets when available by changing only the Nyx asset paths/sheet keys, sheet metadata, and portrait reference.
+- When adding a new fighter, copy the baseline config shape, wire asset paths/sheet metadata, set animation mappings, then add character-select UI only after runtime config smoke tests pass.
 - If future combat work is requested, branch/tune from `fighterz-combat-baseline-v1` and preserve this checkpoint as the known-good baseline.
 - Hands-on tune the anime combat pass: verify Light auto-combo routes at close/mid range, tune launcher height, validate jump-cancel-to-air-combo, validate U+Shift Super Dash against grounded and airborne opponents, and adjust combo scaling if damage feels too low/high.
 - Playtest the feel-polish pass manually: check whether medium/heavy hit stop feels crisp, whether sparks stay readable, whether launcher float supports Jump -> Air Light -> Air Medium -> Air Heavy, and whether hitstun decay stops long infinite routes.
@@ -155,6 +179,10 @@ Date: 2026-05-31
 - Later path: deeper character-swap playtesting, then local 2-player versus; do not jump to online multiplayer yet.
 
 ## Gotchas / Watch Out For
+- Nyx Rapid Flurry uses a finite `multiHit` flag. Keep `maxHits` bounded and continue relying on combo scaling/hitstun decay for long routes.
+- Nyx Shadow Step and Dive Kick are opt-in move flags. Do not add those flags to Kairo/Vanta unless explicitly requested.
+- Do not tune shared baseline attack values while adding new characters. Override values only inside the new character config unless the user asks for a global combat tuning pass.
+- `profile.moves.player` and `profile.moves.enemy` are compiled from raw `attacks` by `hydrateCharacterProfile()`. Update raw config values first, then let hydration rebuild runtime move data.
 - Do not drift combat tuning away from `fighterz-combat-baseline-v1` unless the user explicitly asks for more tuning.
 - Browser CUA multi-key sequences were unreliable during this pass; prefer small browser steps or direct manual playtesting for combo feel validation.
 - Do not judge final combo rhythm only from browser automation screenshots; use live keyboard/controller testing for exact timing and feel.

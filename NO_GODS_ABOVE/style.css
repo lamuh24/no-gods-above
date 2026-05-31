@@ -254,7 +254,7 @@ h1 {
 .select-grid {
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 2.8vw, 28px);
   align-items: stretch;
 }
@@ -285,6 +285,10 @@ h1 {
 
 .select-card.vanta {
   --card-accent: #ff3f5c;
+}
+
+.select-card.nyx {
+  --card-accent: #c884ff;
 }
 
 .select-card:hover {
