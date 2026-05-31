@@ -1,0 +1,443 @@
+:root {
+  color-scheme: dark;
+  --blood: #e3313f;
+  --ember: #ffb15c;
+  --violet: #ba67ff;
+  --ink: #070407;
+  --panel: rgba(9, 5, 10, 0.78);
+  --line: rgba(255, 255, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #050305;
+  color: #f6edf2;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+#game-shell {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(133, 14, 29, 0.35), transparent 38%),
+    linear-gradient(180deg, #15070b 0%, #050305 100%);
+}
+
+#game {
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  display: block;
+  background: #080508;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.65);
+}
+
+.hud {
+  position: absolute;
+  top: clamp(10px, 2vw, 22px);
+  left: 50%;
+  width: min(1180px, calc(100vw - 24px));
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(10px, 2vw, 22px);
+  align-items: start;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.fighter-card {
+  min-width: 0;
+}
+
+.fighter-card.right {
+  text-align: right;
+}
+
+.center-hud {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.fighter-name,
+#round-status {
+  text-shadow: 0 2px 0 #000, 0 0 18px rgba(227, 49, 63, 0.5);
+  font-size: clamp(0.78rem, 1.6vw, 1.05rem);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+#round-status {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.combo-counter {
+  min-height: 44px;
+  padding: 5px 13px;
+  color: #fff8eb;
+  font-size: clamp(1.25rem, 3vw, 2.25rem);
+  font-weight: 1000;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 3px 0 #000, 0 0 18px rgba(255, 177, 92, 0.8);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 80ms linear, transform 80ms linear;
+}
+
+.combo-counter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bar {
+  height: clamp(13px, 1.9vw, 20px);
+  margin-top: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.8);
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transition: width 120ms linear;
+}
+
+.hp span {
+  background: linear-gradient(90deg, #7fe0a2, #ece275 52%, var(--blood));
+}
+
+.meter {
+  width: 62%;
+  height: clamp(8px, 1vw, 12px);
+}
+
+.meter span {
+  background: linear-gradient(90deg, #6739f0, var(--violet), #ffe2ff);
+}
+
+.menu {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.72)),
+    var(--title-bg, none);
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-inner {
+  width: min(720px, 92vw);
+  text-align: center;
+  text-shadow: 0 5px 26px rgba(0, 0, 0, 0.9);
+}
+
+.kicker {
+  margin: 0 0 10px;
+  color: var(--ember);
+  font-size: clamp(0.84rem, 1.8vw, 1.05rem);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 28px;
+  font-size: clamp(3.2rem, 10vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+#start-button {
+  min-width: min(290px, 82vw);
+  min-height: 52px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: linear-gradient(180deg, #f2d08b, #b4423b 48%, #3d0c13);
+  color: #fff8eb;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+#start-button:focus-visible,
+.select-card:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.menu-note {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+.menu.hidden,
+.hud.hidden {
+  display: none;
+}
+
+.character-select {
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 1, 3, 0.18), rgba(3, 1, 3, 0.78)),
+    url("assets/backgrounds/stages/forsaken_courtyard.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.select-panel {
+  width: min(100vw, 1280px);
+  height: min(100vh, 720px);
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(8px, 1.8vh, 16px);
+  padding: clamp(14px, 3.2vh, 30px) clamp(18px, 4vw, 54px);
+  overflow: hidden;
+}
+
+.select-header {
+  min-height: 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.95);
+}
+
+.select-logo {
+  color: #e9ded3;
+  font-size: clamp(1.35rem, 4.2vh, 2.6rem);
+  line-height: 0.95;
+  font-weight: 1000;
+}
+
+.select-heading {
+  margin-top: clamp(4px, 1vh, 10px);
+  color: #fff7ef;
+  font-size: clamp(1.15rem, 3.2vh, 2.1rem);
+  font-weight: 900;
+}
+
+.select-mode {
+  margin-top: clamp(3px, 0.7vh, 7px);
+  color: #ff7272;
+  font-size: clamp(0.64rem, 1.45vh, 0.86rem);
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.select-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2.8vw, 28px);
+  align-items: stretch;
+}
+
+.select-card {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  justify-items: center;
+  gap: clamp(4px, 1vh, 8px);
+  padding: clamp(10px, 2.4vh, 22px);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 48%, rgba(255, 255, 255, 0.28));
+  border-radius: 8px;
+  color: #fff7ef;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--card-accent) 10%, transparent), rgba(0, 0, 0, 0.64)),
+    rgba(8, 5, 9, 0.86);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.select-card.kairo {
+  --card-accent: #63dfff;
+}
+
+.select-card.vanta {
+  --card-accent: #ff3f5c;
+}
+
+.select-card:hover {
+  border-color: color-mix(in srgb, var(--card-accent) 72%, white 28%);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.58), 0 0 28px color-mix(in srgb, var(--card-accent) 42%, transparent);
+}
+
+.select-card.selected {
+  border-color: color-mix(in srgb, var(--card-accent) 82%, white 18%);
+  box-shadow:
+    0 20px 58px rgba(0, 0, 0, 0.58),
+    0 0 30px color-mix(in srgb, var(--card-accent) 48%, transparent),
+    inset 0 0 28px color-mix(in srgb, var(--card-accent) 18%, transparent);
+}
+
+.portrait-frame {
+  width: auto;
+  height: min(100%, 260px);
+  max-width: 78%;
+  min-height: 0;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: end center;
+  border-bottom: 2px solid color-mix(in srgb, var(--card-accent) 82%, white 18%);
+  background:
+    radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--card-accent) 24%, transparent), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.16));
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 15px 18px rgba(0, 0, 0, 0.7));
+}
+
+.select-name {
+  color: #fffaf2;
+  font-size: clamp(1rem, 2.8vh, 1.55rem);
+  font-weight: 1000;
+  text-shadow: 0 2px 0 #000, 0 0 18px color-mix(in srgb, var(--card-accent) 58%, transparent);
+}
+
+.select-role {
+  color: color-mix(in srgb, var(--card-accent) 70%, #fff 30%);
+  font-size: clamp(0.64rem, 1.65vh, 0.86rem);
+  font-weight: 850;
+}
+
+.select-footer {
+  min-height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 244, 231, 0.74);
+  font-size: clamp(0.62rem, 1.55vh, 0.9rem);
+  font-weight: 750;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+kbd {
+  min-width: 24px;
+  display: inline-grid;
+  place-items: center;
+  margin: 0 3px;
+  padding: 3px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.44);
+  color: #fff7ef;
+  font: inherit;
+}
+
+@media (max-width: 640px) {
+  .hud {
+    gap: 8px;
+  }
+
+  #round-status {
+    padding: 6px 8px;
+  }
+
+  .meter {
+    width: 78%;
+  }
+
+  .select-panel {
+    padding: 12px;
+  }
+}
+
+@media (max-height: 420px) {
+  .select-panel {
+    gap: 7px;
+    padding: 10px 12px;
+  }
+
+  .select-logo {
+    font-size: clamp(1.05rem, 5.2vh, 1.38rem);
+  }
+
+  .select-heading {
+    margin-top: 2px;
+    font-size: clamp(0.9rem, 4.8vh, 1.16rem);
+  }
+
+  .select-mode {
+    margin-top: 2px;
+    font-size: 0.62rem;
+  }
+
+  .select-card {
+    padding: 8px;
+  }
+
+  .select-name {
+    font-size: clamp(0.78rem, 3.8vh, 0.92rem);
+  }
+
+  .select-role,
+  .select-footer {
+    font-size: 0.58rem;
+  }
+
+  kbd {
+    min-width: 22px;
+    padding: 2px 5px;
+  }
+}
+
+@media (max-width: 640px) and (min-height: 700px) {
+  .select-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .select-card {
+    grid-template-columns: minmax(96px, 36%) 1fr;
+    grid-template-rows: 1fr auto;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .portrait-frame {
+    width: min(130px, 100%);
+    grid-row: 1 / 3;
+  }
+
+  .select-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+}

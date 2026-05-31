@@ -1,0 +1,16 @@
+Important update: replace the previous playable character with KAIRO NULL.
+
+Use the uploaded Kairo patch as the new canonical player character.
+
+Active player sprite sheets:
+- assets/sprites/kairo/kairo_basic_movement.png
+- assets/sprites/kairo/kairo_core_attacks.png
+- assets/sprites/kairo/kairo_back_low_attacks.png
+- assets/sprites/kairo/kairo_air_specials.png
+- assets/sprites/kairo/kairo_states_ultimate.png
+
+Do NOT use the previous Veyra, Seraphine, chain-whip, or chibi test sprites for the active player.
+
+Keep the same browser game architecture, controls, and combat system. Only replace the player character asset references, animation map, move names, and visual identity.
+
+If sprite slicing is imperfect, crop/approximate/placehold, but keep the active character as Kairo Null.

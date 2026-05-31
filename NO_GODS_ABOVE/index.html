@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NO GODS ABOVE</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="game-shell" aria-label="NO GODS ABOVE game prototype">
+      <canvas id="game" width="1280" height="720"></canvas>
+
+      <section id="hud" class="hud hidden" aria-label="Training HUD">
+        <div class="fighter-card left">
+          <div id="player-name" class="fighter-name">KAIRO FINAL</div>
+          <div class="bar hp"><span id="player-hp"></span></div>
+          <div class="bar meter"><span id="player-meter"></span></div>
+        </div>
+          <div class="center-hud">
+            <div id="round-status">TRAINING</div>
+            <div id="combo-counter" class="combo-counter" aria-live="polite"></div>
+          </div>
+        <div class="fighter-card right">
+          <div id="enemy-name" class="fighter-name">VANTA REIGN</div>
+          <div class="bar hp"><span id="enemy-hp"></span></div>
+        </div>
+      </section>
+
+      <section id="title-screen" class="menu">
+        <div class="menu-inner">
+          <p class="kicker">Training Prototype</p>
+          <h1>NO GODS ABOVE</h1>
+          <button id="start-button" type="button">Training Mode</button>
+          <p class="menu-note">Press Enter to begin</p>
+        </div>
+      </section>
+
+      <section id="character-select" class="menu character-select hidden" aria-label="Choose your character">
+        <div class="select-panel">
+          <header class="select-header">
+            <div class="select-logo">NO GODS ABOVE</div>
+            <div class="select-heading">Choose Your Fighter</div>
+            <div class="select-mode">Training Prototype</div>
+          </header>
+
+          <div class="select-grid">
+            <button class="select-card kairo selected" type="button" data-character="kairo" aria-label="Choose Kairo Final">
+              <span class="portrait-frame">
+                <img src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final">
+              </span>
+              <span class="select-name">KAIRO FINAL</span>
+              <span class="select-role">Cyber Blade Striker</span>
+            </button>
+            <button class="select-card vanta" type="button" data-character="vanta" aria-label="Choose Vanta Reign">
+              <span class="portrait-frame">
+                <img src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign">
+              </span>
+              <span class="select-name">VANTA REIGN</span>
+              <span class="select-role">Crimson Rival</span>
+            </button>
+          </div>
+
+          <footer class="select-footer" aria-label="Character select controls">
+            <span><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd> Choose</span>
+            <span><kbd>Enter</kbd> Confirm</span>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js?v=anime-combat-1"></script>
+  </body>
+</html>

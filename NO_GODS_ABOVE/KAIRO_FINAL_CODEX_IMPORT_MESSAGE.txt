@@ -1,0 +1,27 @@
+Use the Kairo Final sprite pack as the canonical Kairo player character assets.
+
+Read:
+- KAIRO_FINAL_CHARACTER_LOCK.md
+- README_KAIRO_FINAL_PACK.md
+- docs/kairo_final_animation_map.md
+- docs/kairo_final_sprite_rules.md
+- docs/kairo_final_moveset.md
+- docs/kairo_final_asset_manifest.md
+
+Load these runtime assets:
+- assets/sprites/kairo_final/kairo_sheet_1_basic_movement.png
+- assets/sprites/kairo_final/kairo_sheet_2_defense_recovery.png
+- assets/sprites/kairo_final/kairo_sheet_3_core_attacks_a.png
+- assets/sprites/kairo_final/kairo_sheet_4_core_attacks_b.png
+- assets/sprites/kairo_final/kairo_sheet_5_low_air.png
+- assets/sprites/kairo_final/kairo_sheet_6_specials_ultimate.png
+- assets/sprites/kairo_final/kairo_sheet_7_end_states_extras.png
+
+Rules:
+- every sheet is 6 columns x 5 rows
+- slice every sheet uniformly
+- use bottom-center anchoring
+- align grounded animations to one shared ground baseline
+- do not treat sprite-internal pose shifts as world movement
+- keep dash / projectile / special travel handled in code
+- keep the build runnable at every step

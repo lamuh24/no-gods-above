@@ -1,0 +1,31 @@
+Use the Vanta Final sprite pack as the canonical Vanta Reign rival/enemy character assets.
+
+Read:
+- VANTA_FINAL_CHARACTER_LOCK.md
+- README_VANTA_FINAL_PACK.md
+- docs/vanta_final_animation_map.md
+- docs/vanta_final_sprite_rules.md
+- docs/vanta_final_moveset.md
+- docs/vanta_final_asset_manifest.md
+
+Load these runtime assets:
+- assets/sprites/vanta_final/vanta_sheet_1_basic_movement.png
+- assets/sprites/vanta_final/vanta_sheet_2_defense_recovery.png
+- assets/sprites/vanta_final/vanta_sheet_3_core_attacks_a.png
+- assets/sprites/vanta_final/vanta_sheet_4_core_attacks_b.png
+- assets/sprites/vanta_final/vanta_sheet_5_low_air.png
+- assets/sprites/vanta_final/vanta_sheet_6_specials_ultimate.png
+- assets/sprites/vanta_final/vanta_sheet_7_end_states_extras.png
+
+Rules:
+- every sheet is 6 columns x 5 rows
+- slice every sheet uniformly
+- use bottom-center anchoring
+- align grounded animations to one shared ground baseline
+- do not treat sprite-internal pose shifts as world movement
+- keep dash / projectile / special travel handled in code
+- keep the build runnable at every step
+
+Replace old Vanta test sheets and Hollow Saint as the main Training Mode enemy with this Vanta Final pack.
+
+Vanta usually starts on the right side of the screen, so mirror him horizontally so he faces left toward Kairo. Flip hitboxes, projectile directions, dash direction, special travel, and knockback based on facing direction.

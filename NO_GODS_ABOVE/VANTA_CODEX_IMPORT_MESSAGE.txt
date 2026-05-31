@@ -1,0 +1,28 @@
+Add Vanta Reign as the new right-side enemy/rival character.
+
+Read:
+- VANTA_CHARACTER_LOCK.md
+- docs/vanta_animation_map.md
+- docs/vanta_moveset.md
+- docs/vanta_sprite_handling_rules.md
+- docs/vanta_asset_manifest.md
+- docs/vanta_local_versus_plan.md
+
+Use:
+- assets/sprites/vanta/vanta_basic_movement.png
+- assets/sprites/vanta/vanta_core_attacks.png
+- assets/sprites/vanta/vanta_back_low_attacks.png
+- assets/sprites/vanta/vanta_air_specials.png
+- assets/sprites/vanta/vanta_states_ultimate.png
+
+Replace Hollow Saint as the main Training Mode opponent.
+
+Keep Kairo V2 as Player 1.
+
+Vanta starts on the right side, so mirror him horizontally so he faces left toward Kairo.
+
+Flip hitboxes, projectiles, dash direction, special travel, and knockback based on facing direction.
+
+Use bottom-center anchoring and stable baseline alignment to reduce sliding.
+
+First make Vanta work as a stable dummy with idle, damaged, death, and health behavior. Then add attacks and specials. Do not implement online multiplayer yet.

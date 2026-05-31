@@ -1,0 +1,21 @@
+Replace the active playable character with Kairo V2.
+
+Read these first:
+- KAIRO_V2_CHARACTER_LOCK.md
+- docs/kairo_v2_animation_map.md
+- docs/kairo_v2_moveset.md
+- docs/kairo_v2_asset_manifest.md
+- docs/kairo_v2_sprite_handling_rules.md
+
+Use only the sprite sheets in `assets/sprites/kairo_v2/` for the active player character.
+
+Keep the same browser game architecture, controls, and combat system.
+Update the player sprite loading paths, animation map, and move names to Kairo V2.
+
+Important sprite handling rules:
+- use bottom-center anchoring for grounded animations
+- keep feet aligned to a consistent ground baseline
+- do not treat pose shifts inside a frame as world movement
+- move dash and special travel in code, not by baked sprite displacement
+- crop/pad frames to consistent dimensions if needed
+- if slicing is imperfect, approximate and keep the game playable

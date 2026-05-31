@@ -1,0 +1,188 @@
+# Session Context - NO GODS ABOVE
+
+## Last Updated
+Agent: Codex
+Date: 2026-05-31
+
+## What Was Done
+- Locked the current FighterZ-style combat tuning as the stable baseline named `fighterz-combat-baseline-v1`.
+- No combat values, sprites, stage art, UI layout, or gameplay logic were changed during the baseline lock pass.
+- This baseline preserves the current ground combo, air combo, launcher, hit stop, hit spark, camera shake, combo counter, knockdown/recovery, damage scaling, and hitstun decay behavior for future comparison.
+- Applied a final values-only combat micro-tuning pass without rebuilding combat, adding features, changing sprites, changing stage art, or changing UI layout.
+- Made core player combo routes snappier in `game.js`: shortened Light/Medium/Heavy recovery slightly, reduced Medium/Heavy startup on key routes, and kept the Light -> Medium -> Heavy flow fast while preserving readable anticipation.
+- Slightly widened basic cancel leniency by opening auto-combo and air-combo route cancels earlier in the active window; hit-confirm cancels are still gated to avoid returning to pure button-mash pressure.
+- Reduced hit-stop durations a bit across block/light/medium/heavy/launcher/special impact profiles while preserving the existing hit sparks, camera shake, and combo counter.
+- Raised juggle gravity and air recovery gravity so launched opponents fall at a cleaner pace and air combos feel less floaty while still staying close enough for follow-ups.
+- Shortened air recovery and landing recovery timers slightly; combo counter now resets as soon as recovery/landing recovery begins, while active hitstun and the brief airborne juggle window still preserve valid combos.
+- Updated `docs\frame_data.md` with final micro-tune values for juggle gravity, air recovery gravity, and adjusted move timing.
+- Verified `game.js` with `node --check`, verified local HTTP `200`, and browser-smoked title/select/training plus an input pass with no console warnings/errors. Saved `anime_micro_tune_training.png` and `anime_micro_tune_impact.png`.
+- Tuned combo spacing, juggle positioning, combo rhythm, hit stop, landing clarity, and combo reset rules without changing sprites, character art, stage art, or rebuilding the combat system.
+- Added spacing constants and `enforceHitSeparation()` in `game.js` so close-range hits nudge fighters apart, ground combos avoid awkward overlap, and air hits keep the defender close but not inside the attacker.
+- Increased base fighter push separation and made airborne push gentler so juggles stay readable without forcing big horizontal drift.
+- Retuned player move data for clearer rhythm: Light remains fast but less mashy, Medium has slightly heavier startup/recovery, Heavy/launchers have stronger anticipation/recovery, and launcher knockback is more vertical/controlled.
+- Refined hit-cancel timing so cancel-on-hit routes wait until roughly halfway through the active window, while repeated Light auto-combo remains easy.
+- Tuned hit-stop profiles: Light is subtler, Medium is noticeable, Heavy and Launcher are distinct, and special/super impacts stay strong without feeling sticky.
+- Improved knockdown clarity: landing with pending knockdown now damps horizontal velocity and spawns a small code-driven dust puff, preventing weird sliding/snapping after ground contact.
+- Cleaned combo reset logic so valid air juggles keep the combo alive briefly, but airborne escape after the juggle window, safe landing, recovery to neutral, and blocking reset the counter.
+- Updated `docs\frame_data.md` with spacing constants, retuned frame data, hit separation notes, cancel rhythm notes, and knockdown dust behavior.
+- Verified `game.js` with `node --check`; browser-smoked title/select/training and an input pass at `http://127.0.0.1:8010/index.html` with no console warnings/errors. Saved screenshots `anime_spacing_rhythm_training.png` and `anime_spacing_rhythm_impact.png`.
+- Polished the anime-fighter combat feel without changing sprites, character art, stage art, or adding new sheets.
+- Tuned `game.js` impact feedback: hit stop now scales by move strength, light hits are quick, medium hits get modest freeze/shake, heavy/launcher/special hits get stronger freeze/shake, and block impact is short and readable.
+- Reworked code-driven hit sparks using existing Canvas particles only: small light sparks, medium bursts, dramatic heavy/launcher/special shock rings and sparks, with reduced sizes/lifetimes so effects do not cover characters too much.
+- Improved juggle feel with lower airborne hitstun gravity, air recovery gravity, capped airborne horizontal knockback, capped air spike velocity, and retuned launcher/air attack knockback so airborne follow-ups are more controlled.
+- Added hitstun decay alongside existing damage scaling, plus stricter combo reset when the defender blocks, recovers to neutral, lands safely, or escapes hitstun.
+- Updated `docs\frame_data.md` with the new juggle gravity, hitstun decay, retuned attack data, and impact feedback notes.
+- Verified `game.js` parses with `node --check`; browser-smoked title/select/training load at `http://127.0.0.1:8010/index.html` with no console warnings/errors. Saved screenshots `anime_feel_polish_training.png` and `anime_feel_polish_impact.png`.
+- Converted the Training Mode combat logic toward a Dragon Ball FighterZ-style anime fighter feel without adding or changing any sprite assets.
+- Updated `game.js` with faster move frame data, larger forgiving hitboxes, per-move blockstun, stronger hitstun, launchers, soft/hard knockdowns, air recovery, landing recovery, combo damage scaling, input buffering, auto-combo routing, air-combo routing, jump cancels, dash cancels, forward/back air dash, and U+Shift Super Dash.
+- Added a DOM combo counter to the Training HUD in `index.html` / `style.css`; it shows `N Hits` while an active combo is running.
+- Updated `docs\controls.md` and `docs\frame_data.md` for Light auto combo, U+Shift Super Dash, air dash, cancel rules, widened hitboxes, combo scaling, and new move data.
+- Verified `game.js` parses with `node --check`, verified `http://127.0.0.1:8010/index.html` returns HTTP 200, and browser-smoked title/select/training load with no console warnings/errors. Saved final smoke screenshot `anime_combat_final_smoke.png`.
+- Extracted the AI-generated NO GODS ABOVE asset pack and built a plain HTML/CSS/JavaScript Canvas Training Mode prototype.
+- Added title screen, Training Mode, Forsaken Courtyard stage, player/enemy health, passive ultimate meter, hit detection, hit pause, knockback, VFX particles, reset, pause, and hitbox debug.
+- Added Hollow Saint training AI: walks into range, throws light/heavy attacks with forgiving active windows, can damage the player, and respects hold-back block. `N` toggles AI.
+- Extracted `KAIRO_V2_CHARACTER_PATCH.zip`, read the requested V2 docs, copied Kairo V2 production sheets/docs into the game root, and replaced the active player with Kairo V2.
+- `game.js` now loads only `assets/sprites/kairo_v2/` sheets for the active player. HUD and docs identify the player as Kairo V2.
+- Renderer now uses cleaned per-frame source rectangles with a locked bottom-center row anchor for Kairo V2. This replaced the earlier full-cell draw path because it could render neighboring pose fragments from the AI sheets.
+- Kairo V2 movement rows also prune distant horizontal pixel clusters so a sliced adjacent body part does not overlap the active pose.
+- `kairo_basic_movement.png` is sliced as 7 columns to match its actual sheet layout; the other Kairo V2 sheets remain 6 columns.
+- Browser-verified the fix at `http://127.0.0.1:8010/index.html`: title to Training Mode, idle, dash, jump, light/medium/heavy attacks, enemy AI toggle/movement, debug hurtbox alignment, and no browser console warnings/errors.
+- Started a local server at `http://localhost:8010`.
+- Extracted/copied `VANTA_REIGN_CHARACTER_PATCH.zip` contents into this game root:
+  - `VANTA_CHARACTER_LOCK.md`
+  - `VANTA_CODEX_IMPORT_MESSAGE.txt`
+  - `README_VANTA_PATCH.md`
+  - `docs/vanta_*`
+  - `assets/sprites/vanta/vanta_*.png`
+- Replaced Hollow Saint as the active Training Mode opponent with Vanta Reign, while preserving Hollow Saint assets only as unused backup/reference.
+- Added Vanta animation mapping for idle, movement, normals, back/low attacks, air/specials, damaged, death, ultimate/state rows.
+- Added right-side mirroring through fighter facing, bottom-center locked sprite anchoring, facing-aware hitboxes, projectile velocity, dash/special travel, and knockback.
+- Training now starts as `VANTA DUMMY`; pressing `N` toggles `VANTA AI ON` for Vanta normal attacks and specials.
+- Browser-verified at `http://127.0.0.1:8010/index.html`: HUD says `VANTA REIGN`, default dummy mode works, Kairo can damage Vanta, Vanta AI can damage Kairo, and there were no console messages or page errors.
+- Saved verification screenshot to `vanta_training_verify.png`.
+- Investigated sprite overlap/frame bleed across Kairo V2 and Vanta sheets.
+- Confirmed row mappings in code still match the Kairo V2 and Vanta animation-map docs.
+- Verified Kairo V2 frame sizes from actual PNGs: `kairo_basic_movement.png` is 1254x1254 sliced 7x6; `kairo_core_attacks.png` and `kairo_states_ultimate.png` are 1254x1254 sliced 6x6; `kairo_back_low_attacks.png` and `kairo_air_specials.png` are 1536x1024 sliced 6x6.
+- Verified Vanta sheets are all 1254x1254 sliced 6x6.
+- Fixed frame bleed by adding runtime sheet sanitization before frame analysis/rendering. Each frame cell keeps the root/body component and discards detached neighbor-frame scraps; detached effects are allowed only for attack/special sheets via `allowDetachedEffects`.
+- Tightened chroma-key detection so Vanta's red/dark armor and Kairo/Vanta energy colors are not mistaken for magenta background.
+- Browser-verified `idle`, `dash`, `crouch`, `block`, `neutral_heavy`, `down_heavy`, `special_2`, and `VANTA AI ON` states after cleanup. No browser console messages or page errors. Final screenshots: `verified_idle.png`, `verified_dash.png`, `verified_crouch.png`, `verified_block.png`, `verified_neutral_heavy.png`, `verified_down_heavy.png`, `verified_special_2.png`, `verified_vanta_ai.png`.
+- Standardized the active fighter atlas pipeline to 6 frames per animation row for both Kairo V2 and Vanta.
+- Added/regenerated normalized atlases in `assets/sprites/kairo_v2_normalized/` and `assets/sprites/vanta_normalized/`; every normalized output is now 1920x1920 with 6 columns x 6 rows of 320x320 cells.
+- Updated `game.js` to load the normalized atlases and use 6x6 sheet metadata with bottom-center locked anchoring and baseline Y=300.
+- Fixed `scripts/normalize_sprite_atlases.py` connected-component labeling, added body-component validation for source cells cut by cramped atlas boundaries, and held unreliable dash/special_2 rows from stable body frames.
+- Kept Kairo and Vanta special_2 as stable held body poses while spawning/moving projectiles through code using facing direction.
+- Browser-verified current 6-frame behavior at `http://127.0.0.1:8010/index.html`: Kairo idle/walk/dash, Vanta idle/damaged/death, Kairo special_2, Vanta special_2, hitbox debug overlay, yellow baseline foot contact, right-side Vanta facing left, and no console/page errors. Final screenshots: `final6c_*.png`.
+- Added a character select screen after the title screen so Player 1 can choose Kairo V2 or Vanta Reign.
+- Selecting Kairo starts Kairo on the left against Vanta on the right; selecting Vanta starts Vanta on the left against Kairo on the right.
+- Added generated transparent select portraits in `assets/sprites/portraits/`.
+- Updated HUD names, dummy/AI status, hurtbox width, projectile color, death/down text, and animation-sheet selection to follow the chosen Player 1 and opponent.
+- Browser-verified the character select UI and both character paths with no console/page errors. Screenshots: `character_select_screen.png`, `character_select_kairo_training.png`, `character_select_kairo_special2.png`, `character_select_vanta_training.png`, `character_select_vanta_special2.png`, `character_select_vanta_enemy_ai.png`.
+- Replaced the generated character-select cards with the supplied full-screen image `assets/backgrounds/menus/choose_your_fighter_screen.png`.
+- Kept the select screen interactive with transparent Kairo/Vanta click zones and keyboard controls matching the artwork: A/Left selects Kairo, D/Right selects Vanta, Enter confirms.
+- Browser-verified the image-based choose-fighter screen and both character choices with no console/page errors. Screenshots: `new_choose_fighter_screen.png`, `new_choose_fighter_vanta_selected.png`, `new_choose_fighter_vanta_training.png`, `new_choose_fighter_kairo_training.png`.
+- Rebuilt the character select screen again as a responsive in-game menu instead of a pasted screenshot/poster.
+- The supplied choose-fighter screenshot is now treated as visual inspiration only; the visible UI uses CSS grid/flex, clamped typography, responsive card sizing, and the existing Kairo/Vanta portrait assets.
+- Verified the responsive select layout at 1280x720, 960x540, 640x360, and 390x844. All tested panels/cards stayed inside the viewport and keyboard confirm still launched the correct fighter. Screenshots: `responsive_select_v3_*.png`.
+- Integrated `KAIRO_FINAL_PACK.zip` as the canonical Kairo player pack. Copied docs and source sheets, normalized the seven Kairo Final sheets into `assets\sprites\kairo_final\` as 6x5, 320x320-cell runtime atlases, and preserved imported originals in `assets\sprites\kairo_final_source\`.
+- Updated `game.js` so playable/runtime Kairo uses only Kairo Final sheet keys and animation maps. Kairo Final special_2 holds a stable body pose while projectile/VFX motion remains code-driven.
+- Updated the character select card/HUD/docs to show `KAIRO FINAL`; Vanta Reign remains the second selectable fighter and the default right-side dummy when Kairo is selected.
+- Fixed a title-to-select boot race where clicking Training Mode before asset load completed could leave the select UI visible while internal mode reset to title.
+- Browser-verified Kairo Final default path, Vanta-selected path, responsive select containment at 1280x720/640x360/390x844, hitbox debug overlay, Kairo Final special_2, and right-side mirrored enemy facing. Screenshots: `kairo_final_*verified*.png`.
+- Created the local Codex skill `C:\Users\qchee\.codex\skills\fighter-atlas-factory` for NO GODS ABOVE fighter sprite pack generation/review. It enforces clean 6x5 sheets, character locks, seven-sheet packaging, bottom-center anchoring, and code-driven movement/projectiles.
+- Added the project copy `docs\fighter_atlas_factory_sprite_sheet_skill.md`.
+- Updated the skill rule so debug/baseline sheets are optional diagnostic references only. Clean sheets are the runtime assets; use debug/baseline references only when slicing, alignment, spacing, or grounding issues appear.
+- Validated the skill with `quick_validate.py`; result: `Skill is valid!`.
+- Integrated `VANTA_FINAL_PACK.zip` as the canonical Vanta Reign pack. Copied pack docs and clean sheets into the game, with runtime assets under `assets\sprites\vanta_final\`.
+- Replaced old Vanta runtime references in `game.js` with Vanta Final seven-sheet config: basic movement, defense/recovery, core attacks A/B, low/air, specials/ultimate, and end states/extras.
+- Vanta Final now uses the same reusable final-fighter animation mapper as Kairo Final, and is marked playable/future Player 2 ready in the character profile.
+- Vanta Final sheets are sliced per sheet with `frameWidth = image.width / 6` and `frameHeight = image.height / 5`; no universal Vanta frame size is assumed.
+- Regenerated the Vanta select portrait from a clean idle body component.
+- Updated docs/README/asset manifest to point at Vanta Final instead of `vanta_normalized` or old test-sheet paths.
+- Browser-verified Kairo default path, Vanta-selected Player 1 path, mobile character-select containment, Kairo/Vanta special_2 smoke tests, hitbox debug baseline, right-side mirroring, and Vanta AI toggle. No console/page errors. Screenshots: `vanta_final_*verified*.png`.
+- Rebuilt the entire canonical Vanta Final runtime atlas set from preserved source sheets to remove crouch/slash/special frame artifacts.
+- Preserved the imported Vanta Final sheets in `assets\sprites\vanta_final_source\` and regenerated clean runtime sheets in `assets\sprites\vanta_final\`.
+- Added `scripts\rebuild_vanta_final_sheets.py`; it slices each source sheet as 6x5, rebuilds every frame into 320x320 cells, uses solid `#ff00ff` background, bottom-center anchoring, and baseline Y=300.
+- Vanta movement/state/end rows are body-only; dash is held as a stable body pose; special_1 and special_2 are held as stable body rows because dash/projectile/VFX motion is code-driven.
+- Regenerated `assets\sprites\portraits\vanta_select.png` from the rebuilt Vanta idle frame and wrote `docs\vanta_final_rebuild_report.md`.
+- Verified all rebuilt Vanta runtime sheets are `1920x1600`, 6 columns x 5 rows, with magenta corners.
+- Browser-verified at `http://127.0.0.1:8010/index.html`: Kairo default with right-side mirrored Vanta, Vanta as Player 1, Vanta crouch, Vanta down-heavy/crouch slash, Vanta special_1, Vanta special_2, hitbox/baseline debug, Vanta damage/death behavior, and no console/page errors. New screenshots include `vanta_rebuild_final_*.png`.
+- Redid Vanta's sliding visual rows to make Shift dash and U+J special_1 less bland while preserving stable anchoring and code-driven travel.
+- Updated `scripts\rebuild_vanta_final_sheets.py` so the dash row gets contained crimson speed streaks/skid arcs and the special_1 row gets a contained crimson slash sweep over a stable body pose.
+- Regenerated Vanta runtime sheets and verified Shift dash plus U+J special_1 in browser as Vanta Player 1. No console/page errors. Screenshots: `vanta_slide_redo_shift_dash.png`, `vanta_slide_redo_u_j_special1.png`, and `vanta_slide_redo_shift_dash_debug.png`.
+- Added `scripts\patch_animation_rows.py`, a small Pillow utility that patches only two specified rows in a master spritesheet using `slide_fix.png` and `uj_fix.png`, preserving master canvas size and all other rows. It requires explicit zero-based row indices and verifies replacement strip dimensions before saving `patched_master_sheet.png`.
+- Replaced the previous procedural Vanta dash/U+J streak rows with the newly generated clean row strips in `assets\sprites\vanta_final_fixes\slide_fix.png` and `assets\sprites\vanta_final_fixes\uj_fix.png`.
+- Updated `scripts\rebuild_vanta_final_sheets.py` so it normalizes those fixed strips into 320x320 cells, patches Sheet 1 row 4 and Sheet 6 row 2, aggressively removes generated magenta background scraps, and no longer adds procedural slash/speed-streak overlays.
+- Cache-busted Vanta Basic/Specials asset URLs and `game.js` in `index.html` with `vanta-row-fix-1` so the browser reloads the patched runtime sheets.
+- Disabled the separate dash smoke/trail particle effect for Vanta only; Kairo still keeps his dash trail. This prevents Vanta Shift from showing external streaks even when the sheet row is clean.
+- Browser-verified with cache disabled: Vanta Shift/slide and Vanta U+J/special_1 show clean pose-driven replacement animation with no long red sweep/streaks and no console/page errors. Screenshots: `vanta_slide_fix_no_trail_runtime.png`, `vanta_uj_fix_no_streak_runtime.png`.
+- Fixed the replacement strip scale issue: `scripts\rebuild_vanta_final_sheets.py` now clamps generated fix strips to max body size `220x196`, matching Vanta's existing idle/jump runtime frame height instead of filling the 320px cell.
+- Rebuilt and browser-verified Vanta idle, Shift, and U+J with cache disabled. The new animation rows no longer appear oversized. Screenshots: `vanta_scale_fix_idle.png`, `vanta_scale_fix_shift.png`, `vanta_scale_fix_uj_mid.png`.
+
+## In Progress
+- `fighterz-combat-baseline-v1` is the current stable combat baseline. Future combat changes should be made only when explicitly requested and should be compared against this checkpoint.
+- Prototype is runnable with Kairo Final and Vanta Final as canonical selectable fighter runtime packs.
+- Vanta Reign is the default right-side rival when Kairo is selected and can also be Player 1.
+- Anime-fighter combat conversion is now implemented in logic/state systems. It still needs hands-on feel tuning for exact combo routes, hitbox timing, and Super Dash balance.
+- Game-feel polish for hit stop, shake, sparks, juggle float, and combo reset is implemented; it needs hands-on tuning with real keyboard/controller input because browser automation is unreliable for precise combo rhythm.
+- Spacing/rhythm cleanup is implemented in code; still needs manual combo-route playtesting for exact feel because browser automation cannot reliably perform timed air routes.
+- Final micro-tune is implemented and smoke-tested. Remaining work is manual controller/keyboard feel validation only, not architecture.
+- Local versus/online multiplayer are not implemented.
+- Kairo Final/Vanta Final sprite frame cleanup is implemented through normalized/clean runtime atlases plus runtime sanitization. Vanta now also has a deterministic full-atlas rebuild script; continue longer combo testing for any remaining move-specific artifacts.
+- Fighter Atlas Factory skill is installed locally and valid.
+
+## Key Decisions
+- Treat `fighterz-combat-baseline-v1` as the locked stable FighterZ-style combat baseline. Do not change combat values unless the user specifically requests another tuning pass.
+- Use plain Canvas rendering with DOM HUD/menu overlays.
+- Keep gameplay data and hit detection in JavaScript state rather than relying on sprite perfection.
+- Combat conversion must reuse current Kairo/Vanta animations as placeholders only; do not create new sheets or alter existing artwork for this pass.
+- New combat behavior is data-driven through move flags and route tables (`autoCombos`, `airComboRoutes`, cancel flags, launcher/knockdown flags) instead of hardcoding Kairo/Vanta-specific combo logic.
+- Impact feedback is also derived from move data (`boxType` and flags such as `launcher`, `dash`, `rise`, `superDash`, `ultimate`) so future moves can tune feel through data.
+- Combo spacing is now handled by shared constants/functions, not per-character art changes. Keep future spacing tuning in these logic values unless sprites are intentionally rescaled later.
+- Preserve the final micro-tune constraint: future passes should change only combat values unless the user explicitly asks for systems/art/UI work.
+- Kairo Final is the canonical active Kairo player: male cyber ninja, white/silver hair, black tactical armor, black face mask, cyan energy forearm blades, compact silhouette.
+- Do not use older Kairo sheets, Veyra sheets, Seraphine sheets, chain-whip sheets, or chibi test sheets as the active player.
+- Vanta Final/Reign is the canonical Training opponent/rival: dark cyber samurai, black armor, crimson/red energy accents, red visor, red forearm energy blades.
+- Vanta remains passive by default for stable dummy testing; AI is opt-in with `N`.
+- Do not implement online multiplayer yet.
+- Current Kairo Final playable atlas standard is 6 columns x 5 rows, 320x320 per cell, final size 1920x1600, bottom-center anchored, with grounded feet aligned to baseline Y=300. Vanta Final runtime sheets have now been rebuilt to the same 1920x1600 / 320x320-cell standard from preserved source sheets.
+- Vanta special_1 and special_2 should stay code-driven with stable body rows; do not re-enable detached special-row VFX from the source sheet unless the source art is manually repaired.
+- Vanta Shift dash and U+J special_1 now use generated pose-driven fix strips, not procedural in-cell VFX. Keep these rows clean and do not reintroduce long streak overlays.
+- Character select swaps which normalized atlas set is assigned to Player 1; the unselected fighter becomes the right-side dummy/opponent.
+- Character select uses responsive DOM cards inspired by the supplied artwork; do not return to a full-screen pasted image/hotspot layout.
+
+## What's Next
+- If future combat work is requested, branch/tune from `fighterz-combat-baseline-v1` and preserve this checkpoint as the known-good baseline.
+- Hands-on tune the anime combat pass: verify Light auto-combo routes at close/mid range, tune launcher height, validate jump-cancel-to-air-combo, validate U+Shift Super Dash against grounded and airborne opponents, and adjust combo scaling if damage feels too low/high.
+- Playtest the feel-polish pass manually: check whether medium/heavy hit stop feels crisp, whether sparks stay readable, whether launcher float supports Jump -> Air Light -> Air Medium -> Air Heavy, and whether hitstun decay stops long infinite routes.
+- Manually test close-range Light -> Light -> Light, Medium -> Jump Cancel -> air chain, launcher follow-ups, and knockdown landings to confirm the new separation values feel clean.
+- Manually verify Light -> Medium -> Heavy -> Launcher -> Jump -> Air Light -> Air Medium -> Air Heavy after the final micro-tune, especially whether the faster cancel windows feel snappy without becoming spammy.
+- Continue testing Kairo Final and Vanta Final attack-row scale/cropping in browser during longer combo and special-move passes.
+- Playtest and tune Vanta's AI spacing, attack cooldowns, projectile timing, and special balance.
+- Later: deeper character-swap playtesting, then local 2-player versus.
+
+## Gotchas / Watch Out For
+- Do not drift combat tuning away from `fighterz-combat-baseline-v1` unless the user explicitly asks for more tuning.
+- Browser CUA multi-key sequences were unreliable during this pass; prefer small browser steps or direct manual playtesting for combo feel validation.
+- Do not judge final combo rhythm only from browser automation screenshots; use live keyboard/controller testing for exact timing and feel.
+- If combos still overlap visually, tune `GROUND_HIT_SEPARATION`, `AIR_HIT_SEPARATION`, and `AIR_HIT_MAX_SEPARATION` before changing hitboxes or sprites.
+- If the final pass still feels slightly choppy, tune hit-stop profile values first; do not remove hit stop or replace the particle/camera systems.
+- The current anime combat pass intentionally widens hitboxes to match oversized sprite visuals and make basic combos forgiving. Tune carefully before shrinking boxes back toward Street Fighter spacing.
+- Sprite sheets may contain spacing imperfections; keep the game playable with crop/approximation rather than blocking on perfect slicing.
+- Preserve the normalized 6-frame atlases plus locked bottom-center row anchor. Do not revert to raw source-cell drawing, because that can show neighboring sprite fragments.
+- Do not restore the old Kairo V2, old Vanta test sheets, or mixed 7/6-column runtime slicing. The current runtime expects Kairo Final 6x5 atlases and Vanta Final clean 6x5 sheets.
+- Dash and special movement must be handled by code, not baked sprite displacement.
+- Keep `.menu.hidden` and `.hud.hidden` display rules after the menu styles so overlays really hide when state changes.
+- Source sheets may be mixed, cramped, or uneven, but Kairo Final playable atlases must stay 6x5 at 1920x1600 and Vanta Final runtime sheets must stay clean 6x5 sheets sliced per individual image size.
+- Use `python scripts\rebuild_vanta_final_sheets.py` to regenerate Vanta runtime sheets from `assets\sprites\vanta_final_source\`; do not hand-edit or overwrite the source backup folder.
+- The Vanta rebuild script owns the slide and U+J fixed-strip normalization. If those moves need changes, replace `assets\sprites\vanta_final_fixes\slide_fix.png` or `uj_fix.png` and rerun the script; do not restore the old procedural streak code.
+- Keep `FIX_MAX_BODY_WIDTH = 220` and `FIX_MAX_BODY_HEIGHT = 196` unless the whole Vanta runtime scale is intentionally retuned; larger values make the generated replacement rows look oversized in game.
+- `scripts\patch_animation_rows.py` is available for surgical row replacement when corrected 6-frame strips are supplied. It does not infer row indices; pass `--slide-row` and `--uj-row` explicitly.
+- Vanta right-side facing depends on code mirroring via `f.facing`; do not generate or swap in separate left-facing sheets.
+- Vanta special projectile is code-driven and must keep using facing direction for velocity and knockback.
+- Do not remove the runtime sanitizer unless source sheets are manually re-exported with guaranteed non-overlapping frame cells.
+- Movement/state sheets should not use `allowDetachedEffects`; that setting is only for sheets where disconnected attacks/projectiles are intentional.
+- For special/projectile rows where the body source is unreliable, hold or sanitize to a stable body frame when needed and move the projectile/VFX in code. This currently applies to Kairo Final special_2 plus Vanta special_1/special_2 style handling.
+- Character select is local Training Mode only. It does not add local versus or online multiplayer.
+- Keep character select responsive and viewport-contained. Use relative sizing, `clamp()`, grid/flex, and max dimensions instead of screenshot-based dimensions.
+- Debug/baseline sprite sheets are optional. Do not use them as runtime assets; only consult them to diagnose slicing, alignment, spacing, or grounding issues.
