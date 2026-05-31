@@ -14,6 +14,7 @@ Current playable configs:
 - `nyx`: fast rushdown / aerial pressure fighter, currently using Kairo Final sheets and portrait as placeholder art until Nyx-specific sprites exist.
 
 For Nyx-specific stats, moves, placeholder sprite mappings, and final art requirements, see `docs/nyx_character_config.md`.
+For the real Nyx sprite-sheet import workflow, see `docs/nyx_sprite_import.md`.
 
 Each entry owns:
 

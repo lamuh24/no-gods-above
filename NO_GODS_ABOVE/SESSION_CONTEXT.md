@@ -5,6 +5,9 @@ Agent: Codex
 Date: 2026-05-31
 
 ## What Was Done
+- Added `docs\nyx_sprite_import.md`, a documentation-only guide for importing real Nyx sprite sheets later without changing Nyx gameplay values or global combat feel.
+- Linked the Nyx sprite import guide from the character architecture and Nyx config docs.
+- Verified the existing `nyx-gameplay-placeholder-v1` commit/tag remains the stable placeholder-gameplay checkpoint; it was not moved.
 - Created the stable Nyx gameplay checkpoint named `nyx-gameplay-placeholder-v1` after the placeholder-sprite Nyx implementation was verified.
 - No gameplay values, Kairo data, Vanta data, global combat system behavior, stage art, sprites, or UI layout were changed for this checkpoint pass.
 - Added Nyx as a third playable fighter using the existing reusable character config system.
@@ -174,6 +177,7 @@ Date: 2026-05-31
 - Character select uses responsive DOM cards inspired by the supplied artwork; do not return to a full-screen pasted image/hotspot layout.
 
 ## What's Next
+- When real Nyx art is ready, follow `docs\nyx_sprite_import.md` and swap only Nyx asset paths, sheet metadata, sheet keys, and portrait references.
 - Replace Nyx's placeholder Kairo art with Nyx-specific sprite sheets when available by changing only the Nyx asset paths/sheet keys, sheet metadata, and portrait reference.
 - When adding a new fighter, copy the baseline config shape, wire asset paths/sheet metadata, set animation mappings, then add character-select UI only after runtime config smoke tests pass.
 - If future combat work is requested, branch/tune from `fighterz-combat-baseline-v1` and preserve this checkpoint as the known-good baseline.

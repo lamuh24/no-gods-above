@@ -74,3 +74,5 @@ After adding real Nyx sheets, update only:
 - Nyx select portrait path in `index.html`
 
 Keep Nyx's combat config untouched unless a real tuning pass is requested.
+
+For the full future sprite import workflow, sheet row map, frame-count contract, code update list, and test checklist, see `docs/nyx_sprite_import.md`.
