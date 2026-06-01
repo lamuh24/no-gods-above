@@ -134,6 +134,10 @@ button {
   height: clamp(8px, 1vw, 12px);
 }
 
+.fighter-card.right .meter {
+  margin-left: auto;
+}
+
 .meter span {
   background: linear-gradient(90deg, #6739f0, var(--violet), #ffe2ff);
 }

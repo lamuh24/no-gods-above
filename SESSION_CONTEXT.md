@@ -5,6 +5,14 @@ Agent: Codex
 Date: 2026-06-01
 
 ## What Was Done
+- Continued the local P1/P2 milestone with a focused versus-balance polish pass. Changed `NO_GODS_ABOVE\game.js`, `NO_GODS_ABOVE\index.html`, and `NO_GODS_ABOVE\style.css`; updated this session note. No art/assets, controller support, online multiplayer, or character profile/frame data were changed.
+- Added visible P2 meter UI in the right-side HUD (`enemy-meter`) and made P2 gain passive meter in local versus. P2 can now spend full meter on `Numpad0` to trigger `enemy_ultimate`; P1 ultimate flow remains `I+O`.
+- Tightened combo damage scaling constants: `COMBO_SCALE_STEP = 0.1`, `COMBO_MIN_SCALE = 0.5`, with `COMBO_MIN_DAMAGE = 1`. Effective formula is `max(0.5, 1 - priorComboHits * 0.1)`, so hits scale as 100%, 90%, 80%, 70%, 60%, then 50% minimum.
+- Added simple anti-infinite/recovery tuning: hitstun stays normal for hits 1-3, becomes 90% for hits 4-6, and 80% for hit 7+; horizontal knockback grows from hit 4 by `0.025` per prior hit up to `1.18`; combo drop window shortened from `0.75s` to `0.68s`; soft/hard knockdowns shortened from `34/76` frames to `30/68` frames.
+- Validation passed: `node --check NO_GODS_ABOVE\game.js`; existing P1/P2 smoke harness passed with Nyx vs Kairo, Nyx vs Sol, Sol vs Nyx, Kairo vs Vanta, Vanta vs Sol, Seris vs Seris, and Training Dummy Seris; focused meter/ultimate smoke confirmed both P1 and P2 meters filled to 100%, P1 ultimate spent meter and damaged P2, P2 ultimate spent meter and damaged P1; targeted Vanta vs Seris load/damage smoke passed. Console/runtime issues were `0`; stale Seris Sheet 8/generated/old path requests were `0`.
+
+- Known remaining balance issues: P2 still uses enemy-side move names/animations by design for this pass; P2 ultimate has meter/spend/damage flow but no separate bespoke P2 meter design; long-combo feel needs human playtesting after this safer governor pass.
+
 - Implemented the P1/P2 local-versus character select pass on top of baseline commit `6114501`. Only `NO_GODS_ABOVE\game.js`, `NO_GODS_ABOVE\index.html`, and `NO_GODS_ABOVE\style.css` were changed.
 - Character select now defaults to Local Versus and has explicit P1/P2 selection slots, ready states, matchup preview, P1/P2 card badges, and Back/Escape stepping from ready -> P2 -> P1 -> title. Training Dummy remains available from the select screen with `T` or the Training Dummy mode button.
 - Added explicit selection state in `game.js`: `selectedP1CharacterId`, `selectedP2CharacterId`, `selectCursorCharacterId`, `selectGameMode`, `activeSelectSide`, `p1Ready`, and `p2Ready`. Local versus starts with the selected P1 and selected P2 IDs; training still uses the selected P1 and the existing dummy/opponent path.
@@ -13,7 +21,7 @@ Date: 2026-06-01
 - Safety checks: `SERIS_CHAIN_VFX_RUNTIME_ENABLED` remains `false`; no Sheet 8 regular gameplay VFX was restored; no character assets/configs were edited; no controller support was started; no hitboxes, hurtboxes, damage, health, movement values, frame data, or combo rules were changed.
 
 ## In Progress
-- P1/P2 local versus is implemented and smoke-passed, but not committed in this session. Current intentional tracked changes are `NO_GODS_ABOVE\game.js`, `NO_GODS_ABOVE\index.html`, and `NO_GODS_ABOVE\style.css`.
+- P1/P2 local-versus balance pass is implemented, smoke-passed, and ready for the checkpoint commit. Current intentional tracked changes are `NO_GODS_ABOVE\game.js`, `NO_GODS_ABOVE\index.html`, `NO_GODS_ABOVE\style.css`, and this session note.
 - The worktree still contains many pre-existing untracked Seris/Sol/Nyx validation screenshots, caches, quarantine/rollback folders, and old/generated Seris artifacts from earlier milestones. They were not touched for P1/P2.
 
 ## Key Decisions

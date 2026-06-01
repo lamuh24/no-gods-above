@@ -23,6 +23,7 @@
   const playerHpEl = document.getElementById("player-hp");
   const enemyHpEl = document.getElementById("enemy-hp");
   const playerMeterEl = document.getElementById("player-meter");
+  const enemyMeterEl = document.getElementById("enemy-meter");
   const roundStatusEl = document.getElementById("round-status");
   const comboCounterEl = document.getElementById("combo-counter");
 
@@ -53,19 +54,25 @@
   const INPUT_BUFFER = 14 / 60;
   const AIR_RECOVERY_DURATION = 16 / 60;
   const LANDING_RECOVERY = 6 / 60;
-  const SOFT_KNOCKDOWN = 34 / 60;
-  const HARD_KNOCKDOWN = 76 / 60;
+  const SOFT_KNOCKDOWN = 30 / 60;
+  const HARD_KNOCKDOWN = 68 / 60;
   const GROUND_PUSH_SEPARATION = 116;
   const GROUND_HIT_SEPARATION = 108;
   const AIR_HIT_SEPARATION = 82;
   const AIR_HIT_MAX_SEPARATION = 128;
-  const COMBO_DROP_WINDOW = 0.75;
+  const COMBO_DROP_WINDOW = 0.68;
   const COMBO_DISPLAY_TIME = 1.15;
-  const COMBO_SCALE_STEP = 0.05;
-  const COMBO_MIN_SCALE = 0.2;
-  const HITSTUN_DECAY_STEP = 0.035;
-  const HITSTUN_MIN_SCALE = 0.58;
-  const LAUNCHER_HITSTUN_MIN_SCALE = 0.7;
+  // Versus combo governor: damage starts full, then falls 10% per hit to a 50% floor.
+  const COMBO_SCALE_STEP = 0.1;
+  const COMBO_MIN_SCALE = 0.5;
+  const COMBO_MIN_DAMAGE = 1;
+  const HITSTUN_DECAY_MID_START_HITS = 3;
+  const HITSTUN_DECAY_HIGH_START_HITS = 6;
+  const HITSTUN_MID_COMBO_SCALE = 0.9;
+  const HITSTUN_HIGH_COMBO_SCALE = 0.8;
+  const KNOCKBACK_GROWTH_START_HITS = 3;
+  const KNOCKBACK_GROWTH_STEP = 0.025;
+  const KNOCKBACK_GROWTH_MAX = 1.18;
   const MAX_AIR_KNOCKBACK_X = 128;
   const MAX_AIR_SPIKE_VELOCITY = 330;
   const CAMERA_SHAKE_DECAY = 46;
@@ -789,7 +796,8 @@
     heavy: "Numpad3",
     special1: "Numpad4",
     special2: "Numpad5",
-    special3: "Numpad6"
+    special3: "Numpad6",
+    ultimate: "Numpad0"
   };
   const moves = characterProfiles.kairo.moves.player;
 
@@ -2664,9 +2672,17 @@
   }
 
   function growPassiveMeter(dt) {
-    const p = state.player;
-    if (p.dead || p.meter >= METER_MAX) return;
-    p.meter = clamp(p.meter + PASSIVE_METER_PER_SECOND * dt, 0, METER_MAX);
+    growFighterMeter(state.player, PASSIVE_METER_PER_SECOND * dt);
+    if (state.mode === "versus") growFighterMeter(state.enemy, PASSIVE_METER_PER_SECOND * dt);
+  }
+
+  function shouldGainMeter(f) {
+    return f?.kind === "player" || (state.mode === "versus" && f?.kind === "enemy");
+  }
+
+  function growFighterMeter(f, amount) {
+    if (!f || f.dead || f.meter >= METER_MAX) return;
+    f.meter = clamp(f.meter + amount, 0, METER_MAX);
   }
 
   function updateEnemyAI(e, p, dt) {
@@ -2804,12 +2820,12 @@
   function startMove(key, fighter = state.player) {
     const p = fighter;
     if (!isFightMode() || state.paused || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
-    if (key === "ultimate" && p.meter < METER_MAX) {
-      flashStatus("METER NEEDED", 0.8);
-      return;
-    }
     const data = getMove(p, key);
     if (!data) return;
+    if (data.flags.ultimate && p.meter < METER_MAX) {
+      flashStatus(`${p.profile.shortName} METER NEEDED`, 0.8);
+      return;
+    }
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0 || p.landingTimer > 0) return;
 
     if (p.action) {
@@ -2852,7 +2868,7 @@
       f.vy = 0;
       spawnBurst(f.x + f.facing * 62, f.y - 82, f.profile.projectileColor, 18);
     }
-    if (data.flags.ultimate && f.kind === "player") {
+    if (data.flags.ultimate) {
       f.meter = 0;
       state.cameraShake = 12;
       spawnBurst(f.x + f.facing * 150, f.y - 95, f.profile.ultimateBurstColor || "#d66bff", 34);
@@ -3060,11 +3076,19 @@
     return Math.max(COMBO_MIN_SCALE, 1 - combo.hits * COMBO_SCALE_STEP);
   }
 
-  function getComboHitstunScale(attacker, moveData) {
+  function getComboHitstunScale(attacker) {
     const combo = state.combo;
     if (combo.owner !== attacker.kind || combo.hits <= 0) return 1;
-    const minScale = moveData.flags?.launcher ? LAUNCHER_HITSTUN_MIN_SCALE : HITSTUN_MIN_SCALE;
-    return Math.max(minScale, 1 - combo.hits * HITSTUN_DECAY_STEP);
+    if (combo.hits >= HITSTUN_DECAY_HIGH_START_HITS) return HITSTUN_HIGH_COMBO_SCALE;
+    if (combo.hits >= HITSTUN_DECAY_MID_START_HITS) return HITSTUN_MID_COMBO_SCALE;
+    return 1;
+  }
+
+  function getComboKnockbackScale(attacker) {
+    const combo = state.combo;
+    if (combo.owner !== attacker.kind || combo.hits < KNOCKBACK_GROWTH_START_HITS) return 1;
+    const extraHits = combo.hits - KNOCKBACK_GROWTH_START_HITS + 1;
+    return Math.min(KNOCKBACK_GROWTH_MAX, 1 + extraHits * KNOCKBACK_GROWTH_STEP);
   }
 
   function getImpactProfile(source, blocked = false) {
@@ -3145,8 +3169,9 @@
     attacker.cancelUnlocked = true;
     const blocked = isBlockingHit(attacker, defender);
     const damageScale = blocked ? 1 : getComboDamageScale(attacker);
-    const hitstunScale = blocked ? 1 : getComboHitstunScale(attacker, moveData);
-    const damage = blocked ? 0 : Math.ceil(moveData.damage * damageScale);
+    const hitstunScale = blocked ? 1 : getComboHitstunScale(attacker);
+    const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker);
+    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale));
     defender.hp = Math.max(0, defender.hp - damage);
     defender.blockstun = blocked ? moveData.blockstun : 0;
     defender.hitstun = blocked ? 0 : moveData.hitstun * hitstunScale;
@@ -3161,7 +3186,8 @@
     if (moveData.flags.pull) {
       defender.vx = -dir * Math.min(Math.abs(moveData.knockbackX), defender.kind === "enemy" ? 90 : Math.abs(moveData.knockbackX));
     } else {
-      const cappedKnockback = !defender.grounded && !blocked ? Math.min(Math.abs(moveData.knockbackX), MAX_AIR_KNOCKBACK_X) : Math.abs(moveData.knockbackX);
+      const scaledKnockbackX = Math.abs(moveData.knockbackX) * knockbackScale;
+      const cappedKnockback = !defender.grounded && !blocked ? Math.min(scaledKnockbackX, MAX_AIR_KNOCKBACK_X) : scaledKnockbackX;
       const airScale = !defender.grounded && !blocked ? 0.72 : 1;
       defender.vx = dir * (blocked ? cappedKnockback * 0.3 : cappedKnockback * airScale);
     }
@@ -3181,8 +3207,8 @@
       resetCombo();
     }
 
-    if (attacker.kind === "player" && !moveData.flags.ultimate) {
-      attacker.meter = clamp(attacker.meter + (moveData.flags.meter || Math.ceil(moveData.damage / 12)), 0, METER_MAX);
+    if (shouldGainMeter(attacker) && !moveData.flags.ultimate) {
+      growFighterMeter(attacker, moveData.flags.meter || Math.ceil(moveData.damage / 12));
     }
 
     applyImpactFeedback(moveData, hitbox.x + hitbox.w * 0.65, hitbox.y + hitbox.h * 0.45, blocked);
@@ -3255,8 +3281,9 @@
     const blocked = defender.blocking && defender.grounded && attackerIsInFront;
     const owner = projectile.ownerKind === "player" ? state.player : state.enemy;
     const damageScale = blocked || !owner ? 1 : getComboDamageScale(owner);
-    const hitstunScale = blocked || !owner ? 1 : getComboHitstunScale(owner, projectile);
-    const damage = blocked ? 0 : Math.ceil(projectile.damage * damageScale);
+    const hitstunScale = blocked || !owner ? 1 : getComboHitstunScale(owner);
+    const knockbackScale = blocked || !owner ? 1 : getComboKnockbackScale(owner);
+    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(projectile.damage * damageScale));
 
     defender.hp = Math.max(0, defender.hp - damage);
     defender.blockstun = blocked ? projectile.blockstun : 0;
@@ -3266,7 +3293,8 @@
     defender.hasHit = false;
     defender.spawnedProjectile = false;
     setNyxReactionAnim(defender, projectile, blocked);
-    const airX = !defender.grounded && !blocked ? Math.min(Math.abs(projectile.knockbackX), MAX_AIR_KNOCKBACK_X) * 0.65 : Math.abs(projectile.knockbackX);
+    const scaledProjectileKnockbackX = Math.abs(projectile.knockbackX) * knockbackScale;
+    const airX = !defender.grounded && !blocked ? Math.min(scaledProjectileKnockbackX, MAX_AIR_KNOCKBACK_X) * 0.65 : scaledProjectileKnockbackX;
     defender.vx = projectile.facing * (blocked ? airX * 0.25 : airX);
     const projectileY = !defender.grounded && !blocked && projectile.knockbackY > 0 ? Math.min(projectile.knockbackY, MAX_AIR_SPIKE_VELOCITY) : projectile.knockbackY;
     defender.vy = Math.min(defender.vy, blocked ? 0 : projectileY);
@@ -3274,6 +3302,9 @@
     if (owner) enforceHitSeparation(owner, defender, projectile, blocked);
     if (!blocked && owner) registerComboHit(owner, defender);
     if (blocked) resetCombo();
+    if (!blocked && owner && shouldGainMeter(owner)) {
+      growFighterMeter(owner, Math.ceil(projectile.damage / 12));
+    }
 
     applyImpactFeedback(projectile, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
 
@@ -4119,6 +4150,7 @@
     playerHpEl.style.width = `${(p.hp / p.maxHp) * 100}%`;
     enemyHpEl.style.width = `${(e.hp / e.maxHp) * 100}%`;
     playerMeterEl.style.width = `${(p.meter / METER_MAX) * 100}%`;
+    enemyMeterEl.style.width = `${(e.meter / METER_MAX) * 100}%`;
     if (comboCounterEl) {
       const visible = state.combo.displayHits >= 2 && state.combo.displayTimer > 0;
       comboCounterEl.textContent = visible ? `${state.combo.displayHits} Hits` : "";
@@ -4228,6 +4260,7 @@
       if (e.code === P2_CONTROLS.special1) startMove("enemy_special_1", state.enemy);
       if (e.code === P2_CONTROLS.special2) startMove("enemy_special_2", state.enemy);
       if (e.code === P2_CONTROLS.special3) startMove("enemy_special_3", state.enemy);
+      if (e.code === P2_CONTROLS.ultimate) startMove("enemy_ultimate", state.enemy);
     }
   }
 
