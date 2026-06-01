@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "styleDirection": "dark gothic anime fighter; crimson, black, dark metal, brass-gold trim; transparent PNG assets unless noted otherwise",
+  "runtimePolicy": "Imported assets are optional CSS hooks. Missing or reference-only assets must not be requested by runtime.",
+  "assets": [
+    {
+      "key": "hud_timer_medallion",
+      "path": "assets/ui/hud/hud_timer_medallion.png",
+      "intendedUse": "Center HUD timer/status frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_health_frame_p1",
+      "path": "assets/ui/hud/hud_health_frame_p1.png",
+      "intendedUse": "P1 health bar frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_health_frame_p2",
+      "path": "assets/ui/hud/hud_health_frame_p2.png",
+      "intendedUse": "P2 health bar frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_meter_frame_p1",
+      "path": "assets/ui/hud/hud_meter_frame_p1.png",
+      "intendedUse": "P1 meter bar frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_meter_frame_p2",
+      "path": "assets/ui/hud/hud_meter_frame_p2.png",
+      "intendedUse": "P2 meter bar frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_portrait_frame_p1",
+      "path": "assets/ui/hud/hud_portrait_frame_p1.png",
+      "intendedUse": "P1 portrait frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_portrait_frame_p2",
+      "path": "assets/ui/hud/hud_portrait_frame_p2.png",
+      "intendedUse": "P2 portrait frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_nameplate_p1",
+      "path": "assets/ui/hud/hud_nameplate_p1.png",
+      "intendedUse": "P1 character nameplate frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_nameplate_p2",
+      "path": "assets/ui/hud/hud_nameplate_p2.png",
+      "intendedUse": "P2 character nameplate frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_combo_badge",
+      "path": "assets/ui/hud/hud_combo_badge.png",
+      "intendedUse": "Combo/hit counter badge",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "hud_vs_medallion",
+      "path": "assets/ui/hud/hud_vs_medallion.png",
+      "intendedUse": "Future center VS badge or matchup medallion",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "overlay_win_panel",
+      "path": "assets/ui/overlays/overlay_win_panel.png",
+      "intendedUse": "Match result / winner panel",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "overlay_rematch_panel",
+      "path": "assets/ui/overlays/overlay_rematch_panel.png",
+      "intendedUse": "Rematch prompt panel",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "overlay_round_start",
+      "path": "assets/ui/overlays/overlay_round_start.png",
+      "intendedUse": "Future round-start banner",
+      "status": "reference_only",
+      "notes": "Imported but not wired to runtime in this pass."
+    },
+    {
+      "key": "pause_panel_frame",
+      "path": "assets/ui/overlays/pause_panel_frame.png",
+      "intendedUse": "Pause/help overlay frame",
+      "status": "integrated",
+      "notes": "Imported from master_pack_01, alpha-cleaned where needed, and wired through CSS with fallback layers."
+    },
+    {
+      "key": "controls_panel_frame",
+      "path": "assets/ui/overlays/controls_panel_frame.png",
+      "intendedUse": "P1/P2 controls panel frame",
+      "status": "reference_only",
+      "notes": "Imported and alpha-cleaned, but skipped at runtime because it competes with dense controls text."
+    },
+    {
+      "key": "select_header_frame",
+      "path": "assets/ui/select/select_header_frame.png",
+      "intendedUse": "Character select title/header frame",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "select_card_frame",
+      "path": "assets/ui/select/select_card_frame.png",
+      "intendedUse": "Default roster card frame",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "select_card_frame_selected",
+      "path": "assets/ui/select/select_card_frame_selected.png",
+      "intendedUse": "Hovered/selected/active roster card frame",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "select_marker_p1",
+      "path": "assets/ui/select/select_marker_p1.png",
+      "intendedUse": "P1 selected marker",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "select_marker_p2",
+      "path": "assets/ui/select/select_marker_p2.png",
+      "intendedUse": "P2 selected marker",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "select_ready_banner",
+      "path": "assets/ui/select/select_ready_banner.png",
+      "intendedUse": "Ready/locked-in banner for P1/P2 slots",
+      "status": "missing_source",
+      "notes": "Not included as a PNG in master_pack_01; keep CSS fallback."
+    },
+    {
+      "key": "menu_button_frame",
+      "path": "assets/ui/menu/menu_button_frame.png",
+      "intendedUse": "Default title/menu button frame",
+      "status": "reference_only",
+      "notes": "Imported but skipped at runtime because baked text conflicts with dynamic UI labels."
+    },
+    {
+      "key": "menu_button_frame_active",
+      "path": "assets/ui/menu/menu_button_frame_active.png",
+      "intendedUse": "Hover/focus/active menu button frame",
+      "status": "reference_only",
+      "notes": "Imported but skipped at runtime because baked text conflicts with dynamic UI labels."
+    },
+    {
+      "key": "title_panel_frame",
+      "path": "assets/ui/menu/title_panel_frame.png",
+      "intendedUse": "Title screen panel frame",
+      "status": "reference_only",
+      "notes": "Imported but not wired to runtime in this pass."
+    },
+    {
+      "key": "ui_divider_small",
+      "path": "assets/ui/accents/ui_divider_small.png",
+      "intendedUse": "Small divider line or menu separator",
+      "status": "reference_only",
+      "notes": "Imported preview-derived crop; keep as reference until regenerated or manually cleaned."
+    },
+    {
+      "key": "ui_corner_ornament",
+      "path": "assets/ui/accents/ui_corner_ornament.png",
+      "intendedUse": "Reusable gothic corner ornament",
+      "status": "reference_only",
+      "notes": "Imported preview-derived crop; keep as reference until regenerated or manually cleaned."
+    },
+    {
+      "key": "ui_glow_accent",
+      "path": "assets/ui/accents/ui_glow_accent.png",
+      "intendedUse": "Subtle glow accent for buttons, panels, or selected states",
+      "status": "reference_only",
+      "notes": "Imported preview-derived crop; keep as reference until regenerated or manually cleaned."
+    }
+  ]
+}

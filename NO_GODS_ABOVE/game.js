@@ -24,8 +24,16 @@
   const enemyHpEl = document.getElementById("enemy-hp");
   const playerMeterEl = document.getElementById("player-meter");
   const enemyMeterEl = document.getElementById("enemy-meter");
+  const playerPortraitEl = document.getElementById("player-portrait");
+  const enemyPortraitEl = document.getElementById("enemy-portrait");
   const roundStatusEl = document.getElementById("round-status");
   const comboCounterEl = document.getElementById("combo-counter");
+  const selectControlsDisplay = document.getElementById("select-controls-display");
+  const matchFlowOverlay = document.getElementById("match-flow-overlay");
+  const matchFlowTitle = document.getElementById("match-flow-title");
+  const matchFlowSubtitle = document.getElementById("match-flow-subtitle");
+  const matchFlowActions = document.getElementById("match-flow-actions");
+  const matchControlsDisplay = document.getElementById("match-controls-display");
 
   const W = canvas.width;
   const H = canvas.height;
@@ -52,6 +60,7 @@
   const SUPER_DASH_SPEED = 920;
   const SUPER_DASH_COOLDOWN = 28 / 60;
   const INPUT_BUFFER = 14 / 60;
+  const DOUBLE_TAP_DASH_WINDOW = 0.28;
   const AIR_RECOVERY_DURATION = 16 / 60;
   const LANDING_RECOVERY = 6 / 60;
   const SOFT_KNOCKDOWN = 30 / 60;
@@ -73,6 +82,37 @@
   const KNOCKBACK_GROWTH_START_HITS = 3;
   const KNOCKBACK_GROWTH_STEP = 0.025;
   const KNOCKBACK_GROWTH_MAX = 1.18;
+  const HEAVY_HITSTUN_DECAY_MID_START_HITS = 3;
+  const HEAVY_HITSTUN_DECAY_HIGH_START_HITS = 6;
+  const HEAVY_HITSTUN_MID_COMBO_SCALE = 0.85;
+  const HEAVY_HITSTUN_HIGH_COMBO_SCALE = 0.7;
+  const HEAVY_BLOWBACK_X_MULT = 1.45;
+  const HEAVY_AIRBORNE_BLOWBACK_X_MULT = 2.1;
+  const HEAVY_REPEATED_KNOCKBACK_MULT = 1.85;
+  const HEAVY_BLOWBACK_KNOCKBACK_SCALE = 2.25;
+  const HEAVY_BLOWBACK_MIN_X = 220;
+  const HEAVY_AIRBORNE_BLOWBACK_MIN_X = 340;
+  const HEAVY_FORCED_KNOCKDOWN_MIN_X = 440;
+  const HEAVY_GROUND_BLOWBACK_SEPARATION = 210;
+  const HEAVY_AIR_BLOWBACK_SEPARATION = 280;
+  const HEAVY_BLOWBACK_DRIFT_TIME = 0.42;
+  const HEAVY_RELAUNCH_SECOND_SCALE = 0.15;
+  const HEAVY_AIR_BLOWBACK_START_HITS = 1;
+  const HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN = 3;
+  const HEAVY_HITS_BEFORE_BLOWBACK = HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN;
+  const HEAVY_JUGGLE_KNOCKDOWN_THRESHOLD = 7;
+  const HEAVY_AIR_KNOCKBACK_CAP = 560;
+  const HEAVY_BLOWBACK_DOWN_VELOCITY = 340;
+  const HEAVY_FORCED_FALLOUT_HITSTUN = 14 / 60;
+  const AIR_JUGGLE_GRAVITY_SCALE_3_HITS = 1.2;
+  const AIR_JUGGLE_GRAVITY_SCALE_5_HITS = 1.45;
+  const AIR_JUGGLE_GRAVITY_SCALE_7_HITS = 1.75;
+  const WALL_BOUNCE_ENABLED = true;
+  const WALL_BOUNCE_MAX_PER_COMBO = 1;
+  const WALL_BOUNCE_X_VELOCITY_MULT = -0.55;
+  const WALL_BOUNCE_Y_POP = -360;
+  const WALL_BOUNCE_HITSTUN_FRAMES = 18;
+  const WALL_BOUNCE_MIN_HEAVY_KNOCKBACK = 220;
   const MAX_AIR_KNOCKBACK_X = 128;
   const MAX_AIR_SPIKE_VELOCITY = 330;
   const CAMERA_SHAKE_DECAY = 46;
@@ -791,6 +831,7 @@
     right: "ArrowRight",
     up: "ArrowUp",
     down: "ArrowDown",
+    dash: ["ArrowLeft", "ArrowRight"],
     light: "Numpad1",
     medium: "Numpad2",
     heavy: "Numpad3",
@@ -825,11 +866,17 @@
     activeSelectSide: "p1",
     p1Ready: false,
     p2Ready: false,
+    matchEnded: false,
+    matchWinner: null,
+    p1DashTap: { code: null, time: -Infinity },
+    p2DashTap: { code: null, time: -Infinity },
     enemyAI: false,
     combo: {
       owner: null,
       target: null,
       hits: 0,
+      heavyHits: 0,
+      wallBounces: 0,
       displayHits: 0,
       timer: 0,
       displayTimer: 0
@@ -1280,6 +1327,8 @@
       enemy_walk_forward: [sheets.basic, 1],
       enemy_walk_back: [sheets.basic, 2],
       enemy_dash: [sheets.basic, 3],
+      enemy_air_dash_forward: [sheets.basic, 3],
+      enemy_air_dash_back: [sheets.basic, 3],
       enemy_crouch: [sheets.basic, 4],
       enemy_block: [sheets.basic, 5],
       enemy_light_attack: [sheets.core, 0],
@@ -1315,6 +1364,8 @@
       enemy_walk_forward: [sheets.basic, 1],
       enemy_walk_back: [sheets.basic, 2],
       enemy_dash: [sheets.basic, 3],
+      enemy_air_dash_forward: [sheets.basic, 3],
+      enemy_air_dash_back: [sheets.basic, 3],
       enemy_crouch: [sheets.basic, 4],
       enemy_stand_up: [sheets.defense, 0],
       enemy_block: [sheets.defense, 1],
@@ -1368,6 +1419,8 @@
       enemy_walk_back: [sheets.coreMovement, 2],
       enemy_dash: [sheets.coreMovement, 3],
       enemy_dash_back: [sheets.coreMovement, 4],
+      enemy_air_dash_forward: [sheets.airMovement, 4],
+      enemy_air_dash_back: [sheets.airMovement, 5],
       enemy_crouch: [sheets.coreMovement, 5],
       enemy_stand_up: [sheets.endStates, 2],
       enemy_block: [sheets.defense, 0],
@@ -1432,6 +1485,8 @@
       enemy_dash: [sheets.coreMovement, 3],
       enemy_dash_forward: [sheets.coreMovement, 3],
       enemy_dash_back: [sheets.coreMovement, 4],
+      enemy_air_dash_forward: [sheets.airMovement, 4],
+      enemy_air_dash_back: [sheets.airMovement, 5],
       enemy_crouch: [sheets.coreMovement, 5],
       enemy_stand_up: [sheets.endStates, 2],
       enemy_block: [sheets.defense, 0],
@@ -1502,6 +1557,8 @@
       enemy_dash: [sheets.coreMovement, 3],
       enemy_dash_forward: [sheets.coreMovement, 3],
       enemy_dash_back: [sheets.coreMovement, 4],
+      enemy_air_dash_forward: [sheets.airMovement, 4],
+      enemy_air_dash_back: [sheets.airMovement, 5],
       enemy_crouch: [sheets.coreMovement, 5],
       enemy_stand_up: [sheets.endStates, 2],
       enemy_block: [sheets.defense, 0],
@@ -1731,6 +1788,9 @@
       knockdownTimer: 0,
       pendingKnockdown: 0,
       recoveryTimer: 0,
+      juggleGravityScale: 1,
+      blowbackTimer: 0,
+      wallBounceEligible: false,
       landingTimer: 0,
       dashTimer: 0,
       dashCooldown: 0,
@@ -1755,6 +1815,8 @@
   async function boot() {
     await loadAssets();
     document.documentElement.style.setProperty("--title-bg", `url("${assetPaths.title}")`);
+    renderControlsDisplay(selectControlsDisplay, true);
+    renderControlsDisplay(matchControlsDisplay, false);
     resetRound();
     if (state.mode === "loading") {
       state.mode = "title";
@@ -2255,6 +2317,13 @@
     const versusMode = state.mode === "versus";
     const playerId = versusMode ? state.selectedP1CharacterId : state.selectedPlayerId;
     const enemyId = versusMode ? state.selectedP2CharacterId : getOpponentId(playerId);
+    hideMatchFlowOverlay();
+    state.matchEnded = false;
+    state.matchWinner = null;
+    state.paused = false;
+    state.keys.clear();
+    state.p1DashTap = { code: null, time: -Infinity };
+    state.p2DashTap = { code: null, time: -Infinity };
     state.player = makeFighter("player", 330, 1, playerId);
     state.enemy = makeFighter("enemy", 720, -1, enemyId);
     if (versusMode) state.enemyAI = false;
@@ -2287,8 +2356,87 @@
     return state.mode === "training" || state.mode === "versus";
   }
 
+  function showMatchFlowOverlay(title, subtitle, actions, showControls = true, flowKind = "result") {
+    if (!matchFlowOverlay) return;
+    matchFlowTitle.textContent = title;
+    matchFlowSubtitle.textContent = subtitle;
+    matchFlowActions.textContent = actions;
+    matchFlowOverlay.dataset.flow = flowKind;
+    matchControlsDisplay.classList.toggle("hidden", !showControls);
+    matchFlowOverlay.classList.remove("hidden");
+  }
+
+  function hideMatchFlowOverlay() {
+    matchFlowOverlay?.classList.add("hidden");
+  }
+
+  function endMatch(defeated) {
+    if (!defeated || state.matchEnded) return;
+    const p1Won = defeated.kind === "enemy";
+    const winner = p1Won ? state.player : state.enemy;
+    const loser = defeated;
+    state.matchEnded = true;
+    state.matchWinner = p1Won ? "p1" : "p2";
+    state.paused = false;
+    state.hitPause = 0;
+    state.messageTimer = 2.4;
+    state.keys.clear();
+    state.projectiles = [];
+    resetCombo(true);
+    loser.dead = true;
+    loser.hitstun = 999;
+    loser.blockstun = 0;
+    loser.action = null;
+    loser.activeMove = null;
+    loser.anim = loser.kind === "enemy" ? "enemy_death" : "death";
+    if (winner && !winner.dead) {
+      winner.action = null;
+      winner.activeMove = null;
+      winner.bufferedMove = null;
+      winner.vx = 0;
+      winner.anim = withEnemyPrefix(winner, "victory");
+    }
+    const winnerLabel = p1Won ? "P1 WINS" : "P2 WINS";
+    const p1Name = state.player?.profile.shortName || "P1";
+    const p2Name = state.enemy?.profile.shortName || "P2";
+    const subtitle = state.mode === "versus"
+      ? `${p1Won ? p1Name : p2Name} defeats ${p1Won ? p2Name : p1Name}`
+      : `${p1Won ? p1Name : p2Name} takes the round`;
+    roundStatusEl.textContent = winnerLabel;
+    showMatchFlowOverlay(winnerLabel, subtitle, "Press R for Rematch - Press Esc for Character Select", true, "result");
+    updateHud();
+  }
+
+  function returnToCharacterSelectFromMatch() {
+    const selectMode = state.mode === "training" ? "training" : "versus";
+    showCharacterSelect(selectMode);
+  }
+
+  function showPauseHelpOverlay() {
+    showMatchFlowOverlay("PAUSED", "Local Versus Controls", "Resume P - Rematch R - Character Select Esc", true, "pause");
+  }
+
+  function togglePauseHelp() {
+    if (!isFightMode() || state.matchEnded) return;
+    state.paused = !state.paused;
+    if (state.paused) {
+      state.keys.clear();
+      showPauseHelpOverlay();
+      roundStatusEl.textContent = "PAUSED";
+    } else {
+      hideMatchFlowOverlay();
+      roundStatusEl.textContent = getRoundStatus();
+    }
+  }
+
   function showCharacterSelect(selectGameMode = "versus") {
     titleScreen.classList.add("hidden");
+    hud.classList.add("hidden");
+    hideMatchFlowOverlay();
+    state.matchEnded = false;
+    state.matchWinner = null;
+    state.paused = false;
+    state.keys.clear();
     characterSelect.classList.remove("hidden");
     state.mode = "select";
     setCharacterSelectMode(selectGameMode);
@@ -2362,6 +2510,87 @@
 
   function getSelectDisplayName(characterId) {
     return characterProfiles[characterId]?.name || "SELECT";
+  }
+
+  function getPortraitPath(characterId) {
+    const id = isLaunchableCharacterId(characterId) ? characterId : "kairo";
+    const cache = id === "seris" ? "?v=seris-revamp-final-1" : "";
+    return `assets/sprites/portraits/${id}_select.png${cache}`;
+  }
+
+  function keyLabel(code) {
+    const labels = {
+      KeyA: "A",
+      KeyD: "D",
+      KeyW: "W",
+      KeyS: "S",
+      KeyJ: "J",
+      KeyK: "K",
+      KeyL: "L",
+      KeyU: "U",
+      KeyI: "I",
+      KeyO: "O",
+      KeyP: "P",
+      KeyR: "R",
+      KeyT: "T",
+      KeyN: "N",
+      Escape: "Esc",
+      ShiftLeft: "Shift",
+      ShiftRight: "Shift",
+      ArrowLeft: "Left",
+      ArrowRight: "Right",
+      ArrowUp: "Up",
+      ArrowDown: "Down",
+      Numpad0: "Numpad 0",
+      Numpad1: "Numpad 1",
+      Numpad2: "Numpad 2",
+      Numpad3: "Numpad 3",
+      Numpad4: "Numpad 4",
+      Numpad5: "Numpad 5",
+      Numpad6: "Numpad 6"
+    };
+    return labels[code] || code.replace(/^Key/, "").replace(/^Digit/, "");
+  }
+
+  function renderControlsDisplay(target, compact = false) {
+    if (!target) return;
+    const keyChip = (code) => `<kbd>${keyLabel(code)}</kbd>`;
+    const keyCombo = (...codes) => `<span class="key-combo">${codes.map(keyChip).join("<b>+</b>")}</span>`;
+    const keyRepeat = (code) => `<span class="key-combo">${keyChip(code)}${keyChip(code)}</span>`;
+    const controlRow = (label, content, note = "") => `
+      <span class="control-row">
+        <span class="control-label">${label}</span>
+        <span class="control-keys">${content}</span>
+        ${note ? `<span class="control-note">${note}</span>` : ""}
+      </span>`;
+    const p1Rows = [
+      controlRow("Move", `${keyChip(P1_CONTROLS.left)}${keyChip(P1_CONTROLS.right)}`),
+      controlRow("Jump / Guard", `${keyChip(P1_CONTROLS.up)}${keyChip(P1_CONTROLS.down)}`),
+      controlRow("Dash", `${keyChip(P1_CONTROLS.dash[0])}${keyRepeat(P1_CONTROLS.left)}${keyRepeat(P1_CONTROLS.right)}`, "Shift or double tap"),
+      controlRow("Attacks", `${keyChip(P1_CONTROLS.light)}${keyChip(P1_CONTROLS.medium)}${keyChip(P1_CONTROLS.heavy)}`, "Light / Medium / Heavy"),
+      controlRow("Specials", `${keyCombo(P1_CONTROLS.modifier, P1_CONTROLS.light)}${keyCombo(P1_CONTROLS.modifier, P1_CONTROLS.medium)}${keyCombo(P1_CONTROLS.modifier, P1_CONTROLS.heavy)}`),
+      controlRow("Ultimate", keyCombo(P1_CONTROLS.ultimateA, P1_CONTROLS.ultimateB))
+    ];
+    const p2Rows = [
+      controlRow("Move", `${keyChip(P2_CONTROLS.left)}${keyChip(P2_CONTROLS.right)}`),
+      controlRow("Jump / Guard", `${keyChip(P2_CONTROLS.up)}${keyChip(P2_CONTROLS.down)}`),
+      controlRow("Dash", `${keyRepeat(P2_CONTROLS.left)}${keyRepeat(P2_CONTROLS.right)}`, "double tap"),
+      controlRow("Attacks", `${keyChip(P2_CONTROLS.light)}${keyChip(P2_CONTROLS.medium)}${keyChip(P2_CONTROLS.heavy)}`, "Light / Medium / Heavy"),
+      controlRow("Specials", `${keyChip(P2_CONTROLS.special1)}${keyChip(P2_CONTROLS.special2)}${keyChip(P2_CONTROLS.special3)}`),
+      controlRow("Ultimate", keyChip(P2_CONTROLS.ultimate))
+    ];
+    const systemMarkup = compact
+      ? `<div class="controls-side system-controls"><strong>Match</strong>${controlRow("Flow", `${keyChip("KeyR")}${keyChip("KeyP")}${keyChip("Escape")}`, "Rematch / Pause / Select")}</div>`
+      : `<div class="pause-actions" aria-label="Pause options">
+          <span class="pause-option">${keyChip("KeyP")}<span>Resume</span></span>
+          <span class="pause-option">${keyChip("KeyR")}<span>Rematch</span></span>
+          <span class="pause-option">${keyChip("Escape")}<span>Character Select</span></span>
+        </div>`;
+    target.innerHTML = `
+      <div class="controls-side"><strong>P1 Controls</strong>${p1Rows.join("")}</div>
+      <div class="controls-side"><strong>P2 Controls</strong>${p2Rows.join("")}</div>
+      ${systemMarkup}
+    `;
   }
 
   function updateCharacterSelectUi() {
@@ -2477,6 +2706,11 @@
       state.messageTimer -= dt;
     }
 
+    if (state.matchEnded) {
+      updateHud();
+      return;
+    }
+
     if (state.hitPause > 0) {
       state.hitPause = Math.max(0, state.hitPause - dt);
       return;
@@ -2503,6 +2737,7 @@
       p.anim = "death";
       p.vx = 0;
       integrate(p, dt);
+      endMatch(p);
       return;
     }
 
@@ -2519,7 +2754,7 @@
     if (p.hitstun > 0) {
       p.hitstun = Math.max(0, p.hitstun - dt);
       p.anim = getHitReactionAnim(p, p.grounded ? "damaged" : "knockback");
-      p.vx *= 0.42;
+      p.vx *= p.blowbackTimer > 0 ? Math.pow(0.93, dt * 60) : 0.42;
       if (Math.abs(p.vx) < 8) p.vx = 0;
       integrate(p, dt);
       if (p.hitstun <= 0 && !p.grounded) p.recoveryTimer = Math.max(p.recoveryTimer, getJumpStats(p).airRecoveryDuration);
@@ -2530,7 +2765,7 @@
     if (p.knockdownTimer > 0) {
       p.knockdownTimer = Math.max(0, p.knockdownTimer - dt);
       p.anim = getKnockdownAnim(p, p.knockdownTimer > 0.16 ? "knockback" : "get_up");
-      p.vx *= 0.22;
+      p.vx *= p.blowbackTimer > 0 ? Math.pow(0.9, dt * 60) : 0.22;
       if (p.knockdownTimer <= 0) p.reactionAnim = null;
       integrate(p, dt);
       return;
@@ -2610,10 +2845,37 @@
     p.anim = p.grounded ? withEnemyPrefix(p, "idle") : getAirDriftAnim(p, false, false);
   }
 
+  function resolveWallBounce(f) {
+    if (!WALL_BOUNCE_ENABLED || !f.wallBounceEligible || f.grounded) return false;
+    const leftWall = 110;
+    const rightWall = W - 110;
+    const hitLeftWall = f.x <= leftWall && f.vx < 0;
+    const hitRightWall = f.x >= rightWall && f.vx > 0;
+    if (!hitLeftWall && !hitRightWall) return false;
+
+    const combo = state.combo;
+    const canBounce = combo.target === f.kind && combo.wallBounces < WALL_BOUNCE_MAX_PER_COMBO;
+    f.x = hitLeftWall ? leftWall : rightWall;
+    f.wallBounceEligible = false;
+
+    if (!canBounce) {
+      f.pendingKnockdown = Math.max(f.pendingKnockdown, SOFT_KNOCKDOWN);
+      return false;
+    }
+
+    combo.wallBounces += 1;
+    f.vx *= WALL_BOUNCE_X_VELOCITY_MULT;
+    f.vy = Math.min(f.vy, WALL_BOUNCE_Y_POP);
+    f.hitstun = Math.max(f.hitstun, WALL_BOUNCE_HITSTUN_FRAMES / 60);
+    f.blowbackTimer = Math.max(f.blowbackTimer, HEAVY_BLOWBACK_DRIFT_TIME * 0.7);
+    return true;
+  }
+
   function tickFighterTimers(f, dt) {
     if (f.dashCooldown > 0) f.dashCooldown = Math.max(0, f.dashCooldown - dt);
     if (f.airDashCooldown > 0) f.airDashCooldown = Math.max(0, f.airDashCooldown - dt);
     if (f.superDashCooldown > 0) f.superDashCooldown = Math.max(0, f.superDashCooldown - dt);
+    if (f.blowbackTimer > 0) f.blowbackTimer = Math.max(0, f.blowbackTimer - dt);
     if (f.bufferedMove) {
       f.bufferedMove.timer -= dt;
       if (f.bufferedMove.timer <= 0) f.bufferedMove = null;
@@ -2627,6 +2889,14 @@
     e.crouching = false;
     e.blocking = false;
     tickFighterTimers(e, dt);
+    if (e.hp <= 0) {
+      e.dead = true;
+      e.anim = "enemy_death";
+      e.vx = 0;
+      integrate(e, dt);
+      endMatch(e);
+      return;
+    }
     if (e.dead) {
       e.anim = "enemy_death";
       e.vx = 0;
@@ -2640,14 +2910,14 @@
     } else if (e.hitstun > 0) {
       e.hitstun = Math.max(0, e.hitstun - dt);
       e.anim = getHitReactionAnim(e, e.grounded ? "enemy_damaged" : "enemy_knockback");
-      e.vx *= 0.36;
+      e.vx *= e.blowbackTimer > 0 ? Math.pow(0.93, dt * 60) : 0.36;
       if (Math.abs(e.vx) < 8) e.vx = 0;
       if (e.hitstun <= 0 && !e.grounded) e.recoveryTimer = Math.max(e.recoveryTimer, getJumpStats(e).airRecoveryDuration);
       if (e.hitstun <= 0) e.reactionAnim = null;
     } else if (e.knockdownTimer > 0) {
       e.knockdownTimer = Math.max(0, e.knockdownTimer - dt);
       e.anim = getKnockdownAnim(e, e.knockdownTimer > 0.16 ? "enemy_knockback" : "enemy_get_up");
-      e.vx *= 0.22;
+      e.vx *= e.blowbackTimer > 0 ? Math.pow(0.9, dt * 60) : 0.22;
       if (e.knockdownTimer <= 0) e.reactionAnim = null;
     } else if (e.recoveryTimer > 0) {
       e.recoveryTimer = Math.max(0, e.recoveryTimer - dt);
@@ -2657,6 +2927,17 @@
       e.landingTimer = Math.max(0, e.landingTimer - dt);
       e.anim = "enemy_stand_up";
       e.vx *= 0.35;
+    } else if (e.airDashTimer > 0) {
+      const airDash = getAirDashStats(e);
+      e.airDashTimer = Math.max(0, e.airDashTimer - dt);
+      e.vx = e.dashDirection * airDash.speed;
+      e.vy = 0;
+      e.anim = getDashAnim(e);
+    } else if (e.dashTimer > 0) {
+      const movement = getMovementStats(e);
+      e.dashTimer = Math.max(0, e.dashTimer - dt);
+      e.vx = e.dashDirection * movement.dashSpeed;
+      e.anim = getDashAnim(e);
     } else {
       if (state.enemyAI) {
         updateEnemyAI(e, p, dt);
@@ -2770,20 +3051,23 @@
     const wasGrounded = f.grounded;
     if (!f.grounded || f.vy < 0) {
       const jumpStats = getJumpStats(f);
-      const gravity = !f.grounded && f.hitstun > 0 ? jumpStats.juggleGravity : !f.grounded && f.recoveryTimer > 0 ? jumpStats.airRecoveryGravity : jumpStats.gravity;
+      const gravity = !f.grounded && f.hitstun > 0 ? jumpStats.juggleGravity * (f.juggleGravityScale || 1) : !f.grounded && f.recoveryTimer > 0 ? jumpStats.airRecoveryGravity : jumpStats.gravity;
       f.vy += gravity * dt;
       if (!f.grounded && f.hitstun > 0) {
-        f.vx *= Math.pow(0.72, dt * 60);
+        f.vx *= Math.pow(f.blowbackTimer > 0 ? 0.96 : 0.72, dt * 60);
       }
     }
 
     f.x += f.vx * dt;
     f.y += f.vy * dt;
+    resolveWallBounce(f);
 
     if (f.y >= GROUND_Y) {
       f.y = GROUND_Y;
       f.vy = 0;
       f.grounded = true;
+      f.juggleGravityScale = 1;
+      f.wallBounceEligible = false;
       f.airDashUsed = false;
       if (!wasGrounded) {
         if (f.pendingKnockdown > 0) {
@@ -2819,7 +3103,7 @@
 
   function startMove(key, fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.paused || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
+    if (!isFightMode() || state.paused || state.matchEnded || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
     const data = getMove(p, key);
     if (!data) return;
     if (data.flags.ultimate && p.meter < METER_MAX) {
@@ -2843,7 +3127,7 @@
   function startEnemyMove(key) {
     const e = state.enemy;
     const data = getMove(e, key);
-    if (!data || e.dead || e.action || e.hitstun > 0 || e.blockstun > 0 || e.knockdownTimer > 0 || e.recoveryTimer > 0) return;
+    if (!data || state.matchEnded || e.dead || e.action || e.hitstun > 0 || e.blockstun > 0 || e.knockdownTimer > 0 || e.recoveryTimer > 0) return;
     beginMove(e, key);
   }
 
@@ -2955,7 +3239,7 @@
 
   function startDash(fighter = state.player, controls = P1_CONTROLS) {
     const p = fighter;
-    if (!isFightMode() || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (!isFightMode() || state.matchEnded || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canDashCancel(p)) return;
       clearAction(p);
@@ -2984,7 +3268,7 @@
 
   function startSuperDash(fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || p.dead || p.superDashCooldown > 0) return;
+    if (!isFightMode() || state.matchEnded || p.dead || p.superDashCooldown > 0) return;
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action && !canDashCancel(p)) {
       p.bufferedMove = { key: "super_dash", timer: INPUT_BUFFER };
@@ -3008,9 +3292,22 @@
     return p.facing;
   }
 
+  function maybeStartDoubleTapDash(fighter, controls, tap, code) {
+    if (!fighter || !controls.dash?.includes(code)) return;
+    const now = state.time;
+    if (tap.code === code && now - tap.time <= DOUBLE_TAP_DASH_WINDOW) {
+      startDash(fighter, controls);
+      tap.code = null;
+      tap.time = -Infinity;
+      return;
+    }
+    tap.code = code;
+    tap.time = now;
+  }
+
   function jump(fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (!isFightMode() || state.matchEnded || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canJumpCancel(p)) return;
       clearAction(p);
@@ -3043,9 +3340,11 @@
     return defender.blocking && defender.grounded && attackerIsInFront;
   }
 
-  function enforceHitSeparation(attacker, defender, moveData, blocked = false) {
+  function enforceHitSeparation(attacker, defender, moveData, blocked = false, comboEnder = false) {
     if (!attacker || !defender || moveData.flags?.superDash) return;
-    const desired = defender.grounded && attacker.grounded ? GROUND_HIT_SEPARATION : AIR_HIT_SEPARATION;
+    const desired = comboEnder
+      ? (defender.grounded && attacker.grounded ? HEAVY_GROUND_BLOWBACK_SEPARATION : HEAVY_AIR_BLOWBACK_SEPARATION)
+      : (defender.grounded && attacker.grounded ? GROUND_HIT_SEPARATION : AIR_HIT_SEPARATION);
     const dir = attacker.facing || (attacker.x <= defender.x ? 1 : -1);
     const currentGap = Math.abs(defender.x - attacker.x);
 
@@ -3056,7 +3355,7 @@
       const defenderShare = defender.grounded ? 0.68 : 0.76;
       defender.x += dir * correction * defenderShare;
       attacker.x -= dir * correction * (1 - defenderShare);
-    } else if (!defender.grounded && currentGap > AIR_HIT_MAX_SEPARATION && moveData.flags?.air) {
+    } else if (!comboEnder && !defender.grounded && currentGap > AIR_HIT_MAX_SEPARATION && moveData.flags?.air) {
       const pull = Math.min(currentGap - AIR_HIT_MAX_SEPARATION, 28);
       defender.x -= dir * pull;
     }
@@ -3091,6 +3390,73 @@
     return Math.min(KNOCKBACK_GROWTH_MAX, 1 + extraHits * KNOCKBACK_GROWTH_STEP);
   }
 
+  function isHeavyComboMove(moveData, moveKey = "") {
+    return moveData?.boxType === "heavy" || moveKey.includes("heavy");
+  }
+
+  function getComboPriorHits(attacker, defender) {
+    const combo = state.combo;
+    return combo.owner === attacker.kind && combo.target === defender.kind ? combo.hits : 0;
+  }
+
+  function getHeavyHitsInCombo(attacker, defender) {
+    const combo = state.combo;
+    return combo.owner === attacker.kind && combo.target === defender.kind ? combo.heavyHits || 0 : 0;
+  }
+
+  function hasComboWallBounceSpent(attacker, defender) {
+    const combo = state.combo;
+    return combo.owner === attacker.kind && combo.target === defender.kind && combo.wallBounces >= WALL_BOUNCE_MAX_PER_COMBO;
+  }
+
+  function getHeavyComboHitstunScale(attacker, defender, moveData) {
+    if (!isHeavyComboMove(moveData, attacker.activeMove || "")) return 1;
+    const priorHits = getComboPriorHits(attacker, defender);
+    if (priorHits >= HEAVY_HITSTUN_DECAY_HIGH_START_HITS) return HEAVY_HITSTUN_HIGH_COMBO_SCALE;
+    if (priorHits >= HEAVY_HITSTUN_DECAY_MID_START_HITS) return HEAVY_HITSTUN_MID_COMBO_SCALE;
+    return 1;
+  }
+
+  function getHeavyComboKnockbackScale(attacker, defender, moveData) {
+    if (!isHeavyComboMove(moveData, attacker.activeMove || "")) return 1;
+    const heavyHits = getHeavyHitsInCombo(attacker, defender);
+    const airborneScale = !defender.grounded ? HEAVY_AIRBORNE_BLOWBACK_X_MULT : HEAVY_BLOWBACK_X_MULT;
+    if (heavyHits >= HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN - 1) return Math.max(airborneScale, HEAVY_BLOWBACK_KNOCKBACK_SCALE);
+    if (heavyHits >= 1) return Math.max(airborneScale, HEAVY_REPEATED_KNOCKBACK_MULT);
+    return airborneScale;
+  }
+
+  function shouldHeavyForceBlowback(attacker, defender, moveData) {
+    if (!isHeavyComboMove(moveData, attacker.activeMove || "")) return false;
+    const heavyHits = getHeavyHitsInCombo(attacker, defender);
+    const priorHits = getComboPriorHits(attacker, defender);
+    return !defender.grounded && (
+      hasComboWallBounceSpent(attacker, defender) ||
+      heavyHits >= HEAVY_AIR_BLOWBACK_START_HITS - 1 ||
+      heavyHits >= HEAVY_HITS_BEFORE_BLOWBACK - 1 ||
+      priorHits >= HEAVY_JUGGLE_KNOCKDOWN_THRESHOLD - 1
+    );
+  }
+
+  function scaleHeavyRelaunch(attacker, defender, moveData, knockbackY) {
+    if (!isHeavyComboMove(moveData, attacker.activeMove || "") || knockbackY >= 0) return knockbackY;
+    if (!defender.grounded) return knockbackY * HEAVY_RELAUNCH_SECOND_SCALE;
+    return getHeavyHitsInCombo(attacker, defender) >= 1 ? knockbackY * HEAVY_RELAUNCH_SECOND_SCALE : knockbackY;
+  }
+
+  function getHeavyMinimumKnockback(attacker, defender, moveData, forceBlowback) {
+    if (!isHeavyComboMove(moveData, attacker.activeMove || "")) return 0;
+    if (forceBlowback || getHeavyHitsInCombo(attacker, defender) >= HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN - 1) return HEAVY_FORCED_KNOCKDOWN_MIN_X;
+    return defender.grounded ? HEAVY_BLOWBACK_MIN_X : HEAVY_AIRBORNE_BLOWBACK_MIN_X;
+  }
+
+  function getAirJuggleGravityScale(priorHits) {
+    if (priorHits >= 7) return AIR_JUGGLE_GRAVITY_SCALE_7_HITS;
+    if (priorHits >= 5) return AIR_JUGGLE_GRAVITY_SCALE_5_HITS;
+    if (priorHits >= 3) return AIR_JUGGLE_GRAVITY_SCALE_3_HITS;
+    return 1;
+  }
+
   function getImpactProfile(source, blocked = false) {
     if (blocked) {
       return { hitStop: 0.024, shake: 1.5, sparkCount: 7, sparkSize: 8, burstSize: 18, speed: 180, life: 0.18, color: "#7fd6ff" };
@@ -3121,14 +3487,17 @@
     spawnHitSpark(x, y, profile, blocked);
   }
 
-  function registerComboHit(attacker, defender) {
+  function registerComboHit(attacker, defender, moveData) {
     const combo = state.combo;
     if (combo.owner !== attacker.kind || combo.target !== defender.kind) {
       combo.owner = attacker.kind;
       combo.target = defender.kind;
       combo.hits = 0;
+      combo.heavyHits = 0;
+      combo.wallBounces = 0;
     }
     combo.hits += 1;
+    if (isHeavyComboMove(moveData, attacker.activeMove || "")) combo.heavyHits += 1;
     combo.displayHits = combo.hits;
     combo.timer = COMBO_DROP_WINDOW;
     combo.displayTimer = COMBO_DISPLAY_TIME;
@@ -3152,6 +3521,8 @@
     state.combo.owner = null;
     state.combo.target = null;
     state.combo.hits = 0;
+    state.combo.heavyHits = 0;
+    state.combo.wallBounces = 0;
     state.combo.timer = 0;
     if (hard) {
       state.combo.displayHits = 0;
@@ -3160,6 +3531,7 @@
   }
 
   function tryHit(attacker, defender, moveData) {
+    if (state.matchEnded) return false;
     if (!defender || defender.dead) return false;
     const hitbox = getHitbox(attacker, moveData);
     const hurtbox = getHurtbox(defender);
@@ -3168,13 +3540,21 @@
     attacker.hasHit = true;
     attacker.cancelUnlocked = true;
     const blocked = isBlockingHit(attacker, defender);
+    const defenderWasAirborne = !defender.grounded;
+    const isHeavyHit = isHeavyComboMove(moveData, attacker.activeMove || "");
+    const priorComboHits = getComboPriorHits(attacker, defender);
+    const postWallBounceHeavy = isHeavyHit && hasComboWallBounceSpent(attacker, defender);
+    const heavyBlowback = !blocked && shouldHeavyForceBlowback(attacker, defender, moveData);
+    const forceHeavyEnder = !blocked && isHeavyHit && (postWallBounceHeavy || heavyBlowback || getHeavyHitsInCombo(attacker, defender) >= HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN - 1 || priorComboHits >= HEAVY_JUGGLE_KNOCKDOWN_THRESHOLD - 1);
     const damageScale = blocked ? 1 : getComboDamageScale(attacker);
-    const hitstunScale = blocked ? 1 : getComboHitstunScale(attacker);
-    const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker);
+    const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(attacker), getHeavyComboHitstunScale(attacker, defender, moveData));
+    const heavyKnockbackScale = getHeavyComboKnockbackScale(attacker, defender, moveData);
+    const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker) * heavyKnockbackScale;
     const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale));
     defender.hp = Math.max(0, defender.hp - damage);
     defender.blockstun = blocked ? moveData.blockstun : 0;
     defender.hitstun = blocked ? 0 : moveData.hitstun * hitstunScale;
+    if (forceHeavyEnder) defender.hitstun = Math.min(defender.hitstun, HEAVY_FORCED_FALLOUT_HITSTUN);
     defender.action = null;
     defender.activeMove = null;
     defender.hasHit = false;
@@ -3186,23 +3566,37 @@
     if (moveData.flags.pull) {
       defender.vx = -dir * Math.min(Math.abs(moveData.knockbackX), defender.kind === "enemy" ? 90 : Math.abs(moveData.knockbackX));
     } else {
-      const scaledKnockbackX = Math.abs(moveData.knockbackX) * knockbackScale;
-      const cappedKnockback = !defender.grounded && !blocked ? Math.min(scaledKnockbackX, MAX_AIR_KNOCKBACK_X) : scaledKnockbackX;
-      const airScale = !defender.grounded && !blocked ? 0.72 : 1;
+      const minHeavyKnockback = getHeavyMinimumKnockback(attacker, defender, moveData, forceHeavyEnder);
+      const scaledKnockbackX = Math.max(Math.abs(moveData.knockbackX) * knockbackScale, minHeavyKnockback);
+      const airKnockbackCap = isHeavyHit ? HEAVY_AIR_KNOCKBACK_CAP : MAX_AIR_KNOCKBACK_X;
+      const cappedKnockback = defenderWasAirborne && !blocked ? Math.min(scaledKnockbackX, airKnockbackCap) : scaledKnockbackX;
+      const airScale = defenderWasAirborne && !blocked ? (isHeavyHit ? 1.05 : 0.72) : 1;
       defender.vx = dir * (blocked ? cappedKnockback * 0.3 : cappedKnockback * airScale);
     }
-    const knockbackY = !defender.grounded && !blocked && moveData.knockbackY > 0 ? Math.min(moveData.knockbackY, MAX_AIR_SPIKE_VELOCITY) : moveData.knockbackY;
-    defender.vy = Math.min(defender.vy, blocked ? 0 : knockbackY);
+    const comboKnockbackY = scaleHeavyRelaunch(attacker, defender, moveData, moveData.knockbackY);
+    const knockbackY = defenderWasAirborne && !blocked && comboKnockbackY > 0 ? Math.min(comboKnockbackY, MAX_AIR_SPIKE_VELOCITY) : comboKnockbackY;
+    if (forceHeavyEnder) defender.vy = Math.max(defender.vy, HEAVY_BLOWBACK_DOWN_VELOCITY);
+    else if (isHeavyHit && defenderWasAirborne && !blocked) defender.vy = Math.max(defender.vy, HEAVY_BLOWBACK_DOWN_VELOCITY * 0.45);
+    else defender.vy = Math.min(defender.vy, blocked ? 0 : knockbackY);
     if (!blocked && (moveData.flags.launcher || moveData.knockbackY < -260)) {
       defender.grounded = false;
     }
-    enforceHitSeparation(attacker, defender, moveData, blocked);
+    enforceHitSeparation(attacker, defender, moveData, blocked, isHeavyHit && !blocked);
     if (!blocked) {
       if (moveData.flags.hardKnockdown) defender.pendingKnockdown = Math.max(defender.pendingKnockdown, HARD_KNOCKDOWN);
       if (moveData.flags.softKnockdown) defender.pendingKnockdown = Math.max(defender.pendingKnockdown, SOFT_KNOCKDOWN);
+      if (forceHeavyEnder) defender.pendingKnockdown = Math.max(defender.pendingKnockdown, SOFT_KNOCKDOWN);
+      if (isHeavyHit) {
+        defender.blowbackTimer = Math.max(defender.blowbackTimer, HEAVY_BLOWBACK_DRIFT_TIME);
+        const canWallBounceThisHeavy = !postWallBounceHeavy && getHeavyHitsInCombo(attacker, defender) < HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN - 1;
+        defender.wallBounceEligible = canWallBounceThisHeavy && Math.abs(defender.vx) >= WALL_BOUNCE_MIN_HEAVY_KNOCKBACK;
+      } else {
+        defender.wallBounceEligible = false;
+      }
+      defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(priorComboHits + 1)) : 1;
       defender.recoveryTimer = 0;
       defender.landingTimer = 0;
-      registerComboHit(attacker, defender);
+      registerComboHit(attacker, defender, moveData);
     } else {
       resetCombo();
     }
@@ -3214,10 +3608,7 @@
     applyImpactFeedback(moveData, hitbox.x + hitbox.w * 0.65, hitbox.y + hitbox.h * 0.45, blocked);
 
     if (defender.hp <= 0) {
-      defender.dead = true;
-      defender.hitstun = 999;
-      defender.anim = defender.kind === "enemy" ? "enemy_death" : "death";
-      flashStatus(defender.kind === "enemy" ? `${defender.profile.shortName} DEFEATED` : `${defender.profile.shortName} DOWN`, 2.4);
+      endMatch(defender);
     }
     return true;
   }
@@ -3276,6 +3667,7 @@
   }
 
   function applyProjectileHit(projectile, defender, box) {
+    if (state.matchEnded) return;
     projectile.hit = true;
     const attackerIsInFront = (projectile.x > defender.x) === (defender.facing === 1);
     const blocked = defender.blocking && defender.grounded && attackerIsInFront;
@@ -3300,7 +3692,10 @@
     defender.vy = Math.min(defender.vy, blocked ? 0 : projectileY);
     defender.anim = getHitReactionAnim(defender, defender.kind === "enemy" ? "enemy_damaged" : "damaged");
     if (owner) enforceHitSeparation(owner, defender, projectile, blocked);
-    if (!blocked && owner) registerComboHit(owner, defender);
+    if (!blocked && owner) {
+      defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(getComboPriorHits(owner, defender) + 1)) : 1;
+      registerComboHit(owner, defender, projectile);
+    }
     if (blocked) resetCombo();
     if (!blocked && owner && shouldGainMeter(owner)) {
       growFighterMeter(owner, Math.ceil(projectile.damage / 12));
@@ -3309,10 +3704,7 @@
     applyImpactFeedback(projectile, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
 
     if (defender.hp <= 0) {
-      defender.dead = true;
-      defender.hitstun = 999;
-      defender.anim = defender.kind === "enemy" ? "enemy_death" : "death";
-      flashStatus(defender.kind === "enemy" ? `${defender.profile.shortName} DEFEATED` : `${defender.profile.shortName} DOWN`, 2.4);
+      endMatch(defender);
     }
   }
 
@@ -4147,6 +4539,16 @@
     if (!p || !e) return;
     playerNameEl.textContent = p.profile.name;
     enemyNameEl.textContent = e.profile.name;
+    playerNameEl.closest(".fighter-card")?.setAttribute("data-fighter", p.profile.id);
+    enemyNameEl.closest(".fighter-card")?.setAttribute("data-fighter", e.profile.id);
+    if (playerPortraitEl) {
+      playerPortraitEl.src = getPortraitPath(p.profile.id);
+      playerPortraitEl.alt = `${p.profile.name} portrait`;
+    }
+    if (enemyPortraitEl) {
+      enemyPortraitEl.src = getPortraitPath(e.profile.id);
+      enemyPortraitEl.alt = `${e.profile.name} portrait`;
+    }
     playerHpEl.style.width = `${(p.hp / p.maxHp) * 100}%`;
     enemyHpEl.style.width = `${(e.hp / e.maxHp) * 100}%`;
     playerMeterEl.style.width = `${(p.meter / METER_MAX) * 100}%`;
@@ -4162,7 +4564,7 @@
     roundStatusEl.textContent = text;
     state.messageTimer = seconds;
     window.setTimeout(() => {
-      if (isFightMode() && !state.enemy.dead) {
+      if (isFightMode() && !state.matchEnded && !state.enemy.dead) {
         roundStatusEl.textContent = getRoundStatus();
       }
     }, seconds * 1000);
@@ -4224,11 +4626,24 @@
       handleCharacterSelectKey(e);
       return;
     }
-    if (e.code === "KeyR" && isFightMode()) resetRound();
     if (e.code === "KeyH") state.debug = !state.debug;
     if (e.code === "KeyP" && isFightMode()) {
-      state.paused = !state.paused;
-      flashStatus(state.paused ? "PAUSED" : getRoundStatus(), 0.8);
+      togglePauseHelp();
+      return;
+    }
+    if (state.matchEnded && isFightMode()) {
+      if (e.code === "KeyR") resetRound();
+      if (e.code === "Escape") returnToCharacterSelectFromMatch();
+      return;
+    }
+    if (state.paused && isFightMode()) {
+      if (e.code === "Escape") returnToCharacterSelectFromMatch();
+      if (e.code === "KeyR") resetRound();
+      return;
+    }
+    if (e.code === "KeyR" && isFightMode()) {
+      resetRound();
+      return;
     }
     if (!isFightMode() || state.paused) return;
 
@@ -4237,6 +4652,9 @@
       flashStatus(getTrainingStatus(), 0.9);
     }
     if (e.code === P1_CONTROLS.up) jump(state.player);
+    if ([P1_CONTROLS.left, P1_CONTROLS.right].includes(e.code)) {
+      maybeStartDoubleTapDash(state.player, { ...P1_CONTROLS, dash: [P1_CONTROLS.left, P1_CONTROLS.right] }, state.p1DashTap, e.code);
+    }
     if (P1_CONTROLS.dash.includes(e.code)) {
       if (state.keys.has(P1_CONTROLS.modifier)) startSuperDash(state.player);
       else startDash(state.player, P1_CONTROLS);
@@ -4253,6 +4671,7 @@
     if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_3" : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
 
     if (state.mode === "versus") {
+      maybeStartDoubleTapDash(state.enemy, P2_CONTROLS, state.p2DashTap, e.code);
       if (e.code === P2_CONTROLS.up) jump(state.enemy);
       if (e.code === P2_CONTROLS.light) startMove(chooseLightAttack(state.enemy, P2_CONTROLS), state.enemy);
       if (e.code === P2_CONTROLS.medium) startMove(chooseAttack("medium", state.enemy, P2_CONTROLS), state.enemy);
@@ -4344,7 +4763,7 @@
     };
   }
   window.setInterval(() => {
-    if (!isFightMode() || state.paused || !state.player || state.player.dead) return;
+    if (!isFightMode() || state.paused || state.matchEnded || !state.player || state.player.dead) return;
     growPassiveMeter(0.25);
     updateHud();
   }, 250);

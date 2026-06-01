@@ -5,41 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NO GODS ABOVE</title>
     <link rel="icon" href="data:,">
+    <link rel="preload" as="image" href="assets/backgrounds/menus/title_screen_background.png" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main id="game-shell" aria-label="NO GODS ABOVE game prototype">
       <canvas id="game" width="1280" height="720"></canvas>
 
-      <section id="hud" class="hud hidden" aria-label="Training HUD">
-        <div class="fighter-card left">
-          <div id="player-name" class="fighter-name">KAIRO FINAL</div>
-          <div class="bar hp"><span id="player-hp"></span></div>
-          <div class="bar meter"><span id="player-meter"></span></div>
-        </div>
-          <div class="center-hud">
-            <div id="round-status">TRAINING</div>
-            <div id="combo-counter" class="combo-counter" aria-live="polite"></div>
+      <section id="hud" class="hud hidden ui-hud-layer" aria-label="Training HUD">
+        <div class="fighter-card hud-fighter-panel left ui-frame ui-frame-hud" data-side="p1">
+          <div class="hud-portrait-frame ui-portrait-frame">
+            <img id="player-portrait" src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final portrait">
           </div>
-        <div class="fighter-card right">
-          <div id="enemy-name" class="fighter-name">VANTA REIGN</div>
-          <div class="bar hp"><span id="enemy-hp"></span></div>
-          <div class="bar meter"><span id="enemy-meter"></span></div>
+          <div class="hud-fighter-main">
+            <div class="hud-name-frame ui-name-frame">
+              <span class="side-tag p1-tag">P1</span>
+              <div id="player-name" class="fighter-name">KAIRO FINAL</div>
+            </div>
+            <div class="bar hp ui-bar-frame"><span id="player-hp"></span></div>
+            <div class="bar meter ui-bar-frame"><span id="player-meter"></span></div>
+          </div>
+        </div>
+          <div class="center-hud ui-center-hud">
+            <div id="round-status" class="ui-frame ui-timer-frame">TRAINING</div>
+            <div id="combo-counter" class="combo-counter ui-frame ui-combo-frame" aria-live="polite"></div>
+          </div>
+        <div class="fighter-card hud-fighter-panel right ui-frame ui-frame-hud" data-side="p2">
+          <div class="hud-portrait-frame ui-portrait-frame">
+            <img id="enemy-portrait" src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign portrait">
+          </div>
+          <div class="hud-fighter-main">
+            <div class="hud-name-frame ui-name-frame">
+              <div id="enemy-name" class="fighter-name">VANTA REIGN</div>
+              <span class="side-tag p2-tag">P2</span>
+            </div>
+            <div class="bar hp ui-bar-frame"><span id="enemy-hp"></span></div>
+            <div class="bar meter ui-bar-frame"><span id="enemy-meter"></span></div>
+          </div>
         </div>
       </section>
 
       <section id="title-screen" class="menu">
-        <div class="menu-inner">
-          <p class="kicker">Training Prototype</p>
-          <h1>NO GODS ABOVE</h1>
-          <button id="start-button" type="button">Character Select</button>
+        <div class="menu-inner ui-frame ui-title-frame">
+          <button id="start-button" class="ui-menu-button" type="button">Character Select</button>
           <p class="menu-note">Press Enter to begin</p>
         </div>
       </section>
 
       <section id="character-select" class="menu character-select hidden" aria-label="Choose your character">
-        <div class="select-panel">
-          <header class="select-header">
+        <div class="select-panel ui-frame ui-menu-frame">
+          <header class="select-header ui-title-header">
             <div class="select-logo">NO GODS ABOVE</div>
             <div class="select-heading">Choose Your Fighter</div>
             <div id="select-mode-label" class="select-mode">Local Versus</div>
@@ -51,51 +66,53 @@
           </div>
 
           <div class="select-slots" aria-live="polite">
-            <div id="p1-select-slot" class="select-slot active">
+            <div id="p1-select-slot" class="select-slot ui-frame ui-slot-frame active">
               <span class="slot-label">P1 Select</span>
               <strong id="p1-select-name">KAIRO FINAL</strong>
               <em id="p1-select-status">Choosing</em>
             </div>
-            <div id="p2-select-slot" class="select-slot">
+            <div id="p2-select-slot" class="select-slot ui-frame ui-slot-frame">
               <span class="slot-label">P2 Select</span>
               <strong id="p2-select-name">VANTA REIGN</strong>
               <em id="p2-select-status">Waiting</em>
             </div>
           </div>
 
-          <div id="matchup-preview" class="matchup-preview">Choose P1 fighter</div>
+          <div id="matchup-preview" class="matchup-preview ui-frame ui-prompt-frame">Choose P1 fighter</div>
+
+          <div id="select-controls-display" class="controls-display select-controls-display" aria-label="Local versus controls"></div>
 
           <div class="select-grid">
-            <button class="select-card kairo selected" type="button" data-character="kairo" aria-label="Choose Kairo Final">
-              <span class="portrait-frame">
+            <button class="select-card ui-card-frame kairo selected" type="button" data-character="kairo" aria-label="Choose Kairo Final">
+              <span class="portrait-frame ui-portrait-frame">
                 <img src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final">
               </span>
               <span class="select-name">KAIRO FINAL</span>
               <span class="select-role">Cyber Blade Striker</span>
             </button>
-            <button class="select-card vanta" type="button" data-character="vanta" aria-label="Choose Vanta Reign">
-              <span class="portrait-frame">
+            <button class="select-card ui-card-frame vanta" type="button" data-character="vanta" aria-label="Choose Vanta Reign">
+              <span class="portrait-frame ui-portrait-frame">
                 <img src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign">
               </span>
               <span class="select-name">VANTA REIGN</span>
               <span class="select-role">Crimson Rival</span>
             </button>
-            <button class="select-card nyx" type="button" data-character="nyx" aria-label="Choose Nyx">
-              <span class="portrait-frame">
+            <button class="select-card ui-card-frame nyx" type="button" data-character="nyx" aria-label="Choose Nyx">
+              <span class="portrait-frame ui-portrait-frame">
                 <img src="assets/sprites/portraits/nyx_select.png" alt="Nyx">
               </span>
               <span class="select-name">NYX</span>
               <span class="select-role">Aerial Rushdown</span>
             </button>
-            <button class="select-card sol" type="button" data-character="sol" aria-label="Choose Sol Raze">
-              <span class="portrait-frame">
+            <button class="select-card ui-card-frame sol" type="button" data-character="sol" aria-label="Choose Sol Raze">
+              <span class="portrait-frame ui-portrait-frame">
                 <img src="assets/sprites/portraits/sol_select.png" alt="Sol Raze">
               </span>
               <span class="select-name">SOL RAZE</span>
               <span class="select-role">Iron Sun</span>
             </button>
-            <button class="select-card seris" type="button" data-character="seris" aria-label="Choose Seris">
-              <span class="portrait-frame">
+            <button class="select-card ui-card-frame seris" type="button" data-character="seris" aria-label="Choose Seris">
+              <span class="portrait-frame ui-portrait-frame">
                 <img src="assets/sprites/portraits/seris_select.png?v=seris-revamp-final-1" alt="Seris">
               </span>
               <span class="select-name">SERIS</span>
@@ -111,8 +128,17 @@
           </footer>
         </div>
       </section>
+
+      <section id="match-flow-overlay" class="match-flow-overlay hidden" aria-live="assertive" aria-label="Match flow">
+        <div class="match-flow-panel ui-frame ui-overlay-frame">
+          <div id="match-flow-title" class="match-flow-title">P1 WINS</div>
+          <div id="match-flow-subtitle" class="match-flow-subtitle">Same fighters, same arena.</div>
+          <div id="match-flow-actions" class="match-flow-actions">Press R for Rematch - Press Esc for Character Select</div>
+          <div id="match-controls-display" class="controls-display match-controls-display" aria-label="In-match controls"></div>
+        </div>
+      </section>
     </main>
 
-    <script src="game.js?v=seris-public-reenable-1"></script>
+    <script src="game.js?v=hud-pause-asset-hooks-1"></script>
   </body>
 </html>
