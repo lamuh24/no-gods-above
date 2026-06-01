@@ -7,6 +7,16 @@
   const titleScreen = document.getElementById("title-screen");
   const characterSelect = document.getElementById("character-select");
   const characterButtons = document.querySelectorAll("[data-character]");
+  const selectModeLabel = document.getElementById("select-mode-label");
+  const selectVersusButton = document.getElementById("select-versus-button");
+  const selectTrainingButton = document.getElementById("select-training-button");
+  const p1SelectSlot = document.getElementById("p1-select-slot");
+  const p2SelectSlot = document.getElementById("p2-select-slot");
+  const p1SelectName = document.getElementById("p1-select-name");
+  const p2SelectName = document.getElementById("p2-select-name");
+  const p1SelectStatus = document.getElementById("p1-select-status");
+  const p2SelectStatus = document.getElementById("p2-select-status");
+  const matchupPreview = document.getElementById("matchup-preview");
   const hud = document.getElementById("hud");
   const playerNameEl = document.getElementById("player-name");
   const enemyNameEl = document.getElementById("enemy-name");
@@ -743,6 +753,44 @@
 
   const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris"];
   const hiddenTestCharacterIds = SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : [];
+  const selectShortcutCharacterIds = {
+    Digit1: "kairo",
+    Numpad1: "kairo",
+    Digit2: "vanta",
+    Numpad2: "vanta",
+    Digit3: "nyx",
+    Numpad3: "nyx",
+    Digit4: "sol",
+    Numpad4: "sol",
+    Digit5: "seris",
+    Numpad5: "seris"
+  };
+  const P1_CONTROLS = {
+    left: "KeyA",
+    right: "KeyD",
+    up: "KeyW",
+    down: "KeyS",
+    modifier: "KeyU",
+    light: "KeyJ",
+    medium: "KeyK",
+    heavy: "KeyL",
+    ultimateA: "KeyI",
+    ultimateB: "KeyO",
+    dash: ["ShiftLeft", "ShiftRight"],
+    taunt: "KeyT"
+  };
+  const P2_CONTROLS = {
+    left: "ArrowLeft",
+    right: "ArrowRight",
+    up: "ArrowUp",
+    down: "ArrowDown",
+    light: "Numpad1",
+    medium: "Numpad2",
+    heavy: "Numpad3",
+    special1: "Numpad4",
+    special2: "Numpad5",
+    special3: "Numpad6"
+  };
   const moves = characterProfiles.kairo.moves.player;
 
   const state = {
@@ -762,6 +810,13 @@
     player: null,
     enemy: null,
     selectedPlayerId: "kairo",
+    selectedP1CharacterId: "kairo",
+    selectedP2CharacterId: "vanta",
+    selectCursorCharacterId: "kairo",
+    selectGameMode: "versus",
+    activeSelectSide: "p1",
+    p1Ready: false,
+    p2Ready: false,
     enemyAI: false,
     combo: {
       owner: null,
@@ -2189,10 +2244,12 @@
   }
 
   function resetRound() {
-    const playerId = state.selectedPlayerId;
-    const enemyId = getOpponentId(playerId);
+    const versusMode = state.mode === "versus";
+    const playerId = versusMode ? state.selectedP1CharacterId : state.selectedPlayerId;
+    const enemyId = versusMode ? state.selectedP2CharacterId : getOpponentId(playerId);
     state.player = makeFighter("player", 330, 1, playerId);
     state.enemy = makeFighter("enemy", 720, -1, enemyId);
+    if (versusMode) state.enemyAI = false;
     state.particles = [];
     state.projectiles = [];
     state.nyxSignatureEffects = [];
@@ -2200,8 +2257,17 @@
     state.cameraShake = 0;
     state.messageTimer = 1.5;
     resetCombo(true);
-    roundStatusEl.textContent = getTrainingStatus();
+    roundStatusEl.textContent = getRoundStatus();
     updateHud();
+  }
+
+  function getRoundStatus() {
+    if (state.mode === "versus") {
+      const p1Name = state.player?.profile.shortName || "P1";
+      const p2Name = state.enemy?.profile.shortName || "P2";
+      return `${p1Name} VS ${p2Name}`;
+    }
+    return getTrainingStatus();
   }
 
   function getTrainingStatus() {
@@ -2209,17 +2275,22 @@
     return state.enemyAI ? `${enemyName} AI ON` : `${enemyName} DUMMY`;
   }
 
-  function showCharacterSelect() {
+  function isFightMode() {
+    return state.mode === "training" || state.mode === "versus";
+  }
+
+  function showCharacterSelect(selectGameMode = "versus") {
     titleScreen.classList.add("hidden");
     characterSelect.classList.remove("hidden");
     state.mode = "select";
-    updateCharacterSelectFocus(state.selectedPlayerId);
-    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectedPlayerId}"]`);
+    setCharacterSelectMode(selectGameMode);
+    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
     selectedButton?.focus({ preventScroll: true });
   }
 
   function startTraining(characterId = state.selectedPlayerId) {
     state.selectedPlayerId = isLaunchableCharacterId(characterId) ? characterId : "kairo";
+    state.selectedP1CharacterId = state.selectedPlayerId;
     titleScreen.classList.add("hidden");
     characterSelect.classList.add("hidden");
     hud.classList.remove("hidden");
@@ -2228,40 +2299,149 @@
     resetRound();
   }
 
+  function startLocalVersus() {
+    state.selectedP1CharacterId = isLaunchableCharacterId(state.selectedP1CharacterId) ? state.selectedP1CharacterId : "kairo";
+    state.selectedP2CharacterId = isLaunchableCharacterId(state.selectedP2CharacterId) ? state.selectedP2CharacterId : "vanta";
+    state.selectedPlayerId = state.selectedP1CharacterId;
+    titleScreen.classList.add("hidden");
+    characterSelect.classList.add("hidden");
+    hud.classList.remove("hidden");
+    state.mode = "versus";
+    state.enemyAI = false;
+    state.paused = false;
+    resetRound();
+  }
+
+  function setCharacterSelectMode(selectGameMode) {
+    state.selectGameMode = selectGameMode === "training" ? "training" : "versus";
+    state.activeSelectSide = "p1";
+    state.p1Ready = false;
+    state.p2Ready = false;
+    state.selectCursorCharacterId = state.selectGameMode === "training" ? state.selectedPlayerId : state.selectedP1CharacterId;
+    updateCharacterSelectFocus(state.selectCursorCharacterId);
+  }
+
   function updateCharacterSelectFocus(characterId) {
-    state.selectedPlayerId = selectableCharacterIds.includes(characterId) ? characterId : "kairo";
+    state.selectCursorCharacterId = selectableCharacterIds.includes(characterId) ? characterId : "kairo";
+    if (state.selectGameMode === "training") {
+      state.selectedPlayerId = state.selectCursorCharacterId;
+      state.selectedP1CharacterId = state.selectCursorCharacterId;
+    }
     characterButtons.forEach((button) => {
-      const selected = button.dataset.character === state.selectedPlayerId;
+      const character = button.dataset.character;
+      const selected = character === state.selectCursorCharacterId;
       button.classList.toggle("selected", selected);
+      button.classList.toggle("p1-picked", state.p1Ready && character === state.selectedP1CharacterId);
+      button.classList.toggle("p2-picked", state.p2Ready && character === state.selectedP2CharacterId);
       button.setAttribute("aria-pressed", selected ? "true" : "false");
+      let badgeWrap = button.querySelector(".selection-badges");
+      if (!badgeWrap) {
+        badgeWrap = document.createElement("span");
+        badgeWrap.className = "selection-badges";
+        button.prepend(badgeWrap);
+      }
+      const badges = [];
+      if (state.p1Ready && character === state.selectedP1CharacterId) badges.push("P1");
+      if (state.p2Ready && character === state.selectedP2CharacterId) badges.push("P2");
+      badgeWrap.innerHTML = badges.map((badge) => `<span>${badge}</span>`).join("");
     });
+    updateCharacterSelectUi();
   }
 
   function isLaunchableCharacterId(characterId) {
     return selectableCharacterIds.includes(characterId) || hiddenTestCharacterIds.includes(characterId);
   }
 
+  function getSelectDisplayName(characterId) {
+    return characterProfiles[characterId]?.name || "SELECT";
+  }
+
+  function updateCharacterSelectUi() {
+    const trainingMode = state.selectGameMode === "training";
+    selectModeLabel.textContent = trainingMode ? "Training Dummy" : "Local Versus";
+    selectVersusButton.classList.toggle("active", !trainingMode);
+    selectTrainingButton.classList.toggle("active", trainingMode);
+    p1SelectName.textContent = getSelectDisplayName(trainingMode ? state.selectCursorCharacterId : state.selectedP1CharacterId);
+    p2SelectName.textContent = trainingMode ? getSelectDisplayName(getOpponentId(state.selectCursorCharacterId)) : getSelectDisplayName(state.selectedP2CharacterId);
+    p1SelectStatus.textContent = trainingMode ? "Player" : state.p1Ready ? "Ready" : "Choosing";
+    p2SelectStatus.textContent = trainingMode ? "Dummy" : state.p2Ready ? "Ready" : state.p1Ready ? "Choosing" : "Waiting";
+    p1SelectSlot.classList.toggle("active", state.activeSelectSide === "p1");
+    p2SelectSlot.classList.toggle("active", state.activeSelectSide === "p2");
+    p1SelectSlot.classList.toggle("ready", state.p1Ready || trainingMode);
+    p2SelectSlot.classList.toggle("ready", state.p2Ready || trainingMode);
+    if (trainingMode) {
+      matchupPreview.textContent = `${getSelectDisplayName(state.selectCursorCharacterId)} vs ${getSelectDisplayName(getOpponentId(state.selectCursorCharacterId))} dummy`;
+    } else if (!state.p1Ready) {
+      matchupPreview.textContent = "Choose P1 fighter";
+    } else if (!state.p2Ready) {
+      matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} locked - choose P2 fighter`;
+    } else {
+      matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)} - press Enter to start`;
+    }
+  }
+
+  function confirmCharacterSelect() {
+    if (state.selectGameMode === "training") {
+      startTraining(state.selectCursorCharacterId);
+      return;
+    }
+    if (state.activeSelectSide === "p1") {
+      state.selectedP1CharacterId = state.selectCursorCharacterId;
+      state.p1Ready = true;
+      state.activeSelectSide = "p2";
+      state.selectCursorCharacterId = state.selectedP2CharacterId;
+      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      return;
+    }
+    if (state.activeSelectSide === "p2") {
+      state.selectedP2CharacterId = state.selectCursorCharacterId;
+      state.p2Ready = true;
+      state.activeSelectSide = "ready";
+      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      return;
+    }
+    startLocalVersus();
+  }
+
+  function backCharacterSelect() {
+    if (state.selectGameMode === "versus" && state.activeSelectSide === "ready") {
+      state.p2Ready = false;
+      state.activeSelectSide = "p2";
+      state.selectCursorCharacterId = state.selectedP2CharacterId;
+      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      return;
+    }
+    if (state.selectGameMode === "versus" && state.activeSelectSide === "p2") {
+      state.p1Ready = false;
+      state.activeSelectSide = "p1";
+      state.selectCursorCharacterId = state.selectedP1CharacterId;
+      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      return;
+    }
+    characterSelect.classList.add("hidden");
+    titleScreen.classList.remove("hidden");
+    state.mode = "title";
+    startButton.focus({ preventScroll: true });
+  }
+
   function handleCharacterSelectKey(e) {
-    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "Enter", "Escape"].includes(e.code);
+    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "KeyT", "KeyV", "Enter", "Escape", "Backspace"].includes(e.code);
     if (!handled) return false;
 
     e.preventDefault();
     e.stopPropagation();
 
-    if (["KeyA", "ArrowLeft", "Digit1", "Numpad1"].includes(e.code)) updateCharacterSelectFocus("kairo");
-    if (["KeyD", "ArrowRight", "Digit2", "Numpad2"].includes(e.code)) updateCharacterSelectFocus("vanta");
-    if (["KeyW", "ArrowUp", "Digit3", "Numpad3"].includes(e.code)) updateCharacterSelectFocus("nyx");
-    if (["KeyS", "ArrowDown", "Digit4", "Numpad4"].includes(e.code)) updateCharacterSelectFocus("sol");
-    if (["Digit5", "Numpad5"].includes(e.code)) updateCharacterSelectFocus("seris");
-    if (e.code === "Enter") startTraining(state.selectedPlayerId);
-    if (e.code === "Escape") {
-      characterSelect.classList.add("hidden");
-      titleScreen.classList.remove("hidden");
-      state.mode = "title";
-      startButton.focus({ preventScroll: true });
-    }
+    if (e.code === "KeyV") setCharacterSelectMode("versus");
+    if (e.code === "KeyT") setCharacterSelectMode("training");
+    if (["KeyA", "ArrowLeft"].includes(e.code)) updateCharacterSelectFocus("kairo");
+    if (["KeyD", "ArrowRight"].includes(e.code)) updateCharacterSelectFocus("vanta");
+    if (["KeyW", "ArrowUp"].includes(e.code)) updateCharacterSelectFocus("nyx");
+    if (["KeyS", "ArrowDown"].includes(e.code)) updateCharacterSelectFocus("sol");
+    if (selectShortcutCharacterIds[e.code]) updateCharacterSelectFocus(selectShortcutCharacterIds[e.code]);
+    if (e.code === "Enter") confirmCharacterSelect();
+    if (e.code === "Escape" || e.code === "Backspace") backCharacterSelect();
 
-    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectedPlayerId}"]`);
+    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
     selectedButton?.focus({ preventScroll: true });
     return true;
   }
@@ -2281,7 +2461,7 @@
     updateParticles(dt);
     updateNyxSignatureEffects(dt);
 
-    if (state.mode !== "training" || state.paused) {
+    if (!isFightMode() || state.paused) {
       return;
     }
 
@@ -2378,48 +2558,48 @@
     } else if (p.action) {
       updateAction(p, dt);
     } else {
-      readMovement(p, dt);
+      readMovement(p, P1_CONTROLS);
     }
 
     integrate(p, dt);
   }
 
-  function readMovement(p) {
-    const forward = p.facing === 1 ? "KeyD" : "KeyA";
-    const back = p.facing === 1 ? "KeyA" : "KeyD";
+  function readMovement(p, controls) {
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
     const holdingForward = state.keys.has(forward);
     const holdingBack = state.keys.has(back);
-    const holdingDown = state.keys.has("KeyS");
+    const holdingDown = state.keys.has(controls.down);
     const movement = getMovementStats(p);
 
     p.vx = 0;
 
     if (holdingDown && p.grounded) {
       p.crouching = true;
-      p.anim = "crouch";
+      p.anim = withEnemyPrefix(p, "crouch");
       return;
     }
 
     if (holdingBack && p.grounded) {
       p.blocking = true;
       p.vx = -p.facing * movement.walkBack;
-      p.anim = usesNewGenerationArt(p) ? "walk_back" : "block";
+      p.anim = usesNewGenerationArt(p) ? withEnemyPrefix(p, "walk_back") : withEnemyPrefix(p, "block");
       return;
     }
 
     if (holdingForward) {
       p.vx = p.facing * movement.walkForward;
-      p.anim = p.grounded ? "walk_forward" : getAirDriftAnim(p, true, false);
+      p.anim = p.grounded ? withEnemyPrefix(p, "walk_forward") : getAirDriftAnim(p, true, false);
       return;
     }
 
     if (holdingBack) {
       p.vx = -p.facing * movement.walkBack;
-      p.anim = p.grounded ? "walk_back" : getAirDriftAnim(p, false, true);
+      p.anim = p.grounded ? withEnemyPrefix(p, "walk_back") : getAirDriftAnim(p, false, true);
       return;
     }
 
-    p.anim = p.grounded ? "idle" : getAirDriftAnim(p, false, false);
+    p.anim = p.grounded ? withEnemyPrefix(p, "idle") : getAirDriftAnim(p, false, false);
   }
 
   function tickFighterTimers(f, dt) {
@@ -2436,6 +2616,8 @@
     const e = state.enemy;
     const p = state.player;
     e.facing = e.x <= p.x ? 1 : -1;
+    e.crouching = false;
+    e.blocking = false;
     tickFighterTimers(e, dt);
     if (e.dead) {
       e.anim = "enemy_death";
@@ -2470,6 +2652,8 @@
     } else {
       if (state.enemyAI) {
         updateEnemyAI(e, p, dt);
+      } else if (state.mode === "versus") {
+        readMovement(e, P2_CONTROLS);
       } else {
         e.vx *= 0.55;
         if (Math.abs(e.vx) < 5) e.vx = 0;
@@ -2559,7 +2743,7 @@
       f.lastHitTime = -Infinity;
       f.spawnedProjectile = false;
       f.cancelUnlocked = false;
-      if (buffered && f.kind === "player") {
+      if (buffered) {
         f.bufferedMove = null;
         beginMove(f, buffered.key);
       }
@@ -2617,9 +2801,9 @@
     }
   }
 
-  function startMove(key) {
-    const p = state.player;
-    if (state.mode !== "training" || state.paused || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
+  function startMove(key, fighter = state.player) {
+    const p = fighter;
+    if (!isFightMode() || state.paused || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
     if (key === "ultimate" && p.meter < METER_MAX) {
       flashStatus("METER NEEDED", 0.8);
       return;
@@ -2700,7 +2884,7 @@
   }
 
   function tryBufferedMove(f) {
-    if (f.kind !== "player" || !f.bufferedMove) return false;
+    if (!f.bufferedMove) return false;
     if (!canCancelInto(f, f.bufferedMove.key)) return false;
     const key = f.bufferedMove.key;
     beginMove(f, key);
@@ -2753,14 +2937,14 @@
     }
   }
 
-  function startDash() {
-    const p = state.player;
-    if (state.mode !== "training" || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+  function startDash(fighter = state.player, controls = P1_CONTROLS) {
+    const p = fighter;
+    if (!isFightMode() || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canDashCancel(p)) return;
       clearAction(p);
     }
-    const direction = getDashDirection(p);
+    const direction = getDashDirection(p, controls);
     const movement = getMovementStats(p);
     const airDash = getAirDashStats(p);
     if (!p.grounded) {
@@ -2782,9 +2966,9 @@
     }
   }
 
-  function startSuperDash() {
-    const p = state.player;
-    if (state.mode !== "training" || p.dead || p.superDashCooldown > 0) return;
+  function startSuperDash(fighter = state.player) {
+    const p = fighter;
+    if (!isFightMode() || p.dead || p.superDashCooldown > 0) return;
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action && !canDashCancel(p)) {
       p.bufferedMove = { key: "super_dash", timer: INPUT_BUFFER };
@@ -2800,17 +2984,17 @@
     return current.flags.dashCancel && (f.cancelUnlocked || f.actionTime >= current.cancelTime);
   }
 
-  function getDashDirection(p) {
-    const forward = p.facing === 1 ? "KeyD" : "KeyA";
-    const back = p.facing === 1 ? "KeyA" : "KeyD";
+  function getDashDirection(p, controls = P1_CONTROLS) {
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
     if (state.keys.has(back)) return -p.facing;
     if (state.keys.has(forward)) return p.facing;
     return p.facing;
   }
 
-  function jump() {
-    const p = state.player;
-    if (state.mode !== "training" || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+  function jump(fighter = state.player) {
+    const p = fighter;
+    if (!isFightMode() || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canJumpCancel(p)) return;
       clearAction(p);
@@ -3897,7 +4081,7 @@
   }
 
   function drawStatusText() {
-    if (state.mode !== "training") return;
+    if (!isFightMode()) return;
     if (state.paused) {
       drawCenteredText("PAUSED", H / 2);
     } else if (state.messageTimer > 0) {
@@ -3946,37 +4130,49 @@
     roundStatusEl.textContent = text;
     state.messageTimer = seconds;
     window.setTimeout(() => {
-      if (state.mode === "training" && !state.enemy.dead) {
-        roundStatusEl.textContent = getTrainingStatus();
+      if (isFightMode() && !state.enemy.dead) {
+        roundStatusEl.textContent = getRoundStatus();
       }
     }, seconds * 1000);
   }
 
-  function chooseAttack(button) {
-    const p = state.player;
+  function chooseAttack(button, fighter = state.player, controls = P1_CONTROLS) {
+    const p = fighter;
+    if (p.kind === "enemy") return chooseEnemyControlledAttack(button, p, controls);
     if (!p.grounded) return `jump_${button}`;
-    if (state.keys.has("KeyS")) return `down_${button}`;
+    if (state.keys.has(controls.down)) return `down_${button}`;
 
-    const forward = p.facing === 1 ? "KeyD" : "KeyA";
-    const back = p.facing === 1 ? "KeyA" : "KeyD";
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
     if (state.keys.has(forward)) return `forward_${button}`;
     if (state.keys.has(back)) return `back_${button}`;
     return `neutral_${button}`;
   }
 
-  function chooseLightAttack() {
-    const p = state.player;
-    if (!p) return "neutral_light";
-    const autoCombos = getComboRoutes(p).autoCombos;
-    if (p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
-    if (p.grounded && !isHoldingDirectionalModifier(p)) return "neutral_light";
-    return chooseAttack("light");
+  function chooseEnemyControlledAttack(button, fighter, controls) {
+    if (button === "light") return "enemy_light_attack";
+    if (button === "medium") return "enemy_medium_attack";
+    if (button === "heavy") {
+      const forward = fighter.facing === 1 ? controls.right : controls.left;
+      return state.keys.has(forward) ? "enemy_forward_heavy" : "enemy_heavy_attack";
+    }
+    return "enemy_light_attack";
   }
 
-  function isHoldingDirectionalModifier(p) {
-    const forward = p.facing === 1 ? "KeyD" : "KeyA";
-    const back = p.facing === 1 ? "KeyA" : "KeyD";
-    return state.keys.has("KeyS") || state.keys.has(forward) || state.keys.has(back);
+  function chooseLightAttack(fighter = state.player, controls = P1_CONTROLS) {
+    const p = fighter;
+    if (!p) return "neutral_light";
+    if (p.kind === "enemy") return "enemy_light_attack";
+    const autoCombos = getComboRoutes(p).autoCombos;
+    if (p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
+    if (p.grounded && !isHoldingDirectionalModifier(p, controls)) return "neutral_light";
+    return chooseAttack("light", p, controls);
+  }
+
+  function isHoldingDirectionalModifier(p, controls = P1_CONTROLS) {
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
+    return state.keys.has(controls.down) || state.keys.has(forward) || state.keys.has(back);
   }
 
   function handleKeyDown(e) {
@@ -3996,33 +4192,43 @@
       handleCharacterSelectKey(e);
       return;
     }
-    if (e.code === "KeyR") resetRound();
+    if (e.code === "KeyR" && isFightMode()) resetRound();
     if (e.code === "KeyH") state.debug = !state.debug;
-    if (e.code === "KeyP" && state.mode === "training") {
+    if (e.code === "KeyP" && isFightMode()) {
       state.paused = !state.paused;
-      flashStatus(state.paused ? "PAUSED" : getTrainingStatus(), 0.8);
+      flashStatus(state.paused ? "PAUSED" : getRoundStatus(), 0.8);
     }
-    if (state.mode !== "training" || state.paused) return;
+    if (!isFightMode() || state.paused) return;
 
-    if (e.code === "KeyN") {
+    if (state.mode === "training" && e.code === "KeyN") {
       state.enemyAI = !state.enemyAI;
       flashStatus(getTrainingStatus(), 0.9);
     }
-    if (e.code === "KeyW") jump();
-    if (e.code === "ShiftLeft" || e.code === "ShiftRight") {
-      if (state.keys.has("KeyU")) startSuperDash();
-      else startDash();
+    if (e.code === P1_CONTROLS.up) jump(state.player);
+    if (P1_CONTROLS.dash.includes(e.code)) {
+      if (state.keys.has(P1_CONTROLS.modifier)) startSuperDash(state.player);
+      else startDash(state.player, P1_CONTROLS);
     }
-    if (e.code === "KeyT") startMove("taunt");
+    if (e.code === P1_CONTROLS.taunt) startMove("taunt", state.player);
 
-    if ((e.code === "KeyI" && state.keys.has("KeyO")) || (e.code === "KeyO" && state.keys.has("KeyI"))) {
-      startMove("ultimate");
+    if ((e.code === P1_CONTROLS.ultimateA && state.keys.has(P1_CONTROLS.ultimateB)) || (e.code === P1_CONTROLS.ultimateB && state.keys.has(P1_CONTROLS.ultimateA))) {
+      startMove("ultimate", state.player);
       return;
     }
 
-    if (e.code === "KeyJ") startMove(state.keys.has("KeyU") ? "special_1" : chooseLightAttack());
-    if (e.code === "KeyK") startMove(state.keys.has("KeyU") ? "special_2" : chooseAttack("medium"));
-    if (e.code === "KeyL") startMove(state.keys.has("KeyU") ? "special_3" : chooseAttack("heavy"));
+    if (e.code === P1_CONTROLS.light) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_1" : chooseLightAttack(state.player, P1_CONTROLS), state.player);
+    if (e.code === P1_CONTROLS.medium) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_2" : chooseAttack("medium", state.player, P1_CONTROLS), state.player);
+    if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_3" : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
+
+    if (state.mode === "versus") {
+      if (e.code === P2_CONTROLS.up) jump(state.enemy);
+      if (e.code === P2_CONTROLS.light) startMove(chooseLightAttack(state.enemy, P2_CONTROLS), state.enemy);
+      if (e.code === P2_CONTROLS.medium) startMove(chooseAttack("medium", state.enemy, P2_CONTROLS), state.enemy);
+      if (e.code === P2_CONTROLS.heavy) startMove(chooseAttack("heavy", state.enemy, P2_CONTROLS), state.enemy);
+      if (e.code === P2_CONTROLS.special1) startMove("enemy_special_1", state.enemy);
+      if (e.code === P2_CONTROLS.special2) startMove("enemy_special_2", state.enemy);
+      if (e.code === P2_CONTROLS.special3) startMove("enemy_special_3", state.enemy);
+    }
   }
 
   function handleKeyUp(e) {
@@ -4036,6 +4242,8 @@
   window.addEventListener("keydown", handleKeyDown);
   window.addEventListener("keyup", handleKeyUp);
   startButton.addEventListener("click", showCharacterSelect);
+  selectVersusButton.addEventListener("click", () => setCharacterSelectMode("versus"));
+  selectTrainingButton.addEventListener("click", () => setCharacterSelectMode("training"));
   document.addEventListener("keydown", (e) => {
     if (state.mode === "select") {
       handleCharacterSelectKey(e);
@@ -4043,7 +4251,10 @@
   }, true);
   characterButtons.forEach((button) => {
     button.addEventListener("focus", () => updateCharacterSelectFocus(button.dataset.character));
-    button.addEventListener("click", () => startTraining(button.dataset.character));
+    button.addEventListener("click", () => {
+      updateCharacterSelectFocus(button.dataset.character);
+      confirmCharacterSelect();
+    });
   });
   if (SERIS_HIDDEN_TEST_ENABLED) {
     window.__serisRevampTest = {
@@ -4100,7 +4311,7 @@
     };
   }
   window.setInterval(() => {
-    if (state.mode !== "training" || state.paused || !state.player || state.player.dead) return;
+    if (!isFightMode() || state.paused || !state.player || state.player.dead) return;
     growPassiveMeter(0.25);
     updateHud();
   }, 250);

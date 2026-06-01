@@ -31,7 +31,7 @@
         <div class="menu-inner">
           <p class="kicker">Training Prototype</p>
           <h1>NO GODS ABOVE</h1>
-          <button id="start-button" type="button">Training Mode</button>
+          <button id="start-button" type="button">Character Select</button>
           <p class="menu-note">Press Enter to begin</p>
         </div>
       </section>
@@ -41,8 +41,28 @@
           <header class="select-header">
             <div class="select-logo">NO GODS ABOVE</div>
             <div class="select-heading">Choose Your Fighter</div>
-            <div class="select-mode">Training Prototype</div>
+            <div id="select-mode-label" class="select-mode">Local Versus</div>
           </header>
+
+          <div class="select-mode-row" aria-label="Character select mode">
+            <button id="select-versus-button" class="select-mode-button active" type="button">Local Versus</button>
+            <button id="select-training-button" class="select-mode-button" type="button">Training Dummy</button>
+          </div>
+
+          <div class="select-slots" aria-live="polite">
+            <div id="p1-select-slot" class="select-slot active">
+              <span class="slot-label">P1 Select</span>
+              <strong id="p1-select-name">KAIRO FINAL</strong>
+              <em id="p1-select-status">Choosing</em>
+            </div>
+            <div id="p2-select-slot" class="select-slot">
+              <span class="slot-label">P2 Select</span>
+              <strong id="p2-select-name">VANTA REIGN</strong>
+              <em id="p2-select-status">Waiting</em>
+            </div>
+          </div>
+
+          <div id="matchup-preview" class="matchup-preview">Choose P1 fighter</div>
 
           <div class="select-grid">
             <button class="select-card kairo selected" type="button" data-character="kairo" aria-label="Choose Kairo Final">
@@ -85,6 +105,8 @@
           <footer class="select-footer" aria-label="Character select controls">
             <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd><kbd>5</kbd> Choose</span>
             <span><kbd>Enter</kbd> Confirm</span>
+            <span><kbd>V</kbd> Versus <kbd>T</kbd> Training</span>
+            <span><kbd>Esc</kbd> Back</span>
           </footer>
         </div>
       </section>

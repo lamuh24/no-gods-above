@@ -2,9 +2,33 @@
 
 ## Last Updated
 Agent: Codex
-Date: 2026-05-31
+Date: 2026-06-01
 
 ## What Was Done
+- Implemented the P1/P2 local-versus character select pass on top of baseline commit `6114501`. Only `NO_GODS_ABOVE\game.js`, `NO_GODS_ABOVE\index.html`, and `NO_GODS_ABOVE\style.css` were changed.
+- Character select now defaults to Local Versus and has explicit P1/P2 selection slots, ready states, matchup preview, P1/P2 card badges, and Back/Escape stepping from ready -> P2 -> P1 -> title. Training Dummy remains available from the select screen with `T` or the Training Dummy mode button.
+- Added explicit selection state in `game.js`: `selectedP1CharacterId`, `selectedP2CharacterId`, `selectCursorCharacterId`, `selectGameMode`, `activeSelectSide`, `p1Ready`, and `p2Ready`. Local versus starts with the selected P1 and selected P2 IDs; training still uses the selected P1 and the existing dummy/opponent path.
+- Added P2 keyboard support for local versus only by reusing the existing enemy fighter entity and enemy move set: ArrowLeft/ArrowRight move, ArrowUp jump, ArrowDown crouch/block/down, Numpad1 light, Numpad2 medium, Numpad3 heavy, Numpad4 special 1, Numpad5 special 2, Numpad6 special 3. P1 controls remain the existing WASD + J/K/L + U modifier + I/O ultimate + Shift dash layout.
+- Smoke validation passed with a dependency-free Chrome DevTools harness from a temp file: Nyx vs Kairo, Nyx vs Sol, Sol vs Nyx, Kairo vs Vanta, Vanta vs Sol, and Seris vs Seris all loaded with correct HUD names; Training Dummy still launched Seris vs Vanta dummy; P1 reduced P2 HP to `86.6%`; P2 reduced P1 HP to `77.9%`; console/request issue count was `0`; stale Seris Sheet 8 / `seris_generated` / old `seris_final` requests were `0`.
+- Safety checks: `SERIS_CHAIN_VFX_RUNTIME_ENABLED` remains `false`; no Sheet 8 regular gameplay VFX was restored; no character assets/configs were edited; no controller support was started; no hitboxes, hurtboxes, damage, health, movement values, frame data, or combo rules were changed.
+
+## In Progress
+- P1/P2 local versus is implemented and smoke-passed, but not committed in this session. Current intentional tracked changes are `NO_GODS_ABOVE\game.js`, `NO_GODS_ABOVE\index.html`, and `NO_GODS_ABOVE\style.css`.
+- The worktree still contains many pre-existing untracked Seris/Sol/Nyx validation screenshots, caches, quarantine/rollback folders, and old/generated Seris artifacts from earlier milestones. They were not touched for P1/P2.
+
+## Key Decisions
+- Local versus reuses the existing `player` and `enemy` combat entities instead of duplicating character code. In versus mode, the enemy entity becomes P2-human-controlled and CPU/dummy behavior remains limited to Training mode.
+- Same-character mirror matches are allowed; `Seris vs Seris` smoke-passed.
+- P2 uses the existing enemy-profile move keys/animations for the selected character. This keeps the change narrow and avoids rewriting character gameplay while preparing the local multiplayer structure.
+
+## What's Next
+- Review/polish the P1/P2 select UI spacing if desired, then commit the P1/P2 pass.
+- After this pass is accepted, the project is ready to plan controller/remapping work separately.
+
+## Gotchas / Watch Out For
+- The in-app Browser plugin was blocked from opening the local static URL with `net::ERR_BLOCKED_BY_CLIENT`, so rendered validation used a local Chrome DevTools smoke harness instead.
+- Full local smoke is slow because the game reloads many sprite atlases per matchup; use a longer timeout when rerunning the matrix.
+
 - Replaced the rejected Seris Sheet 4 Row 1 / Air Medium polish with a fresh generated row-only strip. The previous existing-frame cleanup approach was discarded, and `NO_GODS_ABOVE\scripts\polish_seris_revamp_final.py` was removed so it is not reused.
 - Added `NO_GODS_ABOVE\scripts\replace_seris_sheet4_air_medium_row.py`, which copies the generated chroma source, extracts and cleans the Air Medium frames, removes preview green/white background artifacts, writes the runtime strip, and inserts it only into Sheet 4 row 1.
 - New Air Medium source copy: `NO_GODS_ABOVE\assets\sprites\seris_revamp\seris_sheet4_air_medium_row1_replacement_generated_chroma.png`; runtime strip: `NO_GODS_ABOVE\assets\sprites\seris_revamp\seris_sheet4_air_medium_row1_replacement_strip.png`; updated runtime atlas: `NO_GODS_ABOVE\assets\sprites\seris_revamp_final\seris_revamp_final_sheet_4_air_normals_atlas.png`.
