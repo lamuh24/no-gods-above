@@ -1,0 +1,372 @@
+{
+  "input": "assets\\sprites\\seris_revamp\\seris_sheet_2_air_movement_revamp_atlas.png",
+  "status": "pass",
+  "contract": {
+    "sheet": "Seris Sheet 2 - Air Movement",
+    "atlas": [
+      2304,
+      2304
+    ],
+    "cell": [
+      384,
+      384
+    ],
+    "grid": [
+      6,
+      6
+    ],
+    "frameCounts": [
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+    ],
+    "runtime": {
+      "fixedSourceCells": true,
+      "skipSanitize": true,
+      "baselineY": 350
+    }
+  },
+  "checks": {
+    "actualSize": [
+      2304,
+      2304
+    ],
+    "transparentPixels": 4409047,
+    "opaquePixels": 899369,
+    "outerEdgeOpaquePixels": 0,
+    "opaqueChromaGreenPixels": 0,
+    "opaqueMagentaPixels": 0
+  },
+  "failures": [],
+  "warnings": [],
+  "cells": [
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 30178,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 32265,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 36060,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 37512,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 4,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 5,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 29218,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 29196,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 30650,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 31715,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 4,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 5,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 29516,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 30855,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 31132,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 31583,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 4,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 5,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 32569,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 31623,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 31460,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 32023,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 4,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 5,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 32105,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 32694,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 33141,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 31989,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 4,
+      "activeFrame": true,
+      "opaquePixels": 33222,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 5,
+      "activeFrame": true,
+      "opaquePixels": 32480,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 33431,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 32745,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 32084,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 32088,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 4,
+      "activeFrame": true,
+      "opaquePixels": 33267,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 5,
+      "activeFrame": true,
+      "opaquePixels": 32568,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    }
+  ],
+  "contactSheet": "assets\\sprites\\seris_revamp\\validation\\seris_sheet_2_air_movement_revamp_atlas_contact.png"
+}

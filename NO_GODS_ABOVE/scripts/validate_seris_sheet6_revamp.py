@@ -1,0 +1,307 @@
+#!/usr/bin/env python3
+"""Validate a clean Seris Sheet 6 revamp atlas before runtime wiring."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from collections import deque
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+
+
+ATLAS_W = 2304
+ATLAS_H = 3072
+CELL = 384
+COLS = 6
+ROWS = 8
+FRAME_COUNTS = [4, 4, 4, 3, 4, 6, 5, 5]
+ROW_NAMES = [
+    "standing_block_guard",
+    "crouch_block_low_guard",
+    "air_block_air_guard",
+    "light_hit_reaction",
+    "medium_hit_reaction",
+    "heavy_hitstun_stagger",
+    "air_hitstun",
+    "wall_knockback_strong_reaction",
+]
+
+MAGENTA = (255, 0, 255)
+EDGE_MARGIN = 4
+TOP_BOTTOM_FRAGMENT_MARGIN = 16
+MIN_FRAGMENT_AREA = 30
+
+
+def rel_to_root(path: Path, root: Path) -> str:
+    try:
+        return path.resolve().relative_to(root.resolve()).as_posix()
+    except ValueError:
+        return str(path.resolve())
+
+
+def connected_components(mask: np.ndarray) -> list[dict[str, int]]:
+    height, width = mask.shape
+    seen = np.zeros(mask.shape, dtype=bool)
+    components: list[dict[str, int]] = []
+    ys, xs = np.where(mask)
+    for start_y, start_x in zip(ys, xs):
+        if seen[start_y, start_x]:
+            continue
+        q: deque[tuple[int, int]] = deque([(int(start_y), int(start_x))])
+        seen[start_y, start_x] = True
+        area = 0
+        min_x = max_x = int(start_x)
+        min_y = max_y = int(start_y)
+        while q:
+            y, x = q.popleft()
+            area += 1
+            min_x = min(min_x, x)
+            max_x = max(max_x, x)
+            min_y = min(min_y, y)
+            max_y = max(max_y, y)
+            for ny in (y - 1, y, y + 1):
+                for nx in (x - 1, x, x + 1):
+                    if ny == y and nx == x:
+                        continue
+                    if 0 <= ny < height and 0 <= nx < width and mask[ny, nx] and not seen[ny, nx]:
+                        seen[ny, nx] = True
+                        q.append((ny, nx))
+        components.append({"area": area, "minX": min_x, "minY": min_y, "maxX": max_x, "maxY": max_y})
+    return components
+
+
+def analyze_cells(arr: np.ndarray) -> tuple[list[dict[str, Any]], list[str], list[str]]:
+    cells: list[dict[str, Any]] = []
+    failures: list[str] = []
+    warnings: list[str] = []
+
+    for row in range(ROWS):
+        for col in range(COLS):
+            x0 = col * CELL
+            y0 = row * CELL
+            cell = arr[y0 : y0 + CELL, x0 : x0 + CELL, :]
+            alpha = cell[:, :, 3] > 0
+            opaque = int(alpha.sum())
+            cell_i = cell.astype(np.int16)
+            mx = np.maximum.reduce([cell_i[:, :, 0], cell_i[:, :, 1], cell_i[:, :, 2]])
+            mn = np.minimum.reduce([cell_i[:, :, 0], cell_i[:, :, 1], cell_i[:, :, 2]])
+            magenta = (
+                (cell[:, :, 0] == MAGENTA[0])
+                & (cell[:, :, 1] == MAGENTA[1])
+                & (cell[:, :, 2] == MAGENTA[2])
+                & alpha
+            )
+            green = (
+                (cell_i[:, :, 3] > 0)
+                & (cell_i[:, :, 1] > 50)
+                & (cell_i[:, :, 0] < 150)
+                & (cell_i[:, :, 2] < 150)
+                & (cell_i[:, :, 1] - cell_i[:, :, 0] > 15)
+                & (cell_i[:, :, 1] - cell_i[:, :, 2] > 15)
+            )
+            bright_low_sat = (
+                alpha
+                & (cell_i[:, :, 0] > 150)
+                & (cell_i[:, :, 1] > 150)
+                & (cell_i[:, :, 2] > 150)
+                & ((mx - mn) < 80)
+            )
+
+            lower_band = np.zeros(alpha.shape, dtype=bool)
+            lower_band[300:, :] = True
+            grid_like = [
+                c
+                for c in connected_components(bright_low_sat & lower_band)
+                if (
+                    c["maxX"] - c["minX"] + 1 >= 25
+                    and c["maxY"] - c["minY"] + 1 <= 8
+                    and c["area"] >= 25
+                )
+                or (
+                    c["minY"] >= CELL - 55
+                    and c["maxX"] - c["minX"] + 1 >= 5
+                    and c["maxY"] - c["minY"] + 1 <= 3
+                    and c["area"] >= 4
+                )
+            ]
+            grid_like.extend(
+                [
+                    c
+                    for c in connected_components(bright_low_sat)
+                    if c["maxY"] - c["minY"] + 1 >= 18
+                    and c["maxX"] - c["minX"] + 1 <= 3
+                    and c["area"] >= 18
+                ]
+            )
+
+            edge_mask = np.zeros(alpha.shape, dtype=bool)
+            edge_mask[:EDGE_MARGIN, :] = True
+            edge_mask[-EDGE_MARGIN:, :] = True
+            edge_mask[:, :EDGE_MARGIN] = True
+            edge_mask[:, -EDGE_MARGIN:] = True
+            cell_edge_opaque = int((alpha & edge_mask).sum())
+
+            top_bottom = np.zeros(alpha.shape, dtype=bool)
+            top_bottom[:TOP_BOTTOM_FRAGMENT_MARGIN, :] = True
+            top_bottom[-TOP_BOTTOM_FRAGMENT_MARGIN:, :] = True
+            top_bottom_components = [
+                c for c in connected_components(alpha & top_bottom) if c["area"] >= MIN_FRAGMENT_AREA
+            ]
+
+            is_trailing = col >= FRAME_COUNTS[row]
+            magenta_count = int(magenta.sum())
+            green_count = int(green.sum())
+            record = {
+                "row": row,
+                "rowName": ROW_NAMES[row],
+                "col": col,
+                "activeFrame": not is_trailing,
+                "opaquePixels": opaque,
+                "opaqueMagentaPixels": magenta_count,
+                "opaqueChromaGreenPixels": green_count,
+                "previewGridFragments": grid_like,
+                "cellEdgeOpaquePixels": cell_edge_opaque,
+                "topBottomFragments": top_bottom_components,
+            }
+            cells.append(record)
+
+            label = f"row {row} {ROW_NAMES[row]} col {col}"
+            if not is_trailing and opaque == 0:
+                failures.append(f"{label}: active frame is empty")
+            if magenta_count:
+                failures.append(f"{label}: contains {magenta_count} opaque magenta pixels")
+            if green_count:
+                failures.append(f"{label}: contains {green_count} opaque chroma/green-spill pixels")
+            if grid_like:
+                failures.append(f"{label}: preview grid-line fragments detected: {grid_like}")
+            if cell_edge_opaque:
+                failures.append(f"{label}: {cell_edge_opaque} opaque pixels touch the {EDGE_MARGIN}px cell edge margin")
+            if top_bottom_components:
+                failures.append(f"{label}: top/bottom edge fragment components detected: {top_bottom_components}")
+            if is_trailing and opaque and not top_bottom_components and not cell_edge_opaque:
+                warnings.append(f"{label}: trailing cell is non-empty; visually confirm it is a clean held pose")
+
+    return cells, failures, warnings
+
+
+def make_contact_sheet(image: Image.Image, output_path: Path) -> None:
+    scale = 0.42
+    thumb = int(CELL * scale)
+    label_w = 210
+    label_h = 20
+    font = ImageFont.load_default()
+    out = Image.new("RGBA", (label_w + COLS * thumb, ROWS * (thumb + label_h)), (28, 26, 34, 255))
+    draw = ImageDraw.Draw(out)
+    for row in range(ROWS):
+        y = row * (thumb + label_h)
+        draw.text((4, y + 4), f"{row}: {ROW_NAMES[row]} ({FRAME_COUNTS[row]})", fill=(232, 232, 238), font=font)
+        for col in range(COLS):
+            cell = image.crop((col * CELL, row * CELL, (col + 1) * CELL, (row + 1) * CELL))
+            bg = Image.new("RGBA", cell.size, (42, 40, 50, 255))
+            bg.alpha_composite(cell)
+            cell_thumb = bg.resize((thumb, thumb), Image.Resampling.NEAREST)
+            x = label_w + col * thumb
+            out.alpha_composite(cell_thumb, (x, y + label_h))
+            outline = (95, 92, 112, 255) if col < FRAME_COUNTS[row] else (170, 120, 80, 255)
+            draw.rectangle((x, y + label_h, x + thumb - 1, y + label_h + thumb - 1), outline=outline)
+            draw.text((x + 3, y + 4), str(col), fill=(210, 210, 218), font=font)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    out.convert("RGB").save(output_path)
+
+
+def validate(input_path: Path, out_dir: Path, root: Path) -> int:
+    failures: list[str] = []
+    warnings: list[str] = []
+    image = Image.open(input_path)
+    has_alpha = image.mode in ("RGBA", "LA") or "transparency" in image.info
+    image_rgba = image.convert("RGBA")
+    arr = np.array(image_rgba)
+    alpha = arr[:, :, 3] > 0
+
+    if image_rgba.size != (ATLAS_W, ATLAS_H):
+        failures.append(f"PNG dimensions must be {ATLAS_W}x{ATLAS_H}; got {image_rgba.size[0]}x{image_rgba.size[1]}")
+    if not has_alpha:
+        failures.append("PNG must include an alpha channel / transparent background")
+    if not np.any(~alpha):
+        failures.append("PNG has no transparent pixels; transparent background is required")
+
+    edge = np.zeros(alpha.shape, dtype=bool)
+    edge[0, :] = True
+    edge[-1, :] = True
+    edge[:, 0] = True
+    edge[:, -1] = True
+    outer_edge_opaque = int((alpha & edge).sum())
+    if outer_edge_opaque:
+        failures.append(f"Atlas outer edge has {outer_edge_opaque} opaque pixels")
+
+    magenta = (arr[:, :, 0] == MAGENTA[0]) & (arr[:, :, 1] == MAGENTA[1]) & (arr[:, :, 2] == MAGENTA[2]) & alpha
+    magenta_count = int(magenta.sum())
+    if magenta_count:
+        failures.append(f"Atlas contains {magenta_count} opaque magenta pixels")
+
+    arr_i = arr.astype(np.int16)
+    green = (
+        (arr_i[:, :, 3] > 0)
+        & (arr_i[:, :, 1] > 50)
+        & (arr_i[:, :, 0] < 150)
+        & (arr_i[:, :, 2] < 150)
+        & (arr_i[:, :, 1] - arr_i[:, :, 0] > 15)
+        & (arr_i[:, :, 1] - arr_i[:, :, 2] > 15)
+    )
+    green_count = int(green.sum())
+    if green_count:
+        failures.append(f"Atlas contains {green_count} opaque chroma/green-spill pixels")
+
+    cells, cell_failures, cell_warnings = analyze_cells(arr)
+    failures.extend(cell_failures)
+    warnings.extend(cell_warnings)
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    contact_path = out_dir / f"{input_path.stem}_contact.png"
+    report_path = out_dir / f"{input_path.stem}_validation_report.json"
+    make_contact_sheet(image_rgba, contact_path)
+    report = {
+        "input": rel_to_root(input_path, root),
+        "status": "pass" if not failures else "fail",
+        "contract": {
+            "sheet": "Seris Sheet 6 - Defense / Hit Reactions",
+            "atlas": [ATLAS_W, ATLAS_H],
+            "cell": [CELL, CELL],
+            "grid": [COLS, ROWS],
+            "frameCounts": FRAME_COUNTS,
+            "runtime": {"fixedSourceCells": True, "skipSanitize": True, "baselineY": 350},
+        },
+        "checks": {
+            "actualSize": list(image_rgba.size),
+            "hasAlpha": has_alpha,
+            "transparentPixels": int((~alpha).sum()),
+            "opaquePixels": int(alpha.sum()),
+            "outerEdgeOpaquePixels": outer_edge_opaque,
+            "opaqueChromaGreenPixels": green_count,
+            "opaqueMagentaPixels": magenta_count,
+        },
+        "failures": failures,
+        "warnings": warnings,
+        "cells": cells,
+        "contactSheet": rel_to_root(contact_path, root),
+    }
+    report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    print(json.dumps({"status": report["status"], "report": str(report_path), "contactSheet": str(contact_path)}, indent=2))
+    return 0 if not failures else 1
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Validate Seris Sheet 6 revamp atlas.")
+    parser.add_argument("input", type=Path)
+    parser.add_argument("--out-dir", type=Path, default=Path("assets/sprites/seris_revamp/validation"))
+    args = parser.parse_args()
+    root = Path(__file__).resolve().parents[1]
+    return validate(args.input, args.out_dir, root)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,496 @@
+{
+  "character": "Nyx",
+  "purpose": "Final transparent runtime atlases for No Gods Above Nyx sprite import.",
+  "cellSize": 320,
+  "baselineY": 300,
+  "previousPlaceholderReferences": {
+    "concept": "nyxConcept3x6",
+    "fallbackSheets": [
+      "kairoFinalBasic",
+      "kairoFinalDefense",
+      "kairoFinalCoreA",
+      "kairoFinalCoreB",
+      "kairoFinalLowAir",
+      "kairoFinalSpecials",
+      "kairoFinalEnd"
+    ]
+  },
+  "sheets": [
+    {
+      "id": "sheet_1_core_movement",
+      "source": "assets/sprites/nyx_generated/nyx_core_movement_dbfz_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png",
+      "cols": 6,
+      "rows": 6,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "idle",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 1,
+          "animation": "walk_forward",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 2,
+          "animation": "walk_back",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 3,
+          "animation": "dash",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 4,
+          "animation": "dash_back",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 5,
+          "animation": "crouch",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        }
+      ],
+      "validation": {
+        "size": [
+          1920,
+          1920
+        ],
+        "opaquePixels": 434215,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    },
+    {
+      "id": "sheet_2_air_movement",
+      "source": "assets/sprites/nyx_generated/nyx_sheet_2_air_movement_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_2_air_movement_atlas.png",
+      "cols": 6,
+      "rows": 6,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "jump_up",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 1,
+          "animation": "jump_forward",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 2,
+          "animation": "jump_back",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 3,
+          "animation": "fall",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 4,
+          "animation": "air_dash_forward",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 5,
+          "animation": "air_dash_back",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": false
+        }
+      ],
+      "validation": {
+        "size": [
+          1920,
+          1920
+        ],
+        "opaquePixels": 345421,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    },
+    {
+      "id": "sheet_3_ground_normals",
+      "source": "assets/sprites/nyx_generated/nyx_sheet_3_ground_normals_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_3_ground_normals_atlas.png",
+      "cols": 8,
+      "rows": 4,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "light_attack",
+          "sourceFrames": 4,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 1,
+          "animation": "medium_attack",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 2,
+          "animation": "heavy_attack",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 3,
+          "animation": "launcher",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        }
+      ],
+      "validation": {
+        "size": [
+          2560,
+          1280
+        ],
+        "opaquePixels": 364225,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    },
+    {
+      "id": "sheet_4_air_normals",
+      "source": "assets/sprites/nyx_generated/nyx_sheet_4_air_normals_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_4_air_normals_atlas.png",
+      "cols": 6,
+      "rows": 4,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "air_light",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 1,
+          "animation": "air_medium",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 2,
+          "animation": "air_heavy",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 3,
+          "animation": "air_recovery",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        }
+      ],
+      "validation": {
+        "size": [
+          1920,
+          1280
+        ],
+        "opaquePixels": 265471,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    },
+    {
+      "id": "sheet_5_specials",
+      "source": "assets/sprites/nyx_generated/nyx_sheet_5_specials_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_5_specials_atlas.png",
+      "cols": 10,
+      "rows": 7,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "shadow_step_start",
+          "sourceFrames": 4,
+          "runtimeFrames": 10,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 1,
+          "animation": "shadow_step_travel",
+          "sourceFrames": 6,
+          "runtimeFrames": 10,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 2,
+          "animation": "shadow_step_end",
+          "sourceFrames": 4,
+          "runtimeFrames": 10,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 3,
+          "animation": "falling_slash_start",
+          "sourceFrames": 3,
+          "runtimeFrames": 10,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 4,
+          "animation": "falling_slash_active",
+          "sourceFrames": 4,
+          "runtimeFrames": 10,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 5,
+          "animation": "falling_slash_land",
+          "sourceFrames": 4,
+          "runtimeFrames": 10,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 6,
+          "animation": "rapid_flurry",
+          "sourceFrames": 10,
+          "runtimeFrames": 10,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        }
+      ],
+      "validation": {
+        "size": [
+          3200,
+          2240
+        ],
+        "opaquePixels": 584919,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    },
+    {
+      "id": "sheet_6_defense_hit_reactions",
+      "source": "assets/sprites/nyx_generated/nyx_sheet_6_defense_hit_reactions_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_6_defense_hit_reactions_atlas.png",
+      "cols": 6,
+      "rows": 8,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "stand_block",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 1,
+          "animation": "crouch_block",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 2,
+          "animation": "air_block",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 3,
+          "animation": "light_hitstun",
+          "sourceFrames": 3,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 4,
+          "animation": "medium_hitstun",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 5,
+          "animation": "heavy_hitstun",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 6,
+          "animation": "launch_hitstun",
+          "sourceFrames": 5,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 7,
+          "animation": "air_hitstun",
+          "sourceFrames": 5,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        }
+      ],
+      "validation": {
+        "size": [
+          1920,
+          2560
+        ],
+        "opaquePixels": 412681,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    },
+    {
+      "id": "sheet_7_knockdown_recovery_flavor",
+      "source": "assets/sprites/nyx_generated/nyx_sheet_7_knockdown_recovery_flavor_chroma.png",
+      "output": "assets/sprites/nyx_final/nyx_sheet_7_knockdown_recovery_flavor_atlas.png",
+      "cols": 8,
+      "rows": 7,
+      "cellSize": 320,
+      "baselineY": 300,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "knockdown_fall",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "air",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 1,
+          "animation": "grounded",
+          "sourceFrames": 3,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 2,
+          "animation": "recovery_get_up",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": true
+        },
+        {
+          "row": 3,
+          "animation": "ko_defeat",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 4,
+          "animation": "intro",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 5,
+          "animation": "victory",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        },
+        {
+          "row": 6,
+          "animation": "taunt",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "paddedByHoldingLastFrame": false
+        }
+      ],
+      "validation": {
+        "size": [
+          2560,
+          2240
+        ],
+        "opaquePixels": 386220,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true
+      }
+    }
+  ]
+}

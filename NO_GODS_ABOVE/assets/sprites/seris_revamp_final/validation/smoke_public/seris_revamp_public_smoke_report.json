@@ -1,0 +1,814 @@
+{
+  "status": "pass",
+  "baseUrl": "http://127.0.0.1:58134",
+  "public": {
+    "cards": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "hasSerisCard": true,
+    "helperExists": false,
+    "expectedCards": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "selectScreenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/public_character_select.png",
+    "fighterSmokes": [
+      {
+        "characterId": "kairo",
+        "playerName": "KAIRO FINAL",
+        "roundStatus": "VANTA DUMMY",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "characterId": "vanta",
+        "playerName": "VANTA REIGN",
+        "roundStatus": "NYX DUMMY",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "characterId": "nyx",
+        "playerName": "NYX",
+        "roundStatus": "KAIRO DUMMY",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "characterId": "sol",
+        "playerName": "SOL RAZE",
+        "roundStatus": "VANTA DUMMY",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "characterId": "seris",
+        "playerName": "SERIS",
+        "roundStatus": "VANTA DUMMY",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/public_seris_selected.png"
+      }
+    ],
+    "serisFinalRequests": [
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1"
+    ],
+    "sheet8Requests": [],
+    "failedOrConsoleErrors": []
+  },
+  "hidden": {
+    "mode": "training",
+    "playerId": "seris",
+    "enemyId": "vanta",
+    "publicSelectable": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "hiddenSelectable": [
+      "seris"
+    ],
+    "chainVfxEnabled": false,
+    "loadedSerisAssets": {
+      "serisFinalCoreMovement": true,
+      "serisFinalAirMovement": true,
+      "serisFinalGroundNormals": true,
+      "serisFinalAirNormals": true,
+      "serisFinalSpecials": true,
+      "serisFinalDefense": true,
+      "serisFinalEndStates": true,
+      "serisChainWhipVfx": false
+    },
+    "hasSerisCard": true,
+    "serisFinalRequests": [
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+      "http://127.0.0.1:58134/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1"
+    ],
+    "sheet8Requests": [],
+    "failedOrConsoleErrors": [],
+    "stateResults": [
+      {
+        "name": "idle",
+        "result": "idle",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/idle.png"
+      },
+      {
+        "name": "walk_forward",
+        "result": "walk_forward",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/walk_forward.png"
+      },
+      {
+        "name": "walk_back",
+        "result": "walk_back",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "dash_forward",
+        "result": "dash_forward",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/dash_forward.png"
+      },
+      {
+        "name": "dash_back",
+        "result": "dash_back",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "crouch",
+        "result": "crouch",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "jump_up",
+        "result": "jump_up",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/jump_up.png"
+      },
+      {
+        "name": "jump_forward",
+        "result": "jump_forward",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "jump_back",
+        "result": "jump_back",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "fall",
+        "result": "fall",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "air_dash_forward",
+        "result": "air_dash_forward",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/air_dash_forward.png"
+      },
+      {
+        "name": "air_dash_back",
+        "result": "air_dash_back",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "block",
+        "result": "stand_block",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/block.png"
+      },
+      {
+        "name": "crouch_block",
+        "result": "crouch_block",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "air_block",
+        "result": "air_block",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "light_hitstun",
+        "result": "light_hitstun",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "medium_hitstun",
+        "result": "medium_hitstun",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "heavy_hitstun",
+        "result": "heavy_hitstun",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/heavy_hitstun.png"
+      },
+      {
+        "name": "launch_hitstun",
+        "result": "launch_hitstun",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "air_hitstun",
+        "result": "air_hitstun",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "knockdown_fall",
+        "result": "knockdown_fall",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/knockdown_fall.png"
+      },
+      {
+        "name": "grounded_downed",
+        "result": "grounded",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "get_up",
+        "result": "get_up",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/get_up.png"
+      },
+      {
+        "name": "intro",
+        "result": "intro",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/intro.png"
+      },
+      {
+        "name": "victory",
+        "result": "victory",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/victory.png"
+      },
+      {
+        "name": "taunt",
+        "result": "taunt",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/taunt.png"
+      },
+      {
+        "name": "left_facing_idle",
+        "result": "idle",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/left_facing_idle.png"
+      },
+      {
+        "name": "right_facing_idle",
+        "result": "idle",
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/right_facing_idle.png"
+      },
+      {
+        "name": "neutral_light",
+        "result": {
+          "move": "neutral_light",
+          "anim": "neutral_light"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/neutral_light.png"
+      },
+      {
+        "name": "forward_light",
+        "result": {
+          "move": "forward_light",
+          "anim": "forward_light"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "back_light",
+        "result": {
+          "move": "back_light",
+          "anim": "back_light"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "down_light",
+        "result": {
+          "move": "down_light",
+          "anim": "down_light"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "neutral_medium",
+        "result": {
+          "move": "neutral_medium",
+          "anim": "neutral_medium"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/neutral_medium.png"
+      },
+      {
+        "name": "forward_medium",
+        "result": {
+          "move": "forward_medium",
+          "anim": "forward_medium"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "back_medium",
+        "result": {
+          "move": "back_medium",
+          "anim": "back_medium"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "down_medium",
+        "result": {
+          "move": "down_medium",
+          "anim": "down_medium"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "neutral_heavy",
+        "result": {
+          "move": "neutral_heavy",
+          "anim": "neutral_heavy"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/neutral_heavy.png"
+      },
+      {
+        "name": "forward_heavy",
+        "result": {
+          "move": "forward_heavy",
+          "anim": "forward_heavy"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "back_heavy",
+        "result": {
+          "move": "back_heavy",
+          "anim": "back_heavy"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "launcher",
+        "result": {
+          "move": null,
+          "anim": "back_heavy"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/launcher.png"
+      },
+      {
+        "name": "down_heavy",
+        "result": {
+          "move": "down_heavy",
+          "anim": "down_heavy"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "jump_light",
+        "result": {
+          "move": "jump_light",
+          "anim": "jump_light"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "jump_medium",
+        "result": {
+          "move": "jump_medium",
+          "anim": "jump_medium"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/jump_medium.png"
+      },
+      {
+        "name": "jump_heavy",
+        "result": {
+          "move": "jump_heavy",
+          "anim": "jump_heavy"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/jump_heavy.png"
+      },
+      {
+        "name": "special_1",
+        "result": {
+          "move": "special_1",
+          "anim": "special_1"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/special_1.png"
+      },
+      {
+        "name": "special_2",
+        "result": {
+          "move": "special_2",
+          "anim": "special_2"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/special_2.png"
+      },
+      {
+        "name": "special_3",
+        "result": {
+          "move": "special_3",
+          "anim": "special_3"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": null
+      },
+      {
+        "name": "ultimate",
+        "result": {
+          "move": "ultimate",
+          "anim": "divine_recoil"
+        },
+        "stats": {
+          "width": 1280,
+          "height": 720,
+          "opaqueish": 921600,
+          "magentaPixels": 0,
+          "greenPixels": 0
+        },
+        "screenshot": "assets/sprites/seris_revamp_final/validation/smoke_public/ultimate.png"
+      }
+    ],
+    "badCanvasStates": []
+  },
+  "failures": []
+}

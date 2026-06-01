@@ -19,6 +19,10 @@
   const W = canvas.width;
   const H = canvas.height;
   const GROUND_Y = 590;
+  const debugParams = new URLSearchParams(window.location.search);
+  const SERIS_HIDDEN_TEST_ENABLED = debugParams.has("serisTest");
+  const SERIS_RUNTIME_ENABLED = true;
+  const SERIS_CHAIN_VFX_RUNTIME_ENABLED = false;
   const PLAYER_MAX_HP = 1000;
   const ENEMY_MAX_HP = 1000;
   const METER_MAX = 100;
@@ -78,6 +82,31 @@
     vantaFinalLowAir: "assets/sprites/vanta_final/vanta_sheet_5_low_air.png",
     vantaFinalSpecials: "assets/sprites/vanta_final/vanta_sheet_6_specials_ultimate.png?v=vanta-row-fix-1",
     vantaFinalEnd: "assets/sprites/vanta_final/vanta_sheet_7_end_states_extras.png",
+    nyxConcept3x6: "assets/sprites/nyx_generated/nyx_concept_sheet_3x6_shadow_assassin.png",
+    nyxFinalCoreMovement: "assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png",
+    nyxFinalAirMovement: "assets/sprites/nyx_final/nyx_sheet_2_air_movement_atlas.png",
+    nyxFinalGroundNormals: "assets/sprites/nyx_final/nyx_sheet_3_ground_normals_atlas.png",
+    nyxFinalAirNormals: "assets/sprites/nyx_final/nyx_sheet_4_air_normals_atlas.png",
+    nyxFinalSpecials: "assets/sprites/nyx_final/nyx_sheet_5_specials_atlas.png",
+    nyxFinalDefense: "assets/sprites/nyx_final/nyx_sheet_6_defense_hit_reactions_atlas.png",
+    nyxFinalEndStates: "assets/sprites/nyx_final/nyx_sheet_7_knockdown_recovery_flavor_atlas.png",
+    nyxPhantomSlash: "assets/effects/nyx/nyx_phantom_slash_wave_anim.png",
+    solFinalCoreMovement: "assets/sprites/sol_final/sol_sheet_1_core_movement_atlas.png?v=sol-runtime-1",
+    solFinalAirMovement: "assets/sprites/sol_final/sol_sheet_2_air_movement_atlas.png?v=sol-runtime-1",
+    solFinalGroundNormals: "assets/sprites/sol_final/sol_sheet_3_ground_normals_atlas.png?v=sol-runtime-1",
+    solFinalAirNormals: "assets/sprites/sol_final/sol_sheet_4_air_normals_atlas.png?v=sol-runtime-1",
+    solFinalSpecials: "assets/sprites/sol_final/sol_sheet_5_specials_atlas.png?v=sol-runtime-1",
+    solFinalDefense: "assets/sprites/sol_final/sol_sheet_6_defense_hit_reactions_atlas.png?v=sol-runtime-1",
+    solFinalEndStates: "assets/sprites/sol_final/sol_sheet_7_knockdown_recovery_flavor_atlas.png?v=sol-runtime-1",
+    solFinalDirectionalNormals: "assets/sprites/sol_final/sol_sheet_8_directional_normals_atlas.png?v=sol-directional-normals-1",
+    serisFinalCoreMovement: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1" : null,
+    serisFinalAirMovement: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1" : null,
+    serisFinalGroundNormals: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1" : null,
+    serisFinalAirNormals: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1" : null,
+    serisFinalSpecials: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1" : null,
+    serisFinalDefense: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1" : null,
+    serisFinalEndStates: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1" : null,
+    serisChainWhipVfx: SERIS_RUNTIME_ENABLED && SERIS_CHAIN_VFX_RUNTIME_ENABLED ? "assets/effects/seris/seris_chain_whip_vfx_atlas.png?v=seris-visual-integrity-1" : null,
     vfx: "assets/effects/combat/combat_vfx_sheet.png"
   };
 
@@ -95,7 +124,30 @@
     vantaFinalCoreB: { cols: 6, rows: 5, baselineRatio: 0.94, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
     vantaFinalLowAir: { cols: 6, rows: 5, baselineRatio: 0.94, scale: 1.42, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
     vantaFinalSpecials: { cols: 6, rows: 5, baselineRatio: 0.94, scale: 1.42, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true, noDetachedEffectRows: [2] },
-    vantaFinalEnd: { cols: 6, rows: 5, baselineRatio: 0.94, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter" }
+    vantaFinalEnd: { cols: 6, rows: 5, baselineRatio: 0.94, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+    nyxConcept3x6: { cols: 6, rows: 3, baselineRatio: 0.88, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+    nyxFinalCoreMovement: { cols: 6, rows: 6, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+    nyxFinalAirMovement: { cols: 6, rows: 6, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+    nyxFinalGroundNormals: { cols: 8, rows: 4, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+    nyxFinalAirNormals: { cols: 6, rows: 4, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+    nyxFinalSpecials: { cols: 10, rows: 7, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+    nyxFinalDefense: { cols: 6, rows: 8, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+    nyxFinalEndStates: { cols: 8, rows: 7, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+    solFinalCoreMovement: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [8, 6, 6, 6, 6, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalAirMovement: { cols: 6, rows: 6, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 4, 4, 4, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalGroundNormals: { cols: 7, rows: 4, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 6, 7, 7], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalAirNormals: { cols: 7, rows: 4, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 6, 7, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalSpecials: { cols: 8, rows: 5, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [8, 8, 8, 6, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalDefense: { cols: 6, rows: 8, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 4, 4, 3, 4, 6, 5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalEndStates: { cols: 8, rows: 7, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [6, 3, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    solFinalDirectionalNormals: { cols: 6, rows: 6, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 4, 4, 6, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalCoreMovement: { cols: 8, rows: 6, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [8, 6, 6, 6, 6, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalAirMovement: { cols: 6, rows: 6, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [4, 4, 4, 4, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalGroundNormals: { cols: 8, rows: 4, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 8, 7, 7], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalAirNormals: { cols: 7, rows: 4, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 6, 7, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalSpecials: { cols: 8, rows: 6, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 6, 4, 8, 8, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalDefense: { cols: 6, rows: 8, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [4, 4, 4, 3, 4, 6, 5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    serisFinalEndStates: { cols: 8, rows: 7, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [6, 3, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true }
   };
 
   const baselineMovementStats = {
@@ -313,6 +365,166 @@
     fallbackAttack: "enemy_special_2"
   };
 
+  const solPlayerAttacks = {
+    ...cloneData(baselinePlayerAttacks),
+    special_1: attackDef(102, 7, 7, 15, 36, 118, -150, "heavy", { dash: true, dashCancel: true, softKnockdown: true, meter: 16 }),
+    special_2: attackDef(78, 8, 8, 14, 34, 96, -70, "medium", { cancelOnHit: ["special_3"], dashCancel: true, meter: 14 }),
+    special_3: attackDef(116, 7, 7, 22, 50, 76, -555, "heavy", { rise: true, launcher: true, hardKnockdown: true, meter: 18 }),
+    super_dash: attackDef(68, 2, 24, 8, 34, 120, -260, "heavy", { superDash: true, dashCancel: true, anim: "dash", blockstun: 22, meter: 10 })
+  };
+
+  const solEnemyAttacks = {
+    ...cloneData(baselineEnemyAttacks),
+    enemy_special_1: attackDef(96, 7, 7, 17, 36, 142, -130, "heavy", { enemy: true, dash: true, softKnockdown: true }),
+    enemy_special_2: attackDef(66, 10, 8, 20, 30, 104, -40, "medium", { enemy: true, softKnockdown: true }),
+    enemy_special_3: attackDef(108, 8, 7, 23, 48, 96, -500, "heavy", { enemy: true, rise: true, launcher: true, hardKnockdown: true }),
+    enemy_super_dash: attackDef(68, 2, 24, 8, 34, 120, -260, "heavy", { enemy: true, superDash: true, dashCancel: true, anim: "dash", blockstun: 22, meter: 10 })
+  };
+
+  const solSpecialMoves = {
+    special_1: { type: "solarStep", attack: "special_1" },
+    special_2: { type: "radiantBreak", attack: "special_2" },
+    special_3: { type: "risingHalo", attack: "special_3" },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  const serisMovementStats = {
+    ...cloneData(baselineMovementStats),
+    walkForward: 230,
+    walkBack: 180,
+    dashSpeed: 780,
+    dashDuration: 17 / 60,
+    dashCooldown: 22 / 60,
+    superDashSpeed: 900,
+    superDashCooldown: 30 / 60
+  };
+
+  const serisJumpStats = {
+    ...cloneData(baselineJumpStats),
+    jumpVelocity: -705,
+    gravity: 1780,
+    juggleGravity: 1220,
+    airRecoveryGravity: 1620,
+    airRecoveryDuration: 16 / 60,
+    landingRecovery: 7 / 60
+  };
+
+  const serisAirDashStats = {
+    speed: 710,
+    duration: 13 / 60,
+    cooldown: 14 / 60
+  };
+
+  const serisHitboxes = {
+    light: { w: 92, h: 58, ox: 46, oy: -78 },
+    medium: { w: 152, h: 68, ox: 62, oy: -84 },
+    heavy: { w: 202, h: 88, ox: 72, oy: -98 },
+    low: { w: 164, h: 44, ox: 58, oy: -42 },
+    jump: { w: 136, h: 72, ox: 48, oy: -88 },
+    chain: { w: 242, h: 66, ox: 74, oy: -86 },
+    ultimate: { w: 340, h: 152, ox: 96, oy: -120 }
+  };
+
+  const serisPlayerAttacks = {
+    neutral_light: attackDef(30, 4, 6, 6, 21, 18, -18, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 54 }),
+    neutral_medium: attackDef(56, 6, 7, 11, 32, 38, -70, "medium", { cancelOnHit: ["neutral_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true, stepForward: 46 }),
+    neutral_heavy: attackDef(86, 9, 6, 18, 50, 80, -515, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    forward_light: attackDef(34, 5, 5, 8, 23, 34, -18, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true }),
+    forward_medium: attackDef(62, 7, 6, 12, 34, 76, -70, "medium", { cancelOnHit: ["forward_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true }),
+    forward_heavy: attackDef(94, 11, 6, 19, 48, 92, -500, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    back_light: attackDef(32, 5, 5, 8, 22, 28, -18, "light", { cancelOnHit: ["back_medium", "neutral_medium"], dashCancel: true }),
+    back_medium: attackDef(58, 7, 6, 12, 32, 58, -68, "medium", { cancelOnHit: ["back_heavy", "special_2"], jumpCancel: true, dashCancel: true }),
+    back_heavy: attackDef(88, 10, 6, 20, 48, 54, -520, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    down_light: attackDef(28, 4, 5, 8, 20, 32, 0, "low", { cancelOnHit: ["down_medium", "neutral_medium"] }),
+    down_medium: attackDef(54, 6, 5, 11, 31, 54, -36, "low", { cancelOnHit: ["down_heavy", "special_2"], jumpCancel: true, dashCancel: true }),
+    down_heavy: attackDef(78, 9, 6, 18, 50, 58, -540, "low", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    jump_light: attackDef(30, 4, 5, 5, 24, 30, -16, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
+    jump_medium: attackDef(54, 6, 6, 9, 34, 45, -30, "jump", { air: true, cancelOnHit: ["jump_heavy", "special_1"], dashCancel: true }),
+    jump_heavy: attackDef(80, 8, 6, 14, 42, 54, 210, "jump", { air: true, softKnockdown: true, dashCancel: true }),
+    special_1: attackDef(76, 8, 9, 16, 36, 104, -120, "chain", { projectile: true, projectileSpeed: 620, noHit: true, cancelOnHit: ["neutral_medium"], meter: 12 }),
+    special_2: attackDef(72, 9, 8, 17, 36, 82, -36, "low", { cancelOnHit: ["special_3"], dashCancel: true, meter: 14 }),
+    special_3: attackDef(92, 7, 8, 21, 48, 70, -470, "chain", { dash: true, launcher: true, jumpCancel: true, hardKnockdown: true, meter: 16 }),
+    super_dash: attackDef(64, 3, 22, 9, 34, 112, -250, "chain", { superDash: true, dashCancel: true, anim: "dash_forward", blockstun: 22, meter: 10 }),
+    ultimate: attackDef(230, 11, 18, 34, 54, 310, -240, "ultimate", { ultimate: true, hardKnockdown: true, anim: "divine_recoil" }),
+    taunt: attackDef(0, 0, 0, 32, 0, 0, 0, "light", { noHit: true })
+  };
+
+  const serisEnemyAttacks = {
+    enemy_light_attack: attackDef(30, 6, 5, 10, 22, 52, -15, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
+    enemy_medium_attack: attackDef(54, 8, 5, 14, 31, 78, -62, "medium", { enemy: true, cancelOnHit: ["enemy_heavy_attack"] }),
+    enemy_heavy_attack: attackDef(78, 11, 6, 20, 44, 96, -390, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_forward_heavy: attackDef(90, 12, 6, 20, 44, 120, -360, "heavy", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_special_1: attackDef(70, 9, 8, 18, 34, 132, -105, "chain", { enemy: true, projectile: true, projectileSpeed: 570, noHit: true }),
+    enemy_special_2: attackDef(66, 10, 7, 18, 34, 86, -36, "low", { enemy: true, softKnockdown: true }),
+    enemy_special_3: attackDef(88, 8, 7, 24, 46, 82, -450, "chain", { enemy: true, dash: true, launcher: true, hardKnockdown: true }),
+    enemy_ultimate: attackDef(205, 14, 17, 34, 50, 260, -170, "ultimate", { enemy: true, ultimate: true, hardKnockdown: true, anim: "divine_recoil" })
+  };
+
+  const serisComboRoutes = {
+    autoCombos: {
+      neutral_light: "neutral_medium",
+      neutral_medium: "neutral_heavy"
+    },
+    airCombos: {
+      jump_light: "jump_medium",
+      jump_medium: "jump_heavy"
+    }
+  };
+
+  const serisSpecialMoves = {
+    special_1: { type: "chainSnare", attack: "special_1", projectileWidth: 156, projectileHeight: 30, projectileLife: 0.82, spawnOffsetX: 136, spawnOffsetY: -84 },
+    special_2: { type: "sanctumSweep", attack: "special_2" },
+    special_3: { type: "divineRecoil", attack: "special_3" },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  const serisVfxMappings = {
+    special_1: "vfx_horizontal_chain_snare",
+    special_2: "vfx_low_sweep_chain_arc",
+    special_3: "vfx_divine_recoil_tether_pull",
+    ultimate: "vfx_rising_launcher_chain_arc",
+    enemy_special_1: "vfx_horizontal_chain_snare",
+    enemy_special_2: "vfx_low_sweep_chain_arc",
+    enemy_special_3: "vfx_divine_recoil_tether_pull",
+    enemy_ultimate: "vfx_rising_launcher_chain_arc"
+  };
+
+  const serisChainWhipVfxRows = {
+    vfx_quick_chain_flick: { row: 0, frames: 5, scale: 0.6, ox: -8, oy: -98, start: 0.08, end: 0.84, alpha: 0.88, snapX: 166, snapY: -96 },
+    vfx_horizontal_chain_snare: { row: 1, frames: 7, scale: 0.72, ox: -2, oy: -104, start: 0.05, end: 0.92, alpha: 0.9, snapX: 344, snapY: -102 },
+    vfx_low_sweep_chain_arc: { row: 2, frames: 7, scale: 0.72, ox: -6, oy: -42, start: 0.04, end: 0.9, alpha: 0.86, snapX: 334, snapY: -36 },
+    vfx_rising_launcher_chain_arc: { row: 3, frames: 7, scale: 0.78, ox: -70, oy: -142, start: 0.04, end: 0.92, alpha: 0.9, snapX: 220, snapY: -178 },
+    vfx_aerial_forward_chain_arc: { row: 4, frames: 6, scale: 0.7, ox: -42, oy: -92, start: 0.04, end: 0.9, alpha: 0.86, snapX: 276, snapY: -104 },
+    vfx_aerial_downward_finisher_arc: { row: 5, frames: 6, scale: 0.72, ox: -58, oy: -74, start: 0.04, end: 0.9, alpha: 0.88, snapX: 268, snapY: -46 },
+    vfx_divine_recoil_tether_pull: { row: 6, frames: 8, scale: 0.76, ox: -4, oy: -100, start: 0.0, end: 0.88, alpha: 0.86, snapX: 326, snapY: -100 }
+  };
+
+  const serisMoveVfxOverrides = {
+    special_1: { accentOnly: true, scale: 0.74, ox: -6, oy: -104, end: 0.86, snapX: 366 },
+    special_2: { accentOnly: true, scale: 0.76, ox: -8, oy: -38, end: 0.86, snapX: 358, snapY: -34 },
+    special_3: { accentOnly: true, scale: 0.78, ox: -4, oy: -96, end: 0.82, snapX: 338 },
+    ultimate: { accentOnly: true, scale: 0.82, ox: -78, oy: -144, alpha: 0.94, snapX: 226, snapY: -184 }
+  };
+
+  const serisEnemyAI = {
+    ...cloneData(baselineEnemyAI),
+    walkSpeed: 128,
+    attackRange: 348,
+    minCooldown: 1.0,
+    maxCooldown: 1.72,
+    farRange: 330,
+    farAttack: "enemy_special_1",
+    weightedAttacks: [
+      { threshold: 0.34, move: "enemy_medium_attack" },
+      { threshold: 0.58, move: "enemy_light_attack" },
+      { threshold: 0.76, move: "enemy_heavy_attack" },
+      { threshold: 0.92, move: "enemy_special_2" }
+    ],
+    fallbackAttack: "enemy_special_3"
+  };
+
   const characterProfiles = {
     kairo: {
       id: "kairo",
@@ -419,18 +631,109 @@
       hurtboxWidth: 58,
       playable: true,
       futurePlayer2: true,
-      placeholderArt: "kairoFinal",
+      placeholderArt: "replacedByNyxFinalAtlases",
       sheets: {
-        basic: "kairoFinalBasic",
-        defense: "kairoFinalDefense",
-        coreA: "kairoFinalCoreA",
-        coreB: "kairoFinalCoreB",
-        lowAir: "kairoFinalLowAir",
-        specials: "kairoFinalSpecials",
-        end: "kairoFinalEnd"
+        coreMovement: "nyxFinalCoreMovement",
+        airMovement: "nyxFinalAirMovement",
+        groundNormals: "nyxFinalGroundNormals",
+        airNormals: "nyxFinalAirNormals",
+        specials: "nyxFinalSpecials",
+        defense: "nyxFinalDefense",
+        endStates: "nyxFinalEndStates"
       },
-      buildPlayerAnimations: buildFinalFighterPlayerAnimations,
-      buildEnemyAnimations: buildFinalFighterEnemyAnimations
+      buildPlayerAnimations: buildNyxFinalPlayerAnimations,
+      buildEnemyAnimations: buildNyxFinalEnemyAnimations
+    },
+    sol: {
+      id: "sol",
+      name: "SOL RAZE",
+      shortName: "SOL",
+      subtitle: "THE IRON SUN",
+      role: "SOLAR BRAWLER",
+      health: PLAYER_MAX_HP,
+      movement: cloneData(baselineMovementStats),
+      jump: cloneData(baselineJumpStats),
+      airDash: cloneData(baselineAirDashStats),
+      attacks: {
+        player: cloneData(solPlayerAttacks),
+        enemy: cloneData(solEnemyAttacks)
+      },
+      comboRoutes: cloneData(baselineComboRoutes),
+      hitboxes: cloneData(baselineHitboxes),
+      hurtboxes: {
+        standing: { w: 66, h: 164 },
+        crouching: { w: 66, h: 94 },
+        dead: { w: 66, h: 62 }
+      },
+      specialMoves: cloneData(solSpecialMoves),
+      ai: cloneData(baselineEnemyAI),
+      effects: { dashTrail: true },
+      projectileColor: "#ffcf48",
+      trailColor: "#d6a638",
+      ultimateBurstColor: "#ffcf48",
+      hurtboxWidth: 66,
+      playable: true,
+      futurePlayer2: true,
+      sheets: {
+        coreMovement: "solFinalCoreMovement",
+        airMovement: "solFinalAirMovement",
+        groundNormals: "solFinalGroundNormals",
+        airNormals: "solFinalAirNormals",
+        specials: "solFinalSpecials",
+        defense: "solFinalDefense",
+        endStates: "solFinalEndStates",
+        directionalNormals: "solFinalDirectionalNormals"
+      },
+      buildPlayerAnimations: buildSolFinalPlayerAnimations,
+      buildEnemyAnimations: buildSolFinalEnemyAnimations
+    },
+    seris: {
+      id: "seris",
+      name: "SERIS",
+      shortName: "SERIS",
+      subtitle: "THE HALO CHAIN",
+      role: "MID-RANGE CHAIN",
+      health: 960,
+      movement: cloneData(serisMovementStats),
+      jump: cloneData(serisJumpStats),
+      airDash: cloneData(serisAirDashStats),
+      attacks: {
+        player: cloneData(serisPlayerAttacks),
+        enemy: cloneData(serisEnemyAttacks)
+      },
+      comboRoutes: cloneData(serisComboRoutes),
+      hitboxes: cloneData(serisHitboxes),
+      hurtboxes: {
+        standing: { w: 64, h: 158 },
+        crouching: { w: 66, h: 88 },
+        dead: { w: 78, h: 58 }
+      },
+      specialMoves: cloneData(serisSpecialMoves),
+      ai: cloneData(serisEnemyAI),
+      effects: { dashTrail: true },
+      vfx: {
+        chainWhipAtlas: SERIS_CHAIN_VFX_RUNTIME_ENABLED ? "serisChainWhipVfx" : null,
+        overlayStatus: SERIS_CHAIN_VFX_RUNTIME_ENABLED ? "prepared" : "disabled_no_vfx_baseline",
+        runtimeEnabled: SERIS_CHAIN_VFX_RUNTIME_ENABLED,
+        mappings: SERIS_CHAIN_VFX_RUNTIME_ENABLED ? cloneData(serisVfxMappings) : {}
+      },
+      projectileColor: "#35e8d5",
+      trailColor: "#d6b24a",
+      hurtboxWidth: 64,
+      playable: true,
+      disabledReason: null,
+      futurePlayer2: false,
+      sheets: {
+        coreMovement: "serisFinalCoreMovement",
+        airMovement: "serisFinalAirMovement",
+        groundNormals: "serisFinalGroundNormals",
+        airNormals: "serisFinalAirNormals",
+        specials: "serisFinalSpecials",
+        defense: "serisFinalDefense",
+        endStates: "serisFinalEndStates"
+      },
+      buildPlayerAnimations: buildSerisFinalPlayerAnimations,
+      buildEnemyAnimations: buildSerisFinalEnemyAnimations
     }
   };
 
@@ -438,7 +741,8 @@
     hydrateCharacterProfile(profile);
   }
 
-  const selectableCharacterIds = ["kairo", "vanta", "nyx"];
+  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris"];
+  const hiddenTestCharacterIds = SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : [];
   const moves = characterProfiles.kairo.moves.player;
 
   const state = {
@@ -454,6 +758,7 @@
     frameBoxes: {},
     particles: [],
     projectiles: [],
+    nyxSignatureEffects: [],
     player: null,
     enemy: null,
     selectedPlayerId: "kairo",
@@ -633,6 +938,279 @@
     };
   }
 
+  function buildNyxConceptPlayerAnimations(sheets) {
+    const animations = buildFinalFighterPlayerAnimations(sheets);
+    // Nyx concept 3x6 rows: 0 idle, 1 dash/run, 2 neutral light.
+    return {
+      ...animations,
+      idle: [sheets.concept, 0],
+      walk_forward: [sheets.concept, 1],
+      dash: [sheets.concept, 1],
+      neutral_light: [sheets.concept, 2]
+    };
+  }
+
+  function buildNyxFinalPlayerAnimations(sheets) {
+    // Nyx final atlas row map:
+    // S1 movement, S2 air movement, S3 ground normals, S4 air normals,
+    // S5 specials, S6 defense/hit reactions, S7 knockdown/flavor.
+    return {
+      idle: [sheets.coreMovement, 0],
+      walk_forward: [sheets.coreMovement, 1],
+      walk_back: [sheets.coreMovement, 2],
+      dash: [sheets.coreMovement, 3],
+      dash_back: [sheets.coreMovement, 4],
+      crouch: [sheets.coreMovement, 5],
+      low_stance: [sheets.coreMovement, 5],
+      jump_up: [sheets.airMovement, 0],
+      rising: [sheets.airMovement, 0],
+      jump_forward: [sheets.airMovement, 1],
+      jump_back: [sheets.airMovement, 2],
+      fall: [sheets.airMovement, 3],
+      neutral_air_drift: [sheets.airMovement, 3],
+      air_dash_forward: [sheets.airMovement, 4],
+      air_dash_back: [sheets.airMovement, 5],
+      stand_up: [sheets.endStates, 2],
+      block: [sheets.defense, 0],
+      guard_idle: [sheets.defense, 0],
+      stand_block: [sheets.defense, 0],
+      crouch_block: [sheets.defense, 1],
+      air_block: [sheets.defense, 2],
+      damaged: [sheets.defense, 3],
+      light_hitstun: [sheets.defense, 3],
+      medium_hitstun: [sheets.defense, 4],
+      knockback: [sheets.defense, 5],
+      heavy_hitstun: [sheets.defense, 5],
+      launch_hitstun: [sheets.defense, 6],
+      air_hitstun: [sheets.defense, 7],
+      get_up: [sheets.endStates, 2],
+      recovery: [sheets.endStates, 2],
+      recovery_get_up: [sheets.endStates, 2],
+      neutral_light: [sheets.groundNormals, 0],
+      light_attack: [sheets.groundNormals, 0],
+      neutral_medium: [sheets.groundNormals, 1],
+      medium_attack: [sheets.groundNormals, 1],
+      neutral_heavy: [sheets.groundNormals, 2],
+      heavy_attack: [sheets.groundNormals, 2],
+      launcher: [sheets.groundNormals, 3],
+      forward_light: [sheets.groundNormals, 0],
+      forward_medium: [sheets.groundNormals, 1],
+      forward_heavy: [sheets.groundNormals, 2],
+      back_light: [sheets.groundNormals, 0],
+      back_medium: [sheets.groundNormals, 1],
+      back_heavy: [sheets.groundNormals, 2],
+      down_light: [sheets.groundNormals, 0],
+      down_medium: [sheets.groundNormals, 1],
+      down_heavy: [sheets.groundNormals, 3],
+      jump_light: [sheets.airNormals, 0],
+      air_light: [sheets.airNormals, 0],
+      jump_medium: [sheets.airNormals, 1],
+      air_medium: [sheets.airNormals, 1],
+      jump_heavy: [sheets.airNormals, 2],
+      air_heavy: [sheets.airNormals, 2],
+      air_recovery: [sheets.airNormals, 3],
+      fall_transition: [sheets.airNormals, 3],
+      special_1: [sheets.specials, 1],
+      shadow_step_start: [sheets.specials, 0],
+      shadow_step_travel: [sheets.specials, 1],
+      shadow_step_end: [sheets.specials, 2],
+      special_2: [sheets.specials, 4],
+      falling_slash_start: [sheets.specials, 3],
+      dive_kick_start: [sheets.specials, 3],
+      falling_slash_active: [sheets.specials, 4],
+      dive_kick_active: [sheets.specials, 4],
+      falling_slash_land: [sheets.specials, 5],
+      dive_kick_land_recover: [sheets.specials, 5],
+      special_3: [sheets.specials, 6],
+      rapid_flurry: [sheets.specials, 6],
+      ultimate: [sheets.specials, 6],
+      knockdown_fall: [sheets.endStates, 0],
+      grounded: [sheets.endStates, 1],
+      downed: [sheets.endStates, 1],
+      death: [sheets.endStates, 3],
+      ko: [sheets.endStates, 3],
+      defeat: [sheets.endStates, 3],
+      intro_pose: [sheets.endStates, 4],
+      intro: [sheets.endStates, 4],
+      victory: [sheets.endStates, 5],
+      level_up: [sheets.endStates, 5],
+      taunt: [sheets.endStates, 6],
+      select_idle: [sheets.coreMovement, 0]
+    };
+  }
+
+  function buildSolFinalPlayerAnimations(sheets) {
+    return {
+      idle: [sheets.coreMovement, 0],
+      walk_forward: [sheets.coreMovement, 1],
+      walk_back: [sheets.coreMovement, 2],
+      dash: [sheets.coreMovement, 3],
+      dash_forward: [sheets.coreMovement, 3],
+      dash_back: [sheets.coreMovement, 4],
+      crouch: [sheets.coreMovement, 5],
+      low_stance: [sheets.coreMovement, 5],
+      jump_up: [sheets.airMovement, 0],
+      rising: [sheets.airMovement, 0],
+      jump_forward: [sheets.airMovement, 1],
+      jump_back: [sheets.airMovement, 2],
+      fall: [sheets.airMovement, 3],
+      neutral_air_drift: [sheets.airMovement, 3],
+      air_dash_forward: [sheets.airMovement, 4],
+      air_dash_back: [sheets.airMovement, 5],
+      stand_up: [sheets.endStates, 2],
+      block: [sheets.defense, 0],
+      guard_idle: [sheets.defense, 0],
+      stand_block: [sheets.defense, 0],
+      crouch_block: [sheets.defense, 1],
+      air_block: [sheets.defense, 2],
+      damaged: [sheets.defense, 3],
+      light_hitstun: [sheets.defense, 3],
+      medium_hitstun: [sheets.defense, 4],
+      knockback: [sheets.defense, 5],
+      heavy_hitstun: [sheets.defense, 5],
+      launch_hitstun: [sheets.defense, 6],
+      air_hitstun: [sheets.defense, 7],
+      get_up: [sheets.endStates, 2],
+      recovery: [sheets.endStates, 2],
+      recovery_get_up: [sheets.endStates, 2],
+      neutral_light: [sheets.groundNormals, 0],
+      light_attack: [sheets.groundNormals, 0],
+      sun_jab: [sheets.groundNormals, 0],
+      neutral_medium: [sheets.groundNormals, 1],
+      medium_attack: [sheets.groundNormals, 1],
+      iron_palm: [sheets.groundNormals, 1],
+      neutral_heavy: [sheets.groundNormals, 2],
+      heavy_attack: [sheets.groundNormals, 2],
+      furnace_hook: [sheets.groundNormals, 2],
+      launcher: [sheets.groundNormals, 3],
+      dawn_upper: [sheets.groundNormals, 3],
+      forward_light: [sheets.directionalNormals, 0],
+      forward_medium: [sheets.directionalNormals, 3],
+      forward_heavy: [sheets.groundNormals, 2],
+      back_light: [sheets.directionalNormals, 1],
+      back_medium: [sheets.directionalNormals, 4],
+      back_heavy: [sheets.groundNormals, 2],
+      down_light: [sheets.directionalNormals, 2],
+      down_medium: [sheets.directionalNormals, 5],
+      down_heavy: [sheets.groundNormals, 3],
+      jump_light: [sheets.airNormals, 0],
+      air_light: [sheets.airNormals, 0],
+      falling_tap: [sheets.airNormals, 0],
+      jump_medium: [sheets.airNormals, 1],
+      air_medium: [sheets.airNormals, 1],
+      comet_knee: [sheets.airNormals, 1],
+      jump_heavy: [sheets.airNormals, 2],
+      air_heavy: [sheets.airNormals, 2],
+      sunfall_axe: [sheets.airNormals, 2],
+      air_recovery: [sheets.airNormals, 3],
+      fall_transition: [sheets.airNormals, 3],
+      special_1: [sheets.specials, 0],
+      solar_step: [sheets.specials, 0],
+      special_2: [sheets.specials, 1],
+      radiant_break: [sheets.specials, 1],
+      special_3: [sheets.specials, 2],
+      rising_halo: [sheets.specials, 2],
+      solar_verdict_startup: [sheets.specials, 3],
+      ultimate: [sheets.specials, 4],
+      solar_verdict_finish: [sheets.specials, 4],
+      knockdown_fall: [sheets.endStates, 0],
+      grounded: [sheets.endStates, 1],
+      downed: [sheets.endStates, 1],
+      death: [sheets.endStates, 3],
+      ko: [sheets.endStates, 3],
+      defeat: [sheets.endStates, 3],
+      intro_pose: [sheets.endStates, 4],
+      intro: [sheets.endStates, 4],
+      victory: [sheets.endStates, 5],
+      level_up: [sheets.endStates, 5],
+      taunt: [sheets.endStates, 6],
+      select_idle: [sheets.coreMovement, 0]
+    };
+  }
+
+  function buildSerisFinalPlayerAnimations(sheets) {
+    return {
+      idle: [sheets.coreMovement, 0],
+      walk_forward: [sheets.coreMovement, 1],
+      walk_back: [sheets.coreMovement, 2],
+      dash: [sheets.coreMovement, 3],
+      dash_forward: [sheets.coreMovement, 3],
+      dash_back: [sheets.coreMovement, 4],
+      crouch: [sheets.coreMovement, 5],
+      low_stance: [sheets.coreMovement, 5],
+      jump_up: [sheets.airMovement, 0],
+      rising: [sheets.airMovement, 0],
+      jump_forward: [sheets.airMovement, 1],
+      jump_back: [sheets.airMovement, 2],
+      fall: [sheets.airMovement, 3],
+      neutral_air_drift: [sheets.airMovement, 3],
+      air_dash_forward: [sheets.airMovement, 4],
+      air_dash_back: [sheets.airMovement, 5],
+      stand_up: [sheets.endStates, 2],
+      block: [sheets.defense, 0],
+      guard_idle: [sheets.defense, 0],
+      stand_block: [sheets.defense, 0],
+      crouch_block: [sheets.defense, 1],
+      air_block: [sheets.defense, 2],
+      damaged: [sheets.defense, 3],
+      light_hitstun: [sheets.defense, 3],
+      medium_hitstun: [sheets.defense, 4],
+      knockback: [sheets.defense, 5],
+      heavy_hitstun: [sheets.defense, 5],
+      launch_hitstun: [sheets.defense, 6],
+      air_hitstun: [sheets.defense, 7],
+      get_up: [sheets.endStates, 2],
+      recovery: [sheets.endStates, 2],
+      recovery_get_up: [sheets.endStates, 2],
+      neutral_light: [sheets.groundNormals, 0],
+      light_attack: [sheets.groundNormals, 0],
+      neutral_medium: [sheets.groundNormals, 1],
+      medium_attack: [sheets.groundNormals, 1],
+      neutral_heavy: [sheets.groundNormals, 2],
+      heavy_attack: [sheets.groundNormals, 2],
+      launcher: [sheets.groundNormals, 3],
+      forward_light: [sheets.groundNormals, 0],
+      forward_medium: [sheets.groundNormals, 1],
+      forward_heavy: [sheets.groundNormals, 2],
+      back_light: [sheets.groundNormals, 0],
+      back_medium: [sheets.groundNormals, 1],
+      back_heavy: [sheets.groundNormals, 2],
+      down_light: [sheets.groundNormals, 0],
+      down_medium: [sheets.groundNormals, 1],
+      down_heavy: [sheets.groundNormals, 3],
+      jump_light: [sheets.airNormals, 0],
+      air_light: [sheets.airNormals, 0],
+      jump_medium: [sheets.airNormals, 1],
+      air_medium: [sheets.airNormals, 1],
+      jump_heavy: [sheets.airNormals, 2],
+      air_heavy: [sheets.airNormals, 2],
+      air_recovery: [sheets.airNormals, 3],
+      fall_transition: [sheets.airNormals, 3],
+      special_1: [sheets.specials, 1],
+      chain_snare_start: [sheets.specials, 0],
+      chain_snare_active: [sheets.specials, 1],
+      chain_snare_recovery: [sheets.specials, 2],
+      special_2: [sheets.specials, 3],
+      sanctum_sweep: [sheets.specials, 3],
+      special_3: [sheets.specials, 4],
+      divine_recoil: [sheets.specials, 4],
+      special_recovery: [sheets.specials, 5],
+      ultimate: [sheets.specials, 4],
+      knockdown_fall: [sheets.endStates, 0],
+      grounded: [sheets.endStates, 1],
+      downed: [sheets.endStates, 1],
+      death: [sheets.endStates, 3],
+      ko: [sheets.endStates, 3],
+      defeat: [sheets.endStates, 3],
+      intro_pose: [sheets.endStates, 4],
+      intro: [sheets.endStates, 4],
+      victory: [sheets.endStates, 5],
+      level_up: [sheets.endStates, 5],
+      taunt: [sheets.endStates, 6],
+      select_idle: [sheets.coreMovement, 0]
+    };
+  }
+
   function buildEnemyAnimations(sheets) {
     return {
       enemy_idle: [sheets.basic, 0],
@@ -708,8 +1286,217 @@
     };
   }
 
+  function buildNyxConceptEnemyAnimations(sheets) {
+    const animations = buildFinalFighterEnemyAnimations(sheets);
+    // Nyx concept 3x6 rows: 0 idle, 1 dash/run, 2 light attack.
+    return {
+      ...animations,
+      enemy_idle: [sheets.concept, 0],
+      enemy_walk_forward: [sheets.concept, 1],
+      enemy_dash: [sheets.concept, 1],
+      enemy_light_attack: [sheets.concept, 2]
+    };
+  }
+
+  function buildNyxFinalEnemyAnimations(sheets) {
+    return {
+      enemy_idle: [sheets.coreMovement, 0],
+      enemy_walk_forward: [sheets.coreMovement, 1],
+      enemy_walk_back: [sheets.coreMovement, 2],
+      enemy_dash: [sheets.coreMovement, 3],
+      enemy_dash_back: [sheets.coreMovement, 4],
+      enemy_crouch: [sheets.coreMovement, 5],
+      enemy_stand_up: [sheets.endStates, 2],
+      enemy_block: [sheets.defense, 0],
+      enemy_guard_idle: [sheets.defense, 0],
+      enemy_stand_block: [sheets.defense, 0],
+      enemy_crouch_block: [sheets.defense, 1],
+      enemy_air_block: [sheets.defense, 2],
+      enemy_damaged: [sheets.defense, 3],
+      enemy_light_hitstun: [sheets.defense, 3],
+      enemy_medium_hitstun: [sheets.defense, 4],
+      enemy_knockback: [sheets.defense, 5],
+      enemy_heavy_hitstun: [sheets.defense, 5],
+      enemy_launch_hitstun: [sheets.defense, 6],
+      enemy_air_hitstun: [sheets.defense, 7],
+      enemy_get_up: [sheets.endStates, 2],
+      enemy_light_attack: [sheets.groundNormals, 0],
+      enemy_medium_attack: [sheets.groundNormals, 1],
+      enemy_heavy_attack: [sheets.groundNormals, 2],
+      enemy_forward_light: [sheets.groundNormals, 0],
+      enemy_forward_medium: [sheets.groundNormals, 1],
+      enemy_forward_heavy: [sheets.groundNormals, 2],
+      enemy_back_light: [sheets.groundNormals, 0],
+      enemy_back_medium: [sheets.groundNormals, 1],
+      enemy_back_heavy: [sheets.groundNormals, 2],
+      enemy_down_light: [sheets.groundNormals, 0],
+      enemy_down_medium: [sheets.groundNormals, 1],
+      enemy_down_heavy: [sheets.groundNormals, 3],
+      enemy_jump_light: [sheets.airNormals, 0],
+      enemy_air_light: [sheets.airNormals, 0],
+      enemy_jump_medium: [sheets.airNormals, 1],
+      enemy_air_medium: [sheets.airNormals, 1],
+      enemy_jump_heavy: [sheets.airNormals, 2],
+      enemy_air_heavy: [sheets.airNormals, 2],
+      enemy_air_recovery: [sheets.airNormals, 3],
+      enemy_special_1: [sheets.specials, 1],
+      enemy_shadow_step_start: [sheets.specials, 0],
+      enemy_shadow_step_travel: [sheets.specials, 1],
+      enemy_shadow_step_end: [sheets.specials, 2],
+      enemy_special_2: [sheets.specials, 4],
+      enemy_falling_slash_start: [sheets.specials, 3],
+      enemy_falling_slash_active: [sheets.specials, 4],
+      enemy_falling_slash_land: [sheets.specials, 5],
+      enemy_special_3: [sheets.specials, 6],
+      enemy_rapid_flurry: [sheets.specials, 6],
+      enemy_ultimate: [sheets.specials, 6],
+      enemy_knockdown_fall: [sheets.endStates, 0],
+      enemy_grounded: [sheets.endStates, 1],
+      enemy_death: [sheets.endStates, 3],
+      enemy_intro_pose: [sheets.endStates, 4],
+      enemy_victory: [sheets.endStates, 5],
+      enemy_level_up: [sheets.endStates, 5],
+      enemy_taunt: [sheets.endStates, 6],
+      enemy_select_idle: [sheets.coreMovement, 0]
+    };
+  }
+
+  function buildSolFinalEnemyAnimations(sheets) {
+    return {
+      enemy_idle: [sheets.coreMovement, 0],
+      enemy_walk_forward: [sheets.coreMovement, 1],
+      enemy_walk_back: [sheets.coreMovement, 2],
+      enemy_dash: [sheets.coreMovement, 3],
+      enemy_dash_forward: [sheets.coreMovement, 3],
+      enemy_dash_back: [sheets.coreMovement, 4],
+      enemy_crouch: [sheets.coreMovement, 5],
+      enemy_stand_up: [sheets.endStates, 2],
+      enemy_block: [sheets.defense, 0],
+      enemy_guard_idle: [sheets.defense, 0],
+      enemy_stand_block: [sheets.defense, 0],
+      enemy_crouch_block: [sheets.defense, 1],
+      enemy_air_block: [sheets.defense, 2],
+      enemy_damaged: [sheets.defense, 3],
+      enemy_light_hitstun: [sheets.defense, 3],
+      enemy_medium_hitstun: [sheets.defense, 4],
+      enemy_knockback: [sheets.defense, 5],
+      enemy_heavy_hitstun: [sheets.defense, 5],
+      enemy_launch_hitstun: [sheets.defense, 6],
+      enemy_air_hitstun: [sheets.defense, 7],
+      enemy_get_up: [sheets.endStates, 2],
+      enemy_light_attack: [sheets.groundNormals, 0],
+      enemy_sun_jab: [sheets.groundNormals, 0],
+      enemy_medium_attack: [sheets.groundNormals, 1],
+      enemy_iron_palm: [sheets.groundNormals, 1],
+      enemy_heavy_attack: [sheets.groundNormals, 2],
+      enemy_furnace_hook: [sheets.groundNormals, 2],
+      enemy_forward_light: [sheets.directionalNormals, 0],
+      enemy_forward_medium: [sheets.directionalNormals, 3],
+      enemy_forward_heavy: [sheets.groundNormals, 2],
+      enemy_back_light: [sheets.directionalNormals, 1],
+      enemy_back_medium: [sheets.directionalNormals, 4],
+      enemy_back_heavy: [sheets.groundNormals, 2],
+      enemy_down_light: [sheets.directionalNormals, 2],
+      enemy_down_medium: [sheets.directionalNormals, 5],
+      enemy_down_heavy: [sheets.groundNormals, 3],
+      enemy_launcher: [sheets.groundNormals, 3],
+      enemy_dawn_upper: [sheets.groundNormals, 3],
+      enemy_jump_light: [sheets.airNormals, 0],
+      enemy_air_light: [sheets.airNormals, 0],
+      enemy_falling_tap: [sheets.airNormals, 0],
+      enemy_jump_medium: [sheets.airNormals, 1],
+      enemy_air_medium: [sheets.airNormals, 1],
+      enemy_comet_knee: [sheets.airNormals, 1],
+      enemy_jump_heavy: [sheets.airNormals, 2],
+      enemy_air_heavy: [sheets.airNormals, 2],
+      enemy_sunfall_axe: [sheets.airNormals, 2],
+      enemy_air_recovery: [sheets.airNormals, 3],
+      enemy_special_1: [sheets.specials, 0],
+      enemy_solar_step: [sheets.specials, 0],
+      enemy_special_2: [sheets.specials, 1],
+      enemy_radiant_break: [sheets.specials, 1],
+      enemy_special_3: [sheets.specials, 2],
+      enemy_rising_halo: [sheets.specials, 2],
+      enemy_solar_verdict_startup: [sheets.specials, 3],
+      enemy_ultimate: [sheets.specials, 4],
+      enemy_solar_verdict_finish: [sheets.specials, 4],
+      enemy_knockdown_fall: [sheets.endStates, 0],
+      enemy_grounded: [sheets.endStates, 1],
+      enemy_death: [sheets.endStates, 3],
+      enemy_intro_pose: [sheets.endStates, 4],
+      enemy_victory: [sheets.endStates, 5],
+      enemy_level_up: [sheets.endStates, 5],
+      enemy_taunt: [sheets.endStates, 6],
+      enemy_select_idle: [sheets.coreMovement, 0]
+    };
+  }
+
+  function buildSerisFinalEnemyAnimations(sheets) {
+    return {
+      enemy_idle: [sheets.coreMovement, 0],
+      enemy_walk_forward: [sheets.coreMovement, 1],
+      enemy_walk_back: [sheets.coreMovement, 2],
+      enemy_dash: [sheets.coreMovement, 3],
+      enemy_dash_forward: [sheets.coreMovement, 3],
+      enemy_dash_back: [sheets.coreMovement, 4],
+      enemy_crouch: [sheets.coreMovement, 5],
+      enemy_stand_up: [sheets.endStates, 2],
+      enemy_block: [sheets.defense, 0],
+      enemy_guard_idle: [sheets.defense, 0],
+      enemy_stand_block: [sheets.defense, 0],
+      enemy_crouch_block: [sheets.defense, 1],
+      enemy_air_block: [sheets.defense, 2],
+      enemy_damaged: [sheets.defense, 3],
+      enemy_light_hitstun: [sheets.defense, 3],
+      enemy_medium_hitstun: [sheets.defense, 4],
+      enemy_knockback: [sheets.defense, 5],
+      enemy_heavy_hitstun: [sheets.defense, 5],
+      enemy_launch_hitstun: [sheets.defense, 6],
+      enemy_air_hitstun: [sheets.defense, 7],
+      enemy_get_up: [sheets.endStates, 2],
+      enemy_light_attack: [sheets.groundNormals, 0],
+      enemy_medium_attack: [sheets.groundNormals, 1],
+      enemy_heavy_attack: [sheets.groundNormals, 2],
+      enemy_forward_light: [sheets.groundNormals, 0],
+      enemy_forward_medium: [sheets.groundNormals, 1],
+      enemy_forward_heavy: [sheets.groundNormals, 2],
+      enemy_back_light: [sheets.groundNormals, 0],
+      enemy_back_medium: [sheets.groundNormals, 1],
+      enemy_back_heavy: [sheets.groundNormals, 2],
+      enemy_down_light: [sheets.groundNormals, 0],
+      enemy_down_medium: [sheets.groundNormals, 1],
+      enemy_down_heavy: [sheets.groundNormals, 3],
+      enemy_jump_light: [sheets.airNormals, 0],
+      enemy_air_light: [sheets.airNormals, 0],
+      enemy_jump_medium: [sheets.airNormals, 1],
+      enemy_air_medium: [sheets.airNormals, 1],
+      enemy_jump_heavy: [sheets.airNormals, 2],
+      enemy_air_heavy: [sheets.airNormals, 2],
+      enemy_air_recovery: [sheets.airNormals, 3],
+      enemy_special_1: [sheets.specials, 1],
+      enemy_chain_snare_start: [sheets.specials, 0],
+      enemy_chain_snare_active: [sheets.specials, 1],
+      enemy_chain_snare_recovery: [sheets.specials, 2],
+      enemy_special_2: [sheets.specials, 3],
+      enemy_sanctum_sweep: [sheets.specials, 3],
+      enemy_special_3: [sheets.specials, 4],
+      enemy_divine_recoil: [sheets.specials, 4],
+      enemy_special_recovery: [sheets.specials, 5],
+      enemy_ultimate: [sheets.specials, 4],
+      enemy_knockdown_fall: [sheets.endStates, 0],
+      enemy_grounded: [sheets.endStates, 1],
+      enemy_death: [sheets.endStates, 3],
+      enemy_intro_pose: [sheets.endStates, 4],
+      enemy_victory: [sheets.endStates, 5],
+      enemy_level_up: [sheets.endStates, 5],
+      enemy_taunt: [sheets.endStates, 6],
+      enemy_select_idle: [sheets.coreMovement, 0]
+    };
+  }
+
   function getCharacterProfile(characterId) {
-    return characterProfiles[characterId] || characterProfiles.kairo;
+    const profile = characterProfiles[characterId];
+    return profile && (profile.playable !== false || hiddenTestCharacterIds.includes(characterId)) ? profile : characterProfiles.kairo;
   }
 
   function getMoveSet(f) {
@@ -743,8 +1530,117 @@
 
   function getOpponentId(characterId) {
     if (characterId === "nyx") return "kairo";
+    if (characterId === "sol") return "vanta";
     if (characterId === "vanta") return "nyx";
     return "vanta";
+  }
+
+  function usesNyxArt(f) {
+    return f?.profile?.id === "nyx";
+  }
+
+  function usesNewGenerationArt(f) {
+    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris";
+  }
+
+  function withEnemyPrefix(f, anim) {
+    return f.kind === "enemy" ? `enemy_${anim}` : anim;
+  }
+
+  function getDashAnim(f) {
+    if (!usesNewGenerationArt(f)) return withEnemyPrefix(f, "dash");
+    const forwardDash = f.dashDirection === f.facing;
+    if (!f.grounded || f.airDashTimer > 0) {
+      return withEnemyPrefix(f, forwardDash ? "air_dash_forward" : "air_dash_back");
+    }
+    return withEnemyPrefix(f, forwardDash ? (usesNyxArt(f) ? "dash" : "dash_forward") : "dash_back");
+  }
+
+  function getAirDriftAnim(f, holdingForward, holdingBack) {
+    if (!usesNewGenerationArt(f)) return withEnemyPrefix(f, "jump_light");
+    if (holdingForward) return withEnemyPrefix(f, "jump_forward");
+    if (holdingBack) return withEnemyPrefix(f, "jump_back");
+    return withEnemyPrefix(f, f.vy < -40 ? "jump_up" : "fall");
+  }
+
+  function getHitReactionAnim(f, fallback) {
+    if (!usesNewGenerationArt(f)) return fallback;
+    return f.reactionAnim || fallback;
+  }
+
+  function getKnockdownAnim(f, fallback) {
+    if (!usesNewGenerationArt(f)) return fallback;
+    if (!f.grounded) return withEnemyPrefix(f, "knockdown_fall");
+    return withEnemyPrefix(f, f.knockdownTimer > 0.16 ? "grounded" : "get_up");
+  }
+
+  function getCharacterActionPhaseAnim(f, moveData) {
+    if (!f.activeMove) return null;
+    if (f.profile?.id === "sol") return getSolActionPhaseAnim(f, moveData);
+    if (f.profile?.id === "seris") return getSerisActionPhaseAnim(f, moveData);
+    if (!usesNyxArt(f)) return null;
+    const moveKey = f.activeMove.replace(/^enemy_/, "");
+    const activeEnd = moveData.startup + moveData.active;
+    if (moveKey === "special_1") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "shadow_step_start");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "shadow_step_travel");
+      return withEnemyPrefix(f, "shadow_step_end");
+    }
+    if (moveKey === "special_2") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "falling_slash_start");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "falling_slash_active");
+      return withEnemyPrefix(f, "falling_slash_land");
+    }
+    return null;
+  }
+
+  function getSolActionPhaseAnim(f, moveData) {
+    const moveKey = f.activeMove.replace(/^enemy_/, "");
+    const activeEnd = moveData.startup + moveData.active;
+    if (moveKey === "ultimate") {
+      if (f.actionTime < activeEnd * 0.54) return withEnemyPrefix(f, "solar_verdict_startup");
+      return withEnemyPrefix(f, "solar_verdict_finish");
+    }
+    if (moveKey === "special_1") return withEnemyPrefix(f, "solar_step");
+    if (moveKey === "special_2") return withEnemyPrefix(f, "radiant_break");
+    if (moveKey === "special_3") return withEnemyPrefix(f, "rising_halo");
+    return null;
+  }
+
+  function getSerisActionPhaseAnim(f, moveData) {
+    const moveKey = f.activeMove.replace(/^enemy_/, "");
+    const activeEnd = moveData.startup + moveData.active;
+    if (moveKey === "special_1") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "chain_snare_start");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "chain_snare_active");
+      return withEnemyPrefix(f, "chain_snare_recovery");
+    }
+    if (moveKey === "special_2") return withEnemyPrefix(f, "sanctum_sweep");
+    if (moveKey === "special_3" || moveKey === "ultimate") return withEnemyPrefix(f, "divine_recoil");
+    return null;
+  }
+
+  function setNyxReactionAnim(defender, source, blocked = false) {
+    if (!usesNewGenerationArt(defender)) return;
+    if (blocked) {
+      defender.reactionAnim = withEnemyPrefix(defender, defender.grounded ? "stand_block" : "air_block");
+      return;
+    }
+    if (!defender.grounded) {
+      defender.reactionAnim = withEnemyPrefix(defender, "air_hitstun");
+      return;
+    }
+    if (source.flags?.launcher || source.knockbackY < -260) {
+      defender.reactionAnim = withEnemyPrefix(defender, "launch_hitstun");
+      return;
+    }
+    if (source.boxType === "light" || source.boxType === "low") {
+      defender.reactionAnim = withEnemyPrefix(defender, "light_hitstun");
+    } else if (source.boxType === "medium" || source.boxType === "jump") {
+      defender.reactionAnim = withEnemyPrefix(defender, "medium_hitstun");
+    } else {
+      defender.reactionAnim = withEnemyPrefix(defender, "heavy_hitstun");
+    }
   }
 
   function makeFighter(kind, x, facing, characterId) {
@@ -788,6 +1684,7 @@
       spawnedProjectile: false,
       cancelUnlocked: false,
       bufferedMove: null,
+      reactionAnim: null,
       anim: kind === "player" ? "idle" : "enemy_idle"
     };
   }
@@ -799,20 +1696,28 @@
     if (state.mode === "loading") {
       state.mode = "title";
     }
+    if (SERIS_HIDDEN_TEST_ENABLED) {
+      startTraining("seris");
+      flashStatus("SERIS HIDDEN TEST", 1.2);
+    }
     requestAnimationFrame(loop);
   }
 
   async function loadAssets() {
     const entries = Object.entries(assetPaths);
     await Promise.all(entries.map(async ([key, path]) => {
-      const chroma = !["stage", "title"].includes(key);
+      if (!path) {
+        state.images[key] = null;
+        return;
+      }
+      const chroma = !["stage", "title", "nyxPhantomSlash"].includes(key);
       const image = await loadImage(path);
       if (!image) {
         state.images[key] = null;
         return;
       }
       const keyed = chroma ? chromaKey(image) : image;
-      state.images[key] = sheetMeta[key] ? sanitizeSpriteSheet(keyed, sheetMeta[key]) : keyed;
+      state.images[key] = sheetMeta[key] && !sheetMeta[key].skipSanitize ? sanitizeSpriteSheet(keyed, sheetMeta[key]) : keyed;
     }));
     state.frameBoxes = buildSpriteFrameBoxes();
   }
@@ -1075,7 +1980,9 @@
       }
 
       rows[row] = {
-        anchorX: meta.allowDetachedEffects
+        anchorX: Number.isFinite(meta.anchorX)
+          ? meta.anchorX
+          : meta.allowDetachedEffects
           ? median(frames.map((f) => f.anchorX))
           : meta.anchorMode === "lockedFrameBottomCenter"
           ? fw / 2
@@ -1288,6 +2195,7 @@
     state.enemy = makeFighter("enemy", 720, -1, enemyId);
     state.particles = [];
     state.projectiles = [];
+    state.nyxSignatureEffects = [];
     state.hitPause = 0;
     state.cameraShake = 0;
     state.messageTimer = 1.5;
@@ -1311,7 +2219,7 @@
   }
 
   function startTraining(characterId = state.selectedPlayerId) {
-    state.selectedPlayerId = selectableCharacterIds.includes(characterId) ? characterId : "kairo";
+    state.selectedPlayerId = isLaunchableCharacterId(characterId) ? characterId : "kairo";
     titleScreen.classList.add("hidden");
     characterSelect.classList.add("hidden");
     hud.classList.remove("hidden");
@@ -1329,8 +2237,12 @@
     });
   }
 
+  function isLaunchableCharacterId(characterId) {
+    return selectableCharacterIds.includes(characterId) || hiddenTestCharacterIds.includes(characterId);
+  }
+
   function handleCharacterSelectKey(e) {
-    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "Enter", "Escape"].includes(e.code);
+    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "Enter", "Escape"].includes(e.code);
     if (!handled) return false;
 
     e.preventDefault();
@@ -1339,6 +2251,8 @@
     if (["KeyA", "ArrowLeft", "Digit1", "Numpad1"].includes(e.code)) updateCharacterSelectFocus("kairo");
     if (["KeyD", "ArrowRight", "Digit2", "Numpad2"].includes(e.code)) updateCharacterSelectFocus("vanta");
     if (["KeyW", "ArrowUp", "Digit3", "Numpad3"].includes(e.code)) updateCharacterSelectFocus("nyx");
+    if (["KeyS", "ArrowDown", "Digit4", "Numpad4"].includes(e.code)) updateCharacterSelectFocus("sol");
+    if (["Digit5", "Numpad5"].includes(e.code)) updateCharacterSelectFocus("seris");
     if (e.code === "Enter") startTraining(state.selectedPlayerId);
     if (e.code === "Escape") {
       characterSelect.classList.add("hidden");
@@ -1365,6 +2279,7 @@
   function update(dt) {
     state.time += dt;
     updateParticles(dt);
+    updateNyxSignatureEffects(dt);
 
     if (state.mode !== "training" || state.paused) {
       return;
@@ -1405,34 +2320,37 @@
 
     if (p.blockstun > 0) {
       p.blockstun = Math.max(0, p.blockstun - dt);
-      p.anim = "block";
+      p.anim = getHitReactionAnim(p, "block");
       p.vx *= 0.32;
       if (Math.abs(p.vx) < 8) p.vx = 0;
+      if (p.blockstun <= 0) p.reactionAnim = null;
       integrate(p, dt);
       return;
     }
 
     if (p.hitstun > 0) {
       p.hitstun = Math.max(0, p.hitstun - dt);
-      p.anim = p.grounded ? "damaged" : "knockback";
+      p.anim = getHitReactionAnim(p, p.grounded ? "damaged" : "knockback");
       p.vx *= 0.42;
       if (Math.abs(p.vx) < 8) p.vx = 0;
       integrate(p, dt);
       if (p.hitstun <= 0 && !p.grounded) p.recoveryTimer = Math.max(p.recoveryTimer, getJumpStats(p).airRecoveryDuration);
+      if (p.hitstun <= 0) p.reactionAnim = null;
       return;
     }
 
     if (p.knockdownTimer > 0) {
       p.knockdownTimer = Math.max(0, p.knockdownTimer - dt);
-      p.anim = p.knockdownTimer > 0.16 ? "knockback" : "get_up";
+      p.anim = getKnockdownAnim(p, p.knockdownTimer > 0.16 ? "knockback" : "get_up");
       p.vx *= 0.22;
+      if (p.knockdownTimer <= 0) p.reactionAnim = null;
       integrate(p, dt);
       return;
     }
 
     if (p.recoveryTimer > 0) {
       p.recoveryTimer = Math.max(0, p.recoveryTimer - dt);
-      p.anim = p.grounded ? "get_up" : "knockback";
+      p.anim = usesNewGenerationArt(p) ? (p.grounded ? "get_up" : "air_recovery") : p.grounded ? "get_up" : "knockback";
       p.vx *= p.grounded ? 0.34 : 0.88;
       integrate(p, dt);
       return;
@@ -1452,11 +2370,11 @@
       p.airDashTimer = Math.max(0, p.airDashTimer - dt);
       p.vx = p.dashDirection * airDash.speed;
       p.vy = 0;
-      p.anim = "dash";
+      p.anim = getDashAnim(p);
     } else if (p.dashTimer > 0) {
       p.dashTimer = Math.max(0, p.dashTimer - dt);
       p.vx = p.dashDirection * movement.dashSpeed;
-      p.anim = "dash";
+      p.anim = getDashAnim(p);
     } else if (p.action) {
       updateAction(p, dt);
     } else {
@@ -1485,23 +2403,23 @@
     if (holdingBack && p.grounded) {
       p.blocking = true;
       p.vx = -p.facing * movement.walkBack;
-      p.anim = "block";
+      p.anim = usesNewGenerationArt(p) ? "walk_back" : "block";
       return;
     }
 
     if (holdingForward) {
       p.vx = p.facing * movement.walkForward;
-      p.anim = "walk_forward";
+      p.anim = p.grounded ? "walk_forward" : getAirDriftAnim(p, true, false);
       return;
     }
 
     if (holdingBack) {
       p.vx = -p.facing * movement.walkBack;
-      p.anim = "walk_back";
+      p.anim = p.grounded ? "walk_back" : getAirDriftAnim(p, false, true);
       return;
     }
 
-    p.anim = p.grounded ? "idle" : "jump_light";
+    p.anim = p.grounded ? "idle" : getAirDriftAnim(p, false, false);
   }
 
   function tickFighterTimers(f, dt) {
@@ -1524,23 +2442,26 @@
       e.vx = 0;
     } else if (e.blockstun > 0) {
       e.blockstun = Math.max(0, e.blockstun - dt);
-      e.anim = "enemy_block";
+      e.anim = getHitReactionAnim(e, "enemy_block");
       e.vx *= 0.32;
+      if (e.blockstun <= 0) e.reactionAnim = null;
     } else if (e.action) {
       updateAction(e, dt);
     } else if (e.hitstun > 0) {
       e.hitstun = Math.max(0, e.hitstun - dt);
-      e.anim = e.grounded ? "enemy_damaged" : "enemy_knockback";
+      e.anim = getHitReactionAnim(e, e.grounded ? "enemy_damaged" : "enemy_knockback");
       e.vx *= 0.36;
       if (Math.abs(e.vx) < 8) e.vx = 0;
       if (e.hitstun <= 0 && !e.grounded) e.recoveryTimer = Math.max(e.recoveryTimer, getJumpStats(e).airRecoveryDuration);
+      if (e.hitstun <= 0) e.reactionAnim = null;
     } else if (e.knockdownTimer > 0) {
       e.knockdownTimer = Math.max(0, e.knockdownTimer - dt);
-      e.anim = e.knockdownTimer > 0.16 ? "enemy_knockback" : "enemy_get_up";
+      e.anim = getKnockdownAnim(e, e.knockdownTimer > 0.16 ? "enemy_knockback" : "enemy_get_up");
       e.vx *= 0.22;
+      if (e.knockdownTimer <= 0) e.reactionAnim = null;
     } else if (e.recoveryTimer > 0) {
       e.recoveryTimer = Math.max(0, e.recoveryTimer - dt);
-      e.anim = e.grounded ? "enemy_get_up" : "enemy_knockback";
+      e.anim = usesNewGenerationArt(e) ? (e.grounded ? "enemy_get_up" : "enemy_air_recovery") : e.grounded ? "enemy_get_up" : "enemy_knockback";
       e.vx *= e.grounded ? 0.34 : 0.88;
     } else if (e.landingTimer > 0) {
       e.landingTimer = Math.max(0, e.landingTimer - dt);
@@ -1606,6 +2527,7 @@
   function updateAction(f, dt) {
     const moveData = getMove(f);
     f.actionTime += dt;
+    f.anim = getCharacterActionPhaseAnim(f, moveData) || f.anim;
     f.vx *= moveData.flags.dash ? 0.98 : f.grounded ? 0.46 : 0.88;
 
     if (moveData.flags.superDash) updateSuperDashVelocity(f);
@@ -1749,7 +2671,8 @@
     if (data.flags.ultimate && f.kind === "player") {
       f.meter = 0;
       state.cameraShake = 12;
-      spawnBurst(f.x + f.facing * 150, f.y - 95, "#d66bff", 34);
+      spawnBurst(f.x + f.facing * 150, f.y - 95, f.profile.ultimateBurstColor || "#d66bff", 34);
+      if (usesNyxArt(f)) spawnNyxUltimateVisual(f);
     }
   }
 
@@ -1853,7 +2776,7 @@
       p.dashCooldown = movement.dashCooldown;
       p.dashDirection = direction;
     }
-    p.anim = "dash";
+    p.anim = getDashAnim(p);
     if (p.profile.effects?.dashTrail) {
       spawnTrail(p.x, p.y - 80);
     }
@@ -2048,6 +2971,7 @@
     defender.hasHit = false;
     defender.spawnedProjectile = false;
     defender.cancelUnlocked = false;
+    setNyxReactionAnim(defender, moveData, blocked);
 
     const dir = attacker.facing;
     if (moveData.flags.pull) {
@@ -2091,8 +3015,16 @@
   function spawnProjectile(owner, moveData) {
     const direction = owner.facing;
     const special = owner.profile.specialMoves?.[owner.activeMove] || {};
+    const serisProjectileVfx = owner.profile?.id === "seris" && owner.profile.vfx?.runtimeEnabled
+      ? owner.profile.vfx?.mappings?.[owner.activeMove]
+      : null;
+    const visualOriginX = owner.x + direction * 34;
+    const visualOriginY = owner.y - 102;
     state.projectiles.push({
       ownerKind: owner.kind,
+      ownerCharacterId: owner.profile?.id || owner.characterId,
+      visualOriginX,
+      visualOriginY,
       x: owner.x + direction * (special.spawnOffsetX || 112),
       y: owner.y + (special.spawnOffsetY || -86),
       vx: direction * (moveData.flags.projectileSpeed || 520),
@@ -2107,9 +3039,13 @@
       boxType: moveData.boxType,
       flags: { projectileImpact: true },
       life: special.projectileLife || 1.1,
-      color: owner.profile.projectileColor
+      maxLife: special.projectileLife || 1.1,
+      color: owner.profile.projectileColor,
+      vfxKey: serisProjectileVfx
     });
-    spawnBurst(owner.x + direction * 72, owner.y - 78, owner.profile.projectileColor, 18);
+    if (owner.profile?.id !== "seris" || owner.profile.vfx?.runtimeEnabled) {
+      spawnBurst(owner.x + direction * 72, owner.y - 78, owner.profile.projectileColor, 18);
+    }
   }
 
   function updateProjectiles(dt) {
@@ -2145,11 +3081,12 @@
     defender.activeMove = null;
     defender.hasHit = false;
     defender.spawnedProjectile = false;
+    setNyxReactionAnim(defender, projectile, blocked);
     const airX = !defender.grounded && !blocked ? Math.min(Math.abs(projectile.knockbackX), MAX_AIR_KNOCKBACK_X) * 0.65 : Math.abs(projectile.knockbackX);
     defender.vx = projectile.facing * (blocked ? airX * 0.25 : airX);
     const projectileY = !defender.grounded && !blocked && projectile.knockbackY > 0 ? Math.min(projectile.knockbackY, MAX_AIR_SPIKE_VELOCITY) : projectile.knockbackY;
     defender.vy = Math.min(defender.vy, blocked ? 0 : projectileY);
-    defender.anim = defender.kind === "enemy" ? "enemy_damaged" : "damaged";
+    defender.anim = getHitReactionAnim(defender, defender.kind === "enemy" ? "enemy_damaged" : "damaged");
     if (owner) enforceHitSeparation(owner, defender, projectile, blocked);
     if (!blocked && owner) registerComboHit(owner, defender);
     if (blocked) resetCombo();
@@ -2313,6 +3250,81 @@
     }
   }
 
+  function spawnNyxUltimateVisual(f) {
+    const startX = clamp(f.x + f.facing * 150, 90, W - 90);
+    const endX = clamp(f.x + f.facing * 760, 90, W - 90);
+    const y = clamp(f.y - 116, 178, GROUND_Y - 82);
+    state.nyxSignatureEffects.push({
+      kind: "ultimateSlash",
+      startX,
+      endX,
+      x: startX,
+      y,
+      facing: f.facing,
+      age: 0,
+      life: 0.76,
+      impactAt: 0.52,
+      trailTimer: 0,
+      impactSpawned: false
+    });
+    state.cameraShake = Math.max(state.cameraShake, 16);
+    spawnBurst(f.x + f.facing * 54, f.y - 90, "#ff38f4", 36, 0.34, "shock");
+    for (let i = 0; i < 10; i += 1) {
+      const angle = -f.facing * (0.1 + Math.random() * 0.7) + (Math.random() - 0.5) * 0.4;
+      const speed = 220 + Math.random() * 280;
+      state.particles.push({
+        kind: "spark",
+        x: f.x + f.facing * (32 + Math.random() * 54),
+        y: f.y - 100 + (Math.random() - 0.5) * 58,
+        vx: Math.cos(angle) * speed * f.facing,
+        vy: Math.sin(angle) * speed - 40,
+        gravity: 90,
+        life: 0.24 + Math.random() * 0.12,
+        maxLife: 0.36,
+        size: 10 + Math.random() * 13,
+        color: i % 3 === 0 ? "#ff4df4" : "#9b5cff",
+        rot: angle,
+        spin: (Math.random() - 0.5) * 5
+      });
+    }
+  }
+
+  function updateNyxSignatureEffects(dt) {
+    for (const effect of state.nyxSignatureEffects) {
+      effect.age += dt;
+      effect.trailTimer -= dt;
+      const t = clamp(effect.age / effect.life, 0, 1);
+      const travel = 1 - Math.pow(1 - t, 3);
+      effect.x = effect.startX + (effect.endX - effect.startX) * travel;
+
+      if (effect.trailTimer <= 0 && t < 0.68) {
+        effect.trailTimer = 0.055;
+        state.particles.push({
+          kind: "spark",
+          x: effect.x - effect.facing * (78 + Math.random() * 72),
+          y: effect.y + (Math.random() - 0.5) * 46,
+          vx: -effect.facing * (110 + Math.random() * 150),
+          vy: (Math.random() - 0.5) * 70,
+          gravity: 0,
+          life: 0.16,
+          maxLife: 0.16,
+          size: 12 + Math.random() * 14,
+          color: Math.random() > 0.45 ? "#ff37f1" : "#6d42ff",
+          rot: (Math.random() - 0.5) * 0.36,
+          spin: 0
+        });
+      }
+
+      if (!effect.impactSpawned && t >= effect.impactAt) {
+        effect.impactSpawned = true;
+        state.cameraShake = Math.max(state.cameraShake, 18);
+        spawnBurst(effect.endX, effect.y + 8, "#ff4df4", 56, 0.38, "shock");
+        spawnBurst(effect.endX - effect.facing * 28, effect.y - 4, "#b47cff", 34, 0.28);
+      }
+    }
+    state.nyxSignatureEffects = state.nyxSignatureEffects.filter((effect) => effect.age < effect.life);
+  }
+
   function render() {
     ctx.save();
     const shakeX = state.cameraShake ? (Math.random() - 0.5) * state.cameraShake : 0;
@@ -2324,6 +3336,8 @@
       drawCenteredText("LOADING", H / 2);
     } else {
       drawArena();
+      drawNyxSignatureBackdrop();
+      drawNyxSignatureEffects();
       drawFighter(state.enemy);
       drawFighter(state.player);
       drawProjectiles();
@@ -2376,7 +3390,7 @@
     }
 
     const row = entry[1];
-    const frameCount = meta.cols;
+    const frameCount = Math.min(meta.cols, Math.max(1, meta.frameCounts?.[row] || meta.cols));
     const frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(getMove(f)?.duration || 0.5, 0.1)) * frameCount)) : Math.floor(state.time * 8) % frameCount;
     const fw = image.width / meta.cols;
     const rh = image.height / meta.rows;
@@ -2389,7 +3403,14 @@
     let dx;
     let dy;
 
-    if (analyzedRow && frameInfo) {
+    if (meta.fixedSourceCells) {
+      sx = frame * fw;
+      sy = row * rh;
+      sw = fw;
+      sh = rh;
+      dx = -(analyzedRow?.anchorX ?? (Number.isFinite(meta.anchorX) ? meta.anchorX : fw / 2)) * meta.scale;
+      dy = f.y - (analyzedRow?.anchorY ?? getSheetBaselineY(meta, rh)) * meta.scale + (meta.groundOffset || 0);
+    } else if (analyzedRow && frameInfo) {
       const pad = meta.framePad || 0;
       const x0 = clamp(frameInfo.bounds.x - pad, meta.cropX || 0, fw - 1);
       const y0 = clamp(frameInfo.bounds.y - pad, meta.cropTop || 0, rh - 1);
@@ -2421,6 +3442,117 @@
     ctx.scale(f.facing, 1);
     ctx.globalAlpha = f.hitstun > 0 && !f.dead ? 0.72 + Math.sin(state.time * 55) * 0.18 : 1;
     ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+    ctx.restore();
+
+    drawSerisChainWhipOverlay(f);
+  }
+
+  function drawSerisChainWhipOverlay(f) {
+    if (!f || f.profile?.id !== "seris" || f.dead || !f.activeMove) return;
+    if (!f.profile.vfx?.runtimeEnabled) return;
+    const vfxKey = f.profile.vfx?.mappings?.[f.activeMove];
+    const moveData = getMove(f);
+    drawSerisChainWhipVfx(f, vfxKey, {
+      time: f.actionTime,
+      moveKey: f.activeMove,
+      moveData,
+      progress: getSerisVfxProgress(f, moveData),
+      activePulse: getSerisVfxActivePulse(f, moveData)
+    });
+  }
+
+  function drawSerisChainWhipVfx(f, vfxKey, timing = {}) {
+    if (!SERIS_CHAIN_VFX_RUNTIME_ENABLED) return false;
+    const image = state.images.serisChainWhipVfx;
+    const baseCfg = serisChainWhipVfxRows[vfxKey];
+    if (!image || !baseCfg) return false;
+    const cfg = {
+      ...baseCfg,
+      ...(serisMoveVfxOverrides[timing.moveKey] || {})
+    };
+
+    const start = cfg.start ?? 0;
+    const end = cfg.end ?? 1;
+    const duration = Math.max(timing.duration || timing.moveData?.duration || 0.1, 0.1);
+    const raw = Number.isFinite(timing.progress)
+      ? timing.progress
+      : clamp((timing.time || 0) / duration, 0, 1);
+    if (raw < start || raw > end) return false;
+
+    const localT = clamp((raw - start) / Math.max(end - start, 0.01), 0, 1);
+    const frame = Math.min(cfg.frames - 1, Math.floor(localT * cfg.frames));
+    const fw = image.width / 8;
+    const fh = image.height / 7;
+    const scale = cfg.scale || 1;
+    const alpha = (cfg.alpha || 1) * Math.sin(localT * Math.PI) * 1.08;
+
+    ctx.save();
+    ctx.translate(f.x, 0);
+    ctx.scale(f.facing, 1);
+    ctx.globalAlpha = clamp(alpha, 0, cfg.alpha || 1);
+    ctx.globalCompositeOperation = "source-over";
+    ctx.shadowColor = "rgba(53, 232, 213, 0.55)";
+    ctx.shadowBlur = 9;
+    if (!cfg.accentOnly) {
+      ctx.drawImage(
+        image,
+        frame * fw,
+        cfg.row * fh,
+        fw,
+        fh,
+        cfg.ox || 0,
+        f.y + (cfg.oy || -96) - (fh * scale) / 2,
+        fw * scale,
+        fh * scale
+      );
+    }
+    drawSerisActiveSnap(f, cfg, scale, timing.activePulse || 0);
+    ctx.restore();
+    return true;
+  }
+
+  function getSerisVfxProgress(f, moveData) {
+    if (!moveData) return 0;
+    const t = f.actionTime;
+    const startup = Math.max(moveData.startup, 1 / 60);
+    const activeEnd = moveData.startup + moveData.active;
+    const recovery = Math.max(moveData.duration - activeEnd, 1 / 60);
+    if (t < moveData.startup) {
+      return 0.04 + 0.34 * clamp(t / startup, 0, 1);
+    }
+    if (t <= activeEnd) {
+      return 0.38 + 0.34 * clamp((t - moveData.startup) / Math.max(moveData.active, 1 / 60), 0, 1);
+    }
+    return 0.72 + 0.28 * clamp((t - activeEnd) / recovery, 0, 1);
+  }
+
+  function getSerisVfxActivePulse(f, moveData) {
+    if (!moveData) return 0;
+    const activeCenter = moveData.startup + moveData.active * 0.5;
+    const activeHalf = Math.max(moveData.active * 0.55, 1 / 60);
+    return clamp(1 - Math.abs(f.actionTime - activeCenter) / activeHalf, 0, 1);
+  }
+
+  function drawSerisActiveSnap(f, cfg, scale, pulse) {
+    if (pulse <= 0.02) return;
+    const x = cfg.snapX ?? 260;
+    const y = f.y + (cfg.snapY ?? -96);
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = Math.min(0.44, pulse * 0.48);
+    ctx.strokeStyle = "#fff7c7";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(x, y, 5 + pulse * 5, -0.35, Math.PI * 1.25);
+    ctx.stroke();
+    ctx.strokeStyle = "#35e8d5";
+    ctx.lineWidth = 1.7;
+    ctx.beginPath();
+    ctx.moveTo(x - 7 * scale, y - 4 * scale);
+    ctx.lineTo(x + 10 * scale, y + 5 * scale);
+    ctx.moveTo(x - 5 * scale, y + 7 * scale);
+    ctx.lineTo(x + 8 * scale, y - 7 * scale);
+    ctx.stroke();
     ctx.restore();
   }
 
@@ -2526,8 +3658,66 @@
     ctx.restore();
   }
 
+  function drawNyxSignatureBackdrop() {
+    if (!state.nyxSignatureEffects.length) return;
+    const strength = state.nyxSignatureEffects.reduce((best, effect) => {
+      const t = clamp(effect.age / effect.life, 0, 1);
+      const pulse = Math.sin(t * Math.PI);
+      return Math.max(best, pulse);
+    }, 0);
+    if (strength <= 0) return;
+
+    ctx.save();
+    ctx.globalAlpha = 0.16 * strength;
+    ctx.fillStyle = "#08000f";
+    ctx.fillRect(0, 0, W, H);
+
+    const gradient = ctx.createRadialGradient(W * 0.52, H * 0.42, 90, W * 0.52, H * 0.42, W * 0.72);
+    gradient.addColorStop(0, "rgba(101, 26, 150, 0.18)");
+    gradient.addColorStop(0.55, "rgba(39, 4, 58, 0.08)");
+    gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+    ctx.globalAlpha = 0.62 * strength;
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  }
+
+  function drawNyxSignatureEffects() {
+    for (const effect of state.nyxSignatureEffects) {
+      const t = clamp(effect.age / effect.life, 0, 1);
+      const rise = Math.sin(t * Math.PI);
+      const leadAlpha = clamp(t < 0.14 ? t / 0.14 : (1 - t) / 0.22, 0, 1);
+      const slashAlpha = Math.max(0.14, leadAlpha) * (0.50 + rise * 0.22);
+
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+      ctx.translate(effect.x, effect.y);
+      ctx.scale(effect.facing, 1);
+      ctx.rotate(-0.04);
+
+      const wave = state.images.nyxPhantomSlash;
+      if (wave) {
+        const frameCount = 8;
+        const sourceW = wave.width / frameCount;
+        const sourceH = wave.height;
+        const sourceFrame = Math.min(frameCount - 1, Math.floor(t * frameCount));
+        const w = 640 + rise * 120;
+        const h = 204 + rise * 56;
+        ctx.globalAlpha = slashAlpha;
+        ctx.shadowColor = "#ff35ef";
+        ctx.shadowBlur = 22;
+        ctx.drawImage(wave, sourceFrame * sourceW, 0, sourceW, sourceH, -w * 0.5, -h * 0.5, w, h);
+      }
+
+      ctx.restore();
+    }
+  }
+
   function drawProjectiles() {
     for (const projectile of state.projectiles) {
+      if (projectile.ownerCharacterId === "seris" && !SERIS_CHAIN_VFX_RUNTIME_ENABLED) continue;
+      if (drawSerisProjectileVfx(projectile)) continue;
+
       const box = getProjectileBox(projectile);
       ctx.save();
       ctx.translate(box.x + box.w / 2, box.y + box.h / 2);
@@ -2547,6 +3737,83 @@
       ctx.fillRect(-box.w / 2, -3, box.w * 0.78, 6);
       ctx.restore();
     }
+  }
+
+  function drawSerisProjectileVfx(projectile) {
+    if (!SERIS_CHAIN_VFX_RUNTIME_ENABLED) return false;
+    if (projectile.ownerCharacterId !== "seris" || !projectile.vfxKey) return false;
+    const box = getProjectileBox(projectile);
+    const owner = projectile.ownerKind === "player" ? state.player : state.enemy;
+    const originX = owner && owner.profile?.id === "seris"
+      ? owner.x + projectile.facing * 34
+      : projectile.visualOriginX;
+    const originY = owner && owner.profile?.id === "seris"
+      ? owner.y - 102
+      : projectile.visualOriginY;
+    const tipX = projectile.facing === 1 ? box.x + box.w : box.x;
+    const tipY = box.y + box.h * 0.5;
+    const lifeAlpha = clamp(projectile.life / Math.max(projectile.maxLife || 1, 0.1), 0.1, 1);
+    const extendAlpha = clamp(((projectile.maxLife || 1) - projectile.life) / 0.16, 0, 1);
+    const alpha = Math.min(0.88, lifeAlpha * extendAlpha);
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.shadowColor = "rgba(214, 178, 74, 0.65)";
+    ctx.shadowBlur = 8;
+    drawSerisTether(originX, originY, tipX, tipY, alpha);
+    ctx.restore();
+    return true;
+  }
+
+  function drawSerisTether(x0, y0, x1, y1, alpha) {
+    const dx = x1 - x0;
+    const dy = y1 - y0;
+    const len = Math.max(1, Math.hypot(dx, dy));
+    const ux = dx / len;
+    const uy = dy / len;
+    const nx = -uy;
+    const ny = ux;
+
+    ctx.strokeStyle = "rgba(14, 31, 34, 0.84)";
+    ctx.lineWidth = 8;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.quadraticCurveTo((x0 + x1) * 0.5 + nx * 12, (y0 + y1) * 0.5 + ny * 12, x1, y1);
+    ctx.stroke();
+
+    ctx.strokeStyle = "rgba(53, 232, 213, 0.86)";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.quadraticCurveTo((x0 + x1) * 0.5 + nx * 12, (y0 + y1) * 0.5 + ny * 12, x1, y1);
+    ctx.stroke();
+
+    const links = Math.min(18, Math.max(5, Math.floor(len / 28)));
+    for (let i = 1; i < links; i += 1) {
+      const t = i / links;
+      const bend = Math.sin(t * Math.PI) * 12;
+      const x = x0 + dx * t + nx * bend;
+      const y = y0 + dy * t + ny * bend;
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.atan2(dy, dx));
+      ctx.strokeStyle = i % 2 === 0 ? "rgba(244, 210, 111, 0.86)" : "rgba(53, 232, 213, 0.78)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 7, 3.2, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = Math.min(0.72, alpha * 0.86);
+    ctx.strokeStyle = "#fff6c5";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(x1, y1, 14, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalCompositeOperation = "source-over";
   }
 
   function drawParticles() {
@@ -2778,6 +4045,60 @@
     button.addEventListener("focus", () => updateCharacterSelectFocus(button.dataset.character));
     button.addEventListener("click", () => startTraining(button.dataset.character));
   });
+  if (SERIS_HIDDEN_TEST_ENABLED) {
+    window.__serisRevampTest = {
+      state,
+      assetPaths,
+      selectableCharacterIds: [...selectableCharacterIds],
+      hiddenTestCharacterIds: [...hiddenTestCharacterIds],
+      chainVfxEnabled: SERIS_CHAIN_VFX_RUNTIME_ENABLED,
+      start: () => startTraining("seris"),
+      reset: resetRound,
+      setPlayerAnim(anim, options = {}) {
+        if (state.mode !== "training" || state.player?.profile?.id !== "seris") startTraining("seris");
+        const f = state.player;
+        f.anim = anim;
+        f.action = null;
+        f.activeMove = null;
+        f.actionTime = 0;
+        f.hitstun = options.hitstun || 0;
+        f.blockstun = options.blockstun || 0;
+        f.knockdownTimer = options.knockdownTimer || 0;
+        f.recoveryTimer = 0;
+        f.landingTimer = 0;
+        f.dead = Boolean(options.dead);
+        f.grounded = options.grounded ?? true;
+        f.facing = options.facing || 1;
+        f.y = options.y || (f.grounded ? GROUND_Y : GROUND_Y - 130);
+        f.vx = 0;
+        f.vy = 0;
+        return f.anim;
+      },
+      startMove(move, options = {}) {
+        if (state.mode !== "training" || state.player?.profile?.id !== "seris") startTraining("seris");
+        const f = state.player;
+        f.meter = METER_MAX;
+        f.grounded = options.grounded ?? f.grounded;
+        f.y = options.y || (f.grounded ? GROUND_Y : GROUND_Y - 130);
+        f.hitstun = 0;
+        f.blockstun = 0;
+        f.knockdownTimer = 0;
+        f.recoveryTimer = 0;
+        f.landingTimer = 0;
+        f.action = null;
+        f.activeMove = null;
+        startMove(move);
+        return { move: f.activeMove, anim: f.anim };
+      },
+      loadedSerisAssets() {
+        return Object.fromEntries(
+          Object.entries(assetPaths)
+            .filter(([key]) => key.startsWith("seris"))
+            .map(([key]) => [key, Boolean(state.images[key])])
+        );
+      }
+    };
+  }
   window.setInterval(() => {
     if (state.mode !== "training" || state.paused || !state.player || state.player.dead) return;
     growPassiveMeter(0.25);

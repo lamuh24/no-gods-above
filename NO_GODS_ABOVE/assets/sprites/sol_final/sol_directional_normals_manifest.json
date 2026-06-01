@@ -1,0 +1,363 @@
+{
+  "character": "Sol Raze",
+  "sheet": "directional_normals",
+  "status": "runtime_ready",
+  "cellSize": 448,
+  "baselineY": 382,
+  "cols": 6,
+  "rows": [
+    {
+      "row": 1,
+      "key": "forward_light",
+      "label": "Step Jab",
+      "frames": 4,
+      "atlasColumns": 6,
+      "source": "sheet_3_ground_normals/light_attack",
+      "pivot": {
+        "mode": "lockedFrameBottomCenter",
+        "x": 224,
+        "y": 382
+      },
+      "cells": [
+        {
+          "column": 1,
+          "displayFrame": 1,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_light/forward_light_01.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 2,
+          "displayFrame": 2,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_light/forward_light_02.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 3,
+          "displayFrame": 3,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_light/forward_light_03.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 4,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_light/forward_light_04.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 5,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_light/forward_light_04.png",
+          "heldFromFinalPose": true,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 6,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_light/forward_light_04.png",
+          "heldFromFinalPose": true,
+          "edgeTouchRisk": false
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "key": "back_light",
+      "label": "Guard Check",
+      "frames": 4,
+      "atlasColumns": 6,
+      "source": "sheet_6_defense_hit_reactions/stand_block",
+      "pivot": {
+        "mode": "lockedFrameBottomCenter",
+        "x": 224,
+        "y": 382
+      },
+      "cells": [
+        {
+          "column": 1,
+          "displayFrame": 1,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_light/back_light_01.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 2,
+          "displayFrame": 2,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_light/back_light_02.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 3,
+          "displayFrame": 3,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_light/back_light_03.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 4,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_light/back_light_04.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 5,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_light/back_light_04.png",
+          "heldFromFinalPose": true,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 6,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_light/back_light_04.png",
+          "heldFromFinalPose": true,
+          "edgeTouchRisk": false
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "key": "down_light",
+      "label": "Low Body Tap",
+      "frames": 4,
+      "atlasColumns": 6,
+      "source": "sheet_6_defense_hit_reactions/crouch_block",
+      "pivot": {
+        "mode": "lockedFrameBottomCenter",
+        "x": 224,
+        "y": 382
+      },
+      "cells": [
+        {
+          "column": 1,
+          "displayFrame": 1,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_light/down_light_01.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 2,
+          "displayFrame": 2,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_light/down_light_02.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 3,
+          "displayFrame": 3,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_light/down_light_03.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 4,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_light/down_light_04.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 5,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_light/down_light_04.png",
+          "heldFromFinalPose": true,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 6,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_light/down_light_04.png",
+          "heldFromFinalPose": true,
+          "edgeTouchRisk": false
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "key": "forward_medium",
+      "label": "Advancing Iron Palm",
+      "frames": 6,
+      "atlasColumns": 6,
+      "source": "sheet_5_specials/radiant_break",
+      "pivot": {
+        "mode": "lockedFrameBottomCenter",
+        "x": 224,
+        "y": 382
+      },
+      "cells": [
+        {
+          "column": 1,
+          "displayFrame": 1,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_medium/forward_medium_01.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 2,
+          "displayFrame": 2,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_medium/forward_medium_02.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 3,
+          "displayFrame": 3,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_medium/forward_medium_03.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 4,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_medium/forward_medium_04.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 5,
+          "displayFrame": 5,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_medium/forward_medium_05.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 6,
+          "displayFrame": 6,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/forward_medium/forward_medium_06.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "key": "back_medium",
+      "label": "Counter Elbow",
+      "frames": 6,
+      "atlasColumns": 6,
+      "source": "sheet_3_ground_normals/heavy_attack",
+      "pivot": {
+        "mode": "lockedFrameBottomCenter",
+        "x": 224,
+        "y": 382
+      },
+      "cells": [
+        {
+          "column": 1,
+          "displayFrame": 1,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_medium/back_medium_01.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 2,
+          "displayFrame": 2,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_medium/back_medium_02.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 3,
+          "displayFrame": 3,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_medium/back_medium_03.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 4,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_medium/back_medium_04.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 5,
+          "displayFrame": 5,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_medium/back_medium_05.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 6,
+          "displayFrame": 6,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/back_medium/back_medium_06.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "key": "down_medium",
+      "label": "Low Knee Body Blow",
+      "frames": 6,
+      "atlasColumns": 6,
+      "source": "sheet_6_defense_hit_reactions/crouch_block",
+      "pivot": {
+        "mode": "lockedFrameBottomCenter",
+        "x": 224,
+        "y": 382
+      },
+      "cells": [
+        {
+          "column": 1,
+          "displayFrame": 1,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_medium/down_medium_01.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 2,
+          "displayFrame": 2,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_medium/down_medium_02.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 3,
+          "displayFrame": 3,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_medium/down_medium_03.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 4,
+          "displayFrame": 4,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_medium/down_medium_04.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 5,
+          "displayFrame": 5,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_medium/down_medium_05.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        },
+        {
+          "column": 6,
+          "displayFrame": 6,
+          "file": "assets/sprites/sol_final/frames/sheet_8_directional_normals/down_medium/down_medium_06.png",
+          "heldFromFinalPose": false,
+          "edgeTouchRisk": false
+        }
+      ]
+    }
+  ],
+  "frameCounts": [
+    4,
+    4,
+    4,
+    6,
+    6,
+    6
+  ],
+  "sourceChroma": "assets/sprites/sol_generated/sol_sheet_8_directional_normals_chroma.png",
+  "transparentAtlas": "assets/sprites/sol_final/sol_sheet_8_directional_normals_atlas.png",
+  "failures": []
+}

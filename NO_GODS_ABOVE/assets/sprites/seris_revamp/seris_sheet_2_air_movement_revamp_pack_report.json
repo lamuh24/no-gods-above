@@ -1,0 +1,784 @@
+{
+  "input": "assets\\sprites\\seris_revamp\\seris_sheet_2_air_movement_revamp_draft_generated.png",
+  "output": "assets\\sprites\\seris_revamp\\seris_sheet_2_air_movement_revamp_atlas.png",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "sourceCellApprox": [
+    209.0,
+    209.0
+  ],
+  "outputSize": [
+    2304,
+    2304
+  ],
+  "cellSize": [
+    384,
+    384
+  ],
+  "grid": [
+    6,
+    6
+  ],
+  "baselineY": 350,
+  "frameCounts": [
+    4,
+    4,
+    4,
+    4,
+    6,
+    6
+  ],
+  "placements": [
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 0,
+      "active": true,
+      "sourceCell": [
+        0,
+        0,
+        209,
+        209
+      ],
+      "sourceBbox": [
+        30,
+        82,
+        159,
+        196
+      ],
+      "paste": [
+        73,
+        131,
+        248,
+        219
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 1,
+      "active": true,
+      "sourceCell": [
+        209,
+        0,
+        418,
+        209
+      ],
+      "sourceBbox": [
+        32,
+        70,
+        175,
+        199
+      ],
+      "paste": [
+        459,
+        102,
+        275,
+        248
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 2,
+      "active": true,
+      "sourceCell": [
+        418,
+        0,
+        627,
+        209
+      ],
+      "sourceBbox": [
+        20,
+        41,
+        178,
+        187
+      ],
+      "paste": [
+        824,
+        70,
+        303,
+        280
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 3,
+      "active": true,
+      "sourceCell": [
+        627,
+        0,
+        836,
+        209
+      ],
+      "sourceBbox": [
+        17,
+        24,
+        175,
+        187
+      ],
+      "paste": [
+        1203,
+        40,
+        300,
+        310
+      ],
+      "scale": 1.9018
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 4,
+      "active": false
+    },
+    {
+      "row": 0,
+      "rowName": "jump_up_rising",
+      "col": 5,
+      "active": false
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 0,
+      "active": true,
+      "sourceCell": [
+        0,
+        209,
+        209,
+        418
+      ],
+      "sourceBbox": [
+        19,
+        74,
+        156,
+        193
+      ],
+      "paste": [
+        102,
+        506,
+        263,
+        228
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 1,
+      "active": true,
+      "sourceCell": [
+        209,
+        209,
+        418,
+        418
+      ],
+      "sourceBbox": [
+        4,
+        70,
+        145,
+        193
+      ],
+      "paste": [
+        457,
+        498,
+        271,
+        236
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 2,
+      "active": true,
+      "sourceCell": [
+        418,
+        209,
+        627,
+        418
+      ],
+      "sourceBbox": [
+        5,
+        69,
+        155,
+        193
+      ],
+      "paste": [
+        850,
+        496,
+        288,
+        238
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 3,
+      "active": true,
+      "sourceCell": [
+        627,
+        209,
+        836,
+        418
+      ],
+      "sourceBbox": [
+        12,
+        62,
+        169,
+        182
+      ],
+      "paste": [
+        1221,
+        504,
+        301,
+        230
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 4,
+      "active": false
+    },
+    {
+      "row": 1,
+      "rowName": "jump_forward",
+      "col": 5,
+      "active": false
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 0,
+      "active": true,
+      "sourceCell": [
+        0,
+        418,
+        209,
+        627
+      ],
+      "sourceBbox": [
+        55,
+        50,
+        155,
+        191
+      ],
+      "paste": [
+        102,
+        847,
+        192,
+        271
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 1,
+      "active": true,
+      "sourceCell": [
+        209,
+        418,
+        418,
+        627
+      ],
+      "sourceBbox": [
+        56,
+        53,
+        191,
+        185
+      ],
+      "paste": [
+        434,
+        865,
+        259,
+        253
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 2,
+      "active": true,
+      "sourceCell": [
+        418,
+        418,
+        627,
+        627
+      ],
+      "sourceBbox": [
+        65,
+        47,
+        198,
+        182
+      ],
+      "paste": [
+        841,
+        859,
+        255,
+        259
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 3,
+      "active": true,
+      "sourceCell": [
+        627,
+        418,
+        836,
+        627
+      ],
+      "sourceBbox": [
+        70,
+        37,
+        196,
+        171
+      ],
+      "paste": [
+        1258,
+        861,
+        242,
+        257
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 4,
+      "active": false
+    },
+    {
+      "row": 2,
+      "rowName": "jump_back",
+      "col": 5,
+      "active": false
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 0,
+      "active": true,
+      "sourceCell": [
+        0,
+        627,
+        209,
+        836
+      ],
+      "sourceBbox": [
+        34,
+        42,
+        155,
+        182
+      ],
+      "paste": [
+        50,
+        1233,
+        232,
+        269
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 1,
+      "active": true,
+      "sourceCell": [
+        209,
+        627,
+        418,
+        836
+      ],
+      "sourceBbox": [
+        36,
+        40,
+        164,
+        175
+      ],
+      "paste": [
+        445,
+        1243,
+        246,
+        259
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 2,
+      "active": true,
+      "sourceCell": [
+        418,
+        627,
+        627,
+        836
+      ],
+      "sourceBbox": [
+        34,
+        48,
+        165,
+        181
+      ],
+      "paste": [
+        862,
+        1247,
+        252,
+        255
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 3,
+      "active": true,
+      "sourceCell": [
+        627,
+        627,
+        836,
+        836
+      ],
+      "sourceBbox": [
+        28,
+        58,
+        166,
+        189
+      ],
+      "paste": [
+        1242,
+        1250,
+        265,
+        252
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 4,
+      "active": false
+    },
+    {
+      "row": 3,
+      "rowName": "fall_neutral_air_drift",
+      "col": 5,
+      "active": false
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 0,
+      "active": true,
+      "sourceCell": [
+        0,
+        836,
+        209,
+        1045
+      ],
+      "sourceBbox": [
+        24,
+        38,
+        185,
+        155
+      ],
+      "paste": [
+        61,
+        1661,
+        309,
+        225
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 1,
+      "active": true,
+      "sourceCell": [
+        209,
+        836,
+        418,
+        1045
+      ],
+      "sourceBbox": [
+        15,
+        44,
+        180,
+        158
+      ],
+      "paste": [
+        437,
+        1667,
+        317,
+        219
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 2,
+      "active": true,
+      "sourceCell": [
+        418,
+        836,
+        627,
+        1045
+      ],
+      "sourceBbox": [
+        10,
+        45,
+        183,
+        157
+      ],
+      "paste": [
+        806,
+        1671,
+        332,
+        215
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 3,
+      "active": true,
+      "sourceCell": [
+        627,
+        836,
+        836,
+        1045
+      ],
+      "sourceBbox": [
+        12,
+        45,
+        179,
+        157
+      ],
+      "paste": [
+        1196,
+        1671,
+        321,
+        215
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 4,
+      "active": true,
+      "sourceCell": [
+        836,
+        836,
+        1045,
+        1045
+      ],
+      "sourceBbox": [
+        6,
+        41,
+        182,
+        156
+      ],
+      "paste": [
+        1568,
+        1665,
+        338,
+        221
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 4,
+      "rowName": "air_dash_forward",
+      "col": 5,
+      "active": true,
+      "sourceCell": [
+        1045,
+        836,
+        1254,
+        1045
+      ],
+      "sourceBbox": [
+        4,
+        43,
+        177,
+        157
+      ],
+      "paste": [
+        1958,
+        1667,
+        332,
+        219
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 0,
+      "active": true,
+      "sourceCell": [
+        0,
+        1045,
+        209,
+        1254
+      ],
+      "sourceBbox": [
+        48,
+        26,
+        194,
+        161
+      ],
+      "paste": [
+        21,
+        2011,
+        280,
+        259
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 1,
+      "active": true,
+      "sourceCell": [
+        209,
+        1045,
+        418,
+        1254
+      ],
+      "sourceBbox": [
+        43,
+        31,
+        188,
+        167
+      ],
+      "paste": [
+        399,
+        2009,
+        278,
+        261
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 2,
+      "active": true,
+      "sourceCell": [
+        418,
+        1045,
+        627,
+        1254
+      ],
+      "sourceBbox": [
+        44,
+        29,
+        191,
+        166
+      ],
+      "paste": [
+        803,
+        2007,
+        282,
+        263
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 3,
+      "active": true,
+      "sourceCell": [
+        627,
+        1045,
+        836,
+        1254
+      ],
+      "sourceBbox": [
+        43,
+        30,
+        191,
+        164
+      ],
+      "paste": [
+        1169,
+        2013,
+        284,
+        257
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 4,
+      "active": true,
+      "sourceCell": [
+        836,
+        1045,
+        1045,
+        1254
+      ],
+      "sourceBbox": [
+        39,
+        24,
+        188,
+        161
+      ],
+      "paste": [
+        1550,
+        2007,
+        286,
+        263
+      ],
+      "scale": 1.92
+    },
+    {
+      "row": 5,
+      "rowName": "air_dash_back",
+      "col": 5,
+      "active": true,
+      "sourceCell": [
+        1045,
+        1045,
+        1254,
+        1254
+      ],
+      "sourceBbox": [
+        37,
+        30,
+        190,
+        164
+      ],
+      "paste": [
+        1937,
+        2013,
+        294,
+        257
+      ],
+      "scale": 1.92
+    }
+  ],
+  "warnings": []
+}

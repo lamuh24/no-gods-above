@@ -1,0 +1,504 @@
+{
+  "input": "assets/sprites/seris_revamp/seris_sheet_3_ground_normals_revamp_draft_generated.png",
+  "status": "fail",
+  "contract": {
+    "sheet": "Seris Sheet 3 - Ground Normals",
+    "atlas": [
+      6656,
+      1792
+    ],
+    "cell": [
+      832,
+      448
+    ],
+    "grid": [
+      8,
+      4
+    ],
+    "frameCounts": [
+      4,
+      8,
+      7,
+      7
+    ],
+    "runtime": {
+      "fixedSourceCells": true,
+      "skipSanitize": true,
+      "anchorX": 320,
+      "baselineY": 406
+    }
+  },
+  "checks": {
+    "actualSize": [
+      1708,
+      920
+    ],
+    "hasAlpha": false,
+    "transparentPixels": 0,
+    "opaquePixels": 1571360,
+    "outerEdgeOpaquePixels": 5252,
+    "opaqueMagentaPixels": 0
+  },
+  "failures": [
+    "PNG dimensions must be 6656x1792; got 1708x920",
+    "PNG must include an alpha channel / transparent background",
+    "PNG has no transparent pixels; transparent background is required",
+    "Atlas outer edge has 5252 opaque pixels",
+    "row 0 light_attack col 0: 10176 opaque pixels touch the 4px cell edge margin",
+    "row 0 light_attack col 0: top/bottom edge fragment components detected: [{'area': 16640, 'minX': 0, 'minY': 0, 'maxX': 831, 'maxY': 19}, {'area': 16640, 'minX': 0, 'minY': 428, 'maxX': 831, 'maxY': 447}]",
+    "row 0 light_attack col 1: 10176 opaque pixels touch the 4px cell edge margin",
+    "row 0 light_attack col 1: top/bottom edge fragment components detected: [{'area': 16640, 'minX': 0, 'minY': 0, 'maxX': 831, 'maxY': 19}, {'area': 16640, 'minX': 0, 'minY': 428, 'maxX': 831, 'maxY': 447}]",
+    "row 0 light_attack col 2: 3872 opaque pixels touch the 4px cell edge margin",
+    "row 0 light_attack col 2: top/bottom edge fragment components detected: [{'area': 880, 'minX': 0, 'minY': 0, 'maxX': 43, 'maxY': 19}, {'area': 880, 'minX': 0, 'minY': 428, 'maxX': 43, 'maxY': 447}]",
+    "row 1 medium_attack col 0: 10176 opaque pixels touch the 4px cell edge margin",
+    "row 1 medium_attack col 0: top/bottom edge fragment components detected: [{'area': 16640, 'minX': 0, 'minY': 0, 'maxX': 831, 'maxY': 19}, {'area': 16640, 'minX': 0, 'minY': 428, 'maxX': 831, 'maxY': 447}]",
+    "row 1 medium_attack col 1: 10176 opaque pixels touch the 4px cell edge margin",
+    "row 1 medium_attack col 1: top/bottom edge fragment components detected: [{'area': 16640, 'minX': 0, 'minY': 0, 'maxX': 831, 'maxY': 19}, {'area': 16640, 'minX': 0, 'minY': 428, 'maxX': 831, 'maxY': 447}]",
+    "row 1 medium_attack col 2: 3872 opaque pixels touch the 4px cell edge margin",
+    "row 1 medium_attack col 2: top/bottom edge fragment components detected: [{'area': 880, 'minX': 0, 'minY': 0, 'maxX': 43, 'maxY': 19}, {'area': 880, 'minX': 0, 'minY': 428, 'maxX': 43, 'maxY': 447}]",
+    "row 2 heavy_attack col 0: 6784 opaque pixels touch the 4px cell edge margin",
+    "row 2 heavy_attack col 0: top/bottom edge fragment components detected: [{'area': 19968, 'minX': 0, 'minY': 0, 'maxX': 831, 'maxY': 23}]",
+    "row 2 heavy_attack col 1: 6784 opaque pixels touch the 4px cell edge margin",
+    "row 2 heavy_attack col 1: top/bottom edge fragment components detected: [{'area': 19968, 'minX': 0, 'minY': 0, 'maxX': 831, 'maxY': 23}]",
+    "row 2 heavy_attack col 2: 480 opaque pixels touch the 4px cell edge margin",
+    "row 2 heavy_attack col 2: top/bottom edge fragment components detected: [{'area': 1056, 'minX': 0, 'minY': 0, 'maxX': 43, 'maxY': 23}]"
+  ],
+  "warnings": [],
+  "cells": [
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 372736,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 10176,
+      "topBottomFragments": [
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 831,
+          "maxY": 19
+        },
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 428,
+          "maxX": 831,
+          "maxY": 447
+        }
+      ]
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 372736,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 10176,
+      "topBottomFragments": [
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 831,
+          "maxY": 19
+        },
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 428,
+          "maxX": 831,
+          "maxY": 447
+        }
+      ]
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 19712,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 3872,
+      "topBottomFragments": [
+        {
+          "area": 880,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 43,
+          "maxY": 19
+        },
+        {
+          "area": 880,
+          "minX": 0,
+          "minY": 428,
+          "maxX": 43,
+          "maxY": 447
+        }
+      ]
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 4,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 5,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 6,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 0,
+      "rowName": "light_attack",
+      "col": 7,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 372736,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 10176,
+      "topBottomFragments": [
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 831,
+          "maxY": 19
+        },
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 428,
+          "maxX": 831,
+          "maxY": 447
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 372736,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 10176,
+      "topBottomFragments": [
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 831,
+          "maxY": 19
+        },
+        {
+          "area": 16640,
+          "minX": 0,
+          "minY": 428,
+          "maxX": 831,
+          "maxY": 447
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 19712,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 3872,
+      "topBottomFragments": [
+        {
+          "area": 880,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 43,
+          "maxY": 19
+        },
+        {
+          "area": 880,
+          "minX": 0,
+          "minY": 428,
+          "maxX": 43,
+          "maxY": 447
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 4,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 5,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 6,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 1,
+      "rowName": "medium_attack",
+      "col": 7,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 19968,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 6784,
+      "topBottomFragments": [
+        {
+          "area": 19968,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 831,
+          "maxY": 23
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 19968,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 6784,
+      "topBottomFragments": [
+        {
+          "area": 19968,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 831,
+          "maxY": 23
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 1056,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 480,
+      "topBottomFragments": [
+        {
+          "area": 1056,
+          "minX": 0,
+          "minY": 0,
+          "maxX": 43,
+          "maxY": 23
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 4,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 5,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 6,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 2,
+      "rowName": "heavy_attack",
+      "col": 7,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 0,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 1,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 2,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 3,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 4,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 5,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 6,
+      "activeFrame": true,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    },
+    {
+      "row": 3,
+      "rowName": "launcher",
+      "col": 7,
+      "activeFrame": false,
+      "opaquePixels": 0,
+      "opaqueMagentaPixels": 0,
+      "cellEdgeOpaquePixels": 0,
+      "topBottomFragments": []
+    }
+  ],
+  "contactSheet": "assets/sprites/seris_revamp/validation/seris_sheet_3_ground_normals_revamp_draft_generated_contact.png"
+}

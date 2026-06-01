@@ -1,13 +1,15 @@
-# Nyx Real Sprite Import Guide
+# Nyx Sprite Import And Atlas Guide
 
-Use this guide when Nyx's final artwork is ready. This is a visual-swap workflow only. Keep Nyx's gameplay config, hitboxes, movement, cancels, damage, hitstun, blockstun, launch values, knockback, combo routes, and special flags unchanged unless a separate tuning pass is explicitly requested.
+Use this guide for Nyx final-art maintenance and for future new-generation character imports based on the Nyx pipeline. This is a visual/import workflow only. Keep gameplay config, hitboxes, movement, cancels, damage, hitstun, blockstun, launch values, knockback, combo routes, and special flags unchanged unless a separate tuning pass is explicitly requested.
 
 ## Current Baseline
 
 - Stable gameplay checkpoint: `nyx-gameplay-placeholder-v1`.
 - Nyx is playable now through `characterProfiles.nyx` in `game.js`.
-- Nyx currently points at Kairo Final sheets as temporary placeholder art.
-- Real Nyx sprites should replace only the sheet keys, asset paths, sheet metadata, and select portrait.
+- Nyx uses dedicated final atlases under `assets/sprites/nyx_final/`.
+- Nyx uses `assets/sprites/portraits/nyx_select.png` for character select.
+- Kairo and Vanta are legacy fighters and should not be modified during Nyx or future-character import work.
+- If Nyx art is replaced later, update only Nyx asset paths, sheet metadata, sheet keys, custom animation mappings if needed, and select portrait.
 
 ## Runtime Folder
 
@@ -17,16 +19,16 @@ Place final Nyx runtime sheets here:
 NO_GODS_ABOVE/assets/sprites/nyx_final/
 ```
 
-Use these filenames:
+Current Nyx final atlas filenames:
 
 ```text
-nyx_sheet_1_basic_movement.png
-nyx_sheet_2_defense_recovery.png
-nyx_sheet_3_core_attacks_a.png
-nyx_sheet_4_core_attacks_b.png
-nyx_sheet_5_low_air.png
-nyx_sheet_6_specials_ultimate.png
-nyx_sheet_7_end_states_extras.png
+nyx_sheet_1_core_movement_atlas.png
+nyx_sheet_2_air_movement_atlas.png
+nyx_sheet_3_ground_normals_atlas.png
+nyx_sheet_4_air_normals_atlas.png
+nyx_sheet_5_specials_atlas.png
+nyx_sheet_6_defense_hit_reactions_atlas.png
+nyx_sheet_7_knockdown_recovery_flavor_atlas.png
 ```
 
 Place the character select portrait here:
@@ -37,89 +39,92 @@ NO_GODS_ABOVE/assets/sprites/portraits/nyx_select.png
 
 ## Sprite Sheet Format
 
-Each clean runtime sheet should be:
+Each clean runtime atlas should be:
 
-- 6 columns x 5 rows.
-- 6 frames per animation row.
-- 5 animation rows per sheet.
 - 320x320 cells.
-- 1920x1600 total image size.
-- Solid `#ff00ff` magenta background.
+- Transparent runtime background after extraction.
 - No text, labels, debug baselines, grid lines, UI, or title graphics.
 - Bottom-center anchored, with grounded feet aligned to the same invisible baseline.
 - Character motion contained inside cells; dash, projectile, teleport, and special travel remain code-driven.
+- Sheet dimensions may vary by move family, but must match `sheetMeta` and `nyx_final_atlas_manifest.json`.
 
 Debug or baseline reference sheets are optional diagnostics only. Do not wire debug sheets into runtime.
 
 ## Sheet Row Map
 
-The existing final-fighter animation mapper expects this seven-sheet layout.
+Nyx uses a custom seven-sheet layout and custom animation builders in `game.js`: `buildNyxFinalPlayerAnimations()` and `buildNyxFinalEnemyAnimations()`.
 
-| Sheet | Row 1 | Row 2 | Row 3 | Row 4 | Row 5 |
-|---|---|---|---|---|---|
-| Sheet 1 - Basic Movement | `idle` | `walk_forward` | `walk_back` | `dash` | `crouch` |
-| Sheet 2 - Defense / Recovery | `stand_up` | `guard_idle` | `hurt` | `knockback` | `get_up` |
-| Sheet 3 - Core Attacks A | `neutral_light` | `neutral_medium` | `neutral_heavy` | `forward_light` | `forward_medium` |
-| Sheet 4 - Core Attacks B | `forward_heavy` | `back_light` | `back_medium` | `back_heavy` | `taunt` |
-| Sheet 5 - Low / Air | `down_light` | `down_medium` | `down_heavy` | `jump_light` | `jump_medium` |
-| Sheet 6 - Specials / Ultimate | `jump_heavy` | `special_1` | `special_2` | `special_3` | `ultimate` |
-| Sheet 7 - End States / Extras | `death` | `victory` | `level_up` | `intro_pose` | `select_idle` |
+| Sheet | Runtime Key | Rows |
+|---|---|---|
+| Sheet 1 - Core Movement | `nyxFinalCoreMovement` | `idle`, `walk_forward`, `walk_back`, `dash`, `dash_back`, `crouch` |
+| Sheet 2 - Air Movement | `nyxFinalAirMovement` | `jump_up`, `jump_forward`, `jump_back`, `fall`, `air_dash_forward`, `air_dash_back` |
+| Sheet 3 - Ground Normals | `nyxFinalGroundNormals` | `light_attack`, `medium_attack`, `heavy_attack`, `launcher` |
+| Sheet 4 - Air Normals | `nyxFinalAirNormals` | `air_light`, `air_medium`, `air_heavy`, `air_recovery` |
+| Sheet 5 - Specials | `nyxFinalSpecials` | `shadow_step_start`, `shadow_step_travel`, `shadow_step_end`, `falling_slash_start`, `falling_slash_active`, `falling_slash_land`, `rapid_flurry` |
+| Sheet 6 - Defense / Hit Reactions | `nyxFinalDefense` | `stand_block`, `crouch_block`, `air_block`, `light_hitstun`, `medium_hitstun`, `heavy_hitstun`, `launch_hitstun`, `air_hitstun` |
+| Sheet 7 - Knockdown / Recovery / Flavor | `nyxFinalEndStates` | `knockdown_fall`, `grounded`, `recovery_get_up`, `ko_defeat`, `intro`, `victory`, `taunt` |
 
-Rows are one-based in this document. Runtime animation objects use zero-based row indexes internally through the shared final-fighter mapper.
+Rows are named in this document. Runtime animation objects use zero-based row indexes internally.
 
 ## Frame Counts
 
-Keep every row at 6 frames.
+Frame counts vary by sheet. Use the manifest and `sheetMeta` as the source of truth:
 
-If an animation only needs 2 or 3 unique poses, duplicate held poses inside the 6-frame row. Do not change gameplay timing to match the art. Attack timing comes from Nyx's `attackDef()` values, not from the number of unique drawn frames.
+- Core Movement: 6 columns x 6 rows.
+- Air Movement: 6 columns x 6 rows.
+- Ground Normals: 8 columns x 4 rows.
+- Air Normals: 6 columns x 4 rows.
+- Specials: 10 columns x 7 rows.
+- Defense / Hit Reactions: 6 columns x 8 rows.
+- Knockdown / Recovery / Flavor: 8 columns x 7 rows.
 
-If a future sheet absolutely must use a different frame count, update the animation references and mapper deliberately, then test all three existing fighters. The preferred path is still to normalize Nyx art into the current 6-frame row format.
+If an animation has fewer unique poses than runtime cells, duplicate held poses inside the row. Do not change gameplay timing to match the art. Attack timing comes from Nyx's `attackDef()` values, not from the number of unique drawn frames.
 
 ## Code Updates For Real Nyx Art
 
 Make visual-only edits in `game.js`.
 
-1. Add Nyx final sheet paths to `assetPaths`:
+1. Keep Nyx final sheet paths in `assetPaths`:
 
 ```js
-nyxFinalBasic: "assets/sprites/nyx_final/nyx_sheet_1_basic_movement.png",
-nyxFinalDefense: "assets/sprites/nyx_final/nyx_sheet_2_defense_recovery.png",
-nyxFinalCoreA: "assets/sprites/nyx_final/nyx_sheet_3_core_attacks_a.png",
-nyxFinalCoreB: "assets/sprites/nyx_final/nyx_sheet_4_core_attacks_b.png",
-nyxFinalLowAir: "assets/sprites/nyx_final/nyx_sheet_5_low_air.png",
-nyxFinalSpecials: "assets/sprites/nyx_final/nyx_sheet_6_specials_ultimate.png",
-nyxFinalEnd: "assets/sprites/nyx_final/nyx_sheet_7_end_states_extras.png",
+nyxFinalCoreMovement: "assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png",
+nyxFinalAirMovement: "assets/sprites/nyx_final/nyx_sheet_2_air_movement_atlas.png",
+nyxFinalGroundNormals: "assets/sprites/nyx_final/nyx_sheet_3_ground_normals_atlas.png",
+nyxFinalAirNormals: "assets/sprites/nyx_final/nyx_sheet_4_air_normals_atlas.png",
+nyxFinalSpecials: "assets/sprites/nyx_final/nyx_sheet_5_specials_atlas.png",
+nyxFinalDefense: "assets/sprites/nyx_final/nyx_sheet_6_defense_hit_reactions_atlas.png",
+nyxFinalEndStates: "assets/sprites/nyx_final/nyx_sheet_7_knockdown_recovery_flavor_atlas.png",
 ```
 
-2. Add Nyx metadata to `sheetMeta`. Start from the Kairo Final metadata when Nyx sheets are 1920x1600 with 320x320 cells:
+2. Keep Nyx metadata in `sheetMeta` aligned with the actual atlas dimensions:
 
 ```js
-nyxFinalBasic: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
-nyxFinalDefense: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
-nyxFinalCoreA: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
-nyxFinalCoreB: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
-nyxFinalLowAir: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.42, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
-nyxFinalSpecials: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.42, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
-nyxFinalEnd: { cols: 6, rows: 5, cellSize: 320, baselineY: 300, scale: 1.38, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+nyxFinalCoreMovement: { cols: 6, rows: 6, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+nyxFinalAirMovement: { cols: 6, rows: 6, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+nyxFinalGroundNormals: { cols: 8, rows: 4, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+nyxFinalAirNormals: { cols: 6, rows: 4, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+nyxFinalSpecials: { cols: 10, rows: 7, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter", allowDetachedEffects: true },
+nyxFinalDefense: { cols: 6, rows: 8, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" },
+nyxFinalEndStates: { cols: 8, rows: 7, cellSize: 320, baselineY: 300, scale: 1.0, framePad: 2, anchorMode: "lockedFrameBottomCenter" }
 ```
 
 Only use `allowDetachedEffects` on attack, air, and special sheets where detached effects are intentional and contained in the cell. Movement, defense, and end-state sheets should stay body-only.
 
-3. Update `characterProfiles.nyx.sheets`:
+3. Keep `characterProfiles.nyx.sheets` pointed at Nyx keys:
 
 ```js
 sheets: {
-  basic: "nyxFinalBasic",
+  coreMovement: "nyxFinalCoreMovement",
+  airMovement: "nyxFinalAirMovement",
+  groundNormals: "nyxFinalGroundNormals",
+  airNormals: "nyxFinalAirNormals",
   defense: "nyxFinalDefense",
-  coreA: "nyxFinalCoreA",
-  coreB: "nyxFinalCoreB",
-  lowAir: "nyxFinalLowAir",
   specials: "nyxFinalSpecials",
-  end: "nyxFinalEnd"
+  endStates: "nyxFinalEndStates"
 }
 ```
 
-4. Remove or update `placeholderArt: "kairoFinal"` so future agents do not mistake the real art for a placeholder.
+4. Keep placeholder notes clear so future agents do not mistake Nyx final atlases for Kairo placeholder art.
 
 5. In `index.html`, update Nyx's select-card image from `assets/sprites/portraits/kairo_select.png` to:
 
@@ -131,15 +136,13 @@ Do not edit Kairo or Vanta sheet mappings during this pass.
 
 ## Animation References
 
-Nyx currently uses the same final-fighter animation map as Kairo and Vanta. The shared mapper is built in `game.js` and hydrates each profile into:
+Nyx uses custom final animation mappers in `game.js` and hydrates into:
 
 - `profile.playerAnimations`
 - `profile.enemyAnimations`
 - `profile.animationReferences`
 
-If Nyx follows the seven-sheet row map above, no custom animation mapper is needed. Updating `characterProfiles.nyx.sheets` is enough for the existing animation references to point at Nyx's real sheets.
-
-Only create a Nyx-specific mapper if the real art intentionally uses different row meanings. If that happens, keep the move names the same so combat logic still resolves actions such as `neutral_light`, `down_heavy`, `jump_medium`, `special_1`, `special_2`, and `special_3`.
+Keep move/action names stable so combat logic still resolves actions such as `neutral_light`, `down_heavy`, `jump_medium`, `special_1`, `special_2`, and `special_3`.
 
 ## Preserve Gameplay Values
 

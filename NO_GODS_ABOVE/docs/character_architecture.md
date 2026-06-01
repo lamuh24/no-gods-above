@@ -1,7 +1,16 @@
 # NO GODS ABOVE - Character Config Architecture
 
-This project now treats Kairo Final and Vanta Reign as data-driven character configs in `game.js`.
-The refactor preserves the `fighterz-combat-baseline-v1` combat feel: no attack values, sprites, stage, UI layout, or balance values were changed for this pass.
+This project treats fighters as data-driven character configs in `game.js`.
+The refactor preserves the `fighterz-combat-baseline-v1` combat feel: do not redesign combat, rebuild the game, or change working Kairo/Vanta gameplay while adding new-character support.
+
+## Current Production Direction
+
+Kairo and Vanta are stable legacy fighters. Keep them playable, keep their current movesets and art style, and only fix them if they break gameplay or are specifically requested later.
+
+Nyx is the first new-generation fighter standard. After Nyx is complete, plan and build exactly one fresh new-generation fighter through the Nyx-style pipeline instead of retrofitting Kairo or Vanta. That fighter is Seris, the Halo Chain. After Seris is playable and tested, shift focus to controller support.
+
+For the full roadmap and new-character planning template, see `docs/character_production_roadmap.md`.
+For Seris pre-production, see `docs/seris_preproduction.md`.
 
 ## Config Location
 
@@ -9,12 +18,16 @@ Character configs live in `characterProfiles`.
 
 Current playable configs:
 
-- `kairo`: Kairo Final, baseline all-rounder, canonical runtime art.
-- `vanta`: Vanta Reign, baseline rival, canonical runtime art.
-- `nyx`: fast rushdown / aerial pressure fighter, currently using Kairo Final sheets and portrait as placeholder art until Nyx-specific sprites exist.
+- `kairo`: Kairo Final, stable legacy fighter, canonical runtime art.
+- `vanta`: Vanta Reign, stable legacy fighter, canonical runtime art.
+- `nyx`: fast rushdown / aerial pressure fighter, first new-generation fighter standard, using Nyx final atlases and Nyx select portrait.
 
-For Nyx-specific stats, moves, placeholder sprite mappings, and final art requirements, see `docs/nyx_character_config.md`.
-For the real Nyx sprite-sheet import workflow, see `docs/nyx_sprite_import.md`.
+Planned new-generation config:
+
+- `seris`: planned mid-range chain / whip fighter, not yet implemented. Do not add runtime config, sprites, select-card data, or controller work until explicitly requested.
+
+For Nyx-specific stats, moves, final atlas mappings, and remaining visual QA items, see `docs/nyx_character_config.md`.
+For Nyx's atlas/import structure and audit checklist, see `docs/nyx_sprite_import.md`.
 
 Each entry owns:
 
@@ -78,6 +91,30 @@ Important fields:
 - `flags.noHit`: animation/action only, no direct hitbox.
 
 ## Adding A New Character
+
+Before generating sprites or touching runtime code, fill out the planning template in `docs/character_production_roadmap.md`.
+
+New-generation fighters should follow this order:
+
+1. Define gameplay identity.
+2. Define move list.
+3. Define visual identity.
+4. Generate sprite sheets.
+5. Audit and fix sheets.
+6. Import atlases.
+7. Make character select image.
+8. Playtest.
+
+Do not use this process to force Kairo or Vanta into the new pipeline. They are legacy fighters unless specifically requested.
+
+Seris-specific starting direction:
+
+- Name: Seris, the Halo Chain.
+- Archetype: mid-range chain / whip fighter.
+- Health target: 960.
+- Profile: medium damage, medium speed, precise measured movement.
+- Visual identity: ivory, black, turquoise, and pale gold celestial chain duelist.
+- Signature / ultimate: Heaven's Guillotine.
 
 1. Add sprite assets to a new folder under `assets/sprites/<character_id>/`.
 2. Add each new sprite sheet to `assetPaths`.
@@ -165,8 +202,8 @@ effects: { dashTrail: true }
 
 15. Add the character id to `selectableCharacterIds` and add/update `getOpponentId()` so Training Mode chooses a valid default matchup.
 
-16. Add a select-card in `index.html` and a matching card accent in `style.css`. If the character has no final art yet, point the portrait and sheet keys at an existing placeholder and mark that in the config with `placeholderArt`.
+16. Add a select-card in `index.html` and a matching card accent in `style.css`. If the character has no final art yet, point the portrait and sheet keys at an existing placeholder and mark that clearly in the config.
 
 ## Baseline Rule
 
-Kairo and Vanta currently share the same combat baseline values. If a future character needs unique timing, damage, hitstun, launch height, knockback, cancel windows, hitboxes, or special behavior, change only that character's config instead of editing global combat logic.
+Kairo and Vanta are legacy fighters and should remain stable. If a future new-generation character needs unique timing, damage, hitstun, launch height, knockback, cancel windows, hitboxes, or special behavior, change only that character's config instead of editing global combat logic.

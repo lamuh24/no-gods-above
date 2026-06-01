@@ -6,9 +6,16 @@ Built with plain HTML, CSS, and JavaScript Canvas only. No Godot, Unity, Unreal,
 
 Current local dev server: `http://localhost:8010`.
 
-## Active Player
+## Character Direction
 
-Kairo Final is the active playable Kairo character.
+Kairo Final and Vanta Reign are stable legacy fighters. Keep them playable and do not spend production time converting them into the new-generation pipeline unless they break gameplay or are specifically requested.
+
+Nyx is the first new-generation fighter standard. After Nyx is fully complete, build exactly one fresh new-generation fighter from the Nyx planning, sprite, atlas, character-select, and playtest pipeline: Seris, the Halo Chain. After Seris is playable and tested, shift focus to controller support.
+
+See `docs/character_production_roadmap.md` for the current roadmap and new-character planning template.
+See `docs/seris_preproduction.md` for the selected next new-generation fighter concept.
+
+## Active Legacy Kairo
 
 Visual identity:
 
@@ -40,10 +47,20 @@ Do not use older Kairo sheets, Veyra sheets, Seraphine sheets, chain-whip sheets
 - `assets/sprites/vanta_final/vanta_sheet_6_specials_ultimate.png`
 - `assets/sprites/vanta_final/vanta_sheet_7_end_states_extras.png`
 
+## Active Nyx Final Assets
+
+- `assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png`
+- `assets/sprites/nyx_final/nyx_sheet_2_air_movement_atlas.png`
+- `assets/sprites/nyx_final/nyx_sheet_3_ground_normals_atlas.png`
+- `assets/sprites/nyx_final/nyx_sheet_4_air_normals_atlas.png`
+- `assets/sprites/nyx_final/nyx_sheet_5_specials_atlas.png`
+- `assets/sprites/nyx_final/nyx_sheet_6_defense_hit_reactions_atlas.png`
+- `assets/sprites/nyx_final/nyx_sheet_7_knockdown_recovery_flavor_atlas.png`
+
 ## Prototype Features
 
 - Title screen, character select, and Training Mode.
-- Kairo Final and Vanta Final selectable player characters.
+- Kairo Final, Vanta Final, and Nyx selectable player characters.
 - Forsaken Courtyard background.
 - Movement, jump, dash, crouch, hold-back block, light/medium/heavy attacks, directional attacks, jump attacks, three specials, and full-meter ultimate.
 - Enemy health, player health, passively growing ultimate meter, hit detection, hitboxes/hurtboxes, hit pause, knockback, VFX particles, enemy death, `R` reset, `H` hitbox debug, and `N` rival AI toggle.
@@ -75,6 +92,7 @@ Do not use older Kairo sheets, Veyra sheets, Seraphine sheets, chain-whip sheets
 
 - Kairo Final runtime sheets are normalized to 6 columns x 5 rows with 320x320 cells.
 - Vanta Final runtime sheets are clean 6 columns x 5 rows sheets. Each Vanta sheet is sliced from its own image size with `frameWidth = image.width / 6` and `frameHeight = image.height / 5`.
+- Nyx Final runtime atlases use dedicated move-family sheets under `assets/sprites/nyx_final/`; see `assets/sprites/nyx_final/nyx_final_atlas_manifest.json`.
 - The renderer uses cleaned per-frame source rectangles with a locked bottom-center row anchor.
 - The original imported Kairo Final pack images are preserved in `assets/sprites/kairo_final_source/`.
 - Feet stay aligned to one ground baseline while blade effects can extend visually from the stable fighter root.

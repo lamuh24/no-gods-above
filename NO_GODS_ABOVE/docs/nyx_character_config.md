@@ -1,6 +1,6 @@
 # Nyx Character Config
 
-Nyx is the third playable fighter and is implemented through the reusable character architecture in `game.js`.
+Nyx is the third playable fighter and the first new-generation character standard for NO GODS ABOVE. She is implemented through the reusable character architecture in `game.js`.
 
 ## Gameplay Identity
 
@@ -12,6 +12,7 @@ Nyx is a fast rushdown / aerial pressure fighter:
 - Smaller hurtboxes to communicate a lighter defensive profile.
 - Lower damage per hit than the baseline fighters.
 - Higher combo potential through fast cancels, launcher access, aerial routes, Shadow Step, Dive Kick, and Rapid Flurry.
+- Purple/magenta shadow assassin visual identity.
 
 ## Real Nyx Moves
 
@@ -28,51 +29,45 @@ Nyx has Nyx-specific combat data. She is not just a renamed Kairo/Vanta config.
 - Special 2, Falling Slash / Dive Kick: diagonal downward pressure and combo-ending attack.
 - Special 3, Rapid Flurry: capped multi-hit rush attack with low per-hit damage. It still uses combo scaling and hitstun decay.
 
-## Placeholder Sprite Mapping
+## Current Runtime Art Mapping
 
-Nyx does not have final artwork yet. For now, Nyx intentionally reuses Kairo Final runtime sheets and portrait as temporary placeholder visuals:
+Nyx now uses dedicated final runtime atlases and a Nyx select portrait. Kairo and Vanta should not be edited as part of Nyx work.
 
-| Nyx Sheet Slot | Temporary Placeholder |
+| Nyx Sheet Slot | Runtime Asset Key |
 |---|---|
-| `basic` | `kairoFinalBasic` |
-| `defense` | `kairoFinalDefense` |
-| `coreA` | `kairoFinalCoreA` |
-| `coreB` | `kairoFinalCoreB` |
-| `lowAir` | `kairoFinalLowAir` |
-| `specials` | `kairoFinalSpecials` |
-| `end` | `kairoFinalEnd` |
-| Select portrait | `assets/sprites/portraits/kairo_select.png` |
+| `coreMovement` | `nyxFinalCoreMovement` |
+| `airMovement` | `nyxFinalAirMovement` |
+| `groundNormals` | `nyxFinalGroundNormals` |
+| `airNormals` | `nyxFinalAirNormals` |
+| `specials` | `nyxFinalSpecials` |
+| `defense` | `nyxFinalDefense` |
+| `endStates` | `nyxFinalEndStates` |
+| Select portrait | `assets/sprites/portraits/nyx_select.png` |
 
-This is temporary only. Do not edit Kairo art to make Nyx art.
+The atlas manifest lives at `assets/sprites/nyx_final/nyx_final_atlas_manifest.json`.
 
-## Real Nyx Sheets Needed Later
+## Nyx Production Standard
 
-When final Nyx art exists, add the same seven-sheet runtime set used by Kairo Final and Vanta Final:
+Future new-generation characters should use Nyx's process as the template:
 
-- `nyx_sheet_1_basic_movement.png`
-- `nyx_sheet_2_defense_recovery.png`
-- `nyx_sheet_3_core_attacks_a.png`
-- `nyx_sheet_4_core_attacks_b.png`
-- `nyx_sheet_5_low_air.png`
-- `nyx_sheet_6_specials_ultimate.png`
-- `nyx_sheet_7_end_states_extras.png`
+- Clear gameplay archetype before sprite generation.
+- Full move identity before sprite generation.
+- Dragon Ball FighterZ-inspired pacing.
+- Ground combos.
+- Air combos.
+- Launcher routes.
+- Jump-cancel routes.
+- Air-dash compatibility.
+- Special moves with clear visual identity.
+- At least one flashy signature / ultimate-style move.
+- Dedicated sprite sheet pipeline.
+- Clean atlas extraction.
+- Character select portrait/card art.
+- Focused playtest pass after import.
 
-The preferred runtime format is still:
-
-- 6 columns x 5 rows.
-- 320x320 cells.
-- 1920x1600 total image size.
-- Solid magenta chroma background.
-- Bottom-center anchored body poses.
-- Movement/projectile travel handled by code, not baked sprite displacement.
-
-After adding real Nyx sheets, update only:
-
-- `assetPaths`
-- `sheetMeta`
-- Nyx `sheets`
-- Nyx select portrait path in `index.html`
+Nyx's remaining production focus is final QA: visual animation mapping audit, signature / ultimate visual upgrade if needed, and normal matchup playtest confirmation.
 
 Keep Nyx's combat config untouched unless a real tuning pass is requested.
 
-For the full future sprite import workflow, sheet row map, frame-count contract, code update list, and test checklist, see `docs/nyx_sprite_import.md`.
+For the full production roadmap and new-character planning template, see `docs/character_production_roadmap.md`.
+For Nyx's sprite import/atlas structure and audit checklist, see `docs/nyx_sprite_import.md`.

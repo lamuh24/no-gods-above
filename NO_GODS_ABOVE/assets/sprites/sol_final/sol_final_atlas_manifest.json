@@ -1,0 +1,3418 @@
+{
+  "character": "Sol Raze",
+  "title": "The Iron Sun",
+  "status": "atlas_extraction_import_prep_only",
+  "sourceDirectory": "assets/sprites/sol_generated",
+  "outputDirectory": "assets/sprites/sol_final",
+  "sourceCellSize": 384,
+  "cellSize": 448,
+  "sourceBaselineY": 350,
+  "baselineY": 382,
+  "padFromSourceCell": 32,
+  "chromaRemoved": "#FF00FF",
+  "runtimeImportStarted": false,
+  "sheets": [
+    {
+      "id": "sheet_1_core_movement",
+      "source": "assets/sprites/sol_generated/sol_sheet_1_core_movement_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_1_core_movement_atlas.png",
+      "cols": 8,
+      "rows": 6,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "idle",
+          "label": "Idle",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_01.png",
+              "contentBBox": [
+                113,
+                89,
+                335,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_02.png",
+              "contentBBox": [
+                99,
+                89,
+                349,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_03.png",
+              "contentBBox": [
+                98,
+                90,
+                349,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_04.png",
+              "contentBBox": [
+                103,
+                87,
+                344,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_05.png",
+              "contentBBox": [
+                101,
+                90,
+                347,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_06.png",
+              "contentBBox": [
+                100,
+                91,
+                348,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_07.png",
+              "contentBBox": [
+                101,
+                91,
+                346,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/idle/idle_08.png",
+              "contentBBox": [
+                100,
+                91,
+                348,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "walk_forward",
+          "label": "Walk Forward",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_forward/walk_forward_01.png",
+              "contentBBox": [
+                127,
+                90,
+                321,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_forward/walk_forward_02.png",
+              "contentBBox": [
+                116,
+                93,
+                331,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_forward/walk_forward_03.png",
+              "contentBBox": [
+                120,
+                94,
+                328,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_forward/walk_forward_04.png",
+              "contentBBox": [
+                121,
+                93,
+                326,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_forward/walk_forward_05.png",
+              "contentBBox": [
+                114,
+                95,
+                334,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_forward/walk_forward_06.png",
+              "contentBBox": [
+                104,
+                99,
+                343,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "walk_back",
+          "label": "Walk Back",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_back/walk_back_01.png",
+              "contentBBox": [
+                118,
+                98,
+                330,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_back/walk_back_02.png",
+              "contentBBox": [
+                119,
+                101,
+                328,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_back/walk_back_03.png",
+              "contentBBox": [
+                125,
+                101,
+                322,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_back/walk_back_04.png",
+              "contentBBox": [
+                114,
+                99,
+                333,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_back/walk_back_05.png",
+              "contentBBox": [
+                128,
+                100,
+                319,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/walk_back/walk_back_06.png",
+              "contentBBox": [
+                104,
+                105,
+                343,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "dash_forward",
+          "label": "Dash Forward",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_forward/dash_forward_01.png",
+              "contentBBox": [
+                60,
+                136,
+                388,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_forward/dash_forward_02.png",
+              "contentBBox": [
+                54,
+                138,
+                393,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_forward/dash_forward_03.png",
+              "contentBBox": [
+                70,
+                142,
+                377,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_forward/dash_forward_04.png",
+              "contentBBox": [
+                70,
+                131,
+                378,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_forward/dash_forward_05.png",
+              "contentBBox": [
+                70,
+                130,
+                378,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_forward/dash_forward_06.png",
+              "contentBBox": [
+                105,
+                96,
+                343,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "key": "dash_back",
+          "label": "Dash Back",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_back/dash_back_01.png",
+              "contentBBox": [
+                62,
+                111,
+                385,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_back/dash_back_02.png",
+              "contentBBox": [
+                72,
+                121,
+                375,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_back/dash_back_03.png",
+              "contentBBox": [
+                70,
+                119,
+                377,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_back/dash_back_04.png",
+              "contentBBox": [
+                73,
+                114,
+                374,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_back/dash_back_05.png",
+              "contentBBox": [
+                83,
+                114,
+                364,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/dash_back/dash_back_06.png",
+              "contentBBox": [
+                104,
+                78,
+                343,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "key": "crouch",
+          "label": "Crouch / Low Stance",
+          "aliases": [
+            "low_stance"
+          ],
+          "sourceFrames": 4,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/crouch/crouch_01.png",
+              "contentBBox": [
+                125,
+                83,
+                322,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/crouch/crouch_02.png",
+              "contentBBox": [
+                120,
+                111,
+                328,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/crouch/crouch_03.png",
+              "contentBBox": [
+                112,
+                144,
+                335,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_1_core_movement/crouch/crouch_04.png",
+              "contentBBox": [
+                114,
+                154,
+                333,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          3584,
+          2688
+        ],
+        "opaquePixels": 1811459,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    },
+    {
+      "id": "sheet_2_air_movement",
+      "source": "assets/sprites/sol_generated/sol_sheet_2_air_movement_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_2_air_movement_atlas.png",
+      "cols": 6,
+      "rows": 6,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "jump_up",
+          "label": "Jump Up / Rising",
+          "aliases": [
+            "rising"
+          ],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_up/jump_up_01.png",
+              "contentBBox": [
+                128,
+                111,
+                319,
+                337
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_up/jump_up_02.png",
+              "contentBBox": [
+                133,
+                83,
+                314,
+                365
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_up/jump_up_03.png",
+              "contentBBox": [
+                123,
+                65,
+                324,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_up/jump_up_04.png",
+              "contentBBox": [
+                124,
+                50,
+                324,
+                398
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "jump_forward",
+          "label": "Jump Forward",
+          "aliases": [],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_forward/jump_forward_01.png",
+              "contentBBox": [
+                105,
+                95,
+                342,
+                353
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_forward/jump_forward_02.png",
+              "contentBBox": [
+                65,
+                97,
+                383,
+                350
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_forward/jump_forward_03.png",
+              "contentBBox": [
+                57,
+                95,
+                390,
+                353
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_forward/jump_forward_04.png",
+              "contentBBox": [
+                88,
+                94,
+                360,
+                353
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "jump_back",
+          "label": "Jump Back",
+          "aliases": [],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_back/jump_back_01.png",
+              "contentBBox": [
+                111,
+                100,
+                336,
+                347
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_back/jump_back_02.png",
+              "contentBBox": [
+                72,
+                105,
+                375,
+                342
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_back/jump_back_03.png",
+              "contentBBox": [
+                80,
+                103,
+                367,
+                344
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/jump_back/jump_back_04.png",
+              "contentBBox": [
+                146,
+                89,
+                302,
+                359
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "fall",
+          "label": "Fall / Neutral Air Drift",
+          "aliases": [
+            "neutral_air_drift"
+          ],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/fall/fall_01.png",
+              "contentBBox": [
+                133,
+                91,
+                315,
+                356
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/fall/fall_02.png",
+              "contentBBox": [
+                133,
+                92,
+                314,
+                356
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/fall/fall_03.png",
+              "contentBBox": [
+                136,
+                94,
+                312,
+                354
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/fall/fall_04.png",
+              "contentBBox": [
+                135,
+                89,
+                312,
+                358
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "key": "air_dash_forward",
+          "label": "Air Dash Forward",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_01.png",
+              "contentBBox": [
+                73,
+                117,
+                375,
+                330
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_02.png",
+              "contentBBox": [
+                54,
+                125,
+                394,
+                322
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_03.png",
+              "contentBBox": [
+                68,
+                127,
+                379,
+                320
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_04.png",
+              "contentBBox": [
+                89,
+                122,
+                359,
+                325
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_05.png",
+              "contentBBox": [
+                94,
+                124,
+                354,
+                323
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_06.png",
+              "contentBBox": [
+                42,
+                120,
+                405,
+                328
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "key": "air_dash_back",
+          "label": "Air Dash Back",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_01.png",
+              "contentBBox": [
+                104,
+                94,
+                343,
+                354
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_02.png",
+              "contentBBox": [
+                109,
+                98,
+                338,
+                350
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_03.png",
+              "contentBBox": [
+                97,
+                99,
+                350,
+                348
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_04.png",
+              "contentBBox": [
+                120,
+                97,
+                328,
+                350
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_05.png",
+              "contentBBox": [
+                146,
+                94,
+                301,
+                354
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_06.png",
+              "contentBBox": [
+                147,
+                94,
+                301,
+                354
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          2688,
+          2688
+        ],
+        "opaquePixels": 1043188,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    },
+    {
+      "id": "sheet_3_ground_normals",
+      "source": "assets/sprites/sol_generated/sol_sheet_3_ground_normals_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_3_ground_normals_atlas.png",
+      "cols": 7,
+      "rows": 4,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "light_attack",
+          "label": "Light Attack / Sun Jab",
+          "aliases": [
+            "sun_jab"
+          ],
+          "sourceFrames": 4,
+          "atlasColumns": 7,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/light_attack/light_attack_01.png",
+              "contentBBox": [
+                126,
+                118,
+                322,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/light_attack/light_attack_02.png",
+              "contentBBox": [
+                81,
+                124,
+                367,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/light_attack/light_attack_03.png",
+              "contentBBox": [
+                43,
+                124,
+                404,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/light_attack/light_attack_04.png",
+              "contentBBox": [
+                128,
+                122,
+                320,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "medium_attack",
+          "label": "Medium Attack / Iron Palm",
+          "aliases": [
+            "iron_palm"
+          ],
+          "sourceFrames": 6,
+          "atlasColumns": 7,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_01.png",
+              "contentBBox": [
+                126,
+                121,
+                322,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_02.png",
+              "contentBBox": [
+                79,
+                123,
+                369,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_03.png",
+              "contentBBox": [
+                38,
+                123,
+                410,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_04.png",
+              "contentBBox": [
+                67,
+                123,
+                380,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_05.png",
+              "contentBBox": [
+                74,
+                135,
+                374,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_06.png",
+              "contentBBox": [
+                122,
+                121,
+                326,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "heavy_attack",
+          "label": "Heavy Attack / Furnace Hook",
+          "aliases": [
+            "furnace_hook"
+          ],
+          "sourceFrames": 7,
+          "atlasColumns": 7,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_01.png",
+              "contentBBox": [
+                132,
+                131,
+                316,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_02.png",
+              "contentBBox": [
+                117,
+                142,
+                331,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_03.png",
+              "contentBBox": [
+                53,
+                148,
+                394,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_04.png",
+              "contentBBox": [
+                53,
+                32,
+                394,
+                398
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_05.png",
+              "contentBBox": [
+                47,
+                151,
+                400,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_06.png",
+              "contentBBox": [
+                128,
+                149,
+                319,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_07.png",
+              "contentBBox": [
+                128,
+                149,
+                320,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "launcher",
+          "label": "Launcher / Dawn Upper",
+          "aliases": [
+            "dawn_upper"
+          ],
+          "sourceFrames": 7,
+          "atlasColumns": 7,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_01.png",
+              "contentBBox": [
+                130,
+                126,
+                317,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_02.png",
+              "contentBBox": [
+                103,
+                153,
+                345,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_03.png",
+              "contentBBox": [
+                98,
+                126,
+                349,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_04.png",
+              "contentBBox": [
+                81,
+                126,
+                366,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_05.png",
+              "contentBBox": [
+                129,
+                128,
+                319,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_06.png",
+              "contentBBox": [
+                129,
+                128,
+                318,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_3_ground_normals/launcher/launcher_07.png",
+              "contentBBox": [
+                128,
+                128,
+                319,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          3136,
+          1792
+        ],
+        "opaquePixels": 910475,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    },
+    {
+      "id": "sheet_4_air_normals",
+      "source": "assets/sprites/sol_generated/sol_sheet_4_air_normals_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_4_air_normals_atlas.png",
+      "cols": 7,
+      "rows": 4,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "air_light",
+          "label": "Air Light / Falling Tap",
+          "aliases": [
+            "falling_tap"
+          ],
+          "sourceFrames": 4,
+          "atlasColumns": 7,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_light/air_light_01.png",
+              "contentBBox": [
+                134,
+                88,
+                314,
+                359
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_light/air_light_02.png",
+              "contentBBox": [
+                108,
+                94,
+                340,
+                354
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_light/air_light_03.png",
+              "contentBBox": [
+                79,
+                93,
+                369,
+                354
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_light/air_light_04.png",
+              "contentBBox": [
+                78,
+                105,
+                370,
+                342
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "air_medium",
+          "label": "Air Medium / Comet Knee",
+          "aliases": [
+            "comet_knee"
+          ],
+          "sourceFrames": 6,
+          "atlasColumns": 7,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_medium/air_medium_01.png",
+              "contentBBox": [
+                138,
+                92,
+                310,
+                355
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_medium/air_medium_02.png",
+              "contentBBox": [
+                72,
+                108,
+                376,
+                339
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_medium/air_medium_03.png",
+              "contentBBox": [
+                83,
+                102,
+                365,
+                345
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_medium/air_medium_04.png",
+              "contentBBox": [
+                99,
+                102,
+                348,
+                345
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_medium/air_medium_05.png",
+              "contentBBox": [
+                136,
+                99,
+                312,
+                348
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_medium/air_medium_06.png",
+              "contentBBox": [
+                135,
+                101,
+                312,
+                346
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "air_heavy",
+          "label": "Air Heavy / Sunfall Axe",
+          "aliases": [
+            "sunfall_axe"
+          ],
+          "sourceFrames": 7,
+          "atlasColumns": 7,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_01.png",
+              "contentBBox": [
+                137,
+                85,
+                310,
+                363
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_02.png",
+              "contentBBox": [
+                106,
+                96,
+                341,
+                352
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_03.png",
+              "contentBBox": [
+                86,
+                97,
+                362,
+                351
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_04.png",
+              "contentBBox": [
+                99,
+                104,
+                349,
+                344
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_05.png",
+              "contentBBox": [
+                90,
+                94,
+                357,
+                353
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_06.png",
+              "contentBBox": [
+                115,
+                127,
+                333,
+                320
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_heavy/air_heavy_07.png",
+              "contentBBox": [
+                141,
+                100,
+                307,
+                348
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "air_recovery",
+          "label": "Air Recovery / Fall Transition",
+          "aliases": [
+            "fall_transition"
+          ],
+          "sourceFrames": 4,
+          "atlasColumns": 7,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_recovery/air_recovery_01.png",
+              "contentBBox": [
+                137,
+                96,
+                310,
+                351
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_recovery/air_recovery_02.png",
+              "contentBBox": [
+                137,
+                98,
+                310,
+                349
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_recovery/air_recovery_03.png",
+              "contentBBox": [
+                137,
+                98,
+                310,
+                349
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_4_air_normals/air_recovery/air_recovery_04.png",
+              "contentBBox": [
+                136,
+                99,
+                311,
+                349
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          3136,
+          1792
+        ],
+        "opaquePixels": 768672,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    },
+    {
+      "id": "sheet_5_specials",
+      "source": "assets/sprites/sol_generated/sol_sheet_5_specials_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_5_specials_atlas.png",
+      "cols": 8,
+      "rows": 5,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "solar_step",
+          "label": "Solar Step",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_01.png",
+              "contentBBox": [
+                117,
+                139,
+                330,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_02.png",
+              "contentBBox": [
+                83,
+                155,
+                365,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_03.png",
+              "contentBBox": [
+                87,
+                160,
+                361,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_04.png",
+              "contentBBox": [
+                65,
+                161,
+                383,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_05.png",
+              "contentBBox": [
+                57,
+                180,
+                390,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_06.png",
+              "contentBBox": [
+                74,
+                164,
+                373,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_07.png",
+              "contentBBox": [
+                72,
+                164,
+                376,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_step/solar_step_08.png",
+              "contentBBox": [
+                122,
+                153,
+                325,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "radiant_break",
+          "label": "Radiant Break",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_01.png",
+              "contentBBox": [
+                120,
+                150,
+                328,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_02.png",
+              "contentBBox": [
+                95,
+                161,
+                352,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_03.png",
+              "contentBBox": [
+                78,
+                157,
+                370,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_04.png",
+              "contentBBox": [
+                52,
+                158,
+                396,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_05.png",
+              "contentBBox": [
+                50,
+                158,
+                398,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_06.png",
+              "contentBBox": [
+                74,
+                154,
+                373,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_07.png",
+              "contentBBox": [
+                96,
+                153,
+                352,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/radiant_break/radiant_break_08.png",
+              "contentBBox": [
+                120,
+                155,
+                328,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "rising_halo",
+          "label": "Rising Halo",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_01.png",
+              "contentBBox": [
+                118,
+                169,
+                329,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_02.png",
+              "contentBBox": [
+                72,
+                119,
+                375,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_03.png",
+              "contentBBox": [
+                97,
+                76,
+                350,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_04.png",
+              "contentBBox": [
+                115,
+                71,
+                332,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_05.png",
+              "contentBBox": [
+                113,
+                65,
+                335,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_06.png",
+              "contentBBox": [
+                99,
+                156,
+                348,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_07.png",
+              "contentBBox": [
+                98,
+                187,
+                350,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/rising_halo/rising_halo_08.png",
+              "contentBBox": [
+                126,
+                174,
+                321,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "solar_verdict_startup",
+          "label": "Solar Verdict Startup",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_startup/solar_verdict_startup_01.png",
+              "contentBBox": [
+                126,
+                164,
+                322,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_startup/solar_verdict_startup_02.png",
+              "contentBBox": [
+                90,
+                161,
+                358,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_startup/solar_verdict_startup_03.png",
+              "contentBBox": [
+                89,
+                162,
+                358,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_startup/solar_verdict_startup_04.png",
+              "contentBBox": [
+                93,
+                164,
+                355,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_startup/solar_verdict_startup_05.png",
+              "contentBBox": [
+                105,
+                169,
+                342,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_startup/solar_verdict_startup_06.png",
+              "contentBBox": [
+                95,
+                172,
+                353,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "key": "solar_verdict_finish",
+          "label": "Solar Verdict Finish",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_01.png",
+              "contentBBox": [
+                128,
+                165,
+                319,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_02.png",
+              "contentBBox": [
+                58,
+                175,
+                389,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_03.png",
+              "contentBBox": [
+                59,
+                176,
+                388,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_04.png",
+              "contentBBox": [
+                32,
+                188,
+                416,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_05.png",
+              "contentBBox": [
+                92,
+                163,
+                355,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_06.png",
+              "contentBBox": [
+                69,
+                176,
+                379,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_07.png",
+              "contentBBox": [
+                83,
+                148,
+                364,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_5_specials/solar_verdict_finish/solar_verdict_finish_08.png",
+              "contentBBox": [
+                62,
+                122,
+                386,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          3584,
+          2240
+        ],
+        "opaquePixels": 1223883,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    },
+    {
+      "id": "sheet_6_defense_hit_reactions",
+      "source": "assets/sprites/sol_generated/sol_sheet_6_defense_hit_reactions_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_6_defense_hit_reactions_atlas.png",
+      "cols": 6,
+      "rows": 8,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "stand_block",
+          "label": "Stand Block",
+          "aliases": [],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_01.png",
+              "contentBBox": [
+                103,
+                114,
+                344,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_02.png",
+              "contentBBox": [
+                100,
+                122,
+                347,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_03.png",
+              "contentBBox": [
+                128,
+                119,
+                320,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_04.png",
+              "contentBBox": [
+                127,
+                121,
+                320,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "crouch_block",
+          "label": "Crouch Block",
+          "aliases": [],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_01.png",
+              "contentBBox": [
+                103,
+                148,
+                344,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_02.png",
+              "contentBBox": [
+                103,
+                159,
+                345,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_03.png",
+              "contentBBox": [
+                127,
+                159,
+                320,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_04.png",
+              "contentBBox": [
+                127,
+                159,
+                321,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "air_block",
+          "label": "Air Block",
+          "aliases": [],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_01.png",
+              "contentBBox": [
+                110,
+                83,
+                337,
+                365
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_02.png",
+              "contentBBox": [
+                110,
+                82,
+                337,
+                365
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_03.png",
+              "contentBBox": [
+                132,
+                82,
+                315,
+                365
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_04.png",
+              "contentBBox": [
+                132,
+                82,
+                316,
+                365
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "light_hitstun",
+          "label": "Light Hitstun",
+          "aliases": [],
+          "sourceFrames": 3,
+          "atlasColumns": 6,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/light_hitstun/light_hitstun_01.png",
+              "contentBBox": [
+                100,
+                108,
+                348,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/light_hitstun/light_hitstun_02.png",
+              "contentBBox": [
+                87,
+                116,
+                360,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/light_hitstun/light_hitstun_03.png",
+              "contentBBox": [
+                106,
+                108,
+                342,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "key": "medium_hitstun",
+          "label": "Medium Hitstun",
+          "aliases": [],
+          "sourceFrames": 4,
+          "atlasColumns": 6,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_01.png",
+              "contentBBox": [
+                82,
+                100,
+                366,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_02.png",
+              "contentBBox": [
+                74,
+                110,
+                373,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_03.png",
+              "contentBBox": [
+                100,
+                106,
+                348,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_04.png",
+              "contentBBox": [
+                100,
+                107,
+                347,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "key": "heavy_hitstun",
+          "label": "Heavy Hitstun",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 6,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_01.png",
+              "contentBBox": [
+                80,
+                108,
+                368,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_02.png",
+              "contentBBox": [
+                70,
+                120,
+                377,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_03.png",
+              "contentBBox": [
+                86,
+                117,
+                362,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_04.png",
+              "contentBBox": [
+                87,
+                116,
+                360,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_05.png",
+              "contentBBox": [
+                94,
+                116,
+                353,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_06.png",
+              "contentBBox": [
+                128,
+                117,
+                320,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "key": "launch_hitstun",
+          "label": "Launch Hitstun",
+          "aliases": [],
+          "sourceFrames": 5,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_01.png",
+              "contentBBox": [
+                75,
+                82,
+                372,
+                365
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_02.png",
+              "contentBBox": [
+                79,
+                82,
+                369,
+                366
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_03.png",
+              "contentBBox": [
+                90,
+                85,
+                358,
+                362
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_04.png",
+              "contentBBox": [
+                88,
+                85,
+                359,
+                363
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_05.png",
+              "contentBBox": [
+                110,
+                81,
+                337,
+                366
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "key": "air_hitstun",
+          "label": "Air Hitstun",
+          "aliases": [],
+          "sourceFrames": 5,
+          "atlasColumns": 6,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_01.png",
+              "contentBBox": [
+                65,
+                96,
+                382,
+                352
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_02.png",
+              "contentBBox": [
+                65,
+                95,
+                382,
+                352
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_03.png",
+              "contentBBox": [
+                70,
+                95,
+                377,
+                352
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_04.png",
+              "contentBBox": [
+                71,
+                96,
+                376,
+                352
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_05.png",
+              "contentBBox": [
+                75,
+                96,
+                373,
+                352
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          2688,
+          3584
+        ],
+        "opaquePixels": 1751304,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    },
+    {
+      "id": "sheet_7_knockdown_recovery_flavor",
+      "source": "assets/sprites/sol_generated/sol_sheet_7_knockdown_recovery_flavor_chroma.png",
+      "output": "assets/sprites/sol_final/sol_sheet_7_knockdown_recovery_flavor_atlas.png",
+      "cols": 8,
+      "rows": 7,
+      "sourceCellSize": 384,
+      "cellSize": 448,
+      "sourceBaselineY": 350,
+      "baselineY": 382,
+      "padFromSourceCell": 32,
+      "rowMap": [
+        {
+          "row": 1,
+          "key": "knockdown_fall",
+          "label": "Knockdown Fall",
+          "aliases": [],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "air",
+          "pivot": {
+            "mode": "lockedFrameCenter",
+            "x": 224,
+            "y": 224
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_01.png",
+              "contentBBox": [
+                75,
+                83,
+                372,
+                365
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_02.png",
+              "contentBBox": [
+                79,
+                116,
+                369,
+                331
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_03.png",
+              "contentBBox": [
+                90,
+                129,
+                358,
+                319
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_04.png",
+              "contentBBox": [
+                95,
+                145,
+                352,
+                303
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_05.png",
+              "contentBBox": [
+                83,
+                169,
+                364,
+                278
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_06.png",
+              "contentBBox": [
+                96,
+                186,
+                351,
+                261
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "key": "grounded",
+          "label": "Grounded / Downed",
+          "aliases": [
+            "downed"
+          ],
+          "sourceFrames": 3,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/grounded/grounded_01.png",
+              "contentBBox": [
+                87,
+                254,
+                360,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/grounded/grounded_02.png",
+              "contentBBox": [
+                79,
+                266,
+                369,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/grounded/grounded_03.png",
+              "contentBBox": [
+                82,
+                279,
+                366,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "key": "recovery_get_up",
+          "label": "Recovery / Get Up",
+          "aliases": [
+            "get_up"
+          ],
+          "sourceFrames": 6,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": true,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_01.png",
+              "contentBBox": [
+                120,
+                163,
+                328,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_02.png",
+              "contentBBox": [
+                102,
+                179,
+                345,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_03.png",
+              "contentBBox": [
+                116,
+                158,
+                331,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_04.png",
+              "contentBBox": [
+                124,
+                159,
+                323,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_05.png",
+              "contentBBox": [
+                126,
+                129,
+                322,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_06.png",
+              "contentBBox": [
+                143,
+                114,
+                304,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "key": "ko_defeat",
+          "label": "KO / Defeat",
+          "aliases": [
+            "defeat"
+          ],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_01.png",
+              "contentBBox": [
+                107,
+                154,
+                340,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_02.png",
+              "contentBBox": [
+                113,
+                150,
+                334,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_03.png",
+              "contentBBox": [
+                83,
+                189,
+                364,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_04.png",
+              "contentBBox": [
+                101,
+                229,
+                347,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_05.png",
+              "contentBBox": [
+                87,
+                255,
+                361,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_06.png",
+              "contentBBox": [
+                91,
+                285,
+                356,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_07.png",
+              "contentBBox": [
+                89,
+                286,
+                358,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_08.png",
+              "contentBBox": [
+                88,
+                290,
+                359,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "key": "intro_pose",
+          "label": "Intro Pose",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_01.png",
+              "contentBBox": [
+                138,
+                93,
+                309,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_02.png",
+              "contentBBox": [
+                109,
+                99,
+                339,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_03.png",
+              "contentBBox": [
+                109,
+                100,
+                339,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_04.png",
+              "contentBBox": [
+                112,
+                108,
+                336,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_05.png",
+              "contentBBox": [
+                102,
+                105,
+                345,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_06.png",
+              "contentBBox": [
+                141,
+                108,
+                307,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_07.png",
+              "contentBBox": [
+                140,
+                109,
+                308,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_08.png",
+              "contentBBox": [
+                138,
+                114,
+                310,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "key": "victory_pose",
+          "label": "Victory Pose",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_01.png",
+              "contentBBox": [
+                144,
+                104,
+                303,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_02.png",
+              "contentBBox": [
+                116,
+                113,
+                331,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_03.png",
+              "contentBBox": [
+                130,
+                111,
+                318,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_04.png",
+              "contentBBox": [
+                129,
+                120,
+                319,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_05.png",
+              "contentBBox": [
+                135,
+                114,
+                312,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_06.png",
+              "contentBBox": [
+                137,
+                120,
+                311,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_07.png",
+              "contentBBox": [
+                151,
+                117,
+                296,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/victory_pose/victory_pose_08.png",
+              "contentBBox": [
+                161,
+                118,
+                286,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "key": "taunt",
+          "label": "Taunt",
+          "aliases": [],
+          "sourceFrames": 8,
+          "atlasColumns": 8,
+          "verticalMode": "ground",
+          "pivot": {
+            "mode": "lockedFrameBottomCenter",
+            "x": 224,
+            "y": 382
+          },
+          "paddedCellsHeldFromSource": false,
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_01.png",
+              "contentBBox": [
+                109,
+                114,
+                338,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_02.png",
+              "contentBBox": [
+                117,
+                117,
+                331,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_03.png",
+              "contentBBox": [
+                130,
+                132,
+                318,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_04.png",
+              "contentBBox": [
+                124,
+                144,
+                324,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_05.png",
+              "contentBBox": [
+                133,
+                122,
+                315,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_06.png",
+              "contentBBox": [
+                134,
+                121,
+                314,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_07.png",
+              "contentBBox": [
+                147,
+                113,
+                300,
+                382
+              ],
+              "edgeTouchRisk": false
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/sol_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_08.png",
+              "contentBBox": [
+                149,
+                119,
+                298,
+                382
+              ],
+              "edgeTouchRisk": false
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          3584,
+          3136
+        ],
+        "opaquePixels": 1461264,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "emptyCells": [],
+        "edgeTouchCells": []
+      }
+    }
+  ]
+}
