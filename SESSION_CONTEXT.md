@@ -5,6 +5,9 @@ Agent: Codex
 Date: 2026-06-02
 
 ## What Was Done
+- Accepted current public LAMUH gameplay state after real playtesting. LAMUH is public and playable, P1/P2 LAMUH works, directional specials are working and feel good in real play, players are enjoying him, and his current movement/normals/specials/balance are accepted for now.
+- Future LAMUH work should not rewrite or retune his core kit unless later playtesting identifies a specific issue. Preserve current core movement, normals, directional specials, and balance as the accepted public baseline.
+- Deferred LAMUH work remains: full cinematic beam ultimate, transformation, and later polish. Do not start controller support, online multiplayer, or core LAMUH kit rewrites from this acceptance note.
 - Fixed the not-yet-approved LAMUH directional-special pass after manual playtest showed the specials still felt collapsed. Root cause was twofold: `index.html` still cache-busted `game.js` as `lamuh-public-enable-1`, so normal browser play could load stale JS, and LAMUH's action-phase animation mapping switched directional specials into shared `special_recovery` too quickly, making the unique Sheet 5 rows flash instead of read clearly.
 - Updated `NO_GODS_ABOVE\index.html` to load `game.js?v=lamuh-directional-specials-1`.
 - Tightened `NO_GODS_ABOVE\game.js` so LAMUH directional specials keep their identity animations visible for most of the move duration: Celestial Palm row 0, Ascend Step row 1, Heaven Splitter row 2, Divine Vanish row 3, and Radiant Dive row 4. Shared `special_recovery` still exists for late recovery.

@@ -4,6 +4,14 @@ This document locks the planning contract for LAMUH before any runtime implement
 
 Do not add LAMUH to runtime from this document alone. Do not add asset keys, `characterProfiles.lamuh`, select-card markup, or `selectableCharacterIds` until a later approved implementation pass.
 
+## Current Public Gameplay Acceptance
+
+As of June 2, 2026, LAMUH is public and playable in No Gods Above. His current public movement, normals, directional specials, and balance are accepted for now after real playtesting. Directional specials feel distinct and good in live play, P1/P2 LAMUH works, and players are enjoying him.
+
+Do not rewrite or retune LAMUH's core movement, normals, specials, or balance unless later playtesting identifies a specific issue. Future LAMUH work should focus on the full cinematic beam ultimate, transformation if explicitly approved, or later polish rather than core kit rewrites.
+
+Cinematic ultimate and transformation remain deferred.
+
 ## 1. Identity Summary
 
 - Name: LAMUH
