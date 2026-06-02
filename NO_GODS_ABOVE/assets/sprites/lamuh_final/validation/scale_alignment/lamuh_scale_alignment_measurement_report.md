@@ -1,0 +1,51 @@
+# LAMUH Scale / Baseline / Alignment Audit
+- Cell size: 448x448
+- BaselineY: 382
+- Rows audited: 39
+- Active frames audited: 224
+## Row Classification Summary
+- PASS: 24
+- OFFSET_FIX: 8
+- REPACK_FIX: 0
+- ROW_REGEN_RECOMMENDED: 7
+
+## Rows
+- **PASS** `sheet1_core_movement` row 0 `idle_select_idle`: size 212-232w / 376-380h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet1_core_movement` row 1 `walk_forward`: size 257-339w / 359-380h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet1_core_movement` row 2 `walk_back`: size 238-302w / 344-354h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet1_core_movement` row 3 `dash_forward`: size 327-356w / 297-317h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet1_core_movement` row 4 `dash_back`: size 277-317w / 319-324h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet1_core_movement` row 5 `crouch_low_stance`: size 275-314w / 282-309h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet2_air_movement` row 0 `jump_up_rising`: size 221-229w / 380-380h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet2_air_movement` row 1 `jump_forward`: size 302-326w / 311-345h, centerX -0.5..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet2_air_movement` row 2 `jump_back`: size 249-289w / 354-371h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet2_air_movement` row 3 `fall_neutral_air_drift`: size 272-287w / 358-369h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet2_air_movement` row 4 `air_dash_forward`: size 324-334w / 223-240h, centerX -0.5..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet2_air_movement` row 5 `air_dash_back`: size 322-347w / 257-259h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **OFFSET_FIX** `sheet3_ground_normals` row 0 `light_attack`: size 232-339w / 347-373h, centerX -1.0..-0.5, baseline 1..1. visible width range 107px
+- **OFFSET_FIX** `sheet3_ground_normals` row 1 `medium_attack`: size 236-369w / 292-349h, centerX -1.0..-0.5, baseline 1..1. visible width range 133px
+- **OFFSET_FIX** `sheet3_ground_normals` row 2 `heavy_attack`: size 253-420w / 286-328h, centerX -1.0..-0.5, baseline 1..1. visible width range 167px, likely cloak/pose expansion
+- **PASS** `sheet3_ground_normals` row 3 `launcher`: size 192-259w / 324-380h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet4_air_normals` row 0 `air_light`: size 118-159w / 169-196h, centerX -1.0..-0.5, baseline 1..1. within tolerance
+- **PASS** `sheet4_air_normals` row 1 `air_medium`: size 121-192w / 163-186h, centerX -1.0..0.0, baseline 1..2. within tolerance
+- **PASS** `sheet4_air_normals` row 2 `air_heavy`: size 114-210w / 154-191h, centerX -1.5..0.0, baseline 1..2. within tolerance
+- **PASS** `sheet4_air_normals` row 3 `air_recovery`: size 93-161w / 162-187h, centerX -1.0..0.0, baseline 1..2. within tolerance
+- **ROW_REGEN_RECOMMENDED** `sheet5_specials` row 0 `celestial_palm_neutral_special`: size 166-372w / 308-310h, centerX -2.0..0.5, baseline 1..1. visible width range 206px, likely cloak/pose expansion
+- **OFFSET_FIX** `sheet5_specials` row 1 `ascend_step_forward_special`: size 247-417w / 250-310h, centerX -1.0..1.0, baseline 1..40. visible width range 170px, likely cloak/pose expansion
+- **OFFSET_FIX** `sheet5_specials` row 2 `heaven_splitter_down_special`: size 142-256w / 293-330h, centerX -1.5..1.5, baseline 1..15. visible width range 114px
+- **ROW_REGEN_RECOMMENDED** `sheet5_specials` row 3 `divine_vanish_back_special`: size 193-408w / 304-310h, centerX -2.5..2.5, baseline 1..4. visible width range 215px, likely cloak/pose expansion
+- **ROW_REGEN_RECOMMENDED** `sheet5_specials` row 4 `radiant_dive_air_special`: size 175-376w / 323-330h, centerX -0.5..1.5, baseline 1..6. visible width range 201px, likely cloak/pose expansion
+- **ROW_REGEN_RECOMMENDED** `sheet5_specials` row 5 `special_recovery`: size 151-417w / 238-300h, centerX -2.0..-0.5, baseline 1..4. visible width range 266px, likely cloak/pose expansion
+- **PASS** `sheet6_defense_hit_reactions` row 0 `stand_block`: size 180-193w / 298-300h, centerX -1.0..0.0, baseline 1..1. within tolerance
+- **PASS** `sheet6_defense_hit_reactions` row 1 `crouch_block`: size 247-301w / 283-285h, centerX -1.0..1.5, baseline 1..1. within tolerance
+- **PASS** `sheet6_defense_hit_reactions` row 2 `air_block`: size 218-246w / 313-315h, centerX -1.0..1.5, baseline 1..1. within tolerance
+- **PASS** `sheet6_defense_hit_reactions` row 3 `light_hit_reaction`: size 222-251w / 313-315h, centerX -1.0..0.0, baseline 1..1. within tolerance
+- **PASS** `sheet6_defense_hit_reactions` row 4 `medium_hit_reaction`: size 373-420w / 270-315h, centerX -2.0..1.0, baseline 1..4. within tolerance
+- **OFFSET_FIX** `sheet6_defense_hit_reactions` row 5 `heavy_hit_reaction_crumple`: size 339-420w / 240-315h, centerX -2.0..1.0, baseline 1..4. visible height range 75px
+- **ROW_REGEN_RECOMMENDED** `sheet7_knockdown_recovery_flavor` row 0 `knockdown_fall_grounded_drop`: size 389-401w / 110-361h, centerX -1.0..-1.0, baseline 3..3. visible height range 251px
+- **OFFSET_FIX** `sheet7_knockdown_recovery_flavor` row 1 `grounded_downed_idle`: size 401-403w / 109-200h, centerX -1.0..-1.0, baseline 2..3. visible height range 91px
+- **ROW_REGEN_RECOMMENDED** `sheet7_knockdown_recovery_flavor` row 2 `get_up_recovery`: size 247-361w / 219-358h, centerX -1.0..0.0, baseline 3..3. visible height range 139px; visible width range 114px
+- **ROW_REGEN_RECOMMENDED** `sheet7_knockdown_recovery_flavor` row 3 `ko_strong_defeat_finish_state`: size 354-404w / 95-326h, centerX -1.5..-0.5, baseline 2..3. visible height range 231px
+- **PASS** `sheet7_knockdown_recovery_flavor` row 4 `intro_entrance`: size 185-249w / 351-353h, centerX -1.0..-0.5, baseline 3..3. within tolerance
+- **OFFSET_FIX** `sheet7_knockdown_recovery_flavor` row 5 `victory_win_pose`: size 180-310w / 351-351h, centerX -1.0..-0.5, baseline 3..3. visible width range 130px
+- **PASS** `sheet7_knockdown_recovery_flavor` row 6 `taunt_flavor_pose`: size 217-312w / 356-356h, centerX -1.0..-0.5, baseline 3..3. within tolerance

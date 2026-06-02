@@ -1,0 +1,2572 @@
+{
+  "sheet": "lamuh_sheet_1_core_movement_atlas.png",
+  "source": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_source_chroma.png",
+  "size": [
+    3584,
+    2688
+  ],
+  "grid": {
+    "columns": 8,
+    "rows": 6,
+    "cellSize": [
+      448,
+      448
+    ]
+  },
+  "baselineY": 382,
+  "fixedSourceCells": true,
+  "anchorMode": "lockedFrameBottomCenter",
+  "rightFacingSourceArt": true,
+  "transparentBackground": true,
+  "alphaCoverage": 0.228319,
+  "sourcePoseComponentsFound": 37,
+  "sourceRowsDetected": [
+    {
+      "row": 0,
+      "cyMean": 111.88,
+      "poseCount": 8,
+      "poseCenters": [
+        140.5,
+        315.5,
+        496.5,
+        664.0,
+        843.5,
+        1025.5,
+        1208.0,
+        1379.0
+      ]
+    },
+    {
+      "row": 1,
+      "cyMean": 302.58,
+      "poseCount": 6,
+      "poseCenters": [
+        130.5,
+        318.5,
+        511.5,
+        711.0,
+        893.5,
+        1070.0
+      ]
+    },
+    {
+      "row": 2,
+      "cyMean": 481.67,
+      "poseCount": 6,
+      "poseCenters": [
+        133.0,
+        325.5,
+        507.0,
+        702.0,
+        885.0,
+        1076.0
+      ]
+    },
+    {
+      "row": 3,
+      "cyMean": 648.57,
+      "poseCount": 7,
+      "poseCenters": [
+        113.5,
+        310.0,
+        497.0,
+        686.0,
+        873.0,
+        1061.0,
+        1238.5
+      ]
+    },
+    {
+      "row": 4,
+      "cyMean": 807.83,
+      "poseCount": 6,
+      "poseCenters": [
+        113.0,
+        308.0,
+        498.0,
+        683.5,
+        864.5,
+        1053.5
+      ]
+    },
+    {
+      "row": 5,
+      "cyMean": 981.25,
+      "poseCount": 4,
+      "poseCenters": [
+        111.5,
+        299.0,
+        481.5,
+        656.5
+      ]
+    }
+  ],
+  "rowReports": [
+    {
+      "row": 0,
+      "animation": "idle / select_idle",
+      "expectedFrames": 8,
+      "nonEmptyFrames": 8,
+      "unusedCellsEmpty": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382
+    },
+    {
+      "row": 1,
+      "animation": "walk_forward",
+      "expectedFrames": 6,
+      "nonEmptyFrames": 6,
+      "unusedCellsEmpty": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382
+    },
+    {
+      "row": 2,
+      "animation": "walk_back",
+      "expectedFrames": 6,
+      "nonEmptyFrames": 6,
+      "unusedCellsEmpty": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382
+    },
+    {
+      "row": 3,
+      "animation": "dash_forward",
+      "expectedFrames": 6,
+      "nonEmptyFrames": 6,
+      "unusedCellsEmpty": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382
+    },
+    {
+      "row": 4,
+      "animation": "dash_back",
+      "expectedFrames": 6,
+      "nonEmptyFrames": 6,
+      "unusedCellsEmpty": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382
+    },
+    {
+      "row": 5,
+      "animation": "crouch / low_stance",
+      "expectedFrames": 4,
+      "nonEmptyFrames": 4,
+      "unusedCellsEmpty": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382
+    }
+  ],
+  "frameReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "hasPixels": true,
+      "bboxInCell": [
+        117,
+        2,
+        331,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "hasPixels": true,
+      "bboxInCell": [
+        118,
+        2,
+        330,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "hasPixels": true,
+      "bboxInCell": [
+        118,
+        2,
+        330,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "hasPixels": true,
+      "bboxInCell": [
+        117,
+        2,
+        331,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "hasPixels": true,
+      "bboxInCell": [
+        115,
+        2,
+        332,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "hasPixels": true,
+      "bboxInCell": [
+        109,
+        2,
+        339,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "hasPixels": true,
+      "bboxInCell": [
+        108,
+        2,
+        340,
+        382
+      ]
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "hasPixels": true,
+      "bboxInCell": [
+        110,
+        6,
+        338,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "hasPixels": true,
+      "bboxInCell": [
+        64,
+        2,
+        383,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "hasPixels": true,
+      "bboxInCell": [
+        57,
+        2,
+        390,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "hasPixels": true,
+      "bboxInCell": [
+        54,
+        11,
+        393,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "hasPixels": true,
+      "bboxInCell": [
+        65,
+        16,
+        382,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "hasPixels": true,
+      "bboxInCell": [
+        67,
+        21,
+        381,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "hasPixels": true,
+      "bboxInCell": [
+        95,
+        23,
+        352,
+        382
+      ]
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "hasPixels": true,
+      "bboxInCell": [
+        78,
+        33,
+        370,
+        382
+      ]
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "hasPixels": true,
+      "bboxInCell": [
+        84,
+        31,
+        364,
+        382
+      ]
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "hasPixels": true,
+      "bboxInCell": [
+        88,
+        28,
+        360,
+        382
+      ]
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "hasPixels": true,
+      "bboxInCell": [
+        73,
+        28,
+        375,
+        382
+      ]
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "hasPixels": true,
+      "bboxInCell": [
+        95,
+        38,
+        352,
+        382
+      ]
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "hasPixels": true,
+      "bboxInCell": [
+        105,
+        33,
+        343,
+        382
+      ]
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "hasPixels": true,
+      "bboxInCell": [
+        54,
+        65,
+        393,
+        382
+      ]
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "hasPixels": true,
+      "bboxInCell": [
+        60,
+        70,
+        387,
+        382
+      ]
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "hasPixels": true,
+      "bboxInCell": [
+        55,
+        68,
+        392,
+        382
+      ]
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "hasPixels": true,
+      "bboxInCell": [
+        60,
+        68,
+        387,
+        382
+      ]
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "hasPixels": true,
+      "bboxInCell": [
+        46,
+        80,
+        402,
+        382
+      ]
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "hasPixels": true,
+      "bboxInCell": [
+        55,
+        85,
+        392,
+        382
+      ]
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "hasPixels": true,
+      "bboxInCell": [
+        65,
+        63,
+        382,
+        382
+      ]
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "hasPixels": true,
+      "bboxInCell": [
+        68,
+        58,
+        380,
+        382
+      ]
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "hasPixels": true,
+      "bboxInCell": [
+        85,
+        60,
+        362,
+        382
+      ]
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "hasPixels": true,
+      "bboxInCell": [
+        69,
+        58,
+        378,
+        382
+      ]
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "hasPixels": true,
+      "bboxInCell": [
+        72,
+        58,
+        376,
+        382
+      ]
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "hasPixels": true,
+      "bboxInCell": [
+        70,
+        63,
+        377,
+        382
+      ]
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "hasPixels": true,
+      "bboxInCell": [
+        67,
+        73,
+        381,
+        382
+      ]
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "hasPixels": true,
+      "bboxInCell": [
+        70,
+        85,
+        377,
+        382
+      ]
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "hasPixels": true,
+      "bboxInCell": [
+        81,
+        90,
+        366,
+        382
+      ]
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "hasPixels": true,
+      "bboxInCell": [
+        86,
+        100,
+        361,
+        382
+      ]
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "hasPixels": false,
+      "bboxInCell": null
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "hasPixels": false,
+      "bboxInCell": null
+    }
+  ],
+  "normalization": {
+    "method": "full-source chroma key, pose component detection, row grouping, bottom-center placement, unused contract columns cleared",
+    "clearedUnusedCells": 12,
+    "selectedFrameCounts": [
+      8,
+      6,
+      6,
+      6,
+      6,
+      4
+    ],
+    "extraSourcePosesSkipped": {
+      "dash_forward_row_source_count": 7,
+      "dash_forward_used": 6
+    }
+  },
+  "frameNormalizationAudit": [
+    {
+      "row": 0,
+      "col": 0,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          93,
+          24,
+          188,
+          193
+        ],
+        "area": 10915,
+        "center": [
+          140.5,
+          108.5
+        ]
+      },
+      "targetSize": [
+        214,
+        380
+      ],
+      "pasteInAtlas": [
+        117,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9091
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          269,
+          26,
+          362,
+          193
+        ],
+        "area": 10574,
+        "center": [
+          315.5,
+          109.5
+        ]
+      },
+      "targetSize": [
+        212,
+        380
+      ],
+      "pasteInAtlas": [
+        566,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9201
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          450,
+          26,
+          543,
+          193
+        ],
+        "area": 10717,
+        "center": [
+          496.5,
+          109.5
+        ]
+      },
+      "targetSize": [
+        212,
+        380
+      ],
+      "pasteInAtlas": [
+        1014,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9201
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          617,
+          27,
+          711,
+          193
+        ],
+        "area": 10686,
+        "center": [
+          664.0,
+          110.0
+        ]
+      },
+      "targetSize": [
+        214,
+        380
+      ],
+      "pasteInAtlas": [
+        1461,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9201
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          797,
+          30,
+          890,
+          193
+        ],
+        "area": 10499,
+        "center": [
+          843.5,
+          111.5
+        ]
+      },
+      "targetSize": [
+        217,
+        380
+      ],
+      "pasteInAtlas": [
+        1907,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9429
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          977,
+          33,
+          1074,
+          193
+        ],
+        "area": 10403,
+        "center": [
+          1025.5,
+          113.0
+        ]
+      },
+      "targetSize": [
+        230,
+        380
+      ],
+      "pasteInAtlas": [
+        2349,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9596
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          1161,
+          39,
+          1255,
+          193
+        ],
+        "area": 9821,
+        "center": [
+          1208.0,
+          116.0
+        ]
+      },
+      "targetSize": [
+        232,
+        380
+      ],
+      "pasteInAtlas": [
+        2796,
+        4
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9974
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "animation": "idle / select_idle",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          1333,
+          41,
+          1425,
+          193
+        ],
+        "area": 9399,
+        "center": [
+          1379.0,
+          117.0
+        ]
+      },
+      "targetSize": [
+        228,
+        376
+      ],
+      "pasteInAtlas": [
+        3246,
+        6
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "animation": "walk_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          65,
+          220,
+          196,
+          376
+        ],
+        "area": 10811,
+        "center": [
+          130.5,
+          298.0
+        ]
+      },
+      "targetSize": [
+        319,
+        380
+      ],
+      "pasteInAtlas": [
+        64,
+        452
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9845
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "animation": "walk_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          251,
+          224,
+          386,
+          378
+        ],
+        "area": 10607,
+        "center": [
+          318.5,
+          301.0
+        ]
+      },
+      "targetSize": [
+        333,
+        380
+      ],
+      "pasteInAtlas": [
+        505,
+        452
+      ],
+      "bottomYInCell": 384,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9974
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "animation": "walk_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          443,
+          228,
+          580,
+          378
+        ],
+        "area": 10538,
+        "center": [
+          511.5,
+          303.0
+        ]
+      },
+      "targetSize": [
+        339,
+        371
+      ],
+      "pasteInAtlas": [
+        950,
+        459
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "animation": "walk_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          647,
+          230,
+          775,
+          378
+        ],
+        "area": 9909,
+        "center": [
+          711.0,
+          304.0
+        ]
+      },
+      "targetSize": [
+        317,
+        366
+      ],
+      "pasteInAtlas": [
+        1409,
+        464
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "animation": "walk_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          830,
+          232,
+          957,
+          378
+        ],
+        "area": 9768,
+        "center": [
+          893.5,
+          305.0
+        ]
+      },
+      "targetSize": [
+        314,
+        361
+      ],
+      "pasteInAtlas": [
+        1859,
+        469
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "animation": "walk_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          1018,
+          232,
+          1122,
+          377
+        ],
+        "area": 8898,
+        "center": [
+          1070.0,
+          304.5
+        ]
+      },
+      "targetSize": [
+        257,
+        359
+      ],
+      "pasteInAtlas": [
+        2335,
+        471
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "animation": "walk_forward",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "animation": "walk_forward",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "animation": "walk_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          74,
+          410,
+          192,
+          551
+        ],
+        "area": 8798,
+        "center": [
+          133.0,
+          480.5
+        ]
+      },
+      "targetSize": [
+        292,
+        349
+      ],
+      "pasteInAtlas": [
+        78,
+        929
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "animation": "walk_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          269,
+          411,
+          382,
+          552
+        ],
+        "area": 8479,
+        "center": [
+          325.5,
+          481.5
+        ]
+      },
+      "targetSize": [
+        280,
+        351
+      ],
+      "pasteInAtlas": [
+        532,
+        927
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "animation": "walk_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          452,
+          410,
+          562,
+          553
+        ],
+        "area": 8504,
+        "center": [
+          507.0,
+          481.5
+        ]
+      },
+      "targetSize": [
+        272,
+        354
+      ],
+      "pasteInAtlas": [
+        984,
+        924
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "animation": "walk_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          641,
+          411,
+          763,
+          554
+        ],
+        "area": 8611,
+        "center": [
+          702.0,
+          482.5
+        ]
+      },
+      "targetSize": [
+        302,
+        354
+      ],
+      "pasteInAtlas": [
+        1417,
+        924
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "animation": "walk_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          833,
+          413,
+          937,
+          552
+        ],
+        "area": 8027,
+        "center": [
+          885.0,
+          482.5
+        ]
+      },
+      "targetSize": [
+        257,
+        344
+      ],
+      "pasteInAtlas": [
+        1887,
+        934
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "animation": "walk_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          1028,
+          411,
+          1124,
+          552
+        ],
+        "area": 7964,
+        "center": [
+          1076.0,
+          481.5
+        ]
+      },
+      "targetSize": [
+        238,
+        349
+      ],
+      "pasteInAtlas": [
+        2345,
+        929
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "animation": "walk_back",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "animation": "walk_back",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "animation": "dash_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          45,
+          580,
+          182,
+          708
+        ],
+        "area": 9519,
+        "center": [
+          113.5,
+          644.0
+        ]
+      },
+      "targetSize": [
+        339,
+        317
+      ],
+      "pasteInAtlas": [
+        54,
+        1409
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "animation": "dash_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          244,
+          584,
+          376,
+          710
+        ],
+        "area": 9543,
+        "center": [
+          310.0,
+          647.0
+        ]
+      },
+      "targetSize": [
+        327,
+        312
+      ],
+      "pasteInAtlas": [
+        508,
+        1414
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "animation": "dash_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          429,
+          585,
+          565,
+          712
+        ],
+        "area": 9723,
+        "center": [
+          497.0,
+          648.5
+        ]
+      },
+      "targetSize": [
+        337,
+        314
+      ],
+      "pasteInAtlas": [
+        951,
+        1412
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "animation": "dash_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          620,
+          584,
+          752,
+          711
+        ],
+        "area": 9336,
+        "center": [
+          686.0,
+          647.5
+        ]
+      },
+      "targetSize": [
+        327,
+        314
+      ],
+      "pasteInAtlas": [
+        1404,
+        1412
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "animation": "dash_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          801,
+          589,
+          945,
+          711
+        ],
+        "area": 9419,
+        "center": [
+          873.0,
+          650.0
+        ]
+      },
+      "targetSize": [
+        356,
+        302
+      ],
+      "pasteInAtlas": [
+        1838,
+        1424
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "animation": "dash_forward",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          993,
+          592,
+          1129,
+          712
+        ],
+        "area": 9287,
+        "center": [
+          1061.0,
+          652.0
+        ]
+      },
+      "targetSize": [
+        337,
+        297
+      ],
+      "pasteInAtlas": [
+        2295,
+        1429
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "animation": "dash_forward",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "animation": "dash_forward",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "animation": "dash_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          49,
+          743,
+          177,
+          872
+        ],
+        "area": 9734,
+        "center": [
+          113.0,
+          807.5
+        ]
+      },
+      "targetSize": [
+        317,
+        319
+      ],
+      "pasteInAtlas": [
+        65,
+        1855
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "animation": "dash_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          245,
+          742,
+          371,
+          873
+        ],
+        "area": 9342,
+        "center": [
+          308.0,
+          807.5
+        ]
+      },
+      "targetSize": [
+        312,
+        324
+      ],
+      "pasteInAtlas": [
+        516,
+        1850
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "animation": "dash_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          442,
+          744,
+          554,
+          873
+        ],
+        "area": 8269,
+        "center": [
+          498.0,
+          808.5
+        ]
+      },
+      "targetSize": [
+        277,
+        322
+      ],
+      "pasteInAtlas": [
+        981,
+        1852
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "animation": "dash_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          621,
+          742,
+          746,
+          873
+        ],
+        "area": 9153,
+        "center": [
+          683.5,
+          807.5
+        ]
+      },
+      "targetSize": [
+        309,
+        324
+      ],
+      "pasteInAtlas": [
+        1413,
+        1850
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "animation": "dash_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          803,
+          742,
+          926,
+          873
+        ],
+        "area": 9023,
+        "center": [
+          864.5,
+          807.5
+        ]
+      },
+      "targetSize": [
+        304,
+        324
+      ],
+      "pasteInAtlas": [
+        1864,
+        1850
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "animation": "dash_back",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          992,
+          744,
+          1115,
+          873
+        ],
+        "area": 9043,
+        "center": [
+          1053.5,
+          808.5
+        ]
+      },
+      "targetSize": [
+        307,
+        319
+      ],
+      "pasteInAtlas": [
+        2310,
+        1855
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "animation": "dash_back",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "animation": "dash_back",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "animation": "crouch / low_stance",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          48,
+          914,
+          175,
+          1038
+        ],
+        "area": 9860,
+        "center": [
+          111.5,
+          976.0
+        ]
+      },
+      "targetSize": [
+        314,
+        309
+      ],
+      "pasteInAtlas": [
+        67,
+        2313
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "animation": "crouch / low_stance",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          237,
+          921,
+          361,
+          1041
+        ],
+        "area": 9462,
+        "center": [
+          299.0,
+          981.0
+        ]
+      },
+      "targetSize": [
+        307,
+        297
+      ],
+      "pasteInAtlas": [
+        518,
+        2325
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "animation": "crouch / low_stance",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          424,
+          924,
+          539,
+          1042
+        ],
+        "area": 8667,
+        "center": [
+          481.5,
+          983.0
+        ]
+      },
+      "targetSize": [
+        285,
+        292
+      ],
+      "pasteInAtlas": [
+        977,
+        2330
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "animation": "crouch / low_stance",
+      "active": true,
+      "status": "normalized_from_pose_component",
+      "sourceComponent": {
+        "bbox": [
+          601,
+          928,
+          712,
+          1042
+        ],
+        "area": 8173,
+        "center": [
+          656.5,
+          985.0
+        ]
+      },
+      "targetSize": [
+        275,
+        282
+      ],
+      "pasteInAtlas": [
+        1430,
+        2340
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "animation": "crouch / low_stance",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "animation": "crouch / low_stance",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "animation": "crouch / low_stance",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "animation": "crouch / low_stance",
+      "active": false,
+      "status": "cleared_unused_contract_cell"
+    }
+  ],
+  "notes": [
+    "Generated source had extra dash-forward poses and non-grid drift; final atlas uses detected full-pose components to avoid sliced bodies.",
+    "No runtime code was changed and no Sheet 2 or later LAMUH assets were generated.",
+    "Human review should approve the movement feel before normals production."
+  ],
+  "postBaselineAlignment": {
+    "method": "per-cell alpha bbox shift toward baselineY after pose extraction",
+    "corrections": [
+      {
+        "row": 0,
+        "col": 0,
+        "oldBBox": [
+          117,
+          4,
+          331,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          117,
+          2,
+          331,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "oldBBox": [
+          118,
+          4,
+          330,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          118,
+          2,
+          330,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "oldBBox": [
+          118,
+          4,
+          330,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          118,
+          2,
+          330,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "oldBBox": [
+          117,
+          4,
+          331,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          117,
+          2,
+          331,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "oldBBox": [
+          115,
+          4,
+          332,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          115,
+          2,
+          332,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 5,
+        "oldBBox": [
+          109,
+          4,
+          339,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          109,
+          2,
+          339,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 6,
+        "oldBBox": [
+          108,
+          4,
+          340,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          108,
+          2,
+          340,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 7,
+        "oldBBox": [
+          110,
+          6,
+          338,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          110,
+          6,
+          338,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "oldBBox": [
+          64,
+          4,
+          383,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          64,
+          2,
+          383,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "oldBBox": [
+          57,
+          4,
+          390,
+          384
+        ],
+        "dy": -2,
+        "newBBox": [
+          57,
+          2,
+          390,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "oldBBox": [
+          54,
+          11,
+          393,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          54,
+          11,
+          393,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "oldBBox": [
+          65,
+          16,
+          382,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          65,
+          16,
+          382,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "oldBBox": [
+          67,
+          21,
+          381,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          67,
+          21,
+          381,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 5,
+        "oldBBox": [
+          95,
+          23,
+          352,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          95,
+          23,
+          352,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 6,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 1,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "oldBBox": [
+          78,
+          33,
+          370,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          78,
+          33,
+          370,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "oldBBox": [
+          84,
+          31,
+          364,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          84,
+          31,
+          364,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "oldBBox": [
+          88,
+          28,
+          360,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          88,
+          28,
+          360,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "oldBBox": [
+          73,
+          28,
+          375,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          73,
+          28,
+          375,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "oldBBox": [
+          95,
+          38,
+          352,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          95,
+          38,
+          352,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "oldBBox": [
+          105,
+          33,
+          343,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          105,
+          33,
+          343,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 6,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 2,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "oldBBox": [
+          54,
+          65,
+          393,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          54,
+          65,
+          393,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "oldBBox": [
+          60,
+          70,
+          387,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          60,
+          70,
+          387,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "oldBBox": [
+          55,
+          68,
+          392,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          55,
+          68,
+          392,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "oldBBox": [
+          60,
+          68,
+          387,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          60,
+          68,
+          387,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "oldBBox": [
+          46,
+          80,
+          402,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          46,
+          80,
+          402,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "oldBBox": [
+          55,
+          85,
+          392,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          55,
+          85,
+          392,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 3,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "oldBBox": [
+          65,
+          63,
+          382,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          65,
+          63,
+          382,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "oldBBox": [
+          68,
+          58,
+          380,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          68,
+          58,
+          380,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "oldBBox": [
+          85,
+          60,
+          362,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          85,
+          60,
+          362,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "oldBBox": [
+          69,
+          58,
+          378,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          69,
+          58,
+          378,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "oldBBox": [
+          72,
+          58,
+          376,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          72,
+          58,
+          376,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "oldBBox": [
+          70,
+          63,
+          377,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          70,
+          63,
+          377,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 6,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 4,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "oldBBox": [
+          67,
+          73,
+          381,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          67,
+          73,
+          381,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "oldBBox": [
+          70,
+          85,
+          377,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          70,
+          85,
+          377,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "oldBBox": [
+          81,
+          90,
+          366,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          81,
+          90,
+          366,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 3,
+        "oldBBox": [
+          86,
+          100,
+          361,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          86,
+          100,
+          361,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 5,
+        "col": 6,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 5,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      }
+    ]
+  }
+}

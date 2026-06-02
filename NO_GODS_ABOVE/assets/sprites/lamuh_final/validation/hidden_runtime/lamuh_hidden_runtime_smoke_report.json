@@ -1,0 +1,276 @@
+{
+  "status": "pass",
+  "base": "http://127.0.0.1:54816",
+  "public": {
+    "cards": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "helperExists": false,
+    "lamuhResources": [],
+    "errors": [],
+    "badResponses": [],
+    "lamuhNetworkRequests": []
+  },
+  "hidden": {
+    "initial": {
+      "mode": "training",
+      "p1": "lamuh",
+      "p2": "vanta",
+      "selectable": [
+        "kairo",
+        "vanta",
+        "nyx",
+        "sol",
+        "seris"
+      ],
+      "hidden": [
+        "lamuh"
+      ],
+      "loaded": {
+        "lamuhFinalCoreMovement": true,
+        "lamuhFinalAirMovement": true,
+        "lamuhFinalGroundNormals": true,
+        "lamuhFinalAirNormals": true,
+        "lamuhFinalSpecials": true,
+        "lamuhFinalDefense": true,
+        "lamuhFinalEndStates": true
+      },
+      "scale": {
+        "p1": {
+          "id": "lamuh",
+          "anim": "idle",
+          "x": 330,
+          "y": 590,
+          "grounded": true,
+          "facing": 1,
+          "sheetScale": 0.82
+        },
+        "p2": {
+          "id": "vanta",
+          "anim": "enemy_idle",
+          "x": 720,
+          "y": 590,
+          "grounded": true,
+          "facing": -1,
+          "sheetScale": null
+        }
+      },
+      "moveKeys": {
+        "p": [
+          "jump_light",
+          "jump_medium",
+          "jump_heavy",
+          "launcher"
+        ],
+        "e": [
+          "enemy_launcher",
+          "enemy_jump_light",
+          "enemy_jump_medium",
+          "enemy_jump_heavy"
+        ]
+      }
+    },
+    "movesP1": [
+      {
+        "move": "neutral_light",
+        "result": {
+          "side": "p1",
+          "move": "neutral_light",
+          "anim": "neutral_light"
+        }
+      },
+      {
+        "move": "neutral_medium",
+        "result": {
+          "side": "p1",
+          "move": "neutral_medium",
+          "anim": "neutral_medium"
+        }
+      },
+      {
+        "move": "neutral_heavy",
+        "result": {
+          "side": "p1",
+          "move": "neutral_heavy",
+          "anim": "neutral_heavy"
+        }
+      },
+      {
+        "move": "launcher",
+        "result": {
+          "side": "p1",
+          "move": "launcher",
+          "anim": "launcher"
+        }
+      },
+      {
+        "move": "jump_light",
+        "result": {
+          "side": "p1",
+          "move": "jump_light",
+          "anim": "jump_light"
+        }
+      },
+      {
+        "move": "jump_medium",
+        "result": {
+          "side": "p1",
+          "move": "jump_medium",
+          "anim": "jump_medium"
+        }
+      },
+      {
+        "move": "jump_heavy",
+        "result": {
+          "side": "p1",
+          "move": "jump_heavy",
+          "anim": "jump_heavy"
+        }
+      },
+      {
+        "move": "special_1",
+        "result": {
+          "side": "p1",
+          "move": "special_1",
+          "anim": "special_1"
+        }
+      },
+      {
+        "move": "special_2",
+        "result": {
+          "side": "p1",
+          "move": "special_2",
+          "anim": "special_2"
+        }
+      },
+      {
+        "move": "special_3",
+        "result": {
+          "side": "p1",
+          "move": "special_3",
+          "anim": "special_3"
+        }
+      },
+      {
+        "move": "ultimate",
+        "result": {
+          "side": "p1",
+          "move": "ultimate",
+          "anim": "ultimate"
+        }
+      }
+    ],
+    "movesP2": [
+      {
+        "move": "neutral_light",
+        "result": {
+          "side": "p2",
+          "move": "enemy_light_attack",
+          "anim": "enemy_light_attack"
+        }
+      },
+      {
+        "move": "neutral_medium",
+        "result": {
+          "side": "p2",
+          "move": "enemy_medium_attack",
+          "anim": "enemy_medium_attack"
+        }
+      },
+      {
+        "move": "neutral_heavy",
+        "result": {
+          "side": "p2",
+          "move": "enemy_heavy_attack",
+          "anim": "enemy_heavy_attack"
+        }
+      },
+      {
+        "move": "launcher",
+        "result": {
+          "side": "p2",
+          "move": "enemy_launcher",
+          "anim": "enemy_launcher"
+        }
+      },
+      {
+        "move": "jump_light",
+        "result": {
+          "side": "p2",
+          "move": "enemy_jump_light",
+          "anim": "enemy_jump_light"
+        }
+      },
+      {
+        "move": "jump_medium",
+        "result": {
+          "side": "p2",
+          "move": "enemy_jump_medium",
+          "anim": "enemy_jump_medium"
+        }
+      },
+      {
+        "move": "jump_heavy",
+        "result": {
+          "side": "p2",
+          "move": "enemy_jump_heavy",
+          "anim": "enemy_jump_heavy"
+        }
+      },
+      {
+        "move": "special_1",
+        "result": {
+          "side": "p2",
+          "move": "enemy_special_1",
+          "anim": "enemy_special_1"
+        }
+      },
+      {
+        "move": "special_2",
+        "result": {
+          "side": "p2",
+          "move": "enemy_special_2",
+          "anim": "enemy_special_2"
+        }
+      },
+      {
+        "move": "special_3",
+        "result": {
+          "side": "p2",
+          "move": "enemy_special_3",
+          "anim": "enemy_special_3"
+        }
+      },
+      {
+        "move": "ultimate",
+        "result": {
+          "side": "p2",
+          "move": "enemy_ultimate",
+          "anim": "enemy_ultimate"
+        }
+      }
+    ],
+    "screenshot": "C:/Users/qchee/OneDrive/Documents/no gods above/NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/hidden_runtime/lamuh_hidden_runtime_smoke.png",
+    "errors": [],
+    "badResponses": [],
+    "lamuhRequests": [
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-hidden-1",
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png?v=lamuh-hidden-1",
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png?v=lamuh-hidden-1",
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png?v=lamuh-hidden-1",
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-hidden-1",
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png?v=lamuh-hidden-1",
+      "http://127.0.0.1:54816/assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png?v=lamuh-hidden-1"
+    ]
+  },
+  "scaleShots": {
+    "sol": "C:/Users/qchee/OneDrive/Documents/no gods above/NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/hidden_runtime/lamuh_scale_vs_sol.png",
+    "nyx": "C:/Users/qchee/OneDrive/Documents/no gods above/NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/hidden_runtime/lamuh_scale_vs_nyx.png",
+    "seris": "C:/Users/qchee/OneDrive/Documents/no gods above/NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/hidden_runtime/lamuh_scale_vs_seris.png"
+  },
+  "failures": []
+}

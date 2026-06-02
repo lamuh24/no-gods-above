@@ -29,6 +29,7 @@
   const roundStatusEl = document.getElementById("round-status");
   const comboCounterEl = document.getElementById("combo-counter");
   const selectControlsDisplay = document.getElementById("select-controls-display");
+  const selectControlsToggle = document.getElementById("select-controls-toggle");
   const matchFlowOverlay = document.getElementById("match-flow-overlay");
   const matchFlowTitle = document.getElementById("match-flow-title");
   const matchFlowSubtitle = document.getElementById("match-flow-subtitle");
@@ -40,7 +41,11 @@
   const GROUND_Y = 590;
   const debugParams = new URLSearchParams(window.location.search);
   const SERIS_HIDDEN_TEST_ENABLED = debugParams.has("serisTest");
+  const LAMUH_HIDDEN_TEST_ENABLED = debugParams.has("lamuhTest");
   const SERIS_RUNTIME_ENABLED = true;
+  const LAMUH_RUNTIME_ENABLED = true;
+  const LAMUH_SELECT_PORTRAIT_PATH = "assets/sprites/portraits/lamuh_select.png";
+  const LAMUH_SELECT_PORTRAIT_READY = true;
   const SERIS_CHAIN_VFX_RUNTIME_ENABLED = false;
   const PLAYER_MAX_HP = 1000;
   const ENEMY_MAX_HP = 1000;
@@ -156,6 +161,13 @@
     solFinalDefense: "assets/sprites/sol_final/sol_sheet_6_defense_hit_reactions_atlas.png?v=sol-runtime-1",
     solFinalEndStates: "assets/sprites/sol_final/sol_sheet_7_knockdown_recovery_flavor_atlas.png?v=sol-runtime-1",
     solFinalDirectionalNormals: "assets/sprites/sol_final/sol_sheet_8_directional_normals_atlas.png?v=sol-directional-normals-1",
+    lamuhFinalCoreMovement: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-public-1" : null,
+    lamuhFinalAirMovement: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png?v=lamuh-public-1" : null,
+    lamuhFinalGroundNormals: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png?v=lamuh-public-1" : null,
+    lamuhFinalAirNormals: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png?v=lamuh-public-1" : null,
+    lamuhFinalSpecials: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-public-1" : null,
+    lamuhFinalDefense: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png?v=lamuh-public-1" : null,
+    lamuhFinalEndStates: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png?v=lamuh-public-1" : null,
     serisFinalCoreMovement: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1" : null,
     serisFinalAirMovement: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1" : null,
     serisFinalGroundNormals: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1" : null,
@@ -198,6 +210,15 @@
     solFinalDefense: { cols: 6, rows: 8, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 4, 4, 3, 4, 6, 5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     solFinalEndStates: { cols: 8, rows: 7, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [6, 3, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     solFinalDirectionalNormals: { cols: 6, rows: 6, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 4, 4, 6, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhFinalCoreMovement: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 6, 6, 6, 6, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhFinalAirMovement: { cols: 6, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [4, 4, 4, 4, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhFinalGroundNormals: { cols: 8, rows: 4, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [4, 8, 7, 7], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    // Sheet 4 source poses are drawn smaller than the other LAMUH atlases, so this is a visual-only scale correction.
+    lamuhFinalAirNormals: { cols: 7, rows: 4, cellSize: 448, baselineY: 382, scale: 1.55, frameCounts: [4, 6, 7, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhFinalSpecials: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [6, 7, 7, 6, 7, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhFinalDefense: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [4, 4, 4, 5, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    // Hidden LAMUH downed idle holds the clean first Sheet 7 frame; the full packaged row remains unchanged.
+    lamuhFinalEndStates: { cols: 8, rows: 7, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [6, 1, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalCoreMovement: { cols: 8, rows: 6, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [8, 6, 6, 6, 6, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalAirMovement: { cols: 6, rows: 6, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [4, 4, 4, 4, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalGroundNormals: { cols: 8, rows: 4, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 8, 7, 7], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
@@ -444,6 +465,51 @@
     special_3: { type: "risingHalo", attack: "special_3" },
     super_dash: { type: "homingDash", attack: "super_dash" },
     ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  function buildLamuhPlayerAttacks() {
+    const attacks = cloneData(solPlayerAttacks);
+    attacks.launcher = cloneData(attacks.down_heavy);
+    return attacks;
+  }
+
+  function buildLamuhEnemyAttacks() {
+    const attacks = cloneData(solEnemyAttacks);
+    attacks.enemy_launcher = cloneData(attacks.enemy_forward_heavy);
+    attacks.enemy_jump_light = cloneData(solPlayerAttacks.jump_light);
+    attacks.enemy_jump_medium = cloneData(solPlayerAttacks.jump_medium);
+    attacks.enemy_jump_heavy = cloneData(solPlayerAttacks.jump_heavy);
+    for (const key of ["enemy_jump_light", "enemy_jump_medium", "enemy_jump_heavy"]) {
+      attacks[key].flags.enemy = true;
+    }
+    return attacks;
+  }
+
+  const lamuhMovementStats = {
+    ...cloneData(baselineMovementStats),
+    walkForward: 236,
+    walkBack: 184,
+    dashSpeed: 875,
+    dashDuration: 15 / 60,
+    dashCooldown: 18 / 60,
+    superDashSpeed: 930,
+    superDashCooldown: 28 / 60
+  };
+
+  const lamuhJumpStats = {
+    ...cloneData(baselineJumpStats),
+    jumpVelocity: -742,
+    gravity: 1840,
+    juggleGravity: 1260,
+    airRecoveryGravity: 1660,
+    landingRecovery: 6 / 60
+  };
+
+  const lamuhAirDashStats = {
+    ...cloneData(baselineAirDashStats),
+    speed: 810,
+    duration: 12 / 60,
+    cooldown: 18 / 60
   };
 
   const serisMovementStats = {
@@ -744,6 +810,49 @@
       buildPlayerAnimations: buildSolFinalPlayerAnimations,
       buildEnemyAnimations: buildSolFinalEnemyAnimations
     },
+    lamuh: {
+      id: "lamuh",
+      name: "LAMUH",
+      shortName: "LAMUH",
+      subtitle: "CELESTIAL KI",
+      role: "KI RUSH FIGHTER",
+      health: PLAYER_MAX_HP,
+      movement: cloneData(lamuhMovementStats),
+      jump: cloneData(lamuhJumpStats),
+      airDash: cloneData(lamuhAirDashStats),
+      attacks: {
+        player: buildLamuhPlayerAttacks(),
+        enemy: buildLamuhEnemyAttacks()
+      },
+      comboRoutes: cloneData(baselineComboRoutes),
+      hitboxes: cloneData(baselineHitboxes),
+      hurtboxes: {
+        standing: { w: 66, h: 164 },
+        crouching: { w: 66, h: 94 },
+        dead: { w: 74, h: 62 }
+      },
+      specialMoves: cloneData(solSpecialMoves),
+      ai: cloneData(baselineEnemyAI),
+      effects: { dashTrail: true },
+      projectileColor: "#67eaff",
+      trailColor: "#d6a638",
+      ultimateBurstColor: "#67eaff",
+      hurtboxWidth: 66,
+      playable: true,
+      hiddenDevOnly: false,
+      futurePlayer2: true,
+      sheets: {
+        coreMovement: "lamuhFinalCoreMovement",
+        airMovement: "lamuhFinalAirMovement",
+        groundNormals: "lamuhFinalGroundNormals",
+        airNormals: "lamuhFinalAirNormals",
+        specials: "lamuhFinalSpecials",
+        defense: "lamuhFinalDefense",
+        endStates: "lamuhFinalEndStates"
+      },
+      buildPlayerAnimations: buildLamuhFinalPlayerAnimations,
+      buildEnemyAnimations: buildLamuhFinalEnemyAnimations
+    },
     seris: {
       id: "seris",
       name: "SERIS",
@@ -798,8 +907,11 @@
     hydrateCharacterProfile(profile);
   }
 
-  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris"];
-  const hiddenTestCharacterIds = SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : [];
+  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris", "lamuh"];
+  const hiddenTestCharacterIds = [
+    ...(SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : []),
+    ...(LAMUH_HIDDEN_TEST_ENABLED ? ["lamuh"] : [])
+  ];
   const selectShortcutCharacterIds = {
     Digit1: "kairo",
     Numpad1: "kairo",
@@ -1321,6 +1433,89 @@
     };
   }
 
+  function buildLamuhFinalPlayerAnimations(sheets) {
+    return {
+      idle: [sheets.coreMovement, 0],
+      select_idle: [sheets.coreMovement, 0],
+      walk_forward: [sheets.coreMovement, 1],
+      walk_back: [sheets.coreMovement, 2],
+      dash: [sheets.coreMovement, 3],
+      dash_forward: [sheets.coreMovement, 3],
+      dash_back: [sheets.coreMovement, 4],
+      crouch: [sheets.coreMovement, 5],
+      low_stance: [sheets.coreMovement, 5],
+      jump_up: [sheets.airMovement, 0],
+      rising: [sheets.airMovement, 0],
+      jump_forward: [sheets.airMovement, 1],
+      jump_back: [sheets.airMovement, 2],
+      fall: [sheets.airMovement, 3],
+      neutral_air_drift: [sheets.airMovement, 3],
+      air_dash_forward: [sheets.airMovement, 4],
+      air_dash_back: [sheets.airMovement, 5],
+      stand_up: [sheets.endStates, 2],
+      block: [sheets.defense, 0],
+      guard_idle: [sheets.defense, 0],
+      stand_block: [sheets.defense, 0],
+      crouch_block: [sheets.defense, 1],
+      air_block: [sheets.defense, 2],
+      damaged: [sheets.defense, 3],
+      light_hitstun: [sheets.defense, 3],
+      medium_hitstun: [sheets.defense, 4],
+      knockback: [sheets.defense, 5],
+      heavy_hitstun: [sheets.defense, 5],
+      launch_hitstun: [sheets.defense, 5],
+      air_hitstun: [sheets.defense, 4],
+      neutral_light: [sheets.groundNormals, 0],
+      light_attack: [sheets.groundNormals, 0],
+      neutral_medium: [sheets.groundNormals, 1],
+      medium_attack: [sheets.groundNormals, 1],
+      neutral_heavy: [sheets.groundNormals, 2],
+      heavy_attack: [sheets.groundNormals, 2],
+      launcher: [sheets.groundNormals, 3],
+      forward_light: [sheets.groundNormals, 0],
+      forward_medium: [sheets.groundNormals, 1],
+      forward_heavy: [sheets.groundNormals, 2],
+      back_light: [sheets.groundNormals, 0],
+      back_medium: [sheets.groundNormals, 1],
+      back_heavy: [sheets.groundNormals, 2],
+      down_light: [sheets.groundNormals, 0],
+      down_medium: [sheets.groundNormals, 1],
+      down_heavy: [sheets.groundNormals, 3],
+      jump_light: [sheets.airNormals, 0],
+      air_light: [sheets.airNormals, 0],
+      jump_medium: [sheets.airNormals, 1],
+      air_medium: [sheets.airNormals, 1],
+      jump_heavy: [sheets.airNormals, 2],
+      air_heavy: [sheets.airNormals, 2],
+      air_recovery: [sheets.airNormals, 3],
+      fall_transition: [sheets.airNormals, 3],
+      special_1: [sheets.specials, 0],
+      celestial_palm: [sheets.specials, 0],
+      special_2: [sheets.specials, 1],
+      ascend_step: [sheets.specials, 1],
+      special_3: [sheets.specials, 2],
+      heaven_splitter: [sheets.specials, 2],
+      divine_vanish: [sheets.specials, 3],
+      radiant_dive: [sheets.specials, 4],
+      special_recovery: [sheets.specials, 5],
+      ultimate: [sheets.specials, 0],
+      knockdown_fall: [sheets.endStates, 0],
+      grounded: [sheets.endStates, 1],
+      downed: [sheets.endStates, 1],
+      get_up: [sheets.endStates, 2],
+      recovery: [sheets.endStates, 2],
+      recovery_get_up: [sheets.endStates, 2],
+      death: [sheets.endStates, 3],
+      ko: [sheets.endStates, 3],
+      defeat: [sheets.endStates, 3],
+      intro_pose: [sheets.endStates, 4],
+      intro: [sheets.endStates, 4],
+      victory: [sheets.endStates, 5],
+      level_up: [sheets.endStates, 5],
+      taunt: [sheets.endStates, 6]
+    };
+  }
+
   function buildEnemyAnimations(sheets) {
     return {
       enemy_idle: [sheets.basic, 0],
@@ -1614,6 +1809,12 @@
     };
   }
 
+  function buildLamuhFinalEnemyAnimations(sheets) {
+    return Object.fromEntries(
+      Object.entries(buildLamuhFinalPlayerAnimations(sheets)).map(([key, entry]) => [`enemy_${key}`, entry])
+    );
+  }
+
   function getCharacterProfile(characterId) {
     const profile = characterProfiles[characterId];
     return profile && (profile.playable !== false || hiddenTestCharacterIds.includes(characterId)) ? profile : characterProfiles.kairo;
@@ -1660,7 +1861,7 @@
   }
 
   function usesNewGenerationArt(f) {
-    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris";
+    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "lamuh";
   }
 
   function withEnemyPrefix(f, anim) {
@@ -1698,6 +1899,7 @@
     if (!f.activeMove) return null;
     if (f.profile?.id === "sol") return getSolActionPhaseAnim(f, moveData);
     if (f.profile?.id === "seris") return getSerisActionPhaseAnim(f, moveData);
+    if (f.profile?.id === "lamuh") return getLamuhActionPhaseAnim(f, moveData);
     if (!usesNyxArt(f)) return null;
     const moveKey = f.activeMove.replace(/^enemy_/, "");
     const activeEnd = moveData.startup + moveData.active;
@@ -1737,6 +1939,28 @@
     }
     if (moveKey === "special_2") return withEnemyPrefix(f, "sanctum_sweep");
     if (moveKey === "special_3" || moveKey === "ultimate") return withEnemyPrefix(f, "divine_recoil");
+    return null;
+  }
+
+  function getLamuhActionPhaseAnim(f, moveData) {
+    const moveKey = f.activeMove.replace(/^enemy_/, "");
+    const activeEnd = moveData.startup + moveData.active;
+    if (moveKey === "special_1") {
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "celestial_palm");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "special_2") {
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "ascend_step");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "special_3") {
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "heaven_splitter");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "ultimate") {
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "celestial_palm");
+      return withEnemyPrefix(f, "special_recovery");
+    }
     return null;
   }
 
@@ -1824,6 +2048,9 @@
     if (SERIS_HIDDEN_TEST_ENABLED) {
       startTraining("seris");
       flashStatus("SERIS HIDDEN TEST", 1.2);
+    } else if (LAMUH_HIDDEN_TEST_ENABLED) {
+      startTraining("lamuh");
+      flashStatus("LAMUH HIDDEN TEST", 1.2);
     }
     requestAnimationFrame(loop);
   }
@@ -2403,7 +2630,7 @@
       ? `${p1Won ? p1Name : p2Name} defeats ${p1Won ? p2Name : p1Name}`
       : `${p1Won ? p1Name : p2Name} takes the round`;
     roundStatusEl.textContent = winnerLabel;
-    showMatchFlowOverlay(winnerLabel, subtitle, "Press R for Rematch - Press Esc for Character Select", true, "result");
+    showMatchFlowOverlay(winnerLabel, subtitle, "Press R for Rematch - Press Esc for Character Select", false, "result");
     updateHud();
   }
 
@@ -2439,6 +2666,7 @@
     state.keys.clear();
     characterSelect.classList.remove("hidden");
     state.mode = "select";
+    setSelectControlsOpen(false);
     setCharacterSelectMode(selectGameMode);
     const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
     selectedButton?.focus({ preventScroll: true });
@@ -2514,6 +2742,7 @@
 
   function getPortraitPath(characterId) {
     const id = isLaunchableCharacterId(characterId) ? characterId : "kairo";
+    if (id === "lamuh") return LAMUH_SELECT_PORTRAIT_READY ? LAMUH_SELECT_PORTRAIT_PATH : "assets/sprites/portraits/sol_select.png";
     const cache = id === "seris" ? "?v=seris-revamp-final-1" : "";
     return `assets/sprites/portraits/${id}_select.png${cache}`;
   }
@@ -2593,6 +2822,16 @@
     `;
   }
 
+  function setSelectControlsOpen(open) {
+    if (!selectControlsDisplay) return;
+    selectControlsDisplay.classList.toggle("hidden", !open);
+    selectControlsToggle?.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  function toggleSelectControls() {
+    setSelectControlsOpen(selectControlsDisplay?.classList.contains("hidden"));
+  }
+
   function updateCharacterSelectUi() {
     const trainingMode = state.selectGameMode === "training";
     selectModeLabel.textContent = trainingMode ? "Training Dummy" : "Local Versus";
@@ -2641,6 +2880,10 @@
   }
 
   function backCharacterSelect() {
+    if (selectControlsDisplay && !selectControlsDisplay.classList.contains("hidden")) {
+      setSelectControlsOpen(false);
+      return;
+    }
     if (state.selectGameMode === "versus" && state.activeSelectSide === "ready") {
       state.p2Ready = false;
       state.activeSelectSide = "p2";
@@ -2662,12 +2905,16 @@
   }
 
   function handleCharacterSelectKey(e) {
-    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "KeyT", "KeyV", "Enter", "Escape", "Backspace"].includes(e.code);
+    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "KeyC", "Slash", "KeyT", "KeyV", "Enter", "Escape", "Backspace"].includes(e.code);
     if (!handled) return false;
 
     e.preventDefault();
     e.stopPropagation();
 
+    if (e.code === "KeyC" || (e.code === "Slash" && e.shiftKey)) {
+      toggleSelectControls();
+      return true;
+    }
     if (e.code === "KeyV") setCharacterSelectMode("versus");
     if (e.code === "KeyT") setCharacterSelectMode("training");
     if (["KeyA", "ArrowLeft"].includes(e.code)) updateCharacterSelectFocus("kairo");
@@ -4696,6 +4943,7 @@
   startButton.addEventListener("click", showCharacterSelect);
   selectVersusButton.addEventListener("click", () => setCharacterSelectMode("versus"));
   selectTrainingButton.addEventListener("click", () => setCharacterSelectMode("training"));
+  selectControlsToggle?.addEventListener("click", () => toggleSelectControls());
   document.addEventListener("keydown", (e) => {
     if (state.mode === "select") {
       handleCharacterSelectKey(e);
@@ -4759,6 +5007,128 @@
             .filter(([key]) => key.startsWith("seris"))
             .map(([key]) => [key, Boolean(state.images[key])])
         );
+      }
+    };
+  }
+  if (LAMUH_HIDDEN_TEST_ENABLED) {
+    window.__lamuhHiddenTest = {
+      state,
+      assetPaths,
+      sheetMeta,
+      selectableCharacterIds: [...selectableCharacterIds],
+      hiddenTestCharacterIds: [...hiddenTestCharacterIds],
+      profile: characterProfiles.lamuh,
+      portrait: {
+        expectedPath: LAMUH_SELECT_PORTRAIT_PATH,
+        ready: LAMUH_SELECT_PORTRAIT_READY,
+        fallbackPath: "assets/sprites/portraits/sol_select.png"
+      },
+      ultimate: {
+        placeholder: true,
+        animation: "celestial_palm",
+        note: "Temporary hidden/demo mapping until the cinematic beam ultimate is built."
+      },
+      startP1() {
+        startTraining("lamuh");
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      startP2(opponentId = "sol") {
+        state.selectedP1CharacterId = isLaunchableCharacterId(opponentId) ? opponentId : "sol";
+        state.selectedP2CharacterId = "lamuh";
+        startLocalVersus();
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      startMirror() {
+        state.selectedP1CharacterId = "lamuh";
+        state.selectedP2CharacterId = "lamuh";
+        startLocalVersus();
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      reset: resetRound,
+      setFighterAnim(side = "p1", anim = "idle", options = {}) {
+        if (state.mode !== "versus" || state.player?.profile?.id !== "lamuh" || state.enemy?.profile?.id !== "lamuh") {
+          this.startMirror();
+        }
+        const f = side === "p2" ? state.enemy : state.player;
+        f.anim = f.kind === "enemy" && !anim.startsWith("enemy_") ? `enemy_${anim}` : anim;
+        f.action = null;
+        f.activeMove = null;
+        f.actionTime = 0;
+        f.hitstun = options.hitstun || 0;
+        f.blockstun = options.blockstun || 0;
+        f.knockdownTimer = options.knockdownTimer || 0;
+        f.recoveryTimer = 0;
+        f.landingTimer = 0;
+        f.dead = Boolean(options.dead);
+        f.grounded = options.grounded ?? true;
+        f.facing = options.facing || (side === "p2" ? -1 : 1);
+        f.y = options.y || (f.grounded ? GROUND_Y : GROUND_Y - 130);
+        f.vx = 0;
+        f.vy = 0;
+        return { side, anim: f.anim, grounded: f.grounded, facing: f.facing };
+      },
+      startMove(move, side = "p1", options = {}) {
+        if (state.mode !== "versus" || state.player?.profile?.id !== "lamuh" || state.enemy?.profile?.id !== "lamuh") {
+          this.startMirror();
+        }
+        const f = side === "p2" ? state.enemy : state.player;
+        const enemyMoveMap = {
+          neutral_light: "enemy_light_attack",
+          light_attack: "enemy_light_attack",
+          neutral_medium: "enemy_medium_attack",
+          medium_attack: "enemy_medium_attack",
+          neutral_heavy: "enemy_heavy_attack",
+          heavy_attack: "enemy_heavy_attack",
+          forward_heavy: "enemy_forward_heavy",
+          launcher: "enemy_launcher",
+          jump_light: "enemy_jump_light",
+          air_light: "enemy_jump_light",
+          jump_medium: "enemy_jump_medium",
+          air_medium: "enemy_jump_medium",
+          jump_heavy: "enemy_jump_heavy",
+          air_heavy: "enemy_jump_heavy",
+          special_1: "enemy_special_1",
+          special_2: "enemy_special_2",
+          special_3: "enemy_special_3",
+          ultimate: "enemy_ultimate"
+        };
+        const key = f.kind === "enemy" && !move.startsWith("enemy_") ? (enemyMoveMap[move] || `enemy_${move}`) : move;
+        f.meter = METER_MAX;
+        f.grounded = options.grounded ?? f.grounded;
+        f.y = options.y || (f.grounded ? GROUND_Y : GROUND_Y - 130);
+        f.hitstun = 0;
+        f.blockstun = 0;
+        f.knockdownTimer = 0;
+        f.recoveryTimer = 0;
+        f.landingTimer = 0;
+        f.dashTimer = 0;
+        f.airDashTimer = 0;
+        f.action = null;
+        f.activeMove = null;
+        startMove(key, f);
+        return { side, move: f.activeMove, anim: f.anim };
+      },
+      loadedLamuhAssets() {
+        return Object.fromEntries(
+          Object.entries(assetPaths)
+            .filter(([key]) => key.startsWith("lamuh"))
+            .map(([key]) => [key, Boolean(state.images[key])])
+        );
+      },
+      scaleSnapshot() {
+        const fighterSnapshot = (f) => ({
+          id: f?.profile?.id,
+          anim: f?.anim,
+          x: f?.x,
+          y: f?.y,
+          grounded: f?.grounded,
+          facing: f?.facing,
+          sheetScale: f?.profile?.id === "lamuh" ? sheetMeta.lamuhFinalCoreMovement.scale : null
+        });
+        return {
+          p1: fighterSnapshot(state.player),
+          p2: fighterSnapshot(state.enemy)
+        };
       }
     };
   }

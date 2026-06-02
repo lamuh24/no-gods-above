@@ -1,0 +1,642 @@
+{
+  "sheet": "LAMUH Sheet 5 - Specials Motion Validation",
+  "atlasPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png",
+  "contactSheetPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_contact.png",
+  "previewPaths": {
+    "celestial_palm": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_celestial_palm_preview.gif",
+    "ascend_step": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_ascend_step_preview.gif",
+    "heaven_splitter": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_heaven_splitter_preview.gif",
+    "divine_vanish": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_divine_vanish_preview.gif",
+    "radiant_dive": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_radiant_dive_preview.gif",
+    "special_recovery": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_special_recovery_preview.gif"
+  },
+  "stripPaths": {
+    "celestial_palm": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_celestial_palm_strip.png",
+    "ascend_step": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_ascend_step_strip.png",
+    "heaven_splitter": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_heaven_splitter_strip.png",
+    "divine_vanish": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_divine_vanish_strip.png",
+    "radiant_dive": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_radiant_dive_strip.png",
+    "special_recovery": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_special_recovery_strip.png"
+  },
+  "passed": true,
+  "checks": {
+    "dimensionsExact": true,
+    "gridExact": true,
+    "cellSizeExact": true,
+    "transparentRgbaRuntimePng": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "noMagentaPixelsRemain": true,
+    "activeFrameCounts": [
+      6,
+      7,
+      7,
+      6,
+      7,
+      4
+    ],
+    "expectedFrameCounts": [
+      6,
+      7,
+      7,
+      6,
+      7,
+      4
+    ],
+    "expectedFrameCountsFound": true,
+    "noEdgeBleed": true,
+    "noRowOrNeighborCellBleed": true,
+    "inactiveTrailingCellsTransparent": true,
+    "noCroppedLocsCloakSandalsHandsFeetOrKiEffects": true,
+    "locsRemainHairOnly": true,
+    "cloakContainedAndReadable": true,
+    "embeddedKiEffectsContainedNotDetachedOverlay": true
+  },
+  "cellReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        140,
+        72,
+        308,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        132,
+        72,
+        315,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        37,
+        72,
+        411,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        43,
+        72,
+        405,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        50,
+        72,
+        397,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        108,
+        72,
+        339,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        61,
+        77,
+        387,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        14,
+        109,
+        434,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        14,
+        132,
+        434,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        88,
+        72,
+        361,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        80,
+        72,
+        369,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        100,
+        72,
+        347,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        61,
+        72,
+        387,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        94,
+        72,
+        353,
+        368
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        100,
+        52,
+        349,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        108,
+        52,
+        341,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        145,
+        52,
+        303,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        153,
+        52,
+        295,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        133,
+        52,
+        315,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        100,
+        52,
+        349,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        125,
+        72,
+        323,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        122,
+        72,
+        326,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        53,
+        72,
+        395,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        18,
+        72,
+        429,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        114,
+        72,
+        335,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        128,
+        72,
+        321,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        126,
+        52,
+        322,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        124,
+        52,
+        325,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        135,
+        52,
+        313,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        104,
+        52,
+        344,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        132,
+        52,
+        317,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        36,
+        52,
+        412,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        94,
+        52,
+        355,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        74,
+        82,
+        374,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        14,
+        144,
+        434,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        104,
+        82,
+        343,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        148,
+        82,
+        299,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    }
+  ],
+  "motionReadabilityNotes": {
+    "celestial_palm": "PASS - Reads as a compact palm burst. Energy sits in the palm/strike zone, though the burst sprite is visibly separated a few pixels in the strongest frames; acceptable as embedded strike impact, not a free projectile row.",
+    "ascend_step": "PASS WITH NOTES - Reads as a fast rush special/gap closer. Cyan trail reinforces forward speed but is the boldest effect language on the sheet.",
+    "heaven_splitter": "PASS - Clearly moves upward with rising body/arm beats and contained vertical energy.",
+    "divine_vanish": "NEEDS REVIEW - Reads as vanish/reposition, but the transparency/afterimage frames are visually busy and could confuse runtime readability. This is the main correction candidate if Sheet 5 needs polish.",
+    "radiant_dive": "PASS - Reads as an air dive special with downward strike beats and attached impact accent.",
+    "special_recovery": "PASS - Settles back toward neutral/recovery cleanly.",
+    "kiAttachment": "PASS WITH NOTES - Cyan/gold effects stay in each source cell and do not bleed; some impact bursts are visually offset from the palm, so treat them as embedded hit accents rather than separate runtime overlays.",
+    "locsAndCloak": "PASS - Locs remain hair only; cloak remains contained and readable through the sequences."
+  },
+  "approvalRecommendation": "APPROVED_WITH_DIVINE_VANISH_REVIEW_NOTE",
+  "correctionCandidateRows": [
+    "Divine Vanish / back_special"
+  ],
+  "sha256": "fb4f6ca4c7bddf1b79e82990fc595d051ff19b772c846a419ffc5f7c663c7437"
+}

@@ -1,0 +1,1296 @@
+{
+  "sheet": "LAMUH Sheet 5 - Specials",
+  "source": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_source_chroma.png",
+  "output": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png",
+  "contactSheet": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_contact.png",
+  "contract": {
+    "atlasSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "columns": 8,
+      "rows": 6
+    },
+    "cellSize": 448,
+    "baselineY": 382,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "rightFacingSourceArt": true,
+    "runtimeMirrorsFacing": true,
+    "transparentBackground": true,
+    "noRuntimeImplementation": true,
+    "frameCounts": {
+      "celestial_palm": 6,
+      "ascend_step": 7,
+      "heaven_splitter": 7,
+      "divine_vanish": 6,
+      "radiant_dive": 7,
+      "special_recovery": 4
+    }
+  },
+  "sourceImage": {
+    "size": [
+      1448,
+      1086
+    ],
+    "mode": "RGBA-after-chroma-clean"
+  },
+  "sourcePoseRowsDetected": [
+    {
+      "row": 0,
+      "cyMean": 131.25,
+      "bodyComponentCount": 6
+    },
+    {
+      "row": 1,
+      "cyMean": 308.43,
+      "bodyComponentCount": 7
+    },
+    {
+      "row": 2,
+      "cyMean": 483.79,
+      "bodyComponentCount": 7
+    },
+    {
+      "row": 3,
+      "cyMean": 657.25,
+      "bodyComponentCount": 6
+    },
+    {
+      "row": 4,
+      "cyMean": 814.14,
+      "bodyComponentCount": 7
+    },
+    {
+      "row": 5,
+      "cyMean": 987.38,
+      "bodyComponentCount": 4
+    }
+  ],
+  "rowReports": [
+    {
+      "row": 0,
+      "name": "celestial_palm",
+      "expectedFrames": 6,
+      "detectedBodyComponents": 6,
+      "normalizedFrames": 6,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 0,
+      "sourceBboxes": [
+        [
+          54,
+          38,
+          165,
+          216
+        ],
+        [
+          242,
+          42,
+          358,
+          216
+        ],
+        [
+          410,
+          44,
+          611,
+          216
+        ],
+        [
+          596,
+          47,
+          788,
+          216
+        ],
+        [
+          783,
+          49,
+          966,
+          216
+        ],
+        [
+          979,
+          61,
+          1101,
+          214
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 1,
+      "name": "ascend_step",
+      "expectedFrames": 7,
+      "detectedBodyComponents": 7,
+      "normalizedFrames": 7,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 0,
+      "sourceBboxes": [
+        [
+          33,
+          245,
+          172,
+          377
+        ],
+        [
+          194,
+          245,
+          380,
+          377
+        ],
+        [
+          404,
+          247,
+          599,
+          376
+        ],
+        [
+          638,
+          228,
+          782,
+          371
+        ],
+        [
+          824,
+          233,
+          982,
+          384
+        ],
+        [
+          1011,
+          229,
+          1144,
+          388
+        ],
+        [
+          1192,
+          234,
+          1348,
+          384
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 2,
+      "name": "heaven_splitter",
+      "expectedFrames": 7,
+      "detectedBodyComponents": 7,
+      "normalizedFrames": 7,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 6,
+      "sourceBboxes": [
+        [
+          42,
+          442,
+          159,
+          571
+        ],
+        [
+          230,
+          409,
+          360,
+          571
+        ],
+        [
+          431,
+          376,
+          581,
+          575
+        ],
+        [
+          622,
+          354,
+          754,
+          579
+        ],
+        [
+          814,
+          344,
+          943,
+          585
+        ],
+        [
+          990,
+          417,
+          1091,
+          574
+        ],
+        [
+          1141,
+          424,
+          1262,
+          574
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        2,
+        2,
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 3,
+      "name": "divine_vanish",
+      "expectedFrames": 6,
+      "detectedBodyComponents": 6,
+      "normalizedFrames": 6,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 2,
+      "sourceBboxes": [
+        [
+          49,
+          576,
+          159,
+          730
+        ],
+        [
+          235,
+          578,
+          346,
+          730
+        ],
+        [
+          387,
+          588,
+          538,
+          728
+        ],
+        [
+          572,
+          590,
+          746,
+          729
+        ],
+        [
+          777,
+          520,
+          946,
+          728
+        ],
+        [
+          993,
+          582,
+          1099,
+          733
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "row": 4,
+      "name": "radiant_dive",
+      "expectedFrames": 7,
+      "detectedBodyComponents": 7,
+      "normalizedFrames": 7,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 1,
+      "sourceBboxes": [
+        [
+          42,
+          726,
+          154,
+          893
+        ],
+        [
+          210,
+          723,
+          321,
+          885
+        ],
+        [
+          360,
+          736,
+          461,
+          896
+        ],
+        [
+          498,
+          737,
+          629,
+          905
+        ],
+        [
+          672,
+          733,
+          773,
+          888
+        ],
+        [
+          807,
+          744,
+          977,
+          897
+        ],
+        [
+          983,
+          742,
+          1109,
+          893
+        ]
+      ],
+      "partCounts": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 5,
+      "name": "special_recovery",
+      "expectedFrames": 4,
+      "detectedBodyComponents": 4,
+      "normalizedFrames": 4,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 6,
+      "sourceBboxes": [
+        [
+          36,
+          920,
+          172,
+          1056
+        ],
+        [
+          178,
+          932,
+          376,
+          1058
+        ],
+        [
+          387,
+          921,
+          502,
+          1057
+        ],
+        [
+          539,
+          897,
+          636,
+          1058
+        ]
+      ],
+      "partCounts": [
+        1,
+        7,
+        1,
+        1
+      ]
+    }
+  ],
+  "cellReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "name": "celestial_palm",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        140,
+        72,
+        308,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.1232876712328768
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "name": "celestial_palm",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        132,
+        72,
+        315,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.183098591549296
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "name": "celestial_palm",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        37,
+        72,
+        411,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.2142857142857144
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "name": "celestial_palm",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        43,
+        72,
+        405,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.2627737226277373
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "name": "celestial_palm",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        50,
+        72,
+        397,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.2962962962962963
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "name": "celestial_palm",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        108,
+        72,
+        339,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.56198347107438
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "name": "celestial_palm",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "name": "celestial_palm",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        61,
+        77,
+        387,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.05
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        14,
+        109,
+        434,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.727272727272727
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        14,
+        132,
+        434,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.576687116564417
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        88,
+        72,
+        361,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.440944881889764
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        80,
+        72,
+        369,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.2962962962962963
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        100,
+        72,
+        347,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.440944881889764
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "name": "ascend_step",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        61,
+        72,
+        387,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.6271186440677967
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "name": "ascend_step",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        94,
+        72,
+        353,
+        368
+      ],
+      "baselineBottomY": 368,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.05
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        100,
+        52,
+        349,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.5384615384615383
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        108,
+        52,
+        341,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 1.9760479041916168
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        145,
+        52,
+        303,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 1.5789473684210527
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        153,
+        52,
+        295,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 1.4666666666666666
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        133,
+        52,
+        315,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.64
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "name": "heaven_splitter",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        100,
+        52,
+        349,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.7966101694915255
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "name": "heaven_splitter",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "name": "divine_vanish",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        125,
+        72,
+        323,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.540983606557377
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "name": "divine_vanish",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        122,
+        72,
+        326,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.5833333333333335
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "name": "divine_vanish",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        53,
+        72,
+        395,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.8703703703703702
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "name": "divine_vanish",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        18,
+        72,
+        429,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.897196261682243
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "name": "divine_vanish",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        114,
+        72,
+        335,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 1.6145833333333333
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "name": "divine_vanish",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        128,
+        72,
+        321,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.6050420168067228
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "name": "divine_vanish",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "name": "divine_vanish",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        126,
+        52,
+        322,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.4444444444444446
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        124,
+        52,
+        325,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.5384615384615383
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        135,
+        52,
+        313,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.578125
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        104,
+        52,
+        344,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.426470588235294
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        132,
+        52,
+        317,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.682926829268293
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        36,
+        52,
+        412,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.727272727272727
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "name": "radiant_dive",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        94,
+        52,
+        355,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.773109243697479
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "name": "radiant_dive",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "name": "special_recovery",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        74,
+        82,
+        374,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.8846153846153846
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "name": "special_recovery",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        14,
+        144,
+        434,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.5301204819277108
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "name": "special_recovery",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        104,
+        82,
+        343,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.8846153846153846
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "name": "special_recovery",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        148,
+        82,
+        299,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3255813953488373
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "name": "special_recovery",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "name": "special_recovery",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "name": "special_recovery",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "name": "special_recovery",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    }
+  ],
+  "normalization": {
+    "strategy": "component extraction with body/phase-body detection, attached same-row fragments, chroma removal, upscaling to LAMUH footprint, locked placement in 448px cells",
+    "magentaPreviewBackgroundRemoved": true,
+    "chromaPixelsRemoved": 1312177,
+    "inactiveTrailingCellsCleared": true,
+    "baselineAlignedToY": 382,
+    "maxPlacedSpriteBox": {
+      "width": 420,
+      "height": 390
+    },
+    "heldDuplicatePolicy": "Only used if source under-produces required active frame count; flagged per row."
+  },
+  "results": {
+    "dimensionsExact": true,
+    "cellSizeExact": true,
+    "gridExact": true,
+    "transparentRgbaRuntimePng": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "noVisiblePreviewMagentaPixels": true,
+    "noCellEdgeContact": true,
+    "edgeCells": [],
+    "noRowOrNeighborCellBleed": true,
+    "expectedFrameCountsFound": true,
+    "activeFrameCounts": [
+      6,
+      7,
+      7,
+      6,
+      7,
+      4
+    ],
+    "inactiveCellsTransparent": true,
+    "issueCount": 0,
+    "chromaPixelsRemovedDuringPackaging": 1312177
+  },
+  "visualAudit": {
+    "scaleReadability": "PASS - Component extraction plus upscaling gives Sheet 5 a closer LAMUH footprint without the visual neighbor contamination from grid slicing.",
+    "distinctionBetweenSpecials": "PASS WITH NOTES - All five specials are distinct: palm burst, rush, rising anti-air, vanish/phase, aerial dive, and recovery.",
+    "celestialPalm": "PASS - Palm burst is compact and attached to the hand.",
+    "ascendStep": "PASS WITH NOTES - Rush special reads clearly; cyan trail is contained but visually bolder than prior sheets.",
+    "heavenSplitter": "PASS - Upward anti-air launcher special reads clearly with contained vertical energy.",
+    "divineVanish": "PASS WITH NOTES - Six unique source poses are preserved, including purple phase/afterimage bodies. This row is coherent but still the row most likely to need polish if stricter runtime readability is desired.",
+    "radiantDive": "PASS - Reads as a true air dive special with attached impact accents.",
+    "specialRecovery": "PASS - Simple settle-back row with contained dust/energy bits.",
+    "cloakContainment": "PASS - Cloak stays inside cells and does not hide key silhouettes.",
+    "locReadability": "PASS - Locs remain hair only and do not read as weapons.",
+    "embeddedKiEffects": "PASS WITH NOTES - Ki/phase effects are contained in-frame, not runtime overlays; Ascend Step/Divine Vanish are intentionally flashier.",
+    "rowsNeedingCorrectionBeforeSheet6": [
+      "Optional polish only: Divine Vanish phase readability and Ascend Step trail intensity. No technical correction required."
+    ]
+  },
+  "issues": [],
+  "approvalRecommendation": "APPROVED_FOR_SHEET_6_PLANNING_WITH_SPECIAL_EFFECT_NOTES",
+  "sha256": "fb4f6ca4c7bddf1b79e82990fc595d051ff19b772c846a419ffc5f7c663c7437",
+  "motionPreviewPass": {
+    "contactSheetPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_contact.png",
+    "previewPaths": {
+      "celestial_palm": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_celestial_palm_preview.gif",
+      "ascend_step": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_ascend_step_preview.gif",
+      "heaven_splitter": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_heaven_splitter_preview.gif",
+      "divine_vanish": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_divine_vanish_preview.gif",
+      "radiant_dive": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_radiant_dive_preview.gif",
+      "special_recovery": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_special_recovery_preview.gif"
+    },
+    "stripPaths": {
+      "celestial_palm": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_celestial_palm_strip.png",
+      "ascend_step": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_ascend_step_strip.png",
+      "heaven_splitter": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_heaven_splitter_strip.png",
+      "divine_vanish": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_divine_vanish_strip.png",
+      "radiant_dive": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_radiant_dive_strip.png",
+      "special_recovery": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_5_special_recovery_strip.png"
+    },
+    "motionReadabilityNotes": {
+      "celestial_palm": "PASS - Reads as a compact palm burst. Energy sits in the palm/strike zone, though the burst sprite is visibly separated a few pixels in the strongest frames; acceptable as embedded strike impact, not a free projectile row.",
+      "ascend_step": "PASS WITH NOTES - Reads as a fast rush special/gap closer. Cyan trail reinforces forward speed but is the boldest effect language on the sheet.",
+      "heaven_splitter": "PASS - Clearly moves upward with rising body/arm beats and contained vertical energy.",
+      "divine_vanish": "NEEDS REVIEW - Reads as vanish/reposition, but the transparency/afterimage frames are visually busy and could confuse runtime readability. This is the main correction candidate if Sheet 5 needs polish.",
+      "radiant_dive": "PASS - Reads as an air dive special with downward strike beats and attached impact accent.",
+      "special_recovery": "PASS - Settles back toward neutral/recovery cleanly.",
+      "kiAttachment": "PASS WITH NOTES - Cyan/gold effects stay in each source cell and do not bleed; some impact bursts are visually offset from the palm, so treat them as embedded hit accents rather than separate runtime overlays.",
+      "locsAndCloak": "PASS - Locs remain hair only; cloak remains contained and readable through the sequences."
+    },
+    "approvalRecommendation": "APPROVED_WITH_DIVINE_VANISH_REVIEW_NOTE",
+    "correctionCandidateRows": [
+      "Divine Vanish / back_special"
+    ]
+  },
+  "validationRefresh": {
+    "dimensionsExact": true,
+    "gridExact": true,
+    "cellSizeExact": true,
+    "transparentRgbaRuntimePng": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "noMagentaPixelsRemain": true,
+    "activeFrameCounts": [
+      6,
+      7,
+      7,
+      6,
+      7,
+      4
+    ],
+    "expectedFrameCounts": [
+      6,
+      7,
+      7,
+      6,
+      7,
+      4
+    ],
+    "expectedFrameCountsFound": true,
+    "noEdgeBleed": true,
+    "noRowOrNeighborCellBleed": true,
+    "inactiveTrailingCellsTransparent": true,
+    "noCroppedLocsCloakSandalsHandsFeetOrKiEffects": true,
+    "locsRemainHairOnly": true,
+    "cloakContainedAndReadable": true,
+    "embeddedKiEffectsContainedNotDetachedOverlay": true
+  }
+}

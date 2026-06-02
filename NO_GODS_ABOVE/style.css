@@ -748,7 +748,7 @@ h1 {
 .select-grid {
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: clamp(12px, 2.8vw, 28px);
   align-items: stretch;
 }
@@ -826,6 +826,10 @@ h1 {
 
 .select-card.seris {
   --card-accent: #35e8d5;
+}
+
+.select-card.lamuh {
+  --card-accent: #67eaff;
 }
 
 .select-card:hover {

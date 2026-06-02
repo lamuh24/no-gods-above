@@ -1,0 +1,2348 @@
+{
+  "sheet": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png",
+  "source": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_source_chroma.png",
+  "contactSheet": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_contact.png",
+  "contract": {
+    "atlasSize": [
+      2688,
+      2688
+    ],
+    "grid": [
+      6,
+      6
+    ],
+    "cellSize": [
+      448,
+      448
+    ],
+    "baselineY": 382,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "rightFacingSourceArt": true,
+    "runtimeMirrorsFacing": true,
+    "transparentBackground": true,
+    "frameCounts": [
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+    ]
+  },
+  "results": {
+    "dimensionsExact": true,
+    "cellSizeExact": true,
+    "gridExact": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "broadPurpleHairHighlightPixelsNotFailure": 3498,
+    "noVisiblePreviewMagentaPixels": true,
+    "noCellEdgeContact": true,
+    "noRowOrNeighborCellBleed": true,
+    "baselineConsistentAllRows": true,
+    "expectedFrameCountsFound": true,
+    "inactiveCellsTransparent": true,
+    "issueCount": 0,
+    "chromaPixelsRemovedDuringPackaging": 7075
+  },
+  "sourcePoseRowsDetected": [
+    {
+      "sourceRow": 0,
+      "cyMean": 134.75,
+      "poseCount": 4,
+      "poseCenters": [
+        131.5,
+        337.0,
+        537.5,
+        730.0
+      ]
+    },
+    {
+      "sourceRow": 1,
+      "cyMean": 365.38,
+      "poseCount": 4,
+      "poseCenters": [
+        135.0,
+        348.5,
+        545.0,
+        754.5
+      ]
+    },
+    {
+      "sourceRow": 2,
+      "cyMean": 585.12,
+      "poseCount": 4,
+      "poseCenters": [
+        122.5,
+        350.0,
+        566.5,
+        762.0
+      ]
+    },
+    {
+      "sourceRow": 3,
+      "cyMean": 803.12,
+      "poseCount": 4,
+      "poseCenters": [
+        123.5,
+        340.0,
+        546.0,
+        747.5
+      ]
+    },
+    {
+      "sourceRow": 4,
+      "cyMean": 989.5,
+      "poseCount": 6,
+      "poseCenters": [
+        130.5,
+        351.0,
+        570.5,
+        761.0,
+        946.5,
+        1130.5
+      ]
+    },
+    {
+      "sourceRow": 5,
+      "cyMean": 1149.3,
+      "poseCount": 5,
+      "poseCenters": [
+        129.0,
+        347.5,
+        562.0,
+        771.5,
+        972.5
+      ]
+    }
+  ],
+  "rowReports": [
+    {
+      "row": 0,
+      "animation": "jump_up_rising",
+      "expectedFrames": 4,
+      "activeFramesFound": 4,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 1,
+      "animation": "jump_forward",
+      "expectedFrames": 4,
+      "activeFramesFound": 4,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 2,
+      "animation": "jump_back",
+      "expectedFrames": 4,
+      "activeFramesFound": 4,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 3,
+      "animation": "fall_neutral_air_drift",
+      "expectedFrames": 4,
+      "activeFramesFound": 4,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 4,
+      "animation": "air_dash_forward",
+      "expectedFrames": 6,
+      "activeFramesFound": 6,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 5,
+      "animation": "air_dash_back",
+      "expectedFrames": 6,
+      "activeFramesFound": 6,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    }
+  ],
+  "cellReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        109,
+        2,
+        338,
+        382
+      ],
+      "margins": {
+        "left": 109,
+        "top": 2,
+        "right": 110,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        113,
+        2,
+        334,
+        382
+      ],
+      "margins": {
+        "left": 113,
+        "top": 2,
+        "right": 114,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        112,
+        2,
+        336,
+        382
+      ],
+      "margins": {
+        "left": 112,
+        "top": 2,
+        "right": 112,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        113,
+        2,
+        334,
+        382
+      ],
+      "margins": {
+        "left": 113,
+        "top": 2,
+        "right": 114,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "animation": "jump_up_rising",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "animation": "jump_up_rising",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        63,
+        37,
+        385,
+        382
+      ],
+      "margins": {
+        "left": 63,
+        "top": 37,
+        "right": 63,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        62,
+        58,
+        386,
+        382
+      ],
+      "margins": {
+        "left": 62,
+        "top": 58,
+        "right": 62,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        61,
+        63,
+        387,
+        382
+      ],
+      "margins": {
+        "left": 61,
+        "top": 63,
+        "right": 61,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        73,
+        71,
+        375,
+        382
+      ],
+      "margins": {
+        "left": 73,
+        "top": 71,
+        "right": 73,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "animation": "jump_forward",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "animation": "jump_forward",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        94,
+        24,
+        353,
+        382
+      ],
+      "margins": {
+        "left": 94,
+        "top": 24,
+        "right": 95,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        99,
+        28,
+        348,
+        382
+      ],
+      "margins": {
+        "left": 99,
+        "top": 28,
+        "right": 100,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        79,
+        11,
+        368,
+        382
+      ],
+      "margins": {
+        "left": 79,
+        "top": 11,
+        "right": 80,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        89,
+        11,
+        359,
+        382
+      ],
+      "margins": {
+        "left": 89,
+        "top": 11,
+        "right": 89,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "animation": "jump_back",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "animation": "jump_back",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        88,
+        15,
+        360,
+        382
+      ],
+      "margins": {
+        "left": 88,
+        "top": 15,
+        "right": 88,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        80,
+        13,
+        367,
+        382
+      ],
+      "margins": {
+        "left": 80,
+        "top": 13,
+        "right": 81,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        82,
+        24,
+        365,
+        382
+      ],
+      "margins": {
+        "left": 82,
+        "top": 24,
+        "right": 83,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        81,
+        20,
+        366,
+        382
+      ],
+      "margins": {
+        "left": 81,
+        "top": 20,
+        "right": 82,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        60,
+        159,
+        388,
+        382
+      ],
+      "margins": {
+        "left": 60,
+        "top": 159,
+        "right": 60,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        57,
+        159,
+        391,
+        382
+      ],
+      "margins": {
+        "left": 57,
+        "top": 159,
+        "right": 57,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        62,
+        157,
+        386,
+        382
+      ],
+      "margins": {
+        "left": 62,
+        "top": 157,
+        "right": 62,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        62,
+        142,
+        386,
+        382
+      ],
+      "margins": {
+        "left": 62,
+        "top": 142,
+        "right": 62,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        62,
+        148,
+        386,
+        382
+      ],
+      "margins": {
+        "left": 62,
+        "top": 148,
+        "right": 62,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        62,
+        150,
+        386,
+        382
+      ],
+      "margins": {
+        "left": 62,
+        "top": 150,
+        "right": 62,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        61,
+        125,
+        387,
+        382
+      ],
+      "margins": {
+        "left": 61,
+        "top": 125,
+        "right": 61,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        50,
+        123,
+        397,
+        382
+      ],
+      "margins": {
+        "left": 50,
+        "top": 123,
+        "right": 51,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        59,
+        123,
+        389,
+        382
+      ],
+      "margins": {
+        "left": 59,
+        "top": 123,
+        "right": 59,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        58,
+        125,
+        390,
+        382
+      ],
+      "margins": {
+        "left": 58,
+        "top": 125,
+        "right": 58,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        63,
+        125,
+        385,
+        382
+      ],
+      "margins": {
+        "left": 63,
+        "top": 125,
+        "right": 63,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        63,
+        125,
+        385,
+        382
+      ],
+      "margins": {
+        "left": 63,
+        "top": 125,
+        "right": 63,
+        "bottom": 66
+      }
+    }
+  ],
+  "normalization": {
+    "method": "source chroma-key extraction, pose component detection, row grouping, bottom-center baseline placement, inactive cells cleared",
+    "heldDuplicatePolicy": "Air dash back source under-produced one frame; filled final frame with clean held/recovery duplicate from same row, flagged in frame audit.",
+    "fillPlans": {
+      "5": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4
+      ]
+    },
+    "postBaselineAlignment": [
+      {
+        "row": 0,
+        "col": 0,
+        "oldBBox": [
+          109,
+          2,
+          338,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          109,
+          2,
+          338,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "oldBBox": [
+          113,
+          2,
+          334,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          113,
+          2,
+          334,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "oldBBox": [
+          112,
+          2,
+          336,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          112,
+          2,
+          336,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "oldBBox": [
+          113,
+          2,
+          334,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          113,
+          2,
+          334,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 0,
+        "col": 5,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "oldBBox": [
+          63,
+          37,
+          385,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          63,
+          37,
+          385,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "oldBBox": [
+          62,
+          58,
+          386,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          62,
+          58,
+          386,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "oldBBox": [
+          61,
+          63,
+          387,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          61,
+          63,
+          387,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "oldBBox": [
+          73,
+          71,
+          375,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          73,
+          71,
+          375,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 1,
+        "col": 5,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "oldBBox": [
+          94,
+          24,
+          353,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          94,
+          24,
+          353,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "oldBBox": [
+          99,
+          28,
+          348,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          99,
+          28,
+          348,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "oldBBox": [
+          79,
+          11,
+          368,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          79,
+          11,
+          368,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "oldBBox": [
+          89,
+          11,
+          359,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          89,
+          11,
+          359,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "oldBBox": [
+          88,
+          15,
+          360,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          88,
+          15,
+          360,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "oldBBox": [
+          80,
+          13,
+          367,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          80,
+          13,
+          367,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "oldBBox": [
+          82,
+          24,
+          365,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          82,
+          24,
+          365,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "oldBBox": [
+          81,
+          20,
+          366,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          81,
+          20,
+          366,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "oldBBox": [
+          60,
+          159,
+          388,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          60,
+          159,
+          388,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "oldBBox": [
+          57,
+          159,
+          391,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          57,
+          159,
+          391,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "oldBBox": [
+          62,
+          157,
+          386,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          62,
+          157,
+          386,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "oldBBox": [
+          62,
+          142,
+          386,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          62,
+          142,
+          386,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "oldBBox": [
+          62,
+          148,
+          386,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          62,
+          148,
+          386,
+          382
+        ]
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "oldBBox": [
+          62,
+          150,
+          386,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          62,
+          150,
+          386,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "oldBBox": [
+          61,
+          125,
+          387,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          61,
+          125,
+          387,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "oldBBox": [
+          50,
+          123,
+          397,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          50,
+          123,
+          397,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "oldBBox": [
+          59,
+          123,
+          389,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          59,
+          123,
+          389,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 3,
+        "oldBBox": [
+          58,
+          125,
+          390,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          58,
+          125,
+          390,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "oldBBox": [
+          63,
+          125,
+          385,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          63,
+          125,
+          385,
+          382
+        ]
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "oldBBox": [
+          63,
+          125,
+          385,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          63,
+          125,
+          385,
+          382
+        ]
+      }
+    ]
+  },
+  "frameNormalizationAudit": [
+    {
+      "row": 0,
+      "col": 0,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          76,
+          56,
+          187,
+          242
+        ],
+        "area": 11779,
+        "center": [
+          131.5,
+          149.0
+        ]
+      },
+      "targetSize": [
+        229,
+        380
+      ],
+      "pasteInAtlas": [
+        109,
+        2
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9524,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          282,
+          40,
+          392,
+          229
+        ],
+        "area": 11789,
+        "center": [
+          337.0,
+          134.5
+        ]
+      },
+      "targetSize": [
+        221,
+        380
+      ],
+      "pasteInAtlas": [
+        561,
+        2
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9383,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          483,
+          31,
+          592,
+          216
+        ],
+        "area": 11517,
+        "center": [
+          537.5,
+          123.5
+        ]
+      },
+      "targetSize": [
+        224,
+        380
+      ],
+      "pasteInAtlas": [
+        1008,
+        2
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9572,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "animation": "jump_up_rising",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          677,
+          41,
+          783,
+          223
+        ],
+        "area": 11114,
+        "center": [
+          730.0,
+          132.0
+        ]
+      },
+      "targetSize": [
+        221,
+        380
+      ],
+      "pasteInAtlas": [
+        1457,
+        2
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9744,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "animation": "jump_up_rising",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "animation": "jump_up_rising",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          60,
+          283,
+          210,
+          443
+        ],
+        "area": 12340,
+        "center": [
+          135.0,
+          363.0
+        ]
+      },
+      "targetSize": [
+        322,
+        345
+      ],
+      "pasteInAtlas": [
+        63,
+        485
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          273,
+          284,
+          424,
+          435
+        ],
+        "area": 12165,
+        "center": [
+          348.5,
+          359.5
+        ]
+      },
+      "targetSize": [
+        324,
+        324
+      ],
+      "pasteInAtlas": [
+        510,
+        506
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          469,
+          294,
+          621,
+          443
+        ],
+        "area": 11533,
+        "center": [
+          545.0,
+          368.5
+        ]
+      },
+      "targetSize": [
+        326,
+        319
+      ],
+      "pasteInAtlas": [
+        957,
+        511
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "animation": "jump_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          684,
+          298,
+          825,
+          443
+        ],
+        "area": 9949,
+        "center": [
+          754.5,
+          370.5
+        ]
+      },
+      "targetSize": [
+        302,
+        311
+      ],
+      "pasteInAtlas": [
+        1417,
+        519
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "animation": "jump_forward",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "animation": "jump_forward",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          62,
+          494,
+          183,
+          661
+        ],
+        "area": 10707,
+        "center": [
+          122.5,
+          577.5
+        ]
+      },
+      "targetSize": [
+        259,
+        358
+      ],
+      "pasteInAtlas": [
+        94,
+        920
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          292,
+          499,
+          408,
+          664
+        ],
+        "area": 10274,
+        "center": [
+          350.0,
+          581.5
+        ]
+      },
+      "targetSize": [
+        249,
+        354
+      ],
+      "pasteInAtlas": [
+        547,
+        924
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          499,
+          504,
+          634,
+          676
+        ],
+        "area": 11287,
+        "center": [
+          566.5,
+          590.0
+        ]
+      },
+      "targetSize": [
+        289,
+        371
+      ],
+      "pasteInAtlas": [
+        975,
+        907
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "animation": "jump_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          699,
+          505,
+          825,
+          678
+        ],
+        "area": 11095,
+        "center": [
+          762.0,
+          591.5
+        ]
+      },
+      "targetSize": [
+        270,
+        371
+      ],
+      "pasteInAtlas": [
+        1433,
+        907
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "animation": "jump_back",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "animation": "jump_back",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          60,
+          712,
+          187,
+          883
+        ],
+        "area": 11168,
+        "center": [
+          123.5,
+          797.5
+        ]
+      },
+      "targetSize": [
+        272,
+        367
+      ],
+      "pasteInAtlas": [
+        88,
+        1359
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          273,
+          717,
+          407,
+          889
+        ],
+        "area": 11475,
+        "center": [
+          340.0,
+          803.0
+        ]
+      },
+      "targetSize": [
+        287,
+        369
+      ],
+      "pasteInAtlas": [
+        528,
+        1357
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          480,
+          721,
+          612,
+          888
+        ],
+        "area": 11325,
+        "center": [
+          546.0,
+          804.5
+        ]
+      },
+      "targetSize": [
+        283,
+        358
+      ],
+      "pasteInAtlas": [
+        978,
+        1368
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          681,
+          723,
+          814,
+          892
+        ],
+        "area": 11284,
+        "center": [
+          747.5,
+          807.5
+        ]
+      },
+      "targetSize": [
+        285,
+        362
+      ],
+      "pasteInAtlas": [
+        1425,
+        1364
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "animation": "fall_neutral_air_drift",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          54,
+          933,
+          207,
+          1036
+        ],
+        "area": 8786,
+        "center": [
+          130.5,
+          984.5
+        ]
+      },
+      "targetSize": [
+        328,
+        223
+      ],
+      "pasteInAtlas": [
+        60,
+        1951
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          273,
+          935,
+          429,
+          1039
+        ],
+        "area": 9117,
+        "center": [
+          351.0,
+          987.0
+        ]
+      },
+      "targetSize": [
+        334,
+        223
+      ],
+      "pasteInAtlas": [
+        505,
+        1951
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          495,
+          938,
+          646,
+          1043
+        ],
+        "area": 8725,
+        "center": [
+          570.5,
+          990.5
+        ]
+      },
+      "targetSize": [
+        324,
+        225
+      ],
+      "pasteInAtlas": [
+        958,
+        1949
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          686,
+          934,
+          836,
+          1046
+        ],
+        "area": 8837,
+        "center": [
+          761.0,
+          990.0
+        ]
+      },
+      "targetSize": [
+        324,
+        240
+      ],
+      "pasteInAtlas": [
+        1406,
+        1934
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          871,
+          935,
+          1022,
+          1044
+        ],
+        "area": 9001,
+        "center": [
+          946.5,
+          989.5
+        ]
+      },
+      "targetSize": [
+        324,
+        234
+      ],
+      "pasteInAtlas": [
+        1854,
+        1940
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "animation": "air_dash_forward",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 5,
+      "sourceComponent": {
+        "bbox": [
+          1055,
+          942,
+          1206,
+          1049
+        ],
+        "area": 8488,
+        "center": [
+          1130.5,
+          995.5
+        ]
+      },
+      "targetSize": [
+        324,
+        232
+      ],
+      "pasteInAtlas": [
+        2302,
+        1942
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          53,
+          1087,
+          205,
+          1206
+        ],
+        "area": 9328,
+        "center": [
+          129.0,
+          1146.5
+        ]
+      },
+      "targetSize": [
+        326,
+        257
+      ],
+      "pasteInAtlas": [
+        61,
+        2365
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          267,
+          1088,
+          428,
+          1209
+        ],
+        "area": 10239,
+        "center": [
+          347.5,
+          1148.5
+        ]
+      },
+      "targetSize": [
+        347,
+        259
+      ],
+      "pasteInAtlas": [
+        498,
+        2363
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          485,
+          1089,
+          639,
+          1210
+        ],
+        "area": 9289,
+        "center": [
+          562.0,
+          1149.5
+        ]
+      },
+      "targetSize": [
+        330,
+        259
+      ],
+      "pasteInAtlas": [
+        955,
+        2363
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          694,
+          1093,
+          849,
+          1213
+        ],
+        "area": 9084,
+        "center": [
+          771.5,
+          1153.0
+        ]
+      },
+      "targetSize": [
+        332,
+        257
+      ],
+      "pasteInAtlas": [
+        1402,
+        2365
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          898,
+          1089,
+          1047,
+          1209
+        ],
+        "area": 9066,
+        "center": [
+          972.5,
+          1149.0
+        ]
+      },
+      "targetSize": [
+        322,
+        257
+      ],
+      "pasteInAtlas": [
+        1855,
+        2365
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": true
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "animation": "air_dash_back",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          898,
+          1089,
+          1047,
+          1209
+        ],
+        "area": 9066,
+        "center": [
+          972.5,
+          1149.0
+        ]
+      },
+      "targetSize": [
+        322,
+        257
+      ],
+      "pasteInAtlas": [
+        2303,
+        2365
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": true
+    }
+  ],
+  "visualAudit": {
+    "scaleReadability": "PASS: LAMUH remains close to approved Sheets 1 and 3 and readable in 448 cells.",
+    "jumpFallDistinction": "PASS: rising, forward jump, backward jump, and neutral fall read as distinct body arcs.",
+    "airDashForwardBackReadability": "PASS WITH NOTES: forward dash is very clear as a horizontal rush; back dash reads as a reclined evasive retreat but includes one held duplicate fill.",
+    "cloakContainment": "PASS: cloak trails are contained and do not become attacks or giant wings.",
+    "locReadability": "PASS: locs remain hair-only secondary motion.",
+    "rowsNeedingReview": "Air dash back includes one held/recovery duplicate fill due source under-production; review for animation smoothness before runtime import."
+  },
+  "issues": [],
+  "approvalRecommendation": "APPROVED_FOR_REVIEW_NOT_RUNTIME",
+  "sha256": "f086254fa2a2c621fb2b984315fbc7da3785ef53b52512b82c0377061889f607"
+}

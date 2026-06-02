@@ -1,0 +1,113 @@
+{
+  "status": "pass",
+  "publicResult": {
+    "helper": "undefined",
+    "lamuhResourceCount": 0,
+    "selectableHasLamuh": false
+  },
+  "publicRequestLamuhCount": 0,
+  "hiddenMeta": {
+    "selectable": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "hiddenIds": [
+      "lamuh"
+    ],
+    "portrait": {
+      "expectedPath": "assets/sprites/portraits/lamuh_select.png",
+      "ready": false,
+      "fallbackPath": "assets/sprites/portraits/sol_select.png"
+    },
+    "ultimate": {
+      "placeholder": true,
+      "animation": "celestial_palm",
+      "note": "Temporary hidden/demo mapping until the cinematic beam ultimate is built."
+    },
+    "scale": {
+      "p1": {
+        "id": "lamuh",
+        "anim": "idle",
+        "x": 330,
+        "y": 590,
+        "grounded": true,
+        "facing": 1,
+        "sheetScale": 0.82
+      },
+      "p2": {
+        "id": "vanta",
+        "anim": "enemy_idle",
+        "x": 720,
+        "y": 590,
+        "grounded": true,
+        "facing": -1,
+        "sheetScale": null
+      }
+    },
+    "lamuhEndStateFrameCounts": [
+      6,
+      1,
+      6,
+      8,
+      8,
+      8,
+      8
+    ],
+    "serisChainEnabled": false
+  },
+  "p1Start": {
+    "mode": "training",
+    "p1": "lamuh",
+    "p2": "vanta"
+  },
+  "p2Start": {
+    "mode": "versus",
+    "p1": "sol",
+    "p2": "lamuh"
+  },
+  "mirror": {
+    "mode": "versus",
+    "p1": "lamuh",
+    "p2": "lamuh"
+  },
+  "downed": {
+    "anim": "grounded",
+    "frameCount": 1
+  },
+  "p1Damage": {
+    "before": 1000,
+    "after": 968,
+    "move": null,
+    "anim": "idle"
+  },
+  "p2Damage": {
+    "before": 1000,
+    "after": 966,
+    "move": null,
+    "anim": "enemy_idle"
+  },
+  "facing": {
+    "p1Facing": -1,
+    "p2Facing": 1
+  },
+  "ultimateCheck": {
+    "helperFlag": {
+      "placeholder": true,
+      "animation": "celestial_palm",
+      "note": "Temporary hidden/demo mapping until the cinematic beam ultimate is built."
+    },
+    "started": {
+      "side": "p1",
+      "move": "ultimate",
+      "anim": "ultimate"
+    }
+  },
+  "hiddenRequestLamuhCount": 7,
+  "serisSheet8Requests": [],
+  "errors": [],
+  "badResponses": [],
+  "failures": []
+}

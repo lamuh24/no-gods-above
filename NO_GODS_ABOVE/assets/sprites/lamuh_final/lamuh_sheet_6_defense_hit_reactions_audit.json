@@ -1,0 +1,1146 @@
+{
+  "sheet": "LAMUH Sheet 6 - Defense / Hit Reactions",
+  "source": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_source_chroma.png",
+  "output": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png",
+  "contactSheet": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_contact.png",
+  "contract": {
+    "atlasSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "columns": 8,
+      "rows": 6
+    },
+    "cellSize": 448,
+    "baselineY": 382,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "rightFacingSourceArt": true,
+    "runtimeMirrorsFacing": true,
+    "transparentBackground": true,
+    "noRuntimeImplementation": true,
+    "frameCounts": {
+      "stand_block": 4,
+      "crouch_block": 4,
+      "air_block": 4,
+      "light_hit_reaction": 5,
+      "medium_hit_reaction": 6,
+      "heavy_hit_reaction": 6
+    }
+  },
+  "sourceImage": {
+    "size": [
+      1448,
+      1086
+    ],
+    "mode": "RGBA-after-chroma-clean"
+  },
+  "sourcePoseRowsDetected": [
+    {
+      "row": 0,
+      "cyMean": 138.88,
+      "bodyComponentCount": 4
+    },
+    {
+      "row": 1,
+      "cyMean": 312.4,
+      "bodyComponentCount": 5
+    },
+    {
+      "row": 2,
+      "cyMean": 484.83,
+      "bodyComponentCount": 6
+    },
+    {
+      "row": 3,
+      "cyMean": 674.5,
+      "bodyComponentCount": 6
+    },
+    {
+      "row": 4,
+      "cyMean": 843.0,
+      "bodyComponentCount": 6
+    },
+    {
+      "row": 5,
+      "cyMean": 1004.36,
+      "bodyComponentCount": 7
+    }
+  ],
+  "rowReports": [
+    {
+      "row": 0,
+      "name": "stand_block",
+      "label": "Stand Block / block_start",
+      "expectedFrames": 4,
+      "detectedBodyComponents": 4,
+      "normalizedFrames": 4,
+      "ignoredExtraSourcePoses": 0,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 0,
+      "sourceBboxes": [
+        [
+          58,
+          50,
+          176,
+          227
+        ],
+        [
+          227,
+          51,
+          349,
+          227
+        ],
+        [
+          409,
+          51,
+          533,
+          227
+        ],
+        [
+          588,
+          51,
+          711,
+          227
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 1,
+      "name": "crouch_block",
+      "label": "Crouch Block",
+      "expectedFrames": 4,
+      "detectedBodyComponents": 5,
+      "normalizedFrames": 4,
+      "ignoredExtraSourcePoses": 1,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 0,
+      "sourceBboxes": [
+        [
+          40,
+          238,
+          188,
+          386
+        ],
+        [
+          220,
+          243,
+          365,
+          382
+        ],
+        [
+          407,
+          246,
+          548,
+          384
+        ],
+        [
+          586,
+          238,
+          720,
+          388
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 2,
+      "name": "air_block",
+      "label": "Air Block / airborne_guard",
+      "expectedFrames": 4,
+      "detectedBodyComponents": 6,
+      "normalizedFrames": 4,
+      "ignoredExtraSourcePoses": 2,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 0,
+      "sourceBboxes": [
+        [
+          47,
+          403,
+          172,
+          565
+        ],
+        [
+          226,
+          403,
+          348,
+          566
+        ],
+        [
+          400,
+          403,
+          532,
+          566
+        ],
+        [
+          585,
+          405,
+          714,
+          560
+        ]
+      ],
+      "partCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "row": 3,
+      "name": "light_hit_reaction",
+      "label": "Light Hit Reaction",
+      "expectedFrames": 5,
+      "detectedBodyComponents": 6,
+      "normalizedFrames": 5,
+      "ignoredExtraSourcePoses": 1,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 10,
+      "sourceBboxes": [
+        [
+          53,
+          588,
+          182,
+          752
+        ],
+        [
+          244,
+          597,
+          375,
+          757
+        ],
+        [
+          429,
+          593,
+          552,
+          755
+        ],
+        [
+          621,
+          595,
+          756,
+          757
+        ],
+        [
+          790,
+          591,
+          919,
+          757
+        ]
+      ],
+      "partCounts": [
+        2,
+        3,
+        3,
+        4,
+        3
+      ]
+    },
+    {
+      "row": 4,
+      "name": "medium_hit_reaction",
+      "label": "Medium Hit Reaction",
+      "expectedFrames": 6,
+      "detectedBodyComponents": 6,
+      "normalizedFrames": 6,
+      "ignoredExtraSourcePoses": 0,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 6,
+      "sourceBboxes": [
+        [
+          45,
+          771,
+          209,
+          914
+        ],
+        [
+          228,
+          770,
+          401,
+          908
+        ],
+        [
+          407,
+          775,
+          602,
+          911
+        ],
+        [
+          609,
+          774,
+          766,
+          903
+        ],
+        [
+          774,
+          771,
+          944,
+          907
+        ],
+        [
+          961,
+          781,
+          1115,
+          915
+        ]
+      ],
+      "partCounts": [
+        3,
+        2,
+        3,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "row": 5,
+      "name": "heavy_hit_reaction",
+      "label": "Heavy Hit Reaction / crumple_reaction",
+      "expectedFrames": 6,
+      "detectedBodyComponents": 7,
+      "normalizedFrames": 6,
+      "ignoredExtraSourcePoses": 1,
+      "heldDuplicateCount": 0,
+      "attachedFragmentCount": 4,
+      "sourceBboxes": [
+        [
+          39,
+          929,
+          214,
+          1072
+        ],
+        [
+          227,
+          934,
+          404,
+          1068
+        ],
+        [
+          439,
+          950,
+          623,
+          1068
+        ],
+        [
+          624,
+          935,
+          777,
+          1069
+        ],
+        [
+          821,
+          937,
+          963,
+          1071
+        ],
+        [
+          971,
+          949,
+          1113,
+          1069
+        ]
+      ],
+      "partCounts": [
+        3,
+        3,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "cellReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "name": "stand_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        134,
+        82,
+        314,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.0408163265306123
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "name": "stand_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        130,
+        82,
+        319,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.0547945205479454
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "name": "stand_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        128,
+        82,
+        321,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.0547945205479454
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "name": "stand_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        128,
+        82,
+        319,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.0547945205479454
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "name": "stand_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "name": "stand_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "name": "stand_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "name": "stand_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "name": "crouch_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        82,
+        97,
+        367,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.4152542372881354
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "name": "crouch_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        74,
+        97,
+        375,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.614678899082569
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "name": "crouch_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        78,
+        97,
+        371,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.638888888888889
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "name": "crouch_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        100,
+        97,
+        347,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.375
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "name": "crouch_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "name": "crouch_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "name": "crouch_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "name": "crouch_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "name": "air_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        110,
+        67,
+        337,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3863636363636362
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "name": "air_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        115,
+        67,
+        333,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3684210526315788
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "name": "air_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        103,
+        67,
+        345,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3684210526315788
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "name": "air_block",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        100,
+        67,
+        349,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.52
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "name": "air_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "name": "air_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "name": "air_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "name": "air_block",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "name": "light_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        108,
+        67,
+        341,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3507462686567164
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "name": "light_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        102,
+        67,
+        347,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.423076923076923
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "name": "light_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        113,
+        67,
+        335,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3863636363636362
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "name": "light_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        98,
+        67,
+        349,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3863636363636362
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "name": "light_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        110,
+        67,
+        339,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.3161764705882355
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "name": "light_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "name": "light_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "name": "light_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "name": "medium_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        37,
+        67,
+        411,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.7876106194690267
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "name": "medium_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        16,
+        67,
+        433,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.9166666666666665
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "name": "medium_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        14,
+        112,
+        434,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.5454545454545454
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "name": "medium_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        30,
+        80,
+        417,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.05
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "name": "medium_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        16,
+        67,
+        432,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.9716981132075473
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "name": "medium_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        36,
+        67,
+        412,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.0288461538461537
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "name": "medium_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "name": "medium_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "name": "heavy_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        22,
+        67,
+        426,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.7876106194690267
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "name": "heavy_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        14,
+        85,
+        434,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.857142857142857
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "name": "heavy_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        14,
+        142,
+        434,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 2.727272727272727
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "name": "heavy_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        38,
+        67,
+        411,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.0288461538461537
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "name": "heavy_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        54,
+        67,
+        393,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.0288461538461537
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "name": "heavy_hit_reaction",
+      "active": true,
+      "transparent": false,
+      "bbox": [
+        53,
+        108,
+        395,
+        382
+      ],
+      "baselineBottomY": 382,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": 3.05
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "name": "heavy_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "name": "heavy_hit_reaction",
+      "active": false,
+      "transparent": true,
+      "bbox": null,
+      "baselineBottomY": null,
+      "edgeContact": false,
+      "heldDuplicate": false,
+      "scale": null
+    }
+  ],
+  "normalization": {
+    "strategy": "component extraction by row, first expected frames kept per contract, same-row subtle impact fragments attached, chroma removal, upscaling to LAMUH footprint, locked placement in 448px cells",
+    "magentaPreviewBackgroundRemoved": true,
+    "chromaPixelsRemoved": 1305000,
+    "inactiveTrailingCellsCleared": true,
+    "baselineAlignedToY": 382,
+    "maxPlacedSpriteBox": {
+      "width": 420,
+      "height": 390
+    },
+    "heldDuplicatePolicy": "Only used if source under-produces required active frame count; flagged per row."
+  },
+  "results": {
+    "dimensionsExact": true,
+    "cellSizeExact": true,
+    "gridExact": true,
+    "transparentRgbaRuntimePng": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "noVisiblePreviewMagentaPixels": true,
+    "noCellEdgeContact": true,
+    "edgeCells": [],
+    "noRowOrNeighborCellBleed": true,
+    "expectedFrameCountsFound": true,
+    "activeFrameCounts": [
+      4,
+      4,
+      4,
+      5,
+      6,
+      6
+    ],
+    "inactiveCellsTransparent": true,
+    "issueCount": 4,
+    "chromaPixelsRemovedDuringPackaging": 1305000
+  },
+  "visualAudit": {
+    "scaleReadability": "PASS - Sheet 6 keeps LAMUH close to established 448px new-generation scale while prioritizing readable silhouettes.",
+    "blockPoseClarity": "PASS - Stand, crouch, and air block rows read as distinct guard types with clear forearm/body protection.",
+    "hitReactionDistinction": "PASS WITH NOTES - Light, medium, and heavy reactions escalate clearly. Source provided extra poses in some rows; the atlas keeps requested counts and clears extras.",
+    "heavyHitReactionStrength": "PASS WITH NOTES - Heavy row reads as strong knockback/crumple and bridges toward Sheet 7, but it leans close to knockdown language in later frames; acceptable for identity review but worth motion preview before final lock.",
+    "cloakContainment": "PASS - Cloak stays inside every cell and does not hide the primary defensive/hurt silhouette.",
+    "locReadability": "PASS - Locs remain hair only and trail naturally with recoil; no weapon-like behavior.",
+    "baselineConsistency": "PASS - Grounded rows are locked near baselineY 382; air block floats intentionally but remains contained.",
+    "rowsNeedingCorrectionBeforeSheet7": [
+      "Optional review: heavy_hit_reaction row may be close to knockdown rather than pure crumple; motion preview should decide."
+    ]
+  },
+  "issues": [
+    "crouch_block source produced 5 pose(s); kept first 4 per contract and cleared extra trailing pose(s).",
+    "air_block source produced 6 pose(s); kept first 4 per contract and cleared extra trailing pose(s).",
+    "light_hit_reaction source produced 6 pose(s); kept first 5 per contract and cleared extra trailing pose(s).",
+    "heavy_hit_reaction source produced 7 pose(s); kept first 6 per contract and cleared extra trailing pose(s)."
+  ],
+  "approvalRecommendation": "APPROVED_FOR_SHEET_7_PLANNING_WITH_HEAVY_REACTION_NOTE",
+  "sha256": "3abfd9e64014fdfeae3f930f5aaea8af54d6c141ecbce5c033fd0821f114008e"
+}

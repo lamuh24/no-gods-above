@@ -1,0 +1,5010 @@
+{
+  "character": "LAMUH",
+  "purpose": "Full approved base body set packaging and validation for Sheets 1-7 before hidden runtime implementation.",
+  "runtimeContract": {
+    "pipeline": "new-generation Sol-style fighter format",
+    "cellSize": [
+      448,
+      448
+    ],
+    "baselineY": 382,
+    "baselineTolerancePx": 3,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "rightFacingSourceArt": true,
+    "runtimeMirrorsFacing": true,
+    "transparentRuntimePngs": true,
+    "noTrimming": true
+  },
+  "generatedArtifacts": {
+    "contactsDir": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts",
+    "combinedOverviewPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/lamuh_sheets_1_7_overview_contact.png",
+    "scaleComparisonPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/lamuh_scale_compare_sol_nyx_seris.png",
+    "validationJsonPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/lamuh_full_pack_validation_report.json",
+    "validationMarkdownPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/lamuh_full_pack_validation_report.md"
+  },
+  "overallStatus": "PASS_WITH_REVIEW_NOTES",
+  "sheetResults": [
+    {
+      "sheet": 1,
+      "name": "core_movement",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_1_core_movement_final_contact.png",
+      "expectedSize": [
+        3584,
+        2688
+      ],
+      "actualSize": [
+        3584,
+        2688
+      ],
+      "grid": [
+        8,
+        6
+      ],
+      "frameCountsExpected": [
+        8,
+        6,
+        6,
+        6,
+        6,
+        4
+      ],
+      "frameCountsActual": [
+        8,
+        6,
+        6,
+        6,
+        6,
+        4
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 0,
+          "bbox": [
+            117,
+            2,
+            331,
+            382
+          ],
+          "size": [
+            214,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 1,
+          "bbox": [
+            118,
+            2,
+            330,
+            382
+          ],
+          "size": [
+            212,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 2,
+          "bbox": [
+            118,
+            2,
+            330,
+            382
+          ],
+          "size": [
+            212,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 3,
+          "bbox": [
+            117,
+            2,
+            331,
+            382
+          ],
+          "size": [
+            214,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 4,
+          "bbox": [
+            115,
+            2,
+            332,
+            382
+          ],
+          "size": [
+            217,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 5,
+          "bbox": [
+            109,
+            2,
+            339,
+            382
+          ],
+          "size": [
+            230,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 6,
+          "bbox": [
+            108,
+            2,
+            340,
+            382
+          ],
+          "size": [
+            232,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "idle_select_idle",
+          "col": 7,
+          "bbox": [
+            110,
+            6,
+            338,
+            382
+          ],
+          "size": [
+            228,
+            376
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "walk_forward",
+          "col": 0,
+          "bbox": [
+            64,
+            2,
+            383,
+            382
+          ],
+          "size": [
+            319,
+            380
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "walk_forward",
+          "col": 1,
+          "bbox": [
+            57,
+            2,
+            390,
+            382
+          ],
+          "size": [
+            333,
+            380
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "walk_forward",
+          "col": 2,
+          "bbox": [
+            54,
+            11,
+            393,
+            382
+          ],
+          "size": [
+            339,
+            371
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "walk_forward",
+          "col": 3,
+          "bbox": [
+            65,
+            16,
+            382,
+            382
+          ],
+          "size": [
+            317,
+            366
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "walk_forward",
+          "col": 4,
+          "bbox": [
+            67,
+            21,
+            381,
+            382
+          ],
+          "size": [
+            314,
+            361
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "walk_forward",
+          "col": 5,
+          "bbox": [
+            95,
+            23,
+            352,
+            382
+          ],
+          "size": [
+            257,
+            359
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "walk_back",
+          "col": 0,
+          "bbox": [
+            78,
+            33,
+            370,
+            382
+          ],
+          "size": [
+            292,
+            349
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "walk_back",
+          "col": 1,
+          "bbox": [
+            84,
+            31,
+            364,
+            382
+          ],
+          "size": [
+            280,
+            351
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "walk_back",
+          "col": 2,
+          "bbox": [
+            88,
+            28,
+            360,
+            382
+          ],
+          "size": [
+            272,
+            354
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "walk_back",
+          "col": 3,
+          "bbox": [
+            73,
+            28,
+            375,
+            382
+          ],
+          "size": [
+            302,
+            354
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "walk_back",
+          "col": 4,
+          "bbox": [
+            95,
+            38,
+            352,
+            382
+          ],
+          "size": [
+            257,
+            344
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "walk_back",
+          "col": 5,
+          "bbox": [
+            105,
+            33,
+            343,
+            382
+          ],
+          "size": [
+            238,
+            349
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "dash_forward",
+          "col": 0,
+          "bbox": [
+            54,
+            65,
+            393,
+            382
+          ],
+          "size": [
+            339,
+            317
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "dash_forward",
+          "col": 1,
+          "bbox": [
+            60,
+            70,
+            387,
+            382
+          ],
+          "size": [
+            327,
+            312
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "dash_forward",
+          "col": 2,
+          "bbox": [
+            55,
+            68,
+            392,
+            382
+          ],
+          "size": [
+            337,
+            314
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "dash_forward",
+          "col": 3,
+          "bbox": [
+            60,
+            68,
+            387,
+            382
+          ],
+          "size": [
+            327,
+            314
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "dash_forward",
+          "col": 4,
+          "bbox": [
+            46,
+            80,
+            402,
+            382
+          ],
+          "size": [
+            356,
+            302
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "dash_forward",
+          "col": 5,
+          "bbox": [
+            55,
+            85,
+            392,
+            382
+          ],
+          "size": [
+            337,
+            297
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "dash_back",
+          "col": 0,
+          "bbox": [
+            65,
+            63,
+            382,
+            382
+          ],
+          "size": [
+            317,
+            319
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "dash_back",
+          "col": 1,
+          "bbox": [
+            68,
+            58,
+            380,
+            382
+          ],
+          "size": [
+            312,
+            324
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "dash_back",
+          "col": 2,
+          "bbox": [
+            85,
+            60,
+            362,
+            382
+          ],
+          "size": [
+            277,
+            322
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "dash_back",
+          "col": 3,
+          "bbox": [
+            69,
+            58,
+            378,
+            382
+          ],
+          "size": [
+            309,
+            324
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "dash_back",
+          "col": 4,
+          "bbox": [
+            72,
+            58,
+            376,
+            382
+          ],
+          "size": [
+            304,
+            324
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "dash_back",
+          "col": 5,
+          "bbox": [
+            70,
+            63,
+            377,
+            382
+          ],
+          "size": [
+            307,
+            319
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "crouch_low_stance",
+          "col": 0,
+          "bbox": [
+            67,
+            73,
+            381,
+            382
+          ],
+          "size": [
+            314,
+            309
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "crouch_low_stance",
+          "col": 1,
+          "bbox": [
+            70,
+            85,
+            377,
+            382
+          ],
+          "size": [
+            307,
+            297
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "crouch_low_stance",
+          "col": 2,
+          "bbox": [
+            81,
+            90,
+            366,
+            382
+          ],
+          "size": [
+            285,
+            292
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "crouch_low_stance",
+          "col": 3,
+          "bbox": [
+            86,
+            100,
+            361,
+            382
+          ],
+          "size": [
+            275,
+            282
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 0,
+      "baselineDeviations": [
+        {
+          "row": 0,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        }
+      ],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          212,
+          356
+        ],
+        "activeFrameHeightMinMax": [
+          282,
+          380
+        ],
+        "activeFrameHeightMedian": 349.0
+      },
+      "rowsToReviewBeforeRuntime": []
+    },
+    {
+      "sheet": 2,
+      "name": "air_movement",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_2_air_movement_final_contact.png",
+      "expectedSize": [
+        2688,
+        2688
+      ],
+      "actualSize": [
+        2688,
+        2688
+      ],
+      "grid": [
+        6,
+        6
+      ],
+      "frameCountsExpected": [
+        4,
+        4,
+        4,
+        4,
+        6,
+        6
+      ],
+      "frameCountsActual": [
+        4,
+        4,
+        4,
+        4,
+        6,
+        6
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "jump_up_rising",
+          "col": 0,
+          "bbox": [
+            109,
+            2,
+            338,
+            382
+          ],
+          "size": [
+            229,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "jump_up_rising",
+          "col": 1,
+          "bbox": [
+            113,
+            2,
+            334,
+            382
+          ],
+          "size": [
+            221,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "jump_up_rising",
+          "col": 2,
+          "bbox": [
+            112,
+            2,
+            336,
+            382
+          ],
+          "size": [
+            224,
+            380
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "jump_up_rising",
+          "col": 3,
+          "bbox": [
+            113,
+            2,
+            334,
+            382
+          ],
+          "size": [
+            221,
+            380
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "jump_forward",
+          "col": 0,
+          "bbox": [
+            63,
+            37,
+            385,
+            382
+          ],
+          "size": [
+            322,
+            345
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "jump_forward",
+          "col": 1,
+          "bbox": [
+            62,
+            58,
+            386,
+            382
+          ],
+          "size": [
+            324,
+            324
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "jump_forward",
+          "col": 2,
+          "bbox": [
+            61,
+            63,
+            387,
+            382
+          ],
+          "size": [
+            326,
+            319
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "jump_forward",
+          "col": 3,
+          "bbox": [
+            73,
+            71,
+            375,
+            382
+          ],
+          "size": [
+            302,
+            311
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "jump_back",
+          "col": 0,
+          "bbox": [
+            94,
+            24,
+            353,
+            382
+          ],
+          "size": [
+            259,
+            358
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "jump_back",
+          "col": 1,
+          "bbox": [
+            99,
+            28,
+            348,
+            382
+          ],
+          "size": [
+            249,
+            354
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "jump_back",
+          "col": 2,
+          "bbox": [
+            79,
+            11,
+            368,
+            382
+          ],
+          "size": [
+            289,
+            371
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "jump_back",
+          "col": 3,
+          "bbox": [
+            89,
+            11,
+            359,
+            382
+          ],
+          "size": [
+            270,
+            371
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "fall_neutral_air_drift",
+          "col": 0,
+          "bbox": [
+            88,
+            15,
+            360,
+            382
+          ],
+          "size": [
+            272,
+            367
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "fall_neutral_air_drift",
+          "col": 1,
+          "bbox": [
+            80,
+            13,
+            367,
+            382
+          ],
+          "size": [
+            287,
+            369
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "fall_neutral_air_drift",
+          "col": 2,
+          "bbox": [
+            82,
+            24,
+            365,
+            382
+          ],
+          "size": [
+            283,
+            358
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "fall_neutral_air_drift",
+          "col": 3,
+          "bbox": [
+            81,
+            20,
+            366,
+            382
+          ],
+          "size": [
+            285,
+            362
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "air_dash_forward",
+          "col": 0,
+          "bbox": [
+            60,
+            159,
+            388,
+            382
+          ],
+          "size": [
+            328,
+            223
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "air_dash_forward",
+          "col": 1,
+          "bbox": [
+            57,
+            159,
+            391,
+            382
+          ],
+          "size": [
+            334,
+            223
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "air_dash_forward",
+          "col": 2,
+          "bbox": [
+            62,
+            157,
+            386,
+            382
+          ],
+          "size": [
+            324,
+            225
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "air_dash_forward",
+          "col": 3,
+          "bbox": [
+            62,
+            142,
+            386,
+            382
+          ],
+          "size": [
+            324,
+            240
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "air_dash_forward",
+          "col": 4,
+          "bbox": [
+            62,
+            148,
+            386,
+            382
+          ],
+          "size": [
+            324,
+            234
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "air_dash_forward",
+          "col": 5,
+          "bbox": [
+            62,
+            150,
+            386,
+            382
+          ],
+          "size": [
+            324,
+            232
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "air_dash_back",
+          "col": 0,
+          "bbox": [
+            61,
+            125,
+            387,
+            382
+          ],
+          "size": [
+            326,
+            257
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "air_dash_back",
+          "col": 1,
+          "bbox": [
+            50,
+            123,
+            397,
+            382
+          ],
+          "size": [
+            347,
+            259
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "air_dash_back",
+          "col": 2,
+          "bbox": [
+            59,
+            123,
+            389,
+            382
+          ],
+          "size": [
+            330,
+            259
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "air_dash_back",
+          "col": 3,
+          "bbox": [
+            58,
+            125,
+            390,
+            382
+          ],
+          "size": [
+            332,
+            257
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "air_dash_back",
+          "col": 4,
+          "bbox": [
+            63,
+            125,
+            385,
+            382
+          ],
+          "size": [
+            322,
+            257
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "air_dash_back",
+          "col": 5,
+          "bbox": [
+            63,
+            125,
+            385,
+            382
+          ],
+          "size": [
+            322,
+            257
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 0,
+      "baselineDeviations": [],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          221,
+          347
+        ],
+        "activeFrameHeightMinMax": [
+          223,
+          380
+        ],
+        "activeFrameHeightMedian": 321.5
+      },
+      "rowsToReviewBeforeRuntime": [
+        "Row 5 air_dash_back: final slot is a held/recovery duplicate from prior packaging; review smoothness before runtime timing lock."
+      ]
+    },
+    {
+      "sheet": 3,
+      "name": "ground_normals",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_3_ground_normals_final_contact.png",
+      "expectedSize": [
+        3584,
+        1792
+      ],
+      "actualSize": [
+        3584,
+        1792
+      ],
+      "grid": [
+        8,
+        4
+      ],
+      "frameCountsExpected": [
+        4,
+        8,
+        7,
+        7
+      ],
+      "frameCountsActual": [
+        4,
+        8,
+        7,
+        7
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "light_attack",
+          "col": 0,
+          "bbox": [
+            108,
+            9,
+            340,
+            382
+          ],
+          "size": [
+            232,
+            373
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "light_attack",
+          "col": 1,
+          "bbox": [
+            54,
+            33,
+            393,
+            382
+          ],
+          "size": [
+            339,
+            349
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "light_attack",
+          "col": 2,
+          "bbox": [
+            99,
+            18,
+            348,
+            382
+          ],
+          "size": [
+            249,
+            364
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "light_attack",
+          "col": 3,
+          "bbox": [
+            62,
+            35,
+            386,
+            382
+          ],
+          "size": [
+            324,
+            347
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 0,
+          "bbox": [
+            103,
+            41,
+            345,
+            382
+          ],
+          "size": [
+            242,
+            341
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 1,
+          "bbox": [
+            89,
+            33,
+            359,
+            382
+          ],
+          "size": [
+            270,
+            349
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 2,
+          "bbox": [
+            80,
+            90,
+            367,
+            382
+          ],
+          "size": [
+            287,
+            292
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 3,
+          "bbox": [
+            100,
+            43,
+            347,
+            382
+          ],
+          "size": [
+            247,
+            339
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 4,
+          "bbox": [
+            80,
+            48,
+            367,
+            382
+          ],
+          "size": [
+            287,
+            334
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 5,
+          "bbox": [
+            106,
+            33,
+            342,
+            382
+          ],
+          "size": [
+            236,
+            349
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 6,
+          "bbox": [
+            39,
+            52,
+            408,
+            382
+          ],
+          "size": [
+            369,
+            330
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "medium_attack",
+          "col": 7,
+          "bbox": [
+            106,
+            48,
+            342,
+            382
+          ],
+          "size": [
+            236,
+            334
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 0,
+          "bbox": [
+            73,
+            69,
+            375,
+            382
+          ],
+          "size": [
+            302,
+            313
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 1,
+          "bbox": [
+            65,
+            54,
+            382,
+            382
+          ],
+          "size": [
+            317,
+            328
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 2,
+          "bbox": [
+            33,
+            54,
+            415,
+            382
+          ],
+          "size": [
+            382,
+            328
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 3,
+          "bbox": [
+            14,
+            96,
+            434,
+            382
+          ],
+          "size": [
+            420,
+            286
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 4,
+          "bbox": [
+            14,
+            96,
+            434,
+            382
+          ],
+          "size": [
+            420,
+            286
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 5,
+          "bbox": [
+            97,
+            60,
+            350,
+            382
+          ],
+          "size": [
+            253,
+            322
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heavy_attack",
+          "col": 6,
+          "bbox": [
+            64,
+            71,
+            383,
+            382
+          ],
+          "size": [
+            319,
+            311
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 0,
+          "bbox": [
+            104,
+            58,
+            344,
+            382
+          ],
+          "size": [
+            240,
+            324
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 1,
+          "bbox": [
+            94,
+            22,
+            353,
+            382
+          ],
+          "size": [
+            259,
+            360
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 2,
+          "bbox": [
+            103,
+            2,
+            344,
+            382
+          ],
+          "size": [
+            241,
+            380
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 3,
+          "bbox": [
+            125,
+            2,
+            322,
+            382
+          ],
+          "size": [
+            197,
+            380
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 4,
+          "bbox": [
+            128,
+            3,
+            320,
+            382
+          ],
+          "size": [
+            192,
+            379
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 5,
+          "bbox": [
+            128,
+            3,
+            320,
+            382
+          ],
+          "size": [
+            192,
+            379
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "launcher",
+          "col": 6,
+          "bbox": [
+            97,
+            35,
+            350,
+            382
+          ],
+          "size": [
+            253,
+            347
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 0,
+      "baselineDeviations": [
+        {
+          "row": 0,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 7,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 6,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 6,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        }
+      ],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          192,
+          420
+        ],
+        "activeFrameHeightMinMax": [
+          286,
+          380
+        ],
+        "activeFrameHeightMedian": 340.0
+      },
+      "rowsToReviewBeforeRuntime": [
+        "Rows 2-3 heavy/launcher: each has one held/recovery duplicate from prior packaging; review animation smoothness before final frame timing."
+      ]
+    },
+    {
+      "sheet": 4,
+      "name": "air_normals",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_4_air_normals_final_contact.png",
+      "expectedSize": [
+        3136,
+        1792
+      ],
+      "actualSize": [
+        3136,
+        1792
+      ],
+      "grid": [
+        7,
+        4
+      ],
+      "frameCountsExpected": [
+        4,
+        6,
+        7,
+        4
+      ],
+      "frameCountsActual": [
+        4,
+        6,
+        7,
+        4
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS_WITH_NOTES",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "air_light",
+          "col": 0,
+          "bbox": [
+            144,
+            186,
+            303,
+            382
+          ],
+          "size": [
+            159,
+            196
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "air_light",
+          "col": 1,
+          "bbox": [
+            161,
+            186,
+            287,
+            382
+          ],
+          "size": [
+            126,
+            196
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "air_light",
+          "col": 2,
+          "bbox": [
+            146,
+            195,
+            301,
+            382
+          ],
+          "size": [
+            155,
+            187
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "air_light",
+          "col": 3,
+          "bbox": [
+            165,
+            213,
+            283,
+            382
+          ],
+          "size": [
+            118,
+            169
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "air_medium",
+          "col": 0,
+          "bbox": [
+            143,
+            196,
+            305,
+            382
+          ],
+          "size": [
+            162,
+            186
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "air_medium",
+          "col": 1,
+          "bbox": [
+            128,
+            218,
+            320,
+            381
+          ],
+          "size": [
+            192,
+            163
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "air_medium",
+          "col": 2,
+          "bbox": [
+            142,
+            198,
+            305,
+            381
+          ],
+          "size": [
+            163,
+            183
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "air_medium",
+          "col": 3,
+          "bbox": [
+            148,
+            203,
+            301,
+            382
+          ],
+          "size": [
+            153,
+            179
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "air_medium",
+          "col": 4,
+          "bbox": [
+            136,
+            198,
+            311,
+            382
+          ],
+          "size": [
+            175,
+            184
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "air_medium",
+          "col": 5,
+          "bbox": [
+            164,
+            197,
+            285,
+            382
+          ],
+          "size": [
+            121,
+            185
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 0,
+          "bbox": [
+            167,
+            192,
+            281,
+            382
+          ],
+          "size": [
+            114,
+            190
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 1,
+          "bbox": [
+            149,
+            195,
+            300,
+            381
+          ],
+          "size": [
+            151,
+            186
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 2,
+          "bbox": [
+            157,
+            190,
+            291,
+            381
+          ],
+          "size": [
+            134,
+            191
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 3,
+          "bbox": [
+            151,
+            228,
+            297,
+            382
+          ],
+          "size": [
+            146,
+            154
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 4,
+          "bbox": [
+            118,
+            202,
+            328,
+            382
+          ],
+          "size": [
+            210,
+            180
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 5,
+          "bbox": [
+            121,
+            197,
+            327,
+            381
+          ],
+          "size": [
+            206,
+            184
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_heavy",
+          "col": 6,
+          "bbox": [
+            127,
+            214,
+            321,
+            382
+          ],
+          "size": [
+            194,
+            168
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "air_recovery",
+          "col": 0,
+          "bbox": [
+            144,
+            220,
+            303,
+            382
+          ],
+          "size": [
+            159,
+            162
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "air_recovery",
+          "col": 1,
+          "bbox": [
+            144,
+            209,
+            305,
+            382
+          ],
+          "size": [
+            161,
+            173
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "air_recovery",
+          "col": 2,
+          "bbox": [
+            166,
+            197,
+            283,
+            381
+          ],
+          "size": [
+            117,
+            184
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "air_recovery",
+          "col": 3,
+          "bbox": [
+            178,
+            195,
+            271,
+            382
+          ],
+          "size": [
+            93,
+            187
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 0,
+      "baselineDeviations": [],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          93,
+          210
+        ],
+        "activeFrameHeightMinMax": [
+          154,
+          196
+        ],
+        "activeFrameHeightMedian": 184
+      },
+      "rowsToReviewBeforeRuntime": [
+        "Row 2 air_heavy: powerful but slightly two-beat; acceptable, review motion if runtime wants one clean strike arc."
+      ]
+    },
+    {
+      "sheet": 5,
+      "name": "specials",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_5_specials_final_contact.png",
+      "expectedSize": [
+        3584,
+        2688
+      ],
+      "actualSize": [
+        3584,
+        2688
+      ],
+      "grid": [
+        8,
+        6
+      ],
+      "frameCountsExpected": [
+        6,
+        7,
+        7,
+        6,
+        7,
+        4
+      ],
+      "frameCountsActual": [
+        6,
+        7,
+        7,
+        6,
+        7,
+        4
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS_WITH_NOTES",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "celestial_palm_neutral_special",
+          "col": 0,
+          "bbox": [
+            142,
+            72,
+            308,
+            382
+          ],
+          "size": [
+            166,
+            310
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "celestial_palm_neutral_special",
+          "col": 1,
+          "bbox": [
+            132,
+            72,
+            315,
+            382
+          ],
+          "size": [
+            183,
+            310
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "celestial_palm_neutral_special",
+          "col": 2,
+          "bbox": [
+            37,
+            72,
+            409,
+            382
+          ],
+          "size": [
+            372,
+            310
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "celestial_palm_neutral_special",
+          "col": 3,
+          "bbox": [
+            43,
+            74,
+            403,
+            382
+          ],
+          "size": [
+            360,
+            308
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "celestial_palm_neutral_special",
+          "col": 4,
+          "bbox": [
+            50,
+            72,
+            395,
+            382
+          ],
+          "size": [
+            345,
+            310
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "celestial_palm_neutral_special",
+          "col": 5,
+          "bbox": [
+            108,
+            72,
+            339,
+            382
+          ],
+          "size": [
+            231,
+            310
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 0,
+          "bbox": [
+            61,
+            77,
+            387,
+            382
+          ],
+          "size": [
+            326,
+            305
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 1,
+          "bbox": [
+            17,
+            112,
+            434,
+            379
+          ],
+          "size": [
+            417,
+            267
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 2,
+          "bbox": [
+            17,
+            132,
+            434,
+            382
+          ],
+          "size": [
+            417,
+            250
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 3,
+          "bbox": [
+            88,
+            72,
+            361,
+            343
+          ],
+          "size": [
+            273,
+            271
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 4,
+          "bbox": [
+            82,
+            72,
+            367,
+            382
+          ],
+          "size": [
+            285,
+            310
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 5,
+          "bbox": [
+            100,
+            72,
+            347,
+            382
+          ],
+          "size": [
+            247,
+            310
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "ascend_step_forward_special",
+          "col": 6,
+          "bbox": [
+            61,
+            72,
+            387,
+            382
+          ],
+          "size": [
+            326,
+            310
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 0,
+          "bbox": [
+            97,
+            75,
+            353,
+            368
+          ],
+          "size": [
+            256,
+            293
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 1,
+          "bbox": [
+            100,
+            55,
+            346,
+            382
+          ],
+          "size": [
+            246,
+            327
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 2,
+          "bbox": [
+            110,
+            52,
+            339,
+            382
+          ],
+          "size": [
+            229,
+            330
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 3,
+          "bbox": [
+            147,
+            52,
+            303,
+            380
+          ],
+          "size": [
+            156,
+            328
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 4,
+          "bbox": [
+            153,
+            52,
+            295,
+            381
+          ],
+          "size": [
+            142,
+            329
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 5,
+          "bbox": [
+            133,
+            52,
+            315,
+            382
+          ],
+          "size": [
+            182,
+            330
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "heaven_splitter_down_special",
+          "col": 6,
+          "bbox": [
+            103,
+            52,
+            349,
+            382
+          ],
+          "size": [
+            246,
+            330
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "divine_vanish_back_special",
+          "col": 0,
+          "bbox": [
+            125,
+            75,
+            323,
+            382
+          ],
+          "size": [
+            198,
+            307
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "divine_vanish_back_special",
+          "col": 1,
+          "bbox": [
+            125,
+            72,
+            326,
+            382
+          ],
+          "size": [
+            201,
+            310
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "divine_vanish_back_special",
+          "col": 2,
+          "bbox": [
+            59,
+            72,
+            392,
+            382
+          ],
+          "size": [
+            333,
+            310
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "divine_vanish_back_special",
+          "col": 3,
+          "bbox": [
+            18,
+            75,
+            426,
+            379
+          ],
+          "size": [
+            408,
+            304
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "divine_vanish_back_special",
+          "col": 4,
+          "bbox": [
+            119,
+            72,
+            335,
+            382
+          ],
+          "size": [
+            216,
+            310
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "divine_vanish_back_special",
+          "col": 5,
+          "bbox": [
+            128,
+            72,
+            321,
+            382
+          ],
+          "size": [
+            193,
+            310
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 0,
+          "bbox": [
+            126,
+            54,
+            322,
+            377
+          ],
+          "size": [
+            196,
+            323
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 1,
+          "bbox": [
+            124,
+            55,
+            325,
+            379
+          ],
+          "size": [
+            201,
+            324
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 2,
+          "bbox": [
+            138,
+            55,
+            313,
+            379
+          ],
+          "size": [
+            175,
+            324
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 3,
+          "bbox": [
+            106,
+            54,
+            342,
+            382
+          ],
+          "size": [
+            236,
+            328
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 4,
+          "bbox": [
+            135,
+            55,
+            314,
+            382
+          ],
+          "size": [
+            179,
+            327
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 5,
+          "bbox": [
+            36,
+            55,
+            412,
+            382
+          ],
+          "size": [
+            376,
+            327
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "radiant_dive_air_special",
+          "col": 6,
+          "bbox": [
+            97,
+            52,
+            355,
+            382
+          ],
+          "size": [
+            258,
+            330
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "special_recovery",
+          "col": 0,
+          "bbox": [
+            74,
+            85,
+            374,
+            379
+          ],
+          "size": [
+            300,
+            294
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "special_recovery",
+          "col": 1,
+          "bbox": [
+            14,
+            144,
+            431,
+            382
+          ],
+          "size": [
+            417,
+            238
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "special_recovery",
+          "col": 2,
+          "bbox": [
+            104,
+            82,
+            343,
+            382
+          ],
+          "size": [
+            239,
+            300
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "special_recovery",
+          "col": 3,
+          "bbox": [
+            148,
+            82,
+            299,
+            380
+          ],
+          "size": [
+            151,
+            298
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 39,
+      "baselineDeviations": [
+        {
+          "row": 0,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bottom": 379,
+          "deviationFromBaselineY": -3
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "bottom": 343,
+          "deviationFromBaselineY": -39
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bottom": 368,
+          "deviationFromBaselineY": -14
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "bottom": 381,
+          "deviationFromBaselineY": -1
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 2,
+          "col": 6,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "bottom": 379,
+          "deviationFromBaselineY": -3
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bottom": 379,
+          "deviationFromBaselineY": -3
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        }
+      ],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          142,
+          417
+        ],
+        "activeFrameHeightMinMax": [
+          238,
+          330
+        ],
+        "activeFrameHeightMedian": 310
+      },
+      "rowsToReviewBeforeRuntime": [
+        "Row 3 Divine Vanish: phase/afterimage frames are visually busy; correction candidate if runtime readability feels confusing.",
+        "Rows 1-2 specials contain intentional off-baseline motion; expected for rush/rising special animation, but tune runtime anchors carefully."
+      ],
+      "baselineApplicabilityNote": "Ascend Step and Heaven Splitter include intentional in-motion/rising special frames; baseline confirmation applies to neutral/recovery grounded frames, not every special-pose alpha bottom."
+    },
+    {
+      "sheet": 6,
+      "name": "defense_hit_reactions",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_6_defense_hit_reactions_final_contact.png",
+      "expectedSize": [
+        3584,
+        2688
+      ],
+      "actualSize": [
+        3584,
+        2688
+      ],
+      "grid": [
+        8,
+        6
+      ],
+      "frameCountsExpected": [
+        4,
+        4,
+        4,
+        5,
+        6,
+        6
+      ],
+      "frameCountsActual": [
+        4,
+        4,
+        4,
+        5,
+        6,
+        6
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "stand_block",
+          "col": 0,
+          "bbox": [
+            134,
+            82,
+            314,
+            382
+          ],
+          "size": [
+            180,
+            300
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "stand_block",
+          "col": 1,
+          "bbox": [
+            130,
+            82,
+            319,
+            382
+          ],
+          "size": [
+            189,
+            300
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "stand_block",
+          "col": 2,
+          "bbox": [
+            128,
+            82,
+            321,
+            382
+          ],
+          "size": [
+            193,
+            300
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "stand_block",
+          "col": 3,
+          "bbox": [
+            128,
+            84,
+            319,
+            382
+          ],
+          "size": [
+            191,
+            298
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "crouch_block",
+          "col": 0,
+          "bbox": [
+            82,
+            97,
+            367,
+            382
+          ],
+          "size": [
+            285,
+            285
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "crouch_block",
+          "col": 1,
+          "bbox": [
+            74,
+            97,
+            375,
+            382
+          ],
+          "size": [
+            301,
+            285
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "crouch_block",
+          "col": 2,
+          "bbox": [
+            81,
+            97,
+            371,
+            382
+          ],
+          "size": [
+            290,
+            285
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "crouch_block",
+          "col": 3,
+          "bbox": [
+            100,
+            99,
+            347,
+            382
+          ],
+          "size": [
+            247,
+            283
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_block",
+          "col": 0,
+          "bbox": [
+            110,
+            67,
+            337,
+            382
+          ],
+          "size": [
+            227,
+            315
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_block",
+          "col": 1,
+          "bbox": [
+            115,
+            69,
+            333,
+            382
+          ],
+          "size": [
+            218,
+            313
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_block",
+          "col": 2,
+          "bbox": [
+            103,
+            67,
+            345,
+            382
+          ],
+          "size": [
+            242,
+            315
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "air_block",
+          "col": 3,
+          "bbox": [
+            103,
+            67,
+            349,
+            382
+          ],
+          "size": [
+            246,
+            315
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "light_hit_reaction",
+          "col": 0,
+          "bbox": [
+            108,
+            67,
+            341,
+            382
+          ],
+          "size": [
+            233,
+            315
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "light_hit_reaction",
+          "col": 1,
+          "bbox": [
+            102,
+            67,
+            347,
+            382
+          ],
+          "size": [
+            245,
+            315
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "light_hit_reaction",
+          "col": 2,
+          "bbox": [
+            113,
+            69,
+            335,
+            382
+          ],
+          "size": [
+            222,
+            313
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "light_hit_reaction",
+          "col": 3,
+          "bbox": [
+            98,
+            67,
+            349,
+            382
+          ],
+          "size": [
+            251,
+            315
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "light_hit_reaction",
+          "col": 4,
+          "bbox": [
+            110,
+            69,
+            339,
+            382
+          ],
+          "size": [
+            229,
+            313
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "medium_hit_reaction",
+          "col": 0,
+          "bbox": [
+            37,
+            67,
+            411,
+            382
+          ],
+          "size": [
+            374,
+            315
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "medium_hit_reaction",
+          "col": 1,
+          "bbox": [
+            16,
+            67,
+            433,
+            379
+          ],
+          "size": [
+            417,
+            312
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "medium_hit_reaction",
+          "col": 2,
+          "bbox": [
+            14,
+            112,
+            434,
+            382
+          ],
+          "size": [
+            420,
+            270
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "medium_hit_reaction",
+          "col": 3,
+          "bbox": [
+            30,
+            80,
+            417,
+            382
+          ],
+          "size": [
+            387,
+            302
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "medium_hit_reaction",
+          "col": 4,
+          "bbox": [
+            19,
+            67,
+            432,
+            382
+          ],
+          "size": [
+            413,
+            315
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "medium_hit_reaction",
+          "col": 5,
+          "bbox": [
+            36,
+            67,
+            409,
+            382
+          ],
+          "size": [
+            373,
+            315
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "heavy_hit_reaction_crumple",
+          "col": 0,
+          "bbox": [
+            22,
+            67,
+            423,
+            382
+          ],
+          "size": [
+            401,
+            315
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "heavy_hit_reaction_crumple",
+          "col": 1,
+          "bbox": [
+            14,
+            85,
+            431,
+            382
+          ],
+          "size": [
+            417,
+            297
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "heavy_hit_reaction_crumple",
+          "col": 2,
+          "bbox": [
+            14,
+            142,
+            434,
+            382
+          ],
+          "size": [
+            420,
+            240
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "heavy_hit_reaction_crumple",
+          "col": 3,
+          "bbox": [
+            38,
+            67,
+            411,
+            379
+          ],
+          "size": [
+            373,
+            312
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "heavy_hit_reaction_crumple",
+          "col": 4,
+          "bbox": [
+            54,
+            67,
+            393,
+            379
+          ],
+          "size": [
+            339,
+            312
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "heavy_hit_reaction_crumple",
+          "col": 5,
+          "bbox": [
+            56,
+            111,
+            395,
+            382
+          ],
+          "size": [
+            339,
+            271
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 3,
+      "baselineDeviations": [
+        {
+          "row": 0,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "bottom": 379,
+          "deviationFromBaselineY": -3
+        },
+        {
+          "row": 4,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 3,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 4,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 4,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        },
+        {
+          "row": 5,
+          "col": 3,
+          "bottom": 379,
+          "deviationFromBaselineY": -3
+        },
+        {
+          "row": 5,
+          "col": 4,
+          "bottom": 379,
+          "deviationFromBaselineY": -3
+        },
+        {
+          "row": 5,
+          "col": 5,
+          "bottom": 382,
+          "deviationFromBaselineY": 0
+        }
+      ],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          180,
+          420
+        ],
+        "activeFrameHeightMinMax": [
+          240,
+          315
+        ],
+        "activeFrameHeightMedian": 312
+      },
+      "rowsToReviewBeforeRuntime": [
+        "Row 5 heavy_hit_reaction: strong and close to knockdown/crumple; review motion before pairing with Sheet 7 knockdown transitions."
+      ]
+    },
+    {
+      "sheet": 7,
+      "name": "knockdown_recovery_flavor",
+      "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png",
+      "contactPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/validation/full_pack/contacts/lamuh_sheet_7_knockdown_recovery_flavor_final_contact.png",
+      "expectedSize": [
+        3584,
+        3136
+      ],
+      "actualSize": [
+        3584,
+        3136
+      ],
+      "grid": [
+        8,
+        7
+      ],
+      "frameCountsExpected": [
+        6,
+        3,
+        6,
+        8,
+        8,
+        8,
+        8
+      ],
+      "frameCountsActual": [
+        6,
+        3,
+        6,
+        8,
+        8,
+        8,
+        8
+      ],
+      "checks": {
+        "fileExists": true,
+        "dimensionsExact": true,
+        "gridExact": true,
+        "cellSize448": true,
+        "transparentRgba": true,
+        "noVisibleMagentaPixels": true,
+        "activeFrameCountsExact": true,
+        "inactiveTrailingCellsTransparent": true,
+        "noActiveCellEdgeContact": true,
+        "noRowOrNeighborCellBleed": true,
+        "baselineConsistentWhereApplicable": true,
+        "locsHairOnlyStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "cloakContainedStaticReview": "PASS_APPROVED_VISUAL_SET",
+        "noDetachedVfxStyleArtifactsStaticReview": "PASS_WITH_NOTES",
+        "noDuplicateBodyFragmentsStaticReview": "PASS_WITH_NOTES"
+      },
+      "visibleMagentaPixelCount": 0,
+      "activeCellBounds": [
+        {
+          "row": 0,
+          "rowName": "knockdown_fall_grounded_drop",
+          "col": 0,
+          "bbox": [
+            29,
+            19,
+            418,
+            380
+          ],
+          "size": [
+            389,
+            361
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "knockdown_fall_grounded_drop",
+          "col": 1,
+          "bbox": [
+            23,
+            113,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            267
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "knockdown_fall_grounded_drop",
+          "col": 2,
+          "bbox": [
+            23,
+            138,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            242
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "knockdown_fall_grounded_drop",
+          "col": 3,
+          "bbox": [
+            23,
+            142,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            238
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "knockdown_fall_grounded_drop",
+          "col": 4,
+          "bbox": [
+            23,
+            253,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            127
+          ]
+        },
+        {
+          "row": 0,
+          "rowName": "knockdown_fall_grounded_drop",
+          "col": 5,
+          "bbox": [
+            23,
+            270,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            110
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "grounded_downed_idle",
+          "col": 0,
+          "bbox": [
+            22,
+            272,
+            425,
+            381
+          ],
+          "size": [
+            403,
+            109
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "grounded_downed_idle",
+          "col": 1,
+          "bbox": [
+            23,
+            247,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            133
+          ]
+        },
+        {
+          "row": 1,
+          "rowName": "grounded_downed_idle",
+          "col": 2,
+          "bbox": [
+            23,
+            180,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            200
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "get_up_recovery",
+          "col": 0,
+          "bbox": [
+            43,
+            93,
+            404,
+            380
+          ],
+          "size": [
+            361,
+            287
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "get_up_recovery",
+          "col": 1,
+          "bbox": [
+            43,
+            161,
+            404,
+            380
+          ],
+          "size": [
+            361,
+            219
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "get_up_recovery",
+          "col": 2,
+          "bbox": [
+            43,
+            100,
+            404,
+            380
+          ],
+          "size": [
+            361,
+            280
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "get_up_recovery",
+          "col": 3,
+          "bbox": [
+            43,
+            80,
+            404,
+            380
+          ],
+          "size": [
+            361,
+            300
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "get_up_recovery",
+          "col": 4,
+          "bbox": [
+            79,
+            24,
+            370,
+            380
+          ],
+          "size": [
+            291,
+            356
+          ]
+        },
+        {
+          "row": 2,
+          "rowName": "get_up_recovery",
+          "col": 5,
+          "bbox": [
+            100,
+            22,
+            347,
+            380
+          ],
+          "size": [
+            247,
+            358
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 0,
+          "bbox": [
+            47,
+            54,
+            401,
+            380
+          ],
+          "size": [
+            354,
+            326
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 1,
+          "bbox": [
+            24,
+            111,
+            424,
+            380
+          ],
+          "size": [
+            400,
+            269
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 2,
+          "bbox": [
+            24,
+            78,
+            423,
+            380
+          ],
+          "size": [
+            399,
+            302
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 3,
+          "bbox": [
+            23,
+            275,
+            425,
+            381
+          ],
+          "size": [
+            402,
+            106
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 4,
+          "bbox": [
+            22,
+            286,
+            426,
+            381
+          ],
+          "size": [
+            404,
+            95
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 5,
+          "bbox": [
+            21,
+            259,
+            425,
+            381
+          ],
+          "size": [
+            404,
+            122
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 6,
+          "bbox": [
+            23,
+            152,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            228
+          ]
+        },
+        {
+          "row": 3,
+          "rowName": "ko_strong_defeat_finish_state",
+          "col": 7,
+          "bbox": [
+            23,
+            152,
+            424,
+            380
+          ],
+          "size": [
+            401,
+            228
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 0,
+          "bbox": [
+            99,
+            27,
+            348,
+            380
+          ],
+          "size": [
+            249,
+            353
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 1,
+          "bbox": [
+            116,
+            29,
+            332,
+            380
+          ],
+          "size": [
+            216,
+            351
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 2,
+          "bbox": [
+            123,
+            29,
+            325,
+            380
+          ],
+          "size": [
+            202,
+            351
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 3,
+          "bbox": [
+            127,
+            29,
+            320,
+            380
+          ],
+          "size": [
+            193,
+            351
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 4,
+          "bbox": [
+            112,
+            29,
+            336,
+            380
+          ],
+          "size": [
+            224,
+            351
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 5,
+          "bbox": [
+            130,
+            29,
+            318,
+            380
+          ],
+          "size": [
+            188,
+            351
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 6,
+          "bbox": [
+            131,
+            29,
+            316,
+            380
+          ],
+          "size": [
+            185,
+            351
+          ]
+        },
+        {
+          "row": 4,
+          "rowName": "intro_entrance",
+          "col": 7,
+          "bbox": [
+            123,
+            29,
+            325,
+            380
+          ],
+          "size": [
+            202,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 0,
+          "bbox": [
+            117,
+            29,
+            330,
+            380
+          ],
+          "size": [
+            213,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 1,
+          "bbox": [
+            126,
+            29,
+            321,
+            380
+          ],
+          "size": [
+            195,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 2,
+          "bbox": [
+            134,
+            29,
+            314,
+            380
+          ],
+          "size": [
+            180,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 3,
+          "bbox": [
+            69,
+            29,
+            379,
+            380
+          ],
+          "size": [
+            310,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 4,
+          "bbox": [
+            87,
+            29,
+            361,
+            380
+          ],
+          "size": [
+            274,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 5,
+          "bbox": [
+            112,
+            29,
+            336,
+            380
+          ],
+          "size": [
+            224,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 6,
+          "bbox": [
+            122,
+            29,
+            326,
+            380
+          ],
+          "size": [
+            204,
+            351
+          ]
+        },
+        {
+          "row": 5,
+          "rowName": "victory_win_pose",
+          "col": 7,
+          "bbox": [
+            111,
+            29,
+            336,
+            380
+          ],
+          "size": [
+            225,
+            351
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 0,
+          "bbox": [
+            111,
+            24,
+            336,
+            380
+          ],
+          "size": [
+            225,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 1,
+          "bbox": [
+            97,
+            24,
+            351,
+            380
+          ],
+          "size": [
+            254,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 2,
+          "bbox": [
+            109,
+            24,
+            339,
+            380
+          ],
+          "size": [
+            230,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 3,
+          "bbox": [
+            68,
+            24,
+            380,
+            380
+          ],
+          "size": [
+            312,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 4,
+          "bbox": [
+            77,
+            24,
+            370,
+            380
+          ],
+          "size": [
+            293,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 5,
+          "bbox": [
+            115,
+            24,
+            332,
+            380
+          ],
+          "size": [
+            217,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 6,
+          "bbox": [
+            110,
+            24,
+            338,
+            380
+          ],
+          "size": [
+            228,
+            356
+          ]
+        },
+        {
+          "row": 6,
+          "rowName": "taunt_flavor_pose",
+          "col": 7,
+          "bbox": [
+            86,
+            24,
+            362,
+            380
+          ],
+          "size": [
+            276,
+            356
+          ]
+        }
+      ],
+      "edgeContacts": [],
+      "inactiveNonEmptyCells": [],
+      "baselineTolerancePx": 3,
+      "maxBaselineDeviationPx": 2,
+      "baselineDeviations": [
+        {
+          "row": 0,
+          "col": 0,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bottom": 381,
+          "deviationFromBaselineY": -1
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "bottom": 381,
+          "deviationFromBaselineY": -1
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "bottom": 381,
+          "deviationFromBaselineY": -1
+        },
+        {
+          "row": 3,
+          "col": 5,
+          "bottom": 381,
+          "deviationFromBaselineY": -1
+        },
+        {
+          "row": 3,
+          "col": 6,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 3,
+          "col": 7,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 4,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 5,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 6,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 4,
+          "col": 7,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 4,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 5,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 6,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 5,
+          "col": 7,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 1,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 2,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 3,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 4,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 5,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        },
+        {
+          "row": 6,
+          "col": 7,
+          "bottom": 380,
+          "deviationFromBaselineY": -2
+        }
+      ],
+      "scaleStats": {
+        "activeFrameWidthMinMax": [
+          180,
+          404
+        ],
+        "activeFrameHeightMinMax": [
+          95,
+          361
+        ],
+        "activeFrameHeightMedian": 351
+      },
+      "rowsToReviewBeforeRuntime": [
+        "Row 3 KO: frame 8 holds the final finish-state pose because source produced 7 unique poses; acceptable for finish-state timing.",
+        "Row 1 downed_idle: third frame is slightly propped/recovering; review if a flatter downed loop is desired."
+      ]
+    }
+  ],
+  "scaleSummary": {
+    "lamuhActiveFrameHeightMinMaxAcrossSheets": [
+      95,
+      380
+    ],
+    "lamuhActiveFrameWidthMinMaxAcrossSheets": [
+      93,
+      420
+    ],
+    "lamuhActiveFrameHeightMedianAcrossSheets": 315.0,
+    "comparisonEntries": [
+      {
+        "name": "LAMUH",
+        "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png",
+        "exists": true,
+        "atlasSize": [
+          3584,
+          2688
+        ],
+        "cellSizeDetected": 448,
+        "firstIdleBBox": [
+          117,
+          2,
+          331,
+          382
+        ],
+        "firstIdleSize": [
+          214,
+          380
+        ],
+        "bottomInCell": 382
+      },
+      {
+        "name": "Sol",
+        "path": "NO_GODS_ABOVE/assets/sprites/sol_final/sol_sheet_1_core_movement_atlas.png",
+        "exists": true,
+        "atlasSize": [
+          3584,
+          2688
+        ],
+        "cellSizeDetected": 448,
+        "firstIdleBBox": [
+          113,
+          89,
+          335,
+          382
+        ],
+        "firstIdleSize": [
+          222,
+          293
+        ],
+        "bottomInCell": 382
+      },
+      {
+        "name": "Nyx",
+        "path": "NO_GODS_ABOVE/assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png",
+        "exists": true,
+        "atlasSize": [
+          1920,
+          1920
+        ],
+        "cellSizeDetected": 384,
+        "firstIdleBBox": [
+          91,
+          101,
+          228,
+          290
+        ],
+        "firstIdleSize": [
+          137,
+          189
+        ],
+        "bottomInCell": 290
+      },
+      {
+        "name": "Seris",
+        "path": "NO_GODS_ABOVE/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png",
+        "exists": true,
+        "atlasSize": [
+          3072,
+          2304
+        ],
+        "cellSizeDetected": 384,
+        "firstIdleBBox": [
+          60,
+          60,
+          313,
+          350
+        ],
+        "firstIdleSize": [
+          253,
+          290
+        ],
+        "bottomInCell": 350
+      }
+    ],
+    "notes": [
+      "LAMUH remains a taller/more commanding new-generation silhouette than Sol/Nyx/Seris in first-idle comparison.",
+      "All LAMUH active sprites are contained inside 448x448 cells; runtime display scale should be reviewed once hidden implementation draws him beside the roster."
+    ]
+  },
+  "rowsToReviewBeforeRuntimeImplementation": [
+    "Sheet 2 Row 5 air_dash_back: final slot is a held/recovery duplicate from prior packaging; review smoothness before runtime timing lock.",
+    "Sheet 3 Rows 2-3 heavy/launcher: each has one held/recovery duplicate from prior packaging; review animation smoothness before final frame timing.",
+    "Sheet 4 Row 2 air_heavy: powerful but slightly two-beat; acceptable, review motion if runtime wants one clean strike arc.",
+    "Sheet 5 Row 3 Divine Vanish: phase/afterimage frames are visually busy; correction candidate if runtime readability feels confusing.",
+    "Sheet 6 Row 5 heavy_hit_reaction: strong and close to knockdown/crumple; review motion before pairing with Sheet 7 knockdown transitions.",
+    "Sheet 7 Row 3 KO: frame 8 holds the final finish-state pose because source produced 7 unique poses; acceptable for finish-state timing.",
+    "Sheet 7 Row 1 downed_idle: third frame is slightly propped/recovering; review if a flatter downed loop is desired.",
+    "Sheet 5 Rows 1-2 specials contain intentional off-baseline motion; expected for rush/rising special animation, but tune runtime anchors carefully."
+  ],
+  "runtimeImplementationReadiness": {
+    "readyForHiddenRuntimeImplementation": true,
+    "reason": "Technical atlas contract passed for all approved sheets; review notes are animation-timing/readability polish items, not packaging blockers.",
+    "doNotDoYet": [
+      "do not add to selectableCharacterIds",
+      "do not change existing fighters",
+      "do not start controller support",
+      "do not start online multiplayer"
+    ]
+  },
+  "notes": [
+    "This pass did not edit game.js, index.html, style.css, or existing fighter assets.",
+    "Preview-magenta fringe was removed from LAMUH runtime atlases only; no source pose regeneration was performed.",
+    "Static visual assertions for locs/cloak/no detached VFX are based on approved contacts plus generated validation contacts, not automated semantic detection."
+  ]
+}

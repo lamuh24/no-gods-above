@@ -1,0 +1,389 @@
+{
+  "sheet": "LAMUH Sheet 4 - Air Normals Motion Validation",
+  "atlasPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png",
+  "contactSheetPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_contact.png",
+  "previewPaths": {
+    "air_light": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_light_preview.gif",
+    "air_medium": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_medium_preview.gif",
+    "air_heavy": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_heavy_preview.gif",
+    "air_recovery": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_recovery_preview.gif"
+  },
+  "stripPaths": {
+    "air_light": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_light_strip.png",
+    "air_medium": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_medium_strip.png",
+    "air_heavy": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_heavy_strip.png",
+    "air_recovery": "NO_GODS_ABOVE/assets/sprites/lamuh_final/previews/lamuh_sheet_4_air_recovery_strip.png"
+  },
+  "passed": true,
+  "checks": {
+    "dimensionsExact": true,
+    "gridExact": true,
+    "cellSizeExact": true,
+    "transparentRgbaRuntimePng": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "noMagentaPixelsRemain": true,
+    "activeFrameCounts": [
+      4,
+      6,
+      7,
+      4
+    ],
+    "expectedFrameCounts": [
+      4,
+      6,
+      7,
+      4
+    ],
+    "expectedFrameCountsFound": true,
+    "noEdgeBleed": true,
+    "noRowOrNeighborCellBleed": true,
+    "inactiveTrailingCellsTransparent": true,
+    "noCroppedLocsCloakSandalsHandsFeetOrKiEffects": true,
+    "locsRemainHairOnly": true,
+    "cloakContainedAndReadable": true,
+    "embeddedKiEffectsContainedNotDetachedOverlay": true
+  },
+  "cellReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        144,
+        186,
+        303,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        161,
+        185,
+        287,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        146,
+        195,
+        301,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        165,
+        213,
+        283,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        143,
+        196,
+        305,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        128,
+        218,
+        320,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        142,
+        198,
+        305,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        148,
+        203,
+        301,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        136,
+        198,
+        311,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        163,
+        197,
+        285,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        167,
+        192,
+        281,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        148,
+        195,
+        300,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        157,
+        190,
+        291,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        151,
+        228,
+        297,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        118,
+        202,
+        329,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        121,
+        197,
+        327,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        127,
+        214,
+        321,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        144,
+        220,
+        303,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        144,
+        209,
+        305,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        166,
+        197,
+        283,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "expectedActive": true,
+      "hasPixels": true,
+      "bbox": [
+        178,
+        195,
+        271,
+        382
+      ],
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "expectedActive": false,
+      "hasPixels": false,
+      "bbox": null,
+      "edgeContact": false
+    }
+  ],
+  "motionReadabilityNotes": {
+    "air_light": "PASS - Reads as one quick compact aerial poke/pressure move with minimal wasted motion.",
+    "air_medium": "PASS - Reads as one smooth extender sequence with punch/kick beats and controlled cloak/loc follow-through.",
+    "air_heavy": "PASS WITH NOTES - Reads as a coherent heavy/slam-blowback row overall; frames 2-4 are downward slam/impact beats and frames 5-7 turn into outward blowback strike beats. Strong identity, but review in motion later if you want one single strike arc instead of a two-beat heavy sequence.",
+    "air_recovery": "PASS - Cleanly settles from reclined aerial recovery into upright/falling neutral posture.",
+    "kiFlashes": "PASS - Blue/cyan flashes stay attached to hands/strike impact areas and do not occupy inactive cells or cell edges.",
+    "cloakLocMotion": "PASS - Cloak and locs trail naturally across the rows and remain contained; locs read as hair only."
+  },
+  "approvalRecommendation": "APPROVED_FOR_SHEET_5_PLANNING_WITH_AIR_HEAVY_NOTE",
+  "sha256": "8e46d71113a5c161b083d87015d589ee0e726b1e4c92f0887faea7121b1a886b"
+}

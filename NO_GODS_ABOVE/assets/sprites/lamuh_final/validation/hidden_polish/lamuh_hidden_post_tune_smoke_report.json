@@ -1,0 +1,83 @@
+{
+  "status": "pass",
+  "base": "http://127.0.0.1:60225",
+  "failures": [],
+  "public": {
+    "cards": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "helper": false,
+    "lamuhResources": []
+  },
+  "hidden": {
+    "loaded": {
+      "lamuhFinalCoreMovement": true,
+      "lamuhFinalAirMovement": true,
+      "lamuhFinalGroundNormals": true,
+      "lamuhFinalAirNormals": true,
+      "lamuhFinalSpecials": true,
+      "lamuhFinalDefense": true,
+      "lamuhFinalEndStates": true
+    },
+    "selectable": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris"
+    ],
+    "hidden": [
+      "lamuh"
+    ],
+    "scale": 0.82,
+    "profile": {
+      "movement": {
+        "walkForward": 236,
+        "walkBack": 184,
+        "dashSpeed": 875,
+        "dashDuration": 0.25,
+        "dashCooldown": 0.3,
+        "superDashSpeed": 930,
+        "superDashCooldown": 0.4666666666666667
+      },
+      "jump": {
+        "jumpVelocity": -742,
+        "gravity": 1840,
+        "juggleGravity": 1260,
+        "airRecoveryGravity": 1660,
+        "airRecoveryDuration": 0.26666666666666666,
+        "landingRecovery": 0.1
+      },
+      "airDash": {
+        "speed": 810,
+        "duration": 0.2,
+        "cooldown": 0.3
+      }
+    }
+  },
+  "hitDamage": {
+    "afterP1": {
+      "p1Hp": 1000,
+      "p2Hp": 968
+    },
+    "afterP2": {
+      "p1Hp": 966,
+      "p2Hp": 1000
+    }
+  },
+  "errors": [],
+  "badResponses": [],
+  "lamuhRequests": [
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-hidden-1",
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png?v=lamuh-hidden-1",
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png?v=lamuh-hidden-1",
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png?v=lamuh-hidden-1",
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-hidden-1",
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png?v=lamuh-hidden-1",
+    "http://127.0.0.1:60225/assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png?v=lamuh-hidden-1"
+  ]
+}

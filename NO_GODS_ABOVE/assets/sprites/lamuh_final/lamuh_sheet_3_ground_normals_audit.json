@@ -1,0 +1,2131 @@
+{
+  "sheet": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png",
+  "source": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_source_chroma.png",
+  "contactSheet": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_contact.png",
+  "contract": {
+    "atlasSize": [
+      3584,
+      1792
+    ],
+    "grid": [
+      8,
+      4
+    ],
+    "cellSize": [
+      448,
+      448
+    ],
+    "baselineY": 382,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "rightFacingSourceArt": true,
+    "runtimeMirrorsFacing": true,
+    "transparentBackground": true,
+    "frameCounts": [
+      4,
+      8,
+      7,
+      7
+    ]
+  },
+  "results": {
+    "dimensionsExact": true,
+    "cellSizeExact": true,
+    "gridExact": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "broadPurpleHairHighlightPixelsNotFailure": 3233,
+    "noVisiblePreviewMagentaPixels": true,
+    "noCellEdgeContact": true,
+    "noRowOrNeighborCellBleed": true,
+    "baselineConsistentAllRows": true,
+    "expectedFrameCountsFound": true,
+    "inactiveCellsTransparent": true,
+    "issueCount": 0,
+    "chromaPixelsRemovedDuringPackaging": 7584
+  },
+  "sourcePoseRowsDetected": [
+    {
+      "sourceRow": 0,
+      "cyMean": 138.38,
+      "poseCount": 4,
+      "poseCenters": [
+        137.0,
+        359.0,
+        560.0,
+        767.5
+      ]
+    },
+    {
+      "sourceRow": 1,
+      "cyMean": 352.94,
+      "poseCount": 8,
+      "poseCenters": [
+        134.5,
+        351.0,
+        554.0,
+        768.5,
+        958.0,
+        1159.0,
+        1373.0,
+        1558.0
+      ]
+    },
+    {
+      "sourceRow": 2,
+      "cyMean": 556.17,
+      "poseCount": 6,
+      "poseCenters": [
+        131.5,
+        365.0,
+        597.0,
+        886.5,
+        1125.0,
+        1326.5
+      ]
+    },
+    {
+      "sourceRow": 3,
+      "cyMean": 779.08,
+      "poseCount": 6,
+      "poseCenters": [
+        115.0,
+        338.5,
+        567.5,
+        787.5,
+        1002.5,
+        1198.0
+      ]
+    }
+  ],
+  "rowReports": [
+    {
+      "row": 0,
+      "animation": "light_attack",
+      "expectedFrames": 4,
+      "activeFramesFound": 4,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 1,
+      "animation": "medium_attack",
+      "expectedFrames": 8,
+      "activeFramesFound": 8,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 2,
+      "animation": "heavy_attack",
+      "expectedFrames": 7,
+      "activeFramesFound": 7,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    },
+    {
+      "row": 3,
+      "animation": "launcher",
+      "expectedFrames": 7,
+      "activeFramesFound": 7,
+      "inactiveCellsClean": true,
+      "bottomYRange": [
+        382,
+        382
+      ],
+      "baselineY": 382,
+      "baselineConsistent": true
+    }
+  ],
+  "cellReports": [
+    {
+      "row": 0,
+      "col": 0,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        108,
+        9,
+        340,
+        382
+      ],
+      "margins": {
+        "left": 108,
+        "top": 9,
+        "right": 108,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        54,
+        33,
+        393,
+        382
+      ],
+      "margins": {
+        "left": 54,
+        "top": 33,
+        "right": 55,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        99,
+        18,
+        348,
+        382
+      ],
+      "margins": {
+        "left": 99,
+        "top": 18,
+        "right": 100,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        62,
+        35,
+        386,
+        382
+      ],
+      "margins": {
+        "left": 62,
+        "top": 35,
+        "right": 62,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        103,
+        41,
+        345,
+        382
+      ],
+      "margins": {
+        "left": 103,
+        "top": 41,
+        "right": 103,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        89,
+        33,
+        359,
+        382
+      ],
+      "margins": {
+        "left": 89,
+        "top": 33,
+        "right": 89,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        80,
+        90,
+        367,
+        382
+      ],
+      "margins": {
+        "left": 80,
+        "top": 90,
+        "right": 81,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        100,
+        43,
+        347,
+        382
+      ],
+      "margins": {
+        "left": 100,
+        "top": 43,
+        "right": 101,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        80,
+        48,
+        367,
+        382
+      ],
+      "margins": {
+        "left": 80,
+        "top": 48,
+        "right": 81,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        106,
+        33,
+        342,
+        382
+      ],
+      "margins": {
+        "left": 106,
+        "top": 33,
+        "right": 106,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        39,
+        52,
+        408,
+        382
+      ],
+      "margins": {
+        "left": 39,
+        "top": 52,
+        "right": 40,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        106,
+        48,
+        342,
+        382
+      ],
+      "margins": {
+        "left": 106,
+        "top": 48,
+        "right": 106,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        73,
+        69,
+        375,
+        382
+      ],
+      "margins": {
+        "left": 73,
+        "top": 69,
+        "right": 73,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        65,
+        54,
+        382,
+        382
+      ],
+      "margins": {
+        "left": 65,
+        "top": 54,
+        "right": 66,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        33,
+        54,
+        415,
+        382
+      ],
+      "margins": {
+        "left": 33,
+        "top": 54,
+        "right": 33,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        14,
+        96,
+        434,
+        382
+      ],
+      "margins": {
+        "left": 14,
+        "top": 96,
+        "right": 14,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        14,
+        96,
+        434,
+        382
+      ],
+      "margins": {
+        "left": 14,
+        "top": 96,
+        "right": 14,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        97,
+        60,
+        350,
+        382
+      ],
+      "margins": {
+        "left": 97,
+        "top": 60,
+        "right": 98,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        64,
+        71,
+        383,
+        382
+      ],
+      "margins": {
+        "left": 64,
+        "top": 71,
+        "right": 65,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "animation": "heavy_attack",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        104,
+        58,
+        344,
+        382
+      ],
+      "margins": {
+        "left": 104,
+        "top": 58,
+        "right": 104,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        94,
+        22,
+        353,
+        382
+      ],
+      "margins": {
+        "left": 94,
+        "top": 22,
+        "right": 95,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        103,
+        2,
+        344,
+        382
+      ],
+      "margins": {
+        "left": 103,
+        "top": 2,
+        "right": 104,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        125,
+        2,
+        322,
+        382
+      ],
+      "margins": {
+        "left": 125,
+        "top": 2,
+        "right": 126,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        128,
+        3,
+        320,
+        382
+      ],
+      "margins": {
+        "left": 128,
+        "top": 3,
+        "right": 128,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        128,
+        3,
+        320,
+        382
+      ],
+      "margins": {
+        "left": 128,
+        "top": 3,
+        "right": 128,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "animation": "launcher",
+      "expectedActive": true,
+      "hasPixels": true,
+      "bboxInCell": [
+        97,
+        35,
+        350,
+        382
+      ],
+      "margins": {
+        "left": 97,
+        "top": 35,
+        "right": 98,
+        "bottom": 66
+      }
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "animation": "launcher",
+      "expectedActive": false,
+      "hasPixels": false,
+      "bboxInCell": null,
+      "margins": null
+    }
+  ],
+  "normalization": {
+    "method": "source chroma-key extraction, pose component detection, row grouping, bottom-center baseline placement, inactive cells cleared",
+    "heldDuplicatePolicy": "Heavy source under-produced one frame; launcher source under-produced one frame after using source recovery pose. Filled with clean held/recovery duplicates within the same row, flagged in frame audit.",
+    "fillPlans": {
+      "2": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "3": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5
+      ]
+    },
+    "postBaselineAlignment": [
+      {
+        "row": 0,
+        "col": 0,
+        "oldBBox": [
+          108,
+          9,
+          340,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          108,
+          9,
+          340,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "oldBBox": [
+          54,
+          33,
+          393,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          54,
+          33,
+          393,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "oldBBox": [
+          99,
+          18,
+          348,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          99,
+          18,
+          348,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "oldBBox": [
+          62,
+          35,
+          386,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          62,
+          35,
+          386,
+          382
+        ]
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 0,
+        "col": 5,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 0,
+        "col": 6,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 0,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "oldBBox": [
+          103,
+          41,
+          345,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          103,
+          41,
+          345,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "oldBBox": [
+          89,
+          33,
+          359,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          89,
+          33,
+          359,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "oldBBox": [
+          80,
+          90,
+          367,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          80,
+          90,
+          367,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "oldBBox": [
+          100,
+          43,
+          347,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          100,
+          43,
+          347,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "oldBBox": [
+          80,
+          48,
+          367,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          80,
+          48,
+          367,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 5,
+        "oldBBox": [
+          106,
+          33,
+          342,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          106,
+          33,
+          342,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 6,
+        "oldBBox": [
+          39,
+          52,
+          408,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          39,
+          52,
+          408,
+          382
+        ]
+      },
+      {
+        "row": 1,
+        "col": 7,
+        "oldBBox": [
+          106,
+          48,
+          342,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          106,
+          48,
+          342,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "oldBBox": [
+          73,
+          69,
+          375,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          73,
+          69,
+          375,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "oldBBox": [
+          65,
+          54,
+          382,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          65,
+          54,
+          382,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "oldBBox": [
+          33,
+          54,
+          415,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          33,
+          54,
+          415,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "oldBBox": [
+          14,
+          96,
+          434,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          14,
+          96,
+          434,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "oldBBox": [
+          14,
+          96,
+          434,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          14,
+          96,
+          434,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "oldBBox": [
+          97,
+          60,
+          350,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          97,
+          60,
+          350,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 6,
+        "oldBBox": [
+          64,
+          71,
+          383,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          64,
+          71,
+          383,
+          382
+        ]
+      },
+      {
+        "row": 2,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "oldBBox": [
+          104,
+          58,
+          344,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          104,
+          58,
+          344,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "oldBBox": [
+          94,
+          22,
+          353,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          94,
+          22,
+          353,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "oldBBox": [
+          103,
+          2,
+          344,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          103,
+          2,
+          344,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "oldBBox": [
+          125,
+          2,
+          322,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          125,
+          2,
+          322,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "oldBBox": [
+          128,
+          3,
+          320,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          128,
+          3,
+          320,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "oldBBox": [
+          128,
+          3,
+          320,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          128,
+          3,
+          320,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "oldBBox": [
+          97,
+          35,
+          350,
+          382
+        ],
+        "dy": 0,
+        "newBBox": [
+          97,
+          35,
+          350,
+          382
+        ]
+      },
+      {
+        "row": 3,
+        "col": 7,
+        "oldBBox": null,
+        "dy": 0,
+        "newBBox": null
+      }
+    ]
+  },
+  "frameNormalizationAudit": [
+    {
+      "row": 0,
+      "col": 0,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          83,
+          48,
+          191,
+          222
+        ],
+        "area": 12247,
+        "center": [
+          137.0,
+          135.0
+        ]
+      },
+      "targetSize": [
+        232,
+        373
+      ],
+      "pasteInAtlas": [
+        108,
+        9
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          280,
+          59,
+          438,
+          221
+        ],
+        "area": 12467,
+        "center": [
+          359.0,
+          140.0
+        ]
+      },
+      "targetSize": [
+        339,
+        349
+      ],
+      "pasteInAtlas": [
+        502,
+        33
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          502,
+          52,
+          618,
+          222
+        ],
+        "area": 12134,
+        "center": [
+          560.0,
+          137.0
+        ]
+      },
+      "targetSize": [
+        249,
+        364
+      ],
+      "pasteInAtlas": [
+        995,
+        18
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "animation": "light_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          692,
+          61,
+          843,
+          222
+        ],
+        "area": 12052,
+        "center": [
+          767.5,
+          141.5
+        ]
+      },
+      "targetSize": [
+        324,
+        347
+      ],
+      "pasteInAtlas": [
+        1406,
+        35
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "animation": "light_attack",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          78,
+          272,
+          191,
+          431
+        ],
+        "area": 10903,
+        "center": [
+          134.5,
+          351.5
+        ]
+      },
+      "targetSize": [
+        242,
+        341
+      ],
+      "pasteInAtlas": [
+        103,
+        489
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          288,
+          268,
+          414,
+          431
+        ],
+        "area": 11702,
+        "center": [
+          351.0,
+          349.5
+        ]
+      },
+      "targetSize": [
+        270,
+        349
+      ],
+      "pasteInAtlas": [
+        537,
+        481
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          487,
+          295,
+          621,
+          431
+        ],
+        "area": 10075,
+        "center": [
+          554.0,
+          363.0
+        ]
+      },
+      "targetSize": [
+        287,
+        292
+      ],
+      "pasteInAtlas": [
+        976,
+        538
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          711,
+          273,
+          826,
+          431
+        ],
+        "area": 10488,
+        "center": [
+          768.5,
+          352.0
+        ]
+      },
+      "targetSize": [
+        247,
+        339
+      ],
+      "pasteInAtlas": [
+        1444,
+        491
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          891,
+          275,
+          1025,
+          431
+        ],
+        "area": 11558,
+        "center": [
+          958.0,
+          353.0
+        ]
+      },
+      "targetSize": [
+        287,
+        334
+      ],
+      "pasteInAtlas": [
+        1872,
+        496
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 5,
+      "sourceComponent": {
+        "bbox": [
+          1104,
+          267,
+          1214,
+          430
+        ],
+        "area": 9904,
+        "center": [
+          1159.0,
+          348.5
+        ]
+      },
+      "targetSize": [
+        236,
+        349
+      ],
+      "pasteInAtlas": [
+        2346,
+        481
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 6,
+      "sourceComponent": {
+        "bbox": [
+          1287,
+          276,
+          1459,
+          430
+        ],
+        "area": 11155,
+        "center": [
+          1373.0,
+          353.0
+        ]
+      },
+      "targetSize": [
+        369,
+        330
+      ],
+      "pasteInAtlas": [
+        2727,
+        500
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "animation": "medium_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 7,
+      "sourceComponent": {
+        "bbox": [
+          1503,
+          275,
+          1613,
+          431
+        ],
+        "area": 10222,
+        "center": [
+          1558.0,
+          353.0
+        ]
+      },
+      "targetSize": [
+        236,
+        334
+      ],
+      "pasteInAtlas": [
+        3242,
+        496
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          61,
+          486,
+          202,
+          632
+        ],
+        "area": 11219,
+        "center": [
+          131.5,
+          559.0
+        ]
+      },
+      "targetSize": [
+        302,
+        313
+      ],
+      "pasteInAtlas": [
+        73,
+        965
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          291,
+          478,
+          439,
+          631
+        ],
+        "area": 12071,
+        "center": [
+          365.0,
+          554.5
+        ]
+      },
+      "targetSize": [
+        317,
+        328
+      ],
+      "pasteInAtlas": [
+        513,
+        950
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          508,
+          480,
+          686,
+          632
+        ],
+        "area": 13523,
+        "center": [
+          597.0,
+          556.0
+        ]
+      },
+      "targetSize": [
+        382,
+        328
+      ],
+      "pasteInAtlas": [
+        929,
+        950
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          769,
+          471,
+          1004,
+          631
+        ],
+        "area": 15377,
+        "center": [
+          886.5,
+          551.0
+        ]
+      },
+      "targetSize": [
+        420,
+        286
+      ],
+      "pasteInAtlas": [
+        1358,
+        992
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.8333,
+      "isHeldDuplicateFill": true
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          769,
+          471,
+          1004,
+          631
+        ],
+        "area": 15377,
+        "center": [
+          886.5,
+          551.0
+        ]
+      },
+      "targetSize": [
+        420,
+        286
+      ],
+      "pasteInAtlas": [
+        1806,
+        992
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.8333,
+      "isHeldDuplicateFill": true
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          1066,
+          482,
+          1184,
+          632
+        ],
+        "area": 10752,
+        "center": [
+          1125.0,
+          557.0
+        ]
+      },
+      "targetSize": [
+        253,
+        322
+      ],
+      "pasteInAtlas": [
+        2337,
+        956
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "animation": "heavy_attack",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 5,
+      "sourceComponent": {
+        "bbox": [
+          1253,
+          487,
+          1400,
+          632
+        ],
+        "area": 11070,
+        "center": [
+          1326.5,
+          559.5
+        ]
+      },
+      "targetSize": [
+        319,
+        311
+      ],
+      "pasteInAtlas": [
+        2752,
+        967
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "animation": "heavy_attack",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 0,
+      "sourceComponent": {
+        "bbox": [
+          59,
+          720,
+          171,
+          871
+        ],
+        "area": 10130,
+        "center": [
+          115.0,
+          795.5
+        ]
+      },
+      "targetSize": [
+        240,
+        324
+      ],
+      "pasteInAtlas": [
+        104,
+        1402
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 1,
+      "sourceComponent": {
+        "bbox": [
+          278,
+          702,
+          399,
+          870
+        ],
+        "area": 10536,
+        "center": [
+          338.5,
+          786.0
+        ]
+      },
+      "targetSize": [
+        259,
+        360
+      ],
+      "pasteInAtlas": [
+        542,
+        1366
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 2,
+      "sourceComponent": {
+        "bbox": [
+          510,
+          688,
+          625,
+          870
+        ],
+        "area": 11550,
+        "center": [
+          567.5,
+          779.0
+        ]
+      },
+      "targetSize": [
+        241,
+        380
+      ],
+      "pasteInAtlas": [
+        999,
+        1346
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.9694,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 3,
+      "sourceComponent": {
+        "bbox": [
+          735,
+          663,
+          840,
+          865
+        ],
+        "area": 10820,
+        "center": [
+          787.5,
+          764.0
+        ]
+      },
+      "targetSize": [
+        197,
+        380
+      ],
+      "pasteInAtlas": [
+        1469,
+        1346
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.8776,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          951,
+          659,
+          1054,
+          862
+        ],
+        "area": 10066,
+        "center": [
+          1002.5,
+          760.5
+        ]
+      },
+      "targetSize": [
+        192,
+        380
+      ],
+      "pasteInAtlas": [
+        1920,
+        1346
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.8696,
+      "isHeldDuplicateFill": true
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 4,
+      "sourceComponent": {
+        "bbox": [
+          951,
+          659,
+          1054,
+          862
+        ],
+        "area": 10066,
+        "center": [
+          1002.5,
+          760.5
+        ]
+      },
+      "targetSize": [
+        192,
+        380
+      ],
+      "pasteInAtlas": [
+        2368,
+        1346
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 0.8696,
+      "isHeldDuplicateFill": true
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "animation": "launcher",
+      "expectedActive": true,
+      "status": "normalized_from_source_component",
+      "sourceIndex": 5,
+      "sourceComponent": {
+        "bbox": [
+          1139,
+          709,
+          1257,
+          870
+        ],
+        "area": 10742,
+        "center": [
+          1198.0,
+          789.5
+        ]
+      },
+      "targetSize": [
+        253,
+        347
+      ],
+      "pasteInAtlas": [
+        2785,
+        1379
+      ],
+      "bottomYInCell": 382,
+      "baselineY": 382,
+      "fitScaleApplied": 1.0,
+      "isHeldDuplicateFill": false
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "animation": "launcher",
+      "expectedActive": false,
+      "status": "cleared_inactive_contract_cell"
+    }
+  ],
+  "visualAudit": {
+    "scaleReadability": "PASS: LAMUH remains close to approved Sheet 1 commanding scale and readable in 448 cells.",
+    "lightMediumHeavyLauncherDistinction": "PASS WITH NOTES: light compact, medium expressive, heavy reads as palm/kick blowback, launcher reads upward; held fills should be reviewed for animation smoothness.",
+    "cloakContainment": "PASS: cloak trails are contained and do not become attacks.",
+    "locReadability": "PASS: locs remain hair-only secondary motion.",
+    "baselineConsistency": "PASS: all active frame alpha bounds align to baselineY 382.",
+    "heavyBlowbackRead": "PASS: row includes charged palm/high-kick blowback beats; impact reads as separation.",
+    "launcherRead": "PASS: row uses rising knee/upward palm beats with recovery; upward intent is clear.",
+    "rowsNeedingReview": "Heavy and launcher include one held duplicate fill each due source under-production; review before runtime import or request correction if unique in-betweens are required."
+  },
+  "issues": [],
+  "approvalRecommendation": "APPROVED_FOR_REVIEW_NOT_RUNTIME",
+  "sha256": "09204c9637c923158ad79fadfd8b653fb7d2c355ca39eab614a0e1a7c2efb8ba"
+}

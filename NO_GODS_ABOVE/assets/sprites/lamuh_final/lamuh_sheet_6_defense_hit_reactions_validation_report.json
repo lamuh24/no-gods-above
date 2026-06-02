@@ -1,0 +1,38 @@
+{
+  "atlasPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png",
+  "contactSheetPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_contact.png",
+  "auditPath": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_audit.json",
+  "passed": true,
+  "checks": {
+    "dimensionsExact": true,
+    "cellSizeExact": true,
+    "gridExact": true,
+    "transparentRgbaRuntimePng": true,
+    "transparentCorners": true,
+    "exactFf00ffVisiblePixels": 0,
+    "visiblePreviewMagentaPixels": 0,
+    "noVisiblePreviewMagentaPixels": true,
+    "noCellEdgeContact": true,
+    "edgeCells": [],
+    "noRowOrNeighborCellBleed": true,
+    "expectedFrameCountsFound": true,
+    "activeFrameCounts": [
+      4,
+      4,
+      4,
+      5,
+      6,
+      6
+    ],
+    "inactiveCellsTransparent": true,
+    "issueCount": 4,
+    "chromaPixelsRemovedDuringPackaging": 1305000
+  },
+  "issues": [
+    "crouch_block source produced 5 pose(s); kept first 4 per contract and cleared extra trailing pose(s).",
+    "air_block source produced 6 pose(s); kept first 4 per contract and cleared extra trailing pose(s).",
+    "light_hit_reaction source produced 6 pose(s); kept first 5 per contract and cleared extra trailing pose(s).",
+    "heavy_hit_reaction source produced 7 pose(s); kept first 6 per contract and cleared extra trailing pose(s)."
+  ],
+  "approvalRecommendation": "APPROVED_FOR_SHEET_7_PLANNING_WITH_HEAVY_REACTION_NOTE"
+}
