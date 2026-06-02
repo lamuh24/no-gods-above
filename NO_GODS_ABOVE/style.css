@@ -211,6 +211,28 @@ button {
   text-shadow: 0 5px 26px rgba(0, 0, 0, 0.9);
 }
 
+.controller-status {
+  display: inline-flex;
+  align-items: center;
+  max-width: min(520px, 92vw);
+  min-height: 24px;
+  padding: 4px 9px;
+  border: 1px solid rgba(211, 167, 79, 0.28);
+  border-radius: 5px;
+  color: rgba(255, 239, 202, 0.86);
+  background: rgba(6, 2, 4, 0.48);
+  box-shadow: 0 0 12px rgba(185, 35, 44, 0.14);
+  white-space: nowrap;
+}
+
+.menu-inner .controller-status {
+  margin: 10px auto 0;
+  justify-content: center;
+}
+
+.select-help-strip .controller-status {
+  justify-content: center;
+}
 .kicker {
   margin: 0 0 10px;
   color: var(--ember);

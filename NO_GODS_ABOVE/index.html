@@ -76,7 +76,8 @@
       <section id="title-screen" class="menu">
         <div class="menu-inner ui-frame ui-title-frame">
           <button id="start-button" class="ui-menu-button" type="button">Character Select</button>
-          <p class="menu-note">Press Enter to begin</p>
+          <p class="menu-note">Press Enter or controller Start/A to begin</p>
+          <p id="title-controller-status" class="controller-status" aria-live="polite">Controllers: none detected - press a controller button after load</p>
         </div>
       </section>
 
@@ -110,6 +111,7 @@
 
           <div class="select-help-strip ui-frame ui-prompt-frame">
             <span>P1/P2 choose fighters, lock in, then start</span>
+            <span id="controller-status" class="controller-status" aria-live="polite">Inputs: P1 Keyboard | P2 Keyboard</span>
             <button id="select-controls-toggle" class="select-help-button" type="button" aria-expanded="false" aria-controls="select-controls-display">
               Controls <kbd>C</kbd>
             </button>
@@ -165,6 +167,7 @@
           <footer class="select-footer" aria-label="Character select controls">
             <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd><kbd>5</kbd> Choose</span>
             <span><kbd>Enter</kbd> Confirm</span>
+            <span><kbd>D-pad</kbd>/<kbd>LS</kbd> Pad Select</span>
             <span><kbd>C</kbd> Controls</span>
             <span><kbd>V</kbd> Versus <kbd>T</kbd> Training</span>
             <span><kbd>Esc</kbd> Back</span>
@@ -182,6 +185,6 @@
       </section>
     </main>
 
-    <script src="game.js?v=deployment-readiness-1"></script>
+    <script src="game.js?v=controller-support-3"></script>
   </body>
 </html>

@@ -35,6 +35,9 @@
   const matchFlowSubtitle = document.getElementById("match-flow-subtitle");
   const matchFlowActions = document.getElementById("match-flow-actions");
   const matchControlsDisplay = document.getElementById("match-controls-display");
+  const controllerStatusEls = ["controller-status", "title-controller-status"]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
 
   const W = canvas.width;
   const H = canvas.height;
@@ -1054,6 +1057,48 @@
     special3: "Numpad6",
     ultimate: "Numpad0"
   };
+
+  const GAMEPAD_DEADZONE = 0.35;
+  const GAMEPAD_TRIGGER_THRESHOLD = 0.5;
+  const GAMEPAD_BUTTONS = {
+    south: 0,
+    east: 1,
+    west: 2,
+    north: 3,
+    leftBumper: 4,
+    rightBumper: 5,
+    leftTrigger: 6,
+    rightTrigger: 7,
+    back: 8,
+    start: 9,
+    dpadUp: 12,
+    dpadDown: 13,
+    dpadLeft: 14,
+    dpadRight: 15
+  };
+
+  const gamepadInput = {
+    assignments: {
+      p1: null,
+      p2: null
+    },
+    soloSide: "p2",
+    current: {
+      p1: null,
+      p2: null
+    },
+    previous: {
+      p1: null,
+      p2: null
+    },
+    lastStatusText: "",
+    pollCount: 0,
+    lastPollMode: "loading",
+    lastRawCount: 0,
+    lastConnectedCount: 0,
+    userGestureSeen: false
+  };
+
   const moves = characterProfiles.kairo.moves.player;
 
   const state = {
@@ -1065,6 +1110,8 @@
     cameraShake: 0,
     messageTimer: 0,
     keys: new Set(),
+    keyboardKeys: new Set(),
+    gamepadKeys: new Set(),
     images: {},
     frameBoxes: {},
     particles: [],
@@ -1101,6 +1148,72 @@
       displayTimer: 0
     }
   };
+
+  function syncInputKeys() {
+    const filteredKeyboardKeys = [...state.keyboardKeys].filter((code) => shouldUseKeyboardKey(code));
+    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys]);
+  }
+
+  function setKeyboardKey(code, pressed) {
+    if (!code) return;
+    if (pressed) {
+      state.keyboardKeys.add(code);
+    } else {
+      state.keyboardKeys.delete(code);
+    }
+    syncInputKeys();
+  }
+
+  function setGamepadKey(code, pressed) {
+    if (!code) return;
+    if (pressed) {
+      state.gamepadKeys.add(code);
+    } else {
+      state.gamepadKeys.delete(code);
+    }
+  }
+
+  function clearInputKeys() {
+    state.keyboardKeys.clear();
+    state.gamepadKeys.clear();
+    state.keys.clear();
+  }
+
+  function controlCodesFor(controls) {
+    return [
+      controls.left,
+      controls.right,
+      controls.up,
+      controls.down,
+      controls.modifier,
+      controls.light,
+      controls.medium,
+      controls.heavy,
+      controls.special1,
+      controls.special2,
+      controls.special3,
+      controls.ultimate,
+      controls.ultimateA,
+      controls.ultimateB,
+      controls.taunt,
+      ...(controls.dash || [])
+    ].filter(Boolean);
+  }
+
+  const P1_KEYBOARD_CODES = new Set(controlCodesFor(P1_CONTROLS));
+  const P2_KEYBOARD_CODES = new Set(controlCodesFor(P2_CONTROLS));
+
+  function isKeyboardEnabledForPlayer(side) {
+    return !isFightMode() || gamepadInput.assignments[side] === null;
+  }
+
+  function shouldUseKeyboardKey(code) {
+    if (isFightMode()) {
+      if (!isKeyboardEnabledForPlayer("p1") && P1_KEYBOARD_CODES.has(code)) return false;
+      if (!isKeyboardEnabledForPlayer("p2") && P2_KEYBOARD_CODES.has(code)) return false;
+    }
+    return true;
+  }
 
   function cloneData(value) {
     if (Array.isArray(value)) return value.map(cloneData);
@@ -2696,7 +2809,7 @@
     state.matchEnded = false;
     state.matchWinner = null;
     state.paused = false;
-    state.keys.clear();
+    clearInputKeys();
     state.p1DashTap = { code: null, time: -Infinity };
     state.p2DashTap = { code: null, time: -Infinity };
     state.player = makeFighter("player", 330, 1, playerId);
@@ -2759,7 +2872,7 @@
     state.hitPause = 0;
     state.lamuhCinematicUltimate = null;
     state.messageTimer = 2.4;
-    state.keys.clear();
+    clearInputKeys();
     state.projectiles = [];
     resetCombo(true);
     loser.dead = true;
@@ -2799,7 +2912,7 @@
     if (!isFightMode() || state.matchEnded) return;
     state.paused = !state.paused;
     if (state.paused) {
-      state.keys.clear();
+      clearInputKeys();
       showPauseHelpOverlay();
       roundStatusEl.textContent = "PAUSED";
     } else {
@@ -2815,7 +2928,7 @@
     state.matchEnded = false;
     state.matchWinner = null;
     state.paused = false;
-    state.keys.clear();
+    clearInputKeys();
     characterSelect.classList.remove("hidden");
     state.mode = "select";
     setSelectControlsOpen(false);
@@ -2960,6 +3073,14 @@
       controlRow("Specials", `${keyChip(P2_CONTROLS.special1)}${keyChip(P2_CONTROLS.special2)}${keyChip(P2_CONTROLS.special3)}`),
       controlRow("Ultimate", keyChip(P2_CONTROLS.ultimate))
     ];
+    const padRows = [
+      controlRow("Move", `${keyChip("LS")}${keyChip("D-pad")}`),
+      controlRow("Jump / Guard", `${keyChip("Up")}${keyChip("Down")}`),
+      controlRow("Attacks", `${keyChip("X/Square")}${keyChip("A/Cross")}${keyChip("B/Circle")}`, "Light / Medium / Heavy"),
+      controlRow("Specials", `${keyChip("Y/Triangle")}${keyChip("LB/L1")}${keyChip("LT/L2")}`, "hold + attack"),
+      controlRow("Dash / Ult", `${keyChip("RB/R1")}${keyChip("RT/R2")}`),
+      controlRow("Menu", `${keyChip("Start")}${keyChip("View/Share")}`, "Pause / Assign")
+    ];
     const systemMarkup = compact
       ? `<div class="controls-side system-controls"><strong>Match</strong>${controlRow("Flow", `${keyChip("KeyR")}${keyChip("KeyP")}${keyChip("Escape")}`, "Rematch / Pause / Select")}</div>`
       : `<div class="pause-actions" aria-label="Pause options">
@@ -2968,8 +3089,9 @@
           <span class="pause-option">${keyChip("Escape")}<span>Character Select</span></span>
         </div>`;
     target.innerHTML = `
-      <div class="controls-side"><strong>P1 Controls</strong>${p1Rows.join("")}</div>
-      <div class="controls-side"><strong>P2 Controls</strong>${p2Rows.join("")}</div>
+      <div class="controls-side"><strong>P1 Keyboard</strong>${p1Rows.join("")}</div>
+      <div class="controls-side"><strong>P2 Keyboard</strong>${p2Rows.join("")}</div>
+      <div class="controls-side controller-controls"><strong>Controller</strong>${padRows.join("")}</div>
       ${systemMarkup}
     `;
   }
@@ -3082,11 +3204,322 @@
     return true;
   }
 
+  function getRawGamepads() {
+    if (!navigator.getGamepads) return [];
+    return Array.from(navigator.getGamepads()).filter(Boolean);
+  }
+
+  function getConnectedGamepads() {
+    return getRawGamepads()
+      .filter((gamepad) => gamepad.connected !== false)
+      .sort((a, b) => a.index - b.index);
+  }
+
+  function getGamepadLabel(gamepad) {
+    if (!gamepad) return "keyboard";
+    const raw = gamepad.id || `Gamepad ${gamepad.index + 1}`;
+    return raw.replace(/\s+\(.*?\)/g, "").replace(/\s+/g, " ").trim().slice(0, 34) || `Gamepad ${gamepad.index + 1}`;
+  }
+
+  function clearGamepadKeysForSide(side) {
+    const controls = side === "p1" ? P1_CONTROLS : P2_CONTROLS;
+    [controls.left, controls.right, controls.up, controls.down, controls.modifier].filter(Boolean).forEach((code) => {
+      state.gamepadKeys.delete(code);
+    });
+    syncInputKeys();
+  }
+
+  function applyGamepadAssignments(nextAssignments) {
+    ["p1", "p2"].forEach((side) => {
+      if (gamepadInput.assignments[side] === nextAssignments[side]) return;
+      clearGamepadKeysForSide(side);
+      gamepadInput.current[side] = null;
+      gamepadInput.previous[side] = null;
+    });
+    gamepadInput.assignments.p1 = nextAssignments.p1;
+    gamepadInput.assignments.p2 = nextAssignments.p2;
+    syncInputKeys();
+  }
+
+  function refreshGamepadAssignments() {
+    const pads = getConnectedGamepads();
+    gamepadInput.lastRawCount = getRawGamepads().length;
+    gamepadInput.lastConnectedCount = pads.length;
+    const nextAssignments = { p1: null, p2: null };
+    if (pads.length === 1) {
+      nextAssignments[gamepadInput.soloSide] = pads[0].index;
+    } else if (pads.length >= 2) {
+      nextAssignments.p1 = pads[0].index;
+      nextAssignments.p2 = pads[1].index;
+    }
+    applyGamepadAssignments(nextAssignments);
+  }
+
+  function toggleSoloGamepadAssignment() {
+    const pads = getConnectedGamepads();
+    if (pads.length !== 1) return false;
+    gamepadInput.soloSide = gamepadInput.soloSide === "p2" ? "p1" : "p2";
+    refreshGamepadAssignments();
+    gamepadInput.lastStatusText = "";
+    updateControllerStatus();
+    if (isFightMode()) {
+      flashStatus(`Controller assigned to ${gamepadInput.soloSide.toUpperCase()}`, 0.9);
+    }
+    return true;
+  }
+
+  function readGamepadButton(gamepad, index) {
+    const button = gamepad?.buttons?.[index];
+    if (!button) return false;
+    return Boolean(button.pressed || button.value > GAMEPAD_TRIGGER_THRESHOLD);
+  }
+
+  function readGamepadAxis(gamepad, index) {
+    const value = gamepad?.axes?.[index];
+    return typeof value === "number" && Number.isFinite(value) ? value : 0;
+  }
+
+  function getPressedButtonIndices(gamepad) {
+    if (!gamepad?.buttons) return [];
+    return gamepad.buttons
+      .map((button, index) => ({ button, index }))
+      .filter(({ button }) => Boolean(button?.pressed || button?.value > GAMEPAD_TRIGGER_THRESHOLD))
+      .map(({ index }) => index);
+  }
+
+  function getGamepadAssignmentLabel(index) {
+    if (gamepadInput.assignments.p1 === index) return "P1";
+    if (gamepadInput.assignments.p2 === index) return "P2";
+    return "unassigned";
+  }
+
+  function readGamepadFrame(gamepad) {
+    if (!gamepad) {
+      return {
+        connected: false,
+        left: false,
+        right: false,
+        up: false,
+        down: false,
+        buttons: {}
+      };
+    }
+
+    const axisX = readGamepadAxis(gamepad, 0);
+    const axisY = readGamepadAxis(gamepad, 1);
+    const dpadAxisX = readGamepadAxis(gamepad, 6);
+    const dpadAxisY = readGamepadAxis(gamepad, 7);
+    const dpadLeft = readGamepadButton(gamepad, GAMEPAD_BUTTONS.dpadLeft);
+    const dpadRight = readGamepadButton(gamepad, GAMEPAD_BUTTONS.dpadRight);
+    const dpadUp = readGamepadButton(gamepad, GAMEPAD_BUTTONS.dpadUp);
+    const dpadDown = readGamepadButton(gamepad, GAMEPAD_BUTTONS.dpadDown);
+    const left = dpadLeft || axisX < -GAMEPAD_DEADZONE || dpadAxisX < -GAMEPAD_DEADZONE;
+    const right = dpadRight || axisX > GAMEPAD_DEADZONE || dpadAxisX > GAMEPAD_DEADZONE;
+    const up = dpadUp || axisY < -GAMEPAD_DEADZONE || dpadAxisY < -GAMEPAD_DEADZONE;
+    const down = dpadDown || axisY > GAMEPAD_DEADZONE || dpadAxisY > GAMEPAD_DEADZONE;
+    const north = readGamepadButton(gamepad, GAMEPAD_BUTTONS.north);
+    const leftBumper = readGamepadButton(gamepad, GAMEPAD_BUTTONS.leftBumper);
+    const nonstandardMapping = gamepad.mapping !== "standard";
+    const leftTrigger = readGamepadButton(gamepad, GAMEPAD_BUTTONS.leftTrigger) || (nonstandardMapping && readGamepadAxis(gamepad, 2) > GAMEPAD_TRIGGER_THRESHOLD);
+    const rightTrigger = readGamepadButton(gamepad, GAMEPAD_BUTTONS.rightTrigger) || (nonstandardMapping && readGamepadAxis(gamepad, 5) > GAMEPAD_TRIGGER_THRESHOLD);
+
+    return {
+      connected: true,
+      id: gamepad.id || "",
+      index: gamepad.index,
+      mapping: gamepad.mapping || "",
+      axes: Array.from(gamepad.axes || []).map((axis) => Math.round(axis * 1000) / 1000),
+      pressedButtons: getPressedButtonIndices(gamepad),
+      left,
+      right,
+      up,
+      down,
+      buttons: {
+        confirm: readGamepadButton(gamepad, GAMEPAD_BUTTONS.south),
+        cancel: readGamepadButton(gamepad, GAMEPAD_BUTTONS.east),
+        light: readGamepadButton(gamepad, GAMEPAD_BUTTONS.west),
+        medium: readGamepadButton(gamepad, GAMEPAD_BUTTONS.south),
+        heavy: readGamepadButton(gamepad, GAMEPAD_BUTTONS.east),
+        specialModifier: north || leftBumper || leftTrigger,
+        dash: readGamepadButton(gamepad, GAMEPAD_BUTTONS.rightBumper),
+        ultimate: rightTrigger,
+        help: readGamepadButton(gamepad, GAMEPAD_BUTTONS.back),
+        start: readGamepadButton(gamepad, GAMEPAD_BUTTONS.start)
+      }
+    };
+  }
+
+  function justPressed(input, previous, key) {
+    return Boolean(input?.buttons?.[key] && !previous?.buttons?.[key]);
+  }
+
+  function directionJustPressed(input, previous, key) {
+    return Boolean(input?.[key] && !previous?.[key]);
+  }
+
+  function syncGamepadMovementKeys(side, input) {
+    const controls = side === "p1" ? P1_CONTROLS : P2_CONTROLS;
+    setGamepadKey(controls.left, input.left);
+    setGamepadKey(controls.right, input.right);
+    setGamepadKey(controls.up, input.up);
+    setGamepadKey(controls.down, input.down);
+    if (controls.modifier) setGamepadKey(controls.modifier, input.buttons.specialModifier);
+  }
+
+  function cycleCharacterSelect(delta) {
+    const ids = selectableCharacterIds;
+    const currentIndex = Math.max(0, ids.indexOf(state.selectCursorCharacterId));
+    const nextIndex = (currentIndex + delta + ids.length) % ids.length;
+    updateCharacterSelectFocus(ids[nextIndex]);
+    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
+    selectedButton?.focus({ preventScroll: true });
+  }
+
+  function handleGamepadSelectInput(input, previous) {
+    if (justPressed(input, previous, "help")) {
+      toggleSelectControls();
+      return;
+    }
+    if (justPressed(input, previous, "cancel")) {
+      backCharacterSelect();
+      return;
+    }
+    if (directionJustPressed(input, previous, "left") || directionJustPressed(input, previous, "up")) {
+      cycleCharacterSelect(-1);
+    }
+    if (directionJustPressed(input, previous, "right") || directionJustPressed(input, previous, "down")) {
+      cycleCharacterSelect(1);
+    }
+    if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) {
+      confirmCharacterSelect();
+    }
+  }
+
+  function startGamepadAttack(side, input, button) {
+    const fighter = side === "p1" ? state.player : state.enemy;
+    if (!fighter) return;
+    const controls = side === "p1" ? P1_CONTROLS : P2_CONTROLS;
+    const specialPrefix = side === "p1" ? "special" : "enemy_special";
+    if (input.buttons.specialModifier) {
+      startMove(chooseSpecialMove(fighter, controls, `${specialPrefix}_${button}`), fighter);
+      return;
+    }
+    if (button === 1) startMove(chooseLightAttack(fighter, controls), fighter);
+    if (button === 2) startMove(chooseAttack("medium", fighter, controls), fighter);
+    if (button === 3) startMove(chooseAttack("heavy", fighter, controls), fighter);
+  }
+
+  function handleGamepadFightInput(side, input, previous) {
+    const fighter = side === "p1" ? state.player : state.enemy;
+    const controls = side === "p1" ? P1_CONTROLS : P2_CONTROLS;
+    if (!fighter) return;
+    if (side === "p2" && state.mode !== "versus") return;
+
+    if (directionJustPressed(input, previous, "up")) jump(fighter);
+    if (justPressed(input, previous, "dash")) {
+      if (input.buttons.specialModifier) startSuperDash(fighter);
+      else startDash(fighter, controls);
+    }
+    if (justPressed(input, previous, "ultimate")) {
+      startMove(side === "p1" ? "ultimate" : "enemy_ultimate", fighter);
+      return;
+    }
+    if (justPressed(input, previous, "light")) startGamepadAttack(side, input, 1);
+    if (justPressed(input, previous, "medium")) startGamepadAttack(side, input, 2);
+    if (justPressed(input, previous, "heavy")) startGamepadAttack(side, input, 3);
+  }
+
+  function handleGamepadMenuInput(side, input, previous) {
+    if (state.mode === "title") {
+      if (justPressed(input, previous, "help")) {
+        toggleSoloGamepadAssignment();
+        return true;
+      }
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) showCharacterSelect();
+      return true;
+    }
+    if (state.mode === "select") {
+      if (justPressed(input, previous, "help")) {
+        if (input.buttons.specialModifier) toggleSelectControls();
+        else toggleSoloGamepadAssignment();
+        return true;
+      }
+      handleGamepadSelectInput(input, previous);
+      return true;
+    }
+    if (!isFightMode()) return false;
+    if (state.matchEnded) {
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) resetRound();
+      if (justPressed(input, previous, "cancel") || justPressed(input, previous, "help")) returnToCharacterSelectFromMatch();
+      return true;
+    }
+    if (justPressed(input, previous, "start") || justPressed(input, previous, "help")) {
+      togglePauseHelp();
+      return true;
+    }
+    if (state.paused) {
+      if (justPressed(input, previous, "cancel")) returnToCharacterSelectFromMatch();
+      return true;
+    }
+    return false;
+  }
+
+  function updateControllerStatus() {
+    if (!controllerStatusEls.length) return;
+    const pads = getConnectedGamepads();
+    const p1Pad = pads.find((pad) => pad.index === gamepadInput.assignments.p1);
+    const p2Pad = pads.find((pad) => pad.index === gamepadInput.assignments.p2);
+    const padText = (pad) => {
+      if (!pad) return "Keyboard";
+      const controllerNumber = pads.findIndex((entry) => entry.index === pad.index) + 1;
+      return `Controller ${controllerNumber} ${getGamepadLabel(pad)}`;
+    };
+    const statusText = pads.length
+      ? `Inputs: P1 ${padText(p1Pad)} | P2 ${padText(p2Pad)}`
+      : "Controllers: none detected - press a controller button after load";
+    if (statusText === gamepadInput.lastStatusText) return;
+    gamepadInput.lastStatusText = statusText;
+    controllerStatusEls.forEach((element) => {
+      element.textContent = statusText;
+    });
+  }
+
+  function pollGamepads() {
+    gamepadInput.pollCount += 1;
+    gamepadInput.lastPollMode = state.mode;
+    refreshGamepadAssignments();
+    const pads = getConnectedGamepads();
+    ["p1", "p2"].forEach((side) => {
+      const pad = pads.find((entry) => entry.index === gamepadInput.assignments[side]);
+      const frame = readGamepadFrame(pad);
+      gamepadInput.current[side] = frame;
+      syncGamepadMovementKeys(side, frame);
+    });
+    syncInputKeys();
+
+    ["p1", "p2"].forEach((side) => {
+      const input = gamepadInput.current[side];
+      const previous = gamepadInput.previous[side] || readGamepadFrame(null);
+      if (!input?.connected) {
+        gamepadInput.previous[side] = input;
+        return;
+      }
+      const handledByMenu = handleGamepadMenuInput(side, input, previous);
+      if (!handledByMenu && isFightMode() && !state.paused && !state.matchEnded) {
+        handleGamepadFightInput(side, input, previous);
+      }
+      gamepadInput.previous[side] = input;
+    });
+
+    updateControllerStatus();
+  }
+
   function loop(now) {
     const last = state.lastNow || now;
     state.lastNow = now;
     const rawDt = Math.min((now - last) / 1000, 1 / 30);
     const dt = state.paused ? 0 : rawDt;
+    pollGamepads();
     update(dt);
     render();
     requestAnimationFrame(loop);
@@ -4515,7 +4948,7 @@
     defender.reactionAnim = starterVictimAnim;
     defender.anim = starterVictimAnim;
 
-    state.keys.clear();
+    clearInputKeys();
     state.hitPause = 0;
     state.cameraShake = Math.max(state.cameraShake, 14);
     spawnBurst(hitbox.x + hitbox.w * 0.66, hitbox.y + hitbox.h * 0.45, attacker.profile.ultimateBurstColor || "#67eaff", 32, 0.26, "shock");
@@ -5716,13 +6149,14 @@
   }
 
   function handleKeyDown(e) {
+    gamepadInput.userGestureSeen = true;
     if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.code)) e.preventDefault();
     if (e.repeat) {
-      state.keys.add(e.code);
+      setKeyboardKey(e.code, true);
       return;
     }
 
-    state.keys.add(e.code);
+    setKeyboardKey(e.code, true);
 
     if (state.mode === "title" && e.code === "Enter") {
       showCharacterSelect();
@@ -5757,26 +6191,28 @@
       state.enemyAI = !state.enemyAI;
       flashStatus(getTrainingStatus(), 0.9);
     }
-    if (e.code === P1_CONTROLS.up) jump(state.player);
-    if ([P1_CONTROLS.left, P1_CONTROLS.right].includes(e.code)) {
-      maybeStartDoubleTapDash(state.player, { ...P1_CONTROLS, dash: [P1_CONTROLS.left, P1_CONTROLS.right] }, state.p1DashTap, e.code);
-    }
-    if (P1_CONTROLS.dash.includes(e.code)) {
-      if (state.keys.has(P1_CONTROLS.modifier)) startSuperDash(state.player);
-      else startDash(state.player, P1_CONTROLS);
-    }
-    if (e.code === P1_CONTROLS.taunt) startMove("taunt", state.player);
+    if (isKeyboardEnabledForPlayer("p1")) {
+      if (e.code === P1_CONTROLS.up) jump(state.player);
+      if ([P1_CONTROLS.left, P1_CONTROLS.right].includes(e.code)) {
+        maybeStartDoubleTapDash(state.player, { ...P1_CONTROLS, dash: [P1_CONTROLS.left, P1_CONTROLS.right] }, state.p1DashTap, e.code);
+      }
+      if (P1_CONTROLS.dash.includes(e.code)) {
+        if (state.keys.has(P1_CONTROLS.modifier)) startSuperDash(state.player);
+        else startDash(state.player, P1_CONTROLS);
+      }
+      if (e.code === P1_CONTROLS.taunt) startMove("taunt", state.player);
 
-    if ((e.code === P1_CONTROLS.ultimateA && state.keys.has(P1_CONTROLS.ultimateB)) || (e.code === P1_CONTROLS.ultimateB && state.keys.has(P1_CONTROLS.ultimateA))) {
-      startMove("ultimate", state.player);
-      return;
+      if ((e.code === P1_CONTROLS.ultimateA && state.keys.has(P1_CONTROLS.ultimateB)) || (e.code === P1_CONTROLS.ultimateB && state.keys.has(P1_CONTROLS.ultimateA))) {
+        startMove("ultimate", state.player);
+        return;
+      }
+
+      if (e.code === P1_CONTROLS.light) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_1") : chooseLightAttack(state.player, P1_CONTROLS), state.player);
+      if (e.code === P1_CONTROLS.medium) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_2") : chooseAttack("medium", state.player, P1_CONTROLS), state.player);
+      if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_3") : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
     }
 
-    if (e.code === P1_CONTROLS.light) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_1") : chooseLightAttack(state.player, P1_CONTROLS), state.player);
-    if (e.code === P1_CONTROLS.medium) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_2") : chooseAttack("medium", state.player, P1_CONTROLS), state.player);
-    if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_3") : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
-
-    if (state.mode === "versus") {
+    if (state.mode === "versus" && isKeyboardEnabledForPlayer("p2")) {
       maybeStartDoubleTapDash(state.enemy, P2_CONTROLS, state.p2DashTap, e.code);
       if (e.code === P2_CONTROLS.up) jump(state.enemy);
       if (e.code === P2_CONTROLS.light) startMove(chooseLightAttack(state.enemy, P2_CONTROLS), state.enemy);
@@ -5790,15 +6226,32 @@
   }
 
   function handleKeyUp(e) {
-    state.keys.delete(e.code);
+    setKeyboardKey(e.code, false);
   }
 
   function clamp(v, min, max) {
     return Math.max(min, Math.min(max, v));
   }
 
+  function markGamepadUserGesture() {
+    gamepadInput.userGestureSeen = true;
+    refreshGamepadAssignments();
+    updateControllerStatus();
+  }
+
   window.addEventListener("keydown", handleKeyDown);
   window.addEventListener("keyup", handleKeyUp);
+  window.addEventListener("pointerdown", markGamepadUserGesture);
+  window.addEventListener("mousedown", markGamepadUserGesture);
+  window.addEventListener("gamepadconnected", () => {
+    gamepadInput.userGestureSeen = true;
+    refreshGamepadAssignments();
+    updateControllerStatus();
+  });
+  window.addEventListener("gamepaddisconnected", () => {
+    refreshGamepadAssignments();
+    updateControllerStatus();
+  });
   startButton.addEventListener("click", showCharacterSelect);
   selectVersusButton.addEventListener("click", () => setCharacterSelectMode("versus"));
   selectTrainingButton.addEventListener("click", () => setCharacterSelectMode("training"));
@@ -5815,6 +6268,8 @@
       confirmCharacterSelect();
     });
   });
+  refreshGamepadAssignments();
+  updateControllerStatus();
   if (SERIS_HIDDEN_TEST_ENABLED) {
     window.__serisRevampTest = {
       state,
