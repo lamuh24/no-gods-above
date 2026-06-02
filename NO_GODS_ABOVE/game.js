@@ -126,6 +126,54 @@
   const ENEMY_AI_ATTACK_RANGE = 320;
   const ENEMY_AI_MIN_COOLDOWN = 1.1;
   const ENEMY_AI_MAX_COOLDOWN = 1.9;
+  const LAMUH_CROWN_FINAL_DAMAGE = 280;
+  const LAMUH_CROWN_RUSH_SPEED = 760;
+  const LAMUH_CROWN_CARRY_DISTANCE = 360;
+  const LAMUH_CROWN_LAUNCH_OFFSET_X = 500;
+  const LAMUH_CROWN_LAUNCH_OFFSET_Y = -178;
+  const LAMUH_CROWN_BEAM_TARGET_X = 586;
+  const LAMUH_CROWN_BEAM_TARGET_Y = -132;
+  const LAMUH_CROWN_BEAM_ORIGIN_X = 104;
+  const LAMUH_CROWN_BEAM_ORIGIN_Y = -112;
+  const LAMUH_CROWN_PHASES = [
+    { key: "combo_a", anim: "crown_combo_a", duration: 0.5, freeze: 0.035, shake: 6 },
+    { key: "combo_b", anim: "crown_combo_b", duration: 0.54, freeze: 0.045, shake: 8 },
+    { key: "launch", anim: "crown_launch", duration: 0.52, freeze: 0.07, shake: 12 },
+    { key: "charge", anim: "crown_charge", duration: 0.78, freeze: 0.1, shake: 8 },
+    { key: "fire", anim: "crown_fire", duration: 0.86, freeze: 0.045, shake: 18, beamAt: 0.16, damageAt: 0.38 },
+    { key: "recovery", anim: "crown_recovery", duration: 0.56, freeze: 0, shake: 4 }
+  ];
+  const LAMUH_SPECIAL_VFX_ANCHORS = {
+    celestialPalm: {
+      drawOffsetX: 0,
+      drawOffsetY: -66,
+      drawW: 168,
+      drawH: 68
+    },
+    ascendStep: {
+      enabled: false,
+      atlasKey: "lamuhVfxAscendRadiant",
+      move: "ascend_step",
+      row: 1,
+      layer: "behind",
+      life: 0.22,
+      offsetX: -64,
+      offsetY: -76,
+      drawW: 176,
+      drawH: 76,
+      alpha: 0.52,
+      followOwner: true,
+      reason: "Candidate trail still reads as a detached sticker instead of an attached dash trail."
+    },
+    heavenSplitter: {
+      enabled: false,
+      reason: "Candidate vertical burst reads as a detached floor spike beside the raised-hand strike."
+    },
+    radiantDive: {
+      enabled: false,
+      reason: "Candidate trail angle reads as a horizontal sticker instead of following the diagonal dive."
+    }
+  };
 
   const assetPaths = {
     stage: "assets/backgrounds/stages/forsaken_courtyard.png",
@@ -144,7 +192,7 @@
     vantaFinalLowAir: "assets/sprites/vanta_final/vanta_sheet_5_low_air.png",
     vantaFinalSpecials: "assets/sprites/vanta_final/vanta_sheet_6_specials_ultimate.png?v=vanta-row-fix-1",
     vantaFinalEnd: "assets/sprites/vanta_final/vanta_sheet_7_end_states_extras.png",
-    nyxConcept3x6: "assets/sprites/nyx_generated/nyx_concept_sheet_3x6_shadow_assassin.png",
+    nyxConcept3x6: null,
     nyxFinalCoreMovement: "assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png",
     nyxFinalAirMovement: "assets/sprites/nyx_final/nyx_sheet_2_air_movement_atlas.png",
     nyxFinalGroundNormals: "assets/sprites/nyx_final/nyx_sheet_3_ground_normals_atlas.png",
@@ -168,6 +216,11 @@
     lamuhFinalSpecials: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-public-1" : null,
     lamuhFinalDefense: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png?v=lamuh-public-1" : null,
     lamuhFinalEndStates: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png?v=lamuh-public-1" : null,
+    lamuhCrownBody: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_8_crown_of_no_gods_body_atlas.png?v=lamuh-crown-body-1" : null,
+    lamuhCrownBeamVfx: LAMUH_RUNTIME_ENABLED ? "assets/effects/lamuh/lamuh_crown_of_no_gods_beam_vfx_atlas.png?v=approved-chat-beam-1" : null,
+    lamuhVfxCelestialPalm: LAMUH_RUNTIME_ENABLED ? "assets/effects/lamuh/lamuh_vfx_celestial_palm_projectile.png?v=lamuh-vfx-pack-01" : null,
+    lamuhVfxAscendRadiant: LAMUH_RUNTIME_ENABLED && LAMUH_SPECIAL_VFX_ANCHORS.ascendStep.enabled ? "assets/effects/lamuh/lamuh_vfx_ascend_radiant_trail.png?v=lamuh-vfx-pack-01" : null,
+    lamuhVfxHeavenSplitter: LAMUH_RUNTIME_ENABLED && LAMUH_SPECIAL_VFX_ANCHORS.heavenSplitter.enabled ? "assets/effects/lamuh/lamuh_vfx_heaven_splitter_vertical.png?v=lamuh-vfx-pack-01" : null,
     serisFinalCoreMovement: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1" : null,
     serisFinalAirMovement: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1" : null,
     serisFinalGroundNormals: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1" : null,
@@ -219,6 +272,7 @@
     lamuhFinalDefense: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [4, 4, 4, 5, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     // Hidden LAMUH downed idle holds the clean first Sheet 7 frame; the full packaged row remains unchanged.
     lamuhFinalEndStates: { cols: 8, rows: 7, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [6, 1, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhCrownBody: { cols: 8, rows: 8, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [6, 7, 8, 8, 7, 8, 8, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalCoreMovement: { cols: 8, rows: 6, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [8, 6, 6, 6, 6, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalAirMovement: { cols: 6, rows: 6, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [4, 4, 4, 4, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalGroundNormals: { cols: 8, rows: 4, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 8, 7, 7], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
@@ -895,7 +949,8 @@
         airNormals: "lamuhFinalAirNormals",
         specials: "lamuhFinalSpecials",
         defense: "lamuhFinalDefense",
-        endStates: "lamuhFinalEndStates"
+        endStates: "lamuhFinalEndStates",
+        crownBody: "lamuhCrownBody"
       },
       buildPlayerAnimations: buildLamuhFinalPlayerAnimations,
       buildEnemyAnimations: buildLamuhFinalEnemyAnimations
@@ -1015,6 +1070,11 @@
     particles: [],
     projectiles: [],
     nyxSignatureEffects: [],
+    lamuhSpecialEffects: [],
+    lamuhUltimateBeams: [],
+    lamuhCinematicUltimate: null,
+    lastLamuhSpecialDebug: null,
+    lastLamuhCrownUltimateDebug: null,
     player: null,
     enemy: null,
     selectedPlayerId: "kairo",
@@ -1550,7 +1610,15 @@
       air_special: [sheets.specials, 4],
       radiant_dive: [sheets.specials, 4],
       special_recovery: [sheets.specials, 5],
-      ultimate: [sheets.specials, 0],
+      crown_startup: [sheets.crownBody, 0],
+      crown_rush: [sheets.crownBody, 1],
+      crown_combo_a: [sheets.crownBody, 2],
+      crown_combo_b: [sheets.crownBody, 3],
+      crown_launch: [sheets.crownBody, 4],
+      crown_charge: [sheets.crownBody, 5],
+      crown_fire: [sheets.crownBody, 6],
+      crown_recovery: [sheets.crownBody, 7],
+      ultimate: [sheets.crownBody, 0],
       knockdown_fall: [sheets.endStates, 0],
       grounded: [sheets.endStates, 1],
       downed: [sheets.endStates, 1],
@@ -1912,6 +1980,10 @@
     return f?.profile?.id === "nyx";
   }
 
+  function usesLamuhArt(f) {
+    return f?.profile?.id === "lamuh";
+  }
+
   function usesNewGenerationArt(f) {
     return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "lamuh";
   }
@@ -2019,8 +2091,9 @@
       return withEnemyPrefix(f, "special_recovery");
     }
     if (moveKey === "ultimate") {
-      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "celestial_palm");
-      return withEnemyPrefix(f, "special_recovery");
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "crown_startup");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "crown_rush");
+      return withEnemyPrefix(f, "crown_recovery");
     }
     return null;
   }
@@ -2601,6 +2674,20 @@
     return clean[Math.floor(clean.length / 2)];
   }
 
+  function mix(a, b, t) {
+    return a + (b - a) * clamp(t, 0, 1);
+  }
+
+  function easeOutCubic(t) {
+    const inv = 1 - clamp(t, 0, 1);
+    return 1 - inv * inv * inv;
+  }
+
+  function easeInOutCubic(t) {
+    const x = clamp(t, 0, 1);
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  }
+
   function resetRound() {
     const versusMode = state.mode === "versus";
     const playerId = versusMode ? state.selectedP1CharacterId : state.selectedPlayerId;
@@ -2618,6 +2705,9 @@
     state.particles = [];
     state.projectiles = [];
     state.nyxSignatureEffects = [];
+    state.lamuhSpecialEffects = [];
+    state.lamuhUltimateBeams = [];
+    state.lamuhCinematicUltimate = null;
     state.hitPause = 0;
     state.cameraShake = 0;
     state.messageTimer = 1.5;
@@ -2667,6 +2757,7 @@
     state.matchWinner = p1Won ? "p1" : "p2";
     state.paused = false;
     state.hitPause = 0;
+    state.lamuhCinematicUltimate = null;
     state.messageTimer = 2.4;
     state.keys.clear();
     state.projectiles = [];
@@ -3005,6 +3096,8 @@
     state.time += dt;
     updateParticles(dt);
     updateNyxSignatureEffects(dt);
+    updateLamuhSpecialEffects(dt);
+    updateLamuhUltimateBeams(dt);
 
     if (!isFightMode() || state.paused) {
       return;
@@ -3015,6 +3108,12 @@
     }
 
     if (state.matchEnded) {
+      updateHud();
+      return;
+    }
+
+    if (state.lamuhCinematicUltimate) {
+      updateLamuhCinematicUltimate(dt);
       updateHud();
       return;
     }
@@ -3315,6 +3414,7 @@
 
   function updateAction(f, dt) {
     const moveData = getMove(f);
+    if (!moveData) return;
     f.actionTime += dt;
     f.anim = getCharacterActionPhaseAnim(f, moveData) || f.anim;
     f.vx *= moveData.flags.dash ? 0.98 : f.grounded ? 0.46 : 0.88;
@@ -3322,6 +3422,7 @@
     if (moveData.flags.superDash) updateSuperDashVelocity(f);
     if (moveData.flags.shadowStep && f.actionTime < (moveData.flags.shadowStepAway ? 0.22 : 0.16)) updateShadowStepVelocity(f, moveData);
     else if (moveData.flags.dash && f.actionTime < 0.18) f.vx = f.facing * 620;
+    if (isLamuhCrownStarter(f, moveData) && f.actionTime >= moveData.startup && f.actionTime < moveData.startup + moveData.active) f.vx = f.facing * LAMUH_CROWN_RUSH_SPEED;
     if (moveData.flags.dive && f.actionTime < 0.22) updateDiveVelocity(f, moveData);
     if (moveData.flags.stepForward && f.actionTime < moveData.startup + moveData.active) f.vx = f.facing * moveData.flags.stepForward;
     if (moveData.flags.rise && f.actionTime < 0.2) f.vy = Math.min(f.vy, -360);
@@ -3341,6 +3442,9 @@
 
     if (f.actionTime >= moveData.duration) {
       const buffered = f.bufferedMove;
+      if (isLamuhCrownStarter(f, moveData) && state.lastLamuhCrownUltimateDebug?.status === "started") {
+        state.lastLamuhCrownUltimateDebug.status = "whiff_recovery";
+      }
       f.action = null;
       f.activeMove = null;
       f.hasHit = false;
@@ -3411,7 +3515,7 @@
 
   function startMove(key, fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.paused || state.matchEnded || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
+    if (!isFightMode() || state.paused || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
     const data = getMove(p, key);
     if (!data) return;
     if (data.flags.ultimate && p.meter < METER_MAX) {
@@ -3435,7 +3539,7 @@
   function startEnemyMove(key) {
     const e = state.enemy;
     const data = getMove(e, key);
-    if (!data || state.matchEnded || e.dead || e.action || e.hitstun > 0 || e.blockstun > 0 || e.knockdownTimer > 0 || e.recoveryTimer > 0) return;
+    if (!data || state.matchEnded || state.lamuhCinematicUltimate || e.dead || e.action || e.hitstun > 0 || e.blockstun > 0 || e.knockdownTimer > 0 || e.recoveryTimer > 0) return;
     beginMove(e, key);
   }
 
@@ -3465,7 +3569,19 @@
       state.cameraShake = 12;
       spawnBurst(f.x + f.facing * 150, f.y - 95, f.profile.ultimateBurstColor || "#d66bff", 34);
       if (usesNyxArt(f)) spawnNyxUltimateVisual(f);
+      if (usesLamuhArt(f)) {
+        state.lastLamuhCrownUltimateDebug = {
+          status: "started",
+          attacker: f.kind,
+          facing: f.facing,
+          sheet: "lamuhCrownBody",
+          phase: "startup",
+          beamSpawned: false,
+          damageApplied: false
+        };
+      }
     }
+    spawnLamuhSpecialEffectForMove(f, key);
   }
 
   function getMoveAnimKey(f, key, data) {
@@ -3551,7 +3667,7 @@
 
   function startDash(fighter = state.player, controls = P1_CONTROLS) {
     const p = fighter;
-    if (!isFightMode() || state.matchEnded || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (!isFightMode() || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canDashCancel(p)) return;
       clearAction(p);
@@ -3580,7 +3696,7 @@
 
   function startSuperDash(fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.matchEnded || p.dead || p.superDashCooldown > 0) return;
+    if (!isFightMode() || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.superDashCooldown > 0) return;
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action && !canDashCancel(p)) {
       p.bufferedMove = { key: "super_dash", timer: INPUT_BUFFER };
@@ -3619,7 +3735,7 @@
 
   function jump(fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.matchEnded || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (!isFightMode() || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canJumpCancel(p)) return;
       clearAction(p);
@@ -3645,6 +3761,7 @@
     f.spawnedProjectile = false;
     f.cancelUnlocked = false;
     f.bufferedMove = null;
+    f.cinematicAnimDuration = null;
   }
 
   function isBlockingHit(attacker, defender) {
@@ -3858,6 +3975,10 @@
     const postWallBounceHeavy = isHeavyHit && hasComboWallBounceSpent(attacker, defender);
     const heavyBlowback = !blocked && shouldHeavyForceBlowback(attacker, defender, moveData);
     const forceHeavyEnder = !blocked && isHeavyHit && (postWallBounceHeavy || heavyBlowback || getHeavyHitsInCombo(attacker, defender) >= HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN - 1 || priorComboHits >= HEAVY_JUGGLE_KNOCKDOWN_THRESHOLD - 1);
+    if (!blocked && isLamuhCrownStarter(attacker, moveData)) {
+      startLamuhCinematicUltimate(attacker, defender, hitbox);
+      return true;
+    }
     const damageScale = blocked ? 1 : getComboDamageScale(attacker);
     const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(attacker), getHeavyComboHitstunScale(attacker, defender, moveData));
     const heavyKnockbackScale = getHeavyComboKnockbackScale(attacker, defender, moveData);
@@ -4208,6 +4329,93 @@
     }
   }
 
+  function spawnLamuhSpecialEffectForMove(f, key) {
+    if (!usesLamuhArt(f) || !key) return;
+    const moveKey = key.replace(/^enemy_/, "");
+    if (moveKey === "back_special") return;
+    const effectBase = {
+      ownerKind: f.kind,
+      facing: f.facing,
+      age: 0,
+      cols: 8,
+      rows: 4,
+      alpha: 0.82
+    };
+    if (moveKey === "special_2" || moveKey === "forward_special") {
+      const anchor = LAMUH_SPECIAL_VFX_ANCHORS.ascendStep;
+      if (!anchor.enabled) return;
+      state.lamuhSpecialEffects.push({
+        ...effectBase,
+        atlasKey: anchor.atlasKey,
+        move: anchor.move,
+        row: anchor.row,
+        layer: anchor.layer,
+        life: anchor.life,
+        x: f.x + f.facing * anchor.offsetX,
+        y: f.y + anchor.offsetY,
+        offsetX: anchor.offsetX,
+        offsetY: anchor.offsetY,
+        drawW: anchor.drawW,
+        drawH: anchor.drawH,
+        followOwner: anchor.followOwner,
+        alpha: anchor.alpha
+      });
+    } else if (moveKey === "special_3" || moveKey === "down_special") {
+      const anchor = LAMUH_SPECIAL_VFX_ANCHORS.heavenSplitter;
+      if (!anchor.enabled) return;
+      state.lamuhSpecialEffects.push({
+        ...effectBase,
+        atlasKey: anchor.atlasKey,
+        move: anchor.move,
+        row: anchor.row,
+        layer: anchor.layer,
+        life: anchor.life,
+        x: f.x + f.facing * anchor.offsetX,
+        y: f.y + anchor.offsetY,
+        offsetX: anchor.offsetX,
+        offsetY: anchor.offsetY,
+        drawW: anchor.drawW,
+        drawH: anchor.drawH,
+        followOwner: anchor.followOwner,
+        alpha: anchor.alpha
+      });
+    } else if (moveKey === "air_special") {
+      const anchor = LAMUH_SPECIAL_VFX_ANCHORS.radiantDive;
+      if (!anchor.enabled) return;
+      state.lamuhSpecialEffects.push({
+        ...effectBase,
+        atlasKey: anchor.atlasKey,
+        move: anchor.move,
+        row: anchor.row,
+        layer: anchor.layer,
+        life: anchor.life,
+        x: f.x + f.facing * anchor.offsetX,
+        y: f.y + anchor.offsetY,
+        offsetX: anchor.offsetX,
+        offsetY: anchor.offsetY,
+        drawW: anchor.drawW,
+        drawH: anchor.drawH,
+        followOwner: anchor.followOwner,
+        alpha: anchor.alpha
+      });
+    }
+  }
+
+  function updateLamuhSpecialEffects(dt) {
+    for (const effect of state.lamuhSpecialEffects) {
+      effect.age += dt;
+      if (effect.followOwner) {
+        const owner = effect.ownerKind === "enemy" ? state.enemy : state.player;
+        if (owner?.profile?.id === "lamuh") {
+          effect.x = owner.x + owner.facing * effect.offsetX;
+          effect.y = owner.y + effect.offsetY;
+          effect.facing = owner.facing;
+        }
+      }
+    }
+    state.lamuhSpecialEffects = state.lamuhSpecialEffects.filter((effect) => effect.age < effect.life);
+  }
+
   function updateNyxSignatureEffects(dt) {
     for (const effect of state.nyxSignatureEffects) {
       effect.age += dt;
@@ -4244,6 +4452,392 @@
     state.nyxSignatureEffects = state.nyxSignatureEffects.filter((effect) => effect.age < effect.life);
   }
 
+  function isLamuhCrownStarter(f, moveData) {
+    return usesLamuhArt(f) && moveData?.flags?.ultimate && f.activeMove?.replace(/^enemy_/, "") === "ultimate";
+  }
+
+  function getLamuhCrownFighter(kind) {
+    return kind === "enemy" ? state.enemy : state.player;
+  }
+
+  function getLamuhCrownPhase() {
+    const cinematic = state.lamuhCinematicUltimate;
+    return cinematic ? LAMUH_CROWN_PHASES[cinematic.phaseIndex] : null;
+  }
+
+  function startLamuhCinematicUltimate(attacker, defender, hitbox) {
+    const facing = attacker.facing || (attacker.x <= defender.x ? 1 : -1);
+    const anchorX = facing === 1
+      ? clamp(attacker.x - facing * 22, 140, W - LAMUH_CROWN_BEAM_TARGET_X - 80)
+      : clamp(attacker.x - facing * 22, LAMUH_CROWN_BEAM_TARGET_X + 80, W - 140);
+    const opponentStartX = clamp(anchorX + facing * 178, 110, W - 110);
+    const carryMidX = clamp(anchorX + facing * (178 + LAMUH_CROWN_CARRY_DISTANCE * 0.52), 110, W - 110);
+    const carryEndX = clamp(anchorX + facing * (178 + LAMUH_CROWN_CARRY_DISTANCE), 110, W - 110);
+    const launchX = clamp(anchorX + facing * LAMUH_CROWN_LAUNCH_OFFSET_X, 110, W - 110);
+    const beamTargetX = clamp(anchorX + facing * LAMUH_CROWN_BEAM_TARGET_X, 110, W - 110);
+    const beamTargetY = GROUND_Y + LAMUH_CROWN_BEAM_TARGET_Y;
+    attacker.facing = facing;
+    defender.facing = -facing;
+    attacker.x = anchorX;
+    attacker.y = GROUND_Y;
+    attacker.grounded = true;
+    attacker.vx = 0;
+    attacker.vy = 0;
+    attacker.action = "cinematic_ultimate";
+    attacker.actionTime = 0;
+    attacker.activeMove = attacker.kind === "enemy" ? "enemy_ultimate" : "ultimate";
+    attacker.hasHit = true;
+    attacker.spawnedProjectile = false;
+    attacker.cancelUnlocked = false;
+    attacker.bufferedMove = null;
+    attacker.anim = withEnemyPrefix(attacker, LAMUH_CROWN_PHASES[0].anim);
+    attacker.cinematicAnimDuration = LAMUH_CROWN_PHASES[0].duration;
+
+    defender.x = opponentStartX;
+    defender.y = GROUND_Y;
+    defender.grounded = true;
+    defender.vx = 0;
+    defender.vy = 0;
+    defender.action = "cinematic_victim";
+    defender.actionTime = 0;
+    defender.cinematicAnimDuration = LAMUH_CROWN_PHASES[0].duration;
+    defender.activeMove = null;
+    defender.hasHit = false;
+    defender.spawnedProjectile = false;
+    defender.cancelUnlocked = false;
+    defender.hitstun = 999;
+    defender.blockstun = 0;
+    defender.knockdownTimer = 0;
+    defender.recoveryTimer = 0;
+    defender.landingTimer = 0;
+    defender.pendingKnockdown = 0;
+    const starterVictimAnim = getLamuhCrownVictimAnim(defender, "starter");
+    defender.reactionAnim = starterVictimAnim;
+    defender.anim = starterVictimAnim;
+
+    state.keys.clear();
+    state.hitPause = 0;
+    state.cameraShake = Math.max(state.cameraShake, 14);
+    spawnBurst(hitbox.x + hitbox.w * 0.66, hitbox.y + hitbox.h * 0.45, attacker.profile.ultimateBurstColor || "#67eaff", 32, 0.26, "shock");
+
+    state.lamuhCinematicUltimate = {
+      attackerKind: attacker.kind,
+      defenderKind: defender.kind,
+      facing,
+      anchorX,
+      lamuhStartX: anchorX,
+      lamuhStartY: GROUND_Y,
+      opponentStartX,
+      opponentStartY: GROUND_Y,
+      carryMidX,
+      carryEndX,
+      launchX,
+      launchY: GROUND_Y + LAMUH_CROWN_LAUNCH_OFFSET_Y,
+      beamTargetX,
+      beamTargetY,
+      beamOriginX: anchorX + facing * LAMUH_CROWN_BEAM_ORIGIN_X,
+      beamOriginY: GROUND_Y + LAMUH_CROWN_BEAM_ORIGIN_Y,
+      age: 0,
+      phaseIndex: 0,
+      phaseTime: 0,
+      phaseFreeze: 0.09,
+      beamSpawned: false,
+      damageApplied: false,
+      finalDamage: LAMUH_CROWN_FINAL_DAMAGE
+    };
+    state.lastLamuhCrownUltimateDebug = {
+      status: "confirmed",
+      attacker: attacker.kind,
+      defender: defender.kind,
+      facing,
+      sheet: "lamuhCrownBody",
+      phase: LAMUH_CROWN_PHASES[0].key,
+      anchors: { anchorX, opponentStartX, carryMidX, carryEndX, launchX, beamTargetX, beamTargetY },
+      beamSpawned: false,
+      damageApplied: false
+    };
+  }
+
+  function updateLamuhCinematicUltimate(dt) {
+    const cinematic = state.lamuhCinematicUltimate;
+    if (!cinematic) return;
+    const attacker = getLamuhCrownFighter(cinematic.attackerKind);
+    const defender = getLamuhCrownFighter(cinematic.defenderKind);
+    if (!attacker || !defender || attacker.dead || state.matchEnded) {
+      state.lamuhCinematicUltimate = null;
+      return;
+    }
+
+    const phase = getLamuhCrownPhase();
+    if (!phase) {
+      finishLamuhCinematicUltimate(cinematic);
+      return;
+    }
+
+    cinematic.age += dt;
+    let phaseDt = dt;
+    if (cinematic.phaseFreeze > 0) {
+      const held = Math.min(cinematic.phaseFreeze, phaseDt);
+      cinematic.phaseFreeze = Math.max(0, cinematic.phaseFreeze - held);
+      phaseDt -= held;
+    }
+    cinematic.phaseTime += phaseDt;
+    attacker.action = "cinematic_ultimate";
+    attacker.activeMove = attacker.kind === "enemy" ? "enemy_ultimate" : "ultimate";
+    attacker.actionTime = cinematic.phaseTime;
+    attacker.cinematicAnimDuration = phase.duration;
+    attacker.anim = withEnemyPrefix(attacker, phase.anim);
+    lockLamuhCrownCombatants(cinematic, phase);
+
+    if (phase.key === "fire" && !cinematic.beamSpawned && cinematic.phaseTime >= phase.beamAt) {
+      cinematic.beamSpawned = true;
+      spawnLamuhUltimateBeamVisual(attacker, { life: 1.06, scale: 0.7 });
+      if (state.lastLamuhCrownUltimateDebug) state.lastLamuhCrownUltimateDebug.beamSpawned = true;
+    }
+
+    if (phase.key === "fire" && !cinematic.damageApplied && cinematic.phaseTime >= phase.damageAt) {
+      applyLamuhCrownFinalDamage(cinematic);
+      if (state.matchEnded) return;
+    }
+
+    if (cinematic.phaseTime >= phase.duration) {
+      cinematic.phaseIndex += 1;
+      cinematic.phaseTime = 0;
+      const next = getLamuhCrownPhase();
+      if (!next) {
+        finishLamuhCinematicUltimate(cinematic);
+      } else {
+        cinematic.phaseFreeze = next.freeze || 0;
+        state.cameraShake = Math.max(state.cameraShake, next.shake || 0);
+        if (state.lastLamuhCrownUltimateDebug) state.lastLamuhCrownUltimateDebug.phase = next.key;
+      }
+    }
+  }
+
+  function lockLamuhCrownCombatants(cinematic, phase) {
+    const attacker = getLamuhCrownFighter(cinematic.attackerKind);
+    const defender = getLamuhCrownFighter(cinematic.defenderKind);
+    if (!attacker || !defender) return;
+    const facing = cinematic.facing;
+    const t = clamp(cinematic.phaseTime / Math.max(phase.duration, 0.001), 0, 1);
+    const eased = easeInOutCubic(t);
+    const out = easeOutCubic(t);
+    const bob = Math.sin(t * Math.PI);
+    const layout = getLamuhCrownLayout(cinematic, phase.key, t, eased, out, bob);
+
+    attacker.x = clamp(layout.ax, 110, W - 110);
+    attacker.y = GROUND_Y;
+    attacker.grounded = true;
+    attacker.vx = 0;
+    attacker.vy = 0;
+    attacker.facing = facing;
+
+    defender.x = clamp(layout.dx, 110, W - 110);
+    defender.y = clamp(layout.dy, GROUND_Y - 230, GROUND_Y);
+    defender.grounded = Boolean(layout.grounded);
+    defender.vx = 0;
+    defender.vy = 0;
+    defender.facing = -facing;
+    defender.hitstun = 999;
+    defender.blockstun = 0;
+    defender.action = "cinematic_victim";
+    defender.actionTime = cinematic.phaseTime;
+    defender.cinematicAnimDuration = phase.duration;
+    defender.activeMove = null;
+    const victimAnim = getLamuhCrownVictimAnim(defender, layout.victimBeat);
+    defender.reactionAnim = victimAnim;
+    defender.anim = victimAnim;
+    if (state.lastLamuhCrownUltimateDebug) {
+      state.lastLamuhCrownUltimateDebug.positions = {
+        phase: phase.key,
+        lamuhX: Math.round(attacker.x),
+        opponentX: Math.round(defender.x),
+        opponentY: Math.round(defender.y),
+        travelFromStart: Math.round(Math.abs(defender.x - cinematic.opponentStartX)),
+        victimBeat: layout.victimBeat,
+        victimAnim
+      };
+    }
+  }
+
+  function getLamuhCrownVictimAnim(f, beat) {
+    const animTable = f.kind === "enemy" ? f.profile.enemyAnimations : f.profile.playerAnimations;
+    const candidateMap = {
+      starter: ["heavy_hitstun", "medium_hitstun", "damaged", "knockback"],
+      combo_medium: ["medium_hitstun", "damaged", "heavy_hitstun", "air_hitstun", "knockback"],
+      combo_heavy: ["heavy_hitstun", "knockback", "air_hitstun", "medium_hitstun", "damaged"],
+      airborne: ["air_hitstun", "launch_hitstun", "knockdown_fall", "knockback", "heavy_hitstun", "damaged"],
+      launch: ["launch_hitstun", "knockdown_fall", "air_hitstun", "knockback", "heavy_hitstun", "damaged"],
+      suspend: ["launch_hitstun", "heavy_hitstun", "knockdown_fall", "air_hitstun", "knockback", "damaged"],
+      beam: ["knockback", "heavy_hitstun", "knockdown_fall", "launch_hitstun", "damaged"],
+      recovery: ["knockdown_fall", "knockback", "heavy_hitstun", "downed", "grounded", "damaged"],
+      knockdown: ["knockdown_fall", "downed", "grounded", "knockback", "damaged"]
+    };
+    const candidates = candidateMap[beat] || candidateMap.combo_heavy;
+    for (const base of candidates) {
+      const key = f.kind === "enemy" ? `enemy_${base}` : base;
+      if (animTable?.[key]) return key;
+    }
+    const fallback = f.kind === "enemy"
+      ? ["enemy_knockback", "enemy_damaged", "enemy_death", "enemy_idle"]
+      : ["knockback", "damaged", "death", "idle"];
+    return fallback.find((key) => animTable?.[key]) || (f.kind === "enemy" ? "enemy_idle" : "idle");
+  }
+
+  function getLamuhCrownLayout(cinematic, phaseKey, t, eased, out, bob) {
+    const facing = cinematic.facing;
+    const start = cinematic.opponentStartX;
+    const mid = cinematic.carryMidX;
+    const end = cinematic.carryEndX;
+    const launch = cinematic.launchX;
+    const target = cinematic.beamTargetX;
+    const ground = GROUND_Y;
+    switch (phaseKey) {
+      case "combo_a":
+        return {
+          ax: mix(cinematic.lamuhStartX, cinematic.lamuhStartX + facing * 92, eased),
+          dx: mix(start, mid, eased),
+          dy: ground - bob * 18,
+          victimBeat: t < 0.55 ? "combo_medium" : "combo_heavy",
+          grounded: t < 0.68
+        };
+      case "combo_b":
+        return {
+          ax: mix(cinematic.lamuhStartX + facing * 92, cinematic.lamuhStartX + facing * 196, eased),
+          dx: mix(mid, end, eased),
+          dy: ground - 22 - bob * 38,
+          victimBeat: t < 0.5 ? "combo_heavy" : "airborne",
+          grounded: false
+        };
+      case "launch":
+        return {
+          ax: mix(cinematic.lamuhStartX + facing * 196, cinematic.lamuhStartX + facing * 248, out),
+          dx: mix(end, launch, out),
+          dy: mix(ground - 42, cinematic.launchY, out),
+          victimBeat: "launch",
+          grounded: false
+        };
+      case "charge":
+        return {
+          ax: mix(cinematic.lamuhStartX + facing * 140, cinematic.lamuhStartX, out),
+          dx: mix(launch, target, out),
+          dy: mix(cinematic.launchY, cinematic.beamTargetY, out) + Math.sin(t * Math.PI * 2) * 6,
+          victimBeat: "suspend",
+          grounded: false
+        };
+      case "fire":
+        return {
+          ax: cinematic.lamuhStartX,
+          dx: target + facing * (22 * t),
+          dy: cinematic.beamTargetY + Math.sin(t * Math.PI) * 10,
+          victimBeat: "beam",
+          grounded: false
+        };
+      case "recovery":
+        return {
+          ax: cinematic.lamuhStartX,
+          dx: target + facing * mix(34, 164, out),
+          dy: mix(cinematic.beamTargetY, ground - 64, out),
+          victimBeat: "recovery",
+          grounded: false
+        };
+      default:
+        return { ax: cinematic.lamuhStartX, dx: start, dy: ground, victimBeat: "combo_medium", grounded: true };
+    }
+  }
+
+  function applyLamuhCrownFinalDamage(cinematic) {
+    const attacker = getLamuhCrownFighter(cinematic.attackerKind);
+    const defender = getLamuhCrownFighter(cinematic.defenderKind);
+    if (!attacker || !defender || defender.dead) return;
+    cinematic.damageApplied = true;
+    const damage = Math.min(defender.hp, cinematic.finalDamage);
+    defender.hp = Math.max(0, defender.hp - damage);
+    defender.grounded = false;
+    defender.hitstun = 0.42;
+    defender.blockstun = 0;
+    defender.vx = cinematic.facing * 560;
+    defender.vy = -210;
+    defender.x = clamp(cinematic.beamTargetX + cinematic.facing * 28, 110, W - 110);
+    defender.y = cinematic.beamTargetY;
+    defender.pendingKnockdown = Math.max(defender.pendingKnockdown, HARD_KNOCKDOWN);
+    defender.recoveryTimer = 0;
+    defender.landingTimer = 0;
+    const beamVictimAnim = getLamuhCrownVictimAnim(defender, "beam");
+    defender.reactionAnim = beamVictimAnim;
+    defender.anim = beamVictimAnim;
+    const source = { damage, boxType: "ultimate", flags: { ultimate: true, hardKnockdown: true }, hitstun: defender.hitstun, blockstun: 0, knockbackX: 560, knockbackY: -210 };
+    registerComboHit(attacker, defender, source);
+    applyImpactFeedback(source, defender.x - cinematic.facing * 18, defender.y, false);
+    state.hitPause = 0;
+    state.cameraShake = Math.max(state.cameraShake, 22);
+    spawnBurst(defender.x - cinematic.facing * 22, defender.y, attacker.profile.ultimateBurstColor || "#67eaff", 58, 0.36, "shock");
+    if (state.lastLamuhCrownUltimateDebug) {
+      state.lastLamuhCrownUltimateDebug.damageApplied = true;
+      state.lastLamuhCrownUltimateDebug.finalDamage = damage;
+    }
+    if (defender.hp <= 0) endMatch(defender);
+  }
+
+  function finishLamuhCinematicUltimate(cinematic) {
+    const attacker = getLamuhCrownFighter(cinematic.attackerKind);
+    const defender = getLamuhCrownFighter(cinematic.defenderKind);
+    if (attacker && !attacker.dead) {
+      clearAction(attacker);
+      attacker.actionTime = 0;
+      attacker.vx = 0;
+      attacker.vy = 0;
+      attacker.anim = withEnemyPrefix(attacker, "idle");
+    }
+    if (defender && !defender.dead && !state.matchEnded) {
+      defender.hitstun = Math.min(defender.hitstun, 0.28);
+      defender.blockstun = 0;
+      defender.grounded = false;
+      defender.vx = cinematic.facing * 520;
+      defender.vy = Math.min(defender.vy, -180);
+      defender.x = clamp(cinematic.beamTargetX + cinematic.facing * 150, 110, W - 110);
+      defender.y = Math.min(defender.y, cinematic.beamTargetY + 72);
+      defender.pendingKnockdown = Math.max(defender.pendingKnockdown, HARD_KNOCKDOWN);
+      defender.action = null;
+      defender.actionTime = 0;
+      defender.reactionAnim = getLamuhCrownVictimAnim(defender, "knockdown");
+      defender.anim = defender.reactionAnim;
+      defender.cinematicAnimDuration = null;
+    }
+    state.lamuhCinematicUltimate = null;
+    state.hitPause = 0;
+    if (state.lastLamuhCrownUltimateDebug) state.lastLamuhCrownUltimateDebug.status = "finished";
+  }
+
+  function spawnLamuhUltimateBeamVisual(f, options = {}) {
+    state.lamuhUltimateBeams.push({
+      ownerKind: f.kind,
+      x: options.x ?? (f.x + f.facing * LAMUH_CROWN_BEAM_ORIGIN_X),
+      y: options.y ?? (f.y + LAMUH_CROWN_BEAM_ORIGIN_Y),
+      facing: f.facing,
+      age: 0,
+      life: options.life || 0.78,
+      scale: options.scale || 0.64,
+      frameCols: 8,
+      frameRows: 4,
+      originX: 210,
+      originY: 256
+    });
+  }
+
+  function updateLamuhUltimateBeams(dt) {
+    for (const beam of state.lamuhUltimateBeams) {
+      beam.age += dt;
+      const owner = beam.ownerKind === "enemy" ? state.enemy : state.player;
+      if (owner?.profile?.id === "lamuh" && owner.activeMove?.replace(/^enemy_/, "") === "ultimate") {
+        beam.x = owner.x + owner.facing * LAMUH_CROWN_BEAM_ORIGIN_X;
+        beam.y = owner.y + LAMUH_CROWN_BEAM_ORIGIN_Y;
+        beam.facing = owner.facing;
+      }
+    }
+    state.lamuhUltimateBeams = state.lamuhUltimateBeams.filter((beam) => beam.age < beam.life);
+  }
+
   function render() {
     ctx.save();
     const shakeX = state.cameraShake ? (Math.random() - 0.5) * state.cameraShake : 0;
@@ -4257,8 +4851,11 @@
       drawArena();
       drawNyxSignatureBackdrop();
       drawNyxSignatureEffects();
+      drawLamuhSpecialEffects("behind");
       drawFighter(state.enemy);
       drawFighter(state.player);
+      drawLamuhSpecialEffects("front");
+      drawLamuhUltimateBeams();
       drawProjectiles();
       drawParticles();
       if (state.debug) drawDebug();
@@ -4310,7 +4907,8 @@
 
     const row = entry[1];
     const frameCount = Math.min(meta.cols, Math.max(1, meta.frameCounts?.[row] || meta.cols));
-    const frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(getMove(f)?.duration || 0.5, 0.1)) * frameCount)) : Math.floor(state.time * 8) % frameCount;
+    const animDuration = f.cinematicAnimDuration || getMove(f)?.duration || 0.5;
+    const frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(animDuration, 0.1)) * frameCount)) : Math.floor(state.time * 8) % frameCount;
     const fw = image.width / meta.cols;
     const rh = image.height / meta.rows;
     const analyzedRow = state.frameBoxes[entry[0]]?.[row];
@@ -4632,10 +5230,90 @@
     }
   }
 
+  function drawLamuhUltimateBeams() {
+    const atlas = state.images.lamuhCrownBeamVfx;
+    if (!atlas || !state.lamuhUltimateBeams.length) return;
+    const frameW = atlas.width / 8;
+    const frameH = atlas.height / 4;
+    for (const beam of state.lamuhUltimateBeams) {
+      const t = clamp(beam.age / beam.life, 0, 1);
+      let row = 2;
+      let localT = 0;
+      if (t < 0.18) {
+        row = 0;
+        localT = t / 0.18;
+      } else if (t < 0.38) {
+        row = 1;
+        localT = (t - 0.18) / 0.2;
+      } else if (t < 0.78) {
+        row = 2;
+        localT = (t - 0.38) / 0.4;
+      } else {
+        row = 3;
+        localT = (t - 0.78) / 0.22;
+      }
+      const frame = Math.min(7, Math.floor(clamp(localT, 0, 0.999) * 8));
+      const fadeIn = clamp(t / 0.06, 0, 1);
+      const fadeOut = clamp((1 - t) / 0.12, 0, 1);
+
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = Math.min(fadeIn, fadeOut) * 0.98;
+      ctx.translate(beam.x, beam.y);
+      ctx.scale(beam.facing * beam.scale, beam.scale);
+      ctx.drawImage(
+        atlas,
+        frame * frameW,
+        row * frameH,
+        frameW,
+        frameH,
+        -beam.originX,
+        -beam.originY,
+        frameW,
+        frameH
+      );
+      ctx.restore();
+    }
+  }
+
+  function drawLamuhSpecialEffects(layer = "front") {
+    if (!state.lamuhSpecialEffects.length) return;
+    for (const effect of state.lamuhSpecialEffects) {
+      if ((effect.layer || "front") !== layer) continue;
+      const atlas = state.images[effect.atlasKey];
+      if (!atlas) continue;
+      const frameW = atlas.width / effect.cols;
+      const frameH = atlas.height / effect.rows;
+      const t = clamp(effect.age / Math.max(effect.life, 0.1), 0, 1);
+      const frame = Math.min(effect.cols - 1, Math.floor(clamp(t, 0, 0.999) * effect.cols));
+      const fadeIn = clamp(t / 0.12, 0, 1);
+      const fadeOut = clamp((1 - t) / 0.18, 0, 1);
+
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = (effect.alpha || 0.8) * Math.min(fadeIn, fadeOut);
+      ctx.translate(effect.x || 0, effect.y || 0);
+      ctx.scale(effect.facing || 1, 1);
+      ctx.drawImage(
+        atlas,
+        frame * frameW,
+        effect.row * frameH,
+        frameW,
+        frameH,
+        -effect.drawW * 0.5,
+        -effect.drawH * 0.5,
+        effect.drawW,
+        effect.drawH
+      );
+      ctx.restore();
+    }
+  }
+
   function drawProjectiles() {
     for (const projectile of state.projectiles) {
       if (projectile.ownerCharacterId === "seris" && !SERIS_CHAIN_VFX_RUNTIME_ENABLED) continue;
       if (drawSerisProjectileVfx(projectile)) continue;
+      if (drawLamuhProjectileVfx(projectile)) continue;
 
       const box = getProjectileBox(projectile);
       ctx.save();
@@ -4656,6 +5334,55 @@
       ctx.fillRect(-box.w / 2, -3, box.w * 0.78, 6);
       ctx.restore();
     }
+  }
+
+  function drawLamuhProjectileVfx(projectile) {
+    if (projectile.ownerCharacterId !== "lamuh") return false;
+    const atlas = state.images.lamuhVfxCelestialPalm;
+    if (!atlas) return false;
+    const box = getProjectileBox(projectile);
+    const frameW = atlas.width / 8;
+    const frameH = atlas.height / 4;
+    const age = (projectile.maxLife || 1) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || 1, 0.1), 0, 1);
+    let row = 1;
+    let localT = t;
+    if (t < 0.14) {
+      row = 0;
+      localT = t / 0.14;
+    } else if (t < 0.72) {
+      row = 1;
+      localT = (t - 0.14) / 0.58;
+    } else if (t < 0.9) {
+      row = 2;
+      localT = (t - 0.72) / 0.18;
+    } else {
+      row = 3;
+      localT = (t - 0.9) / 0.1;
+    }
+    const frame = Math.min(7, Math.floor(clamp(localT, 0, 0.999) * 8));
+    const fadeIn = clamp(t / 0.08, 0, 1);
+    const fadeOut = clamp((1 - t) / 0.16, 0, 1);
+    const anchor = LAMUH_SPECIAL_VFX_ANCHORS.celestialPalm;
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = Math.min(fadeIn, fadeOut) * 0.94;
+    ctx.translate(box.x + box.w / 2 + projectile.facing * anchor.drawOffsetX, box.y + box.h / 2 + anchor.drawOffsetY);
+    ctx.scale(projectile.facing, 1);
+    ctx.drawImage(
+      atlas,
+      frame * frameW,
+      row * frameH,
+      frameW,
+      frameH,
+      -anchor.drawW * 0.5,
+      -anchor.drawH * 0.5,
+      anchor.drawW,
+      anchor.drawH
+    );
+    ctx.restore();
+    return true;
   }
 
   function drawSerisProjectileVfx(projectile) {
@@ -5156,9 +5883,20 @@
         fallbackPath: "assets/sprites/portraits/sol_select.png"
       },
       ultimate: {
-        placeholder: true,
-        animation: "celestial_palm",
-        note: "Temporary hidden/demo mapping until the cinematic beam ultimate is built."
+        placeholder: false,
+        animation: "crown_startup/crown_rush -> confirmed Sheet 8 cinematic",
+        bodyAtlas: "lamuhCrownBody",
+        bodyAtlasPath: assetPaths.lamuhCrownBody,
+        beamVfx: "lamuhCrownBeamVfx",
+        beamAtlasPath: assetPaths.lamuhCrownBeamVfx,
+        finalDamage: LAMUH_CROWN_FINAL_DAMAGE,
+        note: "Crown of No Gods now uses a LAMUH-only rush-confirm cinematic. Whiff recovers; confirmed hits play Sheet 8 rows and spawn the approved beam during the fire phase."
+      },
+      startMatch(p1Id = "lamuh", p2Id = "lamuh") {
+        state.selectedP1CharacterId = isLaunchableCharacterId(p1Id) ? p1Id : "lamuh";
+        state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "lamuh";
+        startLocalVersus();
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
       },
       startP1() {
         startTraining("lamuh");
@@ -5247,8 +5985,27 @@
         f.airDashTimer = 0;
         f.action = null;
         f.activeMove = null;
+        state.lamuhCinematicUltimate = null;
         startMove(key, f);
         return { side, move: f.activeMove, anim: f.anim };
+      },
+      startAnyMove(move, side = "p1", options = {}) {
+        if (!isFightMode()) this.startMatch("sol", "nyx");
+        const f = side === "p2" ? state.enemy : state.player;
+        const key = f.kind === "enemy" && !move.startsWith("enemy_") ? `enemy_${move}` : move;
+        f.meter = METER_MAX;
+        f.grounded = options.grounded ?? f.grounded;
+        f.y = options.y || (f.grounded ? GROUND_Y : GROUND_Y - 130);
+        f.hitstun = 0;
+        f.blockstun = 0;
+        f.knockdownTimer = 0;
+        f.recoveryTimer = 0;
+        f.landingTimer = 0;
+        f.action = null;
+        f.activeMove = null;
+        state.lamuhCinematicUltimate = null;
+        startMove(key, f);
+        return { side, fighter: f.profile?.id, move: f.activeMove, anim: f.anim };
       },
       loadedLamuhAssets() {
         return Object.fromEntries(
@@ -5256,6 +6013,26 @@
             .filter(([key]) => key.startsWith("lamuh"))
             .map(([key]) => [key, Boolean(state.images[key])])
         );
+      },
+      lamuhUltimateBeamCount() {
+        return state.lamuhUltimateBeams.length;
+      },
+      lamuhSpecialEffectCount() {
+        return state.lamuhSpecialEffects.length;
+      },
+      crownDebug() {
+        return {
+          cinematicActive: Boolean(state.lamuhCinematicUltimate),
+          cinematic: state.lamuhCinematicUltimate ? { ...state.lamuhCinematicUltimate } : null,
+          debug: state.lastLamuhCrownUltimateDebug ? { ...state.lastLamuhCrownUltimateDebug } : null,
+          beamCount: state.lamuhUltimateBeams.length,
+          p1Hp: state.player?.hp,
+          p2Hp: state.enemy?.hp,
+          p1Anim: state.player?.anim,
+          p2Anim: state.enemy?.anim,
+          p1Move: state.player?.activeMove,
+          p2Move: state.enemy?.activeMove
+        };
       },
       scaleSnapshot() {
         const fighterSnapshot = (f) => ({
