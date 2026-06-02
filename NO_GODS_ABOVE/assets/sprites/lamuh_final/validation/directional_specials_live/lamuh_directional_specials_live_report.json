@@ -1,0 +1,294 @@
+{
+  "url": "http://127.0.0.1:55230/index.html?lamuhTest=1&pageEventSmoke=1780407257750",
+  "scriptTag": "game.js?v=lamuh-directional-specials-1",
+  "status": "PASS",
+  "results": [
+    {
+      "label": "neutral_special",
+      "side": "p1",
+      "expectedMove": "neutral_special",
+      "expectedRow": 0,
+      "activeMove": "neutral_special",
+      "anim": "celestial_palm",
+      "animRow": 0,
+      "vx": 0,
+      "vy": 0,
+      "debug": {
+        "side": "p1",
+        "fighterKind": "player",
+        "facing": 1,
+        "grounded": true,
+        "held": {
+          "left": false,
+          "right": false,
+          "down": false
+        },
+        "direction": "neutral",
+        "fallbackKey": "special_1",
+        "selectedMove": "neutral_special",
+        "animationKey": "celestial_palm",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 0
+      }
+    },
+    {
+      "label": "forward_special",
+      "side": "p1",
+      "expectedMove": "forward_special",
+      "expectedRow": 1,
+      "activeMove": "forward_special",
+      "anim": "ascend_step",
+      "animRow": 1,
+      "vx": 620,
+      "vy": 0,
+      "debug": {
+        "side": "p1",
+        "fighterKind": "player",
+        "facing": 1,
+        "grounded": true,
+        "held": {
+          "left": false,
+          "right": true,
+          "down": false
+        },
+        "direction": "forward",
+        "fallbackKey": "special_1",
+        "selectedMove": "forward_special",
+        "animationKey": "ascend_step",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 1
+      }
+    },
+    {
+      "label": "down_special",
+      "side": "p1",
+      "expectedMove": "down_special",
+      "expectedRow": 2,
+      "activeMove": "down_special",
+      "anim": "heaven_splitter",
+      "animRow": 2,
+      "vx": 0,
+      "vy": -207,
+      "debug": {
+        "side": "p1",
+        "fighterKind": "player",
+        "facing": 1,
+        "grounded": true,
+        "held": {
+          "left": false,
+          "right": false,
+          "down": true
+        },
+        "direction": "down",
+        "fallbackKey": "special_1",
+        "selectedMove": "down_special",
+        "animationKey": "heaven_splitter",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 2
+      }
+    },
+    {
+      "label": "back_special",
+      "side": "p1",
+      "expectedMove": "back_special",
+      "expectedRow": 3,
+      "activeMove": "back_special",
+      "anim": "divine_vanish",
+      "animRow": 3,
+      "vx": -478,
+      "vy": 0,
+      "debug": {
+        "side": "p1",
+        "fighterKind": "player",
+        "facing": 1,
+        "grounded": true,
+        "held": {
+          "left": true,
+          "right": false,
+          "down": false
+        },
+        "direction": "back",
+        "fallbackKey": "special_1",
+        "selectedMove": "back_special",
+        "animationKey": "divine_vanish",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 3
+      }
+    },
+    {
+      "label": "air_special",
+      "side": "p1",
+      "expectedMove": "air_special",
+      "expectedRow": 4,
+      "activeMove": "air_special",
+      "anim": "radiant_dive",
+      "animRow": 4,
+      "vx": 640,
+      "vy": 0,
+      "debug": {
+        "side": "p1",
+        "fighterKind": "player",
+        "facing": 1,
+        "grounded": false,
+        "held": {
+          "left": false,
+          "right": false,
+          "down": false
+        },
+        "direction": "air",
+        "fallbackKey": "special_1",
+        "selectedMove": "air_special",
+        "animationKey": "radiant_dive",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 4
+      }
+    },
+    {
+      "label": "neutral_special",
+      "side": "p2",
+      "expectedMove": "enemy_neutral_special",
+      "expectedRow": 0,
+      "activeMove": "enemy_neutral_special",
+      "anim": "enemy_celestial_palm",
+      "animRow": 0,
+      "vx": 0,
+      "vy": 0,
+      "debug": {
+        "side": "p2",
+        "fighterKind": "enemy",
+        "facing": -1,
+        "grounded": true,
+        "held": {
+          "left": false,
+          "right": false,
+          "down": false
+        },
+        "direction": "neutral",
+        "fallbackKey": "enemy_special_1",
+        "selectedMove": "enemy_neutral_special",
+        "animationKey": "enemy_celestial_palm",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 0
+      }
+    },
+    {
+      "label": "forward_special",
+      "side": "p2",
+      "expectedMove": "enemy_forward_special",
+      "expectedRow": 1,
+      "activeMove": "enemy_forward_special",
+      "anim": "enemy_ascend_step",
+      "animRow": 1,
+      "vx": -572,
+      "vy": 0,
+      "debug": {
+        "side": "p2",
+        "fighterKind": "enemy",
+        "facing": -1,
+        "grounded": true,
+        "held": {
+          "left": true,
+          "right": false,
+          "down": false
+        },
+        "direction": "forward",
+        "fallbackKey": "enemy_special_1",
+        "selectedMove": "enemy_forward_special",
+        "animationKey": "enemy_ascend_step",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 1
+      }
+    },
+    {
+      "label": "down_special",
+      "side": "p2",
+      "expectedMove": "enemy_down_special",
+      "expectedRow": 2,
+      "activeMove": "enemy_down_special",
+      "anim": "enemy_heaven_splitter",
+      "animRow": 2,
+      "vx": 0,
+      "vy": -237,
+      "debug": {
+        "side": "p2",
+        "fighterKind": "enemy",
+        "facing": -1,
+        "grounded": true,
+        "held": {
+          "left": false,
+          "right": false,
+          "down": true
+        },
+        "direction": "down",
+        "fallbackKey": "enemy_special_1",
+        "selectedMove": "enemy_down_special",
+        "animationKey": "enemy_heaven_splitter",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 2
+      }
+    },
+    {
+      "label": "back_special",
+      "side": "p2",
+      "expectedMove": "enemy_back_special",
+      "expectedRow": 3,
+      "activeMove": "enemy_back_special",
+      "anim": "enemy_divine_vanish",
+      "animRow": 3,
+      "vx": 960,
+      "vy": 0,
+      "debug": {
+        "side": "p2",
+        "fighterKind": "enemy",
+        "facing": -1,
+        "grounded": true,
+        "held": {
+          "left": false,
+          "right": true,
+          "down": false
+        },
+        "direction": "back",
+        "fallbackKey": "enemy_special_1",
+        "selectedMove": "enemy_back_special",
+        "animationKey": "enemy_divine_vanish",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 3
+      }
+    },
+    {
+      "label": "air_special",
+      "side": "p2",
+      "expectedMove": "enemy_air_special",
+      "expectedRow": 4,
+      "activeMove": "enemy_air_special",
+      "anim": "enemy_radiant_dive",
+      "animRow": 4,
+      "vx": -127,
+      "vy": 0,
+      "debug": {
+        "side": "p2",
+        "fighterKind": "enemy",
+        "facing": -1,
+        "grounded": false,
+        "held": {
+          "left": false,
+          "right": false,
+          "down": false
+        },
+        "direction": "air",
+        "fallbackKey": "enemy_special_1",
+        "selectedMove": "enemy_air_special",
+        "animationKey": "enemy_radiant_dive",
+        "sheet": "lamuh_sheet_5_specials_atlas.png",
+        "sheetRow": 4
+      }
+    }
+  ],
+  "failures": [],
+  "requestFailures": [],
+  "consoleErrors": [],
+  "serisSheet8Requests": [],
+  "lamuhSheet5Requests": [
+    "http://127.0.0.1:55230/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-public-1"
+  ]
+}

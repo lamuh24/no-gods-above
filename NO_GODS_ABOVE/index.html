@@ -13,34 +13,62 @@
       <canvas id="game" width="1280" height="720"></canvas>
 
       <section id="hud" class="hud hidden ui-hud-layer" aria-label="Training HUD">
-        <div class="fighter-card hud-fighter-panel left ui-frame ui-frame-hud" data-side="p1">
-          <div class="hud-portrait-frame ui-portrait-frame">
-            <img id="player-portrait" src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final portrait">
+        <div class="fighter-card hud-side hud-side-p1 hud-fighter-panel left ui-frame ui-frame-hud" data-side="p1">
+          <div class="hud-portrait-shell hud-portrait-frame ui-portrait-frame">
+            <span class="hud-portrait-clip">
+              <img id="player-portrait" src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final portrait">
+            </span>
           </div>
           <div class="hud-fighter-main">
-            <div class="hud-name-frame ui-name-frame">
+            <div class="hud-nameplate hud-name-frame ui-name-frame">
               <span class="side-tag p1-tag">P1</span>
-              <div id="player-name" class="fighter-name">KAIRO FINAL</div>
+              <span class="hud-name-safe">
+                <span id="player-name" class="fighter-name">KAIRO FINAL</span>
+              </span>
             </div>
-            <div class="bar hp ui-bar-frame"><span id="player-hp"></span></div>
-            <div class="bar meter ui-bar-frame"><span id="player-meter"></span></div>
+            <div class="bar hp ui-bar-frame hud-health-shell hud-bar-shell" aria-label="P1 health">
+              <div class="hud-health-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-health-fill-clip hud-bar-fill-clip">
+                <span id="player-hp" class="hud-health-fill hud-bar-fill"></span>
+              </div>
+            </div>
+            <div class="bar meter ui-bar-frame hud-meter-shell hud-bar-shell" aria-label="P1 meter">
+              <div class="hud-meter-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-meter-fill-clip hud-bar-fill-clip">
+                <span id="player-meter" class="hud-meter-fill hud-bar-fill"></span>
+              </div>
+            </div>
           </div>
         </div>
           <div class="center-hud ui-center-hud">
             <div id="round-status" class="ui-frame ui-timer-frame">TRAINING</div>
             <div id="combo-counter" class="combo-counter ui-frame ui-combo-frame" aria-live="polite"></div>
           </div>
-        <div class="fighter-card hud-fighter-panel right ui-frame ui-frame-hud" data-side="p2">
-          <div class="hud-portrait-frame ui-portrait-frame">
-            <img id="enemy-portrait" src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign portrait">
+        <div class="fighter-card hud-side hud-side-p2 hud-fighter-panel right ui-frame ui-frame-hud" data-side="p2">
+          <div class="hud-portrait-shell hud-portrait-frame ui-portrait-frame">
+            <span class="hud-portrait-clip">
+              <img id="enemy-portrait" src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign portrait">
+            </span>
           </div>
           <div class="hud-fighter-main">
-            <div class="hud-name-frame ui-name-frame">
-              <div id="enemy-name" class="fighter-name">VANTA REIGN</div>
+            <div class="hud-nameplate hud-name-frame ui-name-frame">
+              <span class="hud-name-safe">
+                <span id="enemy-name" class="fighter-name">VANTA REIGN</span>
+              </span>
               <span class="side-tag p2-tag">P2</span>
             </div>
-            <div class="bar hp ui-bar-frame"><span id="enemy-hp"></span></div>
-            <div class="bar meter ui-bar-frame"><span id="enemy-meter"></span></div>
+            <div class="bar hp ui-bar-frame hud-health-shell hud-bar-shell" aria-label="P2 health">
+              <div class="hud-health-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-health-fill-clip hud-bar-fill-clip">
+                <span id="enemy-hp" class="hud-health-fill hud-bar-fill"></span>
+              </div>
+            </div>
+            <div class="bar meter ui-bar-frame hud-meter-shell hud-bar-shell" aria-label="P2 meter">
+              <div class="hud-meter-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-meter-fill-clip hud-bar-fill-clip">
+                <span id="enemy-meter" class="hud-meter-fill hud-bar-fill"></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -80,7 +108,14 @@
 
           <div id="matchup-preview" class="matchup-preview ui-frame ui-prompt-frame">Choose P1 fighter</div>
 
-          <div id="select-controls-display" class="controls-display select-controls-display" aria-label="Local versus controls"></div>
+          <div class="select-help-strip ui-frame ui-prompt-frame">
+            <span>P1/P2 choose fighters, lock in, then start</span>
+            <button id="select-controls-toggle" class="select-help-button" type="button" aria-expanded="false" aria-controls="select-controls-display">
+              Controls <kbd>C</kbd>
+            </button>
+          </div>
+
+          <div id="select-controls-display" class="controls-display select-controls-display select-controls-popover hidden" aria-label="Local versus controls"></div>
 
           <div class="select-grid">
             <button class="select-card ui-card-frame kairo selected" type="button" data-character="kairo" aria-label="Choose Kairo Final">
@@ -130,6 +165,7 @@
           <footer class="select-footer" aria-label="Character select controls">
             <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd><kbd>5</kbd> Choose</span>
             <span><kbd>Enter</kbd> Confirm</span>
+            <span><kbd>C</kbd> Controls</span>
             <span><kbd>V</kbd> Versus <kbd>T</kbd> Training</span>
             <span><kbd>Esc</kbd> Back</span>
           </footer>
@@ -146,6 +182,6 @@
       </section>
     </main>
 
-    <script src="game.js?v=lamuh-public-enable-1"></script>
+    <script src="game.js?v=lamuh-directional-specials-1"></script>
   </body>
 </html>

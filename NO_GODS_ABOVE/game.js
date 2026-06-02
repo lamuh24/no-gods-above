@@ -467,14 +467,44 @@
     ultimate: { type: "ultimate", attack: "ultimate" }
   };
 
+  const lamuhSpecialMoves = {
+    special_1: { type: "celestialPalm", attack: "special_1", projectileWidth: 88, projectileHeight: 24, projectileLife: 0.92, spawnOffsetX: 112, spawnOffsetY: -88 },
+    special_2: { type: "ascendStep", attack: "special_2" },
+    special_3: { type: "heavenSplitter", attack: "special_3" },
+    neutral_special: { type: "celestialPalm", attack: "neutral_special", projectileWidth: 88, projectileHeight: 24, projectileLife: 0.92, spawnOffsetX: 112, spawnOffsetY: -88 },
+    forward_special: { type: "ascendStep", attack: "forward_special" },
+    down_special: { type: "heavenSplitter", attack: "down_special" },
+    back_special: { type: "divineVanish", attack: "back_special" },
+    air_special: { type: "radiantDive", attack: "air_special" },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
   function buildLamuhPlayerAttacks() {
     const attacks = cloneData(solPlayerAttacks);
+    attacks.neutral_special = attackDef(74, 6, 9, 13, 34, 104, -82, "medium", { projectile: true, projectileSpeed: 680, noHit: true, meter: 12 });
+    attacks.forward_special = attackDef(94, 5, 7, 14, 38, 132, -135, "heavy", { dash: true, dashCancel: true, softKnockdown: true, meter: 14 });
+    attacks.down_special = attackDef(112, 7, 7, 22, 50, 78, -555, "heavy", { rise: true, launcher: true, hardKnockdown: true, meter: 18 });
+    attacks.back_special = attackDef(48, 3, 8, 12, 30, 68, -42, "chain", { shadowStep: true, shadowStepAway: true, shadowStepSpeed: 1040, shadowStepOffset: 96, dashCancel: true, softKnockdown: true, meter: 12 });
+    attacks.air_special = attackDef(72, 5, 7, 16, 40, 64, 260, "dive", { air: true, dive: true, diveSpeedX: 640, diveSpeedY: 590, softKnockdown: true, meter: 14 });
+    attacks.special_1 = cloneData(attacks.neutral_special);
+    attacks.special_2 = cloneData(attacks.forward_special);
+    attacks.special_3 = cloneData(attacks.down_special);
     attacks.launcher = cloneData(attacks.down_heavy);
+    addLamuhDirectionalCancelTargets(attacks);
     return attacks;
   }
 
   function buildLamuhEnemyAttacks() {
     const attacks = cloneData(solEnemyAttacks);
+    attacks.enemy_neutral_special = attackDef(70, 7, 8, 15, 34, 120, -74, "medium", { enemy: true, projectile: true, projectileSpeed: 620, noHit: true });
+    attacks.enemy_forward_special = attackDef(88, 6, 7, 17, 38, 142, -125, "heavy", { enemy: true, dash: true, softKnockdown: true });
+    attacks.enemy_down_special = attackDef(104, 8, 7, 24, 48, 92, -500, "heavy", { enemy: true, rise: true, launcher: true, hardKnockdown: true });
+    attacks.enemy_back_special = attackDef(44, 4, 8, 14, 30, 82, -40, "chain", { enemy: true, shadowStep: true, shadowStepAway: true, shadowStepSpeed: 980, shadowStepOffset: 96, dash: true, softKnockdown: true });
+    attacks.enemy_air_special = attackDef(68, 6, 7, 17, 38, 58, 240, "dive", { enemy: true, air: true, dive: true, diveSpeedX: 600, diveSpeedY: 550, softKnockdown: true });
+    attacks.enemy_special_1 = cloneData(attacks.enemy_neutral_special);
+    attacks.enemy_special_2 = cloneData(attacks.enemy_forward_special);
+    attacks.enemy_special_3 = cloneData(attacks.enemy_down_special);
     attacks.enemy_launcher = cloneData(attacks.enemy_forward_heavy);
     attacks.enemy_jump_light = cloneData(solPlayerAttacks.jump_light);
     attacks.enemy_jump_medium = cloneData(solPlayerAttacks.jump_medium);
@@ -482,7 +512,19 @@
     for (const key of ["enemy_jump_light", "enemy_jump_medium", "enemy_jump_heavy"]) {
       attacks[key].flags.enemy = true;
     }
+    addLamuhDirectionalCancelTargets(attacks, "enemy_");
     return attacks;
+  }
+
+  function addLamuhDirectionalCancelTargets(attacks, prefix = "") {
+    const lamuhTargets = ["neutral_special", "forward_special", "down_special", "back_special", "air_special"].map((target) => `${prefix}${target}`);
+    Object.values(attacks).forEach((move) => {
+      const cancelOnHit = move?.flags?.cancelOnHit;
+      if (!Array.isArray(cancelOnHit)) return;
+      for (const target of lamuhTargets) {
+        if (!cancelOnHit.includes(target)) cancelOnHit.push(target);
+      }
+    });
   }
 
   const lamuhMovementStats = {
@@ -510,6 +552,11 @@
     speed: 810,
     duration: 12 / 60,
     cooldown: 18 / 60
+  };
+
+  const lamuhHitboxes = {
+    ...cloneData(baselineHitboxes),
+    dive: { w: 122, h: 96, ox: 50, oy: -106 }
   };
 
   const serisMovementStats = {
@@ -825,13 +872,13 @@
         enemy: buildLamuhEnemyAttacks()
       },
       comboRoutes: cloneData(baselineComboRoutes),
-      hitboxes: cloneData(baselineHitboxes),
+      hitboxes: cloneData(lamuhHitboxes),
       hurtboxes: {
         standing: { w: 66, h: 164 },
         crouching: { w: 66, h: 94 },
         dead: { w: 74, h: 62 }
       },
-      specialMoves: cloneData(solSpecialMoves),
+      specialMoves: cloneData(lamuhSpecialMoves),
       ai: cloneData(baselineEnemyAI),
       effects: { dashTrail: true },
       projectileColor: "#67eaff",
@@ -1491,11 +1538,16 @@
       fall_transition: [sheets.airNormals, 3],
       special_1: [sheets.specials, 0],
       celestial_palm: [sheets.specials, 0],
+      neutral_special: [sheets.specials, 0],
       special_2: [sheets.specials, 1],
       ascend_step: [sheets.specials, 1],
+      forward_special: [sheets.specials, 1],
       special_3: [sheets.specials, 2],
       heaven_splitter: [sheets.specials, 2],
+      down_special: [sheets.specials, 2],
+      back_special: [sheets.specials, 3],
       divine_vanish: [sheets.specials, 3],
+      air_special: [sheets.specials, 4],
       radiant_dive: [sheets.specials, 4],
       special_recovery: [sheets.specials, 5],
       ultimate: [sheets.specials, 0],
@@ -1945,16 +1997,25 @@
   function getLamuhActionPhaseAnim(f, moveData) {
     const moveKey = f.activeMove.replace(/^enemy_/, "");
     const activeEnd = moveData.startup + moveData.active;
-    if (moveKey === "special_1") {
-      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "celestial_palm");
+    const identityAnimEnd = Math.max(activeEnd, moveData.duration * 0.82);
+    if (moveKey === "special_1" || moveKey === "neutral_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "celestial_palm");
       return withEnemyPrefix(f, "special_recovery");
     }
-    if (moveKey === "special_2") {
-      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "ascend_step");
+    if (moveKey === "special_2" || moveKey === "forward_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "ascend_step");
       return withEnemyPrefix(f, "special_recovery");
     }
-    if (moveKey === "special_3") {
-      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "heaven_splitter");
+    if (moveKey === "special_3" || moveKey === "down_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "heaven_splitter");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "back_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "divine_vanish");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "air_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "radiant_dive");
       return withEnemyPrefix(f, "special_recovery");
     }
     if (moveKey === "ultimate") {
@@ -3259,7 +3320,7 @@
     f.vx *= moveData.flags.dash ? 0.98 : f.grounded ? 0.46 : 0.88;
 
     if (moveData.flags.superDash) updateSuperDashVelocity(f);
-    if (moveData.flags.shadowStep && f.actionTime < 0.16) updateShadowStepVelocity(f, moveData);
+    if (moveData.flags.shadowStep && f.actionTime < (moveData.flags.shadowStepAway ? 0.22 : 0.16)) updateShadowStepVelocity(f, moveData);
     else if (moveData.flags.dash && f.actionTime < 0.18) f.vx = f.facing * 620;
     if (moveData.flags.dive && f.actionTime < 0.22) updateDiveVelocity(f, moveData);
     if (moveData.flags.stepForward && f.actionTime < moveData.startup + moveData.active) f.vx = f.facing * moveData.flags.stepForward;
@@ -3452,6 +3513,10 @@
 
   function updateShadowStepVelocity(f, moveData) {
     const target = f.kind === "player" ? state.enemy : state.player;
+    if (moveData.flags.shadowStepAway) {
+      f.vx = -f.facing * (moveData.flags.shadowStepSpeed || 860);
+      return;
+    }
     if (!target || target.dead) {
       f.vx = f.facing * (moveData.flags.shadowStepSpeed || 860);
       return;
@@ -4856,6 +4921,73 @@
     return state.keys.has(controls.down) || state.keys.has(forward) || state.keys.has(back);
   }
 
+  function chooseSpecialMove(fighter, controls, fallbackKey) {
+    const p = fighter;
+    if (!p || p.profile?.id !== "lamuh") return fallbackKey;
+    const prefix = p.kind === "enemy" ? "enemy_" : "";
+    let selected = `${prefix}neutral_special`;
+    let direction = "neutral";
+    if (!p.grounded) {
+      selected = `${prefix}air_special`;
+      direction = "air";
+      recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
+      return selected;
+    }
+    if (state.keys.has(controls.down)) {
+      selected = `${prefix}down_special`;
+      direction = "down";
+      recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
+      return selected;
+    }
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
+    if (state.keys.has(forward)) {
+      selected = `${prefix}forward_special`;
+      direction = "forward";
+    } else if (state.keys.has(back)) {
+      selected = `${prefix}back_special`;
+      direction = "back";
+    }
+    recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
+    return selected;
+  }
+
+  function recordLamuhSpecialDebug(fighter, controls, fallbackKey, selected, direction) {
+    if (!LAMUH_HIDDEN_TEST_ENABLED) return;
+    const bareMove = selected.replace(/^enemy_/, "");
+    const animByMove = {
+      neutral_special: "celestial_palm",
+      forward_special: "ascend_step",
+      down_special: "heaven_splitter",
+      back_special: "divine_vanish",
+      air_special: "radiant_dive"
+    };
+    const rowByMove = {
+      neutral_special: 0,
+      forward_special: 1,
+      down_special: 2,
+      back_special: 3,
+      air_special: 4
+    };
+    state.lastLamuhSpecialDebug = {
+      side: fighter.kind === "enemy" ? "p2" : "p1",
+      fighterKind: fighter.kind,
+      facing: fighter.facing,
+      grounded: fighter.grounded,
+      held: {
+        left: state.keys.has(controls.left),
+        right: state.keys.has(controls.right),
+        down: state.keys.has(controls.down)
+      },
+      direction,
+      fallbackKey,
+      selectedMove: selected,
+      animationKey: fighter.kind === "enemy" ? `enemy_${animByMove[bareMove] || bareMove}` : (animByMove[bareMove] || bareMove),
+      sheet: "lamuh_sheet_5_specials_atlas.png",
+      sheetRow: rowByMove[bareMove] ?? null
+    };
+  }
+
   function handleKeyDown(e) {
     if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.code)) e.preventDefault();
     if (e.repeat) {
@@ -4913,9 +5045,9 @@
       return;
     }
 
-    if (e.code === P1_CONTROLS.light) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_1" : chooseLightAttack(state.player, P1_CONTROLS), state.player);
-    if (e.code === P1_CONTROLS.medium) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_2" : chooseAttack("medium", state.player, P1_CONTROLS), state.player);
-    if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? "special_3" : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
+    if (e.code === P1_CONTROLS.light) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_1") : chooseLightAttack(state.player, P1_CONTROLS), state.player);
+    if (e.code === P1_CONTROLS.medium) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_2") : chooseAttack("medium", state.player, P1_CONTROLS), state.player);
+    if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_3") : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
 
     if (state.mode === "versus") {
       maybeStartDoubleTapDash(state.enemy, P2_CONTROLS, state.p2DashTap, e.code);
@@ -4923,9 +5055,9 @@
       if (e.code === P2_CONTROLS.light) startMove(chooseLightAttack(state.enemy, P2_CONTROLS), state.enemy);
       if (e.code === P2_CONTROLS.medium) startMove(chooseAttack("medium", state.enemy, P2_CONTROLS), state.enemy);
       if (e.code === P2_CONTROLS.heavy) startMove(chooseAttack("heavy", state.enemy, P2_CONTROLS), state.enemy);
-      if (e.code === P2_CONTROLS.special1) startMove("enemy_special_1", state.enemy);
-      if (e.code === P2_CONTROLS.special2) startMove("enemy_special_2", state.enemy);
-      if (e.code === P2_CONTROLS.special3) startMove("enemy_special_3", state.enemy);
+      if (e.code === P2_CONTROLS.special1) startMove(chooseSpecialMove(state.enemy, P2_CONTROLS, "enemy_special_1"), state.enemy);
+      if (e.code === P2_CONTROLS.special2) startMove(chooseSpecialMove(state.enemy, P2_CONTROLS, "enemy_special_2"), state.enemy);
+      if (e.code === P2_CONTROLS.special3) startMove(chooseSpecialMove(state.enemy, P2_CONTROLS, "enemy_special_3"), state.enemy);
       if (e.code === P2_CONTROLS.ultimate) startMove("enemy_ultimate", state.enemy);
     }
   }
@@ -5090,6 +5222,16 @@
           special_1: "enemy_special_1",
           special_2: "enemy_special_2",
           special_3: "enemy_special_3",
+          neutral_special: "enemy_neutral_special",
+          forward_special: "enemy_forward_special",
+          down_special: "enemy_down_special",
+          back_special: "enemy_back_special",
+          air_special: "enemy_air_special",
+          celestial_palm: "enemy_neutral_special",
+          ascend_step: "enemy_forward_special",
+          heaven_splitter: "enemy_down_special",
+          divine_vanish: "enemy_back_special",
+          radiant_dive: "enemy_air_special",
           ultimate: "enemy_ultimate"
         };
         const key = f.kind === "enemy" && !move.startsWith("enemy_") ? (enemyMoveMap[move] || `enemy_${move}`) : move;
