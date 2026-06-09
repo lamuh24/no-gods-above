@@ -86,6 +86,12 @@ so string-literal extraction plus the portraits folder is complete coverage.
 
 Do not deploy only the HTML/CSS/JS files; the game depends on relative asset paths.
 
+## External Runtime Dependencies
+
+- `index.html` loads PeerJS from `https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js` for Online Versus.
+- Online Versus uses the free PeerJS public signaling cloud; no server-side deploy pieces are required.
+- If unpkg or the PeerJS cloud is unreachable, local play is unaffected; the online menu shows an error status.
+
 ## Runtime Asset Rules
 
 - Runtime paths must remain relative, such as `assets/sprites/...`.

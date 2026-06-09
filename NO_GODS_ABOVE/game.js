@@ -39,6 +39,18 @@
   const controllerStatusEls = ["controller-status", "title-controller-status"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
+  const onlineMenu = document.getElementById("online-menu");
+  const onlineButton = document.getElementById("online-button");
+  const onlineModeRow = document.getElementById("online-mode-row");
+  const onlineHostButton = document.getElementById("online-host-button");
+  const onlineJoinButton = document.getElementById("online-join-button");
+  const onlineHostPanel = document.getElementById("online-host-panel");
+  const onlineJoinPanel = document.getElementById("online-join-panel");
+  const onlineRoomCodeEl = document.getElementById("online-room-code");
+  const onlineCodeInput = document.getElementById("online-code-input");
+  const onlineConnectButton = document.getElementById("online-connect-button");
+  const onlineStatusEl = document.getElementById("online-status");
+  const onlineBackButton = document.getElementById("online-back-button");
 
   const W = canvas.width;
   const H = canvas.height;
@@ -1811,6 +1823,7 @@
     keys: new Set(),
     keyboardKeys: new Set(),
     gamepadKeys: new Set(),
+    netKeys: new Set(),
     images: {},
     frameBoxes: {},
     particles: [],
@@ -1900,7 +1913,7 @@
 
   function syncInputKeys() {
     const filteredKeyboardKeys = [...state.keyboardKeys].filter((code) => shouldUseKeyboardKey(code));
-    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys]);
+    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys, ...state.netKeys]);
   }
 
   function setKeyboardKey(code, pressed) {
@@ -1925,6 +1938,7 @@
   function clearInputKeys() {
     state.keyboardKeys.clear();
     state.gamepadKeys.clear();
+    state.netKeys.clear();
     state.keys.clear();
   }
 
@@ -1957,6 +1971,12 @@
   }
 
   function shouldUseKeyboardKey(code) {
+    if (netIsActive() && isFightMode()) {
+      // Online: the guest's physical keys are translated into net actions, and
+      // P2 keyboard codes always belong to the remote player, never local keys.
+      if (net.role === "guest" && (P1_KEYBOARD_CODES.has(code) || P2_KEYBOARD_CODES.has(code))) return false;
+      if (net.role === "host" && P2_KEYBOARD_CODES.has(code)) return false;
+    }
     if (isFightMode()) {
       if (!isKeyboardEnabledForPlayer("p1") && P1_KEYBOARD_CODES.has(code)) return false;
       if (!isKeyboardEnabledForPlayer("p2") && P2_KEYBOARD_CODES.has(code)) return false;
@@ -4487,6 +4507,8 @@
 
   function endMatch(defeated) {
     if (!defeated || state.matchEnded) return;
+    // Online guests only end the match from a host snapshot, never from local prediction.
+    if (netIsActive() && net.role === "guest" && !net.applyingSnapshot) return;
     const p1Won = defeated.kind === "enemy";
     const winner = p1Won ? state.player : state.enemy;
     const loser = defeated;
@@ -4587,16 +4609,22 @@
   }
 
   function setCharacterSelectMode(selectGameMode) {
-    state.selectGameMode = selectGameMode === "training" ? "training" : "versus";
-    state.activeSelectSide = "p1";
+    state.selectGameMode = netIsActive() ? "versus" : selectGameMode === "training" ? "training" : "versus";
+    state.activeSelectSide = netIsActive() ? (net.role === "guest" ? "p2" : "p1") : "p1";
     state.p1Ready = false;
     state.p2Ready = false;
-    state.selectCursorCharacterId = state.selectGameMode === "training" ? state.selectedPlayerId : state.selectedP1CharacterId;
+    if (netIsActive()) {
+      state.selectCursorCharacterId = net.role === "guest" ? state.selectedP2CharacterId : state.selectedP1CharacterId;
+    } else {
+      state.selectCursorCharacterId = state.selectGameMode === "training" ? state.selectedPlayerId : state.selectedP1CharacterId;
+    }
     updateCharacterSelectFocus(state.selectCursorCharacterId);
   }
 
-  function setStagePreset(stagePresetId) {
+  function setStagePreset(stagePresetId, fromNet = false) {
+    if (netIsActive() && net.role === "guest" && !fromNet) return;
     state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
+    if (netIsActive() && net.role === "host" && !fromNet) netSend({ t: "stage", s: state.selectedStagePresetId });
     updateStagePresetUi();
     updateCharacterSelectUi();
   }
@@ -4750,9 +4778,14 @@
     const trainingMode = state.selectGameMode === "training";
     const selectedStage = getSelectedStagePreset();
     const stageSuffix = selectedStage.experimental ? ` - ${selectedStage.label}` : "";
-    selectModeLabel.textContent = trainingMode ? "Training Dummy" : "Local Versus";
+    selectModeLabel.textContent = netIsActive()
+      ? `Online Versus - Room ${net.roomCode || ""}`.trim()
+      : trainingMode ? "Training Dummy" : "Local Versus";
     selectVersusButton.classList.toggle("active", !trainingMode);
     selectTrainingButton.classList.toggle("active", trainingMode);
+    selectVersusButton.classList.toggle("online-locked", netIsActive());
+    selectTrainingButton.classList.toggle("online-locked", netIsActive());
+    stagePresetButtons.forEach((button) => button.classList.toggle("online-locked", netIsActive() && net.role === "guest"));
     p1SelectName.textContent = getSelectDisplayName(trainingMode ? state.selectCursorCharacterId : state.selectedP1CharacterId);
     p2SelectName.textContent = trainingMode ? getSelectDisplayName(getOpponentId(state.selectCursorCharacterId)) : getSelectDisplayName(state.selectedP2CharacterId);
     p1SelectStatus.textContent = trainingMode ? "Player" : state.p1Ready ? "Ready" : "Choosing";
@@ -4761,7 +4794,18 @@
     p2SelectSlot.classList.toggle("active", state.activeSelectSide === "p2");
     p1SelectSlot.classList.toggle("ready", state.p1Ready || trainingMode);
     p2SelectSlot.classList.toggle("ready", state.p2Ready || trainingMode);
-    if (trainingMode) {
+    if (netIsActive()) {
+      const ownReady = net.role === "guest" ? state.p2Ready : state.p1Ready;
+      const otherReady = net.role === "guest" ? state.p1Ready : state.p2Ready;
+      const matchup = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)}${stageSuffix}`;
+      if (!ownReady) {
+        matchupPreview.textContent = `Choose your fighter (${net.role === "guest" ? "P2" : "P1"}) - Enter to lock in`;
+      } else if (!otherReady) {
+        matchupPreview.textContent = "Locked in - waiting for opponent";
+      } else {
+        matchupPreview.textContent = net.role === "host" ? `${matchup} - press Enter to start` : `${matchup} - waiting for host to start`;
+      }
+    } else if (trainingMode) {
       matchupPreview.textContent = `${getSelectDisplayName(state.selectCursorCharacterId)} vs ${getSelectDisplayName(getOpponentId(state.selectCursorCharacterId))} dummy${stageSuffix}`;
     } else if (!state.p1Ready) {
       matchupPreview.textContent = "Choose P1 fighter";
@@ -4773,6 +4817,10 @@
   }
 
   function confirmCharacterSelect() {
+    if (netIsActive()) {
+      confirmOnlineCharacterSelect();
+      return;
+    }
     if (state.selectGameMode === "training") {
       startTraining(state.selectCursorCharacterId);
       return;
@@ -4798,6 +4846,10 @@
   function backCharacterSelect() {
     if (selectControlsDisplay && !selectControlsDisplay.classList.contains("hidden")) {
       setSelectControlsOpen(false);
+      return;
+    }
+    if (netIsActive()) {
+      backOnlineCharacterSelect();
       return;
     }
     if (state.selectGameMode === "versus" && state.activeSelectSide === "ready") {
@@ -5096,16 +5148,16 @@
     }
     if (!isFightMode()) return false;
     if (state.matchEnded) {
-      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) resetRound();
-      if (justPressed(input, previous, "cancel") || justPressed(input, previous, "help")) returnToCharacterSelectFromMatch();
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) netBroadcastRematch();
+      if (justPressed(input, previous, "cancel") || justPressed(input, previous, "help")) netAwareReturnToSelect();
       return true;
     }
     if (justPressed(input, previous, "start") || justPressed(input, previous, "help")) {
-      togglePauseHelp();
+      netAwareTogglePause();
       return true;
     }
     if (state.paused) {
-      if (justPressed(input, previous, "cancel")) returnToCharacterSelectFromMatch();
+      if (justPressed(input, previous, "cancel")) netAwareReturnToSelect();
       return true;
     }
     return false;
@@ -5152,7 +5204,7 @@
         return;
       }
       const handledByMenu = handleGamepadMenuInput(side, input, previous);
-      if (!handledByMenu && isFightMode() && !state.paused && !state.matchEnded) {
+      if (!handledByMenu && isFightMode() && !state.paused && !state.matchEnded && !netIsActive()) {
         handleGamepadFightInput(side, input, previous);
       }
       gamepadInput.previous[side] = input;
@@ -5168,6 +5220,7 @@
     const dt = state.paused ? 0 : rawDt;
     pollGamepads();
     update(dt);
+    netTick(rawDt);
     updateStageCamera(rawDt);
     render();
     requestAnimationFrame(loop);
@@ -10231,27 +10284,31 @@
       showCharacterSelect();
       return;
     }
+    if (state.mode === "online") {
+      if (e.code === "Escape") closeOnlineMenuToTitle();
+      return;
+    }
     if (state.mode === "select") {
       handleCharacterSelectKey(e);
       return;
     }
     if (e.code === "KeyH") state.debug = !state.debug;
     if (e.code === "KeyP" && isFightMode()) {
-      togglePauseHelp();
+      netAwareTogglePause();
       return;
     }
     if (state.matchEnded && isFightMode()) {
-      if (e.code === "KeyR") resetRound();
-      if (e.code === "Escape") returnToCharacterSelectFromMatch();
+      if (e.code === "KeyR") netBroadcastRematch();
+      if (e.code === "Escape") netAwareReturnToSelect();
       return;
     }
     if (state.paused && isFightMode()) {
-      if (e.code === "Escape") returnToCharacterSelectFromMatch();
-      if (e.code === "KeyR") resetRound();
+      if (e.code === "Escape") netAwareReturnToSelect();
+      if (e.code === "KeyR") netBroadcastRematch();
       return;
     }
     if (e.code === "KeyR" && isFightMode()) {
-      resetRound();
+      netBroadcastRematch();
       return;
     }
     if (!isFightMode() || state.paused) return;
@@ -10259,6 +10316,13 @@
     if (state.mode === "training" && e.code === "KeyN") {
       state.enemyAI = !state.enemyAI;
       flashStatus(getTrainingStatus(), 0.9);
+    }
+    if (netIsActive()) {
+      if (net.role === "guest") {
+        handleNetGuestKeyDown(e.code);
+        return;
+      }
+      if (NET_DIRECTION_CODES.has(e.code)) netSendDirMask();
     }
     if (isKeyboardEnabledForPlayer("p1")) {
       if (e.code === P1_CONTROLS.up && !tryCelesteUpAttackFromHeldButtons(state.player, P1_CONTROLS)) jump(state.player);
@@ -10281,7 +10345,7 @@
       if (e.code === P1_CONTROLS.heavy) startMove(state.keys.has(P1_CONTROLS.modifier) ? chooseSpecialMove(state.player, P1_CONTROLS, "special_3") : chooseAttack("heavy", state.player, P1_CONTROLS), state.player);
     }
 
-    if (state.mode === "versus" && isKeyboardEnabledForPlayer("p2")) {
+    if (state.mode === "versus" && !netIsActive() && isKeyboardEnabledForPlayer("p2")) {
       maybeStartDoubleTapDash(state.enemy, P2_CONTROLS, state.p2DashTap, e.code);
       if (e.code === P2_CONTROLS.up && !tryCelesteUpAttackFromHeldButtons(state.enemy, P2_CONTROLS)) jump(state.enemy);
       if (e.code === P2_CONTROLS.light) startMove(chooseLightAttack(state.enemy, P2_CONTROLS), state.enemy);
@@ -10296,6 +10360,10 @@
 
   function handleKeyUp(e) {
     setKeyboardKey(e.code, false);
+    if (netIsActive() && isFightMode() && !state.paused && !state.matchEnded) {
+      if (net.role === "guest") handleNetGuestKeyUp(e.code);
+      else if (NET_DIRECTION_CODES.has(e.code)) netSendDirMask();
+    }
   }
 
   function clamp(v, min, max) {
@@ -10307,6 +10375,582 @@
     refreshGamepadAssignments();
     updateControllerStatus();
   }
+
+  // ============================================================
+  // ONLINE VERSUS (Phase 1: PeerJS P2P, host-authoritative sync)
+  // Host runs the authoritative match. The guest plays P2 with the
+  // P1 keyboard layout, sends inputs to the host, predicts locally,
+  // and gets corrected by host snapshots ~15x per second.
+  // ============================================================
+
+  const NET_PROTOCOL_VERSION = 1;
+  const NET_PEER_PREFIX = "nga-fight-";
+  const NET_ROOM_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  const NET_SNAPSHOT_INTERVAL = 1 / 15;
+  const NET_DIRECTION_CODES = new Set(["KeyA", "KeyD", "KeyS", "KeyW"]);
+  const NET_DOUBLE_TAP_WINDOW = 0.25;
+  const NET_FIGHTER_SYNC_FIELDS = [
+    "x", "y", "vx", "vy", "facing", "hp", "meter", "grounded", "crouching", "blocking", "dead",
+    "action", "actionTime", "hitstun", "blockstun", "knockdownTimer", "pendingKnockdown",
+    "recoveryTimer", "platformAirRecoveryTimer", "juggleGravityScale", "upAttackGrace",
+    "blowbackTimer", "wallBounceEligible", "standingPlatformId", "platformDropTimer",
+    "landingTimer", "dashTimer", "dashCooldown", "airDashTimer", "airDashCooldown",
+    "airDashUsed", "dashDirection", "superDashCooldown", "activeMove", "hasHit", "hitCount",
+    "spawnedProjectile", "spawnedTrap", "cancelUnlocked", "bufferedMove", "reactionAnim", "anim",
+    "celesteFaCooldown", "celesteFaWindow", "celesteFaStringSpent", "celesteSolCooldown",
+    "celesteLaCooldown", "celesteBarrierTimer", "celesteBarrierHits", "celesteTiCooldown",
+    "lamuhPierceDone", "lamuhPierceConfirmed", "lamuhPierceStage1Hit", "lamuhPierceWhiffed",
+    "lamuhPierceBlocked", "lamuhPierceWhiffBeamFired", "mirrorPierceWallBouncePending",
+    "mirrorPierceHoldTimer", "mirrorPierceHoldX", "mirrorPierceHoldY"
+  ];
+
+  const net = {
+    role: null,
+    peer: null,
+    conn: null,
+    roomCode: null,
+    connected: false,
+    inMatch: false,
+    snapTimer: 0,
+    dirRefreshTimer: 0,
+    lastSentDirMask: -1,
+    applyingSnapshot: false,
+    guestDashTap: { code: null, time: -Infinity }
+  };
+
+  function netIsActive() {
+    return net.connected && net.role !== null;
+  }
+
+  function makeRoomCode() {
+    let code = "";
+    for (let i = 0; i < 5; i++) code += NET_ROOM_ALPHABET[Math.floor(Math.random() * NET_ROOM_ALPHABET.length)];
+    return code;
+  }
+
+  function setOnlineStatus(text, tone = "") {
+    if (!onlineStatusEl) return;
+    onlineStatusEl.textContent = text;
+    onlineStatusEl.classList.toggle("error", tone === "error");
+    onlineStatusEl.classList.toggle("good", tone === "good");
+  }
+
+  function resetOnlinePanels() {
+    onlineHostPanel?.classList.add("hidden");
+    onlineJoinPanel?.classList.add("hidden");
+  }
+
+  function showOnlineMenu() {
+    onlineMenu?.classList.remove("hidden");
+    state.mode = "online";
+    resetOnlinePanels();
+    setOnlineStatus("Choose Host or Join. Both players need this page open.");
+  }
+
+  function closeOnlineMenuToTitle() {
+    netReset();
+    onlineMenu?.classList.add("hidden");
+    titleScreen.classList.remove("hidden");
+    state.mode = "title";
+    startButton.focus({ preventScroll: true });
+  }
+
+  function netPeerAvailable() {
+    if (typeof Peer === "undefined") {
+      setOnlineStatus("Online service script failed to load - check your connection and refresh.", "error");
+      return false;
+    }
+    return true;
+  }
+
+  function startHosting() {
+    if (!netPeerAvailable()) return;
+    netReset();
+    resetOnlinePanels();
+    onlineHostPanel?.classList.remove("hidden");
+    const code = makeRoomCode();
+    net.role = "host";
+    net.roomCode = code;
+    if (onlineRoomCodeEl) onlineRoomCodeEl.textContent = code;
+    setOnlineStatus("Creating room...");
+    net.peer = new Peer(NET_PEER_PREFIX + code.toLowerCase());
+    net.peer.on("open", () => setOnlineStatus("Room ready - waiting for challenger...", "good"));
+    net.peer.on("connection", (conn) => {
+      if (net.conn) {
+        conn.close();
+        return;
+      }
+      bindConnection(conn);
+    });
+    net.peer.on("error", handlePeerError);
+  }
+
+  function joinRoom(rawCode) {
+    if (!netPeerAvailable()) return;
+    const code = String(rawCode || "").trim().toUpperCase();
+    if (code.length < 4) {
+      setOnlineStatus("Enter the 5-character room code.", "error");
+      return;
+    }
+    netReset();
+    resetOnlinePanels();
+    onlineJoinPanel?.classList.remove("hidden");
+    net.role = "guest";
+    net.roomCode = code;
+    setOnlineStatus("Connecting to room " + code + "...");
+    net.peer = new Peer();
+    net.peer.on("open", () => {
+      const conn = net.peer.connect(NET_PEER_PREFIX + code.toLowerCase(), { reliable: true });
+      bindConnection(conn);
+    });
+    net.peer.on("error", handlePeerError);
+  }
+
+  function handlePeerError(err) {
+    const type = err?.type || "unknown";
+    if (type === "unavailable-id") {
+      setOnlineStatus("Room code collision - press Host Game again.", "error");
+      netReset();
+      return;
+    }
+    if (type === "peer-unavailable") {
+      setOnlineStatus("Room not found - check the code and try again.", "error");
+      net.connected = false;
+      return;
+    }
+    if (netIsActive() || state.mode !== "online") {
+      handleNetDrop("Connection lost (" + type + ").");
+      return;
+    }
+    setOnlineStatus("Connection error: " + type, "error");
+  }
+
+  function bindConnection(conn) {
+    net.conn = conn;
+    conn.on("open", () => {
+      net.connected = true;
+      if (net.role === "guest") {
+        netSend({ t: "hello", v: NET_PROTOCOL_VERSION });
+        setOnlineStatus("Connected - syncing...", "good");
+      }
+    });
+    conn.on("data", netOnData);
+    conn.on("close", () => handleNetDrop("Opponent disconnected."));
+    conn.on("error", () => handleNetDrop("Connection error."));
+  }
+
+  function netSend(message) {
+    if (!net.conn || !net.connected) return;
+    try {
+      net.conn.send(message);
+    } catch {
+      /* dropped messages are recovered by snapshots */
+    }
+  }
+
+  function netReset() {
+    try {
+      net.conn?.close();
+    } catch { /* already closed */ }
+    try {
+      net.peer?.destroy();
+    } catch { /* already destroyed */ }
+    net.role = null;
+    net.peer = null;
+    net.conn = null;
+    net.roomCode = null;
+    net.connected = false;
+    net.inMatch = false;
+    net.snapTimer = 0;
+    net.dirRefreshTimer = 0;
+    net.lastSentDirMask = -1;
+    net.guestDashTap = { code: null, time: -Infinity };
+    state.netKeys.clear();
+    syncInputKeys();
+  }
+
+  function handleNetDrop(message) {
+    const wasActive = net.role !== null;
+    netReset();
+    if (!wasActive) return;
+    hud.classList.add("hidden");
+    characterSelect.classList.add("hidden");
+    hideMatchFlowOverlay();
+    state.paused = false;
+    state.matchEnded = false;
+    titleScreen.classList.add("hidden");
+    showOnlineMenu();
+    setOnlineStatus(message, "error");
+  }
+
+  function enterOnlineSelect() {
+    net.inMatch = false;
+    onlineMenu?.classList.add("hidden");
+    titleScreen.classList.add("hidden");
+    showCharacterSelect("versus");
+  }
+
+  function confirmOnlineCharacterSelect() {
+    const cursor = isLaunchableCharacterId(state.selectCursorCharacterId) ? state.selectCursorCharacterId : "kairo";
+    if (net.role === "host") {
+      if (!state.p1Ready) {
+        state.selectedP1CharacterId = cursor;
+        state.p1Ready = true;
+        netSend({ t: "lock", c: cursor });
+        updateCharacterSelectFocus(cursor);
+        return;
+      }
+      if (state.p1Ready && state.p2Ready) {
+        netSend({ t: "start", p1: state.selectedP1CharacterId, p2: state.selectedP2CharacterId, s: state.selectedStagePresetId });
+        startOnlineVersus(state.selectedP1CharacterId, state.selectedP2CharacterId, state.selectedStagePresetId);
+      }
+      return;
+    }
+    if (!state.p2Ready) {
+      state.selectedP2CharacterId = cursor;
+      state.p2Ready = true;
+      netSend({ t: "lock", c: cursor });
+      updateCharacterSelectFocus(cursor);
+    }
+  }
+
+  function backOnlineCharacterSelect() {
+    const ownReady = net.role === "guest" ? state.p2Ready : state.p1Ready;
+    if (ownReady) {
+      if (net.role === "guest") state.p2Ready = false;
+      else state.p1Ready = false;
+      netSend({ t: "unlock" });
+      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      return;
+    }
+    netSend({ t: "bye" });
+    const code = net.roomCode;
+    netReset();
+    characterSelect.classList.add("hidden");
+    titleScreen.classList.add("hidden");
+    showOnlineMenu();
+    setOnlineStatus("You left room " + (code || "") + ".");
+  }
+
+  function startOnlineVersus(p1Id, p2Id, stagePresetId) {
+    state.selectedP1CharacterId = isLaunchableCharacterId(p1Id) ? p1Id : "kairo";
+    state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "vanta";
+    state.selectedPlayerId = state.selectedP1CharacterId;
+    if (stagePresetId) state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
+    titleScreen.classList.add("hidden");
+    onlineMenu?.classList.add("hidden");
+    characterSelect.classList.add("hidden");
+    hud.classList.remove("hidden");
+    state.mode = "versus";
+    state.enemyAI = false;
+    state.paused = false;
+    net.inMatch = true;
+    net.snapTimer = 0;
+    net.lastSentDirMask = -1;
+    resetRound();
+    flashStatus(net.role === "host" ? "ONLINE MATCH - YOU ARE P1" : "ONLINE MATCH - YOU ARE P2", 2.2);
+  }
+
+  function netAwareTogglePause() {
+    if (!netIsActive()) {
+      togglePauseHelp();
+      return;
+    }
+    if (!isFightMode() || state.matchEnded) return;
+    netSend({ t: "pause", on: !state.paused });
+    togglePauseHelp();
+  }
+
+  function netSetPaused(on) {
+    if (!isFightMode() || state.matchEnded || state.paused === Boolean(on)) return;
+    togglePauseHelp();
+  }
+
+  function netBroadcastRematch() {
+    if (netIsActive()) netSend({ t: "rematch" });
+    resetRound();
+    net.lastSentDirMask = -1;
+  }
+
+  function netAwareReturnToSelect() {
+    if (!netIsActive()) {
+      returnToCharacterSelectFromMatch();
+      return;
+    }
+    netSend({ t: "toselect" });
+    enterOnlineSelect();
+  }
+
+  function netRemoteFighter() {
+    return net.role === "host" ? state.enemy : state.player;
+  }
+
+  function setNetKey(code, on) {
+    if (!code) return;
+    if (on) state.netKeys.add(code);
+    else state.netKeys.delete(code);
+  }
+
+  function netComputeLocalDirMask() {
+    let mask = 0;
+    if (state.keyboardKeys.has("KeyA")) mask |= 1;
+    if (state.keyboardKeys.has("KeyD")) mask |= 2;
+    if (state.keyboardKeys.has("KeyS")) mask |= 4;
+    if (state.keyboardKeys.has("KeyW")) mask |= 8;
+    return mask;
+  }
+
+  function applyNetDirMask(fighter, mask) {
+    if (!fighter) return;
+    const controls = fighter.kind === "enemy" ? P2_CONTROLS : P1_CONTROLS;
+    setNetKey(controls.left, mask & 1);
+    setNetKey(controls.right, mask & 2);
+    setNetKey(controls.down, mask & 4);
+    setNetKey(controls.up, mask & 8);
+    syncInputKeys();
+  }
+
+  function netSendDirMask(force = false) {
+    if (!netIsActive()) return;
+    const mask = netComputeLocalDirMask();
+    if (!force && mask === net.lastSentDirMask) return;
+    net.lastSentDirMask = mask;
+    if (net.role === "guest") applyNetDirMask(state.enemy, mask);
+    netSend({ t: "dir", m: mask });
+  }
+
+  function applyNetAction(fighter, action) {
+    if (!fighter || !isFightMode() || state.paused || state.matchEnded || fighter.dead) return;
+    const controls = fighter.kind === "enemy" ? P2_CONTROLS : P1_CONTROLS;
+    const prefix = fighter.kind === "enemy" ? "enemy_" : "";
+    switch (action) {
+      case "jump":
+        if (!tryCelesteUpAttackFromHeldButtons(fighter, controls)) jump(fighter);
+        break;
+      case "dash":
+        startDash(fighter, controls);
+        break;
+      case "superdash":
+        startSuperDash(fighter);
+        break;
+      case "light":
+        startMove(chooseLightAttack(fighter, controls), fighter);
+        break;
+      case "medium":
+        startMove(chooseAttack("medium", fighter, controls), fighter);
+        break;
+      case "heavy":
+        startMove(chooseAttack("heavy", fighter, controls), fighter);
+        break;
+      case "special1":
+        startMove(chooseSpecialMove(fighter, controls, prefix + "special_1"), fighter);
+        break;
+      case "special2":
+        startMove(chooseSpecialMove(fighter, controls, prefix + "special_2"), fighter);
+        break;
+      case "special3":
+        startMove(chooseSpecialMove(fighter, controls, prefix + "special_3"), fighter);
+        break;
+      case "ultimate":
+        startMove(prefix ? "enemy_ultimate" : "ultimate", fighter);
+        break;
+      default:
+        break;
+    }
+  }
+
+  function sendGuestAction(action) {
+    applyNetAction(state.enemy, action);
+    netSend({ t: "act", a: action });
+  }
+
+  function handleNetGuestKeyDown(code) {
+    const held = state.keyboardKeys;
+    if (NET_DIRECTION_CODES.has(code)) {
+      netSendDirMask();
+      if (code === "KeyW") sendGuestAction("jump");
+      if (code === "KeyA" || code === "KeyD") {
+        const now = performance.now() / 1000;
+        if (net.guestDashTap.code === code && now - net.guestDashTap.time < NET_DOUBLE_TAP_WINDOW) {
+          sendGuestAction(held.has("KeyU") ? "superdash" : "dash");
+        }
+        net.guestDashTap = { code, time: now };
+      }
+      return;
+    }
+    if (code === "ShiftLeft" || code === "ShiftRight") {
+      sendGuestAction(held.has("KeyU") ? "superdash" : "dash");
+      return;
+    }
+    if ((code === "KeyI" && held.has("KeyO")) || (code === "KeyO" && held.has("KeyI"))) {
+      sendGuestAction("ultimate");
+      return;
+    }
+    if (code === "KeyJ") sendGuestAction(held.has("KeyU") ? "special1" : "light");
+    if (code === "KeyK") sendGuestAction(held.has("KeyU") ? "special2" : "medium");
+    if (code === "KeyL") sendGuestAction(held.has("KeyU") ? "special3" : "heavy");
+  }
+
+  function handleNetGuestKeyUp(code) {
+    if (NET_DIRECTION_CODES.has(code)) netSendDirMask();
+  }
+
+  function buildFighterSnap(fighter) {
+    return NET_FIGHTER_SYNC_FIELDS.map((key) => {
+      const value = fighter[key];
+      return value === undefined || value === -Infinity || value === Infinity ? null : value;
+    });
+  }
+
+  function applyFighterSnap(fighter, values) {
+    if (!fighter || !Array.isArray(values)) return;
+    NET_FIGHTER_SYNC_FIELDS.forEach((key, index) => {
+      const value = values[index];
+      if (value !== undefined) fighter[key] = value;
+    });
+  }
+
+  function netSendSnapshot() {
+    netSend({
+      t: "snap",
+      p: buildFighterSnap(state.player),
+      e: buildFighterSnap(state.enemy),
+      me: state.matchEnded,
+      mw: state.matchWinner,
+      hp: state.hitPause,
+      c: { ...state.combo },
+      dm: netComputeLocalDirMask()
+    });
+  }
+
+  function netApplySnapshot(message) {
+    if (!isFightMode() || !state.player || !state.enemy) return;
+    applyFighterSnap(state.player, message.p);
+    applyFighterSnap(state.enemy, message.e);
+    if (typeof message.hp === "number") state.hitPause = message.hp;
+    if (message.c) Object.assign(state.combo, message.c);
+    applyNetDirMask(state.player, message.dm | 0);
+    if (message.me && !state.matchEnded) {
+      const defeated = message.mw === "p1" ? state.enemy : state.player;
+      net.applyingSnapshot = true;
+      endMatch(defeated);
+      net.applyingSnapshot = false;
+    }
+    updateHud();
+  }
+
+  function netOnData(message) {
+    if (!message || typeof message !== "object") return;
+    switch (message.t) {
+      case "hello":
+        if (net.role !== "host") return;
+        if (message.v !== NET_PROTOCOL_VERSION) {
+          netSend({ t: "badver" });
+          handleNetDrop("Version mismatch - both players should refresh the page.");
+          return;
+        }
+        netSend({ t: "welcome", v: NET_PROTOCOL_VERSION, s: state.selectedStagePresetId });
+        enterOnlineSelect();
+        break;
+      case "welcome":
+        if (net.role !== "guest") return;
+        if (message.v !== NET_PROTOCOL_VERSION) {
+          handleNetDrop("Version mismatch - both players should refresh the page.");
+          return;
+        }
+        if (message.s) setStagePreset(message.s, true);
+        enterOnlineSelect();
+        break;
+      case "badver":
+        handleNetDrop("Version mismatch - both players should refresh the page.");
+        break;
+      case "lock":
+        if (net.role === "host") {
+          state.selectedP2CharacterId = isLaunchableCharacterId(message.c) ? message.c : "vanta";
+          state.p2Ready = true;
+        } else {
+          state.selectedP1CharacterId = isLaunchableCharacterId(message.c) ? message.c : "kairo";
+          state.p1Ready = true;
+        }
+        if (state.mode === "select") updateCharacterSelectFocus(state.selectCursorCharacterId);
+        break;
+      case "unlock":
+        if (net.role === "host") state.p2Ready = false;
+        else state.p1Ready = false;
+        if (state.mode === "select") updateCharacterSelectFocus(state.selectCursorCharacterId);
+        break;
+      case "stage":
+        setStagePreset(message.s, true);
+        break;
+      case "start":
+        startOnlineVersus(message.p1, message.p2, message.s);
+        break;
+      case "dir":
+        applyNetDirMask(netRemoteFighter(), message.m | 0);
+        break;
+      case "act":
+        applyNetAction(netRemoteFighter(), message.a);
+        break;
+      case "snap":
+        if (net.role === "guest") netApplySnapshot(message);
+        break;
+      case "pause":
+        netSetPaused(message.on);
+        break;
+      case "rematch":
+        if (isFightMode()) {
+          resetRound();
+          net.lastSentDirMask = -1;
+        }
+        break;
+      case "toselect":
+        enterOnlineSelect();
+        break;
+      case "bye":
+        handleNetDrop("Opponent left the room.");
+        break;
+      default:
+        break;
+    }
+  }
+
+  function netTick(dt) {
+    if (!netIsActive()) return;
+    if (net.role === "host") {
+      if (state.mode === "versus" && net.inMatch) {
+        net.snapTimer -= dt;
+        if (net.snapTimer <= 0) {
+          net.snapTimer = NET_SNAPSHOT_INTERVAL;
+          netSendSnapshot();
+        }
+      }
+      return;
+    }
+    net.dirRefreshTimer -= dt;
+    if (net.dirRefreshTimer <= 0) {
+      net.dirRefreshTimer = 0.5;
+      if (state.mode === "versus" && net.inMatch && !state.paused && !state.matchEnded) netSendDirMask(true);
+    }
+  }
+
+  onlineButton?.addEventListener("click", () => {
+    titleScreen.classList.add("hidden");
+    showOnlineMenu();
+  });
+  onlineHostButton?.addEventListener("click", startHosting);
+  onlineJoinButton?.addEventListener("click", () => {
+    netReset();
+    resetOnlinePanels();
+    onlineJoinPanel?.classList.remove("hidden");
+    setOnlineStatus("Enter the host's room code.");
+    onlineCodeInput?.focus();
+  });
+  onlineConnectButton?.addEventListener("click", () => joinRoom(onlineCodeInput?.value));
+  onlineCodeInput?.addEventListener("keydown", (e) => {
+    e.stopPropagation();
+    if (e.key === "Enter") joinRoom(onlineCodeInput.value);
+  });
+  onlineBackButton?.addEventListener("click", closeOnlineMenuToTitle);
 
   window.addEventListener("keydown", handleKeyDown);
   window.addEventListener("keyup", handleKeyUp);

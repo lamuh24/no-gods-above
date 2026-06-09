@@ -76,8 +76,30 @@
       <section id="title-screen" class="menu">
         <div class="menu-inner ui-frame ui-title-frame">
           <button id="start-button" class="ui-menu-button" type="button">Character Select</button>
+          <button id="online-button" class="ui-menu-button" type="button">Online Versus</button>
           <p class="menu-note">Press Enter or controller Start/A to begin</p>
           <p id="title-controller-status" class="controller-status" aria-live="polite">Controllers: none detected - press a controller button after load</p>
+        </div>
+      </section>
+
+      <section id="online-menu" class="menu hidden" aria-label="Online versus setup">
+        <div class="menu-inner ui-frame ui-title-frame online-menu-inner">
+          <div class="online-heading">ONLINE VERSUS</div>
+          <div id="online-mode-row" class="online-mode-row">
+            <button id="online-host-button" class="ui-menu-button" type="button">Host Game</button>
+            <button id="online-join-button" class="ui-menu-button" type="button">Join Game</button>
+          </div>
+          <div id="online-host-panel" class="online-panel hidden">
+            <p class="online-label">Share this room code with your challenger:</p>
+            <div id="online-room-code" class="online-room-code">-----</div>
+          </div>
+          <div id="online-join-panel" class="online-panel hidden">
+            <p class="online-label">Enter the host's room code:</p>
+            <input id="online-code-input" class="online-code-input" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="CODE">
+            <button id="online-connect-button" class="ui-menu-button" type="button">Connect</button>
+          </div>
+          <p id="online-status" class="online-status" aria-live="polite">Choose Host or Join. Both players need this page open.</p>
+          <button id="online-back-button" class="ui-menu-button online-back" type="button">Back</button>
         </div>
       </section>
 
@@ -203,6 +225,7 @@
       </section>
     </main>
 
-    <script src="game.js?v=lamuh-legacy-separation-1"></script>
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src="game.js?v=online-versus-1"></script>
   </body>
 </html>

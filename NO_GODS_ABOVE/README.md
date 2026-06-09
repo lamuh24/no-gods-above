@@ -57,6 +57,16 @@ Do not use older Kairo sheets, Veyra sheets, Seraphine sheets, chain-whip sheets
 - `assets/sprites/nyx_final/nyx_sheet_6_defense_hit_reactions_atlas.png`
 - `assets/sprites/nyx_final/nyx_sheet_7_knockdown_recovery_flavor_atlas.png`
 
+## Online Versus (Phase 1)
+
+- Title screen has an Online Versus option: one player hosts and shares a 5-character room code, the other joins with it.
+- Peer-to-peer over WebRTC via PeerJS (CDN script + free PeerJS cloud signaling); no game server.
+- Host-authoritative netcode: the host simulates the match, the guest sends inputs, predicts locally, and is corrected by host snapshots ~15x/second.
+- The guest plays P2 using the P1 keyboard layout (WASD + JKL + U specials + I+O ultimate).
+- Both players pick their own fighter on the select screen; the host picks the stage and starts the match. Pause, rematch, and return-to-select stay in sync.
+- Validated by `scripts/smoke_online_versus.js` (two headless Chrome instances over a real PeerJS connection; pass a URL argument to smoke the live deployment).
+- Phase 2 (planned): fixed-timestep + seeded RNG refactor, then input-delay lockstep for tighter feel.
+
 ## Prototype Features
 
 - Title screen, character select, and Training Mode.
