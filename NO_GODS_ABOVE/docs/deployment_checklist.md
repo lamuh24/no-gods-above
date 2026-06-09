@@ -1,5 +1,24 @@
 # No Gods Above Deployment Checklist
 
+## Live Hosting (Netlify)
+
+First production deploy: 2026-06-09 (Claude Code session).
+
+- Host: Netlify, team `lamuh24's team` (account nownotlaterinc@gmail.com)
+- Site name: `no-gods-above`, project id `7954ab3d-7c2c-4533-ba61-3de081d568c3`
+- Production URL: https://no-gods-above.netlify.app
+- Admin dashboard: https://app.netlify.com/projects/no-gods-above
+
+Deploy procedure (staged, NOT the full folder — see "Required Deploy Files"):
+
+```powershell
+# from repo root; rebuilds %TEMP%\nga_deploy with only runtime files
+powershell -ExecutionPolicy Bypass -File .\_stage_deploy.ps1
+npx netlify deploy --prod --dir "$env:TEMP\nga_deploy" --site 7954ab3d-7c2c-4533-ba61-3de081d568c3
+```
+
+Note: `--site` must be the project id; the site name is not accepted by the CLI.
+
 ## Local Run
 
 From the repository root:
@@ -49,16 +68,21 @@ Then smoke test public mode without `?lamuhTest` or `?serisTest`:
 
 ## Required Deploy Files
 
-Deploy the full `NO_GODS_ABOVE` folder contents, including:
+The full `NO_GODS_ABOVE` folder is ~1.46 GB (source packs, references, generated
+candidates, verify screenshots). Do NOT upload it wholesale. Deploy a staged
+folder containing only runtime files:
 
-- `index.html`
-- `style.css`
-- `game.js`
-- `assets/backgrounds/`
-- `assets/effects/`
-- `assets/sprites/`
-- `assets/ui/`
-- `docs/` if public documentation should travel with the build
+- `index.html`, `style.css`, `game.js`
+- Every `assets/...` string literal referenced in `game.js` and `index.html`
+  (strip `?v=` cache keys when resolving files on disk)
+- Every `url("assets/...")` referenced in `style.css` (HUD frames, select
+  screen, overlays, menu buttons)
+- All of `assets/sprites/portraits/` (loaded via dynamic
+  `assets/sprites/portraits/${id}_select.png` template)
+
+`_stage_deploy.ps1` in the repo root automates this (101 assets + 3 root
+files, ~207 MB as of 2026-06-09). `game.js` has no runtime `fetch()` calls,
+so string-literal extraction plus the portraits folder is complete coverage.
 
 Do not deploy only the HTML/CSS/JS files; the game depends on relative asset paths.
 
