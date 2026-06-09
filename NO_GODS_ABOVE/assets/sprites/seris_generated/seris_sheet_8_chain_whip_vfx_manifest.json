@@ -1,0 +1,70 @@
+{
+  "asset": "Seris Sheet 8: Chain / Whip VFX",
+  "source_generated_reference": "C:\\Users\\qchee\\.codex\\generated_images\\019e7cd8-672c-74f2-89a5-e9a6cb306ac3\\ig_0a57b18f792cef92016a1c544d577081999eb3f997a24355f2.png",
+  "raw_generated_reference_copy": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\seris_generated\\seris_sheet_8_chain_whip_vfx_chroma_raw_generated_reference.png",
+  "final_path": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\seris_generated\\seris_sheet_8_chain_whip_vfx_chroma.png",
+  "image_size": {
+    "width": 4096,
+    "height": 1540
+  },
+  "cell_size": {
+    "width": 512,
+    "height": 220
+  },
+  "layout": {
+    "rows": 7,
+    "columns": 8,
+    "background": "#FF00FF"
+  },
+  "rows": [
+    {
+      "row": 1,
+      "animation": "Quick Chain Flick",
+      "frames": 5
+    },
+    {
+      "row": 2,
+      "animation": "Horizontal Chain Snare",
+      "frames": 7
+    },
+    {
+      "row": 3,
+      "animation": "Low Sweep Chain Arc",
+      "frames": 7
+    },
+    {
+      "row": 4,
+      "animation": "Rising Launcher Chain Arc",
+      "frames": 7
+    },
+    {
+      "row": 5,
+      "animation": "Aerial Forward Chain Arc",
+      "frames": 6
+    },
+    {
+      "row": 6,
+      "animation": "Aerial Downward Finisher Arc",
+      "frames": 6
+    },
+    {
+      "row": 7,
+      "animation": "Divine Recoil Tether / Pull Effect",
+      "frames": 8
+    }
+  ],
+  "validation_notes": [
+    "Asset-only pass; no runtime/combat/Kairo/Vanta/Nyx/Seris body/stage/UI/controller files intentionally changed.",
+    "No full Seris body sprites are included; this is a standalone chain/whip VFX overlay sheet.",
+    "Built deterministically after image generation produced good visual direction but merged long tether rows, risking sliced chain fragments during normalization.",
+    "All VFX frames are contained in equal 512x220 cells on a solid #FF00FF chroma-key background.",
+    "Colors are pale gold chain links with turquoise/gold divine accents and occasional white-hot active tips.",
+    "Audit correction 2026-05-31: Recreated only row 7 Divine Recoil Tether / Pull Effect so every tether frame stays inside its 512x220 cell with safe padding for atlas extraction."
+  ],
+  "audit_correction": {
+    "date": "2026-05-31",
+    "scope": "Sheet 8 row 7 only",
+    "reason": "Original Divine Recoil tether row touched several cell borders, risking sliced VFX during extraction.",
+    "result": "Rows 1-6 preserved; row 7 rebuilt as contained turquoise/gold chain tether frames with clear cast, active pull, and recoil."
+  }
+}

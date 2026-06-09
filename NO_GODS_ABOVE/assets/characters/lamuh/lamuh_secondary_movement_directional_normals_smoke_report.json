@@ -1,0 +1,60 @@
+{
+  "ok": true,
+  "atlas": {
+    "path": "assets\\characters\\lamuh\\lamuh_sheet_secondary_movement_directional_normals_atlas.png",
+    "width": 3584,
+    "height": 2688,
+    "colorType": 6,
+    "hasAlphaColorType": true
+  },
+  "normalization": {
+    "ok": true,
+    "outputSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "cols": 8,
+      "rows": 6,
+      "cell": 448,
+      "baselineY": 382
+    },
+    "occupiedCells": 48,
+    "sourceSpriteSlotsDetected": 48,
+    "hasRealTransparency": true,
+    "backgroundRemoved": true,
+    "whiteCoatPreserved": true,
+    "blackOutfitLocsPreserved": true,
+    "goldCyanAccentsPreserved": true,
+    "bodyScaleRatioVsSheet1": 0.9224598930481284,
+    "groundedBaselineMaxDeviation": 0
+  },
+  "code": {
+    "assetPath": true,
+    "sheetMeta": true,
+    "profileSheetKey": true,
+    "frameOverrideHelper": true,
+    "frameOverrideActive": true,
+    "oldAtlasesRemainFallback": true,
+    "aliases": {
+      "walk_back": true,
+      "lamuh_walk_back": true,
+      "dash_back": true,
+      "lamuh_dash_back": true,
+      "crouch": true,
+      "lamuh_crouch": true,
+      "low_stance": true,
+      "launcher": true,
+      "forward_light": true,
+      "forward_medium": true,
+      "forward_heavy": true,
+      "back_light": true,
+      "back_medium": true,
+      "back_heavy": true,
+      "air_dash_forward": true,
+      "air_dash_back": true,
+      "air_recovery": true,
+      "fall_transition": true
+    }
+  }
+}

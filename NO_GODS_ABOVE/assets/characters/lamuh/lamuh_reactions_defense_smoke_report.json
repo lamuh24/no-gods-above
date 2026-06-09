@@ -1,0 +1,103 @@
+{
+  "ok": true,
+  "atlas": {
+    "path": "assets\\characters\\lamuh\\lamuh_sheet_reactions_defense_redesign_atlas.png",
+    "width": 3584,
+    "height": 2688,
+    "colorType": 6,
+    "hasAlphaColorType": true
+  },
+  "normalization": {
+    "outputSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "cols": 8,
+      "rows": 6,
+      "cell": 448,
+      "baselineY": 382
+    },
+    "occupiedCells": 48,
+    "sourceSpriteSlotsDetected": 48,
+    "hasRealTransparency": true,
+    "checkerboardRemoved": true,
+    "whiteCoatPreserved": true,
+    "blackOutfitLocsPreserved": true,
+    "goldCyanAccentsPreserved": true,
+    "bodyScale": {
+      "sheet1_reference_median_height": 356,
+      "reaction_standing_guard_median_height": 362,
+      "ratio": 1.0168539325842696,
+      "passes": true
+    },
+    "row5FrameRanges": {
+      "lamuh_getup": [
+        0,
+        3
+      ],
+      "lamuh_block_high": [
+        4,
+        5
+      ],
+      "lamuh_block_low": [
+        6,
+        7
+      ]
+    },
+    "repairedSlots": [
+      {
+        "row": 2,
+        "col": 7,
+        "from": [
+          2,
+          6
+        ]
+      }
+    ]
+  },
+  "code": {
+    "assetPath": true,
+    "sheetMeta": true,
+    "profileSheetKey": true,
+    "frameSplitHelper": true,
+    "frameSplitActive": true,
+    "oldAtlasesRemainFallback": true,
+    "aliases": {
+      "damaged": true,
+      "lamuh_hit_light": true,
+      "hit_light": true,
+      "light_hitstun": true,
+      "medium_hitstun": true,
+      "lamuh_hit_heavy": true,
+      "hit_heavy": true,
+      "heavy_hitstun": true,
+      "launch_hitstun": true,
+      "lamuh_launch_hit": true,
+      "lamuh_air_hit": true,
+      "launch_hit": true,
+      "air_hitstun": true,
+      "air_block": true,
+      "knockback": true,
+      "lamuh_hard_knockback": true,
+      "lamuh_wall_bounce": true,
+      "wall_bounce": true,
+      "knockdown_fall": true,
+      "lamuh_knockdown": true,
+      "lamuh_down": true,
+      "knockdown": true,
+      "grounded": true,
+      "downed": true,
+      "get_up": true,
+      "lamuh_getup": true,
+      "recovery": true,
+      "recovery_get_up": true,
+      "block": true,
+      "guard_idle": true,
+      "stand_block": true,
+      "lamuh_block_high": true,
+      "crouch_block": true,
+      "lamuh_block_low": true
+    }
+  }
+}

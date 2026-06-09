@@ -1,0 +1,144 @@
+{
+  "publicMode": {
+    "hiddenHelperExposed": false,
+    "publicCards": 6,
+    "lamuhCardVisible": 1
+  },
+  "loadedLamuhVfxAssets": {
+    "lamuhVfxCelestialPalm": true,
+    "lamuhVfxAscendRadiant": true,
+    "lamuhVfxHeavenSplitter": true,
+    "lamuhCrownBeamVfx": true
+  },
+  "moveResults": [
+    {
+      "check": "p1_neutral_celestial_palm_projectile",
+      "snapshot": {
+        "p1Move": "neutral_special",
+        "p1Anim": "celestial_palm",
+        "p2Move": null,
+        "p2Anim": "enemy_idle",
+        "effects": [],
+        "projectiles": [
+          {
+            "ownerCharacterId": "lamuh",
+            "color": "#67eaff",
+            "life": 0.7200333333333341,
+            "maxLife": 0.92
+          }
+        ]
+      }
+    },
+    {
+      "check": "p1_forward_ascend_step_trail",
+      "snapshot": {
+        "p1Move": "forward_special",
+        "p1Anim": "ascend_step",
+        "p2Move": null,
+        "p2Anim": "enemy_idle",
+        "effects": [
+          {
+            "move": "ascend_step",
+            "atlasKey": "lamuhVfxAscendRadiant",
+            "row": 1,
+            "age": 0.23329999999999926,
+            "life": 0.34
+          }
+        ],
+        "projectiles": []
+      }
+    },
+    {
+      "check": "p1_down_heaven_splitter_vertical",
+      "snapshot": {
+        "p1Move": "down_special",
+        "p1Anim": "heaven_splitter",
+        "p2Move": null,
+        "p2Anim": "enemy_idle",
+        "effects": [
+          {
+            "move": "heaven_splitter",
+            "atlasKey": "lamuhVfxHeavenSplitter",
+            "row": 1,
+            "age": 0.19999999999999998,
+            "life": 0.42
+          }
+        ],
+        "projectiles": []
+      }
+    },
+    {
+      "check": "p1_air_radiant_dive_trail",
+      "snapshot": {
+        "p1Move": "air_special",
+        "p1Anim": "radiant_dive",
+        "p2Move": null,
+        "p2Anim": "enemy_idle",
+        "effects": [
+          {
+            "move": "radiant_dive",
+            "atlasKey": "lamuhVfxAscendRadiant",
+            "row": 2,
+            "age": 0.16653333333333406,
+            "life": 0.36
+          }
+        ],
+        "projectiles": []
+      }
+    },
+    {
+      "check": "p1_back_divine_vanish_no_gold_candidate_overlay",
+      "snapshot": {
+        "p1Move": "back_special",
+        "p1Anim": "divine_vanish",
+        "p2Move": null,
+        "p2Anim": "enemy_idle",
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "check": "p2_forward_ascend_step_trail",
+      "snapshot": {
+        "p1Move": null,
+        "p1Anim": "idle",
+        "p2Move": "enemy_forward_special",
+        "p2Anim": "enemy_ascend_step",
+        "effects": [
+          {
+            "move": "ascend_step",
+            "atlasKey": "lamuhVfxAscendRadiant",
+            "row": 1,
+            "age": 0.16663333333333624,
+            "life": 0.34
+          }
+        ],
+        "projectiles": []
+      }
+    },
+    {
+      "check": "p2_back_divine_vanish_no_gold_candidate_overlay",
+      "snapshot": {
+        "p1Move": null,
+        "p1Anim": "idle",
+        "p2Move": "enemy_back_special",
+        "p2Anim": "enemy_divine_vanish",
+        "effects": [],
+        "projectiles": []
+      }
+    }
+  ],
+  "candidateRuntimeRequests": [
+    "http://127.0.0.1:8776/assets/effects/lamuh/lamuh_vfx_celestial_palm_projectile.png?v=lamuh-vfx-pack-01",
+    "http://127.0.0.1:8776/assets/effects/lamuh/lamuh_vfx_ascend_radiant_trail.png?v=lamuh-vfx-pack-01",
+    "http://127.0.0.1:8776/assets/effects/lamuh/lamuh_vfx_heaven_splitter_vertical.png?v=lamuh-vfx-pack-01",
+    "http://127.0.0.1:8776/assets/effects/lamuh/lamuh_vfx_celestial_palm_projectile.png?v=lamuh-vfx-pack-01",
+    "http://127.0.0.1:8776/assets/effects/lamuh/lamuh_vfx_ascend_radiant_trail.png?v=lamuh-vfx-pack-01",
+    "http://127.0.0.1:8776/assets/effects/lamuh/lamuh_vfx_heaven_splitter_vertical.png?v=lamuh-vfx-pack-01"
+  ],
+  "requestFailures": [],
+  "badResponses": [],
+  "consoleErrors": [],
+  "serisSheet8OrEffectsRequests": [],
+  "passed": true
+}

@@ -1,0 +1,9267 @@
+{
+  "phase": "phase5_4_1",
+  "sourceRectPolicy": "exact source-cell rectangles; no neighbor-padding expansion",
+  "bodyIsolationPolicy": "body sheets score and preserve the Celeste body component first, then keep meaningful attached or in-cell VFX companions; large VFX must not replace the body",
+  "vfxIsolationPolicy": "Sheet 7 remains VFX-only and may keep VFX components without body fallback holds",
+  "sheets": {
+    "sheet_1_body_basics": [
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9197,
+          "bbox": [
+            56,
+            33,
+            129,
+            146
+          ],
+          "center": [
+            120.5,
+            106.0
+          ],
+          "darknessRatio": 0.48265738827878657,
+          "paleRatio": 0.15820376209633577
+        },
+        "sourceRect": [
+          0,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 244,
+          "y": 123,
+          "w": 278,
+          "h": 315,
+          "anchorX": 121,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          0,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8889,
+          "bbox": [
+            52,
+            33,
+            121,
+            146
+          ],
+          "center": [
+            112.5,
+            106.0
+          ],
+          "darknessRatio": 0.47170660366745415,
+          "paleRatio": 0.17797277534030825
+        },
+        "sourceRect": [
+          209,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 123,
+          "w": 287,
+          "h": 315,
+          "anchorX": 114,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          768,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8727,
+          "bbox": [
+            37,
+            33,
+            123,
+            146
+          ],
+          "center": [
+            98.5,
+            106.0
+          ],
+          "darknessRatio": 0.5233184370344907,
+          "paleRatio": 0.13727512318093274
+        },
+        "sourceRect": [
+          418,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 255,
+          "y": 123,
+          "w": 265,
+          "h": 315,
+          "anchorX": 97,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8448,
+          "bbox": [
+            35,
+            33,
+            128,
+            146
+          ],
+          "center": [
+            99.0,
+            106.0
+          ],
+          "darknessRatio": 0.5505445075757576,
+          "paleRatio": 0.11493844696969698
+        },
+        "sourceRect": [
+          627,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 123,
+          "w": 276,
+          "h": 315,
+          "anchorX": 87,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          2304,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9106,
+          "bbox": [
+            24,
+            33,
+            145,
+            146
+          ],
+          "center": [
+            96.5,
+            106.0
+          ],
+          "darknessRatio": 0.4973643751372721,
+          "paleRatio": 0.1359543158357127
+        },
+        "sourceRect": [
+          836,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 255,
+          "y": 123,
+          "w": 313,
+          "h": 315,
+          "anchorX": 84,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          3072,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 5,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9029,
+          "bbox": [
+            14,
+            33,
+            144,
+            146
+          ],
+          "center": [
+            86.0,
+            106.0
+          ],
+          "darknessRatio": 0.5155609702071104,
+          "paleRatio": 0.1391073208550227
+        },
+        "sourceRect": [
+          1045,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 242,
+          "y": 123,
+          "w": 311,
+          "h": 315,
+          "anchorX": 80,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          3840,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8839,
+          "bbox": [
+            38,
+            39,
+            135,
+            140
+          ],
+          "center": [
+            105.5,
+            109.0
+          ],
+          "darknessRatio": 0.5200814571784138,
+          "paleRatio": 0.2005883018441
+        },
+        "sourceRect": [
+          0,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 260,
+          "y": 123,
+          "w": 304,
+          "h": 315,
+          "anchorX": 93,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          0,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7661,
+          "bbox": [
+            43,
+            39,
+            135,
+            140
+          ],
+          "center": [
+            110.5,
+            109.0
+          ],
+          "darknessRatio": 0.558282208588957,
+          "paleRatio": 0.16877692207283645
+        },
+        "sourceRect": [
+          209,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 123,
+          "w": 304,
+          "h": 315,
+          "anchorX": 93,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          768,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7751,
+          "bbox": [
+            37,
+            40,
+            109,
+            139
+          ],
+          "center": [
+            91.5,
+            109.5
+          ],
+          "darknessRatio": 0.49129144626499804,
+          "paleRatio": 0.24293639530383176
+        },
+        "sourceRect": [
+          418,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 269,
+          "y": 125,
+          "w": 245,
+          "h": 313,
+          "anchorX": 88,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          1536,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7759,
+          "bbox": [
+            37,
+            43,
+            110,
+            136
+          ],
+          "center": [
+            92.0,
+            111.0
+          ],
+          "darknessRatio": 0.500708854233793,
+          "paleRatio": 0.23031318468874856
+        },
+        "sourceRect": [
+          627,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 267,
+          "y": 132,
+          "w": 306,
+          "h": 306,
+          "anchorX": 89,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          2304,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7290,
+          "bbox": [
+            16,
+            41,
+            135,
+            138
+          ],
+          "center": [
+            83.5,
+            110.0
+          ],
+          "darknessRatio": 0.5364883401920439,
+          "paleRatio": 0.17777777777777778
+        },
+        "sourceRect": [
+          836,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 267,
+          "y": 128,
+          "w": 304,
+          "h": 310,
+          "anchorX": 68,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          3072,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 5,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7640,
+          "bbox": [
+            2,
+            42,
+            135,
+            137
+          ],
+          "center": [
+            69.5,
+            110.5
+          ],
+          "darknessRatio": 0.47657068062827224,
+          "paleRatio": 0.2413612565445026
+        },
+        "sourceRect": [
+          1045,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 130,
+          "w": 304,
+          "h": 308,
+          "anchorX": 52,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          3840,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7559,
+          "bbox": [
+            41,
+            44,
+            153,
+            135
+          ],
+          "center": [
+            117.5,
+            111.5
+          ],
+          "darknessRatio": 0.46434713586453236,
+          "paleRatio": 0.2644529699695727
+        },
+        "sourceRect": [
+          0,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 274,
+          "y": 130,
+          "w": 349,
+          "h": 308,
+          "anchorX": 89,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          0,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7620,
+          "bbox": [
+            44,
+            41,
+            144,
+            138
+          ],
+          "center": [
+            116.0,
+            110.0
+          ],
+          "darknessRatio": 0.420997375328084,
+          "paleRatio": 0.30406824146981626
+        },
+        "sourceRect": [
+          209,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 256,
+          "y": 123,
+          "w": 329,
+          "h": 315,
+          "anchorX": 100,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          768,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5608,
+          "bbox": [
+            45,
+            41,
+            104,
+            138
+          ],
+          "center": [
+            97.0,
+            110.0
+          ],
+          "darknessRatio": 0.4917974322396576,
+          "paleRatio": 0.17011412268188303
+        },
+        "sourceRect": [
+          418,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 247,
+          "y": 123,
+          "w": 237,
+          "h": 315,
+          "anchorX": 105,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          1536,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6970,
+          "bbox": [
+            43,
+            42,
+            137,
+            137
+          ],
+          "center": [
+            111.5,
+            110.5
+          ],
+          "darknessRatio": 0.40616929698708754,
+          "paleRatio": 0.32266857962697276
+        },
+        "sourceRect": [
+          627,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 261,
+          "y": 125,
+          "w": 313,
+          "h": 313,
+          "anchorX": 97,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          2304,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 4,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6947,
+          "bbox": [
+            28,
+            42,
+            97,
+            137
+          ],
+          "center": [
+            76.5,
+            110.5
+          ],
+          "darknessRatio": 0.37095148985173454,
+          "paleRatio": 0.3294947459334965
+        },
+        "sourceRect": [
+          836,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 268,
+          "y": 125,
+          "w": 315,
+          "h": 313,
+          "anchorX": 79,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          3072,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1045,
+          358,
+          209,
+          179
+        ],
+        "filledFromFrame": 4,
+        "emptyFrameRepair": "nearest_clean_frame_hold",
+        "runtimeBox": {
+          "x": 268,
+          "y": 125,
+          "w": 315,
+          "h": 313,
+          "anchorX": 79,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          3840,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "crouch_jump_start",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 6067,
+          "bbox": [
+            49,
+            69,
+            125,
+            100
+          ],
+          "center": [
+            111.5,
+            119.0
+          ],
+          "darknessRatio": 0.5717817702324048,
+          "paleRatio": 0.12872919070380748
+        },
+        "sourceRect": [
+          0,
+          537,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 222,
+          "y": 176,
+          "w": 337,
+          "h": 262,
+          "anchorX": 120,
+          "anchorY": 169,
+          "scale": 2.2764227642276422
+        },
+        "runtimeCell": [
+          0,
+          1536,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "crouch_jump_start",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 7392,
+          "bbox": [
+            53,
+            57,
+            128,
+            112
+          ],
+          "center": [
+            117.0,
+            113.0
+          ],
+          "darknessRatio": 0.520698051948052,
+          "paleRatio": 0.19940476190476192
+        },
+        "sourceRect": [
+          209,
+          537,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 227,
+          "y": 167,
+          "w": 330,
+          "h": 271,
+          "anchorX": 122,
+          "anchorY": 169,
+          "scale": 2.2764227642276422
+        },
+        "runtimeCell": [
+          768,
+          1536,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "crouch_jump_start",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6930,
+          "bbox": [
+            44,
+            47,
+            133,
+            123
+          ],
+          "center": [
+            110.5,
+            108.5
+          ],
+          "darknessRatio": 0.5867243867243868,
+          "paleRatio": 0.11587301587301588
+        },
+        "sourceRect": [
+          418,
+          537,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 213,
+          "y": 158,
+          "w": 303,
+          "h": 280,
+          "anchorX": 119,
+          "anchorY": 170,
+          "scale": 2.2764227642276422
+        },
+        "runtimeCell": [
+          1536,
+          1536,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_up",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7831,
+          "bbox": [
+            31,
+            20,
+            167,
+            132
+          ],
+          "center": [
+            114.5,
+            86.0
+          ],
+          "darknessRatio": 0.5187077001660069,
+          "paleRatio": 0.18771548972034224
+        },
+        "sourceRect": [
+          0,
+          716,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 210,
+          "y": 132,
+          "w": 339,
+          "h": 268,
+          "anchorX": 117,
+          "anchorY": 86,
+          "scale": 2.028985507246377
+        },
+        "runtimeCell": [
+          0,
+          2048,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_up",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7505,
+          "bbox": [
+            52,
+            21,
+            134,
+            135
+          ],
+          "center": [
+            119.0,
+            88.5
+          ],
+          "darknessRatio": 0.5628247834776815,
+          "paleRatio": 0.1536309127248501
+        },
+        "sourceRect": [
+          209,
+          716,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 234,
+          "y": 132,
+          "w": 272,
+          "h": 274,
+          "anchorX": 126,
+          "anchorY": 87,
+          "scale": 2.028985507246377
+        },
+        "runtimeCell": [
+          768,
+          2048,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_up",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6873,
+          "bbox": [
+            55,
+            21,
+            132,
+            138
+          ],
+          "center": [
+            121.0,
+            90.0
+          ],
+          "darknessRatio": 0.5947912119889422,
+          "paleRatio": 0.1129055725301906
+        },
+        "sourceRect": [
+          418,
+          716,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 254,
+          "y": 140,
+          "w": 268,
+          "h": 280,
+          "anchorX": 119,
+          "anchorY": 83,
+          "scale": 2.028985507246377
+        },
+        "runtimeCell": [
+          1536,
+          2048,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "fall",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6550,
+          "bbox": [
+            47,
+            0,
+            139,
+            159
+          ],
+          "center": [
+            116.5,
+            79.5
+          ],
+          "darknessRatio": 0.566412213740458,
+          "paleRatio": 0.1348091603053435
+        },
+        "sourceRect": [
+          0,
+          895,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 247,
+          "y": 168,
+          "w": 245,
+          "h": 280,
+          "anchorX": 125,
+          "anchorY": 56,
+          "scale": 1.7610062893081762
+        },
+        "runtimeCell": [
+          0,
+          2560,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "fall",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5687,
+          "bbox": [
+            74,
+            2,
+            90,
+            129
+          ],
+          "center": [
+            119.0,
+            66.5
+          ],
+          "darknessRatio": 0.5902936521892035,
+          "paleRatio": 0.16458589766133286
+        },
+        "sourceRect": [
+          209,
+          895,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 299,
+          "y": 171,
+          "w": 158,
+          "h": 227,
+          "anchorX": 122,
+          "anchorY": 56,
+          "scale": 1.7610062893081762
+        },
+        "runtimeCell": [
+          768,
+          2560,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "fall",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6162,
+          "bbox": [
+            68,
+            13,
+            96,
+            132
+          ],
+          "center": [
+            116.0,
+            79.0
+          ],
+          "darknessRatio": 0.5590717299578059,
+          "paleRatio": 0.18386887374229147
+        },
+        "sourceRect": [
+          418,
+          895,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 292,
+          "y": 171,
+          "w": 169,
+          "h": 232,
+          "anchorX": 120,
+          "anchorY": 67,
+          "scale": 1.7610062893081762
+        },
+        "runtimeCell": [
+          1536,
+          2560,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "landing",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7176,
+          "bbox": [
+            45,
+            27,
+            155,
+            108
+          ],
+          "center": [
+            122.5,
+            81.0
+          ],
+          "darknessRatio": 0.5468227424749164,
+          "paleRatio": 0.15802675585284282
+        },
+        "sourceRect": [
+          0,
+          1074,
+          209,
+          180
+        ],
+        "runtimeBox": {
+          "x": 241,
+          "y": 214,
+          "w": 322,
+          "h": 224,
+          "anchorX": 114,
+          "anchorY": 135,
+          "scale": 2.074829931972789
+        },
+        "runtimeCell": [
+          0,
+          3072,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "landing",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8423,
+          "bbox": [
+            55,
+            5,
+            130,
+            139
+          ],
+          "center": [
+            120.0,
+            74.5
+          ],
+          "darknessRatio": 0.5151371245399501,
+          "paleRatio": 0.16027543630535437
+        },
+        "sourceRect": [
+          209,
+          1074,
+          209,
+          180
+        ],
+        "runtimeBox": {
+          "x": 255,
+          "y": 150,
+          "w": 270,
+          "h": 288,
+          "anchorX": 117,
+          "anchorY": 144,
+          "scale": 2.074829931972789
+        },
+        "runtimeCell": [
+          768,
+          3072,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "landing",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8060,
+          "bbox": [
+            49,
+            0,
+            102,
+            147
+          ],
+          "center": [
+            100.0,
+            73.5
+          ],
+          "darknessRatio": 0.536848635235732,
+          "paleRatio": 0.13722084367245657
+        },
+        "sourceRect": [
+          418,
+          1074,
+          209,
+          180
+        ],
+        "runtimeBox": {
+          "x": 286,
+          "y": 133,
+          "w": 212,
+          "h": 305,
+          "anchorX": 96,
+          "anchorY": 147,
+          "scale": 2.074829931972789
+        },
+        "runtimeCell": [
+          1536,
+          3072,
+          768,
+          512
+        ]
+      }
+    ],
+    "sheet_2_ground_normals": [
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6789,
+          "bbox": [
+            54,
+            41,
+            151,
+            129
+          ],
+          "center": [
+            129.5,
+            105.5
+          ],
+          "darknessRatio": 0.5345411695389601,
+          "paleRatio": 0.19752540874944763
+        },
+        "sourceRect": [
+          0,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 345,
+          "y": 147,
+          "w": 369,
+          "h": 315,
+          "anchorX": 96,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          0,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7311,
+          "bbox": [
+            21,
+            43,
+            127,
+            127
+          ],
+          "center": [
+            84.5,
+            106.5
+          ],
+          "darknessRatio": 0.5415127889481604,
+          "paleRatio": 0.14608124743537135
+        },
+        "sourceRect": [
+          256,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 258,
+          "y": 152,
+          "w": 481,
+          "h": 310,
+          "anchorX": 99,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          896,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7459,
+          "bbox": [
+            19,
+            41,
+            149,
+            129
+          ],
+          "center": [
+            93.5,
+            105.5
+          ],
+          "darknessRatio": 0.5071725432363587,
+          "paleRatio": 0.18742458774634668
+        },
+        "sourceRect": [
+          512,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 280,
+          "y": 147,
+          "w": 435,
+          "h": 315,
+          "anchorX": 88,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          1792,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7207,
+          "bbox": [
+            13,
+            42,
+            133,
+            128
+          ],
+          "center": [
+            79.5,
+            106.0
+          ],
+          "darknessRatio": 0.537810462050784,
+          "paleRatio": 0.18953794921603997
+        },
+        "sourceRect": [
+          768,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 309,
+          "y": 149,
+          "w": 325,
+          "h": 313,
+          "anchorX": 70,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          2688,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7138,
+          "bbox": [
+            49,
+            44,
+            146,
+            127
+          ],
+          "center": [
+            122.0,
+            107.5
+          ],
+          "darknessRatio": 0.5152703838610255,
+          "paleRatio": 0.17960212944802464
+        },
+        "sourceRect": [
+          0,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 309,
+          "y": 147,
+          "w": 362,
+          "h": 315,
+          "anchorX": 105,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          0,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9487,
+          "bbox": [
+            12,
+            45,
+            194,
+            126
+          ],
+          "center": [
+            109.0,
+            108.0
+          ],
+          "darknessRatio": 0.4470327817012754,
+          "paleRatio": 0.23674501950036891
+        },
+        "sourceRect": [
+          256,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 210,
+          "y": 149,
+          "w": 481,
+          "h": 313,
+          "anchorX": 108,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          896,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8430,
+          "bbox": [
+            10,
+            47,
+            209,
+            124
+          ],
+          "center": [
+            114.5,
+            109.0
+          ],
+          "darknessRatio": 0.5008303677342824,
+          "paleRatio": 0.21423487544483985
+        },
+        "sourceRect": [
+          512,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 197,
+          "y": 154,
+          "w": 518,
+          "h": 308,
+          "anchorX": 111,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          1792,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6916,
+          "bbox": [
+            7,
+            45,
+            147,
+            126
+          ],
+          "center": [
+            80.5,
+            108.0
+          ],
+          "darknessRatio": 0.5427993059572007,
+          "paleRatio": 0.16006362058993637
+        },
+        "sourceRect": [
+          768,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 297,
+          "y": 149,
+          "w": 365,
+          "h": 313,
+          "anchorX": 68,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          2688,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5843,
+          "bbox": [
+            56,
+            53,
+            98,
+            118
+          ],
+          "center": [
+            105.0,
+            112.0
+          ],
+          "darknessRatio": 0.629128872154715,
+          "paleRatio": 0.12835871983570085
+        },
+        "sourceRect": [
+          0,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 284,
+          "y": 155,
+          "w": 375,
+          "h": 307,
+          "anchorX": 98,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          0,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 1,
+        "componentsBefore": 5,
+        "componentsAfter": 5,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6984,
+          "bbox": [
+            3,
+            52,
+            130,
+            119
+          ],
+          "center": [
+            68.0,
+            111.5
+          ],
+          "darknessRatio": 0.5604238258877434,
+          "paleRatio": 0.1420389461626575
+        },
+        "sourceRect": [
+          256,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 224,
+          "y": 152,
+          "w": 586,
+          "h": 310,
+          "anchorX": 86,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          896,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 507,
+            "bbox": [
+              220,
+              66,
+              19,
+              105
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 507,
+        "bodySeed": {
+          "label": 1,
+          "area": 7396,
+          "bbox": [
+            5,
+            50,
+            163,
+            121
+          ],
+          "center": [
+            86.5,
+            110.5
+          ],
+          "darknessRatio": 0.49959437533802054,
+          "paleRatio": 0.19253650621957816
+        },
+        "sourceRect": [
+          512,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 224,
+          "y": 147,
+          "w": 568,
+          "h": 315,
+          "anchorX": 91,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          1792,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 3,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 288,
+            "bbox": [
+              191,
+              85,
+              15,
+              86
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 288,
+        "bodySeed": {
+          "label": 1,
+          "area": 6874,
+          "bbox": [
+            8,
+            51,
+            130,
+            120
+          ],
+          "center": [
+            73.0,
+            111.0
+          ],
+          "darknessRatio": 0.5250218213558335,
+          "paleRatio": 0.18868199010765202
+        },
+        "sourceRect": [
+          768,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 261,
+          "y": 150,
+          "w": 474,
+          "h": 312,
+          "anchorX": 80,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          2688,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5548,
+          "bbox": [
+            51,
+            62,
+            92,
+            108
+          ],
+          "center": [
+            97.0,
+            116.0
+          ],
+          "darknessRatio": 0.5766041816870945,
+          "paleRatio": 0.14509733237202596
+        },
+        "sourceRect": [
+          0,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 296,
+          "y": 147,
+          "w": 359,
+          "h": 315,
+          "anchorX": 103,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          0,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5396,
+          "bbox": [
+            40,
+            72,
+            147,
+            98
+          ],
+          "center": [
+            113.5,
+            121.0
+          ],
+          "darknessRatio": 0.5719051148999259,
+          "paleRatio": 0.16475166790214973
+        },
+        "sourceRect": [
+          256,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 299,
+          "y": 176,
+          "w": 429,
+          "h": 286,
+          "anchorX": 91,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          896,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5744,
+          "bbox": [
+            0,
+            65,
+            107,
+            105
+          ],
+          "center": [
+            53.5,
+            117.5
+          ],
+          "darknessRatio": 0.5555362116991643,
+          "paleRatio": 0.1568593314763231
+        },
+        "sourceRect": [
+          512,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 285,
+          "y": 156,
+          "w": 312,
+          "h": 306,
+          "anchorX": 56,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          1792,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5652,
+          "bbox": [
+            2,
+            65,
+            130,
+            105
+          ],
+          "center": [
+            67.0,
+            117.5
+          ],
+          "darknessRatio": 0.6056263269639066,
+          "paleRatio": 0.14401981599433827
+        },
+        "sourceRect": [
+          768,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 299,
+          "y": 156,
+          "w": 379,
+          "h": 306,
+          "anchorX": 53,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          2688,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 1026,
+            "bbox": [
+              209,
+              122,
+              47,
+              49
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 1026,
+        "bodySeed": {
+          "label": 1,
+          "area": 4826,
+          "bbox": [
+            42,
+            72,
+            88,
+            99
+          ],
+          "center": [
+            86.0,
+            121.5
+          ],
+          "darknessRatio": 0.6137588064649814,
+          "paleRatio": 0.12681309573145463
+        },
+        "sourceRect": [
+          0,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 300,
+          "y": 156,
+          "w": 364,
+          "h": 306,
+          "anchorX": 90,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          0,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5218,
+          "bbox": [
+            7,
+            69,
+            117,
+            102
+          ],
+          "center": [
+            65.5,
+            120.0
+          ],
+          "darknessRatio": 0.6054043694902261,
+          "paleRatio": 0.1464162514373323
+        },
+        "sourceRect": [
+          256,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 235,
+          "y": 147,
+          "w": 621,
+          "h": 315,
+          "anchorX": 76,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          896,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8654,
+          "bbox": [
+            0,
+            75,
+            210,
+            96
+          ],
+          "center": [
+            105.0,
+            123.0
+          ],
+          "darknessRatio": 0.4014328634157615,
+          "paleRatio": 0.3128033279408366
+        },
+        "sourceRect": [
+          512,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 161,
+          "y": 166,
+          "w": 649,
+          "h": 296,
+          "anchorX": 93,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          1792,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6617,
+          "bbox": [
+            0,
+            74,
+            142,
+            97
+          ],
+          "center": [
+            71.0,
+            122.5
+          ],
+          "darknessRatio": 0.4863231071482545,
+          "paleRatio": 0.24633519721928365
+        },
+        "sourceRect": [
+          768,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 162,
+          "w": 439,
+          "h": 300,
+          "anchorX": 64,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          2688,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 4846,
+          "bbox": [
+            46,
+            76,
+            94,
+            95
+          ],
+          "center": [
+            93.0,
+            123.5
+          ],
+          "darknessRatio": 0.5877011968633925,
+          "paleRatio": 0.15930664465538588
+        },
+        "sourceRect": [
+          0,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 339,
+          "y": 147,
+          "w": 193,
+          "h": 315,
+          "anchorX": 94,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          0,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 1,
+        "componentsBefore": 4,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 743,
+            "bbox": [
+              79,
+              0,
+              75,
+              37
+            ],
+            "touchesEdge": true
+          },
+          {
+            "area": 389,
+            "bbox": [
+              199,
+              90,
+              19,
+              81
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 1132,
+        "bodySeed": {
+          "label": 3,
+          "area": 5923,
+          "bbox": [
+            0,
+            78,
+            134,
+            93
+          ],
+          "center": [
+            67.0,
+            124.5
+          ],
+          "darknessRatio": 0.4431875738645956,
+          "paleRatio": 0.16900219483369913
+        },
+        "sourceRect": [
+          256,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 319,
+          "y": 283,
+          "w": 368,
+          "h": 179,
+          "anchorX": 70,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          896,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 3,
+          "area": 3930,
+          "bbox": [
+            26,
+            89,
+            101,
+            82
+          ],
+          "center": [
+            76.5,
+            130.0
+          ],
+          "darknessRatio": 0.6203562340966922,
+          "paleRatio": 0.14198473282442747
+        },
+        "sourceRect": [
+          512,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 352,
+          "y": 269,
+          "w": 361,
+          "h": 193,
+          "anchorX": 78,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          1792,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 3,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 533,
+            "bbox": [
+              24,
+              0,
+              56,
+              36
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 533,
+        "bodySeed": {
+          "label": 3,
+          "area": 4369,
+          "bbox": [
+            0,
+            87,
+            101,
+            84
+          ],
+          "center": [
+            50.5,
+            129.0
+          ],
+          "darknessRatio": 0.6042572671091783,
+          "paleRatio": 0.17647058823529413
+        },
+        "sourceRect": [
+          768,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 330,
+          "y": 305,
+          "w": 322,
+          "h": 157,
+          "anchorX": 64,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          2688,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 728,
+            "bbox": [
+              30,
+              0,
+              46,
+              33
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 728,
+        "bodySeed": {
+          "label": 3,
+          "area": 4673,
+          "bbox": [
+            59,
+            79,
+            105,
+            91
+          ],
+          "center": [
+            111.5,
+            124.5
+          ],
+          "darknessRatio": 0.5739353734217847,
+          "paleRatio": 0.17804408303017333
+        },
+        "sourceRect": [
+          0,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 368,
+          "y": 147,
+          "w": 195,
+          "h": 315,
+          "anchorX": 102,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          0,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 4351,
+          "bbox": [
+            17,
+            79,
+            146,
+            91
+          ],
+          "center": [
+            90.0,
+            124.5
+          ],
+          "darknessRatio": 0.6141116984601241,
+          "paleRatio": 0.18915191909905768
+        },
+        "sourceRect": [
+          256,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 296,
+          "y": 147,
+          "w": 302,
+          "h": 315,
+          "anchorX": 82,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          896,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 691,
+            "bbox": [
+              136,
+              0,
+              57,
+              26
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 691,
+        "bodySeed": {
+          "label": 3,
+          "area": 4208,
+          "bbox": [
+            25,
+            79,
+            83,
+            91
+          ],
+          "center": [
+            66.5,
+            124.5
+          ],
+          "darknessRatio": 0.6675380228136882,
+          "paleRatio": 0.12000950570342206
+        },
+        "sourceRect": [
+          512,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 329,
+          "y": 147,
+          "w": 200,
+          "h": 315,
+          "anchorX": 64,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          1792,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 4588,
+          "bbox": [
+            0,
+            83,
+            131,
+            87
+          ],
+          "center": [
+            65.5,
+            126.5
+          ],
+          "darknessRatio": 0.5867480383609416,
+          "paleRatio": 0.1857018308631212
+        },
+        "sourceRect": [
+          768,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 344,
+          "y": 147,
+          "w": 243,
+          "h": 315,
+          "anchorX": 56,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          2688,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 6572,
+          "bbox": [
+            44,
+            62,
+            134,
+            109
+          ],
+          "center": [
+            111.0,
+            116.5
+          ],
+          "darknessRatio": 0.4660681679853926,
+          "paleRatio": 0.2550213024954352
+        },
+        "sourceRect": [
+          0,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 330,
+          "y": 147,
+          "w": 258,
+          "h": 315,
+          "anchorX": 102,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          0,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5662,
+          "bbox": [
+            0,
+            61,
+            112,
+            110
+          ],
+          "center": [
+            56.0,
+            116.0
+          ],
+          "darknessRatio": 0.4977039915224302,
+          "paleRatio": 0.1773225008830802
+        },
+        "sourceRect": [
+          256,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 358,
+          "y": 259,
+          "w": 206,
+          "h": 203,
+          "anchorX": 49,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          896,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 529,
+            "bbox": [
+              236,
+              134,
+              20,
+              37
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 529,
+        "bodySeed": {
+          "label": 2,
+          "area": 7485,
+          "bbox": [
+            0,
+            61,
+            159,
+            110
+          ],
+          "center": [
+            79.5,
+            116.0
+          ],
+          "darknessRatio": 0.4113560454241817,
+          "paleRatio": 0.26132264529058113
+        },
+        "sourceRect": [
+          512,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 314,
+          "y": 147,
+          "w": 293,
+          "h": 315,
+          "anchorX": 73,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          1792,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 4607,
+          "bbox": [
+            0,
+            64,
+            98,
+            107
+          ],
+          "center": [
+            49.0,
+            117.5
+          ],
+          "darknessRatio": 0.5899717820707618,
+          "paleRatio": 0.1441285001085305
+        },
+        "sourceRect": [
+          768,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 363,
+          "y": 147,
+          "w": 181,
+          "h": 315,
+          "anchorX": 46,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          2688,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5094,
+          "bbox": [
+            49,
+            39,
+            112,
+            115
+          ],
+          "center": [
+            105.0,
+            96.5
+          ],
+          "darknessRatio": 0.5255202198665097,
+          "paleRatio": 0.15881429132312525
+        },
+        "sourceRect": [
+          0,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 355,
+          "y": 165,
+          "w": 289,
+          "h": 297,
+          "anchorX": 85,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          0,
+          4352,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 4933,
+          "bbox": [
+            0,
+            40,
+            112,
+            114
+          ],
+          "center": [
+            56.0,
+            97.0
+          ],
+          "darknessRatio": 0.5524021893371174,
+          "paleRatio": 0.17879586458544497
+        },
+        "sourceRect": [
+          256,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 200,
+          "y": 147,
+          "w": 596,
+          "h": 315,
+          "anchorX": 96,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          896,
+          4352,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 3,
+          "area": 5226,
+          "bbox": [
+            0,
+            47,
+            120,
+            107
+          ],
+          "center": [
+            60.0,
+            100.5
+          ],
+          "darknessRatio": 0.5602755453501722,
+          "paleRatio": 0.12016838882510525
+        },
+        "sourceRect": [
+          512,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 213,
+          "y": 168,
+          "w": 589,
+          "h": 294,
+          "anchorX": 91,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          1792,
+          4352,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 4999,
+          "bbox": [
+            11,
+            40,
+            123,
+            114
+          ],
+          "center": [
+            72.5,
+            97.0
+          ],
+          "darknessRatio": 0.5409081816363273,
+          "paleRatio": 0.17763552710542108
+        },
+        "sourceRect": [
+          768,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 327,
+          "y": 168,
+          "w": 318,
+          "h": 294,
+          "anchorX": 58,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          2688,
+          4352,
+          896,
+          544
+        ]
+      }
+    ],
+    "sheet_3_up_air_attacks": [
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8079,
+          "bbox": [
+            60,
+            112,
+            135,
+            144
+          ],
+          "center": [
+            127.5,
+            184.0
+          ],
+          "darknessRatio": 0.5619507364772868,
+          "paleRatio": 0.16078722614184923
+        },
+        "sourceRect": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 309,
+          "y": 281,
+          "w": 194,
+          "h": 207,
+          "anchorX": 112,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          0,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8054,
+          "bbox": [
+            37,
+            50,
+            101,
+            206
+          ],
+          "center": [
+            87.5,
+            153.0
+          ],
+          "darknessRatio": 0.5597218773280358,
+          "paleRatio": 0.16116215545070772
+        },
+        "sourceRect": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 308,
+          "y": 192,
+          "w": 145,
+          "h": 296,
+          "anchorX": 90,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          768,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8529,
+          "bbox": [
+            31,
+            37,
+            114,
+            219
+          ],
+          "center": [
+            88.0,
+            146.5
+          ],
+          "darknessRatio": 0.5154179856958612,
+          "paleRatio": 0.21303787079376246
+        },
+        "sourceRect": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 303,
+          "y": 173,
+          "w": 164,
+          "h": 315,
+          "anchorX": 87,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7396,
+          "bbox": [
+            46,
+            112,
+            102,
+            144
+          ],
+          "center": [
+            97.0,
+            184.0
+          ],
+          "darknessRatio": 0.6268253109789075,
+          "paleRatio": 0.12182260681449432
+        },
+        "sourceRect": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 285,
+          "y": 281,
+          "w": 180,
+          "h": 207,
+          "anchorX": 92,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          2304,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9725,
+          "bbox": [
+            51,
+            95,
+            124,
+            161
+          ],
+          "center": [
+            113.0,
+            175.5
+          ],
+          "darknessRatio": 0.5112596401028278,
+          "paleRatio": 0.21573264781491003
+        },
+        "sourceRect": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 295,
+          "y": 237,
+          "w": 194,
+          "h": 251,
+          "anchorX": 108,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          0,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 10528,
+          "bbox": [
+            37,
+            51,
+            153,
+            205
+          ],
+          "center": [
+            113.5,
+            153.5
+          ],
+          "darknessRatio": 0.5182370820668692,
+          "paleRatio": 0.17762158054711247
+        },
+        "sourceRect": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 298,
+          "y": 168,
+          "w": 239,
+          "h": 320,
+          "anchorX": 92,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          768,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 14286,
+          "bbox": [
+            1,
+            77,
+            227,
+            179
+          ],
+          "center": [
+            114.5,
+            166.5
+          ],
+          "darknessRatio": 0.44211115777684445,
+          "paleRatio": 0.2909141817163657
+        },
+        "sourceRect": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 258,
+          "y": 209,
+          "w": 354,
+          "h": 279,
+          "anchorX": 82,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          1536,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9181,
+          "bbox": [
+            5,
+            95,
+            150,
+            161
+          ],
+          "center": [
+            80.0,
+            175.5
+          ],
+          "darknessRatio": 0.5711796100642631,
+          "paleRatio": 0.1615292451802636
+        },
+        "sourceRect": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 297,
+          "y": 237,
+          "w": 234,
+          "h": 251,
+          "anchorX": 61,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          2304,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8666,
+          "bbox": [
+            47,
+            96,
+            118,
+            160
+          ],
+          "center": [
+            106.0,
+            176.0
+          ],
+          "darknessRatio": 0.5558504500346181,
+          "paleRatio": 0.1704361873990307
+        },
+        "sourceRect": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 291,
+          "y": 251,
+          "w": 175,
+          "h": 237,
+          "anchorX": 110,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          0,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 1,
+        "componentsBefore": 6,
+        "componentsAfter": 6,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 9265,
+          "bbox": [
+            29,
+            74,
+            117,
+            182
+          ],
+          "center": [
+            87.5,
+            165.0
+          ],
+          "darknessRatio": 0.47933081489476526,
+          "paleRatio": 0.19373988127361036
+        },
+        "sourceRect": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 296,
+          "y": 187,
+          "w": 221,
+          "h": 301,
+          "anchorX": 88,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          768,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 2,
+        "componentsBefore": 9,
+        "componentsAfter": 9,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 3,
+          "area": 11413,
+          "bbox": [
+            47,
+            53,
+            120,
+            203
+          ],
+          "center": [
+            107.0,
+            154.5
+          ],
+          "darknessRatio": 0.387628143345308,
+          "paleRatio": 0.4245159029177254
+        },
+        "sourceRect": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 245,
+          "y": 163,
+          "w": 289,
+          "h": 325,
+          "anchorX": 106,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          1536,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8832,
+          "bbox": [
+            33,
+            96,
+            132,
+            160
+          ],
+          "center": [
+            99.0,
+            176.0
+          ],
+          "darknessRatio": 0.5818614130434783,
+          "paleRatio": 0.16553442028985507
+        },
+        "sourceRect": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 310,
+          "y": 251,
+          "w": 196,
+          "h": 237,
+          "anchorX": 83,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          2304,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8012,
+          "bbox": [
+            31,
+            49,
+            132,
+            178
+          ],
+          "center": [
+            97.0,
+            138.0
+          ],
+          "darknessRatio": 0.6364203694458312,
+          "paleRatio": 0.13404892661008488
+        },
+        "sourceRect": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 269,
+          "y": 168,
+          "w": 222,
+          "h": 300,
+          "anchorX": 99,
+          "anchorY": 127,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          0,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7848,
+          "bbox": [
+            0,
+            73,
+            112,
+            151
+          ],
+          "center": [
+            56.0,
+            148.5
+          ],
+          "darknessRatio": 0.5686799184505607,
+          "paleRatio": 0.20323649337410804
+        },
+        "sourceRect": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 274,
+          "y": 188,
+          "w": 287,
+          "h": 254,
+          "anchorX": 65,
+          "anchorY": 139,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          768,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8326,
+          "bbox": [
+            8,
+            69,
+            162,
+            136
+          ],
+          "center": [
+            89.0,
+            137.0
+          ],
+          "darknessRatio": 0.5162142685563296,
+          "paleRatio": 0.28489070381936105
+        },
+        "sourceRect": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 266,
+          "y": 175,
+          "w": 273,
+          "h": 229,
+          "anchorX": 78,
+          "anchorY": 143,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          1536,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7139,
+          "bbox": [
+            13,
+            70,
+            103,
+            153
+          ],
+          "center": [
+            64.5,
+            146.5
+          ],
+          "darknessRatio": 0.5611430172293038,
+          "paleRatio": 0.16907129850119065
+        },
+        "sourceRect": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 276,
+          "y": 188,
+          "w": 174,
+          "h": 258,
+          "anchorX": 77,
+          "anchorY": 136,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          2304,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8951,
+          "bbox": [
+            38,
+            13,
+            129,
+            159
+          ],
+          "center": [
+            102.5,
+            92.5
+          ],
+          "darknessRatio": 0.5053066696458496,
+          "paleRatio": 0.200871411015529
+        },
+        "sourceRect": [
+          0,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 306,
+          "y": 194,
+          "w": 162,
+          "h": 305,
+          "anchorX": 100,
+          "anchorY": 97,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          0,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7485,
+          "bbox": [
+            7,
+            21,
+            111,
+            154
+          ],
+          "center": [
+            62.5,
+            98.0
+          ],
+          "darknessRatio": 0.5792919171676687,
+          "paleRatio": 0.15484301937207748
+        },
+        "sourceRect": [
+          256,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 294,
+          "y": 197,
+          "w": 245,
+          "h": 295,
+          "anchorX": 79,
+          "anchorY": 103,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          768,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 3833,
+          "bbox": [
+            72,
+            34,
+            150,
+            132
+          ],
+          "center": [
+            147.0,
+            100.0
+          ],
+          "darknessRatio": 0.21627967649360813,
+          "paleRatio": 0.4696060527002348
+        },
+        "sourceRect": [
+          512,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 269,
+          "y": 212,
+          "w": 277,
+          "h": 275,
+          "anchorX": 93,
+          "anchorY": 103,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          1536,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7558,
+          "bbox": [
+            8,
+            29,
+            121,
+            146
+          ],
+          "center": [
+            68.5,
+            102.0
+          ],
+          "darknessRatio": 0.6024080444562053,
+          "paleRatio": 0.14699655993649113
+        },
+        "sourceRect": [
+          768,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 294,
+          "y": 217,
+          "w": 152,
+          "h": 183,
+          "anchorX": 80,
+          "anchorY": 95,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          2304,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8546,
+          "bbox": [
+            35,
+            0,
+            115,
+            168
+          ],
+          "center": [
+            92.5,
+            84.0
+          ],
+          "darknessRatio": 0.5489117715890475,
+          "paleRatio": 0.1718932834074421
+        },
+        "sourceRect": [
+          0,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 278,
+          "y": 187,
+          "w": 185,
+          "h": 270,
+          "anchorX": 101,
+          "anchorY": 70,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          0,
+          2880,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 1,
+        "componentsBefore": 5,
+        "componentsAfter": 5,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 11086,
+          "bbox": [
+            24,
+            0,
+            125,
+            188
+          ],
+          "center": [
+            86.5,
+            94.0
+          ],
+          "darknessRatio": 0.43694750135305793,
+          "paleRatio": 0.34728486379217033
+        },
+        "sourceRect": [
+          256,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 246,
+          "y": 171,
+          "w": 257,
+          "h": 302,
+          "anchorX": 86,
+          "anchorY": 80,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          768,
+          2880,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 2,
+        "componentsBefore": 6,
+        "componentsAfter": 6,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9130,
+          "bbox": [
+            25,
+            0,
+            128,
+            177
+          ],
+          "center": [
+            89.0,
+            88.5
+          ],
+          "darknessRatio": 0.5353778751369113,
+          "paleRatio": 0.24227820372398687
+        },
+        "sourceRect": [
+          512,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 246,
+          "y": 165,
+          "w": 315,
+          "h": 315,
+          "anchorX": 97,
+          "anchorY": 84,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          1536,
+          2880,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9909,
+          "bbox": [
+            33,
+            0,
+            138,
+            183
+          ],
+          "center": [
+            102.0,
+            91.5
+          ],
+          "darknessRatio": 0.5313351498637602,
+          "paleRatio": 0.18498334847108688
+        },
+        "sourceRect": [
+          768,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 278,
+          "y": 168,
+          "w": 222,
+          "h": 294,
+          "anchorX": 99,
+          "anchorY": 82,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          2304,
+          2880,
+          768,
+          576
+        ]
+      }
+    ],
+    "sheet_4_specials": [
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7567,
+          "bbox": [
+            106,
+            28,
+            150,
+            142
+          ],
+          "center": [
+            181.0,
+            99.0
+          ],
+          "darknessRatio": 0.5712964186599709,
+          "paleRatio": 0.15620457248579359
+        },
+        "sourceRect": [
+          0,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 502,
+          "y": 144,
+          "w": 333,
+          "h": 315,
+          "anchorX": 168,
+          "anchorY": 98,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          0,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 16031,
+          "bbox": [
+            15,
+            36,
+            273,
+            134
+          ],
+          "center": [
+            151.5,
+            103.0
+          ],
+          "darknessRatio": 0.2233797018277088,
+          "paleRatio": 0.6771255692096563
+        },
+        "sourceRect": [
+          384,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 365,
+          "y": 184,
+          "w": 606,
+          "h": 297,
+          "anchorX": 139,
+          "anchorY": 88,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          1280,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8573,
+          "bbox": [
+            5,
+            48,
+            257,
+            122
+          ],
+          "center": [
+            133.5,
+            109.0
+          ],
+          "darknessRatio": 0.4321707686924064,
+          "paleRatio": 0.35448501108130176
+        },
+        "sourceRect": [
+          768,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 303,
+          "y": 184,
+          "w": 577,
+          "h": 271,
+          "anchorX": 154,
+          "anchorY": 100,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          2560,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8572,
+          "bbox": [
+            54,
+            35,
+            169,
+            135
+          ],
+          "center": [
+            138.5,
+            102.5
+          ],
+          "darknessRatio": 0.5116658889407373,
+          "paleRatio": 0.2264349043397107
+        },
+        "sourceRect": [
+          1152,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 467,
+          "y": 126,
+          "w": 375,
+          "h": 299,
+          "anchorX": 132,
+          "anchorY": 113,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          3840,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7401,
+          "bbox": [
+            102,
+            37,
+            151,
+            134
+          ],
+          "center": [
+            177.5,
+            104.0
+          ],
+          "darknessRatio": 0.5470882313200919,
+          "paleRatio": 0.17578705580326984
+        },
+        "sourceRect": [
+          0,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 490,
+          "y": 140,
+          "w": 355,
+          "h": 315,
+          "anchorX": 166,
+          "anchorY": 105,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          0,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 19032,
+          "bbox": [
+            23,
+            45,
+            298,
+            126
+          ],
+          "center": [
+            172.0,
+            108.0
+          ],
+          "darknessRatio": 0.21006725514922236,
+          "paleRatio": 0.6989806641445986
+        },
+        "sourceRect": [
+          384,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 301,
+          "y": 168,
+          "w": 701,
+          "h": 296,
+          "anchorX": 167,
+          "anchorY": 101,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          1280,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 12028,
+          "bbox": [
+            46,
+            52,
+            202,
+            119
+          ],
+          "center": [
+            147.0,
+            111.5
+          ],
+          "darknessRatio": 0.3425340871300299,
+          "paleRatio": 0.5102261390089791
+        },
+        "sourceRect": [
+          768,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 353,
+          "y": 163,
+          "w": 475,
+          "h": 280,
+          "anchorX": 168,
+          "anchorY": 110,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          2560,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8060,
+          "bbox": [
+            50,
+            41,
+            161,
+            130
+          ],
+          "center": [
+            130.5,
+            106.0
+          ],
+          "darknessRatio": 0.49615384615384617,
+          "paleRatio": 0.24267990074441687
+        },
+        "sourceRect": [
+          1152,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 475,
+          "y": 126,
+          "w": 378,
+          "h": 306,
+          "anchorX": 120,
+          "anchorY": 115,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          3840,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7947,
+          "bbox": [
+            101,
+            33,
+            143,
+            138
+          ],
+          "center": [
+            172.5,
+            102.0
+          ],
+          "darknessRatio": 0.5066062665156663,
+          "paleRatio": 0.22536806342015855
+        },
+        "sourceRect": [
+          0,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 520,
+          "y": 170,
+          "w": 330,
+          "h": 318,
+          "anchorX": 153,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          0,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7832,
+          "bbox": [
+            0,
+            33,
+            131,
+            138
+          ],
+          "center": [
+            65.5,
+            102.0
+          ],
+          "darknessRatio": 0.5113636363636364,
+          "paleRatio": 0.22637895812053116
+        },
+        "sourceRect": [
+          384,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 520,
+          "y": 170,
+          "w": 629,
+          "h": 318,
+          "anchorX": 52,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          1280,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7004,
+          "bbox": [
+            39,
+            33,
+            140,
+            138
+          ],
+          "center": [
+            109.0,
+            102.0
+          ],
+          "darknessRatio": 0.5424043403769274,
+          "paleRatio": 0.16947458595088521
+        },
+        "sourceRect": [
+          768,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 493,
+          "y": 170,
+          "w": 636,
+          "h": 318,
+          "anchorX": 103,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          2560,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7744,
+          "bbox": [
+            43,
+            33,
+            145,
+            138
+          ],
+          "center": [
+            115.5,
+            102.0
+          ],
+          "darknessRatio": 0.512396694214876,
+          "paleRatio": 0.2315340909090909
+        },
+        "sourceRect": [
+          1152,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 516,
+          "y": 170,
+          "w": 334,
+          "h": 318,
+          "anchorX": 97,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          3840,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8197,
+          "bbox": [
+            96,
+            23,
+            134,
+            146
+          ],
+          "center": [
+            163.0,
+            96.0
+          ],
+          "darknessRatio": 0.519946321825058,
+          "paleRatio": 0.22081249237525924
+        },
+        "sourceRect": [
+          0,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 520,
+          "y": 158,
+          "w": 303,
+          "h": 330,
+          "anchorX": 149,
+          "anchorY": 169,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          0,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7609,
+          "bbox": [
+            19,
+            29,
+            134,
+            140
+          ],
+          "center": [
+            86.0,
+            99.0
+          ],
+          "darknessRatio": 0.5494808779077408,
+          "paleRatio": 0.17413589170718885
+        },
+        "sourceRect": [
+          384,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 495,
+          "y": 172,
+          "w": 303,
+          "h": 316,
+          "anchorX": 83,
+          "anchorY": 169,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          1280,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7820,
+          "bbox": [
+            45,
+            30,
+            130,
+            139
+          ],
+          "center": [
+            110.0,
+            99.5
+          ],
+          "darknessRatio": 0.5122762148337596,
+          "paleRatio": 0.21176470588235294
+        },
+        "sourceRect": [
+          768,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 509,
+          "y": 174,
+          "w": 294,
+          "h": 314,
+          "anchorX": 103,
+          "anchorY": 169,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          2560,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7880,
+          "bbox": [
+            44,
+            28,
+            144,
+            142
+          ],
+          "center": [
+            116.0,
+            99.0
+          ],
+          "darknessRatio": 0.5161167512690356,
+          "paleRatio": 0.22525380710659898
+        },
+        "sourceRect": [
+          1152,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 527,
+          "y": 167,
+          "w": 325,
+          "h": 321,
+          "anchorX": 94,
+          "anchorY": 170,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          3840,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8298,
+          "bbox": [
+            89,
+            5,
+            135,
+            164
+          ],
+          "center": [
+            156.5,
+            87.0
+          ],
+          "darknessRatio": 0.5184381778741866,
+          "paleRatio": 0.23451434080501327
+        },
+        "sourceRect": [
+          0,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 545,
+          "y": 170,
+          "w": 262,
+          "h": 318,
+          "anchorX": 138,
+          "anchorY": 169,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          0,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 3,
+          "area": 3631,
+          "bbox": [
+            153,
+            107,
+            136,
+            61
+          ],
+          "center": [
+            221.0,
+            137.5
+          ],
+          "darknessRatio": 0.2497934453318645,
+          "paleRatio": 0.47039383090057835
+        },
+        "sourceRect": [
+          384,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 241,
+          "y": 205,
+          "w": 560,
+          "h": 283,
+          "anchorX": 206,
+          "anchorY": 168,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          1280,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7373,
+          "bbox": [
+            93,
+            21,
+            135,
+            139
+          ],
+          "center": [
+            160.5,
+            90.5
+          ],
+          "darknessRatio": 0.5189203851892038,
+          "paleRatio": 0.20466567204665673
+        },
+        "sourceRect": [
+          768,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 334,
+          "y": 209,
+          "w": 448,
+          "h": 279,
+          "anchorX": 251,
+          "anchorY": 165,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          2560,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7301,
+          "bbox": [
+            31,
+            27,
+            129,
+            137
+          ],
+          "center": [
+            95.5,
+            95.5
+          ],
+          "darknessRatio": 0.5106149842487331,
+          "paleRatio": 0.22832488700178058
+        },
+        "sourceRect": [
+          1152,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 465,
+          "y": 222,
+          "w": 485,
+          "h": 266,
+          "anchorX": 121,
+          "anchorY": 164,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          3840,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 4339,
+          "bbox": [
+            96,
+            34,
+            133,
+            101
+          ],
+          "center": [
+            162.5,
+            84.5
+          ],
+          "darknessRatio": 0.31781516478451255,
+          "paleRatio": 0.3830375662595068
+        },
+        "sourceRect": [
+          0,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 488,
+          "y": 252,
+          "w": 311,
+          "h": 236,
+          "anchorX": 161,
+          "anchorY": 135,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          0,
+          2880,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9958,
+          "bbox": [
+            30,
+            14,
+            216,
+            130
+          ],
+          "center": [
+            138.0,
+            79.0
+          ],
+          "darknessRatio": 0.1422976501305483,
+          "paleRatio": 0.6143803976702149
+        },
+        "sourceRect": [
+          384,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 369,
+          "y": 184,
+          "w": 505,
+          "h": 304,
+          "anchorX": 146,
+          "anchorY": 144,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          1280,
+          2880,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 11674,
+          "bbox": [
+            40,
+            10,
+            264,
+            136
+          ],
+          "center": [
+            172.0,
+            78.0
+          ],
+          "darknessRatio": 0.2560390611615556,
+          "paleRatio": 0.40020558506081894
+        },
+        "sourceRect": [
+          768,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 308,
+          "y": 170,
+          "w": 643,
+          "h": 318,
+          "anchorX": 182,
+          "anchorY": 146,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          2560,
+          2880,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7885,
+          "bbox": [
+            53,
+            49,
+            194,
+            89
+          ],
+          "center": [
+            150.0,
+            93.5
+          ],
+          "darknessRatio": 0.0766011414077362,
+          "paleRatio": 0.7552314521242867
+        },
+        "sourceRect": [
+          1152,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 402,
+          "y": 280,
+          "w": 454,
+          "h": 208,
+          "anchorX": 155,
+          "anchorY": 138,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          3840,
+          2880,
+          1280,
+          576
+        ]
+      }
+    ],
+    "sheet_5_defense_reactions": [
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8940,
+          "bbox": [
+            64,
+            28,
+            127,
+            164
+          ],
+          "center": [
+            127.5,
+            110.0
+          ],
+          "darknessRatio": 0.5438478747203579,
+          "paleRatio": 0.17774049217002238
+        },
+        "sourceRect": [
+          0,
+          0,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 677,
+          "y": 128,
+          "w": 240,
+          "h": 310,
+          "anchorX": 112,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          0,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9549,
+          "bbox": [
+            64,
+            24,
+            132,
+            168
+          ],
+          "center": [
+            130.0,
+            108.0
+          ],
+          "darknessRatio": 0.5492721750968688,
+          "paleRatio": 0.155827835375432
+        },
+        "sourceRect": [
+          204,
+          0,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 653,
+          "y": 120,
+          "w": 250,
+          "h": 318,
+          "anchorX": 125,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9605,
+          "bbox": [
+            82,
+            29,
+            123,
+            163
+          ],
+          "center": [
+            143.5,
+            110.5
+          ],
+          "darknessRatio": 0.5050494534096824,
+          "paleRatio": 0.21395106715252474
+        },
+        "sourceRect": [
+          409,
+          0,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 643,
+          "y": 129,
+          "w": 233,
+          "h": 309,
+          "anchorX": 148,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          3072,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8613,
+          "bbox": [
+            94,
+            28,
+            111,
+            164
+          ],
+          "center": [
+            149.5,
+            110.0
+          ],
+          "darknessRatio": 0.580169511203994,
+          "paleRatio": 0.13735051666086148
+        },
+        "sourceRect": [
+          614,
+          0,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 662,
+          "y": 128,
+          "w": 210,
+          "h": 310,
+          "anchorX": 150,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          4608,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "damaged_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9695,
+          "bbox": [
+            50,
+            40,
+            138,
+            152
+          ],
+          "center": [
+            119.0,
+            116.0
+          ],
+          "darknessRatio": 0.532129963898917,
+          "paleRatio": 0.1740072202166065
+        },
+        "sourceRect": [
+          0,
+          192,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 638,
+          "y": 135,
+          "w": 275,
+          "h": 303,
+          "anchorX": 115,
+          "anchorY": 192,
+          "scale": 1.9934640522875817
+        },
+        "runtimeCell": [
+          0,
+          544,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "damaged_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8605,
+          "bbox": [
+            73,
+            39,
+            108,
+            153
+          ],
+          "center": [
+            127.0,
+            115.5
+          ],
+          "darknessRatio": 0.6083672283556072,
+          "paleRatio": 0.09680418361417781
+        },
+        "sourceRect": [
+          204,
+          192,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 648,
+          "y": 133,
+          "w": 251,
+          "h": 305,
+          "anchorX": 115,
+          "anchorY": 192,
+          "scale": 1.9934640522875817
+        },
+        "runtimeCell": [
+          1536,
+          544,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "damaged_light",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7984,
+          "bbox": [
+            96,
+            43,
+            109,
+            149
+          ],
+          "center": [
+            150.5,
+            117.5
+          ],
+          "darknessRatio": 0.6223697394789579,
+          "paleRatio": 0.11084669338677355
+        },
+        "sourceRect": [
+          409,
+          192,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 630,
+          "y": 141,
+          "w": 225,
+          "h": 297,
+          "anchorX": 161,
+          "anchorY": 192,
+          "scale": 1.9934640522875817
+        },
+        "runtimeCell": [
+          3072,
+          544,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 10064,
+          "bbox": [
+            47,
+            42,
+            138,
+            150
+          ],
+          "center": [
+            116.0,
+            117.0
+          ],
+          "darknessRatio": 0.5635930047694754,
+          "paleRatio": 0.1419912559618442
+        },
+        "sourceRect": [
+          0,
+          384,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 644,
+          "y": 123,
+          "w": 290,
+          "h": 315,
+          "anchorX": 106,
+          "anchorY": 192,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          0,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 11315,
+          "bbox": [
+            53,
+            44,
+            147,
+            148
+          ],
+          "center": [
+            126.5,
+            118.0
+          ],
+          "darknessRatio": 0.548210340256297,
+          "paleRatio": 0.1575784357048166
+        },
+        "sourceRect": [
+          204,
+          384,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 602,
+          "y": 127,
+          "w": 309,
+          "h": 311,
+          "anchorX": 132,
+          "anchorY": 192,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          1536,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9674,
+          "bbox": [
+            78,
+            47,
+            127,
+            133
+          ],
+          "center": [
+            141.5,
+            113.5
+          ],
+          "darknessRatio": 0.5380401075046517,
+          "paleRatio": 0.16994004548273722
+        },
+        "sourceRect": [
+          409,
+          384,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 602,
+          "y": 159,
+          "w": 267,
+          "h": 279,
+          "anchorX": 157,
+          "anchorY": 180,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          3072,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 720,
+            "bbox": [
+              0,
+              121,
+              28,
+              71
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 720,
+        "bodySeed": {
+          "label": 1,
+          "area": 7258,
+          "bbox": [
+            93,
+            51,
+            112,
+            135
+          ],
+          "center": [
+            149.0,
+            118.5
+          ],
+          "darknessRatio": 0.5983742077707357,
+          "paleRatio": 0.1362634334527418
+        },
+        "sourceRect": [
+          614,
+          384,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 646,
+          "y": 154,
+          "w": 235,
+          "h": 284,
+          "anchorX": 151,
+          "anchorY": 186,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          4608,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 10165,
+          "bbox": [
+            41,
+            51,
+            163,
+            141
+          ],
+          "center": [
+            122.5,
+            121.5
+          ],
+          "darknessRatio": 0.5739301524840138,
+          "paleRatio": 0.15632070831283817
+        },
+        "sourceRect": [
+          0,
+          576,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 558,
+          "y": 148,
+          "w": 335,
+          "h": 290,
+          "anchorX": 143,
+          "anchorY": 192,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          0,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9020,
+          "bbox": [
+            58,
+            53,
+            147,
+            139
+          ],
+          "center": [
+            131.5,
+            122.5
+          ],
+          "darknessRatio": 0.5592017738359202,
+          "paleRatio": 0.1558758314855876
+        },
+        "sourceRect": [
+          204,
+          576,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 622,
+          "y": 152,
+          "w": 302,
+          "h": 286,
+          "anchorX": 129,
+          "anchorY": 192,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          1536,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8502,
+          "bbox": [
+            85,
+            58,
+            120,
+            130
+          ],
+          "center": [
+            145.0,
+            123.0
+          ],
+          "darknessRatio": 0.528463890849212,
+          "paleRatio": 0.18054575394024935
+        },
+        "sourceRect": [
+          409,
+          576,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 643,
+          "y": 171,
+          "w": 247,
+          "h": 267,
+          "anchorX": 146,
+          "anchorY": 188,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          3072,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 563,
+            "bbox": [
+              0,
+              116,
+              37,
+              56
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 563,
+        "bodySeed": {
+          "label": 1,
+          "area": 7257,
+          "bbox": [
+            99,
+            49,
+            106,
+            140
+          ],
+          "center": [
+            152.0,
+            119.0
+          ],
+          "darknessRatio": 0.5677277111754169,
+          "paleRatio": 0.166597767672592
+        },
+        "sourceRect": [
+          614,
+          576,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 640,
+          "y": 150,
+          "w": 218,
+          "h": 288,
+          "anchorX": 161,
+          "anchorY": 189,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          4608,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9073,
+          "bbox": [
+            59,
+            14,
+            145,
+            164
+          ],
+          "center": [
+            131.5,
+            96.0
+          ],
+          "darknessRatio": 0.5312465557147581,
+          "paleRatio": 0.10757191667585143
+        },
+        "sourceRect": [
+          0,
+          768,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 649,
+          "y": 128,
+          "w": 261,
+          "h": 295,
+          "anchorX": 125,
+          "anchorY": 100,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          0,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9018,
+          "bbox": [
+            75,
+            40,
+            130,
+            145
+          ],
+          "center": [
+            140.0,
+            112.5
+          ],
+          "darknessRatio": 0.5584386781991573,
+          "paleRatio": 0.13107119095143047
+        },
+        "sourceRect": [
+          204,
+          768,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 649,
+          "y": 171,
+          "w": 234,
+          "h": 261,
+          "anchorX": 141,
+          "anchorY": 102,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          1536,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8173,
+          "bbox": [
+            81,
+            41,
+            124,
+            147
+          ],
+          "center": [
+            143.0,
+            114.5
+          ],
+          "darknessRatio": 0.5809372323504222,
+          "paleRatio": 0.15269790774501407
+        },
+        "sourceRect": [
+          409,
+          768,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 656,
+          "y": 157,
+          "w": 223,
+          "h": 264,
+          "anchorX": 143,
+          "anchorY": 111,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          3072,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7282,
+          "bbox": [
+            98,
+            44,
+            107,
+            144
+          ],
+          "center": [
+            151.5,
+            116.0
+          ],
+          "darknessRatio": 0.5505355671518813,
+          "paleRatio": 0.17440263663828617
+        },
+        "sourceRect": [
+          614,
+          768,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 664,
+          "y": 179,
+          "w": 192,
+          "h": 259,
+          "anchorX": 156,
+          "anchorY": 102,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          4608,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7362,
+          "bbox": [
+            26,
+            68,
+            171,
+            74
+          ],
+          "center": [
+            111.5,
+            105.0
+          ],
+          "darknessRatio": 0.6179027438196142,
+          "paleRatio": 0.1400434664493344
+        },
+        "sourceRect": [
+          0,
+          960,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 579,
+          "y": 286,
+          "w": 352,
+          "h": 152,
+          "anchorX": 118,
+          "anchorY": 142,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          0,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 5683,
+          "bbox": [
+            20,
+            95,
+            185,
+            51
+          ],
+          "center": [
+            112.5,
+            120.5
+          ],
+          "darknessRatio": 0.7042055252507479,
+          "paleRatio": 0.12880520851662855
+        },
+        "sourceRect": [
+          204,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 589,
+          "y": 333,
+          "w": 381,
+          "h": 105,
+          "anchorX": 107,
+          "anchorY": 146,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          1536,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6921,
+          "bbox": [
+            48,
+            45,
+            150,
+            104
+          ],
+          "center": [
+            123.0,
+            97.0
+          ],
+          "darknessRatio": 0.6212975003612194,
+          "paleRatio": 0.1572027163704667
+        },
+        "sourceRect": [
+          409,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 609,
+          "y": 224,
+          "w": 309,
+          "h": 214,
+          "anchorX": 125,
+          "anchorY": 149,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          3072,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7931,
+          "bbox": [
+            51,
+            27,
+            121,
+            123
+          ],
+          "center": [
+            111.5,
+            88.5
+          ],
+          "darknessRatio": 0.5482284705585676,
+          "paleRatio": 0.1682007313075274
+        },
+        "sourceRect": [
+          614,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 628,
+          "y": 185,
+          "w": 249,
+          "h": 253,
+          "anchorX": 119,
+          "anchorY": 150,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          4608,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 7122,
+          "bbox": [
+            52,
+            14,
+            98,
+            153
+          ],
+          "center": [
+            101.0,
+            90.5
+          ],
+          "darknessRatio": 0.5812973883740522,
+          "paleRatio": 0.14855377702892447
+        },
+        "sourceRect": [
+          819,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 684,
+          "y": 123,
+          "w": 202,
+          "h": 315,
+          "anchorX": 93,
+          "anchorY": 167,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          6144,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 1068,
+            "bbox": [
+              49,
+              158,
+              55,
+              34
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 1068,
+        "bodySeed": {
+          "label": 1,
+          "area": 6375,
+          "bbox": [
+            26,
+            3,
+            118,
+            103
+          ],
+          "center": [
+            85.0,
+            54.5
+          ],
+          "darknessRatio": 0.592,
+          "paleRatio": 0.19137254901960785
+        },
+        "sourceRect": [
+          0,
+          1152,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 668,
+          "y": 272,
+          "w": 190,
+          "h": 166,
+          "anchorX": 88,
+          "anchorY": 106,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          0,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 6525,
+          "bbox": [
+            34,
+            6,
+            141,
+            102
+          ],
+          "center": [
+            104.5,
+            57.0
+          ],
+          "darknessRatio": 0.5986206896551725,
+          "paleRatio": 0.17517241379310344
+        },
+        "sourceRect": [
+          204,
+          1152,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 694,
+          "y": 138,
+          "w": 240,
+          "h": 300,
+          "anchorX": 72,
+          "anchorY": 192,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          1536,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 972,
+            "bbox": [
+              37,
+              163,
+              51,
+              29
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 972,
+        "bodySeed": {
+          "label": 1,
+          "area": 5656,
+          "bbox": [
+            33,
+            53,
+            172,
+            54
+          ],
+          "center": [
+            119.0,
+            80.0
+          ],
+          "darknessRatio": 0.704031117397454,
+          "paleRatio": 0.1364922206506365
+        },
+        "sourceRect": [
+          409,
+          1152,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 645,
+          "y": 351,
+          "w": 277,
+          "h": 87,
+          "anchorX": 109,
+          "anchorY": 107,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          3072,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 762,
+            "bbox": [
+              16,
+              167,
+              56,
+              25
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 762,
+        "bodySeed": {
+          "label": 1,
+          "area": 3232,
+          "bbox": [
+            81,
+            67,
+            124,
+            40
+          ],
+          "center": [
+            143.0,
+            87.0
+          ],
+          "darknessRatio": 0.7339108910891089,
+          "paleRatio": 0.11417079207920793
+        },
+        "sourceRect": [
+          614,
+          1152,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 671,
+          "y": 373,
+          "w": 200,
+          "h": 65,
+          "anchorX": 141,
+          "anchorY": 107,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          4608,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 8546,
+          "bbox": [
+            22,
+            0,
+            127,
+            144
+          ],
+          "center": [
+            85.5,
+            72.0
+          ],
+          "darknessRatio": 0.5293704657149544,
+          "paleRatio": 0.1852328574771823
+        },
+        "sourceRect": [
+          0,
+          1344,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 674,
+          "y": 144,
+          "w": 259,
+          "h": 294,
+          "anchorX": 68,
+          "anchorY": 144,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          0,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 10578,
+          "bbox": [
+            0,
+            0,
+            129,
+            147
+          ],
+          "center": [
+            64.5,
+            73.5
+          ],
+          "darknessRatio": 0.49111363206655323,
+          "paleRatio": 0.20646625070901872
+        },
+        "sourceRect": [
+          204,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 636,
+          "y": 138,
+          "w": 263,
+          "h": 300,
+          "anchorX": 65,
+          "anchorY": 147,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          1536,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9189,
+          "bbox": [
+            1,
+            0,
+            130,
+            152
+          ],
+          "center": [
+            66.0,
+            76.0
+          ],
+          "darknessRatio": 0.5359669169659376,
+          "paleRatio": 0.16040918489498313
+        },
+        "sourceRect": [
+          409,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 654,
+          "y": 128,
+          "w": 265,
+          "h": 310,
+          "anchorX": 57,
+          "anchorY": 152,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          3072,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 9581,
+          "bbox": [
+            0,
+            0,
+            132,
+            154
+          ],
+          "center": [
+            66.0,
+            77.0
+          ],
+          "darknessRatio": 0.48220436280137774,
+          "paleRatio": 0.16125665379396723
+        },
+        "sourceRect": [
+          614,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 654,
+          "y": 124,
+          "w": 269,
+          "h": 314,
+          "anchorX": 56,
+          "anchorY": 154,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          4608,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 10090,
+          "bbox": [
+            0,
+            0,
+            134,
+            156
+          ],
+          "center": [
+            67.0,
+            78.0
+          ],
+          "darknessRatio": 0.5006937561942517,
+          "paleRatio": 0.20535183349851338
+        },
+        "sourceRect": [
+          819,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 587,
+          "y": 120,
+          "w": 273,
+          "h": 318,
+          "anchorX": 89,
+          "anchorY": 156,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          6144,
+          3808,
+          1536,
+          544
+        ]
+      }
+    ],
+    "sheet_6_octava_body": [
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 28178,
+          "bbox": [
+            23,
+            69,
+            300,
+            329
+          ],
+          "center": [
+            173.0,
+            233.5
+          ],
+          "darknessRatio": 0.3451274043580098,
+          "paleRatio": 0.4856270849598978
+        },
+        "sourceRect": [
+          0,
+          0,
+          354,
+          443
+        ],
+        "runtimeBox": {
+          "x": 251,
+          "y": 250,
+          "w": 401,
+          "h": 440,
+          "anchorX": 170,
+          "anchorY": 398,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          0,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 1,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 22906,
+          "bbox": [
+            60,
+            89,
+            212,
+            310
+          ],
+          "center": [
+            166.0,
+            244.0
+          ],
+          "darknessRatio": 0.4659477866061294,
+          "paleRatio": 0.32297214703571114
+        },
+        "sourceRect": [
+          354,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 259,
+          "y": 275,
+          "w": 320,
+          "h": 415,
+          "anchorX": 174,
+          "anchorY": 399,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          896,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 2,
+        "componentsBefore": 7,
+        "componentsAfter": 7,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 18676,
+          "bbox": [
+            44,
+            114,
+            214,
+            280
+          ],
+          "center": [
+            151.0,
+            254.0
+          ],
+          "darknessRatio": 0.5930606125508674,
+          "paleRatio": 0.19570571856928679
+        },
+        "sourceRect": [
+          709,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 329,
+          "y": 316,
+          "w": 373,
+          "h": 374,
+          "anchorX": 124,
+          "anchorY": 394,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          1792,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 3,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 22015,
+          "bbox": [
+            11,
+            115,
+            261,
+            277
+          ],
+          "center": [
+            141.5,
+            253.5
+          ],
+          "darknessRatio": 0.5868725868725869,
+          "paleRatio": 0.15112423347717466
+        },
+        "sourceRect": [
+          1064,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 310,
+          "y": 320,
+          "w": 366,
+          "h": 370,
+          "anchorX": 103,
+          "anchorY": 392,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          2688,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 26208,
+          "bbox": [
+            38,
+            95,
+            228,
+            300
+          ],
+          "center": [
+            152.0,
+            245.0
+          ],
+          "darknessRatio": 0.2755265567765568,
+          "paleRatio": 0.49603174603174605
+        },
+        "sourceRect": [
+          1419,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 325,
+          "y": 289,
+          "w": 305,
+          "h": 401,
+          "anchorX": 130,
+          "anchorY": 395,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          3584,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 36752,
+          "bbox": [
+            34,
+            32,
+            274,
+            346
+          ],
+          "center": [
+            171.0,
+            205.0
+          ],
+          "darknessRatio": 0.1996081845885938,
+          "paleRatio": 0.5850838049629952
+        },
+        "sourceRect": [
+          0,
+          443,
+          354,
+          444
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 150,
+          "w": 449,
+          "h": 540,
+          "anchorX": 161,
+          "anchorY": 378,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          0,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 1,
+        "componentsBefore": 6,
+        "componentsAfter": 6,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 6,
+          "area": 15966,
+          "bbox": [
+            66,
+            162,
+            178,
+            216
+          ],
+          "center": [
+            155.0,
+            270.0
+          ],
+          "darknessRatio": 0.4813979706877114,
+          "paleRatio": 0.20155330076412376
+        },
+        "sourceRect": [
+          354,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 205,
+          "y": 162,
+          "w": 499,
+          "h": 528,
+          "anchorX": 161,
+          "anchorY": 378,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          896,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 30991,
+          "bbox": [
+            12,
+            64,
+            307,
+            310
+          ],
+          "center": [
+            165.5,
+            219.0
+          ],
+          "darknessRatio": 0.33938885482882125,
+          "paleRatio": 0.42731760833790455
+        },
+        "sourceRect": [
+          709,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 251,
+          "y": 189,
+          "w": 498,
+          "h": 501,
+          "anchorX": 126,
+          "anchorY": 374,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          1792,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 2,
+          "area": 18551,
+          "bbox": [
+            13,
+            183,
+            270,
+            191
+          ],
+          "center": [
+            148.0,
+            278.5
+          ],
+          "darknessRatio": 0.5092986900975689,
+          "paleRatio": 0.21820926095628268
+        },
+        "sourceRect": [
+          1064,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 306,
+          "y": 300,
+          "w": 421,
+          "h": 390,
+          "anchorX": 104,
+          "anchorY": 374,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          2688,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": {
+          "label": 1,
+          "area": 12592,
+          "bbox": [
+            29,
+            230,
+            217,
+            146
+          ],
+          "center": [
+            137.5,
+            303.0
+          ],
+          "darknessRatio": 0.5698062261753494,
+          "paleRatio": 0.1880559085133418
+        },
+        "sourceRect": [
+          1419,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 289,
+          "y": 462,
+          "w": 339,
+          "h": 228,
+          "anchorX": 131,
+          "anchorY": 376,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          3584,
+          768,
+          896,
+          768
+        ]
+      }
+    ],
+    "sheet_7_detached_vfx": [
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 320,
+          "y": 144,
+          "w": 127,
+          "h": 95,
+          "anchorX": 130,
+          "anchorY": 92,
+          "scale": 1.948051948051948
+        },
+        "runtimeCell": [
+          0,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          307,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 128,
+          "w": 267,
+          "h": 127,
+          "anchorX": 59,
+          "anchorY": 100,
+          "scale": 1.948051948051948
+        },
+        "runtimeCell": [
+          768,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          614,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 283,
+          "y": 117,
+          "w": 201,
+          "h": 150,
+          "anchorX": 54,
+          "anchorY": 102,
+          "scale": 1.948051948051948
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 3,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          921,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          2304,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1228,
+          0,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 219,
+          "y": 178,
+          "w": 330,
+          "h": 28,
+          "anchorX": 139,
+          "anchorY": 67,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          0,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          307,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 172,
+          "y": 121,
+          "w": 424,
+          "h": 141,
+          "anchorX": 92,
+          "anchorY": 92,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          768,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          614,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 193,
+          "y": 117,
+          "w": 382,
+          "h": 150,
+          "anchorX": 67,
+          "anchorY": 94,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          1536,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          921,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 253,
+          "y": 124,
+          "w": 262,
+          "h": 136,
+          "anchorX": 52,
+          "anchorY": 98,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          2304,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1228,
+          102,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 281,
+          "y": 124,
+          "w": 206,
+          "h": 135,
+          "anchorX": 145,
+          "anchorY": 87,
+          "scale": 1.9620253164556962
+        },
+        "runtimeCell": [
+          0,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 372,
+            "bbox": [
+              132,
+              57,
+              57,
+              46
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 372,
+        "bodySeed": null,
+        "sourceRect": [
+          307,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 219,
+          "y": 114,
+          "w": 330,
+          "h": 155,
+          "anchorX": 89,
+          "anchorY": 103,
+          "scale": 1.9620253164556962
+        },
+        "runtimeCell": [
+          768,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          614,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 276,
+          "y": 119,
+          "w": 216,
+          "h": 145,
+          "anchorX": 60,
+          "anchorY": 103,
+          "scale": 1.9620253164556962
+        },
+        "runtimeCell": [
+          1536,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 3,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          921,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          2304,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1228,
+          204,
+          308,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 242,
+          "y": 185,
+          "w": 283,
+          "h": 13,
+          "anchorX": 143,
+          "anchorY": 61,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          0,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 604,
+            "bbox": [
+              218,
+              69,
+              89,
+              13
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 604,
+        "bodySeed": null,
+        "sourceRect": [
+          307,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 219,
+          "y": 117,
+          "w": 329,
+          "h": 150,
+          "anchorX": 78,
+          "anchorY": 102,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          768,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          614,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 181,
+          "y": 126,
+          "w": 406,
+          "h": 131,
+          "anchorX": 86,
+          "anchorY": 97,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          1536,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          921,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 207,
+          "y": 143,
+          "w": 354,
+          "h": 98,
+          "anchorX": 67,
+          "anchorY": 90,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          2304,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1228,
+          307,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 344,
+          "y": 157,
+          "w": 79,
+          "h": 69,
+          "anchorX": 119,
+          "anchorY": 68,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          0,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          256,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 271,
+          "y": 131,
+          "w": 226,
+          "h": 122,
+          "anchorX": 61,
+          "anchorY": 83,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          768,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          512,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 291,
+          "y": 158,
+          "w": 185,
+          "h": 68,
+          "anchorX": 74,
+          "anchorY": 71,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          1536,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          768,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 207,
+          "y": 158,
+          "w": 354,
+          "h": 68,
+          "anchorX": 118,
+          "anchorY": 71,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          2304,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1024,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 276,
+          "y": 119,
+          "w": 216,
+          "h": 145,
+          "anchorX": 109,
+          "anchorY": 93,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          3072,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1280,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 0,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          0,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 1,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          256,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          768,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 2,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          512,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          1536,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          768,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": {
+          "x": 322,
+          "y": 117,
+          "w": 124,
+          "h": 150,
+          "anchorX": 108,
+          "anchorY": 68,
+          "scale": 3.260869565217391
+        },
+        "runtimeCell": [
+          2304,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1024,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1280,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 0,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          0,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          307,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 287,
+          "y": 130,
+          "w": 194,
+          "h": 123,
+          "anchorX": 252,
+          "anchorY": 73,
+          "scale": 1.6875
+        },
+        "runtimeCell": [
+          768,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 808,
+            "bbox": [
+              0,
+              25,
+              46,
+              46
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 808,
+        "bodySeed": null,
+        "sourceRect": [
+          614,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 252,
+          "y": 124,
+          "w": 263,
+          "h": 135,
+          "anchorX": 228,
+          "anchorY": 81,
+          "scale": 1.6875
+        },
+        "runtimeCell": [
+          1536,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          921,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 241,
+          "y": 126,
+          "w": 285,
+          "h": 132,
+          "anchorX": 165,
+          "anchorY": 81,
+          "scale": 1.6875
+        },
+        "runtimeCell": [
+          2304,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1228,
+          614,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 361,
+          "y": 140,
+          "w": 45,
+          "h": 103,
+          "anchorX": 300,
+          "anchorY": 72,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          0,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          307,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 116,
+          "y": 120,
+          "w": 535,
+          "h": 143,
+          "anchorX": 219,
+          "anchorY": 82,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          768,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          614,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 116,
+          "y": 117,
+          "w": 535,
+          "h": 150,
+          "anchorX": 192,
+          "anchorY": 86,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          1536,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 3,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          921,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 118,
+          "y": 158,
+          "w": 532,
+          "h": 68,
+          "anchorX": 179,
+          "anchorY": 84,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          2304,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1228,
+          716,
+          308,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": {
+          "x": 335,
+          "y": 137,
+          "w": 97,
+          "h": 109,
+          "anchorX": 115,
+          "anchorY": 76,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          0,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          219,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": {
+          "x": 252,
+          "y": 148,
+          "w": 264,
+          "h": 87,
+          "anchorX": 46,
+          "anchorY": 72,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          768,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          438,
+          819,
+          220,
+          102
+        ],
+        "runtimeBox": {
+          "x": 259,
+          "y": 138,
+          "w": 250,
+          "h": 107,
+          "anchorX": 192,
+          "anchorY": 75,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          1536,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 209,
+            "bbox": [
+              0,
+              16,
+              15,
+              48
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 209,
+        "bodySeed": null,
+        "sourceRect": [
+          658,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": {
+          "x": 347,
+          "y": 159,
+          "w": 73,
+          "h": 66,
+          "anchorX": 122,
+          "anchorY": 64,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          2304,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 4,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          877,
+          819,
+          220,
+          102
+        ],
+        "runtimeBox": {
+          "x": 233,
+          "y": 132,
+          "w": 301,
+          "h": 120,
+          "anchorX": 190,
+          "anchorY": 102,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          3072,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1097,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 6,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1316,
+          819,
+          220,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          4608,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          0,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 142,
+          "y": 135,
+          "w": 484,
+          "h": 113,
+          "anchorX": 225,
+          "anchorY": 54,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          0,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          256,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 175,
+          "y": 167,
+          "w": 418,
+          "h": 50,
+          "anchorX": 167,
+          "anchorY": 39,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          768,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          512,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 116,
+          "y": 142,
+          "w": 535,
+          "h": 100,
+          "anchorX": 72,
+          "anchorY": 51,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          1536,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          768,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 157,
+          "y": 129,
+          "w": 453,
+          "h": 125,
+          "anchorX": 173,
+          "anchorY": 60,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          2304,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1024,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 97,
+          "w": 223,
+          "h": 190,
+          "anchorX": 59,
+          "anchorY": 91,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          3072,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "bodySeed": null,
+        "sourceRect": [
+          1280,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          3456,
+          768,
+          384
+        ]
+      }
+    ]
+  },
+  "bleedRemovedFrames": [
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 2,
+      "rowName": "neutral_heavy",
+      "frame": 2,
+      "removedArea": 507,
+      "removedComponents": [
+        {
+          "area": 507,
+          "bbox": [
+            220,
+            66,
+            19,
+            105
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 4,
+      "rowName": "forward_medium",
+      "frame": 0,
+      "removedArea": 1026,
+      "removedComponents": [
+        {
+          "area": 1026,
+          "bbox": [
+            209,
+            122,
+            47,
+            49
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 5,
+      "rowName": "forward_heavy",
+      "frame": 1,
+      "removedArea": 1132,
+      "removedComponents": [
+        {
+          "area": 743,
+          "bbox": [
+            79,
+            0,
+            75,
+            37
+          ],
+          "touchesEdge": true
+        },
+        {
+          "area": 389,
+          "bbox": [
+            199,
+            90,
+            19,
+            81
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 5,
+      "rowName": "forward_heavy",
+      "frame": 3,
+      "removedArea": 533,
+      "removedComponents": [
+        {
+          "area": 533,
+          "bbox": [
+            24,
+            0,
+            56,
+            36
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 6,
+      "rowName": "back_light",
+      "frame": 0,
+      "removedArea": 728,
+      "removedComponents": [
+        {
+          "area": 728,
+          "bbox": [
+            30,
+            0,
+            46,
+            33
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 6,
+      "rowName": "back_light",
+      "frame": 2,
+      "removedArea": 691,
+      "removedComponents": [
+        {
+          "area": 691,
+          "bbox": [
+            136,
+            0,
+            57,
+            26
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 7,
+      "rowName": "back_medium",
+      "frame": 2,
+      "removedArea": 529,
+      "removedComponents": [
+        {
+          "area": 529,
+          "bbox": [
+            236,
+            134,
+            20,
+            37
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 2,
+      "rowName": "medium_heavy_hitstun",
+      "frame": 3,
+      "removedArea": 720,
+      "removedComponents": [
+        {
+          "area": 720,
+          "bbox": [
+            0,
+            121,
+            28,
+            71
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 3,
+      "rowName": "knockback",
+      "frame": 3,
+      "removedArea": 563,
+      "removedComponents": [
+        {
+          "area": 563,
+          "bbox": [
+            0,
+            116,
+            37,
+            56
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 6,
+      "rowName": "ko_death",
+      "frame": 0,
+      "removedArea": 1068,
+      "removedComponents": [
+        {
+          "area": 1068,
+          "bbox": [
+            49,
+            158,
+            55,
+            34
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 6,
+      "rowName": "ko_death",
+      "frame": 2,
+      "removedArea": 972,
+      "removedComponents": [
+        {
+          "area": 972,
+          "bbox": [
+            37,
+            163,
+            51,
+            29
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 6,
+      "rowName": "ko_death",
+      "frame": 3,
+      "removedArea": 762,
+      "removedComponents": [
+        {
+          "area": 762,
+          "bbox": [
+            16,
+            167,
+            56,
+            25
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_7_detached_vfx",
+      "row": 3,
+      "rowName": "FA_afterimage",
+      "frame": 1,
+      "removedArea": 604,
+      "removedComponents": [
+        {
+          "area": 604,
+          "bbox": [
+            218,
+            69,
+            89,
+            13
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_7_detached_vfx",
+      "row": 6,
+      "rowName": "TI_trap_marker",
+      "frame": 2,
+      "removedArea": 808,
+      "removedComponents": [
+        {
+          "area": 808,
+          "bbox": [
+            0,
+            25,
+            46,
+            46
+          ],
+          "touchesEdge": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "url": "http://127.0.0.1:62434/?lamuhTest",
+  "initial": {
+    "helperReady": true,
+    "loadedLamuhAssets": {
+      "lamuhFinalCoreMovement": true,
+      "lamuhFinalAirMovement": true,
+      "lamuhFinalGroundNormals": true,
+      "lamuhFinalAirNormals": true,
+      "lamuhFinalSpecials": true,
+      "lamuhFinalDefense": true,
+      "lamuhFinalEndStates": true,
+      "lamuhCrownBeamVfx": true
+    },
+    "ultimate": {
+      "placeholder": true,
+      "animation": "celestial_palm",
+      "beamVfx": "lamuhCrownBeamVfx",
+      "beamAtlasPath": "assets/effects/lamuh/lamuh_crown_of_no_gods_beam_vfx_atlas.png?v=approved-chat-beam-1",
+      "note": "Temporary hidden/demo mapping until the full cinematic ultimate is built; approved chat beam VFX is now used as the live visual overlay."
+    },
+    "beamCount": 0
+  },
+  "p1Result": {
+    "result": {
+      "side": "p1",
+      "move": "ultimate",
+      "anim": "ultimate"
+    },
+    "p1": "lamuh",
+    "p2": "lamuh",
+    "activeMove": "ultimate",
+    "meter": 5,
+    "beamCount": 1
+  },
+  "p2Result": {
+    "result": {
+      "side": "p2",
+      "move": "enemy_ultimate",
+      "anim": "enemy_ultimate"
+    },
+    "p1": "lamuh",
+    "p2": "lamuh",
+    "activeMove": "enemy_ultimate",
+    "meter": 2.5,
+    "beamCount": 1
+  },
+  "beamRequests": [
+    "http://127.0.0.1:62434/assets/effects/lamuh/lamuh_crown_of_no_gods_beam_vfx_atlas.png?v=approved-chat-beam-1"
+  ],
+  "failed": [],
+  "badResponses": [],
+  "consoleErrors": [],
+  "serisForbiddenRequests": [],
+  "screenshots": {
+    "p1": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\lamuh_ultimate_beam_runtime_p1.png",
+    "p2": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\lamuh_ultimate_beam_runtime_p2.png"
+  }
+}

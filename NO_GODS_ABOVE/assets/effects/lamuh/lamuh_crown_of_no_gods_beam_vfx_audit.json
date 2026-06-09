@@ -1,0 +1,870 @@
+{
+  "cells": [
+    {
+      "row": 0,
+      "col": 0,
+      "sourceCrop": [
+        1,
+        1,
+        270,
+        179
+      ],
+      "runtimeCell": [
+        0,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        104,
+        77,
+        578,
+        422
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "sourceCrop": [
+        274,
+        1,
+        541,
+        179
+      ],
+      "runtimeCell": [
+        1024,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        74,
+        33,
+        666,
+        436
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "sourceCrop": [
+        545,
+        1,
+        812,
+        179
+      ],
+      "runtimeCell": [
+        2048,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        59,
+        27,
+        824,
+        455
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "sourceCrop": [
+        816,
+        1,
+        1084,
+        179
+      ],
+      "runtimeCell": [
+        3072,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        59,
+        13,
+        908,
+        475
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "sourceCrop": [
+        1088,
+        1,
+        1356,
+        179
+      ],
+      "runtimeCell": [
+        4096,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        55,
+        10,
+        949,
+        480
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "sourceCrop": [
+        1360,
+        1,
+        1627,
+        179
+      ],
+      "runtimeCell": [
+        5120,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        36,
+        13,
+        983,
+        480
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "sourceCrop": [
+        1631,
+        1,
+        1898,
+        179
+      ],
+      "runtimeCell": [
+        6144,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        6,
+        16,
+        1008,
+        488
+      ],
+      "empty": false
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "sourceCrop": [
+        1902,
+        1,
+        2171,
+        179
+      ],
+      "runtimeCell": [
+        7168,
+        0,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        3,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "sourceCrop": [
+        1,
+        183,
+        270,
+        360
+      ],
+      "runtimeCell": [
+        0,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        14,
+        1,
+        1008,
+        491
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "sourceCrop": [
+        274,
+        183,
+        541,
+        360
+      ],
+      "runtimeCell": [
+        1024,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "sourceCrop": [
+        545,
+        183,
+        812,
+        360
+      ],
+      "runtimeCell": [
+        2048,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "sourceCrop": [
+        816,
+        183,
+        1084,
+        360
+      ],
+      "runtimeCell": [
+        3072,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "sourceCrop": [
+        1088,
+        183,
+        1356,
+        360
+      ],
+      "runtimeCell": [
+        4096,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "sourceCrop": [
+        1360,
+        183,
+        1627,
+        360
+      ],
+      "runtimeCell": [
+        5120,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "sourceCrop": [
+        1631,
+        183,
+        1898,
+        360
+      ],
+      "runtimeCell": [
+        6144,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "sourceCrop": [
+        1902,
+        183,
+        2171,
+        360
+      ],
+      "runtimeCell": [
+        7168,
+        512,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "sourceCrop": [
+        1,
+        364,
+        270,
+        541
+      ],
+      "runtimeCell": [
+        0,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "sourceCrop": [
+        274,
+        364,
+        541,
+        541
+      ],
+      "runtimeCell": [
+        1024,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "sourceCrop": [
+        545,
+        364,
+        812,
+        541
+      ],
+      "runtimeCell": [
+        2048,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "sourceCrop": [
+        816,
+        364,
+        1084,
+        541
+      ],
+      "runtimeCell": [
+        3072,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "sourceCrop": [
+        1088,
+        364,
+        1356,
+        541
+      ],
+      "runtimeCell": [
+        4096,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "sourceCrop": [
+        1360,
+        364,
+        1627,
+        541
+      ],
+      "runtimeCell": [
+        5120,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "sourceCrop": [
+        1631,
+        364,
+        1898,
+        541
+      ],
+      "runtimeCell": [
+        6144,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "sourceCrop": [
+        1902,
+        364,
+        2171,
+        541
+      ],
+      "runtimeCell": [
+        7168,
+        1024,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "sourceCrop": [
+        1,
+        545,
+        270,
+        723
+      ],
+      "runtimeCell": [
+        0,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        0,
+        1008,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "sourceCrop": [
+        274,
+        545,
+        541,
+        723
+      ],
+      "runtimeCell": [
+        1024,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        5,
+        1005,
+        496
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "sourceCrop": [
+        545,
+        545,
+        812,
+        723
+      ],
+      "runtimeCell": [
+        2048,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        10,
+        915,
+        491
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "sourceCrop": [
+        816,
+        545,
+        1084,
+        723
+      ],
+      "runtimeCell": [
+        3072,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        21,
+        927,
+        486
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "sourceCrop": [
+        1088,
+        545,
+        1356,
+        723
+      ],
+      "runtimeCell": [
+        4096,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        41,
+        832,
+        480
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "sourceCrop": [
+        1360,
+        545,
+        1627,
+        723
+      ],
+      "runtimeCell": [
+        5120,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        0,
+        52,
+        820,
+        455
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "sourceCrop": [
+        1631,
+        545,
+        1898,
+        723
+      ],
+      "runtimeCell": [
+        6144,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        29,
+        108,
+        749,
+        427
+      ],
+      "empty": false
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "sourceCrop": [
+        1902,
+        545,
+        2171,
+        723
+      ],
+      "runtimeCell": [
+        7168,
+        1536,
+        1024,
+        512
+      ],
+      "alphaBBoxInPaddedCell": [
+        59,
+        105,
+        650,
+        397
+      ],
+      "empty": false
+    }
+  ],
+  "report": {
+    "status": "PASS",
+    "sheet": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\lamuh_crown_of_no_gods_beam_vfx_atlas.png",
+    "sourceUpload": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\lamuh_crown_of_no_gods_beam_vfx_uploaded_chat_source.png",
+    "sourceOriginal": "C:\\Users\\qchee\\Downloads\\ChatGPT Image Jun 2, 2026, 11_39_59 AM.png",
+    "sourceDimensions": [
+      2172,
+      724
+    ],
+    "atlasDimensions": [
+      8192,
+      2048
+    ],
+    "grid": [
+      8,
+      4
+    ],
+    "cellSize": [
+      1024,
+      512
+    ],
+    "checks": {
+      "dimensionsExact": true,
+      "gridExact": true,
+      "cellSizeExact": true,
+      "transparentRGBA": true,
+      "visibleExactMagentaPixels": 0,
+      "edgeContacts": [],
+      "emptyCells": [],
+      "rowBleedOrNeighborBleed": false,
+      "originStableLeftSide": true,
+      "directionConsistentLeftToRight": true,
+      "beamWidthReasonablyConsistentByRow": true,
+      "rowWidthConsistency": [
+        {
+          "row": 0,
+          "widths": [
+            474,
+            592,
+            765,
+            849,
+            894,
+            947,
+            1002,
+            1005
+          ],
+          "delta": 531,
+          "passes": true
+        },
+        {
+          "row": 1,
+          "widths": [
+            994,
+            1008,
+            1008,
+            1008,
+            1008,
+            1008,
+            1008,
+            1008
+          ],
+          "delta": 14,
+          "passes": true
+        },
+        {
+          "row": 2,
+          "widths": [
+            1008,
+            1008,
+            1008,
+            1008,
+            1008,
+            1008,
+            1008,
+            1008
+          ],
+          "delta": 0,
+          "passes": true
+        },
+        {
+          "row": 3,
+          "widths": [
+            1008,
+            1005,
+            915,
+            927,
+            832,
+            820,
+            720,
+            591
+          ],
+          "delta": 417,
+          "passes": true
+        }
+      ],
+      "impactExplosionBakedIn": false,
+      "characterBodyBakedIn": false,
+      "sourceWasUploadedChatPreview": true,
+      "runtimeCodeChanged": false,
+      "cellSafetyMarginPx": 8
+    },
+    "contactSheet": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\lamuh_crown_of_no_gods_beam_vfx_contact.png",
+    "previews": [
+      {
+        "row": 0,
+        "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_0_muzzle_bloom_beam_startup_strip.png",
+        "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_0_muzzle_bloom_beam_startup.gif"
+      },
+      {
+        "row": 1,
+        "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_1_beam_expansion_strip.png",
+        "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_1_beam_expansion.gif"
+      },
+      {
+        "row": 2,
+        "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_2_beam_sustain_pressure_strip.png",
+        "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_2_beam_sustain_pressure.gif"
+      },
+      {
+        "row": 3,
+        "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_3_beam_taper_dissipate_strip.png",
+        "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_3_beam_taper_dissipate.gif"
+      }
+    ],
+    "notes": [
+      "Approved chat upload was an RGB contact preview with baked checkerboard/grid, so this pass repackaged and alpha-cleaned it into the runtime atlas contract.",
+      "No beam art was regenerated; source beam shapes/palette come from the uploaded approved preview.",
+      "No impact explosion, UI/text, or character body is intentionally baked into the atlas."
+    ]
+  }
+}

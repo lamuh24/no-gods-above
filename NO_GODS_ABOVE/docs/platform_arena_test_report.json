@@ -1,0 +1,1404 @@
+{
+  "ok": true,
+  "checks": {
+    "hookReady": true,
+    "requiredFightersSelectable": true,
+    "platformArenaPreset": {
+      "id": "platform_test",
+      "label": "Platform Arena",
+      "worldWidth": 2400,
+      "canvasWidth": 1280,
+      "widthRatio": 1.875,
+      "platformCount": 1,
+      "configValues": {
+        "camera": {
+          "minScale": 0.7,
+          "maxScale": 1,
+          "paddingX": 320,
+          "damping": 8
+        },
+        "platformSpeedTuning": {
+          "groundSpeedMultiplier": 2.36,
+          "airDriftMultiplier": 2.5,
+          "gravityMultiplier": 2.36,
+          "fallSpeedMultiplier": 1.22,
+          "jumpForceMultiplier": 1,
+          "animationSpeedMultiplier": 1,
+          "hitstopMultiplier": 0.425,
+          "knockbackVelocityMultiplier": 2.24,
+          "cameraSmoothing": 8
+        },
+        "background": {
+          "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+          "overlayAlpha": 0.2,
+          "vignetteMidAlpha": 0.14,
+          "vignetteEdgeAlpha": 0.38
+        },
+        "movement": {
+          "airRecoverySteer": 0.9,
+          "airRecoveryMix": 0.28,
+          "dropThroughTimer": 0.24,
+          "dropThroughNudgeY": 8,
+          "dropThroughVelocity": 100,
+          "landingVelocityScale": 0.46
+        },
+        "combat": {
+          "hitSeparation": {
+            "ground": 150,
+            "air": 118,
+            "heavyGround": 285,
+            "heavyAir": 380
+          },
+          "juggleHitstunScale": {
+            "heavyFirst": 0.78,
+            "heavyRepeated": 0.62,
+            "heavyLate": 0.5,
+            "heavyExhausted": 0.42,
+            "normalMid": 0.78,
+            "normalLate": 0.64,
+            "normalExhausted": 0.52
+          },
+          "knockbackScale": {
+            "heavyGroundBase": 1.24,
+            "heavyAirBase": 1.44,
+            "heavyStep": 0.14,
+            "heavyMax": 1.84,
+            "normalAirLate": 1.14
+          },
+          "heavyRelaunchAirScale": 0.08,
+          "heavyRelaunchRepeatedGroundScale": 0.1,
+          "airRecoveryStartHits": 4,
+          "airRecoveryWindow": 0.26666666666666666
+        }
+      },
+      "ok": true
+    },
+    "fighterLoads": {
+      "kairo": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "kairo",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "vanta": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "vanta",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "nyx",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "nyx": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "nyx",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "sol": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "sol",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "seris": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "seris",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "lamuh": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "lamuh",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "lamuh_legacy": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "lamuh_legacy",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      },
+      "celeste": {
+        "mode": "versus",
+        "selectedStagePresetId": "platform_test",
+        "stagePresetId": "platform_test",
+        "stage": {
+          "id": "platform_test",
+          "label": "Platform Arena",
+          "experimental": true,
+          "worldWidth": 2400,
+          "leftBound": 96,
+          "rightBound": 2304,
+          "groundY": 590,
+          "spawnP1X": 760,
+          "spawnP2X": 1640,
+          "platforms": [
+            {
+              "id": "center_lift",
+              "x": 1020,
+              "y": 456,
+              "w": 360,
+              "h": 24,
+              "dropThrough": true
+            }
+          ],
+          "camera": {
+            "minScale": 0.7,
+            "maxScale": 1,
+            "paddingX": 320,
+            "damping": 8
+          },
+          "platformSpeedTuning": {
+            "groundSpeedMultiplier": 2.36,
+            "airDriftMultiplier": 2.5,
+            "gravityMultiplier": 2.36,
+            "fallSpeedMultiplier": 1.22,
+            "jumpForceMultiplier": 1,
+            "animationSpeedMultiplier": 1,
+            "hitstopMultiplier": 0.425,
+            "knockbackVelocityMultiplier": 2.24,
+            "cameraSmoothing": 8
+          },
+          "background": {
+            "filter": "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+            "overlayAlpha": 0.2,
+            "vignetteMidAlpha": 0.14,
+            "vignetteEdgeAlpha": 0.38
+          },
+          "movement": {
+            "airRecoverySteer": 0.9,
+            "airRecoveryMix": 0.28,
+            "dropThroughTimer": 0.24,
+            "dropThroughNudgeY": 8,
+            "dropThroughVelocity": 100,
+            "landingVelocityScale": 0.46
+          },
+          "combat": {
+            "hitSeparation": {
+              "ground": 150,
+              "air": 118,
+              "heavyGround": 285,
+              "heavyAir": 380
+            },
+            "juggleHitstunScale": {
+              "heavyFirst": 0.78,
+              "heavyRepeated": 0.62,
+              "heavyLate": 0.5,
+              "heavyExhausted": 0.42,
+              "normalMid": 0.78,
+              "normalLate": 0.64,
+              "normalExhausted": 0.52
+            },
+            "knockbackScale": {
+              "heavyGroundBase": 1.24,
+              "heavyAirBase": 1.44,
+              "heavyStep": 0.14,
+              "heavyMax": 1.84,
+              "normalAirLate": 1.14
+            },
+            "heavyRelaunchAirScale": 0.08,
+            "heavyRelaunchRepeatedGroundScale": 0.1,
+            "airRecoveryStartHits": 4,
+            "airRecoveryWindow": 0.26666666666666666
+          }
+        },
+        "camera": {
+          "scale": 1,
+          "x": -560,
+          "y": 0,
+          "initialized": true
+        },
+        "p1": {
+          "id": "celeste",
+          "x": 760,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        },
+        "p2": {
+          "id": "vanta",
+          "x": 1640,
+          "y": 590,
+          "grounded": true,
+          "platform": null
+        }
+      }
+    },
+    "moveChecks": {
+      "kairo": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "special_3"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "special_3",
+            "activeMove": "special_3",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "vanta": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "special_3"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "special_3",
+            "activeMove": "special_3",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "nyx": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "special_3"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "special_3",
+            "activeMove": "special_3",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "sol": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "special_3"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "special_3",
+            "activeMove": "special_3",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "seris": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "special_3"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "special_3",
+            "activeMove": "special_3",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "lamuh": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "down_light_special",
+          "up_light_special"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "down_light_special",
+            "activeMove": "down_light_special",
+            "ok": true
+          },
+          {
+            "requested": "up_light_special",
+            "activeMove": "up_light_special",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "lamuh_legacy": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "down_special",
+          "up_special"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "down_special",
+            "activeMove": "down_special",
+            "ok": true
+          },
+          {
+            "requested": "up_special",
+            "activeMove": "up_special",
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      "celeste": {
+        "wanted": [
+          "neutral_light",
+          "neutral_medium",
+          "neutral_heavy",
+          "special_3"
+        ],
+        "results": [
+          {
+            "requested": "neutral_light",
+            "activeMove": "neutral_light",
+            "ok": true
+          },
+          {
+            "requested": "neutral_medium",
+            "activeMove": "neutral_medium",
+            "ok": true
+          },
+          {
+            "requested": "neutral_heavy",
+            "activeMove": "neutral_heavy",
+            "ok": true
+          },
+          {
+            "requested": "special_3",
+            "activeMove": "special_3",
+            "ok": true
+          }
+        ],
+        "ok": true
+      }
+    },
+    "platformPhysics": {
+      "landedOnPlatform": true,
+      "droppedThrough": true,
+      "floorSafe": true,
+      "jumpPath": {
+        "minY": 456,
+        "platformSeen": true,
+        "platformSeenAt": 0.794
+      },
+      "final": {
+        "x": 1200,
+        "y": 590,
+        "grounded": true,
+        "platform": null
+      }
+    },
+    "camera": {
+      "far": {
+        "scale": 0.7,
+        "x": -200,
+        "y": 177,
+        "initialized": true
+      },
+      "close": {
+        "scale": 1,
+        "x": -560,
+        "y": 0,
+        "initialized": true
+      },
+      "farP1ScreenX": 10,
+      "farP2ScreenX": 1270,
+      "minScale": 0.7,
+      "paddingX": 320,
+      "damping": 8,
+      "ok": true
+    },
+    "platformSpeedTuning": {
+      "platform": {
+        "stagePresetId": "platform_test",
+        "tuning": {
+          "groundSpeedMultiplier": 2.36,
+          "airDriftMultiplier": 2.5,
+          "gravityMultiplier": 2.36,
+          "fallSpeedMultiplier": 1.22,
+          "jumpForceMultiplier": 1,
+          "animationSpeedMultiplier": 1,
+          "hitstopMultiplier": 0.425,
+          "knockbackVelocityMultiplier": 2.24,
+          "cameraSmoothing": 8
+        },
+        "stageTuning": {
+          "groundSpeedMultiplier": 2.36,
+          "airDriftMultiplier": 2.5,
+          "gravityMultiplier": 2.36,
+          "fallSpeedMultiplier": 1.22,
+          "jumpForceMultiplier": 1,
+          "animationSpeedMultiplier": 1,
+          "hitstopMultiplier": 0.425,
+          "knockbackVelocityMultiplier": 2.24,
+          "cameraSmoothing": 8
+        },
+        "movement": {
+          "walkForward": 519.1999999999999,
+          "walkBack": 401.2,
+          "dashSpeed": 1947,
+          "dashDuration": 0.26666666666666666,
+          "dashCooldown": 0.3333333333333333,
+          "superDashSpeed": 2171.2,
+          "superDashCooldown": 0.4666666666666667
+        },
+        "jump": {
+          "jumpVelocity": -720,
+          "gravity": 1800,
+          "juggleGravity": 1260,
+          "airRecoveryGravity": 1660,
+          "airRecoveryDuration": 0.26666666666666666,
+          "landingRecovery": 0.1
+        },
+        "airDash": {
+          "speed": 1900,
+          "duration": 0.21666666666666667,
+          "cooldown": 0.2
+        },
+        "effectiveGravity": {
+          "ascentMultiplier": 1,
+          "fallMultiplier": 2.8792,
+          "reactionMultiplier": 2.36
+        },
+        "animationSpeedMultiplier": 1,
+        "knockbackVelocityMultiplier": 2.24,
+        "heavyHitstop": 0.028050000000000002
+      },
+      "standard": {
+        "stagePresetId": "standard",
+        "tuning": {
+          "groundSpeedMultiplier": 1.18,
+          "airDriftMultiplier": 1.25,
+          "gravityMultiplier": 1.18,
+          "fallSpeedMultiplier": 1.22,
+          "jumpForceMultiplier": 1,
+          "animationSpeedMultiplier": 1,
+          "hitstopMultiplier": 0.85,
+          "knockbackVelocityMultiplier": 1.12,
+          "cameraSmoothing": 8
+        },
+        "stageTuning": null,
+        "movement": {
+          "walkForward": 259.59999999999997,
+          "walkBack": 200.6,
+          "dashSpeed": 973.5,
+          "dashDuration": 0.26666666666666666,
+          "dashCooldown": 0.3333333333333333,
+          "superDashSpeed": 1085.6,
+          "superDashCooldown": 0.4666666666666667
+        },
+        "jump": {
+          "jumpVelocity": -720,
+          "gravity": 1800,
+          "juggleGravity": 1260,
+          "airRecoveryGravity": 1660,
+          "airRecoveryDuration": 0.26666666666666666,
+          "landingRecovery": 0.1
+        },
+        "airDash": {
+          "speed": 950,
+          "duration": 0.21666666666666667,
+          "cooldown": 0.2
+        },
+        "effectiveGravity": {
+          "ascentMultiplier": 1,
+          "fallMultiplier": 1.4396,
+          "reactionMultiplier": 1.18
+        },
+        "animationSpeedMultiplier": 1,
+        "knockbackVelocityMultiplier": 1.12,
+        "heavyHitstop": 0.056100000000000004
+      },
+      "ok": true
+    },
+    "platformJuggleSafety": {
+      "started": {
+        "side": "p1",
+        "fighter": "sol",
+        "move": "neutral_heavy",
+        "anim": "neutral_heavy"
+      },
+      "hit": {
+        "hit": true,
+        "move": "neutral_heavy",
+        "defenderHitstun": 0.23333333333333334,
+        "defenderVy": 761.6,
+        "queuedAirRecovery": 0.26666666666666666,
+        "combo": {
+          "owner": "player",
+          "target": "enemy",
+          "hits": 5,
+          "heavyHits": 2,
+          "wallBounces": 0,
+          "celesteAirBounceSpent": false,
+          "displayHits": 5,
+          "timer": 0.68,
+          "displayTimer": 1.15
+        }
+      },
+      "beforeVy": 0,
+      "afterVy": 761.6,
+      "queuedAirRecovery": 0.26666666666666666,
+      "hitstun": 0.23333333333333334,
+      "combat": {
+        "hitSeparation": {
+          "ground": 150,
+          "air": 118,
+          "heavyGround": 285,
+          "heavyAir": 380
+        },
+        "juggleHitstunScale": {
+          "heavyFirst": 0.78,
+          "heavyRepeated": 0.62,
+          "heavyLate": 0.5,
+          "heavyExhausted": 0.42,
+          "normalMid": 0.78,
+          "normalLate": 0.64,
+          "normalExhausted": 0.52
+        },
+        "knockbackScale": {
+          "heavyGroundBase": 1.24,
+          "heavyAirBase": 1.44,
+          "heavyStep": 0.14,
+          "heavyMax": 1.84,
+          "normalAirLate": 1.14
+        },
+        "heavyRelaunchAirScale": 0.08,
+        "heavyRelaunchRepeatedGroundScale": 0.1,
+        "airRecoveryStartHits": 4,
+        "airRecoveryWindow": 0.26666666666666666
+      },
+      "ok": true
+    },
+    "healthBars": {
+      "p1Exists": true,
+      "p2Exists": true,
+      "p1Width": "100%",
+      "p2Width": "100%",
+      "p1Name": "LAMUH",
+      "p2Name": "CELESTE",
+      "ok": true
+    },
+    "standardStage": {
+      "stagePresetId": "standard",
+      "worldWidth": 1280,
+      "canvasWidth": 1280,
+      "platformCount": 0,
+      "p1x": 330,
+      "p2x": 720,
+      "camera": {
+        "scale": 1,
+        "x": 0,
+        "y": 0
+      },
+      "ok": true
+    }
+  },
+  "failures": [],
+  "errors": []
+}

@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "sheet": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\lamuh_crown_of_no_gods_beam_vfx_atlas.png",
+  "sourceUpload": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\lamuh_crown_of_no_gods_beam_vfx_uploaded_chat_source.png",
+  "sourceOriginal": "C:\\Users\\qchee\\Downloads\\ChatGPT Image Jun 2, 2026, 11_39_59 AM.png",
+  "sourceDimensions": [
+    2172,
+    724
+  ],
+  "atlasDimensions": [
+    8192,
+    2048
+  ],
+  "grid": [
+    8,
+    4
+  ],
+  "cellSize": [
+    1024,
+    512
+  ],
+  "checks": {
+    "dimensionsExact": true,
+    "gridExact": true,
+    "cellSizeExact": true,
+    "transparentRGBA": true,
+    "visibleExactMagentaPixels": 0,
+    "edgeContacts": [],
+    "emptyCells": [],
+    "rowBleedOrNeighborBleed": false,
+    "originStableLeftSide": true,
+    "directionConsistentLeftToRight": true,
+    "beamWidthReasonablyConsistentByRow": true,
+    "rowWidthConsistency": [
+      {
+        "row": 0,
+        "widths": [
+          474,
+          592,
+          765,
+          849,
+          894,
+          947,
+          1002,
+          1005
+        ],
+        "delta": 531,
+        "passes": true
+      },
+      {
+        "row": 1,
+        "widths": [
+          994,
+          1008,
+          1008,
+          1008,
+          1008,
+          1008,
+          1008,
+          1008
+        ],
+        "delta": 14,
+        "passes": true
+      },
+      {
+        "row": 2,
+        "widths": [
+          1008,
+          1008,
+          1008,
+          1008,
+          1008,
+          1008,
+          1008,
+          1008
+        ],
+        "delta": 0,
+        "passes": true
+      },
+      {
+        "row": 3,
+        "widths": [
+          1008,
+          1005,
+          915,
+          927,
+          832,
+          820,
+          720,
+          591
+        ],
+        "delta": 417,
+        "passes": true
+      }
+    ],
+    "impactExplosionBakedIn": false,
+    "characterBodyBakedIn": false,
+    "sourceWasUploadedChatPreview": true,
+    "runtimeCodeChanged": false,
+    "cellSafetyMarginPx": 8
+  },
+  "contactSheet": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\lamuh_crown_of_no_gods_beam_vfx_contact.png",
+  "previews": [
+    {
+      "row": 0,
+      "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_0_muzzle_bloom_beam_startup_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_0_muzzle_bloom_beam_startup.gif"
+    },
+    {
+      "row": 1,
+      "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_1_beam_expansion_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_1_beam_expansion.gif"
+    },
+    {
+      "row": 2,
+      "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_2_beam_sustain_pressure_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_2_beam_sustain_pressure.gif"
+    },
+    {
+      "row": 3,
+      "strip": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_3_beam_taper_dissipate_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\effects\\lamuh\\previews\\lamuh_crown_beam_row_3_beam_taper_dissipate.gif"
+    }
+  ],
+  "notes": [
+    "Approved chat upload was an RGB contact preview with baked checkerboard/grid, so this pass repackaged and alpha-cleaned it into the runtime atlas contract.",
+    "No beam art was regenerated; source beam shapes/palette come from the uploaded approved preview.",
+    "No impact explosion, UI/text, or character body is intentionally baked into the atlas."
+  ]
+}

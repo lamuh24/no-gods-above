@@ -1,0 +1,386 @@
+{
+  "sheet": "lamuh_sheet_8_crown_of_no_gods_body_atlas.png",
+  "sourceDraft": "C:\\Users\\qchee\\.codex\\generated_images\\019e806d-7d08-7470-b417-ead908cc2807\\ig_06b0dfa5e9eec252016a1eeadf383881949ff4c8f5ab698b34.png",
+  "sourceCopy": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\lamuh_sheet_8_crown_of_no_gods_body_source_chroma.png",
+  "status": "PASS_WITH_REVIEW_NOTES",
+  "contract": {
+    "atlasSize": [
+      3584,
+      3584
+    ],
+    "grid": [
+      8,
+      8
+    ],
+    "cellSize": 448,
+    "baselineY": 382,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "frameCounts": [
+      6,
+      7,
+      8,
+      8,
+      7,
+      8,
+      8,
+      6
+    ],
+    "rowNames": [
+      "super_startup_flash_pose",
+      "rush_forward_starter_hit",
+      "cinematic_combo_string_a",
+      "cinematic_combo_string_b_reposition",
+      "launch_setup_hit",
+      "beam_charge",
+      "beam_fire_pose_sustain",
+      "recovery_finish_pose"
+    ]
+  },
+  "sourceDetectedRows": [
+    5,
+    7,
+    7,
+    6,
+    6,
+    7,
+    5
+  ],
+  "checks": {
+    "dimensionsExact": true,
+    "gridExact": true,
+    "cellSizeExact": true,
+    "transparentRGBA": true,
+    "visibleMagentaPixels": 0,
+    "edgeContacts": [],
+    "emptyActiveCells": [],
+    "wideCellsOver430px": [],
+    "tallCellsOver430px": [],
+    "inactiveTrailingCellsCleanOrTransparent": true,
+    "giantBeamOrImpactBakedIn": false,
+    "runtimeCodeChanged": false
+  },
+  "warnings": [
+    "row 0 col 5: generator under-produced source pose; reused clean held pose",
+    "row 2 col 7: generator under-produced source pose; reused clean held pose",
+    "row 3 col 6: generator under-produced source pose; reused clean held pose",
+    "row 3 col 7: generator under-produced source pose; reused clean held pose",
+    "row 4 col 6: generator under-produced source pose; reused clean held pose",
+    "row 5 col 6: generator under-produced source pose; reused clean held pose",
+    "row 5 col 7: generator under-produced source pose; reused clean held pose",
+    "row 6 col 7: generator under-produced source pose; reused clean held pose",
+    "row 7 col 5: generator under-produced source pose; reused clean held pose"
+  ],
+  "heldFillFrames": [
+    {
+      "row": 0,
+      "rowName": "super_startup_flash_pose",
+      "col": 5,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 54,
+        "y": 22,
+        "w": 340,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 54,
+        "y": 22,
+        "w": 340,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 2,
+      "rowName": "cinematic_combo_string_a",
+      "col": 7,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 35,
+        "y": 22,
+        "w": 378,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 35,
+        "y": 22,
+        "w": 378,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 3,
+      "rowName": "cinematic_combo_string_b_reposition",
+      "col": 6,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 76,
+        "y": 22,
+        "w": 296,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 76,
+        "y": 22,
+        "w": 296,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 3,
+      "rowName": "cinematic_combo_string_b_reposition",
+      "col": 7,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 76,
+        "y": 22,
+        "w": 296,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 76,
+        "y": 22,
+        "w": 296,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 4,
+      "rowName": "launch_setup_hit",
+      "col": 6,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 76,
+        "y": 22,
+        "w": 296,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 76,
+        "y": 22,
+        "w": 296,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 5,
+      "rowName": "beam_charge",
+      "col": 6,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 48,
+        "y": 22,
+        "w": 352,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 48,
+        "y": 22,
+        "w": 352,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 5,
+      "rowName": "beam_charge",
+      "col": 7,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 48,
+        "y": 22,
+        "w": 352,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 48,
+        "y": 22,
+        "w": 352,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 6,
+      "rowName": "beam_fire_pose_sustain",
+      "col": 7,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 19,
+        "y": 87,
+        "w": 410,
+        "h": 295,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 234.5,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 19,
+        "y": 87,
+        "w": 410,
+        "h": 295,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 234.5,
+        "baselineDelta": 0
+      }
+    },
+    {
+      "row": 7,
+      "rowName": "recovery_finish_pose",
+      "col": 5,
+      "active": true,
+      "filled": true,
+      "heldFill": true,
+      "bbox": {
+        "x": 126,
+        "y": 22,
+        "w": 196,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      },
+      "renderMeta": {
+        "x": 126,
+        "y": 22,
+        "w": 196,
+        "h": 360,
+        "bottom": 382,
+        "centerX": 224.0,
+        "centerY": 202.0,
+        "baselineDelta": 0
+      }
+    }
+  ],
+  "previewPaths": [
+    {
+      "row": 0,
+      "rowName": "super_startup_flash_pose",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_0_super_startup_flash_pose_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_0_super_startup_flash_pose.gif"
+    },
+    {
+      "row": 1,
+      "rowName": "rush_forward_starter_hit",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_1_rush_forward_starter_hit_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_1_rush_forward_starter_hit.gif"
+    },
+    {
+      "row": 2,
+      "rowName": "cinematic_combo_string_a",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_2_cinematic_combo_string_a_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_2_cinematic_combo_string_a.gif"
+    },
+    {
+      "row": 3,
+      "rowName": "cinematic_combo_string_b_reposition",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_3_cinematic_combo_string_b_reposition_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_3_cinematic_combo_string_b_reposition.gif"
+    },
+    {
+      "row": 4,
+      "rowName": "launch_setup_hit",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_4_launch_setup_hit_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_4_launch_setup_hit.gif"
+    },
+    {
+      "row": 5,
+      "rowName": "beam_charge",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_5_beam_charge_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_5_beam_charge.gif"
+    },
+    {
+      "row": 6,
+      "rowName": "beam_fire_pose_sustain",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_6_beam_fire_pose_sustain_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_6_beam_fire_pose_sustain.gif"
+    },
+    {
+      "row": 7,
+      "rowName": "recovery_finish_pose",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_7_recovery_finish_pose_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_7_recovery_finish_pose.gif"
+    }
+  ],
+  "contactSheet": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\lamuh_sheet_8_crown_of_no_gods_body_contact.png",
+  "finalAtlas": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\lamuh_sheet_8_crown_of_no_gods_body_atlas.png",
+  "notes": [
+    "Generated source supplied seven pose rows rather than the requested eight; final row 4 launch/setup reuses the generated combo/reposition source row as a review draft.",
+    "Some requested active slots use held poses because the source under-produced frame counts; see heldFillFrames.",
+    "Body-only sheet: no beam VFX or impact explosion is baked into the atlas."
+  ],
+  "chromaFringePixelsRemoved": 141049
+}

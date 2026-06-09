@@ -1,0 +1,394 @@
+{
+  "character": "Seris",
+  "sheet": "sheet_1_core_movement",
+  "purpose": "Visual integrity repair for detached movement debris. No gameplay data changed.",
+  "source": "assets/sprites/seris_final/visual_integrity_source/seris_sheet_1_core_movement_atlas_source.png",
+  "output": "assets/sprites/seris_final/seris_sheet_1_core_movement_atlas.png",
+  "cols": 8,
+  "rows": 6,
+  "cell": [
+    384,
+    384
+  ],
+  "edgeOpaquePixels": 0,
+  "rowMap": [
+    {
+      "row": 1,
+      "animation": "idle",
+      "displayFrames": 8,
+      "frames": [
+        {
+          "frame": 1,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_01.png"
+        },
+        {
+          "frame": 2,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_02.png"
+        },
+        {
+          "frame": 3,
+          "components": 2,
+          "kept": 2,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_03.png"
+        },
+        {
+          "frame": 4,
+          "components": 2,
+          "kept": 2,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_04.png"
+        },
+        {
+          "frame": 5,
+          "components": 3,
+          "kept": 3,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_05.png"
+        },
+        {
+          "frame": 6,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_06.png"
+        },
+        {
+          "frame": 7,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_07.png"
+        },
+        {
+          "frame": 8,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_08.png"
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "animation": "walk_forward",
+      "displayFrames": 6,
+      "frames": [
+        {
+          "frame": 1,
+          "components": 5,
+          "kept": 2,
+          "removed": 3,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_01.png"
+        },
+        {
+          "frame": 2,
+          "components": 5,
+          "kept": 1,
+          "removed": 4,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_02.png"
+        },
+        {
+          "frame": 3,
+          "components": 5,
+          "kept": 1,
+          "removed": 4,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_03.png"
+        },
+        {
+          "frame": 4,
+          "components": 2,
+          "kept": 1,
+          "removed": 1,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_04.png"
+        },
+        {
+          "frame": 5,
+          "components": 4,
+          "kept": 2,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_05.png"
+        },
+        {
+          "frame": 6,
+          "components": 6,
+          "kept": 3,
+          "removed": 3,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_06.png"
+        },
+        {
+          "frame": 7,
+          "components": 6,
+          "kept": 3,
+          "removed": 3,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 8,
+          "components": 6,
+          "kept": 3,
+          "removed": 3,
+          "heldPaddingCell": true
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "animation": "walk_back",
+      "displayFrames": 6,
+      "frames": [
+        {
+          "frame": 1,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_01.png"
+        },
+        {
+          "frame": 2,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_02.png"
+        },
+        {
+          "frame": 3,
+          "components": 5,
+          "kept": 3,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_03.png"
+        },
+        {
+          "frame": 4,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_04.png"
+        },
+        {
+          "frame": 5,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_05.png"
+        },
+        {
+          "frame": 6,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_06.png"
+        },
+        {
+          "frame": 7,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 8,
+          "components": 3,
+          "kept": 1,
+          "removed": 2,
+          "heldPaddingCell": true
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "animation": "dash_forward",
+      "displayFrames": 6,
+      "frames": [
+        {
+          "frame": 1,
+          "components": 7,
+          "kept": 7,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_01.png"
+        },
+        {
+          "frame": 2,
+          "components": 8,
+          "kept": 8,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_02.png"
+        },
+        {
+          "frame": 3,
+          "components": 12,
+          "kept": 12,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_03.png"
+        },
+        {
+          "frame": 4,
+          "components": 9,
+          "kept": 9,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_04.png"
+        },
+        {
+          "frame": 5,
+          "components": 9,
+          "kept": 9,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_05.png"
+        },
+        {
+          "frame": 6,
+          "components": 11,
+          "kept": 11,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_06.png"
+        },
+        {
+          "frame": 7,
+          "components": 11,
+          "kept": 11,
+          "removed": 0,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 8,
+          "components": 11,
+          "kept": 11,
+          "removed": 0,
+          "heldPaddingCell": true
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "animation": "dash_back",
+      "displayFrames": 6,
+      "frames": [
+        {
+          "frame": 1,
+          "components": 7,
+          "kept": 6,
+          "removed": 1,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_01.png"
+        },
+        {
+          "frame": 2,
+          "components": 5,
+          "kept": 3,
+          "removed": 2,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_02.png"
+        },
+        {
+          "frame": 3,
+          "components": 5,
+          "kept": 4,
+          "removed": 1,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_03.png"
+        },
+        {
+          "frame": 4,
+          "components": 8,
+          "kept": 8,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_04.png"
+        },
+        {
+          "frame": 5,
+          "components": 3,
+          "kept": 3,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_05.png"
+        },
+        {
+          "frame": 6,
+          "components": 6,
+          "kept": 6,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_06.png"
+        },
+        {
+          "frame": 7,
+          "components": 6,
+          "kept": 6,
+          "removed": 0,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 8,
+          "components": 6,
+          "kept": 6,
+          "removed": 0,
+          "heldPaddingCell": true
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "animation": "crouch",
+      "displayFrames": 4,
+      "frames": [
+        {
+          "frame": 1,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_01.png"
+        },
+        {
+          "frame": 2,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_02.png"
+        },
+        {
+          "frame": 3,
+          "components": 2,
+          "kept": 2,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_03.png"
+        },
+        {
+          "frame": 4,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "file": "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_04.png"
+        },
+        {
+          "frame": 5,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 6,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 7,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "heldPaddingCell": true
+        },
+        {
+          "frame": 8,
+          "components": 1,
+          "kept": 1,
+          "removed": 0,
+          "heldPaddingCell": true
+        }
+      ]
+    }
+  ]
+}

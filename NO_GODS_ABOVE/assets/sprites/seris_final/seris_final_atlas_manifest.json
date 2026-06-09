@@ -1,0 +1,5200 @@
+{
+  "character": "Seris",
+  "purpose": "Transparent atlas and frame export prep for No Gods Above Seris runtime import.",
+  "cellSize": 384,
+  "baselineY": 350,
+  "sourceChromaRemoved": "#FF00FF",
+  "identity": "Mid-range divine chain / whip fighter; ivory, black, turquoise, and gold.",
+  "runtimeImportStatus": "Not wired. Prepared for a later Seris character config and select card step.",
+  "sheets": [
+    {
+      "id": "sheet_1_core_movement",
+      "source": "assets/sprites/seris_generated/seris_sheet_1_core_movement_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_1_core_movement_atlas.png",
+      "cols": 8,
+      "rows": 6,
+      "cellSize": 384,
+      "baselineY": 350,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "idle",
+          "sourceLabel": "Idle",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 8,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_01.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_02.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_03.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_04.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_05.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_06.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_07.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/idle/idle_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                16,
+                183,
+                171
+              ],
+              "placedBbox": [
+                106,
+                195,
+                276,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                17,
+                163,
+                171
+              ],
+              "placedBbox": [
+                116,
+                196,
+                267,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                17,
+                164,
+                171
+              ],
+              "placedBbox": [
+                115,
+                196,
+                267,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                16,
+                150,
+                171
+              ],
+              "placedBbox": [
+                122,
+                195,
+                260,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                17,
+                138,
+                171
+              ],
+              "placedBbox": [
+                129,
+                196,
+                254,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                17,
+                135,
+                171
+              ],
+              "placedBbox": [
+                130,
+                196,
+                252,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                17,
+                153,
+                171
+              ],
+              "placedBbox": [
+                120,
+                196,
+                262,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                17,
+                132,
+                171
+              ],
+              "placedBbox": [
+                130,
+                196,
+                252,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "walk_forward",
+          "sourceLabel": "Walk Forward",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 6,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_01.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_02.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_03.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_04.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_05.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_forward/walk_forward_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                187,
+                170
+              ],
+              "placedBbox": [
+                104,
+                180,
+                279,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                211,
+                170
+              ],
+              "placedBbox": [
+                92,
+                180,
+                291,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                193,
+                170
+              ],
+              "placedBbox": [
+                95,
+                180,
+                287,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                185,
+                170
+              ],
+              "placedBbox": [
+                105,
+                180,
+                278,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                169,
+                170
+              ],
+              "placedBbox": [
+                113,
+                180,
+                269,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                158,
+                170
+              ],
+              "placedBbox": [
+                113,
+                180,
+                270,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "walk_back",
+          "sourceLabel": "Walk Back",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 6,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_01.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_02.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_03.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_04.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_05.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/walk_back/walk_back_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                0,
+                179,
+                171
+              ],
+              "placedBbox": [
+                107,
+                179,
+                275,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                195,
+                171
+              ],
+              "placedBbox": [
+                100,
+                179,
+                282,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                183,
+                171
+              ],
+              "placedBbox": [
+                106,
+                179,
+                277,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                198,
+                171
+              ],
+              "placedBbox": [
+                98,
+                179,
+                284,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                171,
+                171
+              ],
+              "placedBbox": [
+                112,
+                179,
+                271,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                171,
+                171
+              ],
+              "placedBbox": [
+                112,
+                179,
+                270,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "dash_forward",
+          "sourceLabel": "Dash Forward",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 6,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_01.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_02.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_03.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_04.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_05.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_forward/dash_forward_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                18,
+                216,
+                161
+              ],
+              "placedBbox": [
+                89,
+                207,
+                294,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                21,
+                235,
+                161
+              ],
+              "placedBbox": [
+                79,
+                210,
+                303,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                4,
+                16,
+                240,
+                161
+              ],
+              "placedBbox": [
+                74,
+                205,
+                309,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                1,
+                16,
+                256,
+                160
+              ],
+              "placedBbox": [
+                64,
+                206,
+                318,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                16,
+                241,
+                160
+              ],
+              "placedBbox": [
+                71,
+                206,
+                311,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                17,
+                230,
+                161
+              ],
+              "placedBbox": [
+                82,
+                206,
+                301,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 4,
+          "animation": "dash_back",
+          "sourceLabel": "Dash Back",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 6,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_01.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_02.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_03.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_04.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_05.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/dash_back/dash_back_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                0,
+                223,
+                170
+              ],
+              "placedBbox": [
+                85,
+                180,
+                298,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                3,
+                0,
+                220,
+                170
+              ],
+              "placedBbox": [
+                83,
+                180,
+                299,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                0,
+                204,
+                170
+              ],
+              "placedBbox": [
+                95,
+                180,
+                288,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                210,
+                146
+              ],
+              "placedBbox": [
+                92,
+                204,
+                290,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                209,
+                147
+              ],
+              "placedBbox": [
+                93,
+                203,
+                290,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                196,
+                147
+              ],
+              "placedBbox": [
+                99,
+                203,
+                283,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 5,
+          "animation": "crouch",
+          "sourceLabel": "Crouch / Low Stance",
+          "sourceFrames": 4,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_01.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_02.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_03.png",
+            "assets/sprites/seris_final/frames/sheet_1_core_movement/crouch/crouch_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                209,
+                134
+              ],
+              "placedBbox": [
+                93,
+                216,
+                290,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                4,
+                0,
+                223,
+                133
+              ],
+              "placedBbox": [
+                82,
+                217,
+                300,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                5,
+                0,
+                226,
+                133
+              ],
+              "placedBbox": [
+                81,
+                217,
+                301,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                5,
+                0,
+                189,
+                134
+              ],
+              "placedBbox": [
+                100,
+                216,
+                283,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          3072,
+          2304
+        ],
+        "opaquePixels": 484300,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        8,
+        6,
+        6,
+        6,
+        6,
+        4
+      ],
+      "sourceRectPolicy": "fixed cells; runtime uses row-specific display frame counts and skips padded held cells"
+    },
+    {
+      "id": "sheet_2_air_movement",
+      "source": "assets/sprites/seris_generated/seris_sheet_2_air_movement_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_2_air_movement_atlas.png",
+      "cols": 6,
+      "rows": 6,
+      "cellSize": 384,
+      "baselineY": 350,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "jump_up",
+          "sourceLabel": "Jump Up / Rising",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_up/jump_up_01.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_up/jump_up_02.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_up/jump_up_03.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_up/jump_up_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                23,
+                147,
+                171
+              ],
+              "placedBbox": [
+                124,
+                118,
+                258,
+                265
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                12,
+                161,
+                171
+              ],
+              "placedBbox": [
+                117,
+                112,
+                265,
+                270
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                17,
+                156,
+                171
+              ],
+              "placedBbox": [
+                120,
+                115,
+                263,
+                268
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                32,
+                152,
+                171
+              ],
+              "placedBbox": [
+                122,
+                122,
+                261,
+                260
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "jump_forward",
+          "sourceLabel": "Jump Forward",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_forward/jump_forward_01.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_forward/jump_forward_02.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_forward/jump_forward_03.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_forward/jump_forward_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                197,
+                165
+              ],
+              "placedBbox": [
+                99,
+                109,
+                283,
+                273
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                41,
+                220,
+                169
+              ],
+              "placedBbox": [
+                88,
+                128,
+                295,
+                255
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                44,
+                210,
+                169
+              ],
+              "placedBbox": [
+                93,
+                129,
+                290,
+                253
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                202,
+                170
+              ],
+              "placedBbox": [
+                96,
+                107,
+                286,
+                276
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "jump_back",
+          "sourceLabel": "Jump Back",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_back/jump_back_01.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_back/jump_back_02.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_back/jump_back_03.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/jump_back/jump_back_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                20,
+                162,
+                161
+              ],
+              "placedBbox": [
+                117,
+                121,
+                266,
+                261
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                25,
+                159,
+                171
+              ],
+              "placedBbox": [
+                118,
+                119,
+                264,
+                264
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                27,
+                152,
+                171
+              ],
+              "placedBbox": [
+                122,
+                120,
+                261,
+                263
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                12,
+                152,
+                158
+              ],
+              "placedBbox": [
+                122,
+                119,
+                261,
+                264
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "fall",
+          "sourceLabel": "Fall / Neutral Air Drift",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/fall/fall_01.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/fall/fall_02.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/fall/fall_03.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/fall/fall_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                3,
+                165,
+                157
+              ],
+              "placedBbox": [
+                115,
+                115,
+                267,
+                268
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                16,
+                161,
+                163
+              ],
+              "placedBbox": [
+                117,
+                118,
+                265,
+                264
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                15,
+                157,
+                166
+              ],
+              "placedBbox": [
+                119,
+                116,
+                263,
+                266
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                9,
+                157,
+                160
+              ],
+              "placedBbox": [
+                119,
+                116,
+                263,
+                266
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 4,
+          "animation": "air_dash_forward",
+          "sourceLabel": "Air Dash Forward",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 6,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_01.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_02.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_03.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_04.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_05.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_forward/air_dash_forward_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                225,
+                120
+              ],
+              "placedBbox": [
+                79,
+                132,
+                303,
+                251
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                6,
+                227,
+                121
+              ],
+              "placedBbox": [
+                78,
+                134,
+                304,
+                248
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                5,
+                7,
+                234,
+                124
+              ],
+              "placedBbox": [
+                77,
+                133,
+                305,
+                249
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                11,
+                200,
+                124
+              ],
+              "placedBbox": [
+                92,
+                135,
+                291,
+                247
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                11,
+                204,
+                122
+              ],
+              "placedBbox": [
+                90,
+                136,
+                293,
+                246
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                12,
+                192,
+                123
+              ],
+              "placedBbox": [
+                96,
+                136,
+                287,
+                246
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 5,
+          "animation": "air_dash_back",
+          "sourceLabel": "Air Dash Back",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 6,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_01.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_02.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_03.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_04.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_05.png",
+            "assets/sprites/seris_final/frames/sheet_2_air_movement/air_dash_back/air_dash_back_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                255,
+                111
+              ],
+              "placedBbox": [
+                70,
+                136,
+                312,
+                246
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                210,
+                116
+              ],
+              "placedBbox": [
+                93,
+                134,
+                290,
+                249
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                221,
+                119
+              ],
+              "placedBbox": [
+                87,
+                132,
+                295,
+                250
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                2,
+                222,
+                120
+              ],
+              "placedBbox": [
+                86,
+                133,
+                296,
+                250
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                1,
+                180,
+                121
+              ],
+              "placedBbox": [
+                108,
+                132,
+                275,
+                251
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                1,
+                199,
+                121
+              ],
+              "placedBbox": [
+                98,
+                132,
+                284,
+                251
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          2304,
+          2304
+        ],
+        "opaquePixels": 278665,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        4,
+        4,
+        4,
+        4,
+        6,
+        6
+      ],
+      "sourceRectPolicy": "fixed cells; runtime uses row-specific display frame counts and skips padded held cells"
+    },
+    {
+      "id": "sheet_3_ground_normals",
+      "source": "assets/sprites/seris_generated/seris_sheet_3_ground_normals_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_3_ground_normals_atlas.png",
+      "cols": 8,
+      "rows": 4,
+      "cellSize": {
+        "width": 832,
+        "height": 448
+      },
+      "baselineY": 406,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "light_attack",
+          "sourceLabel": "Light Attack",
+          "sourceFrames": 4,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_01.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_02.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_03.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                52,
+                175,
+                225
+              ],
+              "placedBbox": [
+                110,
+                177,
+                273,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                60,
+                242,
+                228
+              ],
+              "placedBbox": [
+                76,
+                182,
+                306,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                65,
+                308,
+                226
+              ],
+              "placedBbox": [
+                38,
+                189,
+                345,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                64,
+                163,
+                224
+              ],
+              "placedBbox": [
+                115,
+                190,
+                267,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "medium_attack",
+          "sourceLabel": "Medium Attack",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 8,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_01.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_02.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_03.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_04.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_05.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_06.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_07.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                37,
+                169,
+                198
+              ],
+              "placedBbox": [
+                113,
+                189,
+                270,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                15,
+                173,
+                197
+              ],
+              "placedBbox": [
+                110,
+                168,
+                272,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                47,
+                339,
+                199
+              ],
+              "placedBbox": [
+                22,
+                198,
+                360,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                49,
+                170,
+                197
+              ],
+              "placedBbox": [
+                107,
+                202,
+                276,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                45,
+                129,
+                198
+              ],
+              "placedBbox": [
+                133,
+                197,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                43,
+                151,
+                200
+              ],
+              "placedBbox": [
+                122,
+                193,
+                261,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                43,
+                179,
+                204
+              ],
+              "placedBbox": [
+                108,
+                189,
+                275,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                44,
+                170,
+                202
+              ],
+              "placedBbox": [
+                112,
+                192,
+                270,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "heavy_attack",
+          "sourceLabel": "Heavy Attack",
+          "sourceFrames": 7,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 5,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_01.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_02.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_03.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_04.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_05.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_06.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_07.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                15,
+                173,
+                172
+              ],
+              "placedBbox": [
+                111,
+                193,
+                271,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": true,
+              "scale": 0.7759,
+              "sourceBbox": [
+                12,
+                29,
+                476,
+                256
+              ],
+              "placedBbox": [
+                12,
+                174,
+                371,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                31,
+                183,
+                256
+              ],
+              "placedBbox": [
+                100,
+                125,
+                282,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": true,
+              "scale": 0.8978,
+              "sourceBbox": [
+                0,
+                0,
+                401,
+                256
+              ],
+              "placedBbox": [
+                12,
+                120,
+                371,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                26,
+                262,
+                173
+              ],
+              "placedBbox": [
+                61,
+                203,
+                322,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            },
+            {
+              "frame": 7,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            }
+          ],
+          "displayFrames": 7,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "launcher",
+          "sourceLabel": "Launcher",
+          "sourceFrames": 7,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 7,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_01.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_02.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_03.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_04.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_05.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_06.png",
+            "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_07.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                14,
+                155,
+                180
+              ],
+              "placedBbox": [
+                119,
+                184,
+                264,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                41,
+                172,
+                187
+              ],
+              "placedBbox": [
+                111,
+                204,
+                272,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                0,
+                140,
+                187
+              ],
+              "placedBbox": [
+                127,
+                163,
+                256,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                139,
+                190
+              ],
+              "placedBbox": [
+                128,
+                160,
+                255,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                119,
+                190
+              ],
+              "placedBbox": [
+                138,
+                160,
+                245,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                176,
+                189
+              ],
+              "placedBbox": [
+                109,
+                161,
+                273,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                154,
+                193
+              ],
+              "placedBbox": [
+                115,
+                157,
+                268,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 7,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          3072,
+          1536
+        ],
+        "opaquePixels": 331435,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [
+        "sheet_3_ground_normals heavy_attack frame 6 held from previous because source slot was empty.",
+        "sheet_3_ground_normals heavy_attack frame 7 held from previous because source slot was empty."
+      ],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        4,
+        8,
+        7,
+        7
+      ],
+      "cellWidth": 832,
+      "cellHeight": 448,
+      "anchorX": 320,
+      "sourceRectPolicy": "fixed large cells; no per-frame runtime trimming for Seris offensive chain sheets"
+    },
+    {
+      "id": "sheet_4_air_normals",
+      "source": "assets/sprites/seris_generated/seris_sheet_4_air_normals_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_4_air_normals_atlas.png",
+      "cols": 7,
+      "rows": 4,
+      "cellSize": {
+        "width": 832,
+        "height": 448
+      },
+      "baselineY": 406,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "air_light",
+          "sourceLabel": "Air Light",
+          "sourceFrames": 4,
+          "runtimeFrames": 7,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_01.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_02.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_03.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                50,
+                224,
+                224
+              ],
+              "placedBbox": [
+                86,
+                105,
+                297,
+                278
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                55,
+                266,
+                230
+              ],
+              "placedBbox": [
+                64,
+                104,
+                318,
+                278
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                54,
+                281,
+                228
+              ],
+              "placedBbox": [
+                57,
+                105,
+                325,
+                278
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                54,
+                281,
+                228
+              ],
+              "placedBbox": [
+                57,
+                105,
+                325,
+                278
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "air_medium",
+          "sourceLabel": "Air Medium",
+          "sourceFrames": 6,
+          "runtimeFrames": 7,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 5,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_01.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_02.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_03.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_04.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_05.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                45,
+                239,
+                212
+              ],
+              "placedBbox": [
+                78,
+                108,
+                305,
+                274
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                49,
+                221,
+                215
+              ],
+              "placedBbox": [
+                87,
+                109,
+                296,
+                274
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": true,
+              "scale": 0.786,
+              "sourceBbox": [
+                12,
+                47,
+                470,
+                217
+              ],
+              "placedBbox": [
+                12,
+                125,
+                371,
+                258
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                51,
+                242,
+                218
+              ],
+              "placedBbox": [
+                77,
+                108,
+                306,
+                274
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                50,
+                282,
+                217
+              ],
+              "placedBbox": [
+                51,
+                108,
+                332,
+                274
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "air_heavy",
+          "sourceLabel": "Air Heavy",
+          "sourceFrames": 7,
+          "runtimeFrames": 7,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 7,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_01.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_02.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_03.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_04.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_05.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_06.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_07.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                39,
+                160,
+                214
+              ],
+              "placedBbox": [
+                117,
+                104,
+                266,
+                278
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                35,
+                244,
+                226
+              ],
+              "placedBbox": [
+                70,
+                96,
+                313,
+                286
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                43,
+                129,
+                209
+              ],
+              "placedBbox": [
+                127,
+                109,
+                255,
+                274
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                37,
+                183,
+                233
+              ],
+              "placedBbox": [
+                100,
+                94,
+                282,
+                289
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                27,
+                190,
+                234
+              ],
+              "placedBbox": [
+                97,
+                88,
+                286,
+                294
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": true,
+              "scale": 0.8633,
+              "sourceBbox": [
+                0,
+                23,
+                417,
+                254
+              ],
+              "placedBbox": [
+                12,
+                92,
+                371,
+                290
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                63,
+                266,
+                256
+              ],
+              "placedBbox": [
+                64,
+                95,
+                319,
+                287
+              ]
+            }
+          ],
+          "displayFrames": 7,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "air_recovery",
+          "sourceLabel": "Air Recovery / Fall Transition",
+          "sourceFrames": 4,
+          "runtimeFrames": 7,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_01.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_02.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_03.png",
+            "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                18,
+                167,
+                194
+              ],
+              "placedBbox": [
+                113,
+                104,
+                269,
+                279
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                18,
+                154,
+                209
+              ],
+              "placedBbox": [
+                120,
+                96,
+                262,
+                286
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                17,
+                160,
+                194
+              ],
+              "placedBbox": [
+                118,
+                103,
+                265,
+                279
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                17,
+                160,
+                194
+              ],
+              "placedBbox": [
+                118,
+                103,
+                265,
+                279
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          2688,
+          1536
+        ],
+        "opaquePixels": 341162,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [
+        "sheet_4_air_normals air_medium frame 6 held from previous because source slot was empty."
+      ],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        4,
+        6,
+        7,
+        4
+      ],
+      "cellWidth": 832,
+      "cellHeight": 448,
+      "anchorX": 320,
+      "sourceRectPolicy": "fixed large cells; no per-frame runtime trimming for Seris offensive chain sheets"
+    },
+    {
+      "id": "sheet_5_specials_body",
+      "source": "assets/sprites/seris_generated/seris_sheet_5_specials_body_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_5_specials_body_atlas.png",
+      "cols": 8,
+      "rows": 6,
+      "cellSize": {
+        "width": 832,
+        "height": 448
+      },
+      "baselineY": 406,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "chain_snare_start",
+          "sourceLabel": "Chain Snare Start",
+          "sourceFrames": 4,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_01.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_02.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_03.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                30,
+                160,
+                171
+              ],
+              "placedBbox": [
+                117,
+                209,
+                265,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                30,
+                166,
+                171
+              ],
+              "placedBbox": [
+                115,
+                209,
+                268,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                34,
+                250,
+                171
+              ],
+              "placedBbox": [
+                72,
+                213,
+                310,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                34,
+                250,
+                171
+              ],
+              "placedBbox": [
+                72,
+                213,
+                310,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "chain_snare_active",
+          "sourceLabel": "Chain Snare Active",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 5,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_01.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_02.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_03.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_04.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_05.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                187,
+                170
+              ],
+              "placedBbox": [
+                104,
+                180,
+                278,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                131,
+                170
+              ],
+              "placedBbox": [
+                126,
+                180,
+                256,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": true,
+              "scale": 0.5325,
+              "sourceBbox": [
+                0,
+                0,
+                676,
+                170
+              ],
+              "placedBbox": [
+                12,
+                259,
+                371,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                184,
+                170
+              ],
+              "placedBbox": [
+                100,
+                180,
+                283,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                47,
+                181,
+                170
+              ],
+              "placedBbox": [
+                107,
+                227,
+                275,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "chain_snare_recovery",
+          "sourceLabel": "Chain Snare Recovery",
+          "sourceFrames": 4,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_01.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_02.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_03.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                0,
+                153,
+                171
+              ],
+              "placedBbox": [
+                120,
+                179,
+                263,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                7,
+                0,
+                147,
+                171
+              ],
+              "placedBbox": [
+                122,
+                179,
+                261,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                4,
+                57,
+                126,
+                171
+              ],
+              "placedBbox": [
+                131,
+                236,
+                252,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                126,
+                171
+              ],
+              "placedBbox": [
+                129,
+                179,
+                254,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "sanctum_sweep",
+          "sourceLabel": "Sanctum Sweep",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 7,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_01.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_02.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_03.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_04.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_05.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_06.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_07.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                0,
+                204,
+                171
+              ],
+              "placedBbox": [
+                94,
+                179,
+                288,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                0,
+                215,
+                171
+              ],
+              "placedBbox": [
+                89,
+                179,
+                294,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                0,
+                214,
+                171
+              ],
+              "placedBbox": [
+                90,
+                179,
+                293,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                5,
+                0,
+                216,
+                171
+              ],
+              "placedBbox": [
+                86,
+                179,
+                296,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                49,
+                226,
+                171
+              ],
+              "placedBbox": [
+                79,
+                228,
+                304,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                4,
+                43,
+                192,
+                171
+              ],
+              "placedBbox": [
+                98,
+                222,
+                285,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                45,
+                172,
+                171
+              ],
+              "placedBbox": [
+                112,
+                224,
+                271,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 4,
+          "animation": "divine_recoil",
+          "sourceLabel": "Divine Recoil",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 8,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_01.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_02.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_03.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_04.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_05.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_06.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_07.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                17,
+                149,
+                170
+              ],
+              "placedBbox": [
+                117,
+                197,
+                265,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                21,
+                154,
+                170
+              ],
+              "placedBbox": [
+                115,
+                201,
+                268,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                23,
+                155,
+                170
+              ],
+              "placedBbox": [
+                114,
+                203,
+                268,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                23,
+                153,
+                152
+              ],
+              "placedBbox": [
+                115,
+                221,
+                267,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                26,
+                155,
+                170
+              ],
+              "placedBbox": [
+                114,
+                206,
+                268,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                161,
+                156
+              ],
+              "placedBbox": [
+                111,
+                194,
+                271,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                59,
+                141
+              ],
+              "placedBbox": [
+                162,
+                209,
+                220,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                0,
+                153,
+                160
+              ],
+              "placedBbox": [
+                115,
+                190,
+                267,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 5,
+          "animation": "special_recovery",
+          "sourceLabel": "Special Recovery / Return to Stance",
+          "sourceFrames": 4,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_01.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_02.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_03.png",
+            "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                160,
+                135
+              ],
+              "placedBbox": [
+                118,
+                215,
+                265,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                158,
+                139
+              ],
+              "placedBbox": [
+                119,
+                211,
+                264,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                149,
+                138
+              ],
+              "placedBbox": [
+                123,
+                212,
+                260,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                149,
+                138
+              ],
+              "placedBbox": [
+                123,
+                212,
+                260,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          3072,
+          2304
+        ],
+        "opaquePixels": 383340,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [
+        "sheet_5_specials_body chain_snare_active frame 6 held from previous because source slot was empty.",
+        "sheet_5_specials_body sanctum_sweep frame 8 held from previous because source slot was empty."
+      ],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        4,
+        6,
+        4,
+        8,
+        8,
+        4
+      ],
+      "cellWidth": 832,
+      "cellHeight": 448,
+      "anchorX": 320,
+      "sourceRectPolicy": "fixed large cells; no per-frame runtime trimming for Seris offensive chain sheets"
+    },
+    {
+      "id": "sheet_6_defense_hit_reactions",
+      "source": "assets/sprites/seris_generated/seris_sheet_6_defense_hit_reactions_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_6_defense_hit_reactions_atlas.png",
+      "cols": 6,
+      "rows": 8,
+      "cellSize": 384,
+      "baselineY": 350,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "stand_block",
+          "sourceLabel": "Stand Block",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/stand_block/stand_block_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                34,
+                165,
+                192
+              ],
+              "placedBbox": [
+                115,
+                192,
+                268,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                35,
+                159,
+                192
+              ],
+              "placedBbox": [
+                118,
+                193,
+                265,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                36,
+                162,
+                192
+              ],
+              "placedBbox": [
+                117,
+                194,
+                266,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                36,
+                162,
+                192
+              ],
+              "placedBbox": [
+                117,
+                194,
+                266,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "crouch_block",
+          "sourceLabel": "Crouch Block",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/crouch_block/crouch_block_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                174,
+                192
+              ],
+              "placedBbox": [
+                110,
+                158,
+                272,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                0,
+                159,
+                192
+              ],
+              "placedBbox": [
+                117,
+                158,
+                266,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                150,
+                192
+              ],
+              "placedBbox": [
+                122,
+                158,
+                260,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                159,
+                192
+              ],
+              "placedBbox": [
+                118,
+                158,
+                265,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "air_block",
+          "sourceLabel": "Air Block",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_block/air_block_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                39,
+                166,
+                192
+              ],
+              "placedBbox": [
+                114,
+                115,
+                268,
+                267
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                167,
+                192
+              ],
+              "placedBbox": [
+                114,
+                96,
+                269,
+                287
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                184,
+                190
+              ],
+              "placedBbox": [
+                105,
+                97,
+                277,
+                286
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                175,
+                192
+              ],
+              "placedBbox": [
+                110,
+                96,
+                273,
+                287
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "light_hitstun",
+          "sourceLabel": "Light Hitstun",
+          "sourceFrames": 3,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 3,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/light_hitstun/light_hitstun_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/light_hitstun/light_hitstun_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/light_hitstun/light_hitstun_03.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                30,
+                148,
+                192
+              ],
+              "placedBbox": [
+                124,
+                188,
+                259,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                30,
+                159,
+                185
+              ],
+              "placedBbox": [
+                117,
+                195,
+                266,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                38,
+                171,
+                188
+              ],
+              "placedBbox": [
+                111,
+                200,
+                272,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 3,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 4,
+          "animation": "medium_hitstun",
+          "sourceLabel": "Medium Hitstun",
+          "sourceFrames": 4,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 4,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/medium_hitstun/medium_hitstun_04.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                15,
+                204,
+                173
+              ],
+              "placedBbox": [
+                95,
+                192,
+                288,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                23,
+                202,
+                175
+              ],
+              "placedBbox": [
+                96,
+                198,
+                287,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                27,
+                207,
+                178
+              ],
+              "placedBbox": [
+                93,
+                199,
+                289,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                27,
+                220,
+                175
+              ],
+              "placedBbox": [
+                87,
+                202,
+                296,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 4,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 5,
+          "animation": "heavy_hitstun",
+          "sourceLabel": "Heavy Hitstun",
+          "sourceFrames": 6,
+          "runtimeFrames": 6,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": 3,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_04.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_05.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/heavy_hitstun/heavy_hitstun_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": true,
+              "scale": 0.4031,
+              "sourceBbox": [
+                11,
+                0,
+                904,
+                192
+              ],
+              "placedBbox": [
+                12,
+                273,
+                371,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                19,
+                291,
+                149
+              ],
+              "placedBbox": [
+                46,
+                220,
+                336,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                0,
+                34,
+                69,
+                105
+              ],
+              "placedBbox": [
+                157,
+                279,
+                225,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            },
+            {
+              "frame": 5,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            },
+            {
+              "frame": 6,
+              "empty": true,
+              "scaled": false,
+              "sourceBbox": null,
+              "placedBbox": null,
+              "heldFromPreviousDueEmptySourceSlot": true
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 6,
+          "animation": "launch_hitstun",
+          "sourceLabel": "Launch Hitstun",
+          "sourceFrames": 5,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 5,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_04.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/launch_hitstun/launch_hitstun_05.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                9,
+                23,
+                145,
+                192
+              ],
+              "placedBbox": [
+                124,
+                107,
+                259,
+                275
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                140,
+                192
+              ],
+              "placedBbox": [
+                127,
+                96,
+                255,
+                287
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                149,
+                192
+              ],
+              "placedBbox": [
+                123,
+                96,
+                260,
+                287
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                142,
+                192
+              ],
+              "placedBbox": [
+                126,
+                96,
+                256,
+                287
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                153,
+                145
+              ],
+              "placedBbox": [
+                121,
+                119,
+                262,
+                263
+              ]
+            }
+          ],
+          "displayFrames": 5,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 7,
+          "animation": "air_hitstun",
+          "sourceLabel": "Air Hitstun",
+          "sourceFrames": 5,
+          "runtimeFrames": 6,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": 5,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_01.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_02.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_03.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_04.png",
+            "assets/sprites/seris_final/frames/sheet_6_defense_hit_reactions/air_hitstun/air_hitstun_05.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                10,
+                0,
+                193,
+                132
+              ],
+              "placedBbox": [
+                100,
+                126,
+                282,
+                257
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                179,
+                128
+              ],
+              "placedBbox": [
+                108,
+                128,
+                275,
+                255
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                12,
+                0,
+                166,
+                125
+              ],
+              "placedBbox": [
+                115,
+                129,
+                268,
+                253
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                210,
+                123
+              ],
+              "placedBbox": [
+                92,
+                130,
+                290,
+                252
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                11,
+                0,
+                210,
+                123
+              ],
+              "placedBbox": [
+                92,
+                130,
+                290,
+                252
+              ]
+            }
+          ],
+          "displayFrames": 5,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          2304,
+          3072
+        ],
+        "opaquePixels": 406056,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [
+        "sheet_6_defense_hit_reactions heavy_hitstun frame 4 held from previous because source slot was empty.",
+        "sheet_6_defense_hit_reactions heavy_hitstun frame 5 held from previous because source slot was empty.",
+        "sheet_6_defense_hit_reactions heavy_hitstun frame 6 held from previous because source slot was empty."
+      ],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        6,
+        5,
+        5
+      ],
+      "sourceRectPolicy": "fixed cells; runtime uses row-specific display frame counts and skips padded held cells"
+    },
+    {
+      "id": "sheet_7_knockdown_recovery_flavor",
+      "source": "assets/sprites/seris_generated/seris_sheet_7_knockdown_recovery_flavor_chroma.png",
+      "output": "assets/sprites/seris_final/seris_sheet_7_knockdown_recovery_flavor_atlas.png",
+      "cols": 8,
+      "rows": 7,
+      "cellSize": 384,
+      "baselineY": 350,
+      "rowMap": [
+        {
+          "row": 0,
+          "animation": "knockdown_fall",
+          "sourceLabel": "Knockdown Fall",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "air",
+          "pivotMode": "cell_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_03.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_04.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_05.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/knockdown_fall/knockdown_fall_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                50,
+                28,
+                205,
+                196
+              ],
+              "placedBbox": [
+                114,
+                108,
+                268,
+                275
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                49,
+                25,
+                207,
+                199
+              ],
+              "placedBbox": [
+                113,
+                105,
+                270,
+                278
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                56,
+                35,
+                207,
+                189
+              ],
+              "placedBbox": [
+                116,
+                115,
+                266,
+                268
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                52,
+                39,
+                204,
+                185
+              ],
+              "placedBbox": [
+                116,
+                119,
+                267,
+                264
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                65,
+                50,
+                190,
+                174
+              ],
+              "placedBbox": [
+                129,
+                130,
+                253,
+                253
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                57,
+                61,
+                198,
+                163
+              ],
+              "placedBbox": [
+                121,
+                141,
+                261,
+                242
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 1,
+          "animation": "grounded",
+          "sourceLabel": "Grounded / Downed",
+          "sourceFrames": 3,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/grounded/grounded_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/grounded/grounded_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/grounded/grounded_03.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                18,
+                62,
+                238,
+                161
+              ],
+              "placedBbox": [
+                82,
+                251,
+                301,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                19,
+                68,
+                237,
+                155
+              ],
+              "placedBbox": [
+                83,
+                263,
+                300,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                30,
+                74,
+                225,
+                149
+              ],
+              "placedBbox": [
+                94,
+                275,
+                288,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 3,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 2,
+          "animation": "recovery_get_up",
+          "sourceLabel": "Recovery / Get Up",
+          "sourceFrames": 6,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": true,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_03.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_04.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_05.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/recovery_get_up/recovery_get_up_06.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                57,
+                65,
+                198,
+                159
+              ],
+              "placedBbox": [
+                121,
+                256,
+                261,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                69,
+                55,
+                187,
+                168
+              ],
+              "placedBbox": [
+                133,
+                237,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                75,
+                45,
+                181,
+                178
+              ],
+              "placedBbox": [
+                139,
+                217,
+                244,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                74,
+                38,
+                181,
+                185
+              ],
+              "placedBbox": [
+                138,
+                203,
+                244,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                69,
+                38,
+                187,
+                186
+              ],
+              "placedBbox": [
+                133,
+                202,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                58,
+                35,
+                198,
+                189
+              ],
+              "placedBbox": [
+                122,
+                196,
+                261,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 6,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 3,
+          "animation": "ko_defeat",
+          "sourceLabel": "KO / Defeat",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_03.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_04.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_05.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_06.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_07.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/ko_defeat/ko_defeat_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                69,
+                28,
+                186,
+                195
+              ],
+              "placedBbox": [
+                133,
+                183,
+                249,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                69,
+                34,
+                187,
+                190
+              ],
+              "placedBbox": [
+                133,
+                194,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                69,
+                34,
+                187,
+                190
+              ],
+              "placedBbox": [
+                133,
+                194,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                56,
+                47,
+                198,
+                177
+              ],
+              "placedBbox": [
+                121,
+                220,
+                262,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                56,
+                52,
+                197,
+                172
+              ],
+              "placedBbox": [
+                121,
+                230,
+                261,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                55,
+                67,
+                201,
+                157
+              ],
+              "placedBbox": [
+                119,
+                260,
+                264,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                43,
+                73,
+                212,
+                150
+              ],
+              "placedBbox": [
+                107,
+                273,
+                275,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                40,
+                73,
+                209,
+                150
+              ],
+              "placedBbox": [
+                107,
+                273,
+                275,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 4,
+          "animation": "intro_pose",
+          "sourceLabel": "Intro Pose",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_03.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_04.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_05.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_06.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_07.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/intro_pose/intro_pose_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                72,
+                35,
+                183,
+                188
+              ],
+              "placedBbox": [
+                136,
+                197,
+                246,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                76,
+                37,
+                180,
+                186
+              ],
+              "placedBbox": [
+                140,
+                201,
+                243,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                53,
+                18,
+                202,
+                206
+              ],
+              "placedBbox": [
+                117,
+                162,
+                265,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                57,
+                19,
+                198,
+                205
+              ],
+              "placedBbox": [
+                121,
+                164,
+                261,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                68,
+                38,
+                187,
+                185
+              ],
+              "placedBbox": [
+                132,
+                203,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                62,
+                40,
+                193,
+                183
+              ],
+              "placedBbox": [
+                126,
+                207,
+                256,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                62,
+                40,
+                193,
+                183
+              ],
+              "placedBbox": [
+                126,
+                207,
+                256,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                62,
+                40,
+                193,
+                183
+              ],
+              "placedBbox": [
+                126,
+                207,
+                256,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 5,
+          "animation": "victory",
+          "sourceLabel": "Victory Pose",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_03.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_04.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_05.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_06.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_07.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/victory/victory_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                72,
+                35,
+                183,
+                189
+              ],
+              "placedBbox": [
+                136,
+                196,
+                246,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                71,
+                36,
+                185,
+                188
+              ],
+              "placedBbox": [
+                135,
+                198,
+                248,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                54,
+                37,
+                202,
+                186
+              ],
+              "placedBbox": [
+                118,
+                201,
+                265,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                84,
+                40,
+                172,
+                184
+              ],
+              "placedBbox": [
+                148,
+                206,
+                235,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                79,
+                42,
+                176,
+                181
+              ],
+              "placedBbox": [
+                143,
+                211,
+                239,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                79,
+                42,
+                177,
+                181
+              ],
+              "placedBbox": [
+                143,
+                211,
+                240,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                74,
+                38,
+                181,
+                185
+              ],
+              "placedBbox": [
+                138,
+                203,
+                244,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                74,
+                38,
+                181,
+                185
+              ],
+              "placedBbox": [
+                138,
+                203,
+                244,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        },
+        {
+          "row": 6,
+          "animation": "taunt",
+          "sourceLabel": "Taunt",
+          "sourceFrames": 8,
+          "runtimeFrames": 8,
+          "verticalMode": "ground",
+          "pivotMode": "bottom_center",
+          "paddedByHoldingLastFrame": false,
+          "detectedSourceRegions": null,
+          "frames": [
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_01.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_02.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_03.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_04.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_05.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_06.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_07.png",
+            "assets/sprites/seris_final/frames/sheet_7_knockdown_recovery_flavor/taunt/taunt_08.png"
+          ],
+          "frameMeta": [
+            {
+              "frame": 1,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                62,
+                36,
+                193,
+                187
+              ],
+              "placedBbox": [
+                126,
+                199,
+                256,
+                349
+              ]
+            },
+            {
+              "frame": 2,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                64,
+                37,
+                192,
+                186
+              ],
+              "placedBbox": [
+                128,
+                201,
+                255,
+                349
+              ]
+            },
+            {
+              "frame": 3,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                54,
+                37,
+                201,
+                186
+              ],
+              "placedBbox": [
+                118,
+                201,
+                264,
+                349
+              ]
+            },
+            {
+              "frame": 4,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                61,
+                37,
+                192,
+                187
+              ],
+              "placedBbox": [
+                126,
+                200,
+                256,
+                349
+              ]
+            },
+            {
+              "frame": 5,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                72,
+                36,
+                184,
+                188
+              ],
+              "placedBbox": [
+                136,
+                198,
+                247,
+                349
+              ]
+            },
+            {
+              "frame": 6,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                69,
+                38,
+                187,
+                186
+              ],
+              "placedBbox": [
+                133,
+                202,
+                250,
+                349
+              ]
+            },
+            {
+              "frame": 7,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                54,
+                38,
+                194,
+                186
+              ],
+              "placedBbox": [
+                122,
+                202,
+                261,
+                349
+              ]
+            },
+            {
+              "frame": 8,
+              "empty": false,
+              "scaled": false,
+              "scale": 1.0,
+              "sourceBbox": [
+                54,
+                38,
+                194,
+                186
+              ],
+              "placedBbox": [
+                122,
+                202,
+                261,
+                349
+              ]
+            }
+          ],
+          "displayFrames": 8,
+          "runtimeSourceRectPolicy": "fixed_cell"
+        }
+      ],
+      "validation": {
+        "size": [
+          3072,
+          2688
+        ],
+        "opaquePixels": 365975,
+        "remainingOpaqueChromaPixels": 0,
+        "transparentCorners": true,
+        "opaqueCanvasEdgePixels": 0
+      },
+      "warnings": [],
+      "fixedSourceCells": true,
+      "displayFrameCounts": [
+        6,
+        3,
+        6,
+        8,
+        8,
+        8,
+        8
+      ],
+      "sourceRectPolicy": "fixed cells; runtime uses row-specific display frame counts and skips padded held cells"
+    }
+  ],
+  "visualIntegrityRepair": {
+    "date": "2026-05-31",
+    "summary": "Seris runtime now uses fixed source cells and row-specific display frame counts. Sheet 1 detached movement debris was cleaned. Sheet 8 normal-attack chain overlays are disabled; embedded offensive body frames carry the main chain motion.",
+    "cacheVersion": "seris-visual-integrity-1",
+    "sheet1CoreMovementRepair": "assets/sprites/seris_final/seris_core_movement_visual_integrity_manifest.json"
+  }
+}

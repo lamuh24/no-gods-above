@@ -10,6 +10,7 @@
   const selectModeLabel = document.getElementById("select-mode-label");
   const selectVersusButton = document.getElementById("select-versus-button");
   const selectTrainingButton = document.getElementById("select-training-button");
+  const stagePresetButtons = document.querySelectorAll("[data-stage-preset]");
   const p1SelectSlot = document.getElementById("p1-select-slot");
   const p2SelectSlot = document.getElementById("p2-select-slot");
   const p1SelectName = document.getElementById("p1-select-name");
@@ -42,9 +43,116 @@
   const W = canvas.width;
   const H = canvas.height;
   const GROUND_Y = 590;
+  const STANDARD_STAGE_ID = "standard";
+  const PLATFORM_TEST_STAGE_ID = "platform_test";
+  const STANDARD_FIGHTING_SPEED_TUNING = {
+    groundSpeedMultiplier: 1.18,
+    airDriftMultiplier: 1.25,
+    gravityMultiplier: 1.18,
+    fallSpeedMultiplier: 1.22,
+    jumpForceMultiplier: 1,
+    animationSpeedMultiplier: 1,
+    hitstopMultiplier: 0.85,
+    knockbackVelocityMultiplier: 1.12,
+    cameraSmoothing: 8
+  };
+  const PLATFORM_ARENA_CONFIG = {
+    label: "Platform Arena",
+    worldWidth: 2400,
+    bounds: { left: 96, right: 2304 },
+    spawns: { p1X: 760, p2X: 1640 },
+    groundY: GROUND_Y,
+    platforms: [
+      { id: "center_lift", x: 1020, y: 456, w: 360, h: 24, dropThrough: true }
+    ],
+    camera: { minScale: 0.7, maxScale: 1, paddingX: 320, damping: 8 },
+    platformSpeedTuning: {
+      groundSpeedMultiplier: 2.36,
+      airDriftMultiplier: 2.5,
+      gravityMultiplier: 2.36,
+      fallSpeedMultiplier: 1.22,
+      jumpForceMultiplier: 1,
+      animationSpeedMultiplier: 1,
+      hitstopMultiplier: 0.425,
+      knockbackVelocityMultiplier: 2.24,
+      cameraSmoothing: 8
+    },
+    background: {
+      filter: "saturate(0.54) brightness(0.6) contrast(0.88) blur(0.6px)",
+      overlayAlpha: 0.2,
+      vignetteMidAlpha: 0.14,
+      vignetteEdgeAlpha: 0.38
+    },
+    movement: {
+      airRecoverySteer: 0.9,
+      airRecoveryMix: 0.28,
+      dropThroughTimer: 0.24,
+      dropThroughNudgeY: 8,
+      dropThroughVelocity: 100,
+      landingVelocityScale: 0.46
+    },
+    combat: {
+      hitSeparation: { ground: 150, air: 118, heavyGround: 285, heavyAir: 380 },
+      juggleHitstunScale: {
+        heavyFirst: 0.78,
+        heavyRepeated: 0.62,
+        heavyLate: 0.5,
+        heavyExhausted: 0.42,
+        normalMid: 0.78,
+        normalLate: 0.64,
+        normalExhausted: 0.52
+      },
+      knockbackScale: {
+        heavyGroundBase: 1.24,
+        heavyAirBase: 1.44,
+        heavyStep: 0.14,
+        heavyMax: 1.84,
+        normalAirLate: 1.14
+      },
+      heavyRelaunchAirScale: 0.08,
+      heavyRelaunchRepeatedGroundScale: 0.1,
+      airRecoveryStartHits: 4,
+      airRecoveryWindow: 16 / 60
+    }
+  };
+  const STAGE_PRESETS = {
+    [STANDARD_STAGE_ID]: {
+      id: STANDARD_STAGE_ID,
+      label: "Standard Arena (Fallback)",
+      experimental: false,
+      worldWidth: W,
+      leftBound: 110,
+      rightBound: W - 110,
+      groundY: GROUND_Y,
+      spawnP1X: 330,
+      spawnP2X: 720,
+      platforms: [],
+      camera: { minScale: 1, maxScale: 1, paddingX: 0 }
+    },
+    [PLATFORM_TEST_STAGE_ID]: {
+      id: PLATFORM_TEST_STAGE_ID,
+      label: PLATFORM_ARENA_CONFIG.label,
+      experimental: true,
+      worldWidth: PLATFORM_ARENA_CONFIG.worldWidth,
+      leftBound: PLATFORM_ARENA_CONFIG.bounds.left,
+      rightBound: PLATFORM_ARENA_CONFIG.bounds.right,
+      groundY: PLATFORM_ARENA_CONFIG.groundY,
+      spawnP1X: PLATFORM_ARENA_CONFIG.spawns.p1X,
+      spawnP2X: PLATFORM_ARENA_CONFIG.spawns.p2X,
+      platforms: PLATFORM_ARENA_CONFIG.platforms,
+      camera: PLATFORM_ARENA_CONFIG.camera,
+      platformSpeedTuning: PLATFORM_ARENA_CONFIG.platformSpeedTuning,
+      background: PLATFORM_ARENA_CONFIG.background,
+      movement: PLATFORM_ARENA_CONFIG.movement,
+      combat: PLATFORM_ARENA_CONFIG.combat
+    }
+  };
   const debugParams = new URLSearchParams(window.location.search);
   const SERIS_HIDDEN_TEST_ENABLED = debugParams.has("serisTest");
   const LAMUH_HIDDEN_TEST_ENABLED = debugParams.has("lamuhTest");
+  const CELESTE_HIDDEN_TEST_ENABLED = debugParams.has("celesteTest");
+  const PLATFORM_TEST_DEBUG_ENABLED = debugParams.has("platformTest");
+  const CELESTE_FRAME_DEBUG_ENABLED = CELESTE_HIDDEN_TEST_ENABLED && debugParams.has("celesteFrameDebug");
   const SERIS_RUNTIME_ENABLED = true;
   const LAMUH_RUNTIME_ENABLED = true;
   const LAMUH_SELECT_PORTRAIT_PATH = "assets/sprites/portraits/lamuh_select.png";
@@ -138,6 +246,7 @@
   const LAMUH_CROWN_BEAM_TARGET_Y = -132;
   const LAMUH_CROWN_BEAM_ORIGIN_X = 104;
   const LAMUH_CROWN_BEAM_ORIGIN_Y = -112;
+  const LAMUH_ASCENDED_BODY_ATLAS_ENABLED = false;
   const LAMUH_CROWN_PHASES = [
     { key: "combo_a", anim: "crown_combo_a", duration: 0.5, freeze: 0.035, shake: 6 },
     { key: "combo_b", anim: "crown_combo_b", duration: 0.54, freeze: 0.045, shake: 8 },
@@ -213,6 +322,15 @@
     solFinalEndStates: "assets/sprites/sol_final/sol_sheet_7_knockdown_recovery_flavor_atlas.png?v=sol-runtime-1",
     solFinalDirectionalNormals: "assets/sprites/sol_final/sol_sheet_8_directional_normals_atlas.png?v=sol-directional-normals-1",
     lamuhFinalCoreMovement: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-public-1" : null,
+    lamuhSheet1CoreNormalsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_1_core_movement_redesign_atlas.png?v=lamuh-sheet1-redesign-1" : null,
+    lamuhForwardSpecialsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_forward_specials_redesign_atlas.png?v=lamuh-forward-specials-redesign-1" : null,
+    lamuhDownUpSpecialsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_3_down_up_specials_body_scale_atlas.png?v=lamuh-down-up-specials-body-scale-1" : null,
+    lamuhBackNeutralSpecialsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_4_back_neutral_specials_redesign_atlas.png?v=lamuh-back-neutral-specials-redesign-1" : null,
+    lamuhNeutralSpecialsBodyVfxRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_neutral_specials_body_vfx_atlas.png?v=lamuh-neutral-specials-body-vfx-1" : null,
+    lamuhReactionsDefenseRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_reactions_defense_redesign_atlas.png?v=lamuh-reactions-defense-redesign-1" : null,
+    lamuhAirCrouchJumpRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_air_crouch_jump_redesign_atlas_v2.png?v=lamuh-air-crouch-jump-redesign-1" : null,
+    lamuhSecondaryMovementDirectionalNormalsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_secondary_movement_directional_normals_atlas.png?v=lamuh-secondary-movement-directional-1" : null,
+    lamuhSuperAscendedGoldenLocs: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_super_ascended_golden_locs_atlas.png?v=lamuh-super-ascended-golden-locs-1" : null,
     lamuhFinalAirMovement: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png?v=lamuh-public-1" : null,
     lamuhFinalGroundNormals: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png?v=lamuh-public-1" : null,
     lamuhFinalAirNormals: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png?v=lamuh-public-1" : null,
@@ -232,6 +350,13 @@
     serisFinalDefense: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1" : null,
     serisFinalEndStates: SERIS_RUNTIME_ENABLED ? "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1" : null,
     serisChainWhipVfx: SERIS_RUNTIME_ENABLED && SERIS_CHAIN_VFX_RUNTIME_ENABLED ? "assets/effects/seris/seris_chain_whip_vfx_atlas.png?v=seris-visual-integrity-1" : null,
+    celesteFinalBodyBasics: "assets/sprites/celeste_final/celeste_sheet_1_body_basics_atlas.png?v=celeste-phase5-4-1",
+    celesteFinalGroundNormals: "assets/sprites/celeste_final/celeste_sheet_2_ground_normals_atlas.png?v=celeste-phase5-4-1",
+    celesteFinalUpAirAttacks: "assets/sprites/celeste_final/celeste_sheet_3_up_air_attacks_atlas.png?v=celeste-phase5-4-1",
+    celesteFinalSpecials: "assets/sprites/celeste_final/celeste_sheet_4_specials_atlas.png?v=celeste-phase5-4-1",
+    celesteFinalDefense: "assets/sprites/celeste_final/celeste_sheet_5_defense_reactions_atlas.png?v=celeste-phase5-4-1",
+    celesteFinalOctavaBody: "assets/sprites/celeste_final/celeste_sheet_6_octava_body_atlas.png?v=celeste-phase5-4-1",
+    celesteFinalVfx: "assets/sprites/celeste_final/celeste_sheet_7_detached_vfx_runtime_atlas.png?v=celeste-phase5-4-1",
     vfx: "assets/effects/combat/combat_vfx_sheet.png"
   };
 
@@ -267,6 +392,15 @@
     solFinalEndStates: { cols: 8, rows: 7, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [6, 3, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     solFinalDirectionalNormals: { cols: 6, rows: 6, cellSize: 448, baselineY: 382, scale: 1.0, frameCounts: [4, 4, 4, 6, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     lamuhFinalCoreMovement: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 6, 6, 6, 6, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhSheet1CoreNormalsRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhForwardSpecialsRedesign: { cols: 8, rows: 3, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhDownUpSpecialsRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhBackNeutralSpecialsRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhNeutralSpecialsBodyVfxRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true, allowDetachedEffects: true },
+    lamuhReactionsDefenseRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    lamuhAirCrouchJumpRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true, allowDetachedEffects: true },
+    lamuhSecondaryMovementDirectionalNormalsRedesign: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true, allowDetachedEffects: true },
+    lamuhSuperAscendedGoldenLocs: { cols: 8, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [8, 8, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true, allowDetachedEffects: true },
     lamuhFinalAirMovement: { cols: 6, rows: 6, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [4, 4, 4, 4, 6, 6], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     lamuhFinalGroundNormals: { cols: 8, rows: 4, cellSize: 448, baselineY: 382, scale: 0.82, frameCounts: [4, 8, 7, 7], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     // Sheet 4 source poses are drawn smaller than the other LAMUH atlases, so this is a visual-only scale correction.
@@ -282,7 +416,13 @@
     serisFinalAirNormals: { cols: 7, rows: 4, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 6, 7, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalSpecials: { cols: 8, rows: 6, cellWidth: 832, cellHeight: 448, anchorX: 320, baselineY: 406, scale: 1.0, frameCounts: [4, 6, 4, 8, 8, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     serisFinalDefense: { cols: 6, rows: 8, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [4, 4, 4, 3, 4, 6, 5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
-    serisFinalEndStates: { cols: 8, rows: 7, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [6, 3, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true }
+    serisFinalEndStates: { cols: 8, rows: 7, cellSize: 384, baselineY: 350, scale: 1.0, frameCounts: [6, 3, 6, 8, 8, 8, 8], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    celesteFinalBodyBasics: { cols: 6, rows: 7, cellWidth: 768, cellHeight: 512, baselineY: 438, scale: 0.66, frameCounts: [6, 6, 6, 3, 3, 3, 3], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    celesteFinalGroundNormals: { cols: 4, rows: 9, cellWidth: 896, cellHeight: 544, baselineY: 462, scale: 0.66, frameCounts: [4, 4, 4, 4, 4, 4, 4, 4, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    celesteFinalUpAirAttacks: { cols: 4, rows: 6, cellWidth: 768, cellHeight: 576, baselineY: 488, scale: 0.66, frameCounts: [4, 4, 4, 4, 4, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    celesteFinalSpecials: { cols: 4, rows: 6, cellWidth: 1280, cellHeight: 576, baselineY: 488, scale: 0.66, frameCounts: [4, 4, 4, 4, 4, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    celesteFinalDefense: { cols: 5, rows: 8, cellWidth: 1536, cellHeight: 544, baselineY: 438, scale: 0.66, frameCounts: [4, 3, 4, 4, 4, 5, 4, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    celesteFinalOctavaBody: { cols: 5, rows: 2, cellWidth: 896, cellHeight: 768, baselineY: 690, scale: 0.62, frameCounts: [5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true }
   };
 
   const baselineMovementStats = {
@@ -525,28 +665,93 @@
   };
 
   const lamuhSpecialMoves = {
-    special_1: { type: "celestialPalm", attack: "special_1", projectileWidth: 88, projectileHeight: 24, projectileLife: 0.92, spawnOffsetX: 112, spawnOffsetY: -88 },
-    special_2: { type: "ascendStep", attack: "special_2" },
+    special_1: { type: "mirrorSpark", attack: "special_1", projectileWidth: 68, projectileHeight: 22, projectileLife: 0.34, spawnOffsetX: 86, spawnOffsetY: -86, visualOffsetX: 72, visualOffsetY: -92 },
+    special_2: { type: "mirrorPulse", attack: "special_2", projectileWidth: 116, projectileHeight: 34, projectileLife: 0.48, spawnOffsetX: 104, spawnOffsetY: -88, visualOffsetX: 78, visualOffsetY: -96 },
+    special_3: { type: "crownBeam", attack: "special_3", projectileWidth: 168, projectileHeight: 42, projectileLife: 0.58, spawnOffsetX: 118, spawnOffsetY: -92, visualOffsetX: 82, visualOffsetY: -104 },
+    neutral_special: { type: "mirrorSpark", attack: "neutral_special", projectileWidth: 68, projectileHeight: 22, projectileLife: 0.34, spawnOffsetX: 86, spawnOffsetY: -86, visualOffsetX: 72, visualOffsetY: -92 },
+    forward_special: { type: "dashStrike", attack: "forward_special" },
+    down_special: { type: "lowMirrorCut", attack: "down_special" },
+    back_special: { type: "mirrorSlip", attack: "back_special" },
+    air_special: { type: "airMirrorSpark", attack: "air_special", projectileWidth: 70, projectileHeight: 22, projectileLife: 0.28, spawnOffsetX: 80, spawnOffsetY: -74 },
+    neutral_light_special: { type: "mirrorSpark", attack: "neutral_light_special", projectileWidth: 68, projectileHeight: 22, projectileLife: 0.34, spawnOffsetX: 86, spawnOffsetY: -86, visualOffsetX: 72, visualOffsetY: -92 },
+    neutral_medium_special: { type: "mirrorPulse", attack: "neutral_medium_special", projectileWidth: 116, projectileHeight: 34, projectileLife: 0.48, spawnOffsetX: 104, spawnOffsetY: -88, visualOffsetX: 78, visualOffsetY: -96 },
+    neutral_heavy_special: { type: "crownBeam", attack: "neutral_heavy_special", projectileWidth: 168, projectileHeight: 42, projectileLife: 0.58, spawnOffsetX: 118, spawnOffsetY: -92, visualOffsetX: 82, visualOffsetY: -104 },
+    forward_light_special: { type: "dashStrike", attack: "forward_light_special" },
+    forward_medium_special: { type: "mirrorBreak", attack: "forward_medium_special" },
+    forward_heavy_special: { type: "mirrorPierce", attack: "forward_heavy_special", projectileWidth: 640, projectileHeight: 82, projectileLife: 0.24, spawnOffsetX: 52, spawnOffsetY: -144 },
+    back_light_special: { type: "mirrorSlip", attack: "back_light_special" },
+    back_medium_special: { type: "reboundStrike", attack: "back_medium_special" },
+    back_heavy_special: { type: "mirrorReversal", attack: "back_heavy_special" },
+    down_light_special: { type: "lowMirrorCut", attack: "down_light_special" },
+    down_medium_special: { type: "groundBreaker", attack: "down_medium_special" },
+    down_heavy_special: { type: "crownRupture", attack: "down_heavy_special" },
+    up_light_special: { type: "crownPop", attack: "up_light_special" },
+    up_medium_special: { type: "risingCrown", attack: "up_medium_special" },
+    up_heavy_special: { type: "ascendantBreak", attack: "up_heavy_special" },
+    air_light_special: { type: "airMirrorSpark", attack: "air_light_special", projectileWidth: 70, projectileHeight: 22, projectileLife: 0.28, spawnOffsetX: 80, spawnOffsetY: -74 },
+    air_medium_special: { type: "airDashStrike", attack: "air_medium_special" },
+    air_heavy_special: { type: "airCrownDrop", attack: "air_heavy_special" },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  const lamuhLegacySpecialMoves = {
+    special_1: { type: "mirrorSpark", attack: "special_1", projectileWidth: 68, projectileHeight: 22, projectileLife: 0.34, spawnOffsetX: 86, spawnOffsetY: -86 },
+    special_2: { type: "dashStrike", attack: "special_2" },
     special_3: { type: "heavenSplitter", attack: "special_3" },
-    neutral_special: { type: "celestialPalm", attack: "neutral_special", projectileWidth: 88, projectileHeight: 24, projectileLife: 0.92, spawnOffsetX: 112, spawnOffsetY: -88 },
-    forward_special: { type: "ascendStep", attack: "forward_special" },
+    neutral_special: { type: "mirrorSpark", attack: "neutral_special", projectileWidth: 68, projectileHeight: 22, projectileLife: 0.34, spawnOffsetX: 86, spawnOffsetY: -86 },
+    forward_special: { type: "dashStrike", attack: "forward_special" },
+    up_special: { type: "heavenSplitter", attack: "up_special" },
     down_special: { type: "heavenSplitter", attack: "down_special" },
-    back_special: { type: "divineVanish", attack: "back_special" },
-    air_special: { type: "radiantDive", attack: "air_special" },
+    back_special: { type: "mirrorSlip", attack: "back_special" },
+    air_special: { type: "airDashStrike", attack: "air_special" },
     super_dash: { type: "homingDash", attack: "super_dash" },
     ultimate: { type: "ultimate", attack: "ultimate" }
   };
 
   function buildLamuhPlayerAttacks() {
     const attacks = cloneData(solPlayerAttacks);
-    attacks.neutral_special = attackDef(74, 6, 9, 13, 34, 104, -82, "medium", { projectile: true, projectileSpeed: 680, noHit: true, meter: 12 });
-    attacks.forward_special = attackDef(94, 5, 7, 14, 38, 132, -135, "heavy", { dash: true, dashCancel: true, softKnockdown: true, meter: 14 });
-    attacks.down_special = attackDef(112, 7, 7, 22, 50, 78, -555, "heavy", { rise: true, launcher: true, hardKnockdown: true, meter: 18 });
-    attacks.back_special = attackDef(48, 3, 8, 12, 30, 68, -42, "chain", { shadowStep: true, shadowStepAway: true, shadowStepSpeed: 1040, shadowStepOffset: 96, dashCancel: true, softKnockdown: true, meter: 12 });
-    attacks.air_special = attackDef(72, 5, 7, 16, 40, 64, 260, "dive", { air: true, dive: true, diveSpeedX: 640, diveSpeedY: 590, softKnockdown: true, meter: 14 });
-    attacks.special_1 = cloneData(attacks.neutral_special);
-    attacks.special_2 = cloneData(attacks.forward_special);
-    attacks.special_3 = cloneData(attacks.down_special);
+    attacks.neutral_light = attackDef(24, 2, 5, 5, 18, 14, -16, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 72, anim: "quick_palm" });
+    attacks.neutral_medium = attackDef(48, 5, 6, 9, 29, 42, -64, "medium", { cancelOnHit: ["neutral_heavy", "neutral_light_special", "forward_light_special", "down_light_special"], jumpCancel: true, dashCancel: true, stepForward: 84, anim: "mirror_knuckle" });
+    attacks.neutral_heavy = attackDef(82, 9, 5, 18, 42, 138, -260, "heavy", { softKnockdown: true, dashCancel: true, anim: "crown_breaker" });
+    attacks.forward_light = attackDef(30, 3, 4, 7, 20, 38, -18, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true, stepForward: 96, anim: "quick_palm" });
+    attacks.forward_medium = attackDef(54, 6, 5, 10, 30, 76, -62, "medium", { cancelOnHit: ["forward_heavy", "forward_light_special", "forward_medium_special"], jumpCancel: true, dashCancel: true, anim: "mirror_knuckle" });
+    attacks.forward_heavy = attackDef(86, 10, 5, 18, 44, 112, -405, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true, anim: "crown_breaker" });
+    attacks.back_light = attackDef(28, 3, 4, 7, 20, 30, -18, "light", { cancelOnHit: ["back_medium", "neutral_medium"], dashCancel: true, anim: "quick_palm" });
+    attacks.back_medium = attackDef(50, 6, 5, 10, 29, 56, -60, "medium", { cancelOnHit: ["back_heavy", "back_medium_special"], jumpCancel: true, dashCancel: true, anim: "mirror_knuckle" });
+    attacks.back_heavy = attackDef(78, 9, 5, 18, 42, 82, -430, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true, anim: "crown_breaker" });
+    attacks.down_light = attackDef(22, 2, 4, 6, 18, 32, 0, "low", { cancelOnHit: ["down_medium", "neutral_medium"], dashCancel: true, anim: "low_check" });
+    attacks.down_medium = attackDef(44, 5, 5, 9, 27, 54, -26, "low", { cancelOnHit: ["down_heavy", "down_light_special"], jumpCancel: true, dashCancel: true, anim: "sweep_line" });
+    attacks.down_heavy = attackDef(70, 8, 5, 19, 42, 54, -500, "launcher", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true, anim: "crown_riser" });
+    attacks.jump_light = attackDef(22, 2, 5, 4, 20, 28, -16, "airLight", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true, anim: "air_tap" });
+    attacks.jump_medium = attackDef(44, 5, 6, 8, 31, 42, -34, "airMedium", { air: true, cancelOnHit: ["jump_heavy", "air_light_special"], dashCancel: true, anim: "sky_knuckle" });
+    attacks.jump_heavy = attackDef(72, 7, 5, 15, 38, 52, 245, "airHeavy", { air: true, softKnockdown: true, anim: "crown_drop" });
+    attacks.neutral_light_special = attackDef(38, 3, 5, 9, 24, 44, -24, "mirrorSpark", { projectile: true, projectileSpeed: 470, noHit: true, meter: 8, anim: "mirror_spark", visualProfile: "mirrorSpark" });
+    attacks.neutral_medium_special = attackDef(64, 6, 7, 14, 32, 94, -48, "mirrorPulse", { projectile: true, projectileSpeed: 540, noHit: true, meter: 12, anim: "mirror_pulse", visualProfile: "mirrorPulse" });
+    attacks.neutral_heavy_special = attackDef(92, 13, 8, 28, 40, 156, -85, "crownBeam", { projectile: true, projectileSpeed: 610, noHit: true, meter: 18, anim: "crown_beam", visualProfile: "crownBeam" });
+    attacks.forward_light_special = attackDef(62, 5, 6, 15, 30, 92, -70, "dashStrike", { dash: true, dashCancel: true, softKnockdown: true, meter: 10, anim: "dash_strike" });
+    attacks.forward_medium_special = attackDef(78, 8, 6, 20, 34, 118, -120, "mirrorBreak", { dash: true, dashSpeed: 520, dashTime: 0.16, dashCancel: true, softKnockdown: true, meter: 14, anim: "mirror_break", visualProfile: "mirrorBreak", impactProfile: { hitStop: 0.064, shake: 7, sparkCount: 17, sparkSize: 15, burstSize: 31, speed: 380, life: 0.28, color: "#f7f2df", dramatic: true } });
+    attacks.forward_heavy_special = attackDef(30, 12, 8, 64, 18, 42, -36, "mirrorPierce", { dash: true, dashSpeed: 790, dashTime: 0.22, projectile: true, projectileSpeed: 0, projectileSpawnAt: 0.95, noHit: true, pierceSideSwitch: true, pierceSwitchAt: 0.56, pierceExitOffset: 84, pierceRange: 250, requiresPierceConfirm: true, pierceHitFrame: 17, sideSwitchFrame: 17, palmPoseStartFrame: 18, beamChargeStartFrame: 24, beamFireFrame: 57, beamHitboxStartFrame: 57, beamHitboxEndFrame: 71, recoveryStartFrame: 71, whiffBeamFireFrame: 38, whiffRecoveryEndFrame: 52, maxMirrorPierceFrame: 96, pierceHoldFrames: 46, palmPauseFrames: 40, pierceHitDamage: 30, pierceHitstunFrames: 18, pierceKnockbackX: 42, pierceKnockbackY: -36, beamDamage: 78, beamHitstunFrames: 58, beamKnockbackX: 2600, beamKnockbackY: -420, beamBlockstunFrames: 28, forceWallBounce: true, softKnockdown: true, meter: 22, anim: "mirror_pierce", visualProfile: "mirrorPierce", impactProfile: { hitStop: 0.026, shake: 4, sparkCount: 10, sparkSize: 11, burstSize: 22, speed: 260, life: 0.18, color: "#f7f2df", dramatic: true }, beamImpactProfile: { hitStop: 0.11, shake: 16, sparkCount: 30, sparkSize: 21, burstSize: 48, speed: 560, life: 0.38, color: "#ffe8a3", dramatic: true } });
+    attacks.back_light_special = attackDef(0, 2, 0, 13, 0, 0, 0, "mirrorSlip", { noHit: true, shadowStep: true, shadowStepAway: true, shadowStepSpeed: 930, meter: 7, anim: "mirror_slip" });
+    attacks.back_medium_special = attackDef(58, 8, 5, 18, 30, 78, -64, "reboundStrike", { shadowStep: true, shadowStepAway: true, shadowStepSpeed: 760, reboundSnap: true, reboundSnapSpeed: 560, reboundSnapStart: 0.88, reboundSnapEnd: 0.62, softKnockdown: true, meter: 12, anim: "rebound_strike", visualProfile: "reboundStrike", impactProfile: { hitStop: 0.06, shake: 6, sparkCount: 15, sparkSize: 13, burstSize: 27, speed: 340, life: 0.26, color: "#f7f2df", dramatic: true } });
+    attacks.back_heavy_special = attackDef(86, 14, 6, 30, 36, 132, -105, "mirrorReversal", { shadowStep: true, shadowStepAway: true, shadowStepSpeed: 610, softKnockdown: true, meter: 18, anim: "mirror_reversal" });
+    attacks.down_light_special = attackDef(34, 3, 5, 10, 23, 40, 0, "lowMirrorCut", { meter: 8, anim: "low_mirror_cut" });
+    attacks.down_medium_special = attackDef(62, 7, 6, 19, 30, 86, -36, "groundBreaker", { softKnockdown: true, meter: 13, anim: "ground_breaker", visualProfile: "groundBreaker", impactProfile: { hitStop: 0.058, shake: 6, sparkCount: 15, sparkSize: 13, burstSize: 28, speed: 340, life: 0.26, color: "#ffe08a", dramatic: true } });
+    attacks.down_heavy_special = attackDef(96, 14, 7, 32, 40, 98, -360, "crownRupture", { launcher: true, hardKnockdown: true, meter: 20, anim: "crown_rupture", visualProfile: "crownRupture", impactProfile: { hitStop: 0.092, shake: 13, sparkCount: 23, sparkSize: 19, burstSize: 40, speed: 500, life: 0.34, color: "#ffe08a", dramatic: true } });
+    attacks.up_light_special = attackDef(36, 3, 5, 10, 24, 34, -130, "crownPop", { meter: 8, anim: "crown_pop" });
+    attacks.up_medium_special = attackDef(72, 7, 6, 22, 36, 54, -465, "risingCrown", { rise: true, riseVelocity: -430, riseTime: 0.2, launcher: true, jumpCancel: true, softKnockdown: true, meter: 15, anim: "rising_crown", visualProfile: "risingCrown", impactProfile: { hitStop: 0.066, shake: 8, sparkCount: 17, sparkSize: 15, burstSize: 32, speed: 390, life: 0.28, color: "#fff3ba", dramatic: true } });
+    attacks.up_heavy_special = attackDef(104, 12, 7, 34, 42, 76, -520, "ascendantBreak", { rise: true, riseVelocity: -560, riseTime: 0.26, launcher: true, hardKnockdown: true, meter: 22, anim: "ascendant_break", visualProfile: "ascendantBreak", impactProfile: { hitStop: 0.1, shake: 14, sparkCount: 24, sparkSize: 20, burstSize: 42, speed: 520, life: 0.36, color: "#fff3ba", dramatic: true } });
+    attacks.air_light_special = attackDef(32, 3, 5, 10, 22, 38, 26, "airSpark", { air: true, projectile: true, projectileSpeed: 420, noHit: true, meter: 8, anim: "air_mirror_spark" });
+    attacks.air_medium_special = attackDef(58, 5, 6, 18, 30, 78, 90, "airDashStrike", { air: true, dive: true, diveSpeedX: 560, diveSpeedY: 260, softKnockdown: true, meter: 13, anim: "air_dash_strike" });
+    attacks.air_heavy_special = attackDef(88, 8, 6, 28, 34, 54, 300, "airCrownDrop", { air: true, dive: true, diveSpeedX: 360, diveSpeedY: 680, softKnockdown: true, meter: 18, anim: "air_crown_drop" });
+    attacks.neutral_special = cloneData(attacks.neutral_light_special);
+    attacks.forward_special = cloneData(attacks.forward_light_special);
+    attacks.down_special = cloneData(attacks.down_light_special);
+    attacks.back_special = cloneData(attacks.back_light_special);
+    attacks.air_special = cloneData(attacks.air_light_special);
+    attacks.special_1 = cloneData(attacks.neutral_light_special);
+    attacks.special_2 = cloneData(attacks.neutral_medium_special);
+    attacks.special_3 = cloneData(attacks.neutral_heavy_special);
     attacks.launcher = cloneData(attacks.down_heavy);
     addLamuhDirectionalCancelTargets(attacks);
     return attacks;
@@ -554,14 +759,36 @@
 
   function buildLamuhEnemyAttacks() {
     const attacks = cloneData(solEnemyAttacks);
-    attacks.enemy_neutral_special = attackDef(70, 7, 8, 15, 34, 120, -74, "medium", { enemy: true, projectile: true, projectileSpeed: 620, noHit: true });
-    attacks.enemy_forward_special = attackDef(88, 6, 7, 17, 38, 142, -125, "heavy", { enemy: true, dash: true, softKnockdown: true });
-    attacks.enemy_down_special = attackDef(104, 8, 7, 24, 48, 92, -500, "heavy", { enemy: true, rise: true, launcher: true, hardKnockdown: true });
-    attacks.enemy_back_special = attackDef(44, 4, 8, 14, 30, 82, -40, "chain", { enemy: true, shadowStep: true, shadowStepAway: true, shadowStepSpeed: 980, shadowStepOffset: 96, dash: true, softKnockdown: true });
-    attacks.enemy_air_special = attackDef(68, 6, 7, 17, 38, 58, 240, "dive", { enemy: true, air: true, dive: true, diveSpeedX: 600, diveSpeedY: 550, softKnockdown: true });
-    attacks.enemy_special_1 = cloneData(attacks.enemy_neutral_special);
-    attacks.enemy_special_2 = cloneData(attacks.enemy_forward_special);
-    attacks.enemy_special_3 = cloneData(attacks.enemy_down_special);
+    attacks.enemy_light_attack = attackDef(24, 4, 4, 8, 18, 42, -15, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"], anim: "quick_palm" });
+    attacks.enemy_medium_attack = attackDef(48, 7, 5, 12, 28, 72, -55, "medium", { enemy: true, cancelOnHit: ["enemy_heavy_attack"], anim: "mirror_knuckle" });
+    attacks.enemy_heavy_attack = attackDef(78, 11, 5, 20, 40, 112, -320, "heavy", { enemy: true, softKnockdown: true, anim: "crown_breaker" });
+    attacks.enemy_forward_heavy = attackDef(84, 11, 5, 20, 42, 112, -385, "heavy", { enemy: true, launcher: true, softKnockdown: true, anim: "crown_breaker" });
+    attacks.enemy_neutral_light_special = attackDef(34, 4, 5, 11, 22, 54, -22, "mirrorSpark", { enemy: true, projectile: true, projectileSpeed: 430, noHit: true, anim: "mirror_spark", visualProfile: "mirrorSpark" });
+    attacks.enemy_neutral_medium_special = attackDef(58, 8, 6, 16, 30, 98, -44, "mirrorPulse", { enemy: true, projectile: true, projectileSpeed: 500, noHit: true, anim: "mirror_pulse", visualProfile: "mirrorPulse" });
+    attacks.enemy_neutral_heavy_special = attackDef(84, 15, 7, 30, 38, 150, -80, "crownBeam", { enemy: true, projectile: true, projectileSpeed: 570, noHit: true, anim: "crown_beam", visualProfile: "crownBeam" });
+    attacks.enemy_forward_light_special = attackDef(58, 6, 6, 17, 28, 102, -64, "dashStrike", { enemy: true, dash: true, softKnockdown: true, anim: "dash_strike" });
+    attacks.enemy_forward_medium_special = attackDef(72, 9, 6, 22, 32, 122, -110, "mirrorBreak", { enemy: true, dash: true, dashSpeed: 500, dashTime: 0.16, softKnockdown: true, anim: "mirror_break", visualProfile: "mirrorBreak", impactProfile: { hitStop: 0.064, shake: 7, sparkCount: 17, sparkSize: 15, burstSize: 31, speed: 380, life: 0.28, color: "#f7f2df", dramatic: true } });
+    attacks.enemy_forward_heavy_special = attackDef(28, 14, 7, 66, 18, 40, -34, "mirrorPierce", { enemy: true, dash: true, dashSpeed: 760, dashTime: 0.22, projectile: true, projectileSpeed: 0, projectileSpawnAt: 0.98, noHit: true, pierceSideSwitch: true, pierceSwitchAt: 0.56, pierceExitOffset: 80, pierceRange: 240, requiresPierceConfirm: true, pierceHitFrame: 18, sideSwitchFrame: 18, palmPoseStartFrame: 19, beamChargeStartFrame: 26, beamFireFrame: 59, beamHitboxStartFrame: 59, beamHitboxEndFrame: 73, recoveryStartFrame: 73, whiffBeamFireFrame: 40, whiffRecoveryEndFrame: 54, maxMirrorPierceFrame: 99, pierceHoldFrames: 46, palmPauseFrames: 41, pierceHitDamage: 28, pierceHitstunFrames: 18, pierceKnockbackX: 40, pierceKnockbackY: -34, beamDamage: 70, beamHitstunFrames: 54, beamKnockbackX: 2400, beamKnockbackY: -390, beamBlockstunFrames: 26, forceWallBounce: true, softKnockdown: true, anim: "mirror_pierce", visualProfile: "mirrorPierce", impactProfile: { hitStop: 0.026, shake: 4, sparkCount: 10, sparkSize: 11, burstSize: 22, speed: 260, life: 0.18, color: "#f7f2df", dramatic: true }, beamImpactProfile: { hitStop: 0.1, shake: 14, sparkCount: 28, sparkSize: 20, burstSize: 44, speed: 540, life: 0.36, color: "#ffe8a3", dramatic: true } });
+    attacks.enemy_back_light_special = attackDef(0, 3, 0, 15, 0, 0, 0, "mirrorSlip", { enemy: true, noHit: true, shadowStep: true, shadowStepAway: true, shadowStepSpeed: 850, anim: "mirror_slip" });
+    attacks.enemy_back_medium_special = attackDef(52, 10, 5, 20, 28, 82, -58, "reboundStrike", { enemy: true, shadowStep: true, shadowStepAway: true, shadowStepSpeed: 710, reboundSnap: true, reboundSnapSpeed: 520, reboundSnapStart: 0.88, reboundSnapEnd: 0.62, softKnockdown: true, anim: "rebound_strike", visualProfile: "reboundStrike", impactProfile: { hitStop: 0.06, shake: 6, sparkCount: 15, sparkSize: 13, burstSize: 27, speed: 340, life: 0.26, color: "#f7f2df", dramatic: true } });
+    attacks.enemy_back_heavy_special = attackDef(78, 16, 6, 32, 34, 126, -95, "mirrorReversal", { enemy: true, shadowStep: true, shadowStepAway: true, shadowStepSpeed: 580, softKnockdown: true, anim: "mirror_reversal" });
+    attacks.enemy_down_light_special = attackDef(30, 4, 5, 12, 22, 42, 0, "lowMirrorCut", { enemy: true, anim: "low_mirror_cut" });
+    attacks.enemy_down_medium_special = attackDef(56, 8, 6, 21, 28, 88, -32, "groundBreaker", { enemy: true, softKnockdown: true, anim: "ground_breaker", visualProfile: "groundBreaker", impactProfile: { hitStop: 0.058, shake: 6, sparkCount: 15, sparkSize: 13, burstSize: 28, speed: 340, life: 0.26, color: "#ffe08a", dramatic: true } });
+    attacks.enemy_down_heavy_special = attackDef(88, 16, 7, 34, 38, 96, -330, "crownRupture", { enemy: true, launcher: true, hardKnockdown: true, anim: "crown_rupture", visualProfile: "crownRupture", impactProfile: { hitStop: 0.092, shake: 13, sparkCount: 23, sparkSize: 19, burstSize: 40, speed: 500, life: 0.34, color: "#ffe08a", dramatic: true } });
+    attacks.enemy_up_light_special = attackDef(32, 4, 5, 12, 22, 36, -115, "crownPop", { enemy: true, anim: "crown_pop" });
+    attacks.enemy_up_medium_special = attackDef(66, 9, 6, 24, 34, 58, -430, "risingCrown", { enemy: true, rise: true, riseVelocity: -410, riseTime: 0.2, launcher: true, softKnockdown: true, anim: "rising_crown", visualProfile: "risingCrown", impactProfile: { hitStop: 0.066, shake: 8, sparkCount: 17, sparkSize: 15, burstSize: 32, speed: 390, life: 0.28, color: "#fff3ba", dramatic: true } });
+    attacks.enemy_up_heavy_special = attackDef(94, 14, 7, 36, 40, 78, -490, "ascendantBreak", { enemy: true, rise: true, riseVelocity: -520, riseTime: 0.26, launcher: true, hardKnockdown: true, anim: "ascendant_break", visualProfile: "ascendantBreak", impactProfile: { hitStop: 0.1, shake: 14, sparkCount: 24, sparkSize: 20, burstSize: 42, speed: 520, life: 0.36, color: "#fff3ba", dramatic: true } });
+    attacks.enemy_air_light_special = attackDef(30, 4, 5, 12, 20, 38, 24, "airSpark", { enemy: true, air: true, projectile: true, projectileSpeed: 390, noHit: true, anim: "air_mirror_spark" });
+    attacks.enemy_air_medium_special = attackDef(52, 6, 6, 20, 28, 78, 82, "airDashStrike", { enemy: true, air: true, dive: true, diveSpeedX: 520, diveSpeedY: 230, softKnockdown: true, anim: "air_dash_strike" });
+    attacks.enemy_air_heavy_special = attackDef(80, 10, 6, 30, 32, 56, 285, "airCrownDrop", { enemy: true, air: true, dive: true, diveSpeedX: 330, diveSpeedY: 640, softKnockdown: true, anim: "air_crown_drop" });
+    attacks.enemy_neutral_special = cloneData(attacks.enemy_neutral_light_special);
+    attacks.enemy_forward_special = cloneData(attacks.enemy_forward_light_special);
+    attacks.enemy_down_special = cloneData(attacks.enemy_down_light_special);
+    attacks.enemy_back_special = cloneData(attacks.enemy_back_light_special);
+    attacks.enemy_air_special = cloneData(attacks.enemy_air_light_special);
+    attacks.enemy_special_1 = cloneData(attacks.enemy_neutral_light_special);
+    attacks.enemy_special_2 = cloneData(attacks.enemy_neutral_medium_special);
+    attacks.enemy_special_3 = cloneData(attacks.enemy_neutral_heavy_special);
     attacks.enemy_launcher = cloneData(attacks.enemy_forward_heavy);
     attacks.enemy_jump_light = cloneData(solPlayerAttacks.jump_light);
     attacks.enemy_jump_medium = cloneData(solPlayerAttacks.jump_medium);
@@ -573,8 +800,91 @@
     return attacks;
   }
 
+  const LAMUH_LEGACY_ALLOWED_PLAYER_MOVES = new Set([
+    "neutral_light", "neutral_medium", "neutral_heavy",
+    "forward_light", "forward_medium", "forward_heavy",
+    "back_light", "back_medium", "back_heavy",
+    "down_light", "down_medium", "down_heavy",
+    "jump_light", "jump_medium", "jump_heavy",
+    "launcher",
+    "special_1", "special_2", "special_3",
+    "neutral_special", "forward_special", "up_special", "down_special", "back_special", "air_special",
+    "super_dash", "ultimate"
+  ]);
+  const LAMUH_LEGACY_ALLOWED_ENEMY_MOVES = new Set([...LAMUH_LEGACY_ALLOWED_PLAYER_MOVES].map((key) => `enemy_${key}`));
+
+  function stripLamuhLegacyCancelTargets(move, allowedMoves) {
+    const cancelOnHit = move?.flags?.cancelOnHit;
+    if (!Array.isArray(cancelOnHit)) return;
+    move.flags.cancelOnHit = cancelOnHit.filter((target) => allowedMoves.has(target));
+  }
+
+  function buildLamuhLegacyPlayerAttacks() {
+    const attacks = buildLamuhPlayerAttacks();
+    const special1 = cloneData(attacks.neutral_light_special);
+    const special2 = cloneData(attacks.forward_light_special);
+    const special3 = cloneData(attacks.up_medium_special);
+    const backSpecial = cloneData(attacks.back_light_special);
+    const airSpecial = cloneData(attacks.air_medium_special);
+    special1.flags.anim = "celestial_palm";
+    special2.flags.anim = "ascend_step";
+    special3.flags.anim = "heaven_splitter";
+    backSpecial.flags.anim = "divine_vanish";
+    airSpecial.flags.anim = "radiant_dive";
+    attacks.special_1 = cloneData(special1);
+    attacks.neutral_special = cloneData(special1);
+    attacks.special_2 = cloneData(special2);
+    attacks.forward_special = cloneData(special2);
+    attacks.special_3 = cloneData(special3);
+    attacks.up_special = cloneData(special3);
+    attacks.down_special = cloneData(special3);
+    attacks.back_special = cloneData(backSpecial);
+    attacks.air_special = cloneData(airSpecial);
+    for (const key of Object.keys(attacks)) {
+      if (!LAMUH_LEGACY_ALLOWED_PLAYER_MOVES.has(key)) delete attacks[key];
+    }
+    Object.values(attacks).forEach((move) => stripLamuhLegacyCancelTargets(move, LAMUH_LEGACY_ALLOWED_PLAYER_MOVES));
+    return attacks;
+  }
+
+  function buildLamuhLegacyEnemyAttacks() {
+    const attacks = buildLamuhEnemyAttacks();
+    const special1 = cloneData(attacks.enemy_neutral_light_special);
+    const special2 = cloneData(attacks.enemy_forward_light_special);
+    const special3 = cloneData(attacks.enemy_up_medium_special);
+    const backSpecial = cloneData(attacks.enemy_back_light_special);
+    const airSpecial = cloneData(attacks.enemy_air_medium_special);
+    special1.flags.anim = "celestial_palm";
+    special2.flags.anim = "ascend_step";
+    special3.flags.anim = "heaven_splitter";
+    backSpecial.flags.anim = "divine_vanish";
+    airSpecial.flags.anim = "radiant_dive";
+    attacks.enemy_special_1 = cloneData(special1);
+    attacks.enemy_neutral_special = cloneData(special1);
+    attacks.enemy_special_2 = cloneData(special2);
+    attacks.enemy_forward_special = cloneData(special2);
+    attacks.enemy_special_3 = cloneData(special3);
+    attacks.enemy_up_special = cloneData(special3);
+    attacks.enemy_down_special = cloneData(special3);
+    attacks.enemy_back_special = cloneData(backSpecial);
+    attacks.enemy_air_special = cloneData(airSpecial);
+    for (const key of Object.keys(attacks)) {
+      if (!LAMUH_LEGACY_ALLOWED_ENEMY_MOVES.has(key)) delete attacks[key];
+    }
+    Object.values(attacks).forEach((move) => stripLamuhLegacyCancelTargets(move, LAMUH_LEGACY_ALLOWED_ENEMY_MOVES));
+    return attacks;
+  }
+
   function addLamuhDirectionalCancelTargets(attacks, prefix = "") {
-    const lamuhTargets = ["neutral_special", "forward_special", "down_special", "back_special", "air_special"].map((target) => `${prefix}${target}`);
+    const lamuhTargets = [
+      "neutral_special", "forward_special", "down_special", "back_special", "air_special",
+      "neutral_light_special", "neutral_medium_special", "neutral_heavy_special",
+      "forward_light_special", "forward_medium_special", "forward_heavy_special",
+      "back_light_special", "back_medium_special", "back_heavy_special",
+      "down_light_special", "down_medium_special", "down_heavy_special",
+      "up_light_special", "up_medium_special", "up_heavy_special",
+      "air_light_special", "air_medium_special", "air_heavy_special"
+    ].map((target) => `${prefix}${target}`);
     Object.values(attacks).forEach((move) => {
       const cancelOnHit = move?.flags?.cancelOnHit;
       if (!Array.isArray(cancelOnHit)) return;
@@ -613,7 +923,37 @@
 
   const lamuhHitboxes = {
     ...cloneData(baselineHitboxes),
+    launcher: { w: 118, h: 132, ox: 42, oy: -134 },
+    airLight: { w: 86, h: 54, ox: 38, oy: -84 },
+    airMedium: { w: 126, h: 70, ox: 46, oy: -92 },
+    airHeavy: { w: 132, h: 98, ox: 42, oy: -70 },
+    mirrorSpark: { w: 92, h: 46, ox: 56, oy: -96 },
+    mirrorPulse: { w: 150, h: 66, ox: 70, oy: -104 },
+    crownBeam: { w: 210, h: 78, ox: 82, oy: -112 },
+    dashStrike: { w: 138, h: 64, ox: 58, oy: -86 },
+    mirrorBreak: { w: 166, h: 76, ox: 62, oy: -94 },
+    mirrorPierce: { w: 188, h: 84, ox: 66, oy: -96 },
+    mirrorSlip: { w: 0, h: 0, ox: 0, oy: 0 },
+    reboundStrike: { w: 142, h: 66, ox: 54, oy: -86 },
+    mirrorReversal: { w: 176, h: 78, ox: 62, oy: -96 },
+    lowMirrorCut: { w: 126, h: 34, ox: 50, oy: -38 },
+    groundBreaker: { w: 156, h: 48, ox: 58, oy: -46 },
+    crownRupture: { w: 190, h: 96, ox: 64, oy: -90 },
+    crownPop: { w: 96, h: 110, ox: 32, oy: -132 },
+    risingCrown: { w: 124, h: 150, ox: 38, oy: -164 },
+    ascendantBreak: { w: 150, h: 176, ox: 44, oy: -184 },
+    airSpark: { w: 86, h: 48, ox: 48, oy: -86 },
+    airDashStrike: { w: 136, h: 74, ox: 54, oy: -92 },
+    airCrownDrop: { w: 128, h: 104, ox: 42, oy: -70 },
     dive: { w: 122, h: 96, ox: 50, oy: -106 }
+  };
+
+  const LAMUH_NEUTRAL_SPECIAL_BODY_CROPS = {
+    mirror_pulse: { left: 0, right: 132 },
+    crown_beam: { left: 0, right: 164 },
+    crown_beam_charge: { left: 0, right: 164 },
+    crown_beam_fire: { left: 0, right: 164 },
+    crown_beam_recovery: { left: 0, right: 164 }
   };
 
   const serisMovementStats = {
@@ -733,6 +1073,254 @@
     special_2: { accentOnly: true, scale: 0.76, ox: -8, oy: -38, end: 0.86, snapX: 358, snapY: -34 },
     special_3: { accentOnly: true, scale: 0.78, ox: -4, oy: -96, end: 0.82, snapX: 338 },
     ultimate: { accentOnly: true, scale: 0.82, ox: -78, oy: -144, alpha: 0.94, snapX: 226, snapY: -184 }
+  };
+
+  const celesteSpiritColors = {
+    DO: { main: "#ffd66b", secondary: "#fff8de" },
+    RE: { main: "#d83d7f", secondary: "#8b46ff" },
+    MI: { main: "#4bb6ff", secondary: "#ffd86b" },
+    FA: { main: "#48e4ff", secondary: "#d89cff" },
+    SOL: { main: "#ffc83d", secondary: "#fff2a8" },
+    LA: { main: "#f8fff0", secondary: "#8effb5" },
+    TI: { main: "#f8f8ff", secondary: "#9b5cff" }
+  };
+  const CELESTE_VFX_FRAME_COUNTS = [5, 5, 5, 5, 6, 6, 5, 5, 7, 6];
+
+  const CELESTE_FA_COOLDOWN = 1.05;
+  const CELESTE_FA_WINDOW = 0.18;
+  const CELESTE_SOL_COOLDOWN = 0.72;
+  const CELESTE_LA_COOLDOWN = 2.8;
+  const CELESTE_LA_ACTIVE = 0.78;
+  const CELESTE_TI_COOLDOWN = 1.65;
+  const CELESTE_TI_ARM_TIME = 0.55;
+  const CELESTE_TI_DETONATE_TIME = 1.25;
+  const CELESTE_TI_LIFE = 1.8;
+  const CELESTE_TI_DAMAGE = 46;
+  const CELESTE_TI_HITSTUN = 24;
+  const CELESTE_AIR_L_BOUNCE_VY = -430;
+  const CELESTE_AIR_L_BOUNCE_HITSTUN = 0.5;
+  const CELESTE_OCTAVA_STARTUP_FRAMES = 28;
+  const CELESTE_OCTAVA_ACTIVE_FRAMES = 18;
+  const CELESTE_OCTAVA_RECOVERY_FRAMES = 54;
+
+  const celesteMovementStats = {
+    ...cloneData(nyxMovementStats),
+    walkForward: 270,
+    walkBack: 205,
+    dashSpeed: 910,
+    dashDuration: 13 / 60,
+    dashCooldown: 20 / 60,
+    superDashSpeed: 940,
+    superDashCooldown: 30 / 60
+  };
+
+  const celesteJumpStats = {
+    ...cloneData(nyxJumpStats),
+    jumpVelocity: -735,
+    gravity: 1760,
+    juggleGravity: 1260,
+    airRecoveryGravity: 1640,
+    airRecoveryDuration: 15 / 60,
+    landingRecovery: 6 / 60
+  };
+
+  const celesteAirDashStats = {
+    ...cloneData(nyxAirDashStats),
+    speed: 830,
+    duration: 11 / 60,
+    cooldown: 16 / 60
+  };
+
+  const celesteHitboxes = {
+    light: { w: 80, h: 54, ox: 36, oy: -76 },
+    medium: { w: 112, h: 62, ox: 44, oy: -84 },
+    heavy: { w: 136, h: 82, ox: 52, oy: -96 },
+    up: { w: 92, h: 132, ox: 28, oy: -158 },
+    jump: { w: 108, h: 70, ox: 40, oy: -88 },
+    trick: { w: 148, h: 60, ox: 52, oy: -86 },
+    trap: { w: 112, h: 112, ox: 74, oy: -122 },
+    ultimate: { w: 590, h: 156, ox: 104, oy: -128 }
+  };
+
+  const celestePlayerAttacks = {
+    neutral_light: attackDef(24, 2, 5, 5, 19, 14, -18, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 74 }),
+    neutral_medium: attackDef(44, 4, 6, 9, 31, 30, -66, "medium", { cancelOnHit: ["neutral_heavy", "special_1", "special_2"], jumpCancel: true, dashCancel: true, stepForward: 92 }),
+    neutral_heavy: attackDef(68, 8, 5, 17, 43, 88, -245, "heavy", { cancelOnHit: ["up_medium", "special_2"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    forward_light: attackDef(28, 3, 4, 7, 20, 48, -16, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true, stepForward: 112 }),
+    forward_medium: attackDef(48, 5, 5, 10, 32, 78, -58, "medium", { cancelOnHit: ["forward_heavy", "up_medium", "special_1", "special_2"], jumpCancel: true, dashCancel: true, stepForward: 86 }),
+    forward_heavy: attackDef(74, 9, 5, 19, 42, 118, -180, "heavy", { cancelOnHit: ["special_2"], dashCancel: true, softKnockdown: true }),
+    back_light: attackDef(24, 3, 4, 8, 20, 36, -18, "light", { cancelOnHit: ["neutral_medium"], dashCancel: true }),
+    back_medium: attackDef(44, 5, 5, 11, 31, 64, -62, "medium", { cancelOnHit: ["back_heavy", "special_2"], jumpCancel: true, dashCancel: true }),
+    back_heavy: attackDef(66, 8, 5, 20, 42, 60, -360, "heavy", { cancelOnHit: ["up_medium"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    up_light: attackDef(22, 3, 5, 6, 22, 22, -110, "up", { cancelOnHit: ["up_medium"], jumpCancel: true, dashCancel: true }),
+    up_medium: attackDef(46, 6, 6, 13, 42, 46, -500, "up", { launcher: true, cancelOnHit: ["jump_light", "special_2"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    up_heavy: attackDef(72, 9, 6, 22, 48, 64, -545, "up", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    down_light: attackDef(24, 3, 4, 7, 19, 34, 0, "light", { cancelOnHit: ["neutral_medium"] }),
+    down_medium: attackDef(42, 5, 4, 10, 30, 50, -34, "medium", { cancelOnHit: ["up_medium"], jumpCancel: true, dashCancel: true }),
+    down_heavy: attackDef(62, 8, 5, 18, 46, 56, -500, "up", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+    jump_light: attackDef(22, 2, 5, 4, 24, 28, -14, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
+    jump_medium: attackDef(42, 4, 6, 8, 34, 40, -32, "jump", { air: true, cancelOnHit: ["jump_heavy", "special_2"], dashCancel: true }),
+    jump_heavy: attackDef(64, 7, 6, 16, 40, 54, 230, "jump", { air: true, softKnockdown: true, dashCancel: true }),
+    special_1: attackDef(0, 3, 5, 17, 0, 0, 0, "trick", { noHit: true, faStrobe: true, dash: true, dashCancel: true, anim: "fa_strobe" }),
+    special_2: attackDef(50, 11, 7, 25, 30, 82, -52, "medium", { projectile: true, solOvation: true, projectileSpeed: 560, noHit: true, anim: "sol_ovation" }),
+    special_3: attackDef(0, 24, 4, 25, 0, 0, 0, "trap", { noHit: true, tiEncore: true, anim: "ti_encore" }),
+    back_special: attackDef(0, 5, 6, 24, 0, 0, 0, "trick", { noHit: true, laBarrier: true, anim: "la_seraph_waltz" }),
+    super_dash: attackDef(52, 3, 22, 9, 33, 98, -230, "trick", { superDash: true, dashCancel: true, anim: "fa_strobe", blockstun: 21, meter: 10 }),
+    ultimate: attackDef(225, CELESTE_OCTAVA_STARTUP_FRAMES, CELESTE_OCTAVA_ACTIVE_FRAMES, CELESTE_OCTAVA_RECOVERY_FRAMES, 54, 360, -270, "ultimate", { ultimate: true, hardKnockdown: true, anim: "octava", blockstun: 34 }),
+    taunt: attackDef(0, 0, 0, 30, 0, 0, 0, "light", { noHit: true })
+  };
+
+  const celesteEnemyAttacks = {
+    enemy_light_attack: attackDef(24, 4, 4, 9, 20, 48, -14, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
+    enemy_medium_attack: attackDef(42, 6, 5, 12, 30, 76, -55, "medium", { enemy: true, cancelOnHit: ["enemy_heavy_attack"] }),
+    enemy_heavy_attack: attackDef(62, 10, 5, 20, 42, 96, -310, "heavy", { enemy: true, softKnockdown: true }),
+    enemy_forward_light: attackDef(26, 4, 4, 9, 20, 54, -14, "light", { enemy: true, cancelOnHit: ["enemy_forward_medium"] }),
+    enemy_forward_medium: attackDef(44, 7, 5, 13, 31, 86, -52, "medium", { enemy: true, cancelOnHit: ["enemy_forward_heavy"] }),
+    enemy_forward_heavy: attackDef(70, 11, 5, 21, 42, 118, -180, "heavy", { enemy: true, softKnockdown: true }),
+    enemy_back_light: attackDef(24, 4, 4, 9, 20, 42, -14, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
+    enemy_back_medium: attackDef(42, 7, 5, 13, 31, 70, -55, "medium", { enemy: true, cancelOnHit: ["enemy_back_heavy"] }),
+    enemy_back_heavy: attackDef(62, 10, 5, 22, 42, 72, -310, "heavy", { enemy: true, softKnockdown: true }),
+    enemy_up_light: attackDef(22, 4, 5, 8, 22, 28, -105, "up", { enemy: true, cancelOnHit: ["enemy_up_medium"] }),
+    enemy_up_medium: attackDef(42, 8, 5, 15, 40, 54, -460, "up", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_up_heavy: attackDef(66, 11, 5, 24, 46, 70, -500, "up", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_down_light: attackDef(22, 4, 4, 9, 19, 36, 0, "light", { enemy: true, cancelOnHit: ["enemy_medium_attack"] }),
+    enemy_down_medium: attackDef(40, 7, 4, 13, 30, 58, -32, "medium", { enemy: true, cancelOnHit: ["enemy_up_medium"] }),
+    enemy_down_heavy: attackDef(60, 10, 5, 20, 44, 62, -460, "up", { enemy: true, launcher: true, softKnockdown: true }),
+    enemy_jump_light: attackDef(22, 4, 5, 6, 24, 28, -14, "jump", { enemy: true, air: true, cancelOnHit: ["enemy_jump_medium"] }),
+    enemy_jump_medium: attackDef(40, 6, 5, 10, 33, 42, -28, "jump", { enemy: true, air: true, cancelOnHit: ["enemy_jump_heavy"] }),
+    enemy_jump_heavy: attackDef(60, 9, 5, 18, 40, 54, 220, "jump", { enemy: true, air: true, softKnockdown: true }),
+    enemy_special_1: attackDef(0, 4, 5, 18, 0, 0, 0, "trick", { enemy: true, noHit: true, faStrobe: true, dash: true, anim: "fa_strobe" }),
+    enemy_special_2: attackDef(46, 13, 7, 27, 28, 88, -48, "medium", { enemy: true, projectile: true, solOvation: true, projectileSpeed: 530, noHit: true, anim: "sol_ovation" }),
+    enemy_special_3: attackDef(0, 27, 4, 28, 0, 0, 0, "trap", { enemy: true, noHit: true, tiEncore: true, anim: "ti_encore" }),
+    enemy_back_special: attackDef(0, 6, 6, 26, 0, 0, 0, "trick", { enemy: true, noHit: true, laBarrier: true, anim: "la_seraph_waltz" }),
+    enemy_super_dash: attackDef(50, 4, 22, 10, 32, 100, -220, "trick", { enemy: true, superDash: true, dashCancel: true, anim: "fa_strobe", blockstun: 21 }),
+    enemy_ultimate: attackDef(205, 32, 16, 56, 50, 330, -270, "ultimate", { enemy: true, ultimate: true, hardKnockdown: true, anim: "octava", blockstun: 32 })
+  };
+
+  const celesteComboRoutes = {
+    autoCombos: {
+      neutral_light: "neutral_medium",
+      neutral_medium: "neutral_heavy",
+      up_light: "up_medium",
+      enemy_light_attack: "enemy_medium_attack",
+      enemy_medium_attack: "enemy_heavy_attack",
+      enemy_up_light: "enemy_up_medium"
+    },
+    airCombos: {
+      jump_light: "jump_medium",
+      jump_medium: "jump_heavy",
+      enemy_jump_light: "enemy_jump_medium",
+      enemy_jump_medium: "enemy_jump_heavy"
+    }
+  };
+
+  const celesteSpecialMoves = {
+    special_1: { type: "faStrobe", attack: "special_1" },
+    special_2: { type: "solOvation", attack: "special_2", projectileWidth: 96, projectileHeight: 24, projectileLife: 0.86, spawnOffsetX: 108, spawnOffsetY: -90 },
+    special_3: { type: "tiEncore", attack: "special_3" },
+    back_special: { type: "laSeraphWaltz", attack: "back_special" },
+    super_dash: { type: "homingDash", attack: "super_dash" },
+    ultimate: { type: "ultimate", attack: "ultimate" }
+  };
+
+  const CELESTE_DEFAULT_SOCKETS = {
+    root: { x: 0, y: 0 },
+    feetBase: { x: 0, y: 0 },
+    torsoCenter: { x: 2, y: -108 },
+    headCenter: { x: 0, y: -176 },
+    frontHand: { x: 42, y: -118 },
+    backHand: { x: -34, y: -116 },
+    batonTip: { x: 92, y: -132 },
+    frontPalm: { x: 70, y: -108 },
+    projectileOrigin: { x: 104, y: -102 },
+    trapPlacementOrigin: { x: 126, y: -72 },
+    barrierCenter: { x: 4, y: -112 },
+    octavaOrigin: { x: -62, y: -158 },
+    beamOrigin: { x: 112, y: -126 }
+  };
+
+  const CELESTE_AIR_SOCKET_OFFSETS = {
+    torsoCenter: { y: 12 },
+    headCenter: { y: 8 },
+    frontHand: { y: 10 },
+    backHand: { y: 10 },
+    batonTip: { y: 8 },
+    frontPalm: { y: 10 },
+    projectileOrigin: { y: 12 },
+    trapPlacementOrigin: { y: 8 },
+    barrierCenter: { y: 10 },
+    octavaOrigin: { y: 8 },
+    beamOrigin: { y: 8 }
+  };
+
+  const CELESTE_ANIMATION_DRAW_META = {
+    idle: { rootType: "grounded", frameTiming: 0.72 },
+    walk_forward: { rootType: "grounded", frameTiming: 0.56 },
+    walk_back: { rootType: "grounded", frameTiming: 0.56 },
+    crouch: { rootType: "grounded", sockets: { torsoCenter: { y: -82 }, headCenter: { y: -135 }, frontHand: { y: -92 }, batonTip: { x: 86, y: -104 }, frontPalm: { x: 62, y: -90 }, barrierCenter: { y: -88 } } },
+    jump_start: { rootType: "grounded" },
+    jump_up: { rootType: "airborne" },
+    rising: { rootType: "airborne" },
+    fall: { rootType: "airborne" },
+    neutral_air_drift: { rootType: "airborne" },
+    landing: { rootType: "grounded", frameTiming: 0.24 },
+    block: { rootType: "grounded", sockets: { barrierCenter: { x: 12, y: -110 }, frontHand: { x: 38, y: -116 }, batonTip: { x: 78, y: -130 } } },
+    guard_idle: { rootType: "grounded", sockets: { barrierCenter: { x: 12, y: -110 }, frontHand: { x: 38, y: -116 }, batonTip: { x: 78, y: -130 } } },
+    damaged: { rootType: "grounded" },
+    knockback: { rootType: "grounded", drawOffsetX: -6 },
+    launch_hitstun: { rootType: "airborne" },
+    air_hitstun: { rootType: "airborne" },
+    knockdown_fall: { rootType: "knockdown", sockets: { torsoCenter: { y: -44 }, headCenter: { x: -22, y: -56 }, frontHand: { x: 42, y: -34 }, batonTip: { x: 82, y: -42 }, barrierCenter: { y: -50 } } },
+    grounded: { rootType: "knockdown", sockets: { torsoCenter: { y: -34 }, headCenter: { x: -30, y: -42 }, frontHand: { x: 44, y: -24 }, batonTip: { x: 80, y: -30 }, barrierCenter: { y: -42 } } },
+    downed: { rootType: "knockdown" },
+    get_up: { rootType: "knockdown" },
+    death: { rootType: "knockdown" },
+    ko: { rootType: "knockdown" },
+    defeat: { rootType: "knockdown" },
+    neutral_light: { rootType: "grounded", frameTiming: 0.18, sockets: { frontPalm: { x: 84, y: -106 }, batonTip: { x: 104, y: -124 } } },
+    neutral_medium: { rootType: "grounded", frameTiming: 0.26, sockets: { batonTip: { x: 112, y: -132 }, frontHand: { x: 56, y: -120 } } },
+    neutral_heavy: { rootType: "grounded", frameTiming: 0.34, sockets: { frontPalm: { x: 96, y: -104 }, batonTip: { x: 116, y: -116 } } },
+    forward_light: { rootType: "grounded", frameTiming: 0.2, sockets: { frontPalm: { x: 96, y: -104 }, batonTip: { x: 112, y: -122 } } },
+    forward_medium: { rootType: "grounded", frameTiming: 0.28, sockets: { batonTip: { x: 128, y: -128 }, frontHand: { x: 72, y: -118 } } },
+    forward_heavy: { rootType: "grounded", frameTiming: 0.38, sockets: { frontPalm: { x: 118, y: -96 }, batonTip: { x: 138, y: -110 } } },
+    back_light: { rootType: "grounded", frameTiming: 0.22, sockets: { frontPalm: { x: 62, y: -104 }, batonTip: { x: 82, y: -122 } } },
+    back_medium: { rootType: "grounded", frameTiming: 0.3, sockets: { batonTip: { x: 92, y: -126 }, barrierCenter: { x: 0, y: -112 } } },
+    back_heavy: { rootType: "grounded", frameTiming: 0.4, sockets: { frontPalm: { x: 74, y: -98 }, batonTip: { x: 92, y: -110 } } },
+    up_light: { rootType: "grounded", frameTiming: 0.2, sockets: { frontPalm: { x: 56, y: -148 }, batonTip: { x: 76, y: -172 } } },
+    up_medium: { rootType: "grounded", frameTiming: 0.3, sockets: { batonTip: { x: 78, y: -184 }, frontHand: { x: 46, y: -142 } } },
+    up_heavy: { rootType: "grounded", frameTiming: 0.42, sockets: { frontPalm: { x: 72, y: -154 }, batonTip: { x: 88, y: -188 } } },
+    jump_light: { rootType: "airborne", frameTiming: 0.2, sockets: { frontPalm: { x: 76, y: -84 }, batonTip: { x: 96, y: -98 } } },
+    jump_medium: { rootType: "airborne", frameTiming: 0.28, sockets: { batonTip: { x: 116, y: -100 }, frontHand: { x: 56, y: -92 } } },
+    jump_heavy: { rootType: "airborne", frameTiming: 0.38, sockets: { frontPalm: { x: 72, y: -58 }, batonTip: { x: 84, y: -68 }, feetBase: { x: 12, y: -18 } } },
+    fa_strobe: { rootType: "grounded", frameTiming: 0.24, sockets: { torsoCenter: { x: -6, y: -104 }, batonTip: { x: 84, y: -124 }, frontPalm: { x: 62, y: -102 } } },
+    air_dash_forward: { rootType: "airborne" },
+    air_dash_back: { rootType: "airborne" },
+    sol_ovation: { rootType: "grounded", frameTiming: 0.42, sockets: { projectileOrigin: { x: 116, y: -102 }, batonTip: { x: 110, y: -116 }, beamOrigin: { x: 118, y: -112 } } },
+    la_seraph_waltz: { rootType: "grounded", frameTiming: 0.46, sockets: { barrierCenter: { x: 6, y: -112 }, frontHand: { x: 38, y: -118 }, batonTip: { x: 76, y: -132 } } },
+    ti_encore: { rootType: "grounded", frameTiming: 0.54, sockets: { trapPlacementOrigin: { x: 118, y: -68 }, batonTip: { x: 96, y: -116 } } },
+    octava_startup: { rootType: "ultimateLarge", frameTiming: 0.48, sockets: { octavaOrigin: { x: -62, y: -176 }, beamOrigin: { x: 126, y: -136 }, batonTip: { x: 118, y: -148 } } },
+    octava_fire: { rootType: "ultimateLarge", frameTiming: 0.62, sockets: { octavaOrigin: { x: -70, y: -178 }, beamOrigin: { x: 146, y: -132 }, batonTip: { x: 134, y: -126 } } },
+    ultimate: { rootType: "ultimateLarge" },
+    victory: { rootType: "grounded", frameTiming: 0.62 }
+  };
+
+  const CELESTE_MOVE_VFX = {
+    neutral_light: { spirit: "DO", row: 0, socket: "frontPalm", layer: "front", scale: 0.34, alpha: 0.74 },
+    forward_light: { spirit: "DO", row: 0, socket: "frontPalm", layer: "front", scale: 0.36, alpha: 0.72 },
+    up_light: { spirit: "DO", row: 0, socket: "frontPalm", layer: "front", scale: 0.34, alpha: 0.72, rotation: -0.7 },
+    jump_light: { spirit: "DO", row: 0, socket: "frontPalm", layer: "front", scale: 0.32, alpha: 0.7 },
+    neutral_medium: { spirit: "RE", row: 1, socket: "batonTip", layer: "front", scale: 0.45, alpha: 0.76 },
+    forward_medium: { spirit: "RE", row: 1, socket: "batonTip", layer: "front", scale: 0.52, alpha: 0.78 },
+    up_medium: { spirit: "RE", row: 1, socket: "batonTip", layer: "front", scale: 0.5, alpha: 0.78, rotation: -0.65 },
+    jump_medium: { spirit: "RE", row: 1, socket: "batonTip", layer: "front", scale: 0.48, alpha: 0.76 },
+    back_medium: { spirit: "RE", row: 1, socket: "batonTip", layer: "front", scale: 0.42, alpha: 0.66 },
+    neutral_heavy: { spirit: "MI", row: 2, socket: "frontPalm", layer: "front", scale: 0.54, alpha: 0.76 },
+    forward_heavy: { spirit: "MI", row: 2, socket: "frontPalm", layer: "front", scale: 0.64, alpha: 0.78 },
+    back_heavy: { spirit: "MI", row: 2, socket: "frontPalm", layer: "front", scale: 0.56, alpha: 0.72 },
+    up_heavy: { spirit: "MI", row: 2, socket: "batonTip", layer: "front", scale: 0.62, alpha: 0.78, rotation: -0.8 },
+    jump_heavy: { spirit: "MI", row: 2, socket: "frontPalm", layer: "front", scale: 0.58, alpha: 0.78 },
+    special_2: { spirit: "SOL", row: 4, socket: "projectileOrigin", layer: "front", scale: 0.44, alpha: 0.72 },
+    special_3: { spirit: "TI", row: 6, socket: "trapPlacementOrigin", layer: "front", scale: 0.38, alpha: 0.72 }
   };
 
   const serisEnemyAI = {
@@ -938,13 +1526,60 @@
       specialMoves: cloneData(lamuhSpecialMoves),
       ai: cloneData(baselineEnemyAI),
       effects: { dashTrail: true },
-      projectileColor: "#67eaff",
+      projectileColor: "#f7f2df",
       trailColor: "#d6a638",
-      ultimateBurstColor: "#67eaff",
+      ultimateBurstColor: "#ffe08a",
       hurtboxWidth: 66,
       playable: true,
       hiddenDevOnly: false,
       futurePlayer2: true,
+      sheets: {
+        sheet1Redesign: "lamuhSheet1CoreNormalsRedesign",
+        forwardSpecialsRedesign: "lamuhForwardSpecialsRedesign",
+        downUpSpecialsRedesign: "lamuhDownUpSpecialsRedesign",
+        backNeutralSpecialsRedesign: "lamuhBackNeutralSpecialsRedesign",
+        neutralSpecialsBodyVfxRedesign: "lamuhNeutralSpecialsBodyVfxRedesign",
+        reactionsDefenseRedesign: "lamuhReactionsDefenseRedesign",
+        airCrouchJumpRedesign: "lamuhAirCrouchJumpRedesign",
+        secondaryMovementDirectionalNormalsRedesign: "lamuhSecondaryMovementDirectionalNormalsRedesign",
+        superAscendedGoldenLocs: "lamuhSuperAscendedGoldenLocs"
+      },
+      buildPlayerAnimations: buildLamuhFinalPlayerAnimations,
+      buildEnemyAnimations: buildLamuhFinalEnemyAnimations
+    },
+    lamuh_legacy: {
+      id: "lamuh_legacy",
+      name: "LAMUH LEGACY",
+      shortName: "LEGACY",
+      subtitle: "CLASSIC CELESTIAL KI",
+      role: "CLASSIC KI RUSH",
+      health: PLAYER_MAX_HP,
+      movement: cloneData(lamuhMovementStats),
+      jump: cloneData(lamuhJumpStats),
+      airDash: cloneData(lamuhAirDashStats),
+      attacks: {
+        player: buildLamuhLegacyPlayerAttacks(),
+        enemy: buildLamuhLegacyEnemyAttacks()
+      },
+      comboRoutes: cloneData(baselineComboRoutes),
+      hitboxes: cloneData(lamuhHitboxes),
+      hurtboxes: {
+        standing: { w: 66, h: 164 },
+        crouching: { w: 66, h: 94 },
+        dead: { w: 74, h: 62 }
+      },
+      specialMoves: cloneData(lamuhLegacySpecialMoves),
+      ai: cloneData(baselineEnemyAI),
+      effects: { dashTrail: true },
+      projectileColor: "#f7f2df",
+      trailColor: "#d6a638",
+      ultimateBurstColor: "#ffe08a",
+      hurtboxWidth: 66,
+      playable: true,
+      hiddenDevOnly: false,
+      futurePlayer2: true,
+      legacyCharacterOf: "lamuh",
+      specialRouting: "lamuh_legacy_simple",
       sheets: {
         coreMovement: "lamuhFinalCoreMovement",
         airMovement: "lamuhFinalAirMovement",
@@ -955,8 +1590,8 @@
         endStates: "lamuhFinalEndStates",
         crownBody: "lamuhCrownBody"
       },
-      buildPlayerAnimations: buildLamuhFinalPlayerAnimations,
-      buildEnemyAnimations: buildLamuhFinalEnemyAnimations
+      buildPlayerAnimations: buildLamuhLegacyPlayerAnimations,
+      buildEnemyAnimations: buildLamuhLegacyEnemyAnimations
     },
     seris: {
       id: "seris",
@@ -1005,6 +1640,64 @@
       },
       buildPlayerAnimations: buildSerisFinalPlayerAnimations,
       buildEnemyAnimations: buildSerisFinalEnemyAnimations
+    },
+    celeste: {
+      id: "celeste",
+      name: "CELESTE",
+      shortName: "CELESTE",
+      subtitle: "CONDUCTOR OF THE SEVEN SPIRITS",
+      role: "TRICKSTER RUSHDOWN",
+      health: 880,
+      movement: cloneData(celesteMovementStats),
+      jump: cloneData(celesteJumpStats),
+      airDash: cloneData(celesteAirDashStats),
+      attacks: {
+        player: cloneData(celestePlayerAttacks),
+        enemy: cloneData(celesteEnemyAttacks)
+      },
+      comboRoutes: cloneData(celesteComboRoutes),
+      hitboxes: cloneData(celesteHitboxes),
+      hurtboxes: {
+        standing: { w: 58, h: 154 },
+        crouching: { w: 58, h: 88 },
+        dead: { w: 76, h: 56 }
+      },
+      specialMoves: cloneData(celesteSpecialMoves),
+      ai: {
+        ...cloneData(nyxEnemyAI),
+        farRange: 235,
+        farAttack: "enemy_special_2",
+        weightedAttacks: [
+          { threshold: 0.38, move: "enemy_light_attack" },
+          { threshold: 0.62, move: "enemy_medium_attack" },
+          { threshold: 0.8, move: "enemy_forward_medium" },
+          { threshold: 0.92, move: "enemy_up_medium" }
+        ],
+        fallbackAttack: "enemy_special_1"
+      },
+      effects: { dashTrail: true, placeholderSpirits: false },
+      vfx: {
+        placeholderOnly: false,
+        atlas: "celesteFinalVfx",
+        spiritColors: cloneData(celesteSpiritColors)
+      },
+      projectileColor: celesteSpiritColors.SOL.main,
+      trailColor: celesteSpiritColors.FA.main,
+      ultimateBurstColor: celesteSpiritColors.MI.main,
+      hurtboxWidth: 58,
+      playable: true,
+      futurePlayer2: true,
+      placeholderArt: "production_sheets_phase_5",
+      sheets: {
+        bodyBasics: "celesteFinalBodyBasics",
+        groundNormals: "celesteFinalGroundNormals",
+        upAirAttacks: "celesteFinalUpAirAttacks",
+        specials: "celesteFinalSpecials",
+        defense: "celesteFinalDefense",
+        octavaBody: "celesteFinalOctavaBody"
+      },
+      buildPlayerAnimations: buildCelesteFinalPlayerAnimations,
+      buildEnemyAnimations: buildCelesteFinalEnemyAnimations
     }
   };
 
@@ -1012,7 +1705,7 @@
     hydrateCharacterProfile(profile);
   }
 
-  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris", "lamuh"];
+  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris", "lamuh", "lamuh_legacy", "celeste"];
   const hiddenTestCharacterIds = [
     ...(SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : []),
     ...(LAMUH_HIDDEN_TEST_ENABLED ? ["lamuh"] : [])
@@ -1027,7 +1720,13 @@
     Digit4: "sol",
     Numpad4: "sol",
     Digit5: "seris",
-    Numpad5: "seris"
+    Numpad5: "seris",
+    Digit6: "lamuh",
+    Numpad6: "lamuh",
+    Digit7: "lamuh_legacy",
+    Numpad7: "lamuh_legacy",
+    Digit8: "celeste",
+    Numpad8: "celeste"
   };
   const P1_CONTROLS = {
     left: "KeyA",
@@ -1116,6 +1815,7 @@
     frameBoxes: {},
     particles: [],
     projectiles: [],
+    celesteTraps: [],
     nyxSignatureEffects: [],
     lamuhSpecialEffects: [],
     lamuhUltimateBeams: [],
@@ -1129,6 +1829,9 @@
     selectedP2CharacterId: "vanta",
     selectCursorCharacterId: "kairo",
     selectGameMode: "versus",
+    selectedStagePresetId: PLATFORM_TEST_STAGE_ID,
+    stagePresetId: PLATFORM_TEST_STAGE_ID,
+    stageCamera: { scale: 1, x: 0, y: 0, initialized: false },
     activeSelectSide: "p1",
     p1Ready: false,
     p2Ready: false,
@@ -1143,11 +1846,57 @@
       hits: 0,
       heavyHits: 0,
       wallBounces: 0,
+      celesteAirBounceSpent: false,
       displayHits: 0,
       timer: 0,
       displayTimer: 0
     }
   };
+
+  function getActiveStagePreset() {
+    return STAGE_PRESETS[state.stagePresetId] || STAGE_PRESETS[STANDARD_STAGE_ID];
+  }
+
+  function getSelectedStagePreset() {
+    return STAGE_PRESETS[state.selectedStagePresetId] || STAGE_PRESETS[STANDARD_STAGE_ID];
+  }
+
+  function isPlatformTestStage() {
+    return getActiveStagePreset().id === PLATFORM_TEST_STAGE_ID;
+  }
+
+  function getPlatformArenaConfig() {
+    return getActiveStagePreset().combat ? getActiveStagePreset() : null;
+  }
+
+  function getPlatformSpeedTuning() {
+    return getPlatformArenaConfig()?.platformSpeedTuning || null;
+  }
+
+  function getFightingSpeedTuning() {
+    return getPlatformSpeedTuning() || STANDARD_FIGHTING_SPEED_TUNING;
+  }
+
+  function getFightingKnockbackVelocityMultiplier() {
+    return getFightingSpeedTuning()?.knockbackVelocityMultiplier ?? 1;
+  }
+
+  function applyFightingKnockbackVelocity(defender, blocked = false) {
+    const multiplier = blocked ? 1 : getFightingKnockbackVelocityMultiplier();
+    if (multiplier === 1) return;
+    defender.vx *= multiplier;
+    defender.vy *= multiplier;
+  }
+
+  function getStageBounds() {
+    const stage = getActiveStagePreset();
+    return { left: stage.leftBound, right: stage.rightBound };
+  }
+
+  function clampToStageX(x) {
+    const bounds = getStageBounds();
+    return clamp(x, bounds.left, bounds.right);
+  }
 
   function syncInputKeys() {
     const filteredKeyboardKeys = [...state.keyboardKeys].filter((code) => shouldUseKeyboardKey(code));
@@ -1430,10 +2179,16 @@
       recovery_get_up: [sheets.endStates, 2],
       neutral_light: [sheets.groundNormals, 0],
       light_attack: [sheets.groundNormals, 0],
+      quick_palm: [sheets.groundNormals, 0],
+      lamuh_stand_light: [sheets.groundNormals, 0],
       neutral_medium: [sheets.groundNormals, 1],
       medium_attack: [sheets.groundNormals, 1],
+      mirror_knuckle: [sheets.groundNormals, 1],
+      lamuh_stand_medium: [sheets.groundNormals, 1],
       neutral_heavy: [sheets.groundNormals, 2],
       heavy_attack: [sheets.groundNormals, 2],
+      crown_breaker: [sheets.groundNormals, 2],
+      lamuh_stand_heavy: [sheets.groundNormals, 2],
       launcher: [sheets.groundNormals, 3],
       forward_light: [sheets.groundNormals, 0],
       forward_medium: [sheets.groundNormals, 1],
@@ -1653,100 +2408,707 @@
     };
   }
 
-  function buildLamuhFinalPlayerAnimations(sheets) {
+  function buildLamuhLegacyPlayerAnimations(sheets) {
+    const core = sheets.coreMovement;
+    const airMovement = sheets.airMovement;
+    const groundNormals = sheets.groundNormals;
+    const airNormals = sheets.airNormals;
+    const specials = sheets.specials;
+    const defense = sheets.defense;
+    const endStates = sheets.endStates;
+    const crownBody = sheets.crownBody;
     return {
-      idle: [sheets.coreMovement, 0],
-      select_idle: [sheets.coreMovement, 0],
-      walk_forward: [sheets.coreMovement, 1],
-      walk_back: [sheets.coreMovement, 2],
-      dash: [sheets.coreMovement, 3],
-      dash_forward: [sheets.coreMovement, 3],
-      dash_back: [sheets.coreMovement, 4],
-      crouch: [sheets.coreMovement, 5],
-      low_stance: [sheets.coreMovement, 5],
-      jump_up: [sheets.airMovement, 0],
-      rising: [sheets.airMovement, 0],
-      jump_forward: [sheets.airMovement, 1],
-      jump_back: [sheets.airMovement, 2],
-      fall: [sheets.airMovement, 3],
-      neutral_air_drift: [sheets.airMovement, 3],
-      air_dash_forward: [sheets.airMovement, 4],
-      air_dash_back: [sheets.airMovement, 5],
-      stand_up: [sheets.endStates, 2],
+      idle: [core, 0],
+      lamuh_legacy_idle: [core, 0],
+      select_idle: [core, 0],
+      walk_forward: [core, 1],
+      walk_back: [core, 2],
+      dash: [core, 3],
+      dash_forward: [core, 3],
+      dash_back: [core, 4],
+      crouch: [core, 5],
+      low_stance: [core, 5],
+      jump_up: [airMovement, 0],
+      rising: [airMovement, 0],
+      jump_forward: [airMovement, 1],
+      jump_back: [airMovement, 2],
+      fall: [airMovement, 3],
+      neutral_air_drift: [airMovement, 3],
+      air_dash_forward: [airMovement, 4],
+      air_dash_back: [airMovement, 5],
+      land: [core, 0],
+      landing: [core, 0],
+      stand_up: [endStates, 2],
+      block: [defense, 0],
+      guard_idle: [defense, 0],
+      stand_block: [defense, 0],
+      crouch_block: [defense, 1],
+      air_block: [defense, 4],
+      damaged: [defense, 3],
+      hit_light: [defense, 3],
+      light_hitstun: [defense, 3],
+      hit_heavy: [defense, 5],
+      medium_hitstun: [defense, 5],
+      heavy_hitstun: [defense, 5],
+      knockback: [defense, 5],
+      wall_bounce: [defense, 5],
+      launch_hitstun: [defense, 5],
+      launch_hit: [defense, 5],
+      air_hitstun: [defense, 4],
+      knockdown_fall: [endStates, 0],
+      knockdown: [endStates, 0],
+      grounded: [endStates, 1],
+      downed: [endStates, 1],
+      get_up: [endStates, 2],
+      recovery: [endStates, 2],
+      recovery_get_up: [endStates, 2],
+      neutral_light: [groundNormals, 0],
+      light_attack: [groundNormals, 0],
+      quick_palm: [groundNormals, 0],
+      neutral_medium: [groundNormals, 1],
+      medium_attack: [groundNormals, 1],
+      mirror_knuckle: [groundNormals, 1],
+      neutral_heavy: [groundNormals, 2],
+      heavy_attack: [groundNormals, 2],
+      crown_breaker: [groundNormals, 2],
+      forward_light: [groundNormals, 0],
+      forward_medium: [groundNormals, 1],
+      forward_heavy: [groundNormals, 2],
+      back_light: [groundNormals, 0],
+      back_medium: [groundNormals, 1],
+      back_heavy: [groundNormals, 2],
+      down_light: [groundNormals, 0],
+      low_check: [groundNormals, 0],
+      crouch_light: [groundNormals, 0],
+      down_medium: [groundNormals, 1],
+      sweep_line: [groundNormals, 1],
+      crouch_medium: [groundNormals, 1],
+      down_heavy: [groundNormals, 3],
+      crown_riser: [groundNormals, 3],
+      crouch_heavy: [groundNormals, 3],
+      launcher: [groundNormals, 3],
+      jump_light: [airNormals, 0],
+      air_light: [airNormals, 0],
+      air_tap: [airNormals, 0],
+      jump_medium: [airNormals, 1],
+      air_medium: [airNormals, 1],
+      sky_knuckle: [airNormals, 1],
+      jump_heavy: [airNormals, 2],
+      air_heavy: [airNormals, 2],
+      crown_drop: [airNormals, 2],
+      air_recovery: [airNormals, 3],
+      fall_transition: [airNormals, 3],
+      special_1: [specials, 0],
+      neutral_special: [specials, 0],
+      celestial_palm: [specials, 0],
+      mirror_spark: [specials, 0],
+      special_2: [specials, 1],
+      forward_special: [specials, 1],
+      ascend_step: [specials, 1],
+      dash_strike: [specials, 1],
+      special_3: [specials, 2],
+      up_special: [specials, 2],
+      down_special: [specials, 2],
+      heaven_splitter: [specials, 2],
+      back_special: [specials, 3],
+      divine_vanish: [specials, 3],
+      mirror_slip: [specials, 3],
+      air_special: [specials, 4],
+      radiant_dive: [specials, 4],
+      air_dash_strike: [specials, 4],
+      special_recovery: [specials, 5],
+      super_dash: [specials, 1],
+      ultimate: crownBody ? [crownBody, 0] : [specials, 5],
+      crown_startup: crownBody ? [crownBody, 0] : [specials, 5],
+      crown_rush: crownBody ? [crownBody, 1] : [specials, 1],
+      crown_charge: [specials, 5],
+      crown_fire: [specials, 5],
+      crown_recovery: [core, 0],
+      death: [endStates, 3],
+      ko: [endStates, 3],
+      defeat: [endStates, 3],
+      intro_pose: [endStates, 4],
+      intro: [endStates, 4],
+      victory: [endStates, 5],
+      level_up: [endStates, 5],
+      taunt: [endStates, 6]
+    };
+  }
+
+  function buildLamuhLegacyEnemyAnimations(sheets) {
+    const player = buildLamuhLegacyPlayerAnimations(sheets);
+    const enemy = {};
+    for (const [key, value] of Object.entries(player)) {
+      enemy[`enemy_${key}`] = value;
+    }
+    enemy.enemy_idle = player.idle;
+    enemy.enemy_walk_forward = player.walk_forward;
+    enemy.enemy_walk_back = player.walk_back;
+    enemy.enemy_dash = player.dash;
+    enemy.enemy_dash_forward = player.dash_forward;
+    enemy.enemy_dash_back = player.dash_back;
+    enemy.enemy_air_dash_forward = player.air_dash_forward;
+    enemy.enemy_air_dash_back = player.air_dash_back;
+    enemy.enemy_block = player.block;
+    enemy.enemy_damaged = player.damaged;
+    enemy.enemy_knockback = player.knockback;
+    enemy.enemy_get_up = player.get_up;
+    enemy.enemy_death = player.death;
+    enemy.enemy_light_attack = player.neutral_light;
+    enemy.enemy_medium_attack = player.neutral_medium;
+    enemy.enemy_heavy_attack = player.neutral_heavy;
+    enemy.enemy_forward_light = player.forward_light;
+    enemy.enemy_forward_medium = player.forward_medium;
+    enemy.enemy_forward_heavy = player.forward_heavy;
+    enemy.enemy_back_light = player.back_light;
+    enemy.enemy_back_medium = player.back_medium;
+    enemy.enemy_back_heavy = player.back_heavy;
+    enemy.enemy_down_light = player.down_light;
+    enemy.enemy_down_medium = player.down_medium;
+    enemy.enemy_down_heavy = player.down_heavy;
+    enemy.enemy_jump_light = player.jump_light;
+    enemy.enemy_jump_medium = player.jump_medium;
+    enemy.enemy_jump_heavy = player.jump_heavy;
+    enemy.enemy_special_1 = player.special_1;
+    enemy.enemy_special_2 = player.special_2;
+    enemy.enemy_special_3 = player.special_3;
+    enemy.enemy_neutral_special = player.neutral_special;
+    enemy.enemy_forward_special = player.forward_special;
+    enemy.enemy_up_special = player.up_special;
+    enemy.enemy_down_special = player.down_special;
+    enemy.enemy_back_special = player.back_special;
+    enemy.enemy_air_special = player.air_special;
+    enemy.enemy_ultimate = player.ultimate;
+    return enemy;
+  }
+
+  function buildLamuhFinalPlayerAnimations(sheets) {
+    const sheet1Redesign = sheets.sheet1Redesign;
+    const newIdle = [sheet1Redesign, 0];
+    const newWalk = [sheet1Redesign, 1];
+    const newRunDash = [sheet1Redesign, 2];
+    const newStandLight = [sheet1Redesign, 3];
+    const newStandMedium = [sheet1Redesign, 4];
+    const newStandHeavy = [sheet1Redesign, 5];
+    const dashStrike = sheets.forwardSpecialsRedesign ? [sheets.forwardSpecialsRedesign, 0] : newRunDash;
+    const mirrorBreak = sheets.forwardSpecialsRedesign ? [sheets.forwardSpecialsRedesign, 1] : newStandMedium;
+    const mirrorPierce = sheets.forwardSpecialsRedesign ? [sheets.forwardSpecialsRedesign, 2] : newStandHeavy;
+    const lowMirrorCut = sheets.downUpSpecialsRedesign ? [sheets.downUpSpecialsRedesign, 0] : newStandLight;
+    const groundBreaker = sheets.downUpSpecialsRedesign ? [sheets.downUpSpecialsRedesign, 1] : newStandMedium;
+    const crownRupture = sheets.downUpSpecialsRedesign ? [sheets.downUpSpecialsRedesign, 2] : newStandHeavy;
+    const crownPop = sheets.downUpSpecialsRedesign ? [sheets.downUpSpecialsRedesign, 3] : newStandLight;
+    const risingCrown = sheets.downUpSpecialsRedesign ? [sheets.downUpSpecialsRedesign, 4] : newStandMedium;
+    const ascendantBreak = sheets.downUpSpecialsRedesign ? [sheets.downUpSpecialsRedesign, 5] : newStandHeavy;
+    const mirrorSlip = sheets.backNeutralSpecialsRedesign ? [sheets.backNeutralSpecialsRedesign, 0] : newWalk;
+    const reboundStrike = sheets.backNeutralSpecialsRedesign ? [sheets.backNeutralSpecialsRedesign, 1] : newStandMedium;
+    const mirrorReversal = sheets.backNeutralSpecialsRedesign ? [sheets.backNeutralSpecialsRedesign, 2] : newStandHeavy;
+    const mirrorSpark = sheets.neutralSpecialsBodyVfxRedesign
+      ? [sheets.neutralSpecialsBodyVfxRedesign, 0]
+      : sheets.backNeutralSpecialsRedesign ? [sheets.backNeutralSpecialsRedesign, 3] : newStandLight;
+    const mirrorPulse = sheets.neutralSpecialsBodyVfxRedesign
+      ? [sheets.neutralSpecialsBodyVfxRedesign, 1]
+      : sheets.backNeutralSpecialsRedesign ? [sheets.backNeutralSpecialsRedesign, 4] : newStandMedium;
+    const crownBeam = sheets.neutralSpecialsBodyVfxRedesign
+      ? [sheets.neutralSpecialsBodyVfxRedesign, 2]
+      : sheets.backNeutralSpecialsRedesign ? [sheets.backNeutralSpecialsRedesign, 5] : newStandHeavy;
+    const crownBeamCharge = crownBeam;
+    const crownBeamFire = crownBeam;
+    const crownBeamRecovery = crownBeam;
+    const superIdle = sheets.superAscendedGoldenLocs ? [sheets.superAscendedGoldenLocs, 0] : newIdle;
+    const superCharge = sheets.superAscendedGoldenLocs ? [sheets.superAscendedGoldenLocs, 1] : newStandHeavy;
+    const superRush = sheets.superAscendedGoldenLocs ? [sheets.superAscendedGoldenLocs, 2] : newRunDash;
+    const superComboA = sheets.superAscendedGoldenLocs ? [sheets.superAscendedGoldenLocs, 3] : newStandLight;
+    const superComboBLaunch = sheets.superAscendedGoldenLocs ? [sheets.superAscendedGoldenLocs, 4] : newStandHeavy;
+    const superLaunch = superComboBLaunch;
+    const superFire = sheets.superAscendedGoldenLocs ? [sheets.superAscendedGoldenLocs, 5] : newStandHeavy;
+    const hitLight = sheets.reactionsDefenseRedesign ? [sheets.reactionsDefenseRedesign, 0] : newIdle;
+    const hitHeavy = sheets.reactionsDefenseRedesign ? [sheets.reactionsDefenseRedesign, 1] : newStandHeavy;
+    const launchHit = sheets.reactionsDefenseRedesign ? [sheets.reactionsDefenseRedesign, 2] : newStandHeavy;
+    const hardKnockback = sheets.reactionsDefenseRedesign ? [sheets.reactionsDefenseRedesign, 3] : newStandHeavy;
+    const knockdownDown = sheets.reactionsDefenseRedesign ? [sheets.reactionsDefenseRedesign, 4] : newIdle;
+    const getupBlock = sheets.reactionsDefenseRedesign ? [sheets.reactionsDefenseRedesign, 5] : newIdle;
+    const jumpFallLand = sheets.airCrouchJumpRedesign ? [sheets.airCrouchJumpRedesign, 0] : newRunDash;
+    const crouchLight = sheets.airCrouchJumpRedesign ? [sheets.airCrouchJumpRedesign, 1] : newStandLight;
+    const crouchMedium = sheets.airCrouchJumpRedesign ? [sheets.airCrouchJumpRedesign, 2] : newStandMedium;
+    const crouchHeavy = sheets.airCrouchJumpRedesign ? [sheets.airCrouchJumpRedesign, 3] : newStandHeavy;
+    const airNormalsCoverage = sheets.airCrouchJumpRedesign ? [sheets.airCrouchJumpRedesign, 4] : null;
+    const airSpecialsCoverage = sheets.airCrouchJumpRedesign ? [sheets.airCrouchJumpRedesign, 5] : null;
+    const airLight = airNormalsCoverage || newStandLight;
+    const airMedium = airNormalsCoverage || newStandMedium;
+    const airHeavy = airNormalsCoverage || newStandHeavy;
+    const airMirrorSpark = airSpecialsCoverage || newStandLight;
+    const airDashStrike = airSpecialsCoverage || newRunDash;
+    const airCrownDrop = airSpecialsCoverage || newStandHeavy;
+    const secondaryMovement = sheets.secondaryMovementDirectionalNormalsRedesign;
+    const walkBack = secondaryMovement ? [secondaryMovement, 0] : newWalk;
+    const dashBack = secondaryMovement ? [secondaryMovement, 1] : newRunDash;
+    const crouchHold = secondaryMovement ? [secondaryMovement, 2] : newStandLight;
+    const forwardDirectionalNormals = secondaryMovement ? [secondaryMovement, 3] : newStandMedium;
+    const backDirectionalNormals = secondaryMovement ? [secondaryMovement, 4] : newStandMedium;
+    const secondaryAirDashRecovery = secondaryMovement ? [secondaryMovement, 5] : newRunDash;
+    return {
+      idle: [sheet1Redesign, 0],
+      lamuh_idle: [sheet1Redesign, 0],
+      select_idle: newIdle,
+      walk_forward: [sheet1Redesign, 1],
+      lamuh_walk: [sheet1Redesign, 1],
+      walk_back: walkBack,
+      lamuh_walk_back: walkBack,
+      dash: [sheet1Redesign, 2],
+      lamuh_run: [sheet1Redesign, 2],
+      lamuh_dash: [sheet1Redesign, 2],
+      dash_forward: [sheet1Redesign, 2],
+      dash_back: dashBack,
+      lamuh_dash_back: dashBack,
+      crouch: crouchHold,
+      lamuh_crouch: crouchHold,
+      low_stance: crouchHold,
+      jump_up: jumpFallLand,
+      lamuh_jump: jumpFallLand,
+      rising: jumpFallLand,
+      jump_forward: jumpFallLand,
+      jump_back: jumpFallLand,
+      fall: jumpFallLand,
+      lamuh_fall: jumpFallLand,
+      neutral_air_drift: jumpFallLand,
+      air_dash_forward: secondaryAirDashRecovery,
+      air_dash_back: secondaryAirDashRecovery,
+      land: jumpFallLand,
+      landing: jumpFallLand,
+      lamuh_land: jumpFallLand,
+      stand_up: getupBlock,
+      block: getupBlock,
+      guard_idle: getupBlock,
+      stand_block: getupBlock,
+      lamuh_block_high: getupBlock,
+      crouch_block: getupBlock,
+      lamuh_block_low: getupBlock,
+      air_block: launchHit,
+      damaged: hitLight,
+      lamuh_hit_light: hitLight,
+      hit_light: hitLight,
+      light_hitstun: hitLight,
+      medium_hitstun: hitHeavy,
+      lamuh_hit_heavy: hitHeavy,
+      hit_heavy: hitHeavy,
+      knockback: hardKnockback,
+      lamuh_hard_knockback: hardKnockback,
+      lamuh_wall_bounce: hardKnockback,
+      wall_bounce: hardKnockback,
+      heavy_hitstun: hitHeavy,
+      launch_hitstun: launchHit,
+      lamuh_launch_hit: launchHit,
+      lamuh_air_hit: launchHit,
+      launch_hit: launchHit,
+      air_hitstun: launchHit,
+      neutral_light: [sheet1Redesign, 3],
+      light_attack: [sheet1Redesign, 3],
+      quick_palm: [sheet1Redesign, 3],
+      lamuh_stand_light: [sheet1Redesign, 3],
+      neutral_medium: [sheet1Redesign, 4],
+      medium_attack: [sheet1Redesign, 4],
+      mirror_knuckle: [sheet1Redesign, 4],
+      lamuh_stand_medium: [sheet1Redesign, 4],
+      neutral_heavy: [sheet1Redesign, 5],
+      heavy_attack: [sheet1Redesign, 5],
+      crown_breaker: [sheet1Redesign, 5],
+      lamuh_stand_heavy: [sheet1Redesign, 5],
+      launcher: forwardDirectionalNormals,
+      forward_light: forwardDirectionalNormals,
+      forward_medium: forwardDirectionalNormals,
+      forward_heavy: forwardDirectionalNormals,
+      back_light: backDirectionalNormals,
+      back_medium: backDirectionalNormals,
+      back_heavy: backDirectionalNormals,
+      down_light: crouchLight,
+      low_check: crouchLight,
+      crouch_light: crouchLight,
+      lamuh_crouch_light: crouchLight,
+      down_medium: crouchMedium,
+      sweep_line: crouchMedium,
+      crouch_medium: crouchMedium,
+      lamuh_crouch_medium: crouchMedium,
+      down_heavy: crouchHeavy,
+      crown_riser: crouchHeavy,
+      lamuh_crown_riser: crouchHeavy,
+      crouch_heavy: crouchHeavy,
+      lamuh_crouch_heavy: crouchHeavy,
+      jump_light: airLight,
+      air_light: airLight,
+      air_tap: airLight,
+      lamuh_air_light: airLight,
+      jump_medium: airMedium,
+      air_medium: airMedium,
+      sky_knuckle: airMedium,
+      lamuh_air_medium: airMedium,
+      jump_heavy: airHeavy,
+      air_heavy: airHeavy,
+      crown_drop: airHeavy,
+      lamuh_air_heavy: airHeavy,
+      air_recovery: secondaryAirDashRecovery,
+      fall_transition: secondaryAirDashRecovery,
+      special_1: mirrorSpark,
+      celestial_palm: mirrorSpark,
+      neutral_special: mirrorSpark,
+      neutral_light_special: mirrorSpark,
+      lamuh_mirror_spark_body: mirrorSpark,
+      mirror_spark: mirrorSpark,
+      lamuh_mirror_spark: mirrorSpark,
+      neutral_medium_special: mirrorPulse,
+      lamuh_mirror_pulse_body: mirrorPulse,
+      mirror_pulse: mirrorPulse,
+      lamuh_mirror_pulse: mirrorPulse,
+      neutral_heavy_special: crownBeam,
+      lamuh_crown_beam_body: crownBeam,
+      crown_beam: crownBeam,
+      lamuh_crown_beam: crownBeam,
+      crown_beam_charge: crownBeamCharge,
+      crown_beam_fire: crownBeamFire,
+      crown_beam_recovery: crownBeamRecovery,
+      special_2: mirrorPulse,
+      ascend_step: dashStrike,
+      forward_special: dashStrike,
+      forward_light_special: dashStrike,
+      dash_strike: dashStrike,
+      lamuh_dash_strike: dashStrike,
+      forward_medium_special: mirrorBreak,
+      mirror_break: mirrorBreak,
+      lamuh_mirror_break: mirrorBreak,
+      forward_heavy_special: mirrorPierce,
+      mirror_pierce: mirrorPierce,
+      lamuh_mirror_pierce: mirrorPierce,
+      special_3: crownBeam,
+      heaven_splitter: groundBreaker,
+      down_special: lowMirrorCut,
+      down_light_special: lowMirrorCut,
+      low_mirror_cut: lowMirrorCut,
+      lamuh_low_mirror_cut: lowMirrorCut,
+      down_medium_special: groundBreaker,
+      ground_breaker: groundBreaker,
+      lamuh_ground_breaker: groundBreaker,
+      down_heavy_special: crownRupture,
+      crown_rupture: crownRupture,
+      lamuh_crown_rupture: crownRupture,
+      up_light_special: crownPop,
+      crown_pop: crownPop,
+      lamuh_crown_pop: crownPop,
+      up_medium_special: risingCrown,
+      rising_crown: risingCrown,
+      lamuh_rising_crown: risingCrown,
+      up_heavy_special: ascendantBreak,
+      ascendant_break: ascendantBreak,
+      lamuh_ascendant_break: ascendantBreak,
+      back_special: mirrorSlip,
+      divine_vanish: mirrorSlip,
+      back_light_special: mirrorSlip,
+      mirror_slip: mirrorSlip,
+      lamuh_mirror_slip: mirrorSlip,
+      back_medium_special: reboundStrike,
+      rebound_strike: reboundStrike,
+      lamuh_rebound_strike: reboundStrike,
+      back_heavy_special: mirrorReversal,
+      mirror_reversal: mirrorReversal,
+      lamuh_mirror_reversal: mirrorReversal,
+      air_special: airMirrorSpark,
+      radiant_dive: airDashStrike,
+      air_light_special: airMirrorSpark,
+      air_mirror_spark: airMirrorSpark,
+      lamuh_air_mirror_spark: airMirrorSpark,
+      air_medium_special: airDashStrike,
+      air_dash_strike: airDashStrike,
+      lamuh_air_dash_strike: airDashStrike,
+      air_heavy_special: airCrownDrop,
+      air_crown_drop: airCrownDrop,
+      lamuh_air_crown_drop: airCrownDrop,
+      special_recovery: crownBeamRecovery,
+      crown_startup: superCharge,
+      crown_rush: superRush,
+      crown_combo_a: superComboA,
+      crown_combo_b: superComboBLaunch,
+      crown_launch: superLaunch,
+      crown_charge: superCharge,
+      lamuh_super_activation: superCharge,
+      crown_fire: superFire,
+      lamuh_super_attack_overlay: superFire,
+      crown_recovery: superIdle,
+      lamuh_super_idle: superIdle,
+      ultimate: superCharge,
+      knockdown_fall: knockdownDown,
+      lamuh_knockdown: knockdownDown,
+      lamuh_down: knockdownDown,
+      knockdown: knockdownDown,
+      grounded: knockdownDown,
+      downed: knockdownDown,
+      get_up: getupBlock,
+      lamuh_getup: getupBlock,
+      recovery: getupBlock,
+      recovery_get_up: getupBlock,
+      lamuh_super_hit_reaction: hitHeavy,
+      death: knockdownDown,
+      ko: knockdownDown,
+      defeat: knockdownDown,
+      intro_pose: newIdle,
+      intro: newIdle,
+      victory: superIdle,
+      level_up: superIdle,
+      taunt: newIdle
+    };
+  }
+
+  function buildCelesteFinalPlayerAnimations(sheets) {
+    return {
+      idle: [sheets.bodyBasics, 0],
+      select_idle: [sheets.bodyBasics, 0],
+      walk_forward: [sheets.bodyBasics, 1],
+      walk_back: [sheets.bodyBasics, 2],
+      dash: [sheets.bodyBasics, 1],
+      dash_forward: [sheets.bodyBasics, 1],
+      dash_back: [sheets.bodyBasics, 2],
+      crouch: [sheets.bodyBasics, 3],
+      low_stance: [sheets.bodyBasics, 3],
+      jump_start: [sheets.bodyBasics, 3],
+      jump_up: [sheets.bodyBasics, 4],
+      rising: [sheets.bodyBasics, 4],
+      jump_forward: [sheets.bodyBasics, 4],
+      jump_back: [sheets.bodyBasics, 4],
+      fall: [sheets.bodyBasics, 5],
+      neutral_air_drift: [sheets.bodyBasics, 5],
+      landing: [sheets.bodyBasics, 6],
+      air_dash_forward: [sheets.specials, 0],
+      air_dash_back: [sheets.specials, 1],
       block: [sheets.defense, 0],
       guard_idle: [sheets.defense, 0],
       stand_block: [sheets.defense, 0],
-      crouch_block: [sheets.defense, 1],
-      air_block: [sheets.defense, 2],
-      damaged: [sheets.defense, 3],
-      light_hitstun: [sheets.defense, 3],
-      medium_hitstun: [sheets.defense, 4],
-      knockback: [sheets.defense, 5],
-      heavy_hitstun: [sheets.defense, 5],
-      launch_hitstun: [sheets.defense, 5],
+      crouch_block: [sheets.defense, 0],
+      air_block: [sheets.defense, 0],
+      damaged: [sheets.defense, 1],
+      light_hitstun: [sheets.defense, 1],
+      medium_hitstun: [sheets.defense, 2],
+      heavy_hitstun: [sheets.defense, 2],
+      knockback: [sheets.defense, 3],
+      launch_hitstun: [sheets.defense, 4],
       air_hitstun: [sheets.defense, 4],
+      knockdown_fall: [sheets.defense, 5],
+      grounded: [sheets.defense, 5],
+      downed: [sheets.defense, 5],
+      get_up: [sheets.defense, 5],
+      recovery: [sheets.defense, 5],
+      recovery_get_up: [sheets.defense, 5],
       neutral_light: [sheets.groundNormals, 0],
       light_attack: [sheets.groundNormals, 0],
       neutral_medium: [sheets.groundNormals, 1],
       medium_attack: [sheets.groundNormals, 1],
       neutral_heavy: [sheets.groundNormals, 2],
       heavy_attack: [sheets.groundNormals, 2],
-      launcher: [sheets.groundNormals, 3],
-      forward_light: [sheets.groundNormals, 0],
-      forward_medium: [sheets.groundNormals, 1],
-      forward_heavy: [sheets.groundNormals, 2],
-      back_light: [sheets.groundNormals, 0],
-      back_medium: [sheets.groundNormals, 1],
-      back_heavy: [sheets.groundNormals, 2],
+      forward_light: [sheets.groundNormals, 3],
+      forward_medium: [sheets.groundNormals, 4],
+      forward_heavy: [sheets.groundNormals, 5],
+      back_light: [sheets.groundNormals, 6],
+      back_medium: [sheets.groundNormals, 7],
+      back_heavy: [sheets.groundNormals, 8],
       down_light: [sheets.groundNormals, 0],
       down_medium: [sheets.groundNormals, 1],
-      down_heavy: [sheets.groundNormals, 3],
-      jump_light: [sheets.airNormals, 0],
-      air_light: [sheets.airNormals, 0],
-      jump_medium: [sheets.airNormals, 1],
-      air_medium: [sheets.airNormals, 1],
-      jump_heavy: [sheets.airNormals, 2],
-      air_heavy: [sheets.airNormals, 2],
-      air_recovery: [sheets.airNormals, 3],
-      fall_transition: [sheets.airNormals, 3],
+      down_heavy: [sheets.upAirAttacks, 1],
+      up_light: [sheets.upAirAttacks, 0],
+      up_medium: [sheets.upAirAttacks, 1],
+      up_heavy: [sheets.upAirAttacks, 2],
+      launcher: [sheets.upAirAttacks, 1],
+      jump_light: [sheets.upAirAttacks, 3],
+      air_light: [sheets.upAirAttacks, 3],
+      jump_medium: [sheets.upAirAttacks, 4],
+      air_medium: [sheets.upAirAttacks, 4],
+      jump_heavy: [sheets.upAirAttacks, 5],
+      air_heavy: [sheets.upAirAttacks, 5],
       special_1: [sheets.specials, 0],
-      celestial_palm: [sheets.specials, 0],
-      neutral_special: [sheets.specials, 0],
-      special_2: [sheets.specials, 1],
-      ascend_step: [sheets.specials, 1],
-      forward_special: [sheets.specials, 1],
-      special_3: [sheets.specials, 2],
-      heaven_splitter: [sheets.specials, 2],
-      down_special: [sheets.specials, 2],
+      fa_strobe: [sheets.specials, 0],
+      special_2: [sheets.specials, 2],
+      sol_ovation: [sheets.specials, 2],
+      special_3: [sheets.specials, 4],
+      ti_encore: [sheets.specials, 4],
       back_special: [sheets.specials, 3],
-      divine_vanish: [sheets.specials, 3],
-      air_special: [sheets.specials, 4],
-      radiant_dive: [sheets.specials, 4],
-      special_recovery: [sheets.specials, 5],
-      crown_startup: [sheets.crownBody, 0],
-      crown_rush: [sheets.crownBody, 1],
-      crown_combo_a: [sheets.crownBody, 2],
-      crown_combo_b: [sheets.crownBody, 3],
-      crown_launch: [sheets.crownBody, 4],
-      crown_charge: [sheets.crownBody, 5],
-      crown_fire: [sheets.crownBody, 6],
-      crown_recovery: [sheets.crownBody, 7],
-      ultimate: [sheets.crownBody, 0],
-      knockdown_fall: [sheets.endStates, 0],
-      grounded: [sheets.endStates, 1],
-      downed: [sheets.endStates, 1],
-      get_up: [sheets.endStates, 2],
-      recovery: [sheets.endStates, 2],
-      recovery_get_up: [sheets.endStates, 2],
-      death: [sheets.endStates, 3],
-      ko: [sheets.endStates, 3],
-      defeat: [sheets.endStates, 3],
-      intro_pose: [sheets.endStates, 4],
-      intro: [sheets.endStates, 4],
-      victory: [sheets.endStates, 5],
-      level_up: [sheets.endStates, 5],
-      taunt: [sheets.endStates, 6]
+      la_seraph_waltz: [sheets.specials, 3],
+      super_dash: [sheets.specials, 0],
+      ultimate: [sheets.octavaBody, 0],
+      octava: [sheets.octavaBody, 0],
+      octava_startup: [sheets.octavaBody, 0],
+      octava_fire: [sheets.octavaBody, 1],
+      death: [sheets.defense, 6],
+      ko: [sheets.defense, 6],
+      defeat: [sheets.defense, 6],
+      victory: [sheets.defense, 7],
+      intro_pose: [sheets.bodyBasics, 0],
+      intro: [sheets.bodyBasics, 0],
+      level_up: [sheets.defense, 7],
+      taunt: [sheets.bodyBasics, 0]
     };
+  }
+
+  function buildCelesteFinalEnemyAnimations(sheets) {
+    const player = buildCelesteFinalPlayerAnimations(sheets);
+    const enemy = {};
+    for (const [key, value] of Object.entries(player)) {
+      enemy[`enemy_${key}`] = value;
+    }
+    enemy.enemy_idle = player.idle;
+    enemy.enemy_walk_forward = player.walk_forward;
+    enemy.enemy_walk_back = player.walk_back;
+    enemy.enemy_dash = player.dash;
+    enemy.enemy_dash_forward = player.dash_forward;
+    enemy.enemy_dash_back = player.dash_back;
+    enemy.enemy_air_dash_forward = player.air_dash_forward;
+    enemy.enemy_air_dash_back = player.air_dash_back;
+    enemy.enemy_block = player.block;
+    enemy.enemy_damaged = player.damaged;
+    enemy.enemy_knockback = player.knockback;
+    enemy.enemy_get_up = player.get_up;
+    enemy.enemy_death = player.death;
+    enemy.enemy_light_attack = player.neutral_light;
+    enemy.enemy_medium_attack = player.neutral_medium;
+    enemy.enemy_heavy_attack = player.neutral_heavy;
+    enemy.enemy_forward_light = player.forward_light;
+    enemy.enemy_forward_medium = player.forward_medium;
+    enemy.enemy_forward_heavy = player.forward_heavy;
+    enemy.enemy_back_light = player.back_light;
+    enemy.enemy_back_medium = player.back_medium;
+    enemy.enemy_back_heavy = player.back_heavy;
+    enemy.enemy_up_light = player.up_light;
+    enemy.enemy_up_medium = player.up_medium;
+    enemy.enemy_up_heavy = player.up_heavy;
+    enemy.enemy_down_light = player.down_light;
+    enemy.enemy_down_medium = player.down_medium;
+    enemy.enemy_down_heavy = player.down_heavy;
+    enemy.enemy_jump_light = player.jump_light;
+    enemy.enemy_jump_medium = player.jump_medium;
+    enemy.enemy_jump_heavy = player.jump_heavy;
+    enemy.enemy_special_1 = player.special_1;
+    enemy.enemy_special_2 = player.special_2;
+    enemy.enemy_special_3 = player.special_3;
+    enemy.enemy_back_special = player.back_special;
+    enemy.enemy_ultimate = player.ultimate;
+    enemy.enemy_octava = player.octava;
+    enemy.enemy_octava_startup = player.octava_startup;
+    enemy.enemy_octava_fire = player.octava_fire;
+    return enemy;
+  }
+
+  function buildCelestePlaceholderPlayerAnimations(sheets) {
+    const sheet = sheets.placeholder;
+    return {
+      idle: [sheet, 0],
+      select_idle: [sheet, 0],
+      walk_forward: [sheet, 1],
+      walk_back: [sheet, 1],
+      dash: [sheet, 2],
+      dash_forward: [sheet, 2],
+      dash_back: [sheet, 2],
+      crouch: [sheet, 3],
+      low_stance: [sheet, 3],
+      jump_up: [sheet, 4],
+      rising: [sheet, 4],
+      jump_forward: [sheet, 4],
+      jump_back: [sheet, 4],
+      fall: [sheet, 5],
+      neutral_air_drift: [sheet, 5],
+      air_dash_forward: [sheet, 2],
+      air_dash_back: [sheet, 2],
+      block: [sheet, 6],
+      guard_idle: [sheet, 6],
+      stand_block: [sheet, 6],
+      crouch_block: [sheet, 6],
+      air_block: [sheet, 6],
+      damaged: [sheet, 7],
+      light_hitstun: [sheet, 7],
+      medium_hitstun: [sheet, 7],
+      knockback: [sheet, 8],
+      heavy_hitstun: [sheet, 8],
+      launch_hitstun: [sheet, 8],
+      air_hitstun: [sheet, 8],
+      knockdown_fall: [sheet, 8],
+      grounded: [sheet, 9],
+      downed: [sheet, 9],
+      get_up: [sheet, 9],
+      recovery: [sheet, 9],
+      recovery_get_up: [sheet, 9],
+      neutral_light: [sheet, 10],
+      neutral_medium: [sheet, 11],
+      neutral_heavy: [sheet, 12],
+      forward_light: [sheet, 13],
+      forward_medium: [sheet, 14],
+      forward_heavy: [sheet, 15],
+      back_light: [sheet, 16],
+      back_medium: [sheet, 17],
+      back_heavy: [sheet, 18],
+      up_light: [sheet, 19],
+      up_medium: [sheet, 20],
+      up_heavy: [sheet, 21],
+      down_light: [sheet, 10],
+      down_medium: [sheet, 11],
+      down_heavy: [sheet, 20],
+      jump_light: [sheet, 22],
+      air_light: [sheet, 22],
+      jump_medium: [sheet, 23],
+      air_medium: [sheet, 23],
+      jump_heavy: [sheet, 24],
+      air_heavy: [sheet, 24],
+      special_1: [sheet, 25],
+      fa_strobe: [sheet, 25],
+      special_2: [sheet, 26],
+      sol_ovation: [sheet, 26],
+      special_3: [sheet, 27],
+      ti_encore: [sheet, 27],
+      ultimate: [sheet, 28],
+      octava: [sheet, 28],
+      death: [sheet, 29],
+      ko: [sheet, 29],
+      defeat: [sheet, 29],
+      victory: [sheet, 30],
+      intro_pose: [sheet, 0],
+      intro: [sheet, 0],
+      level_up: [sheet, 30],
+      taunt: [sheet, 0]
+    };
+  }
+
+  function buildCelestePlaceholderEnemyAnimations(sheets) {
+    const player = buildCelestePlaceholderPlayerAnimations(sheets);
+    const enemy = {};
+    for (const [key, value] of Object.entries(player)) {
+      enemy[`enemy_${key}`] = value;
+    }
+    enemy.enemy_idle = player.idle;
+    enemy.enemy_walk_forward = player.walk_forward;
+    enemy.enemy_walk_back = player.walk_back;
+    enemy.enemy_dash = player.dash;
+    enemy.enemy_dash_forward = player.dash_forward;
+    enemy.enemy_dash_back = player.dash_back;
+    enemy.enemy_block = player.block;
+    enemy.enemy_damaged = player.damaged;
+    enemy.enemy_knockback = player.knockback;
+    enemy.enemy_get_up = player.get_up;
+    enemy.enemy_death = player.death;
+    enemy.enemy_light_attack = player.neutral_light;
+    enemy.enemy_medium_attack = player.neutral_medium;
+    enemy.enemy_heavy_attack = player.neutral_heavy;
+    enemy.enemy_forward_light = player.forward_light;
+    enemy.enemy_forward_medium = player.forward_medium;
+    enemy.enemy_forward_heavy = player.forward_heavy;
+    enemy.enemy_back_light = player.back_light;
+    enemy.enemy_back_medium = player.back_medium;
+    enemy.enemy_back_heavy = player.back_heavy;
+    enemy.enemy_up_light = player.up_light;
+    enemy.enemy_up_medium = player.up_medium;
+    enemy.enemy_up_heavy = player.up_heavy;
+    enemy.enemy_down_light = player.down_light;
+    enemy.enemy_down_medium = player.down_medium;
+    enemy.enemy_down_heavy = player.down_heavy;
+    enemy.enemy_jump_light = player.jump_light;
+    enemy.enemy_jump_medium = player.jump_medium;
+    enemy.enemy_jump_heavy = player.jump_heavy;
+    enemy.enemy_special_1 = player.special_1;
+    enemy.enemy_special_2 = player.special_2;
+    enemy.enemy_special_3 = player.special_3;
+    enemy.enemy_ultimate = player.ultimate;
+    return enemy;
   }
 
   function buildEnemyAnimations(sheets) {
@@ -2071,20 +3433,53 @@
   }
 
   function getMovementStats(f) {
-    return f?.profile?.movement || baselineMovementStats;
+    const base = f?.profile?.movement || baselineMovementStats;
+    const speed = getFightingSpeedTuning();
+    if (!speed) return base;
+    const ground = speed.groundSpeedMultiplier ?? 1;
+    return {
+      ...base,
+      walkForward: base.walkForward * ground,
+      walkBack: base.walkBack * ground,
+      dashSpeed: base.dashSpeed * ground,
+      superDashSpeed: base.superDashSpeed * ground
+    };
   }
 
   function getJumpStats(f) {
-    return f?.profile?.jump || baselineJumpStats;
+    const base = f?.profile?.jump || baselineJumpStats;
+    const speed = getFightingSpeedTuning();
+    if (!speed) return base;
+    return {
+      ...base,
+      jumpVelocity: base.jumpVelocity * (speed.jumpForceMultiplier ?? 1)
+    };
+  }
+
+  function getFightingGravityMultiplier(f) {
+    const speed = getFightingSpeedTuning();
+    if (!speed) return 1;
+    const gravityMultiplier = speed.gravityMultiplier ?? 1;
+    const fallMultiplier = f?.vy > 0 ? (speed.fallSpeedMultiplier ?? 1) : 1;
+    const isReactionGravity = f?.hitstun > 0 || f?.recoveryTimer > 0 || f?.platformAirRecoveryTimer > 0 || f?.knockdownTimer > 0;
+    const shouldUseGravityMultiplier = isReactionGravity || f?.vy >= 0;
+    return (shouldUseGravityMultiplier ? gravityMultiplier : 1) * fallMultiplier;
   }
 
   function getAirDashStats(f) {
-    return f?.profile?.airDash || baselineAirDashStats;
+    const base = f?.profile?.airDash || baselineAirDashStats;
+    const speed = getFightingSpeedTuning();
+    if (!speed) return base;
+    return {
+      ...base,
+      speed: base.speed * (speed.airDriftMultiplier ?? 1)
+    };
   }
 
   function getOpponentId(characterId) {
     if (characterId === "nyx") return "kairo";
     if (characterId === "sol") return "vanta";
+    if (characterId === "celeste") return "vanta";
     if (characterId === "vanta") return "nyx";
     return "vanta";
   }
@@ -2097,8 +3492,145 @@
     return f?.profile?.id === "lamuh";
   }
 
+  function usesLamuhLegacyArt(f) {
+    return f?.profile?.id === "lamuh_legacy";
+  }
+
+  function usesLamuhFamilyArt(f) {
+    return usesLamuhArt(f) || usesLamuhLegacyArt(f);
+  }
+
+  function usesCelestePlaceholder(f) {
+    return f?.profile?.id === "celeste";
+  }
+
+  function getCelesteBaseAnimKey(animKey = "") {
+    return String(animKey || "").replace(/^enemy_/, "");
+  }
+
+  function getCelesteActiveMoveKey(f) {
+    const raw = (f?.activeMove || f?.anim || "").replace(/^enemy_/, "");
+    const aliases = {
+      light_attack: "neutral_light",
+      medium_attack: "neutral_medium",
+      heavy_attack: "neutral_heavy",
+      air_light: "jump_light",
+      air_medium: "jump_medium",
+      air_heavy: "jump_heavy",
+      back_special: "la_seraph_waltz",
+      special_1: "fa_strobe",
+      special_2: "sol_ovation",
+      special_3: "ti_encore",
+      ultimate: "octava_startup"
+    };
+    return aliases[raw] || raw;
+  }
+
+  function getCelesteAnimationMeta(f, animKey = f?.anim) {
+    const baseAnim = getCelesteBaseAnimKey(animKey);
+    const moveKey = getCelesteActiveMoveKey(f);
+    return {
+      ...(CELESTE_ANIMATION_DRAW_META[baseAnim] || {}),
+      ...(CELESTE_ANIMATION_DRAW_META[moveKey] || {})
+    };
+  }
+
+  function getCelesteRootType(f, animKey = f?.anim) {
+    const meta = getCelesteAnimationMeta(f, animKey);
+    if (meta.rootType) return meta.rootType;
+    const baseAnim = getCelesteBaseAnimKey(animKey);
+    if (baseAnim.includes("knockdown") || baseAnim.includes("grounded") || baseAnim.includes("death") || baseAnim.includes("ko") || baseAnim.includes("defeat")) return "knockdown";
+    if (!f?.grounded || baseAnim.includes("jump") || baseAnim.includes("air") || baseAnim.includes("fall") || baseAnim.includes("rising")) return "airborne";
+    return "grounded";
+  }
+
+  function getCelesteFrameProgress(f, moveData = getMove(f)) {
+    if (moveData) return clamp(f.actionTime / Math.max(moveData.duration, 0.1), 0, 0.999);
+    return (state.time * 0.14) % 1;
+  }
+
+  function getCelesteSocketLocal(f, socketName, animKey = f?.anim) {
+    const rootType = getCelesteRootType(f, animKey);
+    const base = CELESTE_DEFAULT_SOCKETS[socketName] || CELESTE_DEFAULT_SOCKETS.root;
+    const meta = getCelesteAnimationMeta(f, animKey);
+    const override = meta.sockets?.[socketName] || {};
+    const air = rootType === "airborne" ? CELESTE_AIR_SOCKET_OFFSETS[socketName] || {} : {};
+    return {
+      x: (base.x || 0) + (air.x || 0) + (override.x || 0),
+      y: (base.y || 0) + (air.y || 0) + (override.y || 0),
+      rootType
+    };
+  }
+
+  function resolveCelesteSocket(f, socketName, options = {}) {
+    if (!usesCelestePlaceholder(f)) return { x: f?.x || 0, y: f?.y || 0, facing: f?.facing || 1, rootType: "grounded" };
+    const animKey = options.animKey || f.anim;
+    const local = getCelesteSocketLocal(f, socketName, animKey);
+    const extraX = options.offsetX || 0;
+    const extraY = options.offsetY || 0;
+    return {
+      x: f.x + f.facing * (local.x + extraX),
+      y: f.y + local.y + extraY,
+      localX: local.x + extraX,
+      localY: local.y + extraY,
+      facing: f.facing,
+      rootType: local.rootType,
+      socket: socketName
+    };
+  }
+
+  function getCelesteRenderContext(f, details = {}) {
+    const animKey = details.animKey || f?.anim || "idle";
+    const meta = getCelesteAnimationMeta(f, animKey);
+    const rootType = getCelesteRootType(f, animKey);
+    const sockets = {};
+    for (const name of Object.keys(CELESTE_DEFAULT_SOCKETS)) {
+      sockets[name] = resolveCelesteSocket(f, name, { animKey });
+    }
+    return {
+      characterId: "celeste",
+      root: { x: f.x, y: f.y },
+      facing: f.facing,
+      animKey,
+      baseAnimKey: getCelesteBaseAnimKey(animKey),
+      activeMove: (f.activeMove || "").replace(/^enemy_/, ""),
+      rootType,
+      frame: details.frame ?? 0,
+      row: details.row ?? 0,
+      sheet: details.sheet || null,
+      drawOffsetX: meta.drawOffsetX || 0,
+      drawOffsetY: meta.drawOffsetY || 0,
+      scale: meta.scale || 1,
+      frameTiming: meta.frameTiming || null,
+      vfxFrames: [],
+      sockets
+    };
+  }
+
+  function getCelesteSocketSnapshot(f) {
+    if (!usesCelestePlaceholder(f)) return null;
+    const animKey = f.anim || withEnemyPrefix(f, "idle");
+    const names = ["root", "feetBase", "torsoCenter", "headCenter", "frontHand", "backHand", "batonTip", "frontPalm", "projectileOrigin", "trapPlacementOrigin", "barrierCenter", "octavaOrigin", "beamOrigin"];
+    const sockets = {};
+    for (const name of names) {
+      const point = resolveCelesteSocket(f, name, { animKey });
+      sockets[name] = {
+        x: Math.round(point.x * 10) / 10,
+        y: Math.round(point.y * 10) / 10,
+        rootType: point.rootType
+      };
+    }
+    return {
+      anim: animKey,
+      activeMove: (f.activeMove || "").replace(/^enemy_/, ""),
+      rootType: getCelesteRootType(f, animKey),
+      frame: f.celesteRenderContext?.frame ?? null,
+      sockets
+    };
+  }
+
   function usesNewGenerationArt(f) {
-    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "lamuh";
+    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "lamuh" || f?.profile?.id === "lamuh_legacy" || f?.profile?.id === "celeste";
   }
 
   function withEnemyPrefix(f, anim) {
@@ -2183,24 +3715,78 @@
     const moveKey = f.activeMove.replace(/^enemy_/, "");
     const activeEnd = moveData.startup + moveData.active;
     const identityAnimEnd = Math.max(activeEnd, moveData.duration * 0.82);
-    if (moveKey === "special_1" || moveKey === "neutral_special") {
-      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "celestial_palm");
+    if (["special_1", "neutral_special", "neutral_light_special"].includes(moveKey)) {
+      return withEnemyPrefix(f, "mirror_spark");
+    }
+    if (["special_2", "neutral_medium_special"].includes(moveKey)) {
+      return withEnemyPrefix(f, "mirror_pulse");
+    }
+    if (["special_3", "neutral_heavy_special"].includes(moveKey)) {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "crown_beam_charge");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "crown_beam_fire");
+      return withEnemyPrefix(f, "crown_beam_recovery");
+    }
+    if (["forward_special", "forward_light_special"].includes(moveKey)) {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "dash_strike");
       return withEnemyPrefix(f, "special_recovery");
     }
-    if (moveKey === "special_2" || moveKey === "forward_special") {
-      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "ascend_step");
+    if (moveKey === "forward_medium_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "mirror_break");
       return withEnemyPrefix(f, "special_recovery");
     }
-    if (moveKey === "special_3" || moveKey === "down_special") {
-      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "heaven_splitter");
+    if (moveKey === "forward_heavy_special") {
+      return withEnemyPrefix(f, "mirror_pierce");
+    }
+    if (["back_special", "back_light_special"].includes(moveKey)) {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "mirror_slip");
       return withEnemyPrefix(f, "special_recovery");
     }
-    if (moveKey === "back_special") {
-      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "divine_vanish");
+    if (moveKey === "back_medium_special") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "mirror_slip");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "rebound_strike");
       return withEnemyPrefix(f, "special_recovery");
     }
-    if (moveKey === "air_special") {
-      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "radiant_dive");
+    if (moveKey === "back_heavy_special") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "divine_vanish");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "mirror_reversal");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (["down_special", "down_light_special"].includes(moveKey)) {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "low_mirror_cut");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "down_medium_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "ground_breaker");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "down_heavy_special") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "crown_charge");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "crown_rupture");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "up_light_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "crown_pop");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "up_medium_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "rising_crown");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "up_heavy_special") {
+      if (f.actionTime < moveData.startup) return withEnemyPrefix(f, "crown_charge");
+      if (f.actionTime <= activeEnd) return withEnemyPrefix(f, "ascendant_break");
+      return withEnemyPrefix(f, "crown_recovery");
+    }
+    if (["air_special", "air_light_special"].includes(moveKey)) {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "air_mirror_spark");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "air_medium_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "air_dash_strike");
+      return withEnemyPrefix(f, "special_recovery");
+    }
+    if (moveKey === "air_heavy_special") {
+      if (f.actionTime <= identityAnimEnd) return withEnemyPrefix(f, "air_crown_drop");
       return withEnemyPrefix(f, "special_recovery");
     }
     if (moveKey === "ultimate") {
@@ -2259,9 +3845,17 @@
       knockdownTimer: 0,
       pendingKnockdown: 0,
       recoveryTimer: 0,
+      platformAirRecoveryTimer: 0,
       juggleGravityScale: 1,
+      upAttackGrace: 0,
       blowbackTimer: 0,
       wallBounceEligible: false,
+      standingPlatformId: null,
+      platformDropTimer: 0,
+      mirrorPierceWallBouncePending: false,
+      mirrorPierceHoldTimer: 0,
+      mirrorPierceHoldX: null,
+      mirrorPierceHoldY: null,
       landingTimer: 0,
       dashTimer: 0,
       dashCooldown: 0,
@@ -2276,7 +3870,27 @@
       hitCount: 0,
       lastHitTime: -Infinity,
       spawnedProjectile: false,
+      spawnedTrap: false,
       cancelUnlocked: false,
+      lamuhPierceDone: false,
+      lamuhPierceConfirmed: false,
+      lamuhPierceStage1Hit: false,
+      lamuhPierceWhiffed: false,
+      lamuhPierceBlocked: false,
+      lamuhPierceWhiffBeamFired: false,
+      lamuhPiercePalmFxAt: -Infinity,
+      lamuhMirrorPierceCleanupReason: null,
+      lamuhMirrorPierceFailsafeTriggered: false,
+      lamuhReboundFlash: false,
+      lamuhAscendTrail: -Infinity,
+      celesteFaCooldown: 0,
+      celesteFaWindow: 0,
+      celesteFaStringSpent: false,
+      celesteSolCooldown: 0,
+      celesteLaCooldown: 0,
+      celesteBarrierTimer: 0,
+      celesteBarrierHits: 0,
+      celesteTiCooldown: 0,
       bufferedMove: null,
       reactionAnim: null,
       anim: kind === "player" ? "idle" : "enemy_idle"
@@ -2288,6 +3902,8 @@
     document.documentElement.style.setProperty("--title-bg", `url("${assetPaths.title}")`);
     renderControlsDisplay(selectControlsDisplay, true);
     renderControlsDisplay(matchControlsDisplay, false);
+    if (PLATFORM_TEST_DEBUG_ENABLED) state.selectedStagePresetId = PLATFORM_TEST_STAGE_ID;
+    updateStagePresetUi();
     resetRound();
     if (state.mode === "loading") {
       state.mode = "title";
@@ -2298,6 +3914,9 @@
     } else if (LAMUH_HIDDEN_TEST_ENABLED) {
       startTraining("lamuh");
       flashStatus("LAMUH HIDDEN TEST", 1.2);
+    } else if (CELESTE_HIDDEN_TEST_ENABLED) {
+      startTraining("celeste");
+      flashStatus("CELESTE HIDDEN TEST", 1.2);
     }
     requestAnimationFrame(loop);
   }
@@ -2805,6 +4424,8 @@
     const versusMode = state.mode === "versus";
     const playerId = versusMode ? state.selectedP1CharacterId : state.selectedPlayerId;
     const enemyId = versusMode ? state.selectedP2CharacterId : getOpponentId(playerId);
+    state.stagePresetId = getSelectedStagePreset().id;
+    const stage = getActiveStagePreset();
     hideMatchFlowOverlay();
     state.matchEnded = false;
     state.matchWinner = null;
@@ -2812,11 +4433,12 @@
     clearInputKeys();
     state.p1DashTap = { code: null, time: -Infinity };
     state.p2DashTap = { code: null, time: -Infinity };
-    state.player = makeFighter("player", 330, 1, playerId);
-    state.enemy = makeFighter("enemy", 720, -1, enemyId);
+    state.player = makeFighter("player", stage.spawnP1X, 1, playerId);
+    state.enemy = makeFighter("enemy", stage.spawnP2X, -1, enemyId);
     if (versusMode) state.enemyAI = false;
     state.particles = [];
     state.projectiles = [];
+    state.celesteTraps = [];
     state.nyxSignatureEffects = [];
     state.lamuhSpecialEffects = [];
     state.lamuhUltimateBeams = [];
@@ -2825,17 +4447,19 @@
     state.cameraShake = 0;
     state.messageTimer = 1.5;
     resetCombo(true);
+    updateStageCamera(0, true);
     roundStatusEl.textContent = getRoundStatus();
     updateHud();
   }
 
   function getRoundStatus() {
+    const stageTag = isPlatformTestStage() ? ` - ${getActiveStagePreset().label.toUpperCase()}` : "";
     if (state.mode === "versus") {
       const p1Name = state.player?.profile.shortName || "P1";
       const p2Name = state.enemy?.profile.shortName || "P2";
-      return `${p1Name} VS ${p2Name}`;
+      return `${p1Name} VS ${p2Name}${stageTag}`;
     }
-    return getTrainingStatus();
+    return `${getTrainingStatus()}${stageTag}`;
   }
 
   function getTrainingStatus() {
@@ -2932,6 +4556,7 @@
     characterSelect.classList.remove("hidden");
     state.mode = "select";
     setSelectControlsOpen(false);
+    updateStagePresetUi();
     setCharacterSelectMode(selectGameMode);
     const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
     selectedButton?.focus({ preventScroll: true });
@@ -2968,6 +4593,20 @@
     state.p2Ready = false;
     state.selectCursorCharacterId = state.selectGameMode === "training" ? state.selectedPlayerId : state.selectedP1CharacterId;
     updateCharacterSelectFocus(state.selectCursorCharacterId);
+  }
+
+  function setStagePreset(stagePresetId) {
+    state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
+    updateStagePresetUi();
+    updateCharacterSelectUi();
+  }
+
+  function updateStagePresetUi() {
+    stagePresetButtons.forEach((button) => {
+      const active = button.dataset.stagePreset === state.selectedStagePresetId;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
   }
 
   function updateCharacterSelectFocus(characterId) {
@@ -3008,6 +4647,7 @@
   function getPortraitPath(characterId) {
     const id = isLaunchableCharacterId(characterId) ? characterId : "kairo";
     if (id === "lamuh") return LAMUH_SELECT_PORTRAIT_READY ? LAMUH_SELECT_PORTRAIT_PATH : "assets/sprites/portraits/sol_select.png";
+    if (id === "celeste") return "assets/sprites/portraits/celeste_select.png";
     const cache = id === "seris" ? "?v=seris-revamp-final-1" : "";
     return `assets/sprites/portraits/${id}_select.png${cache}`;
   }
@@ -3108,6 +4748,8 @@
 
   function updateCharacterSelectUi() {
     const trainingMode = state.selectGameMode === "training";
+    const selectedStage = getSelectedStagePreset();
+    const stageSuffix = selectedStage.experimental ? ` - ${selectedStage.label}` : "";
     selectModeLabel.textContent = trainingMode ? "Training Dummy" : "Local Versus";
     selectVersusButton.classList.toggle("active", !trainingMode);
     selectTrainingButton.classList.toggle("active", trainingMode);
@@ -3120,13 +4762,13 @@
     p1SelectSlot.classList.toggle("ready", state.p1Ready || trainingMode);
     p2SelectSlot.classList.toggle("ready", state.p2Ready || trainingMode);
     if (trainingMode) {
-      matchupPreview.textContent = `${getSelectDisplayName(state.selectCursorCharacterId)} vs ${getSelectDisplayName(getOpponentId(state.selectCursorCharacterId))} dummy`;
+      matchupPreview.textContent = `${getSelectDisplayName(state.selectCursorCharacterId)} vs ${getSelectDisplayName(getOpponentId(state.selectCursorCharacterId))} dummy${stageSuffix}`;
     } else if (!state.p1Ready) {
       matchupPreview.textContent = "Choose P1 fighter";
     } else if (!state.p2Ready) {
       matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} locked - choose P2 fighter`;
     } else {
-      matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)} - press Enter to start`;
+      matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)}${stageSuffix} - press Enter to start`;
     }
   }
 
@@ -3415,7 +5057,12 @@
     if (!fighter) return;
     if (side === "p2" && state.mode !== "versus") return;
 
-    if (directionJustPressed(input, previous, "up")) jump(fighter);
+    const celesteUpAttackPressed = usesCelestePlaceholder(fighter) && input.up && (
+      justPressed(input, previous, "light") ||
+      justPressed(input, previous, "medium") ||
+      justPressed(input, previous, "heavy")
+    );
+    if (directionJustPressed(input, previous, "up") && !celesteUpAttackPressed) jump(fighter);
     if (justPressed(input, previous, "dash")) {
       if (input.buttons.specialModifier) startSuperDash(fighter);
       else startDash(fighter, controls);
@@ -3521,6 +5168,7 @@
     const dt = state.paused ? 0 : rawDt;
     pollGamepads();
     update(dt);
+    updateStageCamera(rawDt);
     render();
     requestAnimationFrame(loop);
   }
@@ -3557,6 +5205,7 @@
     }
 
     updateProjectiles(dt);
+    updateCelesteTraps(dt);
     updateCombo(dt);
     updatePlayer(dt);
     updateEnemy(dt);
@@ -3571,6 +5220,10 @@
     p.crouching = false;
     p.blocking = false;
     tickFighterTimers(p, dt);
+
+    if (updateMirrorPierceHold(p, dt)) {
+      return;
+    }
 
     if (p.hp <= 0) {
       p.dead = true;
@@ -3597,7 +5250,10 @@
       p.vx *= p.blowbackTimer > 0 ? Math.pow(0.93, dt * 60) : 0.42;
       if (Math.abs(p.vx) < 8) p.vx = 0;
       integrate(p, dt);
-      if (p.hitstun <= 0 && !p.grounded) p.recoveryTimer = Math.max(p.recoveryTimer, getJumpStats(p).airRecoveryDuration);
+      if (p.hitstun <= 0 && !p.grounded) {
+        p.recoveryTimer = Math.max(p.recoveryTimer, getJumpStats(p).airRecoveryDuration, p.platformAirRecoveryTimer || 0);
+        p.platformAirRecoveryTimer = 0;
+      }
       if (p.hitstun <= 0) p.reactionAnim = null;
       return;
     }
@@ -3614,7 +5270,8 @@
     if (p.recoveryTimer > 0) {
       p.recoveryTimer = Math.max(0, p.recoveryTimer - dt);
       p.anim = usesNewGenerationArt(p) ? (p.grounded ? "get_up" : "air_recovery") : p.grounded ? "get_up" : "knockback";
-      p.vx *= p.grounded ? 0.34 : 0.88;
+      if (isPlatformTestStage() && !p.grounded) readAirRecoveryMovement(p, P1_CONTROLS);
+      else p.vx *= p.grounded ? 0.34 : 0.88;
       integrate(p, dt);
       return;
     }
@@ -3654,6 +5311,10 @@
     const holdingBack = state.keys.has(back);
     const holdingDown = state.keys.has(controls.down);
     const movement = getMovementStats(p);
+    const speed = getFightingSpeedTuning();
+    const airDriftScale = !p.grounded && speed
+      ? (speed.airDriftMultiplier ?? 1) / Math.max(speed.groundSpeedMultiplier ?? 1, 0.01)
+      : 1;
 
     p.vx = 0;
 
@@ -3671,13 +5332,13 @@
     }
 
     if (holdingForward) {
-      p.vx = p.facing * movement.walkForward;
+      p.vx = p.facing * movement.walkForward * airDriftScale;
       p.anim = p.grounded ? withEnemyPrefix(p, "walk_forward") : getAirDriftAnim(p, true, false);
       return;
     }
 
     if (holdingBack) {
-      p.vx = -p.facing * movement.walkBack;
+      p.vx = -p.facing * movement.walkBack * airDriftScale;
       p.anim = p.grounded ? withEnemyPrefix(p, "walk_back") : getAirDriftAnim(p, false, true);
       return;
     }
@@ -3685,10 +5346,21 @@
     p.anim = p.grounded ? withEnemyPrefix(p, "idle") : getAirDriftAnim(p, false, false);
   }
 
+  function readAirRecoveryMovement(p, controls) {
+    const movement = getMovementStats(p);
+    const platformMovement = getPlatformArenaConfig()?.movement || {};
+    const speed = getFightingSpeedTuning();
+    const airDriftScale = speed ? (speed.airDriftMultiplier ?? 1) / Math.max(speed.groundSpeedMultiplier ?? 1, 0.01) : 1;
+    const left = state.keys.has(controls.left);
+    const right = state.keys.has(controls.right);
+    const steer = platformMovement.airRecoverySteer ?? 0.76;
+    const desired = right === left ? 0 : right ? movement.walkForward * steer * airDriftScale : -movement.walkForward * steer * airDriftScale;
+    p.vx = mix(p.vx, desired, platformMovement.airRecoveryMix ?? 0.18);
+  }
+
   function resolveWallBounce(f) {
     if (!WALL_BOUNCE_ENABLED || !f.wallBounceEligible || f.grounded) return false;
-    const leftWall = 110;
-    const rightWall = W - 110;
+    const { left: leftWall, right: rightWall } = getStageBounds();
     const hitLeftWall = f.x <= leftWall && f.vx < 0;
     const hitRightWall = f.x >= rightWall && f.vx > 0;
     if (!hitLeftWall && !hitRightWall) return false;
@@ -3699,6 +5371,7 @@
     f.wallBounceEligible = false;
 
     if (!canBounce) {
+      f.mirrorPierceWallBouncePending = false;
       f.pendingKnockdown = Math.max(f.pendingKnockdown, SOFT_KNOCKDOWN);
       return false;
     }
@@ -3708,18 +5381,60 @@
     f.vy = Math.min(f.vy, WALL_BOUNCE_Y_POP);
     f.hitstun = Math.max(f.hitstun, WALL_BOUNCE_HITSTUN_FRAMES / 60);
     f.blowbackTimer = Math.max(f.blowbackTimer, HEAVY_BLOWBACK_DRIFT_TIME * 0.7);
+    if (f.mirrorPierceWallBouncePending) {
+      f.mirrorPierceWallBouncePending = false;
+      spawnBurst(f.x, f.y - 104, "#ffe8a3", 30, 0.24, "shock");
+      spawnBurst(f.x + (hitLeftWall ? 24 : -24), f.y - 88, "#35e8d5", 14, 0.18, "spark");
+      state.cameraShake = Math.max(state.cameraShake, 12);
+    }
     return true;
   }
 
   function tickFighterTimers(f, dt) {
+    if (f.platformDropTimer > 0) f.platformDropTimer = Math.max(0, f.platformDropTimer - dt);
     if (f.dashCooldown > 0) f.dashCooldown = Math.max(0, f.dashCooldown - dt);
     if (f.airDashCooldown > 0) f.airDashCooldown = Math.max(0, f.airDashCooldown - dt);
     if (f.superDashCooldown > 0) f.superDashCooldown = Math.max(0, f.superDashCooldown - dt);
     if (f.blowbackTimer > 0) f.blowbackTimer = Math.max(0, f.blowbackTimer - dt);
+    if (f.upAttackGrace > 0) f.upAttackGrace = Math.max(0, f.upAttackGrace - dt);
+    if (usesCelestePlaceholder(f)) {
+      if (f.celesteFaCooldown > 0) f.celesteFaCooldown = Math.max(0, f.celesteFaCooldown - dt);
+      if (f.celesteFaWindow > 0) f.celesteFaWindow = Math.max(0, f.celesteFaWindow - dt);
+      if (f.celesteSolCooldown > 0) f.celesteSolCooldown = Math.max(0, f.celesteSolCooldown - dt);
+      if (f.celesteLaCooldown > 0) f.celesteLaCooldown = Math.max(0, f.celesteLaCooldown - dt);
+      if (f.celesteBarrierTimer > 0) f.celesteBarrierTimer = Math.max(0, f.celesteBarrierTimer - dt);
+      if (f.celesteTiCooldown > 0) f.celesteTiCooldown = Math.max(0, f.celesteTiCooldown - dt);
+      if (f.hitstun > 0 || f.blockstun > 0 || f.knockdownTimer > 0) {
+        f.celesteFaWindow = 0;
+        f.celesteBarrierTimer = 0;
+        f.celesteBarrierHits = 0;
+      }
+      const comboOwned = state.combo.owner === f.kind && state.combo.timer > 0;
+      const neutralReady = !f.action && f.hitstun <= 0 && f.blockstun <= 0 && f.knockdownTimer <= 0 && f.recoveryTimer <= 0 && f.landingTimer <= 0;
+      if (neutralReady && !comboOwned) f.celesteFaStringSpent = false;
+    }
     if (f.bufferedMove) {
       f.bufferedMove.timer -= dt;
       if (f.bufferedMove.timer <= 0) f.bufferedMove = null;
     }
+  }
+
+  function updateMirrorPierceHold(f, dt) {
+    if (!f || f.mirrorPierceHoldTimer <= 0) return false;
+    f.mirrorPierceHoldTimer = Math.max(0, f.mirrorPierceHoldTimer - dt);
+    if (Number.isFinite(f.mirrorPierceHoldX)) f.x = f.mirrorPierceHoldX;
+    if (Number.isFinite(f.mirrorPierceHoldY)) f.y = f.mirrorPierceHoldY;
+    f.vx = 0;
+    f.vy = 0;
+    f.blockstun = 0;
+    f.hitstun = Math.max(f.hitstun, f.mirrorPierceHoldTimer);
+    f.grounded = false;
+    f.anim = getHitReactionAnim(f, f.kind === "enemy" ? "enemy_heavy_hitstun" : "heavy_hitstun");
+    if (f.mirrorPierceHoldTimer <= 0) {
+      f.mirrorPierceHoldX = null;
+      f.mirrorPierceHoldY = null;
+    }
+    return true;
   }
 
   function updateEnemy(dt) {
@@ -3729,6 +5444,9 @@
     e.crouching = false;
     e.blocking = false;
     tickFighterTimers(e, dt);
+    if (updateMirrorPierceHold(e, dt)) {
+      return;
+    }
     if (e.hp <= 0) {
       e.dead = true;
       e.anim = "enemy_death";
@@ -3752,7 +5470,10 @@
       e.anim = getHitReactionAnim(e, e.grounded ? "enemy_damaged" : "enemy_knockback");
       e.vx *= e.blowbackTimer > 0 ? Math.pow(0.93, dt * 60) : 0.36;
       if (Math.abs(e.vx) < 8) e.vx = 0;
-      if (e.hitstun <= 0 && !e.grounded) e.recoveryTimer = Math.max(e.recoveryTimer, getJumpStats(e).airRecoveryDuration);
+      if (e.hitstun <= 0 && !e.grounded) {
+        e.recoveryTimer = Math.max(e.recoveryTimer, getJumpStats(e).airRecoveryDuration, e.platformAirRecoveryTimer || 0);
+        e.platformAirRecoveryTimer = 0;
+      }
       if (e.hitstun <= 0) e.reactionAnim = null;
     } else if (e.knockdownTimer > 0) {
       e.knockdownTimer = Math.max(0, e.knockdownTimer - dt);
@@ -3762,7 +5483,8 @@
     } else if (e.recoveryTimer > 0) {
       e.recoveryTimer = Math.max(0, e.recoveryTimer - dt);
       e.anim = usesNewGenerationArt(e) ? (e.grounded ? "enemy_get_up" : "enemy_air_recovery") : e.grounded ? "enemy_get_up" : "enemy_knockback";
-      e.vx *= e.grounded ? 0.34 : 0.88;
+      if (isPlatformTestStage() && !e.grounded && state.mode === "versus") readAirRecoveryMovement(e, P2_CONTROLS);
+      else e.vx *= e.grounded ? 0.34 : 0.88;
     } else if (e.landingTimer > 0) {
       e.landingTimer = Math.max(0, e.landingTimer - dt);
       e.anim = "enemy_stand_up";
@@ -3854,14 +5576,27 @@
 
     if (moveData.flags.superDash) updateSuperDashVelocity(f);
     if (moveData.flags.shadowStep && f.actionTime < (moveData.flags.shadowStepAway ? 0.22 : 0.16)) updateShadowStepVelocity(f, moveData);
-    else if (moveData.flags.dash && f.actionTime < 0.18) f.vx = f.facing * 620;
+    else if (moveData.flags.faStrobe && f.actionTime < CELESTE_FA_WINDOW) f.vx = f.facing * 760;
+    else if (moveData.flags.dash && f.actionTime < (moveData.flags.dashTime || 0.18)) f.vx = f.facing * (moveData.flags.dashSpeed || 620);
     if (isLamuhCrownStarter(f, moveData) && f.actionTime >= moveData.startup && f.actionTime < moveData.startup + moveData.active) f.vx = f.facing * LAMUH_CROWN_RUSH_SPEED;
+    updateLamuhSpecialMotion(f, moveData);
+    updateLamuhMirrorPierce(f, moveData);
+    updateLamuhMirrorPiercePalmPause(f, moveData);
+    updateLamuhMirrorPierceWhiff(f, moveData);
     if (moveData.flags.dive && f.actionTime < 0.22) updateDiveVelocity(f, moveData);
     if (moveData.flags.stepForward && f.actionTime < moveData.startup + moveData.active) f.vx = f.facing * moveData.flags.stepForward;
-    if (moveData.flags.rise && f.actionTime < 0.2) f.vy = Math.min(f.vy, -360);
-    if (moveData.flags.projectile && !f.spawnedProjectile && f.actionTime >= moveData.startup) {
+    if (moveData.flags.rise && f.actionTime < (moveData.flags.riseTime || 0.2)) f.vy = Math.min(f.vy, moveData.flags.riseVelocity || -360);
+    const projectileSpawnAt = Number.isFinite(moveData.flags.projectileSpawnAt)
+      ? moveData.flags.projectileSpawnAt
+      : moveData.startup;
+    if (moveData.flags.projectile && !f.spawnedProjectile && f.actionTime >= projectileSpawnAt) {
+      if (moveData.flags.requiresPierceConfirm && !f.lamuhPierceConfirmed) return;
       spawnProjectile(f, moveData);
       f.spawnedProjectile = true;
+    }
+    if (moveData.flags.tiEncore && !f.spawnedTrap && f.actionTime >= moveData.startup) {
+      spawnCelesteTrap(f);
+      f.spawnedTrap = true;
     }
     if (!moveData.flags.noHit && isMoveActive(f)) {
       if (moveData.flags.multiHit) {
@@ -3873,8 +5608,29 @@
 
     if (tryBufferedMove(f)) return;
 
+    if (moveData.flags.visualProfile === "mirrorPierce") {
+      const whiffRecoveryEnd = Number.isFinite(moveData.flags.whiffRecoveryEndFrame) ? moveData.flags.whiffRecoveryEndFrame / 60 : moveData.duration;
+      const maxDuration = Number.isFinite(moveData.flags.maxMirrorPierceFrame) ? moveData.flags.maxMirrorPierceFrame / 60 : moveData.duration + 0.2;
+      if (f.lamuhPierceWhiffed && f.actionTime >= whiffRecoveryEnd) {
+        finishLamuhMirrorPierceAction(f, "whiff_recovery_complete");
+        return;
+      }
+      if (f.actionTime >= maxDuration) {
+        finishLamuhMirrorPierceAction(f, "failsafe_max_duration", true);
+        return;
+      }
+    }
+
     if (f.actionTime >= moveData.duration) {
       const buffered = f.bufferedMove;
+      if (moveData.flags.visualProfile === "mirrorPierce") {
+        finishLamuhMirrorPierceAction(f, "duration_complete");
+        if (buffered) {
+          f.bufferedMove = null;
+          beginMove(f, buffered.key);
+        }
+        return;
+      }
       if (isLamuhCrownStarter(f, moveData) && state.lastLamuhCrownUltimateDebug?.status === "started") {
         state.lastLamuhCrownUltimateDebug.status = "whiff_recovery";
       }
@@ -3884,7 +5640,17 @@
       f.hitCount = 0;
       f.lastHitTime = -Infinity;
       f.spawnedProjectile = false;
+      f.spawnedTrap = false;
       f.cancelUnlocked = false;
+      f.lamuhPierceDone = false;
+      f.lamuhPierceConfirmed = false;
+      f.lamuhPierceStage1Hit = false;
+      f.lamuhPierceWhiffed = false;
+      f.lamuhPierceBlocked = false;
+      f.lamuhPierceWhiffBeamFired = false;
+      f.lamuhPiercePalmFxAt = -Infinity;
+      f.lamuhReboundFlash = false;
+      f.lamuhAscendTrail = -Infinity;
       if (buffered) {
         f.bufferedMove = null;
         beginMove(f, buffered.key);
@@ -3894,9 +5660,11 @@
 
   function integrate(f, dt) {
     const wasGrounded = f.grounded;
+    const previousY = f.y;
     if (!f.grounded || f.vy < 0) {
       const jumpStats = getJumpStats(f);
-      const gravity = !f.grounded && f.hitstun > 0 ? jumpStats.juggleGravity * (f.juggleGravityScale || 1) : !f.grounded && f.recoveryTimer > 0 ? jumpStats.airRecoveryGravity : jumpStats.gravity;
+      let gravity = !f.grounded && f.hitstun > 0 ? jumpStats.juggleGravity * (f.juggleGravityScale || 1) : !f.grounded && f.recoveryTimer > 0 ? jumpStats.airRecoveryGravity : jumpStats.gravity;
+      gravity *= getFightingGravityMultiplier(f);
       f.vy += gravity * dt;
       if (!f.grounded && f.hitstun > 0) {
         f.vx *= Math.pow(f.blowbackTimer > 0 ? 0.96 : 0.72, dt * 60);
@@ -3906,30 +5674,9 @@
     f.x += f.vx * dt;
     f.y += f.vy * dt;
     resolveWallBounce(f);
+    resolveStageLanding(f, previousY, wasGrounded);
 
-    if (f.y >= GROUND_Y) {
-      f.y = GROUND_Y;
-      f.vy = 0;
-      f.grounded = true;
-      f.juggleGravityScale = 1;
-      f.wallBounceEligible = false;
-      f.airDashUsed = false;
-      if (!wasGrounded) {
-        if (f.pendingKnockdown > 0) {
-          f.knockdownTimer = Math.max(f.knockdownTimer, f.pendingKnockdown);
-          f.pendingKnockdown = 0;
-          f.vx *= 0.24;
-          spawnLandingDust(f);
-        } else if (!f.action && f.hitstun <= 0) {
-          f.landingTimer = Math.max(f.landingTimer, getJumpStats(f).landingRecovery);
-          f.vx *= 0.42;
-        }
-      }
-    } else {
-      f.grounded = false;
-    }
-
-    f.x = clamp(f.x, 110, W - 110);
+    f.x = clampToStageX(f.x);
   }
 
   function resolveFighterPush() {
@@ -3941,9 +5688,53 @@
     if (gap < minGap) {
       const push = (minGap - gap) * (airborne ? 0.26 : 0.5);
       const dir = p.x < e.x ? -1 : 1;
-      p.x = clamp(p.x + dir * push, 110, W - 110);
-      e.x = clamp(e.x - dir * push, 110, W - 110);
+      p.x = clampToStageX(p.x + dir * push);
+      e.x = clampToStageX(e.x - dir * push);
     }
+  }
+
+  function canStartCelestePhase2Move(f, moveData, key) {
+    if (!usesCelestePlaceholder(f)) return true;
+    if (moveData.flags.faStrobe && (f.celesteFaCooldown > 0 || f.celesteFaStringSpent)) {
+      if (f.kind === "player" && CELESTE_HIDDEN_TEST_ENABLED) {
+        flashStatus("FA STROBE RESET NEEDED", 0.55);
+      } else if (f.kind === "player") {
+        spawnBurst(f.x - f.facing * 22, f.y - 98, celesteSpiritColors.FA.secondary, 7, 0.12, "spark");
+      }
+      return false;
+    }
+    if (moveData.flags.solOvation && f.celesteSolCooldown > 0) return false;
+    if (moveData.flags.laBarrier && f.celesteLaCooldown > 0) {
+      if (f.kind === "player" && CELESTE_HIDDEN_TEST_ENABLED) {
+        flashStatus("LA COOLDOWN", 0.5);
+      } else if (f.kind === "player") {
+        spawnBurst(f.x, f.y - 112, celesteSpiritColors.LA.secondary, 6, 0.12, "spark");
+      }
+      return false;
+    }
+    if (moveData.flags.tiEncore && f.celesteTiCooldown > 0) return false;
+    return Boolean(key);
+  }
+
+  function startCelesteFaStrobe(f) {
+    if (!usesCelestePlaceholder(f)) return;
+    f.celesteFaCooldown = CELESTE_FA_COOLDOWN;
+    f.celesteFaWindow = CELESTE_FA_WINDOW;
+    f.celesteFaStringSpent = true;
+    f.vx = f.facing * 760;
+    const root = resolveCelesteSocket(f, "root");
+    const baton = resolveCelesteSocket(f, "batonTip");
+    spawnBurst(root.x - f.facing * 34, root.y - 96, celesteSpiritColors.FA.main, 22, 0.2, "ring");
+    spawnBurst(baton.x, baton.y + 20, celesteSpiritColors.FA.secondary, 16, 0.18, "spark");
+  }
+
+  function startCelesteBarrier(f) {
+    if (!usesCelestePlaceholder(f)) return;
+    f.celesteBarrierTimer = CELESTE_LA_ACTIVE;
+    f.celesteBarrierHits = 1;
+    f.celesteLaCooldown = CELESTE_LA_COOLDOWN;
+    const barrier = resolveCelesteSocket(f, "barrierCenter");
+    spawnBurst(barrier.x, barrier.y, celesteSpiritColors.LA.secondary, 24, 0.22, "ring");
   }
 
   function startMove(key, fighter = state.player) {
@@ -3955,6 +5746,7 @@
       flashStatus(`${p.profile.shortName} METER NEEDED`, 0.8);
       return;
     }
+    if (!canStartCelestePhase2Move(p, data, key)) return;
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0 || p.landingTimer > 0) return;
 
     if (p.action) {
@@ -3973,6 +5765,7 @@
     const e = state.enemy;
     const data = getMove(e, key);
     if (!data || state.matchEnded || state.lamuhCinematicUltimate || e.dead || e.action || e.hitstun > 0 || e.blockstun > 0 || e.knockdownTimer > 0 || e.recoveryTimer > 0) return;
+    if (!canStartCelestePhase2Move(e, data, key)) return;
     beginMove(e, key);
   }
 
@@ -3986,7 +5779,19 @@
     f.hitCount = 0;
     f.lastHitTime = -Infinity;
     f.spawnedProjectile = false;
+    f.spawnedTrap = false;
     f.cancelUnlocked = false;
+    f.lamuhPierceDone = false;
+    f.lamuhPierceConfirmed = false;
+    f.lamuhPierceStage1Hit = false;
+    f.lamuhPierceWhiffed = false;
+    f.lamuhPierceBlocked = false;
+    f.lamuhPierceWhiffBeamFired = false;
+    f.lamuhPiercePalmFxAt = -Infinity;
+    f.lamuhMirrorPierceCleanupReason = null;
+    f.lamuhMirrorPierceFailsafeTriggered = false;
+    f.lamuhReboundFlash = false;
+    f.lamuhAscendTrail = -Infinity;
     f.bufferedMove = null;
     f.anim = getMoveAnimKey(f, key, data);
     if (f.grounded && !data.flags.dash && !data.flags.rise && !data.flags.superDash) {
@@ -3997,6 +5802,10 @@
       f.vy = 0;
       spawnBurst(f.x + f.facing * 62, f.y - 82, f.profile.projectileColor, 18);
     }
+    if (data.flags.faStrobe) startCelesteFaStrobe(f);
+    if (data.flags.laBarrier) startCelesteBarrier(f);
+    if (data.flags.solOvation) f.celesteSolCooldown = CELESTE_SOL_COOLDOWN;
+    if (data.flags.tiEncore) f.celesteTiCooldown = CELESTE_TI_COOLDOWN;
     if (data.flags.ultimate) {
       f.meter = 0;
       state.cameraShake = 12;
@@ -4015,6 +5824,7 @@
       }
     }
     spawnLamuhSpecialEffectForMove(f, key);
+    spawnCelesteSpiritBurstForMove(f);
   }
 
   function getMoveAnimKey(f, key, data) {
@@ -4082,6 +5892,156 @@
     if (!f.grounded) {
       f.vy = Math.max(f.vy, moveData.flags.diveSpeedY || 480);
     }
+  }
+
+  function updateLamuhSpecialMotion(f, moveData) {
+    if (!usesLamuhArt(f) || !moveData?.flags) return;
+    if (moveData.flags.reboundSnap) {
+      const start = moveData.startup * (moveData.flags.reboundSnapStart || 0.88);
+      const end = moveData.startup + moveData.active * (moveData.flags.reboundSnapEnd || 0.62);
+      if (f.actionTime >= start && f.actionTime <= end) {
+        f.vx = f.facing * (moveData.flags.reboundSnapSpeed || 540);
+        if (!f.lamuhReboundFlash) {
+          f.lamuhReboundFlash = true;
+          spawnLamuhAfterimageTrail(f, 3, 18, "#f7f2df");
+          spawnBurst(f.x - f.facing * 36, f.y - 92, "#1b1510", 8, 0.12, "smoke");
+        }
+      }
+    }
+    if (moveData.flags.visualProfile === "ascendantBreak" && f.actionTime < moveData.startup + moveData.active) {
+      if (!f.lamuhAscendTrail || f.actionTime - f.lamuhAscendTrail > 0.055) {
+        f.lamuhAscendTrail = f.actionTime;
+        spawnBurst(f.x - f.facing * 12, f.y - 42, "#fff3ba", 5, 0.12, "spark");
+      }
+    }
+  }
+
+  function updateLamuhMirrorPierce(f, moveData) {
+    if (!usesLamuhArt(f) || !moveData.flags.pierceSideSwitch || f.lamuhPierceDone) return;
+    const switchAt = moveData.startup + moveData.active * (moveData.flags.pierceSwitchAt || 0.48);
+    if (f.actionTime < switchAt) return;
+    const target = f.kind === "player" ? state.enemy : state.player;
+    if (!target || target.dead) {
+      markLamuhMirrorPierceWhiff(f, moveData, "no_target");
+      f.lamuhPierceDone = true;
+      return;
+    }
+    const range = moveData.flags.pierceRange || 240;
+    if (Math.abs(target.x - f.x) > range) {
+      markLamuhMirrorPierceWhiff(f, moveData, "out_of_range");
+      f.lamuhPierceDone = true;
+      return;
+    }
+    const oldFacing = f.facing || (f.x <= target.x ? 1 : -1);
+    const pierceBox = getLamuhMirrorPierceBox(f, target, oldFacing);
+    if (intersects(pierceBox, getHurtbox(target))) {
+      const result = applyLamuhMirrorPierceHit(f, target, moveData, pierceBox, oldFacing);
+      if (result?.hit && !result.blocked) {
+        startLamuhMirrorPierceHold(f, target, moveData);
+        f.lamuhPierceConfirmed = true;
+        f.lamuhPierceStage1Hit = true;
+      } else if (result?.blocked) {
+        markLamuhMirrorPierceWhiff(f, moveData, "blocked_pierce");
+        f.lamuhPierceBlocked = true;
+      }
+    } else {
+      markLamuhMirrorPierceWhiff(f, moveData, "missed_hurtbox");
+    }
+    f.x = clampToStageX(target.x + oldFacing * (moveData.flags.pierceExitOffset || 72));
+    f.y = f.grounded ? GROUND_Y : f.y;
+    f.facing = target.x >= f.x ? 1 : -1;
+    f.vx = 0;
+    f.lamuhPierceDone = true;
+    state.cameraShake = Math.max(state.cameraShake, 10);
+    spawnLamuhAfterimageTrail(f, 5, 24, "#f7f2df");
+    spawnBurst(target.x - oldFacing * 18, target.y - 92, "#ffe8a3", 28, 0.22, "spark");
+    spawnBurst(target.x + oldFacing * 16, target.y - 70, "#1b1510", 12, 0.16, "smoke");
+    spawnBurst(f.x + f.facing * 48, f.y - 94, "#f7f2df", 22, 0.18, "ring");
+  }
+
+  function markLamuhMirrorPierceWhiff(f, moveData, reason) {
+    if (!usesLamuhArt(f) || moveData.flags.visualProfile !== "mirrorPierce" || f.lamuhPierceConfirmed) return;
+    f.lamuhPierceWhiffed = true;
+    f.lamuhMirrorPierceCleanupReason = reason;
+    clearMirrorPierceHoldForOpponent(f);
+  }
+
+  function getLamuhMirrorPierceBox(attacker, target, facing) {
+    const minX = Math.min(attacker.x, target.x);
+    const maxX = Math.max(attacker.x, target.x);
+    return {
+      x: minX - 54,
+      y: Math.min(attacker.y, target.y) - 138,
+      w: Math.max(120, maxX - minX + 108),
+      h: 116
+    };
+  }
+
+  function applyLamuhMirrorPierceHit(attacker, defender, moveData, box, facing) {
+    const source = {
+      ownerKind: attacker.kind,
+      ownerCharacterId: attacker.profile?.id || attacker.characterId,
+      x: attacker.x + facing * 34,
+      y: attacker.y - 96,
+      facing,
+      damage: moveData.flags.pierceHitDamage || moveData.damage,
+      hitstun: Number.isFinite(moveData.flags.pierceHitstunFrames) ? moveData.flags.pierceHitstunFrames / 60 : moveData.hitstun,
+      blockstun: Math.max(8, Math.round((moveData.flags.pierceHitstunFrames || 18) * 0.58)) / 60,
+      knockbackX: moveData.flags.pierceKnockbackX || moveData.knockbackX,
+      knockbackY: moveData.flags.pierceKnockbackY ?? moveData.knockbackY,
+      boxType: moveData.boxType,
+      flags: {
+        projectileImpact: true,
+        mirrorPierceStage1: true,
+        visualProfile: "mirrorPierce",
+        impactProfile: moveData.flags.impactProfile
+      }
+    };
+    return applyProjectileHit(source, defender, box);
+  }
+
+  function startLamuhMirrorPierceHold(attacker, defender, moveData) {
+    const holdFrames = Number.isFinite(moveData.flags.pierceHoldFrames)
+      ? moveData.flags.pierceHoldFrames
+      : Math.max(24, Math.round(((moveData.flags.projectileSpawnAt || 0.95) - attacker.actionTime + 0.08) * 60));
+    const holdSeconds = Math.max(0.2, holdFrames / 60);
+    defender.mirrorPierceHoldTimer = Math.max(defender.mirrorPierceHoldTimer || 0, holdSeconds);
+    defender.mirrorPierceHoldX = defender.x;
+    defender.mirrorPierceHoldY = Math.min(defender.y, GROUND_Y - 24);
+    defender.x = defender.mirrorPierceHoldX;
+    defender.y = defender.mirrorPierceHoldY;
+    defender.grounded = false;
+    defender.vx = 0;
+    defender.vy = 0;
+    defender.hitstun = Math.max(defender.hitstun, holdSeconds);
+    defender.reactionAnim = withEnemyPrefix(defender, "heavy_hitstun");
+    spawnBurst(attacker.x + attacker.facing * 38, attacker.y - 96, "#35e8d5", 9, 0.16, "spark");
+  }
+
+  function updateLamuhMirrorPiercePalmPause(f, moveData) {
+    if (!usesLamuhArt(f) || moveData.flags.visualProfile !== "mirrorPierce" || !f.lamuhPierceConfirmed || f.spawnedProjectile) return;
+    const chargeStart = Number.isFinite(moveData.flags.beamChargeStartFrame)
+      ? moveData.flags.beamChargeStartFrame / 60
+      : Math.max(moveData.startup + moveData.active, (moveData.flags.projectileSpawnAt || 0.95) - 0.35);
+    const beamFire = Number.isFinite(moveData.flags.beamFireFrame)
+      ? moveData.flags.beamFireFrame / 60
+      : (moveData.flags.projectileSpawnAt || 0.95);
+    if (f.actionTime < chargeStart || f.actionTime >= beamFire) return;
+    if (f.actionTime - (f.lamuhPiercePalmFxAt || -Infinity) < 0.1) return;
+    f.lamuhPiercePalmFxAt = f.actionTime;
+    spawnBurst(f.x + f.facing * 46, f.y - 94, "#35e8d5", 5, 0.12, "spark");
+    spawnBurst(f.x + f.facing * 52, f.y - 96, "#ffe8a3", 4, 0.1, "ring");
+  }
+
+  function updateLamuhMirrorPierceWhiff(f, moveData) {
+    if (!usesLamuhArt(f) || moveData.flags.visualProfile !== "mirrorPierce" || !f.lamuhPierceWhiffed || f.lamuhPierceConfirmed) return;
+    const whiffFire = Number.isFinite(moveData.flags.whiffBeamFireFrame)
+      ? moveData.flags.whiffBeamFireFrame / 60
+      : Math.min(moveData.duration, 0.72);
+    if (f.lamuhPierceWhiffBeamFired || f.actionTime < whiffFire) return;
+    spawnLamuhMirrorPierceWhiffBeam(f, moveData);
+    f.lamuhPierceWhiffBeamFired = true;
+    f.spawnedProjectile = true;
   }
 
   function tryMultiHit(f, moveData) {
@@ -4174,9 +6134,12 @@
       clearAction(p);
     }
     if (!p.grounded) return;
+    if (isPlatformTestStage() && handleDropThroughJump(p)) return;
     p.vy = getJumpStats(p).jumpVelocity;
     p.grounded = false;
+    p.standingPlatformId = null;
     p.landingTimer = 0;
+    if (usesCelestePlaceholder(p)) p.upAttackGrace = 0.08;
   }
 
   function canJumpCancel(f) {
@@ -4186,15 +6149,61 @@
   }
 
   function clearAction(f) {
+    const wasMirrorPierce = getMove(f)?.flags?.visualProfile === "mirrorPierce";
+    if (wasMirrorPierce) clearMirrorPierceHoldForOpponent(f);
     f.action = null;
     f.activeMove = null;
     f.hasHit = false;
     f.hitCount = 0;
     f.lastHitTime = -Infinity;
     f.spawnedProjectile = false;
+    f.spawnedTrap = false;
     f.cancelUnlocked = false;
+    f.mirrorPierceWallBouncePending = false;
+    f.mirrorPierceHoldTimer = 0;
+    f.mirrorPierceHoldX = null;
+    f.mirrorPierceHoldY = null;
+    f.lamuhPierceDone = false;
+    f.lamuhPierceConfirmed = false;
+    f.lamuhPierceStage1Hit = false;
+    f.lamuhPierceWhiffed = false;
+    f.lamuhPierceBlocked = false;
+    f.lamuhPierceWhiffBeamFired = false;
+    f.lamuhPiercePalmFxAt = -Infinity;
     f.bufferedMove = null;
     f.cinematicAnimDuration = null;
+  }
+
+  function clearMirrorPierceHoldForOpponent(attacker) {
+    const defender = attacker?.kind === "player" ? state.enemy : state.player;
+    if (!defender) return;
+    defender.mirrorPierceHoldTimer = 0;
+    defender.mirrorPierceHoldX = null;
+    defender.mirrorPierceHoldY = null;
+  }
+
+  function finishLamuhMirrorPierceAction(f, reason = "finished", failsafe = false) {
+    clearMirrorPierceHoldForOpponent(f);
+    f.action = null;
+    f.activeMove = null;
+    f.hasHit = false;
+    f.hitCount = 0;
+    f.lastHitTime = -Infinity;
+    f.spawnedProjectile = false;
+    f.spawnedTrap = false;
+    f.cancelUnlocked = false;
+    f.bufferedMove = null;
+    f.vx = 0;
+    f.anim = withEnemyPrefix(f, "idle");
+    f.lamuhMirrorPierceCleanupReason = reason;
+    f.lamuhMirrorPierceFailsafeTriggered = failsafe === true;
+    f.lamuhPierceDone = false;
+    f.lamuhPierceConfirmed = false;
+    f.lamuhPierceStage1Hit = false;
+    f.lamuhPierceWhiffed = false;
+    f.lamuhPierceBlocked = false;
+    f.lamuhPierceWhiffBeamFired = false;
+    f.lamuhPiercePalmFxAt = -Infinity;
   }
 
   function isBlockingHit(attacker, defender) {
@@ -4202,11 +6211,20 @@
     return defender.blocking && defender.grounded && attackerIsInFront;
   }
 
+  function getStageHitSeparation(attacker, defender, comboEnder = false) {
+    if (!isPlatformTestStage()) {
+      return comboEnder
+        ? (defender.grounded && attacker.grounded ? HEAVY_GROUND_BLOWBACK_SEPARATION : HEAVY_AIR_BLOWBACK_SEPARATION)
+        : (defender.grounded && attacker.grounded ? GROUND_HIT_SEPARATION : AIR_HIT_SEPARATION);
+    }
+    const separation = getPlatformArenaConfig()?.combat?.hitSeparation || {};
+    if (comboEnder) return defender.grounded && attacker.grounded ? separation.heavyGround : separation.heavyAir;
+    return defender.grounded && attacker.grounded ? separation.ground : separation.air;
+  }
+
   function enforceHitSeparation(attacker, defender, moveData, blocked = false, comboEnder = false) {
     if (!attacker || !defender || moveData.flags?.superDash) return;
-    const desired = comboEnder
-      ? (defender.grounded && attacker.grounded ? HEAVY_GROUND_BLOWBACK_SEPARATION : HEAVY_AIR_BLOWBACK_SEPARATION)
-      : (defender.grounded && attacker.grounded ? GROUND_HIT_SEPARATION : AIR_HIT_SEPARATION);
+    const desired = getStageHitSeparation(attacker, defender, comboEnder);
     const dir = attacker.facing || (attacker.x <= defender.x ? 1 : -1);
     const currentGap = Math.abs(defender.x - attacker.x);
 
@@ -4227,8 +6245,8 @@
       attacker.vx -= dir * 8;
     }
 
-    attacker.x = clamp(attacker.x, 110, W - 110);
-    defender.x = clamp(defender.x, 110, W - 110);
+    attacker.x = clampToStageX(attacker.x);
+    defender.x = clampToStageX(defender.x);
   }
 
   function getComboDamageScale(attacker) {
@@ -4279,6 +6297,68 @@
     return 1;
   }
 
+  function getCelesteJuggleHitstunScale(attacker, defender, moveData) {
+    if (!usesCelestePlaceholder(attacker) || defender.grounded) return 1;
+    const move = (attacker.activeMove || "").replace(/^enemy_/, "");
+    const priorHits = getComboPriorHits(attacker, defender);
+    if (["up_medium", "up_heavy", "down_heavy"].includes(move)) {
+      if (priorHits >= 5) return 0.58;
+      if (priorHits >= 3) return 0.7;
+      if (priorHits >= 1) return 0.84;
+    }
+    if (moveData.flags?.air) {
+      if (priorHits >= 6) return 0.62;
+      if (priorHits >= 4) return 0.76;
+    }
+    return 1;
+  }
+
+  function getPlatformJuggleHitstunScale(attacker, defender, source) {
+    if (!isPlatformTestStage() || defender.grounded) return 1;
+    const decay = getPlatformArenaConfig()?.combat?.juggleHitstunScale || {};
+    const priorHits = getComboPriorHits(attacker, defender);
+    const heavy = isHeavyComboMove(source, attacker.activeMove || "");
+    if (heavy) {
+      if (priorHits >= 5) return decay.heavyExhausted ?? 0.45;
+      if (priorHits >= 3) return decay.heavyLate ?? 0.56;
+      if (priorHits >= 1) return decay.heavyRepeated ?? 0.68;
+      return decay.heavyFirst ?? 0.82;
+    }
+    if (priorHits >= 6) return decay.normalExhausted ?? 0.52;
+    if (priorHits >= 4) return decay.normalLate ?? 0.64;
+    if (priorHits >= 2) return decay.normalMid ?? 0.78;
+    return 1;
+  }
+
+  function getPlatformKnockbackScale(attacker, defender, source) {
+    if (!isPlatformTestStage()) return 1;
+    const knockback = getPlatformArenaConfig()?.combat?.knockbackScale || {};
+    const priorHits = getComboPriorHits(attacker, defender);
+    if (isHeavyComboMove(source, attacker.activeMove || "")) {
+      const heavyHits = getHeavyHitsInCombo(attacker, defender);
+      const base = defender.grounded ? knockback.heavyGroundBase : knockback.heavyAirBase;
+      return Math.min(knockback.heavyMax ?? 1.76, (base ?? 1.22) + heavyHits * (knockback.heavyStep ?? 0.12));
+    }
+    return !defender.grounded && priorHits >= 3 ? (knockback.normalAirLate ?? 1.14) : 1;
+  }
+
+  function shouldCelesteAirHeavyBounce(attacker, defender) {
+    if (!usesCelestePlaceholder(attacker)) return false;
+    const move = (attacker.activeMove || "").replace(/^enemy_/, "");
+    if (move !== "jump_heavy") return false;
+    const combo = state.combo;
+    const sameCombo = combo.owner === attacker.kind && combo.target === defender.kind;
+    return !sameCombo || !combo.celesteAirBounceSpent;
+  }
+
+  function applyCelesteAirHeavyBounce(defender) {
+    defender.grounded = false;
+    defender.pendingKnockdown = 0;
+    defender.vy = Math.min(defender.vy, CELESTE_AIR_L_BOUNCE_VY);
+    defender.hitstun = Math.max(defender.hitstun, CELESTE_AIR_L_BOUNCE_HITSTUN);
+    defender.juggleGravityScale = Math.max(defender.juggleGravityScale || 1, 1.22);
+  }
+
   function getHeavyComboKnockbackScale(attacker, defender, moveData) {
     if (!isHeavyComboMove(moveData, attacker.activeMove || "")) return 1;
     const heavyHits = getHeavyHitsInCombo(attacker, defender);
@@ -4302,8 +6382,23 @@
 
   function scaleHeavyRelaunch(attacker, defender, moveData, knockbackY) {
     if (!isHeavyComboMove(moveData, attacker.activeMove || "") || knockbackY >= 0) return knockbackY;
+    if (isPlatformTestStage()) {
+      const combat = getPlatformArenaConfig()?.combat || {};
+      if (!defender.grounded) return knockbackY * (combat.heavyRelaunchAirScale ?? HEAVY_RELAUNCH_SECOND_SCALE);
+      return getHeavyHitsInCombo(attacker, defender) >= 1
+        ? knockbackY * (combat.heavyRelaunchRepeatedGroundScale ?? HEAVY_RELAUNCH_SECOND_SCALE)
+        : knockbackY;
+    }
     if (!defender.grounded) return knockbackY * HEAVY_RELAUNCH_SECOND_SCALE;
     return getHeavyHitsInCombo(attacker, defender) >= 1 ? knockbackY * HEAVY_RELAUNCH_SECOND_SCALE : knockbackY;
+  }
+
+  function queuePlatformAirRecovery(attacker, defender, moveData, priorHits) {
+    if (!isPlatformTestStage() || defender.grounded || !attacker || !defender || !moveData) return;
+    const combat = getPlatformArenaConfig()?.combat || {};
+    const repeatedHeavy = isHeavyComboMove(moveData, attacker.activeMove || "") && getHeavyHitsInCombo(attacker, defender) >= 1;
+    if (!repeatedHeavy && priorHits < (combat.airRecoveryStartHits ?? 4)) return;
+    defender.platformAirRecoveryTimer = Math.max(defender.platformAirRecoveryTimer || 0, combat.airRecoveryWindow ?? 0);
   }
 
   function getHeavyMinimumKnockback(attacker, defender, moveData, forceBlowback) {
@@ -4324,6 +6419,20 @@
       return { hitStop: 0.024, shake: 1.5, sparkCount: 7, sparkSize: 8, burstSize: 18, speed: 180, life: 0.18, color: "#7fd6ff" };
     }
     const flags = source.flags || {};
+    if (flags.impactProfile) {
+      return {
+        hitStop: 0.056,
+        shake: 6,
+        sparkCount: 14,
+        sparkSize: 13,
+        burstSize: 27,
+        speed: 340,
+        life: 0.26,
+        color: "#ffe4a8",
+        dramatic: true,
+        ...flags.impactProfile
+      };
+    }
     if (flags.ultimate) {
       return { hitStop: 0.13, shake: 16, sparkCount: 22, sparkSize: 20, burstSize: 42, speed: 520, life: 0.36, color: "#f2b3ff", dramatic: true };
     }
@@ -4344,7 +6453,8 @@
 
   function applyImpactFeedback(source, x, y, blocked = false) {
     const profile = getImpactProfile(source, blocked);
-    state.hitPause = Math.max(state.hitPause, profile.hitStop);
+    const hitStop = profile.hitStop * (getFightingSpeedTuning()?.hitstopMultiplier ?? 1);
+    state.hitPause = Math.max(state.hitPause, hitStop);
     state.cameraShake = Math.max(state.cameraShake, profile.shake);
     spawnHitSpark(x, y, profile, blocked);
   }
@@ -4357,6 +6467,7 @@
       combo.hits = 0;
       combo.heavyHits = 0;
       combo.wallBounces = 0;
+      combo.celesteAirBounceSpent = false;
     }
     combo.hits += 1;
     if (isHeavyComboMove(moveData, attacker.activeMove || "")) combo.heavyHits += 1;
@@ -4385,6 +6496,7 @@
     state.combo.hits = 0;
     state.combo.heavyHits = 0;
     state.combo.wallBounces = 0;
+    state.combo.celesteAirBounceSpent = false;
     state.combo.timer = 0;
     if (hard) {
       state.combo.displayHits = 0;
@@ -4401,6 +6513,7 @@
 
     attacker.hasHit = true;
     attacker.cancelUnlocked = true;
+    if (tryCelesteBarrierAbsorb(defender, attacker, moveData, hitbox)) return true;
     const blocked = isBlockingHit(attacker, defender);
     const defenderWasAirborne = !defender.grounded;
     const isHeavyHit = isHeavyComboMove(moveData, attacker.activeMove || "");
@@ -4408,14 +6521,15 @@
     const postWallBounceHeavy = isHeavyHit && hasComboWallBounceSpent(attacker, defender);
     const heavyBlowback = !blocked && shouldHeavyForceBlowback(attacker, defender, moveData);
     const forceHeavyEnder = !blocked && isHeavyHit && (postWallBounceHeavy || heavyBlowback || getHeavyHitsInCombo(attacker, defender) >= HEAVY_HITS_BEFORE_FORCED_KNOCKDOWN - 1 || priorComboHits >= HEAVY_JUGGLE_KNOCKDOWN_THRESHOLD - 1);
+    const celesteAirHeavyBounce = !blocked && shouldCelesteAirHeavyBounce(attacker, defender);
     if (!blocked && isLamuhCrownStarter(attacker, moveData)) {
       startLamuhCinematicUltimate(attacker, defender, hitbox);
       return true;
     }
     const damageScale = blocked ? 1 : getComboDamageScale(attacker);
-    const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(attacker), getHeavyComboHitstunScale(attacker, defender, moveData));
+    const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(attacker), getHeavyComboHitstunScale(attacker, defender, moveData), getCelesteJuggleHitstunScale(attacker, defender, moveData), getPlatformJuggleHitstunScale(attacker, defender, moveData));
     const heavyKnockbackScale = getHeavyComboKnockbackScale(attacker, defender, moveData);
-    const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker) * heavyKnockbackScale;
+    const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker) * heavyKnockbackScale * getPlatformKnockbackScale(attacker, defender, moveData);
     const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale));
     defender.hp = Math.max(0, defender.hp - damage);
     defender.blockstun = blocked ? moveData.blockstun : 0;
@@ -4447,6 +6561,8 @@
     if (!blocked && (moveData.flags.launcher || moveData.knockbackY < -260)) {
       defender.grounded = false;
     }
+    if (celesteAirHeavyBounce) applyCelesteAirHeavyBounce(defender);
+    applyFightingKnockbackVelocity(defender, blocked);
     enforceHitSeparation(attacker, defender, moveData, blocked, isHeavyHit && !blocked);
     if (!blocked) {
       if (moveData.flags.hardKnockdown) defender.pendingKnockdown = Math.max(defender.pendingKnockdown, HARD_KNOCKDOWN);
@@ -4462,7 +6578,9 @@
       defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(priorComboHits + 1)) : 1;
       defender.recoveryTimer = 0;
       defender.landingTimer = 0;
+      queuePlatformAirRecovery(attacker, defender, moveData, priorComboHits);
       registerComboHit(attacker, defender, moveData);
+      if (celesteAirHeavyBounce) state.combo.celesteAirBounceSpent = true;
     } else {
       resetCombo();
     }
@@ -4472,6 +6590,7 @@
     }
 
     applyImpactFeedback(moveData, hitbox.x + hitbox.w * 0.65, hitbox.y + hitbox.h * 0.45, blocked);
+    spawnLamuhImpactVfx(attacker, defender, moveData, hitbox, blocked);
 
     if (defender.hp <= 0) {
       endMatch(defender);
@@ -4481,38 +6600,185 @@
 
   function spawnProjectile(owner, moveData) {
     const direction = owner.facing;
-    const special = owner.profile.specialMoves?.[owner.activeMove] || {};
+    const activeSpecialKey = owner.activeMove || "";
+    const special = owner.profile.specialMoves?.[activeSpecialKey]
+      || (owner.profile?.id === "lamuh" ? owner.profile.specialMoves?.[activeSpecialKey.replace(/^enemy_/, "")] : null)
+      || {};
     const serisProjectileVfx = owner.profile?.id === "seris" && owner.profile.vfx?.runtimeEnabled
       ? owner.profile.vfx?.mappings?.[owner.activeMove]
       : null;
-    const visualOriginX = owner.x + direction * 34;
-    const visualOriginY = owner.y - 102;
+    const celesteProjectileOrigin = owner.profile?.id === "celeste" ? resolveCelesteSocket(owner, "projectileOrigin") : null;
+    const celesteBatonOrigin = owner.profile?.id === "celeste" ? resolveCelesteSocket(owner, "batonTip") : null;
+    const lamuhProjectileOrigin = owner.profile?.id === "lamuh"
+      ? {
+        x: owner.x + direction * (special.spawnOffsetX || 112),
+        y: owner.y + (special.spawnOffsetY || -86)
+      }
+      : null;
+    const lamuhVisualOffsetX = Number.isFinite(special.visualOffsetX) ? special.visualOffsetX : (special.spawnOffsetX || 112);
+    const lamuhVisualOffsetY = Number.isFinite(special.visualOffsetY) ? special.visualOffsetY : (special.spawnOffsetY || -86);
+    const lamuhVisualOrigin = owner.profile?.id === "lamuh"
+      ? {
+        x: owner.x + direction * lamuhVisualOffsetX,
+        y: owner.y + lamuhVisualOffsetY
+      }
+      : null;
+    const visualOriginX = celesteBatonOrigin?.x ?? lamuhVisualOrigin?.x ?? owner.x + direction * 34;
+    const visualOriginY = celesteBatonOrigin?.y ?? lamuhVisualOrigin?.y ?? owner.y - 102;
+    const spawnX = celesteProjectileOrigin?.x ?? lamuhProjectileOrigin?.x ?? owner.x + direction * (special.spawnOffsetX || 112);
+    const spawnY = celesteProjectileOrigin?.y ?? lamuhProjectileOrigin?.y ?? owner.y + (special.spawnOffsetY || -86);
+    const mirrorPierceBeam = moveData.flags.visualProfile === "mirrorPierce";
     state.projectiles.push({
       ownerKind: owner.kind,
       ownerCharacterId: owner.profile?.id || owner.characterId,
       visualOriginX,
       visualOriginY,
-      x: owner.x + direction * (special.spawnOffsetX || 112),
-      y: owner.y + (special.spawnOffsetY || -86),
-      vx: direction * (moveData.flags.projectileSpeed || 520),
+      visualAnchorOffsetX: lamuhProjectileOrigin ? lamuhVisualOffsetX : null,
+      visualAnchorOffsetY: lamuhProjectileOrigin ? lamuhVisualOffsetY : null,
+      x: spawnX,
+      y: spawnY,
+      vx: direction * (moveData.flags.projectileSpeed ?? 520),
       facing: direction,
       w: special.projectileWidth || 92,
       h: special.projectileHeight || 22,
-      damage: moveData.damage,
-      hitstun: moveData.hitstun,
-      blockstun: moveData.blockstun,
-      knockbackX: moveData.knockbackX,
-      knockbackY: moveData.knockbackY,
+      damage: mirrorPierceBeam ? (moveData.flags.beamDamage || moveData.damage) : moveData.damage,
+      hitstun: mirrorPierceBeam && Number.isFinite(moveData.flags.beamHitstunFrames) ? moveData.flags.beamHitstunFrames / 60 : moveData.hitstun,
+      blockstun: mirrorPierceBeam && Number.isFinite(moveData.flags.beamBlockstunFrames) ? moveData.flags.beamBlockstunFrames / 60 : moveData.blockstun,
+      knockbackX: mirrorPierceBeam ? (moveData.flags.beamKnockbackX || moveData.knockbackX) : moveData.knockbackX,
+      knockbackY: mirrorPierceBeam ? (moveData.flags.beamKnockbackY ?? moveData.knockbackY) : moveData.knockbackY,
       boxType: moveData.boxType,
-      flags: { projectileImpact: true },
+      flags: {
+        projectileImpact: true,
+        visualProfile: moveData.flags.visualProfile,
+        impactProfile: mirrorPierceBeam ? (moveData.flags.beamImpactProfile || moveData.flags.impactProfile) : moveData.flags.impactProfile,
+        launcher: moveData.flags.launcher === true,
+        softKnockdown: moveData.flags.softKnockdown === true,
+        hardKnockdown: moveData.flags.hardKnockdown === true,
+        mirrorPierceBeam,
+        forceWallBounce: mirrorPierceBeam && moveData.flags.forceWallBounce === true
+      },
       life: special.projectileLife || 1.1,
       maxLife: special.projectileLife || 1.1,
       color: owner.profile.projectileColor,
       vfxKey: serisProjectileVfx
     });
-    if (owner.profile?.id !== "seris" || owner.profile.vfx?.runtimeEnabled) {
-      spawnBurst(owner.x + direction * 72, owner.y - 78, owner.profile.projectileColor, 18);
+    if (mirrorPierceBeam) {
+      const tipX = spawnX + direction * (special.projectileWidth || 560);
+      spawnBurst(spawnX + direction * 28, spawnY, "#35e8d5", 12, 0.12, "spark");
+      spawnBurst(tipX, spawnY, "#ffe8a3", 18, 0.16, "spark");
+    } else if (owner.profile?.id !== "seris" || owner.profile.vfx?.runtimeEnabled) {
+      spawnBurst(spawnX, spawnY, owner.profile.projectileColor, 18);
     }
+  }
+
+  function getFighterControls(f) {
+    return f?.kind === "enemy" && state.mode === "versus" ? P2_CONTROLS : P1_CONTROLS;
+  }
+
+  function isOverPlatform(f, platform, margin = 34) {
+    return f.x >= platform.x - margin && f.x <= platform.x + platform.w + margin;
+  }
+
+  function getStandingPlatform(f) {
+    if (!f?.standingPlatformId) return null;
+    return getActiveStagePreset().platforms.find((platform) => platform.id === f.standingPlatformId) || null;
+  }
+
+  function handleDropThroughJump(f, controls = getFighterControls(f)) {
+    const platform = getStandingPlatform(f);
+    if (!platform?.dropThrough || !state.keys.has(controls.down)) return false;
+    const movement = getPlatformArenaConfig()?.movement || {};
+    f.platformDropTimer = movement.dropThroughTimer ?? 0.22;
+    f.standingPlatformId = null;
+    f.grounded = false;
+    f.y += movement.dropThroughNudgeY ?? 7;
+    f.vy = Math.max(f.vy, movement.dropThroughVelocity ?? 90);
+    f.landingTimer = 0;
+    return true;
+  }
+
+  function finishFighterLanding(f, wasGrounded) {
+    f.vy = 0;
+    f.grounded = true;
+    f.juggleGravityScale = 1;
+    f.platformAirRecoveryTimer = 0;
+    f.wallBounceEligible = false;
+    f.airDashUsed = false;
+    if (!wasGrounded) {
+      if (f.pendingKnockdown > 0) {
+        f.knockdownTimer = Math.max(f.knockdownTimer, f.pendingKnockdown);
+        f.pendingKnockdown = 0;
+        f.vx *= 0.24;
+        spawnLandingDust(f);
+      } else if (!f.action && f.hitstun <= 0) {
+        f.landingTimer = Math.max(f.landingTimer, getJumpStats(f).landingRecovery);
+        f.vx *= isPlatformTestStage() ? (getPlatformArenaConfig()?.movement?.landingVelocityScale ?? 0.42) : 0.42;
+      }
+    }
+  }
+
+  function resolveStageLanding(f, previousY, wasGrounded) {
+    const stage = getActiveStagePreset();
+    if (f.platformDropTimer <= 0 && f.vy >= 0) {
+      for (const platform of stage.platforms) {
+        if (!isOverPlatform(f, platform)) continue;
+        const crossedTop = previousY <= platform.y + 6 && f.y >= platform.y;
+        if (!crossedTop || f.y >= stage.groundY - 16) continue;
+        f.y = platform.y;
+        f.standingPlatformId = platform.id;
+        finishFighterLanding(f, wasGrounded);
+        return;
+      }
+    }
+
+    if (f.y >= stage.groundY) {
+      f.y = stage.groundY;
+      f.standingPlatformId = null;
+      finishFighterLanding(f, wasGrounded);
+      return;
+    }
+
+    if (wasGrounded && f.standingPlatformId && !isOverPlatform(f, getStandingPlatform(f) || { x: 0, w: 0 })) {
+      f.vy = Math.max(f.vy, 0);
+    }
+    f.grounded = false;
+    f.standingPlatformId = null;
+  }
+
+  function spawnLamuhMirrorPierceWhiffBeam(owner, moveData) {
+    const direction = owner.facing || 1;
+    const special = owner.profile.specialMoves?.[owner.activeMove] || {};
+    const spawnX = owner.x + direction * (special.spawnOffsetX || 52);
+    const spawnY = owner.y + (special.spawnOffsetY || -96);
+    state.projectiles.push({
+      ownerKind: owner.kind,
+      ownerCharacterId: owner.profile?.id || owner.characterId,
+      visualOriginX: owner.x + direction * 34,
+      visualOriginY: owner.y - 102,
+      x: spawnX,
+      y: spawnY,
+      vx: 0,
+      facing: direction,
+      w: special.projectileWidth || 640,
+      h: special.projectileHeight || 82,
+      damage: 0,
+      hitstun: 0,
+      blockstun: 0,
+      knockbackX: 0,
+      knockbackY: 0,
+      boxType: moveData.boxType,
+      flags: {
+        visualProfile: "mirrorPierce",
+        mirrorPierceBeam: true,
+        visualOnly: true
+      },
+      life: Math.min(special.projectileLife || 0.24, 0.18),
+      maxLife: Math.min(special.projectileLife || 0.24, 0.18),
+      color: owner.profile.projectileColor
+    });
+    const tipX = spawnX + direction * (special.projectileWidth || 640);
+    spawnBurst(spawnX + direction * 28, spawnY, "#35e8d5", 8, 0.1, "spark");
+    spawnBurst(tipX, spawnY, "#ffe8a3", 10, 0.12, "spark");
   }
 
   function updateProjectiles(dt) {
@@ -4520,7 +6786,7 @@
       projectile.life -= dt;
       projectile.x += projectile.vx * dt;
       const defender = projectile.ownerKind === "player" ? state.enemy : state.player;
-      if (projectile.hit || !defender || defender.dead) continue;
+      if (projectile.flags?.visualOnly || projectile.hit || !defender || defender.dead) continue;
       const box = getProjectileBox(projectile);
       if (intersects(box, getHurtbox(defender))) {
         applyProjectileHit(projectile, defender, box);
@@ -4528,19 +6794,24 @@
     }
 
     state.projectiles = state.projectiles.filter((projectile) => {
-      return !projectile.hit && projectile.life > 0 && projectile.x > -160 && projectile.x < W + 160;
+      const stage = getActiveStagePreset();
+      const minX = stage.leftBound - 260;
+      const maxX = stage.rightBound + 260;
+      if (projectile.flags?.mirrorPierceBeam) return projectile.life > 0 && projectile.x > minX && projectile.x < maxX;
+      return !projectile.hit && projectile.life > 0 && projectile.x > minX && projectile.x < maxX;
     });
   }
 
   function applyProjectileHit(projectile, defender, box) {
-    if (state.matchEnded) return;
+    if (state.matchEnded) return { hit: false, blocked: false, damage: 0 };
     projectile.hit = true;
     const attackerIsInFront = (projectile.x > defender.x) === (defender.facing === 1);
     const blocked = defender.blocking && defender.grounded && attackerIsInFront;
     const owner = projectile.ownerKind === "player" ? state.player : state.enemy;
+    if (tryCelesteBarrierAbsorb(defender, owner, projectile, box)) return { hit: true, blocked: true, damage: 0 };
     const damageScale = blocked || !owner ? 1 : getComboDamageScale(owner);
-    const hitstunScale = blocked || !owner ? 1 : getComboHitstunScale(owner);
-    const knockbackScale = blocked || !owner ? 1 : getComboKnockbackScale(owner);
+    const hitstunScale = blocked || !owner ? 1 : Math.min(getComboHitstunScale(owner), getPlatformJuggleHitstunScale(owner, defender, projectile));
+    const knockbackScale = blocked || !owner ? 1 : getComboKnockbackScale(owner) * getPlatformKnockbackScale(owner, defender, projectile);
     const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(projectile.damage * damageScale));
 
     defender.hp = Math.max(0, defender.hp - damage);
@@ -4550,16 +6821,29 @@
     defender.activeMove = null;
     defender.hasHit = false;
     defender.spawnedProjectile = false;
+    defender.mirrorPierceHoldTimer = 0;
+    defender.mirrorPierceHoldX = null;
+    defender.mirrorPierceHoldY = null;
     setNyxReactionAnim(defender, projectile, blocked);
     const scaledProjectileKnockbackX = Math.abs(projectile.knockbackX) * knockbackScale;
-    const airX = !defender.grounded && !blocked ? Math.min(scaledProjectileKnockbackX, MAX_AIR_KNOCKBACK_X) * 0.65 : scaledProjectileKnockbackX;
+    const airX = !defender.grounded && !blocked && !projectile.flags?.mirrorPierceBeam ? Math.min(scaledProjectileKnockbackX, MAX_AIR_KNOCKBACK_X) * 0.65 : scaledProjectileKnockbackX;
     defender.vx = projectile.facing * (blocked ? airX * 0.25 : airX);
     const projectileY = !defender.grounded && !blocked && projectile.knockbackY > 0 ? Math.min(projectile.knockbackY, MAX_AIR_SPIKE_VELOCITY) : projectile.knockbackY;
     defender.vy = Math.min(defender.vy, blocked ? 0 : projectileY);
+    applyFightingKnockbackVelocity(defender, blocked);
+    if (!blocked && projectile.flags?.mirrorPierceBeam) {
+      defender.grounded = false;
+      defender.blowbackTimer = Math.max(defender.blowbackTimer, HEAVY_BLOWBACK_DRIFT_TIME);
+      defender.pendingKnockdown = Math.max(defender.pendingKnockdown, SOFT_KNOCKDOWN);
+      defender.wallBounceEligible = Math.abs(defender.vx) >= WALL_BOUNCE_MIN_HEAVY_KNOCKBACK;
+      defender.mirrorPierceWallBouncePending = projectile.flags.forceWallBounce === true;
+    }
     defender.anim = getHitReactionAnim(defender, defender.kind === "enemy" ? "enemy_damaged" : "damaged");
     if (owner) enforceHitSeparation(owner, defender, projectile, blocked);
     if (!blocked && owner) {
-      defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(getComboPriorHits(owner, defender) + 1)) : 1;
+      const priorHits = getComboPriorHits(owner, defender);
+      defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(priorHits + 1)) : 1;
+      queuePlatformAirRecovery(owner, defender, projectile, priorHits);
       registerComboHit(owner, defender, projectile);
     }
     if (blocked) resetCombo();
@@ -4568,10 +6852,147 @@
     }
 
     applyImpactFeedback(projectile, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
+    spawnLamuhImpactVfx(owner, defender, projectile, box, blocked);
 
     if (defender.hp <= 0) {
       endMatch(defender);
     }
+    return { hit: true, blocked, damage };
+  }
+
+  function getFighterByKind(kind) {
+    return kind === "enemy" ? state.enemy : state.player;
+  }
+
+  function tryCelesteBarrierAbsorb(defender, attacker, source, box) {
+    if (!usesCelestePlaceholder(defender) || defender.celesteBarrierTimer <= 0 || defender.celesteBarrierHits <= 0) return false;
+    defender.celesteBarrierTimer = 0;
+    defender.celesteBarrierHits = 0;
+    defender.blockstun = Math.max(defender.blockstun, 0.16);
+    defender.vx = -(defender.facing || 1) * 54;
+    defender.celesteFaWindow = 0;
+    const x = box.x + box.w * 0.5;
+    const y = box.y + box.h * 0.5;
+    applyImpactFeedback({ ...source, flags: { ...(source.flags || {}), projectileImpact: true }, boxType: source.boxType || "medium" }, x, y, true);
+    const barrier = resolveCelesteSocket(defender, "barrierCenter");
+    spawnBurst(barrier.x, barrier.y, celesteSpiritColors.LA.main, 30, 0.24, "ring");
+    if (attacker && attacker !== defender) {
+      attacker.vx *= 0.35;
+      attacker.cancelUnlocked = false;
+    }
+    resetCombo();
+    return true;
+  }
+
+  function spawnCelesteTrap(owner) {
+    if (!usesCelestePlaceholder(owner)) return;
+    const placement = resolveCelesteSocket(owner, "trapPlacementOrigin");
+    const x = clamp(placement.x, 128, W - 128);
+    const y = GROUND_Y - 82;
+    state.celesteTraps.push({
+      ownerKind: owner.kind,
+      ownerCharacterId: owner.profile?.id || owner.characterId,
+      x,
+      y,
+      facing: owner.facing,
+      age: 0,
+      armTime: CELESTE_TI_ARM_TIME,
+      detonateTime: CELESTE_TI_DETONATE_TIME,
+      life: CELESTE_TI_LIFE,
+      radius: 56,
+      detonating: false,
+      detonationAge: 0,
+      hit: false
+    });
+    spawnBurst(x, y - 6, celesteSpiritColors.TI.secondary, 18, 0.2, "spark");
+  }
+
+  function updateCelesteTraps(dt) {
+    for (const trap of state.celesteTraps) {
+      trap.age += dt;
+      if (trap.detonating) {
+        trap.detonationAge += dt;
+        continue;
+      }
+      const defender = trap.ownerKind === "player" ? state.enemy : state.player;
+      const armed = trap.age >= trap.armTime;
+      const expired = trap.age >= trap.detonateTime || trap.age >= trap.life;
+      if (!armed && !expired) continue;
+      const triggerBox = getCelesteTrapBox(trap, armed ? trap.radius : trap.radius * 0.72);
+      if (expired || (defender && !defender.dead && intersects(triggerBox, getHurtbox(defender)))) {
+        detonateCelesteTrap(trap, defender);
+      }
+    }
+    state.celesteTraps = state.celesteTraps.filter((trap) => !trap.hit && (!trap.detonating || trap.detonationAge < 0.18) && trap.age < trap.life + 0.24);
+  }
+
+  function getCelesteTrapBox(trap, radius = trap.radius) {
+    return {
+      x: trap.x - radius,
+      y: trap.y - radius,
+      w: radius * 2,
+      h: radius * 2
+    };
+  }
+
+  function detonateCelesteTrap(trap, defender) {
+    trap.detonating = true;
+    trap.detonationAge = 0;
+    const box = getCelesteTrapBox(trap, 68);
+    const owner = getFighterByKind(trap.ownerKind);
+    const canHit = defender && !defender.dead && intersects(box, getHurtbox(defender));
+    spawnBurst(trap.x, trap.y - 4, celesteSpiritColors.TI.main, 34, 0.24, "shock");
+    if (!canHit || !owner) {
+      trap.hit = true;
+      return;
+    }
+    applyCelesteTrapHit(owner, defender, trap, box);
+    trap.hit = true;
+  }
+
+  function applyCelesteTrapHit(owner, defender, trap, box) {
+    const source = {
+      damage: CELESTE_TI_DAMAGE,
+      hitstun: CELESTE_TI_HITSTUN,
+      blockstun: 11,
+      knockbackX: 64,
+      knockbackY: -180,
+      boxType: "trap",
+      flags: { projectileImpact: true, celesteTrap: true }
+    };
+    if (tryCelesteBarrierAbsorb(defender, owner, source, box)) return;
+    const attackerIsInFront = (trap.x > defender.x) === (defender.facing === 1);
+    const blocked = defender.blocking && defender.grounded && attackerIsInFront;
+    const damageScale = blocked ? 1 : Math.min(getComboDamageScale(owner), 0.78);
+    const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(owner), 0.82);
+    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(source.damage * damageScale));
+    defender.hp = Math.max(0, defender.hp - damage);
+    defender.blockstun = blocked ? source.blockstun / 60 : 0;
+    defender.hitstun = blocked ? 0 : (source.hitstun / 60) * hitstunScale;
+    defender.action = null;
+    defender.activeMove = null;
+    defender.hasHit = false;
+    defender.spawnedProjectile = false;
+    defender.spawnedTrap = false;
+    defender.cancelUnlocked = false;
+    setNyxReactionAnim(defender, source, blocked);
+    const dir = trap.facing || owner.facing;
+    defender.vx = dir * (blocked ? 22 : Math.min(source.knockbackX * getComboKnockbackScale(owner), MAX_AIR_KNOCKBACK_X));
+    defender.vy = Math.min(defender.vy, blocked ? 0 : source.knockbackY);
+    applyFightingKnockbackVelocity(defender, blocked);
+    if (!blocked) defender.grounded = false;
+    enforceHitSeparation(owner, defender, source, blocked);
+    if (!blocked) {
+      defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(getComboPriorHits(owner, defender) + 1)) : 1;
+      defender.recoveryTimer = 0;
+      defender.landingTimer = 0;
+      registerComboHit(owner, defender, source);
+    } else {
+      resetCombo();
+    }
+    if (!blocked && shouldGainMeter(owner)) growFighterMeter(owner, Math.ceil(source.damage / 16));
+    applyImpactFeedback(source, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
+    if (defender.hp <= 0) endMatch(defender);
   }
 
   function isMoveActive(f) {
@@ -4762,10 +7183,130 @@
     }
   }
 
+  function spawnLamuhAfterimageTrail(f, count = 4, spacing = 22, color = "#f7f2df") {
+    for (let i = 0; i < count; i += 1) {
+      state.particles.push({
+        x: f.x - f.facing * spacing * (i + 1),
+        y: f.y - 86 + (Math.random() - 0.5) * 28,
+        vx: -f.facing * (30 + i * 18),
+        vy: -12 - Math.random() * 34,
+        gravity: 40,
+        life: 0.16 + i * 0.025,
+        maxLife: 0.2 + i * 0.03,
+        size: 16 + i * 4,
+        color,
+        kind: "smoke",
+        rot: 0,
+        spin: 0
+      });
+    }
+  }
+
+  function spawnLamuhGroundRipple(x, y, facing, color = "#ffe08a", count = 14) {
+    spawnBurst(x, y, color, count + 8, 0.24, "shock");
+    for (let i = 0; i < count; i += 1) {
+      const spread = (i - count * 0.5) * 13;
+      state.particles.push({
+        x: x + facing * spread,
+        y: y + Math.random() * 5,
+        vx: facing * spread * 1.8,
+        vy: -38 - Math.random() * 52,
+        gravity: 210,
+        life: 0.18 + Math.random() * 0.1,
+        maxLife: 0.3,
+        size: 9 + Math.random() * 8,
+        color: i % 3 === 0 ? "#1b1510" : color,
+        kind: i % 4 === 0 ? "smoke" : "spark",
+        rot: -0.05 + Math.random() * 0.1,
+        spin: (Math.random() - 0.5) * 3
+      });
+    }
+  }
+
+  function spawnLamuhVerticalCrown(x, y, facing, color = "#fff3ba", count = 16) {
+    spawnBurst(x, y - 70, color, count + 6, 0.22, "burst");
+    for (let i = 0; i < count; i += 1) {
+      const side = (i % 2 === 0 ? 1 : -1) * (18 + Math.random() * 34);
+      state.particles.push({
+        x: x + side,
+        y: y - 34 - Math.random() * 38,
+        vx: side * 0.8 + facing * 28,
+        vy: -190 - Math.random() * 170,
+        gravity: 260,
+        life: 0.2 + Math.random() * 0.12,
+        maxLife: 0.32,
+        size: 10 + Math.random() * 10,
+        color: i % 4 === 0 ? "#35e8d5" : color,
+        kind: "spark",
+        rot: -Math.PI * 0.5,
+        spin: (Math.random() - 0.5) * 4
+      });
+    }
+  }
+
+  function spawnLamuhImpactVfx(attacker, defender, source, box, blocked = false) {
+    if (!attacker || !usesLamuhArt(attacker) || blocked) return;
+    const profile = source.flags?.visualProfile;
+    if (!profile) return;
+    const x = box.x + box.w * 0.58;
+    const y = box.y + box.h * 0.44;
+    const facing = attacker.facing || 1;
+    if (profile === "mirrorPulse") {
+      spawnBurst(x, y, "#f7f2df", 18, 0.18, "burst");
+      spawnBurst(x + facing * 16, y + 8, "#35e8d5", 10, 0.14, "spark");
+    } else if (profile === "crownBeam") {
+      spawnBurst(x, y, "#ffe08a", 30, 0.28, "shock");
+      spawnBurst(x - facing * 26, y - 8, "#fff3ba", 18, 0.18, "spark");
+    } else if (profile === "mirrorBreak") {
+      spawnLamuhAfterimageTrail(attacker, 3, 16, "#f7f2df");
+      spawnBurst(x, y, "#f7f2df", 20, 0.18, "spark");
+    } else if (profile === "mirrorPierce") {
+      spawnBurst(defender.x - facing * 28, defender.y - 88, "#ffe8a3", 32, 0.24, "spark");
+      spawnBurst(defender.x + facing * 12, defender.y - 64, "#1b1510", 12, 0.16, "smoke");
+    } else if (profile === "reboundStrike") {
+      spawnBurst(x - facing * 18, y, "#f7f2df", 18, 0.18, "burst");
+      spawnBurst(attacker.x - facing * 46, attacker.y - 92, "#1b1510", 10, 0.14, "smoke");
+    } else if (profile === "groundBreaker") {
+      spawnLamuhGroundRipple(defender.x, defender.y - 4, facing, "#ffe08a", 12);
+    } else if (profile === "crownRupture") {
+      spawnLamuhGroundRipple(defender.x, defender.y - 4, facing, "#ffe08a", 18);
+      spawnLamuhVerticalCrown(defender.x, defender.y - 8, facing, "#fff3ba", 14);
+    } else if (profile === "risingCrown") {
+      spawnLamuhVerticalCrown(defender.x, defender.y - 18, facing, "#ffe08a", 12);
+    } else if (profile === "ascendantBreak") {
+      spawnLamuhVerticalCrown(defender.x, defender.y - 24, facing, "#fff3ba", 20);
+      spawnBurst(defender.x, defender.y - 132, "#35e8d5", 12, 0.18, "spark");
+    }
+  }
+
   function spawnLamuhSpecialEffectForMove(f, key) {
     if (!usesLamuhArt(f) || !key) return;
     const moveKey = key.replace(/^enemy_/, "");
-    if (moveKey === "back_special") return;
+    const isSpecialKey = moveKey.includes("_special") || ["special_1", "special_2", "special_3"].includes(moveKey);
+    if (!isSpecialKey) return;
+    const burst = getLamuhSpecialBurst(moveKey);
+    if (burst) {
+      state.cameraShake = Math.max(state.cameraShake, burst.shake || 0);
+      spawnBurst(f.x + f.facing * burst.x, f.y + burst.y, burst.color, burst.count, burst.life, burst.kind);
+      if (burst.secondary) {
+        spawnBurst(f.x + f.facing * burst.secondary.x, f.y + burst.secondary.y, burst.secondary.color, burst.secondary.count, burst.secondary.life, burst.secondary.kind);
+      }
+    }
+    const profile = getLamuhMoveVisualProfile(moveKey);
+    if (profile === "mirrorPierce") {
+      spawnLamuhAfterimageTrail(f, 4, 22, "#f7f2df");
+    } else if (profile === "reboundStrike") {
+      spawnLamuhAfterimageTrail(f, 3, -18, "#f7f2df");
+    } else if (profile === "groundBreaker") {
+      spawnLamuhGroundRipple(f.x + f.facing * 58, f.y - 2, f.facing, "#ffe08a", 10);
+    } else if (profile === "crownRupture") {
+      spawnLamuhGroundRipple(f.x + f.facing * 74, f.y - 2, f.facing, "#ffe08a", 16);
+    } else if (profile === "risingCrown") {
+      spawnLamuhVerticalCrown(f.x + f.facing * 42, f.y - 8, f.facing, "#ffe08a", 12);
+    } else if (profile === "ascendantBreak") {
+      spawnLamuhVerticalCrown(f.x + f.facing * 54, f.y - 12, f.facing, "#fff3ba", 18);
+    }
+    if (moveKey === "back_special" || moveKey.startsWith("back_")) return;
     const effectBase = {
       ownerKind: f.kind,
       facing: f.facing,
@@ -4774,7 +7315,7 @@
       rows: 4,
       alpha: 0.82
     };
-    if (moveKey === "special_2" || moveKey === "forward_special") {
+    if (moveKey === "forward_special" || moveKey.startsWith("forward_")) {
       const anchor = LAMUH_SPECIAL_VFX_ANCHORS.ascendStep;
       if (!anchor.enabled) return;
       state.lamuhSpecialEffects.push({
@@ -4793,7 +7334,7 @@
         followOwner: anchor.followOwner,
         alpha: anchor.alpha
       });
-    } else if (moveKey === "special_3" || moveKey === "down_special") {
+    } else if (moveKey === "down_special" || moveKey.startsWith("down_") || moveKey.startsWith("up_")) {
       const anchor = LAMUH_SPECIAL_VFX_ANCHORS.heavenSplitter;
       if (!anchor.enabled) return;
       state.lamuhSpecialEffects.push({
@@ -4812,7 +7353,7 @@
         followOwner: anchor.followOwner,
         alpha: anchor.alpha
       });
-    } else if (moveKey === "air_special") {
+    } else if (moveKey === "air_special" || moveKey.startsWith("air_")) {
       const anchor = LAMUH_SPECIAL_VFX_ANCHORS.radiantDive;
       if (!anchor.enabled) return;
       state.lamuhSpecialEffects.push({
@@ -4832,6 +7373,41 @@
         alpha: anchor.alpha
       });
     }
+  }
+
+  function getLamuhSpecialBurst(moveKey) {
+    const white = "#f7f2df";
+    const gold = "#ffe08a";
+    const blackGold = "#1b1510";
+    if (moveKey === "neutral_medium_special" || moveKey === "special_2") return { x: 58, y: -92, color: white, count: 20, life: 0.2, kind: "burst", shake: 4, secondary: { x: 92, y: -88, color: "#35e8d5", count: 8, life: 0.14, kind: "spark" } };
+    if (moveKey === "neutral_heavy_special" || moveKey === "special_3") return { x: 104, y: -102, color: gold, count: 34, life: 0.28, kind: "shock", shake: 9, secondary: { x: 38, y: -106, color: blackGold, count: 12, life: 0.18, kind: "smoke" } };
+    if (moveKey === "forward_medium_special") return { x: 72, y: -84, color: white, count: 18, life: 0.18, kind: "spark", shake: 5 };
+    if (moveKey === "forward_heavy_special") return { x: 102, y: -96, color: gold, count: 26, life: 0.2, kind: "spark", shake: 8, secondary: { x: -18, y: -88, color: white, count: 12, life: 0.14, kind: "smoke" } };
+    if (moveKey === "back_medium_special") return { x: -42, y: -92, color: white, count: 14, life: 0.16, kind: "smoke", shake: 4, secondary: { x: 48, y: -84, color: gold, count: 10, life: 0.12, kind: "spark" } };
+    if (moveKey === "down_medium_special") return { x: 62, y: -24, color: gold, count: 18, life: 0.2, kind: "shock", shake: 5 };
+    if (moveKey === "down_heavy_special") return { x: 78, y: -28, color: gold, count: 30, life: 0.26, kind: "shock", shake: 9, secondary: { x: 36, y: -86, color: blackGold, count: 10, life: 0.16, kind: "smoke" } };
+    if (moveKey === "up_medium_special") return { x: 46, y: -72, color: gold, count: 18, life: 0.18, kind: "spark", shake: 5 };
+    if (moveKey === "up_heavy_special") return { x: 54, y: -104, color: gold, count: 30, life: 0.26, kind: "burst", shake: 10, secondary: { x: 22, y: -132, color: "#35e8d5", count: 10, life: 0.16, kind: "spark" } };
+    if (moveKey === "special_3") return { x: 84, y: -96, color: gold, count: 28, life: 0.24, kind: "shock", shake: 8, secondary: { x: 42, y: -100, color: blackGold, count: 8, life: 0.14, kind: "spark" } };
+    if (moveKey === "special_2") return { x: 70, y: -88, color: gold, count: 18, life: 0.18, kind: "ring", shake: 4 };
+    if (moveKey === "special_1") return { x: 54, y: -84, color: white, count: 11, life: 0.13, kind: "spark", shake: 2 };
+    if (moveKey.includes("heavy")) return { x: 84, y: -96, color: gold, count: 28, life: 0.24, kind: "shock", shake: 8, secondary: { x: 42, y: -100, color: blackGold, count: 8, life: 0.14, kind: "spark" } };
+    if (moveKey.includes("medium")) return { x: 70, y: -88, color: gold, count: 18, life: 0.18, kind: "ring", shake: 4 };
+    if (moveKey.includes("light") || moveKey === "neutral_special" || moveKey === "forward_special" || moveKey === "down_special" || moveKey === "back_special" || moveKey === "air_special") return { x: 54, y: -84, color: white, count: 11, life: 0.13, kind: "spark", shake: 2 };
+    return null;
+  }
+
+  function getLamuhMoveVisualProfile(moveKey) {
+    if (moveKey === "neutral_medium_special" || moveKey === "special_2") return "mirrorPulse";
+    if (moveKey === "neutral_heavy_special" || moveKey === "special_3") return "crownBeam";
+    if (moveKey === "forward_medium_special") return "mirrorBreak";
+    if (moveKey === "forward_heavy_special") return "mirrorPierce";
+    if (moveKey === "back_medium_special") return "reboundStrike";
+    if (moveKey === "down_medium_special") return "groundBreaker";
+    if (moveKey === "down_heavy_special") return "crownRupture";
+    if (moveKey === "up_medium_special") return "risingCrown";
+    if (moveKey === "up_heavy_special") return "ascendantBreak";
+    return null;
   }
 
   function updateLamuhSpecialEffects(dt) {
@@ -4900,14 +7476,15 @@
 
   function startLamuhCinematicUltimate(attacker, defender, hitbox) {
     const facing = attacker.facing || (attacker.x <= defender.x ? 1 : -1);
+    const stage = getActiveStagePreset();
     const anchorX = facing === 1
-      ? clamp(attacker.x - facing * 22, 140, W - LAMUH_CROWN_BEAM_TARGET_X - 80)
-      : clamp(attacker.x - facing * 22, LAMUH_CROWN_BEAM_TARGET_X + 80, W - 140);
-    const opponentStartX = clamp(anchorX + facing * 178, 110, W - 110);
-    const carryMidX = clamp(anchorX + facing * (178 + LAMUH_CROWN_CARRY_DISTANCE * 0.52), 110, W - 110);
-    const carryEndX = clamp(anchorX + facing * (178 + LAMUH_CROWN_CARRY_DISTANCE), 110, W - 110);
-    const launchX = clamp(anchorX + facing * LAMUH_CROWN_LAUNCH_OFFSET_X, 110, W - 110);
-    const beamTargetX = clamp(anchorX + facing * LAMUH_CROWN_BEAM_TARGET_X, 110, W - 110);
+      ? clamp(attacker.x - facing * 22, 140, stage.worldWidth - LAMUH_CROWN_BEAM_TARGET_X - 80)
+      : clamp(attacker.x - facing * 22, LAMUH_CROWN_BEAM_TARGET_X + 80, stage.worldWidth - 140);
+    const opponentStartX = clampToStageX(anchorX + facing * 178);
+    const carryMidX = clampToStageX(anchorX + facing * (178 + LAMUH_CROWN_CARRY_DISTANCE * 0.52));
+    const carryEndX = clampToStageX(anchorX + facing * (178 + LAMUH_CROWN_CARRY_DISTANCE));
+    const launchX = clampToStageX(anchorX + facing * LAMUH_CROWN_LAUNCH_OFFSET_X);
+    const beamTargetX = clampToStageX(anchorX + facing * LAMUH_CROWN_BEAM_TARGET_X);
     const beamTargetY = GROUND_Y + LAMUH_CROWN_BEAM_TARGET_Y;
     attacker.facing = facing;
     defender.facing = -facing;
@@ -5058,14 +7635,14 @@
     const bob = Math.sin(t * Math.PI);
     const layout = getLamuhCrownLayout(cinematic, phase.key, t, eased, out, bob);
 
-    attacker.x = clamp(layout.ax, 110, W - 110);
+    attacker.x = clampToStageX(layout.ax);
     attacker.y = GROUND_Y;
     attacker.grounded = true;
     attacker.vx = 0;
     attacker.vy = 0;
     attacker.facing = facing;
 
-    defender.x = clamp(layout.dx, 110, W - 110);
+    defender.x = clampToStageX(layout.dx);
     defender.y = clamp(layout.dy, GROUND_Y - 230, GROUND_Y);
     defender.grounded = Boolean(layout.grounded);
     defender.vx = 0;
@@ -5191,7 +7768,7 @@
     defender.blockstun = 0;
     defender.vx = cinematic.facing * 560;
     defender.vy = -210;
-    defender.x = clamp(cinematic.beamTargetX + cinematic.facing * 28, 110, W - 110);
+    defender.x = clampToStageX(cinematic.beamTargetX + cinematic.facing * 28);
     defender.y = cinematic.beamTargetY;
     defender.pendingKnockdown = Math.max(defender.pendingKnockdown, HARD_KNOCKDOWN);
     defender.recoveryTimer = 0;
@@ -5228,7 +7805,7 @@
       defender.grounded = false;
       defender.vx = cinematic.facing * 520;
       defender.vy = Math.min(defender.vy, -180);
-      defender.x = clamp(cinematic.beamTargetX + cinematic.facing * 150, 110, W - 110);
+      defender.x = clampToStageX(cinematic.beamTargetX + cinematic.facing * 150);
       defender.y = Math.min(defender.y, cinematic.beamTargetY + 72);
       defender.pendingKnockdown = Math.max(defender.pendingKnockdown, HARD_KNOCKDOWN);
       defender.action = null;
@@ -5281,21 +7858,78 @@
     if (state.mode === "loading") {
       drawCenteredText("LOADING", H / 2);
     } else {
+      ctx.save();
+      applyStageCamera();
       drawArena();
       drawNyxSignatureBackdrop();
       drawNyxSignatureEffects();
       drawLamuhSpecialEffects("behind");
+      drawCelesteOctavaVfx("behind");
       drawFighter(state.enemy);
       drawFighter(state.player);
       drawLamuhSpecialEffects("front");
       drawLamuhUltimateBeams();
+      drawCelesteOctavaVfx("front");
       drawProjectiles();
+      drawCelesteTraps();
       drawParticles();
-      if (state.debug) drawDebug();
+      if (state.debug) {
+        drawDebug();
+        drawCelesteFrameDebugOverlay();
+      }
+      ctx.restore();
       drawStatusText();
     }
 
     ctx.restore();
+  }
+
+  function getStageCameraTarget() {
+    const stage = getActiveStagePreset();
+    if (!isFightMode() || !stage.experimental || !state.player || !state.enemy) {
+      return { scale: 1, x: 0, y: 0 };
+    }
+    const minFighterX = Math.min(state.player.x, state.enemy.x);
+    const maxFighterX = Math.max(state.player.x, state.enemy.x);
+    const focusX = (minFighterX + maxFighterX) * 0.5;
+    const desiredWidth = Math.max(maxFighterX - minFighterX + stage.camera.paddingX, W / stage.camera.maxScale);
+    const scale = clamp(W / desiredWidth, stage.camera.minScale, stage.camera.maxScale);
+    const scaledWorldWidth = stage.worldWidth * scale;
+    const minTranslateX = Math.min(0, W - scaledWorldWidth);
+    const x = clamp(W * 0.5 - focusX * scale, minTranslateX, 0);
+    const y = GROUND_Y - stage.groundY * scale;
+    return { scale, x, y };
+  }
+
+  function updateStageCamera(dt, immediate = false) {
+    const stage = getActiveStagePreset();
+    const target = getStageCameraTarget();
+    if (!isFightMode() || !stage.experimental) {
+      state.stageCamera = { ...target, initialized: false };
+      return;
+    }
+    if (immediate || !state.stageCamera.initialized) {
+      state.stageCamera = { ...target, initialized: true };
+      return;
+    }
+    const damping = getPlatformSpeedTuning()?.cameraSmoothing ?? stage.camera.damping ?? 7.5;
+    const t = 1 - Math.exp(-damping * Math.max(0, dt));
+    state.stageCamera.x = mix(state.stageCamera.x, target.x, t);
+    state.stageCamera.y = mix(state.stageCamera.y, target.y, t);
+    state.stageCamera.scale = mix(state.stageCamera.scale, target.scale, t);
+    state.stageCamera.initialized = true;
+  }
+
+  function getStageCamera() {
+    const stage = getActiveStagePreset();
+    if (!isFightMode() || !stage.experimental) return { scale: 1, x: 0, y: 0 };
+    return state.stageCamera.initialized ? state.stageCamera : getStageCameraTarget();
+  }
+
+  function applyStageCamera() {
+    const camera = getStageCamera();
+    ctx.translate(camera.x, camera.y);
+    ctx.scale(camera.scale, camera.scale);
   }
 
   function drawBackground() {
@@ -5305,27 +7939,245 @@
       ctx.fillRect(0, 0, W, H);
       return;
     }
+    if (isFightMode() && isPlatformTestStage()) {
+      const background = getPlatformArenaConfig()?.background || {};
+      ctx.save();
+      ctx.filter = background.filter || "saturate(0.58) brightness(0.62) contrast(0.9) blur(0.6px)";
+      drawCover(bg, 0, 0, W, H);
+      ctx.restore();
+      drawPlatformArenaBackgroundTreatment();
+      return;
+    }
     drawCover(bg, 0, 0, W, H);
   }
 
+  function drawPlatformArenaBackgroundTreatment() {
+    const background = getPlatformArenaConfig()?.background || {};
+    ctx.save();
+    ctx.fillStyle = `rgba(0, 0, 0, ${background.overlayAlpha ?? 0.18})`;
+    ctx.fillRect(0, 0, W, H);
+    const vignette = ctx.createRadialGradient(W * 0.5, H * 0.48, W * 0.24, W * 0.5, H * 0.52, W * 0.68);
+    vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
+    vignette.addColorStop(0.72, `rgba(0, 0, 0, ${background.vignetteMidAlpha ?? 0.12})`);
+    vignette.addColorStop(1, `rgba(0, 0, 0, ${background.vignetteEdgeAlpha ?? 0.36})`);
+    ctx.fillStyle = vignette;
+    ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  }
+
   function drawArena() {
+    const stage = getActiveStagePreset();
     const grd = ctx.createLinearGradient(0, 430, 0, H);
     grd.addColorStop(0, "rgba(0, 0, 0, 0)");
     grd.addColorStop(1, "rgba(0, 0, 0, 0.35)");
     ctx.fillStyle = grd;
-    ctx.fillRect(0, 430, W, H - 430);
+    ctx.fillRect(0, 430, stage.worldWidth, H - 430);
+    if (stage.experimental) {
+      ctx.fillStyle = "rgba(13, 10, 18, 0.66)";
+      ctx.fillRect(0, stage.groundY + 4, stage.worldWidth, 34);
+      ctx.strokeStyle = "rgba(127, 224, 162, 0.42)";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(0, stage.groundY + 2);
+      ctx.lineTo(stage.worldWidth, stage.groundY + 2);
+      ctx.stroke();
+      for (const platform of stage.platforms) {
+        const platformGradient = ctx.createLinearGradient(platform.x, platform.y, platform.x, platform.y + platform.h);
+        platformGradient.addColorStop(0, "rgba(245, 232, 200, 0.72)");
+        platformGradient.addColorStop(0.5, "rgba(95, 38, 54, 0.76)");
+        platformGradient.addColorStop(1, "rgba(12, 7, 14, 0.9)");
+        ctx.fillStyle = platformGradient;
+        ctx.fillRect(platform.x, platform.y, platform.w, platform.h);
+        ctx.strokeStyle = "rgba(255, 248, 217, 0.62)";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(platform.x, platform.y, platform.w, platform.h);
+      }
+      return;
+    }
     ctx.strokeStyle = "rgba(255, 120, 80, 0.25)";
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(0, GROUND_Y + 2);
-    ctx.lineTo(W, GROUND_Y + 2);
+    ctx.lineTo(stage.worldWidth, GROUND_Y + 2);
     ctx.stroke();
+  }
+
+  function getLamuhMirrorPierceFrameOverride(f, moveData, frameCount, fallbackFrame) {
+    if (!usesLamuhArt(f) || !f.action || !moveData || moveData.flags.visualProfile !== "mirrorPierce") return fallbackFrame;
+    if ((f.activeMove || "").replace(/^enemy_/, "") !== "forward_heavy_special") return fallbackFrame;
+    if (frameCount < 6) return fallbackFrame;
+    const sideSwitch = Number.isFinite(moveData.flags.sideSwitchFrame)
+      ? moveData.flags.sideSwitchFrame / 60
+      : moveData.startup + moveData.active * (moveData.flags.pierceSwitchAt || 0.56);
+    const beamFire = f.lamuhPierceWhiffed && Number.isFinite(moveData.flags.whiffBeamFireFrame)
+      ? moveData.flags.whiffBeamFireFrame / 60
+      : Number.isFinite(moveData.flags.beamFireFrame)
+      ? moveData.flags.beamFireFrame / 60
+      : (moveData.flags.projectileSpawnAt || 0.95);
+    const beamEnd = f.lamuhPierceWhiffed && Number.isFinite(moveData.flags.whiffRecoveryEndFrame)
+      ? moveData.flags.whiffRecoveryEndFrame / 60
+      : Number.isFinite(moveData.flags.beamHitboxEndFrame)
+      ? moveData.flags.beamHitboxEndFrame / 60
+      : beamFire + 0.24;
+    if (f.actionTime >= sideSwitch && f.actionTime < beamFire) return Math.min(frameCount - 1, 4);
+    if (f.actionTime >= beamFire && f.actionTime < beamFire + 0.1) return Math.min(frameCount - 1, 5);
+    if (f.actionTime >= beamFire && f.actionTime < beamEnd) return Math.min(frameCount - 1, 6);
+    if (f.actionTime >= beamEnd) return Math.min(frameCount - 1, 7);
+    return Math.min(fallbackFrame, Math.min(frameCount - 1, 3));
+  }
+
+  function getLamuhNeutralSpecialFrameOverride(f, moveData, frameCount, fallbackFrame) {
+    if (!usesLamuhArt(f) || !f.action || !moveData || frameCount < 4) return fallbackFrame;
+    const moveKey = (f.activeMove || "").replace(/^enemy_/, "");
+    const startup = Math.max(moveData.startup || 0.01, 0.01);
+    const active = Math.max(moveData.active || 0.01, 0.01);
+    const activeEnd = startup + active;
+    const recovery = Math.max(moveData.recovery || Math.max(moveData.duration - activeEnd, 0.01), 0.01);
+    const t = f.actionTime;
+    const last = frameCount - 1;
+
+    if (["special_1", "neutral_special", "neutral_light_special"].includes(moveKey)) {
+      if (t < startup) return 0;
+      if (t <= activeEnd) {
+        const p = clamp((t - startup) / active, 0, 1);
+        return Math.min(last, p < 0.52 ? 2 : 3);
+      }
+      const p = clamp((t - activeEnd) / recovery, 0, 1);
+      return Math.min(last, p < 0.46 ? 5 : p < 0.82 ? 6 : 7);
+    }
+
+    if (["special_2", "neutral_medium_special"].includes(moveKey)) {
+      if (t < startup) {
+        const p = clamp(t / startup, 0, 1);
+        return Math.min(last, p < 0.58 ? 0 : 1);
+      }
+      if (t <= activeEnd) {
+        const p = clamp((t - startup) / active, 0, 1);
+        return Math.min(last, p < 0.42 ? 2 : p < 0.78 ? 3 : 4);
+      }
+      const p = clamp((t - activeEnd) / recovery, 0, 1);
+      return Math.min(last, p < 0.42 ? 5 : p < 0.76 ? 6 : 7);
+    }
+
+    if (["special_3", "neutral_heavy_special"].includes(moveKey)) {
+      if (t < startup) {
+        const p = clamp(t / startup, 0, 1);
+        return Math.min(last, p < 0.36 ? 0 : p < 0.74 ? 1 : 2);
+      }
+      if (t <= activeEnd) {
+        const p = clamp((t - startup) / active, 0, 1);
+        return Math.min(last, p < 0.36 ? 3 : p < 0.72 ? 4 : 5);
+      }
+      const p = clamp((t - activeEnd) / recovery, 0, 1);
+      return Math.min(last, p < 0.26 ? 5 : p < 0.68 ? 6 : 7);
+    }
+
+    return fallbackFrame;
+  }
+
+  function getLamuhReactionDefenseFrameOverride(f, animKey, sheetKey, row, frameCount, fallbackFrame) {
+    if (!usesLamuhArt(f) || sheetKey !== "lamuhReactionsDefenseRedesign" || row !== 5 || frameCount < 8) return fallbackFrame;
+    const key = (animKey || "").replace(/^enemy_/, "");
+    if (["get_up", "lamuh_getup", "recovery", "recovery_get_up", "stand_up"].includes(key)) {
+      return Math.min(3, fallbackFrame % 4);
+    }
+    if (["block", "guard_idle", "stand_block", "lamuh_block_high"].includes(key)) {
+      return 4 + (Math.floor(state.time * 8) % 2);
+    }
+    if (["crouch_block", "lamuh_block_low"].includes(key)) {
+      return 6 + (Math.floor(state.time * 8) % 2);
+    }
+    return fallbackFrame;
+  }
+
+  function getLamuhAirCrouchJumpFrameOverride(f, animKey, sheetKey, row, frameCount, fallbackFrame) {
+    if (!usesLamuhArt(f) || sheetKey !== "lamuhAirCrouchJumpRedesign" || frameCount < 8) return fallbackFrame;
+    const key = (animKey || "").replace(/^enemy_/, "");
+
+    if (row === 0) {
+      if (["jump_up", "lamuh_jump", "rising", "jump_forward", "jump_back"].includes(key)) {
+        return fallbackFrame % 3;
+      }
+      if (["fall", "lamuh_fall", "neutral_air_drift"].includes(key)) {
+        return 3 + (fallbackFrame % 3);
+      }
+      if (["land", "landing", "lamuh_land"].includes(key)) {
+        return 6 + (fallbackFrame % 2);
+      }
+    }
+
+    if (row === 4) {
+      if (["jump_light", "air_light", "air_tap", "lamuh_air_light"].includes(key)) {
+        return fallbackFrame % 3;
+      }
+      if (["jump_medium", "air_medium", "sky_knuckle", "lamuh_air_medium"].includes(key)) {
+        return 3 + (fallbackFrame % 3);
+      }
+      if (["jump_heavy", "air_heavy", "crown_drop", "lamuh_air_heavy"].includes(key)) {
+        return 6 + (fallbackFrame % 2);
+      }
+    }
+
+    if (row === 5) {
+      if (["air_special", "air_light_special", "air_mirror_spark", "lamuh_air_mirror_spark"].includes(key)) {
+        return fallbackFrame % 3;
+      }
+      if (["radiant_dive", "air_medium_special", "air_dash_strike", "lamuh_air_dash_strike"].includes(key)) {
+        return 3 + (fallbackFrame % 3);
+      }
+      if (["air_heavy_special", "air_crown_drop", "lamuh_air_crown_drop"].includes(key)) {
+        return 6 + (fallbackFrame % 2);
+      }
+    }
+
+    return fallbackFrame;
+  }
+
+  function getLamuhSecondaryMovementFrameOverride(f, animKey, sheetKey, row, frameCount, fallbackFrame) {
+    if (!usesLamuhArt(f) || sheetKey !== "lamuhSecondaryMovementDirectionalNormalsRedesign" || frameCount < 8) return fallbackFrame;
+    const key = (animKey || "").replace(/^enemy_/, "");
+
+    if (row === 3) {
+      if (["forward_light"].includes(key)) return fallbackFrame % 3;
+      if (["forward_medium"].includes(key)) return 3 + (fallbackFrame % 3);
+      if (["forward_heavy", "launcher"].includes(key)) return 6 + (fallbackFrame % 2);
+    }
+
+    if (row === 4) {
+      if (["back_light"].includes(key)) return fallbackFrame % 3;
+      if (["back_medium"].includes(key)) return 3 + (fallbackFrame % 3);
+      if (["back_heavy"].includes(key)) return 6 + (fallbackFrame % 2);
+    }
+
+    if (row === 5) {
+      if (["air_dash_forward"].includes(key)) return fallbackFrame % 3;
+      if (["air_dash_back"].includes(key)) return 3 + (fallbackFrame % 3);
+      if (["air_recovery", "fall_transition"].includes(key)) return 6 + (fallbackFrame % 2);
+    }
+
+    return fallbackFrame;
+  }
+
+  function getLamuhNeutralSpecialBodyCrop(f, animKey, sheetKey) {
+    if (!usesLamuhArt(f) || sheetKey !== "lamuhBackNeutralSpecialsRedesign") return null;
+    const key = String(animKey || "").replace(/^enemy_/, "");
+    return LAMUH_NEUTRAL_SPECIAL_BODY_CROPS[key] || null;
   }
 
   function drawFighter(f) {
     if (!f) return;
+    if (usesCelestePlaceholder(f) && f.profile?.placeholderArt === "procedural_celeste_phase_1") {
+      drawCelestePlaceholderFighter(f);
+      return;
+    }
     const animTable = f.kind === "player" ? f.profile.playerAnimations : f.profile.enemyAnimations;
-    const animKey = f.dead ? (f.kind === "player" ? "death" : "enemy_death") : f.anim;
+    let animKey = f.dead ? (f.kind === "player" ? "death" : "enemy_death") : f.anim;
+    if (usesCelestePlaceholder(f) && (f.activeMove || "").replace(/^enemy_/, "") === "ultimate") {
+      const phaseName = getCelesteOctavaPhase(f)?.name || "startup";
+      animKey = phaseName === "startup"
+        ? (f.kind === "player" ? "octava_startup" : "enemy_octava_startup")
+        : (f.kind === "player" ? "octava_fire" : "enemy_octava_fire");
+    }
     const entry = animTable[animKey] || animTable.idle || animTable.enemy_idle;
     const image = state.images[entry[0]];
     const meta = sheetMeta[entry[0]];
@@ -5340,12 +8192,24 @@
 
     const row = entry[1];
     const frameCount = Math.min(meta.cols, Math.max(1, meta.frameCounts?.[row] || meta.cols));
-    const animDuration = f.cinematicAnimDuration || getMove(f)?.duration || 0.5;
-    const frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(animDuration, 0.1)) * frameCount)) : Math.floor(state.time * 8) % frameCount;
+    const moveData = getMove(f);
+    const isCeleste = usesCelestePlaceholder(f);
+    const celesteMeta = isCeleste ? getCelesteAnimationMeta(f, animKey) : null;
+    const animDuration = f.cinematicAnimDuration || moveData?.duration || celesteMeta?.frameTiming || 0.5;
+    const idleFps = celesteMeta?.frameTiming ? frameCount / Math.max(celesteMeta.frameTiming, 0.1) : 8;
+    let frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(animDuration, 0.1)) * frameCount)) : Math.floor(state.time * idleFps) % frameCount;
+    frame = getLamuhMirrorPierceFrameOverride(f, moveData, frameCount, frame);
+    frame = getLamuhNeutralSpecialFrameOverride(f, moveData, frameCount, frame);
+    frame = getLamuhReactionDefenseFrameOverride(f, animKey, entry[0], row, frameCount, frame);
+    frame = getLamuhAirCrouchJumpFrameOverride(f, animKey, entry[0], row, frameCount, frame);
+    frame = getLamuhSecondaryMovementFrameOverride(f, animKey, entry[0], row, frameCount, frame);
     const fw = image.width / meta.cols;
     const rh = image.height / meta.rows;
     const analyzedRow = state.frameBoxes[entry[0]]?.[row];
     const frameInfo = analyzedRow?.frames[frame];
+    const renderScale = meta.scale * (celesteMeta?.scale || 1);
+    const renderOffsetX = celesteMeta?.drawOffsetX || 0;
+    const renderOffsetY = celesteMeta?.drawOffsetY || 0;
     let sx;
     let sy;
     let sw;
@@ -5358,8 +8222,8 @@
       sy = row * rh;
       sw = fw;
       sh = rh;
-      dx = -(analyzedRow?.anchorX ?? (Number.isFinite(meta.anchorX) ? meta.anchorX : fw / 2)) * meta.scale;
-      dy = f.y - (analyzedRow?.anchorY ?? getSheetBaselineY(meta, rh)) * meta.scale + (meta.groundOffset || 0);
+      dx = -(analyzedRow?.anchorX ?? (Number.isFinite(meta.anchorX) ? meta.anchorX : fw / 2)) * renderScale + renderOffsetX;
+      dy = f.y - (analyzedRow?.anchorY ?? getSheetBaselineY(meta, rh)) * renderScale + (meta.groundOffset || 0) + renderOffsetY;
     } else if (analyzedRow && frameInfo) {
       const pad = meta.framePad || 0;
       const x0 = clamp(frameInfo.bounds.x - pad, meta.cropX || 0, fw - 1);
@@ -5370,8 +8234,8 @@
       sy = row * rh + y0;
       sw = x1 - x0;
       sh = y1 - y0;
-      dx = -(analyzedRow.anchorX - x0) * meta.scale;
-      dy = f.y - (analyzedRow.anchorY - y0) * meta.scale + (meta.groundOffset || 0);
+      dx = -(analyzedRow.anchorX - x0) * renderScale + renderOffsetX;
+      dy = f.y - (analyzedRow.anchorY - y0) * renderScale + (meta.groundOffset || 0) + renderOffsetY;
     } else {
       const cropX = meta.cropX || 0;
       const cropTop = meta.cropTop || 0;
@@ -5380,12 +8244,36 @@
       sy = row * rh + cropTop;
       sw = Math.max(1, fw - cropX * 2);
       sh = Math.max(1, rh - cropTop - cropBottom);
-      dx = -(sw * meta.scale) / 2;
-      dy = f.y - sh * meta.scale + (meta.groundOffset || 0);
+      dx = -(sw * renderScale) / 2 + renderOffsetX;
+      dy = f.y - sh * renderScale + (meta.groundOffset || 0) + renderOffsetY;
     }
 
-    const dw = sw * meta.scale;
-    const dh = sh * meta.scale;
+    const lamuhNeutralBodyCrop = getLamuhNeutralSpecialBodyCrop(f, animKey, entry[0]);
+    if (lamuhNeutralBodyCrop && meta.fixedSourceCells) {
+      const cropLeft = Math.max(0, lamuhNeutralBodyCrop.left || 0);
+      const cropRight = Math.max(0, lamuhNeutralBodyCrop.right || 0);
+      sx += cropLeft;
+      sw = Math.max(1, sw - cropLeft - cropRight);
+      dx += cropLeft * renderScale;
+    }
+
+    const dw = sw * renderScale;
+    const dh = sh * renderScale;
+    const celesteRender = isCeleste ? getCelesteRenderContext(f, { animKey, row, frame, sheet: entry[0] }) : null;
+    if (celesteRender) {
+      celesteRender.sourceRect = { sx, sy, sw, sh };
+      celesteRender.drawRect = {
+        x: f.facing === 1 ? f.x + dx : f.x - dx - dw,
+        y: dy,
+        w: dw,
+        h: dh
+      };
+      celesteRender.hitbox = f.activeMove && isMoveActive(f) ? getHitbox(f, moveData) : null;
+      f.celesteRenderContext = celesteRender;
+      drawCelesteFighterVfxLayer(f, "back", celesteRender);
+    }
+
+    drawLamuhAscendedAura(f, animKey, { dx, dy, dw, dh }, "behind");
 
     ctx.save();
     ctx.translate(f.x, 0);
@@ -5394,7 +8282,72 @@
     ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
     ctx.restore();
 
+    drawLamuhAscendedAura(f, animKey, { dx, dy, dw, dh }, "front");
     drawSerisChainWhipOverlay(f);
+    if (celesteRender) drawCelesteFighterVfxLayer(f, "front", celesteRender);
+  }
+
+  function isLamuhAscendedAuraAnim(animKey = "") {
+    const key = animKey.replace(/^enemy_/, "");
+    return key === "crown_charge" || key === "crown_fire" || key === "crown_recovery";
+  }
+
+  function getLamuhAscendedAuraStrength(animKey = "") {
+    const key = animKey.replace(/^enemy_/, "");
+    if (key === "crown_fire") return 1;
+    if (key === "crown_charge") return 0.78;
+    if (key === "crown_recovery") return 0.45;
+    return 0;
+  }
+
+  function drawLamuhAscendedAura(f, animKey, rect, layer) {
+    if (!usesLamuhArt(f) || !isLamuhAscendedAuraAnim(animKey) || !rect) return;
+    const strength = getLamuhAscendedAuraStrength(animKey);
+    if (strength <= 0) return;
+    const cx = rect.dx + rect.dw * 0.5;
+    const cy = rect.dy + rect.dh * 0.52;
+    const pulse = 0.86 + Math.sin(state.time * 12) * 0.08;
+    ctx.save();
+    ctx.translate(f.x, 0);
+    ctx.scale(f.facing, 1);
+    if (layer === "behind") {
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = 0.2 * strength;
+      ctx.strokeStyle = "#fff3ba";
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, rect.dw * 0.34 * pulse, rect.dh * 0.5 * pulse, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalAlpha = 0.12 * strength;
+      ctx.strokeStyle = "#35e8d5";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.ellipse(cx + 6, cy - rect.dh * 0.02, rect.dw * 0.25, rect.dh * 0.42, 0.16, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalCompositeOperation = "source-over";
+      ctx.globalAlpha = 0.11 * strength;
+      ctx.fillStyle = "#17110d";
+      ctx.beginPath();
+      ctx.ellipse(cx - 4, rect.dy + rect.dh * 0.86, rect.dw * 0.31, rect.dh * 0.12, 0, 0, Math.PI * 2);
+      ctx.fill();
+    } else {
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = 0.34 * strength;
+      ctx.strokeStyle = "#ffe08a";
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.arc(cx + rect.dw * 0.18, cy - rect.dh * 0.24, 16 + 8 * strength, -0.7, 1.3);
+      ctx.stroke();
+      ctx.globalAlpha = 0.24 * strength;
+      ctx.strokeStyle = "#f7f2df";
+      ctx.beginPath();
+      ctx.moveTo(cx - rect.dw * 0.19, cy - rect.dh * 0.38);
+      ctx.lineTo(cx - rect.dw * 0.04, cy - rect.dh * 0.48);
+      ctx.moveTo(cx + rect.dw * 0.13, cy + rect.dh * 0.28);
+      ctx.lineTo(cx + rect.dw * 0.24, cy + rect.dh * 0.13);
+      ctx.stroke();
+    }
+    ctx.restore();
   }
 
   function drawSerisChainWhipOverlay(f) {
@@ -5502,6 +8455,384 @@
     ctx.lineTo(x + 10 * scale, y + 5 * scale);
     ctx.moveTo(x - 5 * scale, y + 7 * scale);
     ctx.lineTo(x + 8 * scale, y - 7 * scale);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawCelesteVfxFrame(row, frame, x, y, facing = 1, options = {}) {
+    const atlas = state.images.celesteFinalVfx;
+    if (!atlas) return false;
+    const cols = 7;
+    const rows = 10;
+    const frameW = atlas.width / cols;
+    const frameH = atlas.height / rows;
+    const count = CELESTE_VFX_FRAME_COUNTS[row] || cols;
+    const safeFrame = Math.min(count - 1, Math.max(0, frame));
+    const scale = options.scale ?? 1;
+    const alpha = options.alpha ?? 1;
+    ctx.save();
+    ctx.globalCompositeOperation = options.composite || "lighter";
+    ctx.globalAlpha = alpha;
+    ctx.translate(x, y);
+    if (options.rotation) ctx.rotate(options.rotation * facing);
+    ctx.scale(facing * scale, scale);
+    ctx.drawImage(
+      atlas,
+      safeFrame * frameW,
+      row * frameH,
+      frameW,
+      frameH,
+      -(options.originX ?? frameW / 2),
+      -(options.originY ?? frameH / 2),
+      frameW,
+      frameH
+    );
+    ctx.restore();
+    return true;
+  }
+
+  function drawCelesteVfxAtSocket(f, socketName, row, frame, options = {}, renderContext = null) {
+    const socket = renderContext?.sockets?.[socketName] || resolveCelesteSocket(f, socketName);
+    return drawCelesteVfxFrame(
+      row,
+      frame,
+      socket.x + f.facing * (options.offsetX || 0),
+      socket.y + (options.offsetY || 0),
+      f.facing,
+      options
+    );
+  }
+
+  function getCelesteMoveVfxKey(f) {
+    const raw = (f.activeMove || "").replace(/^enemy_/, "");
+    const aliases = {
+      light_attack: "neutral_light",
+      medium_attack: "neutral_medium",
+      heavy_attack: "neutral_heavy",
+      air_light: "jump_light",
+      air_medium: "jump_medium",
+      air_heavy: "jump_heavy"
+    };
+    return aliases[raw] || raw;
+  }
+
+  function drawCelesteFighterVfxLayer(f, layer = "front", renderContext = null) {
+    if (!usesCelestePlaceholder(f) || f.dead) return;
+    const move = (f.activeMove || "").replace(/^enemy_/, "");
+    const moveData = getMove(f);
+    const duration = Math.max(moveData?.duration || 0.25, 0.1);
+    const t = clamp(f.actionTime / duration, 0, 0.999);
+    if (move === "special_1" || f.celesteFaWindow > 0 || f.anim?.includes("fa_strobe") || f.dashTimer > 0 || f.airDashTimer > 0) {
+      if (layer !== "back") return;
+      const frame = Math.min(4, Math.floor(t * 5));
+      const root = renderContext?.sockets?.root || resolveCelesteSocket(f, "root");
+      renderContext?.vfxFrames?.push({ layer, atlas: "celesteFinalVfx", spirit: "FA", row: 3, frame, socket: "root" });
+      drawCelesteVfxFrame(3, frame, root.x - f.facing * 72, root.y - 98, f.facing, { scale: 0.52, alpha: 0.36 });
+      renderContext?.vfxFrames?.push({ layer, atlas: "celesteFinalVfx", spirit: "FA", row: 3, frame: (frame + 1) % 5, socket: "root" });
+      drawCelesteVfxFrame(3, (frame + 1) % 5, root.x - f.facing * 34, root.y - 100, f.facing, { scale: 0.58, alpha: 0.5 });
+      return;
+    }
+    if (layer === "back") return;
+    const vfxKey = getCelesteMoveVfxKey(f);
+    const cfg = CELESTE_MOVE_VFX[vfxKey];
+    if (cfg && cfg.layer === layer) {
+      const count = CELESTE_VFX_FRAME_COUNTS[cfg.row] || 5;
+      const frame = Math.min(count - 1, Math.floor(t * count));
+      const pulse = Math.sin(t * Math.PI);
+      renderContext?.vfxFrames?.push({ layer, atlas: "celesteFinalVfx", spirit: cfg.spirit, row: cfg.row, frame, socket: cfg.socket });
+      drawCelesteVfxAtSocket(f, cfg.socket, cfg.row, frame, {
+        scale: cfg.scale,
+        alpha: (cfg.alpha || 0.7) * Math.max(0.22, pulse),
+        rotation: cfg.rotation || 0,
+        offsetX: cfg.offsetX || 0,
+        offsetY: cfg.offsetY || 0
+      }, renderContext);
+    }
+    if (f.celesteBarrierTimer > 0 || move === "back_special" || f.anim?.includes("la_seraph_waltz")) {
+      const lifeT = f.celesteBarrierTimer > 0 ? clamp(1 - f.celesteBarrierTimer / CELESTE_LA_ACTIVE, 0, 0.999) : t;
+      const frame = Math.min(5, Math.floor(lifeT * 6));
+      renderContext?.vfxFrames?.push({ layer, atlas: "celesteFinalVfx", spirit: "LA", row: 5, frame, socket: "barrierCenter" });
+      drawCelesteVfxAtSocket(f, "barrierCenter", 5, frame, {
+        scale: 0.78,
+        alpha: 0.82,
+        composite: "lighter"
+      }, renderContext);
+    }
+  }
+
+  function drawCelesteFighterVfxOverlay(f) {
+    drawCelesteFighterVfxLayer(f, "front", f.celesteRenderContext);
+  }
+
+  function drawCelestePlaceholderFighter(f) {
+    const crouch = f.crouching || f.anim?.includes("crouch");
+    const dead = f.dead || f.anim?.includes("death") || f.anim?.includes("ko") || f.anim?.includes("defeat");
+    const blocking = f.blocking || f.blockstun > 0 || f.celesteBarrierTimer > 0 || f.anim?.includes("block");
+    const moveData = getMove(f);
+    const spirit = getCelesteSpiritForMove(f);
+    const reach = moveData ? Math.min(118, getHitboxDefinition(f, moveData.boxType).w * 0.58) : 0;
+    const bob = Math.sin(state.time * 7) * (f.action ? 0.5 : 3);
+
+    ctx.save();
+    ctx.translate(f.x, f.y + (dead ? 8 : bob));
+    ctx.scale(f.facing, 1);
+    ctx.globalAlpha = f.hitstun > 0 && !dead ? 0.76 + Math.sin(state.time * 52) * 0.16 : 1;
+
+    if (f.activeMove === "special_1" || f.celesteFaWindow > 0 || f.anim?.includes("fa_strobe") || f.dashTimer > 0 || f.airDashTimer > 0) {
+      drawCelesteAfterimage(-36, -96, 0.24, celesteSpiritColors.FA.main, celesteSpiritColors.FA.secondary);
+      drawCelesteAfterimage(-66, -98, 0.13, celesteSpiritColors.FA.secondary, celesteSpiritColors.FA.main);
+    }
+
+    ctx.fillStyle = "rgba(16, 12, 22, 0.42)";
+    ctx.beginPath();
+    ctx.ellipse(0, dead ? -6 : -4, dead ? 58 : crouch ? 44 : 34, 10, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.save();
+    if (dead) {
+      ctx.rotate(-Math.PI * 0.5);
+      ctx.translate(-26, -8);
+    }
+
+    ctx.strokeStyle = "#0d0714";
+    ctx.lineWidth = 8;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(-12, crouch ? -74 : -128);
+    ctx.lineTo(-26, crouch ? -42 : -36);
+    ctx.moveTo(12, crouch ? -74 : -128);
+    ctx.lineTo(26, crouch ? -42 : -36);
+    ctx.stroke();
+
+    const coatGradient = ctx.createLinearGradient(0, crouch ? -122 : -172, 0, -28);
+    coatGradient.addColorStop(0, "#2b163c");
+    coatGradient.addColorStop(0.48, "#151126");
+    coatGradient.addColorStop(1, "#09070f");
+    ctx.fillStyle = coatGradient;
+    ctx.strokeStyle = "#d8c7ff";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-30, crouch ? -118 : -168);
+    ctx.quadraticCurveTo(-56, crouch ? -88 : -104, -48, -28);
+    ctx.lineTo(44, -28);
+    ctx.quadraticCurveTo(54, crouch ? -88 : -104, 26, crouch ? -118 : -168);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "#f4ddbd";
+    ctx.beginPath();
+    ctx.arc(0, crouch ? -140 : -188, 17, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = "#21102f";
+    ctx.lineWidth = 7;
+    ctx.beginPath();
+    ctx.moveTo(-8, crouch ? -154 : -204);
+    ctx.quadraticCurveTo(-38, crouch ? -150 : -194, -40, crouch ? -94 : -122);
+    ctx.moveTo(6, crouch ? -155 : -205);
+    ctx.quadraticCurveTo(34, crouch ? -150 : -194, 30, crouch ? -96 : -126);
+    ctx.stroke();
+
+    ctx.strokeStyle = "#fff0bf";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-14, crouch ? -98 : -132);
+    ctx.lineTo(28 + reach, crouch ? -82 : -116);
+    ctx.stroke();
+    ctx.strokeStyle = "#f8f8ff";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(22 + reach, crouch ? -84 : -118);
+    ctx.lineTo(74 + reach, crouch ? -72 : -108);
+    ctx.stroke();
+
+    if (blocking) drawCelesteBarrier();
+    if (spirit) drawCelesteSpiritEffect(f, spirit, reach);
+
+    ctx.restore();
+    ctx.restore();
+  }
+
+  function drawCelesteAfterimage(x, y, alpha, main, secondary) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = main;
+    ctx.fillStyle = secondary;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.ellipse(x, y - 56, 18, 58, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(x, y - 116, 14, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function getCelesteSpiritForMove(f) {
+    const raw = (f.activeMove || "").replace(/^enemy_/, "");
+    const move = {
+      light_attack: "neutral_light",
+      medium_attack: "neutral_medium",
+      heavy_attack: "neutral_heavy"
+    }[raw] || raw;
+    if (["neutral_light", "forward_light", "up_light", "down_light", "jump_light"].includes(move)) return "DO";
+    if (["neutral_medium", "forward_medium", "back_medium", "up_medium", "down_medium", "jump_medium"].includes(move)) return "RE";
+    if (["neutral_heavy", "forward_heavy", "back_heavy", "up_heavy", "down_heavy", "jump_heavy"].includes(move)) return "MI";
+    if (["back_light", "special_1", "super_dash", "fa_strobe"].includes(move)) return "FA";
+    if (["special_2", "sol_ovation"].includes(move)) return "SOL";
+    if (["back_special", "la_seraph_waltz"].includes(move)) return "LA";
+    if (["special_3", "ti_encore"].includes(move)) return "TI";
+    if (["ultimate", "octava"].includes(move)) return "OCTAVA";
+    return null;
+  }
+
+  function spawnCelesteSpiritBurstForMove(f) {
+    if (!usesCelestePlaceholder(f)) return;
+    const spirit = getCelesteSpiritForMove(f);
+    if (!spirit) return;
+    const colors = spirit === "OCTAVA" ? celesteSpiritColors.MI : celesteSpiritColors[spirit];
+    const size = spirit === "OCTAVA" ? 38 : spirit === "MI" ? 26 : spirit === "TI" ? 22 : 18;
+    const socketName = spirit === "DO"
+      ? "frontPalm"
+      : spirit === "RE"
+      ? "batonTip"
+      : spirit === "MI"
+      ? "frontPalm"
+      : spirit === "SOL"
+      ? "projectileOrigin"
+      : spirit === "LA"
+      ? "barrierCenter"
+      : spirit === "TI"
+      ? "trapPlacementOrigin"
+      : spirit === "OCTAVA"
+      ? "beamOrigin"
+      : "batonTip";
+    const socket = resolveCelesteSocket(f, socketName);
+    spawnBurst(socket.x, socket.y, colors.main, size);
+  }
+
+  function drawCelesteSpiritEffect(f, spirit, reach) {
+    const colors = spirit === "OCTAVA" ? celesteSpiritColors.MI : celesteSpiritColors[spirit];
+    const t = getMove(f) ? clamp(f.actionTime / Math.max(getMove(f).duration, 0.1), 0, 1) : 0;
+    const pulse = Math.sin(clamp(t, 0, 1) * Math.PI);
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = 0.34 + pulse * 0.42;
+    ctx.shadowColor = colors.main;
+    ctx.shadowBlur = 18;
+    ctx.strokeStyle = colors.main;
+    ctx.fillStyle = colors.secondary;
+    ctx.lineWidth = 4;
+
+    if (spirit === "DO") {
+      const x = 70 + reach;
+      const y = f.activeMove?.includes("up_") ? -168 : f.activeMove?.includes("jump") ? -98 : -112;
+      ctx.beginPath();
+      ctx.arc(x, y, 20 + pulse * 9, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalAlpha *= 0.66;
+      ctx.fillRect(x - 9, y - 24, 18, 36);
+      ctx.fillRect(x - 22, y - 6, 44, 14);
+    } else if (spirit === "RE") {
+      const y = f.activeMove?.includes("up_") ? -156 : f.activeMove?.includes("jump") ? -102 : -112;
+      ctx.beginPath();
+      ctx.moveTo(38, y + 26);
+      ctx.quadraticCurveTo(118 + reach, y - 42, 170 + reach, y - 4);
+      ctx.stroke();
+      ctx.strokeStyle = colors.secondary;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(34, y + 10);
+      ctx.lineTo(156 + reach, y - 28);
+      ctx.stroke();
+    } else if (spirit === "MI") {
+      const x = 86 + reach;
+      const y = f.activeMove?.includes("up_") ? -160 : f.activeMove?.includes("jump") ? -72 : -106;
+      ctx.beginPath();
+      ctx.ellipse(x, y, 42 + pulse * 26, 22 + pulse * 12, 0.1, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.strokeStyle = colors.secondary;
+      ctx.lineWidth = 2;
+      for (let i = -2; i <= 2; i += 1) {
+        ctx.beginPath();
+        ctx.moveTo(x - 28 + i * 10, y - 30);
+        ctx.lineTo(x + i * 12, y + 28);
+        ctx.stroke();
+      }
+    } else if (spirit === "FA") {
+      drawCelesteAfterimage(76 + reach * 0.25, -104, 0.54, colors.main, colors.secondary);
+    } else if (spirit === "SOL") {
+      ctx.beginPath();
+      ctx.arc(68, -118, 20 + pulse * 5, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(86, -118);
+      ctx.lineTo(180, -118);
+      ctx.lineTo(154, -102);
+      ctx.moveTo(180, -118);
+      ctx.lineTo(154, -134);
+      ctx.stroke();
+    } else if (spirit === "LA") {
+      ctx.beginPath();
+      ctx.ellipse(34, -120, 34 + pulse * 8, 58 + pulse * 12, -0.28, -1.2, 1.2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.ellipse(72, -112, 26 + pulse * 7, 48 + pulse * 10, 0.24, -1.1, 1.25);
+      ctx.stroke();
+      ctx.strokeStyle = colors.secondary;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(18, -152);
+      ctx.quadraticCurveTo(70, -136, 86, -78);
+      ctx.stroke();
+    } else if (spirit === "TI") {
+      const x = 84;
+      const y = -138;
+      ctx.strokeRect(x - 26, y - 14, 52, 28);
+      for (let i = -2; i <= 2; i += 1) {
+        ctx.beginPath();
+        ctx.moveTo(x + i * 10, y - 14);
+        ctx.lineTo(x + i * 10, y + 14);
+        ctx.stroke();
+      }
+      ctx.beginPath();
+      ctx.arc(x + 48, y - 34, 10 + pulse * 8, 0, Math.PI * 2);
+      ctx.stroke();
+    } else if (spirit === "OCTAVA") {
+      for (let i = 0; i < 7; i += 1) {
+        const a = (i / 7) * Math.PI * 2 + state.time * 1.4;
+        const x = Math.cos(a) * 70;
+        const y = -126 + Math.sin(a) * 54;
+        const c = Object.values(celesteSpiritColors)[i];
+        ctx.strokeStyle = c.main;
+        ctx.beginPath();
+        ctx.arc(x, y, 8 + pulse * 8, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawCelesteBarrier() {
+    const colors = celesteSpiritColors.LA;
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = 0.72;
+    ctx.strokeStyle = colors.main;
+    ctx.shadowColor = colors.secondary;
+    ctx.shadowBlur = 18;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.ellipse(18, -112, 58, 88, 0.14, -1.2, 1.35);
+    ctx.stroke();
+    ctx.strokeStyle = colors.secondary;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(10, -158);
+    ctx.quadraticCurveTo(62, -140, 54, -82);
+    ctx.moveTo(2, -146);
+    ctx.quadraticCurveTo(48, -130, 42, -72);
     ctx.stroke();
     ctx.restore();
   }
@@ -5709,6 +9040,185 @@
     }
   }
 
+  function getCelesteOctavaPhase(f) {
+    if (!usesCelestePlaceholder(f) || (f.activeMove || "").replace(/^enemy_/, "") !== "ultimate") return null;
+    const moveData = getMove(f);
+    if (!moveData) return null;
+    const activeStart = moveData.startup;
+    const activeEnd = moveData.startup + moveData.active;
+    if (f.actionTime < activeStart) return { name: "startup", t: clamp(f.actionTime / Math.max(activeStart, 0.01), 0, 1), moveData };
+    if (f.actionTime <= activeEnd) return { name: "beam", t: clamp((f.actionTime - activeStart) / Math.max(moveData.active, 0.01), 0, 1), moveData };
+    return { name: "recovery", t: clamp((f.actionTime - activeEnd) / Math.max(moveData.recovery, 0.01), 0, 1), moveData };
+  }
+
+  function drawCelesteOctavaVfx(layer = "front") {
+    drawCelesteOctavaForFighter(state.enemy, layer);
+    drawCelesteOctavaForFighter(state.player, layer);
+  }
+
+  function drawCelesteOctavaForFighter(f, layer = "front") {
+    const phase = getCelesteOctavaPhase(f);
+    if (!phase) return;
+    const spiritEntries = Object.entries(celesteSpiritColors);
+    const startupPull = phase.name === "startup" ? easeInOutCubic(phase.t) : 1;
+    const recoveryFade = phase.name === "recovery" ? 1 - phase.t : 1;
+    const beamFade = phase.name === "beam" ? Math.min(clamp(phase.t / 0.16, 0, 1), clamp((1 - phase.t) / 0.18, 0, 1)) : 0;
+    const octava = resolveCelesteSocket(f, "octavaOrigin");
+    const beam = resolveCelesteSocket(f, "beamOrigin");
+
+    if (layer === "front") {
+      if (phase.name === "beam") {
+        drawCelesteOctavaBeam(beam.x, beam.y, f.facing, beamFade);
+      } else if (phase.name === "recovery") {
+        drawCelesteOctavaAfterglow(beam.x, beam.y, f.facing, recoveryFade);
+      }
+      return;
+    }
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = 0.72 * recoveryFade;
+
+    for (let i = 0; i < spiritEntries.length; i += 1) {
+      const [spirit, colors] = spiritEntries[i];
+      const angle = state.time * 4.6 + (i / spiritEntries.length) * Math.PI * 2;
+      const orbitRadiusX = mix(88, 18, startupPull);
+      const orbitRadiusY = mix(64, 14, startupPull);
+      const x = octava.x + Math.cos(angle) * orbitRadiusX;
+      const y = octava.y + Math.sin(angle) * orbitRadiusY;
+      const size = mix(9, 5, startupPull) + Math.sin(state.time * 8 + i) * 1.5;
+      if (state.images.celesteFinalVfx) {
+        drawCelesteVfxFrame(8, i, x, y, 1, { scale: 0.22 + (1 - startupPull) * 0.08, alpha: 0.84 * recoveryFade });
+        continue;
+      }
+      ctx.shadowColor = colors.main;
+      ctx.shadowBlur = 18;
+      ctx.fillStyle = colors.main;
+      ctx.strokeStyle = colors.secondary;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      if (spirit === "DO") {
+        ctx.arc(x, y, size + 2, 0, Math.PI * 2);
+      } else if (spirit === "RE") {
+        ctx.moveTo(x - size, y + size);
+        ctx.lineTo(x + size * 1.5, y - size);
+        ctx.lineTo(x + size * 0.2, y + size * 0.2);
+      } else if (spirit === "MI") {
+        ctx.ellipse(x, y, size * 1.8, size, 0.2, 0, Math.PI * 2);
+      } else if (spirit === "FA") {
+        ctx.ellipse(x, y, size * 0.8, size * 2.1, 0, 0, Math.PI * 2);
+      } else if (spirit === "SOL") {
+        ctx.moveTo(x - size, y);
+        ctx.lineTo(x + size * 1.8, y - size * 0.8);
+        ctx.lineTo(x + size * 1.8, y + size * 0.8);
+      } else if (spirit === "LA") {
+        ctx.ellipse(x, y, size, size * 1.9, -0.35, 0, Math.PI * 2);
+      } else {
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.moveTo(x + size * 0.7, y);
+        ctx.lineTo(x + size * 0.7, y - size * 2.5);
+      }
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    const mergePulse = phase.name === "startup" ? startupPull : phase.name === "beam" ? 1 : 1 - phase.t * 0.7;
+    ctx.shadowColor = "#ffffff";
+    ctx.shadowBlur = 30;
+    ctx.fillStyle = "rgba(255, 255, 255, 0.72)";
+    ctx.strokeStyle = celesteSpiritColors.MI.main;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.arc(octava.x, octava.y, 18 + mergePulse * 30, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function drawCelesteOctavaBeam(originX, originY, facing, alpha) {
+    if (state.images.celesteFinalVfx) {
+      const frame = Math.min(5, Math.max(0, Math.floor(state.time * 18) % 6));
+      drawCelesteVfxFrame(9, frame, originX + facing * 246, originY - 4, facing, { scale: 1.34, alpha: alpha * 0.94 });
+      return;
+    }
+    const length = 690;
+    const height = 150;
+    const beamColors = [
+      celesteSpiritColors.DO.main,
+      celesteSpiritColors.RE.main,
+      celesteSpiritColors.MI.main,
+      celesteSpiritColors.FA.main,
+      celesteSpiritColors.SOL.main,
+      celesteSpiritColors.LA.secondary,
+      celesteSpiritColors.TI.secondary
+    ];
+    ctx.save();
+    ctx.globalAlpha = alpha * 0.9;
+    ctx.translate(originX, originY);
+    ctx.scale(facing, 1);
+    ctx.shadowColor = "#fff8ff";
+    ctx.shadowBlur = 28;
+
+    const core = ctx.createLinearGradient(0, 0, length, 0);
+    core.addColorStop(0, "rgba(255,255,255,0.96)");
+    core.addColorStop(0.5, "rgba(185,248,255,0.76)");
+    core.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = core;
+    ctx.beginPath();
+    ctx.moveTo(0, -height * 0.38);
+    ctx.quadraticCurveTo(length * 0.55, -height * 0.62, length, -height * 0.28);
+    ctx.lineTo(length, height * 0.28);
+    ctx.quadraticCurveTo(length * 0.55, height * 0.62, 0, height * 0.38);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.globalAlpha = alpha * 0.58;
+    ctx.lineWidth = 9;
+    for (let i = 0; i < beamColors.length; i += 1) {
+      const y = -height * 0.42 + (i / (beamColors.length - 1)) * height * 0.84;
+      ctx.strokeStyle = beamColors[i];
+      ctx.beginPath();
+      ctx.moveTo(8, y);
+      ctx.bezierCurveTo(length * 0.32, y + Math.sin(state.time * 10 + i) * 14, length * 0.66, y - Math.cos(state.time * 8 + i) * 10, length, y * 0.62);
+      ctx.stroke();
+    }
+
+    ctx.globalAlpha = alpha * 0.74;
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(0, -height * 0.08);
+    ctx.lineTo(length * 0.92, 0);
+    ctx.moveTo(0, height * 0.08);
+    ctx.lineTo(length * 0.82, 0);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawCelesteOctavaAfterglow(originX, originY, facing, alpha) {
+    if (state.images.celesteFinalVfx) {
+      drawCelesteVfxFrame(9, 5, originX + facing * 232, originY - 4, facing, { scale: 1.12, alpha: alpha * 0.3 });
+      return;
+    }
+    ctx.save();
+    ctx.globalAlpha = alpha * 0.28;
+    ctx.translate(originX, originY);
+    ctx.scale(facing, 1);
+    ctx.globalCompositeOperation = "lighter";
+    ctx.strokeStyle = "#bff8ff";
+    ctx.shadowColor = "#ffffff";
+    ctx.shadowBlur = 18;
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(0, -32);
+    ctx.quadraticCurveTo(220, -72, 420, -12);
+    ctx.moveTo(0, 32);
+    ctx.quadraticCurveTo(210, 70, 390, 10);
+    ctx.stroke();
+    ctx.restore();
+  }
+
   function drawLamuhSpecialEffects(layer = "front") {
     if (!state.lamuhSpecialEffects.length) return;
     for (const effect of state.lamuhSpecialEffects) {
@@ -5747,6 +9257,7 @@
       if (projectile.ownerCharacterId === "seris" && !SERIS_CHAIN_VFX_RUNTIME_ENABLED) continue;
       if (drawSerisProjectileVfx(projectile)) continue;
       if (drawLamuhProjectileVfx(projectile)) continue;
+      if (drawCelesteProjectileVfx(projectile)) continue;
 
       const box = getProjectileBox(projectile);
       ctx.save();
@@ -5769,8 +9280,61 @@
     }
   }
 
+  function drawCelesteTraps() {
+    for (const trap of state.celesteTraps) {
+      const armed = trap.age >= trap.armTime;
+      const armingT = clamp(trap.age / Math.max(trap.armTime, 0.1), 0, 1);
+      const detonateT = trap.detonating ? clamp(trap.detonationAge / 0.18, 0, 1) : 0;
+      if (state.images.celesteFinalVfx) {
+        const row = trap.detonating ? 7 : 6;
+        const count = CELESTE_VFX_FRAME_COUNTS[row];
+        const rawT = trap.detonating ? detonateT : armed ? 0.78 + Math.sin(state.time * 7) * 0.08 : armingT * 0.75;
+        const frame = Math.min(count - 1, Math.max(0, Math.floor(clamp(rawT, 0, 0.999) * count)));
+        const alpha = trap.detonating ? Math.max(0.22, 1 - detonateT) : armed ? 0.9 : 0.56 + armingT * 0.24;
+        drawCelesteVfxFrame(row, frame, trap.x, trap.y - 10, 1, { scale: trap.detonating ? 0.62 : 0.46, alpha });
+        continue;
+      }
+      const pulse = Math.sin(state.time * (armed ? 12 : 7)) * 0.5 + 0.5;
+      const colors = celesteSpiritColors.TI;
+      ctx.save();
+      ctx.translate(trap.x, trap.y);
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = trap.detonating ? 0.8 * (1 - detonateT) : armed ? 0.86 : 0.44 + armingT * 0.28;
+      ctx.shadowColor = colors.secondary;
+      ctx.shadowBlur = armed ? 22 : 12;
+      ctx.strokeStyle = armed ? colors.main : "rgba(255, 255, 255, 0.58)";
+      ctx.fillStyle = armed ? colors.secondary : "rgba(155, 92, 255, 0.42)";
+      ctx.lineWidth = armed ? 4 : 2;
+      const radius = trap.detonating ? 44 + detonateT * 64 : 18 + armingT * 26 + pulse * (armed ? 5 : 2);
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.ellipse(-7, 8, 12, 9, -0.28, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(4, 6);
+      ctx.lineTo(4, -42);
+      ctx.quadraticCurveTo(26, -44, 28, -24);
+      ctx.stroke();
+      ctx.strokeStyle = "#0d0b14";
+      ctx.globalAlpha *= armed ? 0.7 : 0.46;
+      for (let i = -2; i <= 2; i += 1) {
+        ctx.beginPath();
+        ctx.moveTo(i * 11, 30);
+        ctx.lineTo(i * 11, 42);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+  }
+
   function drawLamuhProjectileVfx(projectile) {
     if (projectile.ownerCharacterId !== "lamuh") return false;
+    if (projectile.flags?.mirrorPierceBeam) return drawLamuhMirrorPierceBeam(projectile);
+    if (projectile.flags?.visualProfile === "mirrorSpark" && drawLamuhNeutralSpecialAtlasVfx(projectile, 3, { drawW: 118, drawH: 118, offsetX: -58, offsetY: -60, fadeIn: 0.06, fadeOut: 0.12, originFlare: { rx: 8, ry: 6, blur: 10, alpha: 0.62, outer: "rgba(247, 242, 223, 0.7)", shadow: "#f7f2df" } })) return true;
+    if (projectile.flags?.visualProfile === "mirrorPulse") return drawLamuhMirrorPulseProjectile(projectile);
+    if (projectile.flags?.visualProfile === "crownBeam") return drawLamuhCrownBeamProjectile(projectile);
     const atlas = state.images.lamuhVfxCelestialPalm;
     if (!atlas) return false;
     const box = getProjectileBox(projectile);
@@ -5814,6 +9378,332 @@
       anchor.drawW,
       anchor.drawH
     );
+    ctx.restore();
+    return true;
+  }
+
+  function getLamuhProjectileVisualOrigin(projectile, fallbackBox) {
+    const owner = getFighterByKind(projectile.ownerKind);
+    const profile = projectile.flags?.visualProfile;
+    const moveKey = (owner?.activeMove || "").replace(/^enemy_/, "");
+    const isAnchoredNeutral = profile === "mirrorSpark"
+      ? ["special_1", "neutral_special", "neutral_light_special"].includes(moveKey)
+      : profile === "mirrorPulse"
+      ? ["special_2", "neutral_medium_special"].includes(moveKey)
+      : profile === "crownBeam"
+        ? ["special_3", "neutral_heavy_special"].includes(moveKey)
+        : false;
+    if (owner?.profile?.id === "lamuh" && isAnchoredNeutral) {
+      const offsetX = Number.isFinite(projectile.visualAnchorOffsetX) ? projectile.visualAnchorOffsetX : 104;
+      const offsetY = Number.isFinite(projectile.visualAnchorOffsetY) ? projectile.visualAnchorOffsetY : -92;
+      return {
+        x: owner.x + projectile.facing * offsetX,
+        y: owner.y + offsetY
+      };
+    }
+    return {
+      x: Number.isFinite(projectile.visualOriginX)
+        ? projectile.visualOriginX
+        : projectile.facing === 1
+          ? fallbackBox.x
+          : fallbackBox.x + fallbackBox.w,
+      y: Number.isFinite(projectile.visualOriginY) ? projectile.visualOriginY : fallbackBox.y + fallbackBox.h * 0.5
+    };
+  }
+
+  function drawLamuhNeutralSpecialAtlasVfx(projectile, row, options = {}) {
+    const atlas = state.images.lamuhNeutralSpecialsBodyVfxRedesign;
+    if (!atlas) return false;
+    const box = getProjectileBox(projectile);
+    const frameW = atlas.width / 8;
+    const frameH = atlas.height / 6;
+    const age = (projectile.maxLife || options.life || 0.5) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || options.life || 0.5, 0.08), 0, 1);
+    const frame = Math.min(7, Math.floor(clamp(t, 0, 0.999) * 8));
+    const origin = getLamuhProjectileVisualOrigin(projectile, box);
+    const tipX = projectile.facing === 1 ? box.x + box.w : box.x;
+    const rawLength = Math.abs(tipX - origin.x);
+    const drawW = options.drawW || clamp(rawLength + (options.lengthPad || 90), options.minW || box.w, options.maxW || 680);
+    const drawH = options.drawH || Math.max(box.h * (options.heightScale || 2.8), options.minH || 112);
+    const fadeIn = clamp(t / (options.fadeIn || 0.1), 0, 1);
+    const fadeOut = clamp((1 - t) / (options.fadeOut || 0.18), 0, 1);
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = Math.min(fadeIn, fadeOut) * (options.alpha || 0.92);
+    ctx.translate(origin.x, origin.y);
+    ctx.scale(projectile.facing || 1, 1);
+    ctx.drawImage(
+      atlas,
+      frame * frameW,
+      row * frameH,
+      frameW,
+      frameH,
+      Number.isFinite(options.offsetX) ? options.offsetX : -24,
+      Number.isFinite(options.offsetY) ? options.offsetY : -drawH * 0.5,
+      drawW,
+      drawH
+    );
+    if (options.originFlare) {
+      const flare = options.originFlare;
+      const pulse = 0.82 + Math.sin(t * Math.PI) * 0.28;
+      ctx.globalAlpha = Math.min(fadeIn, fadeOut) * (flare.alpha || 0.78);
+      ctx.shadowColor = flare.shadow || "#ffe08a";
+      ctx.shadowBlur = flare.blur || 18;
+      ctx.fillStyle = flare.outer || "rgba(255, 224, 138, 0.72)";
+      ctx.beginPath();
+      ctx.ellipse(flare.x || 0, flare.y || 0, (flare.rx || 14) * pulse, (flare.ry || 10) * pulse, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha *= 0.92;
+      ctx.shadowColor = "#f7f2df";
+      ctx.shadowBlur = Math.max(8, (flare.blur || 18) * 0.5);
+      ctx.fillStyle = flare.inner || "rgba(247, 242, 223, 0.9)";
+      ctx.beginPath();
+      ctx.ellipse(flare.x || 0, flare.y || 0, (flare.rx || 14) * 0.42, (flare.ry || 10) * 0.42, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+    return true;
+  }
+
+  function drawLamuhMirrorPulseProjectile(projectile) {
+    if (drawLamuhNeutralSpecialAtlasVfx(projectile, 4, { lengthPad: 76, minW: 154, maxW: 286, drawH: 146, offsetX: -46, fadeOut: 0.22, originFlare: { rx: 12, ry: 9, blur: 14, alpha: 0.7, outer: "rgba(53, 232, 213, 0.64)", shadow: "#35e8d5" } })) {
+      return true;
+    }
+    const box = getProjectileBox(projectile);
+    const age = (projectile.maxLife || 0.48) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || 0.48, 0.08), 0, 1);
+    const fadeIn = clamp(t / 0.1, 0, 1);
+    const fadeOut = clamp((1 - t) / 0.18, 0, 1);
+    const alpha = Math.min(fadeIn, fadeOut);
+    const origin = getLamuhProjectileVisualOrigin(projectile, box);
+    const tipX = projectile.facing === 1 ? box.x + box.w : box.x;
+    const rawLength = Math.abs(tipX - origin.x);
+    const length = clamp(rawLength, box.w * 0.72, 220);
+    const height = Math.max(box.h, 42);
+    const pulse = Math.sin(t * Math.PI);
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.translate(origin.x, origin.y);
+    ctx.scale(projectile.facing || 1, 1);
+
+    ctx.globalAlpha = alpha * 0.72;
+    ctx.shadowColor = "#35e8d5";
+    ctx.shadowBlur = 18;
+    ctx.strokeStyle = "rgba(53, 232, 213, 0.78)";
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.ellipse(length * 0.58, 0, 32 + pulse * 24, height * 0.42 + pulse * 6, 0.08, 0, Math.PI * 2);
+    ctx.stroke();
+
+    ctx.globalAlpha = alpha * 0.78;
+    ctx.strokeStyle = "rgba(247, 242, 223, 0.9)";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(4, -height * 0.08);
+    ctx.quadraticCurveTo(length * 0.38, -height * 0.34, length * 0.9, -height * 0.04);
+    ctx.moveTo(4, height * 0.08);
+    ctx.quadraticCurveTo(length * 0.36, height * 0.28, length * 0.84, height * 0.04);
+    ctx.stroke();
+
+    ctx.globalAlpha = alpha * 0.92;
+    ctx.fillStyle = "#ffe08a";
+    ctx.shadowColor = "#ffe08a";
+    ctx.shadowBlur = 16;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 13 + pulse * 4, 10 + pulse * 3, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.globalAlpha = alpha * 0.36;
+    ctx.strokeStyle = "#1b1510";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(length * 0.18, 0);
+    ctx.lineTo(length * 0.68, 0);
+    ctx.stroke();
+    ctx.restore();
+    return true;
+  }
+
+  function drawLamuhCrownBeamProjectile(projectile) {
+    if (drawLamuhNeutralSpecialAtlasVfx(projectile, 5, { lengthPad: 156, minW: 330, maxW: 760, drawH: 184, offsetX: -42, fadeIn: 0.08, fadeOut: 0.18, alpha: 0.98, originFlare: { rx: 18, ry: 14, blur: 24, alpha: 0.86, outer: "rgba(255, 224, 138, 0.78)", inner: "rgba(255, 255, 255, 0.94)", shadow: "#ffe08a" } })) {
+      return true;
+    }
+    const box = getProjectileBox(projectile);
+    const age = (projectile.maxLife || 0.58) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || 0.58, 0.08), 0, 1);
+    const fadeIn = clamp(t / 0.12, 0, 1);
+    const fadeOut = clamp((1 - t) / 0.2, 0, 1);
+    const alpha = Math.min(fadeIn, fadeOut);
+    const origin = getLamuhProjectileVisualOrigin(projectile, box);
+    const tipX = projectile.facing === 1 ? box.x + box.w : box.x;
+    const rawLength = Math.abs(tipX - origin.x);
+    const length = clamp(rawLength, box.w, 640);
+    const height = Math.max(box.h, 54);
+    const pulse = 1 + Math.sin(state.time * 72) * 0.05;
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.translate(origin.x, origin.y);
+    ctx.scale(projectile.facing || 1, 1);
+
+    const aura = ctx.createLinearGradient(0, 0, length, 0);
+    aura.addColorStop(0, "rgba(255, 224, 138, 0.26)");
+    aura.addColorStop(0.16, "rgba(247, 242, 223, 0.42)");
+    aura.addColorStop(0.68, "rgba(255, 224, 138, 0.32)");
+    aura.addColorStop(1, "rgba(53, 232, 213, 0.08)");
+    ctx.globalAlpha = alpha * 0.64;
+    ctx.shadowColor = "#ffe08a";
+    ctx.shadowBlur = 30;
+    ctx.fillStyle = aura;
+    ctx.fillRect(0, -height * 0.5 * pulse, length, height * pulse);
+
+    const core = ctx.createLinearGradient(0, 0, length, 0);
+    core.addColorStop(0, "rgba(255, 255, 255, 0.92)");
+    core.addColorStop(0.28, "rgba(247, 242, 223, 0.95)");
+    core.addColorStop(0.64, "rgba(255, 232, 163, 0.86)");
+    core.addColorStop(1, "rgba(53, 232, 213, 0.28)");
+    ctx.globalAlpha = alpha * 0.9;
+    ctx.shadowColor = "#f7f2df";
+    ctx.shadowBlur = 16;
+    ctx.fillStyle = core;
+    ctx.fillRect(0, -height * 0.14, length, height * 0.28);
+
+    ctx.globalAlpha = alpha * 0.9;
+    ctx.strokeStyle = "#f7f2df";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(10, -height * 0.18);
+    ctx.lineTo(length * 0.92, -height * 0.1);
+    ctx.moveTo(12, height * 0.18);
+    ctx.lineTo(length * 0.86, height * 0.08);
+    ctx.stroke();
+
+    ctx.globalAlpha = alpha * 0.88;
+    ctx.fillStyle = "#ffe08a";
+    ctx.shadowColor = "#ffe08a";
+    ctx.shadowBlur = 24;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 16, height * 0.34, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.globalAlpha = alpha * 0.42;
+    ctx.fillStyle = "#1b1510";
+    ctx.fillRect(length * 0.08, -2, length * 0.55, 4);
+    ctx.restore();
+    return true;
+  }
+
+  function drawLamuhMirrorPierceBeam(projectile) {
+    const box = getProjectileBox(projectile);
+    const age = (projectile.maxLife || 0.24) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || 0.24, 0.08), 0, 1);
+    const fadeIn = clamp(t / 0.12, 0, 1);
+    const fadeOut = clamp((1 - t) / 0.18, 0, 1);
+    const alpha = Math.min(fadeIn, fadeOut);
+    const length = box.w;
+    const height = box.h;
+    const originX = projectile.facing === 1 ? box.x : box.x + box.w;
+    const originY = box.y + box.h * 0.5;
+    const pulse = 1 + Math.sin(state.time * 90) * 0.05;
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.translate(originX, originY);
+    ctx.scale(projectile.facing || 1, 1);
+
+    const glow = ctx.createLinearGradient(0, 0, length, 0);
+    glow.addColorStop(0, "rgba(53, 232, 213, 0.18)");
+    glow.addColorStop(0.18, "rgba(247, 242, 223, 0.35)");
+    glow.addColorStop(0.72, "rgba(255, 224, 138, 0.32)");
+    glow.addColorStop(1, "rgba(53, 232, 213, 0.05)");
+    ctx.globalAlpha = alpha * 0.58;
+    ctx.shadowColor = "#35e8d5";
+    ctx.shadowBlur = 30;
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, -height * 0.5 * pulse, length, height * pulse);
+
+    const core = ctx.createLinearGradient(0, 0, length, 0);
+    core.addColorStop(0, "rgba(247, 242, 223, 0.85)");
+    core.addColorStop(0.35, "rgba(53, 232, 213, 0.95)");
+    core.addColorStop(0.75, "rgba(255, 232, 163, 0.9)");
+    core.addColorStop(1, "rgba(255, 255, 255, 0.15)");
+    ctx.globalAlpha = alpha * 0.86;
+    ctx.shadowColor = "#ffe8a3";
+    ctx.shadowBlur = 18;
+    ctx.fillStyle = core;
+    ctx.fillRect(0, -height * 0.13, length, height * 0.26);
+
+    ctx.globalAlpha = alpha * 0.92;
+    ctx.strokeStyle = "#f7f2df";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(8, -height * 0.18);
+    ctx.lineTo(length * 0.93, -height * 0.1);
+    ctx.moveTo(14, height * 0.16);
+    ctx.lineTo(length * 0.86, height * 0.08);
+    ctx.stroke();
+
+    ctx.globalAlpha = alpha * 0.95;
+    ctx.fillStyle = "#ffe8a3";
+    ctx.shadowColor = "#ffe8a3";
+    ctx.shadowBlur = 24;
+    ctx.beginPath();
+    ctx.ellipse(length, 0, 22, height * 0.34, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.globalAlpha = alpha * 0.62;
+    ctx.fillStyle = "#1b1510";
+    ctx.fillRect(length * 0.12, -2, length * 0.58, 4);
+    ctx.restore();
+    return true;
+  }
+
+  function drawCelesteProjectileVfx(projectile) {
+    if (projectile.ownerCharacterId !== "celeste") return false;
+    const box = getProjectileBox(projectile);
+    const age = (projectile.maxLife || 1) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || 1, 0.1), 0, 1);
+    if (state.images.celesteFinalVfx) {
+      const frame = Math.min(5, Math.floor(clamp(t, 0, 0.999) * 6));
+      const fadeIn = clamp(t / 0.08, 0, 1);
+      const fadeOut = clamp((1 - t) / 0.14, 0, 1);
+      drawCelesteVfxFrame(4, frame, box.x + box.w / 2, box.y + box.h / 2, projectile.facing, { scale: 0.58, alpha: Math.min(fadeIn, fadeOut) * 0.96 });
+      return true;
+    }
+    const colors = celesteSpiritColors.SOL;
+    const pulse = Math.sin(t * Math.PI);
+
+    ctx.save();
+    ctx.translate(box.x + box.w / 2, box.y + box.h / 2);
+    ctx.scale(projectile.facing, 1);
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = 0.9;
+    ctx.shadowColor = colors.main;
+    ctx.shadowBlur = 20;
+    ctx.strokeStyle = colors.main;
+    ctx.fillStyle = colors.secondary;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.ellipse(-box.w * 0.28, 0, 18 + pulse * 5, 16 + pulse * 4, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(-box.w * 0.1, 0);
+    ctx.lineTo(box.w * 0.5, -box.h * 0.46);
+    ctx.lineTo(box.w * 0.36, 0);
+    ctx.lineTo(box.w * 0.5, box.h * 0.46);
+    ctx.closePath();
+    ctx.fill();
+    ctx.globalAlpha = 0.52;
+    ctx.strokeStyle = "#fff8da";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(-box.w * 0.45, -4);
+    ctx.lineTo(box.w * 0.28, -4);
+    ctx.moveTo(-box.w * 0.45, 4);
+    ctx.lineTo(box.w * 0.22, 4);
+    ctx.stroke();
     ctx.restore();
     return true;
   }
@@ -5941,18 +9831,22 @@
   function drawDebug() {
     const p = state.player;
     const e = state.enemy;
+    const stage = getActiveStagePreset();
     ctx.save();
     ctx.strokeStyle = "#ffe45c";
     ctx.lineWidth = 3;
     ctx.setLineDash([14, 8]);
     ctx.beginPath();
-    ctx.moveTo(0, GROUND_Y);
-    ctx.lineTo(W, GROUND_Y);
+    ctx.moveTo(0, stage.groundY);
+    ctx.lineTo(stage.worldWidth, stage.groundY);
     ctx.stroke();
+    for (const platform of stage.platforms) {
+      ctx.strokeRect(platform.x, platform.y, platform.w, platform.h);
+    }
     ctx.setLineDash([]);
     ctx.fillStyle = "#ffe45c";
     ctx.font = "700 13px Inter, system-ui, sans-serif";
-    ctx.fillText("GROUND / CONTACT BASELINE", 18, GROUND_Y - 8);
+    ctx.fillText("GROUND / CONTACT BASELINE", 18, stage.groundY - 8);
     ctx.restore();
     drawBox(getHurtbox(p), "rgba(54, 156, 255, 0.28)", "#5ac8ff");
     drawBox(getHurtbox(e), "rgba(54, 156, 255, 0.28)", "#5ac8ff");
@@ -5964,6 +9858,58 @@
     }
     for (const projectile of state.projectiles) {
       drawBox(getProjectileBox(projectile), "rgba(255, 45, 69, 0.24)", "#ff2d45");
+    }
+  }
+
+  function drawCelesteFrameDebugOverlay() {
+    if (!CELESTE_FRAME_DEBUG_ENABLED) return;
+    const fighters = [state.enemy, state.player];
+    for (const f of fighters) {
+      if (!usesCelestePlaceholder(f)) continue;
+      const renderContext = f.celesteRenderContext;
+      if (!renderContext?.drawRect) continue;
+      const rect = renderContext.drawRect;
+      ctx.save();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "rgba(82, 246, 255, 0.95)";
+      ctx.setLineDash([8, 5]);
+      ctx.strokeRect(rect.x, rect.y, rect.w, rect.h);
+      ctx.setLineDash([]);
+      ctx.strokeStyle = "rgba(255, 232, 92, 0.82)";
+      ctx.beginPath();
+      ctx.moveTo(rect.x, f.y);
+      ctx.lineTo(rect.x + rect.w, f.y);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(10, 12, 18, 0.82)";
+      ctx.fillRect(rect.x, rect.y - 66, 310, 60);
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "700 11px Inter, system-ui, sans-serif";
+      ctx.fillText(`${renderContext.baseAnimKey} body r${renderContext.row} f${renderContext.frame}`, rect.x + 6, rect.y - 49);
+      ctx.fillText(`${renderContext.sheet || "sheet"} ${Math.round(rect.w)}x${Math.round(rect.h)}`, rect.x + 6, rect.y - 33);
+      const vfxSummary = renderContext.vfxFrames?.length
+        ? renderContext.vfxFrames.map((vfx) => `${vfx.spirit || "VFX"}:${vfx.layer[0]} r${vfx.row}f${vfx.frame}`).slice(0, 3).join(" ")
+        : "VFX:none";
+      ctx.fillText(vfxSummary, rect.x + 6, rect.y - 17);
+
+      const sockets = renderContext.sockets || {};
+      const socketNames = ["root", "feetBase", "frontPalm", "batonTip", "projectileOrigin", "trapPlacementOrigin", "barrierCenter", "octavaOrigin", "beamOrigin"];
+      for (const name of socketNames) {
+        const socket = sockets[name];
+        if (!socket) continue;
+        const isRoot = name === "root";
+        ctx.fillStyle = isRoot ? "#ff477e" : "#8eff7f";
+        ctx.beginPath();
+        ctx.arc(socket.x, socket.y, isRoot ? 5 : 3.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "700 9px Inter, system-ui, sans-serif";
+        ctx.fillText(name.replace(/[a-z]/g, "").slice(0, 3) || name.slice(0, 2), socket.x + 5, socket.y - 5);
+      }
+
+      if (renderContext.hitbox) {
+        drawBox(renderContext.hitbox, "rgba(255, 45, 85, 0.18)", "#ff3b63");
+      }
+      ctx.restore();
     }
   }
 
@@ -6045,6 +9991,8 @@
   function chooseAttack(button, fighter = state.player, controls = P1_CONTROLS) {
     const p = fighter;
     if (p.kind === "enemy") return chooseEnemyControlledAttack(button, p, controls);
+    if (usesCelestePlaceholder(p) && p.grounded && state.keys.has(controls.up)) return `up_${button}`;
+    if (usesCelestePlaceholder(p) && p.upAttackGrace > 0 && state.keys.has(controls.up)) return `up_${button}`;
     if (!p.grounded) return `jump_${button}`;
     if (state.keys.has(controls.down)) return `down_${button}`;
 
@@ -6056,6 +10004,19 @@
   }
 
   function chooseEnemyControlledAttack(button, fighter, controls) {
+    if (usesCelestePlaceholder(fighter)) {
+      if (fighter.grounded && state.keys.has(controls.up)) return `enemy_up_${button}`;
+      if (fighter.upAttackGrace > 0 && state.keys.has(controls.up)) return `enemy_up_${button}`;
+      if (!fighter.grounded) return `enemy_jump_${button}`;
+      const forward = fighter.facing === 1 ? controls.right : controls.left;
+      const back = fighter.facing === 1 ? controls.left : controls.right;
+      if (state.keys.has(controls.down)) return `enemy_down_${button}`;
+      if (state.keys.has(forward)) return `enemy_forward_${button}`;
+      if (state.keys.has(back)) return `enemy_back_${button}`;
+      if (button === "light") return "enemy_light_attack";
+      if (button === "medium") return "enemy_medium_attack";
+      if (button === "heavy") return "enemy_heavy_attack";
+    }
     if (button === "light") return "enemy_light_attack";
     if (button === "medium") return "enemy_medium_attack";
     if (button === "heavy") {
@@ -6068,9 +10029,15 @@
   function chooseLightAttack(fighter = state.player, controls = P1_CONTROLS) {
     const p = fighter;
     if (!p) return "neutral_light";
-    if (p.kind === "enemy") return "enemy_light_attack";
+    if (p.kind === "enemy") {
+      const autoCombos = getComboRoutes(p).autoCombos;
+      if (usesCelestePlaceholder(p) && p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
+      return usesCelestePlaceholder(p) ? chooseEnemyControlledAttack("light", p, controls) : "enemy_light_attack";
+    }
     const autoCombos = getComboRoutes(p).autoCombos;
     if (p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
+    if (usesCelestePlaceholder(p) && p.grounded && state.keys.has(controls.up)) return chooseAttack("light", p, controls);
+    if (usesCelestePlaceholder(p) && p.upAttackGrace > 0 && state.keys.has(controls.up)) return chooseAttack("light", p, controls);
     if (p.grounded && !isHoldingDirectionalModifier(p, controls)) return "neutral_light";
     return chooseAttack("light", p, controls);
   }
@@ -6083,52 +10050,137 @@
 
   function chooseSpecialMove(fighter, controls, fallbackKey) {
     const p = fighter;
+    if (usesCelestePlaceholder(p)) {
+      const prefix = p.kind === "enemy" ? "enemy_" : "";
+      if (p.grounded) {
+        const back = p.facing === 1 ? controls.left : controls.right;
+        if (state.keys.has(back)) return `${prefix}back_special`;
+      }
+      return fallbackKey;
+    }
+    if (p?.profile?.id === "lamuh_legacy") {
+      return chooseLamuhLegacySpecialMove(p, controls, fallbackKey);
+    }
     if (!p || p.profile?.id !== "lamuh") return fallbackKey;
     const prefix = p.kind === "enemy" ? "enemy_" : "";
-    let selected = `${prefix}neutral_special`;
+    const strength = getLamuhSpecialStrengthFromFallback(fallbackKey);
     let direction = "neutral";
+    let selected = `${prefix}neutral_${strength}_special`;
     if (!p.grounded) {
-      selected = `${prefix}air_special`;
+      selected = `${prefix}air_${strength}_special`;
       direction = "air";
       recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
       return selected;
     }
     if (state.keys.has(controls.down)) {
-      selected = `${prefix}down_special`;
+      selected = `${prefix}down_${strength}_special`;
       direction = "down";
+      recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
+      return selected;
+    }
+    if (state.keys.has(controls.up)) {
+      selected = `${prefix}up_${strength}_special`;
+      direction = "up";
       recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
       return selected;
     }
     const forward = p.facing === 1 ? controls.right : controls.left;
     const back = p.facing === 1 ? controls.left : controls.right;
     if (state.keys.has(forward)) {
-      selected = `${prefix}forward_special`;
+      selected = `${prefix}forward_${strength}_special`;
       direction = "forward";
     } else if (state.keys.has(back)) {
-      selected = `${prefix}back_special`;
+      selected = `${prefix}back_${strength}_special`;
       direction = "back";
     }
     recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
     return selected;
   }
 
+  function chooseLamuhLegacySpecialMove(fighter, controls, fallbackKey) {
+    const p = fighter;
+    const prefix = p.kind === "enemy" ? "enemy_" : "";
+    if (!p.grounded) return `${prefix}air_special`;
+    if (state.keys.has(controls.down)) return `${prefix}down_special`;
+    if (state.keys.has(controls.up)) return `${prefix}up_special`;
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
+    if (state.keys.has(forward)) return `${prefix}forward_special`;
+    if (state.keys.has(back)) return `${prefix}back_special`;
+    const bare = fallbackKey.replace(/^enemy_/, "");
+    if (bare === "special_2" || bare === "special_3") return `${prefix}${bare}`;
+    return `${prefix}neutral_special`;
+  }
+
+  function getLamuhSpecialStrengthFromFallback(fallbackKey = "") {
+    const bare = fallbackKey.replace(/^enemy_/, "");
+    if (bare === "special_2") return "medium";
+    if (bare === "special_3") return "heavy";
+    return "light";
+  }
+
   function recordLamuhSpecialDebug(fighter, controls, fallbackKey, selected, direction) {
     if (!LAMUH_HIDDEN_TEST_ENABLED) return;
     const bareMove = selected.replace(/^enemy_/, "");
     const animByMove = {
-      neutral_special: "celestial_palm",
-      forward_special: "ascend_step",
-      down_special: "heaven_splitter",
-      back_special: "divine_vanish",
-      air_special: "radiant_dive"
+      neutral_special: "mirror_spark",
+      forward_special: "dash_strike",
+      down_special: "low_mirror_cut",
+      back_special: "mirror_slip",
+      air_special: "air_mirror_spark",
+      neutral_light_special: "mirror_spark",
+      neutral_medium_special: "mirror_pulse",
+      neutral_heavy_special: "crown_beam",
+      forward_light_special: "dash_strike",
+      forward_medium_special: "mirror_break",
+      forward_heavy_special: "mirror_pierce",
+      back_light_special: "mirror_slip",
+      back_medium_special: "rebound_strike",
+      back_heavy_special: "mirror_reversal",
+      down_light_special: "low_mirror_cut",
+      down_medium_special: "ground_breaker",
+      down_heavy_special: "crown_rupture",
+      up_light_special: "crown_pop",
+      up_medium_special: "rising_crown",
+      up_heavy_special: "ascendant_break",
+      air_light_special: "air_mirror_spark",
+      air_medium_special: "air_dash_strike",
+      air_heavy_special: "air_crown_drop"
     };
     const rowByMove = {
       neutral_special: 0,
       forward_special: 1,
-      down_special: 2,
-      back_special: 3,
-      air_special: 4
+      down_special: 0,
+      back_special: 0,
+      air_special: 4,
+      neutral_light_special: 0,
+      neutral_medium_special: 1,
+      neutral_heavy_special: 2,
+      forward_light_special: 0,
+      forward_medium_special: 1,
+      forward_heavy_special: 2,
+      back_light_special: 0,
+      back_medium_special: 1,
+      back_heavy_special: 2,
+      down_light_special: 0,
+      down_medium_special: 1,
+      down_heavy_special: 2,
+      up_light_special: 3,
+      up_medium_special: 4,
+      up_heavy_special: 5,
+      air_light_special: 0,
+      air_medium_special: 4,
+      air_heavy_special: "airNormals:2"
     };
+    const sheetByMove = bareMove.startsWith("forward_")
+      ? "lamuh_sheet_forward_specials_redesign_atlas.png"
+      : bareMove.startsWith("down_") || bareMove.startsWith("up_") || bareMove === "down_special"
+        ? "lamuh_sheet_3_down_up_specials_body_scale_atlas.png"
+        : bareMove.startsWith("neutral_") || bareMove === "neutral_special"
+          ? "lamuh_sheet_neutral_specials_body_vfx_atlas.png"
+          : bareMove.startsWith("back_") || bareMove === "back_special"
+            ? "lamuh_sheet_4_back_neutral_specials_redesign_atlas.png"
+            : "lamuh_sheet_5_specials_atlas.png";
     state.lastLamuhSpecialDebug = {
       side: fighter.kind === "enemy" ? "p2" : "p1",
       fighterKind: fighter.kind,
@@ -6143,9 +10195,26 @@
       fallbackKey,
       selectedMove: selected,
       animationKey: fighter.kind === "enemy" ? `enemy_${animByMove[bareMove] || bareMove}` : (animByMove[bareMove] || bareMove),
-      sheet: "lamuh_sheet_5_specials_atlas.png",
+      sheet: sheetByMove,
       sheetRow: rowByMove[bareMove] ?? null
     };
+  }
+
+  function tryCelesteUpAttackFromHeldButtons(fighter, controls = P1_CONTROLS) {
+    if (!usesCelestePlaceholder(fighter) || !fighter.grounded) return false;
+    if (state.keys.has(controls.light)) {
+      startMove(fighter.kind === "enemy" ? "enemy_up_light" : "up_light", fighter);
+      return true;
+    }
+    if (state.keys.has(controls.medium)) {
+      startMove(fighter.kind === "enemy" ? "enemy_up_medium" : "up_medium", fighter);
+      return true;
+    }
+    if (state.keys.has(controls.heavy)) {
+      startMove(fighter.kind === "enemy" ? "enemy_up_heavy" : "up_heavy", fighter);
+      return true;
+    }
+    return false;
   }
 
   function handleKeyDown(e) {
@@ -6192,7 +10261,7 @@
       flashStatus(getTrainingStatus(), 0.9);
     }
     if (isKeyboardEnabledForPlayer("p1")) {
-      if (e.code === P1_CONTROLS.up) jump(state.player);
+      if (e.code === P1_CONTROLS.up && !tryCelesteUpAttackFromHeldButtons(state.player, P1_CONTROLS)) jump(state.player);
       if ([P1_CONTROLS.left, P1_CONTROLS.right].includes(e.code)) {
         maybeStartDoubleTapDash(state.player, { ...P1_CONTROLS, dash: [P1_CONTROLS.left, P1_CONTROLS.right] }, state.p1DashTap, e.code);
       }
@@ -6214,7 +10283,7 @@
 
     if (state.mode === "versus" && isKeyboardEnabledForPlayer("p2")) {
       maybeStartDoubleTapDash(state.enemy, P2_CONTROLS, state.p2DashTap, e.code);
-      if (e.code === P2_CONTROLS.up) jump(state.enemy);
+      if (e.code === P2_CONTROLS.up && !tryCelesteUpAttackFromHeldButtons(state.enemy, P2_CONTROLS)) jump(state.enemy);
       if (e.code === P2_CONTROLS.light) startMove(chooseLightAttack(state.enemy, P2_CONTROLS), state.enemy);
       if (e.code === P2_CONTROLS.medium) startMove(chooseAttack("medium", state.enemy, P2_CONTROLS), state.enemy);
       if (e.code === P2_CONTROLS.heavy) startMove(chooseAttack("heavy", state.enemy, P2_CONTROLS), state.enemy);
@@ -6256,6 +10325,9 @@
   selectVersusButton.addEventListener("click", () => setCharacterSelectMode("versus"));
   selectTrainingButton.addEventListener("click", () => setCharacterSelectMode("training"));
   selectControlsToggle?.addEventListener("click", () => toggleSelectControls());
+  stagePresetButtons.forEach((button) => {
+    button.addEventListener("click", () => setStagePreset(button.dataset.stagePreset));
+  });
   document.addEventListener("keydown", (e) => {
     if (state.mode === "select") {
       handleCharacterSelectKey(e);
@@ -6270,6 +10342,99 @@
   });
   refreshGamepadAssignments();
   updateControllerStatus();
+  window.__platformArenaTest = {
+    state,
+    stagePresets: STAGE_PRESETS,
+    platformArenaConfig: PLATFORM_ARENA_CONFIG,
+    selectableCharacterIds: [...selectableCharacterIds],
+    selectStage(stagePresetId = PLATFORM_TEST_STAGE_ID) {
+      setStagePreset(stagePresetId);
+      return state.selectedStagePresetId;
+    },
+    startMatch(p1Id = "sol", p2Id = "lamuh", stagePresetId = PLATFORM_TEST_STAGE_ID) {
+      state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
+      state.selectedP1CharacterId = isLaunchableCharacterId(p1Id) ? p1Id : "kairo";
+      state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "vanta";
+      startLocalVersus();
+      return this.snapshot();
+    },
+    startTraining(characterId = "sol", stagePresetId = PLATFORM_TEST_STAGE_ID) {
+      state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
+      startTraining(characterId);
+      return this.snapshot();
+    },
+    reset: resetRound,
+    syncCamera() {
+      updateStageCamera(0, true);
+      return this.snapshot().camera;
+    },
+    startMove(move, side = "p1") {
+      const fighter = side === "p2" ? state.enemy : state.player;
+      if (!fighter) return null;
+      const key = fighter.kind === "enemy" && !move.startsWith("enemy_") ? `enemy_${move}` : move;
+      startMove(key, fighter);
+      return { side, fighter: fighter.profile?.id, move: fighter.activeMove, anim: fighter.anim };
+    },
+    tryDirectHit(side = "p1") {
+      const attacker = side === "p2" ? state.enemy : state.player;
+      const defender = side === "p2" ? state.player : state.enemy;
+      if (!attacker || !defender) return { hit: false };
+      const moveData = getMove(attacker);
+      if (!moveData) return { hit: false, move: attacker.activeMove || null };
+      const hit = tryHit(attacker, defender, moveData);
+      return {
+        hit,
+        move: attacker.activeMove,
+        defenderHitstun: defender.hitstun,
+        defenderVy: defender.vy,
+        queuedAirRecovery: defender.platformAirRecoveryTimer || 0,
+        combo: { ...state.combo }
+      };
+    },
+    speedSnapshot(side = "p1") {
+      const fighter = side === "p2" ? state.enemy : state.player;
+      if (!fighter) return null;
+      return {
+        stagePresetId: state.stagePresetId,
+        tuning: getFightingSpeedTuning(),
+        stageTuning: getPlatformSpeedTuning(),
+        movement: getMovementStats(fighter),
+        jump: getJumpStats(fighter),
+        airDash: getAirDashStats(fighter),
+        effectiveGravity: {
+          ascentMultiplier: getFightingGravityMultiplier({ ...fighter, vy: -1, hitstun: 0, recoveryTimer: 0, platformAirRecoveryTimer: 0, knockdownTimer: 0 }),
+          fallMultiplier: getFightingGravityMultiplier({ ...fighter, vy: 1, hitstun: 0, recoveryTimer: 0, platformAirRecoveryTimer: 0, knockdownTimer: 0 }),
+          reactionMultiplier: getFightingGravityMultiplier({ ...fighter, vy: -1, hitstun: 0.1, recoveryTimer: 0, platformAirRecoveryTimer: 0, knockdownTimer: 0 })
+        },
+        animationSpeedMultiplier: getFightingSpeedTuning()?.animationSpeedMultiplier ?? 1,
+        knockbackVelocityMultiplier: getFightingKnockbackVelocityMultiplier(),
+        heavyHitstop: getImpactProfile({ boxType: "heavy", flags: {} }).hitStop * (getFightingSpeedTuning()?.hitstopMultiplier ?? 1)
+      };
+    },
+    setPosition(side = "p1", x = 0, y = GROUND_Y, grounded = true) {
+      const fighter = side === "p2" ? state.enemy : state.player;
+      if (!fighter) return null;
+      fighter.x = clampToStageX(x);
+      fighter.y = y;
+      fighter.grounded = grounded;
+      fighter.vx = 0;
+      fighter.vy = 0;
+      fighter.standingPlatformId = null;
+      fighter.platformAirRecoveryTimer = 0;
+      return { side, x: fighter.x, y: fighter.y, grounded: fighter.grounded };
+    },
+    snapshot() {
+      return {
+        mode: state.mode,
+        selectedStagePresetId: state.selectedStagePresetId,
+        stagePresetId: state.stagePresetId,
+        stage: getActiveStagePreset(),
+        camera: getStageCamera(),
+        p1: state.player ? { id: state.player.profile?.id, x: state.player.x, y: state.player.y, grounded: state.player.grounded, platform: state.player.standingPlatformId } : null,
+        p2: state.enemy ? { id: state.enemy.profile?.id, x: state.enemy.x, y: state.enemy.y, grounded: state.enemy.grounded, platform: state.enemy.standingPlatformId } : null
+      };
+    }
+  };
   if (SERIS_HIDDEN_TEST_ENABLED) {
     window.__serisRevampTest = {
       state,
@@ -6339,13 +10504,15 @@
       },
       ultimate: {
         placeholder: false,
-        animation: "crown_startup/crown_rush -> confirmed Sheet 8 cinematic",
-        bodyAtlas: "lamuhCrownBody",
-        bodyAtlasPath: assetPaths.lamuhCrownBody,
+        animation: "crown_startup/crown_rush -> golden-locs ascended cinematic",
+        bodyAtlas: "lamuhSuperAscendedGoldenLocs",
+        bodyAtlasPath: assetPaths.lamuhSuperAscendedGoldenLocs,
+        fallbackBodyAtlas: "lamuhCrownBody",
+        fallbackBodyAtlasPath: assetPaths.lamuhCrownBody,
         beamVfx: "lamuhCrownBeamVfx",
         beamAtlasPath: assetPaths.lamuhCrownBeamVfx,
         finalDamage: LAMUH_CROWN_FINAL_DAMAGE,
-        note: "Crown of No Gods now uses a LAMUH-only rush-confirm cinematic. Whiff recovers; confirmed hits play Sheet 8 rows and spawn the approved beam during the fire phase."
+        note: "Crown of No Gods uses a LAMUH-only rush-confirm cinematic. Whiff recovers; confirmed hits play the golden-locs ascended rows and spawn the approved beam during the fire phase."
       },
       startMatch(p1Id = "lamuh", p2Id = "lamuh") {
         state.selectedP1CharacterId = isLaunchableCharacterId(p1Id) ? p1Id : "lamuh";
@@ -6502,6 +10669,126 @@
         return {
           p1: fighterSnapshot(state.player),
           p2: fighterSnapshot(state.enemy)
+        };
+      }
+    };
+  }
+  if (CELESTE_HIDDEN_TEST_ENABLED) {
+    window.__celestePhase2Test = {
+      state,
+      selectableCharacterIds: [...selectableCharacterIds],
+      start() {
+        startTraining("celeste");
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      startVersus(p2Id = "vanta") {
+        state.selectedP1CharacterId = "celeste";
+        state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "vanta";
+        startLocalVersus();
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      reset: resetRound,
+      setPositions(options = {}) {
+        if (!isFightMode() || state.player?.profile?.id !== "celeste") startTraining("celeste");
+        const p = state.player;
+        const e = state.enemy;
+        p.x = options.p1x ?? 330;
+        e.x = options.p2x ?? 462;
+        p.y = options.p1y ?? GROUND_Y;
+        e.y = options.p2y ?? GROUND_Y;
+        p.facing = p.x <= e.x ? 1 : -1;
+        e.facing = e.x <= p.x ? 1 : -1;
+        p.grounded = options.p1Grounded ?? true;
+        e.grounded = options.p2Grounded ?? true;
+        p.vx = 0;
+        p.vy = 0;
+        e.vx = 0;
+        e.vy = 0;
+        return { p1x: p.x, p2x: e.x, p1Grounded: p.grounded, p2Grounded: e.grounded };
+      },
+      clearFighter(side = "p1") {
+        const f = side === "p2" ? state.enemy : state.player;
+        if (!f) return null;
+        clearAction(f);
+        f.hitstun = 0;
+        f.blockstun = 0;
+        f.knockdownTimer = 0;
+        f.pendingKnockdown = 0;
+        f.recoveryTimer = 0;
+        f.landingTimer = 0;
+        f.dashTimer = 0;
+        f.airDashTimer = 0;
+        f.blocking = false;
+        return { side, fighter: f.profile?.id };
+      },
+      setBlocking(side = "p2", blocking = true) {
+        const f = side === "p2" ? state.enemy : state.player;
+        if (!f) return null;
+        f.blocking = Boolean(blocking);
+        return { side, blocking: f.blocking };
+      },
+      setFrameDebug(enabled = true) {
+        state.debug = Boolean(enabled);
+        return { frameDebugAvailable: CELESTE_FRAME_DEBUG_ENABLED, debug: state.debug };
+      },
+      holdP2Back(pressed = true) {
+        if (!state.enemy) return null;
+        const back = state.enemy.facing === 1 ? P2_CONTROLS.left : P2_CONTROLS.right;
+        setKeyboardKey(back, Boolean(pressed));
+        return { key: back, pressed: Boolean(pressed), facing: state.enemy.facing };
+      },
+      startMove(move, side = "p1", options = {}) {
+        if (!isFightMode() || state.player?.profile?.id !== "celeste") startTraining("celeste");
+        const f = side === "p2" ? state.enemy : state.player;
+        const key = f.kind === "enemy" && !move.startsWith("enemy_") ? `enemy_${move}` : move;
+        this.clearFighter(side);
+        f.grounded = options.grounded ?? f.grounded;
+        f.y = options.y ?? (f.grounded ? GROUND_Y : GROUND_Y - 130);
+        if (options.fullMeter || key.replace(/^enemy_/, "") === "ultimate") f.meter = METER_MAX;
+        f.celesteFaCooldown = options.resetCooldowns ? 0 : f.celesteFaCooldown;
+        f.celesteSolCooldown = options.resetCooldowns ? 0 : f.celesteSolCooldown;
+        f.celesteLaCooldown = options.resetCooldowns ? 0 : f.celesteLaCooldown;
+        f.celesteTiCooldown = options.resetCooldowns ? 0 : f.celesteTiCooldown;
+        startMove(key, f);
+        return { side, fighter: f.profile?.id, move: f.activeMove, anim: f.anim };
+      },
+      snapshot() {
+        return {
+          mode: state.mode,
+          p1: state.player?.profile?.id,
+          p2: state.enemy?.profile?.id,
+          p1Move: state.player?.activeMove,
+          p2Move: state.enemy?.activeMove,
+          p1Hp: state.player?.hp,
+          p2Hp: state.enemy?.hp,
+          p1Meter: state.player?.meter,
+          p2Meter: state.enemy?.meter,
+          p1ActionTime: state.player?.actionTime,
+          p2ActionTime: state.enemy?.actionTime,
+          p1Position: state.player ? { x: state.player.x, y: state.player.y, grounded: state.player.grounded } : null,
+          p2Position: state.enemy ? { x: state.enemy.x, y: state.enemy.y, grounded: state.enemy.grounded } : null,
+          p1OctavaPhase: getCelesteOctavaPhase(state.player)?.name || null,
+          p2OctavaPhase: getCelesteOctavaPhase(state.enemy)?.name || null,
+          p2Hitstun: state.enemy?.hitstun,
+          p2Blockstun: state.enemy?.blockstun,
+          p2KnockdownTimer: state.enemy?.knockdownTimer,
+          p2PendingKnockdown: state.enemy?.pendingKnockdown,
+          p2Blocking: state.enemy?.blocking,
+          p1Cooldowns: state.player ? {
+            fa: state.player.celesteFaCooldown,
+            sol: state.player.celesteSolCooldown,
+            la: state.player.celesteLaCooldown,
+            ti: state.player.celesteTiCooldown,
+            faSpent: state.player.celesteFaStringSpent,
+            barrierTimer: state.player.celesteBarrierTimer,
+            barrierHits: state.player.celesteBarrierHits
+          } : null,
+          projectiles: state.projectiles.filter((projectile) => projectile.ownerCharacterId === "celeste").length,
+          traps: state.celesteTraps.length,
+          armedTraps: state.celesteTraps.filter((trap) => trap.age >= trap.armTime && !trap.detonating).length,
+          combo: { ...state.combo },
+          p1Sockets: getCelesteSocketSnapshot(state.player),
+          p2Sockets: getCelesteSocketSnapshot(state.enemy)
         };
       }
     };

@@ -1,0 +1,1111 @@
+{
+  "ok": true,
+  "mappings": {
+    "assetPath": "assets/characters/lamuh/lamuh_sheet_neutral_specials_body_vfx_atlas.png?v=lamuh-neutral-specials-body-vfx-1",
+    "sheet1AssetPath": "assets/characters/lamuh/lamuh_sheet_1_core_movement_redesign_atlas.png?v=lamuh-sheet1-redesign-1",
+    "loaded": true,
+    "sheet1Loaded": true,
+    "player": {
+      "neutral_heavy": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "heavy_attack": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "crown_breaker": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "lamuh_stand_heavy": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "special_3": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "neutral_heavy_special": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "crown_beam": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "lamuh_crown_beam": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "crown_beam_charge": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "crown_beam_fire": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "crown_beam_recovery": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ]
+    },
+    "enemy": {
+      "enemy_neutral_heavy": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "enemy_heavy_attack": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "enemy_crown_breaker": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "enemy_lamuh_stand_heavy": [
+        "lamuhSheet1CoreNormalsRedesign",
+        5
+      ],
+      "enemy_special_3": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "enemy_neutral_heavy_special": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "enemy_crown_beam": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "enemy_lamuh_crown_beam": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "enemy_crown_beam_charge": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "enemy_crown_beam_fire": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ],
+      "enemy_crown_beam_recovery": [
+        "lamuhNeutralSpecialsBodyVfxRedesign",
+        2
+      ]
+    },
+    "oldPhaseAliases": {
+      "crown_charge": [
+        "lamuhSuperAscendedGoldenLocs",
+        1
+      ],
+      "crown_fire": [
+        "lamuhSuperAscendedGoldenLocs",
+        5
+      ],
+      "crown_recovery": [
+        "lamuhSuperAscendedGoldenLocs",
+        0
+      ]
+    },
+    "auraKeysStillSuperOnly": [
+      "crown_charge",
+      "crown_fire",
+      "crown_recovery"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "p1_neutral_heavy_special_facing_right_hit",
+      "requestedMove": "neutral_heavy_special",
+      "side": "p1",
+      "facing": 1,
+      "hit": true,
+      "started": {
+        "side": "p1",
+        "move": "neutral_heavy_special",
+        "anim": "crown_beam"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "crown_beam_charge",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.083,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "crown_beam_charge",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.2,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "crown_beam_fire",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.3,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 420,
+          "anim": "crown_beam_recovery",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.4,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 620,
+          "anim": "crown_beam_recovery",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.633,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 860,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.833,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 1120,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.833,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        }
+      ],
+      "sawNewPhases": true,
+      "sawOldPhase": false,
+      "expectedProfile": "crownBeam",
+      "sawExpectedProjectileProfile": false,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p1_special_3_facing_right_hit",
+      "requestedMove": "special_3",
+      "side": "p1",
+      "facing": 1,
+      "hit": true,
+      "started": {
+        "side": "p1",
+        "move": "special_3",
+        "anim": "crown_beam"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "crown_beam_charge",
+          "activeMove": "special_3",
+          "actionTime": 0.083,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "crown_beam_charge",
+          "activeMove": "special_3",
+          "actionTime": 0.217,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "crown_beam_fire",
+          "activeMove": "special_3",
+          "actionTime": 0.3,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 420,
+          "anim": "crown_beam_recovery",
+          "activeMove": "special_3",
+          "actionTime": 0.433,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 620,
+          "anim": "crown_beam_recovery",
+          "activeMove": "special_3",
+          "actionTime": 0.666,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 860,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.833,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 1120,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.833,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        }
+      ],
+      "sawNewPhases": true,
+      "sawOldPhase": false,
+      "expectedProfile": "crownBeam",
+      "sawExpectedProjectileProfile": false,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p1_neutral_heavy_special_facing_left_whiff",
+      "requestedMove": "neutral_heavy_special",
+      "side": "p1",
+      "facing": -1,
+      "hit": false,
+      "started": {
+        "side": "p1",
+        "move": "neutral_heavy_special",
+        "anim": "crown_beam"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "crown_beam_charge",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.05,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "crown_beam_charge",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.183,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "crown_beam_fire",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.3,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "crownBeam",
+              "x": 601,
+              "y": 498,
+              "w": 168,
+              "h": 42,
+              "visualOriginX": 678,
+              "visualOriginY": 486,
+              "visualAnchorOffsetX": 82,
+              "visualAnchorOffsetY": -104
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 420,
+          "anim": "crown_beam_recovery",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.433,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "crownBeam",
+              "x": 520,
+              "y": 498,
+              "w": 168,
+              "h": 42,
+              "visualOriginX": 678,
+              "visualOriginY": 486,
+              "visualAnchorOffsetX": 82,
+              "visualAnchorOffsetY": -104
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 620,
+          "anim": "crown_beam_recovery",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.633,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "crownBeam",
+              "x": 398,
+              "y": 498,
+              "w": 168,
+              "h": 42,
+              "visualOriginX": 678,
+              "visualOriginY": 486,
+              "visualAnchorOffsetX": 82,
+              "visualAnchorOffsetY": -104
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 860,
+          "anim": "crown_beam_recovery",
+          "activeMove": "neutral_heavy_special",
+          "actionTime": 0.8,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        },
+        {
+          "ms": 1120,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.833,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 908
+        }
+      ],
+      "sawNewPhases": true,
+      "sawOldPhase": false,
+      "expectedProfile": "crownBeam",
+      "sawExpectedProjectileProfile": true,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p1_neutral_medium_special_facing_right_hit",
+      "requestedMove": "neutral_medium_special",
+      "side": "p1",
+      "facing": 1,
+      "hit": true,
+      "started": {
+        "side": "p1",
+        "move": "neutral_medium_special",
+        "anim": "mirror_pulse"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "mirror_pulse",
+          "activeMove": "neutral_medium_special",
+          "actionTime": 0.05,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "mirror_pulse",
+          "activeMove": "neutral_medium_special",
+          "actionTime": 0.183,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "mirrorPulse",
+              "x": 500,
+              "y": 502,
+              "w": 116,
+              "h": 34,
+              "visualOriginX": 438,
+              "visualOriginY": 494,
+              "visualAnchorOffsetX": 78,
+              "visualAnchorOffsetY": -96
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "mirror_pulse",
+          "activeMove": "neutral_medium_special",
+          "actionTime": 0.283,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 936
+        },
+        {
+          "ms": 420,
+          "anim": "mirror_pulse",
+          "activeMove": "neutral_medium_special",
+          "actionTime": 0.417,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 936
+        },
+        {
+          "ms": 620,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.467,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 936
+        },
+        {
+          "ms": 860,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.467,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 936
+        },
+        {
+          "ms": 1120,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.467,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 936
+        }
+      ],
+      "sawNewPhases": false,
+      "sawOldPhase": false,
+      "expectedProfile": "mirrorPulse",
+      "sawExpectedProjectileProfile": true,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p1_special_2_facing_left_whiff",
+      "requestedMove": "special_2",
+      "side": "p1",
+      "facing": -1,
+      "hit": false,
+      "started": {
+        "side": "p1",
+        "move": "special_2",
+        "anim": "mirror_pulse"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "mirror_pulse",
+          "activeMove": "special_2",
+          "actionTime": 0.067,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "mirror_pulse",
+          "activeMove": "special_2",
+          "actionTime": 0.183,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "mirrorPulse",
+              "x": 620,
+              "y": 502,
+              "w": 116,
+              "h": 34,
+              "visualOriginX": 682,
+              "visualOriginY": 494,
+              "visualAnchorOffsetX": 78,
+              "visualAnchorOffsetY": -96
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "mirror_pulse",
+          "activeMove": "special_2",
+          "actionTime": 0.317,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "mirrorPulse",
+              "x": 548,
+              "y": 502,
+              "w": 116,
+              "h": 34,
+              "visualOriginX": 682,
+              "visualOriginY": 494,
+              "visualAnchorOffsetX": 78,
+              "visualAnchorOffsetY": -96
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 420,
+          "anim": "mirror_pulse",
+          "activeMove": null,
+          "actionTime": 0.483,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "mirrorPulse",
+              "x": 458,
+              "y": 502,
+              "w": 116,
+              "h": 34,
+              "visualOriginX": 682,
+              "visualOriginY": 494,
+              "visualAnchorOffsetX": 78,
+              "visualAnchorOffsetY": -96
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 620,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.483,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 860,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.483,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 1120,
+          "anim": "idle",
+          "activeMove": null,
+          "actionTime": 0.483,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        }
+      ],
+      "sawNewPhases": false,
+      "sawOldPhase": false,
+      "expectedProfile": "mirrorPulse",
+      "sawExpectedProjectileProfile": true,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": false
+    },
+    {
+      "name": "p2_neutral_heavy_special_facing_right_hit",
+      "requestedMove": "neutral_heavy_special",
+      "side": "p2",
+      "facing": 1,
+      "hit": true,
+      "started": {
+        "side": "p2",
+        "move": "enemy_neutral_heavy_special",
+        "anim": "enemy_crown_beam"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "enemy_crown_beam_charge",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.067,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "enemy_crown_beam_charge",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.2,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "enemy_crown_beam_fire",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.333,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 420,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.467,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 620,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.7,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 860,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.883,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 1120,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.883,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        }
+      ],
+      "sawNewPhases": true,
+      "sawOldPhase": false,
+      "expectedProfile": "crownBeam",
+      "sawExpectedProjectileProfile": false,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p2_special_3_facing_right_hit",
+      "requestedMove": "special_3",
+      "side": "p2",
+      "facing": 1,
+      "hit": true,
+      "started": {
+        "side": "p2",
+        "move": "enemy_special_3",
+        "anim": "enemy_crown_beam"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "enemy_crown_beam_charge",
+          "activeMove": "enemy_special_3",
+          "actionTime": 0.083,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "enemy_crown_beam_charge",
+          "activeMove": "enemy_special_3",
+          "actionTime": 0.2,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "enemy_crown_beam_fire",
+          "activeMove": "enemy_special_3",
+          "actionTime": 0.317,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 420,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_special_3",
+          "actionTime": 0.45,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 620,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_special_3",
+          "actionTime": 0.683,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 860,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.9,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 1120,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.9,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        }
+      ],
+      "sawNewPhases": true,
+      "sawOldPhase": false,
+      "expectedProfile": "crownBeam",
+      "sawExpectedProjectileProfile": false,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p2_neutral_heavy_special_facing_left_whiff",
+      "requestedMove": "neutral_heavy_special",
+      "side": "p2",
+      "facing": -1,
+      "hit": false,
+      "started": {
+        "side": "p2",
+        "move": "enemy_neutral_heavy_special",
+        "anim": "enemy_crown_beam"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "enemy_crown_beam_charge",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.083,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "enemy_crown_beam_charge",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.183,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "enemy_crown_beam_fire",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.3,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "crownBeam",
+              "x": 623,
+              "y": 498,
+              "w": 168,
+              "h": 42,
+              "visualOriginX": 678,
+              "visualOriginY": 486,
+              "visualAnchorOffsetX": 82,
+              "visualAnchorOffsetY": -104
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 420,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.467,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "crownBeam",
+              "x": 528,
+              "y": 498,
+              "w": 168,
+              "h": 42,
+              "visualOriginX": 678,
+              "visualOriginY": 486,
+              "visualAnchorOffsetX": 82,
+              "visualAnchorOffsetY": -104
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 620,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.666,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "crownBeam",
+              "x": 414,
+              "y": 498,
+              "w": 168,
+              "h": 42,
+              "visualOriginX": 678,
+              "visualOriginY": 486,
+              "visualAnchorOffsetX": 82,
+              "visualAnchorOffsetY": -104
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 860,
+          "anim": "enemy_crown_beam_recovery",
+          "activeMove": "enemy_neutral_heavy_special",
+          "actionTime": 0.866,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        },
+        {
+          "ms": 1120,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.883,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 916
+        }
+      ],
+      "sawNewPhases": true,
+      "sawOldPhase": false,
+      "expectedProfile": "crownBeam",
+      "sawExpectedProjectileProfile": true,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    },
+    {
+      "name": "p2_neutral_medium_special_facing_right_hit",
+      "requestedMove": "neutral_medium_special",
+      "side": "p2",
+      "facing": 1,
+      "hit": true,
+      "started": {
+        "side": "p2",
+        "move": "enemy_neutral_medium_special",
+        "anim": "enemy_mirror_pulse"
+      },
+      "samples": [
+        {
+          "ms": 60,
+          "anim": "enemy_mirror_pulse",
+          "activeMove": "enemy_neutral_medium_special",
+          "actionTime": 0.083,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 150,
+          "anim": "enemy_mirror_pulse",
+          "activeMove": "enemy_neutral_medium_special",
+          "actionTime": 0.2,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "mirrorPulse",
+              "x": 481,
+              "y": 502,
+              "w": 116,
+              "h": 34,
+              "visualOriginX": 438,
+              "visualOriginY": 494,
+              "visualAnchorOffsetX": 78,
+              "visualAnchorOffsetY": -96
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 260,
+          "anim": "enemy_mirror_pulse",
+          "activeMove": "enemy_neutral_medium_special",
+          "actionTime": 0.333,
+          "projectiles": 1,
+          "lamuhProjectiles": [
+            {
+              "profile": "mirrorPulse",
+              "x": 547,
+              "y": 502,
+              "w": 116,
+              "h": 34,
+              "visualOriginX": 438,
+              "visualOriginY": 494,
+              "visualAnchorOffsetX": 78,
+              "visualAnchorOffsetY": -96
+            }
+          ],
+          "lamuhSpecialEffects": [],
+          "victimHp": 1000
+        },
+        {
+          "ms": 420,
+          "anim": "enemy_mirror_pulse",
+          "activeMove": "enemy_neutral_medium_special",
+          "actionTime": 0.483,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 942
+        },
+        {
+          "ms": 620,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.533,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 942
+        },
+        {
+          "ms": 860,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.533,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 942
+        },
+        {
+          "ms": 1120,
+          "anim": "enemy_idle",
+          "activeMove": null,
+          "actionTime": 0.533,
+          "projectiles": 0,
+          "lamuhProjectiles": [],
+          "lamuhSpecialEffects": [],
+          "victimHp": 942
+        }
+      ],
+      "sawNewPhases": false,
+      "sawOldPhase": false,
+      "expectedProfile": "mirrorPulse",
+      "sawExpectedProjectileProfile": true,
+      "sawExpectedProjectileOrHit": true,
+      "sawLegacyNeutralOverlay": false,
+      "projectileOriginsAnchored": true,
+      "returnedCleanly": true,
+      "damageLanded": true
+    }
+  ],
+  "checks": {
+    "assetLoaded": true,
+    "sheet1Loaded": true,
+    "crownBeamMappings": true,
+    "standingHeavyMappings": true,
+    "noOldNeutralHeavyMappings": true,
+    "runtimeOk": true
+  }
+}

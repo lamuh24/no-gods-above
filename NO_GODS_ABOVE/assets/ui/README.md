@@ -63,3 +63,49 @@ All UI assets should be transparent PNG unless a specific future art brief says 
 - Prefer wiring future art through CSS variables and existing frame classes instead of changing gameplay logic.
 - Keep the DOM structure stable where possible: HUD panels, overlay panels, character cards, ready slots, and menu buttons should accept background-image swaps.
 - If an asset is absent, the game should continue using CSS fallback styling and should not log failed image requests.
+
+## UI Gap Fix Pack 01 Expected Hooks
+
+The first master pack left a few gaps: character select PNGs were missing, menu button PNGs had baked text, the controls panel frame was too busy for dense controls, and the timer medallion may eventually need a more horizontal HUD variant. The next pack should target these text-free files:
+
+### Character Select Gap Fixes
+
+- `assets/ui/select/select_header_frame_textfree.png` - Text-free select header frame. Recommended `1200x180`.
+- `assets/ui/select/select_card_frame_textfree.png` - Text-free default roster card frame. Recommended `360x520`.
+- `assets/ui/select/select_card_frame_selected_textfree.png` - Text-free selected/hover/ready card frame. Recommended `360x520`.
+- `assets/ui/select/select_marker_p1_textfree.png` - Text-free P1 marker backing. Recommended `180x96`.
+- `assets/ui/select/select_marker_p2_textfree.png` - Text-free P2 marker backing. Recommended `180x96`.
+- `assets/ui/select/select_ready_banner_textfree.png` - Text-free ready banner backing. Recommended `420x110`.
+
+### Menu Gap Fixes
+
+- `assets/ui/menu/menu_button_frame_textfree.png` - Text-free default menu button frame. Recommended `520x120`.
+- `assets/ui/menu/menu_button_frame_active_textfree.png` - Text-free hover/focus/active menu button frame. Recommended `520x120`.
+- `assets/ui/menu/title_panel_frame_textfree.png` - Text-free title support panel. Recommended `760x260`.
+
+### Overlay Gap Fixes
+
+- `assets/ui/overlays/controls_panel_frame_readable.png` - Readable pause/help controls panel frame with quiet center and light edge ornament. Recommended `1100x720` or `900x640`.
+
+### Optional HUD Gap Fixes
+
+- `assets/ui/hud/hud_timer_horizontal_frame.png` - Optional horizontal timer/status frame to replace or supplement the current medallion. Recommended `420x140` or `480x150`.
+
+See `UI_GAP_FIX_PACK_01_HOOKS.md` for the more detailed hook map and integration notes.
+
+## UI Gap Fix Pack 01 Integration Status
+
+`no_gods_above_ui_gap_fix_pack_01.zip` has been imported. Originals are preserved in `select/`, `menu/`, `overlays/`, and `hud/`; pack docs are preserved under `_pack_docs/ui_gap_fix_pack_01/`; processed transparent runtime candidates are under `processed/`.
+
+Applied processed assets:
+
+- Character select header, default card frame, selected card frame, P1/P2 markers, and ready banner.
+- Text-free title/menu button default and active frames.
+- Readable controls panel frame for pause/help controls panels.
+- Horizontal HUD timer/status frame.
+
+Skipped at runtime:
+
+- `title_panel_frame_textfree.png` because the cleaned asset is still too tall/vertical for the current minimal background-led title layout.
+
+See `UI_GAP_FIX_PACK_01_AUDIT.md` for the audit table and cleanup notes.

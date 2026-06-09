@@ -1,0 +1,959 @@
+{
+  "start": {
+    "mode": "versus",
+    "p1": "celeste",
+    "p2": "lamuh"
+  },
+  "debug": {
+    "frameDebugAvailable": true,
+    "debug": true
+  },
+  "atlasInfo": {
+    "celesteFinalUpAirAttacks": {
+      "ok": true,
+      "w": 3072,
+      "h": 3456
+    },
+    "celesteFinalBodyBasics": {
+      "ok": true,
+      "w": 4608,
+      "h": 3584
+    },
+    "celesteFinalSpecials": {
+      "ok": true,
+      "w": 5120,
+      "h": 3456
+    },
+    "celesteFinalGroundNormals": {
+      "ok": true,
+      "w": 3584,
+      "h": 4896
+    },
+    "celesteFinalOctavaBody": {
+      "ok": true,
+      "w": 4480,
+      "h": 1536
+    },
+    "celesteFinalDefense": {
+      "ok": true,
+      "w": 7680,
+      "h": 4352
+    },
+    "celesteFinalVfx": {
+      "ok": true,
+      "w": 5376,
+      "h": 3840
+    }
+  },
+  "moveStarts": [
+    {
+      "label": "J",
+      "move": "neutral_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "neutral_light",
+        "anim": "neutral_light"
+      },
+      "activeMove": null,
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalBodyBasics",
+        "row": 0,
+        "frame": 3,
+        "sourceRect": {
+          "sx": 2304,
+          "sy": 0,
+          "sw": 768,
+          "sh": 512
+        },
+        "drawRect": {
+          "x": 85.10903811702195,
+          "y": 300.91999999999996,
+          "w": 506.88,
+          "h": 337.92
+        },
+        "vfxFrames": [],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "K",
+      "move": "neutral_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "neutral_medium",
+        "anim": "neutral_medium"
+      },
+      "activeMove": "neutral_medium",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 1,
+        "frame": 2,
+        "sourceRect": {
+          "sx": 1792,
+          "sy": 544,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 49.52312266666655,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "RE",
+            "row": 1,
+            "frame": 2,
+            "socket": "batonTip"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "L",
+      "move": "neutral_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "neutral_heavy",
+        "anim": "neutral_heavy"
+      },
+      "activeMove": "neutral_heavy",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 2,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 896,
+          "sy": 1088,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 23.120000000000005,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "MI",
+            "row": 2,
+            "frame": 1,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": {
+          "x": 370.8,
+          "y": 494,
+          "w": 136,
+          "h": 82
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "D+J",
+      "move": "forward_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "forward_light",
+        "anim": "forward_light"
+      },
+      "activeMove": "forward_light",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 3,
+        "frame": 3,
+        "sourceRect": {
+          "sx": 2688,
+          "sy": 1632,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 49.10490276018851,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "DO",
+            "row": 0,
+            "frame": 4,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "D+K",
+      "move": "forward_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "forward_medium",
+        "anim": "forward_medium"
+      },
+      "activeMove": "forward_medium",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 4,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 896,
+          "sy": 2176,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 48.64186666666632,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "RE",
+            "row": 1,
+            "frame": 2,
+            "socket": "batonTip"
+          }
+        ],
+        "hitbox": {
+          "x": 388.3218666666663,
+          "y": 506,
+          "w": 112,
+          "h": 62
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "D+L",
+      "move": "forward_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "forward_heavy",
+        "anim": "forward_heavy"
+      },
+      "activeMove": "forward_heavy",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 5,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 896,
+          "sy": 2720,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 23.120000000000005,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "MI",
+            "row": 2,
+            "frame": 1,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": {
+          "x": 370.8,
+          "y": 494,
+          "w": 136,
+          "h": 82
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "A+J",
+      "move": "back_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_light",
+        "anim": "back_light"
+      },
+      "activeMove": "back_light",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 6,
+        "frame": 3,
+        "sourceRect": {
+          "sx": 2688,
+          "sy": 3264,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 34.31999999999999,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "A+K",
+      "move": "back_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_medium",
+        "anim": "back_medium"
+      },
+      "activeMove": "back_medium",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 7,
+        "frame": 2,
+        "sourceRect": {
+          "sx": 1792,
+          "sy": 3808,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 34.31999999999999,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "RE",
+            "row": 1,
+            "frame": 2,
+            "socket": "batonTip"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "A+L",
+      "move": "back_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_heavy",
+        "anim": "back_heavy"
+      },
+      "activeMove": "back_heavy",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalGroundNormals",
+        "row": 8,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 896,
+          "sy": 4352,
+          "sw": 896,
+          "sh": 544
+        },
+        "drawRect": {
+          "x": 8.853333333333353,
+          "y": 285.08,
+          "w": 591.36,
+          "h": 359.04
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "MI",
+            "row": 2,
+            "frame": 1,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": {
+          "x": 356.53333333333336,
+          "y": 494,
+          "w": 136,
+          "h": 82
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Up+J",
+      "move": "up_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "up_light",
+        "anim": "up_light"
+      },
+      "activeMove": "up_light",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalUpAirAttacks",
+        "row": 0,
+        "frame": 3,
+        "sourceRect": {
+          "sx": 2304,
+          "sy": 0,
+          "sw": 768,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 76.56,
+          "y": 267.91999999999996,
+          "w": 506.88,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "DO",
+            "row": 0,
+            "frame": 4,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Up+K",
+      "move": "up_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "up_medium",
+        "anim": "up_medium"
+      },
+      "activeMove": "up_medium",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalUpAirAttacks",
+        "row": 1,
+        "frame": 2,
+        "sourceRect": {
+          "sx": 1536,
+          "sy": 576,
+          "sw": 768,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 76.56,
+          "y": 267.91999999999996,
+          "w": 506.88,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "RE",
+            "row": 1,
+            "frame": 2,
+            "socket": "batonTip"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Up+L",
+      "move": "up_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "up_heavy",
+        "anim": "up_heavy"
+      },
+      "activeMove": "up_heavy",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalUpAirAttacks",
+        "row": 2,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 768,
+          "sy": 1152,
+          "sw": 768,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 76.56,
+          "y": 267.91999999999996,
+          "w": 506.88,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "MI",
+            "row": 2,
+            "frame": 1,
+            "socket": "batonTip"
+          }
+        ],
+        "hitbox": {
+          "x": 358,
+          "y": 432,
+          "w": 92,
+          "h": 132
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Air J",
+      "move": "jump_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "jump_light",
+        "anim": "jump_light"
+      },
+      "activeMove": "jump_light",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalUpAirAttacks",
+        "row": 3,
+        "frame": 3,
+        "sourceRect": {
+          "sx": 2304,
+          "sy": 1728,
+          "sw": 768,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 76.56,
+          "y": 171.6289045333342,
+          "w": 506.88,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "DO",
+            "row": 0,
+            "frame": 4,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Air K",
+      "move": "jump_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "jump_medium",
+        "anim": "jump_medium"
+      },
+      "activeMove": "jump_medium",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalUpAirAttacks",
+        "row": 4,
+        "frame": 2,
+        "sourceRect": {
+          "sx": 1536,
+          "sy": 2304,
+          "sw": 768,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 76.56,
+          "y": 165.7427155555569,
+          "w": 506.88,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "RE",
+            "row": 1,
+            "frame": 2,
+            "socket": "batonTip"
+          }
+        ],
+        "hitbox": {
+          "x": 370,
+          "y": 399.82271555555695,
+          "w": 108,
+          "h": 70
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Air L",
+      "move": "jump_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "jump_heavy",
+        "anim": "jump_heavy"
+      },
+      "activeMove": "jump_heavy",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalUpAirAttacks",
+        "row": 5,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 768,
+          "sy": 2880,
+          "sw": 768,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 50.902531839999995,
+          "y": 165.79549599999893,
+          "w": 506.88,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "MI",
+            "row": 2,
+            "frame": 1,
+            "socket": "frontPalm"
+          }
+        ],
+        "hitbox": {
+          "x": 344.34253184,
+          "y": 399.875495999999,
+          "w": 108,
+          "h": 70
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "FA",
+      "move": "special_1",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "special_1",
+        "anim": "fa_strobe"
+      },
+      "activeMove": "special_1",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalSpecials",
+        "row": 0,
+        "frame": 2,
+        "sourceRect": {
+          "sx": 2560,
+          "sy": 0,
+          "sw": 1280,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": 24.444363338667642,
+          "y": 267.91999999999996,
+          "w": 844.8000000000001,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "back",
+            "atlas": "celesteFinalVfx",
+            "spirit": "FA",
+            "row": 3,
+            "frame": 2,
+            "socket": "root"
+          },
+          {
+            "layer": "back",
+            "atlas": "celesteFinalVfx",
+            "spirit": "FA",
+            "row": 3,
+            "frame": 3,
+            "socket": "root"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "SOL",
+      "move": "special_2",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "special_2",
+        "anim": "sol_ovation"
+      },
+      "activeMove": "special_2",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalSpecials",
+        "row": 2,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 1280,
+          "sy": 1152,
+          "sw": 1280,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": -92.40000000000003,
+          "y": 267.91999999999996,
+          "w": 844.8000000000001,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "SOL",
+            "row": 4,
+            "frame": 1,
+            "socket": "projectileOrigin"
+          }
+        ],
+        "hitbox": {
+          "x": 374,
+          "y": 506,
+          "w": 112,
+          "h": 62
+        }
+      },
+      "projectiles": 1,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "LA",
+      "move": "back_special",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_special",
+        "anim": "la_seraph_waltz"
+      },
+      "activeMove": "back_special",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalSpecials",
+        "row": 3,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 1280,
+          "sy": 1728,
+          "sw": 1280,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": -92.40000000000003,
+          "y": 267.91999999999996,
+          "w": 844.8000000000001,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "LA",
+            "row": 5,
+            "frame": 1,
+            "socket": "barrierCenter"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 1,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "TI",
+      "move": "special_3",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "special_3",
+        "anim": "ti_encore"
+      },
+      "activeMove": "special_3",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalSpecials",
+        "row": 4,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 1280,
+          "sy": 2304,
+          "sw": 1280,
+          "sh": 576
+        },
+        "drawRect": {
+          "x": -92.40000000000003,
+          "y": 267.91999999999996,
+          "w": 844.8000000000001,
+          "h": 380.16
+        },
+        "vfxFrames": [
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "TI",
+            "row": 6,
+            "frame": 1,
+            "socket": "trapPlacementOrigin"
+          },
+          {
+            "layer": "front",
+            "atlas": "celesteFinalVfx",
+            "spirit": "LA",
+            "row": 5,
+            "frame": 3,
+            "socket": "barrierCenter"
+          }
+        ],
+        "hitbox": null
+      },
+      "projectiles": 1,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Octava",
+      "move": "ultimate",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "ultimate",
+        "anim": "octava"
+      },
+      "activeMove": "ultimate",
+      "p2": "lamuh",
+      "render": {
+        "sheet": "celesteFinalOctavaBody",
+        "row": 1,
+        "frame": 1,
+        "sourceRect": {
+          "sx": 896,
+          "sy": 768,
+          "sw": 896,
+          "sh": 768
+        },
+        "drawRect": {
+          "x": 51.97333333333336,
+          "y": 162.2,
+          "w": 555.52,
+          "h": 476.15999999999997
+        },
+        "vfxFrames": [],
+        "hitbox": {
+          "x": 433.73333333333335,
+          "y": 462,
+          "w": 590,
+          "h": 156
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": "beam"
+    }
+  ],
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "nonblank": 879813,
+    "hotMagenta": 0
+  },
+  "public": {
+    "helperHidden": true,
+    "cards": 7,
+    "celesteCard": true,
+    "lamuhCard": true
+  },
+  "failures": [],
+  "consoleErrors": [],
+  "failedRequests": []
+}

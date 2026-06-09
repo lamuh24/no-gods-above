@@ -198,6 +198,83 @@
       "intendedUse": "Subtle glow accent for buttons, panels, or selected states",
       "status": "reference_only",
       "notes": "Imported preview-derived crop; keep as reference until regenerated or manually cleaned."
+    },
+    {
+      "key": "select_header_frame_textfree",
+      "path": "assets/ui/select/select_header_frame_textfree.png",
+      "intendedUse": "Text-free character select title/header frame; runtime text remains DOM-rendered on top.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/select/select_header_frame_textfree.png, and wired to character select header CSS with fallback layers."
+    },
+    {
+      "key": "select_card_frame_textfree",
+      "path": "assets/ui/select/select_card_frame_textfree.png",
+      "intendedUse": "Text-free default roster card frame for each fighter card.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/select/select_card_frame_textfree.png, and wired as the default roster card frame with fallback layers."
+    },
+    {
+      "key": "select_card_frame_selected_textfree",
+      "path": "assets/ui/select/select_card_frame_selected_textfree.png",
+      "intendedUse": "Text-free focused/selected/ready roster card frame variant.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/select/select_card_frame_selected_textfree.png, and wired for hover/focus/selected card states with fallback layers."
+    },
+    {
+      "key": "select_marker_p1_textfree",
+      "path": "assets/ui/select/select_marker_p1_textfree.png",
+      "intendedUse": "Text-free P1 selection marker backing; live P1 text should remain DOM-rendered.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/select/select_marker_p1_textfree.png, and wired behind DOM-rendered P1 badges."
+    },
+    {
+      "key": "select_marker_p2_textfree",
+      "path": "assets/ui/select/select_marker_p2_textfree.png",
+      "intendedUse": "Text-free P2 selection marker backing; live P2 text should remain DOM-rendered.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/select/select_marker_p2_textfree.png, and wired behind DOM-rendered P2 badges."
+    },
+    {
+      "key": "select_ready_banner_textfree",
+      "path": "assets/ui/select/select_ready_banner_textfree.png",
+      "intendedUse": "Text-free ready/locked-in banner backing for P1/P2 ready slots.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/select/select_ready_banner_textfree.png, and wired behind ready slots with fallback layers."
+    },
+    {
+      "key": "menu_button_frame_textfree",
+      "path": "assets/ui/menu/menu_button_frame_textfree.png",
+      "intendedUse": "Text-free title/menu button frame behind dynamic button labels.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/menu/menu_button_frame_textfree.png, and wired behind dynamic title/menu button text."
+    },
+    {
+      "key": "menu_button_frame_active_textfree",
+      "path": "assets/ui/menu/menu_button_frame_active_textfree.png",
+      "intendedUse": "Text-free hover/focus/active menu button frame behind dynamic labels.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/menu/menu_button_frame_active_textfree.png, and wired for title/menu button hover/focus state."
+    },
+    {
+      "key": "title_panel_frame_textfree",
+      "path": "assets/ui/menu/title_panel_frame_textfree.png",
+      "intendedUse": "Text-free title/menu support panel frame for the cleaned background-led start screen.",
+      "status": "reference_only",
+      "notes": "Imported and alpha-cleaned to assets/ui/processed/menu/title_panel_frame_textfree.png, but kept out of runtime because the tall vertical shape does not fit the current minimal background-led title layout."
+    },
+    {
+      "key": "controls_panel_frame_readable",
+      "path": "assets/ui/overlays/controls_panel_frame_readable.png",
+      "intendedUse": "Readable pause/help controls panel frame for dense P1/P2 key lists.",
+      "status": "reference_only",
+      "notes": "Imported from UI Gap Fix Pack 01 and alpha-cleaned to assets/ui/processed/overlays/controls_panel_frame_readable.png, but disabled at runtime after layout review because it competed with dense controls text. The processed file remains available through --ui-controls-panel-reference-art for future redesign."
+    },
+    {
+      "key": "hud_timer_horizontal_frame",
+      "path": "assets/ui/hud/hud_timer_horizontal_frame.png",
+      "intendedUse": "Optional wider center HUD timer/status frame to replace or supplement the current medallion.",
+      "status": "integrated_processed",
+      "notes": "Imported from UI Gap Fix Pack 01, alpha-cleaned to assets/ui/processed/hud/hud_timer_horizontal_frame.png, and wired as the center HUD timer/status frame because it fits the horizontal HUD better than the medallion."
     }
   ]
 }

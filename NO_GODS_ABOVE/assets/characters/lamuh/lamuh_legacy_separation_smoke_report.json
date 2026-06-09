@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "generatedAt": "2026-06-06T08:17:24.315Z",
+  "files": {
+    "game": "game.js",
+    "html": "index.html",
+    "css": "style.css",
+    "portrait": "assets\\sprites\\portraits\\lamuh_legacy_select.png",
+    "report": "assets\\characters\\lamuh\\lamuh_legacy_separation_smoke_report.json"
+  },
+  "portraitDimensions": {
+    "width": 460,
+    "height": 520
+  },
+  "checks": [
+    {
+      "name": "selectable ids include redesigned and legacy LAMUH",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "LAMUH profile does not include old LAMUH sheet keys",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "LAMUH profile includes only redesigned sheet keys",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "LAMUH Legacy profile includes old LAMUH sheets",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "LAMUH Legacy profile does not include redesigned sheets",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "redesigned LAMUH player builder has no old sheet refs",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "redesigned LAMUH enemy builder mirrors player builder",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "redesigned LAMUH builder maps forward heavy to Sheet 2 row 2",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "redesigned LAMUH builder maps neutral heavy to neutral body/VFX row 2",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "legacy LAMUH builder uses old sheet refs",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "legacy LAMUH builder does not use redesigned sheets",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "legacy LAMUH enemy builder mirrors legacy player builder",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "legacy special chooser is routed before redesigned LAMUH advanced routing",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "legacy chooser keeps simple directional specials",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "legacy allowed moves exclude advanced 15-special keys",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "select screen includes LAMUH Legacy card",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "select footer advertises 1-8 shortcuts",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "keyboard shortcut 7 selects LAMUH Legacy",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "select grid supports eight desktop cards",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "LAMUH Legacy portrait exists",
+      "passed": true,
+      "details": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\portraits\\lamuh_legacy_select.png"
+    },
+    {
+      "name": "LAMUH Legacy portrait dimensions are 460x520",
+      "passed": true,
+      "details": "{\"width\":460,\"height\":520}"
+    }
+  ]
+}

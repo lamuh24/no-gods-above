@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-05-31T18:51:33.440820+00:00",
+  "purpose": "Temporary Seris runtime baseline with all visible green/cyan/gold chain-color pixels removed from active body atlases.",
+  "sourcePreservedIn": "assets\\sprites\\seris_final\\no_green_chain_source",
+  "runtimeCacheVersion": "seris-no-green-chain-1",
+  "vfxPolicy": "Sheet 8 remains on disk but runtime playback is disabled separately in game.js.",
+  "records": [
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_1_core_movement_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_1_core_movement_no_green_chain_atlas.png",
+      "removedPixels": 300836
+    },
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_2_air_movement_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_2_air_movement_no_green_chain_atlas.png",
+      "removedPixels": 194575
+    },
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_3_ground_normals_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_3_ground_normals_no_green_chain_atlas.png",
+      "removedPixels": 309837
+    },
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_4_air_normals_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_4_air_normals_no_green_chain_atlas.png",
+      "removedPixels": 294383
+    },
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_5_specials_body_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_5_specials_body_no_green_chain_atlas.png",
+      "removedPixels": 412507
+    },
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_6_defense_hit_reactions_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_6_defense_hit_reactions_no_green_chain_atlas.png",
+      "removedPixels": 275866
+    },
+    {
+      "source": "assets\\sprites\\seris_final\\seris_sheet_7_knockdown_recovery_flavor_atlas.png",
+      "output": "assets\\sprites\\seris_final\\seris_sheet_7_knockdown_recovery_flavor_no_green_chain_atlas.png",
+      "removedPixels": 254191
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "atlas": {
+    "path": "assets\\characters\\lamuh\\lamuh_sheet_air_crouch_jump_redesign_atlas_v2.png",
+    "width": 3584,
+    "height": 2688,
+    "colorType": 6,
+    "hasAlphaColorType": true
+  },
+  "normalization": {
+    "outputSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "cols": 8,
+      "rows": 6,
+      "cell": 448,
+      "baselineY": 382
+    },
+    "occupiedCells": 48,
+    "sourceSpriteSlotsDetected": 48,
+    "sourceBodySlotsDetected": 48,
+    "sourceRawBodyComponentsDetected": 49,
+    "weakOrFragmentSlots": [],
+    "hasRealTransparency": true,
+    "checkerboardRemoved": true,
+    "whiteCoatPreserved": true,
+    "blackOutfitLocsPreserved": true,
+    "goldCyanAccentsPreserved": true,
+    "bodyScale": {
+      "sheet1_reference_median_height": 360,
+      "air_crouch_jump_median_body_height": 335,
+      "ratio": 0.9305555555555556,
+      "passes": true
+    },
+    "groundedCrouchBaselineMaxDeviation": 0,
+    "airborneCenterMaxDeviation": 20,
+    "noImportantAirDashCrownDropClipping": true
+  },
+  "code": {
+    "assetPath": true,
+    "sheetMeta": true,
+    "profileSheetKey": true,
+    "frameSplitHelper": true,
+    "frameSplitActive": true,
+    "oldAtlasesRemainFallback": true,
+    "untouchedKnownSpecials": true,
+    "aliases": {
+      "jump_up": true,
+      "lamuh_jump": true,
+      "fall": true,
+      "lamuh_fall": true,
+      "land": true,
+      "lamuh_land": true,
+      "down_light": true,
+      "crouch_light": true,
+      "lamuh_crouch_light": true,
+      "down_medium": true,
+      "crouch_medium": true,
+      "lamuh_crouch_medium": true,
+      "down_heavy": true,
+      "crown_riser": true,
+      "lamuh_crown_riser": true,
+      "crouch_heavy": true,
+      "lamuh_crouch_heavy": true,
+      "jump_light": true,
+      "air_light": true,
+      "lamuh_air_light": true,
+      "jump_medium": true,
+      "air_medium": true,
+      "lamuh_air_medium": true,
+      "jump_heavy": true,
+      "air_heavy": true,
+      "lamuh_air_heavy": true,
+      "air_special": true,
+      "air_light_special": true,
+      "air_mirror_spark": true,
+      "lamuh_air_mirror_spark": true,
+      "radiant_dive": true,
+      "air_medium_special": true,
+      "air_dash_strike": true,
+      "lamuh_air_dash_strike": true,
+      "air_heavy_special": true,
+      "air_crown_drop": true,
+      "lamuh_air_crown_drop": true
+    }
+  }
+}

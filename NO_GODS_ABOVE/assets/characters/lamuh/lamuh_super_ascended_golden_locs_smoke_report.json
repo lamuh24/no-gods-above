@@ -1,0 +1,82 @@
+{
+  "ok": true,
+  "atlas": {
+    "path": "assets\\characters\\lamuh\\lamuh_sheet_super_ascended_golden_locs_atlas.png",
+    "width": 3584,
+    "height": 2688,
+    "colorType": 6,
+    "hasAlphaColorType": true
+  },
+  "normalization": {
+    "outputSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "cols": 8,
+      "rows": 6,
+      "cell": 448,
+      "baselineY": 382
+    },
+    "occupiedCells": 48,
+    "sourceSpriteSlotsDetected": 48,
+    "sourceBodySlotsDetected": 48,
+    "sourceRawBodyComponentsDetected": 47,
+    "sourceRepairedSlots": [
+      {
+        "row": 0,
+        "col": 3,
+        "from": [
+          0,
+          2
+        ]
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "from": [
+          1,
+          2
+        ]
+      }
+    ],
+    "weakOrFragmentSlots": [],
+    "hasRealTransparency": true,
+    "checkerboardRemoved": true,
+    "whiteCoatPreserved": true,
+    "blackOutfitLocsPreserved": true,
+    "goldCyanAccentsPreserved": true,
+    "goldenLocsPreserved": true,
+    "superBaselineMaxDeviation": 0,
+    "noImportantSuperBodyClipping": true,
+    "bodyScale": {
+      "sheet1_reference_median_height": 360,
+      "super_ascended_median_body_height": 361,
+      "ratio": 1.0027777777777778,
+      "passes": true
+    }
+  },
+  "code": {
+    "assetPath": true,
+    "sheetMeta": true,
+    "profileSheetKey": true,
+    "rowTargets": true,
+    "aliases": {
+      "crown_startup": true,
+      "crown_rush": true,
+      "crown_combo_a": true,
+      "crown_combo_b": true,
+      "crown_launch": true,
+      "crown_charge": true,
+      "lamuh_super_activation": true,
+      "crown_fire": true,
+      "lamuh_super_attack_overlay": true,
+      "crown_recovery": true,
+      "lamuh_super_idle": true,
+      "ultimate": true
+    },
+    "oldAtlasesRemainFallback": true,
+    "regularCrownBeamUntouched": true,
+    "hiddenDiagnosticUpdated": true
+  }
+}

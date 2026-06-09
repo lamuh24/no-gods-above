@@ -1,0 +1,127 @@
+{
+  "pack": "lamuh_vfx_candidate_pack_01",
+  "sourceZip": "C:/Users/qchee/Downloads/lamuh_vfx_candidate_pack_01.zip",
+  "runtimePolicy": "Only applied assets that improve readability. Divine Vanish remains purple and does not use this gold/cyan pack.",
+  "assets": [
+    {
+      "key": "celestial_palm_projectile",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_01_celestial_palm_projectile_candidate.png",
+      "runtimePath": "assets/effects/lamuh/lamuh_vfx_celestial_palm_projectile.png",
+      "classification": "applied",
+      "intendedUse": "Celestial Palm projectile / regular ki blast draw replacement",
+      "processed": "alpha-cleaned from RGB preview and normalized to 2048x1024, 8x4 grid, 256x256 cells",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "hasAlpha": true,
+      "visibleBounds": [
+        0,
+        57,
+        2040,
+        941
+      ],
+      "notes": "Chosen because it improves runtime readability without replacing Divine Vanish or gameplay behavior."
+    },
+    {
+      "key": "charge_fire_impact",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_02_charge_fire_impact_candidate.png",
+      "runtimePath": null,
+      "referencePath": "assets/effects/lamuh/reference/vfx_candidate_pack_01/lamuh_vfx_02_charge_fire_impact_candidate.png",
+      "classification": "reference_only",
+      "intendedUse": "Reference / future support only",
+      "processed": "copied original only",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "hasAlpha": false,
+      "notes": "Useful language for future charge/impact support, but mixed checkerboard/contact sheet and overlaps with stronger direct candidates."
+    },
+    {
+      "key": "dash_dive_impact",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_03_dash_dive_impact_candidate.png",
+      "runtimePath": "assets/effects/lamuh/lamuh_vfx_ascend_radiant_trail.png",
+      "classification": "applied",
+      "intendedUse": "Ascend Step and Radiant Dive attached rush/dive trail accent",
+      "processed": "alpha-cleaned from RGB preview and normalized to 2048x1024, 8x4 grid, 256x256 cells",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "hasAlpha": true,
+      "visibleBounds": [
+        31,
+        84,
+        2025,
+        956
+      ],
+      "notes": "Chosen because it improves runtime readability without replacing Divine Vanish or gameplay behavior."
+    },
+    {
+      "key": "heaven_splitter_vertical",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_04_heaven_splitter_vertical_candidate.png",
+      "runtimePath": "assets/effects/lamuh/lamuh_vfx_heaven_splitter_vertical.png",
+      "classification": "applied",
+      "intendedUse": "Heaven Splitter attached vertical burst accent",
+      "processed": "alpha-cleaned from RGB preview and normalized to 2048x1024, 8x4 grid, 256x256 cells",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "hasAlpha": true,
+      "visibleBounds": [
+        31,
+        19,
+        2026,
+        1002
+      ],
+      "notes": "Chosen because it improves runtime readability without replacing Divine Vanish or gameplay behavior."
+    },
+    {
+      "key": "column_slash_impact",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_05_column_slash_impact_candidate.png",
+      "runtimePath": null,
+      "referencePath": "assets/effects/lamuh/reference/vfx_candidate_pack_01/lamuh_vfx_05_column_slash_impact_candidate.png",
+      "classification": "reference_only",
+      "intendedUse": "Reference / future support only",
+      "processed": "copied original only",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "hasAlpha": false,
+      "notes": "Noisier dark-background impact sheet; better as future reference than runtime overlay this pass."
+    },
+    {
+      "key": "misc_ring_portal_burst",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_06_misc_ring_portal_burst_candidate.png",
+      "runtimePath": null,
+      "referencePath": "assets/effects/lamuh/reference/vfx_candidate_pack_01/lamuh_vfx_06_misc_ring_portal_burst_candidate.png",
+      "classification": "reference_only",
+      "intendedUse": "Reference / future support only",
+      "processed": "copied original only",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "hasAlpha": false,
+      "notes": "Optional accents only; not needed for current readable move hooks."
+    },
+    {
+      "key": "crown_beam_candidate",
+      "source": "assets/effects/lamuh/source/vfx_candidate_pack_01/lamuh_vfx_07_crown_of_no_gods_beam_candidate.png",
+      "runtimePath": null,
+      "referencePath": "assets/effects/lamuh/reference/vfx_candidate_pack_01/lamuh_vfx_07_crown_of_no_gods_beam_candidate.png",
+      "classification": "reference_only",
+      "intendedUse": "Reference / future support only",
+      "processed": "copied original only",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "hasAlpha": false,
+      "notes": "Kept as reference because the approved uploaded Crown beam is already cleaner and live."
+    }
+  ]
+}

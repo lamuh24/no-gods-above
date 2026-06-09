@@ -1,0 +1,166 @@
+{
+  "ok": true,
+  "asset": {
+    "path": "assets/characters/lamuh/lamuh_sheet_3_down_up_specials_body_scale_atlas.png?v=lamuh-down-up-specials-body-scale-1",
+    "loaded": true,
+    "width": 3584,
+    "height": 2688,
+    "meta": {
+      "cols": 8,
+      "rows": 6,
+      "cellSize": 448,
+      "baselineY": 382,
+      "scale": 0.82,
+      "frameCounts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "fixedSourceCells": true,
+      "anchorMode": "lockedFrameBottomCenter",
+      "skipSanitize": true
+    }
+  },
+  "mappings": {
+    "down_special": [
+      "lamuhDownUpSpecialsRedesign",
+      0
+    ],
+    "down_light_special": [
+      "lamuhDownUpSpecialsRedesign",
+      0
+    ],
+    "low_mirror_cut": [
+      "lamuhDownUpSpecialsRedesign",
+      0
+    ],
+    "lamuh_low_mirror_cut": [
+      "lamuhDownUpSpecialsRedesign",
+      0
+    ],
+    "down_medium_special": [
+      "lamuhDownUpSpecialsRedesign",
+      1
+    ],
+    "ground_breaker": [
+      "lamuhDownUpSpecialsRedesign",
+      1
+    ],
+    "lamuh_ground_breaker": [
+      "lamuhDownUpSpecialsRedesign",
+      1
+    ],
+    "down_heavy_special": [
+      "lamuhDownUpSpecialsRedesign",
+      2
+    ],
+    "crown_rupture": [
+      "lamuhDownUpSpecialsRedesign",
+      2
+    ],
+    "lamuh_crown_rupture": [
+      "lamuhDownUpSpecialsRedesign",
+      2
+    ],
+    "up_light_special": [
+      "lamuhDownUpSpecialsRedesign",
+      3
+    ],
+    "crown_pop": [
+      "lamuhDownUpSpecialsRedesign",
+      3
+    ],
+    "lamuh_crown_pop": [
+      "lamuhDownUpSpecialsRedesign",
+      3
+    ],
+    "up_medium_special": [
+      "lamuhDownUpSpecialsRedesign",
+      4
+    ],
+    "rising_crown": [
+      "lamuhDownUpSpecialsRedesign",
+      4
+    ],
+    "lamuh_rising_crown": [
+      "lamuhDownUpSpecialsRedesign",
+      4
+    ],
+    "up_heavy_special": [
+      "lamuhDownUpSpecialsRedesign",
+      5
+    ],
+    "ascendant_break": [
+      "lamuhDownUpSpecialsRedesign",
+      5
+    ],
+    "lamuh_ascendant_break": [
+      "lamuhDownUpSpecialsRedesign",
+      5
+    ]
+  },
+  "runtimeMoves": {
+    "down_light_special": {
+      "started": {
+        "side": "p1",
+        "move": "down_light_special",
+        "anim": "low_mirror_cut"
+      },
+      "playerAnim": "low_mirror_cut",
+      "activeMove": "down_light_special"
+    },
+    "down_medium_special": {
+      "started": {
+        "side": "p1",
+        "move": "down_medium_special",
+        "anim": "ground_breaker"
+      },
+      "playerAnim": "ground_breaker",
+      "activeMove": "down_medium_special"
+    },
+    "down_heavy_special": {
+      "started": {
+        "side": "p1",
+        "move": "down_heavy_special",
+        "anim": "crown_rupture"
+      },
+      "playerAnim": "crown_rupture",
+      "activeMove": "down_heavy_special"
+    },
+    "up_light_special": {
+      "started": {
+        "side": "p1",
+        "move": "up_light_special",
+        "anim": "crown_pop"
+      },
+      "playerAnim": "crown_pop",
+      "activeMove": "up_light_special"
+    },
+    "up_medium_special": {
+      "started": {
+        "side": "p1",
+        "move": "up_medium_special",
+        "anim": "rising_crown"
+      },
+      "playerAnim": "rising_crown",
+      "activeMove": "up_medium_special"
+    },
+    "up_heavy_special": {
+      "started": {
+        "side": "p1",
+        "move": "up_heavy_special",
+        "anim": "ascendant_break"
+      },
+      "playerAnim": "ascendant_break",
+      "activeMove": "up_heavy_special"
+    }
+  },
+  "checks": {
+    "assetOk": true,
+    "mappingOk": true,
+    "runtimeOk": true
+  }
+}

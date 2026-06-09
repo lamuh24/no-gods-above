@@ -1,0 +1,3216 @@
+{
+  "character": "Seris",
+  "purpose": "Large-cell offensive atlas workaround with embedded physical chain motion. Sheet 8 VFX remains support/accent only.",
+  "cell": {
+    "width": 832,
+    "height": 448,
+    "anchorX": 320,
+    "baselineY": 406
+  },
+  "sourceBackup": "assets/sprites/seris_final/chain_workaround_source_frames",
+  "sheets": [
+    {
+      "sheet": "sheet_3_ground_normals",
+      "output": "assets/sprites/seris_final/seris_sheet_3_ground_normals_atlas.png",
+      "rows": [
+        {
+          "row": 1,
+          "animation": "light_attack",
+          "label": "Light Attack",
+          "requestedFrames": 4,
+          "atlasCols": 8,
+          "chainProfile": "ground_light",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  112,
+                  179,
+                  272,
+                  348
+                ],
+                "sourceSize": [
+                  160,
+                  169
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  240,
+                  237,
+                  400,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  386,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  78,
+                  184,
+                  305,
+                  348
+                ],
+                "sourceSize": [
+                  227,
+                  164
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  206,
+                  242,
+                  433,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  482,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_03.png",
+              "body": {
+                "empty": false,
+                "scale": 0.8362,
+                "sourceBbox": [
+                  51,
+                  191,
+                  344,
+                  348
+                ],
+                "sourceSize": [
+                  293,
+                  157
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  275,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  532,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/light_attack/light_attack_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  117,
+                  192,
+                  266,
+                  348
+                ],
+                "sourceSize": [
+                  149,
+                  156
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  246,
+                  250,
+                  395,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  418,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "animation": "medium_attack",
+          "label": "Medium Attack",
+          "requestedFrames": 8,
+          "atlasCols": 8,
+          "chainProfile": "ground_medium",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  115,
+                  191,
+                  269,
+                  348
+                ],
+                "sourceSize": [
+                  154,
+                  157
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  243,
+                  249,
+                  397,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  394,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  112,
+                  170,
+                  283,
+                  348
+                ],
+                "sourceSize": [
+                  171,
+                  178
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  234,
+                  228,
+                  405,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  472,
+                  285
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_03.png",
+              "body": {
+                "empty": false,
+                "scale": 0.6825,
+                "sourceBbox": [
+                  12,
+                  200,
+                  371,
+                  348
+                ],
+                "sourceSize": [
+                  359,
+                  148
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  305,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  570,
+                  282
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  97,
+                  204,
+                  275,
+                  348
+                ],
+                "sourceSize": [
+                  178,
+                  144
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  231,
+                  262,
+                  409,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  678,
+                  280
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_05.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  135,
+                  199,
+                  249,
+                  348
+                ],
+                "sourceSize": [
+                  114,
+                  149
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  263,
+                  257,
+                  377,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  718,
+                  280
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_06.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  124,
+                  195,
+                  260,
+                  348
+                ],
+                "sourceSize": [
+                  136,
+                  153
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  252,
+                  253,
+                  388,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  626,
+                  282
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_07.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  110,
+                  191,
+                  274,
+                  348
+                ],
+                "sourceSize": [
+                  164,
+                  157
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  238,
+                  249,
+                  402,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  498,
+                  285
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/medium_attack/medium_attack_08.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  114,
+                  194,
+                  269,
+                  348
+                ],
+                "sourceSize": [
+                  155,
+                  154
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  242,
+                  252,
+                  397,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  414,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "animation": "heavy_attack",
+          "label": "Heavy Attack",
+          "requestedFrames": 7,
+          "atlasCols": 8,
+          "chainProfile": "ground_heavy",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  113,
+                  195,
+                  270,
+                  348
+                ],
+                "sourceSize": [
+                  157,
+                  153
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  242,
+                  253,
+                  399,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  404,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_02.png",
+              "body": {
+                "empty": false,
+                "scale": 0.6901,
+                "sourceBbox": [
+                  11,
+                  173,
+                  366,
+                  287
+                ],
+                "sourceSize": [
+                  355,
+                  114
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  327,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  516,
+                  284
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  106,
+                  127,
+                  266,
+                  271
+                ],
+                "sourceSize": [
+                  160,
+                  144
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  240,
+                  262,
+                  400,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  666,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_04.png",
+              "body": {
+                "empty": false,
+                "scale": 0.7313,
+                "sourceBbox": [
+                  47,
+                  110,
+                  382,
+                  275
+                ],
+                "sourceSize": [
+                  335,
+                  165
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  285,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  770,
+                  280
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_05.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9074,
+                "sourceBbox": [
+                  51,
+                  205,
+                  321,
+                  348
+                ],
+                "sourceSize": [
+                  270,
+                  143
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  276,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  728,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_06.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9074,
+                "sourceBbox": [
+                  51,
+                  205,
+                  321,
+                  348
+                ],
+                "sourceSize": [
+                  270,
+                  143
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  276,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  584,
+                  284
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/heavy_attack/heavy_attack_07.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9074,
+                "sourceBbox": [
+                  51,
+                  205,
+                  321,
+                  348
+                ],
+                "sourceSize": [
+                  270,
+                  143
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  276,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  436,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "animation": "launcher",
+          "label": "Launcher",
+          "requestedFrames": 7,
+          "atlasCols": 8,
+          "chainProfile": "launcher",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  121,
+                  186,
+                  263,
+                  348
+                ],
+                "sourceSize": [
+                  142,
+                  162
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  249,
+                  244,
+                  391,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  362,
+                  306
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  113,
+                  206,
+                  271,
+                  348
+                ],
+                "sourceSize": [
+                  158,
+                  142
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  241,
+                  264,
+                  399,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  400,
+                  252
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  129,
+                  153,
+                  264,
+                  348
+                ],
+                "sourceSize": [
+                  135,
+                  195
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  252,
+                  211,
+                  387,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  448,
+                  166
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  130,
+                  150,
+                  254,
+                  348
+                ],
+                "sourceSize": [
+                  124,
+                  198
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  258,
+                  208,
+                  382,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  508,
+                  86
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_05.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  140,
+                  150,
+                  244,
+                  348
+                ],
+                "sourceSize": [
+                  104,
+                  198
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  268,
+                  208,
+                  372,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  480,
+                  112
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_06.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  111,
+                  151,
+                  278,
+                  348
+                ],
+                "sourceSize": [
+                  167,
+                  197
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  236,
+                  209,
+                  403,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  422,
+                  188
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/seris_final/frames/sheet_3_ground_normals/launcher/launcher_07.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  127,
+                  200,
+                  267,
+                  348
+                ],
+                "sourceSize": [
+                  140,
+                  148
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  250,
+                  258,
+                  390,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  342
+                ],
+                "tip": [
+                  372,
+                  272
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          6656,
+          1792
+        ],
+        "cols": 8,
+        "rows": 4,
+        "cell": [
+          832,
+          448
+        ],
+        "baselineY": 406,
+        "edgeOpaquePixels": 0,
+        "opaqueMagentaPixels": 0
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "sheet_4_air_normals",
+      "output": "assets/sprites/seris_final/seris_sheet_4_air_normals_atlas.png",
+      "rows": [
+        {
+          "row": 1,
+          "animation": "air_light",
+          "label": "Air Light",
+          "requestedFrames": 4,
+          "atlasCols": 7,
+          "chainProfile": "air_light",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  88,
+                  107,
+                  296,
+                  277
+                ],
+                "sourceSize": [
+                  208,
+                  170
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  216,
+                  130,
+                  424,
+                  300
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  388,
+                  195
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_02.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9761,
+                "sourceBbox": [
+                  66,
+                  106,
+                  317,
+                  277
+                ],
+                "sourceSize": [
+                  251,
+                  171
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  132,
+                  443,
+                  299
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  472,
+                  195
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_03.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9245,
+                "sourceBbox": [
+                  59,
+                  107,
+                  324,
+                  277
+                ],
+                "sourceSize": [
+                  265,
+                  170
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  137,
+                  443,
+                  294
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  522,
+                  195
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_light/air_light_04.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9245,
+                "sourceBbox": [
+                  59,
+                  107,
+                  324,
+                  277
+                ],
+                "sourceSize": [
+                  265,
+                  170
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  137,
+                  443,
+                  294
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  416,
+                  195
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "animation": "air_medium",
+          "label": "Air Medium",
+          "requestedFrames": 6,
+          "atlasCols": 7,
+          "chainProfile": "air_medium",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  80,
+                  110,
+                  304,
+                  273
+                ],
+                "sourceSize": [
+                  224,
+                  163
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  208,
+                  134,
+                  432,
+                  297
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  400,
+                  181
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  89,
+                  111,
+                  295,
+                  273
+                ],
+                "sourceSize": [
+                  206,
+                  162
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  217,
+                  134,
+                  423,
+                  296
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  496,
+                  181
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_03.png",
+              "body": {
+                "empty": false,
+                "scale": 0.6768,
+                "sourceBbox": [
+                  11,
+                  124,
+                  373,
+                  260
+                ],
+                "sourceSize": [
+                  362,
+                  136
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  169,
+                  443,
+                  261
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  606,
+                  181
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  79,
+                  110,
+                  297,
+                  273
+                ],
+                "sourceSize": [
+                  218,
+                  163
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  211,
+                  134,
+                  429,
+                  297
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  684,
+                  181
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_05.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9142,
+                "sourceBbox": [
+                  63,
+                  110,
+                  331,
+                  273
+                ],
+                "sourceSize": [
+                  268,
+                  163
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  141,
+                  443,
+                  290
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  591,
+                  181
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_medium/air_medium_06.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9142,
+                "sourceBbox": [
+                  63,
+                  110,
+                  331,
+                  273
+                ],
+                "sourceSize": [
+                  268,
+                  163
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  141,
+                  443,
+                  290
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  438,
+                  181
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "animation": "air_heavy",
+          "label": "Air Heavy",
+          "requestedFrames": 7,
+          "atlasCols": 7,
+          "chainProfile": "air_heavy",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  119,
+                  106,
+                  277,
+                  277
+                ],
+                "sourceSize": [
+                  158,
+                  171
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  241,
+                  130,
+                  399,
+                  301
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  396,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_02.png",
+              "body": {
+                "empty": false,
+                "scale": 0.928,
+                "sourceBbox": [
+                  60,
+                  98,
+                  324,
+                  285
+                ],
+                "sourceSize": [
+                  264,
+                  187
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  128,
+                  443,
+                  302
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  488,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  117,
+                  111,
+                  266,
+                  273
+                ],
+                "sourceSize": [
+                  149,
+                  162
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  246,
+                  134,
+                  395,
+                  296
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  612,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  90,
+                  96,
+                  281,
+                  288
+                ],
+                "sourceSize": [
+                  191,
+                  192
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  224,
+                  119,
+                  415,
+                  311
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  694,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_05.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  87,
+                  90,
+                  297,
+                  293
+                ],
+                "sourceSize": [
+                  210,
+                  203
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  215,
+                  114,
+                  425,
+                  317
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  660,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_06.png",
+              "body": {
+                "empty": false,
+                "scale": 0.6882,
+                "sourceBbox": [
+                  20,
+                  92,
+                  376,
+                  291
+                ],
+                "sourceSize": [
+                  356,
+                  199
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  147,
+                  443,
+                  284
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  528,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_heavy/air_heavy_07.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9684,
+                "sourceBbox": [
+                  66,
+                  97,
+                  319,
+                  287
+                ],
+                "sourceSize": [
+                  253,
+                  190
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  123,
+                  443,
+                  307
+                ]
+              },
+              "chain": {
+                "origin": [
+                  338,
+                  177
+                ],
+                "tip": [
+                  420,
+                  315
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "animation": "air_recovery",
+          "label": "Air Recovery / Fall Transition",
+          "requestedFrames": 4,
+          "atlasCols": 7,
+          "chainProfile": "air_recovery",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  115,
+                  106,
+                  268,
+                  278
+                ],
+                "sourceSize": [
+                  153,
+                  172
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  244,
+                  129,
+                  397,
+                  301
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  418,
+                  187
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  122,
+                  98,
+                  261,
+                  285
+                ],
+                "sourceSize": [
+                  139,
+                  187
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  250,
+                  122,
+                  389,
+                  309
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  394,
+                  187
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  120,
+                  105,
+                  264,
+                  278
+                ],
+                "sourceSize": [
+                  144,
+                  173
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  248,
+                  129,
+                  392,
+                  302
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  370,
+                  187
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_4_air_normals/air_recovery/air_recovery_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  120,
+                  105,
+                  264,
+                  278
+                ],
+                "sourceSize": [
+                  144,
+                  173
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  248,
+                  129,
+                  392,
+                  302
+                ]
+              },
+              "chain": {
+                "origin": [
+                  346,
+                  187
+                ],
+                "tip": [
+                  346,
+                  187
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          5824,
+          1792
+        ],
+        "cols": 7,
+        "rows": 4,
+        "cell": [
+          832,
+          448
+        ],
+        "baselineY": 406,
+        "edgeOpaquePixels": 0,
+        "opaqueMagentaPixels": 0
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "sheet_5_specials_body",
+      "output": "assets/sprites/seris_final/seris_sheet_5_specials_body_atlas.png",
+      "rows": [
+        {
+          "row": 1,
+          "animation": "chain_snare_start",
+          "label": "Chain Snare Start",
+          "requestedFrames": 4,
+          "atlasCols": 8,
+          "chainProfile": "chain_snare_start",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  119,
+                  211,
+                  264,
+                  360
+                ],
+                "sourceSize": [
+                  145,
+                  149
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  248,
+                  257,
+                  393,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  386,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  117,
+                  211,
+                  267,
+                  360
+                ],
+                "sourceSize": [
+                  150,
+                  149
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  245,
+                  257,
+                  395,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  428,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  74,
+                  215,
+                  313,
+                  360
+                ],
+                "sourceSize": [
+                  239,
+                  145
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  200,
+                  261,
+                  439,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  470,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_start/chain_snare_start_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  74,
+                  215,
+                  313,
+                  360
+                ],
+                "sourceSize": [
+                  239,
+                  145
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  200,
+                  261,
+                  439,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  516,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "animation": "chain_snare_active",
+          "label": "Chain Snare Active",
+          "requestedFrames": 6,
+          "atlasCols": 8,
+          "chainProfile": "chain_snare_active",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  106,
+                  223,
+                  289,
+                  360
+                ],
+                "sourceSize": [
+                  183,
+                  137
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  228,
+                  269,
+                  411,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  522,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  228,
+                  269,
+                  411,
+                  406
+                ],
+                "sourceSize": [
+                  183,
+                  137
+                ],
+                "usedFallbackForFragments": true,
+                "placedBbox": [
+                  228,
+                  269,
+                  411,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  630,
+                  283
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  228,
+                  269,
+                  411,
+                  406
+                ],
+                "sourceSize": [
+                  183,
+                  137
+                ],
+                "usedFallbackForFragments": true,
+                "placedBbox": [
+                  228,
+                  269,
+                  411,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  758,
+                  280
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  113,
+                  229,
+                  282,
+                  360
+                ],
+                "sourceSize": [
+                  169,
+                  131
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  236,
+                  275,
+                  405,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  792,
+                  280
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_05.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  109,
+                  229,
+                  274,
+                  360
+                ],
+                "sourceSize": [
+                  165,
+                  131
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  238,
+                  275,
+                  403,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  704,
+                  283
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_active/chain_snare_active_06.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  109,
+                  229,
+                  274,
+                  360
+                ],
+                "sourceSize": [
+                  165,
+                  131
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  238,
+                  275,
+                  403,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  562,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "animation": "chain_snare_recovery",
+          "label": "Chain Snare Recovery",
+          "requestedFrames": 4,
+          "atlasCols": 8,
+          "chainProfile": "chain_snare_recovery",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  122,
+                  220,
+                  262,
+                  360
+                ],
+                "sourceSize": [
+                  140,
+                  140
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  250,
+                  266,
+                  390,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  622,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  124,
+                  232,
+                  266,
+                  360
+                ],
+                "sourceSize": [
+                  142,
+                  128
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  249,
+                  278,
+                  391,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  520,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  133,
+                  238,
+                  252,
+                  360
+                ],
+                "sourceSize": [
+                  119,
+                  122
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  260,
+                  284,
+                  379,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  430,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/chain_snare_recovery/chain_snare_recovery_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  135,
+                  238,
+                  254,
+                  360
+                ],
+                "sourceSize": [
+                  119,
+                  122
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  260,
+                  284,
+                  379,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  386,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "animation": "sanctum_sweep",
+          "label": "Sanctum Sweep",
+          "requestedFrames": 8,
+          "atlasCols": 8,
+          "chainProfile": "sanctum_sweep",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  96,
+                  214,
+                  287,
+                  354
+                ],
+                "sourceSize": [
+                  191,
+                  140
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  224,
+                  266,
+                  415,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  384,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  91,
+                  218,
+                  293,
+                  355
+                ],
+                "sourceSize": [
+                  202,
+                  137
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  219,
+                  269,
+                  421,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  452,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  92,
+                  221,
+                  292,
+                  355
+                ],
+                "sourceSize": [
+                  200,
+                  134
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  220,
+                  272,
+                  420,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  550,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  88,
+                  226,
+                  307,
+                  356
+                ],
+                "sourceSize": [
+                  219,
+                  130
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  210,
+                  276,
+                  429,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  670,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_05.png",
+              "body": {
+                "empty": false,
+                "scale": 0.9959,
+                "sourceBbox": [
+                  69,
+                  230,
+                  315,
+                  360
+                ],
+                "sourceSize": [
+                  246,
+                  130
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  198,
+                  277,
+                  443,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  744,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_06.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  100,
+                  224,
+                  295,
+                  360
+                ],
+                "sourceSize": [
+                  195,
+                  136
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  222,
+                  270,
+                  417,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  674,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_07.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  114,
+                  226,
+                  270,
+                  360
+                ],
+                "sourceSize": [
+                  156,
+                  134
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  242,
+                  272,
+                  398,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  530,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/sanctum_sweep/sanctum_sweep_08.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  114,
+                  226,
+                  270,
+                  360
+                ],
+                "sourceSize": [
+                  156,
+                  134
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  242,
+                  272,
+                  398,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  340,
+                  332
+                ],
+                "tip": [
+                  410,
+                  361
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "animation": "divine_recoil",
+          "label": "Divine Recoil",
+          "requestedFrames": 8,
+          "atlasCols": 8,
+          "chainProfile": "divine_recoil",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  107,
+                  199,
+                  276,
+                  320
+                ],
+                "sourceSize": [
+                  169,
+                  121
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  236,
+                  285,
+                  405,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  402,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  105,
+                  203,
+                  279,
+                  327
+                ],
+                "sourceSize": [
+                  174,
+                  124
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  233,
+                  282,
+                  407,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  500,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  104,
+                  205,
+                  259,
+                  332
+                ],
+                "sourceSize": [
+                  155,
+                  127
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  242,
+                  279,
+                  397,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  634,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  105,
+                  223,
+                  278,
+                  348
+                ],
+                "sourceSize": [
+                  173,
+                  125
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  234,
+                  281,
+                  407,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  756,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 5,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_05.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  104,
+                  208,
+                  279,
+                  332
+                ],
+                "sourceSize": [
+                  175,
+                  124
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  232,
+                  282,
+                  407,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  768,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 6,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_06.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  101,
+                  225,
+                  282,
+                  348
+                ],
+                "sourceSize": [
+                  181,
+                  123
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  230,
+                  283,
+                  411,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  644,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 7,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_07.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  230,
+                  283,
+                  411,
+                  406
+                ],
+                "sourceSize": [
+                  181,
+                  123
+                ],
+                "usedFallbackForFragments": true,
+                "placedBbox": [
+                  230,
+                  283,
+                  411,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  502,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 8,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/divine_recoil/divine_recoil_08.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  105,
+                  226,
+                  266,
+                  348
+                ],
+                "sourceSize": [
+                  161,
+                  122
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  240,
+                  284,
+                  401,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  330,
+                  302
+                ],
+                "tip": [
+                  394,
+                  294
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "animation": "special_recovery",
+          "label": "Special Recovery / Return to Stance",
+          "requestedFrames": 4,
+          "atlasCols": 8,
+          "chainProfile": "special_recovery",
+          "frames": [
+            {
+              "frame": 1,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_01.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  120,
+                  205,
+                  264,
+                  348
+                ],
+                "sourceSize": [
+                  144,
+                  143
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  248,
+                  263,
+                  392,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  464,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 2,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_02.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  121,
+                  201,
+                  263,
+                  348
+                ],
+                "sourceSize": [
+                  142,
+                  147
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  249,
+                  259,
+                  391,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  430,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 3,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_03.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  125,
+                  202,
+                  259,
+                  348
+                ],
+                "sourceSize": [
+                  134,
+                  146
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  253,
+                  260,
+                  387,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  400,
+                  281
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            },
+            {
+              "frame": 4,
+              "file": "assets/sprites/seris_final/frames/sheet_5_specials_body/special_recovery/special_recovery_04.png",
+              "body": {
+                "empty": false,
+                "scale": 1.0,
+                "sourceBbox": [
+                  125,
+                  202,
+                  259,
+                  348
+                ],
+                "sourceSize": [
+                  134,
+                  146
+                ],
+                "usedFallbackForFragments": false,
+                "placedBbox": [
+                  253,
+                  260,
+                  387,
+                  406
+                ]
+              },
+              "chain": {
+                "origin": [
+                  344,
+                  288
+                ],
+                "tip": [
+                  378,
+                  288
+                ]
+              },
+              "edgeOpaquePixels": 0,
+              "opaqueMagentaPixels": 0
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "size": [
+          6656,
+          2688
+        ],
+        "cols": 8,
+        "rows": 6,
+        "cell": [
+          832,
+          448
+        ],
+        "baselineY": 406,
+        "edgeOpaquePixels": 0,
+        "opaqueMagentaPixels": 0
+      },
+      "warnings": []
+    }
+  ]
+}

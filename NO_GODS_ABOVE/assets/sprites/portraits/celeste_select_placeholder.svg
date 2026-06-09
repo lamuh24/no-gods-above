@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Celeste placeholder portrait">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="34%" r="70%">
+      <stop offset="0" stop-color="#4b275f"/>
+      <stop offset="0.55" stop-color="#171024"/>
+      <stop offset="1" stop-color="#07050d"/>
+    </radialGradient>
+    <linearGradient id="coat" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2d1b46"/>
+      <stop offset="1" stop-color="#0d0916"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <g opacity="0.9" fill="none" stroke-linecap="round">
+    <circle cx="256" cy="248" r="178" stroke="#d89cff" stroke-width="3" opacity="0.32"/>
+    <circle cx="256" cy="248" r="122" stroke="#ffd66b" stroke-width="2" opacity="0.24"/>
+    <path d="M132 178c58-72 190-76 248-2" stroke="#48e4ff" stroke-width="5" opacity="0.42"/>
+  </g>
+  <g transform="translate(256 292)">
+    <ellipse cx="0" cy="126" rx="96" ry="24" fill="#08050d" opacity="0.68"/>
+    <path d="M-72 132c18-138 24-192 72-192s56 54 72 192z" fill="url(#coat)" stroke="#d8c7ff" stroke-width="7"/>
+    <path d="M-40-42c22 18 58 18 80 0" fill="none" stroke="#ffd66b" stroke-width="5"/>
+    <circle cx="0" cy="-96" r="39" fill="#f4ddbd"/>
+    <path d="M-42-104c28-62 102-54 94 14-34-22-71-22-106 1z" fill="#21102f"/>
+    <path d="M-14-134c-58 22-70 84-54 144M18-134c50 24 58 84 38 144" fill="none" stroke="#21102f" stroke-width="13"/>
+    <path d="M-24-18l-58 58M24-18l74 44" fill="none" stroke="#0d0714" stroke-width="14"/>
+    <path d="M28-24l104 24" fill="none" stroke="#fff8de" stroke-width="6"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M124 338c34-44 74-58 120-44" stroke="#ffd66b" stroke-width="8"/>
+    <path d="M306 226c46-42 84-50 118-18" stroke="#d83d7f" stroke-width="8"/>
+    <ellipse cx="384" cy="334" rx="52" ry="28" stroke="#4bb6ff" stroke-width="8"/>
+    <path d="M132 226c-34-42-48-80-8-116" stroke="#48e4ff" stroke-width="8" opacity="0.8"/>
+    <path d="M376 130l54 20-54 20" stroke="#ffc83d" stroke-width="8"/>
+    <path d="M92 302c-28-52-18-94 32-126" stroke="#8effb5" stroke-width="8" opacity="0.8"/>
+    <path d="M202 98h72v36h-72zM222 98v36M246 98v36" stroke="#f8f8ff" stroke-width="6"/>
+  </g>
+  <text x="256" y="470" fill="#fff8de" font-family="Arial, sans-serif" font-size="34" font-weight="800" text-anchor="middle" letter-spacing="2">CELESTE</text>
+</svg>

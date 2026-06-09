@@ -1,0 +1,607 @@
+{
+  "character": "Seris",
+  "purpose": "Transparent chain/whip VFX overlay atlas for later Seris runtime layering.",
+  "source": "assets/sprites/seris_generated/seris_sheet_8_chain_whip_vfx_chroma.png",
+  "output": "assets/effects/seris/seris_chain_whip_vfx_atlas.png",
+  "cols": 8,
+  "rows": 7,
+  "cellSize": {
+    "width": 512,
+    "height": 220
+  },
+  "background": "transparent",
+  "sourceChromaRemoved": "#FF00FF",
+  "layeringRule": "Overlay only. Do not bake into Seris body frames.",
+  "rowMap": [
+    {
+      "row": 0,
+      "animation": "vfx_quick_chain_flick",
+      "sourceLabel": "Quick Chain Flick",
+      "sourceFrames": 5,
+      "runtimeFrames": 5,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_quick_chain_flick/vfx_quick_chain_flick_01.png",
+        "assets/effects/seris/frames/vfx_quick_chain_flick/vfx_quick_chain_flick_02.png",
+        "assets/effects/seris/frames/vfx_quick_chain_flick/vfx_quick_chain_flick_03.png",
+        "assets/effects/seris/frames/vfx_quick_chain_flick/vfx_quick_chain_flick_04.png",
+        "assets/effects/seris/frames/vfx_quick_chain_flick/vfx_quick_chain_flick_05.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            70,
+            100,
+            307,
+            124
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            70,
+            100,
+            307,
+            124
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            69,
+            96,
+            311,
+            125
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            70,
+            100,
+            307,
+            124
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            70,
+            100,
+            307,
+            124
+          ]
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "animation": "vfx_horizontal_chain_snare",
+      "sourceLabel": "Horizontal Chain Snare",
+      "sourceFrames": 7,
+      "runtimeFrames": 7,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_01.png",
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_02.png",
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_03.png",
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_04.png",
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_05.png",
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_06.png",
+        "assets/effects/seris/frames/vfx_horizontal_chain_snare/vfx_horizontal_chain_snare_07.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            47,
+            99,
+            487,
+            122
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            47,
+            99,
+            487,
+            122
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            47,
+            99,
+            487,
+            122
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            47,
+            96,
+            491,
+            126
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            47,
+            96,
+            491,
+            126
+          ]
+        },
+        {
+          "frame": 6,
+          "contentBbox": [
+            47,
+            99,
+            487,
+            122
+          ]
+        },
+        {
+          "frame": 7,
+          "contentBbox": [
+            47,
+            99,
+            487,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "animation": "vfx_low_sweep_chain_arc",
+      "sourceLabel": "Low Sweep Chain Arc",
+      "sourceFrames": 7,
+      "runtimeFrames": 7,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_01.png",
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_02.png",
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_03.png",
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_04.png",
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_05.png",
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_06.png",
+        "assets/effects/seris/frames/vfx_low_sweep_chain_arc/vfx_low_sweep_chain_arc_07.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            55,
+            114,
+            495,
+            165
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            55,
+            114,
+            495,
+            165
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            55,
+            114,
+            495,
+            175
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            55,
+            112,
+            499,
+            169
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            55,
+            112,
+            499,
+            167
+          ]
+        },
+        {
+          "frame": 6,
+          "contentBbox": [
+            55,
+            114,
+            495,
+            165
+          ]
+        },
+        {
+          "frame": 7,
+          "contentBbox": [
+            55,
+            114,
+            495,
+            165
+          ]
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "animation": "vfx_rising_launcher_chain_arc",
+      "sourceLabel": "Rising Launcher Chain Arc",
+      "sourceFrames": 7,
+      "runtimeFrames": 7,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_01.png",
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_02.png",
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_03.png",
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_04.png",
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_05.png",
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_06.png",
+        "assets/effects/seris/frames/vfx_rising_launcher_chain_arc/vfx_rising_launcher_chain_arc_07.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            119,
+            38,
+            406,
+            172
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            119,
+            38,
+            407,
+            172
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            119,
+            38,
+            407,
+            172
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            119,
+            35,
+            411,
+            172
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            118,
+            35,
+            411,
+            172
+          ]
+        },
+        {
+          "frame": 6,
+          "contentBbox": [
+            119,
+            38,
+            407,
+            172
+          ]
+        },
+        {
+          "frame": 7,
+          "contentBbox": [
+            119,
+            38,
+            407,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "animation": "vfx_aerial_forward_chain_arc",
+      "sourceLabel": "Aerial Forward Chain Arc",
+      "sourceFrames": 6,
+      "runtimeFrames": 6,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_aerial_forward_chain_arc/vfx_aerial_forward_chain_arc_01.png",
+        "assets/effects/seris/frames/vfx_aerial_forward_chain_arc/vfx_aerial_forward_chain_arc_02.png",
+        "assets/effects/seris/frames/vfx_aerial_forward_chain_arc/vfx_aerial_forward_chain_arc_03.png",
+        "assets/effects/seris/frames/vfx_aerial_forward_chain_arc/vfx_aerial_forward_chain_arc_04.png",
+        "assets/effects/seris/frames/vfx_aerial_forward_chain_arc/vfx_aerial_forward_chain_arc_05.png",
+        "assets/effects/seris/frames/vfx_aerial_forward_chain_arc/vfx_aerial_forward_chain_arc_06.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            89,
+            65,
+            469,
+            123
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            89,
+            65,
+            469,
+            124
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            89,
+            58,
+            473,
+            125
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            89,
+            65,
+            473,
+            125
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            89,
+            64,
+            469,
+            124
+          ]
+        },
+        {
+          "frame": 6,
+          "contentBbox": [
+            89,
+            64,
+            469,
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "animation": "vfx_aerial_downward_finisher_arc",
+      "sourceLabel": "Aerial Downward Finisher Arc",
+      "sourceFrames": 6,
+      "runtimeFrames": 6,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_aerial_downward_finisher_arc/vfx_aerial_downward_finisher_arc_01.png",
+        "assets/effects/seris/frames/vfx_aerial_downward_finisher_arc/vfx_aerial_downward_finisher_arc_02.png",
+        "assets/effects/seris/frames/vfx_aerial_downward_finisher_arc/vfx_aerial_downward_finisher_arc_03.png",
+        "assets/effects/seris/frames/vfx_aerial_downward_finisher_arc/vfx_aerial_downward_finisher_arc_04.png",
+        "assets/effects/seris/frames/vfx_aerial_downward_finisher_arc/vfx_aerial_downward_finisher_arc_05.png",
+        "assets/effects/seris/frames/vfx_aerial_downward_finisher_arc/vfx_aerial_downward_finisher_arc_06.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            105,
+            54,
+            460,
+            180
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            105,
+            54,
+            460,
+            180
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            105,
+            54,
+            464,
+            184
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            105,
+            54,
+            464,
+            184
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            105,
+            54,
+            460,
+            180
+          ]
+        },
+        {
+          "frame": 6,
+          "contentBbox": [
+            105,
+            54,
+            460,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "animation": "vfx_divine_recoil_tether_pull",
+      "sourceLabel": "Divine Recoil Tether / Pull Effect",
+      "sourceFrames": 8,
+      "runtimeFrames": 8,
+      "atlasCols": 8,
+      "pivotMode": "left_center_overlay",
+      "pivot": [
+        0,
+        110
+      ],
+      "frames": [
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_01.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_02.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_03.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_04.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_05.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_06.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_07.png",
+        "assets/effects/seris/frames/vfx_divine_recoil_tether_pull/vfx_divine_recoil_tether_pull_08.png"
+      ],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "contentBbox": [
+            45,
+            97,
+            213,
+            126
+          ]
+        },
+        {
+          "frame": 2,
+          "contentBbox": [
+            45,
+            96,
+            313,
+            126
+          ]
+        },
+        {
+          "frame": 3,
+          "contentBbox": [
+            45,
+            83,
+            416,
+            132
+          ]
+        },
+        {
+          "frame": 4,
+          "contentBbox": [
+            45,
+            75,
+            486,
+            126
+          ]
+        },
+        {
+          "frame": 5,
+          "contentBbox": [
+            45,
+            76,
+            486,
+            126
+          ]
+        },
+        {
+          "frame": 6,
+          "contentBbox": [
+            45,
+            85,
+            406,
+            134
+          ]
+        },
+        {
+          "frame": 7,
+          "contentBbox": [
+            45,
+            92,
+            303,
+            126
+          ]
+        },
+        {
+          "frame": 8,
+          "contentBbox": [
+            45,
+            93,
+            218,
+            126
+          ]
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "size": [
+      4096,
+      1540
+    ],
+    "opaquePixels": 151971,
+    "remainingOpaqueChromaPixels": 0,
+    "transparentCorners": true,
+    "opaqueCanvasEdgePixels": 0
+  },
+  "warnings": []
+}

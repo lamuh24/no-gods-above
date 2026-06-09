@@ -1,0 +1,6715 @@
+{
+  "phase": "phase5_3",
+  "sourceRectPolicy": "exact source-cell rectangles; no neighbor-padding expansion",
+  "bodyIsolationPolicy": "keep central intended body cluster and attached nearby parts; remove far/edge neighbor components",
+  "vfxIsolationPolicy": "keep intended detached VFX components; remove tiny/edge source-cell bleed",
+  "sheets": {
+    "sheet_1_body_basics": [
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 244,
+          "y": 123,
+          "w": 278,
+          "h": 315,
+          "anchorX": 121,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          0,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 123,
+          "w": 287,
+          "h": 315,
+          "anchorX": 114,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          768,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 255,
+          "y": 123,
+          "w": 265,
+          "h": 315,
+          "anchorX": 97,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          627,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 123,
+          "w": 276,
+          "h": 315,
+          "anchorX": 87,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          2304,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          836,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 255,
+          "y": 123,
+          "w": 313,
+          "h": 315,
+          "anchorX": 84,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          3072,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "idle",
+        "frame": 5,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1045,
+          0,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 242,
+          "y": 123,
+          "w": 311,
+          "h": 315,
+          "anchorX": 80,
+          "anchorY": 179,
+          "scale": 2.1575342465753424
+        },
+        "runtimeCell": [
+          3840,
+          0,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 260,
+          "y": 123,
+          "w": 304,
+          "h": 315,
+          "anchorX": 93,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          0,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 123,
+          "w": 304,
+          "h": 315,
+          "anchorX": 93,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          768,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 269,
+          "y": 125,
+          "w": 245,
+          "h": 313,
+          "anchorX": 88,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          1536,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          627,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 267,
+          "y": 132,
+          "w": 306,
+          "h": 306,
+          "anchorX": 89,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          2304,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          836,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 267,
+          "y": 128,
+          "w": 304,
+          "h": 310,
+          "anchorX": 68,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          3072,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "walk_forward",
+        "frame": 5,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1045,
+          179,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 130,
+          "w": 304,
+          "h": 308,
+          "anchorX": 52,
+          "anchorY": 179,
+          "scale": 2.25
+        },
+        "runtimeCell": [
+          3840,
+          512,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 274,
+          "y": 130,
+          "w": 349,
+          "h": 308,
+          "anchorX": 89,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          0,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 256,
+          "y": 123,
+          "w": 329,
+          "h": 315,
+          "anchorX": 100,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          768,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 247,
+          "y": 123,
+          "w": 237,
+          "h": 315,
+          "anchorX": 105,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          1536,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          627,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 261,
+          "y": 125,
+          "w": 313,
+          "h": 313,
+          "anchorX": 97,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          2304,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 4,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          836,
+          358,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 268,
+          "y": 125,
+          "w": 315,
+          "h": 313,
+          "anchorX": 79,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          3072,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "walk_back",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1045,
+          358,
+          209,
+          179
+        ],
+        "filledFromFrame": 4,
+        "emptyFrameRepair": "nearest_clean_frame_hold",
+        "runtimeBox": {
+          "x": 268,
+          "y": 125,
+          "w": 315,
+          "h": 313,
+          "anchorX": 79,
+          "anchorY": 179,
+          "scale": 2.282608695652174
+        },
+        "runtimeCell": [
+          3840,
+          1024,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "crouch_jump_start",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          537,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 222,
+          "y": 176,
+          "w": 337,
+          "h": 262,
+          "anchorX": 120,
+          "anchorY": 169,
+          "scale": 2.2764227642276422
+        },
+        "runtimeCell": [
+          0,
+          1536,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "crouch_jump_start",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          537,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 227,
+          "y": 167,
+          "w": 330,
+          "h": 271,
+          "anchorX": 122,
+          "anchorY": 169,
+          "scale": 2.2764227642276422
+        },
+        "runtimeCell": [
+          768,
+          1536,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "crouch_jump_start",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          537,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 213,
+          "y": 158,
+          "w": 303,
+          "h": 280,
+          "anchorX": 119,
+          "anchorY": 170,
+          "scale": 2.2764227642276422
+        },
+        "runtimeCell": [
+          1536,
+          1536,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_up",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          716,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 210,
+          "y": 132,
+          "w": 339,
+          "h": 268,
+          "anchorX": 117,
+          "anchorY": 86,
+          "scale": 2.028985507246377
+        },
+        "runtimeCell": [
+          0,
+          2048,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_up",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          716,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 234,
+          "y": 132,
+          "w": 272,
+          "h": 274,
+          "anchorX": 126,
+          "anchorY": 87,
+          "scale": 2.028985507246377
+        },
+        "runtimeCell": [
+          768,
+          2048,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_up",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          716,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 254,
+          "y": 140,
+          "w": 268,
+          "h": 280,
+          "anchorX": 119,
+          "anchorY": 83,
+          "scale": 2.028985507246377
+        },
+        "runtimeCell": [
+          1536,
+          2048,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "fall",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          895,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 247,
+          "y": 168,
+          "w": 245,
+          "h": 280,
+          "anchorX": 125,
+          "anchorY": 56,
+          "scale": 1.7610062893081762
+        },
+        "runtimeCell": [
+          0,
+          2560,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "fall",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          895,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 299,
+          "y": 171,
+          "w": 158,
+          "h": 227,
+          "anchorX": 122,
+          "anchorY": 56,
+          "scale": 1.7610062893081762
+        },
+        "runtimeCell": [
+          768,
+          2560,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "fall",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          895,
+          209,
+          179
+        ],
+        "runtimeBox": {
+          "x": 292,
+          "y": 171,
+          "w": 169,
+          "h": 232,
+          "anchorX": 120,
+          "anchorY": 67,
+          "scale": 1.7610062893081762
+        },
+        "runtimeCell": [
+          1536,
+          2560,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "landing",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          1074,
+          209,
+          180
+        ],
+        "runtimeBox": {
+          "x": 241,
+          "y": 214,
+          "w": 322,
+          "h": 224,
+          "anchorX": 114,
+          "anchorY": 135,
+          "scale": 2.074829931972789
+        },
+        "runtimeCell": [
+          0,
+          3072,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "landing",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          209,
+          1074,
+          209,
+          180
+        ],
+        "runtimeBox": {
+          "x": 255,
+          "y": 150,
+          "w": 270,
+          "h": 288,
+          "anchorX": 117,
+          "anchorY": 144,
+          "scale": 2.074829931972789
+        },
+        "runtimeCell": [
+          768,
+          3072,
+          768,
+          512
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "landing",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          418,
+          1074,
+          209,
+          180
+        ],
+        "runtimeBox": {
+          "x": 286,
+          "y": 133,
+          "w": 212,
+          "h": 305,
+          "anchorX": 96,
+          "anchorY": 147,
+          "scale": 2.074829931972789
+        },
+        "runtimeCell": [
+          1536,
+          3072,
+          768,
+          512
+        ]
+      }
+    ],
+    "sheet_2_ground_normals": [
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 345,
+          "y": 147,
+          "w": 369,
+          "h": 315,
+          "anchorX": 96,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          0,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 258,
+          "y": 152,
+          "w": 481,
+          "h": 310,
+          "anchorX": 99,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          896,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 280,
+          "y": 147,
+          "w": 435,
+          "h": 315,
+          "anchorX": 88,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          1792,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "neutral_light",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          0,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 309,
+          "y": 149,
+          "w": 325,
+          "h": 313,
+          "anchorX": 70,
+          "anchorY": 170,
+          "scale": 2.441860465116279
+        },
+        "runtimeCell": [
+          2688,
+          0,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 309,
+          "y": 147,
+          "w": 362,
+          "h": 315,
+          "anchorX": 105,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          0,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 210,
+          "y": 149,
+          "w": 481,
+          "h": 313,
+          "anchorX": 108,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          896,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 197,
+          "y": 154,
+          "w": 518,
+          "h": 308,
+          "anchorX": 111,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          1792,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "neutral_medium",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          170,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 297,
+          "y": 149,
+          "w": 365,
+          "h": 313,
+          "anchorX": 68,
+          "anchorY": 171,
+          "scale": 2.4803149606299213
+        },
+        "runtimeCell": [
+          2688,
+          544,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 284,
+          "y": 155,
+          "w": 375,
+          "h": 307,
+          "anchorX": 98,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          0,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 1,
+        "componentsBefore": 5,
+        "componentsAfter": 5,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 224,
+          "y": 152,
+          "w": 586,
+          "h": 310,
+          "anchorX": 86,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          896,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 507,
+            "bbox": [
+              220,
+              66,
+              19,
+              105
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 507,
+        "sourceRect": [
+          512,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 224,
+          "y": 147,
+          "w": 568,
+          "h": 315,
+          "anchorX": 91,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          1792,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "neutral_heavy",
+        "frame": 3,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 288,
+            "bbox": [
+              191,
+              85,
+              15,
+              86
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 288,
+        "sourceRect": [
+          768,
+          341,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 261,
+          "y": 150,
+          "w": 474,
+          "h": 312,
+          "anchorX": 80,
+          "anchorY": 171,
+          "scale": 2.603305785123967
+        },
+        "runtimeCell": [
+          2688,
+          1088,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 296,
+          "y": 147,
+          "w": 359,
+          "h": 315,
+          "anchorX": 103,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          0,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 299,
+          "y": 176,
+          "w": 429,
+          "h": 286,
+          "anchorX": 91,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          896,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 285,
+          "y": 156,
+          "w": 312,
+          "h": 306,
+          "anchorX": 56,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          1792,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "forward_light",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          512,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 299,
+          "y": 156,
+          "w": 379,
+          "h": 306,
+          "anchorX": 53,
+          "anchorY": 170,
+          "scale": 2.9166666666666665
+        },
+        "runtimeCell": [
+          2688,
+          1632,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 1026,
+            "bbox": [
+              209,
+              122,
+              47,
+              49
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 1026,
+        "sourceRect": [
+          0,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 300,
+          "y": 156,
+          "w": 364,
+          "h": 306,
+          "anchorX": 90,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          0,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 235,
+          "y": 147,
+          "w": 621,
+          "h": 315,
+          "anchorX": 76,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          896,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 161,
+          "y": 166,
+          "w": 649,
+          "h": 296,
+          "anchorX": 93,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          1792,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "forward_medium",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          682,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 162,
+          "w": 439,
+          "h": 300,
+          "anchorX": 64,
+          "anchorY": 171,
+          "scale": 3.088235294117647
+        },
+        "runtimeCell": [
+          2688,
+          2176,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 339,
+          "y": 147,
+          "w": 193,
+          "h": 315,
+          "anchorX": 94,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          0,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 1,
+        "componentsBefore": 4,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 743,
+            "bbox": [
+              79,
+              0,
+              75,
+              37
+            ],
+            "touchesEdge": true
+          },
+          {
+            "area": 389,
+            "bbox": [
+              199,
+              90,
+              19,
+              81
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 1132,
+        "sourceRect": [
+          256,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 319,
+          "y": 283,
+          "w": 368,
+          "h": 179,
+          "anchorX": 70,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          896,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 352,
+          "y": 269,
+          "w": 361,
+          "h": 193,
+          "anchorX": 78,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          1792,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "forward_heavy",
+        "frame": 3,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 533,
+            "bbox": [
+              24,
+              0,
+              56,
+              36
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 533,
+        "sourceRect": [
+          768,
+          853,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 330,
+          "y": 305,
+          "w": 322,
+          "h": 157,
+          "anchorX": 64,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          2688,
+          2720,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 728,
+            "bbox": [
+              30,
+              0,
+              46,
+              33
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 728,
+        "sourceRect": [
+          0,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 368,
+          "y": 147,
+          "w": 195,
+          "h": 315,
+          "anchorX": 102,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          0,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 296,
+          "y": 147,
+          "w": 302,
+          "h": 315,
+          "anchorX": 82,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          896,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 3,
+        "removedComponents": [
+          {
+            "area": 691,
+            "bbox": [
+              136,
+              0,
+              57,
+              26
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 691,
+        "sourceRect": [
+          512,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 329,
+          "y": 147,
+          "w": 200,
+          "h": 315,
+          "anchorX": 64,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          1792,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "back_light",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          1024,
+          256,
+          170
+        ],
+        "runtimeBox": {
+          "x": 344,
+          "y": 147,
+          "w": 243,
+          "h": 315,
+          "anchorX": 56,
+          "anchorY": 170,
+          "scale": 1.8529411764705883
+        },
+        "runtimeCell": [
+          2688,
+          3264,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 330,
+          "y": 147,
+          "w": 258,
+          "h": 315,
+          "anchorX": 102,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          0,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 358,
+          "y": 259,
+          "w": 206,
+          "h": 203,
+          "anchorX": 49,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          896,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 529,
+            "bbox": [
+              236,
+              134,
+              20,
+              37
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 529,
+        "sourceRect": [
+          512,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 314,
+          "y": 147,
+          "w": 293,
+          "h": 315,
+          "anchorX": 73,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          1792,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "back_medium",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          1194,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 363,
+          "y": 147,
+          "w": 181,
+          "h": 315,
+          "anchorX": 46,
+          "anchorY": 171,
+          "scale": 1.8421052631578947
+        },
+        "runtimeCell": [
+          2688,
+          3808,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 355,
+          "y": 165,
+          "w": 289,
+          "h": 297,
+          "anchorX": 85,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          0,
+          4352,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 200,
+          "y": 147,
+          "w": 596,
+          "h": 315,
+          "anchorX": 96,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          896,
+          4352,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 213,
+          "y": 168,
+          "w": 589,
+          "h": 294,
+          "anchorX": 91,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          1792,
+          4352,
+          896,
+          544
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "back_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          1365,
+          256,
+          171
+        ],
+        "runtimeBox": {
+          "x": 327,
+          "y": 168,
+          "w": 318,
+          "h": 294,
+          "anchorX": 58,
+          "anchorY": 154,
+          "scale": 2.581967213114754
+        },
+        "runtimeCell": [
+          2688,
+          4352,
+          896,
+          544
+        ]
+      }
+    ],
+    "sheet_3_up_air_attacks": [
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 309,
+          "y": 281,
+          "w": 194,
+          "h": 207,
+          "anchorX": 112,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          0,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 308,
+          "y": 192,
+          "w": 145,
+          "h": 296,
+          "anchorX": 90,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          768,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 303,
+          "y": 173,
+          "w": 164,
+          "h": 315,
+          "anchorX": 87,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "up_light",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 285,
+          "y": 281,
+          "w": 180,
+          "h": 207,
+          "anchorX": 92,
+          "anchorY": 256,
+          "scale": 1.4383561643835616
+        },
+        "runtimeCell": [
+          2304,
+          0,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 295,
+          "y": 237,
+          "w": 194,
+          "h": 251,
+          "anchorX": 108,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          0,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 298,
+          "y": 168,
+          "w": 239,
+          "h": 320,
+          "anchorX": 92,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          768,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 258,
+          "y": 209,
+          "w": 354,
+          "h": 279,
+          "anchorX": 82,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          1536,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "up_medium_down_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 297,
+          "y": 237,
+          "w": 234,
+          "h": 251,
+          "anchorX": 61,
+          "anchorY": 256,
+          "scale": 1.5609756097560976
+        },
+        "runtimeCell": [
+          2304,
+          576,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 291,
+          "y": 251,
+          "w": 175,
+          "h": 237,
+          "anchorX": 110,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          0,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 1,
+        "componentsBefore": 6,
+        "componentsAfter": 6,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 296,
+          "y": 187,
+          "w": 221,
+          "h": 301,
+          "anchorX": 88,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          768,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 2,
+        "componentsBefore": 9,
+        "componentsAfter": 9,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 245,
+          "y": 163,
+          "w": 289,
+          "h": 325,
+          "anchorX": 106,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          1536,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "up_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 310,
+          "y": 251,
+          "w": 196,
+          "h": 237,
+          "anchorX": 83,
+          "anchorY": 256,
+          "scale": 1.4840182648401827
+        },
+        "runtimeCell": [
+          2304,
+          1152,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 269,
+          "y": 168,
+          "w": 222,
+          "h": 300,
+          "anchorX": 99,
+          "anchorY": 127,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          0,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 274,
+          "y": 188,
+          "w": 287,
+          "h": 254,
+          "anchorX": 65,
+          "anchorY": 139,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          768,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 266,
+          "y": 175,
+          "w": 273,
+          "h": 229,
+          "anchorX": 78,
+          "anchorY": 143,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          1536,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "jump_light",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 276,
+          "y": 188,
+          "w": 174,
+          "h": 258,
+          "anchorX": 77,
+          "anchorY": 136,
+          "scale": 1.6853932584269662
+        },
+        "runtimeCell": [
+          2304,
+          1728,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 306,
+          "y": 194,
+          "w": 162,
+          "h": 305,
+          "anchorX": 100,
+          "anchorY": 97,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          0,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 294,
+          "y": 197,
+          "w": 245,
+          "h": 295,
+          "anchorX": 79,
+          "anchorY": 103,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          768,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 269,
+          "y": 212,
+          "w": 277,
+          "h": 275,
+          "anchorX": 93,
+          "anchorY": 103,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          1536,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "jump_medium",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          1024,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 294,
+          "y": 217,
+          "w": 152,
+          "h": 183,
+          "anchorX": 80,
+          "anchorY": 95,
+          "scale": 1.2551440329218106
+        },
+        "runtimeCell": [
+          2304,
+          2304,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 278,
+          "y": 187,
+          "w": 185,
+          "h": 270,
+          "anchorX": 101,
+          "anchorY": 70,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          0,
+          2880,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 1,
+        "componentsBefore": 5,
+        "componentsAfter": 5,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 246,
+          "y": 171,
+          "w": 257,
+          "h": 302,
+          "anchorX": 86,
+          "anchorY": 80,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          768,
+          2880,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 2,
+        "componentsBefore": 6,
+        "componentsAfter": 6,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 246,
+          "y": 165,
+          "w": 315,
+          "h": 315,
+          "anchorX": 97,
+          "anchorY": 84,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          1536,
+          2880,
+          768,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "jump_heavy",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          1280,
+          256,
+          256
+        ],
+        "runtimeBox": {
+          "x": 278,
+          "y": 168,
+          "w": 222,
+          "h": 294,
+          "anchorX": 99,
+          "anchorY": 82,
+          "scale": 1.6071428571428572
+        },
+        "runtimeCell": [
+          2304,
+          2880,
+          768,
+          576
+        ]
+      }
+    ],
+    "sheet_4_specials": [
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 502,
+          "y": 144,
+          "w": 333,
+          "h": 315,
+          "anchorX": 168,
+          "anchorY": 98,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          0,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          384,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 365,
+          "y": 184,
+          "w": 606,
+          "h": 297,
+          "anchorX": 139,
+          "anchorY": 88,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          1280,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 303,
+          "y": 184,
+          "w": 577,
+          "h": 271,
+          "anchorX": 154,
+          "anchorY": 100,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          2560,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "fa_strobe_air_dash_forward",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1152,
+          0,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 467,
+          "y": 126,
+          "w": 375,
+          "h": 299,
+          "anchorX": 132,
+          "anchorY": 113,
+          "scale": 2.2183098591549295
+        },
+        "runtimeCell": [
+          3840,
+          0,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 490,
+          "y": 140,
+          "w": 355,
+          "h": 315,
+          "anchorX": 166,
+          "anchorY": 105,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          0,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          384,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 301,
+          "y": 168,
+          "w": 701,
+          "h": 296,
+          "anchorX": 167,
+          "anchorY": 101,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          1280,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 353,
+          "y": 163,
+          "w": 475,
+          "h": 280,
+          "anchorX": 168,
+          "anchorY": 110,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          2560,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "air_dash_back",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1152,
+          170,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 475,
+          "y": 126,
+          "w": 378,
+          "h": 306,
+          "anchorX": 120,
+          "anchorY": 115,
+          "scale": 2.3507462686567164
+        },
+        "runtimeCell": [
+          3840,
+          576,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 520,
+          "y": 170,
+          "w": 330,
+          "h": 318,
+          "anchorX": 153,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          0,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          384,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 520,
+          "y": 170,
+          "w": 629,
+          "h": 318,
+          "anchorX": 52,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          1280,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 493,
+          "y": 170,
+          "w": 636,
+          "h": 318,
+          "anchorX": 103,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          2560,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "sol_ovation",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1152,
+          341,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 516,
+          "y": 170,
+          "w": 334,
+          "h": 318,
+          "anchorX": 97,
+          "anchorY": 171,
+          "scale": 2.3043478260869565
+        },
+        "runtimeCell": [
+          3840,
+          1152,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 520,
+          "y": 158,
+          "w": 303,
+          "h": 330,
+          "anchorX": 149,
+          "anchorY": 169,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          0,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          384,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 495,
+          "y": 172,
+          "w": 303,
+          "h": 316,
+          "anchorX": 83,
+          "anchorY": 169,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          1280,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 509,
+          "y": 174,
+          "w": 294,
+          "h": 314,
+          "anchorX": 103,
+          "anchorY": 169,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          2560,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "la_seraph_waltz",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1152,
+          512,
+          384,
+          170
+        ],
+        "runtimeBox": {
+          "x": 527,
+          "y": 167,
+          "w": 325,
+          "h": 321,
+          "anchorX": 94,
+          "anchorY": 170,
+          "scale": 2.26027397260274
+        },
+        "runtimeCell": [
+          3840,
+          1728,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 545,
+          "y": 170,
+          "w": 262,
+          "h": 318,
+          "anchorX": 138,
+          "anchorY": 169,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          0,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          384,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 241,
+          "y": 205,
+          "w": 560,
+          "h": 283,
+          "anchorX": 206,
+          "anchorY": 168,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          1280,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 334,
+          "y": 209,
+          "w": 448,
+          "h": 279,
+          "anchorX": 251,
+          "anchorY": 165,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          2560,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "ti_encore",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1152,
+          682,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 465,
+          "y": 222,
+          "w": 485,
+          "h": 266,
+          "anchorX": 121,
+          "anchorY": 164,
+          "scale": 1.9390243902439024
+        },
+        "runtimeCell": [
+          3840,
+          2304,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 488,
+          "y": 252,
+          "w": 311,
+          "h": 236,
+          "anchorX": 161,
+          "anchorY": 135,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          0,
+          2880,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          384,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 369,
+          "y": 184,
+          "w": 505,
+          "h": 304,
+          "anchorX": 146,
+          "anchorY": 144,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          1280,
+          2880,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 308,
+          "y": 170,
+          "w": 643,
+          "h": 318,
+          "anchorX": 182,
+          "anchorY": 146,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          2560,
+          2880,
+          1280,
+          576
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "special_recovery",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1152,
+          853,
+          384,
+          171
+        ],
+        "runtimeBox": {
+          "x": 402,
+          "y": 280,
+          "w": 454,
+          "h": 208,
+          "anchorX": 155,
+          "anchorY": 138,
+          "scale": 2.338235294117647
+        },
+        "runtimeCell": [
+          3840,
+          2880,
+          1280,
+          576
+        ]
+      }
+    ],
+    "sheet_5_defense_reactions": [
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 677,
+          "y": 128,
+          "w": 240,
+          "h": 310,
+          "anchorX": 112,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          0,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          0,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 653,
+          "y": 120,
+          "w": 250,
+          "h": 318,
+          "anchorX": 125,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          0,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 643,
+          "y": 129,
+          "w": 233,
+          "h": 309,
+          "anchorX": 148,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          3072,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "block_guard",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          0,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 662,
+          "y": 128,
+          "w": 210,
+          "h": 310,
+          "anchorX": 150,
+          "anchorY": 192,
+          "scale": 1.8928571428571428
+        },
+        "runtimeCell": [
+          4608,
+          0,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "damaged_light",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          192,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 638,
+          "y": 135,
+          "w": 275,
+          "h": 303,
+          "anchorX": 115,
+          "anchorY": 192,
+          "scale": 1.9934640522875817
+        },
+        "runtimeCell": [
+          0,
+          544,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "damaged_light",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          192,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 648,
+          "y": 133,
+          "w": 251,
+          "h": 305,
+          "anchorX": 115,
+          "anchorY": 192,
+          "scale": 1.9934640522875817
+        },
+        "runtimeCell": [
+          1536,
+          544,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "damaged_light",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          192,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 630,
+          "y": 141,
+          "w": 225,
+          "h": 297,
+          "anchorX": 161,
+          "anchorY": 192,
+          "scale": 1.9934640522875817
+        },
+        "runtimeCell": [
+          3072,
+          544,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          384,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 644,
+          "y": 123,
+          "w": 290,
+          "h": 315,
+          "anchorX": 106,
+          "anchorY": 192,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          0,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          384,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 602,
+          "y": 127,
+          "w": 309,
+          "h": 311,
+          "anchorX": 132,
+          "anchorY": 192,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          1536,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          384,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 602,
+          "y": 159,
+          "w": 267,
+          "h": 279,
+          "anchorX": 157,
+          "anchorY": 180,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          3072,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "medium_heavy_hitstun",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 720,
+            "bbox": [
+              0,
+              121,
+              28,
+              71
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 720,
+        "sourceRect": [
+          614,
+          384,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 646,
+          "y": 154,
+          "w": 235,
+          "h": 284,
+          "anchorX": 151,
+          "anchorY": 186,
+          "scale": 2.1
+        },
+        "runtimeCell": [
+          4608,
+          1088,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          576,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 558,
+          "y": 148,
+          "w": 335,
+          "h": 290,
+          "anchorX": 143,
+          "anchorY": 192,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          0,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          576,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 622,
+          "y": 152,
+          "w": 302,
+          "h": 286,
+          "anchorX": 129,
+          "anchorY": 192,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          1536,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          576,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 643,
+          "y": 171,
+          "w": 247,
+          "h": 267,
+          "anchorX": 146,
+          "anchorY": 188,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          3072,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "knockback",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 563,
+            "bbox": [
+              0,
+              116,
+              37,
+              56
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 563,
+        "sourceRect": [
+          614,
+          576,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 640,
+          "y": 150,
+          "w": 218,
+          "h": 288,
+          "anchorX": 161,
+          "anchorY": 189,
+          "scale": 2.0567375886524824
+        },
+        "runtimeCell": [
+          4608,
+          1632,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          768,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 649,
+          "y": 128,
+          "w": 261,
+          "h": 295,
+          "anchorX": 125,
+          "anchorY": 100,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          0,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          768,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 649,
+          "y": 171,
+          "w": 234,
+          "h": 261,
+          "anchorX": 141,
+          "anchorY": 102,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          1536,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          768,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 656,
+          "y": 157,
+          "w": 223,
+          "h": 264,
+          "anchorX": 143,
+          "anchorY": 111,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          3072,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "launch_air_hitstun",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          768,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 664,
+          "y": 179,
+          "w": 192,
+          "h": 259,
+          "anchorX": 156,
+          "anchorY": 102,
+          "scale": 1.798780487804878
+        },
+        "runtimeCell": [
+          4608,
+          2176,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          960,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 579,
+          "y": 286,
+          "w": 352,
+          "h": 152,
+          "anchorX": 118,
+          "anchorY": 142,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          0,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 589,
+          "y": 333,
+          "w": 381,
+          "h": 105,
+          "anchorX": 107,
+          "anchorY": 146,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          1536,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 609,
+          "y": 224,
+          "w": 309,
+          "h": 214,
+          "anchorX": 125,
+          "anchorY": 149,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          3072,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 628,
+          "y": 185,
+          "w": 249,
+          "h": 253,
+          "anchorX": 119,
+          "anchorY": 150,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          4608,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "knockdown_get_up",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          819,
+          960,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 684,
+          "y": 123,
+          "w": 202,
+          "h": 315,
+          "anchorX": 93,
+          "anchorY": 167,
+          "scale": 2.0588235294117645
+        },
+        "runtimeCell": [
+          6144,
+          2720,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 1068,
+            "bbox": [
+              49,
+              158,
+              55,
+              34
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 1068,
+        "sourceRect": [
+          0,
+          1152,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 668,
+          "y": 272,
+          "w": 190,
+          "h": 166,
+          "anchorX": 88,
+          "anchorY": 106,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          0,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          1152,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 694,
+          "y": 138,
+          "w": 240,
+          "h": 300,
+          "anchorX": 72,
+          "anchorY": 192,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          1536,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 972,
+            "bbox": [
+              37,
+              163,
+              51,
+              29
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 972,
+        "sourceRect": [
+          409,
+          1152,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 645,
+          "y": 351,
+          "w": 277,
+          "h": 87,
+          "anchorX": 109,
+          "anchorY": 107,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          3072,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "ko_death",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 762,
+            "bbox": [
+              16,
+              167,
+              56,
+              25
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 762,
+        "sourceRect": [
+          614,
+          1152,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 671,
+          "y": 373,
+          "w": 200,
+          "h": 65,
+          "anchorX": 141,
+          "anchorY": 107,
+          "scale": 1.6129032258064515
+        },
+        "runtimeCell": [
+          4608,
+          3264,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          1344,
+          204,
+          192
+        ],
+        "runtimeBox": {
+          "x": 674,
+          "y": 144,
+          "w": 259,
+          "h": 294,
+          "anchorX": 68,
+          "anchorY": 144,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          0,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          204,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 636,
+          "y": 138,
+          "w": 263,
+          "h": 300,
+          "anchorX": 65,
+          "anchorY": 147,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          1536,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          409,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 654,
+          "y": 128,
+          "w": 265,
+          "h": 310,
+          "anchorX": 57,
+          "anchorY": 152,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          3072,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 654,
+          "y": 124,
+          "w": 269,
+          "h": 314,
+          "anchorX": 56,
+          "anchorY": 154,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          4608,
+          3808,
+          1536,
+          544
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "victory",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          819,
+          1344,
+          205,
+          192
+        ],
+        "runtimeBox": {
+          "x": 587,
+          "y": 120,
+          "w": 273,
+          "h": 318,
+          "anchorX": 89,
+          "anchorY": 156,
+          "scale": 2.0384615384615383
+        },
+        "runtimeCell": [
+          6144,
+          3808,
+          1536,
+          544
+        ]
+      }
+    ],
+    "sheet_6_octava_body": [
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          354,
+          443
+        ],
+        "runtimeBox": {
+          "x": 251,
+          "y": 250,
+          "w": 401,
+          "h": 440,
+          "anchorX": 170,
+          "anchorY": 398,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          0,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 1,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          354,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 259,
+          "y": 275,
+          "w": 320,
+          "h": 415,
+          "anchorX": 174,
+          "anchorY": 399,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          896,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 2,
+        "componentsBefore": 7,
+        "componentsAfter": 7,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          709,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 329,
+          "y": 316,
+          "w": 373,
+          "h": 374,
+          "anchorX": 124,
+          "anchorY": 394,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          1792,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 3,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1064,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 310,
+          "y": 320,
+          "w": 366,
+          "h": 370,
+          "anchorX": 103,
+          "anchorY": 392,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          2688,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "octava_startup",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1419,
+          0,
+          355,
+          443
+        ],
+        "runtimeBox": {
+          "x": 325,
+          "y": 289,
+          "w": 305,
+          "h": 401,
+          "anchorX": 130,
+          "anchorY": 395,
+          "scale": 1.337386018237082
+        },
+        "runtimeCell": [
+          3584,
+          0,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 0,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          443,
+          354,
+          444
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 150,
+          "w": 449,
+          "h": 540,
+          "anchorX": 161,
+          "anchorY": 378,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          0,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 1,
+        "componentsBefore": 6,
+        "componentsAfter": 6,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          354,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 205,
+          "y": 162,
+          "w": 499,
+          "h": 528,
+          "anchorX": 161,
+          "anchorY": 378,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          896,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 2,
+        "componentsBefore": 4,
+        "componentsAfter": 4,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          709,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 251,
+          "y": 189,
+          "w": 498,
+          "h": 501,
+          "anchorX": 126,
+          "anchorY": 374,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          1792,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1064,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 306,
+          "y": 300,
+          "w": 421,
+          "h": 390,
+          "anchorX": 104,
+          "anchorY": 374,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          2688,
+          768,
+          896,
+          768
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "octava_fire",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1419,
+          443,
+          355,
+          444
+        ],
+        "runtimeBox": {
+          "x": 289,
+          "y": 462,
+          "w": 339,
+          "h": 228,
+          "anchorX": 131,
+          "anchorY": 376,
+          "scale": 1.560693641618497
+        },
+        "runtimeCell": [
+          3584,
+          768,
+          896,
+          768
+        ]
+      }
+    ],
+    "sheet_7_detached_vfx": [
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 320,
+          "y": 144,
+          "w": 127,
+          "h": 95,
+          "anchorX": 130,
+          "anchorY": 92,
+          "scale": 1.948051948051948
+        },
+        "runtimeCell": [
+          0,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          307,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 250,
+          "y": 128,
+          "w": 267,
+          "h": 127,
+          "anchorX": 59,
+          "anchorY": 100,
+          "scale": 1.948051948051948
+        },
+        "runtimeCell": [
+          768,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 283,
+          "y": 117,
+          "w": 201,
+          "h": 150,
+          "anchorX": 54,
+          "anchorY": 102,
+          "scale": 1.948051948051948
+        },
+        "runtimeCell": [
+          1536,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 3,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          921,
+          0,
+          307,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          2304,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 0,
+        "rowName": "DO_hand_impact",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1228,
+          0,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          0,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 219,
+          "y": 178,
+          "w": 330,
+          "h": 28,
+          "anchorX": 139,
+          "anchorY": 67,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          0,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          307,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 172,
+          "y": 121,
+          "w": 424,
+          "h": 141,
+          "anchorX": 92,
+          "anchorY": 92,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          768,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 193,
+          "y": 117,
+          "w": 382,
+          "h": 150,
+          "anchorX": 67,
+          "anchorY": 94,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          1536,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          921,
+          102,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 253,
+          "y": 124,
+          "w": 262,
+          "h": 136,
+          "anchorX": 52,
+          "anchorY": 98,
+          "scale": 2.34375
+        },
+        "runtimeCell": [
+          2304,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 1,
+        "rowName": "RE_slash",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1228,
+          102,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          384,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 281,
+          "y": 124,
+          "w": 206,
+          "h": 135,
+          "anchorX": 145,
+          "anchorY": 87,
+          "scale": 1.9620253164556962
+        },
+        "runtimeCell": [
+          0,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 2,
+        "removedComponents": [
+          {
+            "area": 372,
+            "bbox": [
+              132,
+              57,
+              57,
+              46
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 372,
+        "sourceRect": [
+          307,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 219,
+          "y": 114,
+          "w": 330,
+          "h": 155,
+          "anchorX": 89,
+          "anchorY": 103,
+          "scale": 1.9620253164556962
+        },
+        "runtimeCell": [
+          768,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 276,
+          "y": 119,
+          "w": 216,
+          "h": 145,
+          "anchorX": 60,
+          "anchorY": 103,
+          "scale": 1.9620253164556962
+        },
+        "runtimeCell": [
+          1536,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 3,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          921,
+          204,
+          307,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          2304,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 2,
+        "rowName": "MI_resonance",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1228,
+          204,
+          308,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          768,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 242,
+          "y": 185,
+          "w": 283,
+          "h": 13,
+          "anchorX": 143,
+          "anchorY": 61,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          0,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 604,
+            "bbox": [
+              218,
+              69,
+              89,
+              13
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 604,
+        "sourceRect": [
+          307,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 219,
+          "y": 117,
+          "w": 329,
+          "h": 150,
+          "anchorX": 78,
+          "anchorY": 102,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          768,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 181,
+          "y": 126,
+          "w": 406,
+          "h": 131,
+          "anchorX": 86,
+          "anchorY": 97,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          1536,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          921,
+          307,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 207,
+          "y": 143,
+          "w": 354,
+          "h": 98,
+          "anchorX": 67,
+          "anchorY": 90,
+          "scale": 1.9230769230769231
+        },
+        "runtimeCell": [
+          2304,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 3,
+        "rowName": "FA_afterimage",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1228,
+          307,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          1152,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 344,
+          "y": 157,
+          "w": 79,
+          "h": 69,
+          "anchorX": 119,
+          "anchorY": 68,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          0,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 271,
+          "y": 131,
+          "w": 226,
+          "h": 122,
+          "anchorX": 61,
+          "anchorY": 83,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          768,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 2,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 291,
+          "y": 158,
+          "w": 185,
+          "h": 68,
+          "anchorX": 74,
+          "anchorY": 71,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          1536,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 207,
+          "y": 158,
+          "w": 354,
+          "h": 68,
+          "anchorX": 118,
+          "anchorY": 71,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          2304,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1024,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 276,
+          "y": 119,
+          "w": 216,
+          "h": 145,
+          "anchorX": 109,
+          "anchorY": 93,
+          "scale": 1.6477272727272727
+        },
+        "runtimeCell": [
+          3072,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 4,
+        "rowName": "SOL_projectile",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1280,
+          409,
+          256,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          1536,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 0,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          0,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 1,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          768,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 2,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          1536,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": {
+          "x": 322,
+          "y": 117,
+          "w": 124,
+          "h": 150,
+          "anchorX": 108,
+          "anchorY": 68,
+          "scale": 3.260869565217391
+        },
+        "runtimeCell": [
+          2304,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1024,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 5,
+        "rowName": "LA_barrier",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1280,
+          512,
+          256,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          1920,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 0,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          0,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          307,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 287,
+          "y": 130,
+          "w": 194,
+          "h": 123,
+          "anchorX": 252,
+          "anchorY": 73,
+          "scale": 1.6875
+        },
+        "runtimeCell": [
+          768,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 808,
+            "bbox": [
+              0,
+              25,
+              46,
+              46
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 808,
+        "sourceRect": [
+          614,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 252,
+          "y": 124,
+          "w": 263,
+          "h": 135,
+          "anchorX": 228,
+          "anchorY": 81,
+          "scale": 1.6875
+        },
+        "runtimeCell": [
+          1536,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          921,
+          614,
+          307,
+          102
+        ],
+        "runtimeBox": {
+          "x": 241,
+          "y": 126,
+          "w": 285,
+          "h": 132,
+          "anchorX": 165,
+          "anchorY": 81,
+          "scale": 1.6875
+        },
+        "runtimeCell": [
+          2304,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 6,
+        "rowName": "TI_trap_marker",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1228,
+          614,
+          308,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          2304,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 361,
+          "y": 140,
+          "w": 45,
+          "h": 103,
+          "anchorX": 300,
+          "anchorY": 72,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          0,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 1,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          307,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 116,
+          "y": 120,
+          "w": 535,
+          "h": 143,
+          "anchorX": 219,
+          "anchorY": 82,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          768,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          614,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 116,
+          "y": 117,
+          "w": 535,
+          "h": 150,
+          "anchorX": 192,
+          "anchorY": 86,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          1536,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 3,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          921,
+          716,
+          307,
+          103
+        ],
+        "runtimeBox": {
+          "x": 118,
+          "y": 158,
+          "w": 532,
+          "h": 68,
+          "anchorX": 179,
+          "anchorY": 84,
+          "scale": 1.744186046511628
+        },
+        "runtimeCell": [
+          2304,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 7,
+        "rowName": "TI_detonation",
+        "frame": 4,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1228,
+          716,
+          308,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3072,
+          2688,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 0,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": {
+          "x": 335,
+          "y": 137,
+          "w": 97,
+          "h": 109,
+          "anchorX": 115,
+          "anchorY": 76,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          0,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 1,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          219,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": {
+          "x": 252,
+          "y": 148,
+          "w": 264,
+          "h": 87,
+          "anchorX": 46,
+          "anchorY": 72,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          768,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 2,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          438,
+          819,
+          220,
+          102
+        ],
+        "runtimeBox": {
+          "x": 259,
+          "y": 138,
+          "w": 250,
+          "h": 107,
+          "anchorX": 192,
+          "anchorY": 75,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          1536,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 3,
+        "componentsBefore": 2,
+        "componentsAfter": 1,
+        "removedComponents": [
+          {
+            "area": 209,
+            "bbox": [
+              0,
+              16,
+              15,
+              48
+            ],
+            "touchesEdge": true
+          }
+        ],
+        "removedArea": 209,
+        "sourceRect": [
+          658,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": {
+          "x": 347,
+          "y": 159,
+          "w": 73,
+          "h": 66,
+          "anchorX": 122,
+          "anchorY": 64,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          2304,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 4,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          877,
+          819,
+          220,
+          102
+        ],
+        "runtimeBox": {
+          "x": 233,
+          "y": 132,
+          "w": 301,
+          "h": 120,
+          "anchorX": 190,
+          "anchorY": 102,
+          "scale": 1.4285714285714286
+        },
+        "runtimeCell": [
+          3072,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1097,
+          819,
+          219,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 8,
+        "rowName": "Octava_spirits",
+        "frame": 6,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1316,
+          819,
+          220,
+          102
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          4608,
+          3072,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 0,
+        "componentsBefore": 2,
+        "componentsAfter": 2,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          0,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 142,
+          "y": 135,
+          "w": 484,
+          "h": 113,
+          "anchorX": 225,
+          "anchorY": 54,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          0,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 1,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          256,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 175,
+          "y": 167,
+          "w": 418,
+          "h": 50,
+          "anchorX": 167,
+          "anchorY": 39,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          768,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 2,
+        "componentsBefore": 3,
+        "componentsAfter": 3,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          512,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 116,
+          "y": 142,
+          "w": 535,
+          "h": 100,
+          "anchorX": 72,
+          "anchorY": 51,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          1536,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 3,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          768,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 157,
+          "y": 129,
+          "w": 453,
+          "h": 125,
+          "anchorX": 173,
+          "anchorY": 60,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          2304,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 4,
+        "componentsBefore": 1,
+        "componentsAfter": 1,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1024,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": {
+          "x": 272,
+          "y": 97,
+          "w": 223,
+          "h": 190,
+          "anchorX": 59,
+          "anchorY": 91,
+          "scale": 2.087912087912088
+        },
+        "runtimeCell": [
+          3072,
+          3456,
+          768,
+          384
+        ]
+      },
+      {
+        "row": 9,
+        "rowName": "Octava_beam",
+        "frame": 5,
+        "componentsBefore": 0,
+        "componentsAfter": 0,
+        "removedComponents": [],
+        "removedArea": 0,
+        "sourceRect": [
+          1280,
+          921,
+          256,
+          103
+        ],
+        "runtimeBox": null,
+        "runtimeCell": [
+          3840,
+          3456,
+          768,
+          384
+        ]
+      }
+    ]
+  },
+  "bleedRemovedFrames": [
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 2,
+      "rowName": "neutral_heavy",
+      "frame": 2,
+      "removedArea": 507,
+      "removedComponents": [
+        {
+          "area": 507,
+          "bbox": [
+            220,
+            66,
+            19,
+            105
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 4,
+      "rowName": "forward_medium",
+      "frame": 0,
+      "removedArea": 1026,
+      "removedComponents": [
+        {
+          "area": 1026,
+          "bbox": [
+            209,
+            122,
+            47,
+            49
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 5,
+      "rowName": "forward_heavy",
+      "frame": 1,
+      "removedArea": 1132,
+      "removedComponents": [
+        {
+          "area": 743,
+          "bbox": [
+            79,
+            0,
+            75,
+            37
+          ],
+          "touchesEdge": true
+        },
+        {
+          "area": 389,
+          "bbox": [
+            199,
+            90,
+            19,
+            81
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 5,
+      "rowName": "forward_heavy",
+      "frame": 3,
+      "removedArea": 533,
+      "removedComponents": [
+        {
+          "area": 533,
+          "bbox": [
+            24,
+            0,
+            56,
+            36
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 6,
+      "rowName": "back_light",
+      "frame": 0,
+      "removedArea": 728,
+      "removedComponents": [
+        {
+          "area": 728,
+          "bbox": [
+            30,
+            0,
+            46,
+            33
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 6,
+      "rowName": "back_light",
+      "frame": 2,
+      "removedArea": 691,
+      "removedComponents": [
+        {
+          "area": 691,
+          "bbox": [
+            136,
+            0,
+            57,
+            26
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_2_ground_normals",
+      "row": 7,
+      "rowName": "back_medium",
+      "frame": 2,
+      "removedArea": 529,
+      "removedComponents": [
+        {
+          "area": 529,
+          "bbox": [
+            236,
+            134,
+            20,
+            37
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 2,
+      "rowName": "medium_heavy_hitstun",
+      "frame": 3,
+      "removedArea": 720,
+      "removedComponents": [
+        {
+          "area": 720,
+          "bbox": [
+            0,
+            121,
+            28,
+            71
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 3,
+      "rowName": "knockback",
+      "frame": 3,
+      "removedArea": 563,
+      "removedComponents": [
+        {
+          "area": 563,
+          "bbox": [
+            0,
+            116,
+            37,
+            56
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 6,
+      "rowName": "ko_death",
+      "frame": 0,
+      "removedArea": 1068,
+      "removedComponents": [
+        {
+          "area": 1068,
+          "bbox": [
+            49,
+            158,
+            55,
+            34
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 6,
+      "rowName": "ko_death",
+      "frame": 2,
+      "removedArea": 972,
+      "removedComponents": [
+        {
+          "area": 972,
+          "bbox": [
+            37,
+            163,
+            51,
+            29
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_5_defense_reactions",
+      "row": 6,
+      "rowName": "ko_death",
+      "frame": 3,
+      "removedArea": 762,
+      "removedComponents": [
+        {
+          "area": 762,
+          "bbox": [
+            16,
+            167,
+            56,
+            25
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_7_detached_vfx",
+      "row": 3,
+      "rowName": "FA_afterimage",
+      "frame": 1,
+      "removedArea": 604,
+      "removedComponents": [
+        {
+          "area": 604,
+          "bbox": [
+            218,
+            69,
+            89,
+            13
+          ],
+          "touchesEdge": true
+        }
+      ]
+    },
+    {
+      "sheet": "sheet_7_detached_vfx",
+      "row": 6,
+      "rowName": "TI_trap_marker",
+      "frame": 2,
+      "removedArea": 808,
+      "removedComponents": [
+        {
+          "area": 808,
+          "bbox": [
+            0,
+            25,
+            46,
+            46
+          ],
+          "touchesEdge": true
+        }
+      ]
+    }
+  ]
+}

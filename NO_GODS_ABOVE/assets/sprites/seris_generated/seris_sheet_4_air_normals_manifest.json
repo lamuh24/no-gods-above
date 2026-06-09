@@ -1,0 +1,43 @@
+{
+  "asset": "Seris Sheet 4: Air Normals",
+  "source_generated_image": "C:\\Users\\qchee\\.codex\\generated_images\\019e7cd8-672c-74f2-89a5-e9a6cb306ac3\\ig_0a57b18f792cef92016a1c48202c0081999fd5777df65a7ca8.png",
+  "raw_copy": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\seris_generated\\seris_sheet_4_air_normals_chroma_raw.png",
+  "final_path": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\seris_generated\\seris_sheet_4_air_normals_chroma.png",
+  "image_size": {
+    "width": 1536,
+    "height": 1024
+  },
+  "background": "#FF00FF solid chroma-key normalized from generated magenta background-like pixels",
+  "rows": [
+    {
+      "row": 1,
+      "animation": "Air Light",
+      "frames": 4,
+      "note": "Generated 3 source poses; final held pose duplicated into open row space for exact count."
+    },
+    {
+      "row": 2,
+      "animation": "Air Medium",
+      "frames": 6,
+      "note": "Six requested poses present; long chain/arc pixels can merge in automated span detection."
+    },
+    {
+      "row": 3,
+      "animation": "Air Heavy",
+      "frames": 7,
+      "note": "Seven requested poses present; large connected arcs can merge in automated span detection."
+    },
+    {
+      "row": 4,
+      "animation": "Air Recovery / Fall Transition",
+      "frames": 4,
+      "note": "Generated 3 source poses; final held pose duplicated into open row space for exact count."
+    }
+  ],
+  "validation_notes": [
+    "Asset-only pass; no runtime/combat/Kairo/Vanta/Nyx/stage/UI/controller files intentionally changed.",
+    "Seris design, palette, weapon language, and sprite scale checked against Sheets 1-3 by visual inspection.",
+    "Held duplicates were used only for short rows where the generator underfilled complete poses; no sliced fragments were introduced.",
+    "Manual inspection required for row 2 and row 3 counts because long chain/energy arcs visually connect adjacent frames."
+  ]
+}

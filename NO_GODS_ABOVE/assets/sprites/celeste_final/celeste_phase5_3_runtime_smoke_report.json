@@ -1,0 +1,1804 @@
+{
+  "start": {
+    "mode": "training",
+    "p1": "celeste",
+    "p2": "vanta"
+  },
+  "debug": {
+    "frameDebugAvailable": true,
+    "debug": true
+  },
+  "atlasInfo": {
+    "celesteFinalUpAirAttacks": {
+      "ok": true,
+      "w": 3072,
+      "h": 3456
+    },
+    "celesteFinalBodyBasics": {
+      "ok": true,
+      "w": 4608,
+      "h": 3584
+    },
+    "celesteFinalGroundNormals": {
+      "ok": true,
+      "w": 3584,
+      "h": 4896
+    },
+    "celesteFinalSpecials": {
+      "ok": true,
+      "w": 5120,
+      "h": 3456
+    },
+    "celesteFinalOctavaBody": {
+      "ok": true,
+      "w": 4480,
+      "h": 1536
+    },
+    "celesteFinalVfx": {
+      "ok": true,
+      "w": 5376,
+      "h": 3840
+    },
+    "celesteFinalDefense": {
+      "ok": true,
+      "w": 7680,
+      "h": 4352
+    }
+  },
+  "moveStarts": [
+    {
+      "label": "J",
+      "move": "neutral_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "neutral_light",
+        "anim": "neutral_light"
+      },
+      "activeMove": "neutral_light",
+      "sockets": {
+        "anim": "neutral_light",
+        "activeMove": "neutral_light",
+        "rootType": "grounded",
+        "frame": 3,
+        "sockets": {
+          "root": {
+            "x": 339.7,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 339.7,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 341.7,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 339.7,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 381.7,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 305.7,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 535.7,
+            "y": 334,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 493.7,
+            "y": 376,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 443.7,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 465.7,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 343.7,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 277.7,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 451.7,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "K",
+      "move": "neutral_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "neutral_medium",
+        "anim": "neutral_medium"
+      },
+      "activeMove": "neutral_medium",
+      "sockets": {
+        "anim": "neutral_medium",
+        "activeMove": "neutral_medium",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 343.8,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 343.8,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 345.8,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 343.8,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 441.8,
+            "y": 352,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 309.8,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 547.8,
+            "y": 326,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 413.8,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 447.8,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 469.8,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 347.8,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 281.8,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 455.8,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "L",
+      "move": "neutral_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "neutral_heavy",
+        "anim": "neutral_heavy"
+      },
+      "activeMove": "neutral_heavy",
+      "sockets": {
+        "anim": "neutral_heavy",
+        "activeMove": "neutral_heavy",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 312.4,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 312.4,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 314.4,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 312.4,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 354.4,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 278.4,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 520.4,
+            "y": 342,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 478.4,
+            "y": 378,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 416.4,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 438.4,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 316.4,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 250.4,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 424.4,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "D+J",
+      "move": "forward_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "forward_light",
+        "anim": "forward_light"
+      },
+      "activeMove": "forward_light",
+      "sockets": {
+        "anim": "forward_light",
+        "activeMove": "forward_light",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 337.5,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 337.5,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 339.5,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 337.5,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 379.5,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 303.5,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 541.5,
+            "y": 336,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 503.5,
+            "y": 378,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 441.5,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 463.5,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 341.5,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 275.5,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 449.5,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "D+K",
+      "move": "forward_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "forward_medium",
+        "anim": "forward_medium"
+      },
+      "activeMove": "forward_medium",
+      "sockets": {
+        "anim": "forward_medium",
+        "activeMove": "forward_medium",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 340,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 340,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 342,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 340,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 454,
+            "y": 354,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 306,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 560,
+            "y": 330,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 410,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 444,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 466,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 344,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 278,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 452,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "D+L",
+      "move": "forward_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "forward_heavy",
+        "anim": "forward_heavy"
+      },
+      "activeMove": "forward_heavy",
+      "sockets": {
+        "anim": "forward_heavy",
+        "activeMove": "forward_heavy",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 312.4,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 312.4,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 314.4,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 312.4,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 354.4,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 278.4,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 542.4,
+            "y": 348,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 500.4,
+            "y": 386,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 416.4,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 438.4,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 316.4,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 250.4,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 424.4,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "A+J",
+      "move": "back_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_light",
+        "anim": "back_light"
+      },
+      "activeMove": "back_light",
+      "sockets": {
+        "anim": "back_light",
+        "activeMove": "back_light",
+        "rootType": "grounded",
+        "frame": 2,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 504,
+            "y": 336,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 462,
+            "y": 378,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "A+K",
+      "move": "back_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_medium",
+        "anim": "back_medium"
+      },
+      "activeMove": "back_medium",
+      "sockets": {
+        "anim": "back_medium",
+        "activeMove": "back_medium",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 514,
+            "y": 332,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 400,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 366,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "A+L",
+      "move": "back_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "back_heavy",
+        "anim": "back_heavy"
+      },
+      "activeMove": "back_heavy",
+      "sockets": {
+        "anim": "back_heavy",
+        "activeMove": "back_heavy",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 299.7,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 299.7,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 301.7,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 299.7,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 341.7,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 265.7,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 483.7,
+            "y": 348,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 443.7,
+            "y": 384,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 403.7,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 425.7,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 303.7,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 237.7,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 411.7,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Up+J",
+      "move": "up_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "up_light",
+        "anim": "up_light"
+      },
+      "activeMove": "up_light",
+      "sockets": {
+        "anim": "up_light",
+        "activeMove": "up_light",
+        "rootType": "grounded",
+        "frame": 2,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 498,
+            "y": 286,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 456,
+            "y": 334,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Up+K",
+      "move": "up_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "up_medium",
+        "anim": "up_medium"
+      },
+      "activeMove": "up_medium",
+      "sockets": {
+        "anim": "up_medium",
+        "activeMove": "up_medium",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 329.7,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 329.7,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 331.7,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 329.7,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 417.7,
+            "y": 330,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 295.7,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 499.7,
+            "y": 274,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 399.7,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 433.7,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 455.7,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 333.7,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 267.7,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 441.7,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Up+L",
+      "move": "up_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "up_heavy",
+        "anim": "up_heavy"
+      },
+      "activeMove": "up_heavy",
+      "sockets": {
+        "anim": "up_heavy",
+        "activeMove": "up_heavy",
+        "rootType": "grounded",
+        "frame": 0,
+        "sockets": {
+          "root": {
+            "x": 299.9,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 299.9,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 301.9,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 299.9,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 341.9,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 265.9,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 479.9,
+            "y": 270,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 441.9,
+            "y": 328,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 403.9,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 425.9,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 303.9,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 237.9,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 411.9,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Air J",
+      "move": "jump_light",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "jump_light",
+        "anim": "jump_light"
+      },
+      "activeMove": "jump_light",
+      "sockets": {
+        "anim": "jump_light",
+        "activeMove": "jump_light",
+        "rootType": "airborne",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 464.9,
+            "rootType": "airborne"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 464.9,
+            "rootType": "airborne"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 368.9,
+            "rootType": "airborne"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 296.9,
+            "rootType": "airborne"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 356.9,
+            "rootType": "airborne"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 358.9,
+            "rootType": "airborne"
+          },
+          "batonTip": {
+            "x": 518,
+            "y": 242.9,
+            "rootType": "airborne"
+          },
+          "frontPalm": {
+            "x": 476,
+            "y": 282.9,
+            "rootType": "airborne"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 374.9,
+            "rootType": "airborne"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 400.9,
+            "rootType": "airborne"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 362.9,
+            "rootType": "airborne"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 314.9,
+            "rootType": "airborne"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 346.9,
+            "rootType": "airborne"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Air K",
+      "move": "jump_medium",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "jump_medium",
+        "anim": "jump_medium"
+      },
+      "activeMove": "jump_medium",
+      "sockets": {
+        "anim": "jump_medium",
+        "activeMove": "jump_medium",
+        "rootType": "airborne",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 474.2,
+            "rootType": "airborne"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 474.2,
+            "rootType": "airborne"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 378.2,
+            "rootType": "airborne"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 306.2,
+            "rootType": "airborne"
+          },
+          "frontHand": {
+            "x": 428,
+            "y": 274.2,
+            "rootType": "airborne"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 368.2,
+            "rootType": "airborne"
+          },
+          "batonTip": {
+            "x": 538,
+            "y": 250.2,
+            "rootType": "airborne"
+          },
+          "frontPalm": {
+            "x": 400,
+            "y": 376.2,
+            "rootType": "airborne"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 384.2,
+            "rootType": "airborne"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 410.2,
+            "rootType": "airborne"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 372.2,
+            "rootType": "airborne"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 324.2,
+            "rootType": "airborne"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 356.2,
+            "rootType": "airborne"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Air L",
+      "move": "jump_heavy",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "jump_heavy",
+        "anim": "jump_heavy"
+      },
+      "activeMove": "jump_heavy",
+      "sockets": {
+        "anim": "jump_heavy",
+        "activeMove": "jump_heavy",
+        "rootType": "airborne",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 299.7,
+            "y": 482.9,
+            "rootType": "airborne"
+          },
+          "feetBase": {
+            "x": 311.7,
+            "y": 464.9,
+            "rootType": "airborne"
+          },
+          "torsoCenter": {
+            "x": 301.7,
+            "y": 386.9,
+            "rootType": "airborne"
+          },
+          "headCenter": {
+            "x": 299.7,
+            "y": 314.9,
+            "rootType": "airborne"
+          },
+          "frontHand": {
+            "x": 341.7,
+            "y": 374.9,
+            "rootType": "airborne"
+          },
+          "backHand": {
+            "x": 265.7,
+            "y": 376.9,
+            "rootType": "airborne"
+          },
+          "batonTip": {
+            "x": 475.7,
+            "y": 290.9,
+            "rootType": "airborne"
+          },
+          "frontPalm": {
+            "x": 441.7,
+            "y": 326.9,
+            "rootType": "airborne"
+          },
+          "projectileOrigin": {
+            "x": 403.7,
+            "y": 392.9,
+            "rootType": "airborne"
+          },
+          "trapPlacementOrigin": {
+            "x": 425.7,
+            "y": 418.9,
+            "rootType": "airborne"
+          },
+          "barrierCenter": {
+            "x": 303.7,
+            "y": 380.9,
+            "rootType": "airborne"
+          },
+          "octavaOrigin": {
+            "x": 237.7,
+            "y": 332.9,
+            "rootType": "airborne"
+          },
+          "beamOrigin": {
+            "x": 411.7,
+            "y": 364.9,
+            "rootType": "airborne"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "FA",
+      "move": "special_1",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "special_1",
+        "anim": "fa_strobe"
+      },
+      "activeMove": "special_1",
+      "sockets": {
+        "anim": "fa_strobe",
+        "activeMove": "special_1",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 425,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 425,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 421,
+            "y": 378,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 425,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 467,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 391,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 601,
+            "y": 334,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 557,
+            "y": 380,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 529,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 551,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 429,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 363,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 537,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "SOL",
+      "move": "special_2",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "special_2",
+        "anim": "sol_ovation"
+      },
+      "activeMove": "special_2",
+      "sockets": {
+        "anim": "sol_ovation",
+        "activeMove": "special_2",
+        "rootType": "grounded",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 532,
+            "y": 342,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 400,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 550,
+            "y": 386,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 560,
+            "y": 352,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 1,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "LA",
+      "move": "special_3",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "special_3",
+        "anim": "ti_encore"
+      },
+      "activeMove": "special_3",
+      "sockets": {
+        "anim": "ti_encore",
+        "activeMove": "special_3",
+        "rootType": "grounded",
+        "frame": 0,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 518,
+            "y": 342,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 400,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 574,
+            "y": 450,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 1,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "TI",
+      "move": "down_special",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": null,
+        "anim": "ti_encore"
+      },
+      "activeMove": null,
+      "sockets": {
+        "anim": "idle",
+        "activeMove": "",
+        "rootType": "grounded",
+        "frame": 2,
+        "sockets": {
+          "root": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "feetBase": {
+            "x": 330,
+            "y": 590,
+            "rootType": "grounded"
+          },
+          "torsoCenter": {
+            "x": 332,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "headCenter": {
+            "x": 330,
+            "y": 414,
+            "rootType": "grounded"
+          },
+          "frontHand": {
+            "x": 372,
+            "y": 472,
+            "rootType": "grounded"
+          },
+          "backHand": {
+            "x": 296,
+            "y": 474,
+            "rootType": "grounded"
+          },
+          "batonTip": {
+            "x": 422,
+            "y": 458,
+            "rootType": "grounded"
+          },
+          "frontPalm": {
+            "x": 400,
+            "y": 482,
+            "rootType": "grounded"
+          },
+          "projectileOrigin": {
+            "x": 434,
+            "y": 488,
+            "rootType": "grounded"
+          },
+          "trapPlacementOrigin": {
+            "x": 456,
+            "y": 518,
+            "rootType": "grounded"
+          },
+          "barrierCenter": {
+            "x": 334,
+            "y": 478,
+            "rootType": "grounded"
+          },
+          "octavaOrigin": {
+            "x": 268,
+            "y": 432,
+            "rootType": "grounded"
+          },
+          "beamOrigin": {
+            "x": 442,
+            "y": 464,
+            "rootType": "grounded"
+          }
+        }
+      },
+      "projectiles": 1,
+      "traps": 0,
+      "octava": null
+    },
+    {
+      "label": "Octava",
+      "move": "ultimate",
+      "started": {
+        "side": "p1",
+        "fighter": "celeste",
+        "move": "ultimate",
+        "anim": "octava"
+      },
+      "activeMove": "ultimate",
+      "sockets": {
+        "anim": "octava",
+        "activeMove": "ultimate",
+        "rootType": "ultimateLarge",
+        "frame": 1,
+        "sockets": {
+          "root": {
+            "x": 329.7,
+            "y": 590,
+            "rootType": "ultimateLarge"
+          },
+          "feetBase": {
+            "x": 329.7,
+            "y": 590,
+            "rootType": "ultimateLarge"
+          },
+          "torsoCenter": {
+            "x": 331.7,
+            "y": 482,
+            "rootType": "ultimateLarge"
+          },
+          "headCenter": {
+            "x": 329.7,
+            "y": 414,
+            "rootType": "ultimateLarge"
+          },
+          "frontHand": {
+            "x": 371.7,
+            "y": 472,
+            "rootType": "ultimateLarge"
+          },
+          "backHand": {
+            "x": 295.7,
+            "y": 474,
+            "rootType": "ultimateLarge"
+          },
+          "batonTip": {
+            "x": 539.7,
+            "y": 310,
+            "rootType": "ultimateLarge"
+          },
+          "frontPalm": {
+            "x": 399.7,
+            "y": 482,
+            "rootType": "ultimateLarge"
+          },
+          "projectileOrigin": {
+            "x": 433.7,
+            "y": 488,
+            "rootType": "ultimateLarge"
+          },
+          "trapPlacementOrigin": {
+            "x": 455.7,
+            "y": 518,
+            "rootType": "ultimateLarge"
+          },
+          "barrierCenter": {
+            "x": 333.7,
+            "y": 478,
+            "rootType": "ultimateLarge"
+          },
+          "octavaOrigin": {
+            "x": 205.7,
+            "y": 256,
+            "rootType": "ultimateLarge"
+          },
+          "beamOrigin": {
+            "x": 567.7,
+            "y": 328,
+            "rootType": "ultimateLarge"
+          }
+        }
+      },
+      "projectiles": 0,
+      "traps": 0,
+      "octava": "beam"
+    }
+  ],
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "nonblank": 879922,
+    "hotMagenta": 0
+  },
+  "public": {
+    "helperHidden": true,
+    "cards": 7,
+    "celesteCard": true
+  },
+  "failures": [],
+  "consoleErrors": [],
+  "failedRequests": []
+}

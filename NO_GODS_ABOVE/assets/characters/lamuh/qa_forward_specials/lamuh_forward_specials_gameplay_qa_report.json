@@ -1,0 +1,663 @@
+{
+  "ok": true,
+  "errors": [],
+  "failedRequests": [
+    {
+      "requestId": "31804.93",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_portrait_frame_p1.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.94",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_nameplate_p1.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.95",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_health_frame_p1.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.96",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_meter_frame_p1.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.97",
+      "url": "http://127.0.0.1:63669/assets/ui/processed/hud/hud_timer_horizontal_frame.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.98",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_combo_badge.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.99",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_portrait_frame_p2.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.100",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_nameplate_p2.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.101",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_health_frame_p2.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "requestId": "31804.102",
+      "url": "http://127.0.0.1:63669/assets/ui/hud/hud_meter_frame_p2.png",
+      "errorText": "net::ERR_ABORTED",
+      "canceled": true
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:63669/?lamuhTest=1&forwardSpecialsGameplayQA=1",
+    "http://127.0.0.1:63669/assets/backgrounds/menus/title_screen_background.png",
+    "http://127.0.0.1:63669/style.css",
+    "http://127.0.0.1:63669/assets/sprites/portraits/kairo_select.png",
+    "http://127.0.0.1:63669/assets/sprites/portraits/vanta_select.png",
+    "http://127.0.0.1:63669/assets/sprites/portraits/nyx_select.png",
+    "http://127.0.0.1:63669/assets/sprites/portraits/sol_select.png",
+    "http://127.0.0.1:63669/assets/sprites/portraits/seris_select.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/portraits/lamuh_select.png",
+    "http://127.0.0.1:63669/assets/sprites/portraits/celeste_select.png",
+    "http://127.0.0.1:63669/game.js?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/ui/processed/menu/menu_button_frame_textfree.png",
+    "http://127.0.0.1:63669/assets/backgrounds/stages/forsaken_courtyard.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_1_basic_movement.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_2_defense_recovery.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_3_core_attacks_a.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_4_core_attacks_b.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_5_low_air.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_6_specials_ultimate.png",
+    "http://127.0.0.1:63669/assets/sprites/kairo_final/kairo_sheet_7_end_states_extras.png",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_1_basic_movement.png?v=vanta-row-fix-1",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_2_defense_recovery.png",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_3_core_attacks_a.png",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_4_core_attacks_b.png",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_5_low_air.png",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_6_specials_ultimate.png?v=vanta-row-fix-1",
+    "http://127.0.0.1:63669/assets/sprites/vanta_final/vanta_sheet_7_end_states_extras.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_1_core_movement_atlas.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_2_air_movement_atlas.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_3_ground_normals_atlas.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_4_air_normals_atlas.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_5_specials_atlas.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_6_defense_hit_reactions_atlas.png",
+    "http://127.0.0.1:63669/assets/sprites/nyx_final/nyx_sheet_7_knockdown_recovery_flavor_atlas.png",
+    "http://127.0.0.1:63669/assets/effects/nyx/nyx_phantom_slash_wave_anim.png",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_1_core_movement_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_2_air_movement_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_3_ground_normals_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_4_air_normals_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_5_specials_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_6_defense_hit_reactions_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_7_knockdown_recovery_flavor_atlas.png?v=sol-runtime-1",
+    "http://127.0.0.1:63669/assets/sprites/sol_final/sol_sheet_8_directional_normals_atlas.png?v=sol-directional-normals-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/characters/lamuh/lamuh_sheet_1_core_movement_redesign_atlas.png?v=lamuh-sheet1-redesign-1",
+    "http://127.0.0.1:63669/assets/characters/lamuh/lamuh_sheet_forward_specials_redesign_atlas.png?v=lamuh-forward-specials-redesign-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png?v=lamuh-public-1",
+    "http://127.0.0.1:63669/assets/sprites/lamuh_final/lamuh_sheet_8_crown_of_no_gods_body_atlas.png?v=lamuh-crown-body-1",
+    "http://127.0.0.1:63669/assets/effects/lamuh/lamuh_crown_of_no_gods_beam_vfx_atlas.png?v=approved-chat-beam-1",
+    "http://127.0.0.1:63669/assets/effects/lamuh/lamuh_vfx_celestial_palm_projectile.png?v=lamuh-vfx-pack-01",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_2_air_movement_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_3_ground_normals_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_4_air_normals_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_5_specials_body_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_6_defense_hit_reactions_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/seris_revamp_final/seris_revamp_final_sheet_7_knockdown_recovery_flavor_atlas.png?v=seris-revamp-final-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_1_body_basics_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_2_ground_normals_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_3_up_air_attacks_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_4_specials_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_5_defense_reactions_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_6_octava_body_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/sprites/celeste_final/celeste_sheet_7_detached_vfx_runtime_atlas.png?v=celeste-phase5-4-1",
+    "http://127.0.0.1:63669/assets/effects/combat/combat_vfx_sheet.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_portrait_frame_p1.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_nameplate_p1.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_health_frame_p1.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_meter_frame_p1.png",
+    "http://127.0.0.1:63669/assets/ui/processed/hud/hud_timer_horizontal_frame.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_combo_badge.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_portrait_frame_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_nameplate_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_health_frame_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_meter_frame_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_portrait_frame_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_nameplate_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_health_frame_p2.png",
+    "http://127.0.0.1:63669/assets/ui/hud/hud_meter_frame_p2.png"
+  ],
+  "moves": [
+    {
+      "key": "forward_light_special",
+      "name": "Dash Strike",
+      "expectedAnim": "dash_strike",
+      "expectedRow": 0,
+      "start": {
+        "side": "p1",
+        "move": "forward_light_special",
+        "anim": "dash_strike"
+      },
+      "samples": [
+        {
+          "anim": "dash_strike",
+          "action": "attack",
+          "activeMove": null,
+          "actionTime": 0.0833666666666674,
+          "x": 381.6873333333338,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 1,
+          "beams": 0,
+          "timeMs": 80
+        },
+        {
+          "anim": "dash_strike",
+          "action": "attack",
+          "activeMove": null,
+          "actionTime": 0.1833000000000029,
+          "x": 443.2326666666685,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 180
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.46650000000000724,
+          "x": 595.7106619114713,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 360
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.46650000000000724,
+          "x": 595.7106619114713,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 720
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.46650000000000724,
+          "x": 595.7106619114713,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 1100
+        }
+      ],
+      "after": {
+        "anim": "idle",
+        "action": null,
+        "activeMove": null,
+        "x": 595.7106619114713,
+        "y": 590,
+        "grounded": true
+      }
+    },
+    {
+      "key": "forward_medium_special",
+      "name": "Mirror Break",
+      "expectedAnim": "mirror_break",
+      "expectedRow": 1,
+      "start": {
+        "side": "p1",
+        "move": "forward_medium_special",
+        "anim": "mirror_break"
+      },
+      "samples": [
+        {
+          "anim": "mirror_break",
+          "action": "attack",
+          "activeMove": null,
+          "actionTime": 0.09993333333333188,
+          "x": 381.9653333333326,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 1,
+          "beams": 0,
+          "timeMs": 80
+        },
+        {
+          "anim": "mirror_break",
+          "action": "attack",
+          "activeMove": null,
+          "actionTime": 0.23316666666666302,
+          "x": 449.0417027571182,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 180
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.583199999999997,
+          "x": 590.2801644426864,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 360
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.583199999999997,
+          "x": 590.2801644426864,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 720
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.583199999999997,
+          "x": 590.2801644426864,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 1100
+        }
+      ],
+      "after": {
+        "anim": "idle",
+        "action": null,
+        "activeMove": null,
+        "x": 590.2801644426864,
+        "y": 590,
+        "grounded": true
+      }
+    },
+    {
+      "key": "forward_heavy_special",
+      "name": "Mirror Pierce",
+      "expectedAnim": "mirror_pierce",
+      "expectedRow": 2,
+      "start": {
+        "side": "p1",
+        "move": "forward_heavy_special",
+        "anim": "mirror_pierce"
+      },
+      "samples": [
+        {
+          "anim": "crown_rush",
+          "action": "attack",
+          "activeMove": null,
+          "actionTime": 0.09993333333333189,
+          "x": 408.94733333333215,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 720,
+            "y": 590
+          },
+          "particles": 6,
+          "beams": 0,
+          "timeMs": 80
+        },
+        {
+          "anim": "mirror_pierce",
+          "action": "attack",
+          "activeMove": null,
+          "actionTime": 0.21656666666666813,
+          "x": 501.08766666666776,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 726.772167,
+            "y": 586.2111111111111
+          },
+          "particles": 27,
+          "beams": 0,
+          "timeMs": 180
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.9163666666666634,
+          "x": 840.27463604231,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 724.27463604231,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 360
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.9163666666666634,
+          "x": 840.27463604231,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 724.27463604231,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 720
+        },
+        {
+          "anim": "idle",
+          "action": null,
+          "activeMove": null,
+          "actionTime": 0.9163666666666634,
+          "x": 840.27463604231,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "enemy": {
+            "id": "lamuh",
+            "x": 724.27463604231,
+            "y": 590
+          },
+          "particles": 0,
+          "beams": 0,
+          "timeMs": 1100
+        }
+      ],
+      "after": {
+        "anim": "idle",
+        "action": null,
+        "activeMove": null,
+        "x": 840.27463604231,
+        "y": 590,
+        "grounded": true
+      }
+    }
+  ],
+  "screenshots": [
+    "assets/characters/lamuh/qa_forward_specials/forward_light_special_180ms.png",
+    "assets/characters/lamuh/qa_forward_specials/forward_medium_special_180ms.png",
+    "assets/characters/lamuh/qa_forward_specials/forward_heavy_special_180ms.png",
+    "assets/characters/lamuh/qa_forward_specials/forward_heavy_special_360ms.png"
+  ],
+  "loadedAssets": {
+    "lamuhFinalCoreMovement": true,
+    "lamuhSheet1CoreNormalsRedesign": true,
+    "lamuhForwardSpecialsRedesign": true,
+    "lamuhFinalAirMovement": true,
+    "lamuhFinalGroundNormals": true,
+    "lamuhFinalAirNormals": true,
+    "lamuhFinalSpecials": true,
+    "lamuhFinalDefense": true,
+    "lamuhFinalEndStates": true,
+    "lamuhCrownBody": true,
+    "lamuhCrownBeamVfx": true,
+    "lamuhVfxCelestialPalm": true,
+    "lamuhVfxAscendRadiant": false,
+    "lamuhVfxHeavenSplitter": false
+  },
+  "assetPaths": {
+    "newForward": "assets/characters/lamuh/lamuh_sheet_forward_specials_redesign_atlas.png?v=lamuh-forward-specials-redesign-1",
+    "oldSpecials": "assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png?v=lamuh-public-1",
+    "oldCrown": "assets/sprites/lamuh_final/lamuh_sheet_8_crown_of_no_gods_body_atlas.png?v=lamuh-crown-body-1",
+    "oldSheet1": "assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-public-1"
+  },
+  "mapping": {
+    "forward_light_special": [
+      "lamuhForwardSpecialsRedesign",
+      0
+    ],
+    "dash_strike": [
+      "lamuhForwardSpecialsRedesign",
+      0
+    ],
+    "lamuh_dash_strike": [
+      "lamuhForwardSpecialsRedesign",
+      0
+    ],
+    "forward_medium_special": [
+      "lamuhForwardSpecialsRedesign",
+      1
+    ],
+    "mirror_break": [
+      "lamuhForwardSpecialsRedesign",
+      1
+    ],
+    "lamuh_mirror_break": [
+      "lamuhForwardSpecialsRedesign",
+      1
+    ],
+    "forward_heavy_special": [
+      "lamuhForwardSpecialsRedesign",
+      2
+    ],
+    "mirror_pierce": [
+      "lamuhForwardSpecialsRedesign",
+      2
+    ],
+    "lamuh_mirror_pierce": [
+      "lamuhForwardSpecialsRedesign",
+      2
+    ]
+  },
+  "mechanicsSnapshot": {
+    "forward_light_special": {
+      "damage": 62,
+      "startup": 0.08333333333333333,
+      "active": 0.1,
+      "recovery": 0.25,
+      "hitstun": 0.5,
+      "blockstun": 0.2833333333333333,
+      "knockbackX": 92,
+      "knockbackY": -70,
+      "boxType": "dashStrike",
+      "duration": 0.43333333333333335,
+      "cancelTime": 0.16666666666666666,
+      "flags": {
+        "dash": true,
+        "dashCancel": true,
+        "softKnockdown": true,
+        "meter": 10,
+        "anim": "dash_strike"
+      }
+    },
+    "forward_medium_special": {
+      "damage": 78,
+      "startup": 0.13333333333333333,
+      "active": 0.1,
+      "recovery": 0.3333333333333333,
+      "hitstun": 0.5666666666666667,
+      "blockstun": 0.3333333333333333,
+      "knockbackX": 118,
+      "knockbackY": -120,
+      "boxType": "mirrorBreak",
+      "duration": 0.5666666666666667,
+      "cancelTime": 0.21666666666666667,
+      "flags": {
+        "dash": true,
+        "dashSpeed": 520,
+        "dashTime": 0.16,
+        "dashCancel": true,
+        "softKnockdown": true,
+        "meter": 14,
+        "anim": "mirror_break",
+        "visualProfile": "mirrorBreak",
+        "impactProfile": {
+          "hitStop": 0.064,
+          "shake": 7,
+          "sparkCount": 17,
+          "sparkSize": 15,
+          "burstSize": 31,
+          "speed": 380,
+          "life": 0.28,
+          "color": "#f7f2df",
+          "dramatic": true
+        }
+      }
+    },
+    "forward_heavy_special": {
+      "damage": 108,
+      "startup": 0.2,
+      "active": 0.13333333333333333,
+      "recovery": 0.5666666666666667,
+      "hitstun": 0.7,
+      "blockstun": 0.4,
+      "knockbackX": 162,
+      "knockbackY": -175,
+      "boxType": "mirrorPierce",
+      "duration": 0.9,
+      "cancelTime": 0.31666666666666665,
+      "flags": {
+        "dash": true,
+        "dashSpeed": 790,
+        "dashTime": 0.22,
+        "pierceSideSwitch": true,
+        "pierceSwitchAt": 0.56,
+        "pierceExitOffset": 84,
+        "pierceRange": 250,
+        "softKnockdown": true,
+        "meter": 22,
+        "anim": "mirror_pierce",
+        "visualProfile": "mirrorPierce",
+        "impactProfile": {
+          "hitStop": 0.086,
+          "shake": 12,
+          "sparkCount": 22,
+          "sparkSize": 18,
+          "burstSize": 38,
+          "speed": 500,
+          "life": 0.34,
+          "color": "#ffe8a3",
+          "dramatic": true
+        }
+      }
+    },
+    "inputRoutingShape": true
+  },
+  "canvasStats": {
+    "width": 1280,
+    "height": 720,
+    "alphaPixels": 921600,
+    "brightGoldishPixels": 8242,
+    "hotMagentaPixels": 0
+  },
+  "newAtlasRequested": true,
+  "newAtlasLoaded": true,
+  "forwardRowsMapped": true,
+  "movesStartExpected": true,
+  "movesReturnCleanly": true,
+  "noUltimateVfxLeak": true,
+  "oldFallbackAtlasesPresent": true,
+  "realFailedRequests": [],
+  "ignoredCanceledRequests": 10
+}

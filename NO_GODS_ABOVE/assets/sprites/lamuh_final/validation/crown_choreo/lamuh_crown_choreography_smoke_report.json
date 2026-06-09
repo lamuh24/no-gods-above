@@ -1,0 +1,423 @@
+{
+  "url": "http://127.0.0.1:8765/index.html?lamuhTest&crownChoreoSmoke=1",
+  "loadedAssets": {
+    "lamuhFinalCoreMovement": true,
+    "lamuhFinalAirMovement": true,
+    "lamuhFinalGroundNormals": true,
+    "lamuhFinalAirNormals": true,
+    "lamuhFinalSpecials": true,
+    "lamuhFinalDefense": true,
+    "lamuhFinalEndStates": true,
+    "lamuhCrownBody": true,
+    "lamuhCrownBeamVfx": true
+  },
+  "whiff": {
+    "start": {
+      "cinematicActive": false,
+      "cinematic": null,
+      "debug": {
+        "status": "started",
+        "attacker": "player",
+        "facing": 1,
+        "sheet": "lamuhCrownBody",
+        "phase": "startup",
+        "beamSpawned": false,
+        "damageApplied": false
+      },
+      "beamCount": 0,
+      "p1Hp": 1000,
+      "p2Hp": 1000,
+      "p1Anim": "ultimate",
+      "p2Anim": "enemy_idle",
+      "p1Move": "ultimate",
+      "p2Move": null
+    },
+    "final": {
+      "cinematicActive": false,
+      "cinematic": null,
+      "debug": {
+        "status": "whiff_recovery",
+        "attacker": "player",
+        "facing": 1,
+        "sheet": "lamuhCrownBody",
+        "phase": "startup",
+        "beamSpawned": false,
+        "damageApplied": false
+      },
+      "beamCount": 0,
+      "p1Hp": 1000,
+      "p2Hp": 1000,
+      "p1Anim": "idle",
+      "p2Anim": "enemy_idle",
+      "p1Move": null,
+      "p2Move": null
+    },
+    "screenshot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_whiff_no_cinematic.png",
+    "passed": true
+  },
+  "scenarios": [
+    {
+      "name": "p1_facing_right",
+      "attackerSide": "p1",
+      "facing": 1,
+      "start": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "started",
+          "attacker": "player",
+          "facing": 1,
+          "sheet": "lamuhCrownBody",
+          "phase": "startup",
+          "beamSpawned": false,
+          "damageApplied": false
+        },
+        "beamCount": 0,
+        "p1Hp": 1000,
+        "p2Hp": 1000,
+        "p1Anim": "ultimate",
+        "p2Anim": "enemy_idle",
+        "p1Move": "ultimate",
+        "p2Move": null
+      },
+      "final": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "finished",
+          "attacker": "player",
+          "defender": "enemy",
+          "facing": 1,
+          "sheet": "lamuhCrownBody",
+          "phase": "recovery",
+          "anchors": {
+            "anchorX": 308,
+            "opponentStartX": 486,
+            "carryMidX": 673.2,
+            "carryEndX": 846,
+            "launchX": 808,
+            "beamTargetX": 894,
+            "beamTargetY": 458
+          },
+          "beamSpawned": true,
+          "damageApplied": true,
+          "positions": {
+            "phase": "recovery",
+            "lamuhX": 308,
+            "opponentX": 1058,
+            "opponentY": 526,
+            "travelFromStart": 572
+          },
+          "finalDamage": 280
+        },
+        "beamCount": 0,
+        "p1Hp": 1000,
+        "p2Hp": 720,
+        "p1Anim": "idle",
+        "p2Anim": "enemy_get_up",
+        "p1Move": null,
+        "p2Move": null
+      },
+      "phases": [
+        "startup",
+        "combo_a",
+        "combo_b",
+        "launch",
+        "charge",
+        "fire",
+        "recovery"
+      ],
+      "maxTravel": 572,
+      "minOpponentY": 412,
+      "screenshots": {
+        "launchShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_facing_right_launch.png",
+        "chargeShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_facing_right_charge.png",
+        "fireShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_facing_right_fire.png"
+      },
+      "beamSeen": true,
+      "damageApplied": true,
+      "minHp": 720,
+      "passed": true
+    },
+    {
+      "name": "p1_facing_left",
+      "attackerSide": "p1",
+      "facing": -1,
+      "start": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "started",
+          "attacker": "player",
+          "facing": -1,
+          "sheet": "lamuhCrownBody",
+          "phase": "startup",
+          "beamSpawned": false,
+          "damageApplied": false
+        },
+        "beamCount": 0,
+        "p1Hp": 1000,
+        "p2Hp": 1000,
+        "p1Anim": "ultimate",
+        "p2Anim": "enemy_idle",
+        "p1Move": "ultimate",
+        "p2Move": null
+      },
+      "final": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "finished",
+          "attacker": "player",
+          "defender": "enemy",
+          "facing": -1,
+          "sheet": "lamuhCrownBody",
+          "phase": "recovery",
+          "anchors": {
+            "anchorX": 722,
+            "opponentStartX": 544,
+            "carryMidX": 356.79999999999995,
+            "carryEndX": 184,
+            "launchX": 222,
+            "beamTargetX": 136,
+            "beamTargetY": 458
+          },
+          "beamSpawned": true,
+          "damageApplied": true,
+          "positions": {
+            "phase": "recovery",
+            "lamuhX": 722,
+            "opponentX": 110,
+            "opponentY": 526,
+            "travelFromStart": 434
+          },
+          "finalDamage": 280
+        },
+        "beamCount": 0,
+        "p1Hp": 1000,
+        "p2Hp": 720,
+        "p1Anim": "idle",
+        "p2Anim": "enemy_get_up",
+        "p1Move": null,
+        "p2Move": null
+      },
+      "phases": [
+        "startup",
+        "combo_a",
+        "combo_b",
+        "launch",
+        "charge",
+        "fire",
+        "recovery"
+      ],
+      "maxTravel": 434,
+      "minOpponentY": 412,
+      "screenshots": {
+        "launchShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_facing_left_launch.png",
+        "chargeShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_facing_left_charge.png",
+        "fireShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p1_facing_left_fire.png"
+      },
+      "beamSeen": true,
+      "damageApplied": true,
+      "minHp": 720,
+      "passed": true
+    },
+    {
+      "name": "p2_facing_right",
+      "attackerSide": "p2",
+      "facing": 1,
+      "start": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "started",
+          "attacker": "enemy",
+          "facing": 1,
+          "sheet": "lamuhCrownBody",
+          "phase": "startup",
+          "beamSpawned": false,
+          "damageApplied": false
+        },
+        "beamCount": 0,
+        "p1Hp": 1000,
+        "p2Hp": 1000,
+        "p1Anim": "idle",
+        "p2Anim": "enemy_ultimate",
+        "p1Move": null,
+        "p2Move": "enemy_ultimate"
+      },
+      "final": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "finished",
+          "attacker": "enemy",
+          "defender": "player",
+          "facing": 1,
+          "sheet": "lamuhCrownBody",
+          "phase": "recovery",
+          "anchors": {
+            "anchorX": 308,
+            "opponentStartX": 486,
+            "carryMidX": 673.2,
+            "carryEndX": 846,
+            "launchX": 808,
+            "beamTargetX": 894,
+            "beamTargetY": 458
+          },
+          "beamSpawned": true,
+          "damageApplied": true,
+          "positions": {
+            "phase": "recovery",
+            "lamuhX": 308,
+            "opponentX": 1058,
+            "opponentY": 526,
+            "travelFromStart": 572
+          },
+          "finalDamage": 280
+        },
+        "beamCount": 0,
+        "p1Hp": 720,
+        "p2Hp": 1000,
+        "p1Anim": "get_up",
+        "p2Anim": "enemy_idle",
+        "p1Move": null,
+        "p2Move": null
+      },
+      "phases": [
+        "startup",
+        "combo_a",
+        "combo_b",
+        "launch",
+        "charge",
+        "fire",
+        "recovery"
+      ],
+      "maxTravel": 572,
+      "minOpponentY": 412,
+      "screenshots": {
+        "launchShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p2_facing_right_launch.png",
+        "chargeShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p2_facing_right_charge.png",
+        "fireShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p2_facing_right_fire.png"
+      },
+      "beamSeen": true,
+      "damageApplied": true,
+      "minHp": 720,
+      "passed": true
+    },
+    {
+      "name": "p2_facing_left",
+      "attackerSide": "p2",
+      "facing": -1,
+      "start": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "started",
+          "attacker": "enemy",
+          "facing": -1,
+          "sheet": "lamuhCrownBody",
+          "phase": "startup",
+          "beamSpawned": false,
+          "damageApplied": false
+        },
+        "beamCount": 0,
+        "p1Hp": 1000,
+        "p2Hp": 1000,
+        "p1Anim": "idle",
+        "p2Anim": "enemy_ultimate",
+        "p1Move": null,
+        "p2Move": "enemy_ultimate"
+      },
+      "final": {
+        "cinematicActive": false,
+        "cinematic": null,
+        "debug": {
+          "status": "finished",
+          "attacker": "enemy",
+          "defender": "player",
+          "facing": -1,
+          "sheet": "lamuhCrownBody",
+          "phase": "recovery",
+          "anchors": {
+            "anchorX": 722,
+            "opponentStartX": 544,
+            "carryMidX": 356.79999999999995,
+            "carryEndX": 184,
+            "launchX": 222,
+            "beamTargetX": 136,
+            "beamTargetY": 458
+          },
+          "beamSpawned": true,
+          "damageApplied": true,
+          "positions": {
+            "phase": "recovery",
+            "lamuhX": 722,
+            "opponentX": 110,
+            "opponentY": 526,
+            "travelFromStart": 434
+          },
+          "finalDamage": 280
+        },
+        "beamCount": 0,
+        "p1Hp": 720,
+        "p2Hp": 1000,
+        "p1Anim": "get_up",
+        "p2Anim": "enemy_idle",
+        "p1Move": null,
+        "p2Move": null
+      },
+      "phases": [
+        "startup",
+        "combo_a",
+        "combo_b",
+        "launch",
+        "charge",
+        "fire",
+        "recovery"
+      ],
+      "maxTravel": 434,
+      "minOpponentY": 412,
+      "screenshots": {
+        "launchShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p2_facing_left_launch.png",
+        "chargeShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p2_facing_left_charge.png",
+        "fireShot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\validation\\crown_choreo\\p2_facing_left_fire.png"
+      },
+      "beamSeen": true,
+      "damageApplied": true,
+      "minHp": 720,
+      "passed": true
+    }
+  ],
+  "existingUltimateRegression": {
+    "start": {
+      "active": false,
+      "p1": "sol",
+      "p2": "nyx",
+      "move": "ultimate",
+      "anim": "ultimate"
+    },
+    "final": {
+      "active": false,
+      "p1": "sol",
+      "p2": "nyx",
+      "p1Hp": 1000,
+      "p2Hp": 600,
+      "p1Move": "ultimate",
+      "p1Anim": "solar_verdict_finish"
+    },
+    "passed": true
+  },
+  "network": {
+    "lamuhCrownRequests": [
+      "http://127.0.0.1:8765/assets/sprites/lamuh_final/lamuh_sheet_8_crown_of_no_gods_body_atlas.png?v=lamuh-crown-body-1",
+      "http://127.0.0.1:8765/assets/effects/lamuh/lamuh_crown_of_no_gods_beam_vfx_atlas.png?v=approved-chat-beam-1"
+    ],
+    "serisSheet8Requests": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "consoleMessages": [],
+    "exceptions": []
+  },
+  "passed": true
+}

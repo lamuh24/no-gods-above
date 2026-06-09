@@ -1,0 +1,60 @@
+{
+  "ok": true,
+  "atlas": {
+    "path": "assets\\characters\\lamuh\\lamuh_sheet_4_back_neutral_specials_redesign_atlas.png",
+    "width": 3584,
+    "height": 2688,
+    "colorType": 6,
+    "hasAlphaColorType": true
+  },
+  "normalization": {
+    "validationPassed": true,
+    "outputSize": [
+      3584,
+      2688
+    ],
+    "occupiedCells": 48,
+    "sourceSpriteComponentsDetected": 48,
+    "hasRealTransparency": true,
+    "greenBackgroundRemoved": true,
+    "whiteCoatPreserved": true,
+    "blackOutfitLocsPreserved": true,
+    "vfxPreserved": true,
+    "bodyScale": {
+      "final_median_body_height": 356,
+      "sheet1_median_body_height": 371,
+      "ratio": 0.96,
+      "passes": true
+    },
+    "baselineMaxDeviation": 0
+  },
+  "code": {
+    "assetPath": true,
+    "sheetMeta": true,
+    "profileSheetKey": true,
+    "constants": {
+      "mirrorSlip": true,
+      "reboundStrike": true,
+      "mirrorReversal": true
+    },
+    "aliases": {
+      "back_special": true,
+      "back_light_special": true,
+      "mirror_slip": true,
+      "lamuh_mirror_slip": true,
+      "back_medium_special": true,
+      "rebound_strike": true,
+      "lamuh_rebound_strike": true,
+      "back_heavy_special": true,
+      "mirror_reversal": true,
+      "lamuh_mirror_reversal": true
+    },
+    "debugRows": {
+      "back_special": true,
+      "back_light_special": true,
+      "back_medium_special": true,
+      "back_heavy_special": true
+    },
+    "neutralMovedToDedicatedAtlas": true
+  }
+}

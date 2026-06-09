@@ -1,0 +1,267 @@
+{
+  "sheet": "lamuh_sheet_8_crown_of_no_gods_body_atlas.png",
+  "status": "PASS_WITH_ASCENDED_LOCS_REVIEW_NOTES",
+  "contract": {
+    "atlasSize": [
+      3584,
+      3584
+    ],
+    "grid": [
+      8,
+      8
+    ],
+    "cellSize": 448,
+    "baselineY": 382,
+    "fixedSourceCells": true,
+    "anchorMode": "lockedFrameBottomCenter",
+    "frameCounts": [
+      6,
+      7,
+      8,
+      8,
+      7,
+      8,
+      8,
+      6
+    ],
+    "rowNames": [
+      "super_startup_flash_pose",
+      "rush_forward_starter_hit",
+      "cinematic_combo_string_a",
+      "cinematic_combo_string_b_reposition",
+      "launch_setup_hit",
+      "transformation_beam_charge",
+      "ascended_beam_fire_pose_sustain",
+      "ascended_recovery_aura_fade"
+    ]
+  },
+  "checks": {
+    "dimensionsExact": true,
+    "gridExact": true,
+    "cellSizeExact": true,
+    "transparentRGBA": true,
+    "visibleExactMagentaPixels": 0,
+    "edgeContacts": [],
+    "emptyActiveCells": [],
+    "inactiveTrailingCellsCleanOrTransparent": true,
+    "giantBeamOrImpactBakedIn": false,
+    "runtimeCodeChanged": false,
+    "rows0To4Preserved": true,
+    "onlyRows5To7CorrectedThisPass": true,
+    "rows5To7AscendedDreadlockCorrection": true
+  },
+  "warnings": [
+    "Rows 0-4 were preserved from the prior Sheet 8 structure.",
+    "Rows 5-7 were rebuilt from the pre-spiky body row strips and corrected with restrained gold/cyan loc highlights so LAMUH remains visibly dreadheaded while ascended.",
+    "No full beam or impact explosion is baked into the body sheet; no runtime code was changed."
+  ],
+  "hairIdentityStats": [
+    {
+      "row": 5,
+      "col": 0,
+      "progress": 0,
+      "hairPixels": 0,
+      "highlightPixels": 0
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "progress": 0.18,
+      "hairPixels": 0,
+      "highlightPixels": 0
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "progress": 0.34,
+      "hairPixels": 0,
+      "highlightPixels": 0
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "progress": 0.52,
+      "hairPixels": 9492,
+      "highlightPixels": 4998
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "progress": 0.68,
+      "hairPixels": 9699,
+      "highlightPixels": 4985
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "progress": 0.82,
+      "hairPixels": 9540,
+      "highlightPixels": 4966
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "progress": 0.95,
+      "hairPixels": 9540,
+      "highlightPixels": 4966
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "progress": 1.0,
+      "hairPixels": 9540,
+      "highlightPixels": 4966
+    },
+    {
+      "row": 6,
+      "col": 0,
+      "progress": 0.88,
+      "hairPixels": 10237,
+      "highlightPixels": 5057
+    },
+    {
+      "row": 6,
+      "col": 1,
+      "progress": 0.88,
+      "hairPixels": 11898,
+      "highlightPixels": 5721
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "progress": 0.88,
+      "hairPixels": 14232,
+      "highlightPixels": 6821
+    },
+    {
+      "row": 6,
+      "col": 3,
+      "progress": 0.88,
+      "hairPixels": 14643,
+      "highlightPixels": 6996
+    },
+    {
+      "row": 6,
+      "col": 4,
+      "progress": 0.88,
+      "hairPixels": 14092,
+      "highlightPixels": 6612
+    },
+    {
+      "row": 6,
+      "col": 5,
+      "progress": 0.88,
+      "hairPixels": 12092,
+      "highlightPixels": 5994
+    },
+    {
+      "row": 6,
+      "col": 6,
+      "progress": 0.88,
+      "hairPixels": 11689,
+      "highlightPixels": 5591
+    },
+    {
+      "row": 6,
+      "col": 7,
+      "progress": 0.88,
+      "hairPixels": 11689,
+      "highlightPixels": 5591
+    },
+    {
+      "row": 7,
+      "col": 0,
+      "progress": 0.8,
+      "hairPixels": 8076,
+      "highlightPixels": 4219
+    },
+    {
+      "row": 7,
+      "col": 1,
+      "progress": 0.62,
+      "hairPixels": 7887,
+      "highlightPixels": 4238
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "progress": 0.4,
+      "hairPixels": 8261,
+      "highlightPixels": 4499
+    },
+    {
+      "row": 7,
+      "col": 3,
+      "progress": 0.2,
+      "hairPixels": 8644,
+      "highlightPixels": 4572
+    },
+    {
+      "row": 7,
+      "col": 4,
+      "progress": 0.06,
+      "hairPixels": 0,
+      "highlightPixels": 0
+    },
+    {
+      "row": 7,
+      "col": 5,
+      "progress": 0.0,
+      "hairPixels": 0,
+      "highlightPixels": 0
+    }
+  ],
+  "previewPaths": [
+    {
+      "row": 0,
+      "rowName": "super_startup_flash_pose",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_0_super_startup_flash_pose_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_0_super_startup_flash_pose.gif"
+    },
+    {
+      "row": 1,
+      "rowName": "rush_forward_starter_hit",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_1_rush_forward_starter_hit_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_1_rush_forward_starter_hit.gif"
+    },
+    {
+      "row": 2,
+      "rowName": "cinematic_combo_string_a",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_2_cinematic_combo_string_a_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_2_cinematic_combo_string_a.gif"
+    },
+    {
+      "row": 3,
+      "rowName": "cinematic_combo_string_b_reposition",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_3_cinematic_combo_string_b_reposition_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_3_cinematic_combo_string_b_reposition.gif"
+    },
+    {
+      "row": 4,
+      "rowName": "launch_setup_hit",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_4_launch_setup_hit_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_4_launch_setup_hit.gif"
+    },
+    {
+      "row": 5,
+      "rowName": "transformation_beam_charge",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_5_transformation_beam_charge_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_5_transformation_beam_charge.gif"
+    },
+    {
+      "row": 6,
+      "rowName": "ascended_beam_fire_pose_sustain",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_6_ascended_beam_fire_pose_sustain_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_6_ascended_beam_fire_pose_sustain.gif"
+    },
+    {
+      "row": 7,
+      "rowName": "ascended_recovery_aura_fade",
+      "strip": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_7_ascended_recovery_aura_fade_strip.png",
+      "gif": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\previews\\lamuh_sheet_8_7_ascended_recovery_aura_fade.gif"
+    }
+  ],
+  "contactSheet": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\lamuh_sheet_8_crown_of_no_gods_body_contact.png",
+  "finalAtlas": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\lamuh_sheet_8_crown_of_no_gods_body_atlas.png",
+  "hairCorrectionReport": "NO_GODS_ABOVE\\assets\\sprites\\lamuh_final\\lamuh_sheet_8_crown_of_no_gods_body_ascended_locs_correction_report.json"
+}

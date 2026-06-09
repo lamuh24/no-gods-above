@@ -1,0 +1,378 @@
+{
+  "currentHookAuditBeforeCorrection": {
+    "celestialPalm": {
+      "asset": "lamuh_vfx_celestial_palm_projectile.png",
+      "spawn": "projectile spawned at move startup threshold",
+      "priorOffset": "draw at projectile hitbox center",
+      "drawSize": "168x68",
+      "duration": "projectile life 0.92s P1 / 1.1s P2",
+      "mirrorsWithFacing": true,
+      "follows": "projectile/world motion",
+      "issue": "visual projectile sat too low versus hand/palm"
+    },
+    "ascendStep": {
+      "asset": "lamuh_vfx_ascend_radiant_trail.png",
+      "spawn": "beginMove forward_special/special_2",
+      "priorOffset": {
+        "x": 58,
+        "y": -90
+      },
+      "priorDrawSize": "246x124",
+      "priorDuration": "0.34s",
+      "mirrorsWithFacing": true,
+      "follows": "owner",
+      "issue": "front-floating trail read pasted on"
+    },
+    "heavenSplitter": {
+      "asset": "lamuh_vfx_heaven_splitter_vertical.png",
+      "spawn": "beginMove down_special/special_3",
+      "priorOffset": {
+        "x": 22,
+        "y": -132
+      },
+      "priorDrawSize": "206x282",
+      "priorDuration": "0.42s",
+      "mirrorsWithFacing": true,
+      "follows": "owner",
+      "issue": "separate floor spike beside raised-hand strike"
+    },
+    "radiantDive": {
+      "asset": "lamuh_vfx_ascend_radiant_trail.png",
+      "spawn": "beginMove air_special",
+      "priorOffset": {
+        "x": 54,
+        "y": -62
+      },
+      "priorDrawSize": "258x136",
+      "priorDuration": "0.36s",
+      "mirrorsWithFacing": true,
+      "follows": "owner",
+      "issue": "horizontal trail angle did not match diagonal dive vector"
+    },
+    "divineVanish": {
+      "asset": "Sheet 5 purple/phase row and existing shadow step behavior",
+      "spawn": "back_special",
+      "note": "no gold/cyan candidate overlay; preserved"
+    }
+  },
+  "updatedAnchorsTested": {
+    "celestialPalm": {
+      "classification": "KEEP",
+      "drawOffsetX": 0,
+      "drawOffsetY": -66,
+      "drawSize": "168x68",
+      "mirrorsWithFacing": true,
+      "follows": "projectile/world motion",
+      "note": "visual-only offset; projectile gameplay/hitbox unchanged"
+    },
+    "ascendStep": {
+      "classification": "DISABLE_FOR_NOW",
+      "testedOffset": {
+        "x": -64,
+        "y": -76
+      },
+      "testedLayer": "behind",
+      "testedDrawSize": "176x76",
+      "testedDuration": "0.22s",
+      "testedAlpha": 0.52,
+      "runtimeEnabled": false,
+      "note": "tested as short behind-body owner-follow trail, but still read as a detached sticker in preview"
+    },
+    "heavenSplitter": {
+      "classification": "DISABLE_FOR_NOW",
+      "runtimeEnabled": false,
+      "note": "candidate vertical burst hurts readability and no longer requests at runtime"
+    },
+    "radiantDive": {
+      "classification": "DISABLE_FOR_NOW",
+      "runtimeEnabled": false,
+      "note": "candidate trail angle does not match dive vector and no longer requests at runtime"
+    },
+    "divineVanish": {
+      "classification": "KEEP",
+      "note": "purple phase identity preserved; no gold/cyan overlay spawned"
+    }
+  },
+  "loadedAssets": {
+    "lamuhFinalCoreMovement": true,
+    "lamuhFinalAirMovement": true,
+    "lamuhFinalGroundNormals": true,
+    "lamuhFinalAirNormals": true,
+    "lamuhFinalSpecials": true,
+    "lamuhFinalDefense": true,
+    "lamuhFinalEndStates": true,
+    "lamuhCrownBody": true,
+    "lamuhCrownBeamVfx": true,
+    "lamuhVfxCelestialPalm": true,
+    "lamuhVfxAscendRadiant": false,
+    "lamuhVfxHeavenSplitter": false
+  },
+  "captures": [
+    {
+      "label": "celestial_palm_p1_facing_right",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\celestial_palm_p1_facing_right.png",
+      "move": "neutral_special",
+      "side": "p1",
+      "facing": 1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 420,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "idle"
+        },
+        "p2": {
+          "x": 761.4795787640859,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "celestial_palm_p1_facing_left",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\celestial_palm_p1_facing_left.png",
+      "move": "neutral_special",
+      "side": "p1",
+      "facing": -1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 760,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "idle"
+        },
+        "p2": {
+          "x": 418.52042123591406,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_medium_hitstun"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "celestial_palm_p2_facing_right",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\celestial_palm_p2_facing_right.png",
+      "move": "neutral_special",
+      "side": "p2",
+      "facing": 1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 761.0960368625625,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "medium_hitstun"
+        },
+        "p2": {
+          "x": 420,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "celestial_palm_p2_facing_left",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\celestial_palm_p2_facing_left.png",
+      "move": "neutral_special",
+      "side": "p2",
+      "facing": -1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 418.90396313743764,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "medium_hitstun"
+        },
+        "p2": {
+          "x": 760,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "ascend_step_p1_disabled_reference",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\ascend_step_p1_disabled_reference.png",
+      "move": "forward_special",
+      "side": "p1",
+      "facing": 1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 660.0138247164214,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "idle"
+        },
+        "p2": {
+          "x": 776.0138247164214,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "heaven_splitter_p1_disabled_reference",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\heaven_splitter_p1_disabled_reference.png",
+      "move": "down_special",
+      "side": "p1",
+      "facing": 1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 420,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "stand_up"
+        },
+        "p2": {
+          "x": 760,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "radiant_dive_p1_disabled_reference",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\radiant_dive_p1_disabled_reference.png",
+      "move": "air_special",
+      "side": "p1",
+      "facing": 1,
+      "airborne": true,
+      "snapshot": {
+        "p1": {
+          "x": 567.9973112264533,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "idle"
+        },
+        "p2": {
+          "x": 760,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    },
+    {
+      "label": "divine_vanish_p1_preserve_purple",
+      "file": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\effects\\lamuh\\validation\\vfx_anchor_audit\\divine_vanish_p1_preserve_purple.png",
+      "move": "back_special",
+      "side": "p1",
+      "facing": 1,
+      "airborne": false,
+      "snapshot": {
+        "p1": {
+          "x": 176.21219702322068,
+          "y": 590,
+          "facing": 1,
+          "grounded": true,
+          "move": null,
+          "anim": "idle"
+        },
+        "p2": {
+          "x": 760,
+          "y": 590,
+          "facing": -1,
+          "grounded": true,
+          "move": null,
+          "anim": "enemy_idle"
+        },
+        "effects": [],
+        "projectiles": []
+      }
+    }
+  ],
+  "existingFighter": {
+    "p1": {
+      "x": 371.31266666666625,
+      "y": 590,
+      "facing": 1,
+      "grounded": true,
+      "move": "special_1",
+      "anim": "solar_step"
+    },
+    "p2": {
+      "x": 720,
+      "y": 590,
+      "facing": -1,
+      "grounded": true,
+      "move": null,
+      "anim": "enemy_idle"
+    }
+  },
+  "requestSummary": {
+    "lamuhVfxRequests": [
+      "http://127.0.0.1:8797/assets/effects/lamuh/lamuh_vfx_celestial_palm_projectile.png?v=lamuh-vfx-pack-01"
+    ],
+    "serisSheet8Requests": [],
+    "badResponses": [],
+    "requestFailures": [],
+    "consoleErrors": [],
+    "benignAbortedRequests": [
+      "53868.83:net::ERR_ABORTED",
+      "53868.84:net::ERR_ABORTED",
+      "53868.85:net::ERR_ABORTED",
+      "53868.86:net::ERR_ABORTED",
+      "53868.87:net::ERR_ABORTED",
+      "53868.88:net::ERR_ABORTED",
+      "53868.89:net::ERR_ABORTED",
+      "53868.90:net::ERR_ABORTED",
+      "53868.91:net::ERR_ABORTED",
+      "53868.92:net::ERR_ABORTED"
+    ],
+    "note": "ERR_ABORTED entries are treated as benign scripted-transition/browser-teardown cancellations; hard failures are non-aborted loading failures or >=400 responses."
+  },
+  "passed": true,
+  "visualCaptureNote": "Celestial screenshots were captured immediately after projectile spawn; post-capture state snapshots may show 0 projectiles because the projectile expires quickly during screenshot/JSON collection."
+}

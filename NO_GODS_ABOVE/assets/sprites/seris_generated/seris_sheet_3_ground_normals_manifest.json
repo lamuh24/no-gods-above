@@ -1,0 +1,65 @@
+{
+  "asset": "Seris Sheet 3 - Ground Normals",
+  "path": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\seris_generated\\seris_sheet_3_ground_normals_chroma.png",
+  "raw_generated_source": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\assets\\sprites\\seris_generated\\seris_sheet_3_ground_normals_chroma_raw.png",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "background": "#FF00FF",
+  "background_exact_key_pct": 83.46,
+  "non_key_pixels": 260084,
+  "black_pixels_note": "Black pixels are sprite outlines, not a black background.",
+  "black_pixels_total": 513,
+  "row_frame_counts": {
+    "Light Attack": 4,
+    "Medium Attack": 8,
+    "Heavy Attack": 7,
+    "Launcher": 7
+  },
+  "edge_counts": {
+    "top": 0,
+    "bottom": 0,
+    "left": 0,
+    "right": 0
+  },
+  "edits": [
+    {
+      "row": 4,
+      "action": "removed extra rightmost launcher recovery pose",
+      "covered_region": [
+        1250,
+        768,
+        1536,
+        1024
+      ]
+    }
+  ],
+  "validation": {
+    "pass": true,
+    "full_canvas_background_is_exact_key_where_empty": true,
+    "canvas_edges_clear": true,
+    "row_1_light_attack_frames": 4,
+    "row_2_medium_attack_frames": 8,
+    "row_3_heavy_attack_frames": 7,
+    "row_4_launcher_frames": 7,
+    "all_requested_rows_have_expected_frames_manual_inspection": true,
+    "active_frames_readable_manual_inspection": true,
+    "chain_arcs_contained_manual_inspection": true,
+    "chain_arcs_do_not_cover_body_silhouette_manual_inspection": true,
+    "automated_span_counter_note": "Long chain arcs can visually connect frame regions, so final frame-count acceptance used manual inspection plus edge/background checks.",
+    "runtime_files_changed": false,
+    "combat_files_changed": false,
+    "kairo_changed": false,
+    "vanta_changed": false,
+    "nyx_changed": false,
+    "stage_or_ui_changed": false,
+    "controller_support_changed": false
+  },
+  "notes": [
+    "Generated asset-only from built-in image generation using Seris Sheets 1 and 2 as visual references.",
+    "Accepted after removing one extra rightmost launcher recovery pose so Row 4 has the requested 7 frames.",
+    "Background-like pixels were normalized to exact #FF00FF.",
+    "No runtime import or gameplay hookup has been performed."
+  ]
+}

@@ -93,6 +93,10 @@
             <button id="select-versus-button" class="select-mode-button active" type="button">Local Versus</button>
             <button id="select-training-button" class="select-mode-button" type="button">Training Dummy</button>
           </div>
+          <div class="select-stage-row" aria-label="Stage preset">
+            <button class="select-stage-button active" type="button" data-stage-preset="platform_test">Platform Arena</button>
+            <button class="select-stage-button" type="button" data-stage-preset="standard">Standard Arena (Fallback)</button>
+          </div>
 
           <div class="select-slots" aria-live="polite">
             <div id="p1-select-slot" class="select-slot ui-frame ui-slot-frame active">
@@ -162,10 +166,24 @@
               <span class="select-name">LAMUH</span>
               <span class="select-role">Celestial Ki</span>
             </button>
+            <button class="select-card ui-card-frame lamuh-legacy" type="button" data-character="lamuh_legacy" aria-label="Choose LAMUH Legacy">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/lamuh_legacy_select.png" alt="LAMUH Legacy">
+              </span>
+              <span class="select-name">LAMUH LEGACY</span>
+              <span class="select-role">Classic Ki</span>
+            </button>
+            <button class="select-card ui-card-frame celeste" type="button" data-character="celeste" aria-label="Choose Celeste">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/celeste_select.png" alt="Celeste">
+              </span>
+              <span class="select-name">CELESTE</span>
+              <span class="select-role">Seven Spirits</span>
+            </button>
           </div>
 
           <footer class="select-footer" aria-label="Character select controls">
-            <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd><kbd>5</kbd> Choose</span>
+            <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd>-<kbd>8</kbd> Choose</span>
             <span><kbd>Enter</kbd> Confirm</span>
             <span><kbd>D-pad</kbd>/<kbd>LS</kbd> Pad Select</span>
             <span><kbd>C</kbd> Controls</span>
@@ -185,6 +203,6 @@
       </section>
     </main>
 
-    <script src="game.js?v=controller-support-3"></script>
+    <script src="game.js?v=lamuh-legacy-separation-1"></script>
   </body>
 </html>

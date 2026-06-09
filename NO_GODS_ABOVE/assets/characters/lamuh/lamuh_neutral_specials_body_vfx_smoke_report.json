@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "atlas": {
+    "path": "assets\\characters\\lamuh\\lamuh_sheet_neutral_specials_body_vfx_atlas.png",
+    "width": 3584,
+    "height": 2688,
+    "colorType": 6,
+    "hasAlphaColorType": true
+  },
+  "normalization": {
+    "outputSize": [
+      3584,
+      2688
+    ],
+    "grid": {
+      "cols": 8,
+      "rows": 6,
+      "cell": 448,
+      "baselineY": 382
+    },
+    "occupiedCells": 48,
+    "sourceSpriteSlotsDetected": 48,
+    "hasRealTransparency": true,
+    "checkerboardRemoved": true,
+    "whiteCoatPreserved": true,
+    "blackOutfitLocsPreserved": true,
+    "vfxPreserved": true,
+    "bodyScale": {
+      "body_rows_median_height": 364,
+      "sheet1_median_body_height": 371,
+      "ratio": 0.981,
+      "passes": true
+    },
+    "bodyBaselineMaxDeviation": 0,
+    "repairedBodySlots": {
+      "row0_col6": "row0_col7",
+      "row1_col6": "row1_col7",
+      "row2_col6": "row2_col7"
+    }
+  },
+  "code": {
+    "assetPath": true,
+    "sheetMeta": true,
+    "profileSheetKey": true,
+    "bodyRows": {
+      "mirrorSpark": true,
+      "mirrorPulse": true,
+      "crownBeam": true,
+      "crownBeamPhases": true
+    },
+    "aliases": {
+      "special_1": true,
+      "neutral_special": true,
+      "neutral_light_special": true,
+      "mirror_spark": true,
+      "lamuh_mirror_spark": true,
+      "lamuh_mirror_spark_body": true,
+      "special_2": true,
+      "neutral_medium_special": true,
+      "mirror_pulse": true,
+      "lamuh_mirror_pulse": true,
+      "lamuh_mirror_pulse_body": true,
+      "special_3": true,
+      "neutral_heavy_special": true,
+      "crown_beam": true,
+      "lamuh_crown_beam": true,
+      "lamuh_crown_beam_body": true,
+      "crown_beam_charge": true,
+      "crown_beam_fire": true,
+      "crown_beam_recovery": true
+    },
+    "vfxRows": {
+      "mirrorSpark": true,
+      "mirrorPulse": true,
+      "crownBeam": true,
+      "crownBeamNotBodyRow": true
+    },
+    "projectileProfiles": {
+      "mirrorSpark": true,
+      "enemyMirrorSpark": true,
+      "mirrorPulse": true,
+      "crownBeam": true
+    },
+    "visualAnchors": {
+      "mirrorSpark": true,
+      "mirrorPulse": true,
+      "crownBeam": true,
+      "splitFromHitboxSpawn": true
+    },
+    "frameHolds": {
+      "helper": true,
+      "active": true,
+      "noPulseOldRecovery": true
+    },
+    "debugRows": {
+      "neutral_special": true,
+      "neutral_light_special": true,
+      "neutral_medium_special": true,
+      "neutral_heavy_special": true,
+      "neutralDebugSheet": true,
+      "backDebugSheet": true
+    },
+    "backSpecialsStillSheet4": {
+      "mirrorSlip": true,
+      "reboundStrike": true,
+      "mirrorReversal": true
+    }
+  }
+}

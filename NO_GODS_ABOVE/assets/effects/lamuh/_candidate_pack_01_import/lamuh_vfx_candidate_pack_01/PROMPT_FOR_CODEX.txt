@@ -1,0 +1,52 @@
+Use the attached LAMUH VFX candidate pack and integrate only the assets that improve runtime readability.
+
+Goals
+- Import the attached candidate VFX sheets into the repo under a clean LAMUH effects folder.
+- Preserve current gameplay behavior unless a VFX hook absolutely requires minor safe plumbing.
+- Do not rewrite combat logic.
+- Do not break the current playable build.
+- Do not touch controller support, online multiplayer, or unrelated fighters.
+
+Important rules
+- Preserve Divine Vanish's current purple phase/afterimage identity.
+- Do NOT replace Divine Vanish with the gold/cyan pack.
+- Use the gold/cyan VFX only for Celestial Palm, Ascend Step, Heaven Splitter, Radiant Dive, and Crown of No Gods.
+- If multiple candidate sheets overlap, choose the cleanest runtime-readable one and document what you chose.
+- If a sheet is only useful as reference, say so instead of forcing it into runtime.
+
+Suggested mapping
+- lamuh_vfx_01_celestial_palm_projectile_candidate.png -> Celestial Palm / regular ki blast
+- lamuh_vfx_02_charge_fire_impact_candidate.png -> charge/fire/impact support
+- lamuh_vfx_03_dash_dive_impact_candidate.png -> Ascend Step / Radiant Dive trails
+- lamuh_vfx_04_heaven_splitter_vertical_candidate.png -> Heaven Splitter primary vertical burst
+- lamuh_vfx_05_column_slash_impact_candidate.png -> alternate impact / landing burst
+- lamuh_vfx_06_misc_ring_portal_burst_candidate.png -> optional support accents only
+- lamuh_vfx_07_crown_of_no_gods_beam_candidate.png -> Crown of No Gods beam body/sustain
+
+Tasks
+1. Create or use a clean LAMUH effects folder, for example:
+   NO_GODS_ABOVE/assets/effects/lamuh/
+2. Import the attached PNGs with clear final filenames.
+3. Audit each sheet and classify each as:
+   - applied
+   - reference_only
+   - unused
+4. Hook up the best candidates to the appropriate LAMUH moves.
+5. Keep Divine Vanish purple and separate.
+6. If needed, alpha-clean or crop safely, but do not destroy the source art.
+7. Update SESSION_CONTEXT.md with what was imported and where each sheet is used.
+
+Validation
+- Run node --check NO_GODS_ABOVE/game.js if game.js changes.
+- Run git diff --check.
+- Smoke test LAMUH in public mode.
+- Confirm no failed asset requests.
+- Confirm no console/runtime errors.
+- Confirm Divine Vanish still uses purple effect.
+- Confirm Seris Sheet 8/effects requests remain 0.
+
+Return
+- files imported
+- exact final runtime mappings by move
+- which sheets were applied vs reference_only
+- validation results
