@@ -11292,6 +11292,7 @@
     conn: null,
     roomCode: null,
     connected: false,
+    helloTimer: null,
     inMatch: false,
     snapTimer: 0,
     dirRefreshTimer: 0,
@@ -11408,20 +11409,32 @@
 
   function bindConnection(conn) {
     net.conn = conn;
-    conn.on("open", () => {
+    const markOpen = () => {
       net.connected = true;
       if (net.role === "guest") {
         netSend({ t: "hello", v: NET_PROTOCOL_VERSION });
-        setOnlineStatus("Connected - syncing...", "good");
+        setOnlineStatus("Connected - syncing fighters...", "good");
       }
+    };
+    conn.on("open", () => {
+      markOpen();
+      if (net.role === "guest") startGuestHelloRetry();
+      else setOnlineStatus("Challenger connected - syncing...", "good");
     });
-    conn.on("data", netOnData);
+    conn.on("data", (message) => {
+      if (!net.connected) markOpen();
+      netOnData(message);
+    });
     conn.on("close", () => handleNetDrop("Opponent disconnected."));
     conn.on("error", () => handleNetDrop("Connection error."));
+    if (conn.open) {
+      markOpen();
+      if (net.role === "guest") startGuestHelloRetry();
+    }
   }
 
   function netSend(message) {
-    if (!net.conn || !net.connected) return;
+    if (!net.conn || (!net.connected && !net.conn.open)) return;
     try {
       net.conn.send(message);
     } catch {
@@ -11429,7 +11442,33 @@
     }
   }
 
+  function stopGuestHelloRetry() {
+    if (!net.helloTimer) return;
+    clearInterval(net.helloTimer);
+    net.helloTimer = null;
+  }
+
+  function startGuestHelloRetry() {
+    if (net.role !== "guest" || net.helloTimer || net.inMatch || state.mode === "select") return;
+    let attempts = 0;
+    net.helloTimer = setInterval(() => {
+      if (!net.conn || !net.connected || state.mode === "select" || net.inMatch || net.role !== "guest") {
+        stopGuestHelloRetry();
+        return;
+      }
+      attempts += 1;
+      netSend({ t: "hello", v: NET_PROTOCOL_VERSION });
+      if (attempts >= 10) {
+        stopGuestHelloRetry();
+        if (state.mode === "online" && net.role === "guest" && !net.inMatch) {
+          setOnlineStatus("Room did not answer. Check the code, keep the host page open, then try again.", "error");
+        }
+      }
+    }, 750);
+  }
+
   function netReset() {
+    stopGuestHelloRetry();
     try {
       net.conn?.close();
     } catch { /* already closed */ }
@@ -11737,6 +11776,7 @@
           handleNetDrop("Version mismatch - both players should refresh the page.");
           return;
         }
+        net.connected = true;
         netSend({ t: "welcome", v: NET_PROTOCOL_VERSION, s: state.selectedStagePresetId });
         enterOnlineSelect();
         break;
@@ -11746,6 +11786,8 @@
           handleNetDrop("Version mismatch - both players should refresh the page.");
           return;
         }
+        stopGuestHelloRetry();
+        net.connected = true;
         if (message.s) setStagePreset(message.s, true);
         enterOnlineSelect();
         break;
