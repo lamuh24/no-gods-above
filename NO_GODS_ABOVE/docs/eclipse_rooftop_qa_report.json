@@ -1,0 +1,94 @@
+{
+  "ok": true,
+  "checks": {
+    "booted": true,
+    "eclipseStarted": true,
+    "stage": {
+      "stagePresetId": "eclipse_rooftop",
+      "platforms": [
+        {
+          "id": "eclipse_left_lift",
+          "x": 650,
+          "y": 465,
+          "w": 310,
+          "h": 24,
+          "dropThrough": true
+        },
+        {
+          "id": "eclipse_right_lift",
+          "x": 1640,
+          "y": 436,
+          "w": 310,
+          "h": 24,
+          "dropThrough": true
+        }
+      ],
+      "cameraConfig": {
+        "minScale": 0.72,
+        "maxScale": 1,
+        "paddingX": 300,
+        "damping": 9.5
+      },
+      "camera": {
+        "scale": 0.8767123287671232,
+        "x": -499.72602739726017,
+        "y": 72.7397260273973,
+        "initialized": true
+      },
+      "foregroundActiveGameplay": false,
+      "render": {
+        "mainPlatform": {
+          "x": 150,
+          "y": 420,
+          "w": 2300,
+          "h": 540
+        },
+        "leftPlatform": {
+          "x": 450,
+          "y": 270,
+          "w": 660,
+          "h": 390
+        },
+        "rightPlatform": {
+          "x": 1490,
+          "y": 330,
+          "w": 650,
+          "h": 350
+        }
+      },
+      "p1": {
+        "id": "sol",
+        "x": 720,
+        "y": 590,
+        "grounded": true,
+        "platform": null
+      },
+      "p2": {
+        "id": "vanta",
+        "x": 1880,
+        "y": 590,
+        "grounded": true,
+        "platform": null
+      }
+    },
+    "leftLanding": {
+      "y": 465,
+      "grounded": true,
+      "platform": "eclipse_left_lift",
+      "expectedY": 465
+    },
+    "rightLanding": {
+      "y": 436,
+      "grounded": true,
+      "platform": "eclipse_right_lift",
+      "expectedY": 436
+    },
+    "timeoutUi": {
+      "text": "Connection timed out. This network may block peer-to-peer multiplayer. Try another Wi-Fi network, a phone hotspot, or the same network as your opponent.",
+      "phase": "timed out",
+      "error": true
+    }
+  },
+  "failures": [],
+  "screenshot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\docs\\eclipse_rooftop_qa_screenshot.png"
+}

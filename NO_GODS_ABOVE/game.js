@@ -198,10 +198,10 @@
     spawns: { p1X: 720, p2X: 1880 },
     groundY: GROUND_Y,
     platforms: [
-      { id: "eclipse_left_lift", x: 650, y: 436, w: 310, h: 24, dropThrough: true },
+      { id: "eclipse_left_lift", x: 650, y: 465, w: 310, h: 24, dropThrough: true },
       { id: "eclipse_right_lift", x: 1640, y: 436, w: 310, h: 24, dropThrough: true }
     ],
-    camera: { minScale: 0.66, maxScale: 1, paddingX: 360, damping: 8 },
+    camera: { minScale: 0.72, maxScale: 1, paddingX: 300, damping: 9.5 },
     platformSpeedTuning: {
       groundSpeedMultiplier: 2.24,
       airDriftMultiplier: 2.38,
@@ -211,13 +211,13 @@
       animationSpeedMultiplier: 1,
       hitstopMultiplier: 0.45,
       knockbackVelocityMultiplier: 2.08,
-      cameraSmoothing: 8
+      cameraSmoothing: 9.5
     },
     background: {
-      filter: "saturate(0.78) brightness(0.72) contrast(1.02)",
-      overlayAlpha: 0.08,
-      vignetteMidAlpha: 0.1,
-      vignetteEdgeAlpha: 0.34,
+      filter: "saturate(0.66) brightness(0.64) contrast(0.96)",
+      overlayAlpha: 0.16,
+      vignetteMidAlpha: 0.14,
+      vignetteEdgeAlpha: 0.38,
       platformTop: "rgba(82, 234, 214, 0.54)",
       platformFillA: "rgba(24, 13, 30, 0.88)",
       platformFillB: "rgba(91, 23, 51, 0.78)",
@@ -235,6 +235,7 @@
       leftPlatform: { x: 450, y: 270, w: 660, h: 390 },
       rightPlatform: { x: 1490, y: 330, w: 650, h: 350 },
       foreground: {
+        activeGameplay: false,
         alpha: 0.74,
         clips: [
           { x: 0, y: 0, w: 250, h: H },
@@ -2160,6 +2161,10 @@
 
   function getPlatformSpeedTuning() {
     return getPlatformArenaConfig()?.platformSpeedTuning || null;
+  }
+
+  function isEclipseRooftopStage() {
+    return getActiveStagePreset().id === ECLIPSE_ROOFTOP_STAGE_ID;
   }
 
   function getFightingSpeedTuning() {
@@ -4905,7 +4910,7 @@
       netReset();
       resetOnlinePanels();
       onlineJoinPanel?.classList.remove("hidden");
-      setOnlineStatus("Enter the host's room code.");
+      setOnlinePhase("idle", "Enter the host's room code.");
       onlineCodeInput?.focus();
       return;
     }
@@ -7953,7 +7958,11 @@
 
   function spawnTrail(x, y) {
     const profile = state.player.profile;
-    for (let i = 0; i < 8; i += 1) {
+    const eclipseSmoke = isEclipseRooftopStage();
+    const count = eclipseSmoke ? 5 : 8;
+    const alpha = eclipseSmoke ? 0.5 : 1;
+    const life = eclipseSmoke ? 0.26 : 0.36;
+    for (let i = 0; i < count; i += 1) {
       state.particles.push({
         kind: "smoke",
         x: x - state.player.facing * i * 18,
@@ -7961,10 +7970,11 @@
         vx: -state.player.facing * (80 + Math.random() * 80),
         vy: -20 - Math.random() * 60,
         gravity: 160,
-        life: 0.36,
-        maxLife: 0.36,
-        size: 14 + Math.random() * 20,
+        life,
+        maxLife: life,
+        size: (14 + Math.random() * 20) * (eclipseSmoke ? 0.72 : 1),
         color: profile.trailColor,
+        alpha,
         rot: 0,
         spin: 0
       });
@@ -7973,19 +7983,24 @@
 
   function spawnLandingDust(f) {
     const color = f.profile?.trailColor || "rgba(190, 150, 130, 0.85)";
-    for (let i = 0; i < 7; i += 1) {
+    const eclipseSmoke = isEclipseRooftopStage();
+    const count = eclipseSmoke ? 4 : 7;
+    const alpha = eclipseSmoke ? 0.55 : 1;
+    const life = eclipseSmoke ? 0.2 : 0.28;
+    for (let i = 0; i < count; i += 1) {
       const side = i % 2 === 0 ? -1 : 1;
       state.particles.push({
         kind: "smoke",
         x: f.x + side * (16 + Math.random() * 22),
-        y: GROUND_Y - 5 + Math.random() * 8,
+        y: getActiveStagePreset().groundY - 5 + Math.random() * 8,
         vx: side * (55 + Math.random() * 90),
         vy: -18 - Math.random() * 36,
         gravity: 110,
-        life: 0.28,
-        maxLife: 0.28,
-        size: 10 + Math.random() * 14,
+        life,
+        maxLife: life,
+        size: (10 + Math.random() * 14) * (eclipseSmoke ? 0.7 : 1),
         color,
+        alpha,
         rot: 0,
         spin: 0
       });
@@ -8821,7 +8836,7 @@
       const camera = getStageCamera();
       const parallax = clamp(camera.x * (render.parallaxX ?? 0.08), -52, 52);
       ctx.save();
-      ctx.globalAlpha = 0.9;
+      ctx.globalAlpha = 0.76;
       drawCover(mid, -54 + parallax, 0, W + 108, H);
       ctx.restore();
     }
@@ -8919,6 +8934,7 @@
     const stage = getActiveStagePreset();
     if (!isFightMode() || stage.id !== ECLIPSE_ROOFTOP_STAGE_ID) return;
     const render = stage.render || {};
+    if (render.foreground?.activeGameplay === false) return;
     const img = state.images[render.foregroundKey];
     if (!img) return;
     const clips = render.foreground?.clips || [];
@@ -10720,7 +10736,7 @@
     for (const p of state.particles) {
       const alpha = clamp(p.life / p.maxLife, 0, 1);
       ctx.save();
-      ctx.globalAlpha = alpha;
+      ctx.globalAlpha = alpha * (p.alpha ?? 1);
       ctx.translate(p.x, p.y);
       ctx.rotate(p.rot);
       if (p.kind === "burst") {
@@ -11271,6 +11287,8 @@
   const NET_SNAPSHOT_INTERVAL = 1 / 15;
   const NET_DIRECTION_CODES = new Set(["KeyA", "KeyD", "KeyS", "KeyW"]);
   const NET_DOUBLE_TAP_WINDOW = 0.25;
+  const NET_CONNECT_TIMEOUT_MS = 20000;
+  const NET_TIMEOUT_TEXT = "Connection timed out. This network may block peer-to-peer multiplayer. Try another Wi-Fi network, a phone hotspot, or the same network as your opponent.";
   const NET_FIGHTER_SYNC_FIELDS = [
     "x", "y", "vx", "vy", "facing", "hp", "meter", "grounded", "crouching", "blocking", "dead",
     "action", "actionTime", "hitstun", "blockstun", "knockdownTimer", "pendingKnockdown",
@@ -11293,6 +11311,8 @@
     roomCode: null,
     connected: false,
     helloTimer: null,
+    connectTimer: null,
+    phase: "idle",
     inMatch: false,
     snapTimer: 0,
     dirRefreshTimer: 0,
@@ -11311,11 +11331,56 @@
     return code;
   }
 
-  function setOnlineStatus(text, tone = "") {
+  function logOnlineDiagnostic(phase, detail = "") {
+    const peerState = net.peer ? {
+      disconnected: Boolean(net.peer.disconnected),
+      destroyed: Boolean(net.peer.destroyed),
+      open: Boolean(net.peer.open)
+    } : null;
+    console.info("[NGA online]", { phase, detail, role: net.role, mode: state.mode, peerState, hasConnection: Boolean(net.conn) });
+  }
+
+  function setOnlineStatus(text, tone = "", phase = net.phase || "idle") {
     if (!onlineStatusEl) return;
     onlineStatusEl.textContent = text;
+    onlineStatusEl.dataset.netPhase = phase;
     onlineStatusEl.classList.toggle("error", tone === "error");
     onlineStatusEl.classList.toggle("good", tone === "good");
+    onlineStatusEl.classList.toggle("pending", tone === "pending");
+  }
+
+  function setOnlinePhase(phase, text, tone = "") {
+    net.phase = phase;
+    logOnlineDiagnostic(phase, text);
+    setOnlineStatus(text, tone, phase);
+  }
+
+  function clearNetConnectTimeout() {
+    if (!net.connectTimer) return;
+    clearTimeout(net.connectTimer);
+    net.connectTimer = null;
+  }
+
+  function failNetConnection(phase, message) {
+    const hadRole = net.role !== null;
+    console.warn("[NGA online]", { phase, message, role: net.role, mode: state.mode });
+    netReset();
+    if (!hadRole) {
+      setOnlinePhase(phase, message, "error");
+      return;
+    }
+    hideFlowScreens();
+    hideMatchFlowOverlay();
+    showOnlineMenu();
+    setOnlinePhase(phase, message, "error");
+  }
+
+  function scheduleNetConnectTimeout(phase, message = NET_TIMEOUT_TEXT) {
+    clearNetConnectTimeout();
+    net.connectTimer = setTimeout(() => {
+      if (net.phase !== phase || net.connected || net.inMatch) return;
+      failNetConnection("timed out", message);
+    }, NET_CONNECT_TIMEOUT_MS);
   }
 
   function resetOnlinePanels() {
@@ -11329,7 +11394,7 @@
     state.mode = "online";
     state.flowStep = FLOW_STEP_MODE_DETAIL;
     resetOnlinePanels();
-    setOnlineStatus("Choose Host or Join. Both players need this page open.");
+    setOnlinePhase("idle", "Choose Host or Join. Both players need this page open.");
   }
 
   function closeOnlineMenuToTitle() {
@@ -11339,7 +11404,7 @@
 
   function netPeerAvailable() {
     if (typeof Peer === "undefined") {
-      setOnlineStatus("Online service script failed to load - check your connection and refresh.", "error");
+      setOnlinePhase("failed", "Online service script failed to load - check your connection and refresh.", "error");
       return false;
     }
     return true;
@@ -11354,14 +11419,20 @@
     net.role = "host";
     net.roomCode = code;
     if (onlineRoomCodeEl) onlineRoomCodeEl.textContent = code;
-    setOnlineStatus("Creating room...");
+    setOnlinePhase("creating room", "Creating room...", "pending");
+    scheduleNetConnectTimeout("creating room", "Could not create the room. PeerJS signaling may be blocked on this network.");
     net.peer = new Peer(NET_PEER_PREFIX + code.toLowerCase());
-    net.peer.on("open", () => setOnlineStatus("Room ready - waiting for challenger...", "good"));
+    net.peer.on("open", () => {
+      clearNetConnectTimeout();
+      setOnlinePhase("waiting for opponent", "Room ready - waiting for challenger...", "good");
+    });
     net.peer.on("connection", (conn) => {
       if (net.conn) {
         conn.close();
         return;
       }
+      setOnlinePhase("connecting", "Challenger found - connecting...", "pending");
+      scheduleNetConnectTimeout("connecting");
       bindConnection(conn);
     });
     net.peer.on("error", handlePeerError);
@@ -11371,7 +11442,7 @@
     if (!netPeerAvailable()) return;
     const code = String(rawCode || "").trim().toUpperCase();
     if (code.length < 4) {
-      setOnlineStatus("Enter the 5-character room code.", "error");
+      setOnlinePhase("failed", "Enter the 5-character room code.", "error");
       return;
     }
     netReset();
@@ -11379,9 +11450,12 @@
     onlineJoinPanel?.classList.remove("hidden");
     net.role = "guest";
     net.roomCode = code;
-    setOnlineStatus("Connecting to room " + code + "...");
+    setOnlinePhase("joining room", "Joining room " + code + "...", "pending");
+    scheduleNetConnectTimeout("joining room");
     net.peer = new Peer();
     net.peer.on("open", () => {
+      setOnlinePhase("connecting", "Connecting to room " + code + "...", "pending");
+      scheduleNetConnectTimeout("connecting");
       const conn = net.peer.connect(NET_PEER_PREFIX + code.toLowerCase(), { reliable: true });
       bindConnection(conn);
     });
@@ -11390,36 +11464,37 @@
 
   function handlePeerError(err) {
     const type = err?.type || "unknown";
+    console.warn("[NGA online]", { phase: net.phase, type, role: net.role, message: err?.message || "" });
     if (type === "unavailable-id") {
-      setOnlineStatus("Room code collision - press Host Game again.", "error");
+      setOnlinePhase("failed", "Room code collision - press Host Game again.", "error");
       netReset();
       return;
     }
     if (type === "peer-unavailable") {
-      setOnlineStatus("Room not found - check the code and try again.", "error");
-      net.connected = false;
+      failNetConnection("failed", "Room not found - check the code and try again.");
       return;
     }
     if (netIsActive() || state.mode !== "online") {
       handleNetDrop("Connection lost (" + type + ").");
       return;
     }
-    setOnlineStatus("Connection error: " + type, "error");
+    failNetConnection("failed", "Connection error: " + type + ". This network may be blocking peer-to-peer multiplayer.");
   }
 
   function bindConnection(conn) {
     net.conn = conn;
     const markOpen = () => {
+      clearNetConnectTimeout();
       net.connected = true;
       if (net.role === "guest") {
         netSend({ t: "hello", v: NET_PROTOCOL_VERSION });
-        setOnlineStatus("Connected - syncing fighters...", "good");
+        setOnlinePhase("connected", "Connected - syncing fighters...", "good");
       }
     };
     conn.on("open", () => {
       markOpen();
       if (net.role === "guest") startGuestHelloRetry();
-      else setOnlineStatus("Challenger connected - syncing...", "good");
+      else setOnlinePhase("connected", "Challenger connected - syncing...", "good");
     });
     conn.on("data", (message) => {
       if (!net.connected) markOpen();
@@ -11461,7 +11536,7 @@
       if (attempts >= 10) {
         stopGuestHelloRetry();
         if (state.mode === "online" && net.role === "guest" && !net.inMatch) {
-          setOnlineStatus("Room did not answer. Check the code, keep the host page open, then try again.", "error");
+          failNetConnection("timed out", "Room did not answer. Check the code, keep the host page open, then try again.");
         }
       }
     }, 750);
@@ -11469,6 +11544,7 @@
 
   function netReset() {
     stopGuestHelloRetry();
+    clearNetConnectTimeout();
     try {
       net.conn?.close();
     } catch { /* already closed */ }
@@ -11480,6 +11556,7 @@
     net.conn = null;
     net.roomCode = null;
     net.connected = false;
+    net.phase = "idle";
     net.inMatch = false;
     net.snapTimer = 0;
     net.dirRefreshTimer = 0;
@@ -11498,7 +11575,7 @@
     state.paused = false;
     state.matchEnded = false;
     showOnlineMenu();
-    setOnlineStatus(message, "error");
+    setOnlinePhase("disconnected", message, "error");
   }
 
   function enterOnlineSelect() {
@@ -11557,7 +11634,7 @@
     const code = net.roomCode;
     netReset();
     showOnlineMenu();
-    setOnlineStatus("You left room " + (code || "") + ".");
+    setOnlinePhase("idle", "You left room " + (code || "") + ".");
   }
 
   function startOnlineVersus(p1Id, p2Id, stagePresetId) {
@@ -11884,7 +11961,7 @@
     netReset();
     resetOnlinePanels();
     onlineJoinPanel?.classList.remove("hidden");
-    setOnlineStatus("Enter the host's room code.");
+    setOnlinePhase("idle", "Enter the host's room code.");
     onlineCodeInput?.focus();
   });
   onlineConnectButton?.addEventListener("click", () => joinRoom(onlineCodeInput?.value));
