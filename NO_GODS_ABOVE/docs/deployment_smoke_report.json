@@ -1,64 +1,87 @@
 {
-  "live_deploy_verification": {
-    "url_tested": "https://no-gods-above.netlify.app",
-    "deploy_id": "6a2872bf20bec0457d3a9a0d",
-    "timestamp": "2026-06-09T16:30:00-05:00",
-    "tested_by": "Claude Code (Fable 5) automated HTTP verification",
-    "overall": "pass at HTTP level; interactive browser smoke on the live URL still recommended",
+  "workflow_refactor_verification": {
+    "timestamp": "2026-06-10",
+    "local_url_tested": "http://127.0.0.1:8010/index.html?flowSmoke=1",
+    "overall": "pass",
     "checks": {
-      "index_html": { "status": 200, "bytes": 11880, "matches_local": true },
-      "game_js": { "status": 200, "bytes": 486524, "matches_local": true },
-      "style_css": { "status": 200, "bytes": 48694 },
-      "live_title": "NO GODS ABOVE",
-      "node_check_game_js": "pass"
+      "title_loads": true,
+      "title_start_button": "Start Game",
+      "mode_step_is_first": true,
+      "mode_step_hides_character_grid": true,
+      "mode_step_hides_arena_choices": true,
+      "local_versus_fighter_step": true,
+      "p1_lock_advances_to_p2": true,
+      "p2_lock_advances_to_arena": true,
+      "arena_step_starts_local_match": true,
+      "training_flow_mode_fighter_arena_match": true,
+      "pause_return_to_select_opens_fighter_step": true,
+      "mobile_fighter_step_fits_390x844": true,
+      "mobile_arena_step_fits_390x844": true,
+      "browser_console_errors_or_warnings": []
     },
-    "sample_assets_200": [
-      "assets/sprites/kairo_final/kairo_sheet_1_basic_movement.png",
-      "assets/ui/hud/hud_health_frame_p1.png",
-      "assets/backgrounds/stages/forsaken_courtyard.png",
-      "assets/sprites/portraits/lamuh_select.png",
-      "assets/sprites/seris_revamp_final/seris_revamp_final_sheet_1_core_movement_atlas.png"
-    ],
-    "staged_deploy": {
-      "asset_count": 101,
-      "root_files": ["index.html", "game.js", "style.css"],
-      "stage_size_mb": 207.1,
-      "staging_script": "_stage_deploy.ps1 (repo root)",
-      "coverage_note": "string-literal extraction from game.js/index.html + url() from style.css + full portraits folder; superset of the 77 assets requested in the last local browser smoke",
-      "excluded": "source packs, references, generated candidates, verify screenshots, docs, skills (~1.25 GB)"
+    "local_match_result": {
+      "p1": "KAIRO FINAL",
+      "p2": "VANTA REIGN",
+      "round_status": "KAIRO VS VANTA - PLATFORM ARENA"
     },
-    "hidden_helper_exposure": "window.__lamuhHiddenTest / window.__serisHiddenTest gated behind ?lamuhTest / ?serisTest (game.js:151-152); not exposed on the normal public URL",
-    "local_path_requests": "none — no C:/, OneDrive, Downloads, or file:// references in runtime files",
-    "console_errors": "not checked in this session (no browser automation); see last local smoke below"
+    "training_match_result": {
+      "p1": "KAIRO FINAL",
+      "p2": "VANTA REIGN",
+      "round_status": "VANTA DUMMY - PLATFORM ARENA"
+    }
   },
-  "last_local_browser_smoke": {
-    "url": "http://127.0.0.1:8810/index.html?deploymentSmoke=3",
-    "passed": true,
+  "online_versus_smoke": {
+    "script": "scripts/smoke_online_versus.js",
+    "overall": "pass",
     "checks": {
-      "titleLoads": true,
-      "selectLoads": true,
-      "sixCards": true,
-      "portraitsLoad": true,
-      "hiddenHelpersExposed": false,
-      "lamuhSerisMatchStarted": true,
-      "p1DamageObserved": true,
-      "p2DamageObserved": true,
-      "pauseOverlayOpens": true,
-      "pauseOverlayCloses": true,
-      "koOverlayObserved": true,
-      "rematchWorks": true,
-      "returnToSelectWorks": true,
-      "existingRosterMatchStarts": true
+      "pagesBooted": true,
+      "peerJsLoaded": true,
+      "roomReady": true,
+      "bothInSelect": true,
+      "locksSynced": true,
+      "bothInArenaStep": true,
+      "bothInMatch": true,
+      "guestInputDamagesHostP1": true,
+      "guestSeesP1DamageViaSnapshot": true,
+      "hostInputDamagesP2": true,
+      "guestSeesP2DamageViaSnapshot": true,
+      "pauseSyncsToGuest": true,
+      "unpauseSyncsToGuest": true,
+      "rematchSyncs": true
     },
-    "requests": {
-      "total": 80,
-      "assetCount": 77,
-      "forbiddenAssetRequests": [],
-      "localPathRequests": [],
-      "badResponses": [],
-      "requestFailures": [],
-      "benignCanceled": 0
-    },
-    "console": { "errors": [], "warnings": [] }
+    "failures": [],
+    "hostErrors": [],
+    "guestErrors": []
+  },
+  "static_validation": {
+    "node_check_game_js": "pass",
+    "node_check_online_smoke_script": "pass",
+    "git_diff_check": "pass"
+  },
+  "staged_deploy": {
+    "staging_script": "_stage_deploy.ps1",
+    "asset_count": 101,
+    "missing_referenced_files": 0,
+    "stage_size_mb": 207.1,
+    "root_files": [
+      "index.html",
+      "game.js",
+      "style.css"
+    ],
+    "script_cache_key": "game.js?v=flow-setup-1"
+  },
+  "live_site_status": {
+    "url": "https://no-gods-above.netlify.app/",
+    "http_status": 200,
+    "title": "NO GODS ABOVE",
+    "observed_script_cache_key": "game.js?v=lamuh-legacy-p2-fix-1",
+    "matches_local_flow_refactor": false,
+    "note": "Local build is ready, but Netlify must be redeployed before the public site shows the new sequential setup flow."
+  },
+  "dependencies": {
+    "new_dependencies_added": [],
+    "existing_external_runtime_dependencies": [
+      "https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"
+    ]
   }
 }

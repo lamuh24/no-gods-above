@@ -48,10 +48,17 @@ git diff --check
 Then smoke test public mode without `?lamuhTest` or `?serisTest`:
 
 - Title screen loads with the title background.
-- Character select opens.
-- Six character cards appear: Kairo, Vanta, Nyx, Sol, Seris, and LAMUH.
+- Mode selection opens from the title screen.
+- Character selection opens after choosing Local Versus or Training Dummy.
+- Arena selection opens after fighter lock-in.
+- Eight character cards appear: Kairo, Vanta, Nyx, Sol, Seris, LAMUH, LAMUH Legacy, and Celeste.
 - Portraits load for every public character.
-- P1/P2 local versus selection works.
+- P1/P2 local versus selection works through Mode -> Fighters -> Arena.
+- Training selection works through Mode -> Fighter -> Arena.
+- Online host/guest selection works through Host/Join -> Fighters -> Arena.
+- Eclipse Rooftop appears in Stage Select.
+- Eclipse Rooftop preview uses `assets/stages/eclipse_rooftop/07_stage_select_card_16x9.png`.
+- Eclipse Rooftop match loads with far background, midground, main platform, side platforms, and foreground layer.
 - Match starts.
 - P1 can damage P2.
 - P2 can damage P1.
@@ -79,6 +86,14 @@ folder containing only runtime files:
   screen, overlays, menu buttons)
 - All of `assets/sprites/portraits/` (loaded via dynamic
   `assets/sprites/portraits/${id}_select.png` template)
+- All seven production Eclipse Rooftop stage assets:
+  - `assets/stages/eclipse_rooftop/01_far_background_16x9.png`
+  - `assets/stages/eclipse_rooftop/02_midground_layer_transparent.png`
+  - `assets/stages/eclipse_rooftop/03_main_platform_transparent.png`
+  - `assets/stages/eclipse_rooftop/04_side_platform_left_transparent.png`
+  - `assets/stages/eclipse_rooftop/05_side_platform_right_transparent.png`
+  - `assets/stages/eclipse_rooftop/06_foreground_layer_transparent.png`
+  - `assets/stages/eclipse_rooftop/07_stage_select_card_16x9.png`
 
 `_stage_deploy.ps1` in the repo root automates this (101 assets + 3 root
 files, ~207 MB as of 2026-06-09). `game.js` has no runtime `fetch()` calls,
@@ -99,18 +114,18 @@ Do not deploy only the HTML/CSS/JS files; the game depends on relative asset pat
 - Missing/future planning assets should not be wired into runtime.
 - Query strings are acceptable for cache busting, but the target file before `?` must exist.
 - Seris Sheet 8 regular gameplay VFX must remain disabled unless a later pass explicitly approves it.
+- Eclipse Rooftop must use the supplied seven-file production asset pack. Do not restore the generated placeholder `eclipse_rooftop_background.png` or `eclipse_rooftop_preview.png`.
 
 ## Known Acceptable Demo Issues
 
 - LAMUH's Crown of No Gods ultimate is playable but still prototype/cinematic-in-progress.
 - Some LAMUH regular gold/cyan VFX are intentionally disabled because they looked pasted on; Celestial Palm remains active and Divine Vanish keeps its purple phase identity.
+- Online multiplayer is Phase 1 host-authoritative PeerJS netplay; deeper rollback/lockstep netcode is deferred.
 - The UI is custom-asset-enabled but still has room for deeper polish.
 - Balance is accepted for demo, not final competitive tuning.
 
 ## Not Yet Done
 
-- Controller support.
-- Online multiplayer.
 - Full Crown of No Gods cinematic polish.
 - LAMUH transformation/install mode.
 - Deeper UI polish and final UI art pass.

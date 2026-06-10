@@ -1,10 +1,20 @@
 # NO GODS ABOVE
 
-Playable browser Training Mode prototype for a 2D dark-fantasy fighting game.
+Playable browser fighting-game prototype for a 2D dark-fantasy arena fighter.
 
 Built with plain HTML, CSS, and JavaScript Canvas only. No Godot, Unity, Unreal, Phaser, external engines, or external game frameworks are used.
 
 Current local dev server: `http://localhost:8010`.
+
+## Game Flow
+
+The public setup flow is sequential:
+
+1. Mode selection: Local Versus or Training Dummy.
+2. Character selection: choose the player fighter, or lock P1 then P2 for versus.
+3. Arena selection: choose Platform Arena or Standard Arena, then start.
+
+Online Versus enters after host/join setup and skips straight to character selection. The host chooses the arena and starts the online match.
 
 ## Character Direction
 
@@ -69,11 +79,13 @@ Do not use older Kairo sheets, Veyra sheets, Seraphine sheets, chain-whip sheets
 
 ## Prototype Features
 
-- Title screen, character select, and Training Mode.
-- Kairo Final, Vanta Final, and Nyx selectable player characters.
-- Forsaken Courtyard background.
+- Title screen, sequential mode/character/arena setup, Training Mode, Local Versus, and Online Versus.
+- Kairo Final, Vanta Reign, Nyx, Sol Raze, Seris, LAMUH, LAMUH Legacy, and Celeste selectable player characters.
+- Platform Arena as the primary stage, with Standard Arena as a fallback.
 - Movement, jump, dash, crouch, hold-back block, light/medium/heavy attacks, directional attacks, jump attacks, three specials, and full-meter ultimate.
 - Enemy health, player health, passively growing ultimate meter, hit detection, hitboxes/hurtboxes, hit pause, knockback, VFX particles, enemy death, `R` reset, `H` hitbox debug, and `N` rival AI toggle.
+
+See `docs/game_flow_workflow.md` for the current UI/state workflow, multiplayer flow, breaking UI changes, and dependencies.
 
 ## Controls
 

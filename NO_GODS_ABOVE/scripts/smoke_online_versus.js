@@ -216,9 +216,9 @@ async function run() {
       (await evaluate(guest, "typeof Peer !== 'undefined'"));
     if (!report.checks.peerJsLoaded) throw new Error("PeerJS script did not load.");
 
-    // Host opens a room.
+    // Host opens a room from the Online mode detail screen.
     await evaluate(host, "document.getElementById('online-button').click(); true");
-    await evaluate(host, "document.getElementById('online-host-button').click(); true");
+    await evaluate(host, "[...document.querySelectorAll('#mode-detail-actions button')].find((button) => button.textContent.trim() === 'Host Match').click(); true");
     const roomReady = await waitFor(host, "/^[A-Z0-9]{5}$/.test(document.getElementById('online-room-code').textContent) && document.getElementById('online-status').classList.contains('good')", 25000);
     report.checks.roomReady = roomReady;
     if (!roomReady) throw new Error("Host room did not become ready (PeerJS signaling unreachable?).");
@@ -227,7 +227,7 @@ async function run() {
 
     // Guest joins it.
     await evaluate(guest, "document.getElementById('online-button').click(); true");
-    await evaluate(guest, "document.getElementById('online-join-button').click(); true");
+    await evaluate(guest, "[...document.querySelectorAll('#mode-detail-actions button')].find((button) => button.textContent.trim() === 'Join Match').click(); true");
     await evaluate(guest, `document.getElementById('online-code-input').value = ${JSON.stringify(roomCode)}; true`);
     await evaluate(guest, "document.getElementById('online-connect-button').click(); true");
 
@@ -236,16 +236,28 @@ async function run() {
       (await waitFor(guest, "window.__platformArenaTest.state.mode === 'select'", 25000));
     if (!report.checks.bothInSelect) throw new Error("Both tabs did not reach online character select.");
 
-    // Host locks Kairo as P1, guest locks Vanta as P2.
+    // Host reviews/locks Kairo as P1, guest reviews/locks Vanta as P2.
     await evaluate(host, "document.querySelector('[data-character=\"kairo\"]').click(); true");
+    await evaluate(host, "document.getElementById('showcase-confirm-button').click(); true");
     await evaluate(guest, "document.querySelector('[data-character=\"vanta\"]').click(); true");
+    await evaluate(guest, "document.getElementById('showcase-confirm-button').click(); true");
     report.checks.locksSynced =
       (await waitFor(host, "window.__platformArenaTest.state.p1Ready && window.__platformArenaTest.state.p2Ready", 15000)) &&
       (await waitFor(guest, "window.__platformArenaTest.state.p1Ready && window.__platformArenaTest.state.p2Ready", 15000));
     if (!report.checks.locksSynced) throw new Error("Character locks did not sync to both sides.");
 
-    // Host starts the match (second confirm).
-    await evaluate(host, "document.querySelector('[data-character=\"kairo\"]').click(); true");
+    report.checks.bothInArenaStep =
+      (await waitFor(host, "!document.getElementById('stage-select-screen').classList.contains('hidden')", 10000)) &&
+      (await waitFor(guest, "!document.getElementById('stage-select-screen').classList.contains('hidden')", 10000));
+    if (!report.checks.bothInArenaStep) throw new Error("Both tabs did not reach arena selection after fighter locks.");
+
+    // Host confirms the arena, both players see match intro, then host starts the match.
+    await evaluate(host, "document.getElementById('stage-confirm-button').click(); true");
+    report.checks.bothInMatchIntro =
+      (await waitFor(host, "!document.getElementById('match-intro-screen').classList.contains('hidden')", 10000)) &&
+      (await waitFor(guest, "!document.getElementById('match-intro-screen').classList.contains('hidden')", 10000));
+    if (!report.checks.bothInMatchIntro) throw new Error("Both tabs did not reach match intro after arena confirmation.");
+    await evaluate(host, "document.getElementById('intro-start-button').click(); true");
     report.checks.bothInMatch =
       (await waitFor(host, "window.__platformArenaTest.state.mode === 'versus'", 15000)) &&
       (await waitFor(guest, "window.__platformArenaTest.state.mode === 'versus'", 15000));

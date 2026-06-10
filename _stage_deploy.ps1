@@ -1,4 +1,5 @@
-$root = "C:\Users\qchee\no-gods-above\NO_GODS_ABOVE"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Join-Path $scriptDir "NO_GODS_ABOVE"
 $stage = "C:\Users\qchee\AppData\Local\Temp\nga_deploy"
 if (Test-Path $stage) { Remove-Item $stage -Recurse -Force -Confirm:$false }
 New-Item -ItemType Directory -Force $stage | Out-Null
@@ -21,7 +22,9 @@ $cssPaths = Select-String -Path "$root\style.css" -Pattern $cssPattern -AllMatch
 $portraits = Get-ChildItem "$root\assets\sprites\portraits" -File |
     ForEach-Object { "assets/sprites/portraits/$($_.Name)" }
 
-$all = @($paths) + @($cssPaths) + @($portraits) | Sort-Object -Unique
+$all = @($paths) + @($cssPaths) + @($portraits) |
+    Where-Object { $_ -notmatch '\$\{' -and $_ -notmatch '[{}]' } |
+    Sort-Object -Unique
 $missing = @()
 $copied = 0
 foreach ($p in $all) {

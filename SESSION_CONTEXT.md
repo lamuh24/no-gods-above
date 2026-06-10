@@ -1110,3 +1110,23 @@ Date: 2026-06-09
 - Character select is local Training Mode only. It does not add local versus or online multiplayer.
 - Keep character select responsive and viewport-contained. Use relative sizing, `clamp()`, grid/flex, and max dimensions instead of screenshot-based dimensions.
 - Debug/baseline sprite sheets are optional. Do not use them as runtime assets; only consult them to diagnose slicing, alignment, spacing, or grounding issues.
+
+## 2026-06-10 Sequential Flow Refactor
+- Supersedes older notes that said character select is training-only: current runtime has Training, Local Versus, and Phase 1 PeerJS Online Versus.
+- Refactored setup into sequential `Mode -> Fighters -> Arena` steps using new `state.selectStep`; online host/join skips Mode and enters Fighters, then host starts from Arena.
+- Preserved combat, character configs, sprite handling, controller support, and host-authoritative netcode; only setup workflow/UI and smoke coverage changed.
+- Added/updated docs: `NO_GODS_ABOVE/docs/game_flow_workflow.md`, `README.md`, `docs/deployment_checklist.md`, `docs/deployment_smoke_report.json`, and `docs/online_versus_smoke_report.json`.
+- Updated `_stage_deploy.ps1` to resolve the game root relative to the script and ignore the dynamic portrait template while still copying all portraits.
+- Validation passed: `node --check NO_GODS_ABOVE/game.js`, `node --check NO_GODS_ABOVE/scripts/smoke_online_versus.js`, `git diff --check`, `_stage_deploy.ps1` with 101 assets/0 missing/~207.1 MB, Browser local flow smoke, 390x844 mobile checks, and full PeerJS online smoke.
+- Deployment note: live Netlify `https://no-gods-above.netlify.app/` returned HTTP 200 but still served `game.js?v=lamuh-legacy-p2-fix-1`; local `index.html` now uses `game.js?v=flow-setup-1`, so Netlify needs redeploy before public users see this refactor.
+
+## 2026-06-10 Eclipse Rooftop Production Asset Pack
+- User supplied `E:\Eclipse_Rooftop_Asset_Pack.zip` as the visual source of truth for `eclipse_rooftop`; do not restore or regenerate the placeholder Eclipse art.
+- Copied the seven production PNGs into `NO_GODS_ABOVE\assets\stages\eclipse_rooftop\`: far background, transparent midground, transparent main platform, transparent left/right side platforms, transparent foreground, and stage-select card.
+- Removed runtime references to placeholder `eclipse_rooftop_background.png` and `eclipse_rooftop_preview.png`; those files are no longer present in the stage folder.
+- Updated `NO_GODS_ABOVE\game.js` with Eclipse layered rendering: far/mid screen-space background, main/side platform art in world space, and clipped foreground framing after fighters. Existing Standard and Platform Arena render paths remain separate.
+- Eclipse config values: `worldWidth: 2600`, bounds `96..2504`, spawns `720/1880`, `groundY: 590`, side platforms `{ x: 650, y: 436, w: 310, h: 24 }` and `{ x: 1640, y: 436, w: 310, h: 24 }`, camera `{ minScale: 0.66, maxScale: 1, paddingX: 360, damping: 8 }`.
+- Eclipse art transforms: main platform `{ x: 150, y: 420, w: 2300, h: 540 }`, left platform `{ x: 450, y: 270, w: 660, h: 390 }`, right platform `{ x: 1490, y: 330, w: 650, h: 350 }`, foreground `alpha: 0.74` clipped to side/bottom bands.
+- Updated `NO_GODS_ABOVE\scripts\generate_flow_ui_assets.py` so it no longer generates Eclipse placeholder stage art.
+- Validation passed: `node --check NO_GODS_ABOVE/game.js`, `python -m py_compile NO_GODS_ABOVE/scripts/generate_flow_ui_assets.py`, `node --check NO_GODS_ABOVE/scripts/smoke_online_versus.js`, `git diff --check` (CRLF warnings only), no stale placeholder refs via `rg`, all seven Eclipse PNGs served HTTP 200 from local static server.
+- Full Chrome/CDP runtime smoke could not complete after this asset-pack pass because temporary Chrome profiles filled the nearly-full C: drive; smoke temp profiles were cleaned up. A lightweight alignment preview confirmed collision bars sit on the visible platform lips.

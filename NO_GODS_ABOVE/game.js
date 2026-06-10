@@ -4,13 +4,30 @@
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
   const startButton = document.getElementById("start-button");
+  const trainingButton = document.getElementById("training-button");
+  const arcadeButton = document.getElementById("arcade-button");
+  const controlsButton = document.getElementById("controls-button");
+  const titleControlsPanel = document.getElementById("title-controls-panel");
   const titleScreen = document.getElementById("title-screen");
+  const modeDetailScreen = document.getElementById("mode-detail-screen");
+  const modeDetailPanel = document.getElementById("mode-detail-panel");
+  const modeDetailKicker = document.getElementById("mode-detail-kicker");
+  const modeDetailTitle = document.getElementById("mode-detail-title");
+  const modeDetailDescription = document.getElementById("mode-detail-description");
+  const modeDetailActions = document.getElementById("mode-detail-actions");
+  const modeDetailBackButton = document.getElementById("mode-detail-back-button");
   const characterSelect = document.getElementById("character-select");
   const characterButtons = document.querySelectorAll("[data-character]");
+  const selectHeading = document.getElementById("select-heading");
   const selectModeLabel = document.getElementById("select-mode-label");
+  const selectStepIndicators = document.querySelectorAll("[data-select-step]");
+  const flowStepIndicators = document.querySelectorAll("[data-flow-step]");
+  const selectModeRow = document.getElementById("select-mode-row");
   const selectVersusButton = document.getElementById("select-versus-button");
   const selectTrainingButton = document.getElementById("select-training-button");
+  const selectStageRow = document.getElementById("select-stage-row");
   const stagePresetButtons = document.querySelectorAll("[data-stage-preset]");
+  const selectSlots = document.getElementById("select-slots");
   const p1SelectSlot = document.getElementById("p1-select-slot");
   const p2SelectSlot = document.getElementById("p2-select-slot");
   const p1SelectName = document.getElementById("p1-select-name");
@@ -18,6 +35,35 @@
   const p1SelectStatus = document.getElementById("p1-select-status");
   const p2SelectStatus = document.getElementById("p2-select-status");
   const matchupPreview = document.getElementById("matchup-preview");
+  const selectFlowHint = document.getElementById("select-flow-hint");
+  const selectGrid = document.getElementById("select-grid");
+  const selectBackButton = document.getElementById("select-back-button");
+  const selectConfirmButton = document.getElementById("select-confirm-button");
+  const selectFooter = document.getElementById("select-footer");
+  const fighterConfirmScreen = document.getElementById("fighter-confirm-screen");
+  const showcasePortrait = document.getElementById("showcase-portrait");
+  const showcaseSide = document.getElementById("showcase-side");
+  const showcaseName = document.getElementById("showcase-name");
+  const showcaseArchetype = document.getElementById("showcase-archetype");
+  const showcasePlaystyle = document.getElementById("showcase-playstyle");
+  const showcaseStrengths = document.getElementById("showcase-strengths");
+  const showcaseQuote = document.getElementById("showcase-quote");
+  const showcaseBackButton = document.getElementById("showcase-back-button");
+  const showcaseConfirmButton = document.getElementById("showcase-confirm-button");
+  const stageSelectScreen = document.getElementById("stage-select-screen");
+  const stageMatchupPreview = document.getElementById("stage-matchup-preview");
+  const stageBackButton = document.getElementById("stage-back-button");
+  const stageConfirmButton = document.getElementById("stage-confirm-button");
+  const matchIntroScreen = document.getElementById("match-intro-screen");
+  const introP1Portrait = document.getElementById("intro-p1-portrait");
+  const introP2Portrait = document.getElementById("intro-p2-portrait");
+  const introP1Name = document.getElementById("intro-p1-name");
+  const introP2Name = document.getElementById("intro-p2-name");
+  const introStagePreview = document.getElementById("intro-stage-preview");
+  const introStageName = document.getElementById("intro-stage-name");
+  const introQuote = document.getElementById("intro-quote");
+  const introStartButton = document.getElementById("intro-start-button");
+  const introBackButton = document.getElementById("intro-back-button");
   const hud = document.getElementById("hud");
   const playerNameEl = document.getElementById("player-name");
   const enemyNameEl = document.getElementById("enemy-name");
@@ -57,6 +103,24 @@
   const GROUND_Y = 590;
   const STANDARD_STAGE_ID = "standard";
   const PLATFORM_TEST_STAGE_ID = "platform_test";
+  const ECLIPSE_ROOFTOP_STAGE_ID = "eclipse_rooftop";
+  const SELECT_STEP_MODE = "mode";
+  const SELECT_STEP_CHARACTERS = "characters";
+  const SELECT_STEP_ARENA = "arena";
+  const SELECT_STEPS = [SELECT_STEP_MODE, SELECT_STEP_CHARACTERS, SELECT_STEP_ARENA];
+  const FLOW_STEP_MAIN_MENU = "main-menu";
+  const FLOW_STEP_MODE_DETAIL = "mode-detail";
+  const FLOW_STEP_FIGHTER_SELECT = "fighter-select";
+  const FLOW_STEP_FIGHTER_CONFIRM = "fighter-confirm";
+  const FLOW_STEP_STAGE_SELECT = "stage-select";
+  const FLOW_STEP_MATCH_INTRO = "match-intro";
+  const FLOW_STEPS = [
+    FLOW_STEP_MODE_DETAIL,
+    FLOW_STEP_FIGHTER_SELECT,
+    FLOW_STEP_FIGHTER_CONFIRM,
+    FLOW_STEP_STAGE_SELECT,
+    FLOW_STEP_MATCH_INTRO
+  ];
   const STANDARD_FIGHTING_SPEED_TUNING = {
     groundSpeedMultiplier: 1.18,
     airDriftMultiplier: 1.25,
@@ -127,6 +191,61 @@
       airRecoveryWindow: 16 / 60
     }
   };
+  const ECLIPSE_ROOFTOP_CONFIG = {
+    label: "Eclipse Rooftop",
+    worldWidth: 2600,
+    bounds: { left: 96, right: 2504 },
+    spawns: { p1X: 720, p2X: 1880 },
+    groundY: GROUND_Y,
+    platforms: [
+      { id: "eclipse_left_lift", x: 650, y: 436, w: 310, h: 24, dropThrough: true },
+      { id: "eclipse_right_lift", x: 1640, y: 436, w: 310, h: 24, dropThrough: true }
+    ],
+    camera: { minScale: 0.66, maxScale: 1, paddingX: 360, damping: 8 },
+    platformSpeedTuning: {
+      groundSpeedMultiplier: 2.24,
+      airDriftMultiplier: 2.38,
+      gravityMultiplier: 2.24,
+      fallSpeedMultiplier: 1.22,
+      jumpForceMultiplier: 1,
+      animationSpeedMultiplier: 1,
+      hitstopMultiplier: 0.45,
+      knockbackVelocityMultiplier: 2.08,
+      cameraSmoothing: 8
+    },
+    background: {
+      filter: "saturate(0.78) brightness(0.72) contrast(1.02)",
+      overlayAlpha: 0.08,
+      vignetteMidAlpha: 0.1,
+      vignetteEdgeAlpha: 0.34,
+      platformTop: "rgba(82, 234, 214, 0.54)",
+      platformFillA: "rgba(24, 13, 30, 0.88)",
+      platformFillB: "rgba(91, 23, 51, 0.78)",
+      platformStroke: "rgba(241, 210, 138, 0.72)"
+    },
+    render: {
+      farBackgroundKey: "eclipseFarBackground",
+      midgroundKey: "eclipseMidground",
+      mainPlatformKey: "eclipseMainPlatform",
+      sidePlatformLeftKey: "eclipseSidePlatformLeft",
+      sidePlatformRightKey: "eclipseSidePlatformRight",
+      foregroundKey: "eclipseForeground",
+      parallaxX: 0.08,
+      mainPlatform: { x: 150, y: 420, w: 2300, h: 540 },
+      leftPlatform: { x: 450, y: 270, w: 660, h: 390 },
+      rightPlatform: { x: 1490, y: 330, w: 650, h: 350 },
+      foreground: {
+        alpha: 0.74,
+        clips: [
+          { x: 0, y: 0, w: 250, h: H },
+          { x: W - 250, y: 0, w: 250, h: H },
+          { x: 0, y: H - 112, w: W, h: 112 }
+        ]
+      }
+    },
+    movement: PLATFORM_ARENA_CONFIG.movement,
+    combat: PLATFORM_ARENA_CONFIG.combat
+  };
   const STAGE_PRESETS = {
     [STANDARD_STAGE_ID]: {
       id: STANDARD_STAGE_ID,
@@ -157,6 +276,24 @@
       background: PLATFORM_ARENA_CONFIG.background,
       movement: PLATFORM_ARENA_CONFIG.movement,
       combat: PLATFORM_ARENA_CONFIG.combat
+    },
+    [ECLIPSE_ROOFTOP_STAGE_ID]: {
+      id: ECLIPSE_ROOFTOP_STAGE_ID,
+      label: ECLIPSE_ROOFTOP_CONFIG.label,
+      experimental: true,
+      worldWidth: ECLIPSE_ROOFTOP_CONFIG.worldWidth,
+      leftBound: ECLIPSE_ROOFTOP_CONFIG.bounds.left,
+      rightBound: ECLIPSE_ROOFTOP_CONFIG.bounds.right,
+      groundY: ECLIPSE_ROOFTOP_CONFIG.groundY,
+      spawnP1X: ECLIPSE_ROOFTOP_CONFIG.spawns.p1X,
+      spawnP2X: ECLIPSE_ROOFTOP_CONFIG.spawns.p2X,
+      platforms: ECLIPSE_ROOFTOP_CONFIG.platforms,
+      camera: ECLIPSE_ROOFTOP_CONFIG.camera,
+      platformSpeedTuning: ECLIPSE_ROOFTOP_CONFIG.platformSpeedTuning,
+      background: ECLIPSE_ROOFTOP_CONFIG.background,
+      render: ECLIPSE_ROOFTOP_CONFIG.render,
+      movement: ECLIPSE_ROOFTOP_CONFIG.movement,
+      combat: ECLIPSE_ROOFTOP_CONFIG.combat
     }
   };
   const debugParams = new URLSearchParams(window.location.search);
@@ -302,6 +439,14 @@
   const assetPaths = {
     stage: "assets/backgrounds/stages/forsaken_courtyard.png",
     title: "assets/backgrounds/menus/title_screen_background.png",
+    mainMenuBackground: "assets/ui/flow/main_menu_background.png",
+    eclipseFarBackground: "assets/stages/eclipse_rooftop/01_far_background_16x9.png",
+    eclipseMidground: "assets/stages/eclipse_rooftop/02_midground_layer_transparent.png",
+    eclipseMainPlatform: "assets/stages/eclipse_rooftop/03_main_platform_transparent.png",
+    eclipseSidePlatformLeft: "assets/stages/eclipse_rooftop/04_side_platform_left_transparent.png",
+    eclipseSidePlatformRight: "assets/stages/eclipse_rooftop/05_side_platform_right_transparent.png",
+    eclipseForeground: "assets/stages/eclipse_rooftop/06_foreground_layer_transparent.png",
+    eclipseStageSelectCard: "assets/stages/eclipse_rooftop/07_stage_select_card_16x9.png",
     kairoFinalBasic: "assets/sprites/kairo_final/kairo_sheet_1_basic_movement.png",
     kairoFinalDefense: "assets/sprites/kairo_final/kairo_sheet_2_defense_recovery.png",
     kairoFinalCoreA: "assets/sprites/kairo_final/kairo_sheet_3_core_attacks_a.png",
@@ -1718,6 +1863,133 @@
   }
 
   const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris", "lamuh", "lamuh_legacy", "celeste"];
+  const MODE_FLOW_DATA = {
+    online: {
+      id: "online",
+      title: "Online Versus",
+      kicker: "Network Match",
+      description: "Host a room or join a challenger with a room code.",
+      panel: "online",
+      actions: [
+        { label: "Host Match", action: "host" },
+        { label: "Join Match", action: "join" }
+      ]
+    },
+    versus: {
+      id: "versus",
+      title: "Local Versus",
+      kicker: "Same Screen",
+      description: "Pick P1, pick P2, choose an arena, then fight.",
+      panel: "local",
+      actions: [{ label: "Continue", action: "fighter-select", mode: "versus" }]
+    },
+    training: {
+      id: "training",
+      title: "Training",
+      kicker: "Lab Mode",
+      description: "Practice against a dummy or toggle dummy movement in-match.",
+      panel: "training",
+      actions: [
+        { label: "Free Training", action: "fighter-select", mode: "training", variant: "free" },
+        { label: "Training Dummy", action: "fighter-select", mode: "training", variant: "dummy" }
+      ]
+    },
+    arcade: {
+      id: "arcade",
+      title: "Arcade",
+      kicker: "Coming Soon",
+      description: "Arcade ladder is reserved for a future content pass.",
+      panel: "arcade",
+      actions: [{ label: "Back", action: "main-menu" }]
+    }
+  };
+  const FIGHTER_SELECT_DATA = {
+    kairo: {
+      archetype: "Cyber Blade Striker",
+      difficulty: "2/5",
+      description: "Fast sword pressure with clean confirms.",
+      playstyle: "Kairo rewards footsies, fast pokes, and direct conversions.",
+      strengths: ["Fast buttons", "Clean movement", "Simple confirms"],
+      quote: "Steel answers the sky."
+    },
+    vanta: {
+      archetype: "Crimson Rival",
+      difficulty: "3/5",
+      description: "Midrange bully with heavy whiff punishes.",
+      playstyle: "Vanta controls space with committed strikes and punishing reach.",
+      strengths: ["Midrange threat", "Heavy damage", "Solid defense"],
+      quote: "Every throne has a shadow."
+    },
+    nyx: {
+      archetype: "Aerial Rushdown",
+      difficulty: "4/5",
+      description: "Air routes, speed, and slippery angles.",
+      playstyle: "Nyx opens fights from odd angles and keeps pressure airborne.",
+      strengths: ["Air mobility", "Mixups", "Fast pressure"],
+      quote: "Blink once. Miss everything."
+    },
+    sol: {
+      archetype: "Iron Sun",
+      difficulty: "3/5",
+      description: "Armor-flavored pressure and radiant reach.",
+      playstyle: "Sol turns steady forward movement into oppressive close-range pressure.",
+      strengths: ["Pressure", "Meter threat", "Durable offense"],
+      quote: "Stand in the light or get buried by it."
+    },
+    seris: {
+      archetype: "Halo Chain",
+      difficulty: "4/5",
+      description: "Chain control, traps, and delayed threat.",
+      playstyle: "Seris controls lanes with chain timing and awkward recovery traps.",
+      strengths: ["Space control", "Delayed hits", "Special pressure"],
+      quote: "The halo is not mercy."
+    },
+    lamuh: {
+      archetype: "Celestial Ki",
+      difficulty: "5/5",
+      description: "High-commitment divine pressure and beams.",
+      playstyle: "LAMUH spends commitment for huge payoff and cinematic momentum.",
+      strengths: ["Burst damage", "Beam threat", "High ceiling"],
+      quote: "No crown survives heaven."
+    },
+    lamuh_legacy: {
+      archetype: "Classic Ki",
+      difficulty: "2/5",
+      description: "Simple legacy kit with familiar spacing.",
+      playstyle: "Legacy LAMUH keeps older routes readable and direct.",
+      strengths: ["Accessible", "Stable routes", "Classic specials"],
+      quote: "Old power still burns."
+    },
+    celeste: {
+      archetype: "Seven Spirits",
+      difficulty: "4/5",
+      description: "Spirit stance flavor and tricky pressure.",
+      playstyle: "Celeste changes rhythm with spirit-inflected attacks and mobility.",
+      strengths: ["Unusual angles", "Spirit pressure", "Creative routes"],
+      quote: "Seven voices. One baton."
+    }
+  };
+  const STAGE_FLOW_DATA = {
+    [PLATFORM_TEST_STAGE_ID]: {
+      id: PLATFORM_TEST_STAGE_ID,
+      name: "Platform Arena",
+      note: "Wide stage with center platform",
+      previewClass: "stage-preview-platform"
+    },
+    [STANDARD_STAGE_ID]: {
+      id: STANDARD_STAGE_ID,
+      name: "Standard Arena",
+      note: "Classic fallback ruleset",
+      previewClass: "stage-preview-standard"
+    },
+    [ECLIPSE_ROOFTOP_STAGE_ID]: {
+      id: ECLIPSE_ROOFTOP_STAGE_ID,
+      name: "Eclipse Rooftop",
+      note: "Rooftop floor with elevated side platforms",
+      previewClass: "stage-preview-eclipse",
+      previewPath: "assets/stages/eclipse_rooftop/07_stage_select_card_16x9.png"
+    }
+  };
   const hiddenTestCharacterIds = [
     ...(SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : []),
     ...(LAMUH_HIDDEN_TEST_ENABLED ? ["lamuh"] : [])
@@ -1842,6 +2114,10 @@
     selectedP2CharacterId: "vanta",
     selectCursorCharacterId: "kairo",
     selectGameMode: "versus",
+    selectStep: SELECT_STEP_MODE,
+    flowStep: FLOW_STEP_MAIN_MENU,
+    pendingConfirmCharacterId: "kairo",
+    pendingTrainingVariant: "free",
     selectedStagePresetId: PLATFORM_TEST_STAGE_ID,
     stagePresetId: PLATFORM_TEST_STAGE_ID,
     stageCamera: { scale: 1, x: 0, y: 0, initialized: false },
@@ -1875,7 +2151,7 @@
   }
 
   function isPlatformTestStage() {
-    return getActiveStagePreset().id === PLATFORM_TEST_STAGE_ID;
+    return Boolean(getActiveStagePreset().experimental);
   }
 
   function getPlatformArenaConfig() {
@@ -3922,6 +4198,7 @@
     document.documentElement.style.setProperty("--title-bg", `url("${assetPaths.title}")`);
     renderControlsDisplay(selectControlsDisplay, true);
     renderControlsDisplay(matchControlsDisplay, false);
+    renderControlsDisplay(titleControlsPanel, true);
     if (PLATFORM_TEST_DEBUG_ENABLED) state.selectedStagePresetId = PLATFORM_TEST_STAGE_ID;
     updateStagePresetUi();
     resetRound();
@@ -3948,7 +4225,19 @@
         state.images[key] = null;
         return;
       }
-      const chroma = !["stage", "title", "nyxPhantomSlash"].includes(key);
+      const chroma = ![
+        "stage",
+        "title",
+        "mainMenuBackground",
+        "eclipseFarBackground",
+        "eclipseMidground",
+        "eclipseMainPlatform",
+        "eclipseSidePlatformLeft",
+        "eclipseSidePlatformRight",
+        "eclipseForeground",
+        "eclipseStageSelectCard",
+        "nyxPhantomSlash"
+      ].includes(key);
       const image = await loadImage(path);
       if (!image) {
         state.images[key] = null;
@@ -4547,7 +4836,7 @@
 
   function returnToCharacterSelectFromMatch() {
     const selectMode = state.mode === "training" ? "training" : "versus";
-    showCharacterSelect(selectMode);
+    showCharacterSelect(selectMode, SELECT_STEP_CHARACTERS);
   }
 
   function showPauseHelpOverlay() {
@@ -4567,9 +4856,143 @@
     }
   }
 
-  function showCharacterSelect(selectGameMode = "versus") {
+  function normalizeSelectStep(step) {
+    const requestedStep = SELECT_STEPS.includes(step) ? step : SELECT_STEP_MODE;
+    return netIsActive() && requestedStep === SELECT_STEP_MODE ? SELECT_STEP_CHARACTERS : requestedStep;
+  }
+
+  function setSelectStep(step, focus = true) {
+    state.selectStep = normalizeSelectStep(step);
+    updateCharacterSelectUi();
+    if (focus) focusCurrentSelectStep();
+  }
+
+  function hideFlowScreens({ hideHud = true } = {}) {
     titleScreen.classList.add("hidden");
-    hud.classList.add("hidden");
+    modeDetailScreen?.classList.add("hidden");
+    onlineMenu?.classList.add("hidden");
+    characterSelect.classList.add("hidden");
+    fighterConfirmScreen?.classList.add("hidden");
+    stageSelectScreen?.classList.add("hidden");
+    matchIntroScreen?.classList.add("hidden");
+    if (hideHud) hud.classList.add("hidden");
+  }
+
+  function showMainMenu() {
+    hideFlowScreens();
+    titleScreen.classList.remove("hidden");
+    state.mode = "title";
+    state.flowStep = FLOW_STEP_MAIN_MENU;
+    setSelectControlsOpen(false);
+    startButton.focus({ preventScroll: true });
+  }
+
+  function runModeDetailAction(action) {
+    if (!action) return;
+    if (action.action === "main-menu") {
+      showMainMenu();
+      return;
+    }
+    if (action.action === "host") {
+      hideFlowScreens();
+      showOnlineMenu();
+      startHosting();
+      return;
+    }
+    if (action.action === "join") {
+      hideFlowScreens();
+      showOnlineMenu();
+      netReset();
+      resetOnlinePanels();
+      onlineJoinPanel?.classList.remove("hidden");
+      setOnlineStatus("Enter the host's room code.");
+      onlineCodeInput?.focus();
+      return;
+    }
+    if (action.action === "fighter-select") {
+      state.pendingTrainingVariant = action.variant || "free";
+      showCharacterSelect(action.mode || "versus", SELECT_STEP_CHARACTERS);
+    }
+  }
+
+  function showModeDetail(modeId = "versus") {
+    const data = MODE_FLOW_DATA[modeId] || MODE_FLOW_DATA.versus;
+    hideFlowScreens();
+    modeDetailScreen?.classList.remove("hidden");
+    if (modeDetailPanel) {
+      modeDetailPanel.dataset.modeDetail = data.panel || data.id;
+      modeDetailPanel.style.setProperty("--mode-panel-art", `url("assets/ui/flow/mode_panel_${data.panel || data.id}.png")`);
+    }
+    if (modeDetailKicker) modeDetailKicker.textContent = data.kicker;
+    if (modeDetailTitle) modeDetailTitle.textContent = data.title;
+    if (modeDetailDescription) modeDetailDescription.textContent = data.description;
+    if (modeDetailActions) {
+      modeDetailActions.innerHTML = "";
+      data.actions.forEach((action, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `select-nav-button${index === 0 ? " primary" : ""}`;
+        button.textContent = action.label;
+        button.addEventListener("click", () => runModeDetailAction(action));
+        modeDetailActions.append(button);
+      });
+      modeDetailActions.querySelector("button")?.focus({ preventScroll: true });
+    }
+    state.mode = "select";
+    state.flowStep = FLOW_STEP_MODE_DETAIL;
+    state.selectGameMode = data.id === "training" ? "training" : "versus";
+    hideMatchFlowOverlay();
+    clearInputKeys();
+  }
+
+  function chooseSelectMode(selectGameMode) {
+    if (netIsActive()) return;
+    setCharacterSelectMode(selectGameMode);
+    showCharacterSelect(selectGameMode, SELECT_STEP_CHARACTERS);
+  }
+
+  function focusCurrentSelectStep() {
+    if (state.mode !== "select") return;
+    if (state.flowStep === FLOW_STEP_FIGHTER_CONFIRM) {
+      showcaseConfirmButton?.focus({ preventScroll: true });
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_STAGE_SELECT || state.selectStep === SELECT_STEP_ARENA) {
+      const selectedStageButton = [...stagePresetButtons].find((button) => button.dataset.stagePreset === state.selectedStagePresetId);
+      (selectedStageButton || stageConfirmButton || selectConfirmButton)?.focus({ preventScroll: true });
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_MATCH_INTRO) {
+      introStartButton?.focus({ preventScroll: true });
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_MODE) {
+      const modeButton = state.selectGameMode === "training" ? selectTrainingButton : selectVersusButton;
+      modeButton?.focus({ preventScroll: true });
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_ARENA) {
+      const selectedStageButton = [...stagePresetButtons].find((button) => button.dataset.stagePreset === state.selectedStagePresetId);
+      (selectedStageButton || selectConfirmButton)?.focus({ preventScroll: true });
+      return;
+    }
+    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
+    selectedButton?.focus({ preventScroll: true });
+  }
+
+  function revealFighterSelectScreen(focus = true) {
+    hideFlowScreens();
+    characterSelect.classList.remove("hidden");
+    state.mode = "select";
+    state.flowStep = FLOW_STEP_FIGHTER_SELECT;
+    state.selectStep = SELECT_STEP_CHARACTERS;
+    updateStagePresetUi();
+    updateCharacterSelectUi();
+    if (focus) focusCurrentSelectStep();
+  }
+
+  function showCharacterSelect(selectGameMode = "versus", selectStep = SELECT_STEP_MODE) {
+    hideFlowScreens();
     hideMatchFlowOverlay();
     state.matchEnded = false;
     state.matchWinner = null;
@@ -4577,20 +5000,21 @@
     clearInputKeys();
     characterSelect.classList.remove("hidden");
     state.mode = "select";
+    state.flowStep = FLOW_STEP_FIGHTER_SELECT;
     setSelectControlsOpen(false);
     updateStagePresetUi();
     setCharacterSelectMode(selectGameMode);
-    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
-    selectedButton?.focus({ preventScroll: true });
+    state.selectStep = normalizeSelectStep(selectStep === SELECT_STEP_MODE ? SELECT_STEP_CHARACTERS : selectStep);
+    revealFighterSelectScreen(true);
   }
 
   function startTraining(characterId = state.selectedPlayerId) {
     state.selectedPlayerId = isLaunchableCharacterId(characterId) ? characterId : "kairo";
     state.selectedP1CharacterId = state.selectedPlayerId;
-    titleScreen.classList.add("hidden");
-    characterSelect.classList.add("hidden");
+    hideFlowScreens({ hideHud: false });
     hud.classList.remove("hidden");
     state.mode = "training";
+    state.flowStep = "fight";
     state.paused = false;
     resetRound();
   }
@@ -4599,10 +5023,10 @@
     state.selectedP1CharacterId = isLaunchableCharacterId(state.selectedP1CharacterId) ? state.selectedP1CharacterId : "kairo";
     state.selectedP2CharacterId = isLaunchableCharacterId(state.selectedP2CharacterId) ? state.selectedP2CharacterId : "vanta";
     state.selectedPlayerId = state.selectedP1CharacterId;
-    titleScreen.classList.add("hidden");
-    characterSelect.classList.add("hidden");
+    hideFlowScreens({ hideHud: false });
     hud.classList.remove("hidden");
     state.mode = "versus";
+    state.flowStep = "fight";
     state.enemyAI = false;
     state.paused = false;
     resetRound();
@@ -4627,6 +5051,7 @@
     if (netIsActive() && net.role === "host" && !fromNet) netSend({ t: "stage", s: state.selectedStagePresetId });
     updateStagePresetUi();
     updateCharacterSelectUi();
+    updateStageSelectUi();
   }
 
   function updateStagePresetUi() {
@@ -4678,6 +5103,124 @@
     if (id === "celeste") return "assets/sprites/portraits/celeste_select.png";
     const cache = id === "seris" ? "?v=seris-revamp-final-1" : "";
     return `assets/sprites/portraits/${id}_select.png${cache}`;
+  }
+
+  function getFighterSelectData(characterId) {
+    return FIGHTER_SELECT_DATA[characterId] || FIGHTER_SELECT_DATA.kairo;
+  }
+
+  function getSelectionSideLabel() {
+    if (netIsActive()) return net.role === "guest" ? "P2 Confirm" : "P1 Confirm";
+    if (state.selectGameMode === "training") return "Training Confirm";
+    return state.activeSelectSide === "p2" ? "P2 Confirm" : "P1 Confirm";
+  }
+
+  function showFighterConfirm(characterId = state.selectCursorCharacterId) {
+    const id = isLaunchableCharacterId(characterId) ? characterId : "kairo";
+    const profile = characterProfiles[id] || characterProfiles.kairo;
+    const data = getFighterSelectData(id);
+    state.pendingConfirmCharacterId = id;
+    state.mode = "select";
+    state.flowStep = FLOW_STEP_FIGHTER_CONFIRM;
+    hideFlowScreens();
+    fighterConfirmScreen?.classList.remove("hidden");
+    if (showcasePortrait) {
+      showcasePortrait.src = getPortraitPath(id);
+      showcasePortrait.alt = `${profile.name} portrait`;
+    }
+    if (showcaseSide) showcaseSide.textContent = getSelectionSideLabel();
+    if (showcaseName) showcaseName.textContent = profile.name;
+    if (showcaseArchetype) showcaseArchetype.textContent = `${data.archetype} - Difficulty ${data.difficulty}`;
+    if (showcasePlaystyle) showcasePlaystyle.textContent = data.playstyle;
+    if (showcaseStrengths) {
+      showcaseStrengths.innerHTML = data.strengths.map((strength) => `<span>${strength}</span>`).join("");
+    }
+    if (showcaseQuote) showcaseQuote.textContent = data.quote;
+    focusCurrentSelectStep();
+  }
+
+  function showStageSelect(focus = true) {
+    state.mode = "select";
+    state.flowStep = FLOW_STEP_STAGE_SELECT;
+    state.selectStep = SELECT_STEP_ARENA;
+    hideFlowScreens();
+    stageSelectScreen?.classList.remove("hidden");
+    updateStagePresetUi();
+    updateStageSelectUi();
+    if (focus) focusCurrentSelectStep();
+  }
+
+  function updateStageSelectUi() {
+    const selectedStage = getSelectedStagePreset();
+    const p1 = getSelectDisplayName(state.selectedP1CharacterId || state.selectedPlayerId);
+    const p2 = state.selectGameMode === "training"
+      ? `${getSelectDisplayName(getOpponentId(state.selectedPlayerId))} dummy`
+      : getSelectDisplayName(state.selectedP2CharacterId);
+    const data = STAGE_FLOW_DATA[selectedStage.id] || STAGE_FLOW_DATA[STANDARD_STAGE_ID];
+    if (stageMatchupPreview) stageMatchupPreview.textContent = `${p1} vs ${p2} - ${data.name}`;
+    if (stageConfirmButton) {
+      stageConfirmButton.textContent = netIsActive() && net.role === "guest" ? "Waiting for Host" : "Confirm Arena";
+      stageConfirmButton.disabled = netIsActive() && net.role === "guest";
+    }
+  }
+
+  function getIntroP2Id() {
+    return state.selectGameMode === "training" ? getOpponentId(state.selectedPlayerId) : state.selectedP2CharacterId;
+  }
+
+  function buildIntroQuote(p1Id, p2Id, stageId) {
+    const left = characterProfiles[p1Id]?.shortName || "P1";
+    const right = characterProfiles[p2Id]?.shortName || "P2";
+    if (stageId === ECLIPSE_ROOFTOP_STAGE_ID) return `${left} and ${right} fight under a stolen sun.`;
+    if (stageId === PLATFORM_TEST_STAGE_ID) return `${left} meets ${right} above broken ground.`;
+    return `${left} answers ${right}.`;
+  }
+
+  function showMatchIntro({ fromNet = false } = {}) {
+    state.mode = "select";
+    state.flowStep = FLOW_STEP_MATCH_INTRO;
+    hideFlowScreens();
+    matchIntroScreen?.classList.remove("hidden");
+    const p1Id = isLaunchableCharacterId(state.selectedP1CharacterId) ? state.selectedP1CharacterId : state.selectedPlayerId;
+    const p2Id = isLaunchableCharacterId(getIntroP2Id()) ? getIntroP2Id() : "vanta";
+    const stage = getSelectedStagePreset();
+    const stageData = STAGE_FLOW_DATA[stage.id] || STAGE_FLOW_DATA[STANDARD_STAGE_ID];
+    if (introP1Portrait) {
+      introP1Portrait.src = getPortraitPath(p1Id);
+      introP1Portrait.alt = `${getSelectDisplayName(p1Id)} portrait`;
+    }
+    if (introP2Portrait) {
+      introP2Portrait.src = getPortraitPath(p2Id);
+      introP2Portrait.alt = `${getSelectDisplayName(p2Id)} portrait`;
+    }
+    if (introP1Name) introP1Name.textContent = getSelectDisplayName(p1Id);
+    if (introP2Name) introP2Name.textContent = state.selectGameMode === "training" ? `${getSelectDisplayName(p2Id)} DUMMY` : getSelectDisplayName(p2Id);
+    if (introStageName) introStageName.textContent = stageData.name;
+    if (introStagePreview) {
+      introStagePreview.className = `intro-stage-preview ${stageData.previewClass || ""}`;
+      introStagePreview.style.backgroundImage = stageData.previewPath ? `url("${stageData.previewPath}")` : "";
+    }
+    if (introQuote) introQuote.textContent = buildIntroQuote(p1Id, p2Id, stage.id);
+    if (introStartButton) {
+      introStartButton.textContent = state.selectGameMode === "training" ? "Start Training" : "Start Match";
+      introStartButton.disabled = netIsActive() && net.role === "guest" && fromNet;
+    }
+    focusCurrentSelectStep();
+  }
+
+  function startConfirmedMatch() {
+    if (netIsActive()) {
+      if (net.role === "host" && state.p1Ready && state.p2Ready) {
+        netSend({ t: "start", p1: state.selectedP1CharacterId, p2: state.selectedP2CharacterId, s: state.selectedStagePresetId });
+        startOnlineVersus(state.selectedP1CharacterId, state.selectedP2CharacterId, state.selectedStagePresetId);
+      }
+      return;
+    }
+    if (state.selectGameMode === "training") {
+      startTraining(state.selectedPlayerId);
+      return;
+    }
+    if (state.p1Ready && state.p2Ready) startLocalVersus();
   }
 
   function keyLabel(code) {
@@ -4776,71 +5319,198 @@
 
   function updateCharacterSelectUi() {
     const trainingMode = state.selectGameMode === "training";
+    const modeStep = state.selectStep === SELECT_STEP_MODE;
+    const charactersStep = state.selectStep === SELECT_STEP_CHARACTERS;
+    const arenaStep = state.selectStep === SELECT_STEP_ARENA;
+    const onlineActive = netIsActive();
     const selectedStage = getSelectedStagePreset();
-    const stageSuffix = selectedStage.experimental ? ` - ${selectedStage.label}` : "";
-    selectModeLabel.textContent = netIsActive()
+    const stageSuffix = selectedStage.experimental ? ` - ${selectedStage.label}` : ` - ${selectedStage.label.replace(" (Fallback)", "")}`;
+    const modeLabel = onlineActive
       ? `Online Versus - Room ${net.roomCode || ""}`.trim()
       : trainingMode ? "Training Dummy" : "Local Versus";
+    characterSelect.dataset.step = state.selectStep;
+    flowStepIndicators.forEach((indicator) => {
+      const step = indicator.dataset.flowStep;
+      const stepIndex = FLOW_STEPS.indexOf(step);
+      const currentIndex = FLOW_STEPS.indexOf(state.flowStep);
+      indicator.classList.toggle("active", step === state.flowStep);
+      indicator.classList.toggle("complete", stepIndex >= 0 && currentIndex >= 0 && stepIndex < currentIndex);
+    });
+    selectModeRow?.classList.toggle("hidden", !modeStep);
+    selectGrid?.classList.toggle("hidden", !charactersStep);
+    selectStageRow?.classList.toggle("hidden", !arenaStep);
+    selectSlots?.classList.toggle("hidden", modeStep);
+    selectStepIndicators.forEach((indicator) => {
+      const step = indicator.dataset.selectStep;
+      const stepIndex = SELECT_STEPS.indexOf(step);
+      const currentIndex = SELECT_STEPS.indexOf(state.selectStep);
+      indicator.classList.toggle("active", step === state.selectStep);
+      indicator.classList.toggle("complete", onlineActive ? stepIndex === 0 || stepIndex < currentIndex : stepIndex < currentIndex);
+    });
+    if (selectHeading) {
+      selectHeading.textContent = modeStep
+        ? "Choose Match Mode"
+        : arenaStep ? "Choose Arena" : trainingMode ? "Choose Your Fighter" : "Choose Fighters";
+    }
+    selectModeLabel.textContent = modeStep ? "Mode Selection" : arenaStep ? "Arena Selection" : modeLabel;
     selectVersusButton.classList.toggle("active", !trainingMode);
     selectTrainingButton.classList.toggle("active", trainingMode);
-    selectVersusButton.classList.toggle("online-locked", netIsActive());
-    selectTrainingButton.classList.toggle("online-locked", netIsActive());
-    stagePresetButtons.forEach((button) => button.classList.toggle("online-locked", netIsActive() && net.role === "guest"));
+    selectVersusButton.classList.toggle("online-locked", onlineActive);
+    selectTrainingButton.classList.toggle("online-locked", onlineActive);
+    stagePresetButtons.forEach((button) => button.classList.toggle("online-locked", onlineActive && net.role === "guest"));
     p1SelectName.textContent = getSelectDisplayName(trainingMode ? state.selectCursorCharacterId : state.selectedP1CharacterId);
     p2SelectName.textContent = trainingMode ? getSelectDisplayName(getOpponentId(state.selectCursorCharacterId)) : getSelectDisplayName(state.selectedP2CharacterId);
-    p1SelectStatus.textContent = trainingMode ? "Player" : state.p1Ready ? "Ready" : "Choosing";
+    p1SelectStatus.textContent = trainingMode ? "Player" : state.p1Ready ? "Ready" : charactersStep && state.activeSelectSide === "p1" ? "Choosing" : "Locked";
     p2SelectStatus.textContent = trainingMode ? "Dummy" : state.p2Ready ? "Ready" : state.p1Ready ? "Choosing" : "Waiting";
-    p1SelectSlot.classList.toggle("active", state.activeSelectSide === "p1");
-    p2SelectSlot.classList.toggle("active", state.activeSelectSide === "p2");
-    p1SelectSlot.classList.toggle("ready", state.p1Ready || trainingMode);
-    p2SelectSlot.classList.toggle("ready", state.p2Ready || trainingMode);
-    if (netIsActive()) {
+    p1SelectSlot.classList.toggle("active", charactersStep && state.activeSelectSide === "p1");
+    p2SelectSlot.classList.toggle("active", charactersStep && state.activeSelectSide === "p2");
+    p1SelectSlot.classList.toggle("ready", state.p1Ready || trainingMode || arenaStep);
+    p2SelectSlot.classList.toggle("ready", state.p2Ready || trainingMode || arenaStep);
+
+    let previewText = "";
+    let hintText = "";
+    let confirmText = "Continue";
+    let confirmDisabled = false;
+    let footerText = '<span><kbd>A</kbd>/<kbd>D</kbd> Choose Mode</span><span><kbd>Enter</kbd> Continue</span><span><kbd>Esc</kbd> Back</span>';
+
+    if (modeStep) {
+      previewText = `${modeLabel} selected`;
+      hintText = "Mode";
+      confirmText = "Choose Fighters";
+    } else if (onlineActive) {
       const ownReady = net.role === "guest" ? state.p2Ready : state.p1Ready;
       const otherReady = net.role === "guest" ? state.p1Ready : state.p2Ready;
-      const matchup = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)}${stageSuffix}`;
-      if (!ownReady) {
-        matchupPreview.textContent = `Choose your fighter (${net.role === "guest" ? "P2" : "P1"}) - Enter to lock in`;
+      const matchup = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)}`;
+      footerText = '<span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd>-<kbd>8</kbd> Choose</span><span><kbd>Enter</kbd> Confirm</span><span><kbd>Esc</kbd> Back</span>';
+      if (arenaStep) {
+        previewText = `${matchup}${stageSuffix}`;
+        hintText = net.role === "host" ? "Host chooses arena" : "Waiting for host arena";
+        confirmText = net.role === "host" ? "Start Online Match" : "Waiting for Host";
+        confirmDisabled = net.role !== "host";
+        footerText = net.role === "host"
+          ? '<span><kbd>A</kbd>/<kbd>D</kbd> Choose Arena</span><span><kbd>Enter</kbd> Start</span><span><kbd>Esc</kbd> Back</span>'
+          : '<span>Guest arena follows host selection</span><span><kbd>Esc</kbd> Unlock Fighter</span>';
+      } else if (!ownReady) {
+        previewText = `Choose your fighter (${net.role === "guest" ? "P2" : "P1"})`;
+        hintText = "Fighters";
+        confirmText = "Review Fighter";
       } else if (!otherReady) {
-        matchupPreview.textContent = "Locked in - waiting for opponent";
+        previewText = "Locked in - waiting for opponent";
+        hintText = "Fighters";
+        confirmText = "Waiting";
+        confirmDisabled = true;
       } else {
-        matchupPreview.textContent = net.role === "host" ? `${matchup} - press Enter to start` : `${matchup} - waiting for host to start`;
+        previewText = `${matchup} locked`;
+        hintText = "Fighters ready";
+        confirmText = "Choose Arena";
       }
-    } else if (trainingMode) {
-      matchupPreview.textContent = `${getSelectDisplayName(state.selectCursorCharacterId)} vs ${getSelectDisplayName(getOpponentId(state.selectCursorCharacterId))} dummy${stageSuffix}`;
-    } else if (!state.p1Ready) {
-      matchupPreview.textContent = "Choose P1 fighter";
-    } else if (!state.p2Ready) {
-      matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} locked - choose P2 fighter`;
+    } else if (arenaStep) {
+      if (trainingMode) {
+        previewText = `${getSelectDisplayName(state.selectedPlayerId)} vs ${getSelectDisplayName(getOpponentId(state.selectedPlayerId))} dummy${stageSuffix}`;
+        confirmText = "Start Training";
+      } else {
+        previewText = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)}${stageSuffix}`;
+        confirmText = "Start Match";
+      }
+      hintText = "Arena";
+      footerText = '<span><kbd>A</kbd>/<kbd>D</kbd> Choose Arena</span><span><kbd>Enter</kbd> Start</span><span><kbd>Esc</kbd> Back</span>';
     } else {
-      matchupPreview.textContent = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)}${stageSuffix} - press Enter to start`;
+      footerText = '<span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd>-<kbd>8</kbd> Choose</span><span><kbd>Enter</kbd> Lock In</span><span><kbd>C</kbd> Controls</span><span><kbd>Esc</kbd> Back</span>';
+      if (trainingMode) {
+        previewText = `${getSelectDisplayName(state.selectCursorCharacterId)} vs ${getSelectDisplayName(getOpponentId(state.selectCursorCharacterId))} dummy`;
+        hintText = "Fighter";
+        confirmText = "Review Fighter";
+      } else if (!state.p1Ready) {
+        previewText = "Choose P1 fighter";
+        hintText = "Fighters";
+        confirmText = "Review P1";
+      } else if (!state.p2Ready) {
+        previewText = `${getSelectDisplayName(state.selectedP1CharacterId)} locked - choose P2 fighter`;
+        hintText = "Fighters";
+        confirmText = "Review P2";
+      } else {
+        previewText = `${getSelectDisplayName(state.selectedP1CharacterId)} vs ${getSelectDisplayName(state.selectedP2CharacterId)} locked`;
+        hintText = "Fighters ready";
+        confirmText = "Choose Arena";
+      }
     }
+
+    matchupPreview.textContent = previewText;
+    if (selectFlowHint) selectFlowHint.textContent = hintText;
+    if (selectConfirmButton) {
+      selectConfirmButton.textContent = confirmText;
+      selectConfirmButton.disabled = confirmDisabled;
+    }
+    if (selectFooter) selectFooter.innerHTML = footerText;
   }
 
   function confirmCharacterSelect() {
+    if (state.flowStep === FLOW_STEP_FIGHTER_CONFIRM) {
+      confirmFighterLock();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_STAGE_SELECT || state.selectStep === SELECT_STEP_ARENA) {
+      confirmArenaSelect();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_MATCH_INTRO) {
+      startConfirmedMatch();
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_MODE) {
+      chooseSelectMode(state.selectGameMode);
+      return;
+    }
+    showFighterConfirm(state.selectCursorCharacterId);
+  }
+
+  function confirmFighterLock() {
+    const pending = isLaunchableCharacterId(state.pendingConfirmCharacterId) ? state.pendingConfirmCharacterId : state.selectCursorCharacterId;
+    state.selectCursorCharacterId = pending;
     if (netIsActive()) {
       confirmOnlineCharacterSelect();
+      if (state.selectStep === SELECT_STEP_ARENA) showStageSelect();
+      else revealFighterSelectScreen();
       return;
     }
     if (state.selectGameMode === "training") {
-      startTraining(state.selectCursorCharacterId);
+      state.selectedPlayerId = pending;
+      state.selectedP1CharacterId = pending;
+      showStageSelect();
       return;
     }
     if (state.activeSelectSide === "p1") {
-      state.selectedP1CharacterId = state.selectCursorCharacterId;
+      state.selectedP1CharacterId = pending;
       state.p1Ready = true;
       state.activeSelectSide = "p2";
       state.selectCursorCharacterId = state.selectedP2CharacterId;
-      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      revealFighterSelectScreen();
       return;
     }
     if (state.activeSelectSide === "p2") {
-      state.selectedP2CharacterId = state.selectCursorCharacterId;
+      state.selectedP2CharacterId = pending;
       state.p2Ready = true;
       state.activeSelectSide = "ready";
       updateCharacterSelectFocus(state.selectCursorCharacterId);
+      showStageSelect();
       return;
     }
-    startLocalVersus();
+    showStageSelect();
+  }
+
+  function confirmArenaSelect() {
+    if (netIsActive()) {
+      if (net.role === "host" && state.p1Ready && state.p2Ready) {
+        netSend({ t: "intro", p1: state.selectedP1CharacterId, p2: state.selectedP2CharacterId, s: state.selectedStagePresetId });
+        showMatchIntro();
+      }
+      return;
+    }
+    if (state.selectGameMode === "training") {
+      showMatchIntro();
+      return;
+    }
+    if (state.p1Ready && state.p2Ready) showMatchIntro();
   }
 
   function backCharacterSelect() {
@@ -4848,8 +5518,62 @@
       setSelectControlsOpen(false);
       return;
     }
+    if (state.flowStep === FLOW_STEP_FIGHTER_CONFIRM) {
+      revealFighterSelectScreen();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_MATCH_INTRO) {
+      if (netIsActive()) {
+        if (net.role === "host") {
+          netSend({ t: "stageSelect" });
+          showStageSelect();
+        } else {
+          backOnlineCharacterSelect();
+        }
+        return;
+      }
+      showStageSelect();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_STAGE_SELECT) {
+      if (netIsActive()) {
+        backOnlineCharacterSelect();
+        return;
+      }
+      if (state.selectGameMode === "versus") {
+        state.p2Ready = false;
+        state.activeSelectSide = "p2";
+        state.selectCursorCharacterId = state.selectedP2CharacterId;
+      } else {
+        state.selectCursorCharacterId = state.selectedPlayerId;
+      }
+      revealFighterSelectScreen();
+      return;
+    }
     if (netIsActive()) {
       backOnlineCharacterSelect();
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_ARENA) {
+      if (state.selectGameMode === "versus") {
+        state.p2Ready = false;
+        state.activeSelectSide = "p2";
+        state.selectCursorCharacterId = state.selectedP2CharacterId;
+      } else {
+        state.selectCursorCharacterId = state.selectedPlayerId;
+      }
+      setSelectStep(SELECT_STEP_CHARACTERS);
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_CHARACTERS && (state.selectGameMode === "training" || state.activeSelectSide === "p1")) {
+      state.p1Ready = false;
+      state.p2Ready = false;
+      state.activeSelectSide = "p1";
+      setSelectStep(SELECT_STEP_MODE);
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_MODE) {
+      showMainMenu();
       return;
     }
     if (state.selectGameMode === "versus" && state.activeSelectSide === "ready") {
@@ -4866,14 +5590,11 @@
       updateCharacterSelectFocus(state.selectCursorCharacterId);
       return;
     }
-    characterSelect.classList.add("hidden");
-    titleScreen.classList.remove("hidden");
-    state.mode = "title";
-    startButton.focus({ preventScroll: true });
+    showModeDetail(state.selectGameMode === "training" ? "training" : "versus");
   }
 
   function handleCharacterSelectKey(e) {
-    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "KeyC", "Slash", "KeyT", "KeyV", "Enter", "Escape", "Backspace"].includes(e.code);
+    const handled = ["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyW", "ArrowUp", "Digit3", "Numpad3", "KeyS", "ArrowDown", "Digit4", "Numpad4", "Digit5", "Numpad5", "Digit6", "Numpad6", "Digit7", "Numpad7", "Digit8", "Numpad8", "KeyC", "Slash", "KeyT", "KeyV", "Enter", "Escape", "Backspace"].includes(e.code);
     if (!handled) return false;
 
     e.preventDefault();
@@ -4883,8 +5604,42 @@
       toggleSelectControls();
       return true;
     }
-    if (e.code === "KeyV") setCharacterSelectMode("versus");
-    if (e.code === "KeyT") setCharacterSelectMode("training");
+
+    if (state.flowStep === FLOW_STEP_FIGHTER_CONFIRM) {
+      if (e.code === "Enter") confirmFighterLock();
+      if (e.code === "Escape" || e.code === "Backspace") backCharacterSelect();
+      return true;
+    }
+
+    if (state.flowStep === FLOW_STEP_MATCH_INTRO) {
+      if (e.code === "Enter") startConfirmedMatch();
+      if (e.code === "Escape" || e.code === "Backspace") backCharacterSelect();
+      return true;
+    }
+
+    if (state.flowStep === FLOW_STEP_STAGE_SELECT || state.selectStep === SELECT_STEP_ARENA) {
+      if (["KeyA", "ArrowLeft", "Digit1", "Numpad1"].includes(e.code)) setStagePreset(PLATFORM_TEST_STAGE_ID);
+      if (["KeyD", "ArrowRight", "Digit2", "Numpad2"].includes(e.code)) setStagePreset(STANDARD_STAGE_ID);
+      if (["KeyW", "ArrowUp", "Digit3", "Numpad3"].includes(e.code)) setStagePreset(ECLIPSE_ROOFTOP_STAGE_ID);
+      if (e.code === "Enter") confirmArenaSelect();
+      if (e.code === "Escape" || e.code === "Backspace") backCharacterSelect();
+      focusCurrentSelectStep();
+      return true;
+    }
+
+    if (state.selectStep === SELECT_STEP_MODE) {
+      if (["KeyA", "ArrowLeft", "Digit1", "Numpad1", "KeyV"].includes(e.code)) setCharacterSelectMode("versus");
+      if (["KeyD", "ArrowRight", "Digit2", "Numpad2", "KeyT"].includes(e.code)) setCharacterSelectMode("training");
+      if (e.code === "Enter") confirmCharacterSelect();
+      if (e.code === "Escape" || e.code === "Backspace") backCharacterSelect();
+      focusCurrentSelectStep();
+      return true;
+    }
+
+    if (!netIsActive()) {
+      if (e.code === "KeyV") setCharacterSelectMode("versus");
+      if (e.code === "KeyT") setCharacterSelectMode("training");
+    }
     if (["KeyA", "ArrowLeft"].includes(e.code)) updateCharacterSelectFocus("kairo");
     if (["KeyD", "ArrowRight"].includes(e.code)) updateCharacterSelectFocus("vanta");
     if (["KeyW", "ArrowUp"].includes(e.code)) updateCharacterSelectFocus("nyx");
@@ -4893,8 +5648,7 @@
     if (e.code === "Enter") confirmCharacterSelect();
     if (e.code === "Escape" || e.code === "Backspace") backCharacterSelect();
 
-    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
-    selectedButton?.focus({ preventScroll: true });
+    focusCurrentSelectStep();
     return true;
   }
 
@@ -5065,8 +5819,22 @@
     const currentIndex = Math.max(0, ids.indexOf(state.selectCursorCharacterId));
     const nextIndex = (currentIndex + delta + ids.length) % ids.length;
     updateCharacterSelectFocus(ids[nextIndex]);
-    const selectedButton = characterSelect.querySelector(`[data-character="${state.selectCursorCharacterId}"]`);
-    selectedButton?.focus({ preventScroll: true });
+    focusCurrentSelectStep();
+  }
+
+  function cycleModeSelect(delta) {
+    if (netIsActive()) return;
+    if (delta !== 0) setCharacterSelectMode(state.selectGameMode === "training" ? "versus" : "training");
+    focusCurrentSelectStep();
+  }
+
+  function cycleStageSelect(delta) {
+    if (netIsActive() && net.role === "guest") return;
+    const ids = Object.keys(STAGE_PRESETS);
+    const currentIndex = Math.max(0, ids.indexOf(state.selectedStagePresetId));
+    const nextIndex = (currentIndex + delta + ids.length) % ids.length;
+    setStagePreset(ids[nextIndex]);
+    focusCurrentSelectStep();
   }
 
   function handleGamepadSelectInput(input, previous) {
@@ -5076,6 +5844,29 @@
     }
     if (justPressed(input, previous, "cancel")) {
       backCharacterSelect();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_FIGHTER_CONFIRM) {
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) confirmFighterLock();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_MATCH_INTRO) {
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) startConfirmedMatch();
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_STAGE_SELECT || state.selectStep === SELECT_STEP_ARENA) {
+      if (directionJustPressed(input, previous, "left") || directionJustPressed(input, previous, "up")) cycleStageSelect(-1);
+      if (directionJustPressed(input, previous, "right") || directionJustPressed(input, previous, "down")) cycleStageSelect(1);
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) confirmArenaSelect();
+      return;
+    }
+    if (state.selectStep === SELECT_STEP_MODE) {
+      if (directionJustPressed(input, previous, "left") || directionJustPressed(input, previous, "right") || directionJustPressed(input, previous, "up") || directionJustPressed(input, previous, "down")) {
+        cycleModeSelect(1);
+      }
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) {
+        confirmCharacterSelect();
+      }
       return;
     }
     if (directionJustPressed(input, previous, "left") || directionJustPressed(input, previous, "up")) {
@@ -5134,10 +5925,14 @@
         toggleSoloGamepadAssignment();
         return true;
       }
-      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) showCharacterSelect();
+      if (justPressed(input, previous, "confirm") || justPressed(input, previous, "start")) showModeDetail("versus");
       return true;
     }
     if (state.mode === "select") {
+      if (state.flowStep === FLOW_STEP_MODE_DETAIL) {
+        if (justPressed(input, previous, "cancel")) showMainMenu();
+        return true;
+      }
       if (justPressed(input, previous, "help")) {
         if (input.buttons.specialModifier) toggleSelectControls();
         else toggleSoloGamepadAssignment();
@@ -7931,6 +8726,7 @@
         drawCelesteFrameDebugOverlay();
       }
       ctx.restore();
+      drawEclipseRooftopForeground();
       drawStatusText();
     }
 
@@ -7986,14 +8782,22 @@
   }
 
   function drawBackground() {
-    const bg = state.mode === "title" || state.mode === "select" ? state.images.title : state.images.stage;
+    const activeStage = getActiveStagePreset();
+    const stageBackgroundKey = activeStage.background?.imageKey;
+    const bg = state.mode === "title" || state.mode === "select"
+      ? state.images.mainMenuBackground || state.images.title
+      : (stageBackgroundKey ? state.images[stageBackgroundKey] : null) || state.images.stage;
+    if (isFightMode() && activeStage.id === ECLIPSE_ROOFTOP_STAGE_ID) {
+      drawEclipseRooftopBackground(activeStage);
+      return;
+    }
     if (!bg) {
       ctx.fillStyle = "#12070b";
       ctx.fillRect(0, 0, W, H);
       return;
     }
-    if (isFightMode() && isPlatformTestStage()) {
-      const background = getPlatformArenaConfig()?.background || {};
+    if (isFightMode() && activeStage.experimental) {
+      const background = activeStage.background || {};
       ctx.save();
       ctx.filter = background.filter || "saturate(0.58) brightness(0.62) contrast(0.9) blur(0.6px)";
       drawCover(bg, 0, 0, W, H);
@@ -8004,8 +8808,28 @@
     drawCover(bg, 0, 0, W, H);
   }
 
+  function drawEclipseRooftopBackground(stage) {
+    const render = stage.render || {};
+    const far = state.images[render.farBackgroundKey];
+    const mid = state.images[render.midgroundKey];
+    if (far) drawCover(far, 0, 0, W, H);
+    else {
+      ctx.fillStyle = "#07040c";
+      ctx.fillRect(0, 0, W, H);
+    }
+    if (mid) {
+      const camera = getStageCamera();
+      const parallax = clamp(camera.x * (render.parallaxX ?? 0.08), -52, 52);
+      ctx.save();
+      ctx.globalAlpha = 0.9;
+      drawCover(mid, -54 + parallax, 0, W + 108, H);
+      ctx.restore();
+    }
+    drawPlatformArenaBackgroundTreatment();
+  }
+
   function drawPlatformArenaBackgroundTreatment() {
-    const background = getPlatformArenaConfig()?.background || {};
+    const background = getActiveStagePreset().background || getPlatformArenaConfig()?.background || {};
     ctx.save();
     ctx.fillStyle = `rgba(0, 0, 0, ${background.overlayAlpha ?? 0.18})`;
     ctx.fillRect(0, 0, W, H);
@@ -8020,6 +8844,10 @@
 
   function drawArena() {
     const stage = getActiveStagePreset();
+    if (stage.id === ECLIPSE_ROOFTOP_STAGE_ID) {
+      drawEclipseRooftopArena(stage);
+      return;
+    }
     const grd = ctx.createLinearGradient(0, 430, 0, H);
     grd.addColorStop(0, "rgba(0, 0, 0, 0)");
     grd.addColorStop(1, "rgba(0, 0, 0, 0.35)");
@@ -8028,7 +8856,7 @@
     if (stage.experimental) {
       ctx.fillStyle = "rgba(13, 10, 18, 0.66)";
       ctx.fillRect(0, stage.groundY + 4, stage.worldWidth, 34);
-      ctx.strokeStyle = "rgba(127, 224, 162, 0.42)";
+      ctx.strokeStyle = stage.background?.platformTop || "rgba(127, 224, 162, 0.42)";
       ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(0, stage.groundY + 2);
@@ -8036,12 +8864,12 @@
       ctx.stroke();
       for (const platform of stage.platforms) {
         const platformGradient = ctx.createLinearGradient(platform.x, platform.y, platform.x, platform.y + platform.h);
-        platformGradient.addColorStop(0, "rgba(245, 232, 200, 0.72)");
-        platformGradient.addColorStop(0.5, "rgba(95, 38, 54, 0.76)");
+        platformGradient.addColorStop(0, stage.background?.platformStroke || "rgba(245, 232, 200, 0.72)");
+        platformGradient.addColorStop(0.5, stage.background?.platformFillB || "rgba(95, 38, 54, 0.76)");
         platformGradient.addColorStop(1, "rgba(12, 7, 14, 0.9)");
         ctx.fillStyle = platformGradient;
         ctx.fillRect(platform.x, platform.y, platform.w, platform.h);
-        ctx.strokeStyle = "rgba(255, 248, 217, 0.62)";
+        ctx.strokeStyle = stage.background?.platformStroke || "rgba(255, 248, 217, 0.62)";
         ctx.lineWidth = 2;
         ctx.strokeRect(platform.x, platform.y, platform.w, platform.h);
       }
@@ -8053,6 +8881,56 @@
     ctx.moveTo(0, GROUND_Y + 2);
     ctx.lineTo(stage.worldWidth, GROUND_Y + 2);
     ctx.stroke();
+  }
+
+  function drawStageLayerImage(key, rect, alpha = 1) {
+    const img = state.images[key];
+    if (!img || !rect) return;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(img, rect.x, rect.y, rect.w, rect.h);
+    ctx.restore();
+  }
+
+  function drawEclipseCollisionTop(x, y, w) {
+    ctx.save();
+    ctx.strokeStyle = "rgba(241, 210, 138, 0.22)";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x, y + 1);
+    ctx.lineTo(x + w, y + 1);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawEclipseRooftopArena(stage) {
+    const render = stage.render || {};
+    drawStageLayerImage(render.mainPlatformKey, render.mainPlatform);
+    drawStageLayerImage(render.sidePlatformLeftKey, render.leftPlatform);
+    drawStageLayerImage(render.sidePlatformRightKey, render.rightPlatform);
+    drawEclipseCollisionTop(stage.leftBound, stage.groundY, stage.rightBound - stage.leftBound);
+    for (const platform of stage.platforms) {
+      drawEclipseCollisionTop(platform.x, platform.y, platform.w);
+    }
+  }
+
+  function drawEclipseRooftopForeground() {
+    const stage = getActiveStagePreset();
+    if (!isFightMode() || stage.id !== ECLIPSE_ROOFTOP_STAGE_ID) return;
+    const render = stage.render || {};
+    const img = state.images[render.foregroundKey];
+    if (!img) return;
+    const clips = render.foreground?.clips || [];
+    ctx.save();
+    ctx.globalAlpha = render.foreground?.alpha ?? 0.72;
+    ctx.beginPath();
+    if (clips.length) {
+      for (const clip of clips) ctx.rect(clip.x, clip.y, clip.w, clip.h);
+      ctx.clip();
+    }
+    drawCover(img, 0, 0, W, H);
+    ctx.restore();
   }
 
   function getLamuhMirrorPierceFrameOverride(f, moveData, frameCount, fallbackFrame) {
@@ -10281,7 +11159,11 @@
     setKeyboardKey(e.code, true);
 
     if (state.mode === "title" && e.code === "Enter") {
-      showCharacterSelect();
+      showModeDetail("versus");
+      return;
+    }
+    if (state.flowStep === FLOW_STEP_MODE_DETAIL) {
+      if (e.code === "Escape" || e.code === "Backspace") showMainMenu();
       return;
     }
     if (state.mode === "online") {
@@ -10441,18 +11323,17 @@
   }
 
   function showOnlineMenu() {
+    hideFlowScreens();
     onlineMenu?.classList.remove("hidden");
     state.mode = "online";
+    state.flowStep = FLOW_STEP_MODE_DETAIL;
     resetOnlinePanels();
     setOnlineStatus("Choose Host or Join. Both players need this page open.");
   }
 
   function closeOnlineMenuToTitle() {
     netReset();
-    onlineMenu?.classList.add("hidden");
-    titleScreen.classList.remove("hidden");
-    state.mode = "title";
-    startButton.focus({ preventScroll: true });
+    showMainMenu();
   }
 
   function netPeerAvailable() {
@@ -10573,12 +11454,10 @@
     const wasActive = net.role !== null;
     netReset();
     if (!wasActive) return;
-    hud.classList.add("hidden");
-    characterSelect.classList.add("hidden");
+    hideFlowScreens();
     hideMatchFlowOverlay();
     state.paused = false;
     state.matchEnded = false;
-    titleScreen.classList.add("hidden");
     showOnlineMenu();
     setOnlineStatus(message, "error");
   }
@@ -10587,10 +11466,14 @@
     net.inMatch = false;
     onlineMenu?.classList.add("hidden");
     titleScreen.classList.add("hidden");
-    showCharacterSelect("versus");
+    showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
   }
 
   function confirmOnlineCharacterSelect() {
+    if (state.selectStep === SELECT_STEP_ARENA) {
+      confirmArenaSelect();
+      return;
+    }
     const cursor = isLaunchableCharacterId(state.selectCursorCharacterId) ? state.selectCursorCharacterId : "kairo";
     if (net.role === "host") {
       if (!state.p1Ready) {
@@ -10601,8 +11484,7 @@
         return;
       }
       if (state.p1Ready && state.p2Ready) {
-        netSend({ t: "start", p1: state.selectedP1CharacterId, p2: state.selectedP2CharacterId, s: state.selectedStagePresetId });
-        startOnlineVersus(state.selectedP1CharacterId, state.selectedP2CharacterId, state.selectedStagePresetId);
+        showStageSelect();
       }
       return;
     }
@@ -10611,23 +11493,30 @@
       state.p2Ready = true;
       netSend({ t: "lock", c: cursor });
       updateCharacterSelectFocus(cursor);
+      if (state.p1Ready) showStageSelect();
     }
   }
 
   function backOnlineCharacterSelect() {
+    if (state.selectStep === SELECT_STEP_ARENA) {
+      if (net.role === "guest") state.p2Ready = false;
+      else state.p1Ready = false;
+      netSend({ t: "unlock" });
+      revealFighterSelectScreen();
+      return;
+    }
     const ownReady = net.role === "guest" ? state.p2Ready : state.p1Ready;
     if (ownReady) {
       if (net.role === "guest") state.p2Ready = false;
       else state.p1Ready = false;
       netSend({ t: "unlock" });
-      updateCharacterSelectFocus(state.selectCursorCharacterId);
+      state.selectStep = SELECT_STEP_CHARACTERS;
+      revealFighterSelectScreen();
       return;
     }
     netSend({ t: "bye" });
     const code = net.roomCode;
     netReset();
-    characterSelect.classList.add("hidden");
-    titleScreen.classList.add("hidden");
     showOnlineMenu();
     setOnlineStatus("You left room " + (code || "") + ".");
   }
@@ -10637,11 +11526,10 @@
     state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "vanta";
     state.selectedPlayerId = state.selectedP1CharacterId;
     if (stagePresetId) state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
-    titleScreen.classList.add("hidden");
-    onlineMenu?.classList.add("hidden");
-    characterSelect.classList.add("hidden");
+    hideFlowScreens({ hideHud: false });
     hud.classList.remove("hidden");
     state.mode = "versus";
+    state.flowStep = "fight";
     state.enemyAI = false;
     state.paused = false;
     net.inMatch = true;
@@ -10872,15 +11760,30 @@
           state.selectedP1CharacterId = isLaunchableCharacterId(message.c) ? message.c : "kairo";
           state.p1Ready = true;
         }
-        if (state.mode === "select") updateCharacterSelectFocus(state.selectCursorCharacterId);
+        if (state.mode === "select") {
+          if (state.p1Ready && state.p2Ready) showStageSelect();
+          else updateCharacterSelectFocus(state.selectCursorCharacterId);
+        }
         break;
       case "unlock":
         if (net.role === "host") state.p2Ready = false;
         else state.p1Ready = false;
-        if (state.mode === "select") updateCharacterSelectFocus(state.selectCursorCharacterId);
+        if (state.mode === "select") {
+          state.selectStep = SELECT_STEP_CHARACTERS;
+          updateCharacterSelectFocus(state.selectCursorCharacterId);
+        }
         break;
       case "stage":
         setStagePreset(message.s, true);
+        break;
+      case "intro":
+        state.selectedP1CharacterId = isLaunchableCharacterId(message.p1) ? message.p1 : "kairo";
+        state.selectedP2CharacterId = isLaunchableCharacterId(message.p2) ? message.p2 : "vanta";
+        if (message.s) setStagePreset(message.s, true);
+        showMatchIntro({ fromNet: true });
+        break;
+      case "stageSelect":
+        showStageSelect(false);
         break;
       case "start":
         startOnlineVersus(message.p1, message.p2, message.s);
@@ -10933,10 +11836,7 @@
     }
   }
 
-  onlineButton?.addEventListener("click", () => {
-    titleScreen.classList.add("hidden");
-    showOnlineMenu();
-  });
+  onlineButton?.addEventListener("click", () => showModeDetail("online"));
   onlineHostButton?.addEventListener("click", startHosting);
   onlineJoinButton?.addEventListener("click", () => {
     netReset();
@@ -10965,15 +11865,31 @@
     refreshGamepadAssignments();
     updateControllerStatus();
   });
-  startButton.addEventListener("click", showCharacterSelect);
-  selectVersusButton.addEventListener("click", () => setCharacterSelectMode("versus"));
-  selectTrainingButton.addEventListener("click", () => setCharacterSelectMode("training"));
+  startButton.addEventListener("click", () => showModeDetail("versus"));
+  trainingButton?.addEventListener("click", () => showModeDetail("training"));
+  arcadeButton?.addEventListener("click", () => showModeDetail("arcade"));
+  controlsButton?.addEventListener("click", () => {
+    const opening = titleControlsPanel?.classList.contains("hidden");
+    if (titleControlsPanel) titleControlsPanel.classList.toggle("hidden", !opening);
+    if (opening) renderControlsDisplay(titleControlsPanel, true);
+  });
+  modeDetailBackButton?.addEventListener("click", showMainMenu);
+  selectVersusButton?.addEventListener("click", () => chooseSelectMode("versus"));
+  selectTrainingButton?.addEventListener("click", () => chooseSelectMode("training"));
+  selectBackButton?.addEventListener("click", backCharacterSelect);
+  selectConfirmButton?.addEventListener("click", confirmCharacterSelect);
+  showcaseBackButton?.addEventListener("click", backCharacterSelect);
+  showcaseConfirmButton?.addEventListener("click", confirmFighterLock);
+  stageBackButton?.addEventListener("click", backCharacterSelect);
+  stageConfirmButton?.addEventListener("click", confirmArenaSelect);
+  introBackButton?.addEventListener("click", backCharacterSelect);
+  introStartButton?.addEventListener("click", startConfirmedMatch);
   selectControlsToggle?.addEventListener("click", () => toggleSelectControls());
   stagePresetButtons.forEach((button) => {
     button.addEventListener("click", () => setStagePreset(button.dataset.stagePreset));
   });
   document.addEventListener("keydown", (e) => {
-    if (state.mode === "select") {
+    if (state.mode === "select" && state.flowStep !== FLOW_STEP_MODE_DETAIL) {
       handleCharacterSelectKey(e);
     }
   }, true);
