@@ -198,8 +198,8 @@
     spawns: { p1X: 720, p2X: 1880 },
     groundY: GROUND_Y,
     platforms: [
-      { id: "eclipse_left_lift", x: 650, y: 465, w: 310, h: 24, dropThrough: true },
-      { id: "eclipse_right_lift", x: 1640, y: 436, w: 310, h: 24, dropThrough: true }
+      { id: "eclipse_left_lift", x: 650, y: 447, w: 310, h: 24, dropThrough: true },
+      { id: "eclipse_right_lift", x: 1640, y: 432, w: 310, h: 24, dropThrough: true }
     ],
     camera: { minScale: 0.72, maxScale: 1, paddingX: 300, damping: 9.5 },
     platformSpeedTuning: {
@@ -207,7 +207,7 @@
       airDriftMultiplier: 2.38,
       gravityMultiplier: 2.24,
       fallSpeedMultiplier: 1.22,
-      jumpForceMultiplier: 1,
+      jumpForceMultiplier: 1.13,
       animationSpeedMultiplier: 1,
       hitstopMultiplier: 0.45,
       knockbackVelocityMultiplier: 2.08,
@@ -232,8 +232,8 @@
       foregroundKey: "eclipseForeground",
       parallaxX: 0.08,
       mainPlatform: { x: 150, y: 420, w: 2300, h: 540 },
-      leftPlatform: { x: 450, y: 270, w: 660, h: 390 },
-      rightPlatform: { x: 1490, y: 330, w: 650, h: 350 },
+      leftPlatform: { x: 450, y: 252, w: 660, h: 390 },
+      rightPlatform: { x: 1490, y: 326, w: 650, h: 350 },
       foreground: {
         activeGameplay: false,
         alpha: 0.74,

@@ -2,14 +2,23 @@
   "ok": true,
   "checks": {
     "booted": true,
-    "eclipseStarted": true,
+    "fighters": [
+      "kairo",
+      "vanta",
+      "nyx",
+      "sol",
+      "seris",
+      "lamuh",
+      "lamuh_legacy",
+      "celeste"
+    ],
     "stage": {
       "stagePresetId": "eclipse_rooftop",
       "platforms": [
         {
           "id": "eclipse_left_lift",
           "x": 650,
-          "y": 465,
+          "y": 447,
           "w": 310,
           "h": 24,
           "dropThrough": true
@@ -17,7 +26,7 @@
         {
           "id": "eclipse_right_lift",
           "x": 1640,
-          "y": 436,
+          "y": 432,
           "w": 310,
           "h": 24,
           "dropThrough": true
@@ -37,56 +46,262 @@
       },
       "foregroundActiveGameplay": false,
       "render": {
-        "mainPlatform": {
-          "x": 150,
-          "y": 420,
-          "w": 2300,
-          "h": 540
-        },
         "leftPlatform": {
           "x": 450,
-          "y": 270,
+          "y": 252,
           "w": 660,
           "h": 390
         },
         "rightPlatform": {
           "x": 1490,
-          "y": 330,
+          "y": 326,
           "w": 650,
           "h": 350
         }
       },
+      "jumpTuning": {
+        "groundSpeedMultiplier": 2.24,
+        "airDriftMultiplier": 2.38,
+        "gravityMultiplier": 2.24,
+        "fallSpeedMultiplier": 1.22,
+        "jumpForceMultiplier": 1.13,
+        "animationSpeedMultiplier": 1,
+        "hitstopMultiplier": 0.45,
+        "knockbackVelocityMultiplier": 2.08,
+        "cameraSmoothing": 9.5
+      }
+    },
+    "jumpAccess": [
+      {
+        "fighterId": "kairo",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 419.43824600000016,
+        "apexClearance": 27.561753999999837,
+        "expectedY": 447,
+        "jumpVelocity": -813.5999999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "kairo",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 16,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 419.43390800000003,
+        "apexClearance": 12.56609199999997,
+        "expectedY": 432,
+        "jumpVelocity": -813.5999999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "vanta",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 419.43824600000005,
+        "apexClearance": 27.56175399999995,
+        "expectedY": 447,
+        "jumpVelocity": -813.5999999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "vanta",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 16,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 419.43824599999994,
+        "apexClearance": 12.561754000000064,
+        "expectedY": 432,
+        "jumpVelocity": -813.5999999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "nyx",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 20,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 389.89319244444454,
+        "apexClearance": 57.10680755555546,
+        "expectedY": 447,
+        "jumpVelocity": -858.8,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "nyx",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 19,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 389.89322480000004,
+        "apexClearance": 42.10677519999996,
+        "expectedY": 432,
+        "jumpVelocity": -858.8,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "sol",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 419.43737200000015,
+        "apexClearance": 27.562627999999847,
+        "expectedY": 447,
+        "jumpVelocity": -813.5999999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "sol",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 16,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 419.4391219999999,
+        "apexClearance": 12.560878000000116,
+        "expectedY": 432,
+        "jumpVelocity": -813.5999999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "seris",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 424.75826199999995,
+        "apexClearance": 22.241738000000055,
+        "expectedY": 447,
+        "jumpVelocity": -796.65,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "seris",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 15,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 424.7605159333331,
+        "apexClearance": 7.239484066666876,
+        "expectedY": 432,
+        "jumpVelocity": -796.65,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "lamuh",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 412.709769377778,
+        "apexClearance": 34.290230622222,
+        "expectedY": 447,
+        "jumpVelocity": -838.4599999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "lamuh",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 412.70976937777806,
+        "apexClearance": 19.29023062222194,
+        "expectedY": 432,
+        "jumpVelocity": -838.4599999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "lamuh_legacy",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 412.70976937777783,
+        "apexClearance": 34.29023062222217,
+        "expectedY": 447,
+        "jumpVelocity": -838.4599999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "lamuh_legacy",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 17,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 412.71110626666666,
+        "apexClearance": 19.28889373333334,
+        "expectedY": 432,
+        "jumpVelocity": -838.4599999999999,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "celeste",
+        "platformId": "eclipse_left_lift",
+        "ok": true,
+        "frames": 19,
+        "startY": 590,
+        "landedY": 447,
+        "minY": 407.73348439999944,
+        "apexClearance": 39.26651560000056,
+        "expectedY": 447,
+        "jumpVelocity": -830.55,
+        "jumpForceMultiplier": 1.13
+      },
+      {
+        "fighterId": "celeste",
+        "platformId": "eclipse_right_lift",
+        "ok": true,
+        "frames": 18,
+        "startY": 590,
+        "landedY": 432,
+        "minY": 407.73840006666666,
+        "apexClearance": 24.261599933333343,
+        "expectedY": 432,
+        "jumpVelocity": -830.55,
+        "jumpForceMultiplier": 1.13
+      }
+    ],
+    "cameraPlatforms": {
+      "camera": {
+        "scale": 0.9922480620155039,
+        "x": -649.922480620155,
+        "y": 4.573643410852696,
+        "initialized": true
+      },
       "p1": {
-        "id": "sol",
-        "x": 720,
-        "y": 590,
+        "id": "kairo",
+        "x": 805,
+        "y": 447,
         "grounded": true,
-        "platform": null
+        "platform": "eclipse_left_lift"
       },
       "p2": {
         "id": "vanta",
-        "x": 1880,
-        "y": 590,
+        "x": 1795,
+        "y": 432,
         "grounded": true,
-        "platform": null
+        "platform": "eclipse_right_lift"
       }
-    },
-    "leftLanding": {
-      "y": 465,
-      "grounded": true,
-      "platform": "eclipse_left_lift",
-      "expectedY": 465
-    },
-    "rightLanding": {
-      "y": 436,
-      "grounded": true,
-      "platform": "eclipse_right_lift",
-      "expectedY": 436
-    },
-    "timeoutUi": {
-      "text": "Connection timed out. This network may block peer-to-peer multiplayer. Try another Wi-Fi network, a phone hotspot, or the same network as your opponent.",
-      "phase": "timed out",
-      "error": true
     }
   },
   "failures": [],
