@@ -480,7 +480,7 @@
     solFinalEndStates: "assets/sprites/sol_final/sol_sheet_7_knockdown_recovery_flavor_atlas.png?v=sol-runtime-1",
     solFinalDirectionalNormals: "assets/sprites/sol_final/sol_sheet_8_directional_normals_atlas.png?v=sol-directional-normals-1",
     lamuhFinalCoreMovement: LAMUH_RUNTIME_ENABLED ? "assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png?v=lamuh-public-1" : null,
-    lamuhSheet1CoreNormalsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_1_core_movement_redesign_atlas.png?v=lamuh-sheet1-redesign-1" : null,
+    lamuhSheet1CoreNormalsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_1_2p5d_preview_atlas.png?v=lamuh-sheet1-2p5d-preview-2" : null,
     lamuhForwardSpecialsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_forward_specials_redesign_atlas.png?v=lamuh-forward-specials-redesign-1" : null,
     lamuhDownUpSpecialsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_3_down_up_specials_body_scale_atlas.png?v=lamuh-down-up-specials-body-scale-1" : null,
     lamuhBackNeutralSpecialsRedesign: LAMUH_RUNTIME_ENABLED ? "assets/characters/lamuh/lamuh_sheet_4_back_neutral_specials_redesign_atlas.png?v=lamuh-back-neutral-specials-redesign-1" : null,

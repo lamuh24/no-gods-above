@@ -1,0 +1,1308 @@
+{
+  "source": "C:\\Users\\qchee\\Downloads\\LAMUH 3D CHARACTER SHEET 1.png",
+  "source_copy": "assets\\characters\\lamuh\\2p5d\\sheet1\\lamuh_sheet_1_2p5d_source.png",
+  "source_size": [
+    1448,
+    1086
+  ],
+  "source_mode": "RGB",
+  "source_components": null,
+  "output": "assets\\characters\\lamuh\\lamuh_sheet_1_2p5d_preview_atlas.png",
+  "preview": "assets\\characters\\lamuh\\lamuh_sheet_1_2p5d_preview_contact.png",
+  "output_size": [
+    3584,
+    2688
+  ],
+  "grid": {
+    "cols": 8,
+    "rows": 6,
+    "cell": 448,
+    "baselineY": 382
+  },
+  "row_mapping": {
+    "0": [
+      "lamuh_idle"
+    ],
+    "1": [
+      "lamuh_walk_forward"
+    ],
+    "2": [
+      "lamuh_walk_back_preview"
+    ],
+    "3": [
+      "lamuh_jump_land_preview"
+    ],
+    "4": [
+      "lamuh_crouch_to_ready_preview"
+    ],
+    "5": [
+      "lamuh_run_dash_preview"
+    ]
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "transparent_pixels": 7110456,
+  "opaque_or_semi_pixels": 2523336,
+  "has_real_transparency": true,
+  "baseline_max_deviation": 79,
+  "white_coat_preserved": true,
+  "white_failures": [],
+  "classification": "PREVIEW_ONLY",
+  "notes": [
+    "Opaquely rendered gray source was alpha-cleaned by edge-connected gray flood fill.",
+    "This preview atlas is intended for in-game visual review before final acceptance.",
+    "Runtime wiring should remain branch-only until the user approves the style."
+  ],
+  "cells": [
+    {
+      "row": 0,
+      "col": 0,
+      "source_bounds": [
+        0,
+        0,
+        181,
+        181
+      ],
+      "bbox": [
+        129,
+        5,
+        321,
+        383
+      ],
+      "alpha_pixels": 51562,
+      "source_white_like_pixels": 2294,
+      "output_white_like_pixels": 11261,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 413,
+      "repaired_output_holes": 1774,
+      "removed_tiny_island_pixels": 43,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1591
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "source_bounds": [
+        181,
+        0,
+        362,
+        181
+      ],
+      "bbox": [
+        126,
+        5,
+        322,
+        383
+      ],
+      "alpha_pixels": 51524,
+      "source_white_like_pixels": 2273,
+      "output_white_like_pixels": 11126,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 349,
+      "repaired_output_holes": 1779,
+      "removed_tiny_island_pixels": 7,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1806
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "source_bounds": [
+        362,
+        0,
+        543,
+        181
+      ],
+      "bbox": [
+        118,
+        5,
+        321,
+        383
+      ],
+      "alpha_pixels": 52863,
+      "source_white_like_pixels": 2212,
+      "output_white_like_pixels": 10668,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 400,
+      "repaired_output_holes": 1897,
+      "removed_tiny_island_pixels": 72,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 2077
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "source_bounds": [
+        543,
+        0,
+        724,
+        181
+      ],
+      "bbox": [
+        121,
+        5,
+        326,
+        383
+      ],
+      "alpha_pixels": 52346,
+      "source_white_like_pixels": 2121,
+      "output_white_like_pixels": 10614,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 337,
+      "repaired_output_holes": 1824,
+      "removed_tiny_island_pixels": 16,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1676
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "source_bounds": [
+        724,
+        0,
+        905,
+        181
+      ],
+      "bbox": [
+        117,
+        5,
+        320,
+        383
+      ],
+      "alpha_pixels": 52454,
+      "source_white_like_pixels": 2167,
+      "output_white_like_pixels": 10717,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 308,
+      "repaired_output_holes": 1863,
+      "removed_tiny_island_pixels": 16,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1810
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "source_bounds": [
+        905,
+        0,
+        1086,
+        181
+      ],
+      "bbox": [
+        119,
+        5,
+        322,
+        383
+      ],
+      "alpha_pixels": 52131,
+      "source_white_like_pixels": 2100,
+      "output_white_like_pixels": 10547,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 332,
+      "repaired_output_holes": 1824,
+      "removed_tiny_island_pixels": 45,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1654
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "source_bounds": [
+        1086,
+        0,
+        1267,
+        181
+      ],
+      "bbox": [
+        120,
+        9,
+        318,
+        383
+      ],
+      "alpha_pixels": 51810,
+      "source_white_like_pixels": 2351,
+      "output_white_like_pixels": 11779,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 317,
+      "repaired_output_holes": 1765,
+      "removed_tiny_island_pixels": 34,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1615
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "source_bounds": [
+        1267,
+        0,
+        1448,
+        181
+      ],
+      "bbox": [
+        115,
+        5,
+        324,
+        383
+      ],
+      "alpha_pixels": 53049,
+      "source_white_like_pixels": 2241,
+      "output_white_like_pixels": 11141,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 353,
+      "repaired_output_holes": 1843,
+      "removed_tiny_island_pixels": 23,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 1551
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "source_bounds": [
+        0,
+        181,
+        181,
+        362
+      ],
+      "bbox": [
+        100,
+        25,
+        350,
+        383
+      ],
+      "alpha_pixels": 44029,
+      "source_white_like_pixels": 2230,
+      "output_white_like_pixels": 10491,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 423,
+      "repaired_output_holes": 3086,
+      "removed_tiny_island_pixels": 206,
+      "removed_detached_pixels": 2887,
+      "removed_guide_line_pixels": 4591
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "source_bounds": [
+        181,
+        181,
+        362,
+        362
+      ],
+      "bbox": [
+        34,
+        27,
+        365,
+        383
+      ],
+      "alpha_pixels": 43682,
+      "source_white_like_pixels": 2473,
+      "output_white_like_pixels": 11172,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 423,
+      "repaired_output_holes": 3414,
+      "removed_tiny_island_pixels": 165,
+      "removed_detached_pixels": 2803,
+      "removed_guide_line_pixels": 5366
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "source_bounds": [
+        362,
+        181,
+        543,
+        362
+      ],
+      "bbox": [
+        98,
+        36,
+        356,
+        383
+      ],
+      "alpha_pixels": 45839,
+      "source_white_like_pixels": 2340,
+      "output_white_like_pixels": 11149,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 395,
+      "repaired_output_holes": 3194,
+      "removed_tiny_island_pixels": 105,
+      "removed_detached_pixels": 3067,
+      "removed_guide_line_pixels": 4499
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "source_bounds": [
+        543,
+        181,
+        724,
+        362
+      ],
+      "bbox": [
+        95,
+        35,
+        355,
+        383
+      ],
+      "alpha_pixels": 46327,
+      "source_white_like_pixels": 2522,
+      "output_white_like_pixels": 11653,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 428,
+      "repaired_output_holes": 3578,
+      "removed_tiny_island_pixels": 428,
+      "removed_detached_pixels": 3147,
+      "removed_guide_line_pixels": 5080
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "source_bounds": [
+        724,
+        181,
+        905,
+        362
+      ],
+      "bbox": [
+        94,
+        33,
+        356,
+        383
+      ],
+      "alpha_pixels": 46444,
+      "source_white_like_pixels": 2572,
+      "output_white_like_pixels": 11842,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 454,
+      "repaired_output_holes": 3438,
+      "removed_tiny_island_pixels": 306,
+      "removed_detached_pixels": 3159,
+      "removed_guide_line_pixels": 4953
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "source_bounds": [
+        905,
+        181,
+        1086,
+        362
+      ],
+      "bbox": [
+        102,
+        23,
+        350,
+        383
+      ],
+      "alpha_pixels": 45266,
+      "source_white_like_pixels": 2451,
+      "output_white_like_pixels": 11299,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 468,
+      "repaired_output_holes": 3386,
+      "removed_tiny_island_pixels": 203,
+      "removed_detached_pixels": 3153,
+      "removed_guide_line_pixels": 5064
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "source_bounds": [
+        1086,
+        181,
+        1267,
+        362
+      ],
+      "bbox": [
+        68,
+        27,
+        355,
+        383
+      ],
+      "alpha_pixels": 44138,
+      "source_white_like_pixels": 2368,
+      "output_white_like_pixels": 10491,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 494,
+      "repaired_output_holes": 3412,
+      "removed_tiny_island_pixels": 302,
+      "removed_detached_pixels": 3022,
+      "removed_guide_line_pixels": 5394
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "source_bounds": [
+        1267,
+        181,
+        1448,
+        362
+      ],
+      "bbox": [
+        104,
+        30,
+        348,
+        383
+      ],
+      "alpha_pixels": 43853,
+      "source_white_like_pixels": 2433,
+      "output_white_like_pixels": 10888,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 463,
+      "repaired_output_holes": 3369,
+      "removed_tiny_island_pixels": 213,
+      "removed_detached_pixels": 3273,
+      "removed_guide_line_pixels": 5351
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "source_bounds": [
+        0,
+        362,
+        181,
+        543
+      ],
+      "bbox": [
+        91,
+        5,
+        356,
+        382
+      ],
+      "alpha_pixels": 48401,
+      "source_white_like_pixels": 2466,
+      "output_white_like_pixels": 13382,
+      "foot_bottom": 381,
+      "baseline_delta": -1,
+      "repaired_source_holes": 456,
+      "repaired_output_holes": 3022,
+      "removed_tiny_island_pixels": 313,
+      "removed_detached_pixels": 615,
+      "removed_guide_line_pixels": 4128
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "source_bounds": [
+        181,
+        362,
+        362,
+        543
+      ],
+      "bbox": [
+        93,
+        5,
+        360,
+        383
+      ],
+      "alpha_pixels": 49065,
+      "source_white_like_pixels": 2536,
+      "output_white_like_pixels": 13425,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 476,
+      "repaired_output_holes": 3054,
+      "removed_tiny_island_pixels": 280,
+      "removed_detached_pixels": 594,
+      "removed_guide_line_pixels": 4083
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "source_bounds": [
+        362,
+        362,
+        543,
+        543
+      ],
+      "bbox": [
+        101,
+        5,
+        360,
+        368
+      ],
+      "alpha_pixels": 45764,
+      "source_white_like_pixels": 2585,
+      "output_white_like_pixels": 12224,
+      "foot_bottom": 367,
+      "baseline_delta": -15,
+      "repaired_source_holes": 563,
+      "repaired_output_holes": 3191,
+      "removed_tiny_island_pixels": 166,
+      "removed_detached_pixels": 1301,
+      "removed_guide_line_pixels": 4732
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "source_bounds": [
+        543,
+        362,
+        724,
+        543
+      ],
+      "bbox": [
+        101,
+        5,
+        360,
+        375
+      ],
+      "alpha_pixels": 46726,
+      "source_white_like_pixels": 2524,
+      "output_white_like_pixels": 12800,
+      "foot_bottom": 374,
+      "baseline_delta": -8,
+      "repaired_source_holes": 426,
+      "repaired_output_holes": 2960,
+      "removed_tiny_island_pixels": 258,
+      "removed_detached_pixels": 948,
+      "removed_guide_line_pixels": 3771
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "source_bounds": [
+        724,
+        362,
+        905,
+        543
+      ],
+      "bbox": [
+        95,
+        5,
+        358,
+        371
+      ],
+      "alpha_pixels": 46866,
+      "source_white_like_pixels": 2671,
+      "output_white_like_pixels": 13250,
+      "foot_bottom": 370,
+      "baseline_delta": -12,
+      "repaired_source_holes": 546,
+      "repaired_output_holes": 3096,
+      "removed_tiny_island_pixels": 391,
+      "removed_detached_pixels": 1038,
+      "removed_guide_line_pixels": 4274
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "source_bounds": [
+        905,
+        362,
+        1086,
+        543
+      ],
+      "bbox": [
+        84,
+        5,
+        336,
+        368
+      ],
+      "alpha_pixels": 44891,
+      "source_white_like_pixels": 2539,
+      "output_white_like_pixels": 12382,
+      "foot_bottom": 367,
+      "baseline_delta": -15,
+      "repaired_source_holes": 558,
+      "repaired_output_holes": 2989,
+      "removed_tiny_island_pixels": 379,
+      "removed_detached_pixels": 1131,
+      "removed_guide_line_pixels": 4394
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "source_bounds": [
+        1086,
+        362,
+        1267,
+        543
+      ],
+      "bbox": [
+        67,
+        5,
+        332,
+        380
+      ],
+      "alpha_pixels": 47966,
+      "source_white_like_pixels": 2458,
+      "output_white_like_pixels": 13194,
+      "foot_bottom": 379,
+      "baseline_delta": -3,
+      "repaired_source_holes": 491,
+      "repaired_output_holes": 2911,
+      "removed_tiny_island_pixels": 289,
+      "removed_detached_pixels": 718,
+      "removed_guide_line_pixels": 4210
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "source_bounds": [
+        1267,
+        362,
+        1448,
+        543
+      ],
+      "bbox": [
+        63,
+        5,
+        448,
+        382
+      ],
+      "alpha_pixels": 47695,
+      "source_white_like_pixels": 2483,
+      "output_white_like_pixels": 12677,
+      "foot_bottom": 381,
+      "baseline_delta": -1,
+      "repaired_source_holes": 528,
+      "repaired_output_holes": 3212,
+      "removed_tiny_island_pixels": 161,
+      "removed_detached_pixels": 321,
+      "removed_guide_line_pixels": 4895
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "source_bounds": [
+        0,
+        543,
+        181,
+        724
+      ],
+      "bbox": [
+        63,
+        81,
+        355,
+        367
+      ],
+      "alpha_pixels": 53292,
+      "source_white_like_pixels": 2227,
+      "output_white_like_pixels": 9247,
+      "foot_bottom": 366,
+      "baseline_delta": -16,
+      "repaired_source_holes": 796,
+      "repaired_output_holes": 2582,
+      "removed_tiny_island_pixels": 383,
+      "removed_detached_pixels": 495,
+      "removed_guide_line_pixels": 8487
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "source_bounds": [
+        181,
+        543,
+        362,
+        724
+      ],
+      "bbox": [
+        43,
+        93,
+        336,
+        366
+      ],
+      "alpha_pixels": 51931,
+      "source_white_like_pixels": 2081,
+      "output_white_like_pixels": 8985,
+      "foot_bottom": 365,
+      "baseline_delta": -17,
+      "repaired_source_holes": 717,
+      "repaired_output_holes": 2798,
+      "removed_tiny_island_pixels": 566,
+      "removed_detached_pixels": 881,
+      "removed_guide_line_pixels": 7729
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "source_bounds": [
+        362,
+        543,
+        543,
+        724
+      ],
+      "bbox": [
+        41,
+        5,
+        419,
+        383
+      ],
+      "alpha_pixels": 48986,
+      "source_white_like_pixels": 2286,
+      "output_white_like_pixels": 8430,
+      "foot_bottom": 382,
+      "baseline_delta": 0,
+      "repaired_source_holes": 860,
+      "repaired_output_holes": 3541,
+      "removed_tiny_island_pixels": 68,
+      "removed_detached_pixels": 494,
+      "removed_guide_line_pixels": 6068
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "source_bounds": [
+        543,
+        543,
+        724,
+        724
+      ],
+      "bbox": [
+        36,
+        5,
+        264,
+        346
+      ],
+      "alpha_pixels": 43055,
+      "source_white_like_pixels": 2233,
+      "output_white_like_pixels": 7245,
+      "foot_bottom": 345,
+      "baseline_delta": -37,
+      "repaired_source_holes": 981,
+      "repaired_output_holes": 2876,
+      "removed_tiny_island_pixels": 1,
+      "removed_detached_pixels": 1134,
+      "removed_guide_line_pixels": 5943
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "source_bounds": [
+        724,
+        543,
+        905,
+        724
+      ],
+      "bbox": [
+        46,
+        5,
+        310,
+        304
+      ],
+      "alpha_pixels": 41422,
+      "source_white_like_pixels": 1703,
+      "output_white_like_pixels": 5599,
+      "foot_bottom": 303,
+      "baseline_delta": -79,
+      "repaired_source_holes": 847,
+      "repaired_output_holes": 3062,
+      "removed_tiny_island_pixels": 0,
+      "removed_detached_pixels": 1134,
+      "removed_guide_line_pixels": 6146
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "source_bounds": [
+        905,
+        543,
+        1086,
+        724
+      ],
+      "bbox": [
+        30,
+        5,
+        309,
+        340
+      ],
+      "alpha_pixels": 45114,
+      "source_white_like_pixels": 1921,
+      "output_white_like_pixels": 6761,
+      "foot_bottom": 339,
+      "baseline_delta": -43,
+      "repaired_source_holes": 857,
+      "repaired_output_holes": 3459,
+      "removed_tiny_island_pixels": 0,
+      "removed_detached_pixels": 1204,
+      "removed_guide_line_pixels": 6256
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "source_bounds": [
+        1086,
+        543,
+        1267,
+        724
+      ],
+      "bbox": [
+        32,
+        5,
+        335,
+        368
+      ],
+      "alpha_pixels": 63476,
+      "source_white_like_pixels": 2249,
+      "output_white_like_pixels": 10595,
+      "foot_bottom": 367,
+      "baseline_delta": -15,
+      "repaired_source_holes": 926,
+      "repaired_output_holes": 3798,
+      "removed_tiny_island_pixels": 341,
+      "removed_detached_pixels": 733,
+      "removed_guide_line_pixels": 7279
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "source_bounds": [
+        1267,
+        543,
+        1448,
+        724
+      ],
+      "bbox": [
+        26,
+        76,
+        309,
+        366
+      ],
+      "alpha_pixels": 52670,
+      "source_white_like_pixels": 2216,
+      "output_white_like_pixels": 9212,
+      "foot_bottom": 365,
+      "baseline_delta": -17,
+      "repaired_source_holes": 753,
+      "repaired_output_holes": 2417,
+      "removed_tiny_island_pixels": 391,
+      "removed_detached_pixels": 473,
+      "removed_guide_line_pixels": 8455
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "source_bounds": [
+        0,
+        724,
+        181,
+        905
+      ],
+      "bbox": [
+        82,
+        97,
+        382,
+        373
+      ],
+      "alpha_pixels": 51142,
+      "source_white_like_pixels": 1715,
+      "output_white_like_pixels": 8205,
+      "foot_bottom": 372,
+      "baseline_delta": -10,
+      "repaired_source_holes": 409,
+      "repaired_output_holes": 1960,
+      "removed_tiny_island_pixels": 88,
+      "removed_detached_pixels": 386,
+      "removed_guide_line_pixels": 6414
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "source_bounds": [
+        181,
+        724,
+        362,
+        905
+      ],
+      "bbox": [
+        56,
+        97,
+        331,
+        372
+      ],
+      "alpha_pixels": 48955,
+      "source_white_like_pixels": 1423,
+      "output_white_like_pixels": 7035,
+      "foot_bottom": 371,
+      "baseline_delta": -11,
+      "repaired_source_holes": 322,
+      "repaired_output_holes": 1902,
+      "removed_tiny_island_pixels": 356,
+      "removed_detached_pixels": 288,
+      "removed_guide_line_pixels": 5747
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "source_bounds": [
+        362,
+        724,
+        543,
+        905
+      ],
+      "bbox": [
+        44,
+        5,
+        397,
+        371
+      ],
+      "alpha_pixels": 82537,
+      "source_white_like_pixels": 1659,
+      "output_white_like_pixels": 13988,
+      "foot_bottom": 370,
+      "baseline_delta": -12,
+      "repaired_source_holes": 266,
+      "repaired_output_holes": 2692,
+      "removed_tiny_island_pixels": 131,
+      "removed_detached_pixels": 330,
+      "removed_guide_line_pixels": 9898
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "source_bounds": [
+        543,
+        724,
+        724,
+        905
+      ],
+      "bbox": [
+        72,
+        6,
+        384,
+        346
+      ],
+      "alpha_pixels": 74409,
+      "source_white_like_pixels": 2643,
+      "output_white_like_pixels": 18308,
+      "foot_bottom": 345,
+      "baseline_delta": -37,
+      "repaired_source_holes": 318,
+      "repaired_output_holes": 2855,
+      "removed_tiny_island_pixels": 52,
+      "removed_detached_pixels": 928,
+      "removed_guide_line_pixels": 2943
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "source_bounds": [
+        724,
+        724,
+        905,
+        905
+      ],
+      "bbox": [
+        82,
+        5,
+        357,
+        351
+      ],
+      "alpha_pixels": 53397,
+      "source_white_like_pixels": 1690,
+      "output_white_like_pixels": 9909,
+      "foot_bottom": 350,
+      "baseline_delta": -32,
+      "repaired_source_holes": 453,
+      "repaired_output_holes": 2752,
+      "removed_tiny_island_pixels": 82,
+      "removed_detached_pixels": 362,
+      "removed_guide_line_pixels": 1756
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "source_bounds": [
+        905,
+        724,
+        1086,
+        905
+      ],
+      "bbox": [
+        27,
+        10,
+        317,
+        352
+      ],
+      "alpha_pixels": 51522,
+      "source_white_like_pixels": 1409,
+      "output_white_like_pixels": 8139,
+      "foot_bottom": 351,
+      "baseline_delta": -31,
+      "repaired_source_holes": 433,
+      "repaired_output_holes": 2844,
+      "removed_tiny_island_pixels": 120,
+      "removed_detached_pixels": 369,
+      "removed_guide_line_pixels": 2017
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "source_bounds": [
+        1086,
+        724,
+        1267,
+        905
+      ],
+      "bbox": [
+        80,
+        5,
+        341,
+        351
+      ],
+      "alpha_pixels": 51295,
+      "source_white_like_pixels": 1342,
+      "output_white_like_pixels": 7782,
+      "foot_bottom": 350,
+      "baseline_delta": -32,
+      "repaired_source_holes": 404,
+      "repaired_output_holes": 2876,
+      "removed_tiny_island_pixels": 40,
+      "removed_detached_pixels": 618,
+      "removed_guide_line_pixels": 1927
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "source_bounds": [
+        1267,
+        724,
+        1448,
+        905
+      ],
+      "bbox": [
+        110,
+        5,
+        397,
+        352
+      ],
+      "alpha_pixels": 52468,
+      "source_white_like_pixels": 1304,
+      "output_white_like_pixels": 7976,
+      "foot_bottom": 351,
+      "baseline_delta": -31,
+      "repaired_source_holes": 366,
+      "repaired_output_holes": 3059,
+      "removed_tiny_island_pixels": 64,
+      "removed_detached_pixels": 635,
+      "removed_guide_line_pixels": 1488
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "source_bounds": [
+        0,
+        905,
+        181,
+        1086
+      ],
+      "bbox": [
+        32,
+        5,
+        448,
+        377
+      ],
+      "alpha_pixels": 88889,
+      "source_white_like_pixels": 2202,
+      "output_white_like_pixels": 16768,
+      "foot_bottom": 376,
+      "baseline_delta": -6,
+      "repaired_source_holes": 419,
+      "repaired_output_holes": 5169,
+      "removed_tiny_island_pixels": 65,
+      "removed_detached_pixels": 0,
+      "removed_guide_line_pixels": 7719
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "source_bounds": [
+        181,
+        905,
+        362,
+        1086
+      ],
+      "bbox": [
+        146,
+        35,
+        440,
+        370
+      ],
+      "alpha_pixels": 53419,
+      "source_white_like_pixels": 1587,
+      "output_white_like_pixels": 10186,
+      "foot_bottom": 369,
+      "baseline_delta": -13,
+      "repaired_source_holes": 324,
+      "repaired_output_holes": 3549,
+      "removed_tiny_island_pixels": 88,
+      "removed_detached_pixels": 7322,
+      "removed_guide_line_pixels": 4732
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "source_bounds": [
+        362,
+        905,
+        543,
+        1086
+      ],
+      "bbox": [
+        243,
+        77,
+        440,
+        370
+      ],
+      "alpha_pixels": 29129,
+      "source_white_like_pixels": 1217,
+      "output_white_like_pixels": 5558,
+      "foot_bottom": 369,
+      "baseline_delta": -13,
+      "repaired_source_holes": 212,
+      "repaired_output_holes": 4087,
+      "removed_tiny_island_pixels": 90,
+      "removed_detached_pixels": 27252,
+      "removed_guide_line_pixels": 5307
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "source_bounds": [
+        543,
+        905,
+        724,
+        1086
+      ],
+      "bbox": [
+        4,
+        5,
+        288,
+        334
+      ],
+      "alpha_pixels": 54442,
+      "source_white_like_pixels": 2128,
+      "output_white_like_pixels": 10068,
+      "foot_bottom": 333,
+      "baseline_delta": -49,
+      "repaired_source_holes": 483,
+      "repaired_output_holes": 3070,
+      "removed_tiny_island_pixels": 113,
+      "removed_detached_pixels": 7379,
+      "removed_guide_line_pixels": 6241
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "source_bounds": [
+        724,
+        905,
+        905,
+        1086
+      ],
+      "bbox": [
+        36,
+        5,
+        383,
+        341
+      ],
+      "alpha_pixels": 66161,
+      "source_white_like_pixels": 1972,
+      "output_white_like_pixels": 10110,
+      "foot_bottom": 340,
+      "baseline_delta": -42,
+      "repaired_source_holes": 426,
+      "repaired_output_holes": 3898,
+      "removed_tiny_island_pixels": 195,
+      "removed_detached_pixels": 2340,
+      "removed_guide_line_pixels": 6767
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "source_bounds": [
+        905,
+        905,
+        1086,
+        1086
+      ],
+      "bbox": [
+        82,
+        5,
+        448,
+        373
+      ],
+      "alpha_pixels": 70754,
+      "source_white_like_pixels": 2470,
+      "output_white_like_pixels": 14200,
+      "foot_bottom": 372,
+      "baseline_delta": -10,
+      "repaired_source_holes": 504,
+      "repaired_output_holes": 3946,
+      "removed_tiny_island_pixels": 22,
+      "removed_detached_pixels": 138,
+      "removed_guide_line_pixels": 7294
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "source_bounds": [
+        1086,
+        905,
+        1267,
+        1086
+      ],
+      "bbox": [
+        79,
+        5,
+        388,
+        381
+      ],
+      "alpha_pixels": 68594,
+      "source_white_like_pixels": 3624,
+      "output_white_like_pixels": 14509,
+      "foot_bottom": 380,
+      "baseline_delta": -2,
+      "repaired_source_holes": 293,
+      "repaired_output_holes": 2037,
+      "removed_tiny_island_pixels": 41,
+      "removed_detached_pixels": 594,
+      "removed_guide_line_pixels": 9038
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "source_bounds": [
+        1267,
+        905,
+        1448,
+        1086
+      ],
+      "bbox": [
+        79,
+        5,
+        388,
+        382
+      ],
+      "alpha_pixels": 71586,
+      "source_white_like_pixels": 4175,
+      "output_white_like_pixels": 18034,
+      "foot_bottom": 381,
+      "baseline_delta": -1,
+      "repaired_source_holes": 298,
+      "repaired_output_holes": 2121,
+      "removed_tiny_island_pixels": 32,
+      "removed_detached_pixels": 499,
+      "removed_guide_line_pixels": 9014
+    }
+  ]
+}
