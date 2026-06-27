@@ -15,6 +15,18 @@
 NO_GODS_ABOVE/assets/**/validation/**/chrome-profile/
 NO_GODS_ABOVE/assets/**/validation/**/tmp-prof*/
 
+# Steam/Electron build output
+node_modules/
+steam/desktop/node_modules/
+steam/desktop/dist/
+steam/desktop/release/
+steam/content/
+steam/steampipe/generated/
+steam/steampipe/output/
+steam_release/content/NoGodsAbove/
+steam_release/scripts/generated/
+steam_release/scripts/output/
+
 # Root-level generated screenshots. Final assets should live under assets/.
 NO_GODS_ABOVE/*.png
 NO_GODS_ABOVE/rollback_*.png

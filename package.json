@@ -1,0 +1,13 @@
+{
+  "name": "no-gods-above",
+  "version": "0.1.0-steam-demo",
+  "private": true,
+  "description": "Steam release tooling for the No Gods Above browser fighting game.",
+  "scripts": {
+    "dev": "npm --prefix steam/desktop run dev",
+    "start": "npm --prefix steam/desktop run start",
+    "build": "npm --prefix steam/desktop run build",
+    "package:win": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File steam/scripts/build-windows-steam.ps1",
+    "steam:stage": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File steam/scripts/stage-steam-release.ps1"
+  }
+}
