@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <title>NO GODS ABOVE</title>
+    <link rel="icon" href="data:,">
+    <meta name="theme-color" content="#0a0508">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="No Gods Above">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/ui/app/apple_touch_icon.png">
+    <link rel="preload" as="image" href="assets/backgrounds/menus/title_screen_background.png" fetchpriority="high">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="game-shell" aria-label="NO GODS ABOVE game prototype">
+      <canvas id="game" width="1280" height="720"></canvas>
+
+      <div id="touch-controls" class="touch-controls hidden" aria-hidden="true">
+        <div class="touch-zone touch-zone-left">
+          <div class="touch-dpad">
+            <button type="button" class="touch-btn touch-dpad-up" data-touch-key="KeyW">&#9650;</button>
+            <button type="button" class="touch-btn touch-dpad-left" data-touch-key="KeyA">&#9664;</button>
+            <button type="button" class="touch-btn touch-dpad-right" data-touch-key="KeyD">&#9654;</button>
+            <button type="button" class="touch-btn touch-dpad-down" data-touch-key="KeyS">&#9660;</button>
+          </div>
+        </div>
+        <div class="touch-zone touch-zone-right">
+          <button type="button" class="touch-btn touch-attack touch-light" data-touch-key="KeyJ">L</button>
+          <button type="button" class="touch-btn touch-attack touch-medium" data-touch-key="KeyK">M</button>
+          <button type="button" class="touch-btn touch-attack touch-heavy" data-touch-key="KeyL">H</button>
+          <button type="button" class="touch-btn touch-attack touch-grab" data-touch-key="Space">GRAB</button>
+          <button type="button" class="touch-btn touch-attack touch-special" data-touch-key="KeyU">SP</button>
+          <button type="button" class="touch-btn touch-attack touch-dash" data-touch-key="ShiftLeft">DASH</button>
+          <button type="button" class="touch-btn touch-attack touch-ultimate" data-touch-ultimate="true">ULT</button>
+        </div>
+        <div class="touch-system">
+          <button type="button" class="touch-btn touch-sys" data-touch-key="KeyP">II</button>
+          <button type="button" class="touch-btn touch-sys" data-touch-key="KeyR">R</button>
+          <button type="button" class="touch-btn touch-sys" data-touch-key="KeyN">AI</button>
+        </div>
+      </div>
+      <div id="rotate-hint" class="rotate-hint hidden" aria-hidden="true">
+        <span>ROTATE YOUR PHONE<br>No Gods Above plays in landscape</span>
+      </div>
+
+      <section id="hud" class="hud hidden ui-hud-layer" aria-label="Training HUD">
+        <div class="fighter-card hud-side hud-side-p1 hud-fighter-panel left ui-frame ui-frame-hud" data-side="p1">
+          <div class="hud-portrait-shell hud-portrait-frame ui-portrait-frame">
+            <span class="hud-portrait-clip">
+              <img id="player-portrait" src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final portrait">
+            </span>
+          </div>
+          <div class="hud-fighter-main">
+            <div class="hud-nameplate hud-name-frame ui-name-frame">
+              <span class="side-tag p1-tag">P1</span>
+              <span class="hud-name-safe">
+                <span id="player-name" class="fighter-name">KAIRO FINAL</span>
+              </span>
+            </div>
+            <div class="bar hp ui-bar-frame hud-health-shell hud-bar-shell" aria-label="P1 health">
+              <div class="hud-health-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-health-fill-clip hud-bar-fill-clip">
+                <span id="player-hp" class="hud-health-fill hud-bar-fill"></span>
+              </div>
+            </div>
+            <div class="bar meter ui-bar-frame hud-meter-shell hud-bar-shell" aria-label="P1 meter">
+              <div class="hud-meter-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-meter-fill-clip hud-bar-fill-clip">
+                <span id="player-meter" class="hud-meter-fill hud-bar-fill"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="center-hud ui-center-hud">
+            <div id="round-status" class="ui-frame ui-timer-frame">TRAINING</div>
+            <div id="combo-counter" class="combo-counter ui-frame ui-combo-frame" aria-live="polite"></div>
+          </div>
+        <div class="fighter-card hud-side hud-side-p2 hud-fighter-panel right ui-frame ui-frame-hud" data-side="p2">
+          <div class="hud-portrait-shell hud-portrait-frame ui-portrait-frame">
+            <span class="hud-portrait-clip">
+              <img id="enemy-portrait" src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign portrait">
+            </span>
+          </div>
+          <div class="hud-fighter-main">
+            <div class="hud-nameplate hud-name-frame ui-name-frame">
+              <span class="hud-name-safe">
+                <span id="enemy-name" class="fighter-name">VANTA REIGN</span>
+              </span>
+              <span class="side-tag p2-tag">P2</span>
+            </div>
+            <div class="bar hp ui-bar-frame hud-health-shell hud-bar-shell" aria-label="P2 health">
+              <div class="hud-health-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-health-fill-clip hud-bar-fill-clip">
+                <span id="enemy-hp" class="hud-health-fill hud-bar-fill"></span>
+              </div>
+            </div>
+            <div class="bar meter ui-bar-frame hud-meter-shell hud-bar-shell" aria-label="P2 meter">
+              <div class="hud-meter-frame hud-bar-art" aria-hidden="true"></div>
+              <div class="hud-meter-fill-clip hud-bar-fill-clip">
+                <span id="enemy-meter" class="hud-meter-fill hud-bar-fill"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="title-screen" class="menu main-menu-screen">
+        <div class="main-menu-layout">
+          <div class="main-menu-brand" aria-label="No Gods Above">
+            <span class="main-menu-kicker">Fighting demo</span>
+            <h1>NO GODS ABOVE</h1>
+          </div>
+          <nav class="main-menu-actions" aria-label="Main menu">
+            <button id="online-button" class="ui-menu-button main-menu-button" type="button" data-main-mode="online">Online Versus</button>
+            <button id="start-button" class="ui-menu-button main-menu-button" type="button" data-main-mode="versus">Local Versus</button>
+            <button id="training-button" class="ui-menu-button main-menu-button" type="button" data-main-mode="training">Training</button>
+            <button id="arcade-button" class="ui-menu-button main-menu-button coming-soon" type="button" data-main-mode="arcade" aria-disabled="true">Arcade</button>
+            <button id="controls-button" class="ui-menu-button main-menu-button" type="button">Settings / Controls</button>
+          </nav>
+          <div id="title-controls-panel" class="controls-display title-controls-panel hidden" aria-label="Controls"></div>
+          <p id="title-controller-status" class="controller-status" aria-live="polite">Controllers: none detected - press a controller button after load</p>
+        </div>
+      </section>
+
+      <section id="mode-detail-screen" class="menu mode-detail-screen hidden" aria-label="Mode details">
+        <div id="mode-detail-panel" class="mode-detail-panel ui-frame" data-mode-detail="versus">
+          <div class="mode-detail-copy">
+            <span id="mode-detail-kicker" class="flow-kicker">Local Versus</span>
+            <h2 id="mode-detail-title">Local Versus</h2>
+            <p id="mode-detail-description">Two players, one keyboard or controllers, full roster, selected arena.</p>
+          </div>
+          <div id="mode-detail-actions" class="mode-detail-actions"></div>
+          <button id="mode-detail-back-button" class="select-nav-button" type="button">Back</button>
+        </div>
+      </section>
+
+      <section id="online-menu" class="menu hidden" aria-label="Online versus setup">
+        <div class="menu-inner ui-frame ui-title-frame online-menu-inner">
+          <div class="online-heading">ONLINE VERSUS</div>
+          <div id="online-mode-row" class="online-mode-row">
+            <button id="online-host-button" class="ui-menu-button" type="button">Host Game</button>
+            <button id="online-join-button" class="ui-menu-button" type="button">Join Game</button>
+          </div>
+          <div id="online-host-panel" class="online-panel hidden">
+            <p class="online-label">Share this room code with your challenger:</p>
+            <div id="online-room-code" class="online-room-code">-----</div>
+          </div>
+          <div id="online-join-panel" class="online-panel hidden">
+            <p class="online-label">Enter the host's room code:</p>
+            <input id="online-code-input" class="online-code-input" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="CODE">
+            <button id="online-connect-button" class="ui-menu-button" type="button">Connect</button>
+          </div>
+          <p id="online-status" class="online-status" aria-live="polite">Choose Host or Join. Both players need this page open.</p>
+          <button id="online-back-button" class="ui-menu-button online-back" type="button">Back</button>
+        </div>
+      </section>
+
+      <section id="character-select" class="menu character-select hidden" aria-label="Choose your fighter">
+        <div class="select-panel ui-frame ui-menu-frame">
+          <header class="select-header ui-title-header">
+            <div class="select-logo">NO GODS ABOVE</div>
+            <div id="select-heading" class="select-heading">Choose Fighters</div>
+            <div id="select-mode-label" class="select-mode">Fighter Select</div>
+          </header>
+
+          <div class="select-steps" aria-label="Match setup progress">
+            <span class="select-step complete" data-flow-step="mode-detail">Mode</span>
+            <span class="select-step active" data-flow-step="fighter-select">Fighters</span>
+            <span class="select-step" data-flow-step="fighter-confirm">Confirm</span>
+            <span class="select-step" data-flow-step="stage-select">Arena</span>
+            <span class="select-step" data-flow-step="match-intro">Intro</span>
+          </div>
+
+          <div id="select-mode-row" class="select-mode-row hidden" aria-label="Match mode">
+            <button id="select-versus-button" class="select-mode-button active" type="button">Local Versus</button>
+            <button id="select-training-button" class="select-mode-button" type="button">Training Dummy</button>
+          </div>
+          <div id="select-stage-row" class="select-stage-row hidden" aria-label="Arena selection"></div>
+
+          <div id="select-slots" class="select-slots hidden" aria-live="polite">
+            <div id="p1-select-slot" class="select-slot ui-frame ui-slot-frame active">
+              <span class="slot-label">P1 Select</span>
+              <strong id="p1-select-name">KAIRO FINAL</strong>
+              <em id="p1-select-status">Choosing</em>
+            </div>
+            <div id="p2-select-slot" class="select-slot ui-frame ui-slot-frame">
+              <span class="slot-label">P2 Select</span>
+              <strong id="p2-select-name">VANTA REIGN</strong>
+              <em id="p2-select-status">Waiting</em>
+            </div>
+          </div>
+
+          <div id="matchup-preview" class="matchup-preview ui-frame ui-prompt-frame">Choose P1 fighter</div>
+
+          <div class="select-help-strip ui-frame ui-prompt-frame">
+            <span id="select-flow-hint">Choose a mode to begin setup</span>
+            <span id="controller-status" class="controller-status" aria-live="polite">Inputs: P1 Keyboard | P2 Keyboard</span>
+            <button id="select-controls-toggle" class="select-help-button" type="button" aria-expanded="false" aria-controls="select-controls-display">
+              Controls <kbd>C</kbd>
+            </button>
+          </div>
+
+          <div id="select-controls-display" class="controls-display select-controls-display select-controls-popover hidden" aria-label="Local versus controls"></div>
+
+          <div id="select-grid" class="select-grid">
+            <button class="select-card ui-card-frame kairo selected" type="button" data-character="kairo" aria-label="Choose Kairo Final">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/kairo_select.png" alt="Kairo Final">
+              </span>
+              <span class="select-name">KAIRO FINAL</span>
+              <span class="select-role">Cyber Blade Striker</span>
+              <span class="select-difficulty">Difficulty: 2/5</span>
+              <span class="select-description">Fast sword pressure with clean confirms.</span>
+            </button>
+            <button class="select-card ui-card-frame vanta" type="button" data-character="vanta" aria-label="Choose Vanta Reign">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/vanta_select.png" alt="Vanta Reign">
+              </span>
+              <span class="select-name">VANTA REIGN</span>
+              <span class="select-role">Crimson Rival</span>
+              <span class="select-difficulty">Difficulty: 3/5</span>
+              <span class="select-description">Midrange bully with heavy whiff punishes.</span>
+            </button>
+            <button class="select-card ui-card-frame nyx" type="button" data-character="nyx" aria-label="Choose Nyx">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/nyx_select.png" alt="Nyx">
+              </span>
+              <span class="select-name">NYX</span>
+              <span class="select-role">Aerial Rushdown</span>
+              <span class="select-difficulty">Difficulty: 4/5</span>
+              <span class="select-description">Air routes, speed, and slippery angles.</span>
+            </button>
+            <button class="select-card ui-card-frame sol" type="button" data-character="sol" aria-label="Choose Sol Raze">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/sol_select.png" alt="Sol Raze">
+              </span>
+              <span class="select-name">SOL RAZE</span>
+              <span class="select-role">Iron Sun</span>
+              <span class="select-difficulty">Difficulty: 3/5</span>
+              <span class="select-description">Armor-flavored pressure and radiant reach.</span>
+            </button>
+            <button class="select-card ui-card-frame seris" type="button" data-character="seris" aria-label="Choose Seris">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/seris_select.png?v=seris-revamp-final-1" alt="Seris">
+              </span>
+              <span class="select-name">SERIS</span>
+              <span class="select-role">Halo Chain</span>
+              <span class="select-difficulty">Difficulty: 4/5</span>
+              <span class="select-description">Chain control, traps, and delayed threat.</span>
+            </button>
+            <button class="select-card ui-card-frame sable" type="button" data-character="sable" aria-label="Choose Sable">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/sable_select.png" alt="Sable">
+              </span>
+              <span class="select-name">SABLE</span>
+              <span class="select-role">Void Cartographer</span>
+              <span class="select-difficulty">Difficulty: 4/5</span>
+              <span class="select-description">Void spacing, traps, and evasive punishment.</span>
+            </button>
+            <button class="select-card ui-card-frame lamuh" type="button" data-character="lamuh" aria-label="Choose LAMUH">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/lamuh_select.png" alt="LAMUH">
+              </span>
+              <span class="select-name">LAMUH</span>
+              <span class="select-role">Celestial Ki</span>
+              <span class="select-difficulty">Difficulty: 5/5</span>
+              <span class="select-description">High-commitment divine pressure and beams.</span>
+            </button>
+            <button class="select-card ui-card-frame lamuh-legacy" type="button" data-character="lamuh_legacy" aria-label="Choose LAMUH Legacy">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/lamuh_legacy_select.png" alt="LAMUH Legacy">
+              </span>
+              <span class="select-name">LAMUH LEGACY</span>
+              <span class="select-role">Classic Ki</span>
+              <span class="select-difficulty">Difficulty: 2/5</span>
+              <span class="select-description">Simple legacy kit with familiar spacing.</span>
+            </button>
+            <button class="select-card ui-card-frame celeste" type="button" data-character="celeste" aria-label="Choose Celeste">
+              <span class="portrait-frame ui-portrait-frame">
+                <img src="assets/sprites/portraits/celeste_select.png" alt="Celeste">
+              </span>
+              <span class="select-name">CELESTE</span>
+              <span class="select-role">Seven Spirits</span>
+              <span class="select-difficulty">Difficulty: 4/5</span>
+              <span class="select-description">Spirit stance flavor and tricky pressure.</span>
+            </button>
+          </div>
+
+          <div class="select-action-row" aria-label="Setup actions">
+            <button id="select-back-button" class="select-nav-button" type="button">Back</button>
+            <button id="select-confirm-button" class="select-nav-button primary" type="button">Continue</button>
+          </div>
+
+          <footer id="select-footer" class="select-footer" aria-label="Character select controls">
+            <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd>-<kbd>9</kbd> Choose</span>
+            <span><kbd>Enter</kbd> Confirm</span>
+            <span><kbd>D-pad</kbd>/<kbd>LS</kbd> Pad Select</span>
+            <span><kbd>C</kbd> Controls</span>
+            <span><kbd>Esc</kbd> Back</span>
+          </footer>
+        </div>
+      </section>
+
+      <section id="fighter-confirm-screen" class="menu fighter-confirm-screen hidden" aria-label="Fighter confirmation">
+        <div class="fighter-confirm-panel ui-frame">
+          <div class="fighter-showcase-art">
+            <img id="showcase-portrait" src="assets/sprites/portraits/kairo_select.png" alt="Selected fighter portrait">
+          </div>
+          <div class="fighter-showcase-copy">
+            <span id="showcase-side" class="flow-kicker">P1 Confirm</span>
+            <h2 id="showcase-name">KAIRO FINAL</h2>
+            <p id="showcase-archetype" class="showcase-archetype">Cyber Blade Striker</p>
+            <p id="showcase-playstyle">Fast sword pressure with clean confirms.</p>
+            <div id="showcase-strengths" class="showcase-strengths"></div>
+            <blockquote id="showcase-quote">Steel answers the sky.</blockquote>
+            <div class="select-action-row">
+              <button id="showcase-back-button" class="select-nav-button" type="button">Back</button>
+              <button id="showcase-confirm-button" class="select-nav-button primary" type="button">Confirm Fighter</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stage-select-screen" class="menu stage-select-screen hidden" aria-label="Choose arena">
+        <div class="stage-select-panel ui-frame">
+          <header class="select-header ui-title-header">
+            <div class="select-logo">NO GODS ABOVE</div>
+            <div class="select-heading">Choose Arena</div>
+            <div class="select-mode">Stage Select</div>
+          </header>
+          <div class="stage-card-grid">
+            <button class="stage-card active" type="button" data-stage-preset="platform_test">
+              <span class="stage-preview stage-preview-platform"></span>
+              <span class="arena-name">Platform Arena</span>
+              <span class="arena-note">Wide stage with center platform</span>
+            </button>
+            <button class="stage-card" type="button" data-stage-preset="standard">
+              <span class="stage-preview stage-preview-standard"></span>
+              <span class="arena-name">Standard Arena</span>
+              <span class="arena-note">Classic fallback ruleset</span>
+            </button>
+            <button class="stage-card" type="button" data-stage-preset="eclipse_rooftop">
+              <span class="stage-preview stage-preview-eclipse"></span>
+              <span class="arena-name">Eclipse Rooftop</span>
+              <span class="arena-note">Rooftop floor with elevated side platforms</span>
+            </button>
+          </div>
+          <div id="stage-matchup-preview" class="matchup-preview ui-frame ui-prompt-frame">Select an arena</div>
+          <div class="select-action-row">
+            <button id="stage-back-button" class="select-nav-button" type="button">Back</button>
+            <button id="stage-confirm-button" class="select-nav-button primary" type="button">Confirm Arena</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="match-intro-screen" class="menu match-intro-screen hidden" aria-label="Match intro">
+        <div class="match-intro-panel ui-frame">
+          <div class="intro-fighter intro-p1">
+            <span class="flow-kicker">P1</span>
+            <img id="intro-p1-portrait" src="assets/sprites/portraits/kairo_select.png" alt="P1 portrait">
+            <strong id="intro-p1-name">KAIRO FINAL</strong>
+          </div>
+          <div class="intro-versus">
+            <span id="intro-stage-preview" class="intro-stage-preview"></span>
+            <h2>VS</h2>
+            <p id="intro-stage-name">Platform Arena</p>
+            <blockquote id="intro-quote">Steel answers shadow.</blockquote>
+            <button id="intro-start-button" class="select-nav-button primary" type="button">Start Match</button>
+            <button id="intro-back-button" class="select-nav-button" type="button">Back</button>
+          </div>
+          <div class="intro-fighter intro-p2">
+            <span class="flow-kicker">P2</span>
+            <img id="intro-p2-portrait" src="assets/sprites/portraits/vanta_select.png" alt="P2 portrait">
+            <strong id="intro-p2-name">VANTA REIGN</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="match-flow-overlay" class="match-flow-overlay hidden" aria-live="assertive" aria-label="Match flow">
+        <div class="match-flow-panel ui-frame ui-overlay-frame">
+          <div id="match-flow-title" class="match-flow-title">P1 WINS</div>
+          <div id="match-flow-subtitle" class="match-flow-subtitle">Same fighters, same arena.</div>
+          <div id="match-flow-actions" class="match-flow-actions">Press R for Rematch - Press Esc for Character Select</div>
+          <div id="match-controls-display" class="controls-display match-controls-display" aria-label="In-match controls"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src="game.js?v=eclipse-platform-refine-1"></script>
+  </body>
+</html>
