@@ -11,6 +11,9 @@ Date: 2026-07-03
 - Updated `.gitignore` so local-only `.claude/` and `tmp/` workspace state are not published accidentally; `node_modules/` and generated provider scratch remain ignored.
 - Validation before commit: `npm.cmd run check:game` passed, `.devcontainer/devcontainer.json` and `package.json` parsed as JSON, cloud-file `git diff --check` passed, `tools/generate_placeholder_sfx.js` syntax check passed, and `npm.cmd --prefix tools/sprite-agent run typecheck` passed.
 - GitHub CLI exists but `gh auth status` reports the stored `lamuh24` token is invalid; local `git push` may still work through existing Git credentials, but PR creation through `gh` needs re-auth.
+- Published branch `feature/sable-playable-mvp` to GitHub at `origin/feature/sable-playable-mvp`; GitHub connector confirmed the branch exists. Current pushed commits are `a927dea7` (broad release/cloud project state) and `74e31bbf` (session-context handoff note), followed by this final handoff update.
+- GitHub remote PR helper URL from push: `https://github.com/lamuh24/no-gods-above/pull/new/feature/sable-playable-mvp`.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
 - Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/deployment_readiness_skill.md` and `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`. GitHub publish skill read/applied: `github:yeet`.
 
 ## 2026-07-03 Release Optimization + Icon + Placeholder SFX (Claude Code)
