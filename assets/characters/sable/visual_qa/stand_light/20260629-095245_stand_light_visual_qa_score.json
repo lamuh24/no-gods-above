@@ -1,0 +1,21 @@
+{
+  "characterId": "sable",
+  "clipId": "stand_light",
+  "sheetPath": "assets/characters/sable/normalized/stand_light/v20260629-095244/sable_stand_light_normalized_strip.png",
+  "generatedAt": "2026-06-29T13:52:45.580Z",
+  "adapter": "heuristic-validation-score",
+  "score": 52,
+  "status": "fail",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": true,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

@@ -83,5 +83,100 @@
     "existing_external_runtime_dependencies": [
       "https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"
     ]
+  },
+  "sable_removed_netlify_deploy_2026_07_03": {
+    "timestamp": "2026-07-03",
+    "deployment_target": "Netlify production",
+    "production_url": "https://no-gods-above.netlify.app",
+    "unique_deploy_url": "https://6a4729386947f4036bca9d83--no-gods-above.netlify.app",
+    "deploy_id": "6a4729386947f4036bca9d83",
+    "staged_deploy": {
+      "staging_script": "_stage_deploy.ps1",
+      "staging_dir": "%TEMP%/nga_deploy",
+      "asset_count": 116,
+      "missing_referenced_files": 25,
+      "stage_size_mb": 220.8,
+      "root_files": [
+        "index.html",
+        "game.js",
+        "style.css",
+        "sw.js",
+        "manifest.webmanifest"
+      ],
+      "known_missing_deferred_assets": [
+        "assets/audio/announcer/fight.ogg",
+        "assets/audio/announcer/final_round.ogg",
+        "assets/audio/announcer/ko.ogg",
+        "assets/audio/announcer/ring_out.ogg",
+        "assets/audio/announcer/round_1.ogg",
+        "assets/audio/announcer/round_2.ogg",
+        "assets/audio/music/battle_theme.ogg",
+        "assets/audio/music/title_theme.ogg",
+        "assets/audio/sfx/block.ogg",
+        "assets/audio/sfx/dash.ogg",
+        "assets/audio/sfx/double_jump.ogg",
+        "assets/audio/sfx/grab_catch.ogg",
+        "assets/audio/sfx/grab_toss.ogg",
+        "assets/audio/sfx/hit_heavy.ogg",
+        "assets/audio/sfx/hit_light.ogg",
+        "assets/audio/sfx/hit_medium.ogg",
+        "assets/audio/sfx/hit_super.ogg",
+        "assets/audio/sfx/jump.ogg",
+        "assets/audio/sfx/ko.ogg",
+        "assets/audio/sfx/super_dash.ogg",
+        "assets/audio/sfx/super_flash.ogg",
+        "assets/audio/sfx/ui_confirm.ogg",
+        "assets/audio/sfx/ui_move.ogg",
+        "assets/audio/sfx/whoosh.ogg",
+        "assets/ui/app/apple_touch_icon.png"
+      ]
+    },
+    "static_validation": {
+      "node_check_game_js": "pass",
+      "node_check_sw_js": "pass",
+      "git_diff_check_target_files": "pass_crlf_warnings_only"
+    },
+    "staged_validation": {
+      "index_has_script_cache_key": "game.js?v=remove-sable-select-1",
+      "index_has_sable_card": false,
+      "selectable_character_ids": [
+        "kairo",
+        "vanta",
+        "nyx",
+        "sol",
+        "seris",
+        "lamuh",
+        "lamuh_legacy",
+        "celeste"
+      ],
+      "sable_hidden_test_gate_preserved": true
+    },
+    "live_site_status": {
+      "index_http_status": 200,
+      "index_has_script_cache_key": "game.js?v=remove-sable-select-1",
+      "index_has_sable_card": false,
+      "game_js_http_status": 200,
+      "selectable_character_ids_line": "const selectableCharacterIds = [\"kairo\", \"vanta\", \"nyx\", \"sol\", \"seris\", \"lamuh\", \"lamuh_legacy\", \"celeste\"];",
+      "sable_hidden_test_gate_preserved": true,
+      "sw_http_status": 200,
+      "sw_cache_key": "nga-cache-v6-remove-sable-select",
+      "manifest_http_status": 200,
+      "portrait_http_status": {
+        "kairo": 200,
+        "vanta": 200,
+        "nyx": 200,
+        "sol": 200,
+        "seris": 200,
+        "lamuh": 200,
+        "lamuh_legacy": 200,
+        "celeste": 200
+      }
+    },
+    "notes": [
+      "Sable is removed from normal public fighter select in this production deploy.",
+      "Dev/internal Sable access remains available through the hidden ?sableTest gate.",
+      "No gameplay balance or combat tuning changes were made for this deploy.",
+      "The staging script now copies sw.js and manifest.webmanifest with the runtime root files."
+    ]
   }
 }

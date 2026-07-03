@@ -1,0 +1,25 @@
+# SpriteForge Visual QA Score - sable / stand_light
+
+Status: **fail**
+Score: **0**
+Human review needed: **yes**
+Suspicious output: **yes**
+Identity drift detected: **no**
+Sheet: `assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2/generated/inbox/stand_light/v20260702-114057-codex-rebuild-v2-stand-light-1-components-spread-stand_light/sable_stand_light_codex-rebuild-v2-stand-light-1-components-spread_raw_chroma.png`
+
+## Summary
+
+Heuristic visual QA found risk that should block auto preview approval.
+
+## Factors
+
+- Technical validation failed.
+- NO_ALPHA_TRANSPARENCY: Image has no meaningful transparency.
+- OPAQUE_FULL_BACKGROUND: Opaque pixel ratio 1.000 suggests a full baked background.
+- DIMENSIONS_NOT_FRAME_MULTIPLE: Sheet 2201x714 is not an exact multiple of 448x448.
+
+## Notes
+
+- This is a heuristic score derived from technical measurements and artifact flags.
+- No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.
+- SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image.

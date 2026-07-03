@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Promotion Readiness Audit",
+  "generatedAt": "2026-06-28T20:08:49.6955379-04:00",
+  "character": "sable",
+  "stage": "mvp",
+  "previewPackPath": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack",
+  "PREVIEW_PACK_STATUS": {
+    "status": "COMPLETE_PREVIEW_PACK",
+    "requiredClipCount": 19,
+    "previewPackStripCount": 19,
+    "manifestClipCount": 19,
+    "queueCompletedClipCount": 19,
+    "queueApprovedPreviewClipCount": 19,
+    "failedClips": [],
+    "remainingClips": [],
+    "manifestMissingClips": [],
+    "previewManifestPath": "assets/characters/sable/manifests/preview_animation_clips.json",
+    "previewManifestLiveRosterWiring": "disabled",
+    "smokePassed": true,
+    "idleApprovedClipPreserved": true,
+    "normalizedStripsReferencedByPreviewManifest": [
+      {
+        "clipId": "idle",
+        "displayName": "idle",
+        "normalizedSheet": "assets/characters/sable/normalized/idle/v20260627-015723/sable_idle_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "crouch",
+        "displayName": "crouch",
+        "normalizedSheet": "assets/characters/sable/normalized/crouch/v20260628-180804/sable_crouch_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "block",
+        "displayName": "block",
+        "normalizedSheet": "assets/characters/sable/normalized/block/v20260628-181327/sable_block_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "hit_stun",
+        "displayName": "hitstun",
+        "normalizedSheet": "assets/characters/sable/normalized/hit_stun/v20260628-182024/sable_hit_stun_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "walk_forward",
+        "displayName": "walk",
+        "normalizedSheet": "assets/characters/sable/normalized/walk_forward/v20260628-182538/sable_walk_forward_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "jump",
+        "displayName": "jump",
+        "normalizedSheet": "assets/characters/sable/normalized/jump/v20260628-182735/sable_jump_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "stand_light",
+        "displayName": "ground light",
+        "normalizedSheet": "assets/characters/sable/normalized/stand_light/v20260628-183526/sable_stand_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "stand_medium",
+        "displayName": "ground medium",
+        "normalizedSheet": "assets/characters/sable/normalized/stand_medium/v20260628-183857/sable_stand_medium_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "stand_heavy",
+        "displayName": "ground heavy",
+        "normalizedSheet": "assets/characters/sable/normalized/stand_heavy/v20260628-184106/sable_stand_heavy_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "jump_light",
+        "displayName": "air light",
+        "normalizedSheet": "assets/characters/sable/normalized/jump_light/v20260628-184342/sable_jump_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "jump_medium",
+        "displayName": "air medium",
+        "normalizedSheet": "assets/characters/sable/normalized/jump_medium/v20260628-184541/sable_jump_medium_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "jump_heavy",
+        "displayName": "air heavy",
+        "normalizedSheet": "assets/characters/sable/normalized/jump_heavy/v20260628-184909/sable_jump_heavy_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "neutral_special_light",
+        "displayName": "Void Shard",
+        "normalizedSheet": "assets/characters/sable/normalized/neutral_special_light/v20260628-185500/sable_neutral_special_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "forward_special_light",
+        "displayName": "Forward Light Phase Lunge",
+        "normalizedSheet": "assets/characters/sable/normalized/forward_special_light/v20260628-193427/sable_forward_special_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "forward_special_medium",
+        "displayName": "Forward Medium Phase Lunge",
+        "normalizedSheet": "assets/characters/sable/normalized/forward_special_medium/v20260628-194401/sable_forward_special_medium_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "forward_special_heavy",
+        "displayName": "Forward Heavy Phase Lunge",
+        "normalizedSheet": "assets/characters/sable/normalized/forward_special_heavy/v20260628-194718/sable_forward_special_heavy_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "back_special_light",
+        "displayName": "Void Anchor",
+        "normalizedSheet": "assets/characters/sable/normalized/back_special_light/v20260628-195232/sable_back_special_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "down_special_light",
+        "displayName": "Ground Rift",
+        "normalizedSheet": "assets/characters/sable/normalized/down_special_light/v20260628-195635/sable_down_special_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      },
+      {
+        "clipId": "up_special_light",
+        "displayName": "Vertical Phase",
+        "normalizedSheet": "assets/characters/sable/normalized/up_special_light/v20260628-200015/sable_up_special_light_normalized_strip.png",
+        "approvedForPreview": true,
+        "approvedForLiveRoster": false
+      }
+    ]
+  },
+  "LIVE_PROMOTION_STATUS": {
+    "status": "NOT_PROMOTED_BLOCKED_BY_PREEXISTING_LIVE_DIRTINESS",
+    "approvedLiveClips": [],
+    "manifestApprovedForLiveRoster": false,
+    "previewManifestLiveRosterWiring": "disabled",
+    "livePromotionHappened": false,
+    "liveRosterFilesTouchedByThisAudit": false,
+    "verifyPackStatus": "FAILED_NEEDS_HUMAN",
+    "verifyPackReason": "Live roster files have git changes; this is a promotion-readiness blocker, not a preview-pack failure."
+  },
+  "BLOCKERS": {
+    "dirtyLiveRuntimeFiles": [
+      {
+        "path": "NO_GODS_ABOVE/game.js",
+        "gitStatus": "M",
+        "originAssessment": "pre_existing_before_this_audit_and_documented_in_SESSION_CONTEXT; not written by this audit"
+      },
+      {
+        "path": "NO_GODS_ABOVE/index.html",
+        "gitStatus": "M",
+        "originAssessment": "pre_existing_before_this_audit_and_documented_in_SESSION_CONTEXT; not written by this audit"
+      },
+      {
+        "path": "NO_GODS_ABOVE/style.css",
+        "gitStatus": "M",
+        "originAssessment": "pre_existing_before_this_audit_and_documented_in_SESSION_CONTEXT; not written by this audit"
+      },
+      {
+        "path": "NO_GODS_ABOVE/assets/sprites/portraits/sable_select.png",
+        "gitStatus": "??",
+        "originAssessment": "pre_existing_before_this_audit_and_documented_in_SESSION_CONTEXT; not written by this audit"
+      },
+      {
+        "path": "NO_GODS_ABOVE/assets/sprites/sable_placeholder/",
+        "gitStatus": "??",
+        "originAssessment": "pre_existing_before_this_audit_and_documented_in_SESSION_CONTEXT; not written by this audit"
+      }
+    ],
+    "notClipBlockers": [
+      "SpriteForge queue status is complete.",
+      "No required preview clip is missing.",
+      "No preview clip is failed or waiting for retry.",
+      "Smoke test passed.",
+      "Idle approved clip was preserved."
+    ]
+  },
+  "SAFE_NEXT_ACTIONS": [
+    "Review the completed preview pack visually from assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/ before any live promotion.",
+    "Audit the dirty live-runtime files separately and decide whether to keep, stage, revert, or quarantine those changes.",
+    "Only after live-runtime dirtiness is resolved, rerun npm.cmd run sprite-agent -- verify-pack --character sable --stage mvp.",
+    "Do not promote Sable to the live roster until a separate live integration task is explicitly requested.",
+    "If promotion is approved later, stage only the intended SpriteForge preview-pack/report/manifest files and the separately approved live-runtime changes."
+  ],
+  "validationCommands": [
+    {
+      "command": "npm.cmd --prefix tools/sprite-agent run typecheck",
+      "result": "passed"
+    },
+    {
+      "command": "npm.cmd run sprite-agent -- status --character sable",
+      "result": "passed; queue overallStatus complete; failed none; remaining none"
+    },
+    {
+      "command": "npm.cmd run sprite-agent -- verify-pack --character sable --stage mvp",
+      "result": "ran; FAILED_NEEDS_HUMAN because live runtime files are dirty"
+    }
+  ],
+  "sourceReports": {
+    "queueStatus": "assets/characters/sable/reports/spriteforge_queue_status.json",
+    "packReport": "assets/characters/sable/reports/latest_spriteforge_pack_report.json",
+    "smokeReport": "assets/characters/sable/reports/latest_game_smoke_report.json",
+    "previewManifest": "assets/characters/sable/manifests/preview_animation_clips.json"
+  },
+  "notes": [
+    "SpriteForge preview output lives under assets/characters/sable and does not automatically promote anything into NO_GODS_ABOVE live roster assets.",
+    "The dirty live-runtime files were present at the beginning of this audit and are treated as pre-existing blockers.",
+    "No commit was created."
+  ]
+}

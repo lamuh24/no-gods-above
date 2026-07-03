@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-06-29T18:00:58.397Z",
+  "characterId": "sable",
+  "clipId": "block",
+  "sourceSheet": "assets/characters/sable/generated/inbox/block/v20260629-135838-pixel-redo-guard-block/zz_sable_block_pixel-redo-guard_prepared_4x1_448.png",
+  "expected": {
+    "clipId": "block",
+    "category": "defense",
+    "frameCount": 4,
+    "fps": 10,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/generated/inbox/block/v20260629-135838-pixel-redo-guard-block/zz_sable_block_pixel-redo-guard_prepared_4x1_448.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": []
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 4,
+    "rows": 1,
+    "frameCount": 4
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "pass",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 21671,
+      "bbox": {
+        "x": 136,
+        "y": 30,
+        "width": 176,
+        "height": 352,
+        "right": 311,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110001111111111110000011111111111000001111111111100001111111111110001111111111111000011111111111100001111111111100110011111111110011001111111111001100111111111001110011111111100111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 22945,
+      "bbox": {
+        "x": 134,
+        "y": 30,
+        "width": 181,
+        "height": 352,
+        "right": 314,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000011111111111100001111111111110001111111111111000011111111111100100111111111100110011111111110011001111111111011100111111111001110011111111100111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 23865,
+      "bbox": {
+        "x": 133,
+        "y": 30,
+        "width": 182,
+        "height": 352,
+        "right": 314,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000001111111111100001111111111100001111111111111000011111111111100100111111111100010011111111110011001111111111011100111111111001110011111111100111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 21486,
+      "bbox": {
+        "x": 140,
+        "y": 30,
+        "width": 168,
+        "height": 352,
+        "right": 307,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110001111111111110000011111111111000001111111111100001111111111110001111111111110000011111111111101001111111111100110111111111110011011111111111011100111111111001110011111111110111001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 1,
+      "frameB": 2,
+      "hammingDistance": 3
+    }
+  ],
+  "autoFixRecommended": false
+}

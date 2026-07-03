@@ -1,13 +1,10 @@
 {
-  "name": "no-gods-above",
-  "version": "0.1.0-steam-demo",
   "private": true,
-  "description": "Steam release tooling for the No Gods Above browser fighting game.",
   "scripts": {
-    "dev": "npm --prefix steam/desktop run dev",
-    "start": "npm --prefix steam/desktop run start",
-    "build": "npm --prefix steam/desktop run build",
-    "package:win": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File steam/scripts/build-windows-steam.ps1",
-    "steam:stage": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File steam/scripts/stage-steam-release.ps1"
+    "dev:game": "python -m http.server 5173 --directory NO_GODS_ABOVE",
+    "check:game": "node --check NO_GODS_ABOVE/game.js && node --check NO_GODS_ABOVE/sw.js",
+    "dev:forge:backend": "python -m uvicorn app.main:app --app-dir tools/nga-forge/backend --host 127.0.0.1 --port 8765",
+    "dev:forge:frontend": "npm --prefix tools/nga-forge/frontend run dev",
+    "sprite-agent": "npm --prefix tools/sprite-agent run sprite-agent --"
   }
 }

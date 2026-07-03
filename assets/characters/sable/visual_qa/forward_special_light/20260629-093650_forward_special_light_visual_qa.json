@@ -1,0 +1,76 @@
+{
+  "characterId": "sable",
+  "clipId": "forward_special_light",
+  "sheetPath": "assets/characters/sable/normalized/forward_special_light/v20260629-093648/sable_forward_special_light_normalized_strip.png",
+  "generatedAt": "2026-06-29T13:36:50.134Z",
+  "adapter": "manual-placeholder",
+  "status": "manual_review_required",
+  "approved": false,
+  "checklist": [
+    {
+      "id": "identity",
+      "label": "Same locked character identity",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "style4",
+      "label": "Style 4 HD pixel anime fighter style",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "pose",
+      "label": "Pose and motion match the requested clip",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "facing",
+      "label": "Character faces right by default",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "no_text",
+      "label": "No text, labels, borders, watermark, or UI marks",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "no_background",
+      "label": "No background, floor, or frame grid",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "no_cropping",
+      "label": "No cropped body parts, outfit pieces, weapons, or VFX",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "body_readable",
+      "label": "Body remains readable in every frame",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "vfx_supports_body",
+      "label": "VFX supports the move without replacing the body",
+      "required": true,
+      "status": "pending"
+    },
+    {
+      "id": "scale_center_baseline",
+      "label": "Scale, center, and baseline remain stable",
+      "required": true,
+      "status": "pending"
+    }
+  ],
+  "promptPath": "assets/characters/sable/visual_qa/forward_special_light/20260629-093650_forward_special_light_visual_qa_prompt.md",
+  "notes": [
+    "No multimodal visual model is connected yet.",
+    "Technical pass does not equal live approval; visual review remains required."
+  ]
+}

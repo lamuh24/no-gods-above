@@ -2,15 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
     <title>NO GODS ABOVE</title>
     <link rel="icon" href="data:,">
+    <meta name="theme-color" content="#0a0508">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="No Gods Above">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/ui/app/apple_touch_icon.png">
     <link rel="preload" as="image" href="assets/backgrounds/menus/title_screen_background.png" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main id="game-shell" aria-label="NO GODS ABOVE game prototype">
       <canvas id="game" width="1280" height="720"></canvas>
+
+      <div id="touch-controls" class="touch-controls hidden" aria-hidden="true">
+        <div class="touch-zone touch-zone-left">
+          <div class="touch-dpad">
+            <button type="button" class="touch-btn touch-dpad-up" data-touch-key="KeyW">&#9650;</button>
+            <button type="button" class="touch-btn touch-dpad-left" data-touch-key="KeyA">&#9664;</button>
+            <button type="button" class="touch-btn touch-dpad-right" data-touch-key="KeyD">&#9654;</button>
+            <button type="button" class="touch-btn touch-dpad-down" data-touch-key="KeyS">&#9660;</button>
+          </div>
+        </div>
+        <div class="touch-zone touch-zone-right">
+          <button type="button" class="touch-btn touch-attack touch-light" data-touch-key="KeyJ">L</button>
+          <button type="button" class="touch-btn touch-attack touch-medium" data-touch-key="KeyK">M</button>
+          <button type="button" class="touch-btn touch-attack touch-heavy" data-touch-key="KeyL">H</button>
+          <button type="button" class="touch-btn touch-attack touch-grab" data-touch-key="Space">GRAB</button>
+          <button type="button" class="touch-btn touch-attack touch-special" data-touch-key="KeyU">SP</button>
+          <button type="button" class="touch-btn touch-attack touch-dash" data-touch-key="ShiftLeft">DASH</button>
+          <button type="button" class="touch-btn touch-attack touch-ultimate" data-touch-ultimate="true">ULT</button>
+        </div>
+        <div class="touch-system">
+          <button type="button" class="touch-btn touch-sys" data-touch-key="KeyP">II</button>
+          <button type="button" class="touch-btn touch-sys" data-touch-key="KeyR">R</button>
+          <button type="button" class="touch-btn touch-sys" data-touch-key="KeyN">AI</button>
+        </div>
+      </div>
+      <div id="rotate-hint" class="rotate-hint hidden" aria-hidden="true">
+        <span>ROTATE YOUR PHONE<br>No Gods Above plays in landscape</span>
+      </div>
 
       <section id="hud" class="hud hidden ui-hud-layer" aria-label="Training HUD">
         <div class="fighter-card hud-side hud-side-p1 hud-fighter-panel left ui-frame ui-frame-hud" data-side="p1">
@@ -252,7 +287,7 @@
           </div>
 
           <footer id="select-footer" class="select-footer" aria-label="Character select controls">
-            <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd>-<kbd>8</kbd> Choose</span>
+            <span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd> or <kbd>1</kbd>-<kbd>9</kbd> Choose</span>
             <span><kbd>Enter</kbd> Confirm</span>
             <span><kbd>D-pad</kbd>/<kbd>LS</kbd> Pad Select</span>
             <span><kbd>C</kbd> Controls</span>
@@ -341,12 +376,17 @@
           <div id="match-flow-title" class="match-flow-title">P1 WINS</div>
           <div id="match-flow-subtitle" class="match-flow-subtitle">Same fighters, same arena.</div>
           <div id="match-flow-actions" class="match-flow-actions">Press R for Rematch - Press Esc for Character Select</div>
+          <div class="match-flow-buttons">
+            <button type="button" id="match-flow-resume" class="select-nav-button">Resume</button>
+            <button type="button" id="match-flow-rematch" class="select-nav-button primary">Rematch</button>
+            <button type="button" id="match-flow-select" class="select-nav-button">Character Select</button>
+          </div>
           <div id="match-controls-display" class="controls-display match-controls-display" aria-label="In-match controls"></div>
         </div>
       </section>
     </main>
 
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-    <script src="game.js?v=eclipse-platform-refine-1"></script>
+    <script src="game.js?v=fighter-load-gate-1"></script>
   </body>
 </html>

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "sable_release_delay_decision",
+  "characterId": "sable",
+  "characterName": "Sable",
+  "decisionDate": "2026-07-03",
+  "stageReviewed": "animator-rebuild-v2",
+  "decision": "delay_from_public_steam_demo_roster",
+  "releaseStatus": "wip_delayed",
+  "previewStatus": "animation_rebuild_required",
+  "approvedForLiveRoster": false,
+  "candidateArchiveStatus": "failed_animation_quality_candidate",
+  "productionCandidate": false,
+  "visualDesignStatus": "approved",
+  "gameplayConceptStatus": "approved",
+  "animationPackStatus": "not_release_ready",
+  "shouldPromoteCurrentRebuildV2Live": false,
+  "excludeFromNextPublicSteamDemoRoster": true,
+  "explicitOverrideRequiredForPublicRoster": true,
+  "currentPublicSelectState": {
+    "normalSelectCardVisible": false,
+    "normalSelectableCharacterId": false,
+    "shortcutVisible": false,
+    "devPreviewGate": "?sableTest",
+    "devPreviewDataPreserved": true
+  },
+  "reason": "Current animation packs have missing, choppy, and inconsistent animations with insufficient fighting-game readability.",
+  "qualityDecision": {
+    "pipelineProved": true,
+    "releaseQualityPassed": false,
+    "summary": "The animator-rebuild-v2 pass proved the SpriteForge-style workflow but did not produce Steam/demo release-quality fighting animations."
+  },
+  "preserve": [
+    "old Sable MVP preview pack",
+    "animator-rebuild-v2 prompts",
+    "reports",
+    "manifests",
+    "generated files",
+    "quarantined files",
+    "reference art",
+    "brief",
+    "visual lock",
+    "lore",
+    "existing playable MVP data",
+    "internal test harness access"
+  ],
+  "doNotChange": [
+    "gameplay balance",
+    "moveset",
+    "damage",
+    "input routing",
+    "live gameplay runtime behavior",
+    "dev preview access"
+  ],
+  "recommendedRestartMethod": "key poses -> in-betweens -> assembled spritesheet -> SpriteForge validation -> preview approval",
+  "futurePromotionGate": "GAME_READY",
+  "relatedReports": {
+    "restartPlanMarkdown": "assets/characters/sable/reports/sable_key_pose_restart_plan.md",
+    "restartPlanJson": "assets/characters/sable/reports/sable_key_pose_restart_plan.json"
+  }
+}

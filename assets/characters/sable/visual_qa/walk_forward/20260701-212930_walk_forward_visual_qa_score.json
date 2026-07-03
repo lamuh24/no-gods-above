@@ -1,0 +1,28 @@
+{
+  "characterId": "sable",
+  "clipId": "walk_forward",
+  "sheetPath": "assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2/normalized/walk_forward/v20260701-212927/sable_walk_forward_normalized_strip.png",
+  "generatedAt": "2026-07-02T01:29:30.313Z",
+  "adapter": "heuristic-validation-score",
+  "score": 0,
+  "status": "fail",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": true,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

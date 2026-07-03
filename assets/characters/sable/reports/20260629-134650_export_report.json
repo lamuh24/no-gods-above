@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestKind": "preview",
+  "generatedAt": "2026-06-29T17:46:50.641Z",
+  "characterId": "sable",
+  "approvedForLiveRoster": false,
+  "liveRosterWiring": "disabled",
+  "spriteStandard": {
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right"
+  },
+  "clips": [
+    {
+      "clipId": "idle",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/generated/inbox/idle/v20260629-134147-pixel-redo-idle-motion-idle/zz_sable_idle_pixel-redo-idle-motion_prepared_8x1_448.png",
+      "normalizedSheet": "assets/characters/sable/normalized/idle/v20260629-134623/sable_idle_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-06-29T17:46:50.535Z",
+      "approvalPolicy": "manual-promote-preview"
+    }
+  ],
+  "missingClips": [],
+  "reports": {
+    "latestValidationReport": "assets/characters/sable/reports/latest_validation_report.json",
+    "latestNormalizationReport": "assets/characters/sable/reports/latest_normalization_report.json"
+  },
+  "notes": [
+    "This manifest is preview-only and is not consumed by the live roster automatically.",
+    "Do not wire these clips into NO_GODS_ABOVE/game.js until validation is approved and a separate runtime adapter/integration pass is requested.",
+    "Existing production assets remain untouched."
+  ]
+}

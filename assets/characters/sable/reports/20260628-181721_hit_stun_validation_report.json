@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-06-28T22:17:21.295Z",
+  "characterId": "sable",
+  "clipId": "hit_stun",
+  "sourceSheet": "assets/characters/sable/generated/inbox/hit_stun/v20260628-181656-codex-hit_stun/zz_sable_hit_stun_codex_prepared_4x1_448.png",
+  "expected": {
+    "clipId": "hit_stun",
+    "category": "damage",
+    "frameCount": 4,
+    "fps": 10,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/generated/inbox/hit_stun/v20260628-181656-codex-hit_stun/zz_sable_hit_stun_codex_prepared_4x1_448.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": []
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 4,
+    "rows": 1,
+    "frameCount": 4
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "SCALE_DRIFT",
+      "message": "Frame height drift is 50px (302px..352px); max is 34px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 26593,
+      "bbox": {
+        "x": 100,
+        "y": 30,
+        "width": 249,
+        "height": 352,
+        "right": 348,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111100011111111111110001111111111111000000111111111100000001111111110000111111111111000001111111111110000011111111111100000111111111110010011111111110011001111111110011110011111111001111001111111100111110011111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 27929,
+      "bbox": {
+        "x": 83,
+        "y": 30,
+        "width": 282,
+        "height": 352,
+        "right": 364,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111001111111111111100011111111111110000000111111111000000001111111100000011111111111110000111111111111000011111111111110000111111111111000011111111111100100111111111110010011111111111001100111111111110111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 39106,
+      "bbox": {
+        "x": 56,
+        "y": 80,
+        "width": 336,
+        "height": 302,
+        "right": 391,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111100000001111111110000000011111110000000011111111000001011111111100000000111111111001000001111111000110000111111000111010011111001111101101111100111100011111110011111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 33086,
+      "bbox": {
+        "x": 102,
+        "y": 30,
+        "width": 245,
+        "height": 352,
+        "right": 346,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111110001111111111111000111111111110000011111111100000011111111110000000011111111000001001111111100000011111111111000000111111111100010011111111110011101111111110011110011111110011111001111111001111100111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

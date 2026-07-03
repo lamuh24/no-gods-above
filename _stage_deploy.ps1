@@ -22,7 +22,14 @@ $cssPaths = Select-String -Path "$root\style.css" -Pattern $cssPattern -AllMatch
 $portraits = Get-ChildItem "$root\assets\sprites\portraits" -File |
     ForEach-Object { "assets/sprites/portraits/$($_.Name)" }
 
-$all = @($paths) + @($cssPaths) + @($portraits) |
+# App icons are referenced from manifest.webmanifest, which isn't scanned above
+$appIcons = @()
+if (Test-Path "$root\assets\ui\app") {
+    $appIcons = Get-ChildItem "$root\assets\ui\app" -File |
+        ForEach-Object { "assets/ui/app/$($_.Name)" }
+}
+
+$all = @($paths) + @($cssPaths) + @($portraits) + @($appIcons) |
     Where-Object { $_ -notmatch '\$\{' -and $_ -notmatch '[{}]' } |
     Sort-Object -Unique
 $missing = @()
@@ -39,7 +46,13 @@ foreach ($p in $all) {
     }
 }
 
-Copy-Item "$root\index.html", "$root\game.js", "$root\style.css" $stage
+$rootRuntimeFiles = @("index.html", "game.js", "style.css", "sw.js", "manifest.webmanifest")
+foreach ($file in $rootRuntimeFiles) {
+    $src = Join-Path $root $file
+    if (Test-Path $src) {
+        Copy-Item $src $stage
+    }
+}
 
 $size = (Get-ChildItem $stage -Recurse -File | Measure-Object Length -Sum).Sum / 1MB
 Write-Output "Copied: $copied assets. Missing referenced files: $($missing.Count)"

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "1.0.0",
+  "createdAt": "2026-07-03T00:28:15.948Z",
+  "purpose": "Repair Sable runtime test animations that were exact idle/walk stand-ins. This is a visual-only local playable test pass, not final hand-drawn animation.",
+  "runtimeDir": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2",
+  "backupDir": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2_static_backup_20260703",
+  "preserved": [
+    "idle",
+    "walk_forward",
+    "walk_backward",
+    "jump"
+  ],
+  "regenerated": [
+    {
+      "clip": "crouch",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/crouch.png"
+    },
+    {
+      "clip": "block",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/block.png"
+    },
+    {
+      "clip": "hit_stun",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/hit_stun.png"
+    },
+    {
+      "clip": "knockdown",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/knockdown.png"
+    },
+    {
+      "clip": "getup",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/getup.png"
+    },
+    {
+      "clip": "stand_light",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/stand_light.png"
+    },
+    {
+      "clip": "stand_medium",
+      "frames": 10,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/stand_medium.png"
+    },
+    {
+      "clip": "stand_heavy",
+      "frames": 12,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/stand_heavy.png"
+    },
+    {
+      "clip": "crouch_light",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/crouch_light.png"
+    },
+    {
+      "clip": "crouch_medium",
+      "frames": 10,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/crouch_medium.png"
+    },
+    {
+      "clip": "crouch_heavy",
+      "frames": 12,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/crouch_heavy.png"
+    },
+    {
+      "clip": "jump_light",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/jump_light.png"
+    },
+    {
+      "clip": "jump_medium",
+      "frames": 10,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/jump_medium.png"
+    },
+    {
+      "clip": "jump_heavy",
+      "frames": 12,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/jump_heavy.png"
+    },
+    {
+      "clip": "forward_light",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/forward_light.png"
+    },
+    {
+      "clip": "forward_medium",
+      "frames": 10,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/forward_medium.png"
+    },
+    {
+      "clip": "forward_heavy",
+      "frames": 12,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/forward_heavy.png"
+    },
+    {
+      "clip": "back_light",
+      "frames": 8,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/back_light.png"
+    },
+    {
+      "clip": "back_medium",
+      "frames": 10,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/back_medium.png"
+    },
+    {
+      "clip": "back_heavy",
+      "frames": 12,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/back_heavy.png"
+    },
+    {
+      "clip": "neutral_special_light",
+      "frames": 14,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/neutral_special_light.png"
+    },
+    {
+      "clip": "neutral_special_medium",
+      "frames": 16,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/neutral_special_medium.png"
+    },
+    {
+      "clip": "neutral_special_heavy",
+      "frames": 18,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/neutral_special_heavy.png"
+    },
+    {
+      "clip": "forward_special_light",
+      "frames": 14,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/forward_special_light.png"
+    },
+    {
+      "clip": "forward_special_medium",
+      "frames": 16,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/forward_special_medium.png"
+    },
+    {
+      "clip": "forward_special_heavy",
+      "frames": 18,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/forward_special_heavy.png"
+    },
+    {
+      "clip": "back_special_light",
+      "frames": 14,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/back_special_light.png"
+    },
+    {
+      "clip": "back_special_medium",
+      "frames": 16,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/back_special_medium.png"
+    },
+    {
+      "clip": "back_special_heavy",
+      "frames": 18,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/back_special_heavy.png"
+    },
+    {
+      "clip": "down_special_light",
+      "frames": 14,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/down_special_light.png"
+    },
+    {
+      "clip": "down_special_medium",
+      "frames": 16,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/down_special_medium.png"
+    },
+    {
+      "clip": "down_special_heavy",
+      "frames": 18,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/down_special_heavy.png"
+    },
+    {
+      "clip": "up_special_light",
+      "frames": 14,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/up_special_light.png"
+    },
+    {
+      "clip": "up_special_medium",
+      "frames": 16,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/up_special_medium.png"
+    },
+    {
+      "clip": "up_special_heavy",
+      "frames": 18,
+      "output": "NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/up_special_heavy.png"
+    }
+  ]
+}

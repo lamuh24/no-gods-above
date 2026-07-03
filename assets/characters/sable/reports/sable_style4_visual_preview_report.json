@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "1.1.0",
+  "tool": "Sable Style 4 visual preview audit",
+  "generatedAt": "2026-06-29T02:34:16.884Z",
+  "character": "sable",
+  "stage": "mvp",
+  "previewOnly": true,
+  "liveRosterPromotion": false,
+  "visualPreviewStatus": "STYLE_RESET_REQUIRED",
+  "decision": "Redo the full non-anchor Sable preview pack in the correct anchor style instead of switching the first few clips to the mismatched majority style.",
+  "manifestPath": "assets/characters/sable/manifests/preview_animation_clips.json",
+  "queueStatusPath": "assets/characters/sable/reports/spriteforge_queue_status.json",
+  "previewPackPath": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack",
+  "harness": {
+    "path": "assets/characters/sable/test/sable_style4_preview_pack_harness.html",
+    "mode": "manifest-driven preview-only canvas harness",
+    "approvedClipSource": "assets/characters/sable/manifests/preview_animation_clips.json",
+    "touchesLiveRuntime": false
+  },
+  "contactSheetPath": "assets/characters/sable/reports/sable_style4_visual_contact_sheet.png",
+  "approvedAnchors": [
+    "idle",
+    "block",
+    "hit_stun"
+  ],
+  "correctStyleReferences": [
+    "idle",
+    "crouch",
+    "walk_forward",
+    "block",
+    "hit_stun"
+  ],
+  "redoClips": [
+    "crouch",
+    "walk_forward",
+    "jump",
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "neutral_special_light",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "down_special_light",
+    "up_special_light"
+  ],
+  "currentQueue": {
+    "overallStatus": "waiting_for_generation",
+    "currentClip": "crouch",
+    "remainingClips": [
+      "walk_forward",
+      "jump",
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "neutral_special_light",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "down_special_light",
+      "up_special_light"
+    ],
+    "approvedPreviewClips": [
+      "idle",
+      "block",
+      "hit_stun"
+    ],
+    "approvedLiveClips": [],
+    "nextAction": "Sable Style 4 reset: redo the full non-anchor preview pack in the correct idle/crouch/walk/block/hitstun style. Start with crouch; preserve the correct style while removing placeholder effects and fixing walk motion."
+  },
+  "summary": {
+    "requiredClipCount": 19,
+    "currentlyApprovedPreviewClipCount": 3,
+    "redoRequiredClipCount": 16,
+    "liveApprovedClipCount": 0,
+    "anchorDecision": "Use idle/block/hitstun as current approved anchors; use crouch/walk as style references but redo them for effects/motion cleanup.",
+    "rejectedMajorityStyle": true
+  },
+  "clips": [
+    {
+      "clipId": "idle",
+      "displayName": "idle",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/idle.png",
+      "currentPreviewApproved": true,
+      "correctStyleReference": true,
+      "redoRequired": false,
+      "redoReason": null,
+      "status": "ANCHOR_APPROVED"
+    },
+    {
+      "clipId": "crouch",
+      "displayName": "crouch",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/crouch.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": true,
+      "redoRequired": true,
+      "redoReason": "Correct style family, but redo to remove placeholder-like effects.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "block",
+      "displayName": "block",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/block.png",
+      "currentPreviewApproved": true,
+      "correctStyleReference": true,
+      "redoRequired": false,
+      "redoReason": null,
+      "status": "ANCHOR_APPROVED"
+    },
+    {
+      "clipId": "hit_stun",
+      "displayName": "hitstun",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/hit_stun.png",
+      "currentPreviewApproved": true,
+      "correctStyleReference": true,
+      "redoRequired": false,
+      "redoReason": null,
+      "status": "ANCHOR_APPROVED"
+    },
+    {
+      "clipId": "walk_forward",
+      "displayName": "walk",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/walk_forward.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": true,
+      "redoRequired": true,
+      "redoReason": "Correct style family, but redo walk cycle because it reads like a skip.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "jump",
+      "displayName": "jump",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/jump.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Broken fragments and style reset required.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "stand_light",
+      "displayName": "ground light",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/stand_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift and ground light VFX/motion do not match the anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "stand_medium",
+      "displayName": "ground medium",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/stand_medium.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift and ground medium VFX does not match the anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "stand_heavy",
+      "displayName": "ground heavy",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/stand_heavy.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift and ground heavy does not pass.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "jump_light",
+      "displayName": "air light",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/jump_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift; air light does not pass.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "jump_medium",
+      "displayName": "air medium",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/jump_medium.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift; air medium does not pass.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "jump_heavy",
+      "displayName": "air heavy",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/jump_heavy.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift; air heavy does not pass.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "neutral_special_light",
+      "displayName": "Void Shard",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/neutral_special_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Void Shard VFX does not match the anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "forward_special_light",
+      "displayName": "Forward Light Phase Lunge",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/forward_special_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift from the correct Sable anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "forward_special_medium",
+      "displayName": "Forward Medium Phase Lunge",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/forward_special_medium.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift from the correct Sable anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "forward_special_heavy",
+      "displayName": "Forward Heavy Phase Lunge",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/forward_special_heavy.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift from the correct Sable anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "back_special_light",
+      "displayName": "Void Anchor",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/back_special_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift from the correct Sable anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "down_special_light",
+      "displayName": "Ground Rift",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/down_special_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift from the correct Sable anchor.",
+      "status": "REDO_REQUIRED"
+    },
+    {
+      "clipId": "up_special_light",
+      "displayName": "Vertical Phase",
+      "packStrip": "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack/strips/up_special_light.png",
+      "currentPreviewApproved": false,
+      "correctStyleReference": false,
+      "redoRequired": true,
+      "redoReason": "Style drift from the correct Sable anchor.",
+      "status": "REDO_REQUIRED"
+    }
+  ],
+  "notes": [
+    "This is a preview-pack reset only. It does not promote Sable to the live roster.",
+    "Crouch and walk are in the correct style family but remain in the redo queue for visual cleanup.",
+    "All attacks, air attacks, Void Shard, and remaining specials must be regenerated to match the correct anchor style.",
+    "Live roster assets and gameplay files are intentionally untouched."
+  ],
+  "validationCommands": [
+    {
+      "command": "npm.cmd --prefix tools/sprite-agent run typecheck",
+      "result": "PASS",
+      "notes": "tsc --noEmit completed successfully."
+    },
+    {
+      "command": "npm.cmd run sprite-agent -- status --character sable",
+      "result": "PASS",
+      "notes": "Queue waiting_for_generation; currentClip crouch; approved preview clips idle, block, hit_stun."
+    },
+    {
+      "command": "npm.cmd run sprite-agent -- verify-pack --character sable --stage mvp",
+      "result": "EXPECTED_FAILED_NEEDS_HUMAN",
+      "notes": "Pack verifier now fails because 16 human-rejected clips are missing from preview_animation_clips.json after the style reset."
+    }
+  ]
+}

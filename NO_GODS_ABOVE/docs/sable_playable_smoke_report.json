@@ -1,0 +1,252 @@
+{
+  "ok": true,
+  "url": "http://127.0.0.1:5199/index.html?platformTest=1",
+  "dimensionCheck": {
+    "checked": 39,
+    "failures": [],
+    "ok": true
+  },
+  "checks": {
+    "selectable": {
+      "ids": [
+        "kairo",
+        "vanta",
+        "nyx",
+        "sol",
+        "seris",
+        "sable",
+        "lamuh",
+        "lamuh_legacy",
+        "celeste"
+      ],
+      "hasSable": true,
+      "cardExists": true,
+      "cardLabel": "SABLE\n              Void Cartographer\n              Difficulty: 4/5\n              Void spacing, traps, and evasive punishment."
+    },
+    "matchStart": {
+      "mode": "versus",
+      "p1": "sable",
+      "p2": "lamuh",
+      "p1Name": "SABLE",
+      "p2Name": "LAMUH",
+      "stagePresetId": "standard",
+      "playerAnim": "idle"
+    },
+    "moveStarts": {
+      "results": [
+        {
+          "requested": "neutral_light",
+          "exists": true,
+          "activeMove": "neutral_light",
+          "anim": "neutral_light",
+          "ok": true
+        },
+        {
+          "requested": "neutral_medium",
+          "exists": true,
+          "activeMove": "neutral_medium",
+          "anim": "neutral_medium",
+          "ok": true
+        },
+        {
+          "requested": "neutral_heavy",
+          "exists": true,
+          "activeMove": "neutral_heavy",
+          "anim": "neutral_heavy",
+          "ok": true
+        },
+        {
+          "requested": "forward_light_special",
+          "exists": true,
+          "activeMove": "forward_light_special",
+          "anim": "phase_lunge",
+          "ok": true
+        },
+        {
+          "requested": "back_light_special",
+          "exists": true,
+          "activeMove": "back_light_special",
+          "anim": "void_anchor",
+          "ok": true
+        },
+        {
+          "requested": "down_light_special",
+          "exists": true,
+          "activeMove": "down_light_special",
+          "anim": "ground_rift",
+          "ok": true
+        },
+        {
+          "requested": "up_light_special",
+          "exists": true,
+          "activeMove": "up_light_special",
+          "anim": "vertical_phase",
+          "ok": true
+        }
+      ],
+      "ok": true
+    },
+    "animationSources": {
+      "mapped": {
+        "idle": [
+          "sableRb_idle",
+          0
+        ],
+        "walk_forward": [
+          "sableRb_walk_forward",
+          0
+        ],
+        "walk_back": [
+          "sableRb_walk_backward",
+          0
+        ],
+        "neutral_light": [
+          "sableRb_stand_light",
+          0
+        ],
+        "neutral_medium": [
+          "sableRb_stand_medium",
+          0
+        ],
+        "neutral_heavy": [
+          "sableRb_stand_heavy",
+          0
+        ],
+        "forward_light": [
+          "sableRb_forward_light",
+          0
+        ],
+        "back_heavy": [
+          "sableRb_back_heavy",
+          0
+        ],
+        "neutral_special": [
+          "sableRb_neutral_special_light",
+          0
+        ],
+        "forward_special": [
+          "sableRb_forward_special_light",
+          0
+        ],
+        "back_special": [
+          "sableRb_back_special_light",
+          0
+        ],
+        "down_special": [
+          "sableRb_down_special_light",
+          0
+        ],
+        "up_special": [
+          "sableRb_up_special_light",
+          0
+        ],
+        "air_heavy_special": [
+          "sableRb_down_special_heavy",
+          0
+        ],
+        "phase_lunge": [
+          "sableRb_forward_special_light",
+          0
+        ],
+        "void_anchor": [
+          "sableRb_back_special_light",
+          0
+        ],
+        "ground_rift": [
+          "sableRb_down_special_light",
+          0
+        ],
+        "vertical_phase": [
+          "sableRb_up_special_light",
+          0
+        ]
+      },
+      "allUseRebuild": true
+    },
+    "spriteImages": {
+      "items": {
+        "sableRb_idle": {
+          "type": "HTMLCanvasElement",
+          "complete": null,
+          "width": 3584,
+          "height": 448,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        },
+        "sableRb_walk_forward": {
+          "type": "HTMLCanvasElement",
+          "complete": null,
+          "width": 5376,
+          "height": 448,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        },
+        "sableRb_neutral_special_light": {
+          "type": "HTMLCanvasElement",
+          "complete": null,
+          "width": 6272,
+          "height": 448,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        },
+        "sableRb_up_special_heavy": {
+          "type": "HTMLCanvasElement",
+          "complete": null,
+          "width": 8064,
+          "height": 448,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        }
+      },
+      "ok": true
+    },
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "sampledOpaquePixels": 230400,
+      "ok": true
+    }
+  },
+  "browserEvents": [],
+  "httpErrors": [
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/music/battle_theme.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:5199/assets/audio/sfx/whoosh.ogg"
+    }
+  ],
+  "relevantHttpErrors": [],
+  "screenshot": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\docs\\sable_playable_smoke.png",
+  "failures": []
+}

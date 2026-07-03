@@ -141,7 +141,7 @@ const redesignTokens = [
   "secondaryMovementDirectionalNormalsRedesign",
   "superAscendedGoldenLocs"
 ];
-const advancedLamuhMoveKeys = [
+const lamuhStrengthVariantCompatibilityKeys = [
   "neutral_light_special",
   "neutral_medium_special",
   "neutral_heavy_special",
@@ -176,7 +176,7 @@ assertCheck(checks, "legacy LAMUH builder does not use redesigned sheets", !rede
 assertCheck(checks, "legacy LAMUH enemy builder mirrors legacy player builder", legacyEnemyBuilder.includes("buildLamuhLegacyPlayerAnimations(sheets)"));
 assertCheck(checks, "legacy special chooser is routed before redesigned LAMUH advanced routing", chooseSpecialMove.indexOf("lamuh_legacy") >= 0 && chooseSpecialMove.indexOf("lamuh_legacy") < chooseSpecialMove.indexOf("p.profile?.id !== \"lamuh\""));
 assertCheck(checks, "legacy chooser keeps simple directional specials", ["neutral_special", "forward_special", "back_special", "down_special", "up_special", "air_special"].every((token) => legacyChooser.includes(token)));
-assertCheck(checks, "legacy allowed moves exclude advanced 15-special keys", advancedLamuhMoveKeys.every((token) => !findBalancedBlock(game, "const LAMUH_LEGACY_ALLOWED_PLAYER_MOVES").includes(token)));
+assertCheck(checks, "legacy allowed moves exclude LAMUH strength-variant compatibility aliases", lamuhStrengthVariantCompatibilityKeys.every((token) => !findBalancedBlock(game, "const LAMUH_LEGACY_ALLOWED_PLAYER_MOVES").includes(token)));
 assertCheck(checks, "select screen includes LAMUH Legacy card", html.includes('data-character="lamuh_legacy"') && html.includes("lamuh_legacy_select.png"));
 assertCheck(checks, "select footer advertises 1-8 shortcuts", /<kbd>1<\/kbd>\s*-\s*<kbd>8<\/kbd>/.test(html));
 assertCheck(checks, "keyboard shortcut 7 selects LAMUH Legacy", game.includes('Digit7: "lamuh_legacy"') && game.includes('Numpad7: "lamuh_legacy"'));

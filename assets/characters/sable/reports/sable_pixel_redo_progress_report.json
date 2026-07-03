@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETE_PREVIEW_PIXEL_REFERENCE_REDO_PENDING_PLAYTEST",
+  "createdAt": "2026-06-29T14:25:00-04:00",
+  "characterId": "sable",
+  "stage": "mvp",
+  "approvedPreviewClipCount": 19,
+  "missingClipCount": 0,
+  "approvedForLiveRoster": false,
+  "liveRosterPromotion": false,
+  "approvedPreviewClips": [
+    "idle",
+    "crouch",
+    "block",
+    "hit_stun",
+    "walk_forward",
+    "jump",
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "neutral_special_light",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "down_special_light",
+    "up_special_light"
+  ],
+  "missingClips": [],
+  "contactSheet": "assets/characters/sable/reports/sable_pixel_redo_current_contact_sheet.png",
+  "contactSheetReport": "assets/characters/sable/reports/sable_pixel_redo_current_contact_sheet.json",
+  "manualReviewNotes": [
+    "Preview-only completion: no live roster promotion happened.",
+    "Several special clips have held/recovery duplicate-frame warnings but no crop, edge-contact, or detached VFX blocker.",
+    "User should playtest the full pack before any future runtime/live promotion decision."
+  ],
+  "rejectedCandidates": [
+    {
+      "clipId": "stand_medium",
+      "reason": "Generated forearm crystal mass was too large and would repeat the previous VFX-over-body problem.",
+      "importedIntoInbox": false,
+      "approvedForPreview": false
+    }
+  ],
+  "safety": {
+    "gameplayChanged": false,
+    "movesetsChanged": false,
+    "balanceChanged": false,
+    "runtimeChangedByThisPass": false,
+    "liveAssetsPromoted": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/sprite-agent/validation_report.schema.json",
+  "title": "SpriteForge Validation Report",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "tool",
+    "generatedAt",
+    "characterId",
+    "clipId",
+    "sourceSheet",
+    "overallStatus",
+    "technicalStatus",
+    "visualStatus",
+    "approvedForLiveRoster",
+    "issues",
+    "frameMeasurements"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "tool": { "type": "string" },
+    "generatedAt": { "type": "string" },
+    "characterId": { "type": "string" },
+    "clipId": { "type": "string" },
+    "sourceSheet": { "type": "string" },
+    "normalizedSheet": { "type": "string" },
+    "overallStatus": {
+      "enum": ["technical_pass", "needs_autofix", "manual_review_required", "rejected", "approved"]
+    },
+    "technicalStatus": { "enum": ["pass", "warn", "fail"] },
+    "visualStatus": { "enum": ["not_run", "manual_review_required", "approved", "rejected"] },
+    "approvedForLiveRoster": { "type": "boolean" },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "code", "message"],
+        "properties": {
+          "severity": { "enum": ["info", "warn", "fail"] },
+          "code": { "type": "string" },
+          "message": { "type": "string" },
+          "frameIndex": { "type": "integer" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "frameMeasurements": { "type": "array", "items": { "type": "object" } },
+    "duplicateFrames": { "type": "array", "items": { "type": "object" } },
+    "retryPrompt": { "type": "string" }
+  },
+  "additionalProperties": true
+}

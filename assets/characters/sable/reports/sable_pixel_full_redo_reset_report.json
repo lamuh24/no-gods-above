@@ -1,0 +1,50 @@
+{
+  "status": "RESET_READY_FOR_FULL_PACK_REDO",
+  "createdAt": "2026-06-29T13:22:00-04:00",
+  "characterId": "sable",
+  "stage": "mvp",
+  "referenceStyle": "assets/characters/sable/references/sable_pixel_reference_style.png",
+  "styleLock": "assets/characters/sable/references/sable_pixel_style_redo_lock.md",
+  "previewManifest": "assets/characters/sable/manifests/preview_animation_clips.json",
+  "approvedPreviewClipCount": 0,
+  "missingClipCount": 19,
+  "approvedForLiveRoster": false,
+  "liveRosterPromotion": false,
+  "revokedAllMvpPreviewClips": true,
+  "archivedGeneratedInbox": "assets/characters/sable/generated/quarantine/pixel_reference_full_redo_reset/20260629-131818/inbox/",
+  "activeInbox": "assets/characters/sable/generated/inbox/<clip>/",
+  "promptOutbox": "assets/characters/sable/prompts/outbox/<clip>/latest_<clip>_prompt.md",
+  "clips": [
+    "idle",
+    "crouch",
+    "block",
+    "hit_stun",
+    "walk_forward",
+    "jump",
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "neutral_special_light",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "down_special_light",
+    "up_special_light"
+  ],
+  "nextCommands": [
+    "npm.cmd run sprite-agent -- resume-pack --character sable",
+    "npm.cmd run sprite-agent -- run-pack --character sable --stage mvp --approval-policy previewAuto --redo-approved --auto-verify"
+  ],
+  "safety": {
+    "gameplayChanged": false,
+    "movesetsChanged": false,
+    "balanceChanged": false,
+    "runtimeChangedByThisReset": false,
+    "liveAssetsPromoted": false,
+    "oldNormalizedOutputsRetainedAsRejectedAuditHistory": true
+  }
+}

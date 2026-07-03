@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "sable_key_pose_restart_plan",
+  "characterId": "sable",
+  "characterName": "Sable",
+  "createdAt": "2026-07-03",
+  "status": "planned_not_started",
+  "doNotGenerateArtNow": true,
+  "releaseStatus": "wip_delayed",
+  "previewStatus": "animation_rebuild_required",
+  "approvedForLiveRoster": false,
+  "futurePromotionGate": "GAME_READY",
+  "workflow": [
+    "key poses",
+    "in-betweens",
+    "assembled spritesheet",
+    "SpriteForge validation",
+    "preview approval"
+  ],
+  "keyPoseFirstWorkflow": {
+    "summary": "Lock readable fighting-game key poses before generating in-betweens or assembling runtime strips.",
+    "identityAnchor": "approved Sable visual design and side-view style lock",
+    "stopLine": "Do not create in-betweens until key poses pass visual identity and fighting-readability review."
+  },
+  "baseMovementKeyPoseSheets": [
+    "idle",
+    "walk_forward",
+    "walk_backward",
+    "dash_or_phase_dash",
+    "crouch_or_low_stance",
+    "jump",
+    "fall",
+    "landing",
+    "air_drift",
+    "block_or_guard",
+    "hit_stun",
+    "knockdown",
+    "getup",
+    "air_recovery"
+  ],
+  "normalAttackKeyPoseSheets": [
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "crouch_light",
+    "crouch_medium",
+    "crouch_heavy",
+    "forward_light",
+    "forward_medium",
+    "forward_heavy",
+    "back_light",
+    "back_medium",
+    "back_heavy",
+    "down_light",
+    "down_medium",
+    "down_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy"
+  ],
+  "specialFamilyKeyPoseSheets": [
+    {
+      "family": "neutral_special",
+      "readabilityGoal": "void shard or compression reads from Sable's body pose before VFX."
+    },
+    {
+      "family": "forward_special",
+      "readabilityGoal": "phase lunge has a clear anticipation, travel, strike, and recovery silhouette."
+    },
+    {
+      "family": "back_special",
+      "readabilityGoal": "void anchor reads as a deliberate planted/control pose, not idle with VFX."
+    },
+    {
+      "family": "down_special",
+      "readabilityGoal": "ground rift has a low, grounded body action with VFX separated if needed."
+    },
+    {
+      "family": "up_special",
+      "readabilityGoal": "vertical phase has a readable launch/reach pose and vertical action."
+    },
+    {
+      "family": "ultimate_or_super",
+      "readabilityGoal": "only begin after movement, normals, and specials are readable."
+    }
+  ],
+  "inBetweenGenerationStep": {
+    "input": "approved key poses only",
+    "requirements": [
+      "preserve Sable face, skin tone, hair, outfit, palette, silhouette, and body scale",
+      "keep anticipation, hit frame, follow-through, and recovery readable",
+      "keep large VFX separate when it would hide the body"
+    ]
+  },
+  "assembledSpritesheetStep": {
+    "cellSize": 448,
+    "facing": "right",
+    "requirements": [
+      "real alpha",
+      "transparent background",
+      "baseline checked",
+      "no labels",
+      "no watermarks",
+      "no frame grids",
+      "no idle-only placeholders for attacks"
+    ]
+  },
+  "spriteForgeValidationStep": [
+    "technical validation for dimensions, alpha, frame counts, baseline, and metadata",
+    "visual consistency review against approved Sable design lock",
+    "row classification before runtime integration",
+    "reject missing, choppy, unreadable, identity-drifted, or VFX-only rows"
+  ],
+  "previewHarnessCheck": [
+    "test in the Sable preview harness first",
+    "verify every movement, normal, special, reaction, knockdown, and getup visually differs from idle or walk",
+    "preserve dev preview access",
+    "do not public-promote the pack"
+  ],
+  "livePromotionRules": {
+    "noLivePromotionUntil": "GAME_READY",
+    "requiresExplicitUserOverrideForPublicRoster": true,
+    "doNotTouchGameplayBalance": true,
+    "doNotRemoveExistingPlayableMvpData": true
+  }
+}
+
