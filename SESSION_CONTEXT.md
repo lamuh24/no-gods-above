@@ -1,8 +1,17 @@
 # Session Context - no gods above
 
 ## Last Updated
-Agent: Claude Code
+Agent: Codex
 Date: 2026-07-03
+
+## 2026-07-03 Codex GitHub Cloud Workspace Publish
+- User asked to deploy/push the project to GitHub so it can be worked on from a phone/on the go.
+- Added GitHub Codespaces/devcontainer setup: `.devcontainer/devcontainer.json`, `.devcontainer/post-create.sh`, `CLOUD_WORKSPACE.md`, and README cloud-workspace instructions.
+- Added portable root npm commands in `package.json`: `dev:game`, `check:game`, `dev:forge:backend`, `dev:forge:frontend`, and preserved `sprite-agent`.
+- Updated `.gitignore` so local-only `.claude/` and `tmp/` workspace state are not published accidentally; `node_modules/` and generated provider scratch remain ignored.
+- Validation before commit: `npm.cmd run check:game` passed, `.devcontainer/devcontainer.json` and `package.json` parsed as JSON, cloud-file `git diff --check` passed, `tools/generate_placeholder_sfx.js` syntax check passed, and `npm.cmd --prefix tools/sprite-agent run typecheck` passed.
+- GitHub CLI exists but `gh auth status` reports the stored `lamuh24` token is invalid; local `git push` may still work through existing Git credentials, but PR creation through `gh` needs re-auth.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/deployment_readiness_skill.md` and `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`. GitHub publish skill read/applied: `github:yeet`.
 
 ## 2026-07-03 Release Optimization + Icon + Placeholder SFX (Claude Code)
 - **iOS/mobile stability pass in `NO_GODS_ABOVE/game.js`:** (1) hidden-Sable assets (58 strips: `sableRb_*`, `sableMvp_*`, `sablePlaceholderAtlas`) now only download with `?sableTest` — public players skip that bandwidth/memory entirely; (2) progressive asset loading — `loadAssets` awaits only `CORE_ASSET_KEYS` (title/menu/stage art) so the title screen shows in seconds, fighter sheets stream behind the menus (`state.assetsReady`; `startConfirmedMatch` flashes "FIGHTER ART STREAMING IN..." if a fight starts early; placeholders render until strips arrive); (3) hit-flash no longer uses `ctx.filter` (iOS Safari slow path) — replaced with two additive `lighter` self-draws; (4) particle cap 260 in `updateParticles`.
