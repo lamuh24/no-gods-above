@@ -2,7 +2,18 @@
 
 ## Last Updated
 Agent: Codex
-Date: 2026-07-04
+Date: 2026-07-08
+
+## 2026-07-08 Codex Supervised Collaboration Setup
+- User asked for the first safe, minimal Codex <-> Claude collaboration setup for No Gods Above: documentation/process only, no gameplay changes, no art generation, no deploy, no cron, no inbox/outbox/locks/schemas.
+- Created branch `codex/nga-collaboration-setup`.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`.
+- Read `AGENTS.md`, searched existing character lock files, read the current `NO_GODS_ABOVE/index.html` public select grid, inspected `NO_GODS_ABOVE/game.js` roster/profile/asset/portrait data, and listed `NO_GODS_ABOVE/assets/sprites/portraits/`.
+- Created `agent/memory/character_truth.md`, `agent/memory/visual_rules.md`, `agent/memory/decisions.md`, `agent/memory/future_automation_plan.md`, `agent/templates/asset_request.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `.github/workflows/nga-agent-readonly.yml`, and `CLAUDE.md`.
+- Extended `AGENTS.md` with concise Codex/Claude collaboration safety rules.
+- `character_truth.md` documents the current public roster as Kairo Final, Vanta Reign, Nyx, Sol Raze, Seris, LAMUH, LAMUH Legacy, and Celeste. Sable is included only because repo files establish her, and is marked gated/not-current-playable because she is absent from the current public select grid and `selectableCharacterIds`.
+- No gameplay/runtime files, combat balance, health bars, character art, live assets, Netlify deploy, scheduled workflow, inbox/outbox folders, file locks, or JSON schemas were changed/created.
+- What's next: open the PR from `codex/nga-collaboration-setup`, then ask Claude to review it using `CLAUDE.md`.
 
 ## 2026-07-07 Codex Steam Demo Publishing Guidance
 - User asked how to publish NO GODS ABOVE on Steam as a demo and how much to charge.
