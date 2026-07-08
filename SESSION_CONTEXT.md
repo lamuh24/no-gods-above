@@ -2,7 +2,132 @@
 
 ## Last Updated
 Agent: Codex
-Date: 2026-07-03
+Date: 2026-07-04
+
+## 2026-07-07 Codex Steam Demo Publishing Guidance
+- User asked how to publish NO GODS ABOVE on Steam as a demo and how much to charge.
+- Read `SESSION_CONTEXT.md` first, then read `NO_GODS_ABOVE/skills/deployment_readiness_skill.md`, and checked memory entries for the existing Steam/Electron package lane.
+- Verified current Steamworks docs: Steam Direct fee is currently $100 USD per new app credit, recoupable after the product reaches at least $1,000 adjusted gross revenue; demos are free and use a separate demo App ID associated with the base game's App ID; demos need their own release checklist, depots, and builds; store presence review is typically 3-5 business days and should be submitted at least 7 days before desired visibility; full game release requires a coming-soon page for at least 2 weeks.
+- Guidance given: publish a free Steam demo first, not a paid demo; use the existing packaged Electron build lane (`steam_release/content/NoGodsAbove/NoGodsAbove.exe`) as the Windows launch target after another QA pass; use Steam Playtest instead of a public demo if the goal is controlled bug testing.
+- Pricing recommendation given: demo = free; if selling the current early build as Early Access, consider $4.99-$7.99; if waiting for a more polished paid launch, target $9.99-$14.99, with $9.99 as the safer first serious price for this project state.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Phone Controller L/M/H Strike Fallback
+- User clarified the phone controller now connects and everything works except L/M/H.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/local_versus_feature_skill.md` and `NO_GODS_ABOVE/skills/deployment_readiness_skill.md`; memory deploy runbook read/applied: `nga-netlify-deploy-verify`.
+- Preserved the separate P2 phone input source; no combat, roster, fighter art, or keyboard/gamepad routing rewrite was made.
+- Updated `NO_GODS_ABOVE/controller.html` so L/M/H send both the new `{ t: "btn", b, d, id }` button protocol and a legacy `{ t: "act", a, id }` fallback using the same input id. This lets the public phone page work even if the desktop app is still one launch behind.
+- Updated `NO_GODS_ABOVE/game.js` with `recentActionIds` dedupe for phone messages so rebuilt hosts ignore the fallback duplicate instead of double-firing/auto-chaining.
+- Updated `NO_GODS_ABOVE/scripts/smoke_phone_controller.js` to emulate landscape mobile touch and use real coordinate `Input.dispatchTouchEvent` taps at the visible button centers. The report now records the hit target for L/M/H/SP.
+- Bumped cache keys: `index.html` now uses `phone-strikes-1`; `sw.js` uses `nga-cache-v12-phone-strikes`.
+- Validation passed: `node --check` for `game.js`, `sw.js`, phone smoke script, and controller inline script; `git diff --check`; `npm.cmd run check:game`; local coordinate-touch phone smoke; live coordinate-touch phone smoke against `https://no-gods-above.netlify.app/controller.html`.
+- Live Netlify production deploy completed with deploy ID `6a499f7345ed08c10e18e394`; production URL `https://no-gods-above.netlify.app`; unique deploy URL `https://6a499f7345ed08c10e18e394--no-gods-above.netlify.app`.
+- Live verification passed: `index.html` shows `phone-strikes-1`, `controller.html` contains `sendAction(action, inputId)`, `game.js` contains `recentActionIds`, and `sw.js` contains `nga-cache-v12-phone-strikes`.
+- Live coordinate-touch smoke passed: center taps on L/M/H/SP hit the intended buttons and produced `enemy_light_attack`, `enemy_medium_attack`, `enemy_heavy_attack`, and `enemy_special_1`.
+- Rebuilt and restaged Electron desktop release; packaged app served `controller.html` over local HTTP 200 and confirmed the strike fallback exists.
+- Updated `NO_GODS_ABOVE/docs/phone_controller_smoke_report.json` and appended `phone_controller_strike_fallback_hotfix_2026_07_04` to `NO_GODS_ABOVE/docs/deployment_smoke_report.json`.
+- Gotcha: user should close/reopen the phone controller tab once after this deploy so the `nga-cache-v12-phone-strikes` service worker/controller page takes over.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Phone Controller Button Hotfix
+- User reported the phone controller connects, but light/medium/heavy/special buttons do not work.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/local_versus_feature_skill.md`, `NO_GODS_ABOVE/skills/deployment_readiness_skill.md`, and `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`; memory deploy runbook read/applied: `nga-netlify-deploy-verify`.
+- Root cause addressed: the phone page only sent one-shot `act` messages for strikes and treated SP only as a hold modifier, which was too brittle on real phones and made SP feel broken by itself.
+- Updated `NO_GODS_ABOVE/controller.html` so L/M/H and SP send explicit `{ t: "btn", b, d }` button down/up messages. SP tap now triggers `special1`; holding SP while tapping L/M/H still maps to `special1`/`special2`/`special3`.
+- Updated `NO_GODS_ABOVE/game.js` so the host maps phone `btn` messages to the separate P2 `phoneKeys` input source and triggers the same P2 action resolver as keyboard/gamepad/online. Older one-shot `act` messages remain supported.
+- Updated `NO_GODS_ABOVE/scripts/smoke_phone_controller.js` to assert exact P2 moves for phone light, medium, heavy, and special; it can now smoke a supplied public controller URL via `NGA_PHONE_CONTROLLER_URL`.
+- Bumped runtime cache keys in `NO_GODS_ABOVE/index.html` to `phone-buttons-1` and `NO_GODS_ABOVE/sw.js` to `nga-cache-v11-phone-buttons` so phones do not keep the old cached controller page.
+- Validation passed: `node --check` for `game.js`, `sw.js`, phone smoke script, controller inline script; `git diff --check`; `npm.cmd run check:game`; and local phone smoke.
+- Live Netlify production deploy completed with deploy ID `6a499c2f129bdfc104e081bd`; production URL `https://no-gods-above.netlify.app`; unique deploy URL `https://6a499c2f129bdfc104e081bd--no-gods-above.netlify.app`.
+- Live verification passed: `index.html` shows `phone-buttons-1`, `controller.html` contains the new `btn` protocol, `game.js` contains the host button handler, and `sw.js` contains `nga-cache-v11-phone-buttons`.
+- Live-controller smoke passed using `NGA_PHONE_CONTROLLER_URL=https://no-gods-above.netlify.app/controller.html`: phone connected, P2 direction reached/cleared, and L/M/H/SP produced `enemy_light_attack`, `enemy_medium_attack`, `enemy_heavy_attack`, and `enemy_special_1`.
+- Rebuilt and restaged Electron desktop release after the deploy; `steam_release/content/NoGodsAbove/NoGodsAbove.exe` now serves the updated controller page. Packaged-app smoke returned local HTTP 200 and confirmed the served page contains the `btn` protocol.
+- Updated `NO_GODS_ABOVE/docs/phone_controller_smoke_report.json` and appended `phone_controller_buttons_hotfix_2026_07_04` to `NO_GODS_ABOVE/docs/deployment_smoke_report.json`.
+- Gotcha: if a phone still has the old controller open, close that tab and reopen the Pair Phone web controller URL so the new service-worker/cache version takes over.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Phone Controller Still Not Working Follow-Up
+- User reported the phone URL still was not working after the previous fix.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/local_versus_feature_skill.md`.
+- Updated the Pair Phone UI so it now presents a stable web controller URL first (`https://no-gods-above.netlify.app/controller.html?room=CODE`) and keeps the Electron LAN URL as a visible "Laptop direct" fallback. This avoids relying only on the laptop's temporary LAN server, Windows firewall, or router/client-isolation behavior to load the phone pad.
+- Updated `NO_GODS_ABOVE/game.js` link generation: local Electron/same-origin URL is still available for the fallback link, while the primary phone link uses the public controller page unless the game is already running from a non-local hosted origin.
+- Updated `NO_GODS_ABOVE/index.html` and `NO_GODS_ABOVE/style.css` for the web/laptop-direct link layout in the phone-controller menu.
+- Validation passed: `node --check NO_GODS_ABOVE/game.js`, `git diff --check -- NO_GODS_ABOVE/index.html NO_GODS_ABOVE/game.js NO_GODS_ABOVE/style.css`, `npm.cmd run check:game`, and `node NO_GODS_ABOVE/scripts/smoke_phone_controller.js` (`ok: true`; room creation, phone load/connect, P2 direction, local match, and P2 attack all passed).
+- Live public controller verification passed: `https://no-gods-above.netlify.app/controller.html` returned HTTP 200 and contained `NGA P2 PAD`.
+- Rebuilt and restaged Electron: `npm.cmd --prefix .\steam\desktop run package:win` and `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\steam\scripts\stage-steam-release.ps1`. The first stage attempt was blocked by a running `NoGodsAbove` app holding `app.asar`; the app processes were closed, then staging succeeded.
+- Packaged desktop smoke passed: launched `steam_release/content/NoGodsAbove/NoGodsAbove.exe`; Electron served `controller.html` from `0.0.0.0:<dynamic-port>` and local fetch returned HTTP 200 with `NGA P2 PAD`; the app was closed afterward.
+- Gotcha: users should now open the web controller URL on the phone and type the room code if needed. The laptop-direct URL is still useful, but it can fail on networks with Windows firewall blocks, guest Wi-Fi isolation, VPNs, or wrong adapters.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Mobile Select Netlify Deploy
+- User asked to deploy the mobile-select build so they can test it.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/deployment_readiness_skill.md` and `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`; memory runbook read/applied: `nga-netlify-deploy-verify`.
+- Preserved the current release boundary and deployed the current staged runtime package as-is; no additional gameplay, roster, fighter art, or combat changes were made during deploy.
+- Pre-deploy validation passed: `npm.cmd run check:game` and `git diff --check -- NO_GODS_ABOVE/index.html NO_GODS_ABOVE/style.css NO_GODS_ABOVE/game.js NO_GODS_ABOVE/sw.js NO_GODS_ABOVE/controller.html _stage_deploy.ps1 SESSION_CONTEXT.md`.
+- Staged package with `_stage_deploy.ps1`: copied 137 assets, staged root runtime files `index.html`, `controller.html`, `game.js`, `style.css`, `sw.js`, and `manifest.webmanifest`; stage size ~229.0 MB. Missing references were only the 8 known deferred `.ogg` announcer/music files.
+- Deployed to Netlify production with site ID `7954ab3d-7c2c-4533-ba61-3de081d568c3`. Deploy ID: `6a49945e1d5a1fa055d7dd5a`; production URL: `https://no-gods-above.netlify.app`; unique deploy URL: `https://6a49945e1d5a1fa055d7dd5a--no-gods-above.netlify.app`.
+- Live verification passed: `index.html`, `game.js`, `sw.js`, `manifest.webmanifest`, and `controller.html` all return HTTP 200; live HTML serves `style.css?v=mobile-select-1` and `game.js?v=mobile-select-1`; live `sw.js` contains `nga-cache-v10-mobile-select`; `controller.html` contains `NGA P2 PAD`.
+- Live public roster remains `kairo,vanta,nyx,sol,seris,lamuh,lamuh_legacy,celeste`; Sable is not in the public roster and `SABLE_HIDDEN_TEST_ENABLED` remains present for gated internal access.
+- Live public portraits for Kairo, Vanta, Nyx, Sol, Seris, LAMUH, LAMUH Legacy, and Celeste all returned HTTP 200.
+- Live mobile rendered smoke passed on production: portrait 390x844 loads the select screen with 8 cards in 2 columns and internal panel scroll (`clientHeight 842`, `scrollHeight 977`); landscape 844x390 shows all 8 cards in 4 columns with zero card/action overlap; touch controls and rotate hint are hidden on select. The only failed request observed was the known deferred `assets/audio/music/battle_theme.ogg`.
+- Updated `NO_GODS_ABOVE/docs/deployment_smoke_report.json` with the deploy evidence. Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry and the deployment smoke report are the fallback handoff records.
+
+## 2026-07-04 Codex Phone Controller URL Not Found Fix
+- User reported the phone URL said "URL not found" after the Local Phone Controller pass.
+- Root cause risk: host game could fall back to `https://no-gods-above.netlify.app/controller.html`, but that page was not deployed yet, and Electron URL passing relied only on preload `additionalArguments`.
+- Updated `steam/desktop/main.js` so the Electron shell passes the local controller URL through the loaded `index.html` query (`ngaControllerUrl`) as well as preload arguments, and prefers real private LAN adapters while skipping common virtual/WSL/Docker/Bluetooth adapters.
+- Updated `steam/desktop/preload.js` to expose `controllerUrls` defensively.
+- Updated `NO_GODS_ABOVE/game.js` so `getPhoneControllerBaseUrl()` reads `ngaControllerUrl` from the page URL first, then `window.ngaDesktop.controllerUrl`, then same-origin `controller.html`; it no longer falls back to the undeployed Netlify controller URL for file/localhost cases.
+- Rebuilt Electron with `npm.cmd --prefix .\steam\desktop run package:win` and restaged with `steam/scripts/stage-steam-release.ps1`.
+- Validation passed: `node --check NO_GODS_ABOVE/game.js`, `node --check steam/desktop/main.js`, `node --check steam/desktop/preload.js`, and `git diff --check` for touched files.
+- Desktop launch verification passed: running renderer command line included `--nga-controller-url=http%3A%2F%2F192.168.1.185%3A51944%2Fcontroller.html`, Electron listened on `0.0.0.0:51944`, and `http://127.0.0.1:51944/controller.html` returned HTTP 200 containing `NGA P2 PAD`.
+- Gotcha: the port is dynamic each app launch, so users should use the current Pair Phone URL/code shown by the desktop app. Phone and laptop must be on the same reachable Wi-Fi/LAN; Windows firewall may need to allow NoGodsAbove if prompted.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Mobile Select Usability Pass
+- User reported the mobile website did not display well and the selection screen was bunched up/unusable.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/local_versus_feature_skill.md`. Additional QA skills read/applied: `build-web-apps:frontend-testing-debugging`, `game-studio:game-playtest`, and `browser:control-in-app-browser`.
+- Scoped the work to mobile/select UI and touch overlay behavior only; no combat mechanics, roster data, fighter art, damage, hitboxes, or local/online match rules were intentionally changed.
+- Updated `NO_GODS_ABOVE/style.css` so phone layouts use a real scrollable select panel, larger tap-friendly portrait cards, hidden mobile-only keyboard-help strip, compact landscape phone layout, non-overlapping landscape action row, and scaled short-screen touch controls.
+- Updated `NO_GODS_ABOVE/game.js` so touch combat controls are bound on touch devices but remain hidden on title/menu/select screens. The touch overlay and portrait rotate hint now activate only while a fight is running; touch inputs are released when the overlay hides.
+- Updated `NO_GODS_ABOVE/index.html` to cache-bust `style.css`/`game.js` with `mobile-select-1`, and bumped `NO_GODS_ABOVE/sw.js` to `nga-cache-v10-mobile-select`.
+- Local server started at `http://127.0.0.1:5173/index.html` for QA. Browser plugin setup succeeded, but the in-app browser page load timed out on the asset-heavy game page, so validation fell back to the repo's existing Chrome DevTools Protocol style.
+- Mobile CDP QA passed for `Local Versus -> Continue -> fighter select`: portrait 390x844 renders 8 public fighter cards in 2 columns with internal scroll (`scrollHeight 977`, `clientHeight 842`), landscape 844x390 renders all 8 cards in 4 columns with zero card/action overlap, and touch/rotate overlays stay hidden on the select screen.
+- Touch fight-state check passed: before match, touch controls were hidden and `touch-controls-active` was false; after `window.__platformArenaTest.startTraining("kairo")`, touch controls became visible with `aria-hidden=false` and `touch-controls-active=true`.
+- Validation passed: `npm.cmd run check:game`, `git diff --check -- NO_GODS_ABOVE/index.html NO_GODS_ABOVE/style.css NO_GODS_ABOVE/game.js NO_GODS_ABOVE/sw.js`, and CDP mobile render checks. The only network 404 during QA was the known deferred `assets/audio/music/battle_theme.ogg`.
+- Not deployed or packaged in this pass. If shipping this to Netlify/desktop, restage/redeploy so the `mobile-select-1` cache bust and `nga-cache-v10-mobile-select` service worker reach users.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Local Phone Controller for P2
+- User asked for a way to use an iPhone/Android phone as a controller because the laptop lacks numpad keys for P2.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/local_versus_feature_skill.md`.
+- Implemented Local Versus phone pairing in `NO_GODS_ABOVE/game.js`: new `phoneKeys` input source, separate from keyboard/gamepad/net input; P2 keyboard is ignored during fights only when a phone is connected as P2; existing keyboard/gamepad/online routing remains intact.
+- Added `Pair Phone` to the Local Versus mode detail. It opens a P2 phone-controller room with a short code and controller link, plus Local Versus/New Code/Back actions.
+- Added `NO_GODS_ABOVE/controller.html`, a standalone phone controller page with d-pad, L/M/H, SP hold, dash/superdash, grab, ultimate, confirm, back, pause, rematch, and character-select controls.
+- The phone controller uses PeerJS with prefix `nga-pad-` and protocol version `1`, separate from Online Versus prefix `nga-fight-`. Direction masks map to P2 controls, and action messages reuse the same move resolver path as online/gamepad actions.
+- Updated `NO_GODS_ABOVE/style.css`, `NO_GODS_ABOVE/index.html`, `NO_GODS_ABOVE/sw.js`, `NO_GODS_ABOVE/docs/controller_support.md`, `_stage_deploy.ps1`, and `steam/scripts/stage-steam-web-build.ps1` so the phone controller page is visible, cached, documented, staged, and packaged.
+- Updated Electron shell `steam/desktop/main.js` and `preload.js` to start a read-only local HTTP server for the packaged game folder and expose `window.ngaDesktop.controllerUrl`; this gives the desktop app a LAN-openable `controller.html` URL for phones. Plain hosted web builds use same-origin `controller.html`; file/localhost fallback remains `https://no-gods-above.netlify.app/controller.html`.
+- Added repeatable smoke `NO_GODS_ABOVE/scripts/smoke_phone_controller.js`; latest report `NO_GODS_ABOVE/docs/phone_controller_smoke_report.json` passed: host booted, PeerJS loaded, phone room ready, phone page loaded/connected, direction reached/cleared on host, local match started, and phone light attack started P2 action.
+- Rebuilt and staged the Electron desktop release after the feature: `steam_release/content/NoGodsAbove/NoGodsAbove.exe` now includes the phone-controller build. Desktop shortcut `C:\Users\qchee\OneDrive\Desktop\No Gods Above.lnk` still targets that exe.
+- Desktop launch validation passed: rebuilt app stayed alive for 15 seconds; Electron child exposed a local listener; `http://127.0.0.1:<dynamic-port>/controller.html` returned HTTP 200 and contained `NGA P2 PAD`.
+- Validation passed: `node --check NO_GODS_ABOVE/game.js`, `node --check NO_GODS_ABOVE/sw.js`, `node --check NO_GODS_ABOVE/scripts/smoke_phone_controller.js`, `node --check steam/desktop/main.js`, `node --check steam/desktop/preload.js`, controller inline script syntax check, `git diff --check`, `_stage_deploy.ps1`, phone controller smoke, Electron package build, release staging, and desktop launch/controller-server smoke.
+- Gotchas: phone pairing requires PeerJS signaling, so hostile networks can still block it; the Electron local HTTP server solves loading `controller.html` from the desktop app, but phone and laptop should be on a network where the phone can reach the laptop LAN address. The 8 missing staged `.ogg` files remain the known deferred announcer/music placeholders.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
+
+## 2026-07-04 Codex Electron Desktop App + Desktop Shortcut
+- User asked to ensure NGA is a playable desktop application, not just a web app, and to leave an NGA icon on the Windows desktop/home screen.
+- Repo-local NGA skill docs read/applied: `NO_GODS_ABOVE/skills/deployment_readiness_skill.md` and `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`.
+- Confirmed the existing Electron wrapper lives in `steam/desktop/` and uses `main.js`/`preload.js` plus `electron-builder` to package `NoGodsAbove.exe`.
+- Rebuilt staged desktop web content with `npm.cmd --prefix .\steam\desktop run stage:web`: copied 137 assets, staged 144 files / ~229.1 MB. The 8 missing `.ogg` files are the known deferred announcer/music placeholders, not a desktop-wrapper blocker.
+- Installed Electron wrapper dependencies with `npm.cmd --prefix .\steam\desktop ci` after sandbox permission/cache access failed; audit reported 0 vulnerabilities.
+- Replaced the old placeholder `steam/desktop/build/icon.ico` with a multi-size Windows `.ico` generated from `NO_GODS_ABOVE/assets/ui/app/icon_1024.png`, and updated `steam/desktop/build/README_ICON.md` accordingly.
+- Patched `steam/scripts/build-windows-steam.ps1` to call `npm.cmd` on Windows so PowerShell execution policy does not derail future packaging.
+- Built the Windows Electron package with `npm.cmd --prefix .\steam\desktop run package:win` and staged it with `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\steam\scripts\stage-steam-release.ps1`.
+- Current packaged app path: `steam_release/content/NoGodsAbove/NoGodsAbove.exe` (218 files / ~583.2 MB staged release content). Launch smoke passed: the exe stayed alive after 8 seconds and closed cleanly via the main window.
+- Created Windows desktop shortcut `C:\Users\qchee\OneDrive\Desktop\No Gods Above.lnk`, targeting `steam_release/content/NoGodsAbove/NoGodsAbove.exe` and using `steam/desktop/build/icon.ico`.
+- Validation passed: `node --check steam/desktop/main.js`, `node --check steam/desktop/preload.js`, and `git diff --check -- steam/scripts/build-windows-steam.ps1 steam/desktop/build/README_ICON.md`.
+- Gotchas: Electron packaging needed approved network access to download/extract Electron; the desktop shortcut points to this repo's staged release path, so rebuild/restage if the repo moves or if the web game changes. No gameplay files were changed.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff note.
 
 ## 2026-07-03 Codex GitHub Cloud Workspace Publish
 - User asked to deploy/push the project to GitHub so it can be worked on from a phone/on the go.

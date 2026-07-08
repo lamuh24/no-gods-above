@@ -14,7 +14,8 @@ if (-not (Test-Path -LiteralPath $stageReleaseScript)) {
 }
 
 function Invoke-NpmChecked([string[]]$NpmArgs) {
-    & npm @NpmArgs
+    $npmCommand = if ($IsWindows -or $env:OS -eq "Windows_NT") { "npm.cmd" } else { "npm" }
+    & $npmCommand @NpmArgs
     if ($LASTEXITCODE -ne 0) {
         throw "npm $($NpmArgs -join ' ') failed with exit code $LASTEXITCODE"
     }

@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "checks": {
+    "hostBooted": true,
+    "peerJsLoaded": true,
+    "phoneRoomReady": true,
+    "roomCode": "SGCJY",
+    "controllerUrl": "https://no-gods-above.netlify.app/controller.html?room=SGCJY",
+    "phoneLoaded": true,
+    "phoneConnected": true,
+    "directionReachedHost": true,
+    "directionMaskCleared": true,
+    "localMatchStarted": true,
+    "phoneLightStartedP2": true,
+    "phoneLightStartedP2Move": "enemy_light_attack",
+    "phoneLightStartedP2TouchPoint": {
+      "x": 550,
+      "y": 210,
+      "text": "L",
+      "hitText": "L",
+      "hitStrike": "light",
+      "hitAction": "",
+      "hitSpecial": false
+    },
+    "phoneMediumStartedP2": true,
+    "phoneMediumStartedP2Move": "enemy_medium_attack",
+    "phoneMediumStartedP2TouchPoint": {
+      "x": 632,
+      "y": 210,
+      "text": "M",
+      "hitText": "M",
+      "hitStrike": "medium",
+      "hitAction": "",
+      "hitSpecial": false
+    },
+    "phoneHeavyStartedP2": true,
+    "phoneHeavyStartedP2Move": "enemy_heavy_attack",
+    "phoneHeavyStartedP2TouchPoint": {
+      "x": 714,
+      "y": 210,
+      "text": "H",
+      "hitText": "H",
+      "hitStrike": "heavy",
+      "hitAction": "",
+      "hitSpecial": false
+    },
+    "phoneSpecialStartedP2": true,
+    "phoneSpecialStartedP2Move": "enemy_special_1",
+    "phoneSpecialStartedP2TouchPoint": {
+      "x": 796,
+      "y": 210,
+      "text": "SP",
+      "hitText": "SP",
+      "hitStrike": "",
+      "hitAction": "",
+      "hitSpecial": true
+    },
+    "phoneAttackStartedP2": true
+  },
+  "failures": [],
+  "hostErrors": [],
+  "phoneErrors": []
+}

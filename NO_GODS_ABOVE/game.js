@@ -3,6 +3,7 @@
 
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
+  const touchControls = document.getElementById("touch-controls");
   const startButton = document.getElementById("start-button");
   const trainingButton = document.getElementById("training-button");
   const arcadeButton = document.getElementById("arcade-button");
@@ -97,6 +98,16 @@
   const onlineConnectButton = document.getElementById("online-connect-button");
   const onlineStatusEl = document.getElementById("online-status");
   const onlineBackButton = document.getElementById("online-back-button");
+  const phoneControllerMenu = document.getElementById("phone-controller-menu");
+  const phoneControllerCodeEl = document.getElementById("phone-controller-code");
+  const phoneControllerLinkEl = document.getElementById("phone-controller-link");
+  const phoneControllerLocalLinkEl = document.getElementById("phone-controller-local-link");
+  const phoneControllerStatusEl = document.getElementById("phone-controller-status");
+  const phoneControllerStartButton = document.getElementById("phone-controller-start");
+  const phoneControllerRefreshButton = document.getElementById("phone-controller-refresh");
+  const phoneControllerBackButton = document.getElementById("phone-controller-back");
+  let touchControlsAvailable = false;
+  let touchControlsVisible = false;
 
   const W = canvas.width;
   const H = canvas.height;
@@ -121,6 +132,7 @@
     FLOW_STEP_STAGE_SELECT,
     FLOW_STEP_MATCH_INTRO
   ];
+  const PUBLIC_PHONE_CONTROLLER_URL = "https://no-gods-above.netlify.app/controller.html";
   const STANDARD_FIGHTING_SPEED_TUNING = {
     groundSpeedMultiplier: 1.18,
     airDriftMultiplier: 1.25,
@@ -2423,7 +2435,10 @@
       kicker: "Same Screen",
       description: "Pick P1, pick P2, choose an arena, then fight.",
       panel: "local",
-      actions: [{ label: "Continue", action: "fighter-select", mode: "versus" }]
+      actions: [
+        { label: "Continue", action: "fighter-select", mode: "versus" },
+        { label: "Pair Phone", action: "phone-controller" }
+      ]
     },
     training: {
       id: "training",
@@ -2635,6 +2650,20 @@
     userGestureSeen: false
   };
 
+  const phoneController = {
+    peer: null,
+    conn: null,
+    roomCode: null,
+    connected: false,
+    phase: "idle",
+    connectTimer: null,
+    directionMask: 0,
+    lastStatusText: "",
+    previousFrame: null,
+    lastSeenAt: 0,
+    recentActionIds: new Map()
+  };
+
   const moves = characterProfiles.kairo.moves.player;
 
   const state = {
@@ -2662,6 +2691,7 @@
     keys: new Set(),
     keyboardKeys: new Set(),
     gamepadKeys: new Set(),
+    phoneKeys: new Set(),
     netKeys: new Set(),
     images: {},
     frameBoxes: {},
@@ -2782,7 +2812,7 @@
 
   function syncInputKeys() {
     const filteredKeyboardKeys = [...state.keyboardKeys].filter((code) => shouldUseKeyboardKey(code));
-    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys, ...state.netKeys]);
+    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys, ...state.phoneKeys, ...state.netKeys]);
   }
 
   function setKeyboardKey(code, pressed) {
@@ -2804,9 +2834,20 @@
     }
   }
 
+  function setPhoneKey(code, pressed) {
+    if (!code) return;
+    if (pressed) {
+      state.phoneKeys.add(code);
+    } else {
+      state.phoneKeys.delete(code);
+    }
+    syncInputKeys();
+  }
+
   function clearInputKeys() {
     state.keyboardKeys.clear();
     state.gamepadKeys.clear();
+    state.phoneKeys.clear();
     state.netKeys.clear();
     state.keys.clear();
   }
@@ -2835,8 +2876,12 @@
   const P1_KEYBOARD_CODES = new Set(controlCodesFor(P1_CONTROLS));
   const P2_KEYBOARD_CODES = new Set(controlCodesFor(P2_CONTROLS));
 
+  function isPhoneControllerAssigned(side) {
+    return side === "p2" && phoneController.connected;
+  }
+
   function isKeyboardEnabledForPlayer(side) {
-    return !isFightMode() || gamepadInput.assignments[side] === null;
+    return !isFightMode() || (gamepadInput.assignments[side] === null && !isPhoneControllerAssigned(side));
   }
 
   function shouldUseKeyboardKey(code) {
@@ -5134,12 +5179,12 @@
   }
 
   function initTouchControls() {
-    const touchControls = document.getElementById("touch-controls");
     if (!touchControls) return;
     const coarse = (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) || "ontouchstart" in window;
     if (!coarse) return;
-    touchControls.classList.remove("hidden");
+    touchControlsAvailable = true;
     document.body.classList.add("touch-mode");
+    updateTouchControlsVisibility();
     const press = (code, down) => {
       window.dispatchEvent(new KeyboardEvent(down ? "keydown" : "keyup", { code, bubbles: true }));
     };
@@ -5179,6 +5224,30 @@
         }
       );
     }
+  }
+
+  function releaseTouchInputs() {
+    if (!touchControls) return;
+    touchControls.querySelectorAll(".touch-btn.active").forEach((btn) => btn.classList.remove("active"));
+    touchControls.querySelectorAll("[data-touch-key]").forEach((btn) => {
+      const code = btn.dataset.touchKey;
+      if (code) window.dispatchEvent(new KeyboardEvent("keyup", { code, bubbles: true }));
+    });
+    window.dispatchEvent(new KeyboardEvent("keyup", { code: P1_CONTROLS.ultimateA, bubbles: true }));
+    window.dispatchEvent(new KeyboardEvent("keyup", { code: P1_CONTROLS.ultimateB, bubbles: true }));
+  }
+
+  function setTouchControlsVisible(active) {
+    if (!touchControlsAvailable || !touchControls) return;
+    if (touchControlsVisible && !active) releaseTouchInputs();
+    touchControlsVisible = active;
+    touchControls.classList.toggle("hidden", !active);
+    touchControls.setAttribute("aria-hidden", active ? "false" : "true");
+    document.body.classList.toggle("touch-controls-active", active);
+  }
+
+  function updateTouchControlsVisibility() {
+    setTouchControlsVisible(isFightMode() && !state.paused && !state.matchEnded);
   }
 
   function registerServiceWorker() {
@@ -5981,6 +6050,7 @@
     titleScreen.classList.add("hidden");
     modeDetailScreen?.classList.add("hidden");
     onlineMenu?.classList.add("hidden");
+    phoneControllerMenu?.classList.add("hidden");
     characterSelect.classList.add("hidden");
     fighterConfirmScreen?.classList.add("hidden");
     stageSelectScreen?.classList.add("hidden");
@@ -6018,6 +6088,10 @@
       onlineJoinPanel?.classList.remove("hidden");
       setOnlinePhase("idle", "Enter the host's room code.");
       onlineCodeInput?.focus();
+      return;
+    }
+    if (action.action === "phone-controller") {
+      showPhoneControllerMenu(true);
       return;
     }
     if (action.action === "fighter-select") {
@@ -7103,8 +7177,9 @@
       const controllerNumber = pads.findIndex((entry) => entry.index === pad.index) + 1;
       return `Controller ${controllerNumber} ${getGamepadLabel(pad)}`;
     };
-    const statusText = pads.length
-      ? `Inputs: P1 ${padText(p1Pad)} | P2 ${padText(p2Pad)}`
+    const p2InputText = phoneController.connected ? "Phone" : padText(p2Pad);
+    const statusText = pads.length || phoneController.connected
+      ? `Inputs: P1 ${padText(p1Pad)} | P2 ${p2InputText}`
       : "Controllers: none detected - press a controller button after load";
     if (statusText === gamepadInput.lastStatusText) return;
     gamepadInput.lastStatusText = statusText;
@@ -7158,6 +7233,7 @@
     update(dt);
     netTick(rawDt);
     updateStageCamera(rawDt);
+    updateTouchControlsVisibility();
     render();
     requestAnimationFrame(loop);
   }
@@ -13125,6 +13201,14 @@
       showModeDetail("versus");
       return;
     }
+    if (state.mode === "phone-controller") {
+      if (e.code === "Enter") showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
+      if (e.code === "Escape" || e.code === "Backspace") {
+        stopPhoneControllerHost();
+        showModeDetail("versus");
+      }
+      return;
+    }
     if (state.flowStep === FLOW_STEP_MODE_DETAIL) {
       if (e.code === "Escape" || e.code === "Backspace") showMainMenu();
       return;
@@ -13224,6 +13308,383 @@
     gamepadInput.userGestureSeen = true;
     refreshGamepadAssignments();
     updateControllerStatus();
+  }
+
+  // ============================================================
+  // LOCAL PHONE CONTROLLER (P2)
+  // A phone connects over PeerJS and feeds P2 through a separate
+  // input source so keyboard/gamepad routing stays intact.
+  // ============================================================
+
+  const PHONE_PROTOCOL_VERSION = 1;
+  const PHONE_PEER_PREFIX = "nga-pad-";
+  const PHONE_CONNECT_TIMEOUT_MS = 25000;
+  const PHONE_BUTTON_KEY_CODES = {
+    light: P2_CONTROLS.light,
+    medium: P2_CONTROLS.medium,
+    heavy: P2_CONTROLS.heavy,
+    special: P2_CONTROLS.special1,
+    special1: P2_CONTROLS.special1,
+    special2: P2_CONTROLS.special2,
+    special3: P2_CONTROLS.special3,
+    grab: P2_CONTROLS.grab,
+    ultimate: P2_CONTROLS.ultimate
+  };
+  const PHONE_BUTTON_ACTIONS = new Set([
+    "light",
+    "medium",
+    "heavy",
+    "special",
+    "special1",
+    "special2",
+    "special3",
+    "grab",
+    "dash",
+    "superdash",
+    "ultimate"
+  ]);
+
+  function phonePeerAvailable() {
+    if (typeof Peer === "undefined") {
+      setPhoneControllerStatus("Phone controller script failed to load.", "error", "failed");
+      return false;
+    }
+    return true;
+  }
+
+  function setPhoneControllerStatus(text, tone = "", phase = phoneController.phase || "idle") {
+    phoneController.phase = phase;
+    if (!phoneControllerStatusEl) return;
+    phoneControllerStatusEl.textContent = text;
+    phoneControllerStatusEl.dataset.phonePhase = phase;
+    phoneControllerStatusEl.classList.toggle("error", tone === "error");
+    phoneControllerStatusEl.classList.toggle("good", tone === "good");
+    phoneControllerStatusEl.classList.toggle("pending", tone === "pending");
+  }
+
+  function getPhoneControllerLocalBaseUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const queryUrl = params.get("ngaControllerUrl");
+    if (queryUrl) return queryUrl;
+    const desktopUrl = window.ngaDesktop?.controllerUrl;
+    if (desktopUrl) return desktopUrl;
+    if (window.location.protocol === "file:") return new URL("controller.html", window.location.href).href;
+    const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+    if (localHosts.has(window.location.hostname)) return new URL("controller.html", window.location.href).href;
+    return new URL("controller.html", window.location.href).href;
+  }
+
+  function getPhoneControllerPublicBaseUrl() {
+    if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+      const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+      if (!localHosts.has(window.location.hostname)) {
+        return new URL("controller.html", window.location.href).href;
+      }
+    }
+    return PUBLIC_PHONE_CONTROLLER_URL;
+  }
+
+  function getPhoneControllerUrl(code = phoneController.roomCode, baseUrl = getPhoneControllerPublicBaseUrl()) {
+    const url = new URL(baseUrl);
+    if (code) url.searchParams.set("room", code);
+    return url.href;
+  }
+
+  function updatePhoneControllerLink() {
+    if (!phoneController.roomCode) return;
+    const url = getPhoneControllerUrl(phoneController.roomCode);
+    if (phoneControllerCodeEl) phoneControllerCodeEl.textContent = phoneController.roomCode;
+    if (phoneControllerLinkEl) {
+      phoneControllerLinkEl.href = url;
+      phoneControllerLinkEl.textContent = `Web controller: ${url}`;
+    }
+    if (phoneControllerLocalLinkEl) {
+      const localUrl = getPhoneControllerUrl(phoneController.roomCode, getPhoneControllerLocalBaseUrl());
+      const showLocalUrl = localUrl !== url;
+      phoneControllerLocalLinkEl.classList.toggle("hidden", !showLocalUrl);
+      phoneControllerLocalLinkEl.href = localUrl;
+      phoneControllerLocalLinkEl.textContent = `Laptop direct: ${localUrl}`;
+    }
+  }
+
+  function clearPhoneConnectTimeout() {
+    if (!phoneController.connectTimer) return;
+    clearTimeout(phoneController.connectTimer);
+    phoneController.connectTimer = null;
+  }
+
+  function schedulePhoneConnectTimeout() {
+    clearPhoneConnectTimeout();
+    phoneController.connectTimer = setTimeout(() => {
+      if (phoneController.connected) return;
+      setPhoneControllerStatus("Waiting for phone - check the code or network.", "pending", "waiting");
+    }, PHONE_CONNECT_TIMEOUT_MS);
+  }
+
+  function clearPhoneControllerKeys() {
+    state.phoneKeys.clear();
+    phoneController.directionMask = 0;
+    phoneController.previousFrame = null;
+    syncInputKeys();
+  }
+
+  function stopPhoneControllerHost() {
+    clearPhoneConnectTimeout();
+    try {
+      phoneController.conn?.send({ t: "status", text: "Closed" });
+    } catch { /* already closed */ }
+    try {
+      phoneController.conn?.close();
+    } catch { /* already closed */ }
+    try {
+      phoneController.peer?.destroy();
+    } catch { /* already destroyed */ }
+    phoneController.peer = null;
+    phoneController.conn = null;
+    phoneController.connected = false;
+    phoneController.phase = "idle";
+    phoneController.lastSeenAt = 0;
+    phoneController.recentActionIds.clear();
+    clearPhoneControllerKeys();
+    updateControllerStatus();
+  }
+
+  function showPhoneControllerMenu(startHost = false) {
+    if (netIsActive()) {
+      showOnlineMenu();
+      setOnlinePhase("failed", "Phone controller is for Local Versus only.", "error");
+      return;
+    }
+    hideFlowScreens();
+    phoneControllerMenu?.classList.remove("hidden");
+    state.mode = "phone-controller";
+    state.flowStep = FLOW_STEP_MODE_DETAIL;
+    if (startHost || !phoneController.peer) startPhoneControllerHost();
+    else {
+      updatePhoneControllerLink();
+      const status = phoneController.connected ? "Phone connected as P2." : "Waiting for phone controller...";
+      setPhoneControllerStatus(status, phoneController.connected ? "good" : "pending", phoneController.phase);
+    }
+  }
+
+  function startPhoneControllerHost() {
+    if (!phonePeerAvailable()) return;
+    stopPhoneControllerHost();
+    const code = makeRoomCode();
+    phoneController.roomCode = code;
+    updatePhoneControllerLink();
+    setPhoneControllerStatus("Creating phone controller room...", "pending", "creating");
+    schedulePhoneConnectTimeout();
+    phoneController.peer = new Peer(PHONE_PEER_PREFIX + code.toLowerCase());
+    phoneController.peer.on("open", () => {
+      setPhoneControllerStatus("Waiting for phone controller...", "good", "waiting");
+    });
+    phoneController.peer.on("connection", (conn) => {
+      if (phoneController.conn && phoneController.connected) {
+        conn.close();
+        return;
+      }
+      bindPhoneControllerConnection(conn);
+    });
+    phoneController.peer.on("error", (err) => {
+      const type = err?.type || "unknown";
+      setPhoneControllerStatus("Phone controller error: " + type, "error", "failed");
+      clearPhoneConnectTimeout();
+    });
+  }
+
+  function bindPhoneControllerConnection(conn) {
+    phoneController.conn = conn;
+    const markConnected = () => {
+      clearPhoneConnectTimeout();
+      phoneController.connected = true;
+      phoneController.lastSeenAt = performance.now();
+      setPhoneControllerStatus("Phone connected as P2.", "good", "connected");
+      updateControllerStatus();
+      phoneControllerSend({ t: "welcome", v: PHONE_PROTOCOL_VERSION });
+      if (isFightMode()) flashStatus("PHONE CONTROLLER P2 CONNECTED", 1.2);
+    };
+    conn.on("open", markConnected);
+    conn.on("data", (message) => {
+      if (!phoneController.connected) markConnected();
+      handlePhoneControllerMessage(message);
+    });
+    conn.on("close", () => {
+      phoneController.connected = false;
+      phoneController.conn = null;
+      clearPhoneControllerKeys();
+      setPhoneControllerStatus("Phone disconnected.", "error", "disconnected");
+      updateControllerStatus();
+    });
+    conn.on("error", () => {
+      setPhoneControllerStatus("Phone controller link error.", "error", "failed");
+    });
+    if (conn.open) markConnected();
+  }
+
+  function phoneControllerSend(message) {
+    if (!phoneController.conn || !phoneController.conn.open) return;
+    try {
+      phoneController.conn.send(message);
+    } catch {
+      /* phone status updates are best-effort */
+    }
+  }
+
+  function readPhoneControllerFrame(mask) {
+    return {
+      connected: phoneController.connected,
+      left: Boolean(mask & 1),
+      right: Boolean(mask & 2),
+      down: Boolean(mask & 4),
+      up: Boolean(mask & 8),
+      buttons: {}
+    };
+  }
+
+  function handlePhoneControllerSelectDirection(mask, previousMask) {
+    if (state.mode !== "select" || netIsActive()) return;
+    const frame = readPhoneControllerFrame(mask);
+    const previous = phoneController.previousFrame || readPhoneControllerFrame(previousMask);
+    handleGamepadSelectInput(frame, previous);
+    phoneController.previousFrame = frame;
+  }
+
+  function applyPhoneDirectionMask(mask) {
+    const normalized = mask & 15;
+    const previousMask = phoneController.directionMask;
+    phoneController.directionMask = normalized;
+    setPhoneKey(P2_CONTROLS.left, normalized & 1);
+    setPhoneKey(P2_CONTROLS.right, normalized & 2);
+    setPhoneKey(P2_CONTROLS.down, normalized & 4);
+    setPhoneKey(P2_CONTROLS.up, normalized & 8);
+    handlePhoneControllerSelectDirection(normalized, previousMask);
+  }
+
+  function handlePhoneControllerMenuAction(action) {
+    if (state.mode === "phone-controller") {
+      if (action === "confirm" || action === "start") showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
+      if (action === "back" || action === "select") {
+        stopPhoneControllerHost();
+        showModeDetail("versus");
+      }
+      return true;
+    }
+    if (state.mode === "title") {
+      if (action === "confirm" || action === "start") showModeDetail("versus");
+      return true;
+    }
+    if (state.mode === "select") {
+      if (state.flowStep === FLOW_STEP_MODE_DETAIL) {
+        if (action === "back" || action === "select") showMainMenu();
+        if (action === "confirm" || action === "start") showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
+        return true;
+      }
+      if (action === "back" || action === "select") {
+        backCharacterSelect();
+        return true;
+      }
+      if (action === "confirm" || action === "start") {
+        confirmCharacterSelect();
+        return true;
+      }
+      return true;
+    }
+    if (!isFightMode()) return false;
+    if (action === "pause") {
+      netAwareTogglePause();
+      return true;
+    }
+    if (action === "rematch") {
+      netBroadcastRematch();
+      return true;
+    }
+    if (action === "select" || action === "back") {
+      netAwareReturnToSelect();
+      return true;
+    }
+    if (state.matchEnded) {
+      if (action === "confirm" || action === "start") netBroadcastRematch();
+      return true;
+    }
+    if (state.paused) {
+      if (action === "confirm" || action === "start") netAwareTogglePause();
+      return true;
+    }
+    return false;
+  }
+
+  function prunePhoneActionIds(now = performance.now()) {
+    for (const [id, timestamp] of phoneController.recentActionIds) {
+      if (now - timestamp > 1500) phoneController.recentActionIds.delete(id);
+    }
+  }
+
+  function consumePhoneActionId(inputId) {
+    if (inputId === undefined || inputId === null || inputId === "") return false;
+    const id = String(inputId);
+    const now = performance.now();
+    prunePhoneActionIds(now);
+    if (phoneController.recentActionIds.has(id)) return true;
+    phoneController.recentActionIds.set(id, now);
+    return false;
+  }
+
+  function handlePhoneControllerAction(action, inputId) {
+    if (!action || !phoneController.connected) return;
+    if (consumePhoneActionId(inputId)) return;
+    phoneController.lastSeenAt = performance.now();
+    const normalizedAction = action === "special" ? "special1" : action;
+    if (handlePhoneControllerMenuAction(normalizedAction)) return;
+    if (!isFightMode() || state.mode !== "versus" || state.paused || state.matchEnded || netIsActive()) return;
+    applyNetAction(state.enemy, normalizedAction);
+  }
+
+  function handlePhoneControllerButton(button, down, inputId) {
+    if (!button || !phoneController.connected) return;
+    const normalizedButton = button === "special" ? "special1" : button;
+    const keyCode = PHONE_BUTTON_KEY_CODES[button] || PHONE_BUTTON_KEY_CODES[normalizedButton];
+    if (keyCode) setPhoneKey(keyCode, Boolean(down));
+    phoneController.lastSeenAt = performance.now();
+    if (down && PHONE_BUTTON_ACTIONS.has(normalizedButton)) {
+      handlePhoneControllerAction(normalizedButton, inputId);
+    }
+  }
+
+  function handlePhoneControllerMessage(message) {
+    if (!message || typeof message !== "object") return;
+    phoneController.lastSeenAt = performance.now();
+    switch (message.t) {
+      case "hello":
+        if (message.v !== PHONE_PROTOCOL_VERSION) {
+          phoneControllerSend({ t: "status", text: "Refresh controller", tone: "error" });
+          setPhoneControllerStatus("Phone controller version mismatch.", "error", "failed");
+          return;
+        }
+        phoneControllerSend({ t: "welcome", v: PHONE_PROTOCOL_VERSION });
+        break;
+      case "dir":
+        applyPhoneDirectionMask(message.m | 0);
+        break;
+      case "act":
+        handlePhoneControllerAction(message.a, message.id);
+        break;
+      case "btn":
+        handlePhoneControllerButton(message.b, Boolean(message.d), message.id);
+        break;
+      case "ping":
+        phoneControllerSend({ t: "status", text: "P2 ready", tone: "good" });
+        break;
+      case "bye":
+        phoneController.connected = false;
+        phoneController.conn = null;
+        clearPhoneControllerKeys();
+        setPhoneControllerStatus("Phone disconnected.", "error", "disconnected");
+        updateControllerStatus();
+        break;
+      default:
+        break;
+    }
   }
 
   // ============================================================
@@ -13926,6 +14387,12 @@
     if (e.key === "Enter") joinRoom(onlineCodeInput.value);
   });
   onlineBackButton?.addEventListener("click", closeOnlineMenuToTitle);
+  phoneControllerStartButton?.addEventListener("click", () => showCharacterSelect("versus", SELECT_STEP_CHARACTERS));
+  phoneControllerRefreshButton?.addEventListener("click", startPhoneControllerHost);
+  phoneControllerBackButton?.addEventListener("click", () => {
+    stopPhoneControllerHost();
+    showModeDetail("versus");
+  });
 
   window.addEventListener("keydown", handleKeyDown);
   window.addEventListener("keyup", handleKeyUp);

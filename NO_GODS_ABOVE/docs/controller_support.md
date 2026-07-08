@@ -4,6 +4,7 @@
 - First-pass local controller support uses the browser Gamepad API.
 - Keyboard P1/P2 local versus remains supported and unchanged.
 - Controller support is local only. Online multiplayer is not part of this pass.
+- Phone-as-controller support now lets a phone browser pair as P2 for Local Versus.
 
 ## Supported Controllers
 - Xbox controllers using the standard browser gamepad mapping.
@@ -21,6 +22,7 @@ Browser support varies. Some controllers are not visible to the page until a but
 - No controller connected: keyboard P1 controls P1 and keyboard P2 controls P2.
 - One controller connected: the controller controls P2 by default, so keyboard P1 can fight controller P2.
 - Two controllers connected: controller 1 controls P1 and controller 2 controls P2.
+- One paired phone: the phone controls P2 by default, so keyboard P1 can fight phone P2.
 - When a player has an assigned controller, that player's keyboard combat controls are ignored during the match to avoid accidental duplicated control.
 - Keyboard menu/title/select controls remain active.
 - Character select shows a small controller status readout.
@@ -95,6 +97,14 @@ The runtime also checks axes 6/7 as a fallback D-pad source for controllers/driv
 - View/Share toggles one connected controller between P1 and P2.
 
 Mouse and keyboard select behavior remains available.
+
+## Phone Controller
+- From Local Versus, choose `Pair Phone`.
+- The host opens a P2 controller room and shows a room code plus a controller link.
+- On iPhone or Android, open the controller link or `controller.html`, enter the room code, and connect.
+- The phone controller drives P2 movement, jump, light/medium/heavy, special hold + attack, dash/superdash, grab, ultimate, confirm, back, pause, rematch, and character select.
+- The desktop Electron shell starts a small read-only local HTTP server for `controller.html`; the pairing screen uses that LAN URL when available.
+- The web build uses same-origin `controller.html` when hosted, with `https://no-gods-above.netlify.app/controller.html` as the file/localhost fallback.
 
 ## Known Limitations
 - No controller remapping UI yet.

@@ -46,7 +46,7 @@ foreach ($p in $all) {
     }
 }
 
-$rootRuntimeFiles = @("index.html", "game.js", "style.css", "sw.js", "manifest.webmanifest")
+$rootRuntimeFiles = @("index.html", "controller.html", "game.js", "style.css", "sw.js", "manifest.webmanifest")
 foreach ($file in $rootRuntimeFiles) {
     $src = Join-Path $root $file
     if (Test-Path $src) {

@@ -13,7 +13,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="assets/ui/app/apple_touch_icon.png">
     <link rel="preload" as="image" href="assets/backgrounds/menus/title_screen_background.png" fetchpriority="high">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=phone-strikes-1">
   </head>
   <body>
     <main id="game-shell" aria-label="NO GODS ABOVE game prototype">
@@ -156,6 +156,25 @@
           </div>
           <p id="online-status" class="online-status" aria-live="polite">Choose Host or Join. Both players need this page open.</p>
           <button id="online-back-button" class="ui-menu-button online-back" type="button">Back</button>
+        </div>
+      </section>
+
+      <section id="phone-controller-menu" class="menu hidden" aria-label="Phone controller setup">
+        <div class="menu-inner ui-frame ui-title-frame phone-controller-inner">
+          <div class="online-heading">PHONE CONTROLLER</div>
+          <p class="online-label">P2 controller room</p>
+          <div id="phone-controller-code" class="online-room-code">-----</div>
+          <p class="online-label phone-controller-hint">Open the web controller on your phone. Use laptop direct only if the web link fails.</p>
+          <div class="phone-controller-links">
+            <a id="phone-controller-link" class="phone-controller-link" href="controller.html" target="_blank" rel="noopener">controller.html</a>
+            <a id="phone-controller-local-link" class="phone-controller-link phone-controller-link-secondary hidden" href="controller.html" target="_blank" rel="noopener">Laptop direct</a>
+          </div>
+          <p id="phone-controller-status" class="online-status" aria-live="polite">Creating phone controller room...</p>
+          <div class="phone-controller-actions">
+            <button id="phone-controller-start" class="ui-menu-button" type="button">Local Versus</button>
+            <button id="phone-controller-refresh" class="ui-menu-button" type="button">New Code</button>
+            <button id="phone-controller-back" class="ui-menu-button" type="button">Back</button>
+          </div>
         </div>
       </section>
 
@@ -387,6 +406,6 @@
     </main>
 
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-    <script src="game.js?v=fighter-load-gate-1"></script>
+    <script src="game.js?v=phone-strikes-1"></script>
   </body>
 </html>

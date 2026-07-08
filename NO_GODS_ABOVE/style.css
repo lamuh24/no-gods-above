@@ -1138,6 +1138,7 @@ h1 {
   position: relative;
   width: min(100vw, 1280px);
   height: min(100vh, 720px);
+  height: min(100dvh, 720px);
   min-height: 0;
   display: grid;
   grid-template-rows: auto auto auto auto auto auto minmax(0, 1fr) auto auto;
@@ -2252,7 +2253,26 @@ kbd {
   }
 
   .select-panel {
-    padding: 12px;
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    display: block;
+    padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .select-steps,
+  .select-slots,
+  .matchup-preview,
+  .select-grid,
+  .select-panel > .select-action-row {
+    margin-top: 8px;
   }
 
   .controls-display {
@@ -2261,15 +2281,6 @@ kbd {
 
   .select-stage-row {
     grid-template-columns: 1fr;
-  }
-
-  .select-panel {
-    width: 100%;
-    max-width: 100vw;
-    height: 100%;
-    max-height: 100vh;
-    gap: 6px;
-    padding: 8px 8px 52px;
   }
 
   .select-header {
@@ -2324,10 +2335,7 @@ kbd {
 
   .select-help-strip {
     min-height: 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 6px;
-    padding: 5px 8px;
+    display: none;
   }
 
   .controller-status {
@@ -2335,30 +2343,43 @@ kbd {
   }
 
   .select-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 74px;
+    grid-template-columns: repeat(2, minmax(132px, 1fr));
+    grid-auto-rows: minmax(146px, auto);
     align-content: start;
-    gap: 6px;
+    gap: 8px;
+    padding-bottom: 72px;
   }
 
   .select-card {
-    min-height: 74px;
-    grid-template-rows: minmax(0, 1fr) auto;
-    gap: 3px;
-    padding: 4px;
+    min-height: 146px;
+    grid-template-rows: minmax(76px, 1fr) auto auto;
+    align-content: start;
+    gap: 5px;
+    padding: 8px 7px;
+    touch-action: manipulation;
   }
 
   .portrait-frame {
-    height: min(100%, 44px);
-    max-width: 68%;
+    width: min(92px, 72%);
+    height: auto;
+    max-width: 92px;
   }
 
   .select-name {
-    font-size: 0.58rem;
+    width: 100%;
+    font-size: 0.72rem;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    text-align: center;
   }
 
   .select-role {
-    display: none;
+    display: block;
+    width: 100%;
+    font-size: 0.58rem;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+    text-align: center;
   }
 
   .select-difficulty,
@@ -2367,20 +2388,25 @@ kbd {
   }
 
   .select-panel > .select-action-row {
-    position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
+    position: sticky;
+    left: auto;
+    right: auto;
+    bottom: 0;
     z-index: 18;
     gap: 6px;
+    margin: 2px calc(-1 * max(10px, env(safe-area-inset-right))) calc(-1 * max(10px, env(safe-area-inset-bottom))) calc(-1 * max(10px, env(safe-area-inset-left)));
+    padding: 8px max(10px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+    background:
+      linear-gradient(180deg, rgba(5, 2, 5, 0), rgba(5, 2, 5, 0.82) 24%, rgba(5, 2, 5, 0.96));
+    backdrop-filter: blur(4px);
   }
 
   .select-nav-button {
     min-width: 0;
-    min-height: 36px;
+    min-height: 44px;
     flex: 1 1 0;
     padding: 6px 8px;
-    font-size: 0.62rem;
+    font-size: 0.72rem;
   }
 
   .select-footer {
@@ -2388,7 +2414,7 @@ kbd {
   }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 641px) and (max-width: 900px) {
   .main-menu-layout,
   .fighter-confirm-panel,
   .match-intro-panel {
@@ -2487,21 +2513,162 @@ kbd {
   }
 }
 
+@media (orientation: landscape) and (max-height: 520px) {
+  .character-select {
+    place-items: stretch;
+  }
+
+  .select-panel {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    display: block;
+    padding: max(6px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .select-steps,
+  .select-slots,
+  .matchup-preview,
+  .select-grid,
+  .select-panel > .select-action-row {
+    margin-top: 6px;
+  }
+
+  .select-header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    background-size: min(720px, 100%) 110%, 100% 100%;
+  }
+
+  .select-logo,
+  .select-heading,
+  .select-mode {
+    margin-top: 0;
+  }
+
+  .select-logo {
+    font-size: 1rem;
+  }
+
+  .select-heading {
+    font-size: 1rem;
+  }
+
+  .select-mode {
+    font-size: 0.58rem;
+  }
+
+  .select-steps {
+    gap: 5px;
+  }
+
+  .select-step {
+    min-height: 24px;
+    padding: 3px 6px;
+  }
+
+  .select-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .select-slot {
+    padding: 5px 8px;
+  }
+
+  .matchup-preview,
+  .select-help-strip {
+    min-height: 0;
+    padding: 5px 9px;
+  }
+
+  .select-help-strip {
+    display: none;
+  }
+
+  .controller-status {
+    display: none;
+  }
+
+  .select-grid {
+    grid-template-columns: repeat(4, minmax(112px, 1fr));
+    grid-auto-rows: minmax(94px, auto);
+    gap: 7px;
+    padding-bottom: 0;
+  }
+
+  .select-card {
+    min-height: 94px;
+    grid-template-rows: minmax(48px, 1fr) auto;
+    gap: 3px;
+    padding: 5px 6px;
+    touch-action: manipulation;
+  }
+
+  .portrait-frame {
+    width: min(58px, 70%);
+    height: auto;
+    max-width: 58px;
+  }
+
+  .select-name {
+    width: 100%;
+    font-size: 0.58rem;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  .select-role,
+  .select-difficulty,
+  .select-description {
+    display: none;
+  }
+
+  .select-panel > .select-action-row {
+    position: relative;
+    bottom: auto;
+    z-index: 18;
+    margin: 0;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+  }
+
+  .select-nav-button {
+    min-height: 38px;
+    font-size: 0.66rem;
+  }
+
+  .select-footer {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) and (min-height: 700px) {
   .select-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(154px, auto);
   }
 
   .select-card {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-rows: minmax(84px, 1fr) auto auto;
     justify-items: center;
     text-align: center;
   }
 
   .portrait-frame {
-    width: auto;
-    height: min(100%, 44px);
+    width: min(102px, 74%);
+    height: auto;
     grid-row: auto;
   }
 
@@ -2521,9 +2688,65 @@ kbd {
   background-position: center;
 }
 
+#phone-controller-menu {
+  place-items: center;
+  background:
+    linear-gradient(180deg, rgba(2, 1, 2, 0.55), rgba(3, 1, 3, 0.8)),
+    var(--title-screen-bg-art),
+    linear-gradient(180deg, #12050a, #040204);
+  background-size: cover;
+  background-position: center;
+}
+
 .online-menu-inner {
   display: grid;
   gap: 14px;
+}
+
+.phone-controller-inner {
+  display: grid;
+  gap: 13px;
+  justify-items: center;
+  width: min(620px, calc(100vw - 32px));
+}
+
+.phone-controller-hint {
+  max-width: min(520px, calc(100vw - 58px));
+  line-height: 1.35;
+}
+
+.phone-controller-links {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  width: 100%;
+}
+
+.phone-controller-link {
+  max-width: min(520px, calc(100vw - 58px));
+  overflow: hidden;
+  padding: 7px 12px;
+  border: 1px solid rgba(241, 210, 138, 0.36);
+  border-radius: 6px;
+  color: #ffe9b8;
+  background: rgba(8, 4, 6, 0.66);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.phone-controller-link-secondary {
+  border-color: rgba(117, 177, 255, 0.34);
+  color: #cde2ff;
+}
+
+.phone-controller-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .online-heading {
@@ -2622,6 +2845,8 @@ kbd {
 /* ============ Mobile touch controls ============ */
 
 .touch-controls {
+  --touch-dpad-size: 62px;
+  --touch-action-size: 64px;
   position: fixed;
   inset: 0;
   z-index: 60;
@@ -2662,8 +2887,8 @@ kbd {
 
 .touch-dpad {
   display: grid;
-  grid-template-columns: 62px 62px 62px;
-  grid-template-rows: 62px 62px 62px;
+  grid-template-columns: repeat(3, var(--touch-dpad-size));
+  grid-template-rows: repeat(3, var(--touch-dpad-size));
   grid-template-areas:
     ". up ."
     "left . right"
@@ -2681,8 +2906,8 @@ kbd {
   right: max(14px, env(safe-area-inset-right));
   bottom: max(16px, env(safe-area-inset-bottom));
   display: grid;
-  grid-template-columns: repeat(3, 64px);
-  grid-auto-rows: 64px;
+  grid-template-columns: repeat(3, var(--touch-action-size));
+  grid-auto-rows: var(--touch-action-size);
   gap: 10px;
   justify-items: center;
 }
@@ -2729,8 +2954,34 @@ body.touch-mode .rotate-hint.hidden {
 }
 
 @media (orientation: portrait) {
-  body.touch-mode #rotate-hint:not(.force-hidden) {
+  body.touch-mode.touch-controls-active #rotate-hint:not(.force-hidden) {
     display: grid;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .touch-controls {
+    --touch-dpad-size: 54px;
+    --touch-action-size: 56px;
+  }
+
+  .touch-zone-left {
+    left: max(10px, env(safe-area-inset-left));
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .touch-zone-right {
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+
+  .touch-btn {
+    font-size: 13px;
+  }
+
+  .touch-grab {
+    font-size: 10px;
   }
 }
 

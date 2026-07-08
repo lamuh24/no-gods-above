@@ -41,10 +41,14 @@ if (Test-Path -LiteralPath $peerSource) {
     New-Item -ItemType Directory -Force -Path $vendorRoot | Out-Null
     Copy-Item -LiteralPath $peerSource -Destination (Join-Path $vendorRoot "peerjs.min.js") -Force
 
-    $indexPath = Join-Path $target "index.html"
-    $indexHtml = Get-Content -LiteralPath $indexPath -Raw
-    $indexHtml = $indexHtml.Replace("https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js", "vendor/peerjs.min.js")
-    Set-Content -LiteralPath $indexPath -Value $indexHtml -Encoding ASCII
+    @("index.html", "controller.html") | ForEach-Object {
+        $htmlPath = Join-Path $target $_
+        if (Test-Path -LiteralPath $htmlPath) {
+            $html = Get-Content -LiteralPath $htmlPath -Raw
+            $html = $html.Replace("https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js", "vendor/peerjs.min.js")
+            Set-Content -LiteralPath $htmlPath -Value $html -Encoding ASCII
+        }
+    }
 } else {
     Write-Warning "PeerJS package was not found. Run npm install in steam\desktop before packaging to use the offline Electron script copy."
 }

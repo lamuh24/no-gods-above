@@ -178,5 +178,256 @@
       "No gameplay balance or combat tuning changes were made for this deploy.",
       "The staging script now copies sw.js and manifest.webmanifest with the runtime root files."
     ]
+  },
+  "mobile_select_netlify_deploy_2026_07_04": {
+    "timestamp": "2026-07-04T19:19:28.5727008-04:00",
+    "deployment_target": "Netlify production",
+    "production_url": "https://no-gods-above.netlify.app",
+    "unique_deploy_url": "https://6a49945e1d5a1fa055d7dd5a--no-gods-above.netlify.app",
+    "deploy_id": "6a49945e1d5a1fa055d7dd5a",
+    "deploy_logs": "https://app.netlify.com/projects/no-gods-above/deploys/6a49945e1d5a1fa055d7dd5a",
+    "staged_deploy": {
+      "staging_script": "_stage_deploy.ps1",
+      "staging_dir": "%TEMP%/nga_deploy",
+      "asset_count": 137,
+      "missing_referenced_files": 8,
+      "stage_size_mb": 229.0,
+      "root_files": [
+        "index.html",
+        "controller.html",
+        "game.js",
+        "style.css",
+        "sw.js",
+        "manifest.webmanifest"
+      ],
+      "known_missing_deferred_assets": [
+        "assets/audio/announcer/fight.ogg",
+        "assets/audio/announcer/final_round.ogg",
+        "assets/audio/announcer/ko.ogg",
+        "assets/audio/announcer/ring_out.ogg",
+        "assets/audio/announcer/round_1.ogg",
+        "assets/audio/announcer/round_2.ogg",
+        "assets/audio/music/battle_theme.ogg",
+        "assets/audio/music/title_theme.ogg"
+      ]
+    },
+    "static_validation": {
+      "npm_run_check_game": "pass",
+      "git_diff_check_target_files": "pass_crlf_warnings_only"
+    },
+    "live_site_status": {
+      "index_http_status": 200,
+      "game_js_http_status": 200,
+      "style_cache_key": "style.css?v=mobile-select-1",
+      "game_cache_key": "game.js?v=mobile-select-1",
+      "sw_http_status": 200,
+      "sw_cache_key": "nga-cache-v10-mobile-select",
+      "manifest_http_status": 200,
+      "controller_http_status": 200,
+      "controller_has_pad_ui": true,
+      "selectable_character_ids": [
+        "kairo",
+        "vanta",
+        "nyx",
+        "sol",
+        "seris",
+        "lamuh",
+        "lamuh_legacy",
+        "celeste"
+      ],
+      "sable_in_public_roster": false,
+      "sable_hidden_test_gate_preserved": true,
+      "portrait_http_status": {
+        "kairo": 200,
+        "vanta": 200,
+        "nyx": 200,
+        "sol": 200,
+        "seris": 200,
+        "lamuh": 200,
+        "lamuh_legacy": 200,
+        "celeste": 200
+      }
+    },
+    "live_mobile_render_smoke": {
+      "portrait_390x844": {
+        "script_cache_key": "game.js?v=mobile-select-1",
+        "style_cache_key": "style.css?v=mobile-select-1",
+        "panel_client_height": 842,
+        "panel_scroll_height": 977,
+        "panel_can_scroll": true,
+        "grid_columns": "180px 180px",
+        "card_count": 8,
+        "min_card_width": 180,
+        "min_card_height": 154,
+        "touch_controls_hidden_on_select": true,
+        "rotate_hint_display": "none"
+      },
+      "landscape_844x390": {
+        "script_cache_key": "game.js?v=mobile-select-1",
+        "style_cache_key": "style.css?v=mobile-select-1",
+        "grid_columns": "200.25px 200.25px 200.25px 200.25px",
+        "card_count": 8,
+        "min_card_width": 200,
+        "min_card_height": 94,
+        "cards_overlapped_by_action_row": 0,
+        "touch_controls_hidden_on_select": true,
+        "rotate_hint_display": "none"
+      },
+      "known_failed_requests": [
+        "https://no-gods-above.netlify.app/assets/audio/music/battle_theme.ogg"
+      ],
+      "console_errors_or_warnings": []
+    },
+    "notes": [
+      "This deploy ships the mobile select usability pass for phone testing.",
+      "The normal public roster remains Sable-free while the hidden ?sableTest gate remains present.",
+      "The live phone-controller page returns HTTP 200 and contains the NGA P2 PAD UI.",
+      "The only failed request observed in live mobile smoke was the known deferred battle_theme.ogg."
+    ]
+  },
+  "phone_controller_buttons_hotfix_2026_07_04": {
+    "timestamp": "2026-07-04T19:52:00-04:00",
+    "deployment_target": "Netlify production",
+    "production_url": "https://no-gods-above.netlify.app",
+    "unique_deploy_url": "https://6a499c2f129bdfc104e081bd--no-gods-above.netlify.app",
+    "deploy_id": "6a499c2f129bdfc104e081bd",
+    "deploy_logs": "https://app.netlify.com/projects/no-gods-above/deploys/6a499c2f129bdfc104e081bd",
+    "staged_deploy": {
+      "staging_script": "_stage_deploy.ps1",
+      "staging_dir": "%TEMP%/nga_deploy",
+      "asset_count": 137,
+      "missing_referenced_files": 8,
+      "stage_size_mb": 229.0,
+      "root_files": [
+        "index.html",
+        "controller.html",
+        "game.js",
+        "style.css",
+        "sw.js",
+        "manifest.webmanifest"
+      ],
+      "known_missing_deferred_assets": [
+        "assets/audio/announcer/fight.ogg",
+        "assets/audio/announcer/final_round.ogg",
+        "assets/audio/announcer/ko.ogg",
+        "assets/audio/announcer/ring_out.ogg",
+        "assets/audio/announcer/round_1.ogg",
+        "assets/audio/announcer/round_2.ogg",
+        "assets/audio/music/battle_theme.ogg",
+        "assets/audio/music/title_theme.ogg"
+      ]
+    },
+    "static_validation": {
+      "node_check_game_js": "pass",
+      "node_check_sw_js": "pass",
+      "node_check_phone_smoke_script": "pass",
+      "controller_inline_script_check": "pass",
+      "npm_run_check_game": "pass",
+      "git_diff_check_target_files": "pass_crlf_warnings_only"
+    },
+    "live_site_status": {
+      "index_http_status": 200,
+      "controller_http_status": 200,
+      "game_js_http_status": 200,
+      "sw_http_status": 200,
+      "style_cache_key": "style.css?v=phone-buttons-1",
+      "game_cache_key": "game.js?v=phone-buttons-1",
+      "sw_cache_key": "nga-cache-v11-phone-buttons",
+      "controller_has_btn_protocol": true,
+      "game_has_phone_button_handler": true
+    },
+    "live_controller_pairing_smoke": {
+      "script": "NO_GODS_ABOVE/scripts/smoke_phone_controller.js",
+      "controller_url": "https://no-gods-above.netlify.app/controller.html",
+      "overall": "pass",
+      "phone_connected": true,
+      "direction_reached_host": true,
+      "direction_cleared": true,
+      "light_move": "enemy_light_attack",
+      "medium_move": "enemy_medium_attack",
+      "heavy_move": "enemy_heavy_attack",
+      "special_move": "enemy_special_1"
+    },
+    "notes": [
+      "Phone L/M/H/SP now send explicit button down/up messages instead of relying only on one-shot action messages.",
+      "SP tap now triggers special1; holding SP while pressing L/M/H still maps to special1/special2/special3.",
+      "The desktop package was rebuilt and restaged so the desktop icon host understands the new public controller protocol."
+    ]
+  },
+  "phone_controller_strike_fallback_hotfix_2026_07_04": {
+    "timestamp": "2026-07-04T20:05:00-04:00",
+    "deployment_target": "Netlify production",
+    "production_url": "https://no-gods-above.netlify.app",
+    "unique_deploy_url": "https://6a499f7345ed08c10e18e394--no-gods-above.netlify.app",
+    "deploy_id": "6a499f7345ed08c10e18e394",
+    "deploy_logs": "https://app.netlify.com/projects/no-gods-above/deploys/6a499f7345ed08c10e18e394",
+    "staged_deploy": {
+      "staging_script": "_stage_deploy.ps1",
+      "staging_dir": "%TEMP%/nga_deploy",
+      "asset_count": 137,
+      "missing_referenced_files": 8,
+      "stage_size_mb": 229.0,
+      "root_files": [
+        "index.html",
+        "controller.html",
+        "game.js",
+        "style.css",
+        "sw.js",
+        "manifest.webmanifest"
+      ],
+      "known_missing_deferred_assets": [
+        "assets/audio/announcer/fight.ogg",
+        "assets/audio/announcer/final_round.ogg",
+        "assets/audio/announcer/ko.ogg",
+        "assets/audio/announcer/ring_out.ogg",
+        "assets/audio/announcer/round_1.ogg",
+        "assets/audio/announcer/round_2.ogg",
+        "assets/audio/music/battle_theme.ogg",
+        "assets/audio/music/title_theme.ogg"
+      ]
+    },
+    "static_validation": {
+      "node_check_game_js": "pass",
+      "node_check_sw_js": "pass",
+      "node_check_phone_smoke_script": "pass",
+      "controller_inline_script_check": "pass",
+      "npm_run_check_game": "pass",
+      "git_diff_check_target_files": "pass_crlf_warnings_only"
+    },
+    "live_site_status": {
+      "index_http_status": 200,
+      "controller_http_status": 200,
+      "game_js_http_status": 200,
+      "sw_http_status": 200,
+      "style_cache_key": "style.css?v=phone-strikes-1",
+      "game_cache_key": "game.js?v=phone-strikes-1",
+      "sw_cache_key": "nga-cache-v12-phone-strikes",
+      "controller_has_strike_action_fallback": true,
+      "game_has_phone_action_dedupe": true
+    },
+    "live_controller_coordinate_touch_smoke": {
+      "script": "NO_GODS_ABOVE/scripts/smoke_phone_controller.js",
+      "controller_url": "https://no-gods-above.netlify.app/controller.html",
+      "overall": "pass",
+      "phone_connected": true,
+      "direction_reached_host": true,
+      "direction_cleared": true,
+      "light_move": "enemy_light_attack",
+      "medium_move": "enemy_medium_attack",
+      "heavy_move": "enemy_heavy_attack",
+      "special_move": "enemy_special_1",
+      "touch_hit_targets": {
+        "light": "data-strike=light",
+        "medium": "data-strike=medium",
+        "heavy": "data-strike=heavy",
+        "special": "data-special"
+      }
+    },
+    "notes": [
+      "Phone L/M/H now send both the new button protocol and a legacy action fallback with the same input id.",
+      "The host dedupes matching input ids so updated desktop builds do not double-fire, while older running hosts can still receive the legacy action message.",
+      "The phone smoke now uses real coordinate touch events at the visible button centers, not only synthetic element-dispatched pointer events.",
+      "The desktop package was rebuilt and restaged so the desktop icon contains the same controller fallback and host dedupe code."
+    ]
   }
 }

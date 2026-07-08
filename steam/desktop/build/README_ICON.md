@@ -1,7 +1,8 @@
 # No Gods Above Desktop Icon
 
-`icon.ico` is a placeholder Windows icon for the Steam demo/playtest package.
-Replace it before Steam review if final brand art is available.
+`icon.ico` is generated from the NGA app icon art at
+`NO_GODS_ABOVE/assets/ui/app/icon_1024.png` for the Steam demo/playtest package.
+Regenerate it if the final brand art changes.
 
 Recommended final source:
 
@@ -19,5 +20,5 @@ Electron Builder uses this file for:
 - NSIS one-click installer header icon: `build.nsis.installerHeaderIcon`
 
 The current Steam target is an unpacked Windows `dir` build, so the NSIS icon
-settings are configured for future installer builds but are not exercised by the
-Steam depot package.
+settings are configured for future installer builds while the Windows executable
+and desktop shortcut use this `.ico` directly.
