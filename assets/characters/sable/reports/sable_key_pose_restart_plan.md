@@ -2,7 +2,7 @@
 
 Date: 2026-07-03
 Character: Sable
-Status: planned only. Do not generate new art in this pass.
+Status: active. `full-rebuild-v3` was queued on 2026-07-08 as a preview-only 39-core-clip restart.
 
 ## Goal
 
@@ -11,6 +11,28 @@ Rebuild Sable's animation pack with fighting-game readability first. Future Sabl
 `key poses -> in-betweens -> assembled spritesheet -> SpriteForge validation -> preview approval`
 
 No live promotion until the pack reaches `GAME_READY`.
+
+Current active SpriteForge stage: `full-rebuild-v3`.
+
+## Coverage Lock
+
+Sable's future restart must keep the full 39-core-clip target:
+
+- 9 base/reaction clips: `idle`, `walk_forward`, `walk_backward`, `jump`, `crouch`, `block`, `hit_stun`, `knockdown`, `getup`.
+- 15 normals: `stand_light`, `stand_medium`, `stand_heavy`, `crouch_light`, `crouch_medium`, `crouch_heavy`, `jump_light`, `jump_medium`, `jump_heavy`, `forward_light`, `forward_medium`, `forward_heavy`, `back_light`, `back_medium`, `back_heavy`.
+- 15 specials: 5 special families with Light/Medium/Heavy variants.
+
+Sable's special families:
+
+- Neutral specials: Void Shard L/M/H.
+- Forward specials: Phase Lunge L/M/H.
+- Back specials: Void Anchor L/M/H.
+- Down specials: Ground Rift L/M/H.
+- Up specials: Vertical Phase L/M/H.
+
+Do not treat the specials as 15 unrelated random moves. Each L/M/H variant must share a family identity while differing clearly through startup speed, range, body commitment, active pose, VFX size, recovery, risk/reward, silhouette intensity, and gameplay read.
+
+Every special must pass the smoothness gate, uniqueness gate, hit clarity gate, startup/active/recovery metadata, preview harness visibility, stable baseline/scale validation, and no near-duplicate L/M/H variant check.
 
 ## Workflow
 
@@ -33,16 +55,15 @@ No live promotion until the pack reaches `GAME_READY`.
    - Crouching light, medium, heavy.
    - Forward light, medium, heavy.
    - Back light, medium, heavy.
-   - Down light, medium, heavy.
    - Jump light, medium, heavy.
    - Confirm anticipation, strike, hit frame, follow-through, and recovery readability before in-betweens.
 
 4. **Special family key pose sheets**
-   - Neutral special family: void shard / compression.
-   - Forward special family: phase lunge.
-   - Back special family: void anchor.
-   - Down special family: ground rift.
-   - Up special family: vertical phase.
+   - Neutral special family: Void Shard L/M/H.
+   - Forward special family: Phase Lunge L/M/H.
+   - Back special family: Void Anchor L/M/H.
+   - Down special family: Ground Rift L/M/H.
+   - Up special family: Vertical Phase L/M/H.
    - Ultimate / super family only after core movement, normals, and specials read clearly.
 
 5. **In-between generation**
@@ -67,4 +88,3 @@ No live promotion until the pack reaches `GAME_READY`.
 9. **Approval gate**
    - Mark the future pack `GAME_READY` only after preview approval, runtime smoke, and hands-on visual QA pass.
    - Public roster promotion requires an explicit later approval.
-

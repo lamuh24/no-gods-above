@@ -1,0 +1,29 @@
+{
+  "clipId": "jump",
+  "category": "movement",
+  "frameCount": 8,
+  "fps": 12,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/jump/vzzz-jump-redraw02-final/sable_jump_8.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/jump/v20260709-134756/sable_jump_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 movement pass. Clear takeoff, airborne pose, apex, and landing-ready recovery; intentional vertical motion is allowed but Sable scale, face, hair, boots, and forearm wraps must remain visible. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding."
+  ],
+  "validationStatus": "manual_review_required"
+}

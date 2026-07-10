@@ -1,11 +1,14 @@
 # Sable Corrected Preview Schema Delta Report
 
-Status: `DELTA_PROMPTS_READY`
+Status: `SUPERSEDED_BY_15_SPECIAL_STANDARD`
 Date: `2026-06-29`
+Superseded: `2026-07-08`
 
 ## Summary
 
-Sable's SpriteForge MVP preview schema has been corrected to use one neutral special, three forward specials, one back special, one down special, and one up special. Sable does not use the full 15-special structure.
+This report is historical. It documented a temporary Sable MVP preview schema that used one neutral special, three forward specials, one back special, one down special, and one up special.
+
+Final design decision as of `2026-07-08`: every serious playable No Gods Above character should support the full 15-special system. Sable's future animator-rebuild-v2/key-pose restart target remains 39 core clips: 9 base/reaction clips, 15 normals, and 15 specials.
 
 The current preview manifest preserves the existing `19` approved clips and now reports `9` missing required normal clips.
 
@@ -45,9 +48,9 @@ Live roster promotion remains disabled. `approvedForLiveRoster` remains `false`.
 - `back_medium`
 - `back_heavy`
 
-## Removed / Non-Required Clips
+## Previously Removed / Now Required For Serious Rebuilds
 
-These clips are not required for Sable's corrected MVP preview pack and should not be generated for this delta:
+These clips were treated as non-required in the historical MVP delta only. They are required for Sable's serious-playable rebuild planning:
 
 - `neutral_special_medium`
 - `neutral_special_heavy`
@@ -57,6 +60,14 @@ These clips are not required for Sable's corrected MVP preview pack and should n
 - `down_special_heavy`
 - `up_special_medium`
 - `up_special_heavy`
+
+Sable's 15-special family map is now:
+
+- Neutral specials: Void Shard L/M/H.
+- Forward specials: Phase Lunge L/M/H.
+- Back specials: Void Anchor L/M/H.
+- Down specials: Ground Rift L/M/H.
+- Up specials: Vertical Phase L/M/H.
 
 ## Prompt Outputs
 
@@ -87,7 +98,8 @@ npm.cmd run sprite-agent -- run-queue --character sable --clips "crouch_light,cr
 ## Safety
 
 - Existing approved preview clips were preserved.
-- No prohibited medium/heavy neutral, back, down, or up special variants were queued.
+- The historical MVP delta did not queue medium/heavy neutral, back, down, or up special variants.
+- That reduced-special rule is no longer the serious-playable standard.
 - No generated image candidates from the interrupted pre-correction step were imported into the repo.
 - No live roster assets were modified.
 - No gameplay, balance, moveset, or runtime behavior changes were made.

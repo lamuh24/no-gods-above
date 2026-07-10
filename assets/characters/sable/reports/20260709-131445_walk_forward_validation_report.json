@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-09T17:14:45.983Z",
+  "characterId": "sable",
+  "clipId": "walk_forward",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/walk_forward/vzzzz-walkf-redraw02-select6-final/sable_walk_forward_6.png",
+  "expected": {
+    "clipId": "walk_forward",
+    "category": "movement",
+    "frameCount": 6,
+    "fps": 10,
+    "loop": true,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/walk_forward/vzzzz-walkf-redraw02-select6-final/sable_walk_forward_6.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": [
+      "full-rebuild-v3 movement pass. Full forward walk cycle with stable feet, readable hips/shoulders, short curls and bodysuit seam detail preserved, no skating or scale drift. Frame target lowered from 12 to 6 for the 2026-07-09 fluidity redraw because only 6 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 6,
+    "rows": 1,
+    "frameCount": 6
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "pass",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 21717,
+      "bbox": {
+        "x": 136,
+        "y": 34,
+        "width": 176,
+        "height": 348,
+        "right": 311,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111001111111111111000011111111111000000111111111100000001111111110000011111111111110001111111111110000111111111111001001111111111001100111111111100111011111111110011100111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 19614,
+      "bbox": {
+        "x": 155,
+        "y": 35,
+        "width": 139,
+        "height": 347,
+        "right": 293,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111111001111111111111000111111111111000001111111111100000011111111110000001111111111110011111111111111000111111111111000111111111111100011111111111100001111111111111000011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 20869,
+      "bbox": {
+        "x": 141,
+        "y": 35,
+        "width": 167,
+        "height": 347,
+        "right": 307,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111000111111111111100011111111111100000111111111110000011111111111000011111111111110001111111111111000111111111111001001111111111001100111111111100111011111111110011101111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 20108,
+      "bbox": {
+        "x": 171,
+        "y": 30,
+        "width": 107,
+        "height": 352,
+        "right": 277,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111111001111111111111000111111111111100011111111111110000111111111111000011111111111110001111111111111000111111111111000011111111111100011111111111110001111111111111000111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 21341,
+      "bbox": {
+        "x": 141,
+        "y": 34,
+        "width": 167,
+        "height": 348,
+        "right": 307,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111001111111111111000011111111111100001111111111110000011111111111000001111111111110001111111111111000111111111111000011111111111001101111111111100110011111111110011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 20534,
+      "bbox": {
+        "x": 133,
+        "y": 35,
+        "width": 183,
+        "height": 347,
+        "right": 315,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111001111111111111100011111111111100001111111111111000111111111111100001111111111100000111111111110010011111111110001001111111111001100111111111001110011111111110111001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

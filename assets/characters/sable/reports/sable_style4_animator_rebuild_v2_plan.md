@@ -5,6 +5,24 @@ Generated: 2026-06-30T17:27:12.445Z
 
 This is a preview-only, isolated rebuild plan. It does not promote Sable to the live roster and does not overwrite the current approved preview pack.
 
+## Coverage Lock
+
+This stage intentionally targets the full serious-playable Sable coverage surface: 39 core clips.
+
+- 9 base/reaction clips.
+- 15 normals.
+- 15 specials.
+
+Sable's 15 specials are five family identities with Light/Medium/Heavy variants:
+
+- Void Shard: `neutral_special_light`, `neutral_special_medium`, `neutral_special_heavy`.
+- Phase Lunge: `forward_special_light`, `forward_special_medium`, `forward_special_heavy`.
+- Void Anchor: `back_special_light`, `back_special_medium`, `back_special_heavy`.
+- Ground Rift: `down_special_light`, `down_special_medium`, `down_special_heavy`.
+- Vertical Phase: `up_special_light`, `up_special_medium`, `up_special_heavy`.
+
+Do not reduce this stage to only five specials. Do not promote anything live from this stage until a future pack reaches `GAME_READY`.
+
 ## Commands
 
 - Run pack: `npm.cmd run sprite-agent -- run-pack --character sable --stage animator-rebuild-v2 --approval-policy previewAuto --skip-approved --auto-verify`

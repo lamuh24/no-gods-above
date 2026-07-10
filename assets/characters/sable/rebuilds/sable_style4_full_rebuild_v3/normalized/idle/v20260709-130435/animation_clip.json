@@ -1,0 +1,29 @@
+{
+  "clipId": "idle",
+  "category": "movement",
+  "frameCount": 4,
+  "fps": 8,
+  "loop": true,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/idle/vzzzz-idle-redraw02-select4-final/sable_idle_4.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/idle/v20260709-130435/sable_idle_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse. Frame target lowered from 8 to 4 for the 2026-07-09 fluidity redraw because only 4 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+  ],
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-09T17:04:39.879Z",
+  "approvalPolicy": "previewAuto"
+}

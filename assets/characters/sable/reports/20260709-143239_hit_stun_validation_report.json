@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-09T18:32:39.878Z",
+  "characterId": "sable",
+  "clipId": "hit_stun",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-143238/sable_hit_stun_normalized_strip.png",
+  "expected": {
+    "clipId": "hit_stun",
+    "category": "damage",
+    "frameCount": 8,
+    "fps": 10,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-143238/sable_hit_stun_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": [
+      "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse."
+    ],
+    "validation": {
+      "maxScaleDriftPx": 70,
+      "scaleDriftRationale": "Hit-stun movement intentionally includes recoil, bracing, and stagger-height variation; baseline, center, facing, and global normalization must still remain stable."
+    }
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 8,
+    "rows": 1,
+    "frameCount": 8
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "pass",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 23755,
+      "bbox": {
+        "x": 139,
+        "y": 30,
+        "width": 170,
+        "height": 352,
+        "right": 308,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000000111111111100000111111111111000011111111111100000111111111110010011111111110011001111111111001100111111111101110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 24421,
+      "bbox": {
+        "x": 122,
+        "y": 41,
+        "width": 204,
+        "height": 341,
+        "right": 325,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111110011111111111110001111111111111000010111111111110000011111111111000001111111111100000111111111111000011111111111100000111111111110010011111111111001001111111111100100111111111100111001111111110011100111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 23945,
+      "bbox": {
+        "x": 125,
+        "y": 63,
+        "width": 199,
+        "height": 319,
+        "right": 323,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111001111111111111000000111111111110000001111111111100001111111111111000011111111111100001111111111111000011111111111100001111111111100100111111111100110111111111110011001111111111001100111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 22365,
+      "bbox": {
+        "x": 135,
+        "y": 90,
+        "width": 178,
+        "height": 292,
+        "right": 312,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111100111111111111000011111111111100000111111111110000011111111110000011111111111000001111111111110000011111111110001001111111111001101111111111001110011111111100111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 23654,
+      "bbox": {
+        "x": 126,
+        "y": 96,
+        "width": 197,
+        "height": 286,
+        "right": 322,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111100111111111111110001111111111100000111111111100000011111111110000001111111111000000011111111110010011111111110001001111111111001101111111111001100111111111100111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 22997,
+      "bbox": {
+        "x": 130,
+        "y": 52,
+        "width": 188,
+        "height": 330,
+        "right": 317,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111110001111111111111000111111111111100001111111111100000111111111110000111111111111000011111111111100000111111111110010011111111110001001111111111001100111111111001110011111111100111100111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 23060,
+      "bbox": {
+        "x": 141,
+        "y": 39,
+        "width": 167,
+        "height": 343,
+        "right": 307,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111000111111111111000001111111111100000111111111110000111111111111000011111111111100000111111111110010011111111111001001111111111001100111111111100110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 23110,
+      "bbox": {
+        "x": 142,
+        "y": 33,
+        "width": 165,
+        "height": 349,
+        "right": 306,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111001111111111111000001111111111000000111111111110000111111111111000011111111111100000111111111110010011111111110001001111111111001100111111111100110011111111110111001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 6,
+      "frameB": 7,
+      "hammingDistance": 3
+    }
+  ],
+  "autoFixRecommended": false
+}

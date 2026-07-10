@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "sable_15_special_standard_lock",
+  "characterId": "sable",
+  "characterName": "Sable",
+  "createdAt": "2026-07-08",
+  "status": "locked",
+  "scope": "planning_schema_reports_future_character_standards_only",
+  "supersedes": [
+    "Sable MVP-era reduced-special planning for serious-playable/release planning"
+  ],
+  "approvedForLiveRoster": false,
+  "doNotPromoteLive": true,
+  "doNotGenerateArtNow": true,
+  "doNotModifyGameplayBalance": true,
+  "doNotOverwriteLiveRosterAssets": true,
+  "doNotDeleteSableAssets": true,
+  "sableAnimatorRebuildV2Target": {
+    "totalCoreClipCount": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15
+  },
+  "baseMovementReactionClips": [
+    "idle",
+    "walk_forward",
+    "walk_backward",
+    "jump",
+    "crouch",
+    "block",
+    "hit_stun",
+    "knockdown",
+    "getup"
+  ],
+  "normalAttackClips": [
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "crouch_light",
+    "crouch_medium",
+    "crouch_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "forward_light",
+    "forward_medium",
+    "forward_heavy",
+    "back_light",
+    "back_medium",
+    "back_heavy"
+  ],
+  "specialFamilies": {
+    "neutral": {
+      "familyName": "Void Shard",
+      "clips": ["neutral_special_light", "neutral_special_medium", "neutral_special_heavy"]
+    },
+    "forward": {
+      "familyName": "Phase Lunge",
+      "clips": ["forward_special_light", "forward_special_medium", "forward_special_heavy"]
+    },
+    "back": {
+      "familyName": "Void Anchor",
+      "clips": ["back_special_light", "back_special_medium", "back_special_heavy"]
+    },
+    "down": {
+      "familyName": "Ground Rift",
+      "clips": ["down_special_light", "down_special_medium", "down_special_heavy"]
+    },
+    "up": {
+      "familyName": "Vertical Phase",
+      "clips": ["up_special_light", "up_special_medium", "up_special_heavy"]
+    }
+  },
+  "variantDifferentiators": [
+    "startup speed",
+    "range",
+    "body commitment",
+    "active pose",
+    "VFX size",
+    "recovery",
+    "risk/reward",
+    "silhouette intensity",
+    "gameplay read"
+  ],
+  "qualityGates": [
+    "smoothness gate",
+    "uniqueness gate",
+    "hit clarity gate",
+    "startup/active/recovery metadata",
+    "preview harness visibility",
+    "stable baseline/scale validation",
+    "no near-duplicate L/M/H variants"
+  ],
+  "ultimateCinematicRequiredIfSupported": true,
+  "liveGameplayRuntimeFilesChanged": false
+}

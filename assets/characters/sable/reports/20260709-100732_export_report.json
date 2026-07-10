@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestKind": "preview",
+  "generatedAt": "2026-07-09T14:07:32.871Z",
+  "characterId": "sable",
+  "stage": "full-rebuild-v3",
+  "approvedForLiveRoster": false,
+  "liveRosterWiring": "disabled",
+  "spriteStandard": {
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right"
+  },
+  "clips": [
+    {
+      "clipId": "stand_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-zzzzzzzzzz-stand-light-repair-09/sable_stand_light_repair09_8x1_448.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_light/v20260709-095547/sable_stand_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Fast standing light body-first poke with compact forearm crystal accent; clear startup, active frame, and recovery.",
+        "full-rebuild-v3 normal attack. Fast standing light body-first poke with compact forearm crystal accent; clear startup, active frame, and recovery."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T13:55:49.478Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "stand_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_medium/v20260709-zzz-stand-medium-repair-03/sable_stand_medium_repair03_10x1_448.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_medium/v20260709-100731/sable_stand_medium_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Standing medium with more reach and shoulder rotation than light, still smaller and faster than heavy.",
+        "full-rebuild-v3 normal attack. Standing medium with more reach and shoulder rotation than light, still smaller and faster than heavy."
+      ],
+      "validationStatus": "manual_review_required"
+    }
+  ],
+  "missingClips": [
+    "idle",
+    "walk_forward",
+    "walk_backward",
+    "jump",
+    "crouch",
+    "block",
+    "hit_stun",
+    "knockdown",
+    "getup",
+    "stand_heavy",
+    "crouch_light",
+    "crouch_medium",
+    "crouch_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "forward_light",
+    "forward_medium",
+    "forward_heavy",
+    "back_light",
+    "back_medium",
+    "back_heavy",
+    "neutral_special_light",
+    "neutral_special_medium",
+    "neutral_special_heavy",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "back_special_medium",
+    "back_special_heavy",
+    "down_special_light",
+    "down_special_medium",
+    "down_special_heavy",
+    "up_special_light",
+    "up_special_medium",
+    "up_special_heavy"
+  ],
+  "reports": {
+    "latestValidationReport": "assets/characters/sable/reports/latest_validation_report.json",
+    "latestNormalizationReport": "assets/characters/sable/reports/latest_normalization_report.json"
+  },
+  "notes": [
+    "This manifest is preview-only and is not consumed by the live roster automatically.",
+    "Do not wire these clips into NO_GODS_ABOVE/game.js until validation is approved and a separate runtime adapter/integration pass is requested.",
+    "Existing production assets remain untouched."
+  ]
+}

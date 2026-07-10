@@ -1,0 +1,1284 @@
+{
+  "characterId": "sable",
+  "stage": "full-rebuild-v3",
+  "generatedAt": "2026-07-08T18:17:18.263Z",
+  "clips": [
+    {
+      "clipId": "idle",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse."
+      ]
+    },
+    {
+      "clipId": "walk_forward",
+      "category": "movement",
+      "frameCount": 12,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Full forward walk cycle with stable feet, readable hips/shoulders, short curls and bodysuit seam detail preserved, no skating or scale drift."
+      ]
+    },
+    {
+      "clipId": "walk_backward",
+      "category": "movement",
+      "frameCount": 12,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Defensive backward walk cycle, body still facing right, guard-ready posture, stable baseline and no reused forward-walk frames flipped into mush."
+      ]
+    },
+    {
+      "clipId": "jump",
+      "category": "movement",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Clear takeoff, airborne pose, apex, and landing-ready recovery; intentional vertical motion is allowed but Sable scale, face, hair, boots, and forearm wraps must remain visible."
+      ]
+    },
+    {
+      "clipId": "crouch",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Low guarded crouch loop with readable knees, boots, torso, and forearm crystals; not a Ground Rift special and not idle with lowered opacity."
+      ]
+    },
+    {
+      "clipId": "block",
+      "category": "defense",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Guard/block animation with crossed forearm crystals and compact defensive VFX that supports the silhouette without hiding the body."
+      ]
+    },
+    {
+      "clipId": "hit_stun",
+      "category": "damage",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse."
+      ]
+    },
+    {
+      "clipId": "knockdown",
+      "category": "damage",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Readable fall/grounded knockdown sequence with full body visible, consistent costume details, and no cropping of hair, hands, feet, or boots."
+      ]
+    },
+    {
+      "clipId": "getup",
+      "category": "damage",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Ground-to-standing recovery animation returning to Sable's ready stance; no teleport pop, no missing in-betweens, no scale jump."
+      ]
+    },
+    {
+      "clipId": "stand_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Fast standing light body-first poke with compact forearm crystal accent; clear startup, active frame, and recovery."
+      ]
+    },
+    {
+      "clipId": "stand_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Standing medium with more reach and shoulder rotation than light, still smaller and faster than heavy."
+      ]
+    },
+    {
+      "clipId": "stand_heavy",
+      "category": "normal",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Standing heavy with strong silhouette commitment, clear active hit pose, and readable recovery; no special-family VFX."
+      ]
+    },
+    {
+      "clipId": "crouch_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Quick low crouching poke, compact and readable, not a Ground Rift special."
+      ]
+    },
+    {
+      "clipId": "crouch_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Crouching medium with longer low reach and stronger body motion than light, with only attached crystal accents."
+      ]
+    },
+    {
+      "clipId": "crouch_heavy",
+      "category": "normal",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect."
+      ]
+    },
+    {
+      "clipId": "jump_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Fast aerial light with compact body pose and visible face/hair/suit detail in every airborne frame."
+      ]
+    },
+    {
+      "clipId": "jump_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Aerial medium with a clearer arc and longer reach than light, preserving stable airborne scale."
+      ]
+    },
+    {
+      "clipId": "jump_heavy",
+      "category": "normal",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Heavy aerial strike with committed silhouette and strong active pose; not Vertical Phase."
+      ]
+    },
+    {
+      "clipId": "forward_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline."
+      ]
+    },
+    {
+      "clipId": "forward_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Forward medium with more commitment than light and restrained attached VFX, not a teleport or special dash."
+      ]
+    },
+    {
+      "clipId": "forward_heavy",
+      "category": "normal",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Heavy advancing body-first strike with large but readable silhouette, no Phase Lunge trail."
+      ]
+    },
+    {
+      "clipId": "back_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Defensive retreating light check, not Void Anchor; no trap object or detached anchor crystal."
+      ]
+    },
+    {
+      "clipId": "back_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Back medium counter-poke with clear guarded body turn and compact forearm accents only."
+      ]
+    },
+    {
+      "clipId": "back_heavy",
+      "category": "normal",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Heavy defensive/back normal with stronger commitment and recovery, not a Void Anchor placement."
+      ]
+    },
+    {
+      "clipId": "neutral_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Shard LIGHT. Fastest/smallest/safest one-hand shard flick with compact black-violet-silver fracture VFX and a clear active hit frame."
+      ]
+    },
+    {
+      "clipId": "neutral_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Shard MEDIUM. Two-hand shard fan or crossing thrust with more range/body turn than light and less commitment than heavy."
+      ]
+    },
+    {
+      "clipId": "neutral_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Shard HEAVY. Planted charged shard burst from both forearms, largest startup/read/recovery in the family."
+      ]
+    },
+    {
+      "clipId": "forward_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Phase Lunge LIGHT. Short phase step into compact strike, fastest travel and smallest trail."
+      ]
+    },
+    {
+      "clipId": "forward_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Phase Lunge MEDIUM. Deeper phase dash with readable lunge strike, moderate range and recovery."
+      ]
+    },
+    {
+      "clipId": "forward_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Phase Lunge HEAVY. Slow coil into longest committed phase lunge with the largest attached void trail."
+      ]
+    },
+    {
+      "clipId": "back_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Anchor LIGHT. Small quick anchor tag while slipping back, restrained defensive trap read."
+      ]
+    },
+    {
+      "clipId": "back_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Anchor MEDIUM. Mid-sized anchor placement with clearer retreat and stronger trap silhouette."
+      ]
+    },
+    {
+      "clipId": "back_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Anchor HEAVY. Highest-commitment planted anchor fracture, largest anchor geometry and recovery."
+      ]
+    },
+    {
+      "clipId": "down_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Ground Rift LIGHT. Fast tiny rift at Sable's feet, smallest low VFX and least crouch commitment."
+      ]
+    },
+    {
+      "clipId": "down_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Ground Rift MEDIUM. Clear low stance sending a crawling fracture forward, moderate range and recovery."
+      ]
+    },
+    {
+      "clipId": "down_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Ground Rift HEAVY. Heavy stomp/kneel into wide rupture, strongest low silhouette and longest recovery."
+      ]
+    },
+    {
+      "clipId": "up_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Vertical Phase LIGHT. Quick compact anti-air rise with smallest vertical shimmer and least air time."
+      ]
+    },
+    {
+      "clipId": "up_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Vertical Phase MEDIUM. Mid-height vertical phase arc with stronger upward strike and moderate recovery."
+      ]
+    },
+    {
+      "clipId": "up_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Vertical Phase HEAVY. Highest committed vertical phase rise with largest impact silhouette and longest recovery."
+      ]
+    }
+  ],
+  "manualLoop": [
+    "Generate prompts into prompts/outbox.",
+    "Use a manual image provider.",
+    "Drop generated PNG/WEBP sheets into generated/inbox/<clip>/.",
+    "Run validate, normalize, export, and test.",
+    "Keep results preview-only until explicitly approved."
+  ],
+  "safety": {
+    "previewOnly": true,
+    "liveRosterWiring": "disabled"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "clipId": "getup",
+  "category": "damage",
+  "frameCount": 8,
+  "fps": 10,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/getup/vzzzz-getup01/sable_getup_8.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/getup/v20260709-144214/sable_getup_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 reaction pass. Ground-to-standing recovery animation returning to Sable's ready stance; no teleport pop, no missing in-betweens, no scale jump."
+  ],
+  "validation": {
+    "maxScaleDriftPx": 300,
+    "minHeightPx": 70,
+    "scaleDriftRationale": "Getup intentionally transitions from grounded low poses back to standing height; baseline, center, facing, and global normalization must still remain stable."
+  },
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-09T18:42:20.415Z",
+  "approvalPolicy": "previewAuto"
+}

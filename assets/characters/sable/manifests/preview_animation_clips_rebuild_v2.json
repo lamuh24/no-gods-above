@@ -8,8 +8,10 @@
   "liveRosterWiring": "disabled",
   "releaseStatus": "wip_delayed",
   "previewStatus": "animation_rebuild_required",
+  "animationStatus": "archived_failed_quality_candidate",
   "productionCandidate": false,
   "candidateArchiveStatus": "failed_animation_quality_candidate",
+  "archiveDecisionReport": "assets/characters/sable/reports/sable_animation_attempts_archive_20260708.md",
   "releaseDecisionReport": "assets/characters/sable/reports/sable_release_delay_decision.md",
   "restartPlan": "assets/characters/sable/reports/sable_key_pose_restart_plan.md",
   "qualityDecision": {
@@ -17,6 +19,20 @@
     "decision": "Do not ship the current Sable Style 4 animator-rebuild-v2 pack.",
     "reason": "The current animation packs have missing, choppy, and inconsistent animations with insufficient fighting-game readability.",
     "recommendedRestartMethod": "key poses -> in-betweens -> assembled spritesheet -> SpriteForge validation -> preview approval"
+  },
+  "coverageTarget": {
+    "totalCoreClips": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15,
+    "doNotReduceToFiveSpecials": true,
+    "specialFamilies": {
+      "neutral": "Void Shard L/M/H",
+      "forward": "Phase Lunge L/M/H",
+      "back": "Void Anchor L/M/H",
+      "down": "Ground Rift L/M/H",
+      "up": "Vertical Phase L/M/H"
+    }
   },
   "spriteStandard": {
     "frameWidth": 448,
@@ -1598,6 +1614,7 @@
   },
   "notes": [
     "This manifest is preview-only and is not consumed by the live roster automatically.",
+    "Future Sable serious-playable planning keeps the full 39-core-clip target: 9 base/reaction, 15 normals, and 15 specials.",
     "Do not wire these clips into NO_GODS_ABOVE/game.js until validation is approved and a separate runtime adapter/integration pass is requested.",
     "Existing production assets remain untouched."
   ]

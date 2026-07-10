@@ -8,6 +8,20 @@
   "previewStatus": "animation_rebuild_required",
   "candidateArchiveStatus": "failed_animation_quality_candidate",
   "productionCandidate": false,
+  "coverageTarget": {
+    "totalCoreClips": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15,
+    "doNotReduceToFiveSpecials": true,
+    "specialFamilies": {
+      "neutral": "Void Shard L/M/H",
+      "forward": "Phase Lunge L/M/H",
+      "back": "Void Anchor L/M/H",
+      "down": "Ground Rift L/M/H",
+      "up": "Vertical Phase L/M/H"
+    }
+  },
   "approvalPolicy": "previewAuto",
   "provider": "manual",
   "currentClip": null,
@@ -36,7 +50,7 @@
   "approvedLiveClips": [],
   "latestManifest": "assets/characters/sable/manifests/preview_animation_clips_rebuild_v2.json",
   "latestSmokeReport": "assets/characters/sable/reports/latest_game_smoke_report.json",
-  "nextAction": "Do not promote animator-rebuild-v2 live. Restart Sable animation with a key-pose-first workflow before any public roster approval.",
+  "nextAction": "Do not promote animator-rebuild-v2 live. Restart Sable animation with a key-pose-first workflow before any public roster approval. Preserve the full 39-core-clip target: 9 base/reaction, 15 normals, and 15 specials.",
   "overallStatus": "animation_rebuild_required",
   "remainingClips": [],
   "failureReasons": {

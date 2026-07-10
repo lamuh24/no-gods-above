@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "animation-fluidity-frame-scrub",
+  "generatedAt": "2026-07-09T23:16:05.952Z",
+  "clip": "jump_medium",
+  "sourceStrip": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\generated\\inbox\\jump_medium\\vzzzzzzzz-jumpmedium05-6f\\sable_jump_medium_6.png",
+  "numberedContactSheet": "assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\reports\\frame_scrub\\jump_medium\\fluidity_redraw05_6f_attempt1\\jump_medium_numbered_contact_sheet.png",
+  "frameCount": 6,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "duplicatePairs": [
+    {
+      "frameA": 0,
+      "frameB": 4,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 0,
+      "frameB": 5,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 4,
+      "frameB": 5,
+      "hammingDistance": 4
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 30652,
+      "bbox": {
+        "x": 143,
+        "y": 40,
+        "width": 163,
+        "height": 342,
+        "right": 305,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 34224,
+      "bbox": {
+        "x": 120,
+        "y": 33,
+        "width": 209,
+        "height": 349,
+        "right": 328,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 34787,
+      "bbox": {
+        "x": 69,
+        "y": 33,
+        "width": 310,
+        "height": 349,
+        "right": 378,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 33517,
+      "bbox": {
+        "x": 92,
+        "y": 30,
+        "width": 265,
+        "height": 352,
+        "right": 356,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 30348,
+      "bbox": {
+        "x": 142,
+        "y": 33,
+        "width": 164,
+        "height": 349,
+        "right": 305,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 30720,
+      "bbox": {
+        "x": 143,
+        "y": 42,
+        "width": 163,
+        "height": 340,
+        "right": 305,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    }
+  ],
+  "fluidityChecklist": {
+    "oneContinuousAction": "manual_check_required",
+    "anticipationContactFollowThroughRecovery": "manual_check_required",
+    "lockedStrikingLimb": "manual_check_required",
+    "noMirroredFrames": "manual_check_required",
+    "recoveryTowardIdleWithoutDuplicateFrame0": "fail_duplicate_first_last",
+    "visibleImpactCountMatchesMoveData": "manual_check_required",
+    "notes": [
+      "This script is audit-only. It does not alter, offset, synthesize, or repair frames.",
+      "Manual scrub must verify adjacent-frame continuity, striking-limb lock, phase readability, and hit-count parity before SpriteForge validation."
+    ]
+  }
+}

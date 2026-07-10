@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-09T15:44:14.406Z",
+  "characterId": "sable",
+  "clipId": "crouch_heavy",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_heavy/vzzzzzzzzzz-largest-global-safe352-8-final/sable_crouch_heavy_8.png",
+  "expected": {
+    "clipId": "crouch_heavy",
+    "category": "normal",
+    "frameCount": 8,
+    "fps": 12,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_heavy/vzzzzzzzzzz-largest-global-safe352-8-final/sable_crouch_heavy_8.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hitFrames": [
+      5
+    ],
+    "cancelFrames": [
+      7
+    ],
+    "notes": [
+      "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 8,
+    "rows": 1,
+    "frameCount": 8
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 6,
+      "message": "Body height 178px is below configured minimum 180px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 16049,
+      "bbox": {
+        "x": 149,
+        "y": 187,
+        "width": 150,
+        "height": 195,
+        "right": 298,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100111111111111110001111111111110001111111111110000011111111111000001111111111100000111111111100010011111111110001001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 17745,
+      "bbox": {
+        "x": 145,
+        "y": 173,
+        "width": 158,
+        "height": 209,
+        "right": 302,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100011111111110000001111111111000000111111111101000011111111111000001111111111100000111111111100010011111111110001001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 16467,
+      "bbox": {
+        "x": 138,
+        "y": 202,
+        "width": 172,
+        "height": 180,
+        "right": 309,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111000000111111111100000011111111110000001111111111100000111111111100000011111111110000011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 16844,
+      "bbox": {
+        "x": 140,
+        "y": 179,
+        "width": 168,
+        "height": 203,
+        "right": 307,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110010011111111111000001111111111110000111111111111000011111111111100001111111111100000111111111100010011111111110001001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 15910,
+      "bbox": {
+        "x": 98,
+        "y": 190,
+        "width": 253,
+        "height": 192,
+        "right": 350,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110111111111111110001111111111100000111111111110000000111111111000010011111111000001111111110000001111111111000100111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 15419,
+      "bbox": {
+        "x": 59,
+        "y": 200,
+        "width": 330,
+        "height": 182,
+        "right": 388,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100011111111111110001001111111110000000011111110000111111111110000011111111100000011111111110001001111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 14718,
+      "bbox": {
+        "x": 81,
+        "y": 204,
+        "width": 287,
+        "height": 178,
+        "right": 367,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000111111111111100011111111111000000111111111100000011111111100000111111110000000111111111000110011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 12458,
+      "bbox": {
+        "x": 147,
+        "y": 197,
+        "width": 155,
+        "height": 185,
+        "right": 301,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110001111111111110000111111111111000111111111111100001111111111100000111111111100010011111111110001001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

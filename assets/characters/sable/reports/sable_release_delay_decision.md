@@ -48,3 +48,21 @@ Restart Sable animation production with a key-pose-first pipeline:
 5. Preview approval.
 
 No live promotion until the future pack reaches `GAME_READY`.
+
+## Future Coverage Standard
+
+Sable remains a full serious-playable 15-special character in future planning. The delayed/restart decision does not reduce her kit to five specials.
+
+Future Sable animation production should target 39 core clips:
+
+- 9 base/reaction clips.
+- 15 normals.
+- 15 specials.
+
+Sable special families remain:
+
+- Void Shard: neutral L/M/H.
+- Phase Lunge: forward L/M/H.
+- Void Anchor: back L/M/H.
+- Ground Rift: down L/M/H.
+- Vertical Phase: up L/M/H.

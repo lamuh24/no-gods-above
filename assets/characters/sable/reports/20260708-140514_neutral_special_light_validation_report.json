@@ -1,0 +1,395 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-08T18:05:14.477Z",
+  "characterId": "sable",
+  "clipId": "neutral_special_light",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_specials_rebuild_v3/draft_strips/neutral_special_light/sable_neutral_special_light_draft_strip_12x1_448_20260708.png",
+  "expected": {
+    "clipId": "neutral_special_light",
+    "category": "special",
+    "frameCount": 12,
+    "fps": 12,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_specials_rebuild_v3/draft_strips/neutral_special_light/sable_neutral_special_light_draft_strip_12x1_448_20260708.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "hitFrames": [
+      5
+    ],
+    "cancelFrames": [
+      10
+    ],
+    "notes": [
+      "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+      "Family: neutral Void Shard. Variant: LIGHT, fastest/smallest/safest. A quick one-hand shard flick from ready stance with short range and tiny attached black-violet-silver fracture VFX.",
+      "Motion beats across 12 frames: startup draw-in, active hit pose on frame index 5, compact shard impact, follow-through, recovery, return-to-ready.",
+      "Must read as different from medium/heavy: minimal body commitment, smallest VFX, shortest recovery, crisp fighting-game silhouette.",
+      "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 12,
+    "rows": 1,
+    "frameCount": 12
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "POSSIBLE_DUPLICATE_FRAMES",
+      "message": "10 near-duplicate frame pair(s) detected. Held frames can be okay, but review the motion."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 23651,
+      "bbox": {
+        "x": 145,
+        "y": 30,
+        "width": 159,
+        "height": 352,
+        "right": 303,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000001111111111100000011111111110000001111111111100001111111111110000111111111110010011111111111001101111111111100110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 23651,
+      "bbox": {
+        "x": 145,
+        "y": 30,
+        "width": 159,
+        "height": 352,
+        "right": 303,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000001111111111100000011111111110000001111111111100001111111111110000111111111110010011111111111001101111111111100110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 26996,
+      "bbox": {
+        "x": 76,
+        "y": 30,
+        "width": 296,
+        "height": 352,
+        "right": 371,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111001111111111111100011111111111100001111111111100000011111111110000001111111111100000111111111100000111111111110010011111111111001100111111111001110011111111100111101111111100111110011111110011111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 26996,
+      "bbox": {
+        "x": 76,
+        "y": 30,
+        "width": 296,
+        "height": 352,
+        "right": 371,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111001111111111111100011111111111100001111111111100000011111111110000001111111111100000111111111100000111111111110010011111111111001100111111111001110011111111100111101111111100111110011111110011111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 28344,
+      "bbox": {
+        "x": 68,
+        "y": 30,
+        "width": 313,
+        "height": 352,
+        "right": 380,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111001111111111111000111111111111100000000111111100000000011111110001111111111110000011111111111000001111111111100000011111111110011001111111111001110011111111101111101111111100111110011111110011111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 28344,
+      "bbox": {
+        "x": 68,
+        "y": 30,
+        "width": 313,
+        "height": 352,
+        "right": 380,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111001111111111111000111111111111100000000111111100000000011111110001111111111110000011111111111000001111111111100000011111111110011001111111111001110011111111101111101111111100111110011111110011111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 28706,
+      "bbox": {
+        "x": 75,
+        "y": 30,
+        "width": 298,
+        "height": 352,
+        "right": 372,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111000111111111111100011111111111110001100111111111000000011111111000010001111111100001111111111110000011111111111100001111111111100110011111111100011001111111110011100111111110011110011111111001111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 28706,
+      "bbox": {
+        "x": 75,
+        "y": 30,
+        "width": 298,
+        "height": 352,
+        "right": 372,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111000111111111111100011111111111110001100111111111000000011111111000010001111111100001111111111110000011111111111100001111111111100110011111111100011001111111110011100111111110011110011111111001111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 8,
+      "empty": false,
+      "opaquePixels": 26626,
+      "bbox": {
+        "x": 88,
+        "y": 30,
+        "width": 273,
+        "height": 352,
+        "right": 360,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111000111111111111100011111111111110011111111111110000011111111111000000011111111100001111111111110000111111111111000001111111111100100111111111100111001111111100111100111111110011110011111111001111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 9,
+      "empty": false,
+      "opaquePixels": 26626,
+      "bbox": {
+        "x": 88,
+        "y": 30,
+        "width": 273,
+        "height": 352,
+        "right": 360,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111000111111111111100011111111111110011111111111110000011111111111000000011111111100001111111111110000111111111111000001111111111100100111111111100111001111111100111100111111110011110011111111001111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 10,
+      "empty": false,
+      "opaquePixels": 23345,
+      "bbox": {
+        "x": 146,
+        "y": 30,
+        "width": 157,
+        "height": 352,
+        "right": 302,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000001111111111100000111111111110000001111111111100001111111111110000111111111110010011111111111001101111111111100110011111111110011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 11,
+      "empty": false,
+      "opaquePixels": 23345,
+      "bbox": {
+        "x": 146,
+        "y": 30,
+        "width": 157,
+        "height": 352,
+        "right": 302,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000001111111111100000111111111110000001111111111100001111111111110000111111111110010011111111111001101111111111100110011111111110011001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 0,
+      "frameB": 1,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 0,
+      "frameB": 10,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 0,
+      "frameB": 11,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 1,
+      "frameB": 10,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 1,
+      "frameB": 11,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 2,
+      "frameB": 3,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 4,
+      "frameB": 5,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 6,
+      "frameB": 7,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 8,
+      "frameB": 9,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 10,
+      "frameB": 11,
+      "hammingDistance": 0
+    }
+  ],
+  "autoFixRecommended": false
+}

@@ -1,0 +1,14 @@
+# SpriteForge Preview Approval
+
+Character: `sable`
+Clip: `back_heavy`
+Approved at: 2026-07-10T18:20:33.510Z
+Approval policy: `manual-promote-preview`
+Approved for preview: **true**
+Approved for live roster: **false**
+Normalized sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_heavy/v20260710-141827/sable_back_heavy_normalized_strip.png`
+
+## Notes
+
+- Preview approval only.
+- Live roster promotion remains disabled and requires explicit human approval.

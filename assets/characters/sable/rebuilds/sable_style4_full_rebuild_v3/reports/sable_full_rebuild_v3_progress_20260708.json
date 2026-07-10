@@ -1,0 +1,59 @@
+{
+  "character": "sable",
+  "stage": "full-rebuild-v3",
+  "updatedAt": "2026-07-08T00:00:00.000Z",
+  "status": "waiting_for_generation",
+  "releaseStatus": "wip_delayed",
+  "previewStatus": "animation_rebuild_required",
+  "approvedForLiveRoster": false,
+  "queue": {
+    "provider": "manual",
+    "approvalPolicy": "previewAuto",
+    "attemptedClips": 39,
+    "approvedPreviewClips": [],
+    "failedClips": [],
+    "waitingClips": "all_39_full_rebuild_clips",
+    "missingOutput": "all_39_full_rebuild_clips"
+  },
+  "startedClips": {
+    "stand_light": {
+      "startedAt": "2026-07-09",
+      "status": "manual_review_required",
+      "bestCurrentCandidate": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_light/v20260709-085641/sable_stand_light_normalized_strip.png",
+      "report": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/sable_stand_light_start_20260709.json",
+      "inPreviewManifest": true,
+      "approvedForPreview": false,
+      "approvedForLiveRoster": false,
+      "remainingIssues": [
+        "possible duplicate frames: 0/7 and 4/5"
+      ]
+    }
+  },
+  "coverage": {
+    "baseReaction": 9,
+    "normals": 15,
+    "specials": 15,
+    "totalCoreClips": 39
+  },
+  "productionOrder": [
+    "15 normal attacks",
+    "15 special attacks",
+    "9 movement and reaction clips",
+    "SpriteForge validation per candidate",
+    "preview harness approval"
+  ],
+  "preserved": [
+    "old Sable MVP preview pack",
+    "animator-rebuild-v2 failed-quality candidate history",
+    "specials-rebuild-v3 special-only restart history",
+    "neutral_special_light key-pose draft and duplicate-frame validation report",
+    "reference sheet, style lock, brief, reports, manifests, generated and quarantined files"
+  ],
+  "boundaries": {
+    "liveGameplayRuntimeFilesTouched": false,
+    "publicRosterTouched": false,
+    "livePromotion": false,
+    "stagedOrCommitted": false
+  },
+  "nextAction": "Generate or supply transparent candidate sheets for the 39 full-rebuild-v3 clips, then run resume-pack and verify-pack for full-rebuild-v3."
+}

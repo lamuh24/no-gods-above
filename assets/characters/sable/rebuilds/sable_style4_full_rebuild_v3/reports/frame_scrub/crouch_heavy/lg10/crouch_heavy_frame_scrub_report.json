@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "animation-fluidity-frame-scrub",
+  "generatedAt": "2026-07-09T15:40:20.880Z",
+  "clip": "crouch_heavy",
+  "sourceStrip": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\generated\\inbox\\crouch_heavy\\vzzzzzzzzz-largest-global-safe352-10-final\\sable_crouch_heavy_10.png",
+  "numberedContactSheet": "assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\reports\\frame_scrub\\crouch_heavy\\lg10\\crouch_heavy_numbered_contact_sheet.png",
+  "frameCount": 10,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "duplicatePairs": [
+    {
+      "frameA": 0,
+      "frameB": 8,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 0,
+      "frameB": 9,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 7,
+      "frameB": 9,
+      "hammingDistance": 4
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 16049,
+      "bbox": {
+        "x": 149,
+        "y": 187,
+        "width": 150,
+        "height": 195,
+        "right": 298,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 17745,
+      "bbox": {
+        "x": 145,
+        "y": 173,
+        "width": 158,
+        "height": 209,
+        "right": 302,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 16467,
+      "bbox": {
+        "x": 138,
+        "y": 202,
+        "width": 172,
+        "height": 180,
+        "right": 309,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 16844,
+      "bbox": {
+        "x": 140,
+        "y": 179,
+        "width": 168,
+        "height": 203,
+        "right": 307,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 15910,
+      "bbox": {
+        "x": 98,
+        "y": 190,
+        "width": 253,
+        "height": 192,
+        "right": 350,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 15419,
+      "bbox": {
+        "x": 59,
+        "y": 200,
+        "width": 330,
+        "height": 182,
+        "right": 388,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 14718,
+      "bbox": {
+        "x": 81,
+        "y": 204,
+        "width": 287,
+        "height": 178,
+        "right": 367,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 12458,
+      "bbox": {
+        "x": 147,
+        "y": 197,
+        "width": 155,
+        "height": 185,
+        "right": 301,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 8,
+      "empty": false,
+      "opaquePixels": 15112,
+      "bbox": {
+        "x": 154,
+        "y": 189,
+        "width": 141,
+        "height": 193,
+        "right": 294,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 9,
+      "empty": false,
+      "opaquePixels": 15226,
+      "bbox": {
+        "x": 150,
+        "y": 198,
+        "width": 149,
+        "height": 184,
+        "right": 298,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    }
+  ],
+  "fluidityChecklist": {
+    "oneContinuousAction": "manual_check_required",
+    "anticipationContactFollowThroughRecovery": "manual_check_required",
+    "lockedStrikingLimb": "manual_check_required",
+    "noMirroredFrames": "manual_check_required",
+    "recoveryTowardIdleWithoutDuplicateFrame0": "fail_duplicate_first_last",
+    "visibleImpactCountMatchesMoveData": "manual_check_required",
+    "notes": [
+      "This script is audit-only. It does not alter, offset, synthesize, or repair frames.",
+      "Manual scrub must verify adjacent-frame continuity, striking-limb lock, phase readability, and hit-count parity before SpriteForge validation."
+    ]
+  }
+}

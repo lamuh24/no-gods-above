@@ -12,6 +12,47 @@
   "referencePath": "assets/characters/sable/references/sable_pixel_reference_style.png",
   "styleLockPath": "assets/characters/sable/references/sable_pixel_style_redo_lock.md",
   "requiredClipCount": 39,
+  "coverageTarget": {
+    "standardId": "nga_serious_playable_animation_coverage_v1",
+    "totalCoreClips": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15,
+    "doNotReduceToFiveSpecials": true,
+    "doNotPromoteLive": true,
+    "futurePromotionGate": "GAME_READY"
+  },
+  "specialFamilies": {
+    "neutral": {
+      "familyName": "Void Shard",
+      "clips": ["neutral_special_light", "neutral_special_medium", "neutral_special_heavy"]
+    },
+    "forward": {
+      "familyName": "Phase Lunge",
+      "clips": ["forward_special_light", "forward_special_medium", "forward_special_heavy"]
+    },
+    "back": {
+      "familyName": "Void Anchor",
+      "clips": ["back_special_light", "back_special_medium", "back_special_heavy"]
+    },
+    "down": {
+      "familyName": "Ground Rift",
+      "clips": ["down_special_light", "down_special_medium", "down_special_heavy"]
+    },
+    "up": {
+      "familyName": "Vertical Phase",
+      "clips": ["up_special_light", "up_special_medium", "up_special_heavy"]
+    }
+  },
+  "specialQualityGates": [
+    "smoothness gate",
+    "uniqueness gate",
+    "hit clarity gate",
+    "startup/active/recovery metadata",
+    "preview harness visibility",
+    "stable baseline/scale validation",
+    "no near-duplicate L/M/H variants"
+  ],
   "existingApprovedClips": [
     "back_special_light",
     "block",

@@ -54,6 +54,29 @@
   ],
   "recommendedRestartMethod": "key poses -> in-betweens -> assembled spritesheet -> SpriteForge validation -> preview approval",
   "futurePromotionGate": "GAME_READY",
+  "futureCoverageStandard": {
+    "totalCoreClips": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15,
+    "doNotReduceToFiveSpecials": true,
+    "specialFamilies": {
+      "neutral": "Void Shard L/M/H",
+      "forward": "Phase Lunge L/M/H",
+      "back": "Void Anchor L/M/H",
+      "down": "Ground Rift L/M/H",
+      "up": "Vertical Phase L/M/H"
+    },
+    "qualityGates": [
+      "smoothness gate",
+      "uniqueness gate",
+      "hit clarity gate",
+      "startup/active/recovery metadata",
+      "preview harness visibility",
+      "stable baseline/scale validation",
+      "no near-duplicate L/M/H variants"
+    ]
+  },
   "relatedReports": {
     "restartPlanMarkdown": "assets/characters/sable/reports/sable_key_pose_restart_plan.md",
     "restartPlanJson": "assets/characters/sable/reports/sable_key_pose_restart_plan.json"

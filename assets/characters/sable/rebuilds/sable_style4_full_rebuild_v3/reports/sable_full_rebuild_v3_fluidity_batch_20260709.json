@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "characterId": "sable",
+  "stage": "full-rebuild-v3",
+  "generatedAt": "2026-07-09T16:12:00Z",
+  "standardApplied": "NO_GODS_ABOVE/docs/ANIMATION_FLUIDITY_STANDARD.md",
+  "approvedForLiveRoster": false,
+  "liveRuntimeChanged": false,
+  "publicRosterChanged": false,
+  "toolingChanges": [
+    {
+      "path": "tools/sprite-agent/scripts/pack_alpha_strip.mjs",
+      "change": "removed unsafe pre-standard safe-variant repair helper"
+    },
+    {
+      "path": "tools/sprite-agent/scripts/frame_scrub_report.mjs",
+      "change": "added audit-only numbered contact sheet and frame-scrub report helper"
+    },
+    {
+      "path": "tools/sprite-agent/scripts/prepare-codex-sheet.mjs",
+      "change": "added optional global scale strategy for clip-wide normalization"
+    }
+  ],
+  "previewApprovedUnderFluidityStandard": [
+    {
+      "clipId": "stand_heavy",
+      "frameCount": 8,
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_heavy/vzzzzzzzzz-safe352-8-final/sable_stand_heavy_8.png",
+      "frameScrubReport": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/frame_scrub/stand_heavy/v20260709-fluidity-redraw-02-framecount-8-safe352-final/stand_heavy_frame_scrub_report.json"
+    },
+    {
+      "clipId": "crouch_light",
+      "frameCount": 7,
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_light/vzzzzzzzzzz-global-safe352-7-final/sable_crouch_light_7.png",
+      "frameScrubReport": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/frame_scrub/crouch_light/v20260709-fluidity-redraw-01-framecount-7-global-safe352-final/crouch_light_frame_scrub_report.json"
+    },
+    {
+      "clipId": "crouch_medium",
+      "frameCount": 8,
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_medium/vzzzzzzzzzzzz-redraw02-global-safe352-8-final/sable_crouch_medium_8.png",
+      "frameScrubReport": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/frame_scrub/crouch_medium/redraw02_8/crouch_medium_frame_scrub_report.json"
+    },
+    {
+      "clipId": "crouch_heavy",
+      "frameCount": 8,
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_heavy/vzzzzzzzzzzz-largest-global-safe336-8-final/sable_crouch_heavy_8.png",
+      "frameScrubReport": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/frame_scrub/crouch_heavy/lg8_safe336/crouch_heavy_frame_scrub_report.json"
+    },
+    {
+      "clipId": "jump_light",
+      "frameCount": 7,
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/jump_light/vzzzzzzzzzz-redraw02-global-safe336-7-final/sable_jump_light_7.png",
+      "frameScrubReport": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/frame_scrub/jump_light/redraw02_7/jump_light_frame_scrub_report.json"
+    }
+  ],
+  "rejectedPreStandardClips": [
+    {
+      "clipId": "stand_light",
+      "reason": "pre-standard safe-variant repair candidates must be redrawn and frame-scrubbed",
+      "quarantinePath": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/stand_light/v20260709-fluidity-standard-prestandard-inbox/"
+    },
+    {
+      "clipId": "stand_medium",
+      "reason": "pre-standard safe-variant repair candidates must be redrawn and frame-scrubbed",
+      "quarantinePath": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/stand_medium/v20260709-fluidity-standard-prestandard-inbox/"
+    }
+  ],
+  "queueSummary": {
+    "approvedPreviewClips": 5,
+    "waitingOrMissingOutputClips": 34,
+    "nextClip": "stand_light"
+  }
+}

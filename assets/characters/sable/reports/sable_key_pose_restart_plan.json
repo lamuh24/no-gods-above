@@ -4,8 +4,10 @@
   "characterId": "sable",
   "characterName": "Sable",
   "createdAt": "2026-07-03",
-  "status": "planned_not_started",
-  "doNotGenerateArtNow": true,
+  "updatedAt": "2026-07-08",
+  "status": "active_full_rebuild_v3_queued_preview_only",
+  "activeSpriteForgeStage": "full-rebuild-v3",
+  "doNotGenerateArtNow": false,
   "releaseStatus": "wip_delayed",
   "previewStatus": "animation_rebuild_required",
   "approvedForLiveRoster": false,
@@ -17,6 +19,58 @@
     "SpriteForge validation",
     "preview approval"
   ],
+  "coverageTarget": {
+    "totalCoreClips": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15,
+    "ultimateCinematicRequiredIfSupported": true,
+    "baseMovementReactionClips": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "jump",
+      "crouch",
+      "block",
+      "hit_stun",
+      "knockdown",
+      "getup"
+    ],
+    "normalAttackClips": [
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "crouch_light",
+      "crouch_medium",
+      "crouch_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "forward_light",
+      "forward_medium",
+      "forward_heavy",
+      "back_light",
+      "back_medium",
+      "back_heavy"
+    ],
+    "specialAttackClips": [
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "back_special_medium",
+      "back_special_heavy",
+      "down_special_light",
+      "down_special_medium",
+      "down_special_heavy",
+      "up_special_light",
+      "up_special_medium",
+      "up_special_heavy"
+    ]
+  },
   "keyPoseFirstWorkflow": {
     "summary": "Lock readable fighting-game key poses before generating in-betweens or assembling runtime strips.",
     "identityAnchor": "approved Sable visual design and side-view style lock",
@@ -51,9 +105,6 @@
     "back_light",
     "back_medium",
     "back_heavy",
-    "down_light",
-    "down_medium",
-    "down_heavy",
     "jump_light",
     "jump_medium",
     "jump_heavy"
@@ -61,23 +112,33 @@
   "specialFamilyKeyPoseSheets": [
     {
       "family": "neutral_special",
-      "readabilityGoal": "void shard or compression reads from Sable's body pose before VFX."
+      "familyName": "Void Shard",
+      "clips": ["neutral_special_light", "neutral_special_medium", "neutral_special_heavy"],
+      "readabilityGoal": "Void Shard L/M/H read from Sable's body pose before VFX and differ by startup, size, commitment, recovery, and gameplay read."
     },
     {
       "family": "forward_special",
-      "readabilityGoal": "phase lunge has a clear anticipation, travel, strike, and recovery silhouette."
+      "familyName": "Phase Lunge",
+      "clips": ["forward_special_light", "forward_special_medium", "forward_special_heavy"],
+      "readabilityGoal": "Phase Lunge L/M/H share anticipation/travel/strike/recovery identity while differing by distance, speed, commitment, trail size, and risk."
     },
     {
       "family": "back_special",
-      "readabilityGoal": "void anchor reads as a deliberate planted/control pose, not idle with VFX."
+      "familyName": "Void Anchor",
+      "clips": ["back_special_light", "back_special_medium", "back_special_heavy"],
+      "readabilityGoal": "Void Anchor L/M/H read as deliberate planted/control poses, not idle with VFX."
     },
     {
       "family": "down_special",
-      "readabilityGoal": "ground rift has a low, grounded body action with VFX separated if needed."
+      "familyName": "Ground Rift",
+      "clips": ["down_special_light", "down_special_medium", "down_special_heavy"],
+      "readabilityGoal": "Ground Rift L/M/H use low grounded body action with distinct width, startup, VFX size, recovery, and risk."
     },
     {
       "family": "up_special",
-      "readabilityGoal": "vertical phase has a readable launch/reach pose and vertical action."
+      "familyName": "Vertical Phase",
+      "clips": ["up_special_light", "up_special_medium", "up_special_heavy"],
+      "readabilityGoal": "Vertical Phase L/M/H have readable launch/reach poses and distinct vertical action/recovery profiles."
     },
     {
       "family": "ultimate_or_super",
@@ -109,7 +170,7 @@
     "technical validation for dimensions, alpha, frame counts, baseline, and metadata",
     "visual consistency review against approved Sable design lock",
     "row classification before runtime integration",
-    "reject missing, choppy, unreadable, identity-drifted, or VFX-only rows"
+    "reject missing, choppy, unreadable, identity-drifted, VFX-only, or near-duplicate L/M/H rows"
   ],
   "previewHarnessCheck": [
     "test in the Sable preview harness first",
@@ -124,4 +185,3 @@
     "doNotRemoveExistingPlayableMvpData": true
   }
 }
-

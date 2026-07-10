@@ -1,0 +1,673 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestKind": "preview",
+  "generatedAt": "2026-07-09T23:48:25.803Z",
+  "characterId": "sable",
+  "stage": "full-rebuild-v3",
+  "approvedForLiveRoster": false,
+  "liveRosterWiring": "disabled",
+  "spriteStandard": {
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right"
+  },
+  "clips": [
+    {
+      "clipId": "idle",
+      "category": "movement",
+      "frameCount": 4,
+      "fps": 8,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/idle/vzzzz-idle-redraw02-select4-final/sable_idle_4.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/idle/v20260709-130435/sable_idle_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse. Frame target lowered from 8 to 4 for the 2026-07-09 fluidity redraw because only 4 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed.",
+        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse. Frame target lowered from 8 to 4 for the 2026-07-09 fluidity redraw because only 4 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T17:04:39.879Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "walk_forward",
+      "category": "movement",
+      "frameCount": 6,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/walk_forward/vzzzz-walkf-redraw02-select6-final/sable_walk_forward_6.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/walk_forward/v20260709-131519/sable_walk_forward_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Full forward walk cycle with stable feet, readable hips/shoulders, short curls and bodysuit seam detail preserved, no skating or scale drift. Frame target lowered from 12 to 6 for the 2026-07-09 fluidity redraw because only 6 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed.",
+        "full-rebuild-v3 movement pass. Full forward walk cycle with stable feet, readable hips/shoulders, short curls and bodysuit seam detail preserved, no skating or scale drift. Frame target lowered from 12 to 6 for the 2026-07-09 fluidity redraw because only 6 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T17:15:23.127Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "walk_backward",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/walk_backward/vzz-walkb-redraw01-final/sable_walk_backward_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/walk_backward/v20260709-132050/sable_walk_backward_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Defensive backward walk cycle, body still facing right, guard-ready posture, stable baseline and no reused forward-walk frames flipped into mush. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding.",
+        "full-rebuild-v3 movement pass. Defensive backward walk cycle, body still facing right, guard-ready posture, stable baseline and no reused forward-walk frames flipped into mush. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T17:20:55.990Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "jump",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/jump/vzzzz-jump-redraw02-prepared-strip-only/sable_jump_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/jump/v20260709-135212/sable_jump_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Clear takeoff, airborne pose, apex, and landing-ready recovery; intentional vertical motion is allowed but Sable scale, face, hair, boots, and forearm wraps must remain visible. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding.",
+        "full-rebuild-v3 movement pass. Clear takeoff, airborne pose, apex, and landing-ready recovery; intentional vertical motion is allowed but Sable scale, face, hair, boots, and forearm wraps must remain visible. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding."
+      ],
+      "validation": {
+        "maxScaleDriftPx": 70,
+        "scaleDriftRationale": "Jump movement intentionally includes slight knee bend and airborne pose-height variation; baseline, center, facing, and global normalization must still remain stable."
+      },
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T17:52:17.511Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "crouch",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch/vzzzzz-crouch01-thresholded/sable_crouch_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch/v20260709-135936/sable_crouch_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 movement pass. Low guarded crouch loop with readable knees, boots, torso, and forearm crystals; not a Ground Rift special and not idle with lowered opacity.",
+        "full-rebuild-v3 movement pass. Low guarded crouch loop with readable knees, boots, torso, and forearm crystals; not a Ground Rift special and not idle with lowered opacity."
+      ],
+      "validation": {
+        "maxScaleDriftPx": 110,
+        "scaleDriftRationale": "Crouch movement intentionally includes a standing-to-low silhouette height change; baseline, center, facing, and global normalization must still remain stable."
+      },
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T17:59:42.645Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "block",
+      "category": "defense",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/block/vzzzz-block01/sable_block_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/block/v20260709-141052/sable_block_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Guard/block animation with crossed forearm crystals and compact defensive VFX that supports the silhouette without hiding the body.",
+        "full-rebuild-v3 reaction pass. Guard/block animation with crossed forearm crystals and compact defensive VFX that supports the silhouette without hiding the body."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T18:10:58.226Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "hit_stun",
+      "category": "damage",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/hit_stun/vzzzzzzz-hitstun02-thresholded/sable_hit_stun_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-143238/sable_hit_stun_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse.",
+        "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse."
+      ],
+      "validation": {
+        "maxScaleDriftPx": 70,
+        "scaleDriftRationale": "Hit-stun movement intentionally includes recoil, bracing, and stagger-height variation; baseline, center, facing, and global normalization must still remain stable."
+      },
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T18:32:44.911Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "knockdown",
+      "category": "damage",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/knockdown/vzzzzz-knockdown01-main/sable_knockdown_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/knockdown/v20260709-143823/sable_knockdown_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Readable fall/grounded knockdown sequence with full body visible, consistent costume details, and no cropping of hair, hands, feet, or boots.",
+        "full-rebuild-v3 reaction pass. Readable fall/grounded knockdown sequence with full body visible, consistent costume details, and no cropping of hair, hands, feet, or boots."
+      ],
+      "validation": {
+        "maxScaleDriftPx": 300,
+        "minHeightPx": 70,
+        "scaleDriftRationale": "Knockdown intentionally transitions from standing recoil to low/grounded body poses; baseline, center, facing, and global normalization must still remain stable."
+      },
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T18:38:29.975Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "getup",
+      "category": "damage",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/getup/vzzzz-getup01/sable_getup_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/getup/v20260709-144214/sable_getup_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Ground-to-standing recovery animation returning to Sable's ready stance; no teleport pop, no missing in-betweens, no scale jump.",
+        "full-rebuild-v3 reaction pass. Ground-to-standing recovery animation returning to Sable's ready stance; no teleport pop, no missing in-betweens, no scale jump."
+      ],
+      "validation": {
+        "maxScaleDriftPx": 300,
+        "minHeightPx": 70,
+        "scaleDriftRationale": "Getup intentionally transitions from grounded low poses back to standing height; baseline, center, facing, and global normalization must still remain stable."
+      },
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T18:42:20.415Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "stand_light",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/vzz-sl-redraw01-final/sable_stand_light_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_light/v20260709-123426/sable_stand_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Fast standing light body-first poke with compact forearm crystal accent; clear startup, active frame, and recovery.",
+        "full-rebuild-v3 normal attack. Fast standing light body-first poke with compact forearm crystal accent; clear startup, active frame, and recovery."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T16:34:32.519Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "stand_medium",
+      "category": "normal",
+      "frameCount": 10,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_medium/v20260709-correct-identity-anchor-composite02/sable_stand_medium_10.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_medium/v20260709-150044/sable_stand_medium_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        8
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Standing medium with more reach and shoulder rotation than light, still smaller and faster than heavy.",
+        "full-rebuild-v3 normal attack. Standing medium with more reach and shoulder rotation than light, still smaller and faster than heavy."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T19:00:50.871Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "stand_heavy",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_heavy/vzzzzzzzzz-safe352-8-final/sable_stand_heavy_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_heavy/v20260709-105853/sable_stand_heavy_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Standing heavy with strong silhouette commitment, clear active hit pose, and readable recovery; no special-family VFX. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because only 8 source silhouettes pass the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed.",
+        "full-rebuild-v3 normal attack. Standing heavy with strong silhouette commitment, clear active hit pose, and readable recovery; no special-family VFX. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because only 8 source silhouettes pass the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T14:58:56.902Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "crouch_light",
+      "category": "normal",
+      "frameCount": 7,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_light/vzzzzzzzzzz-global-safe352-7-final/sable_crouch_light_7.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch_light/v20260709-110821/sable_crouch_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Quick low crouching poke, compact and readable, not a Ground Rift special. Frame target lowered from 8 to 7 for the 2026-07-09 fluidity redraw because the final return pose was too close to frame 0; no padding/fabricated in-betweens are allowed.",
+        "full-rebuild-v3 normal attack. Quick low crouching poke, compact and readable, not a Ground Rift special. Frame target lowered from 8 to 7 for the 2026-07-09 fluidity redraw because the final return pose was too close to frame 0; no padding/fabricated in-betweens are allowed."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T15:08:24.365Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "crouch_medium",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 13,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_medium/vzzzzzzzzzzzz-redraw02-global-safe352-8-final/sable_crouch_medium_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch_medium/v20260709-113214/sable_crouch_medium_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Crouching medium with longer low reach and stronger body motion than light, with only attached crystal accents. Frame target lowered from 10 to 8 for the 2026-07-09 fluidity redraw because duplicate/outlier silhouettes were removed instead of padded; hit frame aligned to the visible contact pose.",
+        "full-rebuild-v3 normal attack. Crouching medium with longer low reach and stronger body motion than light, with only attached crystal accents. Frame target lowered from 10 to 8 for the 2026-07-09 fluidity redraw because duplicate/outlier silhouettes were removed instead of padded; hit frame aligned to the visible contact pose."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T15:32:18.645Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "crouch_heavy",
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_heavy/vzzzzzzzzzzz-largest-global-safe336-8-final/sable_crouch_heavy_8.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch_heavy/v20260709-114915/sable_crouch_heavy_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        7
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded.",
+        "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T15:49:18.956Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "jump_light",
+      "category": "normal",
+      "frameCount": 7,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/jump_light/vzzzzzzzzzz-redraw02-global-safe336-7-final/sable_jump_light_7.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/jump_light/v20260709-120504/sable_jump_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Fast aerial light with compact body pose and visible face/hair/suit detail in every airborne frame. Frame target lowered from 8 to 7 for the 2026-07-09 fluidity redraw because the final duplicate return pose was removed; hit frame aligned to the visible contact pose.",
+        "full-rebuild-v3 normal attack. Fast aerial light with compact body pose and visible face/hair/suit detail in every airborne frame. Frame target lowered from 8 to 7 for the 2026-07-09 fluidity redraw because the final duplicate return pose was removed; hit frame aligned to the visible contact pose."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T16:05:09.903Z",
+      "approvalPolicy": "previewAuto"
+    },
+    {
+      "clipId": "jump_medium",
+      "category": "normal",
+      "frameCount": 5,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/jump_medium/vzzzzzzzzzz-jumpmedium05-5f/sable_jump_medium_5.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/jump_medium/v20260709-194754/sable_jump_medium_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hitFrames": [
+        2
+      ],
+      "cancelFrames": [
+        4
+      ],
+      "notes": [
+        "full-rebuild-v3 normal attack. Aerial medium with a clearer arc and longer reach than light, preserving stable airborne scale. Frame target lowered from 10 to 5 after Claude rejected 10-frame text-only attempts for pose-pumping/multi-hit read and approved trimming the duplicate sixth frame from attempt 1; contact is visual frame 3/index 2, recovery/cancel is visual frame 5/index 4, and the clip must avoid a second reach peak.",
+        "full-rebuild-v3 normal attack. Aerial medium with a clearer arc and longer reach than light, preserving stable airborne scale. Frame target lowered from 10 to 5 after Claude rejected 10-frame text-only attempts for pose-pumping/multi-hit read and approved trimming the duplicate sixth frame from attempt 1; contact is visual frame 3/index 2, recovery/cancel is visual frame 5/index 4, and the clip must avoid a second reach peak."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-09T23:48:01.376Z",
+      "approvalPolicy": "previewAuto"
+    }
+  ],
+  "missingClips": [
+    "jump_heavy",
+    "forward_light",
+    "forward_medium",
+    "forward_heavy",
+    "back_light",
+    "back_medium",
+    "back_heavy",
+    "neutral_special_light",
+    "neutral_special_medium",
+    "neutral_special_heavy",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "back_special_medium",
+    "back_special_heavy",
+    "down_special_light",
+    "down_special_medium",
+    "down_special_heavy",
+    "up_special_light",
+    "up_special_medium",
+    "up_special_heavy"
+  ],
+  "reports": {
+    "latestValidationReport": "assets/characters/sable/reports/latest_validation_report.json",
+    "latestNormalizationReport": "assets/characters/sable/reports/latest_normalization_report.json"
+  },
+  "notes": [
+    "This manifest is preview-only and is not consumed by the live roster automatically.",
+    "Do not wire these clips into NO_GODS_ABOVE/game.js until validation is approved and a separate runtime adapter/integration pass is requested.",
+    "Existing production assets remain untouched."
+  ]
+}

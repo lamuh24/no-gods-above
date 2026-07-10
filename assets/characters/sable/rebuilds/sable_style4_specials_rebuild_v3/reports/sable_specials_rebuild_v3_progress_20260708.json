@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-08T18:05:30.000Z",
+  "character": "sable",
+  "stage": "specials-rebuild-v3",
+  "status": "production_started_preview_only",
+  "supersededAsCompleteTargetBy": "full-rebuild-v3",
+  "supersededAsCompleteTargetReason": "User clarified that all Sable attack, movement, and reaction animations are being redone today. This lane remains preserved as special-only history/reference work.",
+  "approvedForLiveRoster": false,
+  "livePromotion": false,
+  "queue": {
+    "overallStatus": "waiting_for_generation",
+    "approvedPreviewClips": [],
+    "approvedLiveClips": [],
+    "waitingClipCount": 15,
+    "missingOutputCount": 15
+  },
+  "firstGeneratedDraft": {
+    "clip": "neutral_special_light",
+    "family": "Void Shard",
+    "variant": "light",
+    "keyposeDraft": "assets/characters/sable/rebuilds/sable_style4_specials_rebuild_v3/keyposes/neutral_special_light/sable_neutral_special_light_keyposes_draft_20260708.png",
+    "transparentKeyposeDraft": "assets/characters/sable/rebuilds/sable_style4_specials_rebuild_v3/keyposes/neutral_special_light/sable_neutral_special_light_keyposes_draft_20260708_alpha.png",
+    "derivedDraftStrip": "assets/characters/sable/rebuilds/sable_style4_specials_rebuild_v3/draft_strips/neutral_special_light/sable_neutral_special_light_draft_strip_12x1_448_20260708.png",
+    "validationOverallStatus": "manual_review_required",
+    "validationTechnicalStatus": "warn",
+    "knownLimitations": [
+      "derived from 6 key poses",
+      "contains near-duplicate held frames",
+      "needs true in-betweens before production queue use"
+    ]
+  },
+  "runtimeTouched": false,
+  "publicRosterTouched": false,
+  "staged": false,
+  "committed": false
+}
