@@ -781,7 +781,7 @@
   // Sable full-rebuild-v3 strips, available only through the hidden ?sableTest gate.
   // One Nx1 448px strip per clip, registered programmatically.
   const SABLE_REBUILD_CLIP_FRAMES = {
-    idle: 3, walk_forward: 6, walk_backward: 8, jump: 8, crouch: 8, block: 8,
+    idle: 4, walk_forward: 6, walk_backward: 8, jump: 8, crouch: 8, block: 8,
     hit_stun: 8, knockdown: 8, getup: 5,
     stand_light: 8, stand_medium: 10, stand_heavy: 8,
     crouch_light: 7, crouch_medium: 8, crouch_heavy: 8,
@@ -796,7 +796,7 @@
   };
   for (const [sableClip, sableFrames] of Object.entries(SABLE_REBUILD_CLIP_FRAMES)) {
     // Sable is hidden from public play — only download her strips on ?sableTest.
-    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-1` : null;
+    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-2` : null;
     sheetMeta[`sableRb_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.86, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
   }
   const SABLE_MVP_CLIP_FRAMES = {

@@ -1,5 +1,15 @@
 # Session Context - no gods above
 
+## 2026-07-11 Codex - live Sable sizing inconsistency resolved in gated runtime
+
+- User confirmed the open `?sableTest` build still changed size across moves. Root cause: the 350 px idle was not wired, getup/Void Anchor remained 255-260 px, runtime scale/cache keys were stale.
+- Hidden runtime now uses idle 350/349, getup final 352, back-special light 353/353, medium 352/352, heavy 352/358, all baseline y=381. Rebuild render scale is 0.86.
+- Generated getup and all Void Anchor replacements with `C:\Users\qchee\Downloads\sable pixel reference style.png` as the actual image input. Light's first generation was service-moderated; the second passed. Light/medium hold one complete plant-plus-trap frame where generated VFX-only cells omitted Sable.
+- Gated runtime files under `NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/` were replaced for idle, getup, and back-special L/M/H. Public roster remains hidden and unchanged.
+- Candidate manifest `preview_animation_clips_full_rebuild_v3_consistency352_candidate.json` passes cross-clip consistency 39/39. Locked palette canon stays 249.3 degree suit hue, not the new idle's sampled hue.
+- Cache keys bumped to `game.js?v=sable-consistency-1` and `nga-cache-v13-sable-consistency` so refresh loads the corrected build.
+- Report: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/runtime_consistency_fix_20260711.md`.
+
 ## 2026-07-11 Codex - Sable majority-canon correction
 
 - Claude rejected commit `517e60e`'s 18 downscaled candidates after roster measurements proved the 348-352 px majority cluster is correct. Those candidate strips, scrub bundles, candidate manifest, and obsolete reports were deleted; do not restore or promote them.
