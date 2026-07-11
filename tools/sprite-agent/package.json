@@ -6,7 +6,8 @@
   "scripts": {
     "sprite-agent": "tsx src/run.ts",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck"
+    "check": "npm run typecheck",
+    "cross-clip-consistency:sable": "node scripts/cross-clip-consistency.mjs --repo-root ../.. --manifest ../../assets/characters/sable/manifests/preview_animation_clips_full_rebuild_v3.json --output ../../assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/cross_clip_consistency_latest.json"
   },
   "dependencies": {
     "sharp": "^0.34.2"

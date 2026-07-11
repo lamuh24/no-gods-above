@@ -2112,3 +2112,24 @@ Date: 2026-07-11
 - Verification watch item: `latest_spriteforge_pack_report` still echoes stale historical retry labels for `forward_light` and `getup` from queue status even though both are approved and present in the complete manifest. Do not modify validator code during asset review; treat this as a separate reviewed tooling/status-cleanup task.
 - No live roster wiring, push, PR, or deployment was performed.
 - Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`). This repo-local section remains the continuity fallback.
+
+## 2026-07-11 Codex - Sable Final Claude Audit And Motion Harness Gate
+- Claude completed the full contact-sheet audit: all 39/39 preview clips are approved at contact-sheet level. The seven late hit-frame checks align with their visible contact poses: `forward_light[2]`, `back_special_light[3]`, `back_special_medium[3]`, `down_special_heavy[4]`, `up_special_light[3]`, `up_special_medium[4]`, and `up_special_heavy[5]`.
+- Extended only `assets/characters/sable/test/sprite_agent_preview.html` with gameplay/half-speed controls and frame/loop telemetry. Also fixed a harness-only negative-first-frame race by clamping elapsed time to zero; no sprite, validator, or live runtime code was changed.
+- Full harness playback passed delivery at both rates: 39/39 clips completed every frame and at least one loop at 1x, and 39/39 did the same at 0.5x. All 27 idle-to-ground-attack sequences advanced. `knockdown -> getup -> idle` and `jump -> jump_light/medium/heavy` completed with exact frame totals after the harness fix.
+- Final motion-gate status is `BLOCK - CROSS-CLIP SCALE POP`, not playtest-ready integration. The pack visibly mixes body scales: many older standing/directional/neutral/forward/down-special starts are about 37% taller than the new idle, while the newer Void Anchor, Ground Rift Heavy, and Vertical Phase clips sit in the smaller scale band. Do not silently rescale during close-out.
+- Evidence: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/fullset_motion_harness_report_20260711.md`, `.../fullset_motion_metrics_20260711.json`, and `.../cross_clip_attack_start_comparison_20260711.png`.
+- `stand_medium` contact-to-upright snap and the 3-frame idle loop bounce remain non-blocking per-clip human feel watch items; all frame indices delivered correctly at both rates.
+- Everything remains preview-only: manifest and every clip have `approvedForLiveRoster: false`; no live roster wiring was added.
+- Next human decisions are (a) whether to run/accept the gated `?sableTest` diagnostic playtest before preview-scale normalization, and (b) whether to open the PR after the cross-clip scale-pop disposition.
+- Repaired the hidden test adapter so that decision is actionable: all 39 preview strips now populate `NO_GODS_ABOVE/assets/sprites/sable_rebuild_v2/`, gated frame counts match the manifest, and Sable L/M/H aliases use their reviewed variants. Added a default-hidden Sable select card that appears only under `?sableTest`; public character select remains unchanged.
+- Fresh-origin browser smoke at `http://127.0.0.1:5176/NO_GODS_ABOVE/index.html?sableTest` selected Sable, entered Standard Arena Training, rendered the new idle, and produced no browser warnings/errors. Evidence: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/gated_sable_training_smoke_20260711.png`.
+# 2026-07-11 Codex - Sable cross-clip consistency gate and review candidates
+
+- Live playtest exposed body-scale and palette/hair drift across otherwise approved clips. This blocks Sable sign-off.
+- Canonical metrics now come from approved idle frame 0: 257 px head-to-baseline, baseline y=381, suit hue 249.3 degrees with +/-18 degree band, lattice hue 24.3 degrees, hair-fleck density 7.24 percent.
+- Added `tools/sprite-agent/scripts/cross-clip-consistency.mjs` and the `cross-clip-consistency:sable` command as a permanent failing gate. All 39 clips are measured; posture-specific starts are reported without comparing crouched/airborne silhouettes directly to idle height.
+- Built candidate-only uniform scale corrections for 18 standing-scale offenders under `consistency_candidates/20260711/`. Approved manifest paths and gated game sprite copies were not replaced.
+- Candidate audit passes 39/39. All 18 modified clips have fresh numbered contact sheets and frame-scrub reports. Suit hues measured inside the canonical band, so no unsafe global recolor was applied.
+- Review report: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/cross_clip_consistency_review_20260711.md`.
+- NEXT: Claude reviews candidate strips in motion and at half speed for pixel-detail loss, palette/hair consistency, and transitions. Only after approval should candidate paths be promoted and copied into the gated `?sableTest` runtime.
