@@ -796,7 +796,7 @@
   };
   for (const [sableClip, sableFrames] of Object.entries(SABLE_REBUILD_CLIP_FRAMES)) {
     // Sable is hidden from public play — only download her strips on ?sableTest.
-    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-2` : null;
+    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-3` : null;
     sheetMeta[`sableRb_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.86, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
   }
   const SABLE_MVP_CLIP_FRAMES = {
@@ -1700,21 +1700,21 @@
       jump_light: attackDef(20, 3, 5, 5, 21, 26, -14, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
       jump_medium: attackDef(38, 5, 6, 9, 30, 36, -28, "jump", { air: true, cancelOnHit: ["jump_heavy", "air_light_special"], dashCancel: true }),
       jump_heavy: attackDef(58, 7, 6, 15, 36, 48, 180, "jump", { air: true, softKnockdown: true, dashCancel: true }),
-      neutral_light_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "void_shard", visualProfile: "voidShard" }),
-      neutral_medium_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable neutral special is single-version in the MVP kit." }),
-      neutral_heavy_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable neutral special is single-version in the MVP kit." }),
-      forward_light_special: attackDef(42, 6, 5, 19, 27, 82, -54, "phaseLunge", { dash: true, dashSpeed: 520, dashTime: 0.16, dashCancel: true, softKnockdown: true, meter: 8, anim: "phase_lunge", variantRole: "short" }),
-      forward_medium_special: attackDef(50, 8, 5, 24, 30, 102, -62, "phaseLunge", { dash: true, dashSpeed: 620, dashTime: 0.18, softKnockdown: true, meter: 12, anim: "phase_lunge", variantRole: "far" }),
-      forward_heavy_special: attackDef(62, 10, 5, 33, 34, 132, -88, "phaseLunge", { dash: true, dashSpeed: 720, dashTime: 0.21, softKnockdown: true, meter: 16, anim: "phase_lunge", variantRole: "heavy_punish" }),
-      back_light_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "void_anchor" }),
-      back_medium_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "void_anchor", intentionalAliasOf: "back_special", aliasReason: "Sable back special is single-version in the MVP kit." }),
-      back_heavy_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "void_anchor", intentionalAliasOf: "back_special", aliasReason: "Sable back special is single-version in the MVP kit." }),
-      down_light_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "ground_rift" }),
-      down_medium_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "ground_rift", intentionalAliasOf: "down_special", aliasReason: "Sable down special is single-version in the MVP kit." }),
-      down_heavy_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "ground_rift", intentionalAliasOf: "down_special", aliasReason: "Sable down special is single-version in the MVP kit." }),
-      up_light_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "vertical_phase" }),
-      up_medium_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "vertical_phase", intentionalAliasOf: "up_special", aliasReason: "Sable up special is single-version in the MVP kit." }),
-      up_heavy_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "vertical_phase", intentionalAliasOf: "up_special", aliasReason: "Sable up special is single-version in the MVP kit." }),
+      neutral_light_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "neutral_light_special", visualProfile: "voidShard" }),
+      neutral_medium_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "neutral_medium_special", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      neutral_heavy_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "neutral_heavy_special", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      forward_light_special: attackDef(42, 6, 5, 19, 27, 82, -54, "phaseLunge", { dash: true, dashSpeed: 520, dashTime: 0.16, dashCancel: true, softKnockdown: true, meter: 8, anim: "forward_light_special", variantRole: "short" }),
+      forward_medium_special: attackDef(50, 8, 5, 24, 30, 102, -62, "phaseLunge", { dash: true, dashSpeed: 620, dashTime: 0.18, softKnockdown: true, meter: 12, anim: "forward_medium_special", variantRole: "far" }),
+      forward_heavy_special: attackDef(62, 10, 5, 33, 34, 132, -88, "phaseLunge", { dash: true, dashSpeed: 720, dashTime: 0.21, softKnockdown: true, meter: 16, anim: "forward_heavy_special", variantRole: "heavy_punish" }),
+      back_light_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "back_light_special" }),
+      back_medium_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "back_medium_special", intentionalAliasOf: "back_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      back_heavy_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "back_heavy_special", intentionalAliasOf: "back_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      down_light_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "down_light_special" }),
+      down_medium_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "down_medium_special", intentionalAliasOf: "down_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      down_heavy_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "down_heavy_special", intentionalAliasOf: "down_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      up_light_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "up_light_special" }),
+      up_medium_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "up_medium_special", intentionalAliasOf: "up_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      up_heavy_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "up_heavy_special", intentionalAliasOf: "up_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
       air_light_special: attackDef(26, 8, 4, 18, 24, 48, 18, "voidShard", { air: true, projectile: true, projectileSpeed: 330, noHit: true, meter: 7, anim: "air_void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable air special compatibility slots fall back to Void Shard for MVP." }),
       air_medium_special: attackDef(26, 8, 4, 18, 24, 48, 18, "voidShard", { air: true, projectile: true, projectileSpeed: 330, noHit: true, meter: 7, anim: "air_void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable air special compatibility slots fall back to Void Shard for MVP." }),
       air_heavy_special: attackDef(26, 8, 4, 18, 24, 48, 18, "voidShard", { air: true, projectile: true, projectileSpeed: 330, noHit: true, meter: 7, anim: "air_void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable air special compatibility slots fall back to Void Shard for MVP." }),
@@ -1729,10 +1729,10 @@
     attacks.up_special = cloneData(attacks.up_light_special);
     attacks.air_special = cloneData(attacks.air_light_special);
     attacks.special_1 = cloneData(attacks.neutral_light_special);
-    attacks.special_2 = cloneData(attacks.neutral_light_special);
+    attacks.special_2 = cloneData(attacks.neutral_medium_special);
     attacks.special_2.flags.intentionalAliasOf = "neutral_special";
     attacks.special_2.flags.aliasReason = "Neutral medium shortcut aliases to Sable's single-version Void Shard.";
-    attacks.special_3 = cloneData(attacks.neutral_light_special);
+    attacks.special_3 = cloneData(attacks.neutral_heavy_special);
     attacks.special_3.flags.intentionalAliasOf = "neutral_special";
     attacks.special_3.flags.aliasReason = "Neutral heavy shortcut aliases to Sable's single-version Void Shard.";
     return attacks;
@@ -1757,10 +1757,10 @@
     enemy.enemy_medium_attack = cloneData(enemy.enemy_medium_attack || enemy.enemy_medium);
     enemy.enemy_heavy_attack = cloneData(enemy.enemy_heavy_attack || enemy.enemy_heavy);
     enemy.enemy_special_1 = cloneData(enemy.enemy_neutral_light_special);
-    enemy.enemy_special_2 = cloneData(enemy.enemy_neutral_light_special);
+    enemy.enemy_special_2 = cloneData(enemy.enemy_neutral_medium_special);
     enemy.enemy_special_2.flags.intentionalAliasOf = "enemy_neutral_special";
     enemy.enemy_special_2.flags.aliasReason = "Neutral medium shortcut aliases to Sable's single-version Void Shard.";
-    enemy.enemy_special_3 = cloneData(enemy.enemy_neutral_light_special);
+    enemy.enemy_special_3 = cloneData(enemy.enemy_neutral_heavy_special);
     enemy.enemy_special_3.flags.intentionalAliasOf = "enemy_neutral_special";
     enemy.enemy_special_3.flags.aliasReason = "Neutral heavy shortcut aliases to Sable's single-version Void Shard.";
     enemy.enemy_neutral_special = cloneData(enemy.enemy_neutral_light_special);
@@ -4952,12 +4952,12 @@
   function getSableActionPhaseAnim(f, moveData) {
     const moveKey = f.activeMove.replace(/^enemy_/, "");
     const identityAnimEnd = Math.max(moveData.startup + moveData.active, moveData.duration * 0.76);
-    if (moveKey.includes("neutral_") && moveKey.includes("_special")) return withEnemyPrefix(f, "void_shard");
-    if (["special_1", "special_2", "special_3"].includes(moveKey)) return withEnemyPrefix(f, "void_shard");
-    if (moveKey.includes("forward_") && moveKey.includes("_special")) return withEnemyPrefix(f, "phase_lunge");
-    if (moveKey.includes("back_") && moveKey.includes("_special")) return withEnemyPrefix(f, "void_anchor");
-    if (moveKey.includes("down_") && moveKey.includes("_special")) return withEnemyPrefix(f, "ground_rift");
-    if (moveKey.includes("up_") && moveKey.includes("_special")) return withEnemyPrefix(f, "vertical_phase");
+    if (moveKey.includes("neutral_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (["special_1", "special_2", "special_3"].includes(moveKey)) return withEnemyPrefix(f, { special_1: "neutral_light_special", special_2: "neutral_medium_special", special_3: "neutral_heavy_special" }[moveKey]);
+    if (moveKey.includes("forward_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("back_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("down_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("up_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
     if (moveKey.includes("air_light_special") || moveKey === "air_special") return withEnemyPrefix(f, "air_void_shard");
     if (moveKey.includes("air_medium_special")) return withEnemyPrefix(f, "air_phase_lunge");
     if (moveKey.includes("air_heavy_special")) return withEnemyPrefix(f, "air_rift_drop");

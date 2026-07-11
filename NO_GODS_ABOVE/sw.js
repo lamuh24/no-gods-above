@@ -3,7 +3,7 @@
  * offline after the first visit. Bump CACHE_NAME to invalidate after big
  * asset changes.
  */
-const CACHE_NAME = "nga-cache-v13-sable-consistency";
+const CACHE_NAME = "nga-cache-v14-sable-variants";
 const CORE = ["./", "./index.html", "./controller.html", "./style.css", "./game.js", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {

@@ -1,5 +1,15 @@
 # Session Context - no gods above
 
+## 2026-07-11 Codex - Sable special strength routing and final scale outliers
+
+- User found forward_light, down_special_heavy, and all up specials still read undersized; also every special family displayed only one visual version.
+- Root routing bug: Sable attack flags and `getSableActionPhaseAnim` collapsed L/M/H moves into generic family aliases. All neutral/forward/back/down/up strength-specific specials now select their exact L/M/H animation keys. Gameplay values were not changed.
+- Hidden runtime replacements: forward_light 352 px, down_special_heavy 353 px, up-special L/M/H all 352 px at opening guard, baseline y=381.
+- Forward light and down heavy were regenerated with the actual Sable reference input. New up-special generations were rejected for cross-cell cropped bodies; the previously Claude-approved complete strips were uniformly enlarged from 205-217 px guards to 352 px, preserving motion and anatomy.
+- Candidate manifest gate remains 39/39. Game syntax and sprite-agent typecheck pass.
+- Cache keys bumped to preview-3 / `sable-consistency-2` / `nga-cache-v14-sable-variants`.
+- Report: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/special_variant_and_scale_fix_20260711.md`.
+
 ## 2026-07-11 Codex - live Sable sizing inconsistency resolved in gated runtime
 
 - User confirmed the open `?sableTest` build still changed size across moves. Root cause: the 350 px idle was not wired, getup/Void Anchor remained 255-260 px, runtime scale/cache keys were stale.
