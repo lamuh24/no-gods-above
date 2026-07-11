@@ -1,5 +1,15 @@
 # Session Context - no gods above
 
+## 2026-07-11 Codex - crouch-heavy scale and special input variants
+
+- User confirmed Sable's normal down-heavy remained undersized and special inputs still displayed one variation.
+- Root special bug was in `chooseSableSpecialMove`: neutral/back/down/up routes discarded the requested strength and returned generic aliases. All directions and airborne-neutral now preserve light/medium/heavy. Combat values are unchanged.
+- Crouch-heavy's approved motion was uniformly rescaled `1.2915x` with nearest-neighbor sampling about the bottom-center baseline. Opening crouch height is now 257px instead of 199px, matching crouch-light; all frames remain inside 448px cells and the scrub has no duplicates.
+- Runtime hidden-test asset and cache keys were updated to preview-4 / `sable-consistency-3` / `nga-cache-v15-sable-special-input`. The local server at port 5177 serves the new selector and cache key.
+- Cross-clip consistency passes 39/39 and game syntax/typecheck pass. The legacy `verify-pack` still returns its known live-file dirty guardrail and stale source checks for forward_light/getup; this does not reflect the hidden runtime, but remains a tooling follow-up.
+- All five special families have three distinct runtime file hashes. Sable remains `?sableTest`-only and `approvedForLiveRoster` remains false.
+- Central Obsidian sync was attempted at `http://127.0.0.1:27124/` but the bridge was unavailable; this repo-local entry is the handoff record.
+
 ## 2026-07-11 Codex - Sable special strength routing and final scale outliers
 
 - User found forward_light, down_special_heavy, and all up specials still read undersized; also every special family displayed only one visual version.

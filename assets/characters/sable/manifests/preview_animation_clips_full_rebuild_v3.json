@@ -687,7 +687,7 @@
       "baselineY": 382,
       "facing": "right",
       "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch_heavy/vzzzzzzzzzzz-largest-global-safe336-8-final/sable_crouch_heavy_8.png",
-      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch_heavy/v20260709-114915/sable_crouch_heavy_normalized_strip.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch_heavy/v20260711-consistency257/sable_crouch_heavy_normalized_strip.png",
       "frameOrder": [
         0,
         1,
@@ -706,7 +706,8 @@
       ],
       "notes": [
         "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded.",
-        "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded."
+        "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded.",
+        "Uniformly rescaled 1.2915x about the bottom-center baseline on 2026-07-11 so its 257px crouching guard matches the approved crouch-light scale; motion and silhouette are unchanged."
       ],
       "validationStatus": "approved",
       "approvedForPreview": true,
@@ -716,8 +717,8 @@
       "crossClipConsistency": {
         "sampleFrame": 0,
         "postureClass": "posture_specific",
-        "bodyHeightPx": 199,
-        "heightDeviationPct": -43.5,
+        "bodyHeightPx": 257,
+        "heightDeviationPct": -27,
         "suitHueDeg": 258.8,
         "suitHueDeviationDeg": 9.5,
         "latticeHueDeg": 19.7,

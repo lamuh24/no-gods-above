@@ -796,7 +796,7 @@
   };
   for (const [sableClip, sableFrames] of Object.entries(SABLE_REBUILD_CLIP_FRAMES)) {
     // Sable is hidden from public play — only download her strips on ?sableTest.
-    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-3` : null;
+    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-4` : null;
     sheetMeta[`sableRb_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.86, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
   }
   const SABLE_MVP_CLIP_FRAMES = {
@@ -13060,14 +13060,14 @@
     const p = fighter;
     const prefix = p.kind === "enemy" ? "enemy_" : "";
     const strength = getLamuhSpecialStrengthFromFallback(fallbackKey);
-    if (!p.grounded) return `${prefix}neutral_special`;
-    if (state.keys.has(controls.down)) return `${prefix}down_special`;
-    if (state.keys.has(controls.up)) return `${prefix}up_special`;
+    if (!p.grounded) return `${prefix}neutral_${strength}_special`;
+    if (state.keys.has(controls.down)) return `${prefix}down_${strength}_special`;
+    if (state.keys.has(controls.up)) return `${prefix}up_${strength}_special`;
     const forward = p.facing === 1 ? controls.right : controls.left;
     const back = p.facing === 1 ? controls.left : controls.right;
     if (state.keys.has(forward)) return `${prefix}forward_${strength}_special`;
-    if (state.keys.has(back)) return `${prefix}back_special`;
-    return `${prefix}neutral_special`;
+    if (state.keys.has(back)) return `${prefix}back_${strength}_special`;
+    return `${prefix}neutral_${strength}_special`;
   }
 
   function chooseLamuhLegacySpecialMove(fighter, controls, fallbackKey) {
