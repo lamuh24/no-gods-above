@@ -2,7 +2,16 @@
 
 ## Last Updated
 Agent: Codex
-Date: 2026-07-08
+Date: 2026-07-11
+
+## 2026-07-10 Codex Swahili Documentation Gate
+- User supplied the full Swahili playable-fighter brief and exact visual reference `C:\Users\qchee\Downloads\swahili char reference image.png`.
+- Opened GitHub Issue #1 for the required documentation/character-truth approval gate. No runtime, sprite generation, public roster, balance, or deployment changes were made.
+- Added gated Swahili truth, `NO_GODS_ABOVE/docs/SWAHILI_CHARACTER_LOCK.md`, and `NO_GODS_ABOVE/docs/swahili_ultimate_paid_in_full.md` on isolated branch `codex/swahili-character-lock`, based on `codex/nga-collaboration-setup` to avoid the active dirty Sable worktree.
+- Resolved the atlas-format conflict in favor of the current new-generation engine standard: 448 px cells, 6 x 5 body atlases, transparent runtime RGBA, one sheet at a time. The brief's 8 x 6 clause explicitly allowed the current standard to supersede it.
+- Swahili remains unimplemented and must stay out of `selectableCharacterIds`. After this docs gate is reviewed and merged, use a new Issue/branch for hidden `?swahiliTest` runtime work; generate and validate Sheet 1 before any later sheet.
+- The first full-worktree checkout failed because C: had insufficient free space; the failed partial path was not registered, and the successful replacement is a sparse docs-only linked worktree. Do not attempt a full second checkout until disk space is reclaimed.
+- Continued on 2026-07-11 to validate and publish the docs-only gate. Obsidian MCP sync to `127.0.0.1:27124` was unreachable, so the fallback handoff was written to `C:\Users\qchee\OneDrive\Documents\LAMUH\LAMUH\Agent Sync\2026-07-11-no-gods-above-swahili-doc-gate.md`.
 
 ## 2026-07-08 Codex Supervised Collaboration Setup
 - User asked for the first safe, minimal Codex <-> Claude collaboration setup for No Gods Above: documentation/process only, no gameplay changes, no art generation, no deploy, no cron, no inbox/outbox/locks/schemas.
