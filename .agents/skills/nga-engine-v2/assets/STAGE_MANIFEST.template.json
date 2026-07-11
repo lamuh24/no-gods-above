@@ -1,0 +1,32 @@
+{
+  "$schemaVersion": 1,
+  "id": "stage_id",
+  "displayName": "Stage Name",
+  "visual": {
+    "web": "runtime/stage.web.glb",
+    "steam": "runtime/stage.steam.glb"
+  },
+  "combatPlane": {
+    "axis": "x",
+    "groundY": 0,
+    "depthZ": 0,
+    "leftBoundary": -12,
+    "rightBoundary": 12,
+    "maxAirHeight": 9
+  },
+  "spawnPoints": {
+    "player1": [-4, 0, 0],
+    "player2": [4, 0, 0]
+  },
+  "cameraManifest": "presentation/cameras.json",
+  "lightingManifest": "presentation/lighting.json",
+  "audioManifest": "presentation/audio.json",
+  "qualityManifest": "runtime/quality.json",
+  "provenanceManifest": "source/provenance.json",
+  "approval": {
+    "visual": "unapproved",
+    "gameplay": "unapproved",
+    "cinematics": "unapproved",
+    "production": "blocked"
+  }
+}
