@@ -406,6 +406,11 @@
     </main>
 
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-    <script src="game.js?v=phone-strikes-1"></script>
+    <script>
+      if (new URLSearchParams(window.location.search).has("swahiliTest")) {
+        document.write('<script src="data/characters/swahili.js?v=swahili-hidden-runtime-1"><\/script>');
+      }
+    </script>
+    <script src="game.js?v=swahili-hidden-runtime-1"></script>
   </body>
 </html>
