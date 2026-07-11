@@ -205,6 +205,20 @@ Note on paths: where a listed path includes a `?v=...` suffix, that suffix is a 
 
 ## Gated / Not Current Playable
 
+### Swahili
+
+- Canonical name: SWAHILI.
+- Accepted aliases/runtime IDs: `swahili`, Swahili.
+- Status: approved only for documentation and hidden-development planning under GitHub Issue #1; not implemented, not in the current public select grid, and not in `selectableCharacterIds`.
+- Archetype/title: Divine Debt Collector / mid-range contract trap and whiff-punish fighter.
+- Gameplay role: deliberate mid-range control through twin pistols, a large scythe, contract traps, and the Debt Halo: Final Notice mark system.
+- Exact visual reference: user-supplied `swahili char reference image.png`; copy it into a traceable review/source area only when the asset-production Issue begins. Do not use the local Downloads path as a runtime asset.
+- Visual lock: anthropomorphic pig; pink skin; broad, heavy build; luxury black tuxedo and vest; white dress shirt; long black patterned necktie; flowing black coat with gold floral lining and gold embroidery; black dress shoes with gold ornamentation; gold rings, nose ring, pocket chain, pig-emblem belt buckle, and small lapel accent.
+- Weapon lock: two black semi-automatic pistols with restrained gold detail; one massive ornate black-and-gold scythe with black shaft, huge curved blade, gold filigree and trim, boar crest, hanging gold charm, and pointed gold end cap.
+- Signature colors/motifs: black, white, warm old gold/brass, pink skin, dark gray, contracts, ledger pages, seals, thin black smoke, and precise gold muzzle/scythe accents.
+- NOT rules: no comic-relief behavior; no bow tie; no short/plain tie; no generic mobster redesign; no different pig species or human face; no bright plastic firearms; no weapon shape drift; no missing scythe crest/charm; no photorealism; no text, ledger words, labels, or stamps baked into body atlases; no public enablement from documentation approval alone.
+- Runtime notes: future work must begin hidden behind a Swahili-specific URL gate, preserve P1/P2 parity, use character-local combat overrides, and keep every generated sheet or strip in review until identity, alpha, grid, baseline, frame-scrub, and smoke gates pass.
+
 ### Sable
 
 - Canonical name: SABLE
