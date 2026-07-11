@@ -1,0 +1,22 @@
+{
+  "$schemaVersion": 1,
+  "id": "move_id",
+  "slot": "5L",
+  "kind": "strike",
+  "command": "L",
+  "animation": "move_id",
+  "frames": { "startup": 0, "active": 0, "recovery": 0 },
+  "damage": 0,
+  "hitstop": { "attacker": 0, "defender": 0 },
+  "onHit": { "hitstun": 0, "knockback": [0, 0], "reaction": "light_hit" },
+  "onBlock": { "blockstun": 0, "pushback": 0 },
+  "cancelRoutes": [],
+  "events": [],
+  "properties": {
+    "low": false,
+    "overhead": false,
+    "airBlockable": true,
+    "counterHitEligible": true
+  },
+  "approval": "unapproved"
+}
