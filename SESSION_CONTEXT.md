@@ -1,5 +1,15 @@
 # Session Context - no gods above
 
+## 2026-07-11 Codex - Sable majority-canon correction
+
+- Claude rejected commit `517e60e`'s 18 downscaled candidates after roster measurements proved the 348-352 px majority cluster is correct. Those candidate strips, scrub bundles, candidate manifest, and obsolete reports were deleted; do not restore or promote them.
+- Cross-clip body canon now derives from the standing majority and must fall inside the shared 350-380 px roster convention. Current Sable canon is 352 px. Idle remains the palette sample only.
+- True sub-canon standing samples: idle 257, getup final 260, back_special_light 255, back_special_medium 260, back_special_heavy 260.
+- Generated a new four-frame reference-input idle and normalized it to 350/350/349/349 px with every frame bottom at y=381. Review strip and numbered sheet are linked in `cross_clip_consistency_majority_review_20260711.md`; not promoted.
+- Runtime audit: Sable rebuild strips were scale 0.98 versus LAMUH 0.82. Corrected Sable rebuild scale candidate is 0.86, making 350 px source art render near 301 px versus LAMUH near 306 px. No combat values changed.
+- Disk filled during the pass. Removed only the rejected candidate set and disposable local npm cache (about 2.43 GB), restoring about 2.5 GB free.
+- NEXT: Claude reviews the new idle and 0.86 runtime multiplier. After approval, promote idle and regenerate getup/back-special standing frames at 352 px canon, then rerun the full gate and motion harness.
+
 ## Last Updated
 Agent: Codex
 Date: 2026-07-11

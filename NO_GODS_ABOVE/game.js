@@ -314,6 +314,8 @@
   const SERIS_HIDDEN_TEST_ENABLED = debugParams.has("serisTest");
   const LAMUH_HIDDEN_TEST_ENABLED = debugParams.has("lamuhTest");
   const SABLE_HIDDEN_TEST_ENABLED = debugParams.has("sableTest");
+  const sableSelectCard = document.querySelector('[data-character="sable"]');
+  if (sableSelectCard) sableSelectCard.classList.toggle("hidden", !SABLE_HIDDEN_TEST_ENABLED);
   const CELESTE_HIDDEN_TEST_ENABLED = debugParams.has("celesteTest");
   const PLATFORM_TEST_DEBUG_ENABLED = debugParams.has("platformTest");
   const CELESTE_FRAME_DEBUG_ENABLED = CELESTE_HIDDEN_TEST_ENABLED && debugParams.has("celesteFrameDebug");
@@ -776,26 +778,26 @@
     sablePlaceholderAtlas: { cols: 4, rows: 20, cellSize: 320, baselineY: 300, scale: 1.38, frameCounts: Array(20).fill(4), fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true }
   };
 
-  // Sable animator-rebuild-v2 strips (preview art promoted for in-game testing).
+  // Sable full-rebuild-v3 strips, available only through the hidden ?sableTest gate.
   // One Nx1 448px strip per clip, registered programmatically.
   const SABLE_REBUILD_CLIP_FRAMES = {
-    idle: 8, walk_forward: 12, walk_backward: 12, jump: 12, crouch: 8, block: 8,
-    hit_stun: 8, knockdown: 8, getup: 8,
-    stand_light: 8, stand_medium: 10, stand_heavy: 12,
-    crouch_light: 8, crouch_medium: 10, crouch_heavy: 12,
-    jump_light: 8, jump_medium: 10, jump_heavy: 12,
-    forward_light: 8, forward_medium: 10, forward_heavy: 12,
-    back_light: 8, back_medium: 10, back_heavy: 12,
-    neutral_special_light: 14, neutral_special_medium: 16, neutral_special_heavy: 18,
-    forward_special_light: 14, forward_special_medium: 16, forward_special_heavy: 18,
-    back_special_light: 14, back_special_medium: 16, back_special_heavy: 18,
-    down_special_light: 14, down_special_medium: 16, down_special_heavy: 18,
-    up_special_light: 14, up_special_medium: 16, up_special_heavy: 18
+    idle: 3, walk_forward: 6, walk_backward: 8, jump: 8, crouch: 8, block: 8,
+    hit_stun: 8, knockdown: 8, getup: 5,
+    stand_light: 8, stand_medium: 10, stand_heavy: 8,
+    crouch_light: 7, crouch_medium: 8, crouch_heavy: 8,
+    jump_light: 7, jump_medium: 5, jump_heavy: 6,
+    forward_light: 5, forward_medium: 6, forward_heavy: 6,
+    back_light: 5, back_medium: 5, back_heavy: 6,
+    neutral_special_light: 7, neutral_special_medium: 8, neutral_special_heavy: 9,
+    forward_special_light: 7, forward_special_medium: 9, forward_special_heavy: 9,
+    back_special_light: 6, back_special_medium: 6, back_special_heavy: 7,
+    down_special_light: 7, down_special_medium: 8, down_special_heavy: 8,
+    up_special_light: 6, up_special_medium: 7, up_special_heavy: 8
   };
   for (const [sableClip, sableFrames] of Object.entries(SABLE_REBUILD_CLIP_FRAMES)) {
     // Sable is hidden from public play — only download her strips on ?sableTest.
-    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-rb-v2-preview-pack-1` : null;
-    sheetMeta[`sableRb_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.98, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
+    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-1` : null;
+    sheetMeta[`sableRb_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.86, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
   }
   const SABLE_MVP_CLIP_FRAMES = {
     idle: 8,
@@ -2299,7 +2301,7 @@
       sheets: {
         placeholder: "sablePlaceholderAtlas"
       },
-      // Animator-rebuild-v2 strips wired for in-game testing (user request 2026-07-02).
+      // Full-rebuild-v3 strips wired only through the hidden ?sableTest preview gate.
       // Placeholder atlas remains loaded as the fallback for any missing strip.
       buildPlayerAnimations: buildSableRebuildPlayerAnimations,
       buildEnemyAnimations: buildSableRebuildEnemyAnimations
@@ -2416,7 +2418,10 @@
     hydrateCharacterProfile(profile);
   }
 
-  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris", "lamuh", "lamuh_legacy", "celeste"];
+  const selectableCharacterIds = [
+    "kairo", "vanta", "nyx", "sol", "seris", "lamuh", "lamuh_legacy", "celeste",
+    ...(SABLE_HIDDEN_TEST_ENABLED ? ["sable"] : [])
+  ];
   const MODE_FLOW_DATA = {
     online: {
       id: "online",
@@ -3928,46 +3933,45 @@
   function buildSableRebuildPlayerAnimations(sheets) {
     const base = buildSablePlaceholderPlayerAnimations(sheets);
     const rb = (clip) => [`sableRb_${clip}`, 0];
-    const mvp = (clip) => [`sableMvp_${clip}`, 0];
     return {
       ...base,
-      idle: mvp("idle"),
-      select_idle: mvp("idle"),
-      intro_pose: mvp("idle"),
-      intro: mvp("idle"),
-      taunt: mvp("idle"),
-      victory: mvp("idle"),
-      level_up: mvp("idle"),
-      walk_forward: mvp("walk_forward"),
-      walk_back: mvp("walk_forward"),
-      dash: mvp("walk_forward"),
-      dash_forward: mvp("walk_forward"),
-      phase_dash: mvp("walk_forward"),
-      dash_back: mvp("walk_forward"),
-      air_dash_forward: mvp("jump"),
-      air_dash_back: mvp("jump"),
-      crouch: mvp("crouch"),
-      low_stance: mvp("crouch"),
-      jump_up: mvp("jump"),
-      rising: mvp("jump"),
-      jump_forward: mvp("jump"),
-      jump_back: mvp("jump"),
-      fall: mvp("jump"),
-      neutral_air_drift: mvp("jump"),
-      air_recovery: mvp("jump"),
-      fall_transition: mvp("jump"),
-      block: mvp("block"),
-      guard_idle: mvp("block"),
-      stand_block: mvp("block"),
-      crouch_block: mvp("block"),
-      air_block: mvp("block"),
-      damaged: mvp("hit_stun"),
-      light_hitstun: mvp("hit_stun"),
-      medium_hitstun: mvp("hit_stun"),
-      heavy_hitstun: mvp("hit_stun"),
-      knockback: mvp("hit_stun"),
-      launch_hitstun: mvp("hit_stun"),
-      air_hitstun: mvp("hit_stun"),
+      idle: rb("idle"),
+      select_idle: rb("idle"),
+      intro_pose: rb("idle"),
+      intro: rb("idle"),
+      taunt: rb("idle"),
+      victory: rb("idle"),
+      level_up: rb("idle"),
+      walk_forward: rb("walk_forward"),
+      walk_back: rb("walk_backward"),
+      dash: rb("walk_forward"),
+      dash_forward: rb("walk_forward"),
+      phase_dash: rb("walk_forward"),
+      dash_back: rb("walk_backward"),
+      air_dash_forward: rb("jump"),
+      air_dash_back: rb("jump"),
+      crouch: rb("crouch"),
+      low_stance: rb("crouch"),
+      jump_up: rb("jump"),
+      rising: rb("jump"),
+      jump_forward: rb("jump"),
+      jump_back: rb("jump"),
+      fall: rb("jump"),
+      neutral_air_drift: rb("jump"),
+      air_recovery: rb("jump"),
+      fall_transition: rb("jump"),
+      block: rb("block"),
+      guard_idle: rb("block"),
+      stand_block: rb("block"),
+      crouch_block: rb("block"),
+      air_block: rb("block"),
+      damaged: rb("hit_stun"),
+      light_hitstun: rb("hit_stun"),
+      medium_hitstun: rb("hit_stun"),
+      heavy_hitstun: rb("hit_stun"),
+      knockback: rb("hit_stun"),
+      launch_hitstun: rb("hit_stun"),
+      air_hitstun: rb("hit_stun"),
       knockdown_fall: rb("knockdown"),
       grounded: rb("knockdown"),
       downed: rb("knockdown"),
@@ -3977,13 +3981,13 @@
       get_up: rb("getup"),
       recovery: rb("getup"),
       recovery_get_up: rb("getup"),
-      neutral_light: mvp("stand_light"),
-      light_attack: mvp("stand_light"),
-      neutral_medium: mvp("stand_medium"),
-      medium_attack: mvp("stand_medium"),
-      neutral_heavy: mvp("stand_heavy"),
-      heavy_attack: mvp("stand_heavy"),
-      launcher: mvp("stand_heavy"),
+      neutral_light: rb("stand_light"),
+      light_attack: rb("stand_light"),
+      neutral_medium: rb("stand_medium"),
+      medium_attack: rb("stand_medium"),
+      neutral_heavy: rb("stand_heavy"),
+      heavy_attack: rb("stand_heavy"),
+      launcher: rb("stand_heavy"),
       down_light: rb("crouch_light"),
       down_medium: rb("crouch_medium"),
       down_heavy: rb("crouch_heavy"),
@@ -3993,52 +3997,52 @@
       back_light: rb("back_light"),
       back_medium: rb("back_medium"),
       back_heavy: rb("back_heavy"),
-      jump_light: mvp("jump_light"),
-      air_light: mvp("jump_light"),
-      jump_medium: mvp("jump_medium"),
-      air_medium: mvp("jump_medium"),
-      jump_heavy: mvp("jump_heavy"),
-      air_heavy: mvp("jump_heavy"),
-      up_light: mvp("up_special_light"),
-      up_medium: mvp("up_special_light"),
-      up_heavy: mvp("up_special_light"),
-      special_1: mvp("neutral_special_light"),
-      special_2: mvp("neutral_special_light"),
-      special_3: mvp("neutral_special_light"),
-      neutral_special: mvp("neutral_special_light"),
-      neutral_light_special: mvp("neutral_special_light"),
-      neutral_medium_special: mvp("neutral_special_light"),
-      neutral_heavy_special: mvp("neutral_special_light"),
-      void_shard: mvp("neutral_special_light"),
-      forward_special: mvp("forward_special_light"),
-      forward_light_special: mvp("forward_special_light"),
-      forward_medium_special: mvp("forward_special_medium"),
-      forward_heavy_special: mvp("forward_special_heavy"),
-      phase_lunge: mvp("forward_special_light"),
-      back_special: mvp("back_special_light"),
-      back_light_special: mvp("back_special_light"),
-      back_medium_special: mvp("back_special_light"),
-      back_heavy_special: mvp("back_special_light"),
-      void_anchor: mvp("back_special_light"),
-      down_special: mvp("down_special_light"),
-      down_light_special: mvp("down_special_light"),
-      down_medium_special: mvp("down_special_light"),
-      down_heavy_special: mvp("down_special_light"),
-      ground_rift: mvp("down_special_light"),
-      up_special: mvp("up_special_light"),
-      up_light_special: mvp("up_special_light"),
-      up_medium_special: mvp("up_special_light"),
-      up_heavy_special: mvp("up_special_light"),
-      vertical_phase: mvp("up_special_light"),
-      air_special: mvp("neutral_special_light"),
-      air_light_special: mvp("neutral_special_light"),
-      air_void_shard: mvp("neutral_special_light"),
-      air_medium_special: mvp("forward_special_medium"),
-      air_phase_lunge: mvp("forward_special_medium"),
+      jump_light: rb("jump_light"),
+      air_light: rb("jump_light"),
+      jump_medium: rb("jump_medium"),
+      air_medium: rb("jump_medium"),
+      jump_heavy: rb("jump_heavy"),
+      air_heavy: rb("jump_heavy"),
+      up_light: rb("up_special_light"),
+      up_medium: rb("up_special_medium"),
+      up_heavy: rb("up_special_heavy"),
+      special_1: rb("neutral_special_light"),
+      special_2: rb("neutral_special_medium"),
+      special_3: rb("neutral_special_heavy"),
+      neutral_special: rb("neutral_special_light"),
+      neutral_light_special: rb("neutral_special_light"),
+      neutral_medium_special: rb("neutral_special_medium"),
+      neutral_heavy_special: rb("neutral_special_heavy"),
+      void_shard: rb("neutral_special_light"),
+      forward_special: rb("forward_special_light"),
+      forward_light_special: rb("forward_special_light"),
+      forward_medium_special: rb("forward_special_medium"),
+      forward_heavy_special: rb("forward_special_heavy"),
+      phase_lunge: rb("forward_special_light"),
+      back_special: rb("back_special_light"),
+      back_light_special: rb("back_special_light"),
+      back_medium_special: rb("back_special_medium"),
+      back_heavy_special: rb("back_special_heavy"),
+      void_anchor: rb("back_special_light"),
+      down_special: rb("down_special_light"),
+      down_light_special: rb("down_special_light"),
+      down_medium_special: rb("down_special_medium"),
+      down_heavy_special: rb("down_special_heavy"),
+      ground_rift: rb("down_special_light"),
+      up_special: rb("up_special_light"),
+      up_light_special: rb("up_special_light"),
+      up_medium_special: rb("up_special_medium"),
+      up_heavy_special: rb("up_special_heavy"),
+      vertical_phase: rb("up_special_light"),
+      air_special: rb("neutral_special_light"),
+      air_light_special: rb("neutral_special_light"),
+      air_void_shard: rb("neutral_special_light"),
+      air_medium_special: rb("forward_special_medium"),
+      air_phase_lunge: rb("forward_special_medium"),
       air_heavy_special: rb("down_special_heavy"),
       air_rift_drop: rb("down_special_heavy"),
-      super_dash: mvp("forward_special_medium"),
-      ultimate: mvp("neutral_special_light")
+      super_dash: rb("forward_special_medium"),
+      ultimate: rb("neutral_special_heavy")
     };
   }
 

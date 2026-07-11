@@ -1,150 +1,21 @@
 #!/usr/bin/env node
-
 import fs from "node:fs/promises";
 import path from "node:path";
 import sharp from "../node_modules/sharp/lib/index.js";
-
-const args = parseArgs(process.argv.slice(2));
-const manifestPath = required(args, "manifest");
-const outputPath = required(args, "output");
-const writeManifest = args["write-manifest"] ?? null;
-const manifest = JSON.parse(await fs.readFile(manifestPath, "utf8"));
-const root = path.resolve(args["repo-root"] ?? process.cwd());
-const alphaThreshold = 24;
-const standing = new Set([
-  "idle", "walk_forward", "walk_backward", "block", "hit_stun",
-  "stand_light", "stand_medium", "stand_heavy", "forward_medium", "forward_heavy",
-  "back_light", "back_medium", "back_heavy", "neutral_special_light", "neutral_special_medium",
-  "neutral_special_heavy", "forward_special_light", "forward_special_medium", "forward_special_heavy",
-  "back_special_light", "back_special_medium", "back_special_heavy"
-]);
-
-const idle = manifest.clips.find((clip) => clip.clipId === "idle");
-if (!idle) throw new Error("Manifest has no idle clip.");
-const canonical = await measureClip(idle, 0);
-const heightTolerancePct = 8;
-const suitHueToleranceDeg = 18;
-const results = [];
-
-for (const clip of manifest.clips) {
-  const sampleFrame = Number(clip.crossClipConsistency?.sampleFrame ?? 0);
-  const metric = await measureClip(clip, sampleFrame);
-  const heightDeviationPct = round((metric.bodyHeight - canonical.bodyHeight) / canonical.bodyHeight * 100, 1);
-  const suitHueDeviationDeg = round(angleDistance(metric.suitHueDeg, canonical.suitHueDeg), 1);
-  const standingComparable = standing.has(clip.clipId);
-  const issues = [];
-  if (standingComparable && Math.abs(heightDeviationPct) > heightTolerancePct) issues.push("body_height");
-  if (standingComparable && suitHueDeviationDeg > suitHueToleranceDeg) issues.push("suit_hue");
-  results.push({
-    clipId: clip.clipId,
-    sampleFrame,
-    postureClass: standingComparable ? "standing_start" : "posture_specific",
-    ...metric,
-    heightDeviationPct,
-    suitHueDeviationDeg,
-    status: issues.length ? "fail" : "pass",
-    issues
-  });
-}
-
-const report = {
-  schemaVersion: "1.0.0",
-  reportKind: "cross_clip_consistency",
-  generatedAt: new Date().toISOString(),
-  manifest: manifestPath.replaceAll("\\", "/"),
-  approvedForLiveRoster: false,
-  canonical: {
-    sourceClip: "idle",
-    sampleFrame: 0,
-    bodyHeightPx: canonical.bodyHeight,
-    baselineY: canonical.bodyBottom,
-    suitHueDeg: canonical.suitHueDeg,
-    suitHueBandDeg: [round(canonical.suitHueDeg - suitHueToleranceDeg, 1), round(canonical.suitHueDeg + suitHueToleranceDeg, 1)],
-    latticeHueDeg: canonical.latticeHueDeg,
-    hairFleckDensityPct: canonical.hairFleckDensityPct,
-    heightTolerancePct,
-    suitHueToleranceDeg
-  },
-  summary: {
-    clipCount: results.length,
-    passed: results.filter((item) => item.status === "pass").length,
-    failed: results.filter((item) => item.status === "fail").length,
-    offenders: results.filter((item) => item.status === "fail").map((item) => item.clipId)
-  },
-  clips: results
-};
-
-await fs.mkdir(path.dirname(outputPath), { recursive: true });
-await fs.writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
-
-if (writeManifest) {
-  manifest.crossClipConsistency = {
-    gate: "cross_clip_consistency",
-    status: report.summary.failed ? "fail" : "pass",
-    canonical: report.canonical,
-    report: path.relative(root, outputPath).replaceAll("\\", "/")
-  };
-  for (const clip of manifest.clips) {
-    const result = results.find((item) => item.clipId === clip.clipId);
-    clip.crossClipConsistency = {
-      sampleFrame: result.sampleFrame,
-      postureClass: result.postureClass,
-      bodyHeightPx: result.bodyHeight,
-      heightDeviationPct: result.heightDeviationPct,
-      suitHueDeg: result.suitHueDeg,
-      suitHueDeviationDeg: result.suitHueDeviationDeg,
-      latticeHueDeg: result.latticeHueDeg,
-      hairFleckDensityPct: result.hairFleckDensityPct,
-      status: result.status
-    };
-  }
-  await fs.writeFile(writeManifest, `${JSON.stringify(manifest, null, 2)}\n`);
-}
-
-console.log(JSON.stringify(report.summary));
-if (report.summary.failed) process.exitCode = 2;
-
-async function measureClip(clip, frameIndex) {
-  const source = path.resolve(root, clip.normalizedSheet);
-  const frame = await sharp(source).extract({ left: frameIndex * clip.frameWidth, top: 0, width: clip.frameWidth, height: clip.frameHeight }).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const { data, info } = frame;
-  let minY = info.height, maxY = -1;
-  const suitHues = [], latticeHues = [];
-  let hairOpaque = 0, hairFlecks = 0;
-  for (let y = 0; y < info.height; y++) for (let x = 0; x < info.width; x++) {
-    const o = (y * info.width + x) * info.channels;
-    if ((data[o + 3] ?? 0) <= alphaThreshold) continue;
-    minY = Math.min(minY, y); maxY = Math.max(maxY, y);
-  }
-  const bodyHeight = maxY - minY + 1;
-  const hairLimit = minY + Math.round(bodyHeight * 0.22);
-  for (let y = minY; y <= maxY; y++) for (let x = 0; x < info.width; x++) {
-    const o = (y * info.width + x) * info.channels;
-    if ((data[o + 3] ?? 0) <= alphaThreshold) continue;
-    const hsv = rgbToHsv(data[o], data[o + 1], data[o + 2]);
-    if (hsv.v < .48 && hsv.s > .18 && hsv.h >= 190 && hsv.h <= 300) suitHues.push(hsv.h);
-    if (hsv.v > .46 && hsv.s > .25 && (hsv.h <= 70 || hsv.h >= 340)) latticeHues.push(hsv.h > 180 ? hsv.h - 360 : hsv.h);
-    if (y <= hairLimit) {
-      hairOpaque++;
-      if (hsv.v > .62 && hsv.s < .38) hairFlecks++;
-    }
-  }
-  return {
-    bodyTop: minY,
-    bodyBottom: maxY,
-    bodyHeight,
-    suitHueDeg: round(circularMean(suitHues), 1),
-    latticeHueDeg: round(mean(latticeHues), 1),
-    hairFleckDensityPct: round(hairOpaque ? hairFlecks / hairOpaque * 100 : 0, 2),
-    suitSamplePixels: suitHues.length,
-    latticeSamplePixels: latticeHues.length
-  };
-}
-
-function rgbToHsv(r, g, b) { r/=255; g/=255; b/=255; const max=Math.max(r,g,b), min=Math.min(r,g,b), d=max-min; let h=0; if(d) h=max===r?60*(((g-b)/d)%6):max===g?60*((b-r)/d+2):60*((r-g)/d+4); if(h<0)h+=360; return {h,s:max?d/max:0,v:max}; }
-function circularMean(values) { if (!values.length) return 0; const x=values.reduce((s,h)=>s+Math.cos(h*Math.PI/180),0); const y=values.reduce((s,h)=>s+Math.sin(h*Math.PI/180),0); return (Math.atan2(y,x)*180/Math.PI+360)%360; }
-function mean(values) { return values.length ? values.reduce((a,b)=>a+b,0)/values.length : 0; }
-function angleDistance(a,b) { const d=Math.abs(a-b)%360; return Math.min(d,360-d); }
-function round(n,d) { const p=10**d; return Math.round(n*p)/p; }
-function parseArgs(tokens) { const out={}; for(let i=0;i<tokens.length;i++){ if(!tokens[i].startsWith("--"))continue; const k=tokens[i].slice(2); const n=tokens[i+1]; out[k]=n&&!n.startsWith("--")?(i++,n):true; } return out; }
-function required(obj,key) { if(!obj[key]||obj[key]===true) throw new Error(`Missing --${key}`); return obj[key]; }
+const args=parseArgs(process.argv.slice(2)), manifestPath=req("manifest"), outputPath=req("output");
+const root=path.resolve(args["repo-root"]??process.cwd()), manifest=JSON.parse(await fs.readFile(manifestPath,"utf8"));
+const standing=new Set(["idle","walk_forward","walk_backward","block","hit_stun","stand_light","stand_medium","stand_heavy","forward_medium","forward_heavy","back_light","back_medium","back_heavy","neutral_special_light","neutral_special_medium","neutral_special_heavy","forward_special_light","forward_special_medium","forward_special_heavy","back_special_light","back_special_medium","back_special_heavy"]);
+const rosterStandingBandPx=[350,380], heightTolerancePct=8, suitHueToleranceDeg=18;
+const idle=manifest.clips.find(c=>c.clipId==="idle"); if(!idle)throw new Error("Manifest has no idle clip.");
+const palette=await measure(idle,0), measured=[];
+for(const clip of manifest.clips){const sampleFrame=clip.clipId==="getup"?clip.frameCount-1:Number(clip.crossClipConsistency?.sampleFrame??0);measured.push({clip,sampleFrame,metric:await measure(clip,sampleFrame),standingComparable:standing.has(clip.clipId)||clip.clipId==="getup"});}
+const cluster=measured.filter(x=>x.standingComparable&&!['idle','getup'].includes(x.clip.clipId)&&x.metric.bodyHeight>=320&&x.metric.bodyHeight<=390).map(x=>x.metric.bodyHeight).sort((a,b)=>a-b);
+const bodyHeightPx=median(cluster); if(bodyHeightPx<350||bodyHeightPx>380)throw new Error(`Derived ${bodyHeightPx}px canon is outside roster convention 350-380px.`);
+const clips=measured.map(({clip,sampleFrame,metric,standingComparable})=>{const heightDeviationPct=rnd((metric.bodyHeight-bodyHeightPx)/bodyHeightPx*100,1),suitHueDeviationDeg=rnd(angle(metric.suitHueDeg,palette.suitHueDeg),1),issues=[];if(standingComparable&&Math.abs(heightDeviationPct)>heightTolerancePct)issues.push("body_height");if(standingComparable&&suitHueDeviationDeg>suitHueToleranceDeg)issues.push("suit_hue");return{clipId:clip.clipId,sampleFrame,postureClass:standingComparable?"standing_sample":"posture_specific",...metric,heightDeviationPct,suitHueDeviationDeg,status:issues.length?"fail":"pass",issues};});
+const canonical={derivation:"median majority standing cluster with roster-relative validation",bodyHeightPx,rosterStandingBandPx,paletteSourceClip:"idle",paletteSampleFrame:0,baselineY:manifest.spriteStandard.baselineY-1,suitHueDeg:palette.suitHueDeg,suitHueBandDeg:[rnd(palette.suitHueDeg-18,1),rnd(palette.suitHueDeg+18,1)],latticeHueDeg:palette.latticeHueDeg,hairFleckDensityPct:palette.hairFleckDensityPct,heightTolerancePct,suitHueToleranceDeg};
+const report={schemaVersion:"2.0.0",reportKind:"cross_clip_consistency",generatedAt:new Date().toISOString(),manifest:manifestPath.replaceAll("\\","/"),approvedForLiveRoster:false,canonical,summary:{clipCount:clips.length,passed:clips.filter(x=>x.status==="pass").length,failed:clips.filter(x=>x.status==="fail").length,offenders:clips.filter(x=>x.status==="fail").map(x=>x.clipId)},clips};
+await fs.mkdir(path.dirname(outputPath),{recursive:true});await fs.writeFile(outputPath,JSON.stringify(report,null,2)+"\n");
+if(args["write-manifest"]){manifest.crossClipConsistency={gate:"cross_clip_consistency",status:report.summary.failed?"fail":"pass",canonical,report:path.relative(root,outputPath).replaceAll("\\","/")};for(const clip of manifest.clips){const x=clips.find(y=>y.clipId===clip.clipId);clip.crossClipConsistency={sampleFrame:x.sampleFrame,postureClass:x.postureClass,bodyHeightPx:x.bodyHeight,heightDeviationPct:x.heightDeviationPct,suitHueDeg:x.suitHueDeg,suitHueDeviationDeg:x.suitHueDeviationDeg,latticeHueDeg:x.latticeHueDeg,hairFleckDensityPct:x.hairFleckDensityPct,status:x.status};}await fs.writeFile(args["write-manifest"],JSON.stringify(manifest,null,2)+"\n");}
+console.log(JSON.stringify(report.summary));if(report.summary.failed)process.exitCode=2;
+async function measure(clip,index){const{data,info}=await sharp(path.resolve(root,clip.normalizedSheet)).extract({left:index*clip.frameWidth,top:0,width:clip.frameWidth,height:clip.frameHeight}).ensureAlpha().raw().toBuffer({resolveWithObject:true});let minY=info.height,maxY=-1;for(let y=0;y<info.height;y++)for(let x=0;x<info.width;x++){let o=(y*info.width+x)*info.channels;if((data[o+3]??0)>24){minY=Math.min(minY,y);maxY=Math.max(maxY,y);}}const bodyHeight=maxY-minY+1,limit=minY+Math.round(bodyHeight*.22),suit=[],gold=[];let hair=0,fleck=0;for(let y=minY;y<=maxY;y++)for(let x=0;x<info.width;x++){let o=(y*info.width+x)*info.channels;if((data[o+3]??0)<=24)continue;const h=hsv(data[o],data[o+1],data[o+2]);if(h.v<.48&&h.s>.18&&h.h>=190&&h.h<=300)suit.push(h.h);if(h.v>.46&&h.s>.25&&(h.h<=70||h.h>=340))gold.push(h.h>180?h.h-360:h.h);if(y<=limit){hair++;if(h.v>.62&&h.s<.38)fleck++;}}return{bodyTop:minY,bodyBottom:maxY,bodyHeight,suitHueDeg:rnd(circle(suit),1),latticeHueDeg:rnd(avg(gold),1),hairFleckDensityPct:rnd(hair?fleck/hair*100:0,2),suitSamplePixels:suit.length,latticeSamplePixels:gold.length};}
+function hsv(r,g,b){r/=255;g/=255;b/=255;const m=Math.max(r,g,b),n=Math.min(r,g,b),d=m-n;let h=0;if(d)h=m===r?60*(((g-b)/d)%6):m===g?60*((b-r)/d+2):60*((r-g)/d+4);if(h<0)h+=360;return{h,s:m?d/m:0,v:m};}function circle(v){if(!v.length)return 0;return(Math.atan2(v.reduce((s,h)=>s+Math.sin(h*Math.PI/180),0),v.reduce((s,h)=>s+Math.cos(h*Math.PI/180),0))*180/Math.PI+360)%360;}function avg(v){return v.length?v.reduce((a,b)=>a+b,0)/v.length:0;}function median(v){let m=Math.floor(v.length/2);return v.length%2?v[m]:(v[m-1]+v[m])/2;}function angle(a,b){let d=Math.abs(a-b)%360;return Math.min(d,360-d);}function rnd(n,d){let p=10**d;return Math.round(n*p)/p;}function parseArgs(t){let o={};for(let i=0;i<t.length;i++){if(!t[i].startsWith("--"))continue;let k=t[i].slice(2),n=t[i+1];o[k]=n&&!n.startsWith("--")?(i++,n):true;}return o;}function req(k){if(!args[k]||args[k]===true)throw new Error(`Missing --${k}`);return args[k];}
