@@ -314,6 +314,8 @@
   const SERIS_HIDDEN_TEST_ENABLED = debugParams.has("serisTest");
   const LAMUH_HIDDEN_TEST_ENABLED = debugParams.has("lamuhTest");
   const SABLE_HIDDEN_TEST_ENABLED = debugParams.has("sableTest");
+  const SWAHILI_HIDDEN_TEST_ENABLED = debugParams.has("swahiliTest") && Boolean(window.SWAHILI_CHARACTER_DATA);
+  const SWAHILI_DATA = SWAHILI_HIDDEN_TEST_ENABLED ? window.SWAHILI_CHARACTER_DATA : null;
   const CELESTE_HIDDEN_TEST_ENABLED = debugParams.has("celesteTest");
   const PLATFORM_TEST_DEBUG_ENABLED = debugParams.has("platformTest");
   const CELESTE_FRAME_DEBUG_ENABLED = CELESTE_HIDDEN_TEST_ENABLED && debugParams.has("celesteFrameDebug");
@@ -707,6 +709,8 @@
     celesteFinalOctavaBody: "assets/sprites/celeste_final/celeste_sheet_6_octava_body_atlas.png?v=celeste-phase5-4-1",
     celesteFinalVfx: "assets/sprites/celeste_final/celeste_sheet_7_detached_vfx_runtime_atlas.png?v=celeste-phase5-4-1",
     sablePlaceholderAtlas: "assets/sprites/sable_placeholder/sable_mvp_placeholder_atlas.png?v=sable-mvp-1",
+    // Intentional null: Phase 1 renders a procedural dev silhouette and reports every production clip missing.
+    swahiliPlaceholder: null,
     vfx: "assets/effects/combat/combat_vfx_sheet.png"
   };
 
@@ -2012,6 +2016,182 @@
     fallbackAttack: "enemy_special_3"
   };
 
+  function buildSwahiliAttackDefinitions(source) {
+    const attacks = {};
+    for (const [key, spec] of Object.entries(source || {})) {
+      attacks[key] = attackDef(spec.damage, spec.startup, spec.active, spec.recovery, spec.hitstun, spec.knockbackX, spec.knockbackY, spec.boxType, cloneData(spec.flags || {}));
+    }
+    return attacks;
+  }
+
+  function buildSwahiliPlayerAttacks() {
+    const attacks = {
+      ...buildSwahiliAttackDefinitions(SWAHILI_DATA?.normals),
+      ...buildSwahiliAttackDefinitions(SWAHILI_DATA?.specials)
+    };
+    if (!SWAHILI_DATA) return attacks;
+    // Engine compatibility aliases do not count toward the locked 15-normal/15-special surface.
+    attacks.up_light = cloneData(attacks.neutral_light);
+    attacks.up_medium = cloneData(attacks.neutral_medium);
+    attacks.up_heavy = cloneData(attacks.down_heavy);
+    attacks.neutral_special = cloneData(attacks.neutral_light_special);
+    attacks.forward_special = cloneData(attacks.forward_light_special);
+    attacks.back_special = cloneData(attacks.back_light_special);
+    attacks.down_special = cloneData(attacks.down_light_special);
+    attacks.up_special = cloneData(attacks.up_light_special);
+    attacks.air_special = cloneData(attacks.neutral_light_special);
+    attacks.air_special.flags.air = true;
+    attacks.special_1 = cloneData(attacks.neutral_light_special);
+    attacks.special_2 = cloneData(attacks.neutral_medium_special);
+    attacks.special_3 = cloneData(attacks.neutral_heavy_special);
+    attacks.ultimate = attackDef(
+      SWAHILI_DATA.ultimate.damage,
+      SWAHILI_DATA.ultimate.startup,
+      SWAHILI_DATA.ultimate.active,
+      SWAHILI_DATA.ultimate.recovery,
+      SWAHILI_DATA.ultimate.hitstun,
+      SWAHILI_DATA.ultimate.knockbackX,
+      SWAHILI_DATA.ultimate.knockbackY,
+      SWAHILI_DATA.ultimate.boxType,
+      cloneData(SWAHILI_DATA.ultimate.flags)
+    );
+    attacks.taunt = attackDef(0, 0, 0, 30, 0, 0, 0, "light", { noHit: true, anim: "taunt_tie_adjust" });
+    return attacks;
+  }
+
+  function buildSwahiliEnemyAttacks() {
+    const enemy = {};
+    for (const [key, spec] of Object.entries(buildSwahiliPlayerAttacks())) {
+      const baseEnemyKey = key === "neutral_light" ? "enemy_light_attack"
+        : key === "neutral_medium" ? "enemy_medium_attack"
+          : key === "neutral_heavy" ? "enemy_heavy_attack"
+            : `enemy_${key}`;
+      enemy[baseEnemyKey] = cloneData(spec);
+      enemy[baseEnemyKey].damage = Math.max(0, Math.floor(enemy[baseEnemyKey].damage * 0.92));
+      enemy[baseEnemyKey].recovery += 1;
+      enemy[baseEnemyKey].flags.enemy = true;
+    }
+    return enemy;
+  }
+
+  function buildSwahiliSpecialMoves() {
+    const result = {};
+    for (const [key, spec] of Object.entries(SWAHILI_DATA?.specials || {})) {
+      result[key] = {
+        displayName: spec.name,
+        input: key.replaceAll("_", " "),
+        purpose: spec.flags?.variantRole || "hidden preview stub",
+        artStatus: "procedural placeholder; production clip missing",
+        type: spec.flags?.swahiliTrap ? "contractTrap" : spec.flags?.swahiliCounter ? "contractCounter" : spec.flags?.projectile ? "contractBullet" : spec.flags?.scythe ? "scythe" : "body",
+        attack: key,
+        projectileWidth: spec.boxType === "pistolHeavy" ? 134 : spec.flags?.lowProjectile ? 88 : 96,
+        projectileHeight: spec.flags?.lowProjectile ? 16 : spec.boxType === "pistolHeavy" ? 34 : 22,
+        projectileLife: spec.boxType === "pistolHeavy" ? 1.35 : 1.1,
+        spawnOffsetX: spec.flags?.lowProjectile ? 82 : 112,
+        spawnOffsetY: spec.flags?.lowProjectile ? -34 : spec.boxType === "pistolUp" ? -126 : -92
+      };
+    }
+    result.special_1 = { ...result.neutral_light_special, attack: "special_1" };
+    result.special_2 = { ...result.neutral_medium_special, attack: "special_2" };
+    result.special_3 = { ...result.neutral_heavy_special, attack: "special_3" };
+    result.neutral_special = { ...result.neutral_light_special, attack: "neutral_special" };
+    result.forward_special = { ...result.forward_light_special, attack: "forward_special" };
+    result.back_special = { ...result.back_light_special, attack: "back_special" };
+    result.down_special = { ...result.down_light_special, attack: "down_special" };
+    result.up_special = { ...result.up_light_special, attack: "up_special" };
+    result.air_special = { ...result.neutral_light_special, attack: "air_special" };
+    return result;
+  }
+
+  function buildSwahiliPlayerAnimations(sheets) {
+    const placeholder = sheets.placeholder;
+    const keys = new Set([
+      "idle", "walk_forward", "walk_back", "dash", "dash_back", "jump_start", "jump", "jump_forward", "jump_back", "fall", "land", "crouch", "block", "damaged", "light_hitstun", "medium_hitstun", "heavy_hitstun", "air_hitstun", "launch_hitstun", "knockback", "knockdown_fall", "downed", "grounded", "get_up", "stand_up", "air_recovery", "death", "victory", "taunt_tie_adjust",
+      ...Object.keys(SWAHILI_DATA?.normals || {}), ...Object.keys(SWAHILI_DATA?.specials || {}),
+      "up_light", "up_medium", "up_heavy", "neutral_special", "forward_special", "back_special", "down_special", "up_special", "air_special", "special_1", "special_2", "special_3", "ultimate", "taunt"
+    ]);
+    return Object.fromEntries([...keys].map((key) => [key, [placeholder, 0]]));
+  }
+
+  function buildSwahiliEnemyAnimations(sheets) {
+    const player = buildSwahiliPlayerAnimations(sheets);
+    const enemy = Object.fromEntries(Object.entries(player).map(([key, entry]) => [`enemy_${key}`, entry]));
+    enemy.enemy_light_attack = player.neutral_light;
+    enemy.enemy_medium_attack = player.neutral_medium;
+    enemy.enemy_heavy_attack = player.neutral_heavy;
+    return enemy;
+  }
+
+  function buildSwahiliProfile() {
+    const attacks = buildSwahiliPlayerAttacks();
+    return {
+      id: "swahili",
+      name: SWAHILI_DATA.name,
+      shortName: SWAHILI_DATA.shortName,
+      subtitle: SWAHILI_DATA.subtitle,
+      role: SWAHILI_DATA.role,
+      health: SWAHILI_DATA.health,
+      movement: cloneData(SWAHILI_DATA.movement),
+      jump: cloneData(SWAHILI_DATA.jump),
+      airDash: cloneData(SWAHILI_DATA.airDash),
+      attacks: { player: attacks, enemy: buildSwahiliEnemyAttacks() },
+      comboRoutes: cloneData(baselineComboRoutes),
+      hitboxes: {
+        ...cloneData(baselineHitboxes),
+        pistol: { w: 88, h: 32, ox: 70, oy: -102 },
+        pistolHeavy: { w: 124, h: 40, ox: 82, oy: -108 },
+        pistolLow: { w: 92, h: 22, ox: 70, oy: -38 },
+        pistolUp: { w: 72, h: 118, ox: 38, oy: -168 },
+        scytheMedium: { w: 156, h: 72, ox: 62, oy: -96 },
+        scytheHeavy: { w: 204, h: 96, ox: 74, oy: -116 },
+        scytheLow: { w: 176, h: 42, ox: 64, oy: -44 },
+        scytheAir: { w: 166, h: 112, ox: 58, oy: -126 },
+        scytheHook: { w: 178, h: 76, ox: 66, oy: -92 },
+        scytheLunge: { w: 188, h: 68, ox: 78, oy: -94 },
+        scytheOverhead: { w: 148, h: 154, ox: 58, oy: -168 },
+        scytheAntiAir: { w: 132, h: 172, ox: 46, oy: -186 },
+        scytheReversal: { w: 148, h: 188, ox: 42, oy: -194 },
+        contractTrap: { w: 0, h: 0, ox: 0, oy: 0 },
+        contractCounter: { w: 0, h: 0, ox: 0, oy: 0 },
+        ultimate: { w: 280, h: 144, ox: 86, oy: -124 }
+      },
+      hurtboxes: { standing: { w: 82, h: 174 }, crouching: { w: 88, h: 102 }, dead: { w: 104, h: 64 } },
+      specialMoves: buildSwahiliSpecialMoves(),
+      ai: {
+        ...cloneData(baselineEnemyAI),
+        walkSpeed: 112,
+        attackRange: 330,
+        farRange: 300,
+        farAttack: "enemy_neutral_light_special",
+        antiAirAttack: "enemy_down_heavy",
+        weightedAttacks: [
+          { threshold: 0.28, move: "enemy_medium_attack" },
+          { threshold: 0.5, move: "enemy_neutral_light_special" },
+          { threshold: 0.68, move: "enemy_back_light_special" },
+          { threshold: 0.84, move: "enemy_heavy_attack" },
+          { threshold: 0.94, move: "enemy_down_heavy" }
+        ],
+        fallbackAttack: "enemy_forward_light_special"
+      },
+      effects: { dashTrail: true, placeholderContractMagic: true },
+      vfx: { placeholderOnly: true, hooks: cloneData(SWAHILI_DATA.hooks.vfx) },
+      audioHooks: { sfx: cloneData(SWAHILI_DATA.hooks.sfx), voice: cloneData(SWAHILI_DATA.hooks.voice) },
+      debt: cloneData(SWAHILI_DATA.debt),
+      projectileColor: SWAHILI_DATA.palette.gold,
+      trailColor: SWAHILI_DATA.palette.nearBlack,
+      ultimateBurstColor: SWAHILI_DATA.palette.brass,
+      playable: false,
+      hiddenDevOnly: true,
+      futurePlayer2: true,
+      placeholderArt: SWAHILI_DATA.placeholderMode,
+      productionAnimationStatus: cloneData(SWAHILI_DATA.productionAnimationStatus),
+      approvedForLiveRoster: false,
+      sheets: { placeholder: "swahiliPlaceholder" },
+      buildPlayerAnimations: buildSwahiliPlayerAnimations,
+      buildEnemyAnimations: buildSwahiliEnemyAnimations
+    };
+  }
+
   const characterProfiles = {
     kairo: {
       id: "kairo",
@@ -2304,6 +2484,7 @@
       buildPlayerAnimations: buildSableRebuildPlayerAnimations,
       buildEnemyAnimations: buildSableRebuildEnemyAnimations
     },
+    ...(SWAHILI_HIDDEN_TEST_ENABLED ? { swahili: buildSwahiliProfile() } : {}),
     seris: {
       id: "seris",
       name: "SERIS",
@@ -2509,6 +2690,16 @@
       strengths: ["Space control", "Anchor traps", "Evasive punishes"],
       quote: "The shortest path is through the dark."
     },
+    ...(SWAHILI_HIDDEN_TEST_ENABLED ? {
+      swahili: {
+        archetype: "Divine Debt Collector",
+        difficulty: "4/5",
+        description: "Pistols, scythe control, contract traps, and Debt Marks.",
+        playstyle: "Swahili controls mid-range, punishes whiffs, and turns unpaid movement into contract pressure.",
+        strengths: ["Whiff punishes", "Contract traps", "Debt cashout"],
+        quote: "Your name is already in the ledger."
+      }
+    } : {}),
     lamuh: {
       archetype: "Celestial Ki",
       difficulty: "5/5",
@@ -2558,7 +2749,8 @@
   const hiddenTestCharacterIds = [
     ...(SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : []),
     ...(LAMUH_HIDDEN_TEST_ENABLED ? ["lamuh"] : []),
-    ...(SABLE_HIDDEN_TEST_ENABLED ? ["sable"] : [])
+    ...(SABLE_HIDDEN_TEST_ENABLED ? ["sable"] : []),
+    ...(SWAHILI_HIDDEN_TEST_ENABLED ? ["swahili"] : [])
   ];
   const selectShortcutCharacterIds = {
     Digit1: "kairo",
@@ -2699,6 +2891,7 @@
     projectiles: [],
     celesteTraps: [],
     voidAnchors: [],
+    swahiliContracts: [],
     nyxSignatureEffects: [],
     lamuhSpecialEffects: [],
     lamuhUltimateBeams: [],
@@ -4704,6 +4897,7 @@
     if (characterId === "nyx") return "kairo";
     if (characterId === "sol") return "vanta";
     if (characterId === "sable") return "lamuh";
+    if (characterId === "swahili") return "vanta";
     if (characterId === "celeste") return "vanta";
     if (characterId === "vanta") return "nyx";
     return "vanta";
@@ -4729,12 +4923,16 @@
     return f?.profile?.id === "sable";
   }
 
+  function usesSwahiliPreview(f) {
+    return f?.profile?.id === "swahili";
+  }
+
   function usesCelestePlaceholder(f) {
     return f?.profile?.id === "celeste";
   }
 
   function usesFullDirectionalBasics(f) {
-    return usesCelestePlaceholder(f) || usesSableArt(f);
+    return usesCelestePlaceholder(f) || usesSableArt(f) || usesSwahiliPreview(f);
   }
 
   function getCelesteBaseAnimKey(animKey = "") {
@@ -4863,7 +5061,7 @@
   }
 
   function usesNewGenerationArt(f) {
-    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "sable" || f?.profile?.id === "lamuh" || f?.profile?.id === "lamuh_legacy" || f?.profile?.id === "celeste";
+    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "sable" || f?.profile?.id === "swahili" || f?.profile?.id === "lamuh" || f?.profile?.id === "lamuh_legacy" || f?.profile?.id === "celeste";
   }
 
   function withEnemyPrefix(f, anim) {
@@ -5160,6 +5358,11 @@
       celesteBarrierTimer: 0,
       celesteBarrierHits: 0,
       celesteTiCooldown: 0,
+      swahiliCounterTimer: 0,
+      swahiliCounterConsumed: false,
+      debtMarks: [],
+      defaultedTimer: 0,
+      swahiliKnockdownPenaltyApplied: false,
       bufferedMove: null,
       reactionAnim: null,
       anim: kind === "player" ? "idle" : "enemy_idle"
@@ -5901,6 +6104,7 @@
     state.projectiles = [];
     state.celesteTraps = [];
     state.voidAnchors = [];
+    state.swahiliContracts = [];
     state.nyxSignatureEffects = [];
     state.lamuhSpecialEffects = [];
     state.lamuhUltimateBeams = [];
@@ -6286,6 +6490,10 @@
     const id = isLaunchableCharacterId(characterId) ? characterId : "kairo";
     if (id === "lamuh") return LAMUH_SELECT_PORTRAIT_READY ? LAMUH_SELECT_PORTRAIT_PATH : "assets/sprites/portraits/sol_select.png";
     if (id === "celeste") return "assets/sprites/portraits/celeste_select.png";
+    if (id === "swahili") {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="#0b0b0d"/><circle cx="128" cy="106" r="61" fill="#f0b1a8" stroke="#d9aa37" stroke-width="7"/><path d="M75 65 46 24l55 22M181 65l29-41-55 22" fill="#f0b1a8" stroke="#d9aa37" stroke-width="7"/><ellipse cx="128" cy="128" rx="42" ry="31" fill="#d99791" stroke="#1a1a1a" stroke-width="6"/><circle cx="113" cy="128" r="6"/><circle cx="143" cy="128" r="6"/><circle cx="103" cy="91" r="7" fill="#1a1a1a"/><circle cx="153" cy="91" r="7" fill="#1a1a1a"/><path d="M108 146q20 13 40 0M65 256q5-86 63-86t63 86" fill="#1a1a1a" stroke="#d9aa37" stroke-width="7"/><path d="M118 174h20l-10 65z" fill="#d9aa37"/></svg>`;
+      return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    }
     const cache = id === "seris" ? "?v=seris-revamp-final-1" : "";
     return `assets/sprites/portraits/${id}_select.png${cache}`;
   }
@@ -7315,6 +7523,7 @@
     updateProjectiles(dt);
     updateCelesteTraps(dt);
     updateVoidAnchors(dt);
+    updateSwahiliContracts(dt);
     updateCombo(dt);
     updatePlayer(dt);
     updateEnemy(dt);
@@ -7521,6 +7730,8 @@
     if (f.superDashCooldown > 0) f.superDashCooldown = Math.max(0, f.superDashCooldown - dt);
     if (f.blowbackTimer > 0) f.blowbackTimer = Math.max(0, f.blowbackTimer - dt);
     if (f.upAttackGrace > 0) f.upAttackGrace = Math.max(0, f.upAttackGrace - dt);
+    if (f.swahiliCounterTimer > 0) f.swahiliCounterTimer = Math.max(0, f.swahiliCounterTimer - dt);
+    updateSwahiliDebtState(f, dt);
     if (usesCelestePlaceholder(f)) {
       if (f.celesteFaCooldown > 0) f.celesteFaCooldown = Math.max(0, f.celesteFaCooldown - dt);
       if (f.celesteFaWindow > 0) f.celesteFaWindow = Math.max(0, f.celesteFaWindow - dt);
@@ -7849,6 +8060,10 @@
       spawnVoidAnchor(f, moveData);
       f.spawnedTrap = true;
     }
+    if (moveData.flags.swahiliTrap && !f.spawnedTrap && f.actionTime >= moveData.startup) {
+      spawnSwahiliContract(f, moveData);
+      f.spawnedTrap = true;
+    }
     if (!moveData.flags.noHit && isMoveActive(f)) {
       if (moveData.flags.multiHit) {
         tryMultiHit(f, moveData);
@@ -8087,6 +8302,11 @@
     if (data.flags.laBarrier) startCelesteBarrier(f);
     if (data.flags.solOvation) f.celesteSolCooldown = CELESTE_SOL_COOLDOWN;
     if (data.flags.tiEncore) f.celesteTiCooldown = CELESTE_TI_COOLDOWN;
+    if (data.flags.swahiliCounter) {
+      f.swahiliCounterTimer = Math.max(f.swahiliCounterTimer, (data.flags.counterActiveFrames || 16) / 60);
+      f.swahiliCounterConsumed = false;
+      spawnBurst(f.x + f.facing * 28, f.y - 104, "#d9aa37", 18, 0.2, "ring");
+    }
     if (data.flags.ultimate) {
       f.meter = 0;
       state.cameraShake = 12;
@@ -8473,6 +8693,7 @@
           playSfx("grab_toss");
           applyImpactFeedback({ flags: {}, boxType: "heavy", damage: GRAB_DAMAGE }, victim.x, victim.y - 80, false);
           registerComboHit(f, victim, { damage: GRAB_DAMAGE, flags: {} });
+          if (usesSwahiliPreview(f)) addDebtMarks(f, victim, 1, "handshake_agreement_throw");
           if (shouldGainMeter(f)) growFighterMeter(f, Math.ceil(GRAB_DAMAGE / 12));
           if (victim.hp <= 0) endMatch(victim);
         }
@@ -8982,12 +9203,14 @@
     const hitbox = getHitbox(attacker, moveData);
     const hurtbox = getHurtbox(defender);
     if (!intersects(hitbox, hurtbox)) return false;
+    if (trySwahiliCounter(defender, attacker, moveData, hitbox)) return true;
 
     attacker.hasHit = true;
     attacker.cancelUnlocked = true;
     if (tryCelesteBarrierAbsorb(defender, attacker, moveData, hitbox)) return true;
     const blocked = isBlockingHit(attacker, defender);
     const defenderWasAirborne = !defender.grounded;
+    const defenderWasActing = Boolean(defender.action || defender.activeMove);
     const isHeavyHit = isHeavyComboMove(moveData, attacker.activeMove || "");
     const priorComboHits = getComboPriorHits(attacker, defender);
     const postWallBounceHeavy = isHeavyHit && hasComboWallBounceSpent(attacker, defender);
@@ -9007,7 +9230,12 @@
     const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(attacker), getHeavyComboHitstunScale(attacker, defender, moveData), getCelesteJuggleHitstunScale(attacker, defender, moveData), getPlatformJuggleHitstunScale(attacker, defender, moveData));
     const heavyKnockbackScale = getHeavyComboKnockbackScale(attacker, defender, moveData);
     const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker) * heavyKnockbackScale * getPlatformKnockbackScale(attacker, defender, moveData);
-    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale * staleScale));
+    let damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale * staleScale));
+    if (!blocked && usesSwahiliPreview(attacker) && moveData.flags.swahiliUltimate) {
+      const consumed = consumeDebtMarks(attacker, defender);
+      damage += consumed * 12;
+      attacker.swahiliUltimateMarksConsumed = consumed;
+    }
     defender.hp = Math.max(0, defender.hp - damage);
     defender.blockstun = blocked ? moveData.blockstun : 0;
     defender.hitstun = blocked ? 0 : moveData.hitstun * hitstunScale;
@@ -9059,6 +9287,7 @@
       defender.landingTimer = 0;
       queuePlatformAirRecovery(attacker, defender, moveData, priorComboHits);
       registerComboHit(attacker, defender, moveData);
+      applySwahiliDebtFromHit(attacker, defender, moveData, { defenderWasAirborne, defenderWasActing });
       if (celesteAirHeavyBounce) state.combo.celesteAirBounceSpent = true;
     } else {
       resetCombo();
@@ -9138,6 +9367,8 @@
         launcher: moveData.flags.launcher === true,
         softKnockdown: moveData.flags.softKnockdown === true,
         hardKnockdown: moveData.flags.hardKnockdown === true,
+        debtOnHit: moveData.flags.debtOnHit || 0,
+        pistolShot: moveData.flags.pistolShot === true,
         mirrorPierceBeam,
         forceWallBounce: mirrorPierceBeam && moveData.flags.forceWallBounce === true
       },
@@ -9295,6 +9526,7 @@
     const attackerIsInFront = (projectile.x > defender.x) === (defender.facing === 1);
     const blocked = defender.blocking && defender.grounded && attackerIsInFront;
     const owner = projectile.ownerKind === "player" ? state.player : state.enemy;
+    if (owner && trySwahiliCounter(defender, owner, projectile, box)) return { hit: true, blocked: false, damage: 34, countered: true };
     if (tryCelesteBarrierAbsorb(defender, owner, projectile, box)) return { hit: true, blocked: true, damage: 0 };
     const damageScale = blocked || !owner ? 1 : getComboDamageScale(owner);
     const hitstunScale = blocked || !owner ? 1 : Math.min(getComboHitstunScale(owner), getPlatformJuggleHitstunScale(owner, defender, projectile));
@@ -9334,6 +9566,7 @@
       defender.juggleGravityScale = !defender.grounded ? Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(priorHits + 1)) : 1;
       queuePlatformAirRecovery(owner, defender, projectile, priorHits);
       registerComboHit(owner, defender, projectile);
+      applySwahiliDebtFromHit(owner, defender, projectile, { defenderWasAirborne: !defender.grounded, defenderWasActing: false });
     }
     if (blocked) resetCombo();
     if (!blocked && owner && shouldGainMeter(owner)) {
@@ -9591,6 +9824,157 @@
     }
     if (!blocked && shouldGainMeter(owner)) growFighterMeter(owner, 2);
     applyImpactFeedback(source, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
+    if (defender.hp <= 0) endMatch(defender);
+  }
+
+  function updateSwahiliDebtState(f, dt) {
+    if (!f) return;
+    if (!Array.isArray(f.debtMarks)) f.debtMarks = [];
+    for (const mark of f.debtMarks) mark.remaining = Math.max(0, mark.remaining - dt);
+    f.debtMarks = f.debtMarks.filter((mark) => mark.remaining > 0);
+    if (f.defaultedTimer > 0) f.defaultedTimer = Math.max(0, f.defaultedTimer - dt);
+
+    if (!usesSwahiliPreview(f)) return;
+    if (f.knockdownTimer > 0 && !f.swahiliKnockdownPenaltyApplied) {
+      const opponent = f.kind === "player" ? state.enemy : state.player;
+      reduceDebtMarkTime(opponent, f.kind, f.profile.debt?.knockdownPenalty || 2);
+      f.swahiliKnockdownPenaltyApplied = true;
+    } else if (f.knockdownTimer <= 0) {
+      f.swahiliKnockdownPenaltyApplied = false;
+    }
+  }
+
+  function getDebtMarksForOwner(target, ownerKind) {
+    return (target?.debtMarks || []).filter((mark) => mark.sourceKind === ownerKind);
+  }
+
+  function addDebtMarks(owner, target, count = 1, reason = "unknown") {
+    if (!usesSwahiliPreview(owner) || !target || count <= 0) return 0;
+    const config = owner.profile.debt || SWAHILI_DATA?.debt || { maxMarks: 5, markDuration: 8, defaultedDuration: 3 };
+    const marks = getDebtMarksForOwner(target, owner.kind);
+    for (const mark of marks) mark.remaining = config.markDuration;
+    let added = 0;
+    while (marks.length + added < config.maxMarks && added < count) {
+      target.debtMarks.push({ sourceKind: owner.kind, remaining: config.markDuration, reason });
+      added += 1;
+    }
+    const total = getDebtMarksForOwner(target, owner.kind).length;
+    if (total >= config.maxMarks) target.defaultedTimer = Math.max(target.defaultedTimer || 0, config.defaultedDuration);
+    spawnBurst(target.x, target.y - 150, "#d9aa37", 8 + added * 3, 0.18, "ring");
+    return added;
+  }
+
+  function reduceDebtMarkTime(target, ownerKind, seconds) {
+    if (!target?.debtMarks?.length) return;
+    for (const mark of target.debtMarks) {
+      if (mark.sourceKind === ownerKind) mark.remaining = Math.max(0, mark.remaining - seconds);
+    }
+    target.debtMarks = target.debtMarks.filter((mark) => mark.remaining > 0);
+  }
+
+  function consumeDebtMarks(owner, target) {
+    if (!owner || !target?.debtMarks) return 0;
+    const count = getDebtMarksForOwner(target, owner.kind).length;
+    target.debtMarks = target.debtMarks.filter((mark) => mark.sourceKind !== owner.kind);
+    target.defaultedTimer = 0;
+    return count;
+  }
+
+  function applySwahiliDebtFromHit(owner, target, moveData, context = {}) {
+    if (!usesSwahiliPreview(owner) || !target || !moveData?.flags) return 0;
+    let count = Number(moveData.flags.debtOnHit || 0);
+    if (moveData.flags.debtOnAirHit && context.defenderWasAirborne) count += Number(moveData.flags.debtOnAirHit || 0);
+    if (moveData.flags.debtOnCounterHit && context.defenderWasActing) count += Number(moveData.flags.debtOnCounterHit || 0);
+    return addDebtMarks(owner, target, count, owner.activeMove || moveData.flags.visualProfile || "hit");
+  }
+
+  function trySwahiliCounter(defender, attacker, source, box) {
+    if (!usesSwahiliPreview(defender) || defender.swahiliCounterTimer <= 0 || defender.swahiliCounterConsumed || !attacker || attacker.dead) return false;
+    defender.swahiliCounterConsumed = true;
+    defender.swahiliCounterTimer = 0;
+    defender.hasHit = true;
+    attacker.action = null;
+    attacker.activeMove = null;
+    attacker.hitstun = Math.max(attacker.hitstun, 0.42);
+    attacker.grounded = false;
+    attacker.vx = defender.facing * 118;
+    attacker.vy = Math.min(attacker.vy, -180);
+    attacker.pendingKnockdown = Math.max(attacker.pendingKnockdown, SOFT_KNOCKDOWN);
+    attacker.hp = Math.max(0, attacker.hp - 34);
+    addDebtMarks(defender, attacker, 2, "default_judgment_counter");
+    spawnBurst(box.x + box.w * 0.5, box.y + box.h * 0.5, "#d9aa37", 28, 0.24, "shock");
+    playSfx("block", 0.9, 0.72);
+    if (attacker.hp <= 0) endMatch(attacker);
+    return true;
+  }
+
+  function spawnSwahiliContract(owner, moveData) {
+    if (!usesSwahiliPreview(owner)) return;
+    const stage = getActiveStagePreset();
+    const distance = moveData.flags.trapDistance || 116;
+    const x = clamp(owner.x + owner.facing * distance, stage.leftBound + 72, stage.rightBound - 72);
+    state.swahiliContracts = state.swahiliContracts.filter((trap) => trap.ownerKind !== owner.kind || trap.hit);
+    state.swahiliContracts.push({
+      ownerKind: owner.kind,
+      ownerCharacterId: "swahili",
+      x,
+      y: stage.groundY - 12,
+      facing: owner.facing,
+      age: 0,
+      armTime: 0.3,
+      life: moveData.flags.trapLife || 4,
+      radius: 42,
+      hit: false,
+      detonating: false,
+      detonationAge: 0,
+      sourceMove: owner.activeMove,
+      moveData
+    });
+    spawnBurst(x, stage.groundY - 16, "#d9aa37", 14, 0.18, "ring");
+  }
+
+  function updateSwahiliContracts(dt) {
+    for (const trap of state.swahiliContracts) {
+      trap.age += dt;
+      if (trap.detonating) {
+        trap.detonationAge += dt;
+        continue;
+      }
+      const defender = trap.ownerKind === "player" ? state.enemy : state.player;
+      if (trap.age >= trap.armTime && defender && !defender.dead && intersects(getSwahiliContractBox(trap), getHurtbox(defender))) {
+        detonateSwahiliContract(trap, defender);
+      }
+    }
+    state.swahiliContracts = state.swahiliContracts.filter((trap) => trap.detonating ? trap.detonationAge < 0.22 : !trap.hit && trap.age < trap.life);
+  }
+
+  function getSwahiliContractBox(trap) {
+    return { x: trap.x - trap.radius, y: trap.y - trap.radius, w: trap.radius * 2, h: trap.radius * 2 };
+  }
+
+  function detonateSwahiliContract(trap, defender) {
+    trap.detonating = true;
+    trap.detonationAge = 0;
+    trap.hit = true;
+    const owner = getFighterByKind(trap.ownerKind);
+    const box = getSwahiliContractBox(trap);
+    spawnBurst(trap.x, trap.y - 18, "#d9aa37", 26, 0.22, "shock");
+    if (!owner || !defender || defender.dead || !intersects(box, getHurtbox(defender))) return;
+    const blocked = defender.blocking && defender.grounded && ((trap.x > defender.x) === (defender.facing === 1));
+    if (!blocked) {
+      defender.hp = Math.max(0, defender.hp - (trap.sourceMove?.includes("medium") ? 34 : 26));
+      defender.hitstun = Math.max(defender.hitstun, trap.sourceMove?.includes("medium") ? 0.42 : 0.32);
+      defender.grounded = false;
+      defender.vx = owner.facing * 54;
+      defender.vy = Math.min(defender.vy, -190);
+      defender.pendingKnockdown = Math.max(defender.pendingKnockdown, SOFT_KNOCKDOWN * 0.6);
+      addDebtMarks(owner, defender, 1, trap.sourceMove || "fine_print");
+      registerComboHit(owner, defender, { damage: 26, boxType: "contractTrap", flags: { projectileImpact: true } });
+    } else {
+      defender.blockstun = Math.max(defender.blockstun, 10 / 60);
+      resetCombo();
+    }
+    applyImpactFeedback({ damage: 26, boxType: "medium", flags: { projectileImpact: true } }, trap.x, trap.y - 24, blocked);
     if (defender.hp <= 0) endMatch(defender);
   }
 
@@ -10531,6 +10915,7 @@
       drawProjectiles();
       drawCelesteTraps();
       drawVoidAnchors();
+      drawSwahiliContracts();
       drawParticles();
       if (state.superFlash) {
         // Super cinematic flash: darken the arena, keep the caster spotlit.
@@ -11008,6 +11393,10 @@
     const image = state.images[entry[0]];
     const meta = sheetMeta[entry[0]];
     if (!image || !meta) {
+      if (usesSwahiliPreview(f)) {
+        drawSwahiliPlaceholderFighter(f);
+        return;
+      }
       if (f.kind === "player") {
         drawKairoPlaceholder(f);
         return;
@@ -12131,6 +12520,7 @@
       if (drawLamuhProjectileVfx(projectile)) continue;
       if (drawCelesteProjectileVfx(projectile)) continue;
       if (drawSableProjectileVfx(projectile)) continue;
+      if (drawSwahiliProjectileVfx(projectile)) continue;
 
       const box = getProjectileBox(projectile);
       ctx.save();
@@ -12151,6 +12541,34 @@
       ctx.fillRect(-box.w / 2, -3, box.w * 0.78, 6);
       ctx.restore();
     }
+  }
+
+  function drawSwahiliProjectileVfx(projectile) {
+    if (projectile.ownerCharacterId !== "swahili") return false;
+    const box = getProjectileBox(projectile);
+    const age = (projectile.maxLife || 1) - projectile.life;
+    const pulse = 0.82 + Math.sin(age * 32) * 0.12;
+    ctx.save();
+    ctx.translate(box.x + box.w * 0.5, box.y + box.h * 0.5);
+    ctx.scale(projectile.facing || 1, 1);
+    ctx.globalCompositeOperation = "lighter";
+    ctx.shadowColor = "#d9aa37";
+    ctx.shadowBlur = 18;
+    ctx.fillStyle = "#17171a";
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.roundRect(-box.w * 0.5, -box.h * 0.34, box.w, box.h * 0.68, 8);
+    ctx.fill();
+    ctx.stroke();
+    ctx.globalAlpha = 0.84 * pulse;
+    ctx.fillStyle = "#fff1b8";
+    ctx.fillRect(-box.w * 0.36, -2, box.w * 0.72, 4);
+    ctx.beginPath();
+    ctx.arc(box.w * 0.34, 0, Math.max(5, box.h * 0.34), 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    return true;
   }
 
   function drawCelesteTraps() {
@@ -12811,6 +13229,23 @@
     for (const anchor of state.voidAnchors) {
       drawBox(getVoidAnchorBox(anchor), "rgba(184, 165, 255, 0.22)", "#b8a5ff");
     }
+    for (const trap of state.swahiliContracts) {
+      drawBox(getSwahiliContractBox(trap), "rgba(217, 170, 55, 0.18)", "#d9aa37");
+    }
+    for (const fighter of [p, e]) {
+      const marks = fighter?.debtMarks || [];
+      if (!marks.length && !(fighter?.defaultedTimer > 0)) continue;
+      ctx.save();
+      ctx.textAlign = "center";
+      ctx.font = "800 13px Inter, system-ui, sans-serif";
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = "rgba(0, 0, 0, 0.86)";
+      ctx.fillStyle = "#ffd86a";
+      const label = `DEBT ${marks.length}/5${fighter.defaultedTimer > 0 ? ` DEFAULTED ${fighter.defaultedTimer.toFixed(1)}s` : ""}`;
+      ctx.strokeText(label, fighter.x, fighter.y - 194);
+      ctx.fillText(label, fighter.x, fighter.y - 194);
+      ctx.restore();
+    }
   }
 
   function drawCelesteFrameDebugOverlay() {
@@ -13002,6 +13437,9 @@
 
   function chooseSpecialMove(fighter, controls, fallbackKey) {
     const p = fighter;
+    if (usesSwahiliPreview(p)) {
+      return chooseSwahiliSpecialMove(p, controls, fallbackKey);
+    }
     if (usesSableArt(p)) {
       return chooseSableSpecialMove(p, controls, fallbackKey);
     }
@@ -13050,6 +13488,227 @@
     }
     recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
     return selected;
+  }
+
+  function drawSwahiliContracts() {
+    for (const trap of state.swahiliContracts) {
+      const armed = trap.age >= trap.armTime;
+      const t = trap.detonating ? clamp(trap.detonationAge / 0.22, 0, 1) : clamp(trap.age / Math.max(trap.armTime, 0.1), 0, 1);
+      const radius = trap.detonating ? 34 + t * 38 : 18 + t * 16 + (armed ? Math.sin(state.time * 8) * 3 : 0);
+      ctx.save();
+      ctx.translate(trap.x, trap.y - 8);
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = trap.detonating ? 1 - t : armed ? 0.9 : 0.45 + t * 0.35;
+      ctx.strokeStyle = "#d9aa37";
+      ctx.fillStyle = "rgba(17, 17, 20, 0.68)";
+      ctx.shadowColor = "#d9aa37";
+      ctx.shadowBlur = 16;
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      for (let i = 0; i < 8; i += 1) {
+        const angle = -Math.PI / 2 + i * Math.PI / 4;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius * 0.48;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(0, 0, radius * 0.32, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  function drawSwahiliPlaceholderFighter(f) {
+    const crouch = f.crouching || String(f.anim).includes("crouch") || String(f.activeMove).includes("down_");
+    const active = String(f.activeMove || "").replace(/^enemy_/, "");
+    const scytheMove = Boolean(getMove(f)?.flags?.scythe);
+    const pistolMove = Boolean(getMove(f)?.flags?.pistolShot || getMove(f)?.flags?.projectile);
+    const countering = f.swahiliCounterTimer > 0;
+    const bodyY = crouch ? -92 : -128;
+    const attackLean = f.action ? Math.min(24, (f.actionTime || 0) * 90) : 0;
+
+    ctx.save();
+    ctx.translate(f.x, f.y);
+    ctx.scale(f.facing, 1);
+    ctx.globalAlpha = f.hitstun > 0 && !f.dead ? 0.76 + Math.sin(state.time * 48) * 0.16 : 1;
+
+    ctx.fillStyle = "rgba(217, 170, 55, 0.18)";
+    ctx.beginPath();
+    ctx.ellipse(0, -4, crouch ? 58 : 48, 12, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Final Signature scythe: black shaft, gold end cap, crest/charm, and huge gold-edged blade.
+    ctx.strokeStyle = "#08080a";
+    ctx.lineWidth = 13;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(-34, -24);
+    ctx.lineTo(-40, crouch ? -188 : -226);
+    ctx.stroke();
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = "#d9aa37";
+    ctx.beginPath();
+    ctx.moveTo(-47, -18);
+    ctx.lineTo(-39, 0);
+    ctx.lineTo(-31, -18);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = "#17171a";
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(-40, crouch ? -190 : -228);
+    ctx.bezierCurveTo(20, crouch ? -220 : -258, 92, crouch ? -194 : -234, 112, crouch ? -120 : -150);
+    ctx.bezierCurveTo(65, crouch ? -164 : -196, 12, crouch ? -170 : -205, -40, crouch ? -190 : -228);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#d9aa37";
+    ctx.beginPath();
+    ctx.arc(-40, crouch ? -190 : -228, 11, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(-28, crouch ? -186 : -224);
+    ctx.lineTo(-18, crouch ? -150 : -182);
+    ctx.stroke();
+    ctx.fillRect(-22, crouch ? -150 : -182, 9, 12);
+
+    // Shoes, trousers, and broad coat silhouette.
+    ctx.strokeStyle = "#09090b";
+    ctx.lineWidth = 18;
+    ctx.beginPath();
+    ctx.moveTo(-19, bodyY + 48);
+    ctx.lineTo(-26, -22);
+    ctx.moveTo(18, bodyY + 48);
+    ctx.lineTo(30, -22);
+    ctx.stroke();
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-38, -18); ctx.lineTo(-15, -18);
+    ctx.moveTo(18, -18); ctx.lineTo(44, -18);
+    ctx.stroke();
+
+    ctx.fillStyle = "#111114";
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-54, bodyY - 42);
+    ctx.quadraticCurveTo(-72, bodyY + 34, -62, -28);
+    ctx.lineTo(-12, -44);
+    ctx.lineTo(0, bodyY + 20);
+    ctx.lineTo(16, -44);
+    ctx.lineTo(66, -28);
+    ctx.quadraticCurveTo(70, bodyY + 28, 52, bodyY - 42);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "rgba(217, 170, 55, 0.72)";
+    ctx.beginPath();
+    ctx.moveTo(-48, bodyY + 12); ctx.lineTo(-18, -48); ctx.lineTo(-6, bodyY + 18); ctx.closePath();
+    ctx.moveTo(46, bodyY + 12); ctx.lineTo(18, -48); ctx.lineTo(7, bodyY + 18); ctx.closePath();
+    ctx.fill();
+
+    // White shirt, black vest, long patterned tie, and pig-emblem belt buckle.
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(-28 + attackLean * 0.2, bodyY - 45, 56, 76);
+    ctx.fillStyle = "#202024";
+    ctx.fillRect(-33 + attackLean * 0.2, bodyY - 22, 66, 58);
+    ctx.fillStyle = "#0b0b0d";
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(-7 + attackLean * 0.2, bodyY - 42);
+    ctx.lineTo(8 + attackLean * 0.2, bodyY - 42);
+    ctx.lineTo(12 + attackLean * 0.2, bodyY + 45);
+    ctx.lineTo(0 + attackLean * 0.2, bodyY + 58);
+    ctx.lineTo(-11 + attackLean * 0.2, bodyY + 45);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#d9aa37";
+    ctx.beginPath();
+    ctx.arc(0, bodyY + 42, 10, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Pig head, upright ears, broad snout, tusks, and gold nose ring.
+    ctx.fillStyle = "#f0b1a8";
+    ctx.strokeStyle = "#3a2020";
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(-31, bodyY - 60); ctx.lineTo(-48, bodyY - 99); ctx.lineTo(-15, bodyY - 82);
+    ctx.moveTo(31, bodyY - 60); ctx.lineTo(48, bodyY - 99); ctx.lineTo(15, bodyY - 82);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(0 + attackLean * 0.25, bodyY - 60, 39, 36, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#d99791";
+    ctx.beginPath();
+    ctx.ellipse(9 + attackLean * 0.25, bodyY - 48, 27, 19, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#17171a";
+    ctx.beginPath(); ctx.arc(-11 + attackLean * 0.25, bodyY - 69, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(19 + attackLean * 0.25, bodyY - 69, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(0 + attackLean * 0.25, bodyY - 48, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(18 + attackLean * 0.25, bodyY - 48, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = "#d9aa37";
+    ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(9 + attackLean * 0.25, bodyY - 39, 11, 0.05, Math.PI - 0.05); ctx.stroke();
+
+    // Arms and compact black/gold pistol presentation.
+    ctx.strokeStyle = "#111114";
+    ctx.lineWidth = 16;
+    ctx.beginPath();
+    ctx.moveTo(-35, bodyY - 18); ctx.lineTo(-63, bodyY + 22);
+    ctx.moveTo(35, bodyY - 18); ctx.lineTo(58 + (pistolMove ? 48 : 0), bodyY + (pistolMove ? -6 : 22));
+    ctx.stroke();
+    if (pistolMove) {
+      ctx.fillStyle = "#0b0b0d";
+      ctx.strokeStyle = "#d9aa37";
+      ctx.lineWidth = 3;
+      ctx.fillRect(54, bodyY - 20, 64, 18);
+      ctx.strokeRect(54, bodyY - 20, 64, 18);
+      ctx.fillRect(66, bodyY - 3, 16, 25);
+    }
+
+    if (scytheMove) {
+      ctx.strokeStyle = "rgba(217, 170, 55, 0.9)";
+      ctx.lineWidth = active.includes("heavy") ? 8 : 5;
+      ctx.beginPath();
+      ctx.arc(28, bodyY - 12, active.includes("heavy") ? 126 : 96, -1.18, 0.72);
+      ctx.stroke();
+    }
+    if (countering) {
+      ctx.strokeStyle = "rgba(217, 170, 55, 0.92)";
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.ellipse(0, bodyY - 40, 72, 112, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function chooseSwahiliSpecialMove(fighter, controls, fallbackKey) {
+    const prefix = fighter.kind === "enemy" ? "enemy_" : "";
+    const strength = getLamuhSpecialStrengthFromFallback(fallbackKey);
+    if (!fighter.grounded) return `${prefix}air_special`;
+    if (state.keys.has(controls.down)) return `${prefix}down_${strength}_special`;
+    if (state.keys.has(controls.up)) return `${prefix}up_${strength}_special`;
+    const forward = fighter.facing === 1 ? controls.right : controls.left;
+    const back = fighter.facing === 1 ? controls.left : controls.right;
+    if (state.keys.has(forward)) return `${prefix}forward_${strength}_special`;
+    if (state.keys.has(back)) return `${prefix}back_${strength}_special`;
+    return `${prefix}neutral_${strength}_special`;
   }
 
   function chooseSableSpecialMove(fighter, controls, fallbackKey) {
@@ -14776,6 +15435,98 @@
         return {
           p1: fighterSnapshot(state.player),
           p2: fighterSnapshot(state.enemy)
+        };
+      }
+    };
+  }
+  if (SWAHILI_HIDDEN_TEST_ENABLED) {
+    window.__swahiliTest = {
+      state,
+      profile: characterProfiles.swahili,
+      data: SWAHILI_DATA,
+      selectableCharacterIds: [...selectableCharacterIds],
+      hiddenTestCharacterIds: [...hiddenTestCharacterIds],
+      startP1(opponentId = "vanta") {
+        state.selectedPlayerId = "swahili";
+        startTraining("swahili");
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id, requestedOpponent: opponentId };
+      },
+      startP2(opponentId = "kairo") {
+        enableTestMatchMode();
+        state.selectedP1CharacterId = isLaunchableCharacterId(opponentId) ? opponentId : "kairo";
+        state.selectedP2CharacterId = "swahili";
+        startLocalVersus();
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      startMirror() {
+        enableTestMatchMode();
+        state.selectedP1CharacterId = "swahili";
+        state.selectedP2CharacterId = "swahili";
+        startLocalVersus();
+        return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
+      },
+      startMove(move, side = "p1", options = {}) {
+        if (!isFightMode() || (state.player?.profile?.id !== "swahili" && state.enemy?.profile?.id !== "swahili")) this.startMirror();
+        const fighter = side === "p2" ? state.enemy : state.player;
+        const key = fighter.kind === "enemy" && !move.startsWith("enemy_") ? `enemy_${move}` : move;
+        fighter.meter = options.fullMeter || key.replace(/^enemy_/, "") === "ultimate" ? METER_MAX : fighter.meter;
+        fighter.hitstun = 0;
+        fighter.blockstun = 0;
+        fighter.knockdownTimer = 0;
+        fighter.recoveryTimer = 0;
+        fighter.landingTimer = 0;
+        fighter.action = null;
+        fighter.activeMove = null;
+        startMove(key, fighter);
+        return { side, fighter: fighter.profile?.id, move: fighter.activeMove, anim: fighter.anim };
+      },
+      addDebt(count = 1, targetSide = "p2", ownerSide = "p1") {
+        const owner = ownerSide === "p2" ? state.enemy : state.player;
+        const target = targetSide === "p1" ? state.player : state.enemy;
+        return { added: addDebtMarks(owner, target, count, "debug_hook"), marks: getDebtMarksForOwner(target, owner?.kind).length, defaultedTimer: target?.defaultedTimer || 0 };
+      },
+      setDebug(enabled = true) {
+        state.debug = Boolean(enabled);
+        return state.debug;
+      },
+      validation() {
+        const missingProductionClips = Object.entries(characterProfiles.swahili.productionAnimationStatus || {}).filter(([, status]) => status !== "ready").map(([clip]) => clip);
+        const missingRuntimeNormals = Object.keys(SWAHILI_DATA.normals).filter((key) => !characterProfiles.swahili.moves.player[key]);
+        const missingRuntimeSpecials = Object.keys(SWAHILI_DATA.specials).filter((key) => !characterProfiles.swahili.moves.player[key]);
+        return {
+          publicSelectable: selectableCharacterIds.includes("swahili"),
+          hiddenLaunchable: hiddenTestCharacterIds.includes("swahili"),
+          approvedForLiveRoster: characterProfiles.swahili.approvedForLiveRoster === true,
+          placeholderMode: characterProfiles.swahili.placeholderArt,
+          canonicalNormals: Object.keys(SWAHILI_DATA.normals).length,
+          canonicalSpecials: Object.keys(SWAHILI_DATA.specials).length,
+          ultimateDefinitions: SWAHILI_DATA.ultimate ? 1 : 0,
+          missingRuntimeNormals,
+          missingRuntimeSpecials,
+          runtimeUltimatePresent: Boolean(characterProfiles.swahili.moves.player.ultimate),
+          missingProductionClips,
+          missingProductionClipCount: missingProductionClips.length,
+          runtimeAssetsRequested: Object.entries(assetPaths).filter(([key, path]) => key.startsWith("swahili") && Boolean(path)).map(([key, path]) => ({ key, path }))
+        };
+      },
+      snapshot() {
+        const fighter = (f) => f ? {
+          id: f.profile?.id,
+          hp: f.hp,
+          meter: f.meter,
+          move: f.activeMove,
+          anim: f.anim,
+          debtMarks: (f.debtMarks || []).map((mark) => ({ ...mark })),
+          defaultedTimer: f.defaultedTimer,
+          counterTimer: f.swahiliCounterTimer
+        } : null;
+        return {
+          mode: state.mode,
+          p1: fighter(state.player),
+          p2: fighter(state.enemy),
+          projectiles: state.projectiles.filter((projectile) => projectile.ownerCharacterId === "swahili").length,
+          contracts: state.swahiliContracts.length,
+          validation: this.validation()
         };
       }
     };

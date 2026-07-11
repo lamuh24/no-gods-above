@@ -4,6 +4,18 @@
 Agent: Codex
 Date: 2026-07-11
 
+## 2026-07-11 Codex Swahili Hidden Runtime Phase 1
+- Continued from Draft PR #2 / commit `aea8391` on new stacked branch `codex/swahili-hidden-runtime`; tracking Issue #3. PR #2 itself was not changed or force-updated.
+- Implemented preview-only Swahili behind `?swahiliTest`. Public `selectableCharacterIds` remains the same eight fighters, public mode does not load `data/characters/swahili.js`, and there are zero Swahili production sprite asset paths.
+- Added `NO_GODS_ABOVE/data/characters/swahili.js` with exactly 15 canonical normals, 15 directional specials, one `Paid in Full` ultimate definition, movement/stats, scythe hitbox metadata, AI data, Debt Mark config, VFX hooks, SFX/voice hooks, and an 80-clip production-missing manifest.
+- Added a Swahili-specific procedural black/gold/pink dev renderer and inline dev portrait; no Sable/LAMUH art was copied, modified, or used as Swahili production art. Review screenshot: `NO_GODS_ABOVE/docs/swahili_hidden_runtime_preview.png`.
+- Added functional Phase 1 stubs: timed opponent-bound Debt Marks, five-mark `Defaulted`, hitstop-safe mark timers, Swahili-knockdown timer penalty, pistol projectiles, Fine Print/Hidden Clause contract traps, Default Judgment counter (+2 marks), throw mark, basic ultimate mark consumption/bonus, contract VFX, and `H`/test-hook Debt debug display.
+- Added `NO_GODS_ABOVE/scripts/validate_swahili_hidden_runtime.js` and `NO_GODS_ABOVE/scripts/smoke_swahili_hidden_runtime.js`. Static validation and Chrome/CDP smoke pass public isolation, hidden P1/P2 launch, 15/15/1 compiled definitions, zero production assets, projectile, trap, 5-mark Defaulted, counter, and no runtime exceptions.
+- All 80 production animation clips remain honestly `missing`; no production sheets were generated. Next asset task is Sheet 1 identity/movement only: `idle`, `walk_forward`, `walk_backward`, `dash_forward`, and `dash_backward`, using 448px cells in a 6x5 transparent-RGBA atlas with baseline 382 and full validation/contact-sheet gates.
+- Skills/docs read and applied: `playable_character_production_skill.md`, `character_visual_consistency_skill.md`, `sprite_sheet_validation_skill.md`, `git_checkpoint_safety_skill.md`, Fighter Atlas Factory `SKILL.md` and full standard, plus PR #2 Swahili character/ultimate locks.
+- Gotcha: this is a sparse linked worktree. The screenshot's non-Swahili dummy can render as a simple rectangle because excluded production assets are intentionally absent from this isolated checkout; the smoke asserts Swahili behavior and zero Swahili asset requests, not visual fidelity of existing fighters.
+- Obsidian MCP sync to `127.0.0.1:27124` was attempted and refused the connection. Fallback note: `C:\Users\qchee\OneDrive\Documents\LAMUH\LAMUH\Agent Sync\2026-07-11-no-gods-above-swahili-hidden-runtime.md`.
+
 ## 2026-07-10 Codex Swahili Documentation Gate
 - User supplied the full Swahili playable-fighter brief and exact visual reference `C:\Users\qchee\Downloads\swahili char reference image.png`.
 - Opened GitHub Issue #1 for the required documentation/character-truth approval gate. No runtime, sprite generation, public roster, balance, or deployment changes were made.
