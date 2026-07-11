@@ -2,7 +2,7 @@
 
 Character: `sable`
 Clip: `forward_special_heavy`
-Approved at: 2026-07-10T19:19:15.345Z
+Approved at: 2026-07-10T23:52:21.401Z
 Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**
@@ -12,5 +12,3 @@ Normalized sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3
 
 - Preview approval only.
 - Live roster promotion remains disabled and requires explicit human approval.
-
-- Post-processing greenfix 2026-07-10: mint-green dash-trail residue was hue-shifted to approved violet/silver; green/chroma detector reports zero pixels.

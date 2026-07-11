@@ -4,14 +4,14 @@ Character: `sable`
 Stage: `full-rebuild-v3`
 Approval policy: `previewAuto`
 Provider: `manual`
-Generated: 2026-07-10T20:14:40.498Z
+Generated: 2026-07-10T23:47:24.682Z
 Auto-approve preview: **true**
 Auto-approve live: **false**
 Human review needed: **no**
 
 ## Clips Attempted
 
-- down_special_medium
+- back_special_heavy
 
 ## Skipped Approved Clips
 
@@ -27,39 +27,39 @@ Human review needed: **no**
 
 ## Waiting For Generation
 
-- down_special_medium
+- back_special_heavy
 
 ## Missing Output
 
-- None.
+- back_special_heavy
 
 ## Retried Clips
 
-- down_special_medium
+- None.
 
 ## Quarantined Outputs
 
-- assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/down_special_medium/v20260710-161453-1783714493925/sable_down_special_medium_8.png
+- None.
 
 ## Retry Count
 
-- down_special_medium: 1
+- None.
 
 ## Validation Summary
 
-- down_special_medium: manual_review_required/warn
+- back_special_heavy: waiting_for_generation
 
 ## Visual QA Summary
 
-- down_special_medium: warn, score 80 (Heuristic visual QA found risk that should block auto preview approval.)
+- back_special_heavy: not_run, score 0 (No generated sheet was available for this clip.)
 
 ## Smoke Test Summary
 
-- down_special_medium: pass
+- back_special_heavy: not run (waiting for generation)
 
 ## Remaining Clips
 
-- down_special_medium
+- back_special_heavy
 
 ## Next Action
 

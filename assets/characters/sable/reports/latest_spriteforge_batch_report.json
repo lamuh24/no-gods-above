@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "tool": "SpriteForge Agent",
-  "generatedAt": "2026-07-10T20:14:40.498Z",
+  "generatedAt": "2026-07-10T23:47:24.682Z",
   "character": "sable",
   "stage": "full-rebuild-v3",
   "approvalPolicy": "previewAuto",
@@ -9,39 +9,35 @@
   "autoApprovePreview": true,
   "autoApproveLive": false,
   "clipsAttempted": [
-    "down_special_medium"
+    "back_special_heavy"
   ],
   "clipsSkippedApproved": [],
   "clipsApprovedForPreview": [],
   "clipsFailed": [],
   "clipsWaitingForGeneration": [
-    "down_special_medium"
+    "back_special_heavy"
   ],
-  "clipsMissingOutput": [],
-  "clipsRetried": [
-    "down_special_medium"
+  "clipsMissingOutput": [
+    "back_special_heavy"
   ],
-  "quarantinedOutputs": [
-    "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/down_special_medium/v20260710-161453-1783714493925/sable_down_special_medium_8.png"
-  ],
-  "retryCountByClip": {
-    "down_special_medium": 1
-  },
+  "clipsRetried": [],
+  "quarantinedOutputs": [],
+  "retryCountByClip": {},
   "validationSummary": {
-    "down_special_medium": "manual_review_required/warn"
+    "back_special_heavy": "waiting_for_generation"
   },
   "visualQaSummary": {
-    "down_special_medium": {
-      "score": 80,
-      "status": "warn",
-      "summary": "Heuristic visual QA found risk that should block auto preview approval."
+    "back_special_heavy": {
+      "score": 0,
+      "status": "not_run",
+      "summary": "No generated sheet was available for this clip."
     }
   },
   "smokeTestSummary": {
-    "down_special_medium": "pass"
+    "back_special_heavy": "not run (waiting for generation)"
   },
   "remainingClips": [
-    "down_special_medium"
+    "back_special_heavy"
   ],
   "humanReviewNeeded": false,
   "nextAction": "Batch prepared prompts and is waiting for generated output for 1 clip(s). Drop sheets into their rebuild inbox folders, then resume.",

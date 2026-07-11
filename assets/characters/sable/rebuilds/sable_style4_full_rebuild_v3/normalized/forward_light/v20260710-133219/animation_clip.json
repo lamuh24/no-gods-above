@@ -25,11 +25,12 @@
     5
   ],
   "notes": [
-    "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Frame target lowered from 8 to 6 for text-only generation; one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard."
+    "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Frame target lowered from 8 to 6 for text-only generation; one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard.",
+    "Human review rejected this preview candidate: Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame."
   ],
-  "validationStatus": "approved",
-  "approvedForPreview": true,
+  "validationStatus": "manual_review_required",
+  "approvedForPreview": false,
   "approvedForLiveRoster": false,
   "approvedAt": "2026-07-10T17:33:38.351Z",
-  "approvalPolicy": "manual-promote-preview"
+  "approvalPolicy": "human-rejected"
 }

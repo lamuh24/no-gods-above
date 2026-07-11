@@ -1,39 +1,48 @@
 {
   "schemaVersion": "1.0.0",
   "tool": "SpriteForge Agent",
-  "updatedAt": "2026-07-10T20:16:57.251Z",
+  "updatedAt": "2026-07-10T23:58:53.657Z",
   "character": "sable",
   "stage": "full-rebuild-v3",
   "approvalPolicy": "previewAuto",
   "provider": "manual",
-  "currentClip": null,
+  "currentClip": "getup",
   "requestedClips": [
-    "down_special_medium"
+    "back_special_heavy"
   ],
   "completedClips": [
-    "down_special_medium"
+    "back_special_heavy",
+    "forward_special_heavy"
   ],
-  "failedClips": [],
+  "failedClips": [
+    "forward_light",
+    "getup"
+  ],
   "waitingClips": [
-    "down_special_medium"
+    "back_special_heavy"
   ],
-  "missingClips": [],
-  "retriedClips": {
-    "down_special_medium": 1
-  },
+  "missingClips": [
+    "back_special_heavy"
+  ],
+  "retriedClips": {},
   "quarantinedOutputs": [
-    "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/down_special_medium/v20260710-161453-1783714493925/sable_down_special_medium_8.png"
+    "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/getup/v20260710-195853-human-rejected-vzzzz-getup01"
   ],
   "approvedPreviewClips": [
-    "down_special_medium"
+    "back_special_heavy",
+    "forward_special_heavy"
   ],
   "approvedLiveClips": [],
   "latestManifest": "assets/characters/sable/manifests/preview_animation_clips_full_rebuild_v3.json",
   "latestSmokeReport": "assets/characters/sable/reports/latest_game_smoke_report.json",
-  "nextAction": "Preview promotion complete. Live roster approval remains false.",
-  "overallStatus": "complete",
+  "nextAction": "getup rejected by human review. Regenerate starting with getup; drop replacement output into generated/inbox/getup/ and run resume.",
+  "overallStatus": "waiting_for_generation",
   "remainingClips": [
-    "down_special_medium"
+    "forward_light",
+    "back_special_heavy"
   ],
-  "failureReasons": {}
+  "failureReasons": {
+    "forward_light": "Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame.",
+    "getup": "Claude audit 2026-07-10: pre-identity-gate red-dreadlock and white-panel character with edge-cropped frames; replacement retry also failed guard-scale continuity."
+  }
 }
