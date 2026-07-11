@@ -1137,3 +1137,13 @@ Date: 2026-06-12
 - Updated `NO_GODS_ABOVE\scripts\generate_flow_ui_assets.py` so it no longer generates Eclipse placeholder stage art.
 - Validation passed: `node --check NO_GODS_ABOVE/game.js`, `python -m py_compile NO_GODS_ABOVE/scripts/generate_flow_ui_assets.py`, `node --check NO_GODS_ABOVE/scripts/smoke_online_versus.js`, `git diff --check` (CRLF warnings only), no stale placeholder refs via `rg`, all seven Eclipse PNGs served HTTP 200 from local static server.
 - Full Chrome/CDP runtime smoke could not complete after this asset-pack pass because temporary Chrome profiles filled the nearly-full C: drive; smoke temp profiles were cleaned up. A lightweight alignment preview confirmed collision bars sit on the visible platform lips.
+
+## 2026-07-11 Cross-device access review
+- Read and applied repo deployment readiness and git checkpoint safety guidance.
+- Confirmed the public Netlify URL `https://no-gods-above.netlify.app/` returns HTTP 200, title `NO GODS ABOVE`, and `game.js?v=phone-strikes-1`.
+- Added cross-device access notes to `NO_GODS_ABOVE/README.md`: use Netlify for phones/tablets/laptops/desktops; use `--bind 0.0.0.0` plus the host LAN IP for same-Wi-Fi local testing; do not share `localhost`/`127.0.0.1` across devices.
+- Added `scripts/stage_deploy.js`, a cross-platform Node staging script for Linux/macOS/Windows environments without PowerShell; staged 114 assets + root runtime files to `/tmp/nga_deploy` with 0 missing files and ~220.2 MB output.
+- Updated deployment checklist and smoke report with the cross-platform staging path, current live cache key, and cross-device access guidance.
+- Netlify deploy was attempted from this container but failed with `Unauthorized: could not retrieve project`; publishing future local changes requires logging in as the owning Netlify account or providing a valid `NETLIFY_AUTH_TOKEN`.
+- Remote online smoke script could not launch Chrome in this Linux container because the script is hardcoded to the Windows Chrome path; HTTP-level live checks passed.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and `https://127.0.0.1:27124/` and was unreachable; repo-local session context is the fallback handoff note.
