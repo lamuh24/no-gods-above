@@ -11,13 +11,23 @@ First production deploy: 2026-06-09 (Claude Code session).
 
 Deploy procedure (staged, NOT the full folder — see "Required Deploy Files"):
 
+Cross-platform staging works anywhere Node is available:
+
+```bash
+# from repo root; rebuilds /tmp/nga_deploy unless a custom path is passed
+node scripts/stage_deploy.js /tmp/nga_deploy
+npx netlify deploy --prod --dir /tmp/nga_deploy --site 7954ab3d-7c2c-4533-ba61-3de081d568c3
+```
+
+Windows PowerShell staging is also kept for the owner's Windows workstation:
+
 ```powershell
 # from repo root; rebuilds %TEMP%\nga_deploy with only runtime files
 powershell -ExecutionPolicy Bypass -File .\_stage_deploy.ps1
 npx netlify deploy --prod --dir "$env:TEMP\nga_deploy" --site 7954ab3d-7c2c-4533-ba61-3de081d568c3
 ```
 
-Note: `--site` must be the project id; the site name is not accepted by the CLI.
+Note: `--site` must be the project id; the site name is not accepted by the CLI. The CLI also requires a Netlify login/token with access to the project; if it says `Unauthorized: could not retrieve project`, log in as the owning Netlify account or export a valid `NETLIFY_AUTH_TOKEN`.
 
 ## Local Run
 
@@ -28,10 +38,24 @@ cd NO_GODS_ABOVE
 python -m http.server 8000
 ```
 
-Open:
+Open locally on the same machine:
 
 ```text
 http://127.0.0.1:8000/index.html
+```
+
+For same-Wi-Fi testing on another phone/tablet/computer, bind the server to all interfaces and use the host computer's LAN IP address:
+
+```bash
+cd NO_GODS_ABOVE
+python -m http.server 8000 --bind 0.0.0.0
+# then open http://<host-lan-ip>:8000/index.html from the other device
+```
+
+Public cross-device access should use the production Netlify URL, not a localhost URL:
+
+```text
+https://no-gods-above.netlify.app/
 ```
 
 The game is a static browser build. A simple static host is enough as long as all folders below are deployed with the HTML/CSS/JS files.
@@ -95,8 +119,8 @@ folder containing only runtime files:
   - `assets/stages/eclipse_rooftop/06_foreground_layer_transparent.png`
   - `assets/stages/eclipse_rooftop/07_stage_select_card_16x9.png`
 
-`_stage_deploy.ps1` in the repo root automates this (101 assets + 3 root
-files, ~207 MB as of 2026-06-09). `game.js` has no runtime `fetch()` calls,
+`scripts/stage_deploy.js` and `_stage_deploy.ps1` in the repo root automate this (114 assets + 3 root
+files, ~220.2 MB as of 2026-07-11). `game.js` has no runtime `fetch()` calls,
 so string-literal extraction plus the portraits folder is complete coverage.
 
 Do not deploy only the HTML/CSS/JS files; the game depends on relative asset paths.

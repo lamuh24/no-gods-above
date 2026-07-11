@@ -6,6 +6,15 @@ Built with plain HTML, CSS, and JavaScript Canvas only. No Godot, Unity, Unreal,
 
 Current local dev server: `http://localhost:8010`.
 
+
+## Access Across Devices
+
+- Public URL for phones, tablets, laptops, and desktops: https://no-gods-above.netlify.app/
+- The game is a static browser build, so no native install is required for normal playtesting.
+- For same-network local testing before deployment, run `python -m http.server 8000 --bind 0.0.0.0` from `NO_GODS_ABOVE/`, then open `http://<host-lan-ip>:8000/index.html` on the other device.
+- Do not share `127.0.0.1` or `localhost` links across devices; those only point back to the device that opens them.
+- Online Versus still depends on PeerJS/WebRTC reachability, so restrictive school/work/mobile networks may block P2P connections even when the site itself loads.
+
 ## Game Flow
 
 The public setup flow is sequential:

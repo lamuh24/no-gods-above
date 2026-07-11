@@ -56,27 +56,31 @@
   "static_validation": {
     "node_check_game_js": "pass",
     "node_check_online_smoke_script": "pass",
+    "runtime_local_path_audit": "pass",
     "git_diff_check": "pass"
   },
   "staged_deploy": {
-    "staging_script": "_stage_deploy.ps1",
-    "asset_count": 101,
+    "staging_script": "scripts/stage_deploy.js",
+    "legacy_windows_staging_script": "_stage_deploy.ps1",
+    "asset_count": 114,
     "missing_referenced_files": 0,
-    "stage_size_mb": 207.1,
+    "stage_size_mb": 220.2,
     "root_files": [
       "index.html",
       "game.js",
       "style.css"
     ],
-    "script_cache_key": "game.js?v=flow-setup-1"
+    "stage_path_tested": "/tmp/nga_deploy",
+    "script_cache_key": "game.js?v=phone-strikes-1"
   },
   "live_site_status": {
     "url": "https://no-gods-above.netlify.app/",
     "http_status": 200,
     "title": "NO GODS ABOVE",
-    "observed_script_cache_key": "game.js?v=lamuh-legacy-p2-fix-1",
-    "matches_local_flow_refactor": false,
-    "note": "Local build is ready, but Netlify must be redeployed before the public site shows the new sequential setup flow."
+    "observed_script_cache_key": "game.js?v=phone-strikes-1",
+    "cross_device_access": "Use the Netlify URL on phones, tablets, laptops, and desktops; do not share localhost/127.0.0.1 links across devices.",
+    "deploy_attempt": "Netlify CLI deploy from this environment failed with Unauthorized: could not retrieve project, so deployment still requires a valid Netlify login/token if local changes need publishing.",
+    "browser_smoke_limitation": "Remote smoke script could not launch Chrome in this Linux container because it is hardcoded to C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe."
   },
   "dependencies": {
     "new_dependencies_added": [],
