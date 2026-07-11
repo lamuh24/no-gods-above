@@ -1,0 +1,46 @@
+{
+  "$schemaVersion": 1,
+  "id": "character_id",
+  "displayName": "Character Name",
+  "rigFamily": "nga_humanoid_standard",
+  "model": {
+    "web": "runtime/model.web.glb",
+    "steam": "runtime/model.steam.glb"
+  },
+  "stats": {
+    "maxHealth": 10000,
+    "walkSpeed": 0,
+    "backWalkSpeed": 0,
+    "dashSpeed": 0,
+    "jumpVelocity": 0,
+    "gravityScale": 1
+  },
+  "resources": [],
+  "moveFiles": {
+    "normals": "combat/normals.json",
+    "specials": "combat/specials.json",
+    "throws": "combat/throws.json",
+    "ultimate": "combat/ultimate.json"
+  },
+  "requiredSlots": {
+    "normals": 15,
+    "specials": 15,
+    "standardThrows": [
+      "forward_throw",
+      "back_throw",
+      "air_throw"
+    ],
+    "ultimate": 1
+  },
+  "animationManifest": "animation/animations.json",
+  "hitboxManifest": "combat/hitboxes.json",
+  "cinematicManifest": "presentation/cinematics.json",
+  "aiManifest": "ai/ai.json",
+  "provenanceManifest": "source/provenance.json",
+  "approval": {
+    "visual": "unapproved",
+    "animation": "unapproved",
+    "combat": "unapproved",
+    "production": "blocked"
+  }
+}

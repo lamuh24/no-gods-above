@@ -1,0 +1,35 @@
+{
+  "$schemaVersion": 1,
+  "id": "grab_id",
+  "kind": "command_grab",
+  "command": "SPECIAL+L",
+  "attackerAnimation": "grab_attacker",
+  "victimAnimation": "grab_victim_universal",
+  "targetEligibility": {
+    "grounded": true,
+    "airborne": false,
+    "hitstun": false,
+    "blockstun": false,
+    "throwInvulnerable": false
+  },
+  "frames": {
+    "startup": 0,
+    "capture": 0,
+    "release": 0,
+    "recovery": 0
+  },
+  "tech": {
+    "techable": false,
+    "windowFrames": 0
+  },
+  "anchors": {
+    "attacker": "grab_anchor",
+    "victim": "victim_anchor",
+    "cameraTarget": "camera_chest"
+  },
+  "damage": 0,
+  "knockdown": "hard",
+  "cameraTimeline": null,
+  "onWhiffState": "grab_whiff",
+  "approval": "unapproved"
+}
