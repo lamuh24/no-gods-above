@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "tool": "SpriteForge Agent",
   "reportKind": "spriteforge-preview-pack",
-  "generatedAt": "2026-07-10T20:49:59.928Z",
+  "generatedAt": "2026-07-11T00:02:50.806Z",
   "character": "sable",
   "stage": "full-rebuild-v3",
   "approvalPolicy": "previewAuto",
@@ -57,41 +57,50 @@
   "queueStatus": {
     "schemaVersion": "1.0.0",
     "tool": "SpriteForge Agent",
-    "updatedAt": "2026-07-10T20:16:57.251Z",
+    "updatedAt": "2026-07-10T23:58:53.657Z",
     "character": "sable",
     "stage": "full-rebuild-v3",
     "approvalPolicy": "previewAuto",
     "provider": "manual",
-    "currentClip": null,
+    "currentClip": "getup",
     "requestedClips": [
-      "down_special_medium"
+      "back_special_heavy"
     ],
     "completedClips": [
-      "down_special_medium"
+      "back_special_heavy",
+      "forward_special_heavy"
     ],
-    "failedClips": [],
+    "failedClips": [
+      "forward_light",
+      "getup"
+    ],
     "waitingClips": [
-      "down_special_medium"
+      "back_special_heavy"
     ],
-    "missingClips": [],
-    "retriedClips": {
-      "down_special_medium": 1
-    },
+    "missingClips": [
+      "back_special_heavy"
+    ],
+    "retriedClips": {},
     "quarantinedOutputs": [
-      "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/down_special_medium/v20260710-161453-1783714493925/sable_down_special_medium_8.png"
+      "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/getup/v20260710-195853-human-rejected-vzzzz-getup01"
     ],
     "approvedPreviewClips": [
-      "down_special_medium"
+      "back_special_heavy",
+      "forward_special_heavy"
     ],
     "approvedLiveClips": [],
     "latestManifest": "assets/characters/sable/manifests/preview_animation_clips_full_rebuild_v3.json",
     "latestSmokeReport": "assets/characters/sable/reports/latest_game_smoke_report.json",
-    "nextAction": "Preview promotion complete. Live roster approval remains false.",
-    "overallStatus": "complete",
+    "nextAction": "getup rejected by human review. Regenerate starting with getup; drop replacement output into generated/inbox/getup/ and run resume.",
+    "overallStatus": "waiting_for_generation",
     "remainingClips": [
-      "down_special_medium"
+      "forward_light",
+      "back_special_heavy"
     ],
-    "failureReasons": {}
+    "failureReasons": {
+      "forward_light": "Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame.",
+      "getup": "Claude audit 2026-07-10: pre-identity-gate red-dreadlock and white-panel character with edge-cropped frames; replacement retry also failed guard-scale continuity."
+    }
   },
   "clipChecks": [
     {
@@ -289,9 +298,9 @@
     {
       "clipId": "getup",
       "required": true,
-      "approvedForPreview": true,
+      "approvedForPreview": false,
       "approvedForLiveRoster": false,
-      "inPreviewManifest": true,
+      "inPreviewManifest": false,
       "normalizedClip": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/getup/v20260709-144214/animation_clip.json",
       "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/getup/v20260709-144214/sable_getup_normalized_strip.png",
       "expectedFrameCount": 8,
@@ -308,7 +317,10 @@
         "dimensionsPass": true,
         "transparencyPass": true
       },
-      "issues": []
+      "issues": [
+        "Missing from preview_animation_clips.json.",
+        "Clip is not approved for preview."
+      ]
     },
     {
       "clipId": "stand_light",
@@ -529,9 +541,9 @@
     {
       "clipId": "forward_light",
       "required": true,
-      "approvedForPreview": true,
+      "approvedForPreview": false,
       "approvedForLiveRoster": false,
-      "inPreviewManifest": true,
+      "inPreviewManifest": false,
       "normalizedClip": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_light/v20260710-133219/animation_clip.json",
       "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_light/v20260710-133219/sable_forward_light_normalized_strip.png",
       "expectedFrameCount": 6,
@@ -548,7 +560,10 @@
         "dimensionsPass": true,
         "transparencyPass": true
       },
-      "issues": []
+      "issues": [
+        "Missing from preview_animation_clips.json.",
+        "Clip is not approved for preview."
+      ]
     },
     {
       "clipId": "forward_medium",
@@ -857,22 +872,26 @@
     {
       "clipId": "back_special_heavy",
       "required": true,
-      "approvedForPreview": false,
+      "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "inPreviewManifest": false,
-      "normalizedClip": null,
-      "normalizedSheet": null,
+      "inPreviewManifest": true,
+      "normalizedClip": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-195024/animation_clip.json",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-195024/sable_back_special_heavy_normalized_strip.png",
       "expectedFrameCount": 7,
       "expectedFrameWidth": 448,
       "expectedFrameHeight": 448,
       "expectedStripWidth": 3136,
       "expectedStripHeight": 448,
-      "issues": [
-        "Missing from preview_animation_clips.json.",
-        "Clip is not approved for preview.",
-        "No normalized animation_clip.json found.",
-        "No normalized strip path recorded."
-      ]
+      "image": {
+        "width": 3136,
+        "height": 448,
+        "hasAlpha": true,
+        "transparentPixelRatio": 0.8963220891034985,
+        "transparentCorners": true,
+        "dimensionsPass": true,
+        "transparencyPass": true
+      },
+      "issues": []
     },
     {
       "clipId": "down_special_light",
@@ -1014,7 +1033,6 @@
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/block.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/hit_stun.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/knockdown.png",
-    "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/getup.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/stand_light.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/stand_medium.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/stand_heavy.png",
@@ -1024,7 +1042,6 @@
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/jump_light.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/jump_medium.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/jump_heavy.png",
-    "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/forward_light.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/forward_medium.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/forward_heavy.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/back_light.png",
@@ -1036,6 +1053,7 @@
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/forward_special_light.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/forward_special_medium.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/forward_special_heavy.png",
+    "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/back_special_heavy.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/down_special_light.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/strips/down_special_medium.png",
     "assets/characters/sable/preview_pack/sable_style4_full-rebuild-v3_preview_pack/preview_animation_clips_full_rebuild_v3.json",
@@ -1048,16 +1066,17 @@
   "smokePassed": true,
   "idleApprovedClipPreserved": true,
   "failedClips": [
+    "forward_light",
+    "getup",
     "back_special_light",
     "back_special_medium",
-    "back_special_heavy",
     "down_special_heavy",
     "up_special_light",
     "up_special_medium",
     "up_special_heavy"
   ],
   "quarantinedOutputs": [
-    "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/down_special_medium/v20260710-161453-1783714493925/sable_down_special_medium_8.png",
+    "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/getup/v20260710-195853-human-rejected-vzzzz-getup01",
     "assets/characters/sable/generated/quarantine/archive_status.json",
     "assets/characters/sable/generated/quarantine/back_special_light/v20260628-222937-human-rejected-v20260629-000200-codex-clean-back-anchor-patched-back_special_light/frame_000.png",
     "assets/characters/sable/generated/quarantine/back_special_light/v20260628-222937-human-rejected-v20260629-000200-codex-clean-back-anchor-patched-back_special_light/frame_001.png",
@@ -1943,6 +1962,10 @@
   "liveRosterModifiedFiles": [],
   "finalStatus": "PARTIAL_PREVIEW_PACK_NEEDS_RETRY",
   "humanReviewReasons": [
+    "getup: Missing from preview_animation_clips.json.",
+    "getup: Clip is not approved for preview.",
+    "forward_light: Missing from preview_animation_clips.json.",
+    "forward_light: Clip is not approved for preview.",
     "back_special_light: Missing from preview_animation_clips.json.",
     "back_special_light: Clip is not approved for preview.",
     "back_special_light: No normalized animation_clip.json found.",
@@ -1951,10 +1974,6 @@
     "back_special_medium: Clip is not approved for preview.",
     "back_special_medium: No normalized animation_clip.json found.",
     "back_special_medium: No normalized strip path recorded.",
-    "back_special_heavy: Missing from preview_animation_clips.json.",
-    "back_special_heavy: Clip is not approved for preview.",
-    "back_special_heavy: No normalized animation_clip.json found.",
-    "back_special_heavy: No normalized strip path recorded.",
     "down_special_heavy: Missing from preview_animation_clips.json.",
     "down_special_heavy: Clip is not approved for preview.",
     "down_special_heavy: No normalized animation_clip.json found.",
@@ -1970,7 +1989,9 @@
     "up_special_heavy: Missing from preview_animation_clips.json.",
     "up_special_heavy: Clip is not approved for preview.",
     "up_special_heavy: No normalized animation_clip.json found.",
-    "up_special_heavy: No normalized strip path recorded."
+    "up_special_heavy: No normalized strip path recorded.",
+    "forward_light: Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame.",
+    "getup: Claude audit 2026-07-10: pre-identity-gate red-dreadlock and white-panel character with edge-cropped frames; replacement retry also failed guard-scale continuity."
   ],
   "notes": [
     "SpriteForge pack output is preview-only.",

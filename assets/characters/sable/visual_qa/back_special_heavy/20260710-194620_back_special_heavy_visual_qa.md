@@ -2,8 +2,8 @@
 
 Status: **manual_review_required**
 Approved: **no**
-Sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-194620/sable_back_special_heavy_normalized_strip.png`
-Prompt: `assets/characters/sable/visual_qa/back_special_heavy/20260710-194622_back_special_heavy_visual_qa_prompt.md`
+Sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/back_special_heavy/vzzzzzzzzzzzz-voidanchor-edgeclean-approved/sable_back_special_heavy_7f.png`
+Prompt: `assets/characters/sable/visual_qa/back_special_heavy/20260710-194620_back_special_heavy_visual_qa_prompt.md`
 
 ## Checklist
 

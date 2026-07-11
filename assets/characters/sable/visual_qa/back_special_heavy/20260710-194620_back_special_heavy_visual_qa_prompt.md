@@ -6,7 +6,7 @@ Review this generated sprite sheet against the locked character spec and No Gods
 
 - Character: `sable`
 - Clip: `back_special_heavy`
-- Sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-194620/sable_back_special_heavy_normalized_strip.png`
+- Sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/back_special_heavy/vzzzzzzzzzzzz-voidanchor-edgeclean-approved/sable_back_special_heavy_7f.png`
 
 ## Checklist
 

@@ -2,7 +2,7 @@
 
 Character: `sable`
 Stage: `full-rebuild-v3`
-Generated: 2026-07-10T20:49:59.928Z
+Generated: 2026-07-11T00:02:50.806Z
 Final status: **PARTIAL_PREVIEW_PACK_NEEDS_RETRY**
 Approval policy: `previewAuto`
 Provider: `manual`
@@ -75,7 +75,7 @@ Approved for live roster: **false**
 - block: pass
 - hit_stun: pass
 - knockdown: pass
-- getup: pass
+- getup: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.)
 - stand_light: pass
 - stand_medium: pass
 - stand_heavy: pass
@@ -85,7 +85,7 @@ Approved for live roster: **false**
 - jump_light: pass
 - jump_medium: pass
 - jump_heavy: pass
-- forward_light: pass
+- forward_light: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.)
 - forward_medium: pass
 - forward_heavy: pass
 - back_light: pass
@@ -99,7 +99,7 @@ Approved for live roster: **false**
 - forward_special_heavy: pass
 - back_special_light: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
 - back_special_medium: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
-- back_special_heavy: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
+- back_special_heavy: pass
 - down_special_light: pass
 - down_special_medium: pass
 - down_special_heavy: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
@@ -109,9 +109,10 @@ Approved for live roster: **false**
 
 ## Failed Or Needs Retry
 
+- forward_light
+- getup
 - back_special_light
 - back_special_medium
-- back_special_heavy
 - down_special_heavy
 - up_special_light
 - up_special_medium
@@ -119,7 +120,7 @@ Approved for live roster: **false**
 
 ## Quarantine
 
-- assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/down_special_medium/v20260710-161453-1783714493925/sable_down_special_medium_8.png
+- assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/quarantine/getup/v20260710-195853-human-rejected-vzzzz-getup01
 - assets/characters/sable/generated/quarantine/archive_status.json
 - assets/characters/sable/generated/quarantine/back_special_light/v20260628-222937-human-rejected-v20260629-000200-codex-clean-back-anchor-patched-back_special_light/frame_000.png
 - assets/characters/sable/generated/quarantine/back_special_light/v20260628-222937-human-rejected-v20260629-000200-codex-clean-back-anchor-patched-back_special_light/frame_001.png
@@ -1008,6 +1009,10 @@ Approved for live roster: **false**
 
 ## Human Review Reasons
 
+- getup: Missing from preview_animation_clips.json.
+- getup: Clip is not approved for preview.
+- forward_light: Missing from preview_animation_clips.json.
+- forward_light: Clip is not approved for preview.
 - back_special_light: Missing from preview_animation_clips.json.
 - back_special_light: Clip is not approved for preview.
 - back_special_light: No normalized animation_clip.json found.
@@ -1016,10 +1021,6 @@ Approved for live roster: **false**
 - back_special_medium: Clip is not approved for preview.
 - back_special_medium: No normalized animation_clip.json found.
 - back_special_medium: No normalized strip path recorded.
-- back_special_heavy: Missing from preview_animation_clips.json.
-- back_special_heavy: Clip is not approved for preview.
-- back_special_heavy: No normalized animation_clip.json found.
-- back_special_heavy: No normalized strip path recorded.
 - down_special_heavy: Missing from preview_animation_clips.json.
 - down_special_heavy: Clip is not approved for preview.
 - down_special_heavy: No normalized animation_clip.json found.
@@ -1036,6 +1037,8 @@ Approved for live roster: **false**
 - up_special_heavy: Clip is not approved for preview.
 - up_special_heavy: No normalized animation_clip.json found.
 - up_special_heavy: No normalized strip path recorded.
+- forward_light: Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame.
+- getup: Claude audit 2026-07-10: pre-identity-gate red-dreadlock and white-panel character with edge-cropped frames; replacement retry also failed guard-scale continuity.
 
 ## Preview Pack
 
