@@ -2,11 +2,11 @@
 
 Character: `sable`
 Clip: `idle`
-Approved at: 2026-07-09T17:04:39.879Z
-Approval policy: `previewAuto`
+Approved at: 2026-07-11T04:55:17.217Z
+Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**
-Normalized sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/idle/v20260709-130435/sable_idle_normalized_strip.png`
+Normalized sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/idle/v20260710-201530/sable_idle_normalized_strip.png`
 
 ## Notes
 

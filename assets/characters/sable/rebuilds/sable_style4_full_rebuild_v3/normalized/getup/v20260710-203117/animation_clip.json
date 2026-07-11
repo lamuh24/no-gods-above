@@ -1,0 +1,35 @@
+{
+  "clipId": "getup",
+  "category": "damage",
+  "frameCount": 5,
+  "fps": 10,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/getup_reference_guard_5f.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/getup/v20260710-203117/sable_getup_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 reaction pass. Five-frame ground-to-standing recovery returning to the shared side-on fists-up guard; no teleport pop, no missing in-betweens, no scale jump, and no padding/fabricated frames."
+  ],
+  "validation": {
+    "maxScaleDriftPx": 300,
+    "minHeightPx": 70,
+    "scaleDriftRationale": "Getup intentionally transitions from grounded low poses back to standing height; baseline, center, facing, and global normalization must still remain stable."
+  },
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-11T04:55:17.282Z",
+  "approvalPolicy": "manual-promote-preview"
+}

@@ -2,7 +2,7 @@
 
 Character: `sable`
 Clip: `forward_heavy`
-Approved at: 2026-07-10T17:52:43.813Z
+Approved at: 2026-07-11T04:55:17.377Z
 Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**

@@ -2,8 +2,8 @@
 
 Character: `sable`
 Clip: `neutral_special_light`
-Approved at: 2026-07-10T18:30:03.061Z
-Approval policy: `previewAuto`
+Approved at: 2026-07-11T04:55:17.406Z
+Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**
 Normalized sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/neutral_special_light/v20260710-142954/sable_neutral_special_light_normalized_strip.png`

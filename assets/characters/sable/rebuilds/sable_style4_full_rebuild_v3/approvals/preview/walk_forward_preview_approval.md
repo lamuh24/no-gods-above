@@ -2,8 +2,8 @@
 
 Character: `sable`
 Clip: `walk_forward`
-Approved at: 2026-07-09T17:15:23.127Z
-Approval policy: `previewAuto`
+Approved at: 2026-07-11T04:55:17.225Z
+Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**
 Normalized sheet: `assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/walk_forward/v20260709-131519/sable_walk_forward_normalized_strip.png`

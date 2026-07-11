@@ -2,8 +2,8 @@
 
 Character: `sable`
 Stage: `full-rebuild-v3`
-Generated: 2026-07-11T00:02:50.806Z
-Final status: **PARTIAL_PREVIEW_PACK_NEEDS_RETRY**
+Generated: 2026-07-11T04:56:18.897Z
+Final status: **COMPLETE_PREVIEW_PACK**
 Approval policy: `previewAuto`
 Provider: `manual`
 Skip approved: **true**
@@ -75,7 +75,7 @@ Approved for live roster: **false**
 - block: pass
 - hit_stun: pass
 - knockdown: pass
-- getup: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.)
+- getup: pass
 - stand_light: pass
 - stand_medium: pass
 - stand_heavy: pass
@@ -85,7 +85,7 @@ Approved for live roster: **false**
 - jump_light: pass
 - jump_medium: pass
 - jump_heavy: pass
-- forward_light: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.)
+- forward_light: pass
 - forward_medium: pass
 - forward_heavy: pass
 - back_light: pass
@@ -97,26 +97,20 @@ Approved for live roster: **false**
 - forward_special_light: pass
 - forward_special_medium: pass
 - forward_special_heavy: pass
-- back_special_light: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
-- back_special_medium: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
+- back_special_light: pass
+- back_special_medium: pass
 - back_special_heavy: pass
 - down_special_light: pass
 - down_special_medium: pass
-- down_special_heavy: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
-- up_special_light: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
-- up_special_medium: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
-- up_special_heavy: needs retry (Missing from preview_animation_clips.json.; Clip is not approved for preview.; No normalized animation_clip.json found.; No normalized strip path recorded.)
+- down_special_heavy: pass
+- up_special_light: pass
+- up_special_medium: pass
+- up_special_heavy: pass
 
 ## Failed Or Needs Retry
 
 - forward_light
 - getup
-- back_special_light
-- back_special_medium
-- down_special_heavy
-- up_special_light
-- up_special_medium
-- up_special_heavy
 
 ## Quarantine
 
@@ -1009,34 +1003,6 @@ Approved for live roster: **false**
 
 ## Human Review Reasons
 
-- getup: Missing from preview_animation_clips.json.
-- getup: Clip is not approved for preview.
-- forward_light: Missing from preview_animation_clips.json.
-- forward_light: Clip is not approved for preview.
-- back_special_light: Missing from preview_animation_clips.json.
-- back_special_light: Clip is not approved for preview.
-- back_special_light: No normalized animation_clip.json found.
-- back_special_light: No normalized strip path recorded.
-- back_special_medium: Missing from preview_animation_clips.json.
-- back_special_medium: Clip is not approved for preview.
-- back_special_medium: No normalized animation_clip.json found.
-- back_special_medium: No normalized strip path recorded.
-- down_special_heavy: Missing from preview_animation_clips.json.
-- down_special_heavy: Clip is not approved for preview.
-- down_special_heavy: No normalized animation_clip.json found.
-- down_special_heavy: No normalized strip path recorded.
-- up_special_light: Missing from preview_animation_clips.json.
-- up_special_light: Clip is not approved for preview.
-- up_special_light: No normalized animation_clip.json found.
-- up_special_light: No normalized strip path recorded.
-- up_special_medium: Missing from preview_animation_clips.json.
-- up_special_medium: Clip is not approved for preview.
-- up_special_medium: No normalized animation_clip.json found.
-- up_special_medium: No normalized strip path recorded.
-- up_special_heavy: Missing from preview_animation_clips.json.
-- up_special_heavy: Clip is not approved for preview.
-- up_special_heavy: No normalized animation_clip.json found.
-- up_special_heavy: No normalized strip path recorded.
 - forward_light: Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame.
 - getup: Claude audit 2026-07-10: pre-identity-gate red-dreadlock and white-panel character with edge-cropped frames; replacement retry also failed guard-scale continuity.
 

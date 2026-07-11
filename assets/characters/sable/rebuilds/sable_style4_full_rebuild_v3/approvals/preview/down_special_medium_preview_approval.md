@@ -2,7 +2,7 @@
 
 Character: `sable`
 Clip: `down_special_medium`
-Approved at: 2026-07-10T20:16:57.004Z
+Approved at: 2026-07-11T04:55:17.481Z
 Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**

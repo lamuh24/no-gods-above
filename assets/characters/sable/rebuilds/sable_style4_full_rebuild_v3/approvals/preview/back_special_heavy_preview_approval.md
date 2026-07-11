@@ -2,7 +2,7 @@
 
 Character: `sable`
 Clip: `back_special_heavy`
-Approved at: 2026-07-10T23:51:15.704Z
+Approved at: 2026-07-11T04:55:17.466Z
 Approval policy: `manual-promote-preview`
 Approved for preview: **true**
 Approved for live roster: **false**

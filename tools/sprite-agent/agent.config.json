@@ -427,15 +427,15 @@
     },
     "up_special_light": {
       "category": "special",
-      "frameCount": 8,
+      "frameCount": 6,
       "fps": 12,
       "hitFrames": [
-        4
+        3
       ]
     },
     "up_special_medium": {
       "category": "special",
-      "frameCount": 8,
+      "frameCount": 7,
       "fps": 12,
       "hitFrames": [
         4
@@ -444,7 +444,7 @@
     "up_special_heavy": {
       "category": "special",
       "frameCount": 8,
-      "fps": 12,
+      "fps": 11,
       "hitFrames": [
         5
       ]
@@ -939,7 +939,7 @@
         "loop": false
       },
       "getup": {
-        "frameCount": 8,
+        "frameCount": 5,
         "fps": 10,
         "loop": false
       },
@@ -1503,11 +1503,11 @@
     },
     "full-rebuild-v3": {
       "idle": {
-        "frameCount": 4,
+        "frameCount": 3,
         "fps": 8,
         "loop": true,
         "notes": [
-          "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse. Frame target lowered from 8 to 4 for the 2026-07-09 fluidity redraw because only 4 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+          "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved pixel reference: side-on fists-up shared attack-start guard, subtle breathing, compact void-crystal forearm shimmer, no old placeholder arms-down stance. Frame target is 3 after trimming only the exact duplicate loop-closer from the approved 4-frame source; no padding or fabricated in-betweens are allowed."
         ]
       },
       "walk_forward": {
@@ -1581,7 +1581,7 @@
         ]
       },
       "getup": {
-        "frameCount": 8,
+        "frameCount": 5,
         "fps": 10,
         "validation": {
           "maxScaleDriftPx": 300,
@@ -1589,7 +1589,7 @@
           "scaleDriftRationale": "Getup intentionally transitions from grounded low poses back to standing height; baseline, center, facing, and global normalization must still remain stable."
         },
         "notes": [
-          "full-rebuild-v3 reaction pass. Ground-to-standing recovery animation returning to Sable's ready stance; no teleport pop, no missing in-betweens, no scale jump."
+          "full-rebuild-v3 reaction pass. Five-frame ground-to-standing recovery returning to the shared side-on fists-up guard; no teleport pop, no missing in-betweens, no scale jump, and no padding/fabricated frames."
         ]
       },
       "stand_light": {
@@ -1710,16 +1710,16 @@
         ]
       },
       "forward_light": {
-        "frameCount": 6,
+        "frameCount": 5,
         "fps": 14,
         "hitFrames": [
           2
         ],
         "cancelFrames": [
-          5
+          4
         ],
         "notes": [
-          "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Frame target lowered from 8 to 6 for text-only generation; one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard."
+          "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Use five frames: one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard. Claude confirmed retry2 attempt 1 has the correct motion storyboard; component cleanup removed only the disconnected 92-pixel boot sliver in visual frame 2 and 227-pixel floating crystal-fist chunk in visual frame 4. Both hands and both boots remain complete; rescrub contact sheet is ready for review."
         ]
       },
       "forward_medium": {
@@ -1882,25 +1882,24 @@
           5
         ],
         "notes": [
-          "full-rebuild-v3 special family: Void Anchor LIGHT. Small quick anchor tag while slipping back, restrained defensive trap read. Frame target lowered from 12 to 6 after the first text-only attempt produced cross-cell detached anchor chunks and attempt 2 had a redundant final guard; one small quick forearm-attached anchor tag, active on visual frame 4/index 3, compact intentional anchor VFX, and recovery toward guard.",
+          "full-rebuild-v3 special family: Void Anchor LIGHT. Small quick space-lock trap while slipping back, using one compact faceted obsidian shard over one shallow silver-violet rift; active on visual frame 4/index 3 with recovery toward guard.",
           "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
-          "DEFERRED 2026-07-10: Claude/user rejected queued clip for literal anchor iconography; remove physical anchor glyphs and use canonical faceted obsidian shard plus silver-violet fracture lines over a small void pool/rift trap after generator health returns."
+          "DEFERRED 2026-07-10: two reference-input canonical redraws failed equal-cell containment; attempt 1 left frame-3 boot bleed in frame 2 and attempt 2 placed frame 3 across the frame-2 boundary. No repack/body rescue allowed."
         ]
       },
       "back_special_medium": {
-        "frameCount": 7,
+        "frameCount": 6,
         "fps": 12,
         "hitFrames": [
           3
         ],
         "cancelFrames": [
-          6
+          5
         ],
         "notes": [
-          "full-rebuild-v3 special family: Void Anchor MEDIUM. Mid-sized anchor placement with clearer retreat and stronger trap silhouette. Frame target lowered from 14 to 7 after the first text-only attempt produced a free-floating repeated anchor; one medium forearm-attached anchor placement, active on visual frame 4/index 3, compact intentional anchor VFX, and recovery toward guard.",
-          "DEFERRED 2026-07-10: two text-only attempts produced free-floating/repeated anchor glyphs; no bounded trim/drop salvage preserves the Void Anchor medium identity.",
+          "full-rebuild-v3 special family: Void Anchor MEDIUM. Six-frame canonical space-lock trap with clearer retreat and a stronger crouched placement silhouette; one medium faceted obsidian shard over one medium silver-violet rift, active on visual frame 4/index 3, followed by settle and committed recovery.",
           "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
-          "DEFERRED 2026-07-10: also covered by literal-object iconography rule; prior floating/repeated anchor candidates remain rejected and the next healthy-generator attempt must use canonical obsidian shard plus void pool/rift trap, not a physical anchor."
+          "APPROVED/PROMOTED PREVIEW-ONLY 2026-07-10: reference-input attempt 2 used a valid 3x2 source grid, deterministically reordered into a six-frame horizontal strip without body repair or component isolation. Claude approved the canonical trap action. A 16-pixel frame-6 ground speck plus three tiny pixels were removed after component check; frames 4-5 have no near-duplicate pair and are an intentional eruption-growth/trap-hold. Normalized and preview smoke passed."
         ]
       },
       "back_special_heavy": {
@@ -1947,23 +1946,8 @@
         ]
       },
       "down_special_heavy": {
-        "frameCount": 10,
-        "fps": 11,
-        "hitFrames": [
-          6
-        ],
-        "cancelFrames": [
-          9
-        ],
-        "notes": [
-          "full-rebuild-v3 special family: Ground Rift HEAVY. Heavy stomp/kneel into wide rupture, strongest low silhouette and longest recovery. Frame target lowered from 16 to 10 for text-only generation; one wide grounded rupture, active on visual frame 7/index 6, intentional low VFX, and committed recovery.",
-          "DEFERRED 2026-07-10: two text-only generations returned unrelated infographic/non-sprite content, failing raw identity/content gate before processing.",
-          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
-        ]
-      },
-      "up_special_light": {
         "frameCount": 8,
-        "fps": 12,
+        "fps": 11,
         "hitFrames": [
           4
         ],
@@ -1971,36 +1955,53 @@
           7
         ],
         "notes": [
-          "full-rebuild-v3 special family: Vertical Phase LIGHT. Quick compact anti-air rise with smallest vertical shimmer and least air time. Frame target lowered from 12 to 8 for text-only generation; one compact upward right-arm phase strike, active on visual frame 5/index 4, attached vertical shimmer, and recovery toward guard.",
-          "DEFERRED 2026-07-10: two strict text-only generations returned unrelated infographic/non-sprite content, indicating image-generation tool failure before raw identity/content gate.",
+          "full-rebuild-v3 special family: Ground Rift HEAVY. Eight-frame reference-input heavy ground placement with slow load, committed kneel, one wide fissure crest active on visual frame 5/index 4, dim aftermath, and a clearly distinct half-rise recovery.",
+          "BATCH PREVIEW CANDIDATE 2026-07-10: attempt 2 passed identity, iconography, 4x2 containment, no-duplicate scrub, one-impact parity, and component audit. Two isolated 1-pixel body-frame specks were removed; all intentional Ground Rift components in frames 4-7 were preserved.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "up_special_light": {
+        "frameCount": 6,
+        "fps": 12,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Vertical Phase LIGHT. Six-frame reference-input quick anti-air rise with a compact right-arm strike, one held contact on visual frame 4/index 3, bent-arm follow-through, and landing recovery distinct from guard.",
+          "BATCH PREVIEW CANDIDATE 2026-07-11: second generation passed identity and iconography gates. A non-centered generated row divider was corrected during deterministic grid slicing; one isolated 2-pixel speck in frame 3 and one isolated 1-pixel speck in frame 4 were removed after confirming complete anatomy. Hash warnings for anticipation/recovery silhouettes were manually cleared because the arm and leg states are visibly distinct.",
           "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
         ]
       },
       "up_special_medium": {
-        "frameCount": 14,
+        "frameCount": 7,
         "fps": 12,
         "hitFrames": [
-          6
+          4
         ],
         "cancelFrames": [
-          12
+          6
         ],
         "notes": [
-          "full-rebuild-v3 special family: Vertical Phase MEDIUM. Mid-height vertical phase arc with stronger upward strike and moderate recovery.",
+          "full-rebuild-v3 special family: Vertical Phase MEDIUM. Seven-frame reference-input mid-height rise with one right-arm contact on visual frame 5/index 4, bent-arm follow-through, and a distinct landing brace on frame 7.",
+          "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic row-boundary correction. The exact duplicate final guard was trimmed under the duplicate-loop policy; disconnected fracture flecks were removed from the contact frame while preserving the complete body and attached main shimmer.",
           "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
         ]
       },
       "up_special_heavy": {
-        "frameCount": 16,
-        "fps": 12,
+        "frameCount": 8,
+        "fps": 11,
         "hitFrames": [
-          7
+          5
         ],
         "cancelFrames": [
-          14
+          7
         ],
         "notes": [
-          "full-rebuild-v3 special family: Vertical Phase HEAVY. Highest committed vertical phase rise with largest impact silhouette and longest recovery.",
+          "full-rebuild-v3 special family: Vertical Phase HEAVY. Eight-frame reference-input committed rise with a long coil, one powerful right-arm contact on visual frame 6/index 5, bent-arm descent, and low landing recovery.",
+          "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic empty-band row slicing. Three disconnected fracture flecks were removed from the contact frame while preserving complete anatomy and the attached central flare; the startup/recovery hash warning was manually cleared because arm and weight direction differ visibly.",
           "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
         ]
       }

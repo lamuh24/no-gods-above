@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "manifestKind": "preview",
-  "generatedAt": "2026-07-11T00:02:38.426Z",
+  "generatedAt": "2026-07-11T04:56:07.261Z",
   "characterId": "sable",
   "stage": "full-rebuild-v3",
   "approvedForLiveRoster": false,
@@ -16,32 +16,31 @@
     {
       "clipId": "idle",
       "category": "movement",
-      "frameCount": 4,
+      "frameCount": 3,
       "fps": 8,
       "loop": true,
       "frameWidth": 448,
       "frameHeight": 448,
       "baselineY": 382,
       "facing": "right",
-      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/idle/vzzzz-idle-redraw02-select4-final/sable_idle_4.png",
-      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/idle/v20260709-130435/sable_idle_normalized_strip.png",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/idle_reference_guard_3f_trim4.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/idle/v20260710-201530/sable_idle_normalized_strip.png",
       "frameOrder": [
         0,
         1,
-        2,
-        3
+        2
       ],
       "hitFrames": [],
       "cancelFrames": [],
       "notes": [
-        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse. Frame target lowered from 8 to 4 for the 2026-07-09 fluidity redraw because only 4 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed.",
-        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved 2026-07-08 pixel reference: composed stance, subtle breathing, compact void-crystal forearm shimmer, no old placeholder walk/stand reuse. Frame target lowered from 8 to 4 for the 2026-07-09 fluidity redraw because only 4 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved pixel reference: side-on fists-up shared attack-start guard, subtle breathing, compact void-crystal forearm shimmer, no old placeholder arms-down stance. Frame target is 3 after trimming only the exact duplicate loop-closer from the approved 4-frame source; no padding or fabricated in-betweens are allowed.",
+        "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved pixel reference: side-on fists-up shared attack-start guard, subtle breathing, compact void-crystal forearm shimmer, no old placeholder arms-down stance. Frame target is 3 after trimming only the exact duplicate loop-closer from the approved 4-frame source; no padding or fabricated in-betweens are allowed."
       ],
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T17:04:39.879Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.217Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "walk_forward",
@@ -72,8 +71,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T17:15:23.127Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.225Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "walk_backward",
@@ -106,8 +105,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T17:20:55.990Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.234Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "jump",
@@ -144,8 +143,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T17:52:17.511Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.242Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "crouch",
@@ -182,8 +181,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T17:59:42.645Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.251Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "block",
@@ -216,8 +215,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T18:10:58.226Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.259Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "hit_stun",
@@ -254,8 +253,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T18:32:44.911Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.265Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "knockdown",
@@ -293,8 +292,44 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T18:38:29.975Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.274Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "getup",
+      "category": "damage",
+      "frameCount": 5,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/getup_reference_guard_5f.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/getup/v20260710-203117/sable_getup_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": [
+        "full-rebuild-v3 reaction pass. Five-frame ground-to-standing recovery returning to the shared side-on fists-up guard; no teleport pop, no missing in-betweens, no scale jump, and no padding/fabricated frames.",
+        "full-rebuild-v3 reaction pass. Five-frame ground-to-standing recovery returning to the shared side-on fists-up guard; no teleport pop, no missing in-betweens, no scale jump, and no padding/fabricated frames."
+      ],
+      "validation": {
+        "maxScaleDriftPx": 300,
+        "minHeightPx": 70,
+        "scaleDriftRationale": "Getup intentionally transitions from grounded low poses back to standing height; baseline, center, facing, and global normalization must still remain stable."
+      },
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.282Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "stand_light",
@@ -331,8 +366,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T16:34:32.519Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.290Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "stand_medium",
@@ -371,8 +406,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T19:00:50.871Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.298Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "stand_heavy",
@@ -409,8 +444,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T14:58:56.902Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.307Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "crouch_light",
@@ -446,8 +481,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T15:08:24.365Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.314Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "crouch_medium",
@@ -484,8 +519,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T15:32:18.645Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.323Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "crouch_heavy",
@@ -522,8 +557,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T15:49:18.956Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.332Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "jump_light",
@@ -559,8 +594,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T16:05:09.903Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.339Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "jump_medium",
@@ -594,8 +629,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-09T23:48:01.376Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.347Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "jump_heavy",
@@ -630,7 +665,42 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T17:25:13.139Z",
+      "approvedAt": "2026-07-11T04:55:17.354Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "forward_light",
+      "category": "normal",
+      "frameCount": 5,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/forward_light_reference_retry2_attempt1_5f_componentclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_light/v20260710-223446/sable_forward_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hitFrames": [
+        2
+      ],
+      "cancelFrames": [
+        4
+      ],
+      "notes": [
+        "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Use five frames: one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard. Claude confirmed retry2 attempt 1 has the correct motion storyboard; component cleanup removed only the disconnected 92-pixel boot sliver in visual frame 2 and 227-pixel floating crystal-fist chunk in visual frame 4. Both hands and both boots remain complete; rescrub contact sheet is ready for review.",
+        "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Use five frames: one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard. Claude confirmed retry2 attempt 1 has the correct motion storyboard; component cleanup removed only the disconnected 92-pixel boot sliver in visual frame 2 and 227-pixel floating crystal-fist chunk in visual frame 4. Both hands and both boots remain complete; rescrub contact sheet is ready for review."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.361Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -666,8 +736,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T17:42:33.454Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.369Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "forward_heavy",
@@ -702,7 +772,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T17:52:43.813Z",
+      "approvedAt": "2026-07-11T04:55:17.377Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -737,8 +807,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:01:15.507Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.384Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "back_medium",
@@ -772,8 +842,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:07:51.617Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.391Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "back_heavy",
@@ -808,7 +878,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:20:33.510Z",
+      "approvedAt": "2026-07-11T04:55:17.399Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -846,8 +916,8 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:30:03.061Z",
-      "approvalPolicy": "previewAuto"
+      "approvedAt": "2026-07-11T04:55:17.406Z",
+      "approvalPolicy": "manual-promote-preview"
     },
     {
       "clipId": "neutral_special_medium",
@@ -885,7 +955,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:39:21.532Z",
+      "approvedAt": "2026-07-11T04:55:17.414Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -925,7 +995,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:48:03.691Z",
+      "approvedAt": "2026-07-11T04:55:17.421Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -963,7 +1033,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T18:59:20.269Z",
+      "approvedAt": "2026-07-11T04:55:17.429Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -1003,7 +1073,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T19:07:12.475Z",
+      "approvedAt": "2026-07-11T04:55:17.436Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -1045,7 +1115,87 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T23:52:21.401Z",
+      "approvedAt": "2026-07-11T04:55:17.443Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "back_special_light",
+      "category": "special",
+      "frameCount": 6,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/back_special_light_reference_canonical_grid6_final_componentclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_light/v20260710-224317/sable_back_special_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        5
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Anchor LIGHT. Small quick space-lock trap while slipping back, using one compact faceted obsidian shard over one shallow silver-violet rift; active on visual frame 4/index 3 with recovery toward guard.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "DEFERRED 2026-07-10: two reference-input canonical redraws failed equal-cell containment; attempt 1 left frame-3 boot bleed in frame 2 and attempt 2 placed frame 3 across the frame-2 boundary. No repack/body rescue allowed.",
+        "full-rebuild-v3 special family: Void Anchor LIGHT. Small quick space-lock trap while slipping back, using one compact faceted obsidian shard over one shallow silver-violet rift; active on visual frame 4/index 3 with recovery toward guard.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "DEFERRED 2026-07-10: two reference-input canonical redraws failed equal-cell containment; attempt 1 left frame-3 boot bleed in frame 2 and attempt 2 placed frame 3 across the frame-2 boundary. No repack/body rescue allowed."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.450Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "back_special_medium",
+      "category": "special",
+      "frameCount": 6,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/back_special_medium_reference_canonical_attempt2_grid6_edgeclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_medium/v20260710-214723/sable_back_special_medium_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        5
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Void Anchor MEDIUM. Six-frame canonical space-lock trap with clearer retreat and a stronger crouched placement silhouette; one medium faceted obsidian shard over one medium silver-violet rift, active on visual frame 4/index 3, followed by settle and committed recovery.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "APPROVED/PROMOTED PREVIEW-ONLY 2026-07-10: reference-input attempt 2 used a valid 3x2 source grid, deterministically reordered into a six-frame horizontal strip without body repair or component isolation. Claude approved the canonical trap action. A 16-pixel frame-6 ground speck plus three tiny pixels were removed after component check; frames 4-5 have no near-duplicate pair and are an intentional eruption-growth/trap-hold. Normalized and preview smoke passed.",
+        "full-rebuild-v3 special family: Void Anchor MEDIUM. Six-frame canonical space-lock trap with clearer retreat and a stronger crouched placement silhouette; one medium faceted obsidian shard over one medium silver-violet rift, active on visual frame 4/index 3, followed by settle and committed recovery.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "READY FOR CLAUDE REVIEW 2026-07-10: reference-input attempt 2 used a valid 3x2 source grid, deterministically reordered into a six-frame horizontal strip without body repair or component isolation; scrub has no duplicate pairs and stable baseline."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.458Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -1086,7 +1236,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T23:51:15.704Z",
+      "approvedAt": "2026-07-11T04:55:17.466Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -1124,7 +1274,7 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T20:04:15.838Z",
+      "approvedAt": "2026-07-11T04:55:17.473Z",
       "approvalPolicy": "manual-promote-preview"
     },
     {
@@ -1163,20 +1313,176 @@
       "validationStatus": "approved",
       "approvedForPreview": true,
       "approvedForLiveRoster": false,
-      "approvedAt": "2026-07-10T20:16:57.004Z",
+      "approvedAt": "2026-07-11T04:55:17.481Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "down_special_heavy",
+      "category": "special",
+      "frameCount": 8,
+      "fps": 11,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/down_special_heavy_reference_grid8_attempt2_final_componentclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/down_special_heavy/v20260710-230905/sable_down_special_heavy_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        7
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Ground Rift HEAVY. Eight-frame reference-input heavy ground placement with slow load, committed kneel, one wide fissure crest active on visual frame 5/index 4, dim aftermath, and a clearly distinct half-rise recovery.",
+        "BATCH PREVIEW CANDIDATE 2026-07-10: attempt 2 passed identity, iconography, 4x2 containment, no-duplicate scrub, one-impact parity, and component audit. Two isolated 1-pixel body-frame specks were removed; all intentional Ground Rift components in frames 4-7 were preserved.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "full-rebuild-v3 special family: Ground Rift HEAVY. Eight-frame reference-input heavy ground placement with slow load, committed kneel, one wide fissure crest active on visual frame 5/index 4, dim aftermath, and a clearly distinct half-rise recovery.",
+        "BATCH PREVIEW CANDIDATE 2026-07-10: attempt 2 passed identity, iconography, 4x2 containment, no-duplicate scrub, one-impact parity, and component audit. Two isolated 1-pixel body-frame specks were removed; all intentional Ground Rift components in frames 4-7 were preserved.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.490Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "up_special_light",
+      "category": "special",
+      "frameCount": 6,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/up_special_light_reference_grid6_attempt2_boundaryfix_componentclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/up_special_light/v20260711-004048/sable_up_special_light_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hitFrames": [
+        3
+      ],
+      "cancelFrames": [
+        5
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Vertical Phase LIGHT. Six-frame reference-input quick anti-air rise with a compact right-arm strike, one held contact on visual frame 4/index 3, bent-arm follow-through, and landing recovery distinct from guard.",
+        "BATCH PREVIEW CANDIDATE 2026-07-11: second generation passed identity and iconography gates. A non-centered generated row divider was corrected during deterministic grid slicing; one isolated 2-pixel speck in frame 3 and one isolated 1-pixel speck in frame 4 were removed after confirming complete anatomy. Hash warnings for anticipation/recovery silhouettes were manually cleared because the arm and leg states are visibly distinct.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "full-rebuild-v3 special family: Vertical Phase LIGHT. Six-frame reference-input quick anti-air rise with a compact right-arm strike, one held contact on visual frame 4/index 3, bent-arm follow-through, and landing recovery distinct from guard.",
+        "BATCH PREVIEW CANDIDATE 2026-07-11: second generation passed identity and iconography gates. A non-centered generated row divider was corrected during deterministic grid slicing; one isolated 2-pixel speck in frame 3 and one isolated 1-pixel speck in frame 4 were removed after confirming complete anatomy. Hash warnings for anticipation/recovery silhouettes were manually cleared because the arm and leg states are visibly distinct.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.499Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "up_special_medium",
+      "category": "special",
+      "frameCount": 7,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/up_special_medium_reference_grid8_attempt1_boundaryfix_trim8_7f_componentclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/up_special_medium/v20260711-004840/sable_up_special_medium_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hitFrames": [
+        4
+      ],
+      "cancelFrames": [
+        6
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Vertical Phase MEDIUM. Seven-frame reference-input mid-height rise with one right-arm contact on visual frame 5/index 4, bent-arm follow-through, and a distinct landing brace on frame 7.",
+        "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic row-boundary correction. The exact duplicate final guard was trimmed under the duplicate-loop policy; disconnected fracture flecks were removed from the contact frame while preserving the complete body and attached main shimmer.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "full-rebuild-v3 special family: Vertical Phase MEDIUM. Seven-frame reference-input mid-height rise with one right-arm contact on visual frame 5/index 4, bent-arm follow-through, and a distinct landing brace on frame 7.",
+        "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic row-boundary correction. The exact duplicate final guard was trimmed under the duplicate-loop policy; disconnected fracture flecks were removed from the contact frame while preserving the complete body and attached main shimmer.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.507Z",
+      "approvalPolicy": "manual-promote-preview"
+    },
+    {
+      "clipId": "up_special_heavy",
+      "category": "special",
+      "frameCount": 8,
+      "fps": 11,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/up_special_heavy_reference_grid8_attempt1_boundaryfix_componentclean.png",
+      "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/up_special_heavy/v20260711-005450/sable_up_special_heavy_normalized_strip.png",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        7
+      ],
+      "notes": [
+        "full-rebuild-v3 special family: Vertical Phase HEAVY. Eight-frame reference-input committed rise with a long coil, one powerful right-arm contact on visual frame 6/index 5, bent-arm descent, and low landing recovery.",
+        "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic empty-band row slicing. Three disconnected fracture flecks were removed from the contact frame while preserving complete anatomy and the attached central flare; the startup/recovery hash warning was manually cleared because arm and weight direction differ visibly.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+        "full-rebuild-v3 special family: Vertical Phase HEAVY. Eight-frame reference-input committed rise with a long coil, one powerful right-arm contact on visual frame 6/index 5, bent-arm descent, and low landing recovery.",
+        "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic empty-band row slicing. Three disconnected fracture flecks were removed from the contact frame while preserving complete anatomy and the attached central flare; the startup/recovery hash warning was manually cleared because arm and weight direction differ visibly.",
+        "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+      ],
+      "validationStatus": "approved",
+      "approvedForPreview": true,
+      "approvedForLiveRoster": false,
+      "approvedAt": "2026-07-11T04:55:17.514Z",
       "approvalPolicy": "manual-promote-preview"
     }
   ],
-  "missingClips": [
-    "getup",
-    "forward_light",
-    "back_special_light",
-    "back_special_medium",
-    "down_special_heavy",
-    "up_special_light",
-    "up_special_medium",
-    "up_special_heavy"
-  ],
+  "missingClips": [],
   "reports": {
     "latestValidationReport": "assets/characters/sable/reports/latest_validation_report.json",
     "latestNormalizationReport": "assets/characters/sable/reports/latest_normalization_report.json"
