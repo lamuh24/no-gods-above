@@ -11,7 +11,7 @@ The platform input layer lives outside the deterministic simulation. Browser key
 - Medium: `K` (`5M`/`2M` while grounded, `j.K` while airborne)
 - Heavy: `L` (`5H`/`2H` while grounded, `j.L` while airborne)
 - Special: `U`
-- Throw placeholder: `I`
+- Universal forward throw / throw tech: `I`
 - Block: `O`
 - Burst placeholder: `P`
 - Pause: `Escape`
@@ -23,7 +23,7 @@ The platform input layer lives outside the deterministic simulation. Browser key
 - Reset: `R`
 - Live/replay mode: `M`
 
-No combat key also triggers a debug action. `U` (Special), `I` (Throw), and `P` (Burst) are reserved inputs only; the HUD marks them inactive and the gameplay kernel does not pretend those mechanics exist yet.
+No combat key also triggers a debug action. `I` (Throw) is active: just-press it while grounded and in range to attempt the universal forward throw. A captured defender can just-press the same Throw input during the authored tech window. Holding Throw does not repeatedly start throws or tech attempts. `U` (Special) and `P` (Burst) remain reserved and inactive.
 
 The aerial cancel graph is intentionally acyclic: `j.J -> j.K` or `j.L`, and `j.K -> j.L`. Reverse cancels are rejected. Each jump has a temporary three-aerial-normal budget; this is not a double jump, air dash, or additional mobility action.
 
@@ -35,7 +35,7 @@ The aerial cancel graph is intentionally acyclic: `j.J -> j.K` or `j.L`, and `j.
 - Face left: Heavy
 - Face top: Special
 - Left shoulder: Block
-- Right shoulder: Throw placeholder
+- Right shoulder / standard button index `5`: Universal forward throw / throw tech
 - Back/select: Burst placeholder
 - Start: Pause
 

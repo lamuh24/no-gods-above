@@ -4,6 +4,19 @@
 Agent: Codex
 Date: 2026-07-11
 
+## 2026-07-11 Codex Engine V2 Universal Forward Throw
+- Continued only in the isolated `codex/engine-v2-checkpoint` worktree; the dirty Sable/legacy worktree was not modified. No commit or push was made in this task.
+- Added the first data-driven grounded universal `forward_throw` for Lamuh prototype and the training dummy: normalized Throw input (`I` / standard gamepad button 5), 6-tick startup, 2-tick active throw box, reciprocal capture states, deterministic grab/victim/release anchors, 8-tick tech window, whiff, 100 fixed damage, forward release, 42-tick hard knockdown, recovery, throw invulnerability, corner containment, and atomic cleanup.
+- Throws use a distinct collision primitive and throw hurtbox; they do not reuse strike resolution. Captured pairs suppress only their mutual pushbox and realign from authoritative simulation anchors every tick, including hitstop. A connecting strike beats an unconfirmed throw; simultaneous eligible throws produce an order-independent mutual tech.
+- Same-button techs on capture frame, ordinary window, final visible window, and mutual-throw path all enter `throw_teched` at timer 0 with identical 12-tick recovery. Holding Throw cannot repeat attempts or techs.
+- Debug geometry/HUD now distinguishes every throw state and shows throw box/hurtbox, grab/victim/release/camera anchors, role/partner, timer, tech remaining, facing, throw invulnerability, outcome, push suppression, and pressed/held Throw state. Existing aerial HUD remains intact.
+- Added `tests/forward_throw.test.js`; full validation passes 86 tests (62 prior + 24 throw), 8 character and 3 stage contracts, roster/stage parity, replay/snapshot/order determinism, production build, and Windows browser smoke. Replay fixture checksum is now `0f5b884d` because authoritative throw fields are serialized.
+- Browser evidence added nine throw screenshots. Final smoke reported zero console errors, no dropped/retriggered input, anchor drift, repeated damage, bounds/camera escape, reset leak, or pool growth; renderer stayed at 8 geometries and 22 pooled overlays. The existing non-blocking ~566 kB production bundle warning remains.
+- Legacy `NO_GODS_ABOVE/game.js` remains untouched at SHA-256 `401E262330F74AB9A2673C12C98AA0405F37F04ACC5BA2D773B5F9B531B7E5F1`. No back throw, air throw, command grab, hit-grab, special, new character, production model/animation, Blender/Tripo, cinematic, or deployment work was added.
+- Skill docs read/applied: `.agents/skills/nga-engine-v2/SKILL.md`, its universal-character-contract and validation-gates references, and `NO_GODS_ABOVE/skills/fighting_game_balance_pass_skill.md`.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff.
+- Next gate: owner manually tests close throw on both facings, whiff recovery, early/late tech, release/knockdown, and both corners. Only after acceptance should temporary rigged Lamuh integration be planned as a separate task.
+
 ## 2026-07-11 Codex Engine V2 Combat Checkpoint
 - Created an isolated Engine V2 checkpoint branch from the clean collaboration baseline so the dirty Sable and legacy-combat worktrees remain untouched.
 - Added the preservation-first Engine V2 package, schemas/manifests, deterministic combat kernel, debug runtime, input adapter, replay fixture, tests, documentation, and browser evidence under `NO_GODS_ABOVE/engine_v2/`.
@@ -1857,3 +1870,20 @@ Date: 2026-07-11
 - Updated `NO_GODS_ABOVE\scripts\generate_flow_ui_assets.py` so it no longer generates Eclipse placeholder stage art.
 - Validation passed: `node --check NO_GODS_ABOVE/game.js`, `python -m py_compile NO_GODS_ABOVE/scripts/generate_flow_ui_assets.py`, `node --check NO_GODS_ABOVE/scripts/smoke_online_versus.js`, `git diff --check` (CRLF warnings only), no stale placeholder refs via `rg`, all seven Eclipse PNGs served HTTP 200 from local static server.
 - Full Chrome/CDP runtime smoke could not complete after this asset-pack pass because temporary Chrome profiles filled the nearly-full C: drive; smoke temp profiles were cleaned up. A lightweight alignment preview confirmed collision bars sit on the visible platform lips.
+
+## 2026-07-11 Engine V2 Lamuh 3D Vertical Slice
+- Created the clean feature branch `codex/engine-v2-lamuh-3d-prototype` after checkpointing the approved forward-throw implementation as commit `4966782`.
+- Audited Blender, local model generators, NGA Forge adapters, existing models, and approved Lamuh references. Blender and production model adapters were unavailable; Three.js GLB export was available.
+- Completed exactly one bounded procedural Path A attempt. It proves an articulated GLB/runtime path (24 bones, 11 anchors, four skinned layers, 29 required clips, toon shading, outline, deterministic state-to-clip adapter) but failed the Lamuh visual-quality gate because the silhouette remains mannequin-like.
+- Stopped local model polishing and prepared the required Path B Tripo package at `NO_GODS_ABOVE/engine_v2/assets/characters/lamuh_prototype_v0/tripo_input/`, including locked identity/accessory/hair prompts, approved reference index, cleanup/rig/export contract, and swap validation.
+- Added `manifests/lamuh_prototype_v0.model.json`, reproducible generator, GLB contract validator, adapter mapping regression test, HUD visual status, and Windows browser evidence. The adapter-proof GLB is deliberately marked `path_a_failed_visual_gate_adapter_proof`; do not present it as production Lamuh art.
+- Validation passed: Engine V2 full validate, model contract (24 bones/11 anchors/29 clips/no root motion), production build, Windows Chromium smoke, replay checksum `0f5b884d`, and stable renderer memory. `NO_GODS_ABOVE/game.js` has no diff.
+- Next: generate/import the Tripo mesh from the locked package, approve its turnaround before rigging, then preserve exact manifest bone/anchor/clip names and rerun the documented gates. No throws, specials, gameplay tuning, stages, or production animation work was added here.
+- Central Obsidian sync was attempted at `https://127.0.0.1:27124/` but returned HTTP `000`; this repo-local handoff is the fallback source of truth.
+
+## 2026-07-12 Engine V2 Blender-PC GitHub Handoff
+- Pushed `codex/engine-v2-lamuh-3d-prototype` to `origin` so the Engine V2 forward-throw checkpoint, failed procedural adapter proof, model contract, and Tripo/Blender handoff are available on the Blender PC.
+- The branch remains intentionally honest: `lamuh_prototype_v0.glb` is an adapter/rig proof that failed visual acceptance and must be replaced from the locked Tripo package before production use.
+- The review is a stacked draft PR based on `codex/engine-v2-checkpoint` / draft PR #7, preventing unrelated historical commits from appearing in this 3D continuation review.
+- Validation remains the 2026-07-11 green gate: full Engine V2 validate/build, Windows browser smoke, 24 bones, 11 anchors, 29 clips, no root motion, replay checksum `0f5b884d`, stable renderer resources, and unchanged legacy `NO_GODS_ABOVE/game.js`.
+- Central Obsidian sync was retried at `https://127.0.0.1:27124/` and again returned HTTP `000`; this repo-local note remains the fallback.

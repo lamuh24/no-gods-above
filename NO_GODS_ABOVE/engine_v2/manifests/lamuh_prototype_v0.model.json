@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0-prototype",
+  "id": "lamuh_prototype_v0",
+  "status": "path_a_failed_visual_gate_adapter_proof",
+  "runtimeAsset": "/models/lamuh_prototype_v0.glb",
+  "source": {
+    "generator": "scripts/generate_lamuh_prototype_v0.mjs",
+    "blend": null,
+    "blendStatus": "unavailable: Blender was not installed during the bounded Path A attempt",
+    "references": [
+      "C:/Users/qchee/Downloads/lamuh  char reference sheet.png",
+      "C:/Users/qchee/Downloads/lamuh character reference.png",
+      "C:/Users/qchee/Downloads/lamuh_reference_only.png",
+      "NO_GODS_ABOVE/assets/characters/lamuh/portrait.png"
+    ],
+    "provenance": "Procedurally authored by Codex from owner-approved Lamuh references; no third-party model or texture assets.",
+    "license": "Repository-owner controlled prototype asset; not cleared for redistribution outside NO GODS ABOVE."
+  },
+  "render": {
+    "simulationFps": 60,
+    "presentationFps": 15,
+    "shading": "Three.js MeshToonMaterial",
+    "outline": "Three.js OutlineEffect; production tuning pending replacement model",
+    "rootMotion": false
+  },
+  "layers": ["lamuh_body", "lamuh_clothing", "lamuh_hair", "lamuh_accessories"],
+  "requiredBones": [
+    "root", "pelvis", "spine_lower", "spine_mid", "spine_upper", "chest", "neck", "head",
+    "clavicle_l", "upper_arm_l", "forearm_l", "hand_l", "clavicle_r", "upper_arm_r", "forearm_r", "hand_r",
+    "thigh_l", "shin_l", "foot_l", "thigh_r", "shin_r", "foot_r"
+  ],
+  "optionalBones": ["toe_l", "toe_r"],
+  "requiredAnchors": [
+    "grab_anchor", "victim_anchor", "release_anchor", "camera_face", "camera_chest",
+    "vfx_hand_l", "vfx_hand_r", "vfx_foot_l", "vfx_foot_r", "ground_foot_l", "ground_foot_r"
+  ],
+  "requiredClips": [
+    "idle", "walk_forward", "walk_backward", "crouch", "jump_startup", "jump_air", "landing", "dash_forward", "backdash", "turn",
+    "standing_light", "standing_medium", "standing_heavy", "crouching_light", "crouching_medium", "crouching_heavy", "air_light", "air_medium", "air_heavy",
+    "standing_block", "crouching_block", "light_hit", "heavy_hit", "knockdown", "get_up",
+    "forward_throw_attacker", "forward_throw_whiff", "throw_tech_attacker", "throw_tech_victim"
+  ],
+  "stateClipPolicy": "Simulation state and phaseTick are authoritative. The adapter selects a clip and quantizes presentation sampling to 15 fps; animation never writes fighter position, collision, facing, anchors, or combat state.",
+  "swapContract": "A replacement GLB may retain this file path or update runtimeAsset, but must preserve the required node and clip names."
+}

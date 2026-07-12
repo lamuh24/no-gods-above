@@ -53,3 +53,16 @@ Directional back-block and the configured block button are both enabled for this
 - Landing immediately interrupts an unfinished aerial attack, clears its move/cancel state and remaining air actions, then applies the existing 5-tick landing recovery.
 - Every aerial hitbox has `maxHits: 1`. Combo scaling and neutral reset use the repaired shared kernel rules.
 - These are temporary prototype proof values, not a roster-wide balance pass.
+
+## Universal forward-throw prototype
+
+- `forward_throw`: 6 startup ticks, 2 active capture ticks, 8-tick inclusive tech window, and impact at capture tick 10.
+- Throw/tech uses the normalized Throw action: keyboard `I` or standard gamepad button `5`. It is edge-triggered; holding the action cannot repeat an attempt.
+- The temporary throw deals a fixed `100` damage outside strike scaling, then records a standalone `forward_throw` combo route. It does not inherit or extend a stale strike combo.
+- Release lasts 2 non-hitstop ticks, attacker recovery lasts 14 ticks, whiff recovery lasts 18 ticks, and a successful tech gives both fighters 12 ticks of tech recovery.
+- Release applies 6 ticks of paired hitstop, `24` units of attacker forward displacement, the authored release anchor, `7` units/tick of temporary victim release velocity, and 42 ticks of hard knockdown. Release velocity stops when the explicit victim-release state enters knockdown.
+- The defender just-presses the same Throw action during capture to tech. A successful tech deals no damage, separates both fighters by the authored 20-unit pushback on each side, clears the pair atomically, and grants 18 ticks of throw-only invulnerability.
+- Standard throws are grounded and close-range only. Airborne, hitstunned, blockstunned, knocked-down, getting-up, captured, throw-invulnerable, KO, landing-recovery, and inactive-round targets are invalid. Ordinary blocking is throwable; an attack that connects on the same simulation tick beats an unconfirmed throw.
+- Simultaneous eligible forward throws resolve as a deterministic mutual tech. Capture disables paired pushbox separation and aligns the victim from simulation-owned grab/victim anchors every tick, including hitstop. Tech, release, strike interruption, KO, reset, or an invalid pair restores independent collision and movement atomically.
+- Corners translate the authored attacker/victim release pair together before committing positions, preserving side/order and spacing without crossing the legal stage bounds.
+- These values are an architecture proof for the Lamuh prototype and training dummy, not a full moveset or balance pass. Back throws, air throws, command grabs, hit-grabs, specials, and production animation sockets remain out of scope.

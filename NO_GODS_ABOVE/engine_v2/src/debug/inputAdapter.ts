@@ -15,7 +15,14 @@ export class KeyboardInputAdapter {
     target.addEventListener("gamepadconnected", (event) => { this.connectedGamepad = event.gamepad.id; this.activeDevice = "gamepad"; });
     target.addEventListener("gamepaddisconnected", () => { this.connectedGamepad = "none"; this.activeDevice = "keyboard"; });
   }
-  read(): NormalizedDeviceInput { const gamepad = this.readGamepad(); if (gamepad) return gamepad; return { device: "keyboard", frame: this.readKeyboard(), connectedGamepad: this.connectedGamepad }; }
+  read(): NormalizedDeviceInput {
+    const gamepad = this.readGamepad();
+    const keyboard = this.readKeyboard();
+    if (Object.values(keyboard).some(Boolean)) { this.activeDevice = "keyboard"; return { device: "keyboard", frame: keyboard, connectedGamepad: this.connectedGamepad }; }
+    if (gamepad && Object.values(gamepad.frame).some(Boolean)) return gamepad;
+    if (gamepad && this.activeDevice === "gamepad") return gamepad;
+    return { device: "keyboard", frame: keyboard, connectedGamepad: this.connectedGamepad };
+  }
   readP1(): InputFrame { return this.read().frame; }
   readKeyboard(): InputFrame { return { left: fromKeys(this.keys, keyboardMapping.left), right: fromKeys(this.keys, keyboardMapping.right), down: fromKeys(this.keys, keyboardMapping.down), up: fromKeys(this.keys, keyboardMapping.up), light: fromKeys(this.keys, keyboardMapping.light), medium: fromKeys(this.keys, keyboardMapping.medium), heavy: fromKeys(this.keys, keyboardMapping.heavy), special: fromKeys(this.keys, keyboardMapping.special), throw: fromKeys(this.keys, keyboardMapping.throw), block: fromKeys(this.keys, keyboardMapping.block), burst: fromKeys(this.keys, keyboardMapping.burst), pause: fromKeys(this.keys, keyboardMapping.pause) }; }
   readGamepad(): NormalizedDeviceInput | null { const pads = navigator.getGamepads?.() || []; const g = [...pads].find(Boolean); if (!g) { this.connectedGamepad = "none"; return null; } this.connectedGamepad = g.id; const x = Math.abs(g.axes[0] || 0) >= this.deadZone ? g.axes[0] : 0; const y = Math.abs(g.axes[1] || 0) >= this.deadZone ? g.axes[1] : 0; const frame: InputFrame = { left: x < 0 || button(g, 14), right: x > 0 || button(g, 15), up: y < 0 || button(g, 12), down: y > 0 || button(g, 13), light: button(g, standardGamepadMapping.light), medium: button(g, standardGamepadMapping.medium), heavy: button(g, standardGamepadMapping.heavy), special: button(g, standardGamepadMapping.special), throw: button(g, standardGamepadMapping.throw), block: button(g, standardGamepadMapping.block), burst: button(g, standardGamepadMapping.burst), pause: button(g, standardGamepadMapping.pause) }; if (Object.values(frame).some(Boolean)) this.activeDevice = "gamepad"; return { device: "gamepad", frame, connectedGamepad: g.id }; }

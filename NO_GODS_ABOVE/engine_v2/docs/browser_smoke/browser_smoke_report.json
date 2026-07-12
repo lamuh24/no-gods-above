@@ -1,7 +1,24 @@
 {
-  "url": "http://127.0.0.1:64652/",
+  "url": "http://127.0.0.1:61817/",
   "platform": "win32",
   "consoleErrors": [],
+  "characterVisual": {
+    "status": {
+      "assetId": "lamuh_prototype_v0",
+      "ready": true,
+      "currentClip": "idle",
+      "sampledFrame": 0,
+      "error": null
+    },
+    "modelPresent": true,
+    "layers": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "qualityGate": "failed: procedural silhouette remains mannequin-like; Tripo Path B required"
+  },
   "jump": {
     "startupTicks": 4,
     "y": -16.95,
@@ -137,6 +154,561 @@
       "comboReset": false
     }
   },
+  "throw": {
+    "keyboard": {
+      "startup": {
+        "phase": "throw_startup",
+        "timer": 1,
+        "move": "forward_throw",
+        "outcome": null
+      },
+      "activeRange": {
+        "ticksFromInput": 6,
+        "state": {
+          "phase": "throw_active",
+          "timer": 0,
+          "move": "forward_throw",
+          "outcome": null
+        }
+      },
+      "whiff": {
+        "ticksFromInput": 8,
+        "state": {
+          "phase": "throw_whiff",
+          "timer": 0,
+          "move": "forward_throw",
+          "outcome": "whiff"
+        }
+      },
+      "heldNoRetrigger": {
+        "recoveredWhileHeld": {
+          "phase": "idle",
+          "timer": 0,
+          "move": null,
+          "outcome": "whiff",
+          "ticksFromInput": 26
+        },
+        "heldRetriggered": false,
+        "final": {
+          "phase": "idle",
+          "timer": 8,
+          "move": null,
+          "outcome": "whiff"
+        }
+      }
+    },
+    "capture": {
+      "ticks": 6,
+      "attacker": {
+        "phase": "throw_capture",
+        "partner": "p2",
+        "facing": 1,
+        "throwFacing": 1,
+        "pos": [
+          -40,
+          0
+        ]
+      },
+      "victim": {
+        "phase": "throw_victim_captured",
+        "partner": "p1",
+        "facing": -1,
+        "pos": [
+          -4,
+          0
+        ]
+      },
+      "separation": 36
+    },
+    "anchorStability": {
+      "before": {
+        "p1": [
+          -40,
+          0
+        ],
+        "p2": [
+          -4,
+          0
+        ]
+      },
+      "after": {
+        "p1": [
+          -40,
+          0
+        ],
+        "p2": [
+          -4,
+          0
+        ]
+      }
+    },
+    "tech": {
+      "captureTicks": 6,
+      "attacker": {
+        "phase": "throw_teched",
+        "health": 1000,
+        "partner": null,
+        "outcome": "teched",
+        "invuln": 18,
+        "pos": [
+          -60,
+          0
+        ]
+      },
+      "victim": {
+        "phase": "throw_teched",
+        "health": 1000,
+        "partner": null,
+        "outcome": "teched",
+        "invuln": 18,
+        "pos": [
+          16,
+          0
+        ]
+      }
+    },
+    "release": {
+      "ticks": 16,
+      "start": {
+        "p1": [
+          -40,
+          0
+        ],
+        "p2": [
+          30,
+          0
+        ],
+        "defenderHealth": 1000
+      },
+      "attacker": {
+        "phase": "throw_release",
+        "pos": [
+          -16,
+          0
+        ],
+        "combo": 1,
+        "damage": 100,
+        "route": [
+          "forward_throw"
+        ],
+        "outcome": "released"
+      },
+      "victim": {
+        "phase": "throw_victim_released",
+        "health": 900,
+        "pos": [
+          56,
+          0
+        ],
+        "knockdownTicks": 42,
+        "outcome": "released"
+      }
+    },
+    "knockdown": {
+      "ticks": 8,
+      "attacker": {
+        "phase": "throw_recovery",
+        "pos": [
+          -16,
+          0
+        ]
+      },
+      "victim": {
+        "phase": "knockdown",
+        "health": 900,
+        "healthAtKnockdown": 900,
+        "grounded": true,
+        "knockdownTicks": 37,
+        "pos": [
+          63,
+          0
+        ]
+      }
+    },
+    "cornerContainment": {
+      "ticks": 16,
+      "stage": {
+        "left": -420,
+        "right": 420
+      },
+      "attacker": {
+        "phase": "throw_release",
+        "x": 348
+      },
+      "victim": {
+        "phase": "throw_victim_released",
+        "x": 420
+      },
+      "cameraX": 0,
+      "warnings": []
+    },
+    "resetCleanup": {
+      "before": {
+        "ticks": 6,
+        "attackerPhase": "throw_capture",
+        "victimPhase": "throw_victim_captured",
+        "attackerPartner": "p2",
+        "victimPartner": "p1"
+      },
+      "after": {
+        "attacker": {
+          "phase": "idle",
+          "move": null,
+          "partner": null,
+          "outcome": null
+        },
+        "victim": {
+          "phase": "idle",
+          "move": null,
+          "partner": null,
+          "outcome": null
+        },
+        "warnings": []
+      }
+    },
+    "hud": {
+      "keyboardStartup": {
+        "normalizedInput": {
+          "left": false,
+          "right": false,
+          "down": false,
+          "up": false,
+          "light": false,
+          "medium": false,
+          "heavy": false,
+          "special": false,
+          "throw": true,
+          "block": false,
+          "burst": false,
+          "pause": false
+        },
+        "controls": {
+          "throw": "I / gamepad button 5",
+          "block": "O",
+          "pause": "Escape",
+          "overlays": "F1",
+          "step": ". (paused only)",
+          "reset": "R"
+        },
+        "status": "active / universal forward throw + throw tech",
+        "lamuh": {
+          "move": "forward_throw",
+          "state": "throw_startup",
+          "role": "attacker",
+          "partner": null,
+          "timer": 1,
+          "techRemaining": 0,
+          "facing": 1,
+          "invuln": 0,
+          "outcome": null,
+          "pushSuppressed": false,
+          "anchors": {
+            "grab": {
+              "x": -134,
+              "y": -52
+            },
+            "victim": null,
+            "release": {
+              "x": -98,
+              "y": -52
+            },
+            "camera": {
+              "x": -134,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": true,
+            "held": true,
+            "normalizedHeld": true
+          }
+        }
+      },
+      "activeRange": {
+        "move": "forward_throw",
+        "state": "throw_active",
+        "role": "attacker",
+        "partner": null,
+        "timer": 0,
+        "techRemaining": 0,
+        "facing": 1,
+        "invuln": 0,
+        "outcome": null,
+        "pushSuppressed": false,
+        "anchors": {
+          "grab": {
+            "x": -134,
+            "y": -52
+          },
+          "victim": null,
+          "release": {
+            "x": -98,
+            "y": -52
+          },
+          "camera": {
+            "x": -134,
+            "y": -52
+          }
+        },
+        "input": {
+          "pressed": false,
+          "held": true,
+          "normalizedHeld": true
+        }
+      },
+      "capture": {
+        "lamuh": {
+          "move": "forward_throw",
+          "state": "throw_capture",
+          "role": "attacker",
+          "partner": "p2",
+          "timer": 0,
+          "techRemaining": 8,
+          "facing": 1,
+          "invuln": 0,
+          "outcome": "captured",
+          "pushSuppressed": true,
+          "anchors": {
+            "grab": {
+              "x": -4,
+              "y": -52
+            },
+            "victim": {
+              "x": -4,
+              "y": -52
+            },
+            "release": {
+              "x": 32,
+              "y": -52
+            },
+            "camera": {
+              "x": -4,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        },
+        "dummy": {
+          "move": "forward_throw",
+          "state": "throw_victim_captured",
+          "role": "victim",
+          "partner": "p1",
+          "timer": 0,
+          "techRemaining": 8,
+          "facing": 1,
+          "invuln": 0,
+          "outcome": "captured",
+          "pushSuppressed": true,
+          "anchors": {
+            "grab": {
+              "x": -4,
+              "y": -52
+            },
+            "victim": {
+              "x": -4,
+              "y": -52
+            },
+            "release": {
+              "x": 32,
+              "y": -52
+            },
+            "camera": {
+              "x": -4,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        }
+      },
+      "tech": {
+        "lamuh": {
+          "move": "forward_throw",
+          "state": "throw_teched",
+          "role": "attacker",
+          "partner": null,
+          "timer": 0,
+          "techRemaining": 0,
+          "facing": 1,
+          "invuln": 18,
+          "outcome": "teched",
+          "pushSuppressed": false,
+          "anchors": {
+            "grab": {
+              "x": -24,
+              "y": -52
+            },
+            "victim": null,
+            "release": {
+              "x": 12,
+              "y": -52
+            },
+            "camera": {
+              "x": -24,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        },
+        "dummy": {
+          "move": "forward_throw",
+          "state": "throw_teched",
+          "role": "attacker",
+          "partner": null,
+          "timer": 0,
+          "techRemaining": 0,
+          "facing": 1,
+          "invuln": 18,
+          "outcome": "teched",
+          "pushSuppressed": false,
+          "anchors": {
+            "grab": {
+              "x": 52,
+              "y": -52
+            },
+            "victim": null,
+            "release": {
+              "x": 88,
+              "y": -52
+            },
+            "camera": {
+              "x": 52,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": true,
+            "held": true,
+            "normalizedHeld": false
+          }
+        }
+      },
+      "release": {
+        "lamuh": {
+          "move": "forward_throw",
+          "state": "throw_release",
+          "role": "attacker",
+          "partner": null,
+          "timer": 0,
+          "techRemaining": 0,
+          "facing": 1,
+          "invuln": 0,
+          "outcome": "released",
+          "pushSuppressed": false,
+          "anchors": {
+            "grab": {
+              "x": 20,
+              "y": -52
+            },
+            "victim": null,
+            "release": {
+              "x": 56,
+              "y": -52
+            },
+            "camera": {
+              "x": 20,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        },
+        "dummy": {
+          "move": "forward_throw",
+          "state": "throw_victim_released",
+          "role": "victim",
+          "partner": null,
+          "timer": 0,
+          "techRemaining": 0,
+          "facing": 1,
+          "invuln": 18,
+          "outcome": "released",
+          "pushSuppressed": false,
+          "anchors": {
+            "grab": {
+              "x": 92,
+              "y": -52
+            },
+            "victim": null,
+            "release": {
+              "x": 128,
+              "y": -52
+            },
+            "camera": {
+              "x": 92,
+              "y": -52
+            }
+          },
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        }
+      },
+      "reset": {
+        "lamuh": {
+          "move": null,
+          "state": "none",
+          "role": "none",
+          "partner": null,
+          "timer": 0,
+          "techRemaining": 0,
+          "facing": 1,
+          "invuln": 0,
+          "outcome": null,
+          "pushSuppressed": false,
+          "anchors": null,
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        },
+        "dummy": {
+          "move": null,
+          "state": "none",
+          "role": "none",
+          "partner": null,
+          "timer": 0,
+          "techRemaining": 0,
+          "facing": -1,
+          "invuln": 0,
+          "outcome": null,
+          "pushSuppressed": false,
+          "anchors": null,
+          "input": {
+            "pressed": false,
+            "held": false,
+            "normalizedHeld": false
+          }
+        }
+      }
+    },
+    "observedIssues": {
+      "droppedInput": false,
+      "heldInputRetrigger": false,
+      "anchorDrift": false,
+      "repeatedDamage": false,
+      "cornerEscape": false,
+      "cameraEscape": false,
+      "resetLeak": false
+    }
+  },
   "trade": {
     "p1Health": 970,
     "p2Health": 970
@@ -160,24 +732,24 @@
     "blocking": false
   },
   "replay": {
-    "expected": "7d56f13c",
-    "actual": "7d56f13c",
+    "expected": "0f5b884d",
+    "actual": "0f5b884d",
     "tick": 20
   },
   "rendererMemory": {
     "start": {
-      "geometries": 8,
+      "geometries": 50,
       "textures": 0,
-      "pooledOverlays": 17
+      "pooledOverlays": 22
     },
     "end": {
-      "geometries": 8,
+      "geometries": 50,
       "textures": 0,
-      "pooledOverlays": 17
+      "pooledOverlays": 22
     },
     "expectedStableGeometryRange": [
-      8,
-      9
+      50,
+      51
     ]
   },
   "controls": {
@@ -185,6 +757,7 @@
     "groundAndAirLight": "J",
     "groundAndAirMedium": "K",
     "groundAndAirHeavy": "L",
+    "throwAndThrowTech": "I / gamepad button 5",
     "block": "O",
     "pause": "Escape",
     "overlays": "F1",
@@ -192,11 +765,11 @@
     "reset": "R",
     "reserved": [
       "U Special",
-      "I Throw",
       "P Burst"
     ]
   },
   "screenshots": [
+    "lamuh_3d_adapter_proof.png",
     "neutral_jump.png",
     "neutral_landing.png",
     "dash_authored_duration.png",
@@ -209,6 +782,15 @@
     "aerial_full_jj_jk_jl.png",
     "aerial_jl_landing_knockdown.png",
     "aerial_normals_contact_sheet.png",
+    "throw_keyboard_i_startup_hud.png",
+    "throw_active_range.png",
+    "throw_whiff_recovery.png",
+    "throw_capture_anchors_hud.png",
+    "throw_tech.png",
+    "throw_release_impact.png",
+    "throw_knockdown.png",
+    "throw_corner_containment.png",
+    "throw_reset_cleanup.png",
     "simultaneous_trade.png",
     "combo_reset.png",
     "block_rejected_during_hitstun.png",
@@ -216,9 +798,9 @@
   ],
   "serverLogs": [
     "",
-    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m747\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m861\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
     "",
-    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m64652\u001b[22m/\u001b[39m",
+    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m61817\u001b[22m/\u001b[39m",
     ""
   ]
 }
