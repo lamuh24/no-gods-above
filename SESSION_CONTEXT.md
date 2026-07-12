@@ -2,7 +2,16 @@
 
 ## Last Updated
 Agent: Codex
-Date: 2026-07-08
+Date: 2026-07-11
+
+## 2026-07-11 Codex Engine V2 Combat Checkpoint
+- Created an isolated Engine V2 checkpoint branch from the clean collaboration baseline so the dirty Sable and legacy-combat worktrees remain untouched.
+- Added the preservation-first Engine V2 package, schemas/manifests, deterministic combat kernel, debug runtime, input adapter, replay fixture, tests, documentation, and browser evidence under `NO_GODS_ABOVE/engine_v2/`.
+- Checkpoint includes the gameplay-kernel stabilization and distinct Lamuh aerial normals `j.J`, `j.K`, and `j.L`; it does not add throws, specials, production models/animations, stages, deployment changes, or legacy-runtime integration.
+- Root `.gitignore` excludes Engine V2 `node_modules/`, `dist/`, and `debug_dist/`; no build output, local cache, temp server file, or secret is included.
+- Validation passed: 8 character contracts, 3 stage contracts, roster/stage parity, all 62 tests, production build, and Windows browser smoke with zero console errors. Renderer resources stayed at 8 geometries / 17 pooled overlays; the aerial route produced 4 hits / 194 scaled damage with no bounds warnings. The only build note is the existing non-blocking ~552 kB bundle warning.
+- Legacy `NO_GODS_ABOVE/game.js` remains untouched at checkpoint-base SHA-256 `401E262330F74AB9A2673C12C98AA0405F37F04ACC5BA2D773B5F9B531B7E5F1`. Cached-diff whitespace and staged-scope checks are required immediately before commit.
+- Next gate after this checkpoint: owner manually playtests `2H -> jump -> j.J -> j.K -> j.L`. Only after acceptance should universal forward-throw architecture begin, followed later by temporary rigged Lamuh integration.
 
 ## 2026-07-08 Codex Supervised Collaboration Setup
 - User asked for the first safe, minimal Codex <-> Claude collaboration setup for No Gods Above: documentation/process only, no gameplay changes, no art generation, no deploy, no cron, no inbox/outbox/locks/schemas.
