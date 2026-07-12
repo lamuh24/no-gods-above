@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/engine-v2-character.schema.json",
+  "title": "NGA Engine V2 Character Contract",
+  "type": "object",
+  "required": ["schemaVersion", "id", "displayName", "status", "source", "select", "runtime", "moves", "animation", "assets", "validation"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "2.0.0-alpha" },
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["legacy-adapted", "native-v2", "candidate", "disabled"] },
+    "source": {
+      "type": "object",
+      "required": ["runtimeOwner", "notes"],
+      "additionalProperties": false,
+      "properties": {
+        "runtimeOwner": { "type": "string" },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "select": {
+      "type": "object",
+      "required": ["archetype", "difficulty", "description", "playstyle", "strengths", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "archetype": { "type": "string" },
+        "difficulty": { "type": "string" },
+        "description": { "type": "string" },
+        "playstyle": { "type": "string" },
+        "strengths": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "quote": { "type": "string" }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["preserveHydration", "globalTuningPolicy", "inputPolicy"],
+      "additionalProperties": false,
+      "properties": {
+        "preserveHydration": { "type": "boolean" },
+        "globalTuningPolicy": { "type": "string" },
+        "inputPolicy": { "type": "string" }
+      }
+    },
+    "moves": {
+      "type": "object",
+      "required": ["contract", "knownPolicies"],
+      "additionalProperties": false,
+      "properties": {
+        "contract": { "type": "string" },
+        "knownPolicies": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "animation": {
+      "type": "object",
+      "required": ["atlasPolicy", "aliasPolicy", "manifestRefs"],
+      "additionalProperties": false,
+      "properties": {
+        "atlasPolicy": { "type": "string" },
+        "aliasPolicy": { "type": "string" },
+        "manifestRefs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "required": ["portrait", "spriteRoots", "fallbackPolicy"],
+      "additionalProperties": false,
+      "properties": {
+        "portrait": { "type": ["string", "null"] },
+        "spriteRoots": { "type": "array", "items": { "type": "string" } },
+        "fallbackPolicy": { "type": "string" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["requiredChecks", "lastKnownReports", "gotchas"],
+      "additionalProperties": false,
+      "properties": {
+        "requiredChecks": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "lastKnownReports": { "type": "array", "items": { "type": "string" } },
+        "gotchas": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

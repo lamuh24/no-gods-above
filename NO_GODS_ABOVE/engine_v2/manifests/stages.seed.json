@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "2.0.0-alpha",
+  "generatedFrom": "NO_GODS_ABOVE/game.js STAGE_FLOW_DATA/STAGE_PRESETS and current session notes",
+  "stages": [
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "standard",
+      "displayName": "Standard Arena",
+      "status": "legacy-adapted",
+      "runtime": { "worldWidth": 1280, "bounds": { "left": 80, "right": 1200 }, "spawns": { "p1X": 420, "p2X": 860 }, "groundY": 520 },
+      "camera": { "mode": "legacy-fixed" },
+      "collision": { "platforms": [], "policy": "Classic fallback ruleset; preserve existing no-platform behavior." },
+      "render": { "layerPolicy": "Single fallback background path remains valid.", "foregroundPolicy": "No active-gameplay foreground occlusion." },
+      "assets": { "stageCard": null, "layers": ["NO_GODS_ABOVE/assets/backgrounds/stages/forsaken_courtyard.png"] },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js"], "lastKnownReports": [], "gotchas": ["Use as fallback when experimental stage config is unavailable."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "platform_test",
+      "displayName": "Platform Arena",
+      "status": "legacy-adapted",
+      "runtime": { "worldWidth": 2200, "bounds": { "left": 80, "right": 2120 }, "spawns": { "p1X": 620, "p2X": 1580 }, "groundY": 590 },
+      "camera": { "mode": "experimental-follow", "preserveCurrentTuning": true },
+      "collision": { "platforms": [{ "id": "center", "policy": "Preserve current runtime dimensions from STAGE_PRESETS until extracted directly." }], "policy": "Platform tops must remain visually aligned with collision bars." },
+      "render": { "layerPolicy": "Procedural fallback platform renderer remains valid.", "foregroundPolicy": "No active-gameplay foreground occlusion." },
+      "assets": { "stageCard": null, "layers": [] },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js", "node NO_GODS_ABOVE/scripts/smoke_platform_arena_test.js"], "lastKnownReports": ["NO_GODS_ABOVE/docs/platform_arena_test_report.json"], "gotchas": ["Do not change Standard Arena when adjusting Platform Arena."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "eclipse_rooftop",
+      "displayName": "Eclipse Rooftop",
+      "status": "legacy-adapted",
+      "runtime": { "worldWidth": 2600, "bounds": { "left": 96, "right": 2504 }, "spawns": { "p1X": 720, "p2X": 1880 }, "groundY": 590 },
+      "camera": { "minScale": 0.72, "maxScale": 1, "paddingX": 300, "damping": 8, "cameraSmoothing": 9.5 },
+      "collision": { "platforms": [{ "id": "eclipse_left_lift", "x": 650, "y": 447, "w": 310, "h": 24 }, { "id": "eclipse_right_lift", "x": 1640, "y": 432, "w": 310, "h": 24 }], "policy": "Keep side-platform collision and art transforms synchronized." },
+      "render": { "layerPolicy": "Far/mid screen-space background, main/side platforms in world space, foreground asset kept available.", "foregroundPolicy": "Foreground must remain disabled during active gameplay so fighters and VFX stay readable." },
+      "assets": { "stageCard": "NO_GODS_ABOVE/assets/stages/eclipse_rooftop/07_stage_select_card_16x9.png", "layers": ["NO_GODS_ABOVE/assets/stages/eclipse_rooftop/01_far_background_16x9.png", "NO_GODS_ABOVE/assets/stages/eclipse_rooftop/02_midground_layer_transparent.png", "NO_GODS_ABOVE/assets/stages/eclipse_rooftop/03_main_platform_transparent.png", "NO_GODS_ABOVE/assets/stages/eclipse_rooftop/04_side_platform_left_transparent.png", "NO_GODS_ABOVE/assets/stages/eclipse_rooftop/05_side_platform_right_transparent.png", "NO_GODS_ABOVE/assets/stages/eclipse_rooftop/06_foreground_layer_transparent.png"] },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js", "node NO_GODS_ABOVE/scripts/smoke_platform_arena_test.js"], "lastKnownReports": ["NO_GODS_ABOVE/docs/eclipse_rooftop_qa_report.json", "NO_GODS_ABOVE/docs/eclipse_rooftop_qa_screenshot.png"], "gotchas": ["Do not restore placeholder Eclipse art.", "Full Chrome/CDP smoke previously hit temp profile disk-pressure limits."] }
+    }
+  ]
+}

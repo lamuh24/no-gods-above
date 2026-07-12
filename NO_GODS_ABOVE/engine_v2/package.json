@@ -1,0 +1,22 @@
+{
+  "name": "nga-engine-v2",
+  "private": true,
+  "version": "0.1.0-alpha",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && vite build",
+    "build:sim": "tsc -p tsconfig.json",
+    "dev": "vite --host 127.0.0.1",
+    "test": "npm run build:sim && node tests/combat_kernel.test.js && node tests/debug_runtime.test.js && node tests/input_combat_feel.test.js && node tests/gameplay_kernel_repair.test.js && node tests/aerial_normals.test.js",
+    "validate": "node scripts/validate_manifests.js && node scripts/parity_smoke.js && npm test",
+    "smoke:browser": "node scripts/browser_smoke.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/three": "^0.185.1",
+    "playwright": "^1.61.1",
+    "three": "^0.185.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.4"
+  }
+}

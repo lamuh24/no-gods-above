@@ -1,0 +1,224 @@
+{
+  "url": "http://127.0.0.1:64652/",
+  "platform": "win32",
+  "consoleErrors": [],
+  "jump": {
+    "startupTicks": 4,
+    "y": -16.95,
+    "vy": -16.95,
+    "phase": "jump"
+  },
+  "landing": {
+    "ticks": 33,
+    "y": 0,
+    "vy": 0,
+    "phase": "landing"
+  },
+  "dash": {
+    "duration": 12,
+    "phase": "idle",
+    "x": 51.7
+  },
+  "standingChain": {
+    "combo": 3,
+    "damage": 152,
+    "scaling": 0.7600000000000001,
+    "defenderHealth": 848,
+    "defenderPosition": [
+      43.400000000000006,
+      0
+    ]
+  },
+  "lowChain": {
+    "combo": 3,
+    "damage": 138,
+    "scaling": 0.7600000000000001,
+    "defenderHealth": 862,
+    "defenderPosition": [
+      43,
+      0
+    ]
+  },
+  "launcherApex": {
+    "ticks": 31,
+    "minimumY": -113.99999999999994,
+    "ceilingY": -180,
+    "position": [
+      94,
+      -113.19999999999995
+    ]
+  },
+  "launcherLanding": {
+    "ticks": 14,
+    "grounded": true,
+    "y": 0,
+    "warnings": []
+  },
+  "aerial": {
+    "launcherToAirLight": {
+      "route": [
+        "crouching_heavy",
+        "air_light"
+      ],
+      "move": "air_light",
+      "cancels": [
+        "air_medium",
+        "air_heavy"
+      ],
+      "remainingAirActions": 2,
+      "attacker": [
+        -47.19999999999999,
+        -61.499999999999986
+      ],
+      "defender": [
+        58,
+        -82.59999999999998
+      ],
+      "warnings": []
+    },
+    "airLightToMedium": {
+      "route": [
+        "crouching_heavy",
+        "air_light",
+        "air_medium"
+      ],
+      "move": "air_medium",
+      "cancels": [
+        "air_heavy"
+      ],
+      "remainingAirActions": 1
+    },
+    "fullRoute": {
+      "route": [
+        "crouching_heavy",
+        "air_light",
+        "air_medium",
+        "air_heavy"
+      ],
+      "combo": 4,
+      "damage": 194,
+      "move": "air_heavy",
+      "phase": "attack",
+      "remainingAirActions": 0,
+      "defenderHealth": 806,
+      "defenderPhase": "knockdown",
+      "positions": {
+        "attacker": [
+          21.000000000000014,
+          -143.99999999999994
+        ],
+        "defender": [
+          82.29999999999998,
+          -82.29999999999998
+        ]
+      },
+      "warnings": []
+    },
+    "landing": {
+      "ticks": 25,
+      "attackerPhase": "landing",
+      "attackerMove": null,
+      "remainingAirActions": 0,
+      "defenderPhase": "knockdown",
+      "defenderGrounded": true,
+      "route": [
+        "crouching_heavy",
+        "air_light",
+        "air_medium",
+        "air_heavy"
+      ],
+      "warnings": []
+    },
+    "observedIssues": {
+      "droppedInputs": false,
+      "cameraEscape": false,
+      "floatiness": false,
+      "landingInterruption": false,
+      "comboReset": false
+    }
+  },
+  "trade": {
+    "p1Health": 970,
+    "p2Health": 970
+  },
+  "comboReset": {
+    "first": {
+      "combo": 1,
+      "scale": 0.92
+    },
+    "reset": {
+      "combo": 0,
+      "scale": 1,
+      "ticks": 29
+    }
+  },
+  "blockDuringHitstun": {
+    "firstHealth": 970,
+    "finalHealth": 919,
+    "combo": 2,
+    "blockstun": 0,
+    "blocking": false
+  },
+  "replay": {
+    "expected": "7d56f13c",
+    "actual": "7d56f13c",
+    "tick": 20
+  },
+  "rendererMemory": {
+    "start": {
+      "geometries": 8,
+      "textures": 0,
+      "pooledOverlays": 17
+    },
+    "end": {
+      "geometries": 8,
+      "textures": 0,
+      "pooledOverlays": 17
+    },
+    "expectedStableGeometryRange": [
+      8,
+      9
+    ]
+  },
+  "controls": {
+    "movement": "WASD/arrows",
+    "groundAndAirLight": "J",
+    "groundAndAirMedium": "K",
+    "groundAndAirHeavy": "L",
+    "block": "O",
+    "pause": "Escape",
+    "overlays": "F1",
+    "step": ". while paused",
+    "reset": "R",
+    "reserved": [
+      "U Special",
+      "I Throw",
+      "P Burst"
+    ]
+  },
+  "screenshots": [
+    "neutral_jump.png",
+    "neutral_landing.png",
+    "dash_authored_duration.png",
+    "chain_5l_5m_5h.png",
+    "chain_2l_2m_2h.png",
+    "launcher_bounded_apex.png",
+    "launcher_landing.png",
+    "aerial_2h_to_jj_hud.png",
+    "aerial_jj_to_jk.png",
+    "aerial_full_jj_jk_jl.png",
+    "aerial_jl_landing_knockdown.png",
+    "aerial_normals_contact_sheet.png",
+    "simultaneous_trade.png",
+    "combo_reset.png",
+    "block_rejected_during_hitstun.png",
+    "renderer_memory_and_controls.png"
+  ],
+  "serverLogs": [
+    "",
+    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m747\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+    "",
+    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m64652\u001b[22m/\u001b[39m",
+    ""
+  ]
+}
