@@ -1,6 +1,6 @@
 # Engine V2 Universal Forward-Throw Report
 
-Date: 2026-07-11  
+Date: 2026-07-11
 Branch: `codex/engine-v2-checkpoint`
 
 ## Scope and preservation boundary

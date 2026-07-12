@@ -33,7 +33,21 @@ async function main() {
     page.on('pageerror', (error) => consoleErrors.push(error.message));
     await page.goto(url, { waitUntil: 'networkidle' });
     await page.waitForFunction(() => !!window.__NGA_ENGINE_V2_DEBUG__);
+    await page.waitForFunction(() => window.__NGA_ENGINE_V2_DEBUG__.renderer.getCharacterVisualStatus()?.ready === true);
     await page.waitForTimeout(250);
+
+    const characterVisual = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true); renderer.render(runtime.state);
+      const status = { ...renderer.getCharacterVisualStatus() };
+      const model = renderer.scene.getObjectByName('lamuh_prototype_v0_visual');
+      const layers = ['lamuh_body', 'lamuh_clothing', 'lamuh_hair', 'lamuh_accessories'].map((name) => !!renderer.scene.getObjectByName(name));
+      Object.assign(renderer.overlays, { push: false, hurt: false, strike: false, throw: false, anchors: false, origin: false, facing: false, ground: true });
+      renderer.render(runtime.state);
+      return { status, modelPresent: !!model, layers };
+    });
+    await page.screenshot({ path: path.join(OUT_DIR, 'lamuh_3d_adapter_proof.png'), fullPage: true });
+    await page.evaluate(() => Object.assign(window.__NGA_ENGINE_V2_DEBUG__.renderer.overlays, { push: true, hurt: true, strike: true, throw: true, anchors: true, origin: true, facing: true, ground: true }));
 
     const jump = await page.evaluate(() => {
       const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__; runtime.reset(); runtime.setPaused(true);
@@ -330,6 +344,7 @@ async function main() {
     await page.waitForTimeout(100); await page.screenshot({ path: path.join(OUT_DIR, 'renderer_memory_and_controls.png'), fullPage: true });
     const replay = await page.evaluate(async () => { const fixture = await fetch('/replays/lamuh_light_opening.replay.json').then((response) => response.json()); const state = window.__NGA_ENGINE_V2_DEBUG__.runtime.runReplayToEnd(fixture); return { expected: fixture.finalChecksum, actual: state.checksums.at(-1), tick: state.tick }; });
 
+    assert.strictEqual(characterVisual.status.ready, true); assert.strictEqual(characterVisual.status.error, null); assert.strictEqual(characterVisual.modelPresent, true); assert.deepStrictEqual(characterVisual.layers, [true, true, true, true]);
     assert.strictEqual(jump.startupTicks, 4); assert.strictEqual(landing.y, 0); assert.strictEqual(landing.vy, 0);
     assert.strictEqual(dash.duration, 12); assert.strictEqual(standingChain.combo, 3); assert.strictEqual(lowChain.combo, 3);
     assert.ok(launcherApex.minimumY >= launcherApex.ceilingY); assert.strictEqual(launcherLanding.grounded, true); assert.ok(launcherLanding.ticks < 120);
@@ -355,7 +370,7 @@ async function main() {
     assert.ok(memoryEnd.geometries - memoryStart.geometries <= 1, `renderer geometry grew ${memoryStart.geometries} -> ${memoryEnd.geometries}`);
     assert.strictEqual(memoryEnd.pooledOverlays, memoryStart.pooledOverlays); assert.strictEqual(replay.actual, replay.expected); assert.deepStrictEqual(consoleErrors, []);
 
-    const screenshots = ['neutral_jump.png', 'neutral_landing.png', 'dash_authored_duration.png', 'chain_5l_5m_5h.png', 'chain_2l_2m_2h.png', 'launcher_bounded_apex.png', 'launcher_landing.png', 'aerial_2h_to_jj_hud.png', 'aerial_jj_to_jk.png', 'aerial_full_jj_jk_jl.png', 'aerial_jl_landing_knockdown.png', 'aerial_normals_contact_sheet.png', 'throw_keyboard_i_startup_hud.png', 'throw_active_range.png', 'throw_whiff_recovery.png', 'throw_capture_anchors_hud.png', 'throw_tech.png', 'throw_release_impact.png', 'throw_knockdown.png', 'throw_corner_containment.png', 'throw_reset_cleanup.png', 'simultaneous_trade.png', 'combo_reset.png', 'block_rejected_during_hitstun.png', 'renderer_memory_and_controls.png'];
+    const screenshots = ['lamuh_3d_adapter_proof.png', 'neutral_jump.png', 'neutral_landing.png', 'dash_authored_duration.png', 'chain_5l_5m_5h.png', 'chain_2l_2m_2h.png', 'launcher_bounded_apex.png', 'launcher_landing.png', 'aerial_2h_to_jj_hud.png', 'aerial_jj_to_jk.png', 'aerial_full_jj_jk_jl.png', 'aerial_jl_landing_knockdown.png', 'aerial_normals_contact_sheet.png', 'throw_keyboard_i_startup_hud.png', 'throw_active_range.png', 'throw_whiff_recovery.png', 'throw_capture_anchors_hud.png', 'throw_tech.png', 'throw_release_impact.png', 'throw_knockdown.png', 'throw_corner_containment.png', 'throw_reset_cleanup.png', 'simultaneous_trade.png', 'combo_reset.png', 'block_rejected_during_hitstun.png', 'renderer_memory_and_controls.png'];
     const throwHudEvidence = {
       keyboardStartup: { normalizedInput: keyboardThrowStartup.hud.normalizedInput, controls: keyboardThrowStartup.hud.controls, status: keyboardThrowStartup.hud.combatActionStatus.throw, lamuh: keyboardThrowStartup.hud.lamuh.throw },
       activeRange: throwActiveRange.hud.lamuh.throw,
@@ -364,7 +379,7 @@ async function main() {
       release: { lamuh: throwReleaseHud.lamuh.throw, dummy: throwReleaseHud.dummy.throw },
       reset: { lamuh: throwResetHud.lamuh.throw, dummy: throwResetHud.dummy.throw }
     };
-    const report = { url, platform: process.platform, consoleErrors, jump, landing, dash, standingChain, lowChain, launcherApex, launcherLanding, aerial: { launcherToAirLight, airLightToMedium, fullRoute: fullAerialRoute, landing: aerialLanding, observedIssues: { droppedInputs: false, cameraEscape: false, floatiness: false, landingInterruption: false, comboReset: false } }, throw: { keyboard: { startup: keyboardThrowStartup.state, activeRange: { ticksFromInput: throwActiveRange.ticksFromInput, state: throwActiveRange.state }, whiff: { ticksFromInput: throwWhiff.ticksFromInput, state: throwWhiff.state }, heldNoRetrigger }, capture: throwCapture, anchorStability: throwAnchorStability, tech: throwTech, release: throwRelease, knockdown: throwKnockdown, cornerContainment: throwCornerContainment, resetCleanup: { before: throwResetCleanup, after: throwResetState }, hud: throwHudEvidence, observedIssues: { droppedInput: false, heldInputRetrigger: false, anchorDrift: false, repeatedDamage: false, cornerEscape: false, cameraEscape: false, resetLeak: false } }, trade, comboReset, blockDuringHitstun, replay, rendererMemory: { start: memoryStart, end: memoryEnd, expectedStableGeometryRange: [memoryStart.geometries, memoryStart.geometries + 1] }, controls: { movement: 'WASD/arrows', groundAndAirLight: 'J', groundAndAirMedium: 'K', groundAndAirHeavy: 'L', throwAndThrowTech: 'I / gamepad button 5', block: 'O', pause: 'Escape', overlays: 'F1', step: '. while paused', reset: 'R', reserved: ['U Special', 'P Burst'] }, screenshots, serverLogs: logs.join('').split('\n').slice(0, 12) };
+    const report = { url, platform: process.platform, consoleErrors, characterVisual: { ...characterVisual, qualityGate: 'failed: procedural silhouette remains mannequin-like; Tripo Path B required' }, jump, landing, dash, standingChain, lowChain, launcherApex, launcherLanding, aerial: { launcherToAirLight, airLightToMedium, fullRoute: fullAerialRoute, landing: aerialLanding, observedIssues: { droppedInputs: false, cameraEscape: false, floatiness: false, landingInterruption: false, comboReset: false } }, throw: { keyboard: { startup: keyboardThrowStartup.state, activeRange: { ticksFromInput: throwActiveRange.ticksFromInput, state: throwActiveRange.state }, whiff: { ticksFromInput: throwWhiff.ticksFromInput, state: throwWhiff.state }, heldNoRetrigger }, capture: throwCapture, anchorStability: throwAnchorStability, tech: throwTech, release: throwRelease, knockdown: throwKnockdown, cornerContainment: throwCornerContainment, resetCleanup: { before: throwResetCleanup, after: throwResetState }, hud: throwHudEvidence, observedIssues: { droppedInput: false, heldInputRetrigger: false, anchorDrift: false, repeatedDamage: false, cornerEscape: false, cameraEscape: false, resetLeak: false } }, trade, comboReset, blockDuringHitstun, replay, rendererMemory: { start: memoryStart, end: memoryEnd, expectedStableGeometryRange: [memoryStart.geometries, memoryStart.geometries + 1] }, controls: { movement: 'WASD/arrows', groundAndAirLight: 'J', groundAndAirMedium: 'K', groundAndAirHeavy: 'L', throwAndThrowTech: 'I / gamepad button 5', block: 'O', pause: 'Escape', overlays: 'F1', step: '. while paused', reset: 'R', reserved: ['U Special', 'P Burst'] }, screenshots, serverLogs: logs.join('').split('\n').slice(0, 12) };
     fs.writeFileSync(path.join(OUT_DIR, 'browser_smoke_report.json'), JSON.stringify(report, null, 2));
     console.log(`Browser smoke passed at ${url}`); console.log(JSON.stringify(report, null, 2));
   } finally {

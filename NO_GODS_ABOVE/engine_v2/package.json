@@ -7,8 +7,10 @@
     "build": "tsc -p tsconfig.json && vite build",
     "build:sim": "tsc -p tsconfig.json",
     "dev": "vite --host 127.0.0.1",
-    "test": "npm run build:sim && node tests/combat_kernel.test.js && node tests/debug_runtime.test.js && node tests/input_combat_feel.test.js && node tests/gameplay_kernel_repair.test.js && node tests/aerial_normals.test.js && node tests/forward_throw.test.js",
-    "validate": "node scripts/validate_manifests.js && node scripts/parity_smoke.js && npm test",
+    "test": "npm run build:sim && node tests/combat_kernel.test.js && node tests/debug_runtime.test.js && node tests/input_combat_feel.test.js && node tests/gameplay_kernel_repair.test.js && node tests/aerial_normals.test.js && node tests/forward_throw.test.js && node tests/character_visual_adapter.test.js",
+    "validate:model": "node scripts/validate_lamuh_model.js",
+    "validate": "node scripts/validate_manifests.js && npm run validate:model && node scripts/parity_smoke.js && npm test",
+    "generate:lamuh-model": "node scripts/generate_lamuh_prototype_v0.mjs",
     "smoke:browser": "node scripts/browser_smoke.js"
   },
   "devDependencies": {

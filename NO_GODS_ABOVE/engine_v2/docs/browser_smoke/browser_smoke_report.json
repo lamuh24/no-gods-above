@@ -1,7 +1,24 @@
 {
-  "url": "http://127.0.0.1:58078/",
+  "url": "http://127.0.0.1:61817/",
   "platform": "win32",
   "consoleErrors": [],
+  "characterVisual": {
+    "status": {
+      "assetId": "lamuh_prototype_v0",
+      "ready": true,
+      "currentClip": "idle",
+      "sampledFrame": 0,
+      "error": null
+    },
+    "modelPresent": true,
+    "layers": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "qualityGate": "failed: procedural silhouette remains mannequin-like; Tripo Path B required"
+  },
   "jump": {
     "startupTicks": 4,
     "y": -16.95,
@@ -721,18 +738,18 @@
   },
   "rendererMemory": {
     "start": {
-      "geometries": 8,
+      "geometries": 50,
       "textures": 0,
       "pooledOverlays": 22
     },
     "end": {
-      "geometries": 8,
+      "geometries": 50,
       "textures": 0,
       "pooledOverlays": 22
     },
     "expectedStableGeometryRange": [
-      8,
-      9
+      50,
+      51
     ]
   },
   "controls": {
@@ -752,6 +769,7 @@
     ]
   },
   "screenshots": [
+    "lamuh_3d_adapter_proof.png",
     "neutral_jump.png",
     "neutral_landing.png",
     "dash_authored_duration.png",
@@ -780,9 +798,9 @@
   ],
   "serverLogs": [
     "",
-    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m852\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m861\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
     "",
-    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m58078\u001b[22m/\u001b[39m",
+    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m61817\u001b[22m/\u001b[39m",
     ""
   ]
 }

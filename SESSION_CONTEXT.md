@@ -1870,3 +1870,13 @@ Date: 2026-07-11
 - Updated `NO_GODS_ABOVE\scripts\generate_flow_ui_assets.py` so it no longer generates Eclipse placeholder stage art.
 - Validation passed: `node --check NO_GODS_ABOVE/game.js`, `python -m py_compile NO_GODS_ABOVE/scripts/generate_flow_ui_assets.py`, `node --check NO_GODS_ABOVE/scripts/smoke_online_versus.js`, `git diff --check` (CRLF warnings only), no stale placeholder refs via `rg`, all seven Eclipse PNGs served HTTP 200 from local static server.
 - Full Chrome/CDP runtime smoke could not complete after this asset-pack pass because temporary Chrome profiles filled the nearly-full C: drive; smoke temp profiles were cleaned up. A lightweight alignment preview confirmed collision bars sit on the visible platform lips.
+
+## 2026-07-11 Engine V2 Lamuh 3D Vertical Slice
+- Created the clean feature branch `codex/engine-v2-lamuh-3d-prototype` after checkpointing the approved forward-throw implementation as commit `4966782`.
+- Audited Blender, local model generators, NGA Forge adapters, existing models, and approved Lamuh references. Blender and production model adapters were unavailable; Three.js GLB export was available.
+- Completed exactly one bounded procedural Path A attempt. It proves an articulated GLB/runtime path (24 bones, 11 anchors, four skinned layers, 29 required clips, toon shading, outline, deterministic state-to-clip adapter) but failed the Lamuh visual-quality gate because the silhouette remains mannequin-like.
+- Stopped local model polishing and prepared the required Path B Tripo package at `NO_GODS_ABOVE/engine_v2/assets/characters/lamuh_prototype_v0/tripo_input/`, including locked identity/accessory/hair prompts, approved reference index, cleanup/rig/export contract, and swap validation.
+- Added `manifests/lamuh_prototype_v0.model.json`, reproducible generator, GLB contract validator, adapter mapping regression test, HUD visual status, and Windows browser evidence. The adapter-proof GLB is deliberately marked `path_a_failed_visual_gate_adapter_proof`; do not present it as production Lamuh art.
+- Validation passed: Engine V2 full validate, model contract (24 bones/11 anchors/29 clips/no root motion), production build, Windows Chromium smoke, replay checksum `0f5b884d`, and stable renderer memory. `NO_GODS_ABOVE/game.js` has no diff.
+- Next: generate/import the Tripo mesh from the locked package, approve its turnaround before rigging, then preserve exact manifest bone/anchor/clip names and rerun the documented gates. No throws, specials, gameplay tuning, stages, or production animation work was added here.
+- Central Obsidian sync was attempted at `https://127.0.0.1:27124/` but returned HTTP `000`; this repo-local handoff is the fallback source of truth.

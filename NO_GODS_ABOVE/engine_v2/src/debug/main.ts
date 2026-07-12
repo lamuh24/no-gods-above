@@ -88,6 +88,7 @@ function updateHud() {
     controls: { throw: `I / gamepad button ${standardGamepadMapping.throw}`, block: "O", pause: "Escape", overlays: "F1", step: ". (paused only)", reset: "R" },
     combatActionStatus: reservedCombatActions,
     debugWarnings: s.debugWarnings,
+    visual: renderer.getCharacterVisualStatus(),
     aerial: { moveId: attack?.airOnly ? f.currentAttack : null, phase: attack?.airOnly ? currentAttackPhase(f) : "none", availableCancels: aerialCancelRoutes, remainingAirActions: f.airActionsRemaining },
     lamuh: { health: f.health, state: f.phase, attack: f.currentAttack, attackPhase: currentAttackPhase(f), cancelOptions: f.cancelOptions, combo: f.comboCount, comboDamage: f.comboDamage, comboRoute: f.comboRoute, scaling: f.damageScaling, timer: f.phaseTick, pos: [f.x, f.y], vel: [f.vx, f.vy], grounded: f.grounded, hitstop: f.hitstop, hitstun: f.hitstun, blockstun: f.blockstun, throw: throwHud("p1", lastDevice.frame.throw), buffer: f.deterministicBuffer.history.slice(-5) },
     dummy: { health: d.health, mode: d.dummyMode, state: d.phase, timer: d.phaseTick, pos: [d.x, d.y], vel: [d.vx, d.vy], grounded: d.grounded, hitstop: d.hitstop, hitstun: d.hitstun, blockstun: d.blockstun, throw: throwHud("p2") },
