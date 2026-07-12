@@ -1,4 +1,4 @@
-import { AttackDefinition, FighterDefinition, MovementTuning } from "../core/types";
+import { AttackDefinition, FighterDefinition, MovementTuning, ThrowDefinition } from "../core/types";
 
 const move: MovementTuning = { walkForward: 5.4, walkBackward: 3.8, dashSpeed: 13, dashDuration: 12, backdashSpeed: -10, backdashDuration: 14, jumpStartup: 4, jumpVelocity: -18, forwardJumpVelocityX: 6.2, backJumpVelocityX: -5.1, airControl: 1.4, gravity: 1.05, landingRecovery: 5, inputBuffer: 18, wakeupInvuln: 18, comboNeutralTimeout: 12 };
 function hit(id: string, start: number, end: number, rect: any, damage: number, hitstop: number, hitstun: number, blockstun: number, kx: number, ky: number, level: any, extra = {}) { return { id, start, end, rect, damage, hitstop, hitstun, blockstun, knockbackX: kx, knockbackY: ky, maxHits: 1, level, ...extra }; }
@@ -13,8 +13,38 @@ const attacks: Record<string, AttackDefinition> = {
   air_medium: { id: "air_medium", command: "j.K", startup: 5, active: 4, recovery: 10, cancel: { onHit: ["air_heavy"], onBlock: ["air_heavy"] }, airOnly: true, hitboxes: [hit("jk", 5, 8, { x: 26, y: -70, w: 72, h: 42 }, 45, 4, 16, 9, 2.8, -5, "mid")] },
   air_heavy: { id: "air_heavy", command: "j.L", startup: 6, active: 6, recovery: 14, airOnly: true, hitboxes: [hit("jl", 6, 11, { x: 22, y: -82, w: 78, h: 58 }, 70, 6, 18, 12, 5, 8, "mid", { knockdown: "soft" })] }
 };
-export const fighterDefinitions: Record<string, FighterDefinition> = {
-  lamuh_proto: { kind: "lamuh_proto", maxHealth: 1000, movement: move, pushbox: { x: -22, y: -96, w: 44, h: 96 }, standingHurtboxes: [{ x: -24, y: -96, w: 48, h: 46 }, { x: -20, y: -52, w: 40, h: 52 }], crouchingHurtboxes: [{ x: -25, y: -66, w: 50, h: 66 }], attacks: attacks as any },
-  training_dummy: { kind: "training_dummy", maxHealth: 1000, movement: { ...move, walkForward: 0, walkBackward: 0 }, pushbox: { x: -23, y: -98, w: 46, h: 98 }, standingHurtboxes: [{ x: -25, y: -98, w: 50, h: 48 }, { x: -21, y: -54, w: 42, h: 54 }], crouchingHurtboxes: [{ x: -25, y: -68, w: 50, h: 68 }], attacks: attacks as any }
+const forwardThrow: ThrowDefinition = {
+  id: "forward_throw",
+  command: "Throw",
+  startup: 6,
+  active: 2,
+  techWindow: 8,
+  impactTick: 10,
+  release: 2,
+  recovery: 14,
+  whiffRecovery: 18,
+  techRecovery: 12,
+  damage: 100,
+  hitstop: 6,
+  throwBox: { id: "forward_throw_box", rect: { x: 18, y: -82, w: 44, h: 76 }, maxTargets: 1, groundedOnly: true },
+  anchors: {
+    grabAnchor: { x: 36, y: -52 },
+    victimAnchor: { x: 0, y: -52 },
+    releaseAnchor: { x: 72, y: -52 },
+    cameraTarget: { x: 36, y: -52 }
+  },
+  forwardDisplacement: 24,
+  releaseVelocityX: 7,
+  releaseVelocityY: 0,
+  knockdown: "hard",
+  knockdownTicks: 42,
+  techPushback: 20,
+  techThrowInvuln: 18,
+  releaseThrowInvuln: 18
 };
-export const defaultTuning = { lamuh_proto: move, attacks };
+const throws = { forward_throw: forwardThrow };
+export const fighterDefinitions: Record<string, FighterDefinition> = {
+  lamuh_proto: { kind: "lamuh_proto", maxHealth: 1000, movement: move, pushbox: { x: -22, y: -96, w: 44, h: 96 }, throwHurtbox: { x: -23, y: -92, w: 46, h: 88 }, standingHurtboxes: [{ x: -24, y: -96, w: 48, h: 46 }, { x: -20, y: -52, w: 40, h: 52 }], crouchingHurtboxes: [{ x: -25, y: -66, w: 50, h: 66 }], attacks: attacks as any, throws },
+  training_dummy: { kind: "training_dummy", maxHealth: 1000, movement: { ...move, walkForward: 0, walkBackward: 0 }, pushbox: { x: -23, y: -98, w: 46, h: 98 }, throwHurtbox: { x: -24, y: -94, w: 48, h: 90 }, standingHurtboxes: [{ x: -25, y: -98, w: 50, h: 48 }, { x: -21, y: -54, w: 42, h: 54 }], crouchingHurtboxes: [{ x: -25, y: -68, w: 50, h: 68 }], attacks: attacks as any, throws }
+};
+export const defaultTuning = { lamuh_proto: move, attacks, throws };

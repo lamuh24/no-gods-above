@@ -41,7 +41,7 @@ The `j.K` hitbox points horizontally/slightly downward while its temporary upwar
 - Full simulation suite: 62 tests passing, including the repaired grounded chains, trades, blocking, hitstop, and snapshot/replay coverage.
 - Windows browser smoke: no console errors; stable renderer resources at 8 geometries / 17 pooled overlays.
 - Browser route: `2H -> j.J -> j.K -> j.L`, 4 hits, 194 scaled damage, defender health 806, no bounds warnings.
-- Replay fixture checksum: expected/actual `7d56f13c`.
+- Replay fixture checksum after the universal-throw state fields were added: expected/actual `0f5b884d`; the aerial input script and results are unchanged.
 - Report: `docs/browser_smoke/browser_smoke_report.json`.
 - Contact sheet: `docs/browser_smoke/aerial_normals_contact_sheet.png`.
 - Frames: `aerial_2h_to_jj_hud.png`, `aerial_jj_to_jk.png`, `aerial_full_jj_jk_jl.png`, and `aerial_jl_landing_knockdown.png`.

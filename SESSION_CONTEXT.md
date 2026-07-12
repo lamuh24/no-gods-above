@@ -4,6 +4,19 @@
 Agent: Codex
 Date: 2026-07-11
 
+## 2026-07-11 Codex Engine V2 Universal Forward Throw
+- Continued only in the isolated `codex/engine-v2-checkpoint` worktree; the dirty Sable/legacy worktree was not modified. No commit or push was made in this task.
+- Added the first data-driven grounded universal `forward_throw` for Lamuh prototype and the training dummy: normalized Throw input (`I` / standard gamepad button 5), 6-tick startup, 2-tick active throw box, reciprocal capture states, deterministic grab/victim/release anchors, 8-tick tech window, whiff, 100 fixed damage, forward release, 42-tick hard knockdown, recovery, throw invulnerability, corner containment, and atomic cleanup.
+- Throws use a distinct collision primitive and throw hurtbox; they do not reuse strike resolution. Captured pairs suppress only their mutual pushbox and realign from authoritative simulation anchors every tick, including hitstop. A connecting strike beats an unconfirmed throw; simultaneous eligible throws produce an order-independent mutual tech.
+- Same-button techs on capture frame, ordinary window, final visible window, and mutual-throw path all enter `throw_teched` at timer 0 with identical 12-tick recovery. Holding Throw cannot repeat attempts or techs.
+- Debug geometry/HUD now distinguishes every throw state and shows throw box/hurtbox, grab/victim/release/camera anchors, role/partner, timer, tech remaining, facing, throw invulnerability, outcome, push suppression, and pressed/held Throw state. Existing aerial HUD remains intact.
+- Added `tests/forward_throw.test.js`; full validation passes 86 tests (62 prior + 24 throw), 8 character and 3 stage contracts, roster/stage parity, replay/snapshot/order determinism, production build, and Windows browser smoke. Replay fixture checksum is now `0f5b884d` because authoritative throw fields are serialized.
+- Browser evidence added nine throw screenshots. Final smoke reported zero console errors, no dropped/retriggered input, anchor drift, repeated damage, bounds/camera escape, reset leak, or pool growth; renderer stayed at 8 geometries and 22 pooled overlays. The existing non-blocking ~566 kB production bundle warning remains.
+- Legacy `NO_GODS_ABOVE/game.js` remains untouched at SHA-256 `401E262330F74AB9A2673C12C98AA0405F37F04ACC5BA2D773B5F9B531B7E5F1`. No back throw, air throw, command grab, hit-grab, special, new character, production model/animation, Blender/Tripo, cinematic, or deployment work was added.
+- Skill docs read/applied: `.agents/skills/nga-engine-v2/SKILL.md`, its universal-character-contract and validation-gates references, and `NO_GODS_ABOVE/skills/fighting_game_balance_pass_skill.md`.
+- Obsidian central sync was attempted at `http://127.0.0.1:27124/` and was unreachable (`Unable to connect to the remote server`); this repo-local context entry is the fallback handoff.
+- Next gate: owner manually tests close throw on both facings, whiff recovery, early/late tech, release/knockdown, and both corners. Only after acceptance should temporary rigged Lamuh integration be planned as a separate task.
+
 ## 2026-07-11 Codex Engine V2 Combat Checkpoint
 - Created an isolated Engine V2 checkpoint branch from the clean collaboration baseline so the dirty Sable and legacy-combat worktrees remain untouched.
 - Added the preservation-first Engine V2 package, schemas/manifests, deterministic combat kernel, debug runtime, input adapter, replay fixture, tests, documentation, and browser evidence under `NO_GODS_ABOVE/engine_v2/`.

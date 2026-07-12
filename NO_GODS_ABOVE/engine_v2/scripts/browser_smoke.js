@@ -121,6 +121,180 @@ async function main() {
     });
     await page.waitForTimeout(100); await page.screenshot({ path: path.join(OUT_DIR, 'aerial_jl_landing_knockdown.png'), fullPage: true });
 
+    const readHud = async () => {
+      await page.waitForTimeout(50);
+      return page.evaluate(() => JSON.parse(document.querySelector('#hud').textContent || '{}'));
+    };
+    const focusThrowHud = async (fighterKey = 'lamuh') => {
+      await page.evaluate((key) => {
+        const panel = document.querySelector('.panel');
+        const hud = document.querySelector('#hud');
+        const text = hud.textContent || '';
+        const fighterIndex = text.indexOf(`"${key}":`);
+        const throwIndex = fighterIndex >= 0 ? text.indexOf('"throw":', fighterIndex) : -1;
+        const markerIndex = throwIndex >= 0 ? throwIndex : Math.max(0, fighterIndex);
+        const line = text.slice(0, markerIndex).split('\n').length - 1;
+        const lineHeight = Number.parseFloat(getComputedStyle(hud).lineHeight) || 16;
+        panel.scrollTop = Math.max(0, hud.offsetTop + (line - 2) * lineHeight);
+      }, fighterKey);
+      await page.waitForTimeout(50);
+    };
+    const resetPanelScroll = () => page.evaluate(() => { document.querySelector('.panel').scrollTop = 0; });
+    const stepPausedKeyboard = async (count = 1) => {
+      for (let index = 0; index < count; index++) await page.keyboard.press('Period');
+    };
+    const readP1ThrowState = () => page.evaluate(() => {
+      const fighter = window.__NGA_ENGINE_V2_DEBUG__.runtime.state.fighters.p1;
+      return { phase: fighter.phase, timer: fighter.phaseTick, move: fighter.currentThrow, outcome: fighter.lastThrowOutcome };
+    });
+
+    // Traverse the real keyboard adapter and paused debug-step handler. Holding I must produce one
+    // deterministic edge, visibly expose startup/active/whiff, and never auto-repeat after recovery.
+    await page.keyboard.up('i');
+    await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true);
+      runtime.state.fighters.p1.x = -170; runtime.state.fighters.p2.x = 170;
+      renderer.render(runtime.state);
+    });
+    await page.keyboard.down('i');
+    await stepPausedKeyboard();
+    const keyboardThrowStartup = { state: await readP1ThrowState(), hud: await readHud() };
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_keyboard_i_startup_hud.png'), fullPage: true });
+
+    let keyboardTicks = 1;
+    let keyboardState = keyboardThrowStartup.state;
+    while (keyboardState.phase !== 'throw_active' && keyboardTicks < 12) {
+      await stepPausedKeyboard(); keyboardTicks++; keyboardState = await readP1ThrowState();
+    }
+    const throwActiveRange = { ticksFromInput: keyboardTicks, state: keyboardState, hud: await readHud() };
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_active_range.png'), fullPage: true });
+
+    while (keyboardState.phase !== 'throw_whiff' && keyboardTicks < 20) {
+      await stepPausedKeyboard(); keyboardTicks++; keyboardState = await readP1ThrowState();
+    }
+    const throwWhiff = { ticksFromInput: keyboardTicks, state: keyboardState, hud: await readHud() };
+    await focusThrowHud('lamuh');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_whiff_recovery.png'), fullPage: true });
+
+    while (keyboardState.move !== null && keyboardTicks < 60) {
+      await stepPausedKeyboard(); keyboardTicks++; keyboardState = await readP1ThrowState();
+    }
+    const recoveredWhileHeld = { ...keyboardState, ticksFromInput: keyboardTicks };
+    let heldRetriggered = false;
+    for (let index = 0; index < 8; index++) {
+      await stepPausedKeyboard(); keyboardState = await readP1ThrowState();
+      if (keyboardState.move !== null || keyboardState.phase.startsWith('throw_')) heldRetriggered = true;
+    }
+    const heldNoRetrigger = { recoveredWhileHeld, heldRetriggered, final: keyboardState };
+    await page.keyboard.up('i');
+
+    const throwCapture = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true);
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      p1.x = -40; p2.x = 30;
+      runtime.frameAdvance({ p1: { throw: true } });
+      let ticks = 1;
+      while (p1.phase !== 'throw_capture' && ticks < 24) { runtime.frameAdvance({}); ticks++; }
+      if (p1.phase !== 'throw_capture') throw new Error('forward throw did not capture in browser evidence');
+      renderer.render(runtime.state);
+      return { ticks, attacker: { phase: p1.phase, partner: p1.throwPartner, facing: p1.facing, throwFacing: p1.throwFacing, pos: [p1.x, p1.y] }, victim: { phase: p2.phase, partner: p2.throwPartner, facing: p2.facing, pos: [p2.x, p2.y] }, separation: p2.x - p1.x };
+    });
+    const throwCaptureHud = await readHud();
+    await focusThrowHud('lamuh');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_capture_anchors_hud.png'), fullPage: true });
+    const throwAnchorStability = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      const before = { p1: [runtime.state.fighters.p1.x, runtime.state.fighters.p1.y], p2: [runtime.state.fighters.p2.x, runtime.state.fighters.p2.y] };
+      runtime.frameAdvance({}); runtime.frameAdvance({}); runtime.frameAdvance({});
+      renderer.render(runtime.state);
+      const after = { p1: [runtime.state.fighters.p1.x, runtime.state.fighters.p1.y], p2: [runtime.state.fighters.p2.x, runtime.state.fighters.p2.y] };
+      return { before, after };
+    });
+
+    const throwTech = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true);
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      p1.x = -40; p2.x = 30;
+      runtime.frameAdvance({ p1: { throw: true } });
+      let captureTicks = 1;
+      while (p1.phase !== 'throw_capture' && captureTicks < 24) { runtime.frameAdvance({}); captureTicks++; }
+      runtime.frameAdvance({ p2: { throw: true } });
+      renderer.render(runtime.state);
+      return { captureTicks, attacker: { phase: p1.phase, health: p1.health, partner: p1.throwPartner, outcome: p1.lastThrowOutcome, invuln: p1.throwInvulnTicks, pos: [p1.x, p1.y] }, victim: { phase: p2.phase, health: p2.health, partner: p2.throwPartner, outcome: p2.lastThrowOutcome, invuln: p2.throwInvulnTicks, pos: [p2.x, p2.y] } };
+    });
+    const throwTechHud = await readHud();
+    await focusThrowHud('lamuh');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_tech.png'), fullPage: true });
+
+    const throwRelease = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true);
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      const start = { p1: [p1.x = -40, p1.y], p2: [p2.x = 30, p2.y], defenderHealth: p2.health };
+      runtime.frameAdvance({ p1: { throw: true } });
+      let ticks = 1;
+      while (p1.phase !== 'throw_release' && ticks < 60) { runtime.frameAdvance({}); ticks++; }
+      if (p1.phase !== 'throw_release') throw new Error('forward throw did not reach authored release in browser evidence');
+      renderer.render(runtime.state);
+      return { ticks, start, attacker: { phase: p1.phase, pos: [p1.x, p1.y], combo: p1.comboCount, damage: p1.comboDamage, route: [...p1.comboRoute], outcome: p1.lastThrowOutcome }, victim: { phase: p2.phase, health: p2.health, pos: [p2.x, p2.y], knockdownTicks: p2.knockdownTicks, outcome: p2.lastThrowOutcome } };
+    });
+    const throwReleaseHud = await readHud();
+    await focusThrowHud('lamuh');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_release_impact.png'), fullPage: true });
+    const throwKnockdown = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      let ticks = 0;
+      while (p2.phase !== 'knockdown' && ticks < 40) { runtime.frameAdvance({}); ticks++; }
+      const healthAtKnockdown = p2.health;
+      for (let index = 0; index < 5; index++) runtime.frameAdvance({});
+      renderer.render(runtime.state);
+      return { ticks, attacker: { phase: p1.phase, pos: [p1.x, p1.y] }, victim: { phase: p2.phase, health: p2.health, healthAtKnockdown, grounded: p2.grounded, knockdownTicks: p2.knockdownTicks, pos: [p2.x, p2.y] } };
+    });
+    await focusThrowHud('dummy');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_knockdown.png'), fullPage: true });
+
+    const throwCornerContainment = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true);
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      p1.x = 350; p2.x = 400;
+      runtime.frameAdvance({ p1: { throw: true } });
+      let ticks = 1;
+      while (p1.phase !== 'throw_release' && ticks < 60) { runtime.frameAdvance({}); ticks++; }
+      renderer.render(runtime.state);
+      const stage = runtime.state.stage;
+      return { ticks, stage: { left: stage.left, right: stage.right }, attacker: { phase: p1.phase, x: p1.x }, victim: { phase: p2.phase, x: p2.x }, cameraX: renderer.camera.position.x, warnings: [...runtime.state.debugWarnings] };
+    });
+    await focusThrowHud('lamuh');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_corner_containment.png'), fullPage: true });
+
+    const throwResetCleanup = await page.evaluate(() => {
+      const { runtime } = window.__NGA_ENGINE_V2_DEBUG__;
+      runtime.reset(); runtime.setPaused(true);
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      p1.x = -40; p2.x = 30;
+      runtime.frameAdvance({ p1: { throw: true } });
+      let ticks = 1;
+      while (p1.phase !== 'throw_capture' && ticks < 24) { runtime.frameAdvance({}); ticks++; }
+      return { ticks, attackerPhase: p1.phase, victimPhase: p2.phase, attackerPartner: p1.throwPartner, victimPartner: p2.throwPartner };
+    });
+    await page.click('#reset');
+    await page.waitForTimeout(50);
+    const throwResetState = await page.evaluate(() => {
+      const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__;
+      renderer.render(runtime.state);
+      const p1 = runtime.state.fighters.p1, p2 = runtime.state.fighters.p2;
+      return { attacker: { phase: p1.phase, move: p1.currentThrow, partner: p1.throwPartner, outcome: p1.lastThrowOutcome }, victim: { phase: p2.phase, move: p2.currentThrow, partner: p2.throwPartner, outcome: p2.lastThrowOutcome }, warnings: [...runtime.state.debugWarnings] };
+    });
+    const throwResetHud = await readHud();
+    await focusThrowHud('lamuh');
+    await page.screenshot({ path: path.join(OUT_DIR, 'throw_reset_cleanup.png'), fullPage: true });
+    await resetPanelScroll();
+
     const trade = await page.evaluate(() => {
       const { runtime, renderer } = window.__NGA_ENGINE_V2_DEBUG__; runtime.reset(); runtime.setPaused(true); runtime.state.fighters.p1.x = -50; runtime.state.fighters.p2.x = 50;
       runtime.frameAdvance({ p1: { light: true }, p2: { light: true } }); let ticks = 0; while ((runtime.state.fighters.p1.health === 1000 || runtime.state.fighters.p2.health === 1000) && ticks < 30) { runtime.frameAdvance({}); ticks++; }
@@ -165,11 +339,32 @@ async function main() {
     assert.strictEqual(aerialLanding.attackerPhase, 'landing'); assert.strictEqual(aerialLanding.attackerMove, null); assert.strictEqual(aerialLanding.remainingAirActions, 0); assert.deepStrictEqual(aerialLanding.warnings, []);
     assert.deepStrictEqual(trade, { p1Health: 970, p2Health: 970 }); assert.deepStrictEqual(comboReset.reset.combo, 0); assert.strictEqual(comboReset.reset.scale, 1);
     assert.strictEqual(blockDuringHitstun.combo, 2); assert.ok(blockDuringHitstun.finalHealth < blockDuringHitstun.firstHealth); assert.strictEqual(blockDuringHitstun.blockstun, 0);
+    assert.strictEqual(keyboardThrowStartup.state.phase, 'throw_startup'); assert.strictEqual(keyboardThrowStartup.state.move, 'forward_throw');
+    assert.strictEqual(keyboardThrowStartup.hud.normalizedInput.throw, true); assert.strictEqual(keyboardThrowStartup.hud.lamuh.throw.input.pressed, true); assert.strictEqual(keyboardThrowStartup.hud.lamuh.throw.input.held, true); assert.strictEqual(keyboardThrowStartup.hud.lamuh.throw.input.normalizedHeld, true);
+    assert.match(keyboardThrowStartup.hud.controls.throw, /^I \/ gamepad button 5$/); assert.match(keyboardThrowStartup.hud.combatActionStatus.throw, /^active/);
+    assert.strictEqual(throwActiveRange.state.phase, 'throw_active'); assert.strictEqual(throwActiveRange.hud.lamuh.throw.state, 'throw_active'); assert.strictEqual(throwActiveRange.hud.lamuh.throw.role, 'attacker'); assert.ok(throwActiveRange.hud.lamuh.throw.anchors);
+    assert.strictEqual(throwWhiff.state.phase, 'throw_whiff'); assert.strictEqual(throwWhiff.state.outcome, 'whiff'); assert.strictEqual(heldNoRetrigger.heldRetriggered, false); assert.strictEqual(heldNoRetrigger.final.move, null); assert.strictEqual(heldNoRetrigger.final.phase, 'idle');
+    assert.strictEqual(throwCapture.attacker.phase, 'throw_capture'); assert.strictEqual(throwCapture.victim.phase, 'throw_victim_captured'); assert.strictEqual(throwCapture.attacker.partner, 'p2'); assert.strictEqual(throwCapture.victim.partner, 'p1');
+    assert.strictEqual(throwCaptureHud.lamuh.throw.state, 'throw_capture'); assert.strictEqual(throwCaptureHud.lamuh.throw.role, 'attacker'); assert.strictEqual(throwCaptureHud.lamuh.throw.pushSuppressed, true); assert.strictEqual(throwCaptureHud.lamuh.throw.techRemaining, 8);
+    assert.strictEqual(throwCaptureHud.dummy.throw.role, 'victim'); assert.deepStrictEqual(throwCaptureHud.lamuh.throw.anchors.grab, throwCaptureHud.lamuh.throw.anchors.victim); assert.deepStrictEqual(throwAnchorStability.after, throwAnchorStability.before);
+    assert.strictEqual(throwTech.attacker.phase, 'throw_teched'); assert.strictEqual(throwTech.victim.phase, 'throw_teched'); assert.strictEqual(throwTech.attacker.health, 1000); assert.strictEqual(throwTech.victim.health, 1000); assert.strictEqual(throwTech.attacker.partner, null); assert.strictEqual(throwTech.victim.partner, null); assert.strictEqual(throwTech.attacker.outcome, 'teched'); assert.strictEqual(throwTech.victim.outcome, 'teched'); assert.ok(throwTech.attacker.invuln > 0 && throwTech.victim.invuln > 0); assert.strictEqual(throwTechHud.lamuh.throw.state, 'throw_teched');
+    assert.strictEqual(throwRelease.attacker.phase, 'throw_release'); assert.strictEqual(throwRelease.victim.phase, 'throw_victim_released'); assert.strictEqual(throwRelease.victim.health, throwRelease.start.defenderHealth - 100); assert.strictEqual(throwRelease.attacker.combo, 1); assert.strictEqual(throwRelease.attacker.damage, 100); assert.deepStrictEqual(throwRelease.attacker.route, ['forward_throw']); assert.ok(throwRelease.attacker.pos[0] > throwRelease.start.p1[0]); assert.strictEqual(throwReleaseHud.lamuh.throw.state, 'throw_release'); assert.strictEqual(throwReleaseHud.dummy.throw.state, 'throw_victim_released');
+    assert.strictEqual(throwKnockdown.victim.phase, 'knockdown'); assert.strictEqual(throwKnockdown.victim.grounded, true); assert.strictEqual(throwKnockdown.victim.health, throwKnockdown.victim.healthAtKnockdown); assert.ok(throwKnockdown.victim.knockdownTicks > 0);
+    assert.ok(throwCornerContainment.attacker.x >= throwCornerContainment.stage.left && throwCornerContainment.attacker.x <= throwCornerContainment.stage.right); assert.ok(throwCornerContainment.victim.x >= throwCornerContainment.stage.left && throwCornerContainment.victim.x <= throwCornerContainment.stage.right); assert.ok(Number.isFinite(throwCornerContainment.cameraX)); assert.deepStrictEqual(throwCornerContainment.warnings, []);
+    assert.strictEqual(throwResetCleanup.attackerPhase, 'throw_capture'); assert.strictEqual(throwResetCleanup.victimPhase, 'throw_victim_captured'); assert.deepStrictEqual(throwResetState, { attacker: { phase: 'idle', move: null, partner: null, outcome: null }, victim: { phase: 'idle', move: null, partner: null, outcome: null }, warnings: [] }); assert.strictEqual(throwResetHud.lamuh.throw.state, 'none'); assert.strictEqual(throwResetHud.dummy.throw.state, 'none');
     assert.ok(memoryEnd.geometries - memoryStart.geometries <= 1, `renderer geometry grew ${memoryStart.geometries} -> ${memoryEnd.geometries}`);
     assert.strictEqual(memoryEnd.pooledOverlays, memoryStart.pooledOverlays); assert.strictEqual(replay.actual, replay.expected); assert.deepStrictEqual(consoleErrors, []);
 
-    const screenshots = ['neutral_jump.png', 'neutral_landing.png', 'dash_authored_duration.png', 'chain_5l_5m_5h.png', 'chain_2l_2m_2h.png', 'launcher_bounded_apex.png', 'launcher_landing.png', 'aerial_2h_to_jj_hud.png', 'aerial_jj_to_jk.png', 'aerial_full_jj_jk_jl.png', 'aerial_jl_landing_knockdown.png', 'aerial_normals_contact_sheet.png', 'simultaneous_trade.png', 'combo_reset.png', 'block_rejected_during_hitstun.png', 'renderer_memory_and_controls.png'];
-    const report = { url, platform: process.platform, consoleErrors, jump, landing, dash, standingChain, lowChain, launcherApex, launcherLanding, aerial: { launcherToAirLight, airLightToMedium, fullRoute: fullAerialRoute, landing: aerialLanding, observedIssues: { droppedInputs: false, cameraEscape: false, floatiness: false, landingInterruption: false, comboReset: false } }, trade, comboReset, blockDuringHitstun, replay, rendererMemory: { start: memoryStart, end: memoryEnd, expectedStableGeometryRange: [memoryStart.geometries, memoryStart.geometries + 1] }, controls: { movement: 'WASD/arrows', groundAndAirLight: 'J', groundAndAirMedium: 'K', groundAndAirHeavy: 'L', block: 'O', pause: 'Escape', overlays: 'F1', step: '. while paused', reset: 'R', reserved: ['U Special', 'I Throw', 'P Burst'] }, screenshots, serverLogs: logs.join('').split('\n').slice(0, 12) };
+    const screenshots = ['neutral_jump.png', 'neutral_landing.png', 'dash_authored_duration.png', 'chain_5l_5m_5h.png', 'chain_2l_2m_2h.png', 'launcher_bounded_apex.png', 'launcher_landing.png', 'aerial_2h_to_jj_hud.png', 'aerial_jj_to_jk.png', 'aerial_full_jj_jk_jl.png', 'aerial_jl_landing_knockdown.png', 'aerial_normals_contact_sheet.png', 'throw_keyboard_i_startup_hud.png', 'throw_active_range.png', 'throw_whiff_recovery.png', 'throw_capture_anchors_hud.png', 'throw_tech.png', 'throw_release_impact.png', 'throw_knockdown.png', 'throw_corner_containment.png', 'throw_reset_cleanup.png', 'simultaneous_trade.png', 'combo_reset.png', 'block_rejected_during_hitstun.png', 'renderer_memory_and_controls.png'];
+    const throwHudEvidence = {
+      keyboardStartup: { normalizedInput: keyboardThrowStartup.hud.normalizedInput, controls: keyboardThrowStartup.hud.controls, status: keyboardThrowStartup.hud.combatActionStatus.throw, lamuh: keyboardThrowStartup.hud.lamuh.throw },
+      activeRange: throwActiveRange.hud.lamuh.throw,
+      capture: { lamuh: throwCaptureHud.lamuh.throw, dummy: throwCaptureHud.dummy.throw },
+      tech: { lamuh: throwTechHud.lamuh.throw, dummy: throwTechHud.dummy.throw },
+      release: { lamuh: throwReleaseHud.lamuh.throw, dummy: throwReleaseHud.dummy.throw },
+      reset: { lamuh: throwResetHud.lamuh.throw, dummy: throwResetHud.dummy.throw }
+    };
+    const report = { url, platform: process.platform, consoleErrors, jump, landing, dash, standingChain, lowChain, launcherApex, launcherLanding, aerial: { launcherToAirLight, airLightToMedium, fullRoute: fullAerialRoute, landing: aerialLanding, observedIssues: { droppedInputs: false, cameraEscape: false, floatiness: false, landingInterruption: false, comboReset: false } }, throw: { keyboard: { startup: keyboardThrowStartup.state, activeRange: { ticksFromInput: throwActiveRange.ticksFromInput, state: throwActiveRange.state }, whiff: { ticksFromInput: throwWhiff.ticksFromInput, state: throwWhiff.state }, heldNoRetrigger }, capture: throwCapture, anchorStability: throwAnchorStability, tech: throwTech, release: throwRelease, knockdown: throwKnockdown, cornerContainment: throwCornerContainment, resetCleanup: { before: throwResetCleanup, after: throwResetState }, hud: throwHudEvidence, observedIssues: { droppedInput: false, heldInputRetrigger: false, anchorDrift: false, repeatedDamage: false, cornerEscape: false, cameraEscape: false, resetLeak: false } }, trade, comboReset, blockDuringHitstun, replay, rendererMemory: { start: memoryStart, end: memoryEnd, expectedStableGeometryRange: [memoryStart.geometries, memoryStart.geometries + 1] }, controls: { movement: 'WASD/arrows', groundAndAirLight: 'J', groundAndAirMedium: 'K', groundAndAirHeavy: 'L', throwAndThrowTech: 'I / gamepad button 5', block: 'O', pause: 'Escape', overlays: 'F1', step: '. while paused', reset: 'R', reserved: ['U Special', 'P Burst'] }, screenshots, serverLogs: logs.join('').split('\n').slice(0, 12) };
     fs.writeFileSync(path.join(OUT_DIR, 'browser_smoke_report.json'), JSON.stringify(report, null, 2));
     console.log(`Browser smoke passed at ${url}`); console.log(JSON.stringify(report, null, 2));
   } finally {

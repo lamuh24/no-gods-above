@@ -4,9 +4,9 @@ import { KeyboardInputAdapter } from "./inputAdapter";
 import { DebugRenderer } from "./debugRenderer";
 import { ReplayRecording } from "../core/replay";
 import { TICKS_PER_SECOND } from "../core/types";
-import { currentAttackPhase } from "../core/engine";
+import { currentAttackPhase, getThrowDebugGeometry } from "../core/engine";
 import { fighterDefinitions } from "../data/fighters";
-import { debugKeyboardMapping, reservedCombatActions } from "./inputMap";
+import { debugKeyboardMapping, reservedCombatActions, standardGamepadMapping } from "./inputMap";
 
 const root = document.querySelector<HTMLDivElement>("#app")!;
 root.innerHTML = `
@@ -19,7 +19,7 @@ root.innerHTML = `
         <button id="mode">Mode: live</button><button id="pause">Pause</button><button id="step">Step</button><button id="reset">Reset</button><button id="overlays">Toggle overlays</button><button id="dummy">Dummy: auto</button><button id="export-tuning">Copy tuning JSON</button>
       </div>
       <pre id="hud"></pre><textarea id="tuning" readonly rows="8"></textarea>
-      <p class="help">A/D or arrows move · W jump · S crouch · J/K/L ground and air normals · O block · Esc pause · F1 overlays · . step while paused · R reset · M replay/live · U/I/P reserved</p>
+      <p class="help">A/D or arrows move · W jump · S crouch · J/K/L ground and air normals · I forward throw / throw tech · O block · Esc pause · F1 overlays · . step while paused · R reset · M replay/live · U/P reserved</p>
     </aside>
   </main>`;
 
@@ -46,7 +46,7 @@ function setModeLabel() {
 
 function toggleOverlays() {
   const enabled = !renderer.overlays.push;
-  Object.assign(renderer.overlays, { push: enabled, hurt: enabled, strike: enabled, origin: enabled, facing: enabled, ground: true });
+  Object.assign(renderer.overlays, { push: enabled, hurt: enabled, strike: enabled, throw: enabled, anchors: enabled, origin: enabled, facing: enabled, ground: true });
 }
 
 let lastDevice = input.read();
@@ -59,6 +59,23 @@ function updateHud() {
   const d = s.fighters.p2;
   const attack = f.currentAttack ? fighterDefinitions[f.kind].attacks[f.currentAttack] : null;
   const aerialCancelRoutes = f.cancelOptions.filter((attackId) => fighterDefinitions[f.kind].attacks[attackId].airOnly);
+  const throwHud = (id: "p1" | "p2", normalizedHeld?: boolean) => {
+    const fighter = s.fighters[id], geometry = getThrowDebugGeometry(s, id);
+    return {
+      move: geometry?.moveId ?? fighter.currentThrow,
+      state: geometry?.state ?? (fighter.currentThrow ? fighter.phase : "none"),
+      role: geometry?.role ?? "none",
+      partner: fighter.throwPartner,
+      timer: fighter.phaseTick,
+      techRemaining: geometry?.techWindowRemaining ?? 0,
+      facing: fighter.throwFacing,
+      invuln: fighter.throwInvulnTicks,
+      outcome: fighter.lastThrowOutcome,
+      pushSuppressed: geometry?.pushboxSuppressed ?? false,
+      anchors: geometry ? { grab: geometry.grabAnchor, victim: geometry.victimAnchor, release: geometry.releaseAnchor, camera: geometry.cameraTarget } : null,
+      input: { pressed: !!fighter.deterministicBuffer.pressed.throw, held: !!fighter.deterministicBuffer.current.throw, normalizedHeld: !!normalizedHeld }
+    };
+  };
   hud.textContent = JSON.stringify({
     mode: runtime.mode,
     activeDevice: lastDevice.device,
@@ -68,12 +85,12 @@ function updateHud() {
     tick: s.tick,
     seed: s.seed,
     checksum: runtime.checksum,
-    controls: { block: "O", pause: "Escape", overlays: "F1", step: ". (paused only)", reset: "R" },
-    reservedActions: reservedCombatActions,
+    controls: { throw: `I / gamepad button ${standardGamepadMapping.throw}`, block: "O", pause: "Escape", overlays: "F1", step: ". (paused only)", reset: "R" },
+    combatActionStatus: reservedCombatActions,
     debugWarnings: s.debugWarnings,
     aerial: { moveId: attack?.airOnly ? f.currentAttack : null, phase: attack?.airOnly ? currentAttackPhase(f) : "none", availableCancels: aerialCancelRoutes, remainingAirActions: f.airActionsRemaining },
-    lamuh: { health: f.health, state: f.phase, attack: f.currentAttack, attackPhase: currentAttackPhase(f), cancelOptions: f.cancelOptions, combo: f.comboCount, comboDamage: f.comboDamage, comboRoute: f.comboRoute, scaling: f.damageScaling, timer: f.phaseTick, pos: [f.x, f.y], vel: [f.vx, f.vy], grounded: f.grounded, hitstop: f.hitstop, hitstun: f.hitstun, blockstun: f.blockstun, buffer: f.deterministicBuffer.history.slice(-5) },
-    dummy: { health: d.health, mode: d.dummyMode, state: d.phase, timer: d.phaseTick, pos: [d.x, d.y], vel: [d.vx, d.vy], grounded: d.grounded, hitstop: d.hitstop, hitstun: d.hitstun, blockstun: d.blockstun },
+    lamuh: { health: f.health, state: f.phase, attack: f.currentAttack, attackPhase: currentAttackPhase(f), cancelOptions: f.cancelOptions, combo: f.comboCount, comboDamage: f.comboDamage, comboRoute: f.comboRoute, scaling: f.damageScaling, timer: f.phaseTick, pos: [f.x, f.y], vel: [f.vx, f.vy], grounded: f.grounded, hitstop: f.hitstop, hitstun: f.hitstun, blockstun: f.blockstun, throw: throwHud("p1", lastDevice.frame.throw), buffer: f.deterministicBuffer.history.slice(-5) },
+    dummy: { health: d.health, mode: d.dummyMode, state: d.phase, timer: d.phaseTick, pos: [d.x, d.y], vel: [d.vx, d.vy], grounded: d.grounded, hitstop: d.hitstop, hitstun: d.hitstun, blockstun: d.blockstun, throw: throwHud("p2") },
     replayFinalChecksum: replay ? runtime.runReplayToEnd(replay).checksums.at(-1) : "loading"
   }, null, 2);
 }

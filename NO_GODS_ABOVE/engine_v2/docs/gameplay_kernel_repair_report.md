@@ -39,7 +39,7 @@ Scope: existing Engine V2 prototype only; legacy `NO_GODS_ABOVE/game.js` exclude
 - Windows browser report: `docs/browser_smoke/browser_smoke_report.json`.
 - Visual evidence/contact sheet: `docs/browser_smoke/gameplay_kernel_repair_contact_sheet.png`.
 - Browser evidence covers jump/landing, dash duration, both grounded chains, bounded launcher/landing, symmetric trade, combo reset, hitstun block rejection, stable renderer resources, and conflict-free controls.
-- Deterministic replay fixture `replays/lamuh_light_opening.replay.json` is currently pinned to checksum `7d56f13c`; the serializable checksum changed when the later aerial-normal slice added explicit air-action and combo-route state.
+- Deterministic replay fixture `replays/lamuh_light_opening.replay.json` is currently pinned to checksum `0f5b884d`; the serialized checksum changed again when the universal-throw slice added explicit round, throw, partner, facing, invulnerability, and outcome state. The repaired grounded input script and result remain deterministic.
 
 ## Remaining gate
 

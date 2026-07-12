@@ -118,7 +118,7 @@ function testControlsHaveNoCombatDebugDuplicates() {
   const combatCodes = new Set(Object.entries(keyboardMapping).filter(([action]) => action !== 'pause').flatMap(([, codes]) => [...codes]));
   for (const [action, code] of Object.entries(debugKeyboardMapping)) { if (action !== 'pause') assert.ok(!combatCodes.has(code), `${code} duplicates combat and debug actions`); }
   assert.deepStrictEqual(keyboardMapping.block, ['KeyO']); assert.strictEqual(debugKeyboardMapping.pause, 'Escape'); assert.strictEqual(debugKeyboardMapping.overlay, 'F1');
-  assert.strictEqual(reservedCombatActions.special, 'reserved / inactive'); assert.strictEqual(reservedCombatActions.throw, 'reserved / inactive'); assert.strictEqual(reservedCombatActions.burst, 'reserved / inactive');
+  assert.strictEqual(reservedCombatActions.special, 'reserved / inactive'); assert.strictEqual(reservedCombatActions.throw, 'active / universal forward throw + throw tech'); assert.strictEqual(reservedCombatActions.burst, 'reserved / inactive');
 }
 
 function testBrowserSmokeUsesCrossPlatformNodeSpawn() {
