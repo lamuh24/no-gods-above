@@ -1880,3 +1880,10 @@ Date: 2026-07-11
 - Validation passed: Engine V2 full validate, model contract (24 bones/11 anchors/29 clips/no root motion), production build, Windows Chromium smoke, replay checksum `0f5b884d`, and stable renderer memory. `NO_GODS_ABOVE/game.js` has no diff.
 - Next: generate/import the Tripo mesh from the locked package, approve its turnaround before rigging, then preserve exact manifest bone/anchor/clip names and rerun the documented gates. No throws, specials, gameplay tuning, stages, or production animation work was added here.
 - Central Obsidian sync was attempted at `https://127.0.0.1:27124/` but returned HTTP `000`; this repo-local handoff is the fallback source of truth.
+
+## 2026-07-12 Engine V2 Blender-PC GitHub Handoff
+- Pushed `codex/engine-v2-lamuh-3d-prototype` to `origin` so the Engine V2 forward-throw checkpoint, failed procedural adapter proof, model contract, and Tripo/Blender handoff are available on the Blender PC.
+- The branch remains intentionally honest: `lamuh_prototype_v0.glb` is an adapter/rig proof that failed visual acceptance and must be replaced from the locked Tripo package before production use.
+- The review is a stacked draft PR based on `codex/engine-v2-checkpoint` / draft PR #7, preventing unrelated historical commits from appearing in this 3D continuation review.
+- Validation remains the 2026-07-11 green gate: full Engine V2 validate/build, Windows browser smoke, 24 bones, 11 anchors, 29 clips, no root motion, replay checksum `0f5b884d`, stable renderer resources, and unchanged legacy `NO_GODS_ABOVE/game.js`.
+- Central Obsidian sync was retried at `https://127.0.0.1:27124/` and again returned HTTP `000`; this repo-local note remains the fallback.
