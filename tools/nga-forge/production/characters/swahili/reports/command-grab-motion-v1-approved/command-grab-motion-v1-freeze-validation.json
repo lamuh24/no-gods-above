@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_COMMAND_GRAB_MOTION_V1",
+  "result": "PASS_APPROVED_MOTION_FREEZE",
+  "status": "approved_motion",
+  "candidateOnly": true,
+  "deployable": false,
+  "frameCount": 24,
+  "selectedReviewSpeed": 0.8,
+  "selectedReviewDurationMs": 1720,
+  "selectedAuthoredPreviewSha256": "48E636E8526C9B042232A29F30DFDDA176EA66A13376874E58A503335E230FE2",
+  "selectedMirroredPreviewSha256": "8B37D228385A66C21075314D010ED8803E1A698217DC9E24082CDDBF490A3EDE",
+  "checks": {
+    "v21ValidationPassed": true,
+    "selectedTimingValidationPassed": true,
+    "all24SourceReferencesPresentAndHashMatch": true,
+    "all24ApprovedCopiesAreByteIdentical": true,
+    "all24ApprovedFramesAre1536Rgba": true,
+    "sourceFilesRemainUnchanged": true,
+    "motionFrameOrderHashesRootsAndSpacingMatchV21": true,
+    "attackerRootPathPreserved": true,
+    "victimRootPathPreserved": true,
+    "oneSideSwitchRootCrossingPreserved": true,
+    "authoredSelectedPreviewHashPreserved": true,
+    "authoredSelectedPreviewHas24Frames": true,
+    "authoredSelectedPreviewIs1720Ms": true,
+    "mirroredPreviewHasMatchingFrameCountAndDuration": true,
+    "reviewTimingExplicitlyNonAuthoritative": true,
+    "combatTimingAndRuntimeBalanceRemainUnapproved": true,
+    "candidateOnlyAndNotDeployable": true,
+    "legacyGameJsHashUnchanged": true,
+    "noImageGenerationOrSourceRegeneration": true,
+    "runtimeIntegrationNotPerformed": true,
+    "finalPackagingNotAllowed": true
+  },
+  "failedChecks": [],
+  "approvedFrames": [
+    {
+      "index": 1,
+      "frameId": "01_mounted_startup",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/01_01_mounted_startup.png",
+      "sha256": "C6B32C5D134D38A8C67981E84ABDFD939639417924EADC5CB2C4E824564F6450"
+    },
+    {
+      "index": 2,
+      "frameId": "02_hand_reaches_scythe",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/02_02_hand_reaches_scythe.png",
+      "sha256": "3CDD3C33568D01A41DFF8B13BB7CF11DCB6EF28370DC780A6F4AB61CF4AF4A74"
+    },
+    {
+      "index": 3,
+      "frameId": "03_scythe_clears_back",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/03_03_scythe_clears_back.png",
+      "sha256": "B9C69D558602E41A74E1B76F7509254017DD19C72E20AEE2E36C79ECD386FE51"
+    },
+    {
+      "index": 4,
+      "frameId": "04_blade_flip_transition",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/04_04_blade_flip_transition.png",
+      "sha256": "822F2834B17B2DEAC7F773B502BB9D058F2B7FA0FB604E894B54B26068C90DA6"
+    },
+    {
+      "index": 5,
+      "frameId": "05_hook_ready_maximum_coil",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/05_05_hook_ready_maximum_coil.png",
+      "sha256": "BA1BF4AC84A91FDAAC4F25AFFCC9D99C20D6E76371E931A4B2A7916F0A7560A6"
+    },
+    {
+      "index": 6,
+      "frameId": "06_lead_foot_plant_weapon_lag",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/06_06_lead_foot_plant_weapon_lag.png",
+      "sha256": "40A2AA7282125FE784A172539313CDB3BC915F7D5D5DFD9253C19E157C60E4EF"
+    },
+    {
+      "index": 7,
+      "frameId": "07_acceleration_begins_scoop_curve",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/07_07_acceleration_begins_scoop_curve.png",
+      "sha256": "BD990AAA57F778E0295F23DE5603B0AA86ED43CBB9AE65A5840F72516E297519"
+    },
+    {
+      "index": 8,
+      "frameId": "07_scoop_acceleration_entry",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/08_07_scoop_acceleration_entry.png",
+      "sha256": "0919982638284F2F5B0A751BCBDD9910AFC43966FDA09357695900CE8AA254E4"
+    },
+    {
+      "index": 9,
+      "frameId": "08_maximum_speed_scoop",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/09_08_maximum_speed_scoop.png",
+      "sha256": "5EB4ED48849D86448EA0F9FE954F3306A9336F34F662F68540ECC88EEA400E3C"
+    },
+    {
+      "index": 10,
+      "frameId": "09_first_low_hook_contact",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/10_09_first_low_hook_contact.png",
+      "sha256": "3C245A7A41A256BB7B5BDD7D876D87480998C03DC0A7B1F8847F0FF2195A7890"
+    },
+    {
+      "index": 11,
+      "frameId": "10_impact_compression_secure_scoop_catch",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/11_10_impact_compression_secure_scoop_catch.png",
+      "sha256": "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF"
+    },
+    {
+      "index": 12,
+      "frameId": "12_feet_swept_out_locked",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/12_12_feet_swept_out_locked.png",
+      "sha256": "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF"
+    },
+    {
+      "index": 13,
+      "frameId": "13_pelvis_leading_rotation_v2",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/13_13_pelvis_leading_rotation_v2.png",
+      "sha256": "01E59477C58F65E8BE382D7C8506F33DCCD1307216F274FBADC8F042BDEF9490"
+    },
+    {
+      "index": 14,
+      "frameId": "14_locked_low_carry",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/14_14_locked_low_carry.png",
+      "sha256": "7D0A60F1CBE886F141F2601A907BB975BD4CC8CAD4393DF14D85E71E890D81DB"
+    },
+    {
+      "index": 15,
+      "frameId": "15_continued_carry_head_direction_v2",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/15_15_continued_carry_head_direction_v2.png",
+      "sha256": "E00B55DEB99423033E2DA359AD3E9563B9972764085E3CD8F8DB4E9A8CAACF27"
+    },
+    {
+      "index": 16,
+      "frameId": "16_airborne_release_head_direction_v2",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/16_16_airborne_release_head_direction_v2.png",
+      "sha256": "1B52D8F7D5CF2A4CD1AF12DE52FC9B6DA1BDB3D76A5E8F578CD822BECE285754"
+    },
+    {
+      "index": 17,
+      "frameId": "16_to_17_head_reorientation_connector_v2",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/17_16_to_17_head_reorientation_connector_v2.png",
+      "sha256": "081CC7EFFD4F8DB8B24092879F0A669CB700614BAF31531E02C6BB2DFC692B4B"
+    },
+    {
+      "index": 18,
+      "frameId": "16_airborne_hang",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/18_16_airborne_hang.png",
+      "sha256": "F5B6E6B03F0989573E3CFD3387677CECF5AAD303E0E11D0C33BA84D91C8629F8"
+    },
+    {
+      "index": 19,
+      "frameId": "17_aim_at_midair",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/19_17_aim_at_midair.png",
+      "sha256": "4C4F0C389AFCF51FA822C5D2E477261019093E31FF9F0CF47082FF14E42BA441"
+    },
+    {
+      "index": 20,
+      "frameId": "18_midair_shot",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/20_18_midair_shot.png",
+      "sha256": "C1AFA8C3F191B38B2E8C5DD20105349F934BD7FD8AE268A982CE59110FE9B5A3"
+    },
+    {
+      "index": 21,
+      "frameId": "19_post_shot_fall",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/21_19_post_shot_fall.png",
+      "sha256": "96851C8504ABE9EC78AD075BD3C5191189F73094137782088B6BDD7706579C36"
+    },
+    {
+      "index": 22,
+      "frameId": "20_fall_toward_floor",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/22_20_fall_toward_floor.png",
+      "sha256": "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D"
+    },
+    {
+      "index": 23,
+      "frameId": "21_landing_after_shot",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/23_21_landing_after_shot.png",
+      "sha256": "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D"
+    },
+    {
+      "index": 24,
+      "frameId": "22_recovery",
+      "approvedPath": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/24_22_recovery.png",
+      "sha256": "6FCAE963E610ABFD49E4BD96DEE3EFB7F7C40DB190D1B40358B7011DF0995A7C"
+    }
+  ],
+  "nextMilestone": "SWAHILI_LOCOMOTION_COMPLETION_V1",
+  "nextGate": "awaiting_combat_timing_runtime_balance"
+}
