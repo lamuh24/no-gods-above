@@ -1,0 +1,494 @@
+{
+  "anchors": [
+    {
+      "effect": {
+        "x": 930,
+        "y": 690
+      },
+      "farFoot": {
+        "x": 1016,
+        "y": 1286
+      },
+      "feet": {
+        "x": 521,
+        "y": 1406
+      },
+      "frame": 0,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 521,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "heavy_hit_entry"
+    },
+    {
+      "effect": {
+        "x": 930,
+        "y": 690
+      },
+      "farFoot": {
+        "x": 1033,
+        "y": 1290
+      },
+      "feet": {
+        "x": 503,
+        "y": 1406
+      },
+      "frame": 3,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 503,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "heavy_hit_reaction"
+    },
+    {
+      "effect": {
+        "x": 930,
+        "y": 690
+      },
+      "farFoot": {
+        "x": 996,
+        "y": 1283
+      },
+      "feet": {
+        "x": 540,
+        "y": 1406
+      },
+      "frame": 11,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 540,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "heavy_hit_recovery"
+    }
+  ],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json",
+    "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+    "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json"
+  ],
+  "combatTrack": {
+    "active": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "recovery": 23,
+    "startup": 0,
+    "timingAuthorship": {
+      "authoredTotalDuration": 23,
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "durationModel": "independently_authored_per_move",
+      "simulationTickRateHz": 60,
+      "timingExceptions": [],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default"
+    }
+  },
+  "entryPose": {
+    "elevation": "grounded",
+    "facing": "forward",
+    "handOccupancy": {
+      "left": "pistol",
+      "right": "pistol"
+    },
+    "id": "neutral_stand",
+    "plantedFoot": "both",
+    "silhouette": "grounded_control_state",
+    "verticalMotion": "stationary",
+    "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+    "weight": "neutral"
+  },
+  "exitPose": {
+    "elevation": "grounded",
+    "facing": "forward",
+    "handOccupancy": {
+      "left": "pistol",
+      "right": "pistol"
+    },
+    "id": "neutral_stand",
+    "plantedFoot": "both",
+    "silhouette": "control_state_resolved_by_simulation",
+    "verticalMotion": "stationary",
+    "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+    "weight": "neutral"
+  },
+  "exposures": [
+    {
+      "duration": 3,
+      "sourceFrameId": "heavy_hit_entry",
+      "start": 0
+    },
+    {
+      "duration": 8,
+      "sourceFrameId": "heavy_hit_reaction",
+      "start": 3
+    },
+    {
+      "duration": 12,
+      "sourceFrameId": "heavy_hit_recovery",
+      "start": 11
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "losslessMirrorRequired": true,
+    "mirrorAxisX": 768,
+    "runtimeP2": "horizontal_mirror_screen_left"
+  },
+  "gameplayTimingStatus": {
+    "authoritative": false,
+    "candidateValues": {
+      "knockdown": false,
+      "launch": false,
+      "returnState": "simulation_resolved",
+      "sandboxHitstopTicks": 7,
+      "sandboxHitstunTicks": 23,
+      "visualTicks": 23
+    },
+    "notes": [
+      "heavy reaction timing is a sandbox candidate awaiting combat approval.",
+      "Hitstun, launch, stagger, and knockdown decisions are external combat state.",
+      "Hitstop freezes both gameplay cursor and artwork exposure."
+    ],
+    "owner": "simulation",
+    "state": "sandbox_candidate_awaiting_combat_approval"
+  },
+  "groundingTrack": [
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 1016,
+        "y": 1286
+      },
+      "farFootRole": "lifted_non_support",
+      "nearFoot": {
+        "x": 521,
+        "y": 1406
+      },
+      "nearFootRole": "principal_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "heavy_hit_entry"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 1033,
+        "y": 1290
+      },
+      "farFootRole": "lifted_non_support",
+      "nearFoot": {
+        "x": 503,
+        "y": 1406
+      },
+      "nearFootRole": "principal_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "heavy_hit_reaction"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 996,
+        "y": 1283
+      },
+      "farFootRole": "lifted_non_support",
+      "nearFoot": {
+        "x": 540,
+        "y": 1406
+      },
+      "nearFootRole": "principal_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "heavy_hit_recovery"
+    }
+  ],
+  "id": "heavy_hit_reaction",
+  "interruptPoses": [
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "heavy_hit_stagger",
+      "plantedFoot": "left",
+      "silhouette": "deep_backward_stagger",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "backward"
+    }
+  ],
+  "interruptionBehavior": {
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state"
+    ],
+    "onInterrupt": "restart_or_replace_reaction_from_new_authoritative_combat_result",
+    "owner": "simulation",
+    "returnStatePolicy": "simulation_resolves_idle_or_crouch_from_current_legal_control_input"
+  },
+  "landing": [],
+  "phases": {
+    "active": [],
+    "anticipation": [],
+    "followThrough": [
+      {
+        "end": 22,
+        "start": 11
+      }
+    ],
+    "impact": [
+      {
+        "end": 10,
+        "start": 0
+      }
+    ],
+    "recovery": [
+      {
+        "end": 22,
+        "start": 11
+      }
+    ],
+    "startup": []
+  },
+  "playbackPolicy": {
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "clamp_to_gameplay_state",
+    "mode": "external_gameplay_state"
+  },
+  "presentationSockets": [
+    {
+      "eventTypes": [
+        "hit_spark",
+        "impact_sound",
+        "optional_camera_shake",
+        "optional_smoke_debris"
+      ],
+      "id": "hit_contact",
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "x": 930,
+      "y": 690
+    },
+    {
+      "eventTypes": [
+        "character_hit_flash"
+      ],
+      "id": "character_center",
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "x": 768,
+      "y": 820
+    }
+  ],
+  "presentationTrack": [
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 0,
+      "index": 0,
+      "payload": {
+        "optional": false,
+        "profile": "heavy_hit_spark",
+        "socket": "hit_contact",
+        "trigger": "external_hit_result"
+      },
+      "type": "spawn_vfx"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 0,
+      "index": 1,
+      "payload": {
+        "optional": false,
+        "profile": "heavy_character_hit_flash",
+        "socket": "character_center",
+        "trigger": "external_hit_result"
+      },
+      "type": "start_hit_flash"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 0,
+      "index": 2,
+      "payload": {
+        "optional": false,
+        "profile": "heavy_impact",
+        "socket": "hit_contact",
+        "trigger": "external_hit_result"
+      },
+      "type": "play_sound"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 0,
+      "index": 3,
+      "payload": {
+        "optional": true,
+        "profile": "heavy_impact_shake",
+        "socket": "hit_contact",
+        "trigger": "external_hit_result"
+      },
+      "type": "start_shake"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 0,
+      "index": 4,
+      "payload": {
+        "optional": true,
+        "profile": "heavy_smoke_debris",
+        "socket": "hit_contact",
+        "trigger": "external_hit_result"
+      },
+      "type": "spawn_vfx"
+    }
+  ],
+  "promotionState": "candidate",
+  "provenance": {
+    "cleanupOperations": [
+      "byte_identical_source_promotion",
+      "metadata_only_package_authoring"
+    ],
+    "createdAt": "2026-07-14T00:00:00Z",
+    "humanApproval": {
+      "approvedAt": "2026-07-14",
+      "approvedBy": "human_user",
+      "state": "approved"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package. Not approved for production roster or deployment."
+    ],
+    "model": "openai_builtin_imagegen",
+    "promptHash": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+      "repo://tools/nga-forge/docs/TIMING_AUTHORING.md"
+    ],
+    "revisionChain": [
+      "APPROVED_AS_DEFENSE_REACTION_MOTION_V1",
+      "heavy_hit_reaction_candidate_package_v1",
+      "APPROVED_AFTER_IN_GAME_REVIEW"
+    ],
+    "seed": null,
+    "sourceType": "ai_assisted",
+    "tool": "NGA Forge and Codex deterministic package compiler"
+  },
+  "schemaVersion": "2.1.0-contract",
+  "simulationLength": 23,
+  "sourceFrames": [
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+      "height": 1536,
+      "id": "heavy_hit_entry",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/defense-reaction-motion-v1.provenance.json",
+      "sha256": "C4048FB7106AAB0A6E365367CEB6C1B6B64B922DF56EB4F628531272A10662A7",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_entry.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+      "height": 1536,
+      "id": "heavy_hit_reaction",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/defense-reaction-key-poses-v1.provenance.json",
+      "sha256": "2EBA6C233687CE3426B9439DFF334F82811292952E9276DF9F26140CDBAC9096",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+      "height": 1536,
+      "id": "heavy_hit_recovery",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/defense-reaction-motion-v1.provenance.json",
+      "sha256": "F612EE1A43B87D6A6F2C321EF77BA2B82E6031C5E4A22652FDB1A82330AF79EB",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_recovery.png",
+      "width": 1536
+    }
+  ],
+  "transitionCompatibility": [
+    {
+      "addsGameplayFrames": false,
+      "condition": "authoritative_heavy_hit_result",
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "standing_block",
+        "crouching_block"
+      ],
+      "toState": "heavy_hit_reaction"
+    },
+    {
+      "addsGameplayFrames": false,
+      "condition": "hitstun_zero_and_no_knockdown_launch_or_forced_branch",
+      "fromStates": [
+        "heavy_hit_reaction"
+      ],
+      "toState": "valid_control_state"
+    }
+  ],
+  "transitions": [],
+  "validation": {
+    "creativeWarnings": [
+      "sandbox_timing_awaits_combat_approval",
+      "large_idle_to_reaction_cut_is_intentional",
+      "no_automatic_knockdown"
+    ],
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "transition_state_compatibility",
+      "rollback_event_identity",
+      "simulation_owns_cursor",
+      "grounding_track",
+      "mirror_round_trip",
+      "provenance_present"
+    ],
+    "humanApprovalRequired": true
+  },
+  "version": 1
+}

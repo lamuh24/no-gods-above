@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "knockdown_recovery",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 51,
+  "sourceFrames": [
+    {
+      "id": "knockdown_recovery_01_launch_reaction",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/01_launch_reaction.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "7B0212226FD30A878901FC15F5586EF809E07BBA0BFFD6E88DFED369DF4A7C73",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_02_airborne_tumble",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "1574E722E395A86A9508713786E55FC8DA048E7514AF80585D1E8D94842F40A1",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_03_ground_impact",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "DBE082B7386C35AE7EA60387F6B97CE34F0095340D6174B1926C4678E6AA2874",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_04_impact_settle",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "FC73B12790CC069B4645A8D43620BCF34787A3EEAD4EDE06DEE09FCC9FC1EBB9",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_05_face_up_knockdown",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "5C3F8993BC3D8C2588E75ABDA754B45313134857CE8D9426861AE283E3D31A31",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_06_shoulder_roll_knee_draw",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/06_shoulder_roll_knee_draw.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E5B0B19C233D7599BF91CF2478D22425B759150ECB25A0332551A4C24FA1E8F2",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_07_face_up_roll_brace",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/07_face_up_roll_brace.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E12DCE0E7CAB12F4B0E03C4F686DC11A2C2CB3BC59499CEACDF44B58F4E164DD",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_08_push_to_kneel",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "C5A6C7F05BD01CCCE0B275F35C3BC5F971C9FDF56B75A61BD745F45FD082AC20",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_09_neutral_get_up",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "01E5A9544C3CEAA47F137608AE66DCD8B96DB96C7643C69C28CC75A9D3A866A6",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "knockdown_recovery_10_rise_to_stand",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "8C81C0B7423733B42FBE5B5812A052C460F279165FA6056DE35D0440D46A060D",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "knockdown_recovery_01_launch_reaction",
+      "start": 0,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_02_airborne_tumble",
+      "start": 4,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_03_ground_impact",
+      "start": 8,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_04_impact_settle",
+      "start": 10,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_05_face_up_knockdown",
+      "start": 12,
+      "duration": 18
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_06_shoulder_roll_knee_draw",
+      "start": 30,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_07_face_up_roll_brace",
+      "start": 33,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_08_push_to_kneel",
+      "start": 37,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_09_neutral_get_up",
+      "start": 41,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_10_rise_to_stand",
+      "start": 47,
+      "duration": 4
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [
+      {
+        "start": 0,
+        "end": 50
+      }
+    ],
+    "recovery": [
+      {
+        "start": 0,
+        "end": 50
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "knockdown_recovery_01_launch_reaction",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 629,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 629,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 906,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 4,
+      "sourceFrameId": "knockdown_recovery_02_airborne_tumble",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 684,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 684,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 852,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 8,
+      "sourceFrameId": "knockdown_recovery_03_ground_impact",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 639,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 639,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 897,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 10,
+      "sourceFrameId": "knockdown_recovery_04_impact_settle",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 602,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 602,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 933,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 12,
+      "sourceFrameId": "knockdown_recovery_05_face_up_knockdown",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 611,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 611,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 923,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 30,
+      "sourceFrameId": "knockdown_recovery_06_shoulder_roll_knee_draw",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 643,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 643,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 891,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 33,
+      "sourceFrameId": "knockdown_recovery_07_face_up_roll_brace",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 635,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 900,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 37,
+      "sourceFrameId": "knockdown_recovery_08_push_to_kneel",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 670,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 670,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 865,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 41,
+      "sourceFrameId": "knockdown_recovery_09_neutral_get_up",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 666,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 666,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 869,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 47,
+      "sourceFrameId": "knockdown_recovery_10_rise_to_stand",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 662,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 662,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 874,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "knockdown_recovery_01_launch_reaction",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 629,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 906,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_02_airborne_tumble",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 684,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 852,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_03_ground_impact",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 639,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 897,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_04_impact_settle",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 602,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 933,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_05_face_up_knockdown",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 611,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 923,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_06_shoulder_roll_knee_draw",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 643,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 891,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_07_face_up_roll_brace",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 900,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_08_push_to_kneel",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 670,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 865,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_09_neutral_get_up",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 666,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 869,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "knockdown_recovery_10_rise_to_stand",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 662,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 874,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "knockdown_recovery"
+      ],
+      "toState": "knockdown_recovery",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "knockdown_recovery"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 51,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 51,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "APPROVED_AS_KNOCKDOWN_RECOVERY_MOTION_V1",
+      "timingAuthority": "approved_motion_review_timing_sandbox_combat_values_non_authoritative",
+      "rootMotionAuthority": "sandbox_simulation"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "APPROVED_AS_KNOCKDOWN_RECOVERY_MOTION_V1",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-07-26T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "APPROVED_AS_KNOCKDOWN_RECOVERY_MOTION_V1",
+      "knockdown_recovery_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "APPROVED_AS_KNOCKDOWN_RECOVERY_MOTION_V1",
+    "sourceAlphaAudit": {
+      "knockdown_recovery_01_launch_reaction": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          306,
+          629,
+          1230,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 324537,
+        "semiTransparentPixelCount": 49830,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 32,
+        "pass": true
+      },
+      "knockdown_recovery_02_airborne_tumble": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          488,
+          642,
+          1049,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 214888,
+        "semiTransparentPixelCount": 29799,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "knockdown_recovery_03_ground_impact": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          338,
+          739,
+          1198,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 326804,
+        "semiTransparentPixelCount": 47998,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 32,
+        "pass": true
+      },
+      "knockdown_recovery_04_impact_settle": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          216,
+          848,
+          1320,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 271451,
+        "semiTransparentPixelCount": 35760,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 27,
+        "pass": true
+      },
+      "knockdown_recovery_05_face_up_knockdown": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          246,
+          933,
+          1289,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 230063,
+        "semiTransparentPixelCount": 38101,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 23,
+        "pass": true
+      },
+      "knockdown_recovery_06_shoulder_roll_knee_draw": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          354,
+          853,
+          1181,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 225442,
+        "semiTransparentPixelCount": 16986,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 22,
+        "pass": true
+      },
+      "knockdown_recovery_07_face_up_roll_brace": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          327,
+          808,
+          1209,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 266826,
+        "semiTransparentPixelCount": 18946,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 26,
+        "pass": true
+      },
+      "knockdown_recovery_08_push_to_kneel": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          443,
+          738,
+          1093,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 235082,
+        "semiTransparentPixelCount": 18741,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 23,
+        "pass": true
+      },
+      "knockdown_recovery_09_neutral_get_up": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          429,
+          726,
+          1107,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 248247,
+        "semiTransparentPixelCount": 40216,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 6,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 24,
+        "pass": true
+      },
+      "knockdown_recovery_10_rise_to_stand": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          414,
+          508,
+          1123,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 268206,
+        "semiTransparentPixelCount": 22237,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 26,
+        "pass": true
+      }
+    },
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}

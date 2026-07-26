@@ -1,0 +1,499 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "standing_to_crouch",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 11,
+  "sourceFrames": [
+    {
+      "id": "idle_00",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "A33A3C81F8C554A9E0A750B91EB875A17F7513A70DE646D8E2DBC2956BF2E077",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "crouching_block_release",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_release.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "1995D4F21ABA5E6568DFCD05F92AE3F88D9FE83975DD9DE8293A81DE32718DF6",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "crouch",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouch.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "idle_00",
+      "start": 0,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "crouching_block_release",
+      "start": 3,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "crouch",
+      "start": 6,
+      "duration": 5
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [
+      {
+        "start": 0,
+        "end": 10
+      }
+    ],
+    "recovery": [
+      {
+        "start": 0,
+        "end": 10
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "idle_00",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 591,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 591,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 851,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 3,
+      "sourceFrameId": "crouching_block_release",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 627,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 627,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 900,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 6,
+      "sourceFrameId": "crouch",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 635,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 916,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "idle_00",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 591,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 851,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "crouching_block_release",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 627,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 900,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "crouch",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 916,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "standing_to_crouch"
+      ],
+      "toState": "standing_to_crouch",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "standing_to_crouch"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 11,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 11,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "awaiting_human_stance_transition_motion_review",
+      "timingAuthority": "candidate_11_ticks",
+      "rootMotionAuthority": "simulation_owned_or_not_applicable"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "awaiting_human_stance_transition_motion_review",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-07-26T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "awaiting_human_stance_transition_motion_review",
+      "standing_to_crouch_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "pending",
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "awaiting_human_stance_transition_motion_review",
+    "sourceAlphaAudit": {
+      "idle_00": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          289,
+          342,
+          1154,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377984,
+        "semiTransparentPixelCount": 30009,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "crouching_block_release": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          341,
+          1220,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 425182,
+        "semiTransparentPixelCount": 27767,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "crouch": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          340,
+          1244,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      }
+    },
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}

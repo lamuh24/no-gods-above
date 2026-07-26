@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "standing_light",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 12,
+  "sourceFrames": [
+    {
+      "id": "standing_normals_motion_v1_light_01_compact_chamber",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/01_compact_chamber.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "78BC144277AC7069E7A586461A705FE52B5594D7ED3B8AA567E6F6F6134DEC24",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "standing_normals_motion_v1_light_02_fast_low_extension",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/02_fast_low_extension_connector.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "9855161B80638E36CCB2F32D0EF0CED0836461D25D11B338917ECDC188B5C1A7",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "standing_normals_motion_v1_light_03_low_kick_contact",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/02_low_kick_contact.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "A06D78B94003E986440759825E62196096179F782062904E57F1EE19BC83B4C1",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "standing_normals_motion_v1_light_04_post_contact_recoil",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/04_post_contact_recoil_connector.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "8028A6CD81D4A49DE433FECAC9F5176A05770C3BA459E11D6B0CE9A714ED7CA1",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "standing_normals_motion_v1_light_05_leg_retraction",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/03_leg_retraction.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "5FDF2EE53AE55F4B962A2E6AA6B350545B9B862EB860FC7E91AA54C67703EBAF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "standing_normals_motion_v1_light_06_planted_recovery",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/04_planted_recovery.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "00B627387A6E44118991E0940138D64187D527C88FCCF96E3164E36099206D03",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_01_compact_chamber",
+      "start": 0,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_02_fast_low_extension",
+      "start": 3,
+      "duration": 1
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_03_low_kick_contact",
+      "start": 4,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_04_post_contact_recoil",
+      "start": 6,
+      "duration": 1
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_05_leg_retraction",
+      "start": 7,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_06_planted_recovery",
+      "start": 9,
+      "duration": 3
+    }
+  ],
+  "phases": {
+    "anticipation": [
+      {
+        "start": 0,
+        "end": 3
+      }
+    ],
+    "startup": [
+      {
+        "start": 0,
+        "end": 3
+      }
+    ],
+    "active": [
+      {
+        "start": 4,
+        "end": 5
+      }
+    ],
+    "impact": [
+      {
+        "start": 4,
+        "end": 5
+      }
+    ],
+    "followThrough": [
+      {
+        "start": 6,
+        "end": 11
+      }
+    ],
+    "recovery": [
+      {
+        "start": 6,
+        "end": 11
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "standing_normals_motion_v1_light_01_compact_chamber",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 469,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 469,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 630,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 3,
+      "sourceFrameId": "standing_normals_motion_v1_light_02_fast_low_extension",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 728,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 728,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1009,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 4,
+      "sourceFrameId": "standing_normals_motion_v1_light_03_low_kick_contact",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 770,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 770,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1052,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 6,
+      "sourceFrameId": "standing_normals_motion_v1_light_04_post_contact_recoil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 738,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 738,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1014,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 7,
+      "sourceFrameId": "standing_normals_motion_v1_light_05_leg_retraction",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 722,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 722,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 984,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 9,
+      "sourceFrameId": "standing_normals_motion_v1_light_06_planted_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 707,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 707,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 900,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_01_compact_chamber",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 469,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 630,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_02_fast_low_extension",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 728,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1009,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_03_low_kick_contact",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 770,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1052,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_04_post_contact_recoil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 738,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1014,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_05_leg_retraction",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 722,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 984,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "standing_normals_motion_v1_light_06_planted_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 707,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 900,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "standing_light"
+      ],
+      "toState": "standing_light",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "standing_light"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 4,
+    "active": 2,
+    "recovery": 6,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 12,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "approved_current_baseline_with_polish_debt",
+      "timingAuthority": "approved_current_review_baseline",
+      "rootMotionAuthority": "simulation_owned_or_not_applicable"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "approved_current_baseline_with_polish_debt",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-07-26T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "approved_current_baseline_with_polish_debt",
+      "standing_light_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "approved_current_baseline_with_polish_debt",
+    "sourceAlphaAudit": {
+      "standing_normals_motion_v1_light_01_compact_chamber": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          283,
+          333,
+          817,
+          1413
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 316895,
+        "semiTransparentPixelCount": 30360,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 31,
+        "pass": true
+      },
+      "standing_normals_motion_v1_light_02_fast_low_extension": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          400,
+          333,
+          1338,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 369779,
+        "semiTransparentPixelCount": 28471,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "standing_normals_motion_v1_light_03_low_kick_contact": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          443,
+          336,
+          1380,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 386008,
+        "semiTransparentPixelCount": 45042,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "standing_normals_motion_v1_light_04_post_contact_recoil": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          416,
+          329,
+          1337,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 399862,
+        "semiTransparentPixelCount": 29286,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "standing_normals_motion_v1_light_05_leg_retraction": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          417,
+          333,
+          1290,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377062,
+        "semiTransparentPixelCount": 26082,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "standing_normals_motion_v1_light_06_planted_recovery": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          483,
+          332,
+          1125,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 352411,
+        "semiTransparentPixelCount": 31862,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 35,
+        "pass": true
+      }
+    },
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}

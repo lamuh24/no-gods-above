@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "swahili_goal_v1",
+  "displayName": "Swahili - Moveset Goal V1 Candidate",
+  "bundleVersion": 1,
+  "promotionState": "candidate",
+  "poseLibrary": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "standing_guard",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "responsive_standing_guard",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "crouch",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "low",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "compact_crouch",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "crouching_guard",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "low",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "compact_low_guard",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "light_hit_reaction",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "backward",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "compact_directional_recoil",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "heavy_hit_stagger",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "backward",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "deep_backward_stagger",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "grab_control",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "forward",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "captured_weapon_control",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "airborne",
+      "facing": "forward",
+      "elevation": "airborne",
+      "plantedFoot": "none",
+      "weight": "airborne",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "airborne_weapon_control",
+      "verticalMotion": "falling"
+    }
+  ],
+  "animationPackages": [
+    "moves/idle/animation.package.json",
+    "moves/walk-forward/animation.package.json",
+    "moves/dash-forward/animation.package.json",
+    "moves/dash-backward/animation.package.json",
+    "moves/standing-to-crouch/animation.package.json",
+    "moves/crouch-to-standing/animation.package.json",
+    "moves/turn-side-switch/animation.package.json",
+    "moves/jump-fall-landing/animation.package.json",
+    "moves/air-dash-forward/animation.package.json",
+    "moves/air-dash-backward/animation.package.json",
+    "moves/air-dash-side-switch/animation.package.json",
+    "moves/standing-light/animation.package.json",
+    "moves/standing-heavy/animation.package.json",
+    "moves/crouching-light/animation.package.json",
+    "moves/crouching-medium/animation.package.json",
+    "moves/crouching-heavy/animation.package.json",
+    "reused/standing-block/animation.package.json",
+    "reused/crouching-block/animation.package.json",
+    "reused/light-hit-reaction/animation.package.json",
+    "reused/heavy-hit-reaction/animation.package.json",
+    "moves/knockdown-recovery/animation.package.json",
+    "reused/universal-grab-attempt/animation.package.json",
+    "reused/universal-forward-throw/animation.package.json",
+    "reused/universal-backward-throw/animation.package.json",
+    "moves/command-grab-v2/animation.package.json"
+  ],
+  "packageGroups": {
+    "universal_movement": [
+      "idle",
+      "walk_forward",
+      "dash_forward",
+      "dash_backward",
+      "standing_to_crouch",
+      "crouch_to_standing",
+      "turn_side_switch"
+    ],
+    "air_movement": [
+      "jump_fall_landing",
+      "air_dash_forward",
+      "air_dash_backward",
+      "air_dash_side_switch"
+    ],
+    "ground_normals": [
+      "standing_light",
+      "standing_heavy",
+      "crouching_light",
+      "crouching_medium",
+      "crouching_heavy"
+    ],
+    "defense": [
+      "standing_block",
+      "crouching_block"
+    ],
+    "reactions_and_recovery": [
+      "light_hit_reaction",
+      "heavy_hit_reaction",
+      "knockdown_recovery"
+    ],
+    "grabs": [
+      "universal_grab_attempt",
+      "universal_forward_throw",
+      "universal_backward_throw",
+      "command_grab_v2"
+    ]
+  },
+  "design": {
+    "characterBible": "repo://tools/nga-forge/production/characters/swahili/character.lock.json",
+    "palette": "repo://tools/nga-forge/production/characters/swahili/reference.manifest.json",
+    "forbiddenMutations": [
+      "identity_drift",
+      "costume_drift",
+      "pistol_mutation",
+      "scythe_mutation",
+      "scale_pumping",
+      "camera_recenter",
+      "baked_vfx"
+    ]
+  },
+  "runtimeProfile": {
+    "candidateOnly": true,
+    "deployable": false,
+    "productionRoster": false,
+    "isolatedSandboxOnly": true,
+    "centerline": 768,
+    "footPosition": 1408,
+    "worldHeight": 1067,
+    "unsupportedFallbacksWarn": true
+  }
+}

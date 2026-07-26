@@ -1,0 +1,2609 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "command_grab_v2",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 107,
+  "sourceFrames": [
+    {
+      "id": "command_grab_01_mounted_startup",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/01_01_mounted_startup.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "C6B32C5D134D38A8C67981E84ABDFD939639417924EADC5CB2C4E824564F6450",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_02_hand_reaches_scythe",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/02_02_hand_reaches_scythe.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "3CDD3C33568D01A41DFF8B13BB7CF11DCB6EF28370DC780A6F4AB61CF4AF4A74",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_03_scythe_clears_back",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/03_03_scythe_clears_back.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "B9C69D558602E41A74E1B76F7509254017DD19C72E20AEE2E36C79ECD386FE51",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_04_blade_flip_transition",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/04_04_blade_flip_transition.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "822F2834B17B2DEAC7F773B502BB9D058F2B7FA0FB604E894B54B26068C90DA6",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_05_hook_ready_maximum_coil",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/05_05_hook_ready_maximum_coil.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "BA1BF4AC84A91FDAAC4F25AFFCC9D99C20D6E76371E931A4B2A7916F0A7560A6",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_06_lead_foot_plant_weapon_lag",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/06_06_lead_foot_plant_weapon_lag.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "40A2AA7282125FE784A172539313CDB3BC915F7D5D5DFD9253C19E157C60E4EF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_07_acceleration_begins_scoop_curve",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/07_07_acceleration_begins_scoop_curve.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "BD990AAA57F778E0295F23DE5603B0AA86ED43CBB9AE65A5840F72516E297519",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_08_scoop_acceleration_entry",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/08_07_scoop_acceleration_entry.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "0919982638284F2F5B0A751BCBDD9910AFC43966FDA09357695900CE8AA254E4",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_09_maximum_speed_scoop",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/09_08_maximum_speed_scoop.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "5EB4ED48849D86448EA0F9FE954F3306A9336F34F662F68540ECC88EEA400E3C",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_10_first_low_hook_contact",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/10_09_first_low_hook_contact.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "3C245A7A41A256BB7B5BDD7D876D87480998C03DC0A7B1F8847F0FF2195A7890",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_11_secure_scoop_catch",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/11_10_impact_compression_secure_scoop_catch.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_12_feet_swept_out_locked",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/12_12_feet_swept_out_locked.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_13_pelvis_leading_rotation_v2",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/13_13_pelvis_leading_rotation_v2.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "01E59477C58F65E8BE382D7C8506F33DCCD1307216F274FBADC8F042BDEF9490",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_14_locked_low_carry",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/14_14_locked_low_carry.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "7D0A60F1CBE886F141F2601A907BB975BD4CC8CAD4393DF14D85E71E890D81DB",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_15_continued_carry_v2",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/15_15_continued_carry_head_direction_v2.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E00B55DEB99423033E2DA359AD3E9563B9972764085E3CD8F8DB4E9A8CAACF27",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_16_airborne_release_v2",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/16_16_airborne_release_head_direction_v2.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "1B52D8F7D5CF2A4CD1AF12DE52FC9B6DA1BDB3D76A5E8F578CD822BECE285754",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_17_head_reorientation_connector_v2",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/17_16_to_17_head_reorientation_connector_v2.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "081CC7EFFD4F8DB8B24092879F0A669CB700614BAF31531E02C6BB2DFC692B4B",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_18_airborne_hang",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/18_16_airborne_hang.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "F5B6E6B03F0989573E3CFD3387677CECF5AAD303E0E11D0C33BA84D91C8629F8",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_19_aim_at_midair",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/19_17_aim_at_midair.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "4C4F0C389AFCF51FA822C5D2E477261019093E31FF9F0CF47082FF14E42BA441",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_20_midair_shot",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/20_18_midair_shot.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "C1AFA8C3F191B38B2E8C5DD20105349F934BD7FD8AE268A982CE59110FE9B5A3",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_21_post_shot_fall",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/21_19_post_shot_fall.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "96851C8504ABE9EC78AD075BD3C5191189F73094137782088B6BDD7706579C36",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_22_fall_toward_floor",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/22_20_fall_toward_floor.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_23_landing_after_shot",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/23_21_landing_after_shot.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_24_recovery",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/24_22_recovery.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "6FCAE963E610ABFD49E4BD96DEE3EFB7F7C40DB190D1B40358B7011DF0995A7C",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_victim_post_release_airborne",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/01_command_grab_victim_post_release_airborne.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "9E916A8F924ECA05710404BFFC7FA4DB911961590377F25BB7EDDC0574A90B10",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_victim_airborne_carry_hang",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/02_command_grab_victim_airborne_carry_hang.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "90F7EABB72C30CC68222D2235D5BC870D69C76E20C08980FAC13A357BC3E54FE",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_victim_midair_shot_reaction",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/03_command_grab_victim_midair_shot_reaction.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "A8CE179086F47887538B1F338A935A035100333A4EBCF79F0C909BC077FB4FE8",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_victim_post_shot_fall",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/04_command_grab_victim_post_shot_fall.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "BBAF2B2AC09344EEAB42C2885D19F022A8DF51874C32EF77417C28EC848B78CF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_victim_descent_landing_prep",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/05_command_grab_victim_descent_landing_prep.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "403F30F78326355C9BC93E4BDA3443DA692BEBC0286297CDBEF44CFB4D79D841",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "command_grab_victim_impact_downed",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/06_command_grab_victim_impact_downed.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "73BC5944CE52F9B21AB9529562A13FBDC94F4F5CBC8DEDBB68C657A86266F6BD",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "command_grab_01_mounted_startup",
+      "start": 0,
+      "duration": 7
+    },
+    {
+      "sourceFrameId": "command_grab_02_hand_reaches_scythe",
+      "start": 7,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_03_scythe_clears_back",
+      "start": 12,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "command_grab_04_blade_flip_transition",
+      "start": 18,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_05_hook_ready_maximum_coil",
+      "start": 23,
+      "duration": 10
+    },
+    {
+      "sourceFrameId": "command_grab_06_lead_foot_plant_weapon_lag",
+      "start": 33,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_07_acceleration_begins_scoop_curve",
+      "start": 38,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "command_grab_08_scoop_acceleration_entry",
+      "start": 40,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "command_grab_09_maximum_speed_scoop",
+      "start": 42,
+      "duration": 1
+    },
+    {
+      "sourceFrameId": "command_grab_10_first_low_hook_contact",
+      "start": 43,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_11_secure_scoop_catch",
+      "start": 48,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_12_feet_swept_out_locked",
+      "start": 53,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "command_grab_13_pelvis_leading_rotation_v2",
+      "start": 55,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "command_grab_14_locked_low_carry",
+      "start": 59,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "command_grab_15_continued_carry_v2",
+      "start": 62,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "command_grab_16_airborne_release_v2",
+      "start": 65,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_17_head_reorientation_connector_v2",
+      "start": 70,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "command_grab_18_airborne_hang",
+      "start": 72,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_19_aim_at_midair",
+      "start": 77,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "command_grab_20_midair_shot",
+      "start": 80,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "command_grab_21_post_shot_fall",
+      "start": 84,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "command_grab_22_fall_toward_floor",
+      "start": 88,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "command_grab_23_landing_after_shot",
+      "start": 92,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "command_grab_24_recovery",
+      "start": 97,
+      "duration": 10
+    }
+  ],
+  "phases": {
+    "anticipation": [
+      {
+        "start": 0,
+        "end": 42
+      }
+    ],
+    "startup": [
+      {
+        "start": 0,
+        "end": 42
+      }
+    ],
+    "active": [
+      {
+        "start": 43,
+        "end": 43
+      }
+    ],
+    "impact": [
+      {
+        "start": 43,
+        "end": 43
+      }
+    ],
+    "followThrough": [
+      {
+        "start": 44,
+        "end": 106
+      }
+    ],
+    "recovery": [
+      {
+        "start": 44,
+        "end": 106
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "command_grab_01_mounted_startup",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 564,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 564,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 816,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 7,
+      "sourceFrameId": "command_grab_02_hand_reaches_scythe",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 544,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 544,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 813,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 12,
+      "sourceFrameId": "command_grab_03_scythe_clears_back",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 491,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 491,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 789,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 18,
+      "sourceFrameId": "command_grab_04_blade_flip_transition",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 583,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 583,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 832,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 23,
+      "sourceFrameId": "command_grab_05_hook_ready_maximum_coil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 539,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 539,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 918,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 33,
+      "sourceFrameId": "command_grab_06_lead_foot_plant_weapon_lag",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 531,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 531,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 902,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 38,
+      "sourceFrameId": "command_grab_07_acceleration_begins_scoop_curve",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 607,
+        "y": 1343
+      },
+      "nearFoot": {
+        "x": 607,
+        "y": 1343
+      },
+      "farFoot": {
+        "x": 1009,
+        "y": 1343
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 40,
+      "sourceFrameId": "command_grab_08_scoop_acceleration_entry",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 579,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 579,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 980,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 42,
+      "sourceFrameId": "command_grab_09_maximum_speed_scoop",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 591,
+        "y": 1387
+      },
+      "nearFoot": {
+        "x": 591,
+        "y": 1387
+      },
+      "farFoot": {
+        "x": 949,
+        "y": 1387
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 43,
+      "sourceFrameId": "command_grab_10_first_low_hook_contact",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 604,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 604,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 978,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 48,
+      "sourceFrameId": "command_grab_11_secure_scoop_catch",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 594,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 594,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 951,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 53,
+      "sourceFrameId": "command_grab_12_feet_swept_out_locked",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 594,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 594,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 951,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 55,
+      "sourceFrameId": "command_grab_13_pelvis_leading_rotation_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 706,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 706,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1073,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 59,
+      "sourceFrameId": "command_grab_14_locked_low_carry",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 769,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 769,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1006,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 62,
+      "sourceFrameId": "command_grab_15_continued_carry_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 595,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 595,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 975,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 65,
+      "sourceFrameId": "command_grab_16_airborne_release_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 544,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 544,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 947,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 70,
+      "sourceFrameId": "command_grab_17_head_reorientation_connector_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 544,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 544,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 947,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 72,
+      "sourceFrameId": "command_grab_18_airborne_hang",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 685,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 685,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 948,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 77,
+      "sourceFrameId": "command_grab_19_aim_at_midair",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 709,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 709,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 996,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 80,
+      "sourceFrameId": "command_grab_20_midair_shot",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 577,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 577,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 871,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 84,
+      "sourceFrameId": "command_grab_21_post_shot_fall",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 529,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 529,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 842,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 88,
+      "sourceFrameId": "command_grab_22_fall_toward_floor",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 726,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 726,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 998,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 92,
+      "sourceFrameId": "command_grab_23_landing_after_shot",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 726,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 726,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 998,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 97,
+      "sourceFrameId": "command_grab_24_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 644,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 644,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 884,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "command_grab_01_mounted_startup",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 564,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 816,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_02_hand_reaches_scythe",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 544,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 813,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_03_scythe_clears_back",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 491,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 789,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_04_blade_flip_transition",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 583,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 832,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_05_hook_ready_maximum_coil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 539,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 918,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_06_lead_foot_plant_weapon_lag",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 531,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 902,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_07_acceleration_begins_scoop_curve",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 607,
+        "y": 1343
+      },
+      "farFoot": {
+        "x": 1009,
+        "y": 1343
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_08_scoop_acceleration_entry",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 579,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 980,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_09_maximum_speed_scoop",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 591,
+        "y": 1387
+      },
+      "farFoot": {
+        "x": 949,
+        "y": 1387
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_10_first_low_hook_contact",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 604,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 978,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_11_secure_scoop_catch",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 594,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 951,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_12_feet_swept_out_locked",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 594,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 951,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_13_pelvis_leading_rotation_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 706,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1073,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_14_locked_low_carry",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 769,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 1006,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_15_continued_carry_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 595,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 975,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_16_airborne_release_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 544,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 947,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_17_head_reorientation_connector_v2",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 544,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 947,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_18_airborne_hang",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 685,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 948,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_19_aim_at_midair",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 709,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 996,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_20_midair_shot",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 577,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 871,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_21_post_shot_fall",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 529,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 842,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_22_fall_toward_floor",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 726,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 998,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_23_landing_after_shot",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 726,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 998,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "command_grab_24_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 644,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 884,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "command_grab_v2"
+      ],
+      "toState": "command_grab_v2",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "command_grab_v2"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 43,
+    "active": 1,
+    "recovery": 63,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 107,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "approved_attacker_motion_with_candidate_victim_fall_and_combat_timing",
+      "timingAuthority": "temporary_sandbox_values_not_production_balance",
+      "rootMotionAuthority": "deterministic_sandbox_simulation"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "approved_attacker_motion_with_candidate_victim_fall_and_combat_timing",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-07-26T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "approved_attacker_motion_with_candidate_victim_fall_and_combat_timing",
+      "command_grab_v2_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "approved_attacker_motion_with_candidate_victim_fall_and_combat_timing",
+    "sourceAlphaAudit": {
+      "command_grab_01_mounted_startup": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          270,
+          340,
+          1111,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 395221,
+        "semiTransparentPixelCount": 28492,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "command_grab_02_hand_reaches_scythe": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          232,
+          340,
+          1126,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 363212,
+        "semiTransparentPixelCount": 26036,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "command_grab_03_scythe_clears_back": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          145,
+          340,
+          1136,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 392942,
+        "semiTransparentPixelCount": 28728,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "command_grab_04_blade_flip_transition": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          340,
+          1122,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 308624,
+        "semiTransparentPixelCount": 22118,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 30,
+        "pass": true
+      },
+      "command_grab_05_hook_ready_maximum_coil": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          98,
+          372,
+          1360,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 390185,
+        "semiTransparentPixelCount": 28221,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "command_grab_06_lead_foot_plant_weapon_lag": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          98,
+          382,
+          1336,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 385699,
+        "semiTransparentPixelCount": 26228,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "command_grab_07_acceleration_begins_scoop_curve": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          140,
+          609,
+          1477,
+          1344
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 299273,
+        "semiTransparentPixelCount": 26491,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 29,
+        "pass": true
+      },
+      "command_grab_08_scoop_acceleration_entry": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          112,
+          377,
+          1448,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 450607,
+        "semiTransparentPixelCount": 30591,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 45,
+        "pass": true
+      },
+      "command_grab_09_maximum_speed_scoop": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          173,
+          625,
+          1368,
+          1388
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 296379,
+        "semiTransparentPixelCount": 21870,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 29,
+        "pass": true
+      },
+      "command_grab_10_first_low_hook_contact": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          168,
+          798,
+          1415,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 273886,
+        "semiTransparentPixelCount": 21372,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 27,
+        "pass": true
+      },
+      "command_grab_11_secure_scoop_catch": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          177,
+          709,
+          1369,
+          1491
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 336951,
+        "semiTransparentPixelCount": 23722,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "command_grab_12_feet_swept_out_locked": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          177,
+          709,
+          1369,
+          1491
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 336951,
+        "semiTransparentPixelCount": 23722,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "command_grab_13_pelvis_leading_rotation_v2": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          277,
+          678,
+          1503,
+          1463
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 374673,
+        "semiTransparentPixelCount": 27438,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "command_grab_14_locked_low_carry": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          493,
+          678,
+          1283,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 287881,
+        "semiTransparentPixelCount": 25351,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 28,
+        "pass": true
+      },
+      "command_grab_15_continued_carry_v2": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          153,
+          627,
+          1418,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 339547,
+        "semiTransparentPixelCount": 26741,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "command_grab_16_airborne_release_v2": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          73,
+          517,
+          1419,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 417712,
+        "semiTransparentPixelCount": 29221,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "command_grab_17_head_reorientation_connector_v2": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          73,
+          517,
+          1419,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 422126,
+        "semiTransparentPixelCount": 30039,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "command_grab_18_airborne_hang": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          378,
+          340,
+          1256,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 398085,
+        "semiTransparentPixelCount": 26844,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "command_grab_19_aim_at_midair": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          376,
+          340,
+          1330,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 364736,
+        "semiTransparentPixelCount": 26333,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "command_grab_20_midair_shot": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          234,
+          340,
+          1214,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 376673,
+        "semiTransparentPixelCount": 27428,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "command_grab_21_post_shot_fall": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          164,
+          340,
+          1208,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367728,
+        "semiTransparentPixelCount": 28513,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "command_grab_22_fall_toward_floor": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          410,
+          340,
+          1315,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367116,
+        "semiTransparentPixelCount": 28071,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "command_grab_23_landing_after_shot": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          410,
+          340,
+          1315,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367116,
+        "semiTransparentPixelCount": 28071,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "command_grab_24_recovery": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          364,
+          340,
+          1164,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 345157,
+        "semiTransparentPixelCount": 26536,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "command_grab_victim_post_release_airborne": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          228,
+          546,
+          1307,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 218541,
+        "semiTransparentPixelCount": 43550,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "command_grab_victim_airborne_carry_hang": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          276,
+          445,
+          1260,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 201235,
+        "semiTransparentPixelCount": 42157,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 20,
+        "pass": true
+      },
+      "command_grab_victim_midair_shot_reaction": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          336,
+          497,
+          1199,
+          1414
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 190940,
+        "semiTransparentPixelCount": 38777,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 19,
+        "pass": true
+      },
+      "command_grab_victim_post_shot_fall": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          452,
+          716,
+          1084,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 216430,
+        "semiTransparentPixelCount": 44961,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "command_grab_victim_descent_landing_prep": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          266,
+          875,
+          1270,
+          1414
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 224877,
+        "semiTransparentPixelCount": 40370,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 22,
+        "pass": true
+      },
+      "command_grab_victim_impact_downed": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          279,
+          1032,
+          1257,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 194670,
+        "semiTransparentPixelCount": 35421,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 19,
+        "pass": true
+      }
+    },
+    "victimFrames": [
+      {
+        "sourceId": "command_grab_victim_post_release_airborne",
+        "role": "post_release_airborne",
+        "victimRoot": [
+          690,
+          980
+        ],
+        "approvalSha256": "9E916A8F924ECA05710404BFFC7FA4DB911961590377F25BB7EDDC0574A90B10"
+      },
+      {
+        "sourceId": "command_grab_victim_airborne_carry_hang",
+        "role": "airborne_carry_hang",
+        "victimRoot": [
+          630,
+          880
+        ],
+        "approvalSha256": "90F7EABB72C30CC68222D2235D5BC870D69C76E20C08980FAC13A357BC3E54FE"
+      },
+      {
+        "sourceId": "command_grab_victim_midair_shot_reaction",
+        "role": "midair_shot_reaction",
+        "victimRoot": [
+          570,
+          870
+        ],
+        "approvalSha256": "A8CE179086F47887538B1F338A935A035100333A4EBCF79F0C909BC077FB4FE8"
+      },
+      {
+        "sourceId": "command_grab_victim_post_shot_fall",
+        "role": "post_shot_fall",
+        "victimRoot": [
+          540,
+          1080
+        ],
+        "approvalSha256": "BBAF2B2AC09344EEAB42C2885D19F022A8DF51874C32EF77417C28EC848B78CF"
+      },
+      {
+        "sourceId": "command_grab_victim_descent_landing_prep",
+        "role": "descent_landing_prep",
+        "victimRoot": [
+          520,
+          1290
+        ],
+        "approvalSha256": "403F30F78326355C9BC93E4BDA3443DA692BEBC0286297CDBEF44CFB4D79D841"
+      },
+      {
+        "sourceId": "command_grab_victim_impact_downed",
+        "role": "impact_downed",
+        "victimRoot": [
+          500,
+          1408
+        ],
+        "approvalSha256": "73BC5944CE52F9B21AB9529562A13FBDC94F4F5CBC8DEDBB68C657A86266F6BD"
+      }
+    ],
+    "interactionContract": {
+      "captureSourceTick": 34,
+      "releaseSourceTick": 52,
+      "shotSourceTick": 64,
+      "landingSourceTick": 73,
+      "simulationTotalTicks": 107,
+      "authoritative": false
+    }
+  }
+}

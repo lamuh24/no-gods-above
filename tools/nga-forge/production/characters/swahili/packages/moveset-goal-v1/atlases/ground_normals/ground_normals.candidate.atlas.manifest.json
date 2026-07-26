@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_CANDIDATE_FAMILY_ATLAS",
+  "family": "ground_normals",
+  "candidateOnly": true,
+  "deployable": false,
+  "finalShippingAtlas": false,
+  "packing": {
+    "algorithm": "deterministic_variable_trim_shelf_pages",
+    "maxPageSize": [
+      4096,
+      4096
+    ],
+    "extrudePixels": 1,
+    "gapPixels": 2,
+    "explicitSourceBounds": true,
+    "anchorOffsetsPreserved": true
+  },
+  "pageCount": 3,
+  "sourceAssetCount": 30,
+  "pages": [
+    {
+      "pageIndex": 0,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/ground_normals/ground_normals.candidate.page-01.png",
+      "width": 4013,
+      "height": 3231,
+      "sha256": "96020DD26EF01FF671308ECAC55772AD5EF9C35BA766F34BBF3C16D86FEED5C0"
+    },
+    {
+      "pageIndex": 1,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/ground_normals/ground_normals.candidate.page-02.png",
+      "width": 3847,
+      "height": 3276,
+      "sha256": "BEED60B308AEF2946A2E7920FBE5D9B3819EA0219BFF2B6357D063E28E886CA6"
+    },
+    {
+      "pageIndex": 2,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/ground_normals/ground_normals.candidate.page-03.png",
+      "width": 3441,
+      "height": 2207,
+      "sha256": "489FE4FE6196D1D7E9E82879E1EA6E59E270F83EE7C9A4F6F8565A8B00C3A939"
+    }
+  ],
+  "frames": {
+    "asset_00b627387a6e4411": {
+      "pageIndex": 1,
+      "region": {
+        "x": 2359,
+        "y": 3,
+        "width": 642,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 483,
+        "y": 332,
+        "width": 642,
+        "height": 1080
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/04_planted_recovery.png",
+      "sourceSha256": "00B627387A6E44118991E0940138D64187D527C88FCCF96E3164E36099206D03",
+      "sourcePixelSha256": "127864B035A7D1229E94CA9832B92661F74592619BAED728FF3D89BDAA92C316",
+      "anchorOffset": {
+        "rootX": 285,
+        "rootY": 1076
+      },
+      "aliases": [
+        {
+          "packageId": "standing_light",
+          "sourceFrameId": "standing_normals_motion_v1_light_06_planted_recovery"
+        }
+      ]
+    },
+    "asset_1966b687dad286de": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2130,
+        "y": 2156,
+        "width": 1017,
+        "height": 1071
+      },
+      "sourceBounds": {
+        "x": 294,
+        "y": 337,
+        "width": 1017,
+        "height": 1071
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_preparation.png",
+      "sourceSha256": "1966B687DAD286DE633653191D84C6B194A7655DE1716B81887E0C9E64636088",
+      "sourcePixelSha256": "B8FBE5E961826B1F8F72C1214EF674DAEE7F73D6EEC72B3E90978DECFE2B7471",
+      "anchorOffset": {
+        "rootX": 474,
+        "rootY": 1071
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "standing_heavy_preparation"
+        }
+      ]
+    },
+    "asset_270183d773f92922": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1812,
+        "y": 3,
+        "width": 1057,
+        "height": 1072
+      },
+      "sourceBounds": {
+        "x": 230,
+        "y": 336,
+        "width": 1057,
+        "height": 1072
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/02_rapid_low_aim.png",
+      "sourceSha256": "270183D773F92922B2EF539F6893BED48F0296A6F1A982629C7535245ED7505C",
+      "sourcePixelSha256": "92E1F4C9A9A75C366D47CDCDEE34053C775A9D97B461C040B9A2FB517B26E1B8",
+      "anchorOffset": {
+        "rootX": 538,
+        "rootY": 1072
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_light",
+          "sourceFrameId": "crouching_light_v4_02_rapid_low_aim"
+        }
+      ]
+    },
+    "asset_2f43567b1874c5dc": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3005,
+        "y": 3,
+        "width": 839,
+        "height": 1073
+      },
+      "sourceBounds": {
+        "x": 287,
+        "y": 335,
+        "width": 839,
+        "height": 1073
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/01_deep_rotational_anticipation.png",
+      "sourceSha256": "2F43567B1874C5DC563AC5624C544F2829621EF041A2C5C485DC0E15DFB47D51",
+      "sourcePixelSha256": "F986AD65BE4D12CB05FE28E7A9E59D90A6AB64BBB54B66BEE015BC9B5CF99B0F",
+      "anchorOffset": {
+        "rootX": 481,
+        "rootY": 1073
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_heavy",
+          "sourceFrameId": "crouching_heavy_motion_v1_01_deep_rotational_anticipation"
+        }
+      ]
+    },
+    "asset_3502151bb8379946": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2873,
+        "y": 3,
+        "width": 1137,
+        "height": 1073
+      },
+      "sourceBounds": {
+        "x": 216,
+        "y": 335,
+        "width": 1137,
+        "height": 1073
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/03_point_blank_shot.png",
+      "sourceSha256": "3502151BB83799465BF2F67A14E9682CFB80D3EDEAC3F5C58AFFA202692EA9B4",
+      "sourcePixelSha256": "EDF34D68704158527A4A541AB9BB7D967F98F7DEB2229ACC4E9BCCB6EFFC38B5",
+      "anchorOffset": {
+        "rootX": 552,
+        "rootY": 1073
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_light",
+          "sourceFrameId": "crouching_light_v4_03_point_blank_shot"
+        }
+      ]
+    },
+    "asset_52a13ca10ca352ac": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 1087,
+        "width": 1178,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 133,
+        "y": 328,
+        "width": 1178,
+        "height": 1080
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/02_sweep_acceleration.png",
+      "sourceSha256": "52A13CA10CA352AC4C6C8B0541CABEBABA5638317DAB42BA82289F8CFB6F3968",
+      "sourcePixelSha256": "2AA3152E98A871A4841E11F8853DC5BE602F3493FE368857590CFC72A5F84615",
+      "anchorOffset": {
+        "rootX": 635,
+        "rootY": 1080
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_heavy",
+          "sourceFrameId": "crouching_heavy_motion_v1_02_sweep_acceleration"
+        }
+      ]
+    },
+    "asset_5466faa362910a06": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1986,
+        "y": 1080,
+        "width": 863,
+        "height": 1072
+      },
+      "sourceBounds": {
+        "x": 268,
+        "y": 337,
+        "width": 863,
+        "height": 1072
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_anticipation_v2.png",
+      "sourceSha256": "5466FAA362910A0619CE364FAF9CBA9CC42EE32A82233AB55E87FC9C2EF841EE",
+      "sourcePixelSha256": "B2002633E65109201424F42C62BFCDF39025C2C502334BBDD29B3CFEF73074D4",
+      "anchorOffset": {
+        "rootX": 500,
+        "rootY": 1071
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "standing_heavy_anticipation_v2"
+        }
+      ]
+    },
+    "asset_5e452f91f34d21a8": {
+      "pageIndex": 1,
+      "region": {
+        "x": 2871,
+        "y": 2171,
+        "width": 879,
+        "height": 1097
+      },
+      "sourceBounds": {
+        "x": 311,
+        "y": 311,
+        "width": 879,
+        "height": 1097
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/01_anticipation.png",
+      "sourceSha256": "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0",
+      "sourcePixelSha256": "BF5683A9E41048E05D0983D365BBE2A48DC10629D42D54BED01D1447BAE7D8C2",
+      "anchorOffset": {
+        "rootX": 457,
+        "rootY": 1097
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_medium",
+          "sourceFrameId": "crouching_medium_motion_v1_01_anticipation"
+        }
+      ]
+    },
+    "asset_5fdf2ee53ae55f4b": {
+      "pageIndex": 1,
+      "region": {
+        "x": 1482,
+        "y": 3,
+        "width": 873,
+        "height": 1079
+      },
+      "sourceBounds": {
+        "x": 417,
+        "y": 333,
+        "width": 873,
+        "height": 1079
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/03_leg_retraction.png",
+      "sourceSha256": "5FDF2EE53AE55F4B962A2E6AA6B350545B9B862EB860FC7E91AA54C67703EBAF",
+      "sourcePixelSha256": "14F3252C817764E669DC35A8F4E7B3D42A1EE8D1A50E5E0A47E533CD269C22F4",
+      "anchorOffset": {
+        "rootX": 351,
+        "rootY": 1075
+      },
+      "aliases": [
+        {
+          "packageId": "standing_light",
+          "sourceFrameId": "standing_normals_motion_v1_light_05_leg_retraction"
+        }
+      ]
+    },
+    "asset_71ea44229ce3e556": {
+      "pageIndex": 1,
+      "region": {
+        "x": 973,
+        "y": 2171,
+        "width": 954,
+        "height": 1102
+      },
+      "sourceBounds": {
+        "x": 297,
+        "y": 306,
+        "width": 954,
+        "height": 1102
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/06_recovery_unwind.png",
+      "sourceSha256": "71EA44229CE3E55644ACDC9D9F64D1AE5C1C4692E165AA800957CA019077D00F",
+      "sourcePixelSha256": "55B3919173F371F8A2668CAB8B48B83CFCA39C4DF801510DCBF3B17D67D63E85",
+      "anchorOffset": {
+        "rootX": 471,
+        "rootY": 1102
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_heavy",
+          "sourceFrameId": "crouching_heavy_motion_v1_06_recovery_unwind"
+        }
+      ]
+    },
+    "asset_78bc144277ac7069": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 534,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 283,
+        "y": 333,
+        "width": 534,
+        "height": 1080
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/01_compact_chamber.png",
+      "sourceSha256": "78BC144277AC7069E7A586461A705FE52B5594D7ED3B8AA567E6F6F6134DEC24",
+      "sourcePixelSha256": "5037460ED2BABB7DAE8B6C00DDD053107114263B3576184A848B3076B9AB4295",
+      "anchorOffset": {
+        "rootX": 485,
+        "rootY": 1075
+      },
+      "aliases": [
+        {
+          "packageId": "standing_light",
+          "sourceFrameId": "standing_normals_motion_v1_light_01_compact_chamber"
+        }
+      ]
+    },
+    "asset_8028a6cd81d4a49d": {
+      "pageIndex": 2,
+      "region": {
+        "x": 1885,
+        "y": 1122,
+        "width": 921,
+        "height": 1082
+      },
+      "sourceBounds": {
+        "x": 416,
+        "y": 329,
+        "width": 921,
+        "height": 1082
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/04_post_contact_recoil_connector.png",
+      "sourceSha256": "8028A6CD81D4A49DE433FECAC9F5176A05770C3BA459E11D6B0CE9A714ED7CA1",
+      "sourcePixelSha256": "02AF996DFBAA88BE55D62CE61F045C448782D2AAE3E22F346C908AF5438F4FAF",
+      "anchorOffset": {
+        "rootX": 352,
+        "rootY": 1079
+      },
+      "aliases": [
+        {
+          "packageId": "standing_light",
+          "sourceFrameId": "standing_normals_motion_v1_light_04_post_contact_recoil"
+        }
+      ]
+    },
+    "asset_922cd08175ae59f4": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 2156,
+        "width": 900,
+        "height": 1070
+      },
+      "sourceBounds": {
+        "x": 242,
+        "y": 340,
+        "width": 900,
+        "height": 1070
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_recoil_v2.png",
+      "sourceSha256": "922CD08175AE59F47E7BE74E2638B5D1CC3F9ABC250F2F3D37A54C501FABB305",
+      "sourcePixelSha256": "3A46D8DDC32D5E2BBD6E8B9D4E34D899CCF7AE72F65F0BC17AA1BD0B7AE1EC31",
+      "anchorOffset": {
+        "rootX": 526,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "standing_heavy_recoil_v2"
+        }
+      ]
+    },
+    "asset_9855161b80638e36": {
+      "pageIndex": 2,
+      "region": {
+        "x": 943,
+        "y": 1122,
+        "width": 938,
+        "height": 1079
+      },
+      "sourceBounds": {
+        "x": 400,
+        "y": 333,
+        "width": 938,
+        "height": 1079
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/02_fast_low_extension_connector.png",
+      "sourceSha256": "9855161B80638E36CCB2F32D0EF0CED0836461D25D11B338917ECDC188B5C1A7",
+      "sourcePixelSha256": "B4C67D31DF5458607C1ADFBF6287E467972A0389AC6D37C0A23073473A95935B",
+      "anchorOffset": {
+        "rootX": 368,
+        "rootY": 1075
+      },
+      "aliases": [
+        {
+          "packageId": "standing_light",
+          "sourceFrameId": "standing_normals_motion_v1_light_02_fast_low_extension"
+        }
+      ]
+    },
+    "asset_9db272e63cbad90d": {
+      "pageIndex": 2,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 1290,
+        "height": 1115
+      },
+      "sourceBounds": {
+        "x": 131,
+        "y": 293,
+        "width": 1290,
+        "height": 1115
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/02_kick_acceleration.png",
+      "sourceSha256": "9DB272E63CBAD90D4BBBEB093F60A525281F581581F2D3E32F5D406DFBF239D7",
+      "sourcePixelSha256": "4616B247164B4E495985C98BDF14DFE53431C95C701C9A9365706C62A8225829",
+      "anchorOffset": {
+        "rootX": 637,
+        "rootY": 1115
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_medium",
+          "sourceFrameId": "crouching_medium_motion_v1_02_kick_acceleration"
+        }
+      ]
+    },
+    "asset_a06d78b94003e986": {
+      "pageIndex": 1,
+      "region": {
+        "x": 541,
+        "y": 3,
+        "width": 937,
+        "height": 1073
+      },
+      "sourceBounds": {
+        "x": 443,
+        "y": 336,
+        "width": 937,
+        "height": 1073
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/02_low_kick_contact.png",
+      "sourceSha256": "A06D78B94003E986440759825E62196096179F782062904E57F1EE19BC83B4C1",
+      "sourcePixelSha256": "EA0943FBCFCEAC15F2EBD6779B8452EDAB1E65D6A7F393195DFED96E3904029C",
+      "anchorOffset": {
+        "rootX": 325,
+        "rootY": 1072
+      },
+      "aliases": [
+        {
+          "packageId": "standing_light",
+          "sourceFrameId": "standing_normals_motion_v1_light_03_low_kick_contact"
+        }
+      ]
+    },
+    "asset_a33a3c81f8c554a9": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 865,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 289,
+        "y": 342,
+        "width": 865,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png",
+      "sourceSha256": "A33A3C81F8C554A9E0A750B91EB875A17F7513A70DE646D8E2DBC2956BF2E077",
+      "sourcePixelSha256": "E0CD031A0D75902B8637CF1EFB5C91D090777495D3FE809CBAF688AB1094718B",
+      "anchorOffset": {
+        "rootX": 479,
+        "rootY": 1066
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "idle_00"
+        }
+      ]
+    },
+    "asset_c6ba499b928355bc": {
+      "pageIndex": 1,
+      "region": {
+        "x": 1185,
+        "y": 1087,
+        "width": 1048,
+        "height": 969
+      },
+      "sourceBounds": {
+        "x": 289,
+        "y": 439,
+        "width": 1048,
+        "height": 969
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/03_low_ground_contact.png",
+      "sourceSha256": "C6BA499B928355BC15F79E4ED4D2893262041DFA59BDBA9A5B431A5842F4255A",
+      "sourcePixelSha256": "94B7C6AA8F6D20F92FEBFA058866236FCF76D005256CEC1DFFD71C267BF1AC34",
+      "anchorOffset": {
+        "rootX": 479,
+        "rootY": 969
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_heavy",
+          "sourceFrameId": "crouching_heavy_motion_v1_03_low_ground_contact"
+        }
+      ]
+    },
+    "asset_cce5862a1ae61e82": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3151,
+        "y": 2156,
+        "width": 791,
+        "height": 1072
+      },
+      "sourceBounds": {
+        "x": 294,
+        "y": 338,
+        "width": 791,
+        "height": 1072
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_recovery.png",
+      "sourceSha256": "CCE5862A1AE61E8286ED75CB5328EABB3AF0DF0C1E7123D0BE3D61725B78A280",
+      "sourcePixelSha256": "5039B66DFE877FD60B0C38E65EC32EE1BFFE9439CA27D643F6A74A0CC743310B",
+      "anchorOffset": {
+        "rootX": 474,
+        "rootY": 1070
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "standing_heavy_recovery"
+        }
+      ]
+    },
+    "asset_d07751082c466f1f": {
+      "pageIndex": 2,
+      "region": {
+        "x": 3,
+        "y": 1122,
+        "width": 936,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 341,
+        "width": 936,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/05_planted_crouch_recovery.png",
+      "sourceSha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
+      "sourcePixelSha256": "D62C2E5D05A9649C484E789886693948034653BECE77906F7F0E037F879EC9AA",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_medium",
+          "sourceFrameId": "crouching_medium_motion_v1_05_planted_crouch_recovery"
+        }
+      ]
+    },
+    "asset_d0eb4d79d2569329": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 1080,
+        "width": 1039,
+        "height": 1071
+      },
+      "sourceBounds": {
+        "x": 249,
+        "y": 337,
+        "width": 1039,
+        "height": 1071
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/04_compact_recoil.png",
+      "sourceSha256": "D0EB4D79D25693297B25255A2497A4C640098B2DA830A8F5D4F52BAE9BE719E3",
+      "sourcePixelSha256": "E791AF37C62617D11A0A407B3FAD9E035732F1E35723553CCE75911EA7F55DE2",
+      "anchorOffset": {
+        "rootX": 519,
+        "rootY": 1071
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_light",
+          "sourceFrameId": "crouching_light_v4_04_compact_recoil"
+        }
+      ]
+    },
+    "asset_d3fdffde485a1681": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2853,
+        "y": 1080,
+        "width": 1131,
+        "height": 1056
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 353,
+        "width": 1131,
+        "height": 1056
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.png",
+      "sourceSha256": "D3FDFFDE485A1681812F6BFFC30E5886BE881A70DB4E914BFB5F071EF4D63BAE",
+      "sourcePixelSha256": "5E81C37199440C29CC18A29ACA16665ABFAF7F9CDABC075974B21B921C4EA800",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1055
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "standing_heavy_impact_v2"
+        }
+      ]
+    },
+    "asset_de3228a682b01774": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 2171,
+        "width": 966,
+        "height": 1021
+      },
+      "sourceBounds": {
+        "x": 230,
+        "y": 387,
+        "width": 966,
+        "height": 1021
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/05_committed_follow_through.png",
+      "sourceSha256": "DE3228A682B0177434821CFD6F070EB132A57F11419AD7F62D01BE34CE7FA35E",
+      "sourcePixelSha256": "63562B6159FFF58FEF14D54E7DF9A5A5F0D4BF0427063F42337AE55013491A11",
+      "anchorOffset": {
+        "rootX": 538,
+        "rootY": 1021
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_heavy",
+          "sourceFrameId": "crouching_heavy_motion_v1_05_committed_follow_through"
+        }
+      ]
+    },
+    "asset_e0795f4bbf2fe70a": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1046,
+        "y": 1080,
+        "width": 936,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 340,
+        "width": 936,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/05_crouched_recovery.png",
+      "sourceSha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "sourcePixelSha256": "2434E27FA5E02C4278CC4E5DF48F064881A8EA83A79C6D44D3095383EDF73D12",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_light",
+          "sourceFrameId": "crouching_light_v4_05_crouched_recovery"
+        }
+      ]
+    },
+    "asset_e194d652efd7d939": {
+      "pageIndex": 1,
+      "region": {
+        "x": 2237,
+        "y": 1087,
+        "width": 1097,
+        "height": 989
+      },
+      "sourceBounds": {
+        "x": 241,
+        "y": 419,
+        "width": 1097,
+        "height": 989
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/04_rotational_carry_past_contact.png",
+      "sourceSha256": "E194D652EFD7D939DF8F6025BBFA36286D5C059D8236CC86A42A7C631A830B76",
+      "sourcePixelSha256": "1DBF853079D8CD0032AA3E2526A145BE51612F84D10F4A7B7D142DF5970E7E1B",
+      "anchorOffset": {
+        "rootX": 527,
+        "rootY": 989
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_heavy",
+          "sourceFrameId": "crouching_heavy_motion_v1_04_rotational_carry_past_contact"
+        }
+      ]
+    },
+    "asset_ee109de74710ba3a": {
+      "pageIndex": 2,
+      "region": {
+        "x": 2578,
+        "y": 3,
+        "width": 860,
+        "height": 1088
+      },
+      "sourceBounds": {
+        "x": 267,
+        "y": 320,
+        "width": 860,
+        "height": 1088
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/04_leg_retraction.png",
+      "sourceSha256": "EE109DE74710BA3A3E2DAD19EE432024618995CEC99EB5F8F04D83F8D5197B90",
+      "sourcePixelSha256": "E05E569F8BAED2EF763A8AD3EFFEBD50B8CB2DA2F30923A5EB382F1D583C08AC",
+      "anchorOffset": {
+        "rootX": 501,
+        "rootY": 1088
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_medium",
+          "sourceFrameId": "crouching_medium_motion_v1_04_leg_retraction"
+        }
+      ]
+    },
+    "asset_f04cc609f8ed4f46": {
+      "pageIndex": 0,
+      "region": {
+        "x": 907,
+        "y": 2156,
+        "width": 1219,
+        "height": 1057
+      },
+      "sourceBounds": {
+        "x": 221,
+        "y": 353,
+        "width": 1219,
+        "height": 1057
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_extension.png",
+      "sourceSha256": "F04CC609F8ED4F46748868953A324F3D9893F2C32E4C01D86A813FB403DDD4B5",
+      "sourcePixelSha256": "0878A55700F7FDB5FB8BA3760B808E32AB98F621B4D0BD1CDC2C59547BE9F2E3",
+      "anchorOffset": {
+        "rootX": 547,
+        "rootY": 1055
+      },
+      "aliases": [
+        {
+          "packageId": "standing_heavy",
+          "sourceFrameId": "standing_heavy_extension"
+        }
+      ]
+    },
+    "asset_ff35213cd2f40485": {
+      "pageIndex": 2,
+      "region": {
+        "x": 1297,
+        "y": 3,
+        "width": 1277,
+        "height": 1063
+      },
+      "sourceBounds": {
+        "x": 165,
+        "y": 345,
+        "width": 1277,
+        "height": 1063
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/03_low_side_kick_contact.png",
+      "sourceSha256": "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13",
+      "sourcePixelSha256": "06556283A2A0A24746FC2178E7715D1B167EBFD1926CC03356A02CCFD4A5716C",
+      "anchorOffset": {
+        "rootX": 603,
+        "rootY": 1063
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_medium",
+          "sourceFrameId": "crouching_medium_motion_v1_03_low_side_kick_contact"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "pixelExactReconstruction": true,
+    "reconstructionMismatches": []
+  }
+}

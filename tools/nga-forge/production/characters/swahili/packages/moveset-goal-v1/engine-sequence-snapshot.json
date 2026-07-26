@@ -1,0 +1,1264 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_ENGINE_SEQUENCE_SNAPSHOT",
+  "generatedAt": "2026-07-25",
+  "source": "compiled Engine V2 sandbox modules",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "sequenceCount": 18,
+  "sequences": [
+    {
+      "id": "idle",
+      "family": "universal_movement",
+      "reviewState": "approved_production_baseline",
+      "timingAuthority": "approved_idle_review_loop_non_combat",
+      "exposures": [
+        {
+          "sourceId": "idle_00",
+          "ticks": 8,
+          "role": "neutral_anchor"
+        },
+        {
+          "sourceId": "idle_01",
+          "ticks": 8,
+          "role": "breath_shift"
+        },
+        {
+          "sourceId": "idle_02",
+          "ticks": 8,
+          "role": "guarded_settle"
+        },
+        {
+          "sourceId": "idle_03",
+          "ticks": 8,
+          "role": "loop_return"
+        }
+      ]
+    },
+    {
+      "id": "walk_forward",
+      "family": "universal_movement",
+      "reviewState": "awaiting_human_forward_walk_v2_motion_review",
+      "timingAuthority": "candidate_contact_weighted_40_ticks",
+      "rootMotionAuthority": "deterministic_sandbox_simulation",
+      "exposures": [
+        {
+          "sourceId": "walk_forward_contact",
+          "ticks": 6,
+          "role": "first_foot_contact",
+          "approvalSha256": "C131729BB0A15E1FC578C34E0EE9DAF617FDF9C935AE13B5516C2356B4E6707F",
+          "supportFoot": "screen_right_contact",
+          "swingFoot": "screen_left_trailing"
+        },
+        {
+          "sourceId": "walk_forward_neutral_departure",
+          "ticks": 5,
+          "role": "first_foot_down_compression",
+          "approvalSha256": "AD74794522C34C31D9FD1980A52AEEEF21CB26F7C9EA23B19E368844A96954CB",
+          "supportFoot": "screen_right_support",
+          "swingFoot": "screen_left_swing"
+        },
+        {
+          "sourceId": "walk_forward_passing",
+          "ticks": 4,
+          "role": "first_passing",
+          "approvalSha256": "E33CDA0F93ADA445AFC303EE42AF7FF1E40545B49620BDB9263945AED08A2EBB",
+          "supportFoot": "screen_right_support",
+          "swingFoot": "screen_left_passing"
+        },
+        {
+          "sourceId": "walk_forward_opposite_contact",
+          "ticks": 5,
+          "role": "first_up_late_swing",
+          "approvalSha256": "37C24DBE00F0822E74100D1249B243A72127DB69357166D094B42FDEFC81F790",
+          "supportFoot": "screen_right_support",
+          "swingFoot": "screen_left_late_swing"
+        },
+        {
+          "sourceId": "walk_forward_return",
+          "ticks": 6,
+          "role": "opposite_foot_contact",
+          "approvalSha256": "A1844C8A86EE2B709161C5BE73EDC450655CE6DB4262AFBED7A7CA786EBDDB1E",
+          "supportFoot": "screen_left_principal_contact",
+          "swingFoot": "screen_right_trailing"
+        },
+        {
+          "sourceId": "walk_forward_opposite_down",
+          "ticks": 5,
+          "role": "opposite_foot_down_compression",
+          "approvalSha256": "97499BF7BEF88A66B1A185974D29DCF11295B4741AD62F17C947AE40CCE80B00",
+          "supportFoot": "screen_left_support",
+          "swingFoot": "screen_right_swing"
+        },
+        {
+          "sourceId": "walk_forward_opposite_passing",
+          "ticks": 4,
+          "role": "opposite_passing",
+          "approvalSha256": "938EFDE85655BE57EA8197980F7FD4260159BAC51B41086E77F3B0C0BE4E487F",
+          "supportFoot": "screen_left_support",
+          "swingFoot": "screen_right_passing"
+        },
+        {
+          "sourceId": "walk_forward_opposite_up_return",
+          "ticks": 5,
+          "role": "opposite_up_return",
+          "approvalSha256": "FF4BAB60315D9AD085B1B4854148344AB83B012D0CFC16B4D90920F7EF1B38FD",
+          "supportFoot": "screen_left_support",
+          "swingFoot": "screen_right_late_swing"
+        }
+      ]
+    },
+    {
+      "id": "dash_forward",
+      "family": "universal_movement",
+      "reviewState": "approved_current_forge_baseline",
+      "timingAuthority": "approved_review_motion_candidate_gameplay_distance_simulation_owned",
+      "rootMotionAuthority": "DETERMINISTIC_SIMULATION_OWNED_EASE_IN_OUT_CURVE",
+      "exposures": [
+        {
+          "sourceId": "dash_forward_v2_startup_load",
+          "ticks": 8,
+          "role": "startup_load",
+          "approvalSha256": "067216E931FADEDCEBA423585C814785B63C0C33608E6B4E2360062D439D10A9",
+          "grounded": null,
+          "support": "screen_left_loaded_support"
+        },
+        {
+          "sourceId": "dash_forward_v2_grounded_push_connector",
+          "ticks": 6,
+          "role": "grounded_push_connector",
+          "approvalSha256": "D2ED4BE2BE6D2B28D9E6B5BD480555AE7FAB8BD533E86FD96F4A6557A755FF93",
+          "grounded": null,
+          "support": "screen_left_push_contact"
+        },
+        {
+          "sourceId": "dash_forward_v2_committed_launch",
+          "ticks": 5,
+          "role": "committed_launch",
+          "approvalSha256": "88AA55D699F9CF3157DE288B01F7A1807606C71EE4DFEB754D819E136D51AD6A",
+          "grounded": null,
+          "support": "screen_left_launch_extension"
+        },
+        {
+          "sourceId": "dash_forward_v2_low_travel_carry",
+          "ticks": 7,
+          "role": "low_travel_carry",
+          "approvalSha256": "D4E7DBB81A503F6FD44238EB856C7E7C2108807F013A63950220C1CE73FA310B",
+          "grounded": null,
+          "support": "low_burst_visual_contact"
+        },
+        {
+          "sourceId": "dash_forward_v2_deceleration_catch",
+          "ticks": 7,
+          "role": "deceleration_catch",
+          "approvalSha256": "09827943771230F6482B0E8FD340CB21AC4B85836F7FF46F946C2106686937D1",
+          "grounded": null,
+          "support": "screen_right_deceleration_contact"
+        },
+        {
+          "sourceId": "dash_forward_v2_brake_recovery",
+          "ticks": 11,
+          "role": "brake_recovery",
+          "approvalSha256": "EC3C5B2B778DDC35441417F54A8F9F7EBEF7DCA62B618F0006AD3AD2CBF5C5AC",
+          "grounded": null,
+          "support": "both_grounded_brake"
+        }
+      ]
+    },
+    {
+      "id": "dash_backward",
+      "family": "universal_movement",
+      "reviewState": "approved_current_forge_baseline",
+      "timingAuthority": "approved_review_motion_candidate_gameplay_distance_simulation_owned",
+      "rootMotionAuthority": "DETERMINISTIC_SIMULATION_OWNED_EASE_IN_OUT_CURVE",
+      "exposures": [
+        {
+          "sourceId": "dash_backward_v3_load_low",
+          "ticks": 9,
+          "role": "load_low",
+          "approvalSha256": "702280E3EEA290E1DAFC52D4E1B19FE28A6617271006628730BD0F0169891C74",
+          "grounded": null,
+          "support": "screen_right_loaded_support"
+        },
+        {
+          "sourceId": "dash_backward_v3_push_away",
+          "ticks": 7,
+          "role": "push_away",
+          "approvalSha256": "B8195F0B3C6E510255BEA5EDA6E1A5F079EFB0FAB3CCEDB65D0B673DA383DA23",
+          "grounded": null,
+          "support": "screen_right_retreat_push"
+        },
+        {
+          "sourceId": "dash_backward_v3_compact_retreat_hop_slide",
+          "ticks": 6,
+          "role": "compact_retreat_hop_slide",
+          "approvalSha256": "7128CA1C1A0A83284DF149F8F8A1D2B068269D9893C55374606C08BD2086BBF7",
+          "grounded": null,
+          "support": "airborne_none"
+        },
+        {
+          "sourceId": "dash_backward_v3_max_retreat",
+          "ticks": 8,
+          "role": "max_retreat",
+          "approvalSha256": "C6DA56D6273EC2296E6B8868149B54B570814B76FAE0E26AAC14E0DCA28CEA4E",
+          "grounded": null,
+          "support": "airborne_none"
+        },
+        {
+          "sourceId": "dash_backward_v3_controlled_landing",
+          "ticks": 8,
+          "role": "controlled_landing",
+          "approvalSha256": "3D635F9490BF91B6F8017EAC0AAD2820B332742C8C78B0C4C9C854CD423DE400",
+          "grounded": null,
+          "support": "screen_left_rear_catch"
+        },
+        {
+          "sourceId": "dash_backward_v3_guarded_recovery",
+          "ticks": 12,
+          "role": "guarded_recovery",
+          "approvalSha256": "52F955C2B7F388625690C75BDE9A9C9F6550AE63108CADD0ADB059B9418AD4A7",
+          "grounded": null,
+          "support": "both_grounded_brake"
+        }
+      ]
+    },
+    {
+      "id": "jump_fall_landing",
+      "family": "air_movement",
+      "reviewState": "approved_current_forge_baseline",
+      "timingAuthority": "simulation_trajectory_with_review_exposure_defaults",
+      "rootMotionAuthority": "existing_sandbox_simulation_only",
+      "exposures": [
+        {
+          "sourceId": "jump_v1_anticipation",
+          "ticks": 4,
+          "role": "jump_anticipation",
+          "verticalState": "grounded_pre_takeoff"
+        },
+        {
+          "sourceId": "jump_v1_takeoff",
+          "ticks": 3,
+          "role": "takeoff",
+          "verticalState": "rising_takeoff"
+        },
+        {
+          "sourceId": "jump_v1_rising",
+          "ticks": 4,
+          "role": "rising_jump",
+          "verticalState": "rising"
+        },
+        {
+          "sourceId": "jump_v1_apex",
+          "ticks": 3,
+          "role": "jump_apex",
+          "verticalState": "apex_near_zero_vertical_velocity"
+        },
+        {
+          "sourceId": "jump_v1_falling",
+          "ticks": 4,
+          "role": "falling",
+          "verticalState": "falling"
+        },
+        {
+          "sourceId": "jump_v1_soft_landing",
+          "ticks": 6,
+          "role": "soft_landing",
+          "verticalState": "grounded_soft_landing_contact"
+        },
+        {
+          "sourceId": "jump_v1_attack_landing_recovery",
+          "ticks": 9,
+          "role": "attack_landing_recovery",
+          "verticalState": "grounded_attack_landing_recovery"
+        },
+        {
+          "sourceId": "jump_v1_hard_landing_compatibility",
+          "ticks": 12,
+          "role": "hard_landing_compatibility",
+          "verticalState": "grounded_hard_landing_contact"
+        }
+      ]
+    },
+    {
+      "id": "air_dash_forward",
+      "family": "air_movement",
+      "reviewState": "approved_current_sandbox_baseline",
+      "timingAuthority": "candidate_12_ticks",
+      "rootMotionAuthority": "deterministic_simulation",
+      "exposures": [
+        {
+          "sourceId": "air_dash_forward_01_air_brace",
+          "ticks": 2,
+          "role": "air_brace",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        },
+        {
+          "sourceId": "air_dash_forward_02_forward_burst",
+          "ticks": 3,
+          "role": "forward_burst",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        },
+        {
+          "sourceId": "air_dash_forward_03_forward_travel",
+          "ticks": 4,
+          "role": "forward_travel",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        },
+        {
+          "sourceId": "air_dash_forward_04_air_brake",
+          "ticks": 3,
+          "role": "air_brake",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        }
+      ]
+    },
+    {
+      "id": "air_dash_backward",
+      "family": "air_movement",
+      "reviewState": "approved_current_sandbox_baseline",
+      "timingAuthority": "candidate_12_ticks",
+      "rootMotionAuthority": "deterministic_simulation",
+      "exposures": [
+        {
+          "sourceId": "air_dash_backward_01_guarded_recoil",
+          "ticks": 2,
+          "role": "guarded_recoil",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        },
+        {
+          "sourceId": "air_dash_backward_02_backward_burst",
+          "ticks": 3,
+          "role": "backward_burst",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        },
+        {
+          "sourceId": "air_dash_backward_03_max_retreat",
+          "ticks": 4,
+          "role": "max_retreat",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        },
+        {
+          "sourceId": "air_dash_backward_04_air_brake",
+          "ticks": 3,
+          "role": "air_brake",
+          "approvalSha256": null,
+          "grounded": null,
+          "support": null
+        }
+      ]
+    },
+    {
+      "id": "air_dash_side_switch",
+      "family": "air_movement",
+      "reviewState": "approved_current_sandbox_baseline",
+      "timingAuthority": "candidate_12_ticks",
+      "rootMotionAuthority": "deterministic_simulation",
+      "exposures": [
+        {
+          "sourceId": "air_dash_forward_01_air_brace",
+          "ticks": 2,
+          "role": "air_brace"
+        },
+        {
+          "sourceId": "air_dash_forward_02_forward_burst",
+          "ticks": 3,
+          "role": "forward_burst"
+        },
+        {
+          "sourceId": "air_dash_forward_03_forward_travel",
+          "ticks": 2,
+          "role": "forward_travel_pre_cross"
+        },
+        {
+          "sourceId": "air_dash_side_switch_01_rotation_midpoint",
+          "ticks": 1,
+          "role": "airborne_yaw_rotation_midpoint"
+        },
+        {
+          "sourceId": "air_dash_backward_03_max_retreat",
+          "ticks": 2,
+          "role": "backdash_carry_post_cross"
+        },
+        {
+          "sourceId": "air_dash_backward_04_air_brake",
+          "ticks": 2,
+          "role": "backdash_brake_post_cross"
+        }
+      ]
+    },
+    {
+      "id": "standing_to_crouch",
+      "family": "universal_transitions",
+      "reviewState": "awaiting_human_stance_transition_motion_review",
+      "timingAuthority": "candidate_11_ticks",
+      "exposures": [
+        {
+          "sourceId": "idle_00",
+          "ticks": 3,
+          "role": "idle_departure"
+        },
+        {
+          "sourceId": "crouching_block_release",
+          "ticks": 3,
+          "role": "controlled_compression_connector"
+        },
+        {
+          "sourceId": "crouch",
+          "ticks": 5,
+          "role": "crouch_settle"
+        }
+      ]
+    },
+    {
+      "id": "crouch_to_standing",
+      "family": "universal_transitions",
+      "reviewState": "awaiting_human_stance_transition_motion_review",
+      "timingAuthority": "candidate_11_ticks",
+      "exposures": [
+        {
+          "sourceId": "crouch",
+          "ticks": 3,
+          "role": "crouch_departure"
+        },
+        {
+          "sourceId": "crouching_block_release",
+          "ticks": 3,
+          "role": "controlled_rise_connector"
+        },
+        {
+          "sourceId": "idle_00",
+          "ticks": 5,
+          "role": "idle_settle"
+        }
+      ]
+    },
+    {
+      "id": "turn_side_switch",
+      "family": "universal_transitions",
+      "reviewState": "awaiting_human_turn_side_switch_live_review",
+      "timingAuthority": "candidate_12_ticks",
+      "rootMotionAuthority": "simulation_owned_zero_fighter_displacement",
+      "exposures": [
+        {
+          "sourceId": "idle_00",
+          "ticks": 3,
+          "role": "current_facing_idle_departure",
+          "facingPhase": "starting"
+        },
+        {
+          "sourceId": "turn_pivot_bridge_v1",
+          "ticks": 2,
+          "role": "planted_pivot_entry",
+          "facingPhase": "starting"
+        },
+        {
+          "sourceId": "turn_pivot_bridge_v1",
+          "ticks": 2,
+          "role": "planted_pivot_exit_runtime_mirrored",
+          "facingPhase": "ending"
+        },
+        {
+          "sourceId": "idle_00",
+          "ticks": 5,
+          "role": "new_facing_idle_settle",
+          "facingPhase": "ending"
+        }
+      ]
+    },
+    {
+      "id": "knockdown_recovery",
+      "family": "reactions_and_recovery",
+      "reviewState": "APPROVED_AS_KNOCKDOWN_RECOVERY_MOTION_V1",
+      "timingAuthority": "approved_motion_review_timing_sandbox_combat_values_non_authoritative",
+      "rootMotionAuthority": "sandbox_simulation",
+      "exposures": [
+        {
+          "sourceId": "knockdown_recovery_01_launch_reaction",
+          "ticks": 4,
+          "role": "launch_reaction",
+          "approvalSha256": null,
+          "grounded": false,
+          "support": "airborne_none"
+        },
+        {
+          "sourceId": "knockdown_recovery_02_airborne_tumble",
+          "ticks": 4,
+          "role": "airborne_tumble",
+          "approvalSha256": null,
+          "grounded": false,
+          "support": "airborne_none"
+        },
+        {
+          "sourceId": "knockdown_recovery_03_ground_impact",
+          "ticks": 2,
+          "role": "ground_impact",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "back_and_coat_floor_contact"
+        },
+        {
+          "sourceId": "knockdown_recovery_04_impact_settle",
+          "ticks": 2,
+          "role": "impact_settle",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "back_hips_and_coat_floor_contact"
+        },
+        {
+          "sourceId": "knockdown_recovery_05_face_up_knockdown",
+          "ticks": 18,
+          "role": "face_up_knockdown",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "back_and_coat_floor_contact"
+        },
+        {
+          "sourceId": "knockdown_recovery_06_shoulder_roll_knee_draw",
+          "ticks": 3,
+          "role": "shoulder_roll_knee_draw",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "back_opposite_shoulder_and_forearm_transition"
+        },
+        {
+          "sourceId": "knockdown_recovery_07_face_up_roll_brace",
+          "ticks": 4,
+          "role": "face_up_roll_brace",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "forearm_hip_and_lower_leg"
+        },
+        {
+          "sourceId": "knockdown_recovery_08_push_to_kneel",
+          "ticks": 4,
+          "role": "push_to_kneel",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "planted_hand_knee_and_foot"
+        },
+        {
+          "sourceId": "knockdown_recovery_09_neutral_get_up",
+          "ticks": 6,
+          "role": "neutral_get_up",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "planted_hand_knee_and_foot"
+        },
+        {
+          "sourceId": "knockdown_recovery_10_rise_to_stand",
+          "ticks": 4,
+          "role": "rise_to_stand",
+          "approvalSha256": null,
+          "grounded": true,
+          "support": "both_feet_bent_knee_stand"
+        }
+      ]
+    },
+    {
+      "id": "standing_light",
+      "family": "ground_normals",
+      "reviewState": "approved_current_baseline_with_polish_debt",
+      "timingAuthority": "approved_current_review_baseline",
+      "exposures": [
+        {
+          "sourceId": "standing_normals_motion_v1_light_01_compact_chamber",
+          "ticks": 3,
+          "role": "compact_chamber"
+        },
+        {
+          "sourceId": "standing_normals_motion_v1_light_02_fast_low_extension",
+          "ticks": 1,
+          "role": "fast_low_extension"
+        },
+        {
+          "sourceId": "standing_normals_motion_v1_light_03_low_kick_contact",
+          "ticks": 2,
+          "role": "low_kick_contact"
+        },
+        {
+          "sourceId": "standing_normals_motion_v1_light_04_post_contact_recoil",
+          "ticks": 1,
+          "role": "post_contact_recoil"
+        },
+        {
+          "sourceId": "standing_normals_motion_v1_light_05_leg_retraction",
+          "ticks": 2,
+          "role": "leg_retraction"
+        },
+        {
+          "sourceId": "standing_normals_motion_v1_light_06_planted_recovery",
+          "ticks": 3,
+          "role": "planted_recovery"
+        }
+      ],
+      "combatCandidate": {
+        "startup": 4,
+        "active": 2,
+        "recovery": 6
+      }
+    },
+    {
+      "id": "standing_heavy",
+      "family": "ground_normals",
+      "reviewState": "APPROVED_RECOMMENDED_PROFILE",
+      "timingAuthority": "authoritative_v1_balance_baseline",
+      "exposures": [
+        {
+          "sourceId": "idle_00",
+          "ticks": 12,
+          "role": "startup_stillness",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "standing_heavy_anticipation_v2",
+          "ticks": 10,
+          "role": "anticipation",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "standing_heavy_preparation",
+          "ticks": 5,
+          "role": "preparation",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "standing_heavy_extension",
+          "ticks": 3,
+          "role": "extension",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "standing_heavy_impact_v2",
+          "ticks": 6,
+          "role": "visual_impact_hold",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "standing_heavy_recoil_v2",
+          "ticks": 5,
+          "role": "recoil",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "standing_heavy_recovery",
+          "ticks": 9,
+          "role": "recovery_bridge",
+          "supportFoot": "screen_left_principal_support"
+        },
+        {
+          "sourceId": "idle_00",
+          "ticks": 25,
+          "role": "committed_return_hold_not_neutral",
+          "supportFoot": "screen_left_principal_support"
+        }
+      ],
+      "combatCandidate": {
+        "authoritative": true,
+        "startup": 24,
+        "active": 5,
+        "recovery": 46
+      }
+    },
+    {
+      "id": "crouching_light",
+      "family": "ground_normals",
+      "reviewState": "APPROVED_AS_CROUCHING_LIGHT_MOTION_V1",
+      "timingAuthority": "approved_17_ticks",
+      "exposures": [
+        {
+          "sourceId": "crouching_light_v4_01_guarded_crouch",
+          "ticks": 2,
+          "role": "guarded_crouch"
+        },
+        {
+          "sourceId": "crouching_light_v4_02_rapid_low_aim",
+          "ticks": 3,
+          "role": "rapid_low_aim"
+        },
+        {
+          "sourceId": "crouching_light_v4_03_point_blank_shot",
+          "ticks": 1,
+          "role": "point_blank_shot"
+        },
+        {
+          "sourceId": "crouching_light_v4_04_compact_recoil",
+          "ticks": 5,
+          "role": "compact_recoil"
+        },
+        {
+          "sourceId": "crouching_light_v4_05_crouched_recovery",
+          "ticks": 6,
+          "role": "crouched_recovery"
+        }
+      ],
+      "combatCandidate": {
+        "startup": 5,
+        "active": 1,
+        "recovery": 11
+      }
+    },
+    {
+      "id": "crouching_medium",
+      "family": "ground_normals",
+      "reviewState": "awaiting_human_crouching_medium_motion_review",
+      "timingAuthority": "candidate_responsive_medium_20_ticks",
+      "exposures": [
+        {
+          "sourceId": "crouching_medium_motion_v1_01_anticipation",
+          "ticks": 4,
+          "role": "anticipation"
+        },
+        {
+          "sourceId": "crouching_medium_motion_v1_02_kick_acceleration",
+          "ticks": 2,
+          "role": "kick_acceleration"
+        },
+        {
+          "sourceId": "crouching_medium_motion_v1_03_low_side_kick_contact",
+          "ticks": 2,
+          "role": "low_side_kick_contact"
+        },
+        {
+          "sourceId": "crouching_medium_motion_v1_04_leg_retraction",
+          "ticks": 4,
+          "role": "leg_retraction"
+        },
+        {
+          "sourceId": "crouching_medium_motion_v1_05_planted_crouch_recovery",
+          "ticks": 8,
+          "role": "planted_crouch_recovery"
+        }
+      ],
+      "combatCandidate": {
+        "startup": 6,
+        "active": 2,
+        "recovery": 12
+      }
+    },
+    {
+      "id": "crouching_heavy",
+      "family": "ground_normals",
+      "reviewState": "awaiting_human_crouching_heavy_motion_review",
+      "timingAuthority": "candidate_responsive_heavy_sweep_32_ticks",
+      "exposures": [
+        {
+          "sourceId": "crouching_heavy_motion_v1_01_deep_rotational_anticipation",
+          "ticks": 7,
+          "role": "deep_rotational_anticipation"
+        },
+        {
+          "sourceId": "crouching_heavy_motion_v1_02_sweep_acceleration",
+          "ticks": 3,
+          "role": "sweep_acceleration"
+        },
+        {
+          "sourceId": "crouching_heavy_motion_v1_03_low_ground_contact",
+          "ticks": 4,
+          "role": "low_ground_contact"
+        },
+        {
+          "sourceId": "crouching_heavy_motion_v1_04_rotational_carry_past_contact",
+          "ticks": 3,
+          "role": "rotational_carry_past_contact"
+        },
+        {
+          "sourceId": "crouching_heavy_motion_v1_05_committed_follow_through",
+          "ticks": 4,
+          "role": "committed_follow_through"
+        },
+        {
+          "sourceId": "crouching_heavy_motion_v1_06_recovery_unwind",
+          "ticks": 5,
+          "role": "recovery_unwind"
+        },
+        {
+          "sourceId": "crouching_heavy_motion_v1_07_planted_recovery",
+          "ticks": 6,
+          "role": "planted_recovery"
+        }
+      ],
+      "combatCandidate": {
+        "startup": 10,
+        "active": 4,
+        "recovery": 18
+      }
+    },
+    {
+      "id": "command_grab_v2",
+      "family": "grabs",
+      "reviewState": "approved_attacker_motion_with_candidate_victim_fall_and_combat_timing",
+      "timingAuthority": "temporary_sandbox_values_not_production_balance",
+      "rootMotionAuthority": "deterministic_sandbox_simulation",
+      "exposures": [
+        {
+          "sourceId": "command_grab_01_mounted_startup",
+          "ticks": 7,
+          "role": "mounted_startup",
+          "approvalSha256": null,
+          "sourceExposureTicks": 5,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1520,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_02_hand_reaches_scythe",
+          "ticks": 5,
+          "role": "hand_reaches_scythe",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1515,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_03_scythe_clears_back",
+          "ticks": 6,
+          "role": "scythe_clears_back",
+          "approvalSha256": null,
+          "sourceExposureTicks": 5,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1510,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_04_blade_flip_transition",
+          "ticks": 5,
+          "role": "blade_flip_transition",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1510,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_05_hook_ready_maximum_coil",
+          "ticks": 10,
+          "role": "hook_ready_maximum_coil",
+          "approvalSha256": null,
+          "sourceExposureTicks": 8,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1508,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_06_lead_foot_plant_weapon_lag",
+          "ticks": 5,
+          "role": "lead_foot_plant_weapon_lag",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1505,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_07_acceleration_begins_scoop_curve",
+          "ticks": 2,
+          "role": "acceleration_begins_scoop_curve",
+          "approvalSha256": null,
+          "sourceExposureTicks": 2,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1502,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_08_scoop_acceleration_entry",
+          "ticks": 2,
+          "role": "scoop_acceleration_entry",
+          "approvalSha256": null,
+          "sourceExposureTicks": 1,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1500,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_09_maximum_speed_scoop",
+          "ticks": 1,
+          "role": "maximum_speed_scoop",
+          "approvalSha256": null,
+          "sourceExposureTicks": 1,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1460,
+            1408
+          ],
+          "victimPose": "neutral"
+        },
+        {
+          "sourceId": "command_grab_10_first_low_hook_contact",
+          "ticks": 5,
+          "role": "first_low_hook_contact",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1320,
+            1408
+          ],
+          "victimPose": "low_hip_contact"
+        },
+        {
+          "sourceId": "command_grab_11_secure_scoop_catch",
+          "ticks": 5,
+          "role": "impact_compression_secure_scoop_catch",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1240,
+            1408
+          ],
+          "victimPose": "hip_trap"
+        },
+        {
+          "sourceId": "command_grab_12_feet_swept_out_locked",
+          "ticks": 2,
+          "role": "feet_swept_out",
+          "approvalSha256": null,
+          "sourceExposureTicks": 2,
+          "attackerRoot": [
+            768,
+            1408
+          ],
+          "victimRoot": [
+            1210,
+            1380
+          ],
+          "victimPose": "feet_swept"
+        },
+        {
+          "sourceId": "command_grab_13_pelvis_leading_rotation_v2",
+          "ticks": 4,
+          "role": "pelvis_leading_rotation_v2",
+          "approvalSha256": null,
+          "sourceExposureTicks": 3,
+          "attackerRoot": [
+            825,
+            1408
+          ],
+          "victimRoot": [
+            1080,
+            1230
+          ],
+          "victimPose": "pelvis_leading_rotation_v2"
+        },
+        {
+          "sourceId": "command_grab_14_locked_low_carry",
+          "ticks": 3,
+          "role": "low_carry_midpoint_edge_on",
+          "approvalSha256": null,
+          "sourceExposureTicks": 2,
+          "attackerRoot": [
+            900,
+            1408
+          ],
+          "victimRoot": [
+            950,
+            1163
+          ],
+          "victimPose": "low_rotational_carry_camera_axis_midpoint"
+        },
+        {
+          "sourceId": "command_grab_15_continued_carry_v2",
+          "ticks": 3,
+          "role": "continued_carry_correct_head_direction",
+          "approvalSha256": null,
+          "sourceExposureTicks": 3,
+          "attackerRoot": [
+            995,
+            1408
+          ],
+          "victimRoot": [
+            650,
+            1010
+          ],
+          "victimPose": "victim_crosses_centerline_v2"
+        },
+        {
+          "sourceId": "command_grab_16_airborne_release_v2",
+          "ticks": 5,
+          "role": "opposite_side_airborne_release_correct_head_direction",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            440,
+            980
+          ],
+          "victimPose": "airborne_release"
+        },
+        {
+          "sourceId": "command_grab_17_head_reorientation_connector_v2",
+          "ticks": 2,
+          "role": "post_release_scythe_reorientation",
+          "approvalSha256": null,
+          "sourceExposureTicks": 1,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            440,
+            980
+          ],
+          "victimPose": "airborne_release"
+        },
+        {
+          "sourceId": "command_grab_18_airborne_hang",
+          "ticks": 5,
+          "role": "airborne_hang",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            300,
+            880
+          ],
+          "victimPose": "airborne_hang"
+        },
+        {
+          "sourceId": "command_grab_19_aim_at_midair",
+          "ticks": 3,
+          "role": "aim_at_midair",
+          "approvalSha256": null,
+          "sourceExposureTicks": 3,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            240,
+            850
+          ],
+          "victimPose": "airborne_hang"
+        },
+        {
+          "sourceId": "command_grab_20_midair_shot",
+          "ticks": 4,
+          "role": "midair_shot",
+          "approvalSha256": null,
+          "sourceExposureTicks": 3,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            210,
+            870
+          ],
+          "victimPose": "shot_react"
+        },
+        {
+          "sourceId": "command_grab_21_post_shot_fall",
+          "ticks": 4,
+          "role": "post_shot_fall",
+          "approvalSha256": null,
+          "sourceExposureTicks": 3,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            190,
+            1080
+          ],
+          "victimPose": "post_shot_fall"
+        },
+        {
+          "sourceId": "command_grab_22_fall_toward_floor",
+          "ticks": 4,
+          "role": "fall_toward_floor",
+          "approvalSha256": null,
+          "sourceExposureTicks": 3,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            190,
+            1290
+          ],
+          "victimPose": "fall_low"
+        },
+        {
+          "sourceId": "command_grab_23_landing_after_shot",
+          "ticks": 5,
+          "role": "landing_after_shot",
+          "approvalSha256": null,
+          "sourceExposureTicks": 4,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            190,
+            1408
+          ],
+          "victimPose": "downed"
+        },
+        {
+          "sourceId": "command_grab_24_recovery",
+          "ticks": 10,
+          "role": "recovery",
+          "approvalSha256": null,
+          "sourceExposureTicks": 8,
+          "attackerRoot": [
+            1062,
+            1408
+          ],
+          "victimRoot": [
+            190,
+            1408
+          ],
+          "victimPose": "downed"
+        }
+      ],
+      "combatCandidate": {
+        "startup": 43,
+        "active": 1,
+        "recovery": 63
+      },
+      "victimFrames": [
+        {
+          "sourceId": "command_grab_victim_post_release_airborne",
+          "role": "post_release_airborne",
+          "victimRoot": [
+            690,
+            980
+          ],
+          "approvalSha256": "9E916A8F924ECA05710404BFFC7FA4DB911961590377F25BB7EDDC0574A90B10"
+        },
+        {
+          "sourceId": "command_grab_victim_airborne_carry_hang",
+          "role": "airborne_carry_hang",
+          "victimRoot": [
+            630,
+            880
+          ],
+          "approvalSha256": "90F7EABB72C30CC68222D2235D5BC870D69C76E20C08980FAC13A357BC3E54FE"
+        },
+        {
+          "sourceId": "command_grab_victim_midair_shot_reaction",
+          "role": "midair_shot_reaction",
+          "victimRoot": [
+            570,
+            870
+          ],
+          "approvalSha256": "A8CE179086F47887538B1F338A935A035100333A4EBCF79F0C909BC077FB4FE8"
+        },
+        {
+          "sourceId": "command_grab_victim_post_shot_fall",
+          "role": "post_shot_fall",
+          "victimRoot": [
+            540,
+            1080
+          ],
+          "approvalSha256": "BBAF2B2AC09344EEAB42C2885D19F022A8DF51874C32EF77417C28EC848B78CF"
+        },
+        {
+          "sourceId": "command_grab_victim_descent_landing_prep",
+          "role": "descent_landing_prep",
+          "victimRoot": [
+            520,
+            1290
+          ],
+          "approvalSha256": "403F30F78326355C9BC93E4BDA3443DA692BEBC0286297CDBEF44CFB4D79D841"
+        },
+        {
+          "sourceId": "command_grab_victim_impact_downed",
+          "role": "impact_downed",
+          "victimRoot": [
+            500,
+            1408
+          ],
+          "approvalSha256": "73BC5944CE52F9B21AB9529562A13FBDC94F4F5CBC8DEDBB68C657A86266F6BD"
+        }
+      ],
+      "interactionContract": {
+        "captureSourceTick": 34,
+        "releaseSourceTick": 52,
+        "shotSourceTick": 64,
+        "landingSourceTick": 73,
+        "simulationTotalTicks": 107,
+        "authoritative": false
+      }
+    }
+  ]
+}

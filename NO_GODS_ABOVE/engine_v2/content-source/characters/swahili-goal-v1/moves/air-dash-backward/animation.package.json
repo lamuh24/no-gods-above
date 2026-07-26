@@ -1,0 +1,591 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "air_dash_backward",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 12,
+  "sourceFrames": [
+    {
+      "id": "air_dash_backward_01_guarded_recoil",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/01_air_dash_backward_guarded_recoil.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "5D0B1F14EA2B6AC03B13B268F6EAE57247FAF6BC439593D285E1836DD9CBCEAF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "air_dash_backward_02_backward_burst",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/02_air_dash_backward_backward_burst.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "B302E2676EE8C1972FAA7EB7D13758E4B3E0C330458AD282B5B9FB8DB4E99B58",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "air_dash_backward_03_max_retreat",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/03_air_dash_backward_max_retreat.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "60752FF72D617B4AFBA75C27B57BA9F56664248131BC08C519F67169F083D3AE",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "air_dash_backward_04_air_brake",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/04_air_dash_backward_air_brake.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "D578B0A4A53EAB3BCC862C5D3FA160BA608B7E7AC68F4AC737D2D443C3422941",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "air_dash_backward_01_guarded_recoil",
+      "start": 0,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "air_dash_backward_02_backward_burst",
+      "start": 2,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "air_dash_backward_03_max_retreat",
+      "start": 5,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "air_dash_backward_04_air_brake",
+      "start": 9,
+      "duration": 3
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [
+      {
+        "start": 0,
+        "end": 11
+      }
+    ],
+    "recovery": [
+      {
+        "start": 0,
+        "end": 11
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "airborne",
+    "facing": "forward",
+    "elevation": "airborne",
+    "plantedFoot": "none",
+    "weight": "airborne",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "airborne_weapon_control",
+    "verticalMotion": "falling"
+  },
+  "exitPose": {
+    "id": "airborne",
+    "facing": "forward",
+    "elevation": "airborne",
+    "plantedFoot": "none",
+    "weight": "airborne",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "airborne_weapon_control",
+    "verticalMotion": "falling"
+  },
+  "interruptPoses": [
+    {
+      "id": "airborne",
+      "facing": "forward",
+      "elevation": "airborne",
+      "plantedFoot": "none",
+      "weight": "airborne",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "airborne_weapon_control",
+      "verticalMotion": "falling"
+    }
+  ],
+  "transitions": [],
+  "landing": [
+    {
+      "start": 0,
+      "end": 0,
+      "rule": "external_gameplay_state_owns_landing"
+    }
+  ],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "air_dash_backward_01_guarded_recoil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 656,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 656,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 880,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 2,
+      "sourceFrameId": "air_dash_backward_02_backward_burst",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 649,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 649,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 886,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 5,
+      "sourceFrameId": "air_dash_backward_03_max_retreat",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 631,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 631,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 905,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 9,
+      "sourceFrameId": "air_dash_backward_04_air_brake",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 626,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 626,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 910,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "air_dash_backward_01_guarded_recoil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 656,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 880,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "air_dash_backward_02_backward_burst",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 649,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 886,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "air_dash_backward_03_max_retreat",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 631,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 905,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "air_dash_backward_04_air_brake",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 626,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 910,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "external_gameplay_state",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "clamp_to_gameplay_state"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "air_dash_backward"
+      ],
+      "toState": "air_dash_backward",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "air_dash_backward"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 12,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 12,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "approved_current_sandbox_baseline",
+      "timingAuthority": "candidate_12_ticks",
+      "rootMotionAuthority": "deterministic_simulation"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "approved_current_sandbox_baseline",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-07-26T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "approved_current_sandbox_baseline",
+      "air_dash_backward_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "approved_current_sandbox_baseline",
+    "sourceAlphaAudit": {
+      "air_dash_backward_01_guarded_recoil": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          395,
+          618,
+          1142,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 213276,
+        "semiTransparentPixelCount": 32901,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "air_dash_backward_02_backward_burst": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          372,
+          657,
+          1164,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 235653,
+        "semiTransparentPixelCount": 41868,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 4,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 23,
+        "pass": true
+      },
+      "air_dash_backward_03_max_retreat": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          313,
+          669,
+          1224,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 253186,
+        "semiTransparentPixelCount": 39999,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 25,
+        "pass": true
+      },
+      "air_dash_backward_04_air_brake": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          334,
+          1243,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 437066,
+        "semiTransparentPixelCount": 32428,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 43,
+        "pass": true
+      }
+    },
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}

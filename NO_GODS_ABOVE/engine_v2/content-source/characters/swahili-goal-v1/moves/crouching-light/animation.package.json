@@ -1,0 +1,691 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "crouching_light",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 17,
+  "sourceFrames": [
+    {
+      "id": "crouching_light_v4_01_guarded_crouch",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/01_guarded_crouch.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "crouching_light_v4_02_rapid_low_aim",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/02_rapid_low_aim.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "270183D773F92922B2EF539F6893BED48F0296A6F1A982629C7535245ED7505C",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "crouching_light_v4_03_point_blank_shot",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/03_point_blank_shot.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "3502151BB83799465BF2F67A14E9682CFB80D3EDEAC3F5C58AFFA202692EA9B4",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "crouching_light_v4_04_compact_recoil",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/04_compact_recoil.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "D0EB4D79D25693297B25255A2497A4C640098B2DA830A8F5D4F52BAE9BE719E3",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "crouching_light_v4_05_crouched_recovery",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/05_crouched_recovery.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "crouching_light_v4_01_guarded_crouch",
+      "start": 0,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_02_rapid_low_aim",
+      "start": 2,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_03_point_blank_shot",
+      "start": 5,
+      "duration": 1
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_04_compact_recoil",
+      "start": 6,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_05_crouched_recovery",
+      "start": 11,
+      "duration": 6
+    }
+  ],
+  "phases": {
+    "anticipation": [
+      {
+        "start": 0,
+        "end": 4
+      }
+    ],
+    "startup": [
+      {
+        "start": 0,
+        "end": 4
+      }
+    ],
+    "active": [
+      {
+        "start": 5,
+        "end": 5
+      }
+    ],
+    "impact": [
+      {
+        "start": 5,
+        "end": 5
+      }
+    ],
+    "followThrough": [
+      {
+        "start": 6,
+        "end": 16
+      }
+    ],
+    "recovery": [
+      {
+        "start": 6,
+        "end": 16
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "crouch",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "low",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "compact_crouch",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "crouch",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "low",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "compact_crouch",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "crouch",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "low",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "compact_crouch",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "crouching_light_v4_01_guarded_crouch",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 635,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 916,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 2,
+      "sourceFrameId": "crouching_light_v4_02_rapid_low_aim",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 599,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 599,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 917,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 5,
+      "sourceFrameId": "crouching_light_v4_03_point_blank_shot",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 613,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 613,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 955,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 6,
+      "sourceFrameId": "crouching_light_v4_04_compact_recoil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 612,
+        "y": 1407
+      },
+      "nearFoot": {
+        "x": 612,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 924,
+        "y": 1407
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 11,
+      "sourceFrameId": "crouching_light_v4_05_crouched_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 635,
+        "y": 1406
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 916,
+        "y": 1406
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "crouching_light_v4_01_guarded_crouch",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 916,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_02_rapid_low_aim",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 599,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 917,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_03_point_blank_shot",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 613,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 955,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_04_compact_recoil",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 612,
+        "y": 1407
+      },
+      "farFoot": {
+        "x": 924,
+        "y": 1407
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "crouching_light_v4_05_crouched_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 635,
+        "y": 1406
+      },
+      "farFoot": {
+        "x": 916,
+        "y": 1406
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "crouching_light"
+      ],
+      "toState": "crouching_light",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "crouching_light"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 5,
+    "active": 1,
+    "recovery": 11,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 17,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "APPROVED_AS_CROUCHING_LIGHT_MOTION_V1",
+      "timingAuthority": "approved_17_ticks",
+      "rootMotionAuthority": "simulation_owned_or_not_applicable"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "APPROVED_AS_CROUCHING_LIGHT_MOTION_V1",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-07-26T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "APPROVED_AS_CROUCHING_LIGHT_MOTION_V1",
+      "crouching_light_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "APPROVED_AS_CROUCHING_LIGHT_MOTION_V1",
+    "sourceAlphaAudit": {
+      "crouching_light_v4_01_guarded_crouch": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          340,
+          1244,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "crouching_light_v4_02_rapid_low_aim": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          230,
+          336,
+          1287,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 487343,
+        "semiTransparentPixelCount": 32189,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 48,
+        "pass": true
+      },
+      "crouching_light_v4_03_point_blank_shot": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          216,
+          335,
+          1353,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 486764,
+        "semiTransparentPixelCount": 36232,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 48,
+        "pass": true
+      },
+      "crouching_light_v4_04_compact_recoil": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          249,
+          337,
+          1288,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 467264,
+        "semiTransparentPixelCount": 35004,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 46,
+        "pass": true
+      },
+      "crouching_light_v4_05_crouched_recovery": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          340,
+          1244,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      }
+    },
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}
