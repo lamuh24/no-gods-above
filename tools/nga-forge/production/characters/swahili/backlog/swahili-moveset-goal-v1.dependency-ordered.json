@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_DEPENDENCY_ORDERED_BACKLOG",
+  "generatedAt": "2026-07-25",
+  "branch": "codex/swahili-moveset-goal-v1",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "legacyGameJsMutable": false,
+  "phases": [
+    {
+      "priority": 0,
+      "milestone": "baseline_safety",
+      "status": "complete_after_report_validation",
+      "workItems": [
+        "goal_branch",
+        "protected_hash_lock",
+        "baseline_validation",
+        "coverage_matrix",
+        "dependency_ordered_backlog"
+      ],
+      "stopGate": "no_generation_before_milestone_0_pass"
+    },
+    {
+      "priority": 1,
+      "milestone": "universal_movement_coverage",
+      "status": "in_progress",
+      "workItems": [
+        {
+          "animationId": "walk_forward",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_human_forward_walk_v2_motion_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "walk_backward",
+          "currentStatus": "blocked_manual_art",
+          "gate": "three_manual_rgba_paintovers_required",
+          "dependencies": [
+            "walk_backward_first_passing",
+            "walk_backward_first_up",
+            "walk_backward_opposite_down"
+          ]
+        },
+        {
+          "animationId": "forward_to_backward_reversal",
+          "currentStatus": "missing",
+          "gate": "requirements_authored_then_key_pose_authoring",
+          "dependencies": [
+            "walk_forward",
+            "walk_backward"
+          ]
+        },
+        {
+          "animationId": "backward_to_forward_reversal",
+          "currentStatus": "blocked_manual_art",
+          "gate": "blocked_until_backward_walk_manual_paintovers_pass",
+          "dependencies": [
+            "walk_backward"
+          ]
+        },
+        {
+          "animationId": "standing_to_crouch",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_human_stance_transition_motion_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "crouch_to_standing",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_human_stance_transition_motion_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "turn_side_switch_compatibility",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_human_turn_side_switch_live_review",
+          "dependencies": []
+        }
+      ],
+      "preserveApproved": [
+        "idle",
+        "dash_forward",
+        "dash_backward",
+        "air_dash_forward",
+        "air_dash_backward",
+        "jump_anticipation",
+        "jump_takeoff",
+        "jump_rising",
+        "jump_apex",
+        "falling",
+        "soft_landing",
+        "attack_landing_recovery",
+        "hard_landing_compatibility",
+        "launch_reaction",
+        "airborne_tumble",
+        "ground_impact",
+        "face_up_knockdown",
+        "neutral_get_up"
+      ],
+      "stopGate": "family_human_motion_or_manual_art_review"
+    },
+    {
+      "priority": 2,
+      "milestone": "normal_attack_coverage",
+      "status": "in_progress",
+      "workItems": [
+        {
+          "family": "standing_normals",
+          "items": [
+            {
+              "animationId": "standing_light",
+              "currentStatus": "approved_motion",
+              "gate": "approved_current_production_baseline_with_polish_debt",
+              "dependencies": []
+            },
+            {
+              "animationId": "standing_medium",
+              "currentStatus": "candidate_key_poses",
+              "gate": "awaiting_human_standing_medium_v3_key_pose_review",
+              "dependencies": []
+            },
+            {
+              "animationId": "standing_heavy",
+              "currentStatus": "approved_motion",
+              "gate": "approved_production_baseline",
+              "dependencies": []
+            }
+          ],
+          "nextAction": "human_review_standing_medium_v3_key_pose_direction"
+        },
+        {
+          "family": "crouching_normals",
+          "items": [
+            {
+              "animationId": "crouching_light",
+              "currentStatus": "approved_motion",
+              "gate": "approved_current_production_baseline",
+              "dependencies": []
+            },
+            {
+              "animationId": "crouching_medium",
+              "currentStatus": "candidate_motion",
+              "gate": "awaiting_human_crouching_medium_motion_review",
+              "dependencies": []
+            },
+            {
+              "animationId": "crouching_heavy",
+              "currentStatus": "candidate_motion",
+              "gate": "awaiting_human_crouching_heavy_motion_review",
+              "dependencies": []
+            }
+          ],
+          "nextAction": "human_review_medium_and_heavy_motion_candidates"
+        },
+        {
+          "family": "directional_normals",
+          "items": [
+            {
+              "animationId": "forward_normal_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_move_design_then_author_key_poses",
+              "dependencies": [
+                "forward_directional_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "forward_normal_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_move_design_then_author_key_poses",
+              "dependencies": [
+                "forward_directional_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "forward_normal_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_move_design_then_author_key_poses",
+              "dependencies": [
+                "forward_directional_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "backward_normal_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_move_design_then_author_key_poses",
+              "dependencies": [
+                "backward_directional_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "backward_normal_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_move_design_then_author_key_poses",
+              "dependencies": [
+                "backward_directional_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "backward_normal_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_move_design_then_author_key_poses",
+              "dependencies": [
+                "backward_directional_normals_family_concept_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_requirements_and_stop_for_family_concept_review"
+        },
+        {
+          "family": "air_normals",
+          "items": [
+            {
+              "animationId": "air_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_air_normal_design_then_author_key_poses",
+              "dependencies": [
+                "air_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "air_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_air_normal_design_then_author_key_poses",
+              "dependencies": [
+                "air_normals_family_concept_approval"
+              ]
+            },
+            {
+              "animationId": "air_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_air_normal_design_then_author_key_poses",
+              "dependencies": [
+                "air_normals_family_concept_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_requirements_and_stop_for_family_concept_review"
+        }
+      ],
+      "stopGate": "family_human_key_pose_motion_and_gameplay_review"
+    },
+    {
+      "priority": 3,
+      "milestone": "five_core_special_families",
+      "status": "blocked_combat_design",
+      "workItems": [
+        {
+          "family": "pistol_pressure_family",
+          "items": [
+            {
+              "animationId": "special_neutral_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "pistol_pressure_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_neutral_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "pistol_pressure_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_neutral_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "pistol_pressure_family_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_family_requirements_then_human_concept_review"
+        },
+        {
+          "family": "scythe_control_family",
+          "items": [
+            {
+              "animationId": "special_backward_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "scythe_control_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_backward_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "scythe_control_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_backward_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "scythe_control_family_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_family_requirements_then_human_concept_review"
+        },
+        {
+          "family": "advancing_weapon_control_family",
+          "items": [
+            {
+              "animationId": "special_forward_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "advancing_weapon_control_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_forward_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "advancing_weapon_control_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_forward_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "advancing_weapon_control_family_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_family_requirements_then_human_concept_review"
+        },
+        {
+          "family": "anti_air_upward_family",
+          "items": [
+            {
+              "animationId": "special_up_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "anti_air_upward_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_up_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "anti_air_upward_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_up_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "anti_air_upward_family_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_family_requirements_then_human_concept_review"
+        },
+        {
+          "family": "low_control_sweep_family",
+          "items": [
+            {
+              "animationId": "special_down_light",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "low_control_sweep_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_down_medium",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "low_control_sweep_family_approval"
+              ]
+            },
+            {
+              "animationId": "special_down_heavy",
+              "currentStatus": "blocked_combat_design",
+              "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+              "dependencies": [
+                "low_control_sweep_family_approval"
+              ]
+            }
+          ],
+          "nextAction": "author_family_requirements_then_human_concept_review"
+        }
+      ],
+      "stopGate": "human_family_concept_review_before_lmh_variant_art"
+    },
+    {
+      "priority": 4,
+      "milestone": "grabs_throws_and_reactions",
+      "status": "in_progress",
+      "workItems": [
+        {
+          "animationId": "universal_grab_attempt",
+          "currentStatus": "approved_motion",
+          "gate": "awaiting_human_grab_combat_timing_and_balance_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "universal_forward_throw",
+          "currentStatus": "approved_motion",
+          "gate": "awaiting_human_grab_combat_timing_and_balance_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "universal_backward_throw",
+          "currentStatus": "approved_motion",
+          "gate": "awaiting_human_grab_combat_timing_and_balance_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "command_grab",
+          "currentStatus": "approved_motion",
+          "gate": "awaiting_combat_timing_runtime_balance",
+          "dependencies": []
+        },
+        {
+          "animationId": "throw_whiff",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_throw_whiff_gameplay_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "throw_tech",
+          "currentStatus": "blocked_combat_design",
+          "gate": "throw_tech_window_result_and_animation_direction_pending",
+          "dependencies": []
+        },
+        {
+          "animationId": "command_grab_victim_fall",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_human_command_grab_victim_fall_gameplay_review",
+          "dependencies": []
+        },
+        {
+          "animationId": "throw_corner_behavior",
+          "currentStatus": "blocked_combat_design",
+          "gate": "forward_backward_command_throw_corner_results_pending",
+          "dependencies": []
+        },
+        {
+          "animationId": "unsupported_victim_variants",
+          "currentStatus": "blocked_combat_design",
+          "gate": "small_large_non_humanoid_and_extreme_variant_requirements_pending",
+          "dependencies": []
+        },
+        {
+          "animationId": "throw_result_knockdown_compatibility",
+          "currentStatus": "candidate_motion",
+          "gate": "awaiting_throw_result_and_corner_gameplay_review",
+          "dependencies": [
+            "universal_forward_throw",
+            "universal_backward_throw",
+            "command_grab"
+          ]
+        },
+        {
+          "animationId": "wall_bounce_reaction",
+          "currentStatus": "blocked_combat_design",
+          "gate": "wall_bounce_result_and_variant_requirement_pending",
+          "dependencies": [
+            "approved_wall_bounce_combat_result"
+          ]
+        },
+        {
+          "animationId": "ground_bounce_reaction",
+          "currentStatus": "blocked_combat_design",
+          "gate": "ground_bounce_result_and_variant_requirement_pending",
+          "dependencies": [
+            "approved_ground_bounce_combat_result"
+          ]
+        }
+      ],
+      "nextAction": "rebuild_command_grab_candidate_package_from_approved_v1_motion_then_review_combat_timing_and_victim_results",
+      "stopGate": "human_gameplay_balance_and_victim_compatibility_review"
+    },
+    {
+      "priority": 5,
+      "milestone": "candidate_packaging",
+      "status": "blocked_by_family_review_gates",
+      "requirements": [
+        "deterministic_animation_packages",
+        "trimmed_family_atlases",
+        "explicit_sourceBounds",
+        "anchor_offsets",
+        "edge_extrusion",
+        "pixel_exact_reconstruction",
+        "isolated_sandbox_only"
+      ],
+      "stopGate": "no_final_shipping_atlas_and_no_production_roster"
+    },
+    {
+      "priority": 6,
+      "milestone": "final_verification",
+      "status": "blocked_by_prior_milestones",
+      "requirements": [
+        "full_forge_tests",
+        "full_engine_v2_tests",
+        "production_build",
+        "typescript_checks",
+        "browser_authored_and_mirrored_smokes",
+        "deterministic_replay_checksums",
+        "rollback_presentation_event_checks",
+        "source_hash_verification",
+        "alpha_edge_and_rigid_prop_audits",
+        "transition_matrix",
+        "package_reconstruction_tests",
+        "no_running_jobs"
+      ],
+      "stopGate": "goal_final_stop_condition"
+    }
+  ]
+}

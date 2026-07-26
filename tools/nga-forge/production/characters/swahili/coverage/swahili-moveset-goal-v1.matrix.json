@@ -1,0 +1,1600 @@
+{
+  "schemaVersion": 2,
+  "record": "SWAHILI_MOVESET_GOAL_V1_COVERAGE_MATRIX",
+  "generatedAt": "2026-07-25",
+  "branch": "codex/swahili-moveset-goal-v1",
+  "baselineCommit": "81412231aa5fdfbd907d27bc6591b39dce7b43ca",
+  "sourceOfTruthOrder": [
+    "human approval and rejection records",
+    "exact protected hashes and freeze records",
+    "current status and synchronization records",
+    "current Engine V2 tests and sandbox contracts",
+    "older coverage matrix only where not superseded"
+  ],
+  "allowedStatuses": [
+    "approved_motion",
+    "approved_key_poses",
+    "candidate_motion",
+    "candidate_key_poses",
+    "blocked_manual_art",
+    "blocked_combat_design",
+    "rejected",
+    "missing",
+    "not_applicable"
+  ],
+  "entryCount": 84,
+  "statusCounts": {
+    "approved_key_poses": 1,
+    "approved_motion": 32,
+    "blocked_combat_design": 32,
+    "blocked_manual_art": 2,
+    "candidate_key_poses": 1,
+    "candidate_motion": 9,
+    "missing": 1,
+    "not_applicable": 6
+  },
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "legacyGameJsSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+  "supersedesForCurrentPlanning": "tools/nga-forge/production/characters/swahili/coverage/animation-coverage-completion-v1.matrix.json",
+  "entries": [
+    {
+      "animationId": "idle",
+      "family": "universal_state",
+      "currentStatus": "approved_motion",
+      "gate": "approved_production_baseline",
+      "timingStatus": "approved_review_timing_non_combat",
+      "sandboxStatus": "sandbox_preview_only",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/idle-foundation-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "crouch",
+      "family": "universal_state",
+      "currentStatus": "approved_key_poses",
+      "gate": "stance_transition_motion_review",
+      "timingStatus": "hold_state_simulation_owned",
+      "sandboxStatus": "sandbox_preview_only",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "walk_forward",
+      "family": "locomotion",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_forward_walk_v2_motion_review",
+      "timingStatus": "candidate_contact_weighted_40_ticks_non_authoritative",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "NO_GODS_ABOVE/engine_v2/docs/swahili_sandbox/forward-walk-v2-live-review/REVIEW_SUMMARY.md",
+        "tools/nga-forge/production/characters/swahili/production-entry.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "walk_backward",
+      "family": "locomotion",
+      "currentStatus": "blocked_manual_art",
+      "gate": "three_manual_rgba_paintovers_required",
+      "timingStatus": "blocked_until_cycle_art_is_complete",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "walk_backward_first_passing",
+        "walk_backward_first_up",
+        "walk_backward_opposite_down"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/walk-backward-motion-v2.manual-paintovers-block.json",
+        "tools/nga-forge/production/characters/swahili/manual-paintover-kits/walk-backward-motion-v2/manual-paintover-kits.manifest.json"
+      ],
+      "notes": "Automated retries are prohibited; the complete manual paint-over kits are authoritative.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "dash_forward",
+      "family": "locomotion",
+      "currentStatus": "approved_motion",
+      "gate": "approved_production_baseline",
+      "timingStatus": "approved_44_ticks_60hz",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/dash-motion-v2.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "dash_backward",
+      "family": "locomotion",
+      "currentStatus": "approved_motion",
+      "gate": "approved_production_baseline",
+      "timingStatus": "approved_50_ticks_60hz",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/dash-motion-v2.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_to_backward_reversal",
+      "family": "locomotion_transition",
+      "currentStatus": "missing",
+      "gate": "requirements_authored_then_key_pose_authoring",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "walk_forward",
+        "walk_backward"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/coverage/animation-coverage-completion-v1.matrix.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_to_forward_reversal",
+      "family": "locomotion_transition",
+      "currentStatus": "blocked_manual_art",
+      "gate": "blocked_until_backward_walk_manual_paintovers_pass",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "walk_backward"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/walk-backward-motion-v2.manual-paintovers-block.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "standing_to_crouch",
+      "family": "stance_transition",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_stance_transition_motion_review",
+      "timingStatus": "candidate_11_ticks_non_authoritative",
+      "sandboxStatus": "candidate_review_only",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "crouch_to_standing",
+      "family": "stance_transition",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_stance_transition_motion_review",
+      "timingStatus": "candidate_11_ticks_non_authoritative",
+      "sandboxStatus": "candidate_review_only",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/stance-transitions-v1.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "turn_side_switch_compatibility",
+      "family": "facing_transition",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_turn_side_switch_live_review",
+      "timingStatus": "candidate_12_ticks_non_authoritative",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/turn-side-switch-compatibility-v1.status.json",
+        "tools/nga-forge/production/characters/swahili/reports/animation-coverage-completion-v1/turn-side-switch-compatibility-v1/turn-side-switch-compatibility-v1.motion-review.md"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_dash_forward",
+      "family": "air_mobility",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_sandbox_baseline_production_balance_pending",
+      "timingStatus": "approved_sandbox_baseline_12_ticks_non_production_balance",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/air-dash-motion-v1.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_dash_backward",
+      "family": "air_mobility",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_sandbox_baseline_production_balance_pending",
+      "timingStatus": "approved_sandbox_baseline_12_ticks_non_production_balance",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/air-dash-side-switch-v2.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "jump_anticipation",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "jump_takeoff",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "jump_rising",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "jump_apex",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "falling",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "soft_landing",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "attack_landing_recovery",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "hard_landing_compatibility",
+      "family": "jump_fall_landing",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_motion_spacing_reference_simulation_trajectory_owned",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "standing_block",
+      "family": "defense_reaction",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_sandbox_baseline",
+      "timingStatus": "incoming_combat_state_owned_candidate_timing",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "candidate_animation_package_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "crouching_block",
+      "family": "defense_reaction",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_sandbox_baseline",
+      "timingStatus": "incoming_combat_state_owned_candidate_timing",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "candidate_animation_package_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "light_hit_reaction",
+      "family": "defense_reaction",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_sandbox_baseline",
+      "timingStatus": "incoming_combat_state_owned_candidate_timing",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "candidate_animation_package_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "heavy_hit_reaction",
+      "family": "defense_reaction",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_sandbox_baseline",
+      "timingStatus": "incoming_combat_state_owned_candidate_timing",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "candidate_animation_package_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "launch_reaction",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "airborne_tumble",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "ground_impact",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "face_up_knockdown",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "hard_knockdown",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "wake_up_startup",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "neutral_get_up",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "landing_from_launch",
+      "family": "knockdown_recovery",
+      "currentStatus": "approved_motion",
+      "gate": "approved_motion_sandbox_integration_candidate_only",
+      "timingStatus": "approved_artwork_motion_sandbox_cursor_non_production",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/knockdown-recovery-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "face_down_knockdown_if_required",
+      "family": "knockdown_recovery",
+      "currentStatus": "not_applicable",
+      "gate": "no_current_move_contract_requires_face_down_variant",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json"
+      ],
+      "notes": "Re-open only if an approved combat result requires a face-down branch.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "wall_bounce_reaction",
+      "family": "knockdown_recovery",
+      "currentStatus": "blocked_combat_design",
+      "gate": "wall_bounce_result_and_variant_requirement_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "approved_wall_bounce_combat_result"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "ground_bounce_reaction",
+      "family": "knockdown_recovery",
+      "currentStatus": "blocked_combat_design",
+      "gate": "ground_bounce_result_and_variant_requirement_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "approved_ground_bounce_combat_result"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "soft_knockdown",
+      "family": "knockdown_recovery",
+      "currentStatus": "blocked_combat_design",
+      "gate": "soft_knockdown_result_pending_move_contract",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "quick_recovery",
+      "family": "knockdown_recovery",
+      "currentStatus": "blocked_combat_design",
+      "gate": "recovery_option_and_timing_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "delayed_recovery",
+      "family": "knockdown_recovery",
+      "currentStatus": "blocked_combat_design",
+      "gate": "recovery_option_and_timing_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "throw_result_knockdown_compatibility",
+      "family": "knockdown_recovery",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_throw_result_and_corner_gameplay_review",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "universal_forward_throw",
+        "universal_backward_throw",
+        "command_grab"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+        "NO_GODS_ABOVE/engine_v2/tests/swahili_knockdown_recovery_v1.test.js"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "standing_light",
+      "family": "normal_attack",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_production_baseline_with_polish_debt",
+      "timingStatus": "approved_12_ticks",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json"
+      ],
+      "notes": "Standing Heavy remains the visual-quality benchmark.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "standing_medium",
+      "family": "normal_attack",
+      "currentStatus": "candidate_key_poses",
+      "gate": "awaiting_human_standing_medium_v3_key_pose_review",
+      "timingStatus": "not_authored_for_v3",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/standing-medium-identity-v3.status.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/standing-medium-identity-v3/standing-medium-v3-key-pose-review.md"
+      ],
+      "notes": "V3 supersedes the rejected longer-light/rising-knee direction for current review.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "standing_heavy",
+      "family": "normal_attack",
+      "currentStatus": "approved_motion",
+      "gate": "approved_production_baseline",
+      "timingStatus": "authoritative_75_ticks_60hz",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-combat-profile-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "crouching_light",
+      "family": "normal_attack",
+      "currentStatus": "approved_motion",
+      "gate": "approved_current_production_baseline",
+      "timingStatus": "authoritative_17_ticks_60hz",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "crouching_medium",
+      "family": "normal_attack",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_crouching_medium_motion_review",
+      "timingStatus": "candidate_20_or_24_ticks_non_authoritative",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "crouching_heavy",
+      "family": "normal_attack",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_crouching_heavy_motion_review",
+      "timingStatus": "candidate_32_or_40_ticks_non_authoritative",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/crouching-heavy-motion-v1.status.json"
+      ],
+      "notes": "Sweep knockdown result is not authoritative.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_normal_light",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_move_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "forward_directional_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_normal_medium",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_move_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "forward_directional_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_normal_heavy",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_move_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "forward_directional_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_normal_light",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_move_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "backward_directional_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_normal_medium",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_move_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "backward_directional_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_normal_heavy",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_move_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "backward_directional_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_light",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_air_normal_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "air_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_medium",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_air_normal_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "air_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_heavy",
+      "family": "normal_attack",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_air_normal_design_then_author_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "air_normals_family_concept_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/attack-animation-audit-v1.md",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_neutral_light",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "pistol_pressure_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_neutral_medium",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "pistol_pressure_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_neutral_heavy",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "pistol_pressure_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_backward_light",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "scythe_control_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_backward_medium",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "scythe_control_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_backward_heavy",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "scythe_control_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_forward_light",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "advancing_weapon_control_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_forward_medium",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "advancing_weapon_control_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_forward_heavy",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "advancing_weapon_control_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_up_light",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "anti_air_upward_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_up_medium",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "anti_air_upward_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_up_heavy",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "anti_air_upward_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_down_light",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "low_control_sweep_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_down_medium",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "low_control_sweep_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_down_heavy",
+      "family": "core_special",
+      "currentStatus": "blocked_combat_design",
+      "gate": "approve_five_core_family_concepts_before_variant_key_poses",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [
+        "low_control_sweep_family_approval"
+      ],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/character.lock.json",
+        "tools/nga-forge/production/characters/swahili/reports/attack-animation-cleanup-v1/prioritized-rebuild-queue-v1.json"
+      ],
+      "notes": "L/M/H must be intentional variants of one approved family, not unrelated moves.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "universal_grab_attempt",
+      "family": "throw_grab",
+      "currentStatus": "approved_motion",
+      "gate": "awaiting_human_grab_combat_timing_and_balance_review",
+      "timingStatus": "candidate_non_authoritative_package_timing",
+      "sandboxStatus": "preview_only",
+      "packageStatus": "candidate_animation_package_unlisted_from_active_bundle",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "universal_forward_throw",
+      "family": "throw_grab",
+      "currentStatus": "approved_motion",
+      "gate": "awaiting_human_grab_combat_timing_and_balance_review",
+      "timingStatus": "candidate_non_authoritative_package_timing",
+      "sandboxStatus": "preview_only",
+      "packageStatus": "candidate_animation_package_unlisted_from_active_bundle",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "universal_backward_throw",
+      "family": "throw_grab",
+      "currentStatus": "approved_motion",
+      "gate": "awaiting_human_grab_combat_timing_and_balance_review",
+      "timingStatus": "candidate_non_authoritative_package_timing",
+      "sandboxStatus": "preview_only",
+      "packageStatus": "candidate_animation_package_unlisted_from_active_bundle",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "command_grab",
+      "family": "throw_grab",
+      "currentStatus": "approved_motion",
+      "gate": "awaiting_combat_timing_runtime_balance",
+      "timingStatus": "selected_0_8x_motion_reference_non_authoritative",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "existing_candidate_package_is_stale_and_requires_rebuild_from_approved_v1_motion",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/status/command-grab-motion-v1.approved.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "throw_whiff",
+      "family": "throw_grab",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_throw_whiff_gameplay_review",
+      "timingStatus": "candidate_universal_grab_attempt_recovery",
+      "sandboxStatus": "preview_only",
+      "packageStatus": "candidate_package",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "throw_tech",
+      "family": "throw_grab",
+      "currentStatus": "blocked_combat_design",
+      "gate": "throw_tech_window_result_and_animation_direction_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "command_grab_victim_fall",
+      "family": "throw_grab",
+      "currentStatus": "candidate_motion",
+      "gate": "awaiting_human_command_grab_victim_fall_gameplay_review",
+      "timingStatus": "candidate_sandbox_victim_timing",
+      "sandboxStatus": "isolated_swahili_sandbox",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/status/command-grab-victim-fall-v1.status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "throw_corner_behavior",
+      "family": "throw_grab",
+      "currentStatus": "blocked_combat_design",
+      "gate": "forward_backward_command_throw_corner_results_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "unsupported_victim_variants",
+      "family": "throw_grab",
+      "currentStatus": "blocked_combat_design",
+      "gate": "small_large_non_humanoid_and_extreme_variant_requirements_pending",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/packages/grab-throw-v1/operation-status.json"
+      ],
+      "notes": "Arbitrary whole-sprite runtime scaling is prohibited.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "super",
+      "family": "cinematic_or_meta",
+      "currentStatus": "not_applicable",
+      "gate": "explicitly_out_of_scope_for_swahili_moveset_goal_v1",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/production-entry.json"
+      ],
+      "notes": "Requires a new explicitly authorized Goal.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "ultimate",
+      "family": "cinematic_or_meta",
+      "currentStatus": "not_applicable",
+      "gate": "explicitly_out_of_scope_for_swahili_moveset_goal_v1",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/production-entry.json"
+      ],
+      "notes": "Requires a new explicitly authorized Goal.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "intro",
+      "family": "cinematic_or_meta",
+      "currentStatus": "not_applicable",
+      "gate": "explicitly_out_of_scope_for_swahili_moveset_goal_v1",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/production-entry.json"
+      ],
+      "notes": "Requires a new explicitly authorized Goal.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "victory",
+      "family": "cinematic_or_meta",
+      "currentStatus": "not_applicable",
+      "gate": "explicitly_out_of_scope_for_swahili_moveset_goal_v1",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/production-entry.json"
+      ],
+      "notes": "Requires a new explicitly authorized Goal.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "round_finisher",
+      "family": "cinematic_or_meta",
+      "currentStatus": "not_applicable",
+      "gate": "explicitly_out_of_scope_for_swahili_moveset_goal_v1",
+      "timingStatus": "not_authored",
+      "sandboxStatus": "not_integrated",
+      "packageStatus": "not_compiled",
+      "dependencies": [],
+      "evidence": [
+        "tools/nga-forge/production/characters/swahili/production-entry.json"
+      ],
+      "notes": "Requires a new explicitly authorized Goal.",
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    }
+  ]
+}

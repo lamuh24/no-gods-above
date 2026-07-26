@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_REVERSAL_MANUAL_ACTION_KIT",
+  "generatedAt": "2026-07-25",
+  "status": "BLOCKED_MANUAL_ART_COMPLETE_DEPENDENCY_KIT",
+  "candidateOnly": true,
+  "deployable": false,
+  "automatedGenerationRetriesAllowed": false,
+  "blockingDependency": {
+    "manifest": "tools/nga-forge/production/characters/swahili/manual-paintover-kits/walk-backward-motion-v2/manual-paintover-kits.manifest.json",
+    "manifestSha256": "94FC785AA633D8A2261BC516EC663328283ACBD9CEC2244E2BF4A8A5F97B3E67",
+    "requiredManualFrames": [
+      "walk_backward_first_passing",
+      "walk_backward_first_up",
+      "walk_backward_opposite_down"
+    ],
+    "verifiedReferencedFileCount": 54,
+    "completionRule": "all three paintovers must pass their existing post-paintover validation templates and human motion review before reversal connector authoring"
+  },
+  "reversals": [
+    {
+      "animationId": "forward_to_backward_reversal",
+      "finalCategory": "blocked_manual_art_complete_kit",
+      "sourceBoundary": "approved/candidate Forward Walk V2 contact-weighted cycle boundary",
+      "targetBoundary": "completed Backward Walk V2 cycle",
+      "manualAction": [
+        "complete and validate the three existing Backward Walk V2 paintovers",
+        "select the nearest valid forward support phase and backward support phase",
+        "author the minimum transition connector only after both boundary phases are approved",
+        "validate support-foot continuity, root velocity sign change, weapon continuity, authored/mirrored parity, and deterministic replay"
+      ],
+      "timingAuthority": "simulation-owned candidate; authoritative reversal timing requires gameplay approval"
+    },
+    {
+      "animationId": "backward_to_forward_reversal",
+      "finalCategory": "blocked_manual_art_complete_kit",
+      "sourceBoundary": "completed Backward Walk V2 cycle",
+      "targetBoundary": "approved/candidate Forward Walk V2 contact-weighted cycle boundary",
+      "manualAction": [
+        "complete and validate the three existing Backward Walk V2 paintovers",
+        "select the nearest valid backward support phase and forward support phase",
+        "author the minimum transition connector only after both boundary phases are approved",
+        "validate support-foot continuity, root velocity sign change, weapon continuity, authored/mirrored parity, and deterministic replay"
+      ],
+      "timingAuthority": "simulation-owned candidate; authoritative reversal timing requires gameplay approval"
+    }
+  ],
+  "postManualValidation": [
+    "1536x1536 clean RGBA with transparent corners and no colored alpha fringe",
+    "character lock, pistols, and rigid scythe unchanged",
+    "no floating feet, foot skating, root jump, scale pumping, or camera-distance drift",
+    "no mirrored-source splice; P2 is a lossless runtime mirror",
+    "forward-to-backward and backward-to-forward direction changes are monotonic and deterministic",
+    "legacy game.js remains byte-identical"
+  ]
+}

@@ -1,0 +1,1790 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_COMBAT_CONCEPT_REVIEW_CONTRACT",
+  "generatedAt": "2026-07-25",
+  "status": "awaiting_grouped_human_move_concept_review",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "artworkGenerated": false,
+  "authoritativeCombatValuesAuthored": false,
+  "conceptCount": 32,
+  "specialFamilyCount": 5,
+  "specialVariantCount": 15,
+  "concepts": [
+    {
+      "animationId": "air_heavy",
+      "group": "directional_and_air_normals",
+      "label": "Air Heavy - committed descending hook sweep",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "High-commitment air normal with a broad downward hook-control silhouette and explicit attack-landing recovery.",
+      "keyPoseDirectionCandidate": [
+        "clear airborne anticipation",
+        "descending hook sweep with rigid scythe continuity",
+        "attack-landing recovery branch"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_light",
+      "group": "directional_and_air_normals",
+      "label": "Air Light - compact airborne check",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Fast air-to-air check with low commitment and no projectile behavior.",
+      "keyPoseDirectionCandidate": [
+        "compact airborne chamber",
+        "short boot or pistol-frame contact",
+        "return to existing falling pose"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "air_medium",
+      "group": "directional_and_air_normals",
+      "label": "Air Medium - cross-body scythe-shaft strike",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Moderate airborne space-control strike that commits torso rotation while preserving facing and landing compatibility.",
+      "keyPoseDirectionCandidate": [
+        "airborne cross-body load",
+        "shaft contact separated from body silhouette",
+        "fall-compatible unwind"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_normal_heavy",
+      "group": "directional_and_air_normals",
+      "label": "Backward Heavy - committed drag-control denial",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Slow, high-risk retreating hook-control strike that denies reckless chase and visibly yields space.",
+      "keyPoseDirectionCandidate": [
+        "large rearward anticipation",
+        "single committed drag-control contact",
+        "long recovery with no automatic pull or throw"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_normal_light",
+      "group": "directional_and_air_normals",
+      "label": "Backward Light - retreating guard check",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Quick retreat-compatible check that interrupts pursuit while preserving close-range identity.",
+      "keyPoseDirectionCandidate": [
+        "rearward weight shift",
+        "compact elbow or pistol-frame check",
+        "guarded recovery without root teleportation"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "backward_normal_medium",
+      "group": "directional_and_air_normals",
+      "label": "Backward Medium - retreating low hook check",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Measured retreating scythe check that discourages forward pursuit without creating full-screen control.",
+      "keyPoseDirectionCandidate": [
+        "rear-foot load",
+        "low shaft or hook threat within close-mid range",
+        "weapon-led recovery back to guard"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "delayed_recovery",
+      "group": "reaction_results",
+      "label": "Delayed recovery option",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Simulation-selected delayed wake-up path using a held approved downed pose before the approved rise.",
+      "keyPoseDirectionCandidate": [
+        "downed hold",
+        "wake-up tell",
+        "approved rise",
+        "neutral return"
+      ],
+      "phaseRequirements": [
+        "hold duration is simulation-owned",
+        "no new downed art unless human review finds a visual need",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_normal_heavy",
+      "group": "directional_and_air_normals",
+      "label": "Forward Heavy - advancing hook-control strike",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "High-commitment advancing control strike with strong reach and whiff risk; not a replacement for Standing Heavy.",
+      "keyPoseDirectionCandidate": [
+        "deep loaded step",
+        "broad readable hook-control contact",
+        "long planted recovery with no side switch"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_normal_light",
+      "group": "directional_and_air_normals",
+      "label": "Forward Light - advancing pistol-frame check",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Fast, close advancing check that supports approach and confirms without becoming a zoning shot.",
+      "keyPoseDirectionCandidate": [
+        "small forward weight transfer",
+        "pistol-frame or forearm contact kept close to the body",
+        "short guarded recovery"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "forward_normal_medium",
+      "group": "directional_and_air_normals",
+      "label": "Forward Medium - scythe-shaft body control",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Committed mid-strength advancing body check using the rigid scythe shaft as close-range position control.",
+      "keyPoseDirectionCandidate": [
+        "hip-led step",
+        "shaft contact outside Swahili's body",
+        "opponent-facing recoil with weapon geometry unchanged"
+      ],
+      "phaseRequirements": [
+        "clear anticipation/startup silhouette",
+        "one readable active/contact pose",
+        "impact exposure without baked VFX",
+        "follow-through that preserves opponent-facing intent",
+        "planted recovery compatible with idle, walk, block, and throw startup"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "ground_bounce_reaction",
+      "group": "reaction_results",
+      "label": "Ground-bounce compatibility",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Optional combat-result branch with one readable floor impact and deterministic recovery handoff.",
+      "keyPoseDirectionCandidate": [
+        "descending victim pose",
+        "floor impact compression",
+        "single rebound",
+        "fall/knockdown handoff"
+      ],
+      "phaseRequirements": [
+        "single-bounce default",
+        "no rotated idle",
+        "stage floor and root remain simulation-owned",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "quick_recovery",
+      "group": "reaction_results",
+      "label": "Quick recovery option",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Simulation-selected faster recovery path that reuses approved compatible get-up poses.",
+      "keyPoseDirectionCandidate": [
+        "downed eligibility",
+        "quick brace",
+        "rise",
+        "neutral return"
+      ],
+      "phaseRequirements": [
+        "timing and invulnerability require balance approval",
+        "no skipped visual discontinuity",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "soft_knockdown",
+      "group": "reaction_results",
+      "label": "Soft knockdown result",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Shorter knockdown result reusing approved landing/recovery language without changing hard-knockdown art.",
+      "keyPoseDirectionCandidate": [
+        "soft impact",
+        "brief downed hold",
+        "quick recovery handoff"
+      ],
+      "phaseRequirements": [
+        "combat-result selector owns choice",
+        "approved hard-knockdown sequence remains unchanged",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_backward_heavy",
+      "group": "core_special_families",
+      "label": "Scythe Control - Heavy",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Rearward-loaded scythe control that catches forward movement and manipulates close-range spacing.",
+      "keyPoseDirectionCandidate": [
+        "rear-foot load with weapon lag",
+        "canonical hook remains outside the victim volume until contact",
+        "recovery preserves scythe mounting and both pistols"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "heavy",
+        "intentionalDifference": "Deep-load control candidate with the greatest range and recovery; any side switch requires separate approval.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_backward_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_backward_light",
+      "group": "core_special_families",
+      "label": "Scythe Control - Light",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Rearward-loaded scythe control that catches forward movement and manipulates close-range spacing.",
+      "keyPoseDirectionCandidate": [
+        "rear-foot load with weapon lag",
+        "canonical hook remains outside the victim volume until contact",
+        "recovery preserves scythe mounting and both pistols"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "light",
+        "intentionalDifference": "Quick hook check with minimal displacement and no victim pull.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_backward_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_backward_medium",
+      "group": "core_special_families",
+      "label": "Scythe Control - Medium",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Rearward-loaded scythe control that catches forward movement and manipulates close-range spacing.",
+      "keyPoseDirectionCandidate": [
+        "rear-foot load with weapon lag",
+        "canonical hook remains outside the victim volume until contact",
+        "recovery preserves scythe mounting and both pistols"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "medium",
+        "intentionalDifference": "Slower hook-and-reel candidate with modest victim displacement pending combat approval.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_backward_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_down_heavy",
+      "group": "core_special_families",
+      "label": "Low Control Sweep - Heavy",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Grounded low-control family that forces close-range respect without replacing the approved Crouching Light shot.",
+      "keyPoseDirectionCandidate": [
+        "deep grounded load with stance-aware support",
+        "low contact remains visually separate from floor and VFX",
+        "planted recovery preserves root and weapon geometry"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "heavy",
+        "intentionalDifference": "Full committed sweep with hard-knockdown candidate, longest startup/recovery, and strict single-hit parity.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_down_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_down_light",
+      "group": "core_special_families",
+      "label": "Low Control Sweep - Light",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Grounded low-control family that forces close-range respect without replacing the approved Crouching Light shot.",
+      "keyPoseDirectionCandidate": [
+        "deep grounded load with stance-aware support",
+        "low contact remains visually separate from floor and VFX",
+        "planted recovery preserves root and weapon geometry"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "light",
+        "intentionalDifference": "Fast low scythe-shaft check; no knockdown; shortest recovery.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_down_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_down_medium",
+      "group": "core_special_families",
+      "label": "Low Control Sweep - Medium",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Grounded low-control family that forces close-range respect without replacing the approved Crouching Light shot.",
+      "keyPoseDirectionCandidate": [
+        "deep grounded load with stance-aware support",
+        "low contact remains visually separate from floor and VFX",
+        "planted recovery preserves root and weapon geometry"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "medium",
+        "intentionalDifference": "Broader low hook-control sweep with moderate startup and positional push candidate.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_down_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_forward_heavy",
+      "group": "core_special_families",
+      "label": "Advancing Weapon Control - Heavy",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Forward-moving close-range weapon control that carries Swahili into grappler pressure instead of projectile keep-away.",
+      "keyPoseDirectionCandidate": [
+        "visible planted launch before travel",
+        "simulation-owned advance with no sprite-driven collision",
+        "braked recovery that remains punishable on whiff"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "heavy",
+        "intentionalDifference": "Longest committed advance with hook-control finish, longest recovery, and no unapproved armor.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_forward_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_forward_light",
+      "group": "core_special_families",
+      "label": "Advancing Weapon Control - Light",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Forward-moving close-range weapon control that carries Swahili into grappler pressure instead of projectile keep-away.",
+      "keyPoseDirectionCandidate": [
+        "visible planted launch before travel",
+        "simulation-owned advance with no sprite-driven collision",
+        "braked recovery that remains punishable on whiff"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "light",
+        "intentionalDifference": "Short pistol-frame or forearm entry; fastest recovery; no launch result.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_forward_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_forward_medium",
+      "group": "core_special_families",
+      "label": "Advancing Weapon Control - Medium",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Forward-moving close-range weapon control that carries Swahili into grappler pressure instead of projectile keep-away.",
+      "keyPoseDirectionCandidate": [
+        "visible planted launch before travel",
+        "simulation-owned advance with no sprite-driven collision",
+        "braked recovery that remains punishable on whiff"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "medium",
+        "intentionalDifference": "Scythe-shaft shoulder drive with moderate travel and body-control hit result candidate.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_forward_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_neutral_heavy",
+      "group": "core_special_families",
+      "label": "Pistol Pressure - Heavy",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Short-to-mid-range pistol pressure that supports approach and confirms; never a runaway zoning loop.",
+      "keyPoseDirectionCandidate": [
+        "close guarded presentation with pistols retained",
+        "separate muzzle/smoke/shell VFX sockets",
+        "recovery returns to close-range threat rather than retreat"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "heavy",
+        "intentionalDifference": "Committed short burst with the longest startup/recovery and strongest close-range push result; never full-screen.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_neutral_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_neutral_light",
+      "group": "core_special_families",
+      "label": "Pistol Pressure - Light",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Short-to-mid-range pistol pressure that supports approach and confirms; never a runaway zoning loop.",
+      "keyPoseDirectionCandidate": [
+        "close guarded presentation with pistols retained",
+        "separate muzzle/smoke/shell VFX sockets",
+        "recovery returns to close-range threat rather than retreat"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "light",
+        "intentionalDifference": "Fast single pressure shot; shortest reach and recovery; low commitment; no movement.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_neutral_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_neutral_medium",
+      "group": "core_special_families",
+      "label": "Pistol Pressure - Medium",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Short-to-mid-range pistol pressure that supports approach and confirms; never a runaway zoning loop.",
+      "keyPoseDirectionCandidate": [
+        "close guarded presentation with pistols retained",
+        "separate muzzle/smoke/shell VFX sockets",
+        "recovery returns to close-range threat rather than retreat"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "medium",
+        "intentionalDifference": "Two-beat pressure string with a small advancing step; moderate recovery; confirms at close-mid range.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_neutral_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_up_heavy",
+      "group": "core_special_families",
+      "label": "Anti-Air Upward Control - Heavy",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Close-range upward control that protects the grappler's approach space without becoming a vertical projectile.",
+      "keyPoseDirectionCandidate": [
+        "low loaded anticipation",
+        "upward contact silhouette clear from the body",
+        "grounded or explicitly authored airborne recovery"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "heavy",
+        "intentionalDifference": "Committed launcher candidate with largest vertical reach and landing/recovery liability; no automatic follow-up.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_up_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_up_light",
+      "group": "core_special_families",
+      "label": "Anti-Air Upward Control - Light",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Close-range upward control that protects the grappler's approach space without becoming a vertical projectile.",
+      "keyPoseDirectionCandidate": [
+        "low loaded anticipation",
+        "upward contact silhouette clear from the body",
+        "grounded or explicitly authored airborne recovery"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "light",
+        "intentionalDifference": "Fast upward pistol-frame check; narrow range; stays grounded.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_up_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "special_up_medium",
+      "group": "core_special_families",
+      "label": "Anti-Air Upward Control - Medium",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Close-range upward control that protects the grappler's approach space without becoming a vertical projectile.",
+      "keyPoseDirectionCandidate": [
+        "low loaded anticipation",
+        "upward contact silhouette clear from the body",
+        "grounded or explicitly authored airborne recovery"
+      ],
+      "phaseRequirements": [
+        "distinct anticipation and startup",
+        "single readable active/contact role unless later multi-hit approval is explicit",
+        "impact exposure with VFX kept separate",
+        "variant-specific follow-through",
+        "recovery proportional to range, movement, and reward"
+      ],
+      "variantDeltaCandidate": {
+        "strength": "medium",
+        "intentionalDifference": "Rising scythe-shaft hook with broader vertical coverage and moderate recovery.",
+        "startup": "relative_only_pending_human_approval",
+        "duration": "independently_authored_at_60_hz_after_motion_review",
+        "range": "relative_only_pending_human_approval",
+        "movement": "simulation_owned_candidate_only",
+        "hitResult": "candidate_only_pending_combat_approval",
+        "vfx": "separate_socketed_presentation_assets_only",
+        "recovery": "relative_only_pending_human_approval",
+        "riskReward": "human_balance_review_required"
+      },
+      "dependencies": [
+        "special_up_family_concept_human_approval"
+      ],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "throw_corner_behavior",
+      "group": "grabs_and_victim_contracts",
+      "label": "Throw corner behavior",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Stage-safe resolution contract for forward throw, backward throw, and command grab without sprite scaling or clipping.",
+      "keyPoseDirectionCandidate": [
+        "capture",
+        "corner-aware root resolution",
+        "release/impact",
+        "recovery"
+      ],
+      "phaseRequirements": [
+        "simulation clamps roots",
+        "back throw side switch occurs only if space resolves safely",
+        "mirrored parity",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "throw_tech",
+      "group": "grabs_and_victim_contracts",
+      "label": "Throw-tech response",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Mutual break response before capture lock with readable separation and deterministic neutral return.",
+      "keyPoseDirectionCandidate": [
+        "pre-lock clash",
+        "attacker recoil",
+        "victim recoil",
+        "neutral spacing restore"
+      ],
+      "phaseRequirements": [
+        "command grab remains non-techable unless separately approved",
+        "tech window and advantage require combat approval",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "unsupported_victim_variants",
+      "group": "grabs_and_victim_contracts",
+      "label": "Unsupported victim-class variants",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Explicit requirements for small, large, non-humanoid, and extreme-proportion victims.",
+      "keyPoseDirectionCandidate": [
+        "class-specific capture anchor",
+        "class-specific carry/release pose track",
+        "class-specific landing result"
+      ],
+      "phaseRequirements": [
+        "standard-height package remains valid only for its declared class",
+        "no arbitrary whole-sprite scaling",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    },
+    {
+      "animationId": "wall_bounce_reaction",
+      "group": "reaction_results",
+      "label": "Wall-bounce compatibility",
+      "productionState": "awaiting_human_move_concept_review",
+      "finalCategory": "human_review_ready_combat_design_candidate",
+      "gameplayIntent": "Optional combat-result branch for supported victims; not an automatic property of existing attacks.",
+      "keyPoseDirectionCandidate": [
+        "impact compression",
+        "wall contact",
+        "outbound tumble",
+        "fall/landing handoff"
+      ],
+      "phaseRequirements": [
+        "combat system selects branch",
+        "real victim poses only",
+        "corner clamp and mirrored parity",
+        "authored/mirrored transition compatibility and deterministic replay"
+      ],
+      "variantDeltaCandidate": null,
+      "dependencies": [],
+      "humanDecisionRequired": [
+        "accept, revise, or reject the move concept and combat role",
+        "accept, revise, or reject the key animation direction before artwork generation",
+        "approve later motion quality, game feel, authoritative timing, and combat balance separately"
+      ],
+      "preserve": [
+        "approved Swahili character lock and canonical idle anchor",
+        "face, snout, body proportions, tuxedo, coat, pistols, and canonical rigid scythe",
+        "approved source pixels and VFX separation",
+        "1536x1536 RGBA source-frame contract and root at (768, 1408)",
+        "authored P1 plus lossless runtime mirror for P2",
+        "simulation-owned movement, collision, hit results, timing, and rollback",
+        "candidate-only status, deployable false, and production-roster exclusion"
+      ],
+      "prohibited": [
+        "no baked muzzle flashes, sparks, smoke, projectile trails, camera effects, text, grids, or review overlays",
+        "no arbitrary whole-sprite victim scaling",
+        "no runtime-driven pose fabrication or rotated-idle victim falls",
+        "no authoritative combat timing, damage, boxes, cancels, armor, invulnerability, or balance before approval",
+        "no legacy game.js, production roster, deployment, or final shipping atlas changes"
+      ],
+      "artworkGenerated": false,
+      "timingAuthoritative": false,
+      "sandboxIntegrated": false,
+      "candidateOnly": true,
+      "deployable": false,
+      "productionRoster": false
+    }
+  ],
+  "reviewDecisionContract": {
+    "allowedDecisions": [
+      "APPROVE_CONCEPT",
+      "REQUEST_TARGETED_REVISION",
+      "REJECT_CONCEPT"
+    ],
+    "approvalEffect": "authorizes candidate key-pose production only; does not approve motion, timing, combat, package promotion, roster, or deployment",
+    "groupedReviewFamilies": [
+      "directional_and_air_normals",
+      "pistol_pressure_special_family",
+      "scythe_control_special_family",
+      "advancing_weapon_control_special_family",
+      "anti_air_upward_special_family",
+      "low_control_sweep_special_family",
+      "reaction_results",
+      "grabs_and_victim_contracts"
+    ]
+  }
+}
