@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_FINAL_PRODUCTION_REPORT",
+  "generatedAt": "2026-07-26",
+  "status": "COMPLETE_CANDIDATE_ONLY_WITH_EXPLICIT_HUMAN_AND_MANUAL_GATES",
+  "branch": "codex/swahili-moveset-goal-v1",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "finalShippingAtlasBuilt": false,
+  "legacyRuntimeModified": false,
+  "published": false,
+  "deployed": false,
+  "pushed": false,
+  "pullRequestCreated": false,
+  "baselineCommit": "81412231aa5fdfbd907d27bc6591b39dce7b43ca",
+  "localMilestoneCommits": [
+    {
+      "commit": "fc4c46ed",
+      "subject": "chore(swahili): record moveset v1 baseline and review contracts"
+    },
+    {
+      "commit": "05d76ae7",
+      "subject": "feat(swahili): package moveset v1 sandbox candidate"
+    }
+  ],
+  "coverage": {
+    "entryCount": 84,
+    "silentMissingCount": 0,
+    "approvedProductionBaseline": 33,
+    "humanReviewReadyExistingCandidate": 10,
+    "humanReviewReadyCombatDesignCandidate": 32,
+    "blockedManualArtCompleteKit": 3,
+    "notApplicable": 6,
+    "humanReviewQueueItems": 45
+  },
+  "completedFamilies": {
+    "classified": [
+      "universal movement",
+      "air movement",
+      "stance transitions",
+      "turn and side-switch compatibility",
+      "ground normals",
+      "defense",
+      "reactions and recovery",
+      "universal grabs and throws",
+      "command grab v2",
+      "five core special families with intentional light, medium, and heavy design variants"
+    ],
+    "candidatePackages": {
+      "total": 25,
+      "newGoalPackages": 18,
+      "byteIdenticalReusedPackages": 7,
+      "staleCommandGrabExcluded": true,
+      "currentCommandGrabSimulationTicks": 107,
+      "currentCommandGrabAttackerExposures": 24,
+      "currentCommandGrabVictimFrames": 6
+    },
+    "candidateAtlases": {
+      "families": 6,
+      "pages": 13,
+      "uniqueSourceAssets": 131,
+      "pixelExactReconstruction": true,
+      "alphaAuditFailures": 0
+    }
+  },
+  "manualBlockers": [
+    {
+      "animationId": "walk_backward",
+      "status": "BLOCKED_MANUAL_ART_COMPLETE_KIT",
+      "automatedRetryAllowed": false
+    },
+    {
+      "animationId": "forward_to_backward_reversal",
+      "status": "BLOCKED_MANUAL_ART_COMPLETE_DEPENDENCY_KIT",
+      "automatedRetryAllowed": false
+    },
+    {
+      "animationId": "backward_to_forward_reversal",
+      "status": "BLOCKED_MANUAL_ART_COMPLETE_DEPENDENCY_KIT",
+      "automatedRetryAllowed": false
+    }
+  ],
+  "validation": {
+    "forgeTopLevelTests": "PASS 51/51",
+    "forgeBackendTests": "PASS 83/83",
+    "focusedCandidatePackageTests": "PASS 8/8",
+    "engineValidate": "PASS",
+    "engineProductionBuild": "PASS",
+    "forgeFrontendProductionBuild": "PASS",
+    "candidateManifestFreshness": "PASS",
+    "browserSandboxSmoke": {
+      "status": "PASS",
+      "scenarioCount": 55,
+      "consoleErrorCount": 0,
+      "renderer": "ANGLE SwiftShader WebGL2",
+      "serverStoppedByHarness": true
+    },
+    "deterministicReplayAndSnapshot": "PASS",
+    "authoredAndMirroredScenarios": "PASS",
+    "rollbackPresentationDeduplication": "PASS",
+    "sourceHashValidation": "PASS",
+    "protectedHashMismatchCount": 0,
+    "atlasReconstructionMismatchCount": 0
+  },
+  "hashes": {
+    "legacyGameJsSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+    "protectedFileCount": 263,
+    "protectedDigestSha256": "1026F275B478F1505FDD5A992C5FC6923CE4567007B9439FDA19840DE4313E10"
+  },
+  "keyArtifacts": {
+    "finalMatrix": "tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+    "reviewQueue": "tools/nga-forge/production/characters/swahili/reviews/swahili-moveset-goal-v1/HUMAN_REVIEW_QUEUE.md",
+    "combatConcepts": "tools/nga-forge/production/characters/swahili/design/swahili-moveset-goal-v1.combat-concepts.md",
+    "reversalManualKit": "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1-reversals/README.md",
+    "packageOperationStatus": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/operation-status.json",
+    "candidateBundle": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/character.bundle.json",
+    "compiledCandidateManifest": "NO_GODS_ABOVE/engine_v2/generated/manifests/swahili_moveset_goal_v1.candidate.runtime.json",
+    "browserReport": "NO_GODS_ABOVE/engine_v2/docs/swahili_sandbox/captures/sandbox_browser_report.json"
+  },
+  "unresolvedRisks": [
+    "Forty-two visual or combat-design candidates still require human judgment; candidate classification is not approval.",
+    "Walk Backward and both direction reversals require manual artwork using the completed dependency kits; automated generation retries remain disabled.",
+    "Combat-design candidates have no generated artwork, authoritative timing, balance approval, or sandbox integration.",
+    "Browser evidence used SwiftShader software rendering; hardware-GPU visual performance remains unverified.",
+    "Vite reported an existing large-chunk warning during the Engine V2 production build.",
+    "Git automatic geometric repack exhausted disk space after the second commit; the exact incomplete temporary pack was removed, but future repository maintenance needs additional free space."
+  ],
+  "polishDebt": [
+    "Complete grouped visual review with mirrored previews and numbered contact sheets.",
+    "Perform manual paintovers for Walk Backward and both reversal connectors.",
+    "Validate rigid scythe and pistol identity in every newly approved sequence.",
+    "Approve or revise gameplay timing and balance only after visual motion approval.",
+    "Build a final shipping atlas only after explicit promotion approval."
+  ],
+  "manualReviewChecklist": [
+    "Review all 45 queued decisions in the grouped human-review queue.",
+    "Reject any identity, costume, anatomy, pistol, rigid-scythe, scale, camera, alpha, limb-swap, or mirrored-frame drift.",
+    "Confirm visible-impact count equals registered hit count for every attack candidate.",
+    "Complete and validate the manual Walk Backward and reversal paintover kits without automated retries.",
+    "Run focused and full regression again after any accepted visual or timing revision.",
+    "Keep Swahili outside the production roster until a separate explicit promotion decision."
+  ],
+  "recommendedNextGoal": {
+    "title": "Swahili Moveset V1 Human Review and Manual Reversal Paintover",
+    "firstAction": "Review the 45-item grouped queue, beginning with the 10 existing motion candidates before the 32 combat-design candidates.",
+    "promotionBoundary": "No roster, deployment, final-atlas, or production promotion action is authorized by this report."
+  },
+  "scopeExclusionsPreserved": [
+    "legacy NO_GODS_ABOVE/game.js",
+    "supers",
+    "ultimate",
+    "intro",
+    "victory",
+    "finisher",
+    "final stage art",
+    "other fighters",
+    "architecture redesign"
+  ]
+}
