@@ -1,0 +1,1130 @@
+{
+  "schemaVersion": "1.0.0",
+  "simulationHz": 60,
+  "durationPolicy": "INDEPENDENTLY_AUTHORED_PER_MOVE",
+  "defaultGameplayVisualAlignment": true,
+  "blanketDurationMultiplier": null,
+  "moves": [
+    {
+      "moveId": "standing_light",
+      "sourceFrameCount": 4,
+      "contactSourceFrames": [
+        2
+      ],
+      "v1Historical": {
+        "durationTicks": 15,
+        "exposureTicks": [
+          4,
+          4,
+          4,
+          3
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+          "phaseTicks": {
+            "startup": 3,
+            "active": 4,
+            "recovery": 5
+          },
+          "durationTicks": 12,
+          "exposureTicks": [
+            2,
+            1,
+            4,
+            2,
+            1,
+            2
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 3,
+            "active": 5,
+            "recovery": 6
+          },
+          "durationTicks": 14,
+          "exposureTicks": [
+            2,
+            1,
+            5,
+            2,
+            1,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "WEIGHTED_ALTERNATE_NOT_DEFAULT",
+          "phaseTicks": {
+            "startup": 4,
+            "active": 6,
+            "recovery": 7
+          },
+          "durationTicks": 17,
+          "exposureTicks": [
+            3,
+            1,
+            6,
+            3,
+            1,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": "APPROVED_V2_RETIMING",
+      "note": "Targeted V2 one-hit reconstruction: V1 stance, lead-arm arc, momentum and recovery direction preserved; the obsolete second full extension is replaced by connected same-arm follow-through and recoil.",
+      "authoredFrameCount": 6
+    },
+    {
+      "moveId": "standing_medium",
+      "sourceFrameCount": 8,
+      "contactSourceFrames": [
+        4
+      ],
+      "v1Historical": {
+        "durationTicks": 21,
+        "exposureTicks": [
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          3,
+          2
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+          "phaseTicks": {
+            "startup": 5,
+            "active": 5,
+            "recovery": 10
+          },
+          "durationTicks": 20,
+          "exposureTicks": [
+            2,
+            1,
+            1,
+            1,
+            5,
+            4,
+            2,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 6,
+            "active": 6,
+            "recovery": 11
+          },
+          "durationTicks": 23,
+          "exposureTicks": [
+            2,
+            2,
+            1,
+            1,
+            6,
+            4,
+            3,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "WEIGHTED_ALTERNATE_NOT_DEFAULT",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 7,
+            "recovery": 13
+          },
+          "durationTicks": 27,
+          "exposureTicks": [
+            3,
+            2,
+            1,
+            1,
+            7,
+            5,
+            3,
+            5
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": "APPROVED_V2_RETIMING",
+      "note": "Targeted V2 one-hit modernization: the V1 wide base, cross-body coil, rear-hand arc, body momentum, secondary lag and recovery direction are preserved; the obsolete post-punch knee and high kick are replaced by same-arm overshoot and recoil.",
+      "authoredFrameCount": 8
+    },
+    {
+      "moveId": "standing_heavy",
+      "sourceFrameCount": 7,
+      "contactSourceFrames": [
+        3
+      ],
+      "v1Historical": {
+        "durationTicks": 31,
+        "exposureTicks": [
+          5,
+          4,
+          5,
+          4,
+          5,
+          4,
+          4
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+          "phaseTicks": {
+            "startup": 9,
+            "active": 5,
+            "recovery": 18
+          },
+          "durationTicks": 32,
+          "exposureTicks": [
+            4,
+            3,
+            2,
+            5,
+            4,
+            6,
+            8
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 11,
+            "active": 5,
+            "recovery": 21
+          },
+          "durationTicks": 37,
+          "exposureTicks": [
+            5,
+            4,
+            2,
+            5,
+            5,
+            7,
+            9
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE",
+          "phaseTicks": {
+            "startup": 13,
+            "active": 6,
+            "recovery": 23
+          },
+          "durationTicks": 42,
+          "exposureTicks": [
+            6,
+            4,
+            3,
+            6,
+            6,
+            8,
+            9
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Heavy alternate preserves strike acceleration and exposes anticipation/recovery."
+    },
+    {
+      "moveId": "crouching_light",
+      "sourceFrameCount": 4,
+      "contactSourceFrames": [
+        3
+      ],
+      "v1Historical": {
+        "durationTicks": 14,
+        "exposureTicks": [
+          4,
+          3,
+          4,
+          3
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+          "phaseTicks": {
+            "startup": 3,
+            "active": 3,
+            "recovery": 6
+          },
+          "durationTicks": 12,
+          "exposureTicks": [
+            1,
+            1,
+            1,
+            3,
+            3,
+            2,
+            1
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 3,
+            "active": 4,
+            "recovery": 7
+          },
+          "durationTicks": 14,
+          "exposureTicks": [
+            1,
+            1,
+            1,
+            4,
+            3,
+            2,
+            2
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+          "phaseTicks": {
+            "startup": 4,
+            "active": 5,
+            "recovery": 8
+          },
+          "durationTicks": 17,
+          "exposureTicks": [
+            2,
+            1,
+            1,
+            5,
+            3,
+            3,
+            2
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": "APPROVED_V2_RETIMING",
+      "note": "Distinct V2 low-attack modernization: V1 Crouching Light only aliased Standing Light artwork, so the compact lead-arm rhythm, planted base, fast acceleration, body momentum, secondary lag and guard-return direction are preserved while a true low palm-check silhouette is authored.",
+      "authoredFrameCount": 7
+    },
+    {
+      "moveId": "crouching_medium",
+      "sourceFrameCount": 8,
+      "contactSourceFrames": [
+        3
+      ],
+      "v1Historical": {
+        "durationTicks": 19,
+        "exposureTicks": [
+          3,
+          2,
+          3,
+          2,
+          2,
+          3,
+          2,
+          2
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+          "phaseTicks": {
+            "startup": 5,
+            "active": 4,
+            "recovery": 10
+          },
+          "durationTicks": 19,
+          "exposureTicks": [
+            2,
+            2,
+            1,
+            4,
+            3,
+            3,
+            2,
+            2
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 6,
+            "active": 5,
+            "recovery": 11
+          },
+          "durationTicks": 22,
+          "exposureTicks": [
+            3,
+            2,
+            1,
+            5,
+            3,
+            3,
+            2,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 6,
+            "recovery": 12
+          },
+          "durationTicks": 25,
+          "exposureTicks": [
+            4,
+            2,
+            1,
+            6,
+            4,
+            3,
+            2,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": "APPROVED_V2_RETIMING",
+      "note": "Sweep Line modernization: V1 Crouching Medium aliased Standing Medium art, so V2 preserves medium-weight load, hip-led torque, fast post-load acceleration, secondary-motion follow-through and guarded recovery while authoring a true one-hit lead-leg low sweep.",
+      "authoredFrameCount": 8
+    },
+    {
+      "moveId": "crouching_heavy",
+      "sourceFrameCount": 7,
+      "contactSourceFrames": [
+        3
+      ],
+      "v1Historical": {
+        "durationTicks": 31,
+        "exposureTicks": [
+          5,
+          4,
+          5,
+          4,
+          5,
+          4,
+          4
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "ORIGINAL_V1_RHYTHM",
+          "phaseTicks": {
+            "startup": 10,
+            "active": 4,
+            "recovery": 17
+          },
+          "durationTicks": 31,
+          "exposureTicks": [
+            5,
+            3,
+            2,
+            4,
+            5,
+            5,
+            7
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 10,
+            "active": 5,
+            "recovery": 22
+          },
+          "durationTicks": 37,
+          "exposureTicks": [
+            5,
+            3,
+            2,
+            5,
+            6,
+            7,
+            9
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+          "phaseTicks": {
+            "startup": 12,
+            "active": 6,
+            "recovery": 25
+          },
+          "durationTicks": 43,
+          "exposureTicks": [
+            6,
+            4,
+            2,
+            6,
+            7,
+            8,
+            10
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Crown Riser preserves the V1 low coil, lead-knee drive, same rear-hand rise, impact extension, held follow-through and guarded return. V2 replaces the exact duplicate drawing with one recovery connector and keeps the hold in exposure timing.",
+      "authoredFrameCount": 7
+    },
+    {
+      "moveId": "air_light",
+      "sourceFrameCount": 4,
+      "contactSourceFrames": [
+        2
+      ],
+      "v1Historical": {
+        "durationTicks": 12,
+        "exposureTicks": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+          "phaseTicks": {
+            "startup": 2,
+            "active": 5,
+            "recovery": 4
+          },
+          "durationTicks": 11,
+          "exposureTicks": [
+            1,
+            1,
+            5,
+            2,
+            2
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 3,
+            "active": 5,
+            "recovery": 5
+          },
+          "durationTicks": 13,
+          "exposureTicks": [
+            2,
+            1,
+            5,
+            2,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE",
+          "phaseTicks": {
+            "startup": 4,
+            "active": 5,
+            "recovery": 6
+          },
+          "durationTicks": 15,
+          "exposureTicks": [
+            2,
+            2,
+            5,
+            3,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Rebuilds Jump Light as one continuous same-arm open-palm action: compact chamber, extension connector, one contact, held same-arm follow-through, and guarded recovery. The ambiguous fist strike remains excluded and the new connector spacing smooths body, coat, and loc travel without adding another hit.",
+      "authoredFrameCount": 5
+    },
+    {
+      "moveId": "air_medium",
+      "sourceFrameCount": 6,
+      "contactSourceFrames": [
+        2
+      ],
+      "v1Historical": {
+        "durationTicks": 19,
+        "exposureTicks": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+          "phaseTicks": {
+            "startup": 5,
+            "active": 4,
+            "recovery": 10
+          },
+          "durationTicks": 19,
+          "exposureTicks": [
+            3,
+            2,
+            4,
+            3,
+            3,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 6,
+            "active": 4,
+            "recovery": 11
+          },
+          "durationTicks": 21,
+          "exposureTicks": [
+            3,
+            3,
+            4,
+            3,
+            4,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 5,
+            "recovery": 12
+          },
+          "durationTicks": 24,
+          "exposureTicks": [
+            4,
+            3,
+            5,
+            4,
+            4,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Rebuilds Jump Medium as one continuous same-leg side kick: compact chamber, extension connector, one contact, retraction connector, knee recoil, and guarded recovery. The duplicated third foot was removed from extension and contact without changing timing, scale, or the one-hit combat profile.",
+      "authoredFrameCount": 6
+    },
+    {
+      "moveId": "air_heavy",
+      "sourceFrameCount": 7,
+      "contactSourceFrames": [
+        3
+      ],
+      "v1Historical": {
+        "durationTicks": 26,
+        "exposureTicks": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4,
+          3
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 5,
+            "recovery": 15
+          },
+          "durationTicks": 27,
+          "exposureTicks": [
+            3,
+            2,
+            2,
+            5,
+            3,
+            5,
+            7
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 8,
+            "active": 5,
+            "recovery": 17
+          },
+          "durationTicks": 30,
+          "exposureTicks": [
+            4,
+            2,
+            2,
+            5,
+            4,
+            6,
+            7
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_ALTERNATE",
+          "phaseTicks": {
+            "startup": 10,
+            "active": 6,
+            "recovery": 19
+          },
+          "durationTicks": 35,
+          "exposureTicks": [
+            5,
+            3,
+            2,
+            6,
+            5,
+            7,
+            7
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Preserves the strongest V1 descending two-hand slam arc and squash/stretch while removing contradictory later kick/palm impacts; frame 03 is the only contact.",
+      "authoredFrameCount": 7
+    },
+    {
+      "moveId": "ascend_step",
+      "sourceFrameCount": 7,
+      "contactSourceFrames": [
+        3,
+        10
+      ],
+      "v1Historical": {
+        "durationTicks": 30,
+        "exposureTicks": [
+          5,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "QUICK_TARGETED_REPAIR_44",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 22,
+            "recovery": 15
+          },
+          "durationTicks": 44,
+          "exposureTicks": [
+            3,
+            2,
+            2,
+            3,
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            3,
+            2,
+            2,
+            3,
+            4,
+            6
+          ],
+          "preservesSourceFrameOrder": false,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "READABLE_TARGETED_REPAIR_RECOMMENDED_48",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 24,
+            "recovery": 17
+          },
+          "durationTicks": 48,
+          "exposureTicks": [
+            3,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            6
+          ],
+          "preservesSourceFrameOrder": false,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "BROAD_ROTATIONAL_RECOVERY_52",
+          "phaseTicks": {
+            "startup": 8,
+            "active": 24,
+            "recovery": 20
+          },
+          "durationTicks": 52,
+          "exposureTicks": [
+            4,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            4,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            7
+          ],
+          "preservesSourceFrameOrder": false,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Targeted Medium-special motion repair: a traveling low slide-kick contact flows through an authored retraction/coil into a planted-hands back-handspring and one asymmetric rising-heel launcher, then a distinct airborne tuck and controlled landing. The two visible impacts map to two deterministic hitboxes.",
+      "authoredFrameCount": 16,
+      "v2Reinterpretation": {
+        "approvedDisposition": "MODERNIZE",
+        "reason": "Targeted motion repair keeps the approved two-hit concept but replaces the fixed-root, symmetrical gymnastics read. The slide visibly travels, a new coil pose recycles its momentum backward, the hands plant as a temporary pivot, one heel rises as the clear striking leg while the other leg stays bent for counterbalance, and distinct post-contact tuck art carries Lamuh into a compressed landing.",
+        "retiredLegacyBeats": [
+          "shared Light/Medium dash-punch clone",
+          "punch contact",
+          "soft-knockdown finish"
+        ],
+        "retainedLegacyQualities": [
+          "forward-loaded momentum",
+          "low dash energy",
+          "coat and loc drag",
+          "connected recovery direction"
+        ],
+        "protectedLegacyFramesModified": false
+      }
+    },
+    {
+      "moveId": "ascend_step_light",
+      "sourceFrameCount": 7,
+      "authoredFrameCount": 6,
+      "contactSourceFrames": [
+        3
+      ],
+      "v1Historical": {
+        "durationTicks": 30,
+        "exposureTicks": [
+          5,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "durationEvidence": "RECOVERED_HISTORICAL_V1_GAMEPLAY_DEFINITION",
+        "exposureEvidence": "DETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+        "contactTick": null,
+        "note": "Per-pose V1 exposure and frame-indexed contact were not stored; the exact recovered total duration is shown with a clearly labeled linear frame-map reconstruction."
+      },
+      "candidates": {
+        "A": {
+          "label": "QUICK_LEGACY_RHYTHM",
+          "phaseTicks": {
+            "startup": 4,
+            "active": 4,
+            "recovery": 10
+          },
+          "durationTicks": 18,
+          "exposureTicks": [
+            2,
+            1,
+            1,
+            4,
+            4,
+            6
+          ],
+          "preservesSourceFrameOrder": false,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "QUICK_MOBILITY_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 5,
+            "active": 4,
+            "recovery": 11
+          },
+          "durationTicks": 20,
+          "exposureTicks": [
+            2,
+            2,
+            1,
+            4,
+            5,
+            6
+          ],
+          "preservesSourceFrameOrder": false,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "READABLE_LIGHT_ALTERNATE",
+          "phaseTicks": {
+            "startup": 6,
+            "active": 5,
+            "recovery": 12
+          },
+          "durationTicks": 23,
+          "exposureTicks": [
+            3,
+            2,
+            1,
+            5,
+            5,
+            7
+          ],
+          "preservesSourceFrameOrder": false,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Ascend Step Light uses the approved family dash-punch motion at the shortest travel and lowest reward. It is one cyan-gold movement dash and one punch, never a second attack.",
+      "v2Reinterpretation": {
+        "approvedDisposition": "MODERNIZE",
+        "reason": "Shares the reinterpreted family dash-punch motion; the seven V1 source cells are not replayed in order.",
+        "retiredLegacyBeats": [
+          "rising palm contact",
+          "airborne palm follow-through",
+          "extended airborne second strike"
+        ],
+        "retainedLegacyQualities": [
+          "forward-loaded momentum",
+          "low dash energy",
+          "coat and loc drag",
+          "forward follow-through",
+          "grounded recovery direction"
+        ],
+        "protectedLegacyFramesModified": false
+      }
+    },
+    {
+      "moveId": "ascend_step_heavy",
+      "sourceFrameCount": 0,
+      "authoredFrameCount": 10,
+      "contactSourceFrames": [
+        7
+      ],
+      "v1Historical": {
+        "durationTicks": 0,
+        "exposureTicks": [],
+        "durationEvidence": "No recoverable V1 Heavy variant; V2 missing-state authoring.",
+        "exposureEvidence": "Not applicable.",
+        "contactTick": null,
+        "note": "Ascend Step Heavy is a new V2 family variant, not a claim about legacy timing."
+      },
+      "candidates": {
+        "A": {
+          "label": "FAST_CHARGE_ROUTE",
+          "phaseTicks": {
+            "startup": 22,
+            "active": 4,
+            "recovery": 12
+          },
+          "durationTicks": 38,
+          "exposureTicks": [
+            3,
+            3,
+            4,
+            2,
+            4,
+            3,
+            3,
+            4,
+            5,
+            7
+          ],
+          "preservesSourceFrameOrder": null,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "PAUSE_GROWTH_RECOMMENDED",
+          "phaseTicks": {
+            "startup": 24,
+            "active": 5,
+            "recovery": 13
+          },
+          "durationTicks": 42,
+          "exposureTicks": [
+            4,
+            4,
+            4,
+            2,
+            4,
+            3,
+            3,
+            5,
+            6,
+            7
+          ],
+          "preservesSourceFrameOrder": null,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_GROWING_BLAST_ALTERNATE",
+          "phaseTicks": {
+            "startup": 26,
+            "active": 6,
+            "recovery": 14
+          },
+          "durationTicks": 46,
+          "exposureTicks": [
+            5,
+            4,
+            4,
+            2,
+            5,
+            3,
+            3,
+            6,
+            7,
+            7
+          ],
+          "preservesSourceFrameOrder": null,
+          "preservesAuthoredFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedCandidate": "B",
+      "humanReviewStatus": null,
+      "note": "Ascend Step Heavy approaches with the family aura, performs one deterministic target-relative side switch without translating the victim, pauses briefly behind them, visibly grows a palm energy ball, then fires one blast. It has no approach hit and no multi-hit sequence."
+    }
+  ]
+}

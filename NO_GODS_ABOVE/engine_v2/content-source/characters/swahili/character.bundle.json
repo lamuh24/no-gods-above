@@ -1,0 +1,137 @@
+{
+  "animationPackages": [
+    "moves/standing-block/animation.package.json",
+    "moves/crouching-block/animation.package.json",
+    "moves/light-hit-reaction/animation.package.json",
+    "moves/heavy-hit-reaction/animation.package.json"
+  ],
+  "bundleVersion": 1,
+  "design": {
+    "characterBible": "repo://tools/nga-forge/production/characters/swahili/character.lock.json",
+    "forbiddenMutations": [
+      "identity_drift",
+      "costume_drift",
+      "pistol_mutation",
+      "scythe_mutation",
+      "scale_pumping",
+      "camera_recenter",
+      "baked_vfx"
+    ],
+    "palette": "repo://tools/nga-forge/production/characters/swahili/reference.manifest.json"
+  },
+  "displayName": "Swahili",
+  "id": "swahili",
+  "packageGroups": {
+    "defense": [
+      "standing_block",
+      "crouching_block"
+    ],
+    "reactions": [
+      "light_hit_reaction",
+      "heavy_hit_reaction"
+    ]
+  },
+  "poseLibrary": [
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "neutral_stand",
+      "plantedFoot": "both",
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "neutral"
+    },
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "standing_guard",
+      "plantedFoot": "both",
+      "silhouette": "responsive_standing_guard",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "neutral"
+    },
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "crouch",
+      "plantedFoot": "both",
+      "silhouette": "compact_crouch",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "low"
+    },
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "crouching_guard",
+      "plantedFoot": "both",
+      "silhouette": "compact_low_guard",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "low"
+    },
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "light_hit_reaction",
+      "plantedFoot": "both",
+      "silhouette": "compact_directional_recoil",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "backward"
+    },
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol",
+        "right": "pistol"
+      },
+      "id": "heavy_hit_stagger",
+      "plantedFoot": "left",
+      "silhouette": "deep_backward_stagger",
+      "verticalMotion": "stationary",
+      "weaponState": "dual_pistols_controlled_scythe_mounted_undrawn",
+      "weight": "backward"
+    }
+  ],
+  "promotionState": "candidate",
+  "runtimeProfile": {
+    "centerline": 768,
+    "footPosition": 1408,
+    "handReach": 450,
+    "universalCapabilities": [
+      "ground_normals",
+      "air_normals",
+      "standing_block",
+      "crouching_block",
+      "hit_reaction",
+      "standard_throw",
+      "command_grab"
+    ],
+    "worldHeight": 1067
+  },
+  "schemaVersion": "2.1.0-contract"
+}

@@ -1,0 +1,390 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "crown_elbow",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 24,
+  "sourceFrames": [
+    {
+      "id": "crown_elbow_0",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-frames-v1/combo-03.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "3505D847A42E3761C71EEA9F399086834C7835523F94A7018D0C783503CB5EB8",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/human-review.pending.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/registration.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/provenance.json"
+    },
+    {
+      "id": "crown_elbow_1",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-frames-v1/combo-04.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "603A5DFBF780E70CCB6FDDF3DCF2F30AA35C38D91DBD1672AD60248D13C878D0",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/human-review.pending.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/registration.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/provenance.json"
+    },
+    {
+      "id": "crown_elbow_2",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-frames-v1/combo-05.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "AAC9A99DD0151265E662B5D4DA229AF4A9585682B584BACC586297DCD7907030",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/human-review.pending.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/registration.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/provenance.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "crown_elbow_0",
+      "start": 0,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "crown_elbow_1",
+      "start": 6,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "crown_elbow_2",
+      "start": 12,
+      "duration": 12
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [],
+    "recovery": [
+      {
+        "start": 0,
+        "end": 23
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "elbow_entry",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "elbow_exit",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "crown_elbow_0",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 1360
+      }
+    },
+    {
+      "frame": 6,
+      "sourceFrameId": "crown_elbow_1",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 1360
+      }
+    },
+    {
+      "frame": 12,
+      "sourceFrameId": "crown_elbow_2",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 1360
+      }
+    }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 24,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 24,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "presentationTrack": [],
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state"
+    ],
+    "onInterrupt": "simulation_selects_target_state",
+    "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+  },
+  "groundingTrack": [
+    {
+      "sourceFrameId": "crown_elbow_0",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "fixed_registration_not_foot_measurement",
+      "farFootRole": "fixed_registration_not_foot_measurement",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "fixed_root_candidate_v1"
+    },
+    {
+      "sourceFrameId": "crown_elbow_1",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "fixed_registration_not_foot_measurement",
+      "farFootRole": "fixed_registration_not_foot_measurement",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "fixed_root_candidate_v1"
+    },
+    {
+      "sourceFrameId": "crown_elbow_2",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "fixed_registration_not_foot_measurement",
+      "farFootRole": "fixed_registration_not_foot_measurement",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "fixed_root_candidate_v1"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "attack"
+      ],
+      "toState": "crown_elbow",
+      "condition": "simulation_owns_crown_elbow",
+      "addsGameplayFrames": false
+    }
+  ],
+  "presentationSockets": [
+    {
+      "id": "body_root",
+      "y": 1360,
+      "x": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "spawn_vfx"
+      ]
+    }
+  ],
+  "gameplayTimingStatus": {
+    "owner": "simulation",
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "candidateValues": {
+      "duration": 24
+    },
+    "notes": [
+      "User approved concept, not this final motion candidate.",
+      "Charge holds a planted pose; the actual Tribunal PerspectiveCamera orbits the fixed combat plane. Previous angle cycling was rejected as character spinning.",
+      "Body and aura/beam are separate source layers; rendering never applies damage.",
+      "Individual source frames remain truth; generated atlases are deployment artifacts only.",
+      "Starter spend100 with ordinary16hit/5block meter gain; no confirmed followup meter gain."
+    ]
+  },
+  "approvalRecords": [
+    "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ultimate-packages-v1/records/human-review.pending.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "rollback_event_identity",
+      "simulation_owns_cursor",
+      "grounding_track"
+    ],
+    "creativeWarnings": [
+      "User approved concept, not this final motion candidate.",
+      "Charge holds a planted pose; the actual Tribunal PerspectiveCamera orbits the fixed combat plane. Previous angle cycling was rejected as character spinning.",
+      "Body and aura/beam are separate source layers; rendering never applies damage.",
+      "Individual source frames remain truth; generated atlases are deployment artifacts only.",
+      "Starter spend100 with ordinary16hit/5block meter gain; no confirmed followup meter gain."
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "ai_assisted",
+    "tool": "Built-in imagegen and source-preserving normalization",
+    "createdAt": "2026-09-08",
+    "model": null,
+    "seed": null,
+    "promptHash": null,
+    "references": [
+      "repo://tools/nga-forge/review/lamuh-ultimate-v1/combo-normalization.json",
+      "repo://tools/nga-forge/review/lamuh-ultimate-v1/charge-normalization.json",
+      "repo://tools/nga-forge/review/lamuh-ultimate-v1/vfx-normalization.json"
+    ],
+    "cleanupOperations": [
+      "alpha_preserving_normalization",
+      "source_hash_lock",
+      "fixed_root_registration",
+      "exact_idle_reuse"
+    ],
+    "revisionChain": [
+      "USER_APPROVED_CELESTIAL_CROWN_CONCEPT",
+      "ULTIMATE_V1_MOTION_CANDIDATE"
+    ],
+    "humanApproval": {
+      "state": "pending",
+      "approvedAt": null,
+      "approvedBy": null
+    },
+    "licensingNotes": [
+      "Local Lamuh candidate only."
+    ],
+    "promptProvenance": "repo://tools/nga-forge/review/lamuh-ultimate-v1/README.md"
+  },
+  "confirmedInteractionReference": {
+    "owner": "deterministic_simulation",
+    "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/src/core/engine.ts",
+    "phaseStarts": {
+      "confirm": 0,
+      "elbow": 18,
+      "knee": 42,
+      "charge": 66,
+      "beam": 166,
+      "recovery": 202
+    },
+    "durationTicks": 240,
+    "contacts": [
+      {
+        "phase": "starter",
+        "tick": 18,
+        "damage": 40
+      },
+      {
+        "phase": "confirmed",
+        "tick": 24,
+        "damage": 50
+      },
+      {
+        "phase": "confirmed",
+        "tick": 50,
+        "damage": 60
+      },
+      {
+        "phase": "confirmed",
+        "tick": 178,
+        "damage": 130
+      }
+    ],
+    "damagePolicy": "existing_combo_entry_scaling",
+    "visibleImpactCount": 4,
+    "beamReleaseTick": 166,
+    "transformation": "ultimate_charge_only_reverts_in_recovery"
+  }
+}

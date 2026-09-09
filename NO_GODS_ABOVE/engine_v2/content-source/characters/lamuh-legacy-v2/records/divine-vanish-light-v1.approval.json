@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_scoped_review",
+  "approvedAt": "2026-09-07",
+  "subject": "lamuh_legacy_v2.divine_vanish.light.animation_only",
+  "userInput": "great i like it now move o to the med and heavy",
+  "decision": "APPROVED_AS_PRODUCTION_BASELINE",
+  "interpretation": "The shown Light animation and its 20-tick preview rhythm pass within this narrow review scope. Continue Medium and Heavy. This is not combat, whole-family, asset promotion, fighter or release approval.",
+  "approvalScope": ["divine_vanish_light_visible_motion", "divine_vanish_light_shown_preview_timing"],
+  "acceptedProfile": "B",
+  "acceptedExposureTicks": [1, 2, 2, 4, 3, 3, 3, 2],
+  "acceptedDurationTicks": 20,
+  "acceptedFrameHashes": [
+    { "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png", "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD" },
+    { "publicPath": "/lamuh-legacy-v2/divine-vanish-v1/pose-00.png", "sha256": "4078C6685042DE8744C17E3A665ACC0ED8FD957C64A4360CA538EB1ED12F5BAD" },
+    { "publicPath": "/lamuh-legacy-v2/divine-vanish-v1/pose-01.png", "sha256": "06BCEE82C7354C103584505FFD5E119E5B263AD87BF50B825F2A268F503CDF24" },
+    { "publicPath": "/lamuh-legacy-v2/divine-vanish-v1/pose-02.png", "sha256": "A51B99DFB43CB4AC309826D7E4354AF99E694328605C5550E7A49B8C938F69AB" },
+    { "publicPath": "/lamuh-legacy-v2/divine-vanish-v1/pose-03.png", "sha256": "9C0708600DA35FF4FF287D5DDAA458FA3A6F772556C82BF23AB040A432A70827" },
+    { "publicPath": "/lamuh-legacy-v2/divine-vanish-v1/pose-04.png", "sha256": "2541D6B5244E4C3B922802AAD05F258E5D702AEC344AFB7700EB423E6EF31544" },
+    { "publicPath": "/lamuh-legacy-v2/divine-vanish-v1/pose-05.png", "sha256": "001E927E75EFEF0B1A7967C509E0331AE72C3BADFE77A077BACF3E26E3559BD8" },
+    { "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png", "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD" }
+  ],
+  "candidateOnly": true,
+  "deployable": false,
+  "productionPromotion": false,
+  "combatApproved": false,
+  "mediumApproved": false,
+  "heavyApproved": false,
+  "wholeCharacterApproved": false
+}

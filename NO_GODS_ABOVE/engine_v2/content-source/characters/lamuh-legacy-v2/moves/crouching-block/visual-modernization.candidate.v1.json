@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_crouching_block_modern_visual_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": true,
+  "combatStateChanged": false,
+  "timingChanged": false,
+  "state": {
+    "sourceFrameCount": 4,
+    "authoredFrameCount": 4,
+    "selectedLegacyFrames": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exposureTicks": [
+      3,
+      3,
+      4,
+      6
+    ],
+    "durationTicks": 16,
+    "loop": false,
+    "frames": [
+      {
+        "index": 0,
+        "role": "lower_guard_entry",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-00.png",
+        "sha256": "A3BC804AE948845C3365D6882B8DD1F1D8C8214BAB6033F2AE1FFF5B482B228E",
+        "sourceSha256": "3A1D9144BFAD4CE1CD2C3F651DFA488D5FB8762D2CE5753019647E41803AF2AD",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.16666667,
+        "legacySha256": "1B73D883C41F6491B6229CA7C0EDDA56C18ED7B43ECA5EB713D2364DDF3DD2CC",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 540,
+          "minY": 889,
+          "maxX": 996,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 797.76,
+          "y": 1154.25
+        }
+      },
+      {
+        "index": 1,
+        "role": "compact_forearm_cover",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-01.png",
+        "sha256": "CE3C0F13764490998454DEA2BF18CAF9454FE3C2B9858845A6E94763826AE0AB",
+        "sourceSha256": "9746E4194C63E2CC21407995C93B425296109755472C0F91A69A825A496639D7",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.16666667,
+        "legacySha256": "78A3D25D360DCBC06B95B672CD6D719AFA146B077E9B6BC04DDBD5035D6CACC0",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 549,
+          "minY": 892,
+          "maxX": 987,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 784.54,
+          "y": 1155.67
+        }
+      },
+      {
+        "index": 2,
+        "role": "braced_defensive_compression",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-02.png",
+        "sha256": "160880DF73327C1B00E6D4EF62F2C074019E2AE2E258214E50A99D6AB288F154",
+        "sourceSha256": "7B73E11D8E31A949647F764898AF26F39FCF62CDC6A79BE5B63DBEFA253EDBBD",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.16666667,
+        "legacySha256": "103B2819E2D7EF2CEABACB7E65E22F7F1380FF95EE42E609D11F1C68711687F1",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 554,
+          "minY": 903,
+          "maxX": 986,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 786.37,
+          "y": 1163.25
+        }
+      },
+      {
+        "index": 3,
+        "role": "stable_low_guard_hold",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-03.png",
+        "sha256": "780C88F8C1E5B952FD0BF4248368C25A4A6E3D4D29B9C2CEC0707D3013A1BF49",
+        "sourceSha256": "144B753430544E2CB7341086E50E58D7A5040ED3751888B53BA6999BA5210AA4",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.16666667,
+        "legacySha256": "CA9FEA1FBC520B438FD906A37B933E4B8C6FB1AE52E89947F5BDF6EA311572FC",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 563,
+          "minY": 907,
+          "maxX": 971,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 780.44,
+          "y": 1166.15
+        }
+      }
+    ]
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-block-modernization-v1/normalization.report.json",
+    "sha256": "B67958AFD90B74DC7C84F25AD5C909DD0882B80739BAD97D988D35853306E7CF"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/crouching-block-modernization-v1.hash-lock.json",
+    "sha256": "9FE9B9BFF937B755924D77EBBBEA5A7F962636EEC4D33B2495DD9695B0DEAD5A"
+  },
+  "humanApproval": null
+}

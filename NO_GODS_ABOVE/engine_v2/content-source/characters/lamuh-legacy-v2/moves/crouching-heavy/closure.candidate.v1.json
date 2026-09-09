@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "crouching_heavy_crown_riser_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "motionLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/crouching-heavy/motion-lock.v1.json",
+    "sha256": "C79764D2E764C155F769D067DAE800A7C5847788FD376AD4311097A5940C231C"
+  },
+  "styleApproval": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/style-checkpoint-v1.approval.json",
+    "sha256": "9B671312457675BBCC8B5A8A1256041B4453A5A433B724740FDDDE4694069462",
+    "decision": "APPROVED_WITH_TARGETED_REPAIR"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalization.report.json",
+    "sha256": "C932D2F070448A6F2044819E79622FF8D1ACB1BAD426166A51B685D75CE809D2"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "low_guarded_coil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-00.png",
+      "sha256": "1A2447884A0BA9CB57DDE28F074E56EC262C1E4F5CAF587BE79BAD2DAABCD4B3",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 473,
+        "minY": 744,
+        "maxX": 1050,
+        "maxY": 1359
+      }
+    },
+    {
+      "index": 1,
+      "role": "lead_knee_drive",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-01.png",
+      "sha256": "58D478DFC384C370EFCF603B9E41EBDF435870D2B4BD80C4B459934D66660006",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 608,
+        "minY": 440,
+        "maxX": 1184,
+        "maxY": 1364
+      }
+    },
+    {
+      "index": 2,
+      "role": "rear_hand_rising_acceleration",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-02.png",
+      "sha256": "DE022BBFEDDD3952E1C7FAE49DE41CF08A907C732B1F072F8C0129EA551A7EA8",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 569,
+        "minY": 485,
+        "maxX": 1125,
+        "maxY": 1364
+      }
+    },
+    {
+      "index": 3,
+      "role": "single_rising_contact",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-03.png",
+      "sha256": "22B7F077C4CC1C17D16925CA5242878BE7E09DEDD9549D9F7E7D566A83E22E90",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 580,
+        "minY": 353,
+        "maxX": 1107,
+        "maxY": 1358
+      }
+    },
+    {
+      "index": 4,
+      "role": "same_arm_rising_follow_through",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-04.png",
+      "sha256": "95FCD71FC4372A860BDAC9479C1F8336C27463D70990D223FDC09814A7CA2DA4",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 558,
+        "minY": 397,
+        "maxX": 1096,
+        "maxY": 1361
+      }
+    },
+    {
+      "index": 5,
+      "role": "authored_recovery_connector",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-05.png",
+      "sha256": "A4F82C3A1DA9EAADEF2E0F6FDE1D868F48B5F1BAFB4B2DACE6456F5B009E92D1",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 601,
+        "minY": 479,
+        "maxX": 1146,
+        "maxY": 1358
+      }
+    },
+    {
+      "index": 6,
+      "role": "connected_guarded_crouch_exit",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-heavy-v1/normalized/crouching-heavy-06.png",
+      "sha256": "A4D6A05ECE9C553C9904E9384BDCF1FD5B9E0D9CE0D95F2C52316C260F6B8300",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 374,
+        "minY": 628,
+        "maxX": 1077,
+        "maxY": 1359
+      }
+    }
+  ],
+  "contactPresentation": {
+    "publicPath": "/lamuh-legacy-v2/crouching-heavy-v2/crouching-heavy-03.png",
+    "sha256": "22B7F077C4CC1C17D16925CA5242878BE7E09DEDD9549D9F7E7D566A83E22E90",
+    "bodyOnlyOnWhiff": true,
+    "bodyOnlyForAllOutcomes": true,
+    "vfxEnabled": false,
+    "classification": "DISABLE_FOR_NOW",
+    "allowedOutcomes": [],
+    "separationStatus": "BODY_ONLY_ALL_OUTCOMES_VFX_DISABLED_BY_HUMAN_FEEDBACK"
+  },
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM",
+      "phaseTicks": {
+        "startup": 10,
+        "active": 4,
+        "recovery": 17
+      },
+      "durationTicks": 31,
+      "exposureTicks": [
+        5,
+        3,
+        2,
+        4,
+        5,
+        5,
+        7
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 10,
+        "active": 5,
+        "recovery": 22
+      },
+      "durationTicks": 37,
+      "exposureTicks": [
+        5,
+        3,
+        2,
+        5,
+        6,
+        7,
+        9
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+      "phaseTicks": {
+        "startup": 12,
+        "active": 6,
+        "recovery": 25
+      },
+      "durationTicks": 43,
+      "exposureTicks": [
+        6,
+        4,
+        2,
+        6,
+        7,
+        8,
+        10
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_LAUNCH_6",
+      "hitstopTicks": 6,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_LAUNCH_7",
+      "hitstopTicks": 7,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "FIRMER_LAUNCH_8",
+      "hitstopTicks": 8,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    }
+  },
+  "approvalStatus": "awaiting_human_crouching_heavy_motion_and_timing_review",
+  "humanApproval": {
+    "motion": null,
+    "timing": null,
+    "selectedTimingCandidate": null,
+    "combatProfile": null,
+    "record": null
+  }
+}

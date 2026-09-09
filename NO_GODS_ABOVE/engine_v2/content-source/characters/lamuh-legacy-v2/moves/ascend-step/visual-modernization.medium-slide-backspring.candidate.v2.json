@@ -1,0 +1,723 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_ascend_step_medium_slide_back_handspring_launcher_candidate_v2",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "v1Disposition": "MODERNIZE",
+  "supersedesForMediumOnly": {
+    "priorCandidate": "visual-modernization.candidate.v2.json",
+    "directionReceipt": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-medium-slide-backspring-v2.human-direction.json",
+      "sha256": "7C6BDD13BED778B4E03A26C39A4D41F269BED473167E3577600432DAC755386F"
+    }
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-medium-slide-flip-v1.hash-lock.json",
+    "sha256": "D46F02D6C661205ED0E3C6532C089F51C82B33A2F466223133A24D7ABC9F40D5"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalization.report.json",
+    "sha256": "5CACCF8C6C9B899F22641C33AF057D1ADB858DE6FAAD6F4A13A58FE4E93B6F5A"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "idle_identity_lock_with_aura_ignition",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-00.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+      "sha256": "54C06E9DCCCABF582FB9C080CF10D5C5110EA8FADDC8FA7BDF1631A605088706",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 562,
+        "minY": 560,
+        "maxX": 973,
+        "maxY": 1359
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "targetCentroid": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 1,
+      "role": "low_slide_guarded_entry",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-01.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-00.png",
+      "sha256": "24846774AC58D93F732A9061158F0073FD123232BF0EB3E0525E31B913455674",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 310,
+        "minY": 510,
+        "maxX": 1069,
+        "maxY": 1420
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 689.26,
+          "y": 1073.17
+        },
+        "targetCentroid": {
+          "x": 689.26,
+          "y": 1073.17
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 2,
+      "role": "low_slide_kick_acceleration",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-02.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-02.png",
+      "sha256": "CEA87B08CE0765E531191D1984DEB554E52F535825177F77D972C578084EEAAA",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 400,
+        "minY": 561,
+        "maxX": 1226,
+        "maxY": 1366
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 751,
+          "y": 1111.34
+        },
+        "targetCentroid": {
+          "x": 751,
+          "y": 1111.34
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 3,
+      "role": "first_contact_traveling_slide_kick",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-03.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-03.png",
+      "sha256": "FAB66E4D19DA0BC73C955C59DACE6E9AEF49CB91C291ECEFE00D3D96719332CF",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 400,
+        "minY": 561,
+        "maxX": 1262,
+        "maxY": 1367
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 774.85,
+          "y": 1120.49
+        },
+        "targetCentroid": {
+          "x": 774.85,
+          "y": 1120.49
+        },
+        "scale": 1
+      },
+      "contact": true
+    },
+    {
+      "index": 4,
+      "role": "same_leg_slide_follow_through",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-04.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-04.png",
+      "sha256": "03BEF9D0F402D60647F2877DE6811A682CE7F80A954644C034B47007E2B6885E",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 369,
+        "minY": 561,
+        "maxX": 1207,
+        "maxY": 1369
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 740.76,
+          "y": 1096.55
+        },
+        "targetCentroid": {
+          "x": 740.76,
+          "y": 1096.55
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 5,
+      "role": "same_leg_retraction_into_handspring_load",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-05.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-05.png",
+      "sha256": "22BF944287113CB0821A3AD2A48AC8135F5FF12EFC3B9D8F481C52B565B4CFBF",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 455,
+        "minY": 688,
+        "maxX": 1035,
+        "maxY": 1365
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 772.53,
+          "y": 1057.3
+        },
+        "targetCentroid": {
+          "x": 772.53,
+          "y": 1057.3
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 6,
+      "role": "two_hand_reach_toward_floor",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-06.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/air-normals-v2/air-heavy/air-heavy-01.png",
+      "sha256": "7EE076A04FC1DF7C82AA9E09F67D92044A0B4ACF587918EC220EC17C35DC3CD8",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 376,
+        "minY": 254,
+        "maxX": 1162,
+        "maxY": 968
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 755.81,
+          "y": 632.23
+        },
+        "targetCentroid": {
+          "x": 755.81,
+          "y": 632.23
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 7,
+      "role": "back_handspring_two_hand_plant",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-07.png",
+      "approvedIdentityBodyUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-plant-normalized-v2.png",
+      "sha256": "856F08BDB4886414F0AD866548A747A7567546D323BF8C1A3DF0ED9073FA5C59",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 614,
+        "minY": 866,
+        "maxX": 1155,
+        "maxY": 1273
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "targetCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 8,
+      "role": "back_handspring_hips_over_shoulders",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-08.png",
+      "approvedIdentityBodyUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-plant-normalized-v2.png",
+      "sha256": "E9E643F8A773FBB99EE169DEC57E623107D5CFF6CE9E642E467B7206935D6A56",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 601,
+        "minY": 839,
+        "maxX": 1149,
+        "maxY": 1313
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": -12,
+        "sourceCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "targetCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 9,
+      "role": "back_handspring_double_leg_acceleration",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-09.png",
+      "approvedIdentityBodyUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-double-kick-contact-normalized-v2.png",
+      "sha256": "DCA9D49E719B45B44D186A301A0ECCCD537A687AD2E06FFB5B95840B38606331",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 660,
+        "minY": 539,
+        "maxX": 1182,
+        "maxY": 1363
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": -10,
+        "sourceCentroid": {
+          "x": 900.16,
+          "y": 951.86
+        },
+        "targetCentroid": {
+          "x": 900.16,
+          "y": 951.86
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 10,
+      "role": "second_contact_back_handspring_double_leg_launcher",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-10.png",
+      "approvedIdentityBodyUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-double-kick-contact-normalized-v2.png",
+      "sha256": "2DFB2650DB9B695B02478745BE8CC98CDA6FA42DC3525A35EBDD57C6DFA51D25",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 617,
+        "minY": 576,
+        "maxX": 1240,
+        "maxY": 1329
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 900.16,
+          "y": 951.86
+        },
+        "targetCentroid": {
+          "x": 900.16,
+          "y": 951.86
+        },
+        "scale": 1
+      },
+      "contact": true
+    },
+    {
+      "index": 11,
+      "role": "back_handspring_turnover_and_hand_release",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-11.png",
+      "approvedIdentityBodyUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-double-kick-contact-normalized-v2.png",
+      "sha256": "A57B2481C744318F69F4B7DD33F428D21381A2DB430FEAFC7E146264953B5ED7",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 480,
+        "minY": 736,
+        "maxX": 1348,
+        "maxY": 1270
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 28,
+        "sourceCentroid": {
+          "x": 900.16,
+          "y": 951.86
+        },
+        "targetCentroid": {
+          "x": 900.16,
+          "y": 951.86
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 12,
+      "role": "back_handspring_two_foot_landing_approach",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-12.png",
+      "approvedIdentityBodyUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-landing-normalized-v2.png",
+      "sha256": "478D4B87FBCD3AD90A84DBAB63E7766992E49A7CF44AFFB1135CB917DE16AAEA",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 506,
+        "minY": 854,
+        "maxX": 934,
+        "maxY": 1360
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 730.92,
+          "y": 1099.42
+        },
+        "targetCentroid": {
+          "x": 730.92,
+          "y": 1099.42
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 13,
+      "role": "soft_landing_compression",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-13.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-05.png",
+      "sha256": "7C1BCE1764A0AA38E783A538457A9989D0431CA64ABE244345B09E3501C92F2A",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 548,
+        "minY": 834,
+        "maxX": 990,
+        "maxY": 1362
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 783.4,
+          "y": 1117.2
+        },
+        "targetCentroid": {
+          "x": 783.4,
+          "y": 1117.2
+        },
+        "scale": 1
+      },
+      "contact": false
+    },
+    {
+      "index": 14,
+      "role": "approved_idle_identity_recovery",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-14.png",
+      "approvedIdentityBodyUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-01.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 543,
+        "minY": 560,
+        "maxX": 992,
+        "maxY": 1359
+      },
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 768.24,
+          "y": 968.04
+        },
+        "targetCentroid": {
+          "x": 768.24,
+          "y": 968.04
+        },
+        "scale": 1
+      },
+      "contact": false
+    }
+  ],
+  "timingCandidates": {
+    "A": {
+      "label": "QUICK_SLIDE_HANDSPRING_RHYTHM",
+      "phaseTicks": {
+        "startup": 6,
+        "active": 22,
+        "recovery": 12
+      },
+      "durationTicks": 40,
+      "exposureTicks": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "READABLE_SLIDE_HANDSPRING_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 7,
+        "active": 22,
+        "recovery": 15
+      },
+      "durationTicks": 44,
+      "exposureTicks": [
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        3,
+        3,
+        2,
+        2,
+        3,
+        2,
+        3,
+        5,
+        7
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_LAUNCHER_ALTERNATE",
+      "phaseTicks": {
+        "startup": 8,
+        "active": 24,
+        "recovery": 16
+      },
+      "durationTicks": 48,
+      "exposureTicks": [
+        4,
+        2,
+        2,
+        4,
+        2,
+        3,
+        3,
+        3,
+        2,
+        2,
+        4,
+        2,
+        3,
+        5,
+        7
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_SLIDE_4_LAUNCHER_7",
+      "hitstopTicks": 7,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_SLIDE_5_LAUNCHER_8",
+      "hitstopTicks": 8,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "WEIGHTED_SLIDE_6_LAUNCHER_9",
+      "hitstopTicks": 9,
+      "contactExposureDelta": 1,
+      "recoilExposureDelta": 1,
+      "recoveryExposureDelta": -2
+    }
+  },
+  "rootMotionContract": {
+    "owner": "simulation",
+    "startTick": 2,
+    "endTick": 11,
+    "velocityPerTick": 9,
+    "rendererDrivesGameplay": false,
+    "authoredException": null
+  },
+  "combatCandidate": {
+    "runtimeAttackId": "legacy_ascend_step",
+    "damage": 70,
+    "expectedScaledRouteDamage": 66,
+    "hitstop": 8,
+    "hitstun": 34,
+    "blockstun": 18,
+    "knockbackX": 2.8,
+    "knockbackY": -15.5,
+    "level": "launcher",
+    "knockdown": "none",
+    "launches": true,
+    "hitboxes": [
+      {
+        "id": "legacy_ascend_step_medium_slide",
+        "start": 7,
+        "end": 9,
+        "damage": 26,
+        "hitstop": 5,
+        "hitstun": 28,
+        "blockstun": 16,
+        "knockbackX": 1,
+        "knockbackY": 0,
+        "level": "low",
+        "launches": false
+      },
+      {
+        "id": "legacy_ascend_step_medium_backspring_launcher",
+        "start": 24,
+        "end": 26,
+        "damage": 44,
+        "hitstop": 8,
+        "hitstun": 34,
+        "blockstun": 18,
+        "knockbackX": 2.8,
+        "knockbackY": -15.5,
+        "level": "launcher",
+        "launches": true
+      }
+    ],
+    "approval": null
+  },
+  "singleActionContract": {
+    "oneContinuousPhysicalAction": true,
+    "oneContinuousComboAction": true,
+    "groundedDashForward": true,
+    "strikingLimb": "both_legs",
+    "strikingLimbContinuity": "slide_lead_leg_then_both_legs_together",
+    "punchOnly": false,
+    "contactFrame": 10,
+    "contactFrames": [
+      3,
+      10
+    ],
+    "visibleImpactCount": 2,
+    "gameplayHitCount": 2,
+    "firstBeat": "traveling_low_slide_kick",
+    "secondBeat": "grounded_back_handspring_simultaneous_double_leg_launcher",
+    "victimTeleport": false,
+    "poseProgression": [
+      "idle_identity_lock_with_aura_ignition",
+      "low_slide_guarded_entry",
+      "low_slide_kick_acceleration",
+      "first_contact_traveling_slide_kick",
+      "same_leg_slide_follow_through",
+      "same_leg_retraction_into_handspring_load",
+      "two_hand_reach_toward_floor",
+      "back_handspring_two_hand_plant",
+      "back_handspring_hips_over_shoulders",
+      "back_handspring_double_leg_acceleration",
+      "second_contact_back_handspring_double_leg_launcher",
+      "back_handspring_turnover_and_hand_release",
+      "back_handspring_two_foot_landing_approach",
+      "soft_landing_compression",
+      "approved_idle_identity_recovery"
+    ]
+  },
+  "mobilityIdentity": {
+    "primaryRead": "movement_first_low_slide_into_floor_planted_back_handspring_launcher",
+    "dashAura": true,
+    "auraPalette": [
+      "white_core",
+      "cyan",
+      "restrained_gold"
+    ],
+    "auraFrames": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "strongestAuraFrame": 2,
+    "impactExplosion": false,
+    "afterimageBodyClone": false,
+    "worldTravelOwner": "deterministic_simulation"
+  },
+  "approvalStatus": "awaiting_human_ascend_step_medium_slide_back_handspring_launcher_review",
+  "identityLock": {
+    "matureAdultProportions": true,
+    "noChibiProportions": true,
+    "boxedBeardAndMustache": true,
+    "longBlackLocs": true,
+    "noPurpleOutline": true,
+    "sameSequenceScale": true,
+    "compactFramesUsePoseCompressionNotPerFrameScale": true,
+    "approvedRuntimeBodyFramesOnly": false,
+    "approvedRuntimeConnectorFrames": true,
+    "boundedMissingStateSourceFrames": 3,
+    "rigidRotationOnlyForConnectorFrames": true,
+    "generatedAvatarPixels": true,
+    "authoredMissingStateScale": 0.9,
+    "internalVisualAudit": "PASS_CANDIDATE_INTERNAL_REVIEW",
+    "directionReceipt": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-medium-slide-backspring-v2.human-direction.json",
+      "sha256": "7C6BDD13BED778B4E03A26C39A4D41F269BED473167E3577600432DAC755386F"
+    },
+    "humanApproval": null
+  },
+  "humanApproval": {
+    "motion": null,
+    "timing": null,
+    "combatProfile": null,
+    "transitions": null,
+    "adultProportions": null
+  }
+}

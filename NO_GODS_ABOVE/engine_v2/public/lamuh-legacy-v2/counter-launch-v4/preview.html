@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lamuh counter rising kick + diagonal ball — candidate</title>
+<style>body{margin:24px auto;max-width:1100px;padding:0 16px;background:#101720;color:#eee;font:16px system-ui}canvas{width:100%;background:#071017;border:1px solid #465361}button,a,select{padding:9px;margin:4px;color:#edffff;background:#203442;border:1px solid #55707d;border-radius:4px}img{width:100%}p{line-height:1.5}.fine{color:#aebecb}</style>
+<h1>Divine counter: rising kick → diagonal aura ball</h1>
+<p>Animation-only loop · 55 simulation ticks · candidate awaiting your review. The sandbox tests actual counter triggers, collision and victim launch.</p>
+<div><button id="play">Pause</button><button id="step">Next frame</button><button id="restart">Restart</button><select id="speed"><option value="1">1×</option><option value="0.5">0.5×</option></select><button id="mirror">Face left</button><a href="/lamuh-legacy-sandbox.html">Full playtest</a></div>
+<canvas id="view" width="1024" height="540"></canvas><p id="status"></p>
+<p class="fine">Kick contact: ticks12–14. Delayed ball release:32, after the distant launch. Empty palm after release; fixed-scale body. This visual preview does not simulate an opponent or approve combat.</p>
+<img src="numbered-contact-sheet.png" alt="Eight numbered new counter poses">
+<script>
+(async()=>{
+ const m=await(await fetch('manifest.json')).json(),s=m.response,canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+ const cache=new Map();await Promise.all([...new Set([...s.frames,...m.projectileFrames].map(f=>f.publicPath))].map(async p=>{const i=new Image();i.src=p;await i.decode();cache.set(p,i)}));
+ let clock=0,playing=true,facing=1,last=performance.now();
+ const indexAt=t=>{let x=0;for(let i=0;i<s.exposureTicks.length;i++){x+=s.exposureTicks[i];if(t<x)return i;}return s.frames.length-1;};
+ const draw=(f,x,y,scale=.3,rotation=0)=>{ctx.save();ctx.translate(x,y);ctx.rotate(rotation);ctx.scale(facing*scale,scale);ctx.drawImage(cache.get(f.publicPath),-f.root.x,-f.root.y);ctx.restore();};
+ const duration=s.exposureTicks.reduce((a,b)=>a+b,0), shot=s.combatProfile.projectile;
+ function paint(){const tick=Math.min(duration-1,Math.floor(clock)),index=indexAt(tick),f=s.frames[index];ctx.clearRect(0,0,1024,540);ctx.strokeStyle='#425561';ctx.beginPath();ctx.moveTo(0,470);ctx.lineTo(1024,470);ctx.stroke();draw(f,450,470);
+  if(tick>=shot.releaseTick){const age=tick-shot.releaseTick,p=m.projectileFrames[Math.floor(age/3)%2];draw(p,450+(73+age*shot.speed)*1.3*facing,470+(-167+age*shot.initialVelocityY)*1.3,.3,Math.atan2(shot.initialVelocityY,shot.speed)*facing);}
+  document.querySelector('#status').textContent=`Tick ${tick}/${duration-1} · frame ${index} · ${f.role}`;
+ }
+ document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Pause':'Play';};
+ document.querySelector('#restart').onclick=()=>{clock=0;paint();};
+ document.querySelector('#step').onclick=()=>{playing=false;document.querySelector('#play').textContent='Play';const i=indexAt(Math.min(duration-1,Math.floor(clock)));clock=s.exposureTicks.slice(0,i+1).reduce((a,b)=>a+b,0)%duration;paint();};
+ document.querySelector('#mirror').onclick=()=>{facing=-facing;document.querySelector('#mirror').textContent=facing===1?'Face left':'Face right';paint();};
+ function loop(now){if(playing)clock=(clock+Math.min(100,now-last)/1000*60*Number(document.querySelector('#speed').value))%(duration+14);last=now;paint();requestAnimationFrame(loop);}requestAnimationFrame(loop);
+})().catch(e=>document.querySelector('#status').textContent='Preview failed: '+e.message);
+</script>

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "standing_heavy",
+  "version": 1,
+  "promotionState": "retired",
+  "simulationLength": 30,
+  "sourceFrames": [
+    { "id": "standing_heavy_00", "sourceUri": "fixture://lamuh/standing-heavy/00", "width": 296, "height": 384 },
+    { "id": "standing_heavy_01", "sourceUri": "fixture://lamuh/standing-heavy/01", "width": 324, "height": 384 },
+    { "id": "standing_heavy_02", "sourceUri": "fixture://lamuh/standing-heavy/02", "width": 272, "height": 384 },
+    { "id": "standing_heavy_03", "sourceUri": "fixture://lamuh/standing-heavy/03", "width": 366, "height": 384 },
+    { "id": "standing_heavy_04", "sourceUri": "fixture://lamuh/standing-heavy/04", "width": 396, "height": 384 },
+    { "id": "standing_heavy_05", "sourceUri": "fixture://lamuh/standing-heavy/05", "width": 448, "height": 362 },
+    { "id": "standing_heavy_06", "sourceUri": "fixture://lamuh/standing-heavy/06", "width": 432, "height": 384 },
+    { "id": "standing_heavy_07", "sourceUri": "fixture://lamuh/standing-heavy/07", "width": 273, "height": 384 },
+    { "id": "idle_07", "sourceUri": "fixture://lamuh/idle/07", "width": 276, "height": 375 },
+    { "id": "idle_06", "sourceUri": "fixture://lamuh/idle/06", "width": 249, "height": 378 },
+    { "id": "idle_00", "sourceUri": "fixture://lamuh/idle/00", "width": 264, "height": 378 }
+  ],
+  "exposures": [
+    { "sourceFrameId": "standing_heavy_00", "start": 0, "duration": 3 },
+    { "sourceFrameId": "standing_heavy_01", "start": 3, "duration": 3 },
+    { "sourceFrameId": "standing_heavy_02", "start": 6, "duration": 2 },
+    { "sourceFrameId": "standing_heavy_03", "start": 8, "duration": 1 },
+    { "sourceFrameId": "standing_heavy_04", "start": 9, "duration": 1 },
+    { "sourceFrameId": "standing_heavy_05", "start": 10, "duration": 1 },
+    { "sourceFrameId": "standing_heavy_06", "start": 11, "duration": 2 },
+    { "sourceFrameId": "standing_heavy_07", "start": 13, "duration": 5 },
+    { "sourceFrameId": "idle_07", "start": 18, "duration": 4 },
+    { "sourceFrameId": "idle_06", "start": 22, "duration": 4 },
+    { "sourceFrameId": "idle_00", "start": 26, "duration": 4 }
+  ],
+  "phases": {
+    "anticipation": [{ "start": 0, "end": 7 }],
+    "startup": [{ "start": 0, "end": 7 }],
+    "active": [{ "start": 8, "end": 12 }],
+    "impact": [{ "start": 10, "end": 12 }],
+    "followThrough": [{ "start": 13, "end": 17 }],
+    "recovery": [{ "start": 13, "end": 29 }]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "mirror_energy_idle",
+    "handOccupancy": { "left": "free", "right": "free" },
+    "silhouette": "upright_guard",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "mirror_energy_idle",
+    "handOccupancy": { "left": "free", "right": "free" },
+    "silhouette": "upright_guard",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "forward_weighted",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "left",
+      "weight": "forward",
+      "weaponState": "mirror_energy_strike",
+      "handOccupancy": { "left": "guard", "right": "strike" },
+      "silhouette": "extended_punch",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "standing_heavy_to_idle",
+      "fromPose": "neutral_stand",
+      "toAnimation": "idle",
+      "type": "authored_micro_transition",
+      "simulationWindow": { "start": 13, "end": 29 },
+      "visualFrames": ["standing_heavy_07", "idle_07", "idle_06", "idle_00"],
+      "addsGameplayFrames": false,
+      "maskEventId": null
+    }
+  ],
+  "landing": [],
+  "anchors": [
+    { "frame": 0, "root": { "x": 0, "y": 0 }, "feet": { "x": 0, "y": 0 }, "effect": { "x": 42, "y": -176 } },
+    { "frame": 8, "root": { "x": 0, "y": 0 }, "feet": { "x": 0, "y": 0 }, "effect": { "x": 152, "y": -196 } },
+    { "frame": 13, "root": { "x": 0, "y": 0 }, "feet": { "x": 0, "y": 0 }, "effect": { "x": 86, "y": -184 } },
+    { "frame": 26, "root": { "x": 0, "y": 0 }, "feet": { "x": 0, "y": 0 }, "effect": { "x": 42, "y": -176 } }
+  ],
+  "combatTrack": {
+    "startup": 8,
+    "active": 5,
+    "recovery": 17,
+    "damage": 85,
+    "hitstop": 7,
+    "hitstun": 22,
+    "blockstun": 14,
+    "boxes": [
+      { "frame": 8, "kind": "hit", "x": 42, "y": -94, "width": 92, "height": 50 },
+      { "frame": 9, "kind": "hit", "x": 42, "y": -94, "width": 92, "height": 50 },
+      { "frame": 10, "kind": "hit", "x": 42, "y": -94, "width": 92, "height": 50 },
+      { "frame": 11, "kind": "hit", "x": 42, "y": -94, "width": 92, "height": 50 },
+      { "frame": 12, "kind": "hit", "x": 42, "y": -94, "width": 92, "height": 50 }
+    ],
+    "cancelWindows": []
+  },
+  "presentationTrack": [
+    {
+      "index": 0,
+      "frame": 8,
+      "type": "start_hit_flash",
+      "payload": { "profile": "heavy_contact" },
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}"
+    }
+  ],
+  "validation": {
+    "hardGates": ["contract_shape", "exposure_coverage", "phase_bounds", "combat_timing_parity", "hit_count_parity", "transition_coverage", "rollback_event_identity", "provenance_present"],
+    "creativeWarnings": ["legacy_character_art_rejected", "REJECTED_FOR_CHARACTER_ART_REVISION"],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "contract_fixture",
+    "tool": "Codex",
+    "model": null,
+    "createdAt": "2026-07-12T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": ["Production Ecosystem Architectural Review", "ANIMATION_FLUIDITY_STANDARD.md", "NO_GODS_ABOVE/engine_v2/src/data/fighters.ts"],
+    "revisionChain": ["contract-v2-runtime-parity"],
+    "cleanupOperations": [],
+    "humanApproval": { "state": "rejected", "approvedBy": null, "approvedAt": null },
+    "licensingNotes": ["REJECTED_FOR_CHARACTER_ART_REVISION. Non-deployable legacy technical fixture only."]
+  }
+}

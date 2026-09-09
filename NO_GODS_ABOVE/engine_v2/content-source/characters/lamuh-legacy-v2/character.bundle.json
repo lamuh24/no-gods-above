@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "lamuh_legacy_v2",
+  "displayName": "LAMUH Legacy V2",
+  "bundleVersion": 1,
+  "promotionState": "candidate",
+  "runtimeProfile": {
+    "worldHeight": 164,
+    "centerline": 224,
+    "footPosition": 382,
+    "handReach": 120,
+    "universalCapabilities": [
+      "ground_normals",
+      "air_normals",
+      "standing_block",
+      "hit_reaction",
+      "standard_throw"
+    ]
+  },
+  "poseLibrary": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "crouch",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "low",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "compact_low_lamuh",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "airborne",
+      "facing": "forward",
+      "elevation": "airborne",
+      "plantedFoot": "none",
+      "weight": "airborne",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "airborne_lamuh_arc",
+      "verticalMotion": "rising"
+    }
+  ],
+  "animationPackages": [
+    "moves/idle/animation.package.json",
+    "moves/walk-forward/animation.package.json",
+    "moves/walk-backward/animation.package.json",
+    "moves/dash-forward/animation.package.json",
+    "moves/dash-backward/animation.package.json",
+    "moves/crouch/animation.package.json",
+    "moves/jump/animation.package.json",
+    "moves/air-dash-forward/animation.package.json",
+    "moves/air-dash-backward/animation.package.json",
+    "moves/standing-block/animation.package.json",
+    "moves/light-reaction/animation.package.json",
+    "moves/standing-light/animation.package.json",
+    "moves/standing-medium/animation.package.json",
+    "moves/standing-heavy/animation.package.json",
+    "moves/crouching-light/animation.package.json",
+    "moves/crouching-medium/animation.package.json",
+    "moves/crouching-heavy/animation.package.json",
+    "moves/air-light/animation.package.json",
+    "moves/air-medium/animation.package.json",
+    "moves/air-heavy/animation.package.json",
+    "moves/universal-grab-attempt/animation.package.json",
+    "moves/forward-throw/animation.package.json",
+    "moves/back-throw/animation.package.json",
+    "moves/turn-facing/animation.package.json",
+    "moves/ascend-step-light/animation.package.json",
+    "moves/ascend-step/animation.package.json",
+    "moves/ascend-step-heavy/animation.package.json"
+  ],
+  "packageGroups": {
+    "movement": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "dash_forward",
+      "dash_backward",
+      "crouch",
+      "jump",
+      "air_dash_forward",
+      "air_dash_backward",
+      "turn_facing"
+    ],
+    "defense": [
+      "standing_block",
+      "light_reaction"
+    ],
+    "ground_normals": [
+      "standing_light",
+      "standing_medium",
+      "standing_heavy",
+      "crouching_light",
+      "crouching_medium",
+      "crouching_heavy"
+    ],
+    "air_normals": [
+      "air_light",
+      "air_medium",
+      "air_heavy"
+    ],
+    "specials": [
+      "ascend_step_light",
+      "ascend_step",
+      "ascend_step_heavy"
+    ],
+    "throws": [
+      "universal_grab_attempt",
+      "forward_throw",
+      "back_throw"
+    ]
+  },
+  "design": {
+    "characterBible": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/COMBAT_IDENTITY.md",
+    "palette": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-lock.v1.json",
+    "forbiddenMutations": [
+      "identity_drift",
+      "major_scale_drift",
+      "root_teleportation",
+      "broken_anatomy",
+      "costume_mutation",
+      "squash_stretch_suppression"
+    ]
+  }
+}

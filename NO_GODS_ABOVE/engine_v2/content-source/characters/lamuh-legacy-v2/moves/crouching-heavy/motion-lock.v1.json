@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.crouching_heavy.crown_riser.candidate.v1",
+  "status": "V1_MOTION_HASH_LOCKED_FOR_OUTLINE_FREE_V2_RECONSTRUCTION",
+  "candidateOnly": true,
+  "deployable": false,
+  "legacySourceImmutable": true,
+  "legacySource": {
+    "animationName": "launcher_crouching_heavy",
+    "sheetId": "ground_normals",
+    "row": 3,
+    "sourceFrameCount": 7,
+    "historicalDurationTicks": 31,
+    "historicalDamage": 78,
+    "root": { "x": 224, "y": 382 },
+    "duplicateEvidence": {
+      "frames": [4, 5],
+      "sha256": "285EC40CBA163757C486C7B49D8C53C3C27CA44255F7D1201B1C08B8F5C9BD65",
+      "v2Treatment": "preserve the held follow-through through exposure timing; author one recovery connector instead of presenting the duplicate as a new drawing"
+    }
+  },
+  "authoredRootContract": {
+    "kind": "in_place_bottom_center",
+    "legacyRoot": { "x": 224, "y": 382 },
+    "v2CandidateRoot": { "x": 768, "y": 1360 },
+    "runtimeRootTranslation": false,
+    "visualRecenteringProhibited": true,
+    "perFrameRendererScaleProhibited": true,
+    "contactNeighborAnatomicalScaleRegressionThresholdPct": 8,
+    "note": "Source-camera differences are normalized once in candidate art; review and runtime use one fixed scale and root. Intentional torso extension remains authored motion, not renderer zoom."
+  },
+  "strikingLimb": "rear_hand_same_arm_from_low_coil_through_rising_contact_follow_through_and_guard_recovery",
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1,
+    "impactFrame": 3,
+    "rule": "Only authored V2 frame 03 may show outcome-routed contact VFX. The knee drive remains body momentum, not a second gameplay hit. Frames 04-06 have no impact presentation."
+  },
+  "modernizationDecision": {
+    "classification": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+    "reason": "The V1 launcher has a strong readable low-to-high body arc and signature same-arm rise, while its outline, duplicate hold drawing, collision metadata and launcher profile require V2 reconstruction.",
+    "preserve": [
+      "low wide anticipation",
+      "lead-knee body drive",
+      "same rear-hand upward strike",
+      "torso rotation and rising extension",
+      "dreadlock and coat-tail lag",
+      "held follow-through",
+      "guarded recovery direction"
+    ],
+    "modernize": [
+      "outline-free NGA V2 artwork",
+      "one unique recovery connector replacing the exact duplicate drawing",
+      "single-hit outcome-routed contact presentation",
+      "deterministic launcher collision and presentation metadata",
+      "fixed-root and fixed-renderer-scale validation"
+    ],
+    "identityRead": "Crown Riser is an agile, body-driven anti-air launcher: a compact knee-loaded rise and decisive rear-hand strike, not a slow Swahili-style heavy and not a two-hit knee-plus-punch string."
+  },
+  "legacyFrames": [
+    { "index": 0, "id": "crouching_heavy_frame_00", "sha256": "1511298EB1504955B8C9FE547F1C0E514EE5A49B17C14E5B43BACE86F9A18094", "motionTruth": "Low wide guarded coil with both feet planted.", "v2Use": "Preserve anticipation silhouette and root." },
+    { "index": 1, "id": "crouching_heavy_frame_01", "sha256": "3C5AF09CD520FED080D842B7ED7897DBFB3C43A8AFF6A8FB030C4F7E2C3323ED", "motionTruth": "Lead knee drives upward while the rear foot supports the rise.", "v2Use": "Preserve compact body-driven acceleration." },
+    { "index": 2, "id": "crouching_heavy_frame_02", "sha256": "96255F61235732E1DDB7D4DF5B90BF34380F467636544632F344E700D577D85C", "motionTruth": "Rear hand rises above the head as torso and coat rotate.", "v2Use": "Preserve same-arm strike acceleration and secondary lag." },
+    { "index": 3, "id": "crouching_heavy_frame_03", "sha256": "10990EEEE74597731B341ADAB117B1B541B2A05DBEEAE68E8110FE5659F6CFF7", "motionTruth": "Full upward extension at the original single contact pose.", "v2Use": "Preserve single contact and authored extension without scale growth." },
+    { "index": 4, "id": "crouching_heavy_frame_04", "sha256": "285EC40CBA163757C486C7B49D8C53C3C27CA44255F7D1201B1C08B8F5C9BD65", "motionTruth": "Raised-strike follow-through hold.", "v2Use": "Preserve follow-through direction and exposure." },
+    { "index": 5, "id": "crouching_heavy_frame_05", "sha256": "285EC40CBA163757C486C7B49D8C53C3C27CA44255F7D1201B1C08B8F5C9BD65", "motionTruth": "Byte-identical repeat of frame 04.", "v2Use": "Carry the hold in timing metadata and author a connected recovery pose." },
+    { "index": 6, "id": "crouching_heavy_frame_06", "sha256": "220B1BEC640DF3D7DEAC96AE6318E5416E1D4F682BB2524F81B401AB9C812C2E", "motionTruth": "Guarded grounded return with forward protective fist.", "v2Use": "Preserve recovery endpoint and crouch/neutral compatibility." }
+  ],
+  "v2Frames": [
+    { "index": 0, "role": "low_guarded_coil", "constraint": "Both feet planted; low wide anticipation; no VFX." },
+    { "index": 1, "role": "lead_knee_drive", "constraint": "Lead knee rises while the rear sandal remains the visible support; no hit presentation." },
+    { "index": 2, "role": "rear_hand_rising_acceleration", "constraint": "Same rear hand travels upward; knee remains raised; coat and dreadlocks lag." },
+    { "index": 3, "role": "single_rising_contact", "constraint": "Only visible outcome-routed impact; no body scale change from neighboring frames." },
+    { "index": 4, "role": "same_arm_rising_follow_through", "constraint": "Same arm coasts beyond contact with no second strike or VFX." },
+    { "index": 5, "role": "authored_recovery_connector", "constraint": "Rear hand lowers, lead knee descends and torso unwinds continuously; recovery only." },
+    { "index": 6, "role": "connected_guarded_crouch_exit", "constraint": "Both feet plant and guard restores without snapping or a second attack." }
+  ],
+  "timingCandidates": {
+    "A": { "label": "ORIGINAL_V1_RHYTHM", "durationTicks": 31, "exposureTicks": [5, 3, 2, 4, 5, 5, 7], "phaseTicks": { "startup": 10, "active": 4, "recovery": 17 } },
+    "B": { "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED", "durationTicks": 37, "exposureTicks": [5, 3, 2, 5, 6, 7, 9], "phaseTicks": { "startup": 10, "active": 5, "recovery": 22 } },
+    "C": { "label": "HEAVIER_ALTERNATE_NOT_DEFAULT", "durationTicks": 43, "exposureTicks": [6, 4, 2, 6, 7, 8, 10], "phaseTicks": { "startup": 12, "active": 6, "recovery": 25 } }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": { "label": "CLEAN_LAUNCH_6", "hitstopTicks": 6 },
+    "I2": { "label": "READABLE_LAUNCH_7", "hitstopTicks": 7 },
+    "I3": { "label": "FIRMER_LAUNCH_8", "hitstopTicks": 8 }
+  },
+  "recommendedImpactCandidate": "I2",
+  "benchmarkQuestions": [
+    "Does the motion read as one low-to-high same-arm launcher rather than a knee-plus-punch two-hit string?",
+    "Does the rear foot visibly support frames 01-05 without root sliding or floating?",
+    "Does frame 03 retain the same anatomical scale as frames 02 and 04?",
+    "Does frame 05 connect the held rise to the guarded endpoint without reversing momentum?",
+    "Does B preserve the fast frame-01-to-03 strike while making impact, follow-through and recovery easier to read?"
+  ],
+  "approvalBoundary": {
+    "crouchingMediumMotionAndTimingApprovedOnly": true,
+    "crouchingHeavyMotionApproved": false,
+    "crouchingHeavyTimingApproved": false,
+    "crouchingHeavyCombatProfileApproved": false,
+    "runtimeArtApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

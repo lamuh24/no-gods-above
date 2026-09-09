@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/animation-package.schema.json",
+  "title": "NGA Animation Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "version", "promotionState", "simulationLength", "sourceFrames", "exposures", "phases", "entryPose", "exitPose", "interruptPoses", "transitions", "landing", "anchors", "combatTrack", "presentationTrack", "validation", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": "2.1.0-contract" },
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "version": { "type": "integer", "minimum": 1 },
+    "promotionState": { "enum": ["draft", "candidate", "approved", "retired"] },
+    "simulationLength": { "type": "integer", "minimum": 1 },
+    "sourceFrames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "sourceUri", "width", "height"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "sourceUri": { "type": "string", "minLength": 1 },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+          "approvalUri": { "type": "string", "minLength": 1 },
+          "provenanceUri": { "type": "string", "minLength": 1 },
+          "metadataUri": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "exposures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceFrameId", "start", "duration"],
+        "properties": {
+          "sourceFrameId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "start": { "type": "integer", "minimum": 0 },
+          "duration": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "phases": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["anticipation", "startup", "active", "impact", "followThrough", "recovery"],
+      "properties": {
+        "anticipation": { "$ref": "#/$defs/ranges" },
+        "startup": { "$ref": "#/$defs/ranges" },
+        "active": { "$ref": "#/$defs/ranges" },
+        "impact": { "$ref": "#/$defs/ranges" },
+        "followThrough": { "$ref": "#/$defs/ranges" },
+        "recovery": { "$ref": "#/$defs/ranges" }
+      }
+    },
+    "entryPose": { "$ref": "pose-token.schema.json" },
+    "exitPose": { "$ref": "pose-token.schema.json" },
+    "interruptPoses": { "type": "array", "items": { "$ref": "pose-token.schema.json" } },
+    "transitions": { "type": "array", "items": { "$ref": "transition.schema.json" } },
+    "landing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start", "end", "result"],
+        "properties": {
+          "start": { "type": "integer", "minimum": 0 },
+          "end": { "type": "integer", "minimum": 0 },
+          "result": { "enum": ["soft_landing", "hard_landing", "attack_landing_recovery", "whiff_landing_recovery", "knockdown_landing", "special_landing", "seamless_continuation", "prohibited"] }
+        }
+      }
+    },
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["frame", "root", "feet", "effect"],
+        "properties": {
+          "frame": { "type": "integer", "minimum": 0 },
+          "sourceFrameId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "root": { "$ref": "#/$defs/point" },
+          "feet": { "$ref": "#/$defs/point" },
+          "effect": { "$ref": "#/$defs/point" },
+          "nearFoot": { "$ref": "#/$defs/point" },
+          "farFoot": { "$ref": "#/$defs/point" },
+          "groundingContract": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "combatTrack": { "$ref": "combat-track.schema.json" },
+    "presentationTrack": { "type": "array", "items": { "$ref": "presentation-event.schema.json" } },
+    "playbackPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "cursorOwner", "hitstopFreezesCursor", "holdBehavior"],
+      "properties": {
+        "mode": { "enum": ["fixed_timeline", "input_held_guard", "external_gameplay_state"] },
+        "cursorOwner": { "const": "simulation" },
+        "hitstopFreezesCursor": { "const": true },
+        "holdBehavior": { "enum": ["none", "clamp_while_input_held", "clamp_to_gameplay_state"] }
+      }
+    },
+    "interruptionBehavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "allowedSources", "onInterrupt", "returnStatePolicy"],
+      "properties": {
+        "owner": { "const": "simulation" },
+        "allowedSources": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "onInterrupt": { "type": "string", "minLength": 1 },
+        "returnStatePolicy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "groundingTrack": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceFrameId", "root", "nearFoot", "farFoot", "nearFootRole", "farFootRole", "projectedGroundPlaneY", "contractVersion"],
+        "properties": {
+          "sourceFrameId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "root": { "$ref": "#/$defs/point" },
+          "nearFoot": { "$ref": "#/$defs/point" },
+          "farFoot": { "$ref": "#/$defs/point" },
+          "nearFootRole": { "type": "string", "minLength": 1 },
+          "farFootRole": { "type": "string", "minLength": 1 },
+          "projectedGroundPlaneY": { "type": "integer" },
+          "contractVersion": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "facingBehavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authoredFacing", "runtimeP2", "mirrorAxisX", "losslessMirrorRequired"],
+      "properties": {
+        "authoredFacing": { "const": "P1_screen_right" },
+        "runtimeP2": { "const": "horizontal_mirror_screen_left" },
+        "mirrorAxisX": { "type": "integer" },
+        "losslessMirrorRequired": { "const": true }
+      }
+    },
+    "transitionCompatibility": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fromStates", "toState", "condition", "addsGameplayFrames"],
+        "properties": {
+          "fromStates": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "toState": { "type": "string", "minLength": 1 },
+          "condition": { "type": "string", "minLength": 1 },
+          "addsGameplayFrames": { "const": false }
+        }
+      }
+    },
+    "presentationSockets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "mirrorRule", "eventTypes"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "x": { "type": "integer" },
+          "y": { "type": "integer" },
+          "mirrorRule": { "const": "x_prime_equals_canvas_width_minus_x" },
+          "eventTypes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    },
+    "gameplayTimingStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "authoritative", "owner", "candidateValues", "notes"],
+      "properties": {
+        "state": { "enum": ["sandbox_candidate_awaiting_combat_approval", "authoritative", "not_applicable"] },
+        "authoritative": { "type": "boolean" },
+        "owner": { "const": "simulation" },
+        "candidateValues": { "type": "object" },
+        "notes": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "approvalRecords": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hardGates", "creativeWarnings", "humanApprovalRequired"],
+      "properties": {
+        "hardGates": { "type": "array", "items": { "type": "string" } },
+        "creativeWarnings": { "type": "array", "items": { "type": "string" } },
+        "humanApprovalRequired": { "const": true }
+      }
+    },
+    "provenance": { "$ref": "provenance.schema.json" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "promotionState": { "not": { "const": "retired" } } },
+        "required": ["promotionState"]
+      },
+      "then": {
+        "required": ["playbackPolicy", "interruptionBehavior", "groundingTrack", "facingBehavior", "transitionCompatibility", "presentationSockets", "gameplayTimingStatus", "approvalRecords"],
+        "properties": {
+          "combatTrack": { "required": ["timingAuthorship"] }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "ranges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start", "end"],
+        "properties": {
+          "start": { "type": "integer", "minimum": 0 },
+          "end": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "integer" },
+        "y": { "type": "integer" }
+      }
+    }
+  }
+}

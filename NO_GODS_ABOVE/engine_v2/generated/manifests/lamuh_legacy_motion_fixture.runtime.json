@@ -1,0 +1,213 @@
+{
+  "animations": [
+    {
+      "combatTrack": {
+        "active": 0,
+        "blockstun": 0,
+        "boxes": [],
+        "cancelWindows": [],
+        "damage": 0,
+        "hitstop": 0,
+        "hitstun": 0,
+        "recovery": 0,
+        "startup": 0
+      },
+      "entryPoseId": "neutral_stand",
+      "exitPoseId": "neutral_stand",
+      "exposures": [
+        {
+          "duration": 10,
+          "sourceFrameId": "idle_a",
+          "start": 0
+        },
+        {
+          "duration": 10,
+          "sourceFrameId": "idle_b",
+          "start": 10
+        }
+      ],
+      "id": "idle",
+      "landing": [],
+      "presentationTrack": [],
+      "simulationLength": 20,
+      "transitions": [
+        {
+          "addsGameplayFrames": false,
+          "fromPose": "neutral_stand",
+          "id": "idle_to_standing_heavy",
+          "maskEventId": null,
+          "simulationWindow": {
+            "end": 19,
+            "start": 0
+          },
+          "toAnimation": "standing_heavy",
+          "type": "clean_cut",
+          "visualFrames": []
+        }
+      ],
+      "version": 1
+    },
+    {
+      "combatTrack": {
+        "active": 5,
+        "blockstun": 14,
+        "boxes": [
+          {
+            "frame": 8,
+            "height": 50,
+            "kind": "hit",
+            "width": 92,
+            "x": 42,
+            "y": -94
+          },
+          {
+            "frame": 9,
+            "height": 50,
+            "kind": "hit",
+            "width": 92,
+            "x": 42,
+            "y": -94
+          },
+          {
+            "frame": 10,
+            "height": 50,
+            "kind": "hit",
+            "width": 92,
+            "x": 42,
+            "y": -94
+          },
+          {
+            "frame": 11,
+            "height": 50,
+            "kind": "hit",
+            "width": 92,
+            "x": 42,
+            "y": -94
+          },
+          {
+            "frame": 12,
+            "height": 50,
+            "kind": "hit",
+            "width": 92,
+            "x": 42,
+            "y": -94
+          }
+        ],
+        "cancelWindows": [],
+        "damage": 85,
+        "hitstop": 7,
+        "hitstun": 22,
+        "recovery": 17,
+        "startup": 8
+      },
+      "entryPoseId": "neutral_stand",
+      "exitPoseId": "neutral_stand",
+      "exposures": [
+        {
+          "duration": 3,
+          "sourceFrameId": "standing_heavy_00",
+          "start": 0
+        },
+        {
+          "duration": 3,
+          "sourceFrameId": "standing_heavy_01",
+          "start": 3
+        },
+        {
+          "duration": 2,
+          "sourceFrameId": "standing_heavy_02",
+          "start": 6
+        },
+        {
+          "duration": 1,
+          "sourceFrameId": "standing_heavy_03",
+          "start": 8
+        },
+        {
+          "duration": 1,
+          "sourceFrameId": "standing_heavy_04",
+          "start": 9
+        },
+        {
+          "duration": 1,
+          "sourceFrameId": "standing_heavy_05",
+          "start": 10
+        },
+        {
+          "duration": 2,
+          "sourceFrameId": "standing_heavy_06",
+          "start": 11
+        },
+        {
+          "duration": 5,
+          "sourceFrameId": "standing_heavy_07",
+          "start": 13
+        },
+        {
+          "duration": 4,
+          "sourceFrameId": "idle_07",
+          "start": 18
+        },
+        {
+          "duration": 4,
+          "sourceFrameId": "idle_06",
+          "start": 22
+        },
+        {
+          "duration": 4,
+          "sourceFrameId": "idle_00",
+          "start": 26
+        }
+      ],
+      "id": "standing_heavy",
+      "landing": [],
+      "presentationTrack": [
+        {
+          "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+          "frame": 8,
+          "index": 0,
+          "payload": {
+            "profile": "heavy_contact"
+          },
+          "type": "start_hit_flash"
+        }
+      ],
+      "simulationLength": 30,
+      "transitions": [
+        {
+          "addsGameplayFrames": false,
+          "fromPose": "neutral_stand",
+          "id": "standing_heavy_to_idle",
+          "maskEventId": null,
+          "simulationWindow": {
+            "end": 29,
+            "start": 13
+          },
+          "toAnimation": "idle",
+          "type": "authored_micro_transition",
+          "visualFrames": [
+            "standing_heavy_07",
+            "idle_07",
+            "idle_06",
+            "idle_00"
+          ]
+        }
+      ],
+      "version": 1
+    }
+  ],
+  "bundleVersion": 1,
+  "compilerVersion": "0.1.0",
+  "deployable": false,
+  "fighterId": "lamuh_legacy_motion_fixture",
+  "packageGroups": {
+    "core": [
+      "idle"
+    ],
+    "normals": [
+      "standing_heavy"
+    ]
+  },
+  "schemaVersion": "2.1.0-runtime",
+  "sourceDigest": "9f86084e30579c3d60c71153e33c2f9c202c1660b7475598a5cab5af9e10409c"
+}

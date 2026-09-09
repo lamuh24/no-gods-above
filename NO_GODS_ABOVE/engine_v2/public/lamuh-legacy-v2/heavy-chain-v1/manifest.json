@@ -1,0 +1,1083 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidateOnly": true,
+  "deployable": false,
+  "humanApproval": null,
+  "status": "awaiting_human_heavy_punch_vanish_kick_ball_review",
+  "opener": {
+    "frames": [
+      {
+        "index": 0,
+        "role": "base_ready",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+        "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+        "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.94899,
+        "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 562,
+          "minY": 560,
+          "maxX": 973,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "contact": false,
+        "visibleImpact": false
+      },
+      {
+        "auraBaked": false,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-00.png",
+        "bodyCenter": {
+          "y": 1011.5104337611637,
+          "x": 745.3161092781012
+        },
+        "index": 1,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 436,
+          "maxX": 1001,
+          "minY": 650,
+          "maxY": 1363
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "loaded anticipation",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "7906C20104B10024193832D21BB15757372997A18D6DC864D2D55C643836816B"
+      },
+      {
+        "auraBaked": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-01.png",
+        "bodyCenter": {
+          "y": 1025.9883539035854,
+          "x": 692.7154454567768
+        },
+        "index": 2,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 290,
+          "maxX": 1023,
+          "minY": 690,
+          "maxY": 1358
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "committed low forward dash",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "ACC9353333FAEB0A0E2AAC0237D953CDAE5E236D74D4CB7F7F25BCB4D444C2F7"
+      },
+      {
+        "auraBaked": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-02.png",
+        "bodyCenter": {
+          "y": 1024.7348408524003,
+          "x": 739.0824086490693
+        },
+        "index": 3,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 339,
+          "maxX": 1118,
+          "minY": 655,
+          "maxY": 1367
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "same-arm extension connector",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "2A3105A851F5E4B1AB80D9EAAB7420C8B49EF0993153F2A25EF2FC06F6C08B7D"
+      },
+      {
+        "auraBaked": true,
+        "contact": true,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-03.png",
+        "bodyCenter": {
+          "y": 1015.0999213847417,
+          "x": 741.9390209965354
+        },
+        "index": 4,
+        "sourceScale": 2.3,
+        "visibleImpact": true,
+        "visibleBounds": {
+          "minX": 327,
+          "maxX": 1185,
+          "minY": 625,
+          "maxY": 1360
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "single straight punch contact",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "19CF9B9DBCFAEEBDDA64B1B86B1F12CD0300370CA56454A607FE7A64813713E6"
+      },
+      {
+        "auraBaked": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-04.png",
+        "bodyCenter": {
+          "y": 1024.113841845327,
+          "x": 715.6860711109429
+        },
+        "index": 5,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 296,
+          "maxX": 1146,
+          "minY": 689,
+          "maxY": 1358
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "forward-weight follow through",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "5EF96AA216B174537BCDC963E24CC38DE658F7D9A0D963C616655FDAA986575F"
+      },
+      {
+        "auraBaked": false,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-05.png",
+        "bodyCenter": {
+          "y": 1018.3741730331326,
+          "x": 714.1914476018522
+        },
+        "index": 6,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 390,
+          "maxX": 941,
+          "minY": 660,
+          "maxY": 1360
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "same-arm retraction",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "BAC7A3E61E30304D3F5CA0D8E80956D10B1D928B5BABD9CD11C872C41DF8E60F"
+      },
+      {
+        "auraBaked": false,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-06.png",
+        "bodyCenter": {
+          "y": 977.5019273388517,
+          "x": 736.6140018563067
+        },
+        "index": 7,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 518,
+          "maxX": 936,
+          "minY": 570,
+          "maxY": 1360
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "settling toward idle",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "5CC9DB6646D0F447B091D445ACDE207F50772BDCD06FA7E263E2AB9225858663"
+      },
+      {
+        "index": 8,
+        "role": "base_ready",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+        "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+        "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.94899,
+        "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 562,
+          "minY": 560,
+          "maxX": 973,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "contact": false,
+        "visibleImpact": false
+      }
+    ],
+    "exposureTicks": [
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      4,
+      4,
+      6
+    ],
+    "durationTicks": 30,
+    "contactFrame": 4
+  },
+  "response": {
+    "frames": [
+      {
+        "auraBaked": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-03.png",
+        "bodyCenter": {
+          "y": 1015.0999213847417,
+          "x": 741.9390209965354
+        },
+        "index": 0,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 327,
+          "maxX": 1185,
+          "minY": 625,
+          "maxY": 1360
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "single straight punch contact",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "19CF9B9DBCFAEEBDDA64B1B86B1F12CD0300370CA56454A607FE7A64813713E6"
+      },
+      {
+        "auraBaked": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-04.png",
+        "bodyCenter": {
+          "y": 1024.113841845327,
+          "x": 715.6860711109429
+        },
+        "index": 1,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 296,
+          "maxX": 1146,
+          "minY": 689,
+          "maxY": 1358
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "forward-weight follow through",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "5EF96AA216B174537BCDC963E24CC38DE658F7D9A0D963C616655FDAA986575F"
+      },
+      {
+        "auraBaked": false,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/forward-light-clean-v2/pose-05.png",
+        "bodyCenter": {
+          "y": 1018.3741730331326,
+          "x": 714.1914476018522
+        },
+        "index": 2,
+        "sourceScale": 2.3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 390,
+          "maxX": 941,
+          "minY": 660,
+          "maxY": 1360
+        },
+        "greenRemaining": 0,
+        "edgeContact": false,
+        "role": "same-arm retraction",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "BAC7A3E61E30304D3F5CA0D8E80956D10B1D928B5BABD9CD11C872C41DF8E60F"
+      },
+      {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "auraBaked": true,
+        "bodyAbsent": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/heavy-chain-fx-v1/vanish-shell.png",
+        "bodyCenter": {
+          "y": 1021.455974556468,
+          "x": 768.4479081313692
+        },
+        "index": 3,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 497,
+          "maxX": 1038,
+          "minY": 573,
+          "maxY": 1362
+        },
+        "greenRemaining": 0,
+        "role": "vanish-shell",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "EC0FE23A1126366A06CCED053D37E20DE0A1B8312E72C2E9787F11A0E6EB3AEC"
+      },
+      {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "auraBaked": true,
+        "bodyAbsent": true,
+        "contact": false,
+        "publicPath": "/lamuh-legacy-v2/heavy-chain-fx-v1/vanish-wisp.png",
+        "bodyCenter": {
+          "y": 1003.2671922057374,
+          "x": 769.3191539561157
+        },
+        "index": 4,
+        "visibleImpact": false,
+        "visibleBounds": {
+          "minX": 625,
+          "maxX": 913,
+          "minY": 609,
+          "maxY": 1357
+        },
+        "greenRemaining": 0,
+        "role": "vanish-wisp",
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "sha256": "94F7B2FEA1D75A64262D1C147C8E7F56E13AEAD27D1256A67C4A94448BF4C0E2"
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2911244,
+        "auraBaked": true,
+        "sha256": "B9486D6AF312AA37398CDDCAE3BFD0B59987EBA1E72839863402E2BBD164DF2D",
+        "role": "near knee chamber, far foot planted",
+        "contact": false,
+        "index": 5,
+        "sourceRegistration": {
+          "y": 450,
+          "x": 235
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 23570,
+        "sourceSha256": "532DAA494A9632A6860C764168FF8483B21697FDDEB191CCB5945862C2E951B2",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 517,
+          "maxX": 1060,
+          "minY": 553,
+          "maxY": 1360
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-00.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-00.png",
+        "bodyCenter": {
+          "y": 931.3088880768652,
+          "x": 777.3509317971756
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2884280,
+        "auraBaked": true,
+        "sha256": "C2613CDBD5BF12DD53C991206299E7682042FB830510B904FCFDD4B25FAFC5ED",
+        "role": "same leg unfolding",
+        "contact": false,
+        "index": 6,
+        "sourceRegistration": {
+          "y": 454,
+          "x": 650
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 23218,
+        "sourceSha256": "F89052854329E1937A52B9DEF5875E539E4985F1E26F3F55A3736DB11C08C6D4",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 603,
+          "maxX": 1324,
+          "minY": 559,
+          "maxY": 1362
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-01.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-01.png",
+        "bodyCenter": {
+          "y": 921.0995896391602,
+          "x": 897.2483762978047
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": true,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2874822,
+        "auraBaked": true,
+        "sha256": "01AB8BB0EF61BE57B51805B3D1762B4FD951BE1EC680A98F6E9E43BF67852DD6",
+        "role": "single side kick full extension",
+        "contact": true,
+        "index": 7,
+        "sourceRegistration": {
+          "y": 454,
+          "x": 1123
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 23067,
+        "sourceSha256": "ED8EF35A27EB0E61A925B45F8B3E73B7A2F4946B23D2D6A26B33C7C9DC87DDC4",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 577,
+          "maxX": 1428,
+          "minY": 575,
+          "maxY": 1360
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-02.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-02.png",
+        "bodyCenter": {
+          "y": 918.5518994692058,
+          "x": 908.6263632776731
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2918496,
+        "auraBaked": true,
+        "sha256": "0F4D3519E60D8DB2F7C0C5DD933B4CD779C7967F4EE14A884165071632F5C500",
+        "role": "same knee recoil and retract",
+        "contact": false,
+        "index": 8,
+        "sourceRegistration": {
+          "y": 943,
+          "x": 240
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 22738,
+        "sourceSha256": "50A86374EEEC64A2A3FE29D34392F51021A1AA99531982A0F98CEE82C58D6E7F",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 537,
+          "maxX": 1060,
+          "minY": 563,
+          "maxY": 1360
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-03.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-03.png",
+        "bodyCenter": {
+          "y": 937.2601991220166,
+          "x": 785.3681537935718
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2890754,
+        "auraBaked": true,
+        "sha256": "255DCEBEA80ACEDC3D9D64B75287AFC9BF5609B95A29784C7FC5A1B2ED17896C",
+        "role": "kicking foot planted, balance restored",
+        "contact": false,
+        "index": 9,
+        "sourceRegistration": {
+          "y": 945,
+          "x": 643
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 28586,
+        "sourceSha256": "A89E298C57BDBC4F68A67DA32221C24657E14B8EF146A5BB1CFD711408D772BD",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 645,
+          "maxX": 1176,
+          "minY": 553,
+          "maxY": 1362
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-04.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-04.png",
+        "bodyCenter": {
+          "y": 965.3675929290216,
+          "x": 900.2925506706055
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2883267,
+        "auraBaked": true,
+        "sha256": "3D2E49D0B2CF47FABC2202408E77EF2E7541DD65DFE25691BE0769FD56774E8A",
+        "role": "grounded open palm preparation",
+        "contact": false,
+        "index": 10,
+        "sourceRegistration": {
+          "y": 945,
+          "x": 1131
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 30957,
+        "sourceSha256": "CBD61F740190271F680EA9B04734D8DF96AFC5EEBF7DBB734245782D1742C8B0",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 641,
+          "maxX": 1224,
+          "minY": 557,
+          "maxY": 1362
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-05.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-kick-chain-v1/pose-05.png",
+        "bodyCenter": {
+          "y": 962.0026832086415,
+          "x": 918.1091708923684
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2800152,
+        "auraBaked": true,
+        "sha256": "D7DCA925ABAAD7ACCC2BB35F518E3707705285C963D89F8F9F53642576939969",
+        "role": "palm load and small orb",
+        "contact": false,
+        "index": 11,
+        "sourceRegistration": {
+          "y": 463,
+          "x": 762
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 42809,
+        "sourceSha256": "58F3A9766D70C980C5EFC562A1D3522EAE407C667B4E71C6FB4AA14AF888EFB2",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 381,
+          "maxX": 1130,
+          "minY": 555,
+          "maxY": 1366
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-01.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-01.png",
+        "bodyCenter": {
+          "y": 987.1324795721812,
+          "x": 750.884366964838
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2747517,
+        "auraBaked": true,
+        "sha256": "602F068AF6EF3A0801250DF3EF2C0D587A45B94543AB90D698B80F1C67BCA8DD",
+        "role": "palm extension and orb growth",
+        "contact": false,
+        "index": 12,
+        "sourceRegistration": {
+          "y": 467,
+          "x": 1217
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 55280,
+        "sourceSha256": "A1A0E47C07F94D501961474ABA5016DD5F71E9602C2FB5CC59237EACAC4AA28C",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 391,
+          "maxX": 1246,
+          "minY": 561,
+          "maxY": 1362
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-02.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-02.png",
+        "bodyCenter": {
+          "y": 975.8072139652093,
+          "x": 802.2753522006009
+        }
+      },
+      {
+        "publicPath": "/lamuh-legacy-v2/heavy-chain-release-v1/release-empty-palm.png",
+        "contact": false,
+        "bodyCenter": {
+          "y": 1018.6637171353254,
+          "x": 741.9079244735218
+        },
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "role": "empty-palm release after detached aura ball",
+        "sha256": "D9D90F02B2D8B57D035CE901C6EB3BD2C15D181DDE3F47F708C8BEEEBDEEBBEF",
+        "index": 13,
+        "visibleBounds": {
+          "minX": 394,
+          "maxX": 1111,
+          "minY": 601,
+          "maxY": 1363
+        },
+        "auraBaked": true
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2830279,
+        "auraBaked": true,
+        "sha256": "EA0B0E01C4A0A57A3EFB87992418CF9AFDF5D65BCD0B24527B26E3737785187F",
+        "role": "same arm retracting follow-through",
+        "contact": false,
+        "index": 14,
+        "sourceRegistration": {
+          "y": 950,
+          "x": 803
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 34069,
+        "sourceSha256": "FA9C07526BDF557D959686028C39221B80BA55C7F8C587C4768B4FFC1F468DA8",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 433,
+          "maxX": 1154,
+          "minY": 543,
+          "maxY": 1354
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-04.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-04.png",
+        "bodyCenter": {
+          "y": 963.9703916134165,
+          "x": 774.0260123951035
+        }
+      },
+      {
+        "greenRemaining": 0,
+        "visibleImpact": false,
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "transparentPixels": 2919617,
+        "auraBaked": false,
+        "sha256": "F6454AB47B99E652F217328D20CDDD0E79C853C2FCB33208B445F876F587079A",
+        "role": "clear settled return",
+        "contact": false,
+        "index": 15,
+        "sourceRegistration": {
+          "y": 952,
+          "x": 1241
+        },
+        "sourceScale": 2,
+        "opaqueWhitePixels": 33071,
+        "sourceSha256": "0BBB6E09E77D560BF57FEECF37C81ABC138E1F103C0189C16AD64DD675D4D4E0",
+        "edgeContact": false,
+        "visibleBounds": {
+          "minX": 549,
+          "maxX": 970,
+          "minY": 533,
+          "maxY": 1368
+        },
+        "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-05.png",
+        "publicPath": "/lamuh-legacy-v2/ascend-heavy-clean-v2/pose-05.png",
+        "bodyCenter": {
+          "y": 961.9578810670898,
+          "x": 760.4781250138506
+        }
+      },
+      {
+        "index": 16,
+        "role": "base_ready",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+        "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+        "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.94899,
+        "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 562,
+          "minY": 560,
+          "maxX": 973,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "contact": false,
+        "visibleImpact": false
+      }
+    ],
+    "exposureTicks": [
+      4,
+      3,
+      3,
+      3,
+      3,
+      4,
+      2,
+      3,
+      3,
+      3,
+      2,
+      1,
+      2,
+      4,
+      5,
+      6,
+      13
+    ],
+    "durationTicks": 64,
+    "contactFrame": 7
+  },
+  "projectileFrames": [
+    {
+      "canvas": {
+        "height": 512,
+        "width": 512
+      },
+      "auraBaked": true,
+      "bodyAbsent": true,
+      "contact": false,
+      "publicPath": "/lamuh-legacy-v2/heavy-chain-fx-v1/aura-ball-00.png",
+      "bodyCenter": {
+        "y": 253.37701310043667,
+        "x": 285.0172925764192
+      },
+      "index": 2,
+      "visibleImpact": false,
+      "visibleBounds": {
+        "minX": 90,
+        "maxX": 395,
+        "minY": 152,
+        "maxY": 345
+      },
+      "greenRemaining": 0,
+      "role": "aura-ball-00",
+      "root": {
+        "y": 256,
+        "x": 320
+      },
+      "sha256": "12C1F311E52DF98C9399788DEB3899343BA84F5EB98C4BBB1F4E399A5D21E5A0"
+    },
+    {
+      "canvas": {
+        "height": 512,
+        "width": 512
+      },
+      "auraBaked": true,
+      "bodyAbsent": true,
+      "contact": false,
+      "publicPath": "/lamuh-legacy-v2/heavy-chain-fx-v1/aura-ball-01.png",
+      "bodyCenter": {
+        "y": 257.24526934228595,
+        "x": 283.0431100259423
+      },
+      "index": 3,
+      "visibleImpact": false,
+      "visibleBounds": {
+        "minX": 102,
+        "maxX": 388,
+        "minY": 155,
+        "maxY": 346
+      },
+      "greenRemaining": 0,
+      "role": "aura-ball-01",
+      "root": {
+        "y": 256,
+        "x": 320
+      },
+      "sha256": "F46DA569A762AC74AA2CC0546876652B20D2146C7375968921D5D9A9610229CE"
+    }
+  ],
+  "projectileExposureTicks": [
+    3,
+    3
+  ],
+  "sockets": {
+    "opener": {
+      "x": 1175,
+      "y": 860
+    },
+    "kick": {
+      "x": 1410,
+      "y": 826
+    },
+    "ball": {
+      "x": 1020,
+      "y": 948
+    }
+  },
+  "notes": [
+    "Only forward Heavy changed; Light/Medium/Divine source and combat preserved.",
+    "Unblocked genuine opener confirms sequence; block/whiff use30tick opener recovery.",
+    "Victim pause is simulation-owned hitstun, never a renderer freeze or arbitrary victim teleport.",
+    "Response vanish10-15, relocate14, kick22-24, real projectile36; end64.",
+    "World arena boundaries and legal side-switch fallback remain enforced.",
+    "New kick and aura sprite frames are human-review candidates."
+  ],
+  "combat": {
+    "opener": {
+      "id": "legacy_ascend_step_heavy",
+      "command": "6S+H",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "groundOnly": true,
+      "hitboxes": [
+        {
+          "id": "legacy_ascend_step_heavy_punch",
+          "start": 10,
+          "end": 12,
+          "rect": {
+            "x": 20,
+            "y": -120,
+            "w": 105,
+            "h": 66
+          },
+          "damage": 24,
+          "hitstop": 5,
+          "hitstun": 12,
+          "blockstun": 16,
+          "knockbackX": 0,
+          "knockbackY": 0,
+          "maxHits": 1,
+          "level": "mid",
+          "blockHitstop": 4
+        }
+      ],
+      "hitConfirm": {
+        "hitboxId": "legacy_ascend_step_heavy_punch",
+        "holdThrough": 21,
+        "response": {
+          "id": "legacy_ascend_step_heavy",
+          "command": "genuine_punch_hit_only",
+          "startup": 22,
+          "active": 3,
+          "recovery": 39,
+          "groundOnly": true,
+          "targetHurtboxProfile": "extended",
+          "targetSideSwitch": {
+            "triggerTick": 14,
+            "captureRange": 180,
+            "behindDistance": 140,
+            "verticalTolerance": 110,
+            "requireTargetAhead": true,
+            "faceTargetAfterSwitch": true
+          },
+          "hitboxes": [
+            {
+              "id": "legacy_ascend_step_heavy_kick",
+              "start": 22,
+              "end": 24,
+              "rect": {
+                "x": 108,
+                "y": -148,
+                "w": 70,
+                "h": 58
+              },
+              "damage": 28,
+              "hitstop": 6,
+              "hitstun": 42,
+              "blockstun": 18,
+              "knockbackX": 15,
+              "knockbackY": 0,
+              "maxHits": 1,
+              "level": "mid",
+              "blockHitstop": 5
+            }
+          ],
+          "projectile": {
+            "releaseTick": 36,
+            "spawnOffset": {
+              "x": 58,
+              "y": -95
+            },
+            "releaseSweepStartX": 30,
+            "speed": 28,
+            "gravity": 0,
+            "maxTravel": 1400,
+            "lifeTicks": 60,
+            "hitbox": {
+              "id": "legacy_ascend_step_heavy_aura_ball",
+              "start": 0,
+              "end": 0,
+              "rect": {
+                "x": -26,
+                "y": -30,
+                "w": 52,
+                "h": 60
+              },
+              "damage": 32,
+              "hitstop": 6,
+              "hitstun": 24,
+              "blockstun": 18,
+              "knockbackX": 9,
+              "knockbackY": 0,
+              "maxHits": 1,
+              "level": "mid",
+              "knockdown": "soft",
+              "blockHitstop": 5
+            }
+          }
+        }
+      }
+    },
+    "response": {
+      "id": "legacy_ascend_step_heavy",
+      "command": "genuine_punch_hit_only",
+      "startup": 22,
+      "active": 3,
+      "recovery": 39,
+      "groundOnly": true,
+      "targetHurtboxProfile": "extended",
+      "targetSideSwitch": {
+        "triggerTick": 14,
+        "captureRange": 180,
+        "behindDistance": 140,
+        "verticalTolerance": 110,
+        "requireTargetAhead": true,
+        "faceTargetAfterSwitch": true
+      },
+      "hitboxes": [
+        {
+          "id": "legacy_ascend_step_heavy_kick",
+          "start": 22,
+          "end": 24,
+          "rect": {
+            "x": 108,
+            "y": -148,
+            "w": 70,
+            "h": 58
+          },
+          "damage": 28,
+          "hitstop": 6,
+          "hitstun": 42,
+          "blockstun": 18,
+          "knockbackX": 15,
+          "knockbackY": 0,
+          "maxHits": 1,
+          "level": "mid",
+          "blockHitstop": 5
+        }
+      ],
+      "projectile": {
+        "releaseTick": 36,
+        "spawnOffset": {
+          "x": 58,
+          "y": -95
+        },
+        "releaseSweepStartX": 30,
+        "speed": 28,
+        "gravity": 0,
+        "maxTravel": 1400,
+        "lifeTicks": 60,
+        "hitbox": {
+          "id": "legacy_ascend_step_heavy_aura_ball",
+          "start": 0,
+          "end": 0,
+          "rect": {
+            "x": -26,
+            "y": -30,
+            "w": 52,
+            "h": 60
+          },
+          "damage": 32,
+          "hitstop": 6,
+          "hitstun": 24,
+          "blockstun": 18,
+          "knockbackX": 9,
+          "knockbackY": 0,
+          "maxHits": 1,
+          "level": "mid",
+          "knockdown": "soft",
+          "blockHitstop": 5
+        }
+      }
+    }
+  }
+}

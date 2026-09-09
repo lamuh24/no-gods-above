@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_visual_direction",
+  "subject": "lamuh_legacy_v2.all_move_animation_artwork",
+  "recordedAt": "2026-09-03",
+  "sourceApplication": "Codex desktop",
+  "userInput": "make sure he doesnt look chibi when he is doing the moves this is v2",
+  "requirements": [
+    "mature adult head-to-torso ratio in every move frame",
+    "adult torso, arm, and leg length consistent with the approved modern idle scale",
+    "connected boxed beard and mustache with mature angular facial read",
+    "one sequence-wide anatomy scale with fixed authored roots",
+    "compact attack poses must read as deliberate body compression rather than global shrinkage"
+  ],
+  "allowedAnimationDeformation": [
+    "torso compression",
+    "extension",
+    "exaggerated lean",
+    "intentional smear",
+    "impact distortion",
+    "coat and hair lag",
+    "controlled silhouette exaggeration"
+  ],
+  "automaticRejection": [
+    "chibi or super-deformed anatomy",
+    "oversized head caused by shortened body proportions",
+    "missing beard or childlike facial identity",
+    "per-frame character scaling",
+    "pose-to-pose body-size drift"
+  ],
+  "appliesTo": "all_remaining_lamuh_v2_normals_specials_throws_reactions_and_transitions",
+  "enforcement": "hard_candidate_gate_before_human_motion_review",
+  "approvalBoundary": {
+    "visualDirectionRecorded": true,
+    "currentAscendStepHumanApproved": false,
+    "futureMoveHumanApprovalStillRequired": true,
+    "runtimePromotionApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

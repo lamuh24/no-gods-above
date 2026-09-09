@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "technicalStatus": "DETERMINISTIC_MECHANICS_PLUS_DEDICATED_ATTACKER_ART_CANDIDATE",
+  "humanReviewStatus": "APPROVED_STANDARD_GRAB_FORWARD_THROW_BACK_THROW_CANDIDATE_ONLY",
+  "artStatus": "HUMAN_APPROVED_THROW_FAMILY_CANDIDATE_NOT_PROMOTED",
+  "simulationHz": 60,
+  "victimClass": "standard_humanoid",
+  "globalVictimScale": false,
+  "forwardThrow": {
+    "startup": 4,
+    "connectTick": 4,
+    "releaseTick": 14,
+    "totalTicks": 32,
+    "damage": 70,
+    "humanReviewStatus": "APPROVED_FORWARD_THROW",
+    "physicalTrackRequired": true
+  },
+  "backThrow": {
+    "startup": 4,
+    "connectTick": 4,
+    "releaseTick": 16,
+    "totalTicks": 36,
+    "damage": 75,
+    "humanReviewStatus": "APPROVED_BACK_THROW",
+    "physicalTrackRequired": true
+  },
+  "artTruth": "Dedicated modern-style attacker animation now exists for the universal grab attempt/whiff, forward throw, and back throw. Victim motion remains the deterministic standard-humanoid track; the procedural victim is still review-only.",
+  "futureVictimClasses": [
+    "small",
+    "large",
+    "non_humanoid",
+    "extreme_proportion"
+  ],
+  "animationFamily": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+    "sha256": "532DD6D2B211301CAC1B0F45BE4101B8F94B3BEA473B99A81F33E92FA3A8C0AD"
+  },
+  "humanApproval": {
+    "standardGrab": "APPROVED_STANDARD_GRAB",
+    "forwardThrow": "APPROVED_FORWARD_THROW",
+    "backThrow": "APPROVED_BACK_THROW"
+  },
+  "approvalReceipt": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/standard-grab-throw-family-v1.approval.json",
+    "sha256": "68A394EF16F12FB35C1C1D760A88E74989C9AC498616DE64085F5F29DB487A3A"
+  }
+}

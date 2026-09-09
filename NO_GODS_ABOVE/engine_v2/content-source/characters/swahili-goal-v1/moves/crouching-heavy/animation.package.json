@@ -589,7 +589,7 @@
     "authoritative": false,
     "owner": "simulation",
     "candidateValues": {
-      "reviewState": "awaiting_human_crouching_heavy_motion_review",
+      "reviewState": "APPROVED_AS_CURRENT_SANDBOX_MOVESET_2026_08_12",
       "timingAuthority": "candidate_responsive_heavy_sweep_32_ticks",
       "rootMotionAuthority": "simulation_owned_or_not_applicable"
     },
@@ -629,7 +629,7 @@
       "provenance_present"
     ],
     "creativeWarnings": [
-      "awaiting_human_crouching_heavy_motion_review",
+      "APPROVED_AS_CURRENT_SANDBOX_MOVESET_2026_08_12",
       "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
       "candidate package only; no production roster or deployment authorization"
     ],
@@ -639,7 +639,7 @@
     "sourceType": "approved_or_human_review_candidate_exact_rgba",
     "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
     "model": null,
-    "createdAt": "2026-07-26T00:00:00Z",
+    "createdAt": "2026-08-13T00:00:00Z",
     "promptHash": null,
     "seed": null,
     "references": [
@@ -648,7 +648,7 @@
       "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
     ],
     "revisionChain": [
-      "awaiting_human_crouching_heavy_motion_review",
+      "APPROVED_AS_CURRENT_SANDBOX_MOVESET_2026_08_12",
       "crouching_heavy_goal_v1_candidate_package"
     ],
     "cleanupOperations": [
@@ -656,16 +656,16 @@
       "source_pixels_unchanged"
     ],
     "humanApproval": {
-      "state": "pending",
-      "approvedBy": null,
-      "approvedAt": null
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
     },
     "licensingNotes": [
       "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
     ]
   },
   "goalV1Extension": {
-    "reviewState": "awaiting_human_crouching_heavy_motion_review",
+    "reviewState": "APPROVED_AS_CURRENT_SANDBOX_MOVESET_2026_08_12",
     "sourceAlphaAudit": {
       "crouching_heavy_motion_v1_01_deep_rotational_anticipation": {
         "canvas": [

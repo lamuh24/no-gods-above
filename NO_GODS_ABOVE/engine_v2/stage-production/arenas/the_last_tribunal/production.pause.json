@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0-stage-production-pause",
+  "arenaId": "the_last_tribunal",
+  "record": {
+    "key": "THE_LAST_TRIBUNAL_STAGE_PRODUCTION",
+    "value": "PAUSED_AFTER_PLAYABLE_GRAYBOX_V1"
+  },
+  "recordedOn": "2026-07-14",
+  "reason": "The stage is currently sufficient for character gameplay development. Character completion, combat systems, animation coverage, and Swahili's production pipeline are higher priorities.",
+  "state": {
+    "candidateOnly": true,
+    "deployable": false,
+    "humanStageApprovalRecorded": false,
+    "productionPaused": true
+  },
+  "preserveUnchanged": [
+    "playable_graybox",
+    "stage_contracts",
+    "validation_captures",
+    "arena_configuration",
+    "camera_configuration",
+    "validation_records"
+  ],
+  "doNotBegin": [
+    "concept_backdrop_integration",
+    "floor_art",
+    "materials",
+    "final_textures",
+    "architecture_art",
+    "banners",
+    "atmosphere",
+    "lighting_polish",
+    "final_gpu_profiling"
+  ],
+  "resumeGate": "explicit_human_instruction",
+  "authorization": {
+    "commit": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

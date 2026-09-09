@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.crouch_jump.modern_style.candidate.v1",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "legacySourceImmutable": true,
+  "generationMode": "OpenAI built-in image generation reference edit mode",
+  "generationPromptSummary": "Modern outline-free Lamuh crouch entry/hold/exit and jump anticipation/takeoff/knee-tuck/apex/fall/landing/recovery, using V1 poses as motion reference and modern idle as identity/scale reference.",
+  "sourceSheets": {
+    "crouch": {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/raw/crouch-source-sheet.png",
+      "sha256": "A773959A869EB9ABF656C301B768C266776E9FDBD687003392272101B1EAC215",
+      "generationMode": "imagegen_reference_edit"
+    },
+    "jump": {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/raw/jump-source-sheet.png",
+      "sha256": "7A0D5E023E674E3AFDB4153754642E6C2216F18806F42F018130B01D6B7B4ACC",
+      "generationMode": "imagegen_reference_edit"
+    }
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalization.report.json",
+    "sha256": "0E4437D835E76DCB12AC3FC029A99EFB80DC809EE8B3AC36B2CD3D69CA0CBFF2"
+  },
+  "contactSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/crouch-jump-numbered-contact-sheet.png",
+    "sha256": "5DF1DB98B279BA96AB186D3B9F9EB64045046169DDF41CA4598A0A29FB013BC6"
+  },
+  "protectedLegacyFrames": [
+    {
+      "state": "crouch",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/crouch/crouch_00.png",
+      "sha256": "DC3D6607A892A4D8CD2B3C3019B9D8A39AF47D60CD95D0F8EE846F10AF643636"
+    },
+    {
+      "state": "crouch",
+      "legacyIndex": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/crouch/crouch_01.png",
+      "sha256": "6EAA1D6FAAC8A39AA4CCF397B913CEB626A422E37B10507DEE005B946A11D25B"
+    },
+    {
+      "state": "crouch",
+      "legacyIndex": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/crouch/crouch_02.png",
+      "sha256": "323AECCD518505CCB965E7F7F67C6F1F06206DA5F30C9B713ED9FBE0D5A4E632"
+    },
+    {
+      "state": "crouch",
+      "legacyIndex": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/crouch/crouch_03.png",
+      "sha256": "64A1BBB1ABC0C689F7F8B0E35AA55AB4750F9547FCFC5C214D9E07FB6E48A6FC"
+    },
+    {
+      "state": "crouch",
+      "legacyIndex": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/crouch/crouch_03.png",
+      "sha256": "64A1BBB1ABC0C689F7F8B0E35AA55AB4750F9547FCFC5C214D9E07FB6E48A6FC"
+    },
+    {
+      "state": "crouch",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/crouch/crouch_00.png",
+      "sha256": "DC3D6607A892A4D8CD2B3C3019B9D8A39AF47D60CD95D0F8EE846F10AF643636"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_00.png",
+      "sha256": "DCA31F24EB3384B43B5D2E86A216358E04A866055474429B632B09BEDC2CFECC"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_00.png",
+      "sha256": "DCA31F24EB3384B43B5D2E86A216358E04A866055474429B632B09BEDC2CFECC"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_01.png",
+      "sha256": "4B33135C49A651138CDBEDFB740F31613A6706230A7830BE513712FFDA8CE5CC"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_02.png",
+      "sha256": "879FBB8BA3810D47916AAB15EAB64531CE21D1E5141FB738681C9DA74A3703A6"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_03.png",
+      "sha256": "B2891856AAFFBF2B59FA453FD1737C2E3294BA828DADB8DA906BF73AD7D02AFD"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_03.png",
+      "sha256": "B2891856AAFFBF2B59FA453FD1737C2E3294BA828DADB8DA906BF73AD7D02AFD"
+    },
+    {
+      "state": "jump",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/jump/jump_00.png",
+      "sha256": "DCA31F24EB3384B43B5D2E86A216358E04A866055474429B632B09BEDC2CFECC"
+    }
+  ],
+  "sourceFrames": [
+    {
+      "state": "crouch",
+      "index": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/crouch/crouch-00.png",
+      "sha256": "DF38F02117265929D79B07A37154C09C88C27C7BD608070F6ACD965908D8B852"
+    },
+    {
+      "state": "crouch",
+      "index": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/crouch/crouch-01.png",
+      "sha256": "9D5353109E526634E9257C9A86EB2B701A479D1233042953C4714F08D5FD1046"
+    },
+    {
+      "state": "crouch",
+      "index": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/crouch/crouch-02.png",
+      "sha256": "4ABA4CF9917D106ABF8635F9927C311A240B6FA161433D2CCEE733C90CCA54F8"
+    },
+    {
+      "state": "crouch",
+      "index": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/crouch/crouch-03.png",
+      "sha256": "D7A2A8445738B48DE319144597DAB2CEA9EC3160886B3B98BF00E95922F9C64D"
+    },
+    {
+      "state": "crouch",
+      "index": 4,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/crouch/crouch-04.png",
+      "sha256": "BFEBE2CED0977DC36783ACF299A81DC35A981767B3FBDB516ABF3A895263F273"
+    },
+    {
+      "state": "crouch",
+      "index": 5,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/crouch/crouch-05.png",
+      "sha256": "C28012D96802E64DA4925C6BCA9EFBB87C4D857E843BDA30C5A60AABB75AF1BD"
+    },
+    {
+      "state": "jump",
+      "index": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-00.png",
+      "sha256": "85EE95FBD1AB8C7B892336E2269139218E680FAC553E8194E852801E4D329DBF"
+    },
+    {
+      "state": "jump",
+      "index": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-01.png",
+      "sha256": "DB7117B72A62F58013402ABE16CFF59AA477789A1A0B013FF97CB123D6B225EB"
+    },
+    {
+      "state": "jump",
+      "index": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-02.png",
+      "sha256": "D7728F42C5B67BFB895B951A785C22C9A421994CB3EEE39DF4C67320B84490DE"
+    },
+    {
+      "state": "jump",
+      "index": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-03.png",
+      "sha256": "857E94729E34E78DC4C1DB4FDAF5F4E684F16599DB1EE48DE578D7CDFFD89DDF"
+    },
+    {
+      "state": "jump",
+      "index": 4,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-04.png",
+      "sha256": "D9896E32AB7D615F82120725BBCAB3B8BE95E4A09557BF4E1BBDDF00122886A8"
+    },
+    {
+      "state": "jump",
+      "index": 5,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-05.png",
+      "sha256": "5818E4EC1B2472FD02FC899D1240A3CB63069EBE3FC7E6FCCC27BA4C14A88C50"
+    },
+    {
+      "state": "jump",
+      "index": 6,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/crouch-jump-modernization-v1/jump/jump-06.png",
+      "sha256": "323592AB624D0F49B7120B0F521867B95EC76C75E5664D1A949CE6C47A0F225F"
+    }
+  ],
+  "normalizedFrames": [
+    {
+      "state": "crouch",
+      "index": 0,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/crouch-00.png",
+      "sha256": "D74FA203193FDD628788A85A2FB5CA66954F6589BE7CAE8A581CA6470F163456"
+    },
+    {
+      "state": "crouch",
+      "index": 1,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/crouch-01.png",
+      "sha256": "7955AAC2D26006304029CD73F2A2548274FE4F89B7CC2D491F8FC1F0AE0A283D"
+    },
+    {
+      "state": "crouch",
+      "index": 2,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/crouch-02.png",
+      "sha256": "80684B5FFA67DAA208A8A13D605D619669F6A51B07456FDA278667EB92823E04"
+    },
+    {
+      "state": "crouch",
+      "index": 3,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/crouch-03.png",
+      "sha256": "884816B668058EAFDA91D5145C377F2FEA44764770FEC8D62E93D8986627EFDA"
+    },
+    {
+      "state": "crouch",
+      "index": 4,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/crouch-04.png",
+      "sha256": "4719F396A15DEC97264B1A0ADC85D02C3B73AB557374737019FA787D0F98965E"
+    },
+    {
+      "state": "crouch",
+      "index": 5,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/crouch-05.png",
+      "sha256": "71AB25B2834118CEDF47ED4CCAA9F267A330D6A480AAF1C953EDC1D933C513AA"
+    },
+    {
+      "state": "jump",
+      "index": 0,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-00.png",
+      "sha256": "76A2768F4BF5EA9F85EEA488B8AA72C8D5362693CC572198079173BF32FBBCA8"
+    },
+    {
+      "state": "jump",
+      "index": 1,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-01.png",
+      "sha256": "EFE8AC58739F7A95D99661EB3252C0FAE78513DA8030D4C2431F60C1C0B413D7"
+    },
+    {
+      "state": "jump",
+      "index": 2,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-02.png",
+      "sha256": "E3E82D696FB6E6FAA93A2BCE9144EFA74113620F2E9DE51713B0DE90CA8ECD40"
+    },
+    {
+      "state": "jump",
+      "index": 3,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-03.png",
+      "sha256": "38C64946EB5D385387B16E442FEA8E7B4347774080D9D311CE2E6AA17DAEEF23"
+    },
+    {
+      "state": "jump",
+      "index": 4,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-04.png",
+      "sha256": "7669E6A7BBAEE72F1B7F1E9857C8374096FFEF1F45836AAB5CFDD9103707B2E3"
+    },
+    {
+      "state": "jump",
+      "index": 5,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-05.png",
+      "sha256": "07BAC6640B39753E5C3738DCAFF05993D9B8A93C940C307EFF833716287B2451"
+    },
+    {
+      "state": "jump",
+      "index": 6,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalized/jump-06.png",
+      "sha256": "98114DDE4F00C0D5380E8E6BBEF547B691BACFAFD0AFBA9A26E92A6396ED1C09"
+    }
+  ],
+  "approvalBoundary": {
+    "crouchMotionApproved": false,
+    "jumpMotionApproved": false,
+    "transitionsApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

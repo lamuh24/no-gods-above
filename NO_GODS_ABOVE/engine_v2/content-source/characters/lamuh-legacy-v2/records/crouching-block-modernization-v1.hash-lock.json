@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.crouching_block.modernization.candidate.v1",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "legacySourceImmutable": true,
+  "generationMode": "OpenAI built-in image generation reference edit mode",
+  "sourceSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-block-modernization-v1/raw/crouching-block-source-sheet.png",
+    "sha256": "6F5D5ED3B20D6C8A101C6C1617C6F37D17D21208378A20C39F748AC8613FF180",
+    "generationMode": "OpenAI built-in image generation reference edit mode",
+    "cells": 4
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-block-modernization-v1/normalization.report.json",
+    "sha256": "B67958AFD90B74DC7C84F25AD5C909DD0882B80739BAD97D988D35853306E7CF"
+  },
+  "contactSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-block-modernization-v1/crouching-block-numbered-contact-sheet.png",
+    "sha256": "05A07279BB0A159AFA3C9D9179E173EF74517C9229496EB141A0091F72D8A5EA"
+  },
+  "sourceRepairReason": "Preserve the V1 crouching-block body progression while rebuilding its obsolete purple-outlined art in the approved modern Lamuh style. The first pose lowers from neutral, the last pose is a stable low guard hold, and gameplay blocking remains simulation-owned.",
+  "timingChanged": false,
+  "gameplayChanged": false,
+  "normalizedFrames": [
+    {
+      "index": 0,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-00.png",
+      "sha256": "A3BC804AE948845C3365D6882B8DD1F1D8C8214BAB6033F2AE1FFF5B482B228E"
+    },
+    {
+      "index": 1,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-01.png",
+      "sha256": "CE3C0F13764490998454DEA2BF18CAF9454FE3C2B9858845A6E94763826AE0AB"
+    },
+    {
+      "index": 2,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-02.png",
+      "sha256": "160880DF73327C1B00E6D4EF62F2C074019E2AE2E258214E50A99D6AB288F154"
+    },
+    {
+      "index": 3,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/crouching-block-03.png",
+      "sha256": "780C88F8C1E5B952FD0BF4248368C25A4A6E3D4D29B9C2CEC0707D3013A1BF49"
+    }
+  ],
+  "approvalBoundary": {
+    "motionApproved": false,
+    "adultIdentityApproved": false,
+    "transitionsApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

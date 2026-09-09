@@ -1,0 +1,1455 @@
+{
+  "anchors": [
+    {
+      "effect": {
+        "x": 945,
+        "y": 670
+      },
+      "farFoot": {
+        "x": 980,
+        "y": 1365
+      },
+      "feet": {
+        "x": 556,
+        "y": 1406
+      },
+      "frame": 0,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 556,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_threatening_startup"
+    },
+    {
+      "effect": {
+        "x": 1165,
+        "y": 625
+      },
+      "farFoot": {
+        "x": 1004,
+        "y": 1363
+      },
+      "feet": {
+        "x": 532,
+        "y": 1406
+      },
+      "frame": 7,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 532,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_scythe_draw_control_bridge"
+    },
+    {
+      "effect": {
+        "x": 1165,
+        "y": 625
+      },
+      "farFoot": {
+        "x": 996,
+        "y": 1366
+      },
+      "feet": {
+        "x": 541,
+        "y": 1406
+      },
+      "frame": 12,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 541,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_scythe_capture_v2"
+    },
+    {
+      "effect": {
+        "x": 1165,
+        "y": 625
+      },
+      "farFoot": {
+        "x": 1019,
+        "y": 1406
+      },
+      "feet": {
+        "x": 517,
+        "y": 1364
+      },
+      "frame": 18,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 517,
+        "y": 1364
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_pull_in"
+    },
+    {
+      "effect": {
+        "x": 1165,
+        "y": 625
+      },
+      "farFoot": {
+        "x": 984,
+        "y": 1363
+      },
+      "feet": {
+        "x": 552,
+        "y": 1406
+      },
+      "frame": 24,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 552,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_pistol_intimidation_beat"
+    },
+    {
+      "effect": {
+        "x": 1055,
+        "y": 720
+      },
+      "farFoot": {
+        "x": 1052,
+        "y": 1406
+      },
+      "feet": {
+        "x": 485,
+        "y": 1386
+      },
+      "frame": 32,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 485,
+        "y": 1386
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_release_v2"
+    },
+    {
+      "effect": {
+        "x": 768,
+        "y": 760
+      },
+      "farFoot": {
+        "x": 948,
+        "y": 1367
+      },
+      "feet": {
+        "x": 589,
+        "y": 1406
+      },
+      "frame": 39,
+      "groundingContract": "forge_stance_grounding_v2",
+      "nearFoot": {
+        "x": 589,
+        "y": 1406
+      },
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_recovery"
+    }
+  ],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+    "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-targeted-repair-v1.approval.json",
+    "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+  ],
+  "combatTrack": {
+    "active": 6,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "recovery": 30,
+    "startup": 12,
+    "timingAuthorship": {
+      "authoredTotalDuration": 48,
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "durationModel": "independently_authored_per_move",
+      "simulationTickRateHz": 60,
+      "timingExceptions": [],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default"
+    }
+  },
+  "entryPose": {
+    "elevation": "grounded",
+    "facing": "forward",
+    "handOccupancy": {
+      "left": "pistol_or_declared_grab_control",
+      "right": "pistol_or_declared_grab_control"
+    },
+    "id": "neutral_stand",
+    "plantedFoot": "both",
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary",
+    "weaponState": "dual_pistols_retained_scythe_mounted_undrawn",
+    "weight": "neutral"
+  },
+  "exitPose": {
+    "elevation": "grounded",
+    "facing": "forward",
+    "handOccupancy": {
+      "left": "pistol_or_declared_grab_control",
+      "right": "pistol_or_declared_grab_control"
+    },
+    "id": "neutral_stand",
+    "plantedFoot": "both",
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary",
+    "weaponState": "dual_pistols_retained_scythe_mounted_undrawn",
+    "weight": "neutral"
+  },
+  "exposures": [
+    {
+      "duration": 7,
+      "sourceFrameId": "command_grab_threatening_startup",
+      "start": 0
+    },
+    {
+      "duration": 5,
+      "sourceFrameId": "command_grab_scythe_draw_control_bridge",
+      "start": 7
+    },
+    {
+      "duration": 6,
+      "sourceFrameId": "command_grab_scythe_capture_v2",
+      "start": 12
+    },
+    {
+      "duration": 6,
+      "sourceFrameId": "command_grab_pull_in",
+      "start": 18
+    },
+    {
+      "duration": 8,
+      "sourceFrameId": "command_grab_pistol_intimidation_beat",
+      "start": 24
+    },
+    {
+      "duration": 7,
+      "sourceFrameId": "command_grab_release_v2",
+      "start": 32
+    },
+    {
+      "duration": 9,
+      "sourceFrameId": "command_grab_recovery",
+      "start": 39
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "losslessMirrorRequired": true,
+    "mirrorAxisX": 768,
+    "runtimeP2": "horizontal_mirror_screen_left"
+  },
+  "gameplayTimingStatus": {
+    "authoritative": false,
+    "candidateValues": {
+      "synchronizedGrab": {
+        "attackerArtworkExposureTrack": [
+          {
+            "duration": 7,
+            "sourceFrameId": "command_grab_threatening_startup",
+            "start": 0
+          },
+          {
+            "duration": 5,
+            "sourceFrameId": "command_grab_scythe_draw_control_bridge",
+            "start": 7
+          },
+          {
+            "duration": 6,
+            "sourceFrameId": "command_grab_scythe_capture_v2",
+            "start": 12
+          },
+          {
+            "duration": 6,
+            "sourceFrameId": "command_grab_pull_in",
+            "start": 18
+          },
+          {
+            "duration": 8,
+            "sourceFrameId": "command_grab_pistol_intimidation_beat",
+            "start": 24
+          },
+          {
+            "duration": 7,
+            "sourceFrameId": "command_grab_release_v2",
+            "start": 32
+          },
+          {
+            "duration": 9,
+            "sourceFrameId": "command_grab_recovery",
+            "start": 39
+          }
+        ],
+        "attackerVictimRootSynchronization": [
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 7,
+            "sideSwitchState": "none",
+            "start": 0,
+            "victimRoot": {
+              "x": 1230,
+              "y": 1408
+            }
+          },
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 5,
+            "sideSwitchState": "none",
+            "start": 7,
+            "victimRoot": {
+              "x": 1210,
+              "y": 1408
+            }
+          },
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 6,
+            "sideSwitchState": "none",
+            "start": 12,
+            "victimRoot": {
+              "x": 1210,
+              "y": 1408
+            }
+          },
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 6,
+            "sideSwitchState": "none",
+            "start": 18,
+            "victimRoot": {
+              "x": 1240,
+              "y": 1408
+            }
+          },
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 8,
+            "sideSwitchState": "none",
+            "start": 24,
+            "victimRoot": {
+              "x": 1240,
+              "y": 1408
+            }
+          },
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 7,
+            "sideSwitchState": "none",
+            "start": 32,
+            "victimRoot": {
+              "x": 1310,
+              "y": 1408
+            }
+          },
+          {
+            "attackerRoot": {
+              "x": 768,
+              "y": 1408
+            },
+            "duration": 9,
+            "sideSwitchState": "none",
+            "start": 39,
+            "victimRoot": {
+              "x": 1380,
+              "y": 1408
+            }
+          }
+        ],
+        "cinematicCamera": {
+          "forcedEveryUse": false,
+          "optional": true,
+          "supported": true
+        },
+        "contractVersion": "forge_synchronized_grab_package_v1",
+        "genericVictimPoseTrack": [
+          {
+            "duration": 7,
+            "facing": "screen_left",
+            "poseToken": "victim_neutral",
+            "resultingPoseToken": "free_standing",
+            "root": {
+              "x": 1230,
+              "y": 1408
+            },
+            "start": 0
+          },
+          {
+            "duration": 5,
+            "facing": "screen_left",
+            "poseToken": "victim_command_scythe_draw_control_bridge",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1210,
+              "y": 1408
+            },
+            "start": 7
+          },
+          {
+            "duration": 6,
+            "facing": "screen_left",
+            "poseToken": "victim_scythe_control",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1210,
+              "y": 1408
+            },
+            "start": 12
+          },
+          {
+            "duration": 6,
+            "facing": "screen_left",
+            "poseToken": "victim_pull_in",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1240,
+              "y": 1408
+            },
+            "start": 18
+          },
+          {
+            "duration": 8,
+            "facing": "screen_left",
+            "poseToken": "victim_execution_control",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1240,
+              "y": 1408
+            },
+            "start": 24
+          },
+          {
+            "duration": 7,
+            "facing": "screen_left",
+            "poseToken": "victim_grounded_release",
+            "resultingPoseToken": "grounded_release",
+            "root": {
+              "x": 1310,
+              "y": 1408
+            },
+            "start": 32
+          },
+          {
+            "duration": 9,
+            "facing": "screen_left",
+            "poseToken": "victim_grounded_release",
+            "resultingPoseToken": "grounded_release",
+            "root": {
+              "x": 1380,
+              "y": 1408
+            },
+            "start": 39
+          }
+        ],
+        "grabAndWeaponContacts": [
+          {
+            "handContacts": {
+              "screenLeftHand": [
+                820,
+                810
+              ],
+              "screenRightHand": [
+                945,
+                670
+              ]
+            },
+            "phase": "threatening_startup",
+            "pistolThreatDirection": null,
+            "releaseDirection": "none",
+            "scytheHookControlContact": null,
+            "start": 0,
+            "victimAnchors": {
+              "chest": [
+                1230,
+                823
+              ],
+              "left_arm": [
+                1070,
+                888
+              ],
+              "left_foot": [
+                1145,
+                1408
+              ],
+              "neck": [
+                1230,
+                723
+              ],
+              "right_arm": [
+                1375,
+                908
+              ],
+              "right_foot": [
+                1325,
+                1408
+              ],
+              "waist": [
+                1230,
+                1048
+              ]
+            }
+          },
+          {
+            "handContacts": {
+              "screenLeftHand": [
+                700,
+                890
+              ],
+              "screenRightHand": [
+                995,
+                595
+              ]
+            },
+            "phase": "draw_control_bridge",
+            "pistolThreatDirection": null,
+            "releaseDirection": "none",
+            "scytheHookControlContact": [
+              1165,
+              625
+            ],
+            "start": 7,
+            "victimAnchors": {
+              "chest": [
+                1267,
+                710
+              ],
+              "left_arm": [
+                1092,
+                800
+              ],
+              "left_foot": [
+                1097,
+                1408
+              ],
+              "neck": [
+                1262,
+                580
+              ],
+              "right_arm": [
+                1472,
+                805
+              ],
+              "right_foot": [
+                1387,
+                1408
+              ],
+              "waist": [
+                1232,
+                1010
+              ]
+            }
+          },
+          {
+            "handContacts": {
+              "screenLeftHand": [
+                850,
+                820
+              ],
+              "screenRightHand": [
+                1030,
+                640
+              ]
+            },
+            "phase": "scythe_capture",
+            "pistolThreatDirection": null,
+            "releaseDirection": "none",
+            "scytheHookControlContact": [
+              1165,
+              625
+            ],
+            "start": 12,
+            "victimAnchors": {
+              "chest": [
+                1210,
+                688
+              ],
+              "left_arm": [
+                1040,
+                793
+              ],
+              "left_foot": [
+                1120,
+                1408
+              ],
+              "neck": [
+                1210,
+                568
+              ],
+              "right_arm": [
+                1365,
+                798
+              ],
+              "right_foot": [
+                1320,
+                1408
+              ],
+              "waist": [
+                1190,
+                988
+              ]
+            }
+          },
+          {
+            "handContacts": {
+              "screenLeftHand": [
+                875,
+                815
+              ],
+              "screenRightHand": [
+                1040,
+                645
+              ]
+            },
+            "phase": "pull_in",
+            "pistolThreatDirection": null,
+            "releaseDirection": "none",
+            "scytheHookControlContact": [
+              1165,
+              625
+            ],
+            "start": 18,
+            "victimAnchors": {
+              "chest": [
+                1220,
+                688
+              ],
+              "left_arm": [
+                1050,
+                793
+              ],
+              "left_foot": [
+                1130,
+                1408
+              ],
+              "neck": [
+                1220,
+                568
+              ],
+              "right_arm": [
+                1375,
+                798
+              ],
+              "right_foot": [
+                1330,
+                1408
+              ],
+              "waist": [
+                1200,
+                988
+              ]
+            }
+          },
+          {
+            "handContacts": {
+              "screenLeftHand": [
+                880,
+                815
+              ],
+              "screenRightHand": [
+                1008,
+                704
+              ]
+            },
+            "phase": "pistol_intimidation",
+            "pistolThreatDirection": {
+              "direction": "screen_right",
+              "origin": [
+                1008,
+                704
+              ],
+              "targetAnchor": "chest"
+            },
+            "releaseDirection": "none",
+            "scytheHookControlContact": [
+              1165,
+              625
+            ],
+            "start": 24,
+            "victimAnchors": {
+              "chest": [
+                1220,
+                688
+              ],
+              "left_arm": [
+                1050,
+                793
+              ],
+              "left_foot": [
+                1130,
+                1408
+              ],
+              "neck": [
+                1220,
+                568
+              ],
+              "right_arm": [
+                1375,
+                798
+              ],
+              "right_foot": [
+                1330,
+                1408
+              ],
+              "waist": [
+                1200,
+                988
+              ]
+            }
+          },
+          {
+            "handContacts": {
+              "screenLeftHand": [
+                900,
+                835
+              ],
+              "screenRightHand": [
+                1055,
+                720
+              ]
+            },
+            "phase": "grounded_release",
+            "pistolThreatDirection": null,
+            "releaseDirection": "screen_right",
+            "scytheHookControlContact": null,
+            "start": 32,
+            "victimAnchors": {
+              "chest": [
+                1340,
+                968
+              ],
+              "left_arm": [
+                1160,
+                1053
+              ],
+              "left_foot": [
+                1050,
+                1408
+              ],
+              "neck": [
+                1410,
+                898
+              ],
+              "right_arm": [
+                1540,
+                1108
+              ],
+              "right_foot": [
+                1490,
+                1408
+              ],
+              "waist": [
+                1255,
+                1118
+              ]
+            }
+          },
+          {
+            "handContacts": {},
+            "phase": "weapon_return_recovery",
+            "pistolThreatDirection": null,
+            "releaseDirection": "none",
+            "scytheHookControlContact": null,
+            "start": 39,
+            "victimAnchors": {
+              "chest": [
+                1410,
+                968
+              ],
+              "left_arm": [
+                1230,
+                1053
+              ],
+              "left_foot": [
+                1120,
+                1408
+              ],
+              "neck": [
+                1480,
+                898
+              ],
+              "right_arm": [
+                1610,
+                1108
+              ],
+              "right_foot": [
+                1560,
+                1408
+              ],
+              "waist": [
+                1325,
+                1118
+              ]
+            }
+          }
+        ],
+        "mirroredBehavior": {
+          "P1": "authored_screen_right",
+          "P2": "lossless_horizontal_mirror_screen_left",
+          "mirrorAxisX": 768,
+          "mirrorsAttackerVictimRootsContactsReleaseAndSideSwitch": true
+        },
+        "presentationEffectsSeparateFromArtwork": [
+          "blood",
+          "sparks",
+          "smoke",
+          "muzzle_flash",
+          "camera_effects",
+          "debris"
+        ],
+        "releaseTiming": {
+          "authoritative": false,
+          "candidateTick": 32
+        },
+        "sequenceId": "command_grab",
+        "sideSwitchTiming": {
+          "authoritative": false,
+          "behavior": "none",
+          "candidateTick": null
+        },
+        "timingAuthority": "awaiting_human_grab_combat_timing_approval",
+        "victimArtworkExposureTrack": [
+          {
+            "duration": 7,
+            "facing": "screen_left",
+            "poseToken": "victim_neutral",
+            "resultingPoseToken": "free_standing",
+            "root": {
+              "x": 1230,
+              "y": 1408
+            },
+            "start": 0
+          },
+          {
+            "duration": 5,
+            "facing": "screen_left",
+            "poseToken": "victim_command_scythe_draw_control_bridge",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1210,
+              "y": 1408
+            },
+            "start": 7
+          },
+          {
+            "duration": 6,
+            "facing": "screen_left",
+            "poseToken": "victim_scythe_control",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1210,
+              "y": 1408
+            },
+            "start": 12
+          },
+          {
+            "duration": 6,
+            "facing": "screen_left",
+            "poseToken": "victim_pull_in",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1240,
+              "y": 1408
+            },
+            "start": 18
+          },
+          {
+            "duration": 8,
+            "facing": "screen_left",
+            "poseToken": "victim_execution_control",
+            "resultingPoseToken": "captured_controlled",
+            "root": {
+              "x": 1240,
+              "y": 1408
+            },
+            "start": 24
+          },
+          {
+            "duration": 7,
+            "facing": "screen_left",
+            "poseToken": "victim_grounded_release",
+            "resultingPoseToken": "grounded_release",
+            "root": {
+              "x": 1310,
+              "y": 1408
+            },
+            "start": 32
+          },
+          {
+            "duration": 9,
+            "facing": "screen_left",
+            "poseToken": "victim_grounded_release",
+            "resultingPoseToken": "grounded_release",
+            "root": {
+              "x": 1380,
+              "y": 1408
+            },
+            "start": 39
+          }
+        ],
+        "victimSizeClassMetadata": {
+          "dedicatedVariantsRequired": [
+            "small_height_class",
+            "large_height_class",
+            "non_humanoid_body_plan",
+            "extreme_shoulders_or_hip_height"
+          ],
+          "normalizationInputs": [
+            "victim height class",
+            "torso scale",
+            "shoulder height",
+            "hip height",
+            "root offset"
+          ],
+          "runtimeWholeSpriteArbitraryScaleAllowed": false,
+          "validatedHeightClass": "standard"
+        },
+        "whiffBranch": {
+          "authoritative": false,
+          "captureCheckCandidate": {
+            "end": 17,
+            "start": 12
+          },
+          "onNoCapture": "branch_to_command_grab_startup_then_recovery_without_victim_control",
+          "whiffArtwork": [
+            {
+              "duration": 7,
+              "sourceFrameId": "command_grab_threatening_startup"
+            },
+            {
+              "duration": 9,
+              "sourceFrameId": "command_grab_recovery"
+            }
+          ]
+        }
+      }
+    },
+    "notes": [
+      "Artwork exposure timing is the approved motion-review candidate, not authoritative grab combat timing.",
+      "Damage, range, startup, capture window, recovery, throw tech, invulnerability, victim state, and final side-switch timing await combat approval.",
+      "Simulation owns the move cursor, capture, release, interruption, side switch, and rollback replay."
+    ],
+    "owner": "simulation",
+    "state": "sandbox_candidate_awaiting_combat_approval"
+  },
+  "groundingTrack": [
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 980,
+        "y": 1365
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 556,
+        "y": 1406
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_threatening_startup"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 1004,
+        "y": 1363
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 532,
+        "y": 1406
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_scythe_draw_control_bridge"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 996,
+        "y": 1366
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 541,
+        "y": 1406
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_scythe_capture_v2"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 1019,
+        "y": 1406
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 517,
+        "y": 1364
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_pull_in"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 984,
+        "y": 1363
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 552,
+        "y": 1406
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_pistol_intimidation_beat"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 1052,
+        "y": 1406
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 485,
+        "y": 1386
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_release_v2"
+    },
+    {
+      "contractVersion": "forge_stance_grounding_v2",
+      "farFoot": {
+        "x": 948,
+        "y": 1367
+      },
+      "farFootRole": "depth_offset_or_secondary_support",
+      "nearFoot": {
+        "x": 589,
+        "y": 1406
+      },
+      "nearFootRole": "principal_or_pose_support",
+      "projectedGroundPlaneY": 1408,
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "sourceFrameId": "command_grab_recovery"
+    }
+  ],
+  "id": "command_grab",
+  "interruptPoses": [
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "pistol_or_declared_grab_control",
+        "right": "pistol_or_declared_grab_control"
+      },
+      "id": "grab_control",
+      "plantedFoot": "both",
+      "silhouette": "captured_weapon_control",
+      "verticalMotion": "stationary",
+      "weaponState": "scythe_active_pistols_retained",
+      "weight": "forward"
+    }
+  ],
+  "interruptionBehavior": {
+    "allowedSources": [
+      "incoming_hit_before_capture_lock",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation releases victim control and selects the authoritative reaction or neutral branch",
+    "owner": "simulation",
+    "returnStatePolicy": "attacker and victim return states are selected from combat result; artwork cannot decide capture, tech, release, or side switch"
+  },
+  "landing": [],
+  "phases": {
+    "active": [
+      {
+        "end": 17,
+        "start": 12
+      }
+    ],
+    "anticipation": [
+      {
+        "end": 6,
+        "start": 0
+      }
+    ],
+    "followThrough": [
+      {
+        "end": 38,
+        "start": 18
+      }
+    ],
+    "impact": [
+      {
+        "end": 38,
+        "start": 32
+      }
+    ],
+    "recovery": [
+      {
+        "end": 47,
+        "start": 39
+      }
+    ],
+    "startup": [
+      {
+        "end": 11,
+        "start": 0
+      }
+    ]
+  },
+  "playbackPolicy": {
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none",
+    "mode": "fixed_timeline"
+  },
+  "presentationSockets": [
+    {
+      "eventTypes": [
+        "play_sound",
+        "request_camera_track"
+      ],
+      "id": "character_center",
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "x": 768,
+      "y": 820
+    },
+    {
+      "eventTypes": [
+        "play_sound"
+      ],
+      "id": "scythe_hook",
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "x": 1165,
+      "y": 625
+    },
+    {
+      "eventTypes": [
+        "play_sound"
+      ],
+      "id": "pistol_threat",
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "x": 1008,
+      "y": 704
+    },
+    {
+      "eventTypes": [
+        "spawn_vfx"
+      ],
+      "id": "release_impact",
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "x": 1120,
+      "y": 720
+    }
+  ],
+  "presentationTrack": [
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 0,
+      "index": 0,
+      "payload": {
+        "optional": true,
+        "profile": "scythe_draw",
+        "rollbackDeduplicated": true,
+        "sequence": "command_grab",
+        "socket": "character_center"
+      },
+      "type": "play_sound"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 12,
+      "index": 1,
+      "payload": {
+        "optional": false,
+        "profile": "scythe_control_contact",
+        "rollbackDeduplicated": true,
+        "sequence": "command_grab",
+        "socket": "scythe_hook"
+      },
+      "type": "play_sound"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 18,
+      "index": 2,
+      "payload": {
+        "optional": true,
+        "profile": "optional_close_combat_camera",
+        "rollbackDeduplicated": true,
+        "sequence": "command_grab",
+        "socket": "character_center"
+      },
+      "type": "request_camera_track"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 24,
+      "index": 3,
+      "payload": {
+        "optional": true,
+        "profile": "pistol_intimidation",
+        "rollbackDeduplicated": true,
+        "sequence": "command_grab",
+        "socket": "pistol_threat"
+      },
+      "type": "play_sound"
+    },
+    {
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "frame": 32,
+      "index": 4,
+      "payload": {
+        "optional": true,
+        "profile": "command_grab_release_impact",
+        "rollbackDeduplicated": true,
+        "sequence": "command_grab",
+        "socket": "release_impact"
+      },
+      "type": "spawn_vfx"
+    }
+  ],
+  "promotionState": "candidate",
+  "provenance": {
+    "cleanupOperations": [
+      "byte_identical_source_promotion",
+      "metadata_only_package_authoring"
+    ],
+    "createdAt": "2026-07-15T00:00:00Z",
+    "humanApproval": {
+      "approvedAt": "2026-07-15T00:00:00Z",
+      "approvedBy": "human_user",
+      "state": "approved"
+    },
+    "licensingNotes": [
+      "Candidate-only package; no production roster or deployment authorization."
+    ],
+    "model": "openai_builtin_imagegen",
+    "promptHash": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/motion/grab-throw-motion-v1.review-plan.json",
+      "repo://tools/nga-forge/production/characters/swahili/motion/grab-throw-motion-v1.synchronization.json",
+      "repo://tools/nga-forge/production/characters/swahili/poses/grab-throw-motion-v1.generic-victim-tokens.json"
+    ],
+    "revisionChain": [
+      "SWAHILI_GRAB_THROW_MOTION_V1_APPROVED_WITH_ONE_VISUAL_CHECK",
+      "PASS_NO_REPAIR_REQUIRED",
+      "APPROVED_AS_GRAB_THROW_MOTION_V1",
+      "command_grab_candidate_package_v1"
+    ],
+    "seed": null,
+    "sourceType": "ai_assisted",
+    "tool": "NGA Forge and Codex deterministic synchronized-grab package compiler"
+  },
+  "schemaVersion": "2.1.0-contract",
+  "simulationLength": 48,
+  "sourceFrames": [
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_threatening_startup",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-key-poses-v1.provenance.json",
+      "sha256": "7F1B3C77B690110F288427C11354ACDFC1802C6313CE22F1987981717EAA9A92",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_threatening_startup.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_scythe_draw_control_bridge",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-motion-v1.provenance.json",
+      "sha256": "C1215C190B0635B719D4FF6464E2FEF37A99295DF126B552085244A18A7768EC",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/command_grab_scythe_draw_control_bridge.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_scythe_capture_v2",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-targeted-repair-v1.provenance.json",
+      "sha256": "A29F7B11FE8A315E21EBF84A0697CB4FAE38316DB91A3BBB9D64B921039413D9",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_scythe_capture_v2.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_pull_in",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-key-poses-v1.provenance.json",
+      "sha256": "13A1BC7D8E61ECB3DE60609A17A3A063E7D867CD80C0A15115D2AD84699F21F5",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_pull_in.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_pistol_intimidation_beat",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-key-poses-v1.provenance.json",
+      "sha256": "F99AD051EB9E2BFBCC856BDF438AF4EA0B9C3938FD562B6E557AF154B703EF93",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_pistol_intimidation_beat.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_release_v2",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-targeted-repair-v1.provenance.json",
+      "sha256": "4D07CA6BD00E37221BD2FF66A29BC78B54C5B4896882C7BE53578E4FE78390DF",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_release_v2.png",
+      "width": 1536
+    },
+    {
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "height": 1536,
+      "id": "command_grab_recovery",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/generation/grab-throw-key-poses-v1.provenance.json",
+      "sha256": "2F51D8A6BA157ECB32225BDF9681118188FD5777C47A5AB5C3142A17AC80EBBE",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_recovery.png",
+      "width": 1536
+    }
+  ],
+  "transitionCompatibility": [
+    {
+      "addsGameplayFrames": false,
+      "condition": "simulation_accepts_grab_input_and_candidate_range_check",
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch"
+      ],
+      "toState": "command_grab"
+    },
+    {
+      "addsGameplayFrames": false,
+      "condition": "release_or_whiff_recovery_complete",
+      "fromStates": [
+        "command_grab"
+      ],
+      "toState": "idle"
+    }
+  ],
+  "transitions": [],
+  "validation": {
+    "creativeWarnings": [
+      "combat_timing_and_balance_await_human_approval",
+      "generic_victim_standard_height_class_only"
+    ],
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "victim_track_coverage",
+      "root_sync",
+      "contact_anchor_completeness",
+      "size_class_contract",
+      "mirror_round_trip",
+      "rollback_event_identity",
+      "simulation_owns_cursor"
+    ],
+    "humanApprovalRequired": true
+  },
+  "version": 1
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.turn_facing.modernization.candidate.v1",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "legacySourceImmutable": true,
+  "legacySourceAvailable": false,
+  "generationMode": "OpenAI built-in image generation reference edit mode",
+  "sourceSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/source/turn-facing-generation-v2-chroma-green.png",
+    "sha256": "E9EC0F79F2745CA296D41A2B00A07B5DA918A3C83225AE6B6BD56218E2598BCE",
+    "generationMode": "OpenAI built-in image generation reference edit mode",
+    "cells": 4
+  },
+  "rejectedGeneration": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.rejected-generation.json",
+    "sha256": "ACE6DC63B1F0809F18B878F4953D7D334D8BE5BDBF7145676A4E768CF13413DF"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+    "sha256": "83174DFC1AA7F8C5E7FD31CA0D519B1E09CD61744BA63FE6E641054B1E43F700"
+  },
+  "contactSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/turn-facing-numbered-contact-sheet.png",
+    "sha256": "D30024A2592F6F1FB782A32FA299FBE04696623AE4FA86183DEB8EBC541626B2"
+  },
+  "fixedRoot": {
+    "x": 768,
+    "y": 1360
+  },
+  "sequenceScale": 1.28102482,
+  "normalizedHeightSpread": 0.02,
+  "idleHeightDeltaRatio": 0.0012,
+  "sourceRepairReason": "No dedicated Lamuh V1 turn clip was recoverable. Author four adult-proportion, outline-free bridge poses around a planted root while preserving the approved V2 Idle identity and leaving the facing swap, collision, input response, replay and rollback state simulation-owned.",
+  "normalizedFrames": [
+    {
+      "index": 0,
+      "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-00.png",
+      "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-00.png",
+      "sha256": "246E115828C5AB8A2FAC2B81933885E02A1EEB5F0899BEDD4C71E5D260273854"
+    },
+    {
+      "index": 1,
+      "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-01.png",
+      "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-01.png",
+      "sha256": "C562A0F99A4B04FE64A23535D310279458DDC95B597749443340FD97B7854ACB"
+    },
+    {
+      "index": 2,
+      "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-02.png",
+      "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-02.png",
+      "sha256": "971050E25CD35A8DC95D29C3CE23DF6927231489372D067074EC61649E35C496"
+    },
+    {
+      "index": 3,
+      "sourcePath": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-03.png",
+      "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-03.png",
+      "sha256": "2CA374F31757521AD22FB1EBF39E560BAEDA78165246BD996F7DE067D2B4A54B"
+    }
+  ],
+  "approvalBoundary": {
+    "turnMotionApprovedForCurrentBaseline": true,
+    "transitionApprovedForCurrentBaseline": true,
+    "starredForRevisit": true,
+    "combinedMovementApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0-production-arena-brief-approval",
+  "arenaId": "the_last_tribunal",
+  "result": "APPROVED_AS_PRODUCTION_ARENA_BRIEF_V1",
+  "approvedBy": "human_user",
+  "approvedAt": "2026-07-14",
+  "approvedCreativeDirection": [
+    "abandoned celestial courthouse",
+    "eclipse dusk",
+    "central eclipse and oculus",
+    "empty galleries",
+    "matte basalt gameplay floor",
+    "aged-brass judgment markings",
+    "ink blue-black, cathedral red, aged brass, ash gray, and cool-violet haze",
+    "solemn, hostile, post-divine institutional atmosphere"
+  ],
+  "approvedTechnicalDirection": [
+    "authoritative deterministic 2D combat plane",
+    "collision-independent 3D presentation",
+    "candidate production bounds and spawn points",
+    "constrained perspective gameplay camera",
+    "fighter plane at Z=0",
+    "flat fighter-shadow receiver",
+    "deterministic presentation-event identity and reconstruction",
+    "no real-time stage shadow casters"
+  ],
+  "clarifications": {
+    "presentationEventDurations": "arena_defaults_and_test_values_only",
+    "moveAuthoredCinematicLengths": "arbitrary_positive_fixed_tick_durations_supported",
+    "dynamicLights": "primarily_environment_and_presentation_effects_not_destructive_sprite_relighting",
+    "stageTextureMemoryMb": "72_is_candidate_maximum_pending_profiling",
+    "candidateBudgetsGloballyBinding": false
+  },
+  "authorizes": ["concept_direction", "deterministic_graybox_blockout", "graybox_validation_captures"],
+  "doesNotAuthorize": ["final_arena_art", "production_textures", "production_roster_integration", "gameplay_changes", "runtime_deployment"],
+  "deployable": false,
+  "nextStatus": "production_arena_graybox_candidate",
+  "nextGate": "awaiting_human_graybox_and_concept_approval"
+}

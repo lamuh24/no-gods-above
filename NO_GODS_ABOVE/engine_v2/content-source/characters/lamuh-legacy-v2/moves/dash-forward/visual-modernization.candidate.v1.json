@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_dash_forward_modern_visual_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": true,
+  "simulationOwnsTravel": true,
+  "simulationOwnsDefenseState": false,
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-dash-block-modernization-v1/normalization.report.json",
+    "sha256": "96299A52DE1EC7369128A999EEA3285C2B0686AADD36D7E7A8A99504C4961EA5"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/dash-block-modernization-v1.hash-lock.json",
+    "sha256": "08D0D332B7C37191682D81EA183827E8F0205181C8C4B38DD5CDE9371EC0C4B7"
+  },
+  "state": {
+    "sourceFrameCount": 6,
+    "authoredFrameCount": 6,
+    "selectedLegacyFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "retiredGeneratedFrame": null,
+    "exposureTicks": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "durationTicks": 18,
+    "loop": false,
+    "frames": [
+      {
+        "index": 0,
+        "role": "forward_coil",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/dash-forward-00.png",
+        "sha256": "77576556FA57C83C1625BEC36AE19F23054CE93FA0BC82B7F7FC2B46B4C4DB76",
+        "sourceSha256": "BB60DF8867CC0961869F4673397328C7FF6FA4230E2F8743072BFAF77ECB72A3",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.95871315,
+        "legacySha256": "5D7CCEA769ECE4D6DDDA6CD17DF952D93078EF857194A464671BCFDD6FB72B99",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 458,
+          "minY": 736,
+          "maxX": 1078,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 791.75,
+          "y": 1034.21
+        }
+      },
+      {
+        "index": 1,
+        "role": "first_drive",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/dash-forward-01.png",
+        "sha256": "848E3546D602F72ADE8C8802B4734A805337D4E2CA9FDE135DE2DEF155F7D8F8",
+        "sourceSha256": "8DAD13E8B52263205088FF7940F9DB3D42787A1A258CE638E2A3C76AF9145225",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.95871315,
+        "legacySha256": "6DE91852AD5E3040663DB0764D4C10618CB95242C6F8472418FF14D4D760FB03",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 476,
+          "minY": 723,
+          "maxX": 1056,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 769.51,
+          "y": 1024.82
+        }
+      },
+      {
+        "index": 2,
+        "role": "stride_extension",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/dash-forward-02.png",
+        "sha256": "3A17C982A460C85E1C52C7FD171BD2C3F455797CF97C3F4DDB3C9EC6CED02171",
+        "sourceSha256": "3503D9D18A79CCD3F315EA4DDF114BD41335F91059C79905A89F6B85CB66F410",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.95871315,
+        "legacySha256": "EB72EA3A832F9A7CB1F4DD0921AB9F993AC20791923B89C2E708F3185F31CD44",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 461,
+          "minY": 696,
+          "maxX": 1070,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 785.23,
+          "y": 1006.56
+        }
+      },
+      {
+        "index": 3,
+        "role": "maximum_burst",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/dash-forward-03.png",
+        "sha256": "45F0B7EC3FAB5EE1B567067B960904B1F061229E252E9FCFFD7776070D87BF1C",
+        "sourceSha256": "C701E876702D98FB06C8F132902D8119B07FAC9722F8744F4DA166F68D7C988D",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.95871315,
+        "legacySha256": "B48E4D69585E471DF403D0F7FF0A20445A393D660A345B1DA64F2E6EE4933E1F",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 465,
+          "minY": 701,
+          "maxX": 1068,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 797.46,
+          "y": 1011.41
+        }
+      },
+      {
+        "index": 4,
+        "role": "carry_stride",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/dash-forward-04.png",
+        "sha256": "42DFE3730157CE8CD81CC3E71224B5F01AB5D268F17944E62231241101DCF58A",
+        "sourceSha256": "EE15F32AC7F185B95BA491A74F9A74CAD17E8BF031DC0D174A8803E8C3D96ACB",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.95871315,
+        "legacySha256": "77B17D1C6C83516141B67D69708AD84D2E7B741F57B9203B0221500A089F6D34",
+        "legacyIndex": 4,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 456,
+          "minY": 712,
+          "maxX": 1080,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 781.73,
+          "y": 1007.47
+        }
+      },
+      {
+        "index": 5,
+        "role": "shoulder_turn_brake",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/dash-forward-05.png",
+        "sha256": "1FEE76B8BD9E1A74B841D6577DBD9D3EC6753928D3A0DC4B52B9B7E183E5908C",
+        "sourceSha256": "71CF4E021D66491E92878C2AF04DF3CF8496C9A96587A0C9589998AC70B591F6",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.95871315,
+        "legacySha256": "2CA474A02461B0C3773B3B8E02389D50BC29D7D453F5D0E7D09E2492983CFDE7",
+        "legacyIndex": 5,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 457,
+          "minY": 709,
+          "maxX": 1078,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 764.07,
+          "y": 1003.71
+        }
+      }
+    ]
+  },
+  "approvalStatus": "awaiting_human_dash_air_dash_standing_block_crouch_jump_grab_throw_and_combined_movement_review",
+  "humanApproval": null
+}

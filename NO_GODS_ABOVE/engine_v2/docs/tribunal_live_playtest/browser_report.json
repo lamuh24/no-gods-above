@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "1.0.0-tribunal-live-playtest-report",
+  "status": "production_arena_live_playtest_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_actual_tribunal_graybox_integration",
+  "automatedSmokeIsHumanApproval": false,
+  "route": "/tribunal-playtest.html",
+  "capturedAt": "2026-07-14T16:58:49.352Z",
+  "browser": {
+    "name": "Chromium",
+    "version": "149.0.7827.55",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  "arenaId": "the_last_tribunal",
+  "presentationId": "actual_graybox_v1",
+  "sceneConfigPath": "stage-production/arenas/the_last_tribunal/graybox/actual_graybox_v1.scene.json",
+  "rendererEntryPoint": "src/graybox/actualTribunalGrayboxRenderer.ts",
+  "genericSandboxPresentationBypassed": true,
+  "scenarios": {
+    "captures": [
+      "idle_center",
+      "left_corner",
+      "right_corner",
+      "jump_camera_placeholder",
+      "standing_heavy_hit",
+      "standing_block",
+      "heavy_hit_reaction"
+    ],
+    "gameplay": [
+      "forward_walk",
+      "backward_walk",
+      "walk_reversal",
+      "crouch",
+      "standing_block",
+      "crouching_block",
+      "standing_heavy_whiff",
+      "standing_heavy_block",
+      "light_hit_reaction",
+      "side_switch",
+      "mirrored_facing"
+    ],
+    "comparison": [
+      "comparison_generic_sandbox.png",
+      "comparison_actual_tribunal_graybox.png",
+      "diagnostics_active_arena_renderer.png"
+    ]
+  },
+  "deterministicReplay": [
+    "d6781ecb",
+    "d6781ecb"
+  ],
+  "presentationAuthority": {
+    "before": "b6aa10c3",
+    "after": "b6aa10c3",
+    "effects": {
+      "studyMode": "all",
+      "beam": true,
+      "projectile": true,
+      "hitSparks": true,
+      "muzzleFlashes": true,
+      "darkSilhouettePlaceholder": false
+    }
+  },
+  "geometryEvidence": {
+    "matte_tribunal_floor": true,
+    "dais_front": true,
+    "judgment_bench": true,
+    "gallery_left_tier_1": true,
+    "gallery_right_tier_4": true,
+    "central_eclipse_void": true,
+    "cathedral_red_banner_1": true,
+    "foreground_left": true,
+    "boundary_pylon_left": true
+  },
+  "parallaxEvidence": {
+    "center": {
+      "foreground": 0,
+      "midground": 0,
+      "background": 0
+    },
+    "corner": {
+      "foreground": 1.411276423105655,
+      "midground": 0.8828539971864626,
+      "background": 0.6824416430729401
+    },
+    "delta": {
+      "foreground": 1.411276423105655,
+      "midground": 0.8828539971864626,
+      "background": 0.6824416430729401
+    }
+  },
+  "cinematicEvidence": {
+    "activeVolume": "close_combat",
+    "activeContext": "command_grab",
+    "authoredDurationTicks": 37
+  },
+  "metrics": {
+    "webgl2": true,
+    "drawCalls": 76,
+    "triangles": 7236,
+    "geometries": 102,
+    "textures": 15,
+    "loadedSpriteTextures": 36,
+    "estimatedSpriteTextureMemoryMb": 81,
+    "textureMaxResolution": 768,
+    "stageTextures": 0,
+    "conceptBoardRuntimeDependency": false,
+    "loadError": null,
+    "realTimeShadowCasters": 0
+  },
+  "diagnosticMetrics": {
+    "webgl2": true,
+    "drawCalls": 98,
+    "triangles": 7808,
+    "geometries": 102,
+    "textures": 15,
+    "loadedSpriteTextures": 36,
+    "estimatedSpriteTextureMemoryMb": 81,
+    "textureMaxResolution": 768,
+    "stageTextures": 0,
+    "conceptBoardRuntimeDependency": false,
+    "loadError": null,
+    "realTimeShadowCasters": 0
+  },
+  "frameTiming": {
+    "frames": 90,
+    "totalMs": 464.90000000037253,
+    "averageFrameMs": 5.165555555559695,
+    "measuredFps": 193.5900193588468
+  },
+  "diagnostics": {
+    "enabled": true,
+    "foregroundOcclusionPercent": 0,
+    "eclipseHeadSeparationNdc": [
+      0.7933,
+      0.7933
+    ],
+    "cameraClampX": [
+      -7.8,
+      7.8
+    ],
+    "worldBounds": [
+      -8.4,
+      8.4
+    ],
+    "spawnWorldX": [
+      -1.52,
+      1.52
+    ],
+    "parallaxZ": {
+      "foreground": 3.2,
+      "fighter": 0,
+      "midground": -7,
+      "background": -15
+    },
+    "actualTribunalGeometryLoaded": true,
+    "loadedGeometryRoles": [
+      "matte_tribunal_floor",
+      "fighter_shadow_receiver",
+      "central_dais",
+      "rear_gallery_depth",
+      "courthouse_architectural_masses",
+      "midground_court_structures",
+      "eclipsed_sky_placeholder",
+      "background_oculus_wall",
+      "cathedral_red_banner_masses",
+      "boundary_pylons",
+      "foreground_architectural_frame"
+    ],
+    "cinematicVolumes": [
+      {
+        "id": "close_combat",
+        "centerClampX": [
+          -7.4,
+          7.4
+        ],
+        "rootMargin": 0.8
+      },
+      {
+        "id": "wide_super",
+        "centerClampX": [
+          -6.8,
+          6.8
+        ],
+        "rootMargin": 1.2
+      },
+      {
+        "id": "ultimate",
+        "centerClampX": [
+          -6.2,
+          6.2
+        ],
+        "rootMargin": 1.4
+      },
+      {
+        "id": "finisher",
+        "centerClampX": [
+          -7,
+          7
+        ],
+        "rootMargin": 1
+      },
+      {
+        "id": "intro_victory",
+        "centerClampX": [
+          -6.5,
+          6.5
+        ],
+        "rootMargin": 1.2
+      }
+    ],
+    "contrastZones": [
+      {
+        "id": "fighter_body_band",
+        "bounds": [
+          -8.2,
+          8.2,
+          0.35,
+          5.8
+        ]
+      },
+      {
+        "id": "left_corner_backing",
+        "bounds": [
+          -9.2,
+          -7.2,
+          0,
+          5.8
+        ]
+      },
+      {
+        "id": "right_corner_backing",
+        "bounds": [
+          7.2,
+          9.2,
+          0,
+          5.8
+        ]
+      }
+    ],
+    "vfxSafetyRegions": [
+      {
+        "id": "beam_corridor",
+        "bounds": [
+          -9.2,
+          9.2,
+          0.4,
+          4.8
+        ]
+      },
+      {
+        "id": "projectile_lane",
+        "bounds": [
+          -9.2,
+          9.2,
+          0.45,
+          3.8
+        ]
+      },
+      {
+        "id": "hit_spark_local",
+        "radiusFromFighterRoot": 2.2
+      }
+    ]
+  },
+  "legacyGameSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+  "consoleErrors": [],
+  "serverLogs": [
+    "",
+    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m669\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+    "",
+    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m49915\u001b[22m/\u001b[39m",
+    "\u001b[2m12:58:15 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[90m\u001b[2m(client)\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2msrc/sandbox/swahiliSandboxSimulation.ts\u001b[22m",
+    ""
+  ]
+}

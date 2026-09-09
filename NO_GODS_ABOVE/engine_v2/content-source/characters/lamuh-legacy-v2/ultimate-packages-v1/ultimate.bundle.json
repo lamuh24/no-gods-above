@@ -1,0 +1,292 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "lamuh_ultimate_v1",
+  "displayName": "Lamuh celestial ultimate candidate",
+  "bundleVersion": 1,
+  "promotionState": "candidate",
+  "runtimeProfile": {
+    "worldHeight": 164,
+    "centerline": 224,
+    "footPosition": 382,
+    "handReach": 120,
+    "universalCapabilities": [
+      "ground_normals",
+      "air_normals",
+      "standing_block",
+      "hit_reaction",
+      "standard_throw"
+    ]
+  },
+  "poseLibrary": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "crouch",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "low",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "compact_low_lamuh",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "airborne",
+      "facing": "forward",
+      "elevation": "airborne",
+      "plantedFoot": "none",
+      "weight": "airborne",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "airborne_lamuh_arc",
+      "verticalMotion": "rising"
+    },
+    {
+      "id": "starter_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "starter_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "confirm_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "confirm_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "elbow_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "elbow_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "knee_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "knee_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "charge_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "charge_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "beam_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "beam_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "recovery_entry",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "recovery_exit",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "animationPackages": [
+    "starter/animation.package.json",
+    "confirm/animation.package.json",
+    "elbow/animation.package.json",
+    "knee/animation.package.json",
+    "charge/animation.package.json",
+    "beam/animation.package.json",
+    "recovery/animation.package.json"
+  ],
+  "packageGroups": {
+    "ultimate": [
+      "crown_starter",
+      "crown_confirm",
+      "crown_elbow",
+      "crown_knee",
+      "crown_charge",
+      "crown_beam",
+      "crown_recovery"
+    ]
+  },
+  "design": {
+    "characterBible": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/COMBAT_IDENTITY.md",
+    "palette": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-lock.v1.json",
+    "forbiddenMutations": [
+      "identity_drift",
+      "major_scale_drift",
+      "root_teleportation",
+      "broken_anatomy",
+      "costume_mutation",
+      "squash_stretch_suppression"
+    ]
+  }
+}

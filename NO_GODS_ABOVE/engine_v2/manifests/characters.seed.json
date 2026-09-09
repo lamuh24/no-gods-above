@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "2.0.0-alpha",
+  "generatedFrom": "NO_GODS_ABOVE/game.js FIGHTER_SELECT_DATA and current session notes",
+  "characters": [
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "kairo",
+      "displayName": "Kairo",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Current runtime uses Kairo Final 6x5 runtime atlases.", "Travel remains code-driven rather than raw source-cell driven."] },
+      "select": { "archetype": "Cyber Blade Striker", "difficulty": "2/5", "description": "Fast sword pressure with clean confirms.", "playstyle": "Kairo rewards footsies, fast pokes, and direct conversions.", "strengths": ["Fast buttons", "Clean movement", "Simple confirms"], "quote": "Steel answers the sky." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not change shared combat tuning during V2 adaptation.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Keep Final atlas movement/travel code-driven."] },
+      "animation": { "atlasPolicy": "Use validated Kairo Final 6x5 runtime atlases.", "aliasPolicy": "Map aliases through current runtime profile before extracting to V2 modules.", "manifestRefs": ["NO_GODS_ABOVE/docs/kairo_final_animation_map.md", "NO_GODS_ABOVE/docs/kairo_final_asset_manifest.md"] },
+      "assets": { "portrait": null, "spriteRoots": ["NO_GODS_ABOVE/assets/sprites/kairo_final/"], "fallbackPolicy": "Do not revert to old Kairo V2 or mixed 7/6-column slicing." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js"], "lastKnownReports": [], "gotchas": ["Keep bottom-center row anchor and code-driven travel."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "vanta",
+      "displayName": "Vanta",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Current runtime loads Vanta Final clean sheets.", "Vanta is passive by default for stable dummy behavior."] },
+      "select": { "archetype": "Crimson Rival", "difficulty": "3/5", "description": "Midrange bully with heavy whiff punishes.", "playstyle": "Vanta controls space with committed strikes and punishing reach.", "strengths": ["Midrange threat", "Heavy damage", "Solid defense"], "quote": "Every throne has a shadow." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not change shared combat tuning during V2 adaptation.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Projectile/unreliable rows should hold or sanitize body pose and spawn VFX through code."] },
+      "animation": { "atlasPolicy": "Use clean Vanta Final sheets sliced per image size.", "aliasPolicy": "Preserve current runtime aliases until V2 extraction has parity tests.", "manifestRefs": ["NO_GODS_ABOVE/docs/vanta_final_animation_map.md", "NO_GODS_ABOVE/docs/vanta_final_asset_manifest.md"] },
+      "assets": { "portrait": null, "spriteRoots": ["NO_GODS_ABOVE/assets/sprites/vanta_final/"], "fallbackPolicy": "Regenerate from source with rebuild_vanta_final_sheets.py rather than hand-editing runtime sheets." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js"], "lastKnownReports": [], "gotchas": ["Keep FIX_MAX_BODY_WIDTH/FIX_MAX_BODY_HEIGHT unless runtime scale is intentionally retuned."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "nyx",
+      "displayName": "Nyx",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Nyx is a new-generation fighter with opt-in move flags."] },
+      "select": { "archetype": "Aerial Rushdown", "difficulty": "4/5", "description": "Air routes, speed, and slippery angles.", "playstyle": "Nyx opens fights from odd angles and keeps pressure airborne.", "strengths": ["Air mobility", "Mixups", "Fast pressure"], "quote": "Blink once. Miss everything." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not add Nyx-only flags to other fighters without request.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Rapid Flurry multiHit must stay bounded.", "Shadow Step and Dive Kick remain opt-in flags."] },
+      "animation": { "atlasPolicy": "Keep dedicated slash-wave VFX and large-cell ultimate export profile.", "aliasPolicy": "Preserve current aliases until extracted with V2 coverage tests.", "manifestRefs": ["NO_GODS_ABOVE/docs/nyx_character_config.md", "NO_GODS_ABOVE/docs/nyx_sprite_import.md"] },
+      "assets": { "portrait": null, "spriteRoots": [], "fallbackPolicy": "Do not restore procedural stroke lines unless explicitly requested." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js"], "lastKnownReports": [], "gotchas": ["Do not run ultimate slash-wave through projectile sizing or tiny-frame extraction."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "sol",
+      "displayName": "Sol",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Sol uses 448px prepared cells and fixed source cells from sol_final_atlas_manifest.json."] },
+      "select": { "archetype": "Iron Sun", "difficulty": "3/5", "description": "Armor-flavored pressure and radiant reach.", "playstyle": "Sol turns steady forward movement into oppressive close-range pressure.", "strengths": ["Pressure", "Meter threat", "Durable offense"], "quote": "Stand in the light or get buried by it." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not add Seris-style chain/tether concepts to Sol.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Keep Sol effects compact, attached to body, or centered near impact."] },
+      "animation": { "atlasPolicy": "Use 448px prepared cells and manifest row-specific frame counts.", "aliasPolicy": "Preserve active sol profile and solFinal sheet metadata.", "manifestRefs": ["NO_GODS_ABOVE/docs/sol_raze_sprite_production_plan.md", "NO_GODS_ABOVE/assets/sprites/sol_final/sol_final_atlas_manifest.json"] },
+      "assets": { "portrait": "NO_GODS_ABOVE/assets/sprites/portraits/sol_select.png", "spriteRoots": ["NO_GODS_ABOVE/assets/sprites/sol_final/"], "fallbackPolicy": "Do not swap to non-final source sheets without normalization." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js"], "lastKnownReports": [], "gotchas": ["Sheet 7 source was regenerated once; re-audit if comparing source versions."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "seris",
+      "displayName": "Seris",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Seris is public playable from seris_revamp_final.", "Detached chain VFX runtime remains disabled."] },
+      "select": { "archetype": "Halo Chain", "difficulty": "4/5", "description": "Chain control, traps, and delayed threat.", "playstyle": "Seris controls lanes with chain timing and awkward recovery traps.", "strengths": ["Space control", "Delayed hits", "Special pressure"], "quote": "The halo is not mercy." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not change global combat while cleaning Seris visuals.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["SERIS_CHAIN_VFX_RUNTIME_ENABLED must remain false for regular gameplay."] },
+      "animation": { "atlasPolicy": "Use fixed source cells and row-specific display frame counts.", "aliasPolicy": "Do not restore aggressive per-frame trimming or all-column playback.", "manifestRefs": ["NO_GODS_ABOVE/docs/seris_preproduction.md", "NO_GODS_ABOVE/docs/seris_restart_plan.md"] },
+      "assets": { "portrait": null, "spriteRoots": ["NO_GODS_ABOVE/assets/sprites/seris_revamp_final/"], "fallbackPolicy": "Do not swap back to seris_generated, old seris_final, no-green-chain, or stale manifest sources." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js", "node NO_GODS_ABOVE/scripts/smoke_seris_revamp_hidden.js"], "lastKnownReports": ["NO_GODS_ABOVE/assets/sprites/seris_revamp_final/validation/smoke_public/seris_revamp_public_smoke_report.json"], "gotchas": ["Some embedded offensive source cells still contain baked duplicate/ghost poses."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "lamuh",
+      "displayName": "LAMUH",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["LAMUH has modern and legacy selectable forms."] },
+      "select": { "archetype": "Celestial Ki", "difficulty": "5/5", "description": "High-commitment divine pressure and beams.", "playstyle": "LAMUH spends commitment for huge payoff and cinematic momentum.", "strengths": ["Burst damage", "Beam threat", "High ceiling"], "quote": "No crown survives heaven." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not change cinematic ultimate or beam tuning during V2 extraction.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Read lamuh_animation_manifest.md before LAMUH animation work."] },
+      "animation": { "atlasPolicy": "Use validated LAMUH runtime atlases only.", "aliasPolicy": "Keep modern/legacy alias separation explicit.", "manifestRefs": ["NO_GODS_ABOVE/docs/lamuh_animation_manifest.md", "NO_GODS_ABOVE/docs/lamuh_legacy_animation_manifest.md"] },
+      "assets": { "portrait": null, "spriteRoots": [], "fallbackPolicy": "Preserve legacy fallback/history atlases until runtime coverage proves replacement safe." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js", "node NO_GODS_ABOVE/scripts/smoke_lamuh_legacy_separation.js"], "lastKnownReports": [], "gotchas": ["LAMUH work must read the dedicated animation manifest first."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "lamuh_legacy",
+      "displayName": "LAMUH Legacy",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Legacy LAMUH remains a separate selectable profile."] },
+      "select": { "archetype": "Classic Ki", "difficulty": "2/5", "description": "Simple legacy kit with familiar spacing.", "playstyle": "Legacy LAMUH keeps older routes readable and direct.", "strengths": ["Accessible", "Stable routes", "Classic specials"], "quote": "Old power still burns." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not merge modern and legacy LAMUH behavior without request.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Maintain legacy separation smoke coverage."] },
+      "animation": { "atlasPolicy": "Use legacy-specific validated atlas mapping.", "aliasPolicy": "Keep legacy aliases separate from modern LAMUH aliases.", "manifestRefs": ["NO_GODS_ABOVE/docs/lamuh_legacy_animation_manifest.md"] },
+      "assets": { "portrait": null, "spriteRoots": [], "fallbackPolicy": "Preserve legacy runtime sheets as fallback/history." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js", "node NO_GODS_ABOVE/scripts/smoke_lamuh_legacy_separation.js"], "lastKnownReports": [], "gotchas": ["Legacy profile exists to keep older routes readable and direct."] }
+    },
+    {
+      "schemaVersion": "2.0.0-alpha",
+      "id": "celeste",
+      "displayName": "Celeste",
+      "status": "legacy-adapted",
+      "source": { "runtimeOwner": "NO_GODS_ABOVE/game.js", "notes": ["Celeste uses socket-based render layer for future visual work."] },
+      "select": { "archetype": "Seven Spirits", "difficulty": "4/5", "description": "Spirit stance flavor and tricky pressure.", "playstyle": "Celeste changes rhythm with spirit-inflected attacks and mobility.", "strengths": ["Unusual angles", "Spirit pressure", "Creative routes"], "quote": "Seven voices. One baton." },
+      "runtime": { "preserveHydration": true, "globalTuningPolicy": "Do not add hardcoded f.x/f.y visual offsets for future Celeste visual work.", "inputPolicy": "Keep keyboard/controller routing unchanged." },
+      "moves": { "contract": "Hydrate from raw character profile config before runtime use.", "knownPolicies": ["Use named sockets and layer-aware VFX."] },
+      "animation": { "atlasPolicy": "Treat runtime atlases as fixed clean cells after packaging.", "aliasPolicy": "Do not widen source rectangles to recover missing art.", "manifestRefs": [] },
+      "assets": { "portrait": null, "spriteRoots": [], "fallbackPolicy": "Use exact source cells plus component isolation or regenerate bad source cells." },
+      "validation": { "requiredChecks": ["node --check NO_GODS_ABOVE/game.js"], "lastKnownReports": [], "gotchas": ["Sheet 1 walk_back frame 5 is repaired by holding nearest clean row frame until source is regenerated."] }
+    }
+  ]
+}

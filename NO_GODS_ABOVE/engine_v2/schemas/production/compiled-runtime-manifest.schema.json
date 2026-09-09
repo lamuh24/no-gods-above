@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/compiled-runtime-manifest.schema.json",
+  "title": "NGA Compiled Runtime Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "compilerVersion", "sourceDigest", "fighterId", "bundleVersion", "deployable", "packageGroups", "animations"],
+  "properties": {
+    "schemaVersion": { "const": "2.1.0-runtime" },
+    "compilerVersion": { "type": "string", "minLength": 1 },
+    "sourceDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "fighterId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "bundleVersion": { "type": "integer", "minimum": 1 },
+    "deployable": { "type": "boolean" },
+    "packageGroups": { "type": "object" },
+    "animations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version", "simulationLength", "sourceFrames", "exposures", "phases", "entryPoseId", "exitPoseId", "interruptPoses", "transitions", "landing", "anchors", "groundingTrack", "facingBehavior", "playbackPolicy", "interruptionBehavior", "transitionCompatibility", "combatTrack", "gameplayTimingStatus", "presentationSockets", "presentationTrack", "approvalRecords"],
+        "properties": {
+          "id": { "type": "string" },
+          "version": { "type": "integer", "minimum": 1 },
+          "simulationLength": { "type": "integer", "minimum": 1 },
+          "sourceFrames": { "type": "array" },
+          "exposures": { "type": "array" },
+          "phases": { "type": "object" },
+          "entryPoseId": { "type": "string" },
+          "exitPoseId": { "type": "string" },
+          "interruptPoses": { "type": "array" },
+          "transitions": { "type": "array" },
+          "landing": { "type": "array" },
+          "anchors": { "type": "array" },
+          "groundingTrack": { "type": "array" },
+          "facingBehavior": { "type": "object" },
+          "playbackPolicy": { "type": "object" },
+          "interruptionBehavior": { "type": "object" },
+          "transitionCompatibility": { "type": "array" },
+          "combatTrack": { "type": "object" },
+          "gameplayTimingStatus": { "type": "object" },
+          "presentationSockets": { "type": "array" },
+          "presentationTrack": { "type": "array" },
+          "approvalRecords": { "type": "array" }
+        }
+      }
+    }
+  }
+}

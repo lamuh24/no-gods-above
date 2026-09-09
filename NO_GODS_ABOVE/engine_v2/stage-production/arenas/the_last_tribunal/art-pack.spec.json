@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "1.0.0-stage-art-pack",
+  "arenaId": "the_last_tribunal",
+  "status": "production_arena_graybox_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_graybox_and_concept_approval",
+  "root": "art-pack/",
+  "directoryStructure": [
+    "geometry/structural/",
+    "geometry/presentation/",
+    "planes/painted/",
+    "decals/foreground/",
+    "layers/background/",
+    "materials/definitions/",
+    "lighting/lightmaps/",
+    "lighting/shadow_receivers/",
+    "atmosphere/",
+    "masks/emission_rim/",
+    "preview/thumbnails/",
+    "validation/captures/"
+  ],
+  "authority": {
+    "presentationMeshesAffectCollision": false,
+    "renderedFloorAffectsGrounding": false,
+    "artMayDefineWalls": false,
+    "hazards": "prohibited_until_separately_authored_as_deterministic_gameplay_systems"
+  },
+  "assets": [
+    {
+      "id": "tribunal_floor_dais",
+      "category": "3d_geometry",
+      "pathPattern": "geometry/structural/tribunal_floor_dais.glb",
+      "format": "GLB_2_0",
+      "required": true,
+      "runtimeRole": "Flat visual floor and tribunal dais; non-authoritative presentation geometry.",
+      "validation": "No slope, seam, or raised element within world X -9.2 to 9.2; top surface visually coincides with floor Y 0."
+    },
+    {
+      "id": "tribunal_architecture",
+      "category": "3d_geometry",
+      "pathPattern": "geometry/structural/tribunal_architecture.glb",
+      "format": "GLB_2_0",
+      "required": true,
+      "runtimeRole": "Apse, columns, balconies, and wall-marker pylons outside the combat lane.",
+      "validation": "No camera-safe-volume intersection or fighter occlusion in any required scenario."
+    },
+    {
+      "id": "eclipse_sky_plane",
+      "category": "painted_plane",
+      "pathPattern": "planes/painted/eclipse_sky.ktx2",
+      "format": "KTX2_sRGB",
+      "required": true,
+      "runtimeRole": "Painted eclipse, cloud, and sky composition at background depth.",
+      "validation": "Oculus rim remains above Y 6.1 in gameplay framing and passes bright-costume/VFX contrast checks."
+    },
+    {
+      "id": "foreground_edge_decals",
+      "category": "foreground_decal",
+      "pathPattern": "decals/foreground/edge_decals.ktx2",
+      "format": "KTX2_sRGB_alpha",
+      "required": true,
+      "runtimeRole": "Sparse rail fragments and stone accents outside the gameplay center.",
+      "validation": "Zero central-combat occlusion and no more than four percent edge-gameplay occlusion."
+    },
+    {
+      "id": "distant_city_layer",
+      "category": "background_layer",
+      "pathPattern": "layers/background/distant_city.ktx2",
+      "format": "KTX2_sRGB_alpha",
+      "required": true,
+      "runtimeRole": "Deep city silhouette and low-frequency environmental motion.",
+      "validation": "Motion is fixed-tick or match-seeded, and detail does not compete with fighters at center or corners."
+    },
+    {
+      "id": "tribunal_materials",
+      "category": "material_definition",
+      "pathPattern": "materials/definitions/tribunal.materials.json",
+      "format": "NGA_material_manifest_JSON",
+      "required": true,
+      "runtimeRole": "Defines matte basalt, aged brass, ash stone, and restrained cloth responses.",
+      "validation": "At most eight stage material variants, no mirror floor, and color-space metadata is explicit."
+    },
+    {
+      "id": "tribunal_lightmaps",
+      "category": "light_map",
+      "pathPattern": "lighting/lightmaps/tribunal_lightmap_*.ktx2",
+      "format": "KTX2_linear",
+      "required": true,
+      "runtimeRole": "Baked structural light and controlled low-frequency value grouping.",
+      "validation": "No baked highlight violates contrast masks or VFX safety-region emission caps."
+    },
+    {
+      "id": "fighter_shadow_receiver",
+      "category": "shadow_receiver",
+      "pathPattern": "lighting/shadow_receivers/fighter_shadow_receiver.glb",
+      "format": "GLB_2_0",
+      "required": true,
+      "runtimeRole": "Flat, invisible receiver for approved fighter contact shadows.",
+      "validation": "Receiver is planar at Y 0, follows visual floor only, and never feeds root or collision calculations."
+    },
+    {
+      "id": "tribunal_haze",
+      "category": "atmospheric_effect",
+      "pathPattern": "atmosphere/tribunal_haze.json",
+      "format": "NGA_atmosphere_manifest_JSON",
+      "required": true,
+      "runtimeRole": "Layered atmospheric perspective outside fighter and VFX corridors.",
+      "validation": "Haze cannot reduce fighter silhouette contrast below the approved reference captures."
+    },
+    {
+      "id": "corona_emission_mask",
+      "category": "optional_mask",
+      "pathPattern": "masks/emission_rim/corona_emission.ktx2",
+      "format": "KTX2_linear_grayscale",
+      "required": false,
+      "runtimeRole": "Optional eclipse emission and restrained stage rim response.",
+      "validation": "Corona pulse remains at or below two-percent luminance modulation and outside the fighter body band."
+    },
+    {
+      "id": "non_authoritative_set_dressing",
+      "category": "presentation_mesh",
+      "pathPattern": "geometry/presentation/set_dressing.glb",
+      "format": "GLB_2_0",
+      "required": true,
+      "runtimeRole": "Witness seats, rubble, rails, and other collision-independent presentation meshes.",
+      "validation": "Meshes are excluded from all combat queries and comply with camera and occlusion masks."
+    },
+    {
+      "id": "stage_select_thumbnail",
+      "category": "preview_thumbnail",
+      "pathPattern": "preview/thumbnails/the_last_tribunal_*.webp",
+      "format": "WebP_sRGB",
+      "required": true,
+      "runtimeRole": "Stage-select, package-browser, and approval preview imagery.",
+      "validation": "Includes center-stage identity without implying unapproved final art."
+    },
+    {
+      "id": "arena_validation_captures",
+      "category": "validation_capture",
+      "pathPattern": "validation/captures/{scenario}_{browser}_{gpuClass}.png",
+      "format": "PNG_sRGB",
+      "required": true,
+      "runtimeRole": "Deterministic scenario captures, overlays, and regression baselines.",
+      "validation": "Every required scenario has clean and diagnostic-overlay captures plus a machine-readable report entry."
+    }
+  ],
+  "budgets": {
+    "stageDrawCalls": 48,
+    "visibleTriangles": 35000,
+    "loadedTriangles": 60000,
+    "stageTextures": 12,
+    "stageTextureMemoryMb": 72,
+    "materialVariants": 8,
+    "dynamicLights": 2,
+    "shadowCasters": 0
+  },
+  "budgetPolicy": {
+    "stageTextureMemoryMb": "72_mb_is_a_candidate_maximum_pending_browser_and_gpu_profiling",
+    "durationsAndBudgetsGloballyBinding": false,
+    "profilingRequired": true
+  },
+  "promotionGates": [
+    "human approval of the production arena brief",
+    "approved blockout and fighter-readability paintover",
+    "art assets conform to the approved package structure and budgets",
+    "all required validation scenarios pass with clean and overlay captures",
+    "rollback replay produces identical stage presentation frames",
+    "WebGL2 browser and GPU matrix meets performance targets",
+    "no presentation asset gains collision, wall, grounding, or match authority",
+    "separate human authorization for runtime integration and deployment"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/engine-v2-stage.schema.json",
+  "title": "NGA Engine V2 Stage Contract",
+  "type": "object",
+  "required": ["schemaVersion", "id", "displayName", "status", "runtime", "camera", "collision", "render", "assets", "validation"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "2.0.0-alpha" },
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "displayName": { "type": "string" },
+    "status": { "enum": ["legacy-adapted", "native-v2", "candidate", "disabled"] },
+    "runtime": {
+      "type": "object",
+      "required": ["worldWidth", "bounds", "spawns", "groundY"],
+      "additionalProperties": false,
+      "properties": {
+        "worldWidth": { "type": "number" },
+        "bounds": { "type": "object", "required": ["left", "right"], "properties": { "left": { "type": "number" }, "right": { "type": "number" } }, "additionalProperties": false },
+        "spawns": { "type": "object", "required": ["p1X", "p2X"], "properties": { "p1X": { "type": "number" }, "p2X": { "type": "number" } }, "additionalProperties": false },
+        "groundY": { "type": "number" }
+      }
+    },
+    "camera": { "type": "object", "additionalProperties": { "type": ["number", "string", "boolean"] } },
+    "collision": { "type": "object", "required": ["platforms", "policy"], "properties": { "platforms": { "type": "array", "items": { "type": "object" } }, "policy": { "type": "string" } }, "additionalProperties": false },
+    "render": { "type": "object", "required": ["layerPolicy", "foregroundPolicy"], "properties": { "layerPolicy": { "type": "string" }, "foregroundPolicy": { "type": "string" } }, "additionalProperties": false },
+    "assets": { "type": "object", "required": ["stageCard", "layers"], "properties": { "stageCard": { "type": ["string", "null"] }, "layers": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false },
+    "validation": { "type": "object", "required": ["requiredChecks", "lastKnownReports", "gotchas"], "properties": { "requiredChecks": { "type": "array", "items": { "type": "string" }, "minItems": 1 }, "lastKnownReports": { "type": "array", "items": { "type": "string" } }, "gotchas": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false }
+  }
+}

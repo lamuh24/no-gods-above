@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "standing_light_single_hit_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "motionLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/standing-light/motion-lock.v1.json",
+    "sha256": "FAE485302561F5E687A340FE38FF98D787E2DCD92536958223B4AD1D33A76FAF"
+  },
+  "styleApproval": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/style-checkpoint-v1.approval.json",
+    "sha256": "9B671312457675BBCC8B5A8A1256041B4453A5A433B724740FDDDE4694069462",
+    "decision": "APPROVED_WITH_TARGETED_REPAIR"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalization.report.json",
+    "sha256": "F9AEFB8B6CE6FC200D4D33DE84DE491B8E9EED731D90459BCE3134C8456B71DD"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "compact_ready_entry",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalized/standing-light-00.png",
+      "sha256": "505F6268D8D4D797FB6DF61D7FEC623DDDD236427839008D30BA5D0BE398CEF5",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 472,
+        "minY": 526,
+        "maxX": 1064,
+        "maxY": 1359
+      }
+    },
+    {
+      "index": 1,
+      "role": "lead_fist_chamber",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalized/standing-light-01.png",
+      "sha256": "D5963F748806A8A0A0E87D1DEAD583E3DAF65312A6BBD4FFDC02A7E574EDE40A",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 432,
+        "minY": 534,
+        "maxX": 1125,
+        "maxY": 1326
+      }
+    },
+    {
+      "index": 2,
+      "role": "single_straight_contact_body",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalized/standing-light-02.png",
+      "sha256": "8E2326F54B73ADD8F0CC1B956DD3A1C89A7A2EFA685ECA275AC3A787445C15F8",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 463,
+        "minY": 608,
+        "maxX": 1094,
+        "maxY": 1363
+      }
+    },
+    {
+      "index": 3,
+      "role": "same_arm_follow_through",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalized/standing-light-03.png",
+      "sha256": "3A77DBA2AEDCF26A102BDEB329090D69F70732BFFBE77666B89B7BE0D4783804",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 463,
+        "minY": 607,
+        "maxX": 1102,
+        "maxY": 1363
+      }
+    },
+    {
+      "index": 4,
+      "role": "lead_arm_recoil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalized/standing-light-04.png",
+      "sha256": "309857A5534CB7D1B3387CF2013CB01F3A0FFB6A97C1F72C47A648B362E2F86D",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 454,
+        "minY": 615,
+        "maxX": 1051,
+        "maxY": 1365
+      }
+    },
+    {
+      "index": 5,
+      "role": "connected_guard_recovery",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-light-v1/normalized/standing-light-05.png",
+      "sha256": "3AB0FD81FE49AD6BEBC1C712441DAAF51F17728C646EAB34E2CF28D29AD5C6F7",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 466,
+        "minY": 615,
+        "maxX": 1050,
+        "maxY": 1364
+      }
+    }
+  ],
+  "contactPresentation": {
+    "publicPath": "/lamuh-legacy-v2/standing-light-v2/standing-light-02-hit-composite.png",
+    "sha256": "47EE942A893CB90E6DD8C1E9D99FE1DED9F686E7D362A9456751BACFAFB8EF8A",
+    "bodyOnlyOnWhiff": true,
+    "allowedOutcomes": [
+      "hit",
+      "block"
+    ],
+    "separationStatus": "OUTCOME_ROUTED_SINGLE_CONTACT_COMPOSITE"
+  },
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "phaseTicks": {
+        "startup": 3,
+        "active": 4,
+        "recovery": 5
+      },
+      "durationTicks": 12,
+      "exposureTicks": [
+        2,
+        1,
+        4,
+        2,
+        1,
+        2
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 3,
+        "active": 5,
+        "recovery": 6
+      },
+      "durationTicks": 14,
+      "exposureTicks": [
+        2,
+        1,
+        5,
+        2,
+        1,
+        3
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "WEIGHTED_ALTERNATE_NOT_DEFAULT",
+      "phaseTicks": {
+        "startup": 4,
+        "active": 6,
+        "recovery": 7
+      },
+      "durationTicks": 17,
+      "exposureTicks": [
+        3,
+        1,
+        6,
+        3,
+        1,
+        3
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_3",
+      "hitstopTicks": 3,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_4",
+      "hitstopTicks": 4,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "WEIGHTED_5",
+      "hitstopTicks": 5,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    }
+  },
+  "approvalStatus": "human_approved_standing_light_motion_and_b_retiming_candidate_base",
+  "humanApproval": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED",
+    "timing": "APPROVED_V2_RETIMING",
+    "selectedTimingCandidate": "B",
+    "combatProfile": null,
+    "record": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/standing-light-v1.approval.json",
+      "sha256": "6AE3051A07085A2170D1F33533CBD6E049150F7D020615FC7108DF46D62C9748"
+    }
+  }
+}

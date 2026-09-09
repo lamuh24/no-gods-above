@@ -1,0 +1,16 @@
+{
+  "approvedAt": null,
+  "approvedBy": null,
+  "candidateOnly": true,
+  "deployable": false,
+  "remainingReview": [
+    "Human motion, adult-identity, transition, and support-foot registration review remains pending.",
+    "Fixed canvas root and silhouette-bottom registration are not anatomical support-foot measurements.",
+    "Anchor feet/nearFoot/farFoot coordinates are registration references only; the role labels explicitly exclude support-foot claims.",
+    "Nominal exposure lengths are metadata for review, not combat hitstun, launch, knockdown, or getup durations.",
+    "Runtime selects frames from simulation phase, phaseTick, velocity, grounded state, and remaining stun; it never loops a completed reaction.",
+    "This independent candidate bundle does not replace or modify the existing first-playable bundle or runtime mappings."
+  ],
+  "sourceManifestSha256": "91D7E73297D19BCDAC066572046C818A86AE956D646466C304CDCBD21EDAAE01",
+  "state": "pending"
+}

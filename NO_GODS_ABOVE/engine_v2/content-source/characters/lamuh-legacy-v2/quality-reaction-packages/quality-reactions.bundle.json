@@ -1,0 +1,88 @@
+{
+  "animationPackages": [
+    "light/animation.package.json",
+    "heavy/animation.package.json",
+    "launch/animation.package.json",
+    "knockdown/animation.package.json",
+    "getup/animation.package.json"
+  ],
+  "bundleVersion": 1,
+  "design": {
+    "characterBible": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/COMBAT_IDENTITY.md",
+    "forbiddenMutations": [
+      "identity_drift",
+      "major_scale_drift",
+      "root_teleportation",
+      "broken_anatomy",
+      "costume_mutation",
+      "squash_stretch_suppression"
+    ],
+    "palette": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-lock.v1.json"
+  },
+  "displayName": "LAMUH Legacy V2 additive reaction quality candidate",
+  "id": "lamuh_quality_reactions_v1",
+  "packageGroups": {
+    "reaction_quality": [
+      "quality_reaction_light",
+      "quality_reaction_heavy",
+      "quality_reaction_launch",
+      "quality_reaction_knockdown",
+      "quality_reaction_getup"
+    ]
+  },
+  "poseLibrary": [
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "id": "quality_reaction_upright",
+      "plantedFoot": "both",
+      "silhouette": "adult_lamuh_upright_recoil_or_guard",
+      "verticalMotion": "stationary",
+      "weaponState": "legacy_lamuh_body",
+      "weight": "neutral"
+    },
+    {
+      "elevation": "airborne",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "id": "quality_reaction_airborne",
+      "plantedFoot": "none",
+      "silhouette": "adult_lamuh_airborne_recoil",
+      "verticalMotion": "falling",
+      "weaponState": "legacy_lamuh_body",
+      "weight": "airborne"
+    },
+    {
+      "elevation": "grounded",
+      "facing": "forward",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "id": "quality_reaction_grounded",
+      "plantedFoot": "none",
+      "silhouette": "adult_lamuh_grounded_settle",
+      "verticalMotion": "stationary",
+      "weaponState": "legacy_lamuh_body",
+      "weight": "low"
+    }
+  ],
+  "promotionState": "candidate",
+  "runtimeProfile": {
+    "centerline": 768,
+    "footPosition": 1360,
+    "handReach": 120,
+    "universalCapabilities": [
+      "reaction_presentation_only"
+    ],
+    "worldHeight": 164
+  },
+  "schemaVersion": "2.1.0-contract"
+}

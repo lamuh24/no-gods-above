@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0-production-arena-graybox",
+  "arenaId": "the_last_tribunal",
+  "status": "production_arena_graybox_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_graybox_and_concept_approval",
+  "authority": {
+    "gameplayPlane": "deterministic_2d",
+    "renderGeometryAuthoritative": false,
+    "presentationMayWriteSimulation": false,
+    "hazards": "prohibited",
+    "fighterPlaneZ": 0,
+    "floorY": 0
+  },
+  "inheritedValues": {
+    "simulationBounds": [-420, 420],
+    "worldBounds": [-8.4, 8.4],
+    "spawnSimulationX": [-76, 76],
+    "spawnWorldX": [-1.52, 1.52],
+    "wallBounceWorldX": [-8.4, 8.4],
+    "defaultCameraPosition": [0, 5.3, 20],
+    "fovDegrees": 28,
+    "cameraDistanceRange": [20, 32],
+    "cameraClampX": [-7.8, 7.8]
+  },
+  "blockout": {
+    "geometry": ["flat_gameplay_floor", "court_dais", "apse", "columns", "empty_gallery_masses", "boundary_pylons", "foreground_architectural_silhouettes"],
+    "paintedPlaceholders": ["eclipsed_sky", "distant_nave", "cool_violet_haze"],
+    "parallaxZ": { "foreground": 3.2, "fighter": 0, "midground": -7, "background": -15 },
+    "finalMaterialsOrTextures": false
+  },
+  "lighting": {
+    "primaryDirection": [6, 10, 8],
+    "realTimeStageShadowCasters": 0,
+    "fighterSpriteMaterial": "unlit_srgb_alpha_tested",
+    "dynamicLightsPrimaryTargets": ["environment", "presentation_effect_proxies"],
+    "destructiveFighterSpriteRelighting": false
+  },
+  "eventDurationPolicy": {
+    "arenaValues": "defaults_and_test_values",
+    "moveAuthoredLengths": "arbitrary_positive_fixed_tick_durations",
+    "durationAffectsIdentity": false,
+    "durationAffectsRollbackReconstruction": false
+  },
+  "diagnostics": [
+    "combat_plane",
+    "gameplay_bounds",
+    "spawn_points",
+    "wall_bounce_anchors",
+    "camera_target",
+    "camera_clamps",
+    "cinematic_volumes",
+    "contrast_zones",
+    "vfx_safety_regions",
+    "foreground_occlusion_percentage",
+    "fighter_root_and_shadow_alignment",
+    "sprite_plane_and_parallax_depths"
+  ],
+  "conceptArtRuntimeDependency": false,
+  "productionTextureMemoryMbMaximumCandidate": 72,
+  "profilingRequiredBeforeBudgetLock": true
+}

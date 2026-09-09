@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_walk_backward_directional_motion_repair_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "simulationOwnsTravel": true,
+  "timingChanged": false,
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalization.report.json",
+    "sha256": "CFDE17C5CFF88EDC07808DD02BCA709A95A651CFDD2A56C86EADF84A56A02321"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/backward-motion-repair-v1.hash-lock.json",
+    "sha256": "A65169639E9C1CDA4F34D8767CB8A169E33D763953BD59F109F1D462543AF2FE"
+  },
+  "state": {
+    "sourceFrameCount": 6,
+    "authoredFrameCount": 6,
+    "selectedLegacyFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "exposureTicks": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "durationTicks": 18,
+    "loop": true,
+    "frames": [
+      {
+        "index": 0,
+        "role": "guarded_retreat_reach",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-00.png",
+        "sha256": "97AFBC2BF7DFB5C9B4E30DD7B4A37CA90117BC00F21807F53E864F463B57F508",
+        "sourceSha256": "889CC5678DF2537675107C7858A512AF31219C83DD1E6E1C79424DD6C105B5E2",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.71467556,
+        "legacySha256": "D15657479427DC1419D64296FF31EACE3026B15C883B9799C089FAC63AF50079",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 531,
+          "minY": 613,
+          "maxX": 1077,
+          "maxY": 1346
+        },
+        "bodyCenter": {
+          "x": 833.15,
+          "y": 1005.87
+        }
+      },
+      {
+        "index": 1,
+        "role": "rear_foot_plant",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-01.png",
+        "sha256": "28587DDE8B9E321ECF4B7672E7BEBF970ABC79478B40F9219058CE830A3DFE7C",
+        "sourceSha256": "A1F5D7684798DEF5B5BAAFF7568343147C974861F3D3EDA5FEB0659B0175FAB7",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.71467556,
+        "legacySha256": "B6FB744F885AA9686BA7024F334A7901AF832779C48F28EFEDD330485003B209",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 586,
+          "minY": 622,
+          "maxX": 1029,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 835.96,
+          "y": 1011.8
+        }
+      },
+      {
+        "index": 2,
+        "role": "passing_step",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-02.png",
+        "sha256": "7FE3054A6996609C3B9568AE6BF5C526B09CF31F5840A28CC4C536E3E471588E",
+        "sourceSha256": "79A805463FD5E35F00825B673845577A2DAF4D80BD774ED99851EDFC4C5A54E5",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.71467556,
+        "legacySha256": "DD65FA8D797105CB9D316C1D045984124C063AA369754DF868DC34E87D6F7DE3",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 593,
+          "minY": 615,
+          "maxX": 995,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 809.46,
+          "y": 996.55
+        }
+      },
+      {
+        "index": 3,
+        "role": "opposite_retreat_reach",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-03.png",
+        "sha256": "6A46153B14F487B484D040920CC07A3EF52C3DC06DAF395A3C6F3F15C0D1451B",
+        "sourceSha256": "CF3D3CBB0C6A39F929929FE1DE51A734E54AFF9A48035FE0D7FDDCFE2361A62C",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.71467556,
+        "legacySha256": "7F489EDB40E2490810C967413C7FCC19C56E3156FAEF649CE3843FAFACD344BC",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 483,
+          "minY": 629,
+          "maxX": 944,
+          "maxY": 1353
+        },
+        "bodyCenter": {
+          "x": 750.37,
+          "y": 1004.78
+        }
+      },
+      {
+        "index": 4,
+        "role": "opposite_foot_plant",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-04.png",
+        "sha256": "46C27A7A5C675E40D9B50F790388EF868341505870780034D5AD81477C9EBBC9",
+        "sourceSha256": "CB5350D5DD6B45402098A4FE004F9F5CBA3E475FE1BC62635521F5AFD9746F52",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.71467556,
+        "legacySha256": "60E70D5CA279C7A2D4A61404F0873C2AF82CED8EC70787E7757E8A5446A5AD07",
+        "legacyIndex": 4,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 458,
+          "minY": 635,
+          "maxX": 964,
+          "maxY": 1353
+        },
+        "bodyCenter": {
+          "x": 719.09,
+          "y": 1021.35
+        }
+      },
+      {
+        "index": 5,
+        "role": "guarded_cycle_close",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-05.png",
+        "sha256": "29BA7B07D212FF5607CB5F7958B7AFC3F1292331D0B0CE4FBA3F038F2722BD5B",
+        "sourceSha256": "ACDFF61B700922DA0E314404D71C1D0019937E699123AEE1EC7B76C09C4FFA0F",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.71467556,
+        "legacySha256": "8255E593F1361F530F5A2E68CE641D2D5999223DE561BC159A180BD339E6AEC2",
+        "legacyIndex": 5,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 458,
+          "minY": 625,
+          "maxX": 964,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 717.84,
+          "y": 1017.26
+        }
+      }
+    ]
+  },
+  "approvalStatus": "awaiting_human_walk_backward_and_dash_backward_directional_review",
+  "humanApproval": null
+}

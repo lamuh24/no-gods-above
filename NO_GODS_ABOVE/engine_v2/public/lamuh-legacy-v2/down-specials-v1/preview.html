@@ -1,0 +1,36 @@
+<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lamuh down specials — motion review</title>
+<style>body{max-width:1200px;margin:24px auto;padding:0 16px;background:#0b1119;color:#e7edf4;font:16px system-ui}button,select,a{padding:10px;background:#203844;color:#e7faff;border:1px solid #638394;border-radius:5px;margin:4px}canvas{width:100%;background:#080e14;border:1px solid #385260}p{line-height:1.5}#strip{display:grid;grid-template-columns:repeat(4,1fr)}#strip img{width:100%}figure{margin:6px;background:#111c28}figcaption{padding:7px;font-size:12px}</style>
+<style>#view{height:52vh;object-fit:contain}h1{margin-bottom:8px}</style>
+<h1>Down specials · Aura Sweep</h1>
+<p>New motion candidates. Light: quick low sweep. Medium: advancing turning sweep. Heavy: heel slam → short ground wave. Source frames are unchanged by playback; movement belongs to the simulation.</p>
+<select id="move"><option value="light">Light</option><option value="medium">Medium</option><option value="heavy">Heavy</option></select>
+<button id="play">Pause</button><button id="step">+1 tick</button><button id="frame">Next drawing</button><button id="restart">Restart</button><button id="mirror">Face left</button>
+<select id="speed"><option value="1">1×</option><option value="0.5">0.5×</option></select><a href="/lamuh-legacy-sandbox.html">Playtest all moves</a>
+<canvas id="view" width="1120" height="620"></canvas><p id="status"></p><div id="strip"></div>
+<p>Animation-only review, not hit simulation. No V1 equivalent exists for this newly approved family. Gameplay profile and motion remain candidates pending human review.</p>
+<script>
+(async()=>{
+ const m=await(await fetch('manifest.json',{cache:'no-store'})).json(),ctx=document.querySelector('canvas').getContext('2d'),cache=new Map();
+ await Promise.all([...new Set([...Object.values(m.variants).flatMap(v=>v.frames),...m.projectileFrames].map(f=>f.publicPath))].map(async p=>{const i=new Image();i.src=p;await i.decode();cache.set(p,i)}));
+ let clock=0,playing=true,facing=1,last=performance.now();const move=document.querySelector('#move');
+ const seq=()=>m.variants[move.value],duration=()=>seq().exposureTicks.reduce((a,b)=>a+b,0);
+ const indexAt=(s,t)=>{let n=0;for(let i=0;i<s.exposureTicks.length;i++){n+=s.exposureTicks[i];if(t<n)return i}return s.frames.length-1};
+ const draw=(f,x,y)=>{ctx.save();ctx.translate(x,y);ctx.scale(.3*facing,.3);ctx.drawImage(cache.get(f.publicPath),-f.root.x,-f.root.y);ctx.restore()};
+ function paint(){const s=seq(),tick=Math.min(duration()-1,Math.floor(clock)),i=indexAt(s,tick),root= s.combatProfile.rootMotion;
+  const travel=root?Math.max(0,Math.min(tick-root.start,root.end-root.start+1))*root.velocity:0;
+  ctx.clearRect(0,0,1120,620);ctx.strokeStyle='#4d6573';ctx.beginPath();ctx.moveTo(0,540);ctx.lineTo(1120,540);ctx.stroke();
+  draw(s.frames[i],430+travel*1.3*facing,540);
+  const p=s.combatProfile.projectile;if(p&&tick>=p.releaseTick){const age=tick-p.releaseTick;if(age*p.speed<=p.maxTravel){const f=m.projectileFrames[Math.floor(age/3)%m.projectileFrames.length];draw(f,430+(p.spawnOffset.x+age*p.speed)*1.3*facing,540+p.spawnOffset.y*1.3)}}
+  document.querySelector('#status').textContent=`${move.value} · tick ${tick}/${duration()-1} · drawing ${i}: ${s.frames[i].role} · contact/release ${s.combatProfile.startup} · ${s.combatProfile.startup}/${s.combatProfile.active}/${s.combatProfile.recovery}`;
+ }
+ function strip(){document.querySelector('#strip').replaceChildren(...seq().frames.map((f,i)=>{const box=document.createElement('figure'),img=document.createElement('img'),label=document.createElement('figcaption');img.src=f.publicPath;label.textContent=`${i} ${f.role} · ${seq().exposureTicks[i]} ticks`;box.append(label,img);return box}));clock=0;paint()}
+ move.onchange=strip;document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Pause':'Play'};
+ function stop(){playing=false;document.querySelector('#play').textContent='Play'}
+ document.querySelector('#step').onclick=()=>{stop();clock=(Math.floor(clock)+1)%duration();paint()};
+ document.querySelector('#frame').onclick=()=>{stop();clock=seq().exposureTicks.slice(0,indexAt(seq(),clock)+1).reduce((a,b)=>a+b,0)%duration();paint()};
+ document.querySelector('#restart').onclick=()=>{clock=0;paint()};document.querySelector('#mirror').onclick=()=>{facing=-facing;paint()};
+ strip();function loop(now){if(playing)clock=(clock+Math.min(100,now-last)/1000*60*Number(document.querySelector('#speed').value))%(duration()+15);last=now;paint();requestAnimationFrame(loop)}requestAnimationFrame(loop);
+})().catch(e=>document.querySelector('#status').textContent='Not ready: '+e.message);
+</script>

@@ -1,0 +1,505 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "turn_facing",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 12,
+  "sourceFrames": [
+    {
+      "id": "turn_facing_00",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-00.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "246E115828C5AB8A2FAC2B81933885E02A1EEB5F0899BEDD4C71E5D260273854",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+      "provenanceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/turn-facing/visual-modernization.candidate.v1.json"
+    },
+    {
+      "id": "turn_facing_01",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-01.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "C562A0F99A4B04FE64A23535D310279458DDC95B597749443340FD97B7854ACB",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+      "provenanceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/turn-facing/visual-modernization.candidate.v1.json"
+    },
+    {
+      "id": "turn_facing_02",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-02.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "971050E25CD35A8DC95D29C3CE23DF6927231489372D067074EC61649E35C496",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+      "provenanceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/turn-facing/visual-modernization.candidate.v1.json"
+    },
+    {
+      "id": "turn_facing_03",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/turn-facing-modernization-v1/turn-facing-03.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "2CA374F31757521AD22FB1EBF39E560BAEDA78165246BD996F7DE067D2B4A54B",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+      "provenanceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/turn-facing/visual-modernization.candidate.v1.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "turn_facing_00",
+      "start": 0,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "turn_facing_01",
+      "start": 2,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "turn_facing_02",
+      "start": 5,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "turn_facing_03",
+      "start": 8,
+      "duration": 4
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [
+      {
+        "start": 0,
+        "end": 7
+      }
+    ],
+    "recovery": [
+      {
+        "start": 8,
+        "end": 11
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "either",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "either",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "either",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "turn_facing_00",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 640,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 899,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 900
+      },
+      "groundingContract": "lamuh_turn_facing_fixed_root_v1"
+    },
+    {
+      "frame": 2,
+      "sourceFrameId": "turn_facing_01",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 622,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 882,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 900
+      },
+      "groundingContract": "lamuh_turn_facing_fixed_root_v1"
+    },
+    {
+      "frame": 5,
+      "sourceFrameId": "turn_facing_02",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 685,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 841,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 900
+      },
+      "groundingContract": "lamuh_turn_facing_fixed_root_v1"
+    },
+    {
+      "frame": 8,
+      "sourceFrameId": "turn_facing_03",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 694,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 858,
+        "y": 1360
+      },
+      "effect": {
+        "x": 768,
+        "y": 900
+      },
+      "groundingContract": "lamuh_turn_facing_fixed_root_v1"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "turn_facing_00",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 640,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 899,
+        "y": 1360
+      },
+      "nearFootRole": "pivoting_contact",
+      "farFootRole": "receiving_contact",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_turn_facing_fixed_root_v1"
+    },
+    {
+      "sourceFrameId": "turn_facing_01",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 622,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 882,
+        "y": 1360
+      },
+      "nearFootRole": "pivoting_contact",
+      "farFootRole": "receiving_contact",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_turn_facing_fixed_root_v1"
+    },
+    {
+      "sourceFrameId": "turn_facing_02",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 685,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 841,
+        "y": 1360
+      },
+      "nearFootRole": "receiving_contact",
+      "farFootRole": "settling_contact",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_turn_facing_fixed_root_v1"
+    },
+    {
+      "sourceFrameId": "turn_facing_03",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 694,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 858,
+        "y": 1360
+      },
+      "nearFootRole": "receiving_contact",
+      "farFootRole": "settling_contact",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_turn_facing_fixed_root_v1"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true,
+    "canonicalSequence": "right_facing_to_left_facing",
+    "runtimePresentationBasis": "turnStartingFacing",
+    "gameplayFacingSwap": "simulation_owned_immediate"
+  },
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "attack_input",
+      "jump_input",
+      "dash_input",
+      "crouch_input",
+      "walk_input",
+      "block_input",
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation immediately selects the requested authoritative state and clears turnStartingFacing",
+    "returnStatePolicy": "simulation returns to neutral after twelve ticks only when no higher-priority gameplay state preempts the presentation"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "block",
+        "turn"
+      ],
+      "toState": "turn",
+      "condition": "grounded opponent side changes while facing updates are legal",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "turn"
+      ],
+      "toState": "idle",
+      "condition": "twelve presentation ticks complete without a higher-priority gameplay input",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "turn"
+      ],
+      "toState": "any_legal_ground_action",
+      "condition": "attack, jump, dash, crouch, walk or block input preempts immediately",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 12,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 12,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "not_applicable",
+    "authoritative": true,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+      "starredForRevisit": true,
+      "visualDurationTicks": 12,
+      "gameplayFacingSwapTick": 0,
+      "fighterRootDisplacement": 0
+    },
+    "notes": [
+      "Facing changes immediately in deterministic simulation.",
+      "The twelve-tick artwork is non-blocking presentation and never delays legal inputs.",
+      "Renderer mirrors the canonical sequence from simulation-owned turnStartingFacing and never drives gameplay."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 900,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+    "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-v1.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "fixed_root",
+      "sequence_wide_scale",
+      "simulation_owned_facing",
+      "immediate_interrupts",
+      "mirror_round_trip",
+      "replay_checksum",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "current-baseline pass carries user-requested polish debt and a revisit star",
+      "missing-state V2 authoring; no V1 turn motion is claimed",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "imagegen_reference_edit_missing_state_authoring_normalized_rgba",
+    "tool": "OpenAI built-in image generation plus NGA Forge deterministic normalization",
+    "model": null,
+    "createdAt": "2026-09-02T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+      "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+      "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/turn-facing/visual-modernization.candidate.v1.json"
+    ],
+    "revisionChain": [
+      "rejected_checkerboard_and_duplicate_settle_v1",
+      "targeted_chroma_green_distinct_settle_v2",
+      "turn_facing_modernization_candidate_v1"
+    ],
+    "cleanupOperations": [
+      "uniform_chroma_background_removal",
+      "sequence_wide_scale_only",
+      "fixed_root_placement",
+      "purple_fringe_audit"
+    ],
+    "humanApproval": {
+      "state": "pending",
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    "licensingNotes": [
+      "Local candidate-only Lamuh Legacy V2 transition art; not approved for shipping atlas, production roster, publication, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+    "starredForRevisit": true,
+    "sourceFrameCount": 0,
+    "authoredFrameCount": 4,
+    "fixedRoot": {
+      "x": 768,
+      "y": 1360
+    },
+    "rootDisplacement": 0,
+    "gameplayFacingSwapDelayed": false,
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}

@@ -1,0 +1,34 @@
+const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict'), crypto = require('node:crypto');
+const root = path.resolve(__dirname, '..'), repo = path.resolve(root, '../..');
+const read = p => JSON.parse(fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, ''));
+const hash = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex').toUpperCase();
+const reportPath = path.join(repo, 'tools/nga-forge/review/lamuh-legacy-v2-ascend-heavy-clean-v2/normalization.report.json');
+const report = read(reportPath), review = read(path.join(root, 'public/lamuh-legacy-v2/review-data.json'));
+const light = read(path.join(repo, 'tools/nga-forge/review/lamuh-forward-light-clean-v2/normalization.report.json'));
+const original = review.ascendStepFamily.variants.heavy, heavy = structuredClone(original);
+const dash = { ...light.frames[1], publicPath: '/lamuh-legacy-v2/forward-light-clean-v2/pose-01.png' }, idle = review.movementModernization.states.idle.frames[0];
+assert.equal(report.frames.length, 6);
+const sourceFrames = [idle, dash, dash, original.v2.frames[3], ...report.frames, idle];
+heavy.status = 'awaiting_human_forward_heavy_clean_v2_review'; heavy.humanApproval = null; heavy.styleApproval = null;
+delete heavy.priorGateApproval; delete heavy.hashLock;
+heavy.normalizationReport = 'repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-heavy-clean-v2/normalization.report.json';
+heavy.v2.frames = sourceFrames.map((f, index) => ({ ...f, index, contact: index === 7, visibleImpact: index === 7 }));
+for (const f of heavy.v2.frames) assert.equal(hash(path.join(root, 'public', f.publicPath)), f.sha256);
+heavy.v2.rootPath = heavy.v2.frames.map(f => f.root);
+heavy.v2.contactFrame = 7; heavy.v2.contactFrames = [7]; heavy.v2.contactPresentation = { publicPath: heavy.v2.frames[7].publicPath, sha256: heavy.v2.frames[7].sha256, bodyOnlyOnWhiff: false, bodyOnlyForAllOutcomes: false, vfxEnabled: false, allowedOutcomes: [], classification: 'authored_motion_aura_single_contact', separationStatus: 'baked_source_motion_no_second_overlay' };
+heavy.v2.singleSequenceScale = 1; heavy.v2.perFrameRescale = false;
+heavy.v2.sourceCameraCalibration = { newHeavy: 2, borrowedDash: 'existing_new_Light_frame_unchanged', exactIdle: 'existing_approved_frame_unchanged' };
+heavy.v2.placementPolicy = report.registration;
+heavy.v2.preservationBoundary = { originalHeavyFramesPreserved: true, divineCounterReferencesPreserved: true, gameplayUnchanged: true, contactTickUnchanged: true };
+heavy.v2.contactSocket = report.contactSocket;
+const world = { x: (report.contactSocket.x - 768) * .3 / 1.3, y: (report.contactSocket.y - 1360) * .3 / 1.3 };
+assert(world.x >= 24 && world.x <= 166 && world.y >= -108 && world.y <= -32, 'Visible palm must stay in unchanged Heavy hitbox');
+for (const [key, holds] of Object.entries({ A: [4,4,4,2,3,2,3,5,2,3,6], B: [4,4,4,2,4,3,3,5,3,3,7], C: [4,4,4,2,5,4,3,5,4,3,8] })) {
+  const duration = holds.reduce((a,b) => a+b,0), startup = holds.slice(0,7).reduce((a,b) => a+b,0);
+  heavy.timingCandidates[key] = { label: key === 'B' ? 'GAMEPLAY_ALIGNED_CLEAN_CANDIDATE' : 'VISUAL_COMPARISON_ONLY', phaseTicks: { startup, active: 5, recovery: duration-startup-5 }, durationTicks: duration, exposureTicks: holds, preservesSourceFrameOrder: false, preservesAuthoredFrameOrder: true, duplicateMeaninglessFrames: false, visualComparisonOnly: key !== 'B' };
+}
+heavy.reviewNotes = ['New six-pose adult palm chain with flowing cyan-white-gold surrounding aura.', 'New Light dash source is deliberately held across two existing timing slots; not two unique poses.', 'The existing two-tick cyan disappearance streak remains a targeted visual debt; no purple Divine source is recolored.', 'All old Heavy files remain untouched because DivineCounter consumes old05-08.', 'One84-damage contact24-28 and total42 ticks preserved. Candidate only; human motion approval required.'];
+const manifest = { schemaVersion: '1.0.0', candidateOnly: true, deployable: false, heavy };
+for (const file of [path.join(root, 'public/lamuh-legacy-v2/ascend-heavy-clean-v2/manifest.json'), path.join(root, 'content-source/characters/lamuh-legacy-v2/ascend-heavy-clean-v2/manifest.json')]) fs.writeFileSync(file, JSON.stringify(manifest, null, 2)+'\n');
+for (const p of report.preservedOldHeavy) assert.equal(hash(p.path), p.sha256);
+console.log('Heavy cleanV2 manifest ready;42ticks/contact24-28; old Heavy/Divine source preserved.');

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_turn_facing_modern_visual_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": false,
+  "missingStateAuthored": true,
+  "gameplayFacingChanged": true,
+  "gameplayFacingSwapDelayed": false,
+  "gameplayResponsivenessChanged": false,
+  "fixedWorldRoot": true,
+  "state": {
+    "sourceFrameCount": 0,
+    "authoredFrameCount": 4,
+    "selectedLegacyFrames": [],
+    "exposureTicks": [
+      2,
+      3,
+      3,
+      4
+    ],
+    "durationTicks": 12,
+    "loop": false,
+    "frames": [
+      {
+        "index": 0,
+        "role": "right_facing_planted_turn_entry",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-00.png",
+        "sha256": "246E115828C5AB8A2FAC2B81933885E02A1EEB5F0899BEDD4C71E5D260273854",
+        "sourceSha256": "E3D37C1231F358816BE1E1A4CC70D7F862C2B8565CCDC01ED3AF85A31BC770F0",
+        "sourceType": "imagegen_reference_edit_missing_state_authoring",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.28102482,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 545,
+          "minY": 554,
+          "maxX": 975,
+          "maxY": 1361
+        },
+        "bodyCenter": {
+          "x": 769.66,
+          "y": 977.17
+        }
+      },
+      {
+        "index": 1,
+        "role": "rear_three_quarter_pivot",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-01.png",
+        "sha256": "C562A0F99A4B04FE64A23535D310279458DDC95B597749443340FD97B7854ACB",
+        "sourceSha256": "AC6A2FF21336DDCF85AFE5D775A519F769FB8DD83B02409CD69439CDB5CE2B7A",
+        "sourceType": "imagegen_reference_edit_missing_state_authoring",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.28102482,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 554,
+          "minY": 563,
+          "maxX": 958,
+          "maxY": 1361
+        },
+        "bodyCenter": {
+          "x": 759.87,
+          "y": 974.44
+        }
+      },
+      {
+        "index": 2,
+        "role": "left_facing_weight_transfer",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-02.png",
+        "sha256": "971050E25CD35A8DC95D29C3CE23DF6927231489372D067074EC61649E35C496",
+        "sourceSha256": "7E4331DE05A6CAE0CFA8D0253F669EBD678ADD04727F901F0B54ABA783D644B6",
+        "sourceType": "imagegen_reference_edit_missing_state_authoring",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.28102482,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 592,
+          "minY": 570,
+          "maxX": 1043,
+          "maxY": 1361
+        },
+        "bodyCenter": {
+          "x": 791.24,
+          "y": 986.55
+        }
+      },
+      {
+        "index": 3,
+        "role": "left_facing_guard_settle",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/turn-facing-03.png",
+        "sha256": "2CA374F31757521AD22FB1EBF39E560BAEDA78165246BD996F7DE067D2B4A54B",
+        "sourceSha256": "2C9A806575BA0CFC3FFDD083F61E840C6C61C6F5DDBA3C98102FC957877084F1",
+        "sourceType": "imagegen_reference_edit_missing_state_authoring",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.28102482,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 608,
+          "minY": 559,
+          "maxX": 1002,
+          "maxY": 1361
+        },
+        "bodyCenter": {
+          "x": 784.08,
+          "y": 994
+        }
+      }
+    ]
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+    "sha256": "83174DFC1AA7F8C5E7FD31CA0D519B1E09CD61744BA63FE6E641054B1E43F700"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json",
+    "sha256": "AC366BF060577F71ED137F5A745B88432477710C2497B2A4518C3C6FC05F5260"
+  },
+  "transitionContract": {
+    "simulationPhase": "turn",
+    "durationTicks": 12,
+    "gameplayFacingChangesImmediately": true,
+    "presentationUsesTurnStartingFacing": true,
+    "immediatelyInterruptibleByAttackJumpDashCrouchWalkOrBlock": true,
+    "rendererOwnsGameplayState": false
+  },
+  "humanApproval": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+  "approvalReceipt": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-v1.approval.json",
+    "sha256": "E55CC847A11CFE212FED668EF6EC2075A75D3A4E9E6D2964E4EF0985AE9E5BD7"
+  },
+  "starredForRevisit": true,
+  "polishDebt": "user_requested_revisit_after_current_baseline_pass"
+}

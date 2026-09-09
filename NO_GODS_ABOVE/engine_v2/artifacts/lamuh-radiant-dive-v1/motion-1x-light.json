@@ -1,0 +1,1471 @@
+{
+  "version": "radiant-dive-v1-stage-driven",
+  "playbackRate": 1,
+  "captureBracket": {
+    "before": {
+      "state": {
+        "schemaVersion": "2.0.0-alpha",
+        "matchId": "lamuh-closure-4405-p1-B-I2",
+        "matchConfig": {
+          "p1Kind": "lamuh_legacy_v2",
+          "p2Kind": "lamuh_legacy_v2",
+          "p1X": -34,
+          "p2X": 34,
+          "p1LamuhReview": {
+            "timing": "B",
+            "hitstop": 9
+          }
+        },
+        "seed": 4405,
+        "rngState": 4405,
+        "tick": 8,
+        "stage": {
+          "left": -280,
+          "right": 280,
+          "groundY": 0,
+          "ceilingY": -180
+        },
+        "fighters": {
+          "p1": {
+            "id": "p1",
+            "kind": "lamuh_legacy_v2",
+            "victimClass": "standard_humanoid",
+            "x": -28.100050000000003,
+            "y": -92,
+            "vx": 7,
+            "vy": 5,
+            "pendingJumpVx": 0,
+            "facing": 1,
+            "attackFacing": 1,
+            "grounded": false,
+            "phase": "attack",
+            "phaseTick": 7,
+            "health": 1000,
+            "blocking": false,
+            "crouchBlocking": false,
+            "currentAttack": "legacy_radiant_dive_light",
+            "reviewAttackProfile": {
+              "timing": "B",
+              "hitstop": 9
+            },
+            "hitstop": 4,
+            "hitstun": 0,
+            "hitReactionWeight": "light",
+            "blockstun": 0,
+            "knockdownKind": "none",
+            "knockdownTicks": 0,
+            "getupTicks": 0,
+            "wakeupInvuln": 0,
+            "inputBuffer": [
+              {
+                "special": true,
+                "light": true
+              },
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "deterministicBuffer": {
+              "current": {},
+              "previous": {},
+              "pressed": {},
+              "released": {},
+              "history": [
+                {
+                  "tick": 0,
+                  "held": {
+                    "light": true,
+                    "special": true
+                  },
+                  "pressed": {
+                    "light": true,
+                    "special": true
+                  },
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 1,
+                  "held": {},
+                  "pressed": {},
+                  "released": {
+                    "light": true,
+                    "special": true
+                  },
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 2,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 3,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 4,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 5,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 6,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 7,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                }
+              ],
+              "max": 18
+            },
+            "hitLedger": {
+              "legacy_radiant_dive_light:legacy_radiant_dive_light_palm": [
+                "p2"
+              ]
+            },
+            "attackConnected": true,
+            "attackBlocked": false,
+            "cancelOptions": [],
+            "airActionsRemaining": 3,
+            "airRecoveryTicks": 0,
+            "airRecoveryCount": 0,
+            "airTechInvuln": 0,
+            "lastAirTechDirection": null,
+            "recoveryEvent": null,
+            "comboCount": 1,
+            "comboDamage": 40,
+            "comboRoute": [
+              "legacy_radiant_dive_light"
+            ],
+            "damageScaling": 0.92,
+            "comboTarget": "p2",
+            "comboNeutralTicks": 0,
+            "juggleSpent": 0,
+            "peakJuggleSpent": 0,
+            "tension": 16,
+            "tensionEarned": 16,
+            "tensionSpent": 0,
+            "romanCancelTicks": 0,
+            "romanCancelCount": 0,
+            "burst": 100,
+            "burstTicks": 0,
+            "burstCount": 0,
+            "systemInputConsumed": {
+              "romanCancel": -1,
+              "burst": -1
+            },
+            "hitCountTaken": 0,
+            "throwInstanceCounter": 0,
+            "throwRotation": 0,
+            "moveInstanceCounter": 1,
+            "currentMoveInstance": 1,
+            "airDashesRemaining": 0,
+            "airDiveUsed": true
+          },
+          "p2": {
+            "id": "p2",
+            "kind": "lamuh_legacy_v2",
+            "victimClass": "standard_humanoid",
+            "x": 39.90005000000001,
+            "y": 0,
+            "vx": 4.5,
+            "vy": 0,
+            "pendingJumpVx": 0,
+            "facing": -1,
+            "attackFacing": -1,
+            "grounded": true,
+            "phase": "hit_reaction",
+            "phaseTick": 0,
+            "health": 960,
+            "blocking": false,
+            "crouchBlocking": false,
+            "currentAttack": null,
+            "hitstop": 4,
+            "hitstun": 18,
+            "hitReactionWeight": "heavy",
+            "blockstun": 0,
+            "knockdownKind": "none",
+            "knockdownTicks": 0,
+            "getupTicks": 0,
+            "wakeupInvuln": 0,
+            "inputBuffer": [
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "deterministicBuffer": {
+              "current": {},
+              "previous": {},
+              "pressed": {},
+              "released": {},
+              "history": [
+                {
+                  "tick": 0,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 1,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 2,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 3,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 4,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 5,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 6,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 7,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                }
+              ],
+              "max": 18
+            },
+            "hitLedger": {},
+            "attackConnected": false,
+            "attackBlocked": false,
+            "cancelOptions": [],
+            "airActionsRemaining": 0,
+            "airRecoveryTicks": 0,
+            "airRecoveryCount": 0,
+            "airTechInvuln": 0,
+            "lastAirTechDirection": null,
+            "recoveryEvent": null,
+            "comboCount": 0,
+            "comboDamage": 0,
+            "comboRoute": [],
+            "damageScaling": 1,
+            "comboTarget": null,
+            "comboNeutralTicks": 0,
+            "juggleSpent": 0,
+            "peakJuggleSpent": 0,
+            "tension": 0,
+            "tensionEarned": 0,
+            "tensionSpent": 0,
+            "romanCancelTicks": 0,
+            "romanCancelCount": 0,
+            "burst": 100,
+            "burstTicks": 0,
+            "burstCount": 0,
+            "systemInputConsumed": {
+              "romanCancel": -1,
+              "burst": -1
+            },
+            "hitCountTaken": 1,
+            "throwInstanceCounter": 0,
+            "throwRotation": 0,
+            "moveInstanceCounter": 0,
+            "currentMoveInstance": 0,
+            "airDashesRemaining": 0,
+            "dummyMode": "auto_recovery"
+          }
+        },
+        "inputLog": [
+          {
+            "tick": 0,
+            "p1": {
+              "special": true,
+              "light": true
+            },
+            "p2": {}
+          },
+          {
+            "tick": 1,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 2,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 3,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 4,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 5,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 6,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 7,
+            "p1": {},
+            "p2": {}
+          }
+        ],
+        "checksums": [
+          "e3c74011",
+          "cda7a5e3",
+          "29a1500f",
+          "6d2a6119",
+          "98cfa33d",
+          "fc760d9c",
+          "a45b4414",
+          "4fa857bd"
+        ],
+        "debugWarnings": [],
+        "lastCombatEvent": {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_radiant_dive_light",
+          "hitOrdinal": 1,
+          "damage": 40,
+          "scaling": 1,
+          "baseHitstun": 18,
+          "effectiveHitstun": 18,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8
+        },
+        "lastSystemEvent": null,
+        "throwInteraction": null,
+        "lastThrowEvent": null,
+        "presentationEventLedger": [
+          "lamuh-closure-4405-p1-B-I2:6:p1:1:0"
+        ]
+      },
+      "readout": {
+        "tick": 8,
+        "checksum": "4fa857bd",
+        "actor": "p1",
+        "opponentKind": "lamuh_legacy_v2",
+        "visibleArenaBounds": [
+          -280,
+          280
+        ],
+        "fighterCollision": {
+          "reviewDecision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+          "starredForRevisit": true,
+          "candidateOnly": true,
+          "rootSeparation": 68,
+          "pushboxesOverlap": false,
+          "authoredThrowExceptionActive": false,
+          "actorPushbox": {
+            "x": -62.10005,
+            "y": -190,
+            "w": 68,
+            "h": 98
+          },
+          "opponentPushbox": {
+            "x": 5.900050000000007,
+            "y": -98,
+            "w": 68,
+            "h": 98
+          }
+        },
+        "profile": {
+          "timing": "B",
+          "hitstop": 9
+        },
+        "phase": "attack",
+        "phaseTick": 7,
+        "turnStartingFacing": null,
+        "gameplayFacing": 1,
+        "attackFacing": 1,
+        "airDashesRemaining": 0,
+        "visualPackage": "radiant_dive_stage_driven_candidate",
+        "attack": "legacy_radiant_dive_light",
+        "attackPhase": "active",
+        "attackTiming": [
+          7,
+          10,
+          10
+        ],
+        "targetSideSwitch": null,
+        "authoredContacts": [
+          2
+        ],
+        "standingHeavyFrame": null,
+        "standingHeavyExposures": [
+          5,
+          4,
+          2,
+          5,
+          5,
+          8,
+          8
+        ],
+        "activeGroundNormalFrame": 2,
+        "activeNormalFrame": 2,
+        "activeFrameRole": "ONE descending palm CONTACT",
+        "contactPresentation": "body_plus_contact_event",
+        "combo": {
+          "count": 1,
+          "damage": 40,
+          "route": [
+            "legacy_radiant_dive_light"
+          ]
+        },
+        "health": 1000,
+        "victim": {
+          "kind": "lamuh_legacy_v2",
+          "phase": "hit_reaction",
+          "position": [
+            39.9,
+            0
+          ],
+          "rotation": 0,
+          "health": 960,
+          "hitCountTaken": 1,
+          "blocking": false,
+          "crouchBlocking": false
+        },
+        "throw": null,
+        "lastCombatEvent": {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_radiant_dive_light",
+          "hitOrdinal": 1,
+          "damage": 40,
+          "scaling": 1,
+          "baseHitstun": 18,
+          "effectiveHitstun": 18,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8
+        },
+        "lastThrowEvent": null,
+        "presentationEventCount": 1,
+        "counterHit": "UNSUPPORTED_IN_CURRENT_LAMUH_CORE_AND_NOT_INVENTED",
+        "candidateOnly": true,
+        "deployable": false,
+        "humanReviewStatus": "awaiting_human_radiant_dive_family_review",
+        "presentationQuality": {
+          "enabled": true,
+          "preparedFrames": 251,
+          "actorReactionFrame": null,
+          "victimReactionFrame": 1,
+          "eventIds": [
+            "lamuh-closure-4405-p1-B-I2:6:p1:1:0"
+          ],
+          "activeContactCues": [
+            {
+              "id": "lamuh-closure-4405-p1-B-I2:6:p1:1:0",
+              "tick": 6,
+              "x": 39.90005000000001,
+              "y": -131,
+              "facing": 1,
+              "kind": "hit",
+              "attackerRoot": {
+                "x": -28.100050000000003,
+                "y": -92
+              },
+              "hitOrdinal": 1,
+              "strength": "medium",
+              "attackId": "legacy_radiant_dive_light",
+              "duration": 9,
+              "radius": 22,
+              "screenAnchor": {
+                "x": 609.8699349999999,
+                "y": 369.09999999999997
+              }
+            }
+          ],
+          "bodyLayer": "unchanged_source_frame",
+          "heavyVfxOffComparison": "previous clean poses, not pixel-identical aura removal",
+          "contactLayer": "collision_triggered_sprite_socket"
+        },
+        "projectiles": [],
+        "lastProjectileEvent": null,
+        "projectileEventLedger": [],
+        "forwardSpecialsReview": "passed_for_now_starred",
+        "authoredDive": {
+          "attackId": "legacy_radiant_dive_light",
+          "stage": "strike",
+          "moveTick": 7,
+          "stageTick": 0,
+          "currentHeight": 92,
+          "landingRecoveryTicks": 10,
+          "landingTicksRemaining": null,
+          "maximumAirTicks": 43
+        },
+        "actorPosition": {
+          "x": -28.100050000000003,
+          "y": -92
+        },
+        "oneDescendingPalm": true
+      }
+    },
+    "after": {
+      "state": {
+        "schemaVersion": "2.0.0-alpha",
+        "matchId": "lamuh-closure-4405-p1-B-I2",
+        "matchConfig": {
+          "p1Kind": "lamuh_legacy_v2",
+          "p2Kind": "lamuh_legacy_v2",
+          "p1X": -34,
+          "p2X": 34,
+          "p1LamuhReview": {
+            "timing": "B",
+            "hitstop": 9
+          }
+        },
+        "seed": 4405,
+        "rngState": 4405,
+        "tick": 24,
+        "stage": {
+          "left": -280,
+          "right": 280,
+          "groundY": 0,
+          "ceilingY": -180
+        },
+        "fighters": {
+          "p1": {
+            "id": "p1",
+            "kind": "lamuh_legacy_v2",
+            "victimClass": "standard_humanoid",
+            "x": 29.649950000000004,
+            "y": -32,
+            "vx": 2,
+            "vy": 5,
+            "pendingJumpVx": 0,
+            "facing": 1,
+            "attackFacing": 1,
+            "grounded": false,
+            "phase": "attack",
+            "phaseTick": 19,
+            "health": 1000,
+            "blocking": false,
+            "crouchBlocking": false,
+            "currentAttack": "legacy_radiant_dive_light",
+            "reviewAttackProfile": {
+              "timing": "B",
+              "hitstop": 9
+            },
+            "hitstop": 0,
+            "hitstun": 0,
+            "hitReactionWeight": "light",
+            "blockstun": 0,
+            "knockdownKind": "none",
+            "knockdownTicks": 0,
+            "getupTicks": 0,
+            "wakeupInvuln": 0,
+            "inputBuffer": [
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "deterministicBuffer": {
+              "current": {},
+              "previous": {},
+              "pressed": {},
+              "released": {},
+              "history": [
+                {
+                  "tick": 6,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 7,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 8,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 9,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 10,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 11,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 12,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 13,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 14,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 15,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 16,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 17,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 18,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 19,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 20,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 21,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 22,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 23,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": 1,
+                  "forward": false,
+                  "back": false
+                }
+              ],
+              "max": 18
+            },
+            "hitLedger": {
+              "legacy_radiant_dive_light:legacy_radiant_dive_light_palm": [
+                "p2"
+              ]
+            },
+            "attackConnected": true,
+            "attackBlocked": false,
+            "cancelOptions": [],
+            "airActionsRemaining": 3,
+            "airRecoveryTicks": 0,
+            "airRecoveryCount": 0,
+            "airTechInvuln": 0,
+            "lastAirTechDirection": null,
+            "recoveryEvent": null,
+            "comboCount": 1,
+            "comboDamage": 40,
+            "comboRoute": [
+              "legacy_radiant_dive_light"
+            ],
+            "damageScaling": 0.92,
+            "comboTarget": "p2",
+            "comboNeutralTicks": 0,
+            "juggleSpent": 0,
+            "peakJuggleSpent": 0,
+            "tension": 16,
+            "tensionEarned": 16,
+            "tensionSpent": 0,
+            "romanCancelTicks": 0,
+            "romanCancelCount": 0,
+            "burst": 100,
+            "burstTicks": 0,
+            "burstCount": 0,
+            "systemInputConsumed": {
+              "romanCancel": -1,
+              "burst": -1
+            },
+            "hitCountTaken": 0,
+            "throwInstanceCounter": 0,
+            "throwRotation": 0,
+            "moveInstanceCounter": 1,
+            "currentMoveInstance": 1,
+            "airDashesRemaining": 0,
+            "airDiveUsed": true,
+            "airDiveGatherStartTick": 17
+          },
+          "p2": {
+            "id": "p2",
+            "kind": "lamuh_legacy_v2",
+            "victimClass": "standard_humanoid",
+            "x": 105.15005000000001,
+            "y": 0,
+            "vx": 4.5,
+            "vy": 0,
+            "pendingJumpVx": 0,
+            "facing": -1,
+            "attackFacing": -1,
+            "grounded": true,
+            "phase": "hit_reaction",
+            "phaseTick": 12,
+            "health": 960,
+            "blocking": false,
+            "crouchBlocking": false,
+            "currentAttack": null,
+            "hitstop": 0,
+            "hitstun": 6,
+            "hitReactionWeight": "heavy",
+            "blockstun": 0,
+            "knockdownKind": "none",
+            "knockdownTicks": 0,
+            "getupTicks": 0,
+            "wakeupInvuln": 0,
+            "inputBuffer": [
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "deterministicBuffer": {
+              "current": {},
+              "previous": {},
+              "pressed": {},
+              "released": {},
+              "history": [
+                {
+                  "tick": 6,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 7,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 8,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 9,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 10,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 11,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 12,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 13,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 14,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 15,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 16,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 17,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 18,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 19,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 20,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 21,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 22,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                },
+                {
+                  "tick": 23,
+                  "held": {},
+                  "pressed": {},
+                  "released": {},
+                  "facing": -1,
+                  "forward": false,
+                  "back": false
+                }
+              ],
+              "max": 18
+            },
+            "hitLedger": {},
+            "attackConnected": false,
+            "attackBlocked": false,
+            "cancelOptions": [],
+            "airActionsRemaining": 0,
+            "airRecoveryTicks": 0,
+            "airRecoveryCount": 0,
+            "airTechInvuln": 0,
+            "lastAirTechDirection": null,
+            "recoveryEvent": null,
+            "comboCount": 0,
+            "comboDamage": 0,
+            "comboRoute": [],
+            "damageScaling": 1,
+            "comboTarget": null,
+            "comboNeutralTicks": 0,
+            "juggleSpent": 0,
+            "peakJuggleSpent": 0,
+            "tension": 0,
+            "tensionEarned": 0,
+            "tensionSpent": 0,
+            "romanCancelTicks": 0,
+            "romanCancelCount": 0,
+            "burst": 100,
+            "burstTicks": 0,
+            "burstCount": 0,
+            "systemInputConsumed": {
+              "romanCancel": -1,
+              "burst": -1
+            },
+            "hitCountTaken": 1,
+            "throwInstanceCounter": 0,
+            "throwRotation": 0,
+            "moveInstanceCounter": 0,
+            "currentMoveInstance": 0,
+            "airDashesRemaining": 0,
+            "dummyMode": "auto_recovery"
+          }
+        },
+        "inputLog": [
+          {
+            "tick": 0,
+            "p1": {
+              "special": true,
+              "light": true
+            },
+            "p2": {}
+          },
+          {
+            "tick": 1,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 2,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 3,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 4,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 5,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 6,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 7,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 8,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 9,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 10,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 11,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 12,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 13,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 14,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 15,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 16,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 17,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 18,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 19,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 20,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 21,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 22,
+            "p1": {},
+            "p2": {}
+          },
+          {
+            "tick": 23,
+            "p1": {},
+            "p2": {}
+          }
+        ],
+        "checksums": [
+          "e3c74011",
+          "cda7a5e3",
+          "29a1500f",
+          "6d2a6119",
+          "98cfa33d",
+          "fc760d9c",
+          "a45b4414",
+          "4fa857bd",
+          "6e69da39",
+          "8a4143aa",
+          "9648f0aa",
+          "5711928e",
+          "774586ea",
+          "f8df5ad7",
+          "62b2162d",
+          "bd2a302e",
+          "13fa92f6",
+          "4e025ba6",
+          "5759ed31",
+          "ff9b82a4",
+          "c921f14d",
+          "6b63315d",
+          "8efd84f8",
+          "7105f138"
+        ],
+        "debugWarnings": [],
+        "lastCombatEvent": {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_radiant_dive_light",
+          "hitOrdinal": 1,
+          "damage": 40,
+          "scaling": 1,
+          "baseHitstun": 18,
+          "effectiveHitstun": 18,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8
+        },
+        "lastSystemEvent": null,
+        "throwInteraction": null,
+        "lastThrowEvent": null,
+        "presentationEventLedger": [
+          "lamuh-closure-4405-p1-B-I2:6:p1:1:0"
+        ]
+      },
+      "readout": {
+        "tick": 24,
+        "checksum": "7105f138",
+        "actor": "p1",
+        "opponentKind": "lamuh_legacy_v2",
+        "visibleArenaBounds": [
+          -280,
+          280
+        ],
+        "fighterCollision": {
+          "reviewDecision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+          "starredForRevisit": true,
+          "candidateOnly": true,
+          "rootSeparation": 75.5,
+          "pushboxesOverlap": false,
+          "authoredThrowExceptionActive": false,
+          "actorPushbox": {
+            "x": -4.350049999999996,
+            "y": -130,
+            "w": 68,
+            "h": 98
+          },
+          "opponentPushbox": {
+            "x": 71.15005000000002,
+            "y": -98,
+            "w": 68,
+            "h": 98
+          }
+        },
+        "profile": {
+          "timing": "B",
+          "hitstop": 9
+        },
+        "phase": "attack",
+        "phaseTick": 19,
+        "turnStartingFacing": null,
+        "gameplayFacing": 1,
+        "attackFacing": 1,
+        "airDashesRemaining": 0,
+        "visualPackage": "radiant_dive_stage_driven_candidate",
+        "attack": "legacy_radiant_dive_light",
+        "attackPhase": "recovery",
+        "attackTiming": [
+          7,
+          10,
+          10
+        ],
+        "targetSideSwitch": null,
+        "authoredContacts": [
+          2
+        ],
+        "standingHeavyFrame": null,
+        "standingHeavyExposures": [
+          5,
+          4,
+          2,
+          5,
+          5,
+          8,
+          8
+        ],
+        "activeGroundNormalFrame": 3,
+        "activeNormalFrame": 3,
+        "activeFrameRole": "airborne knee gather",
+        "contactPresentation": "not_contact",
+        "combo": {
+          "count": 1,
+          "damage": 40,
+          "route": [
+            "legacy_radiant_dive_light"
+          ]
+        },
+        "health": 1000,
+        "victim": {
+          "kind": "lamuh_legacy_v2",
+          "phase": "hit_reaction",
+          "position": [
+            105.15,
+            0
+          ],
+          "rotation": 0,
+          "health": 960,
+          "hitCountTaken": 1,
+          "blocking": false,
+          "crouchBlocking": false
+        },
+        "throw": null,
+        "lastCombatEvent": {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_radiant_dive_light",
+          "hitOrdinal": 1,
+          "damage": 40,
+          "scaling": 1,
+          "baseHitstun": 18,
+          "effectiveHitstun": 18,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8
+        },
+        "lastThrowEvent": null,
+        "presentationEventCount": 1,
+        "counterHit": "UNSUPPORTED_IN_CURRENT_LAMUH_CORE_AND_NOT_INVENTED",
+        "candidateOnly": true,
+        "deployable": false,
+        "humanReviewStatus": "awaiting_human_radiant_dive_family_review",
+        "presentationQuality": {
+          "enabled": true,
+          "preparedFrames": 251,
+          "actorReactionFrame": null,
+          "victimReactionFrame": 2,
+          "eventIds": [
+            "lamuh-closure-4405-p1-B-I2:6:p1:1:0"
+          ],
+          "activeContactCues": [],
+          "bodyLayer": "unchanged_source_frame",
+          "heavyVfxOffComparison": "previous clean poses, not pixel-identical aura removal",
+          "contactLayer": "collision_triggered_sprite_socket"
+        },
+        "projectiles": [],
+        "lastProjectileEvent": null,
+        "projectileEventLedger": [],
+        "forwardSpecialsReview": "passed_for_now_starred",
+        "authoredDive": {
+          "attackId": "legacy_radiant_dive_light",
+          "stage": "gather",
+          "moveTick": 19,
+          "stageTick": 2,
+          "currentHeight": 32,
+          "landingRecoveryTicks": 10,
+          "landingTicksRemaining": null,
+          "maximumAirTicks": 43
+        },
+        "actorPosition": {
+          "x": 29.649950000000004,
+          "y": -32
+        },
+        "oneDescendingPalm": true
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "sourceType": "ai_assisted",
+  "tool": "Built-in imagegen and source-preserving normalization",
+  "createdAt": "2026-09-05T00:00:00Z",
+  "model": null,
+  "seed": null,
+  "promptHash": null,
+  "references": [
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/atlases/lamuh_sheet_5_specials_atlas.png"
+  ],
+  "cleanupOperations": [
+    "edge_connected_tight_checker_key",
+    "audited_heavy_wide_pose_crop",
+    "one_scale_per_source",
+    "support_sandal_registration",
+    "approved_idle_endpoints_reused"
+  ],
+  "revisionChain": [
+    "V1_CELESTIAL_PALM",
+    "V2_NEUTRAL_FAMILY_CANDIDATE"
+  ],
+  "humanApproval": {
+    "state": "pending",
+    "approvedAt": null,
+    "approvedBy": null
+  },
+  "licensingNotes": [
+    "Local Lamuh candidate only."
+  ]
+}

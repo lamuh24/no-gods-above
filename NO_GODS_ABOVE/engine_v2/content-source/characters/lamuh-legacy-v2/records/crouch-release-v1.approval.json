@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_animation_review",
+  "subject": "lamuh_legacy_v2.crouch_to_stand.transition.candidate.v1",
+  "approvedAt": "2026-09-02",
+  "sourceApplication": "Codex desktop",
+  "userInput": "passes",
+  "decisions": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED"
+  },
+  "approvalScope": "crouch_to_stand_motion_and_transition_only",
+  "accepted": [
+    "eight-tick rising connector and standing recovery",
+    "fixed authored root and adult anatomy scale",
+    "outline-free NGA V2 style",
+    "simulation-owned crouch release phase",
+    "immediate attack, jump, dash, crouch, walk and block interruption"
+  ],
+  "approvalBoundary": {
+    "crouchReleaseMotionApproved": true,
+    "crouchReleaseTransitionApproved": true,
+    "movementSetApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "sourceInterpretation": "V1 had no dedicated crouch-release clip. This approval accepts the preservation-first V2 connector built from the existing modern Crouch package; it does not claim a one-to-one legacy clip reconstruction.",
+  "nextAuthorizedCandidateWork": "dedicated_turn_and_facing_transition",
+  "legacySourceRemainsImmutable": true
+}

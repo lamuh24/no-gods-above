@@ -1,0 +1,1771 @@
+{
+  "schemaVersion": "1.1.0-forward-walk-v2-smooth-root-review",
+  "status": "candidate-only",
+  "deployable": false,
+  "approval": "awaiting_human_forward_walk_v2_smooth_root_review",
+  "capturedAt": "2026-07-19T00:26:56.704Z",
+  "browser": {
+    "name": "Chromium",
+    "version": "149.0.7827.55",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  "sourceRoute": "http://127.0.0.1:52934/sandbox.html?capture=1&walkTiming=contact_weighted_40_ticks",
+  "selectedTiming": "contact_weighted_40_ticks",
+  "profileResults": {
+    "candidate_current_58_ticks": {
+      "profile": "candidate_current_58_ticks",
+      "cycleTicks": 58,
+      "durationMs": 966.6666666666666,
+      "exposureTicks": [
+        7,
+        7,
+        7,
+        8,
+        7,
+        7,
+        7,
+        8
+      ],
+      "totalDistance": 208.79999999999993,
+      "expectedGameplayDistance": 208.8,
+      "meanFootSkate": 4.287438978713938,
+      "peakFootSkate": 31.352684249779657,
+      "maxDeltaChange": 0.637360707364337,
+      "minDisplacement": 1.9887811603046543,
+      "maxDisplacement": 5.3796189572174455,
+      "motionCurveVersion": "contact_aware_smoothstep_v2",
+      "frameCoverage": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "samples": [
+        {
+          "tick": 0,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 1.9887811603046543,
+          "accumulated": 1.9887811603046543,
+          "plantedFootWorldPosition": -272.43621883969536,
+          "footSkateEstimate": 0,
+          "deltaChange": 0
+        },
+        {
+          "tick": 1,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.0632359255994857,
+          "accumulated": 4.05201708590414,
+          "plantedFootWorldPosition": -270.37298291409587,
+          "footSkateEstimate": 2.0632359255994857,
+          "deltaChange": 0.0744547652948313
+        },
+        {
+          "tick": 2,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.1880263068682666,
+          "accumulated": 6.240043392772407,
+          "plantedFootWorldPosition": -268.1849566072276,
+          "footSkateEstimate": 2.1880263068682666,
+          "deltaChange": 0.12479038126878095
+        },
+        {
+          "tick": 3,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.3379844961240224,
+          "accumulated": 8.578027888896429,
+          "plantedFootWorldPosition": -265.8469721111036,
+          "footSkateEstimate": 2.3379844961240224,
+          "deltaChange": 0.14995818925575577
+        },
+        {
+          "tick": 4,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.487942685379778,
+          "accumulated": 11.065970574276207,
+          "plantedFootWorldPosition": -263.3590294257238,
+          "footSkateEstimate": 2.487942685379778,
+          "deltaChange": 0.14995818925575577
+        },
+        {
+          "tick": 5,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.612733066648559,
+          "accumulated": 13.678703640924766,
+          "plantedFootWorldPosition": -260.74629635907525,
+          "footSkateEstimate": 2.612733066648559,
+          "deltaChange": 0.12479038126878095
+        },
+        {
+          "tick": 6,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.6871878319433904,
+          "accumulated": 16.365891472868157,
+          "plantedFootWorldPosition": -257.72910852713187,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.0744547652948313
+        },
+        {
+          "tick": 7,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.7212692385924697,
+          "accumulated": 19.087160711460626,
+          "plantedFootWorldPosition": -255.00783928853937,
+          "footSkateEstimate": 2.721269238592498,
+          "deltaChange": 0.03408140664907933
+        },
+        {
+          "tick": 8,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.8887924605057833,
+          "accumulated": 21.97595317196641,
+          "plantedFootWorldPosition": -252.1190468280336,
+          "footSkateEstimate": 2.8887924605057833,
+          "deltaChange": 0.1675232219133136
+        },
+        {
+          "tick": 9,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.169570818360569,
+          "accumulated": 25.14552399032698,
+          "plantedFootWorldPosition": -248.94947600967302,
+          "footSkateEstimate": 3.169570818360569,
+          "deltaChange": 0.28077835785478555
+        },
+        {
+          "tick": 10,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.5069767441860336,
+          "accumulated": 28.652500734513012,
+          "plantedFootWorldPosition": -245.442499265487,
+          "footSkateEstimate": 3.5069767441860336,
+          "deltaChange": 0.3374059258254647
+        },
+        {
+          "tick": 11,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.8443826700114982,
+          "accumulated": 32.49688340452451,
+          "plantedFootWorldPosition": -241.5981165954755,
+          "footSkateEstimate": 3.8443826700114982,
+          "deltaChange": 0.3374059258254647
+        },
+        {
+          "tick": 12,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 4.125161027866284,
+          "accumulated": 36.622044432390794,
+          "plantedFootWorldPosition": -237.4729555676092,
+          "footSkateEstimate": 4.125161027866284,
+          "deltaChange": 0.28077835785478555
+        },
+        {
+          "tick": 13,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.292684249779654,
+          "accumulated": 40.91472868217045,
+          "plantedFootWorldPosition": -231.36527131782955,
+          "footSkateEstimate": 6.107684249779652,
+          "deltaChange": 0.16752322191337043
+        },
+        {
+          "tick": 14,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.332008949759313,
+          "accumulated": 45.24673763192976,
+          "plantedFootWorldPosition": -227.03326236807024,
+          "footSkateEstimate": 4.332008949759313,
+          "deltaChange": 0.03932469997965882
+        },
+        {
+          "tick": 15,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.443691097701532,
+          "accumulated": 49.69042872963129,
+          "plantedFootWorldPosition": -222.5895712703687,
+          "footSkateEstimate": 4.443691097701532,
+          "deltaChange": 0.11168214794221853
+        },
+        {
+          "tick": 16,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.630876669604731,
+          "accumulated": 54.321305399236024,
+          "plantedFootWorldPosition": -217.95869460076398,
+          "footSkateEstimate": 4.630876669604731,
+          "deltaChange": 0.18718557190319984
+        },
+        {
+          "tick": 17,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.855813953488365,
+          "accumulated": 59.17711935272439,
+          "plantedFootWorldPosition": -213.1028806472756,
+          "footSkateEstimate": 4.855813953488365,
+          "deltaChange": 0.22493728388363365
+        },
+        {
+          "tick": 18,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 5.080751237372027,
+          "accumulated": 64.25787059009642,
+          "plantedFootWorldPosition": -208.02212940990358,
+          "footSkateEstimate": 5.080751237372027,
+          "deltaChange": 0.22493728388366208
+        },
+        {
+          "tick": 19,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 5.267936809275199,
+          "accumulated": 69.52580739937162,
+          "plantedFootWorldPosition": -202.7541926006284,
+          "footSkateEstimate": 5.267936809275199,
+          "deltaChange": 0.18718557190317142
+        },
+        {
+          "tick": 20,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.3796189572174455,
+          "accumulated": 74.90542635658906,
+          "plantedFootWorldPosition": -209.08957364341094,
+          "footSkateEstimate": 6.335381042782558,
+          "deltaChange": 0.11168214794224696
+        },
+        {
+          "tick": 21,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.356973716085264,
+          "accumulated": 80.26240007267432,
+          "plantedFootWorldPosition": -203.73259992732568,
+          "footSkateEstimate": 5.356973716085264,
+          "deltaChange": 0.02264524113218158
+        },
+        {
+          "tick": 22,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.080005450581382,
+          "accumulated": 85.3424055232557,
+          "plantedFootWorldPosition": -198.6525944767443,
+          "footSkateEstimate": 5.080005450581382,
+          "deltaChange": 0.2769682655038821
+        },
+        {
+          "tick": 23,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 4.602819161821714,
+          "accumulated": 89.94522468507742,
+          "plantedFootWorldPosition": -194.04977531492258,
+          "footSkateEstimate": 4.602819161821714,
+          "deltaChange": 0.4771862887596683
+        },
+        {
+          "tick": 24,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 4.005502059108522,
+          "accumulated": 93.95072674418594,
+          "plantedFootWorldPosition": -190.04427325581406,
+          "footSkateEstimate": 4.005502059108522,
+          "deltaChange": 0.5973171027131912
+        },
+        {
+          "tick": 25,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 3.3681413517441854,
+          "accumulated": 97.31886809593013,
+          "plantedFootWorldPosition": -186.67613190406988,
+          "footSkateEstimate": 3.3681413517441854,
+          "deltaChange": 0.637360707364337
+        },
+        {
+          "tick": 26,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 2.7708242490309942,
+          "accumulated": 100.08969234496112,
+          "plantedFootWorldPosition": -183.90530765503888,
+          "footSkateEstimate": 2.7708242490309942,
+          "deltaChange": 0.5973171027131912
+        },
+        {
+          "tick": 27,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 2.293637960271326,
+          "accumulated": 102.38333030523245,
+          "plantedFootWorldPosition": -181.61166969476756,
+          "footSkateEstimate": 2.293637960271326,
+          "deltaChange": 0.4771862887596683
+        },
+        {
+          "tick": 28,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.016669694767444,
+          "accumulated": 104.39999999999989,
+          "plantedFootWorldPosition": -228.2700000000001,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.2769682655038821
+        },
+        {
+          "tick": 29,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 1.9887811603046543,
+          "accumulated": 106.38878116030455,
+          "plantedFootWorldPosition": -226.28121883969544,
+          "footSkateEstimate": 1.9887811603046543,
+          "deltaChange": 0.027888534462789494
+        },
+        {
+          "tick": 30,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.0632359255994857,
+          "accumulated": 108.45201708590403,
+          "plantedFootWorldPosition": -224.21798291409596,
+          "footSkateEstimate": 2.0632359255994857,
+          "deltaChange": 0.0744547652948313
+        },
+        {
+          "tick": 31,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.1880263068682666,
+          "accumulated": 110.6400433927723,
+          "plantedFootWorldPosition": -222.0299566072277,
+          "footSkateEstimate": 2.1880263068682666,
+          "deltaChange": 0.12479038126878095
+        },
+        {
+          "tick": 32,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.3379844961240224,
+          "accumulated": 112.97802788889632,
+          "plantedFootWorldPosition": -219.69197211110367,
+          "footSkateEstimate": 2.3379844961240224,
+          "deltaChange": 0.14995818925575577
+        },
+        {
+          "tick": 33,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.4879426853798066,
+          "accumulated": 115.46597057427613,
+          "plantedFootWorldPosition": -217.2040294257239,
+          "footSkateEstimate": 2.487942685379778,
+          "deltaChange": 0.1499581892557842
+        },
+        {
+          "tick": 34,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.6127330666485875,
+          "accumulated": 118.07870364092472,
+          "plantedFootWorldPosition": -214.59129635907527,
+          "footSkateEstimate": 2.612733066648616,
+          "deltaChange": 0.12479038126878095
+        },
+        {
+          "tick": 35,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.687187831943419,
+          "accumulated": 120.76589147286813,
+          "plantedFootWorldPosition": -225.76410852713187,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.0744547652948313
+        },
+        {
+          "tick": 36,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.7212692385924413,
+          "accumulated": 123.48716071146058,
+          "plantedFootWorldPosition": -223.04283928853943,
+          "footSkateEstimate": 2.7212692385924413,
+          "deltaChange": 0.03408140664902248
+        },
+        {
+          "tick": 37,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.8887924605058117,
+          "accumulated": 126.37595317196639,
+          "plantedFootWorldPosition": -220.15404682803361,
+          "footSkateEstimate": 2.8887924605058117,
+          "deltaChange": 0.16752322191337043
+        },
+        {
+          "tick": 38,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.169570818360569,
+          "accumulated": 129.54552399032696,
+          "plantedFootWorldPosition": -216.98447600967305,
+          "footSkateEstimate": 3.169570818360569,
+          "deltaChange": 0.28077835785475713
+        },
+        {
+          "tick": 39,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.5069767441860336,
+          "accumulated": 133.052500734513,
+          "plantedFootWorldPosition": -213.477499265487,
+          "footSkateEstimate": 3.5069767441860336,
+          "deltaChange": 0.3374059258254647
+        },
+        {
+          "tick": 40,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.8443826700115267,
+          "accumulated": 136.89688340452452,
+          "plantedFootWorldPosition": -209.63311659547549,
+          "footSkateEstimate": 3.8443826700115267,
+          "deltaChange": 0.3374059258254931
+        },
+        {
+          "tick": 41,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 4.125161027866284,
+          "accumulated": 141.0220444323908,
+          "plantedFootWorldPosition": -205.5079555676092,
+          "footSkateEstimate": 4.125161027866284,
+          "deltaChange": 0.28077835785475713
+        },
+        {
+          "tick": 42,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.292684249779654,
+          "accumulated": 145.31472868217045,
+          "plantedFootWorldPosition": -174.15527131782954,
+          "footSkateEstimate": 31.352684249779657,
+          "deltaChange": 0.16752322191337043
+        },
+        {
+          "tick": 43,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.332008949759313,
+          "accumulated": 149.64673763192977,
+          "plantedFootWorldPosition": -169.82326236807023,
+          "footSkateEstimate": 4.332008949759313,
+          "deltaChange": 0.03932469997965882
+        },
+        {
+          "tick": 44,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.443691097701532,
+          "accumulated": 154.0904287296313,
+          "plantedFootWorldPosition": -165.3795712703687,
+          "footSkateEstimate": 4.443691097701532,
+          "deltaChange": 0.11168214794221853
+        },
+        {
+          "tick": 45,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.630876669604731,
+          "accumulated": 158.72130539923603,
+          "plantedFootWorldPosition": -160.74869460076397,
+          "footSkateEstimate": 4.630876669604731,
+          "deltaChange": 0.18718557190319984
+        },
+        {
+          "tick": 46,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.855813953488365,
+          "accumulated": 163.5771193527244,
+          "plantedFootWorldPosition": -155.8928806472756,
+          "footSkateEstimate": 4.855813953488365,
+          "deltaChange": 0.22493728388363365
+        },
+        {
+          "tick": 47,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 5.080751237372027,
+          "accumulated": 168.65787059009642,
+          "plantedFootWorldPosition": -150.81212940990358,
+          "footSkateEstimate": 5.080751237372027,
+          "deltaChange": 0.22493728388366208
+        },
+        {
+          "tick": 48,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 5.267936809275199,
+          "accumulated": 173.92580739937162,
+          "plantedFootWorldPosition": -145.54419260062838,
+          "footSkateEstimate": 5.267936809275199,
+          "deltaChange": 0.18718557190317142
+        },
+        {
+          "tick": 49,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.3796189572174455,
+          "accumulated": 179.30542635658907,
+          "plantedFootWorldPosition": -140.16457364341093,
+          "footSkateEstimate": 5.3796189572174455,
+          "deltaChange": 0.11168214794224696
+        },
+        {
+          "tick": 50,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.356973716085278,
+          "accumulated": 184.66240007267436,
+          "plantedFootWorldPosition": -134.80759992732567,
+          "footSkateEstimate": 5.356973716085264,
+          "deltaChange": 0.02264524113216737
+        },
+        {
+          "tick": 51,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.080005450581396,
+          "accumulated": 189.74240552325574,
+          "plantedFootWorldPosition": -129.72759447674426,
+          "footSkateEstimate": 5.08000545058141,
+          "deltaChange": 0.2769682655038821
+        },
+        {
+          "tick": 52,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 4.602819161821714,
+          "accumulated": 194.34522468507745,
+          "plantedFootWorldPosition": -125.12477531492254,
+          "footSkateEstimate": 4.602819161821714,
+          "deltaChange": 0.4771862887596825
+        },
+        {
+          "tick": 53,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 4.005502059108522,
+          "accumulated": 198.35072674418598,
+          "plantedFootWorldPosition": -121.11927325581402,
+          "footSkateEstimate": 4.005502059108522,
+          "deltaChange": 0.5973171027131912
+        },
+        {
+          "tick": 54,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 3.3681413517441854,
+          "accumulated": 201.71886809593016,
+          "plantedFootWorldPosition": -117.75113190406984,
+          "footSkateEstimate": 3.3681413517441854,
+          "deltaChange": 0.637360707364337
+        },
+        {
+          "tick": 55,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 2.7708242490310084,
+          "accumulated": 204.48969234496116,
+          "plantedFootWorldPosition": -114.98030765503883,
+          "footSkateEstimate": 2.7708242490310084,
+          "deltaChange": 0.597317102713177
+        },
+        {
+          "tick": 56,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 2.2936379602713117,
+          "accumulated": 206.78333030523248,
+          "plantedFootWorldPosition": -112.68666969476752,
+          "footSkateEstimate": 2.2936379602713117,
+          "deltaChange": 0.4771862887596967
+        },
+        {
+          "tick": 57,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.016669694767444,
+          "accumulated": 208.79999999999993,
+          "plantedFootWorldPosition": -65.62500000000007,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.2769682655038679
+        }
+      ]
+    },
+    "even_40_ticks": {
+      "profile": "even_40_ticks",
+      "cycleTicks": 40,
+      "durationMs": 666.6666666666666,
+      "exposureTicks": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "totalDistance": 144.00000000000003,
+      "expectedGameplayDistance": 144,
+      "meanFootSkate": 4.638260571428571,
+      "peakFootSkate": 31.334640000000007,
+      "maxDeltaChange": 0.9712800000000072,
+      "minDisplacement": 2.000159999999994,
+      "maxDisplacement": 5.369760000000014,
+      "motionCurveVersion": "contact_aware_smoothstep_v2",
+      "frameCoverage": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "samples": [
+        {
+          "tick": 0,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.000159999999994,
+          "accumulated": 2.000159999999994,
+          "plantedFootWorldPosition": -272.42484,
+          "footSkateEstimate": 0,
+          "deltaChange": 0
+        },
+        {
+          "tick": 1,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.1355199999999854,
+          "accumulated": 4.135679999999979,
+          "plantedFootWorldPosition": -270.28932000000003,
+          "footSkateEstimate": 2.1355199999999854,
+          "deltaChange": 0.1353599999999915
+        },
+        {
+          "tick": 2,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.339999999999975,
+          "accumulated": 6.475679999999954,
+          "plantedFootWorldPosition": -267.94932000000006,
+          "footSkateEstimate": 2.339999999999975,
+          "deltaChange": 0.20447999999998956
+        },
+        {
+          "tick": 3,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.5444800000000214,
+          "accumulated": 9.020159999999976,
+          "plantedFootWorldPosition": -265.40484000000004,
+          "footSkateEstimate": 2.5444800000000214,
+          "deltaChange": 0.2044800000000464
+        },
+        {
+          "tick": 4,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.679840000000013,
+          "accumulated": 11.699999999999989,
+          "plantedFootWorldPosition": -262.395,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.1353599999999915
+        },
+        {
+          "tick": 5,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.745360000000005,
+          "accumulated": 14.445359999999994,
+          "plantedFootWorldPosition": -259.64964,
+          "footSkateEstimate": 2.745360000000005,
+          "deltaChange": 0.06551999999999225
+        },
+        {
+          "tick": 6,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.049919999999986,
+          "accumulated": 17.49527999999998,
+          "plantedFootWorldPosition": -256.59972000000005,
+          "footSkateEstimate": 3.049919999999929,
+          "deltaChange": 0.30455999999998085
+        },
+        {
+          "tick": 7,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.509999999999991,
+          "accumulated": 21.00527999999997,
+          "plantedFootWorldPosition": -253.08972000000003,
+          "footSkateEstimate": 3.5100000000000193,
+          "deltaChange": 0.46008000000000493
+        },
+        {
+          "tick": 8,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.970079999999996,
+          "accumulated": 24.975359999999966,
+          "plantedFootWorldPosition": -249.11964000000003,
+          "footSkateEstimate": 3.970079999999996,
+          "deltaChange": 0.46008000000000493
+        },
+        {
+          "tick": 9,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.274639999999977,
+          "accumulated": 29.249999999999943,
+          "plantedFootWorldPosition": -243.03000000000006,
+          "footSkateEstimate": 6.089639999999974,
+          "deltaChange": 0.30455999999998085
+        },
+        {
+          "tick": 10,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.350239999999985,
+          "accumulated": 33.60023999999993,
+          "plantedFootWorldPosition": -238.67976000000007,
+          "footSkateEstimate": 4.350239999999985,
+          "deltaChange": 0.07560000000000855
+        },
+        {
+          "tick": 11,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.553280000000029,
+          "accumulated": 38.15351999999996,
+          "plantedFootWorldPosition": -234.12648000000004,
+          "footSkateEstimate": 4.553280000000029,
+          "deltaChange": 0.20304000000004407
+        },
+        {
+          "tick": 12,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.860000000000014,
+          "accumulated": 43.01351999999997,
+          "plantedFootWorldPosition": -229.26648000000003,
+          "footSkateEstimate": 4.860000000000014,
+          "deltaChange": 0.30671999999998434
+        },
+        {
+          "tick": 13,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 5.166719999999998,
+          "accumulated": 48.18023999999997,
+          "plantedFootWorldPosition": -224.09976000000003,
+          "footSkateEstimate": 5.166719999999998,
+          "deltaChange": 0.30671999999998434
+        },
+        {
+          "tick": 14,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.369760000000014,
+          "accumulated": 53.54999999999998,
+          "plantedFootWorldPosition": -230.44500000000002,
+          "footSkateEstimate": 6.34523999999999,
+          "deltaChange": 0.20304000000001565
+        },
+        {
+          "tick": 15,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.304239999999993,
+          "accumulated": 58.854239999999976,
+          "plantedFootWorldPosition": -225.14076000000003,
+          "footSkateEstimate": 5.304239999999993,
+          "deltaChange": 0.06552000000002067
+        },
+        {
+          "tick": 16,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 4.661280000000005,
+          "accumulated": 63.51551999999998,
+          "plantedFootWorldPosition": -220.47948000000002,
+          "footSkateEstimate": 4.661280000000005,
+          "deltaChange": 0.642959999999988
+        },
+        {
+          "tick": 17,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 3.6899999999999977,
+          "accumulated": 67.20551999999998,
+          "plantedFootWorldPosition": -216.78948000000003,
+          "footSkateEstimate": 3.6899999999999977,
+          "deltaChange": 0.9712800000000072
+        },
+        {
+          "tick": 18,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 2.7187199999999905,
+          "accumulated": 69.92423999999997,
+          "plantedFootWorldPosition": -214.07076000000004,
+          "footSkateEstimate": 2.7187199999999905,
+          "deltaChange": 0.9712800000000072
+        },
+        {
+          "tick": 19,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.0757600000000025,
+          "accumulated": 71.99999999999997,
+          "plantedFootWorldPosition": -260.67,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.642959999999988
+        },
+        {
+          "tick": 20,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.000159999999994,
+          "accumulated": 74.00015999999997,
+          "plantedFootWorldPosition": -258.66984,
+          "footSkateEstimate": 2.000159999999994,
+          "deltaChange": 0.07560000000000855
+        },
+        {
+          "tick": 21,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.135520000000014,
+          "accumulated": 76.13567999999998,
+          "plantedFootWorldPosition": -256.53432000000004,
+          "footSkateEstimate": 2.1355199999999854,
+          "deltaChange": 0.1353600000000199
+        },
+        {
+          "tick": 22,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.3400000000000034,
+          "accumulated": 78.47567999999998,
+          "plantedFootWorldPosition": -254.19432,
+          "footSkateEstimate": 2.340000000000032,
+          "deltaChange": 0.20447999999998956
+        },
+        {
+          "tick": 23,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.544479999999993,
+          "accumulated": 81.02015999999998,
+          "plantedFootWorldPosition": -251.64984000000004,
+          "footSkateEstimate": 2.5444799999999645,
+          "deltaChange": 0.20447999999998956
+        },
+        {
+          "tick": 24,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.679840000000013,
+          "accumulated": 83.69999999999999,
+          "plantedFootWorldPosition": -262.83000000000004,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.1353600000000199
+        },
+        {
+          "tick": 25,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.745360000000005,
+          "accumulated": 86.44536,
+          "plantedFootWorldPosition": -260.08464000000004,
+          "footSkateEstimate": 2.745360000000005,
+          "deltaChange": 0.06551999999999225
+        },
+        {
+          "tick": 26,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.0499200000000144,
+          "accumulated": 89.49528000000001,
+          "plantedFootWorldPosition": -257.03472,
+          "footSkateEstimate": 3.049920000000043,
+          "deltaChange": 0.30456000000000927
+        },
+        {
+          "tick": 27,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.509999999999991,
+          "accumulated": 93.00528,
+          "plantedFootWorldPosition": -253.52472,
+          "footSkateEstimate": 3.509999999999991,
+          "deltaChange": 0.4600799999999765
+        },
+        {
+          "tick": 28,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.970079999999996,
+          "accumulated": 96.97536,
+          "plantedFootWorldPosition": -249.55464,
+          "footSkateEstimate": 3.970079999999996,
+          "deltaChange": 0.46008000000000493
+        },
+        {
+          "tick": 29,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.274640000000005,
+          "accumulated": 101.25,
+          "plantedFootWorldPosition": -218.22,
+          "footSkateEstimate": 31.334640000000007,
+          "deltaChange": 0.30456000000000927
+        },
+        {
+          "tick": 30,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.350240000000014,
+          "accumulated": 105.60024000000001,
+          "plantedFootWorldPosition": -213.86975999999999,
+          "footSkateEstimate": 4.350240000000014,
+          "deltaChange": 0.07560000000000855
+        },
+        {
+          "tick": 31,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.553280000000001,
+          "accumulated": 110.15352000000001,
+          "plantedFootWorldPosition": -209.31647999999998,
+          "footSkateEstimate": 4.553280000000001,
+          "deltaChange": 0.20303999999998723
+        },
+        {
+          "tick": 32,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.860000000000014,
+          "accumulated": 115.01352000000003,
+          "plantedFootWorldPosition": -204.45647999999997,
+          "footSkateEstimate": 4.860000000000014,
+          "deltaChange": 0.30672000000001276
+        },
+        {
+          "tick": 33,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 5.166719999999998,
+          "accumulated": 120.18024000000003,
+          "plantedFootWorldPosition": -199.28975999999997,
+          "footSkateEstimate": 5.166719999999998,
+          "deltaChange": 0.30671999999998434
+        },
+        {
+          "tick": 34,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.369760000000014,
+          "accumulated": 125.55000000000004,
+          "plantedFootWorldPosition": -193.91999999999996,
+          "footSkateEstimate": 5.369760000000014,
+          "deltaChange": 0.20304000000001565
+        },
+        {
+          "tick": 35,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.304239999999993,
+          "accumulated": 130.85424000000003,
+          "plantedFootWorldPosition": -188.61575999999997,
+          "footSkateEstimate": 5.304239999999993,
+          "deltaChange": 0.06552000000002067
+        },
+        {
+          "tick": 36,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 4.661280000000005,
+          "accumulated": 135.51552000000004,
+          "plantedFootWorldPosition": -183.95447999999996,
+          "footSkateEstimate": 4.661280000000005,
+          "deltaChange": 0.642959999999988
+        },
+        {
+          "tick": 37,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 3.6899999999999977,
+          "accumulated": 139.20552000000004,
+          "plantedFootWorldPosition": -180.26447999999996,
+          "footSkateEstimate": 3.6899999999999977,
+          "deltaChange": 0.9712800000000072
+        },
+        {
+          "tick": 38,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 2.7187199999999905,
+          "accumulated": 141.92424000000003,
+          "plantedFootWorldPosition": -177.54575999999997,
+          "footSkateEstimate": 2.7187199999999905,
+          "deltaChange": 0.9712800000000072
+        },
+        {
+          "tick": 39,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.0757600000000025,
+          "accumulated": 144.00000000000003,
+          "plantedFootWorldPosition": -130.42499999999995,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.642959999999988
+        }
+      ]
+    },
+    "contact_weighted_40_ticks": {
+      "profile": "contact_weighted_40_ticks",
+      "cycleTicks": 40,
+      "durationMs": 666.6666666666666,
+      "exposureTicks": [
+        6,
+        5,
+        4,
+        5,
+        6,
+        5,
+        4,
+        5
+      ],
+      "totalDistance": 143.99999999999994,
+      "expectedGameplayDistance": 144,
+      "meanFootSkate": 4.615982506785095,
+      "peakFootSkate": 31.48967875647668,
+      "maxDeltaChange": 1.0065077720207398,
+      "minDisplacement": 2.066493955094984,
+      "maxDisplacement": 5.547765544041454,
+      "motionCurveVersion": "contact_aware_smoothstep_v2",
+      "frameCoverage": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "samples": [
+        {
+          "tick": 0,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.066493955094984,
+          "accumulated": 2.066493955094984,
+          "plantedFootWorldPosition": -272.358506044905,
+          "footSkateEstimate": 0,
+          "deltaChange": 0
+        },
+        {
+          "tick": 1,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.1683937823834185,
+          "accumulated": 4.234887737478402,
+          "plantedFootWorldPosition": -270.1901122625216,
+          "footSkateEstimate": 2.1683937823834185,
+          "deltaChange": 0.10189982728843461
+        },
+        {
+          "tick": 2,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.3324697754749764,
+          "accumulated": 6.567357512953379,
+          "plantedFootWorldPosition": -267.85764248704663,
+          "footSkateEstimate": 2.3324697754749764,
+          "deltaChange": 0.16407599309155785
+        },
+        {
+          "tick": 3,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.5172711571675563,
+          "accumulated": 9.084628670120935,
+          "plantedFootWorldPosition": -265.3403713298791,
+          "footSkateEstimate": 2.5172711571675563,
+          "deltaChange": 0.18480138169257998
+        },
+        {
+          "tick": 4,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.6813471502590573,
+          "accumulated": 11.765975820379992,
+          "plantedFootWorldPosition": -262.65902417962,
+          "footSkateEstimate": 2.6813471502590573,
+          "deltaChange": 0.164075993091501
+        },
+        {
+          "tick": 5,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.783246977547492,
+          "accumulated": 14.549222797927484,
+          "plantedFootWorldPosition": -259.5457772020725,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.10189982728843461
+        },
+        {
+          "tick": 6,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 2.844932642487038,
+          "accumulated": 17.394155440414522,
+          "plantedFootWorldPosition": -256.70084455958545,
+          "footSkateEstimate": 2.844932642487038,
+          "deltaChange": 0.06168566493954586
+        },
+        {
+          "tick": 7,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.1605388601035997,
+          "accumulated": 20.554694300518122,
+          "plantedFootWorldPosition": -253.54030569948188,
+          "footSkateEstimate": 3.1605388601035713,
+          "deltaChange": 0.31560621761656193
+        },
+        {
+          "tick": 8,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 3.6373056994818853,
+          "accumulated": 24.192000000000007,
+          "plantedFootWorldPosition": -249.903,
+          "footSkateEstimate": 3.6373056994818853,
+          "deltaChange": 0.47676683937828557
+        },
+        {
+          "tick": 9,
+          "frame": 2,
+          "role": "first_foot_down_compression",
+          "delta": 4.114072538860114,
+          "accumulated": 28.30607253886012,
+          "plantedFootWorldPosition": -245.78892746113988,
+          "footSkateEstimate": 4.114072538860114,
+          "deltaChange": 0.4767668393782287
+        },
+        {
+          "tick": 10,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.429678756476676,
+          "accumulated": 32.7357512953368,
+          "plantedFootWorldPosition": -239.5442487046632,
+          "footSkateEstimate": 6.244678756476674,
+          "deltaChange": 0.31560621761656193
+        },
+        {
+          "tick": 11,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.524773316062181,
+          "accumulated": 37.26052461139898,
+          "plantedFootWorldPosition": -235.01947538860102,
+          "footSkateEstimate": 4.524773316062181,
+          "deltaChange": 0.09509455958550461
+        },
+        {
+          "tick": 12,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 4.830796632124361,
+          "accumulated": 42.09132124352334,
+          "plantedFootWorldPosition": -230.18867875647666,
+          "footSkateEstimate": 4.830796632124361,
+          "deltaChange": 0.3060233160621806
+        },
+        {
+          "tick": 13,
+          "frame": 3,
+          "role": "first_passing",
+          "delta": 5.241742227979273,
+          "accumulated": 47.33306347150261,
+          "plantedFootWorldPosition": -224.9469365284974,
+          "footSkateEstimate": 5.241742227979273,
+          "deltaChange": 0.41094559585491197
+        },
+        {
+          "tick": 14,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.547765544041454,
+          "accumulated": 52.880829015544066,
+          "plantedFootWorldPosition": -231.11417098445594,
+          "footSkateEstimate": 6.16723445595855,
+          "deltaChange": 0.3060233160621806
+        },
+        {
+          "tick": 15,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 5.4966217616580195,
+          "accumulated": 58.377450777202085,
+          "plantedFootWorldPosition": -225.61754922279792,
+          "footSkateEstimate": 5.4966217616580195,
+          "deltaChange": 0.0511437823834342
+        },
+        {
+          "tick": 16,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 4.83034196891191,
+          "accumulated": 63.207792746113995,
+          "plantedFootWorldPosition": -220.787207253886,
+          "footSkateEstimate": 4.83034196891191,
+          "deltaChange": 0.6662797927461099
+        },
+        {
+          "tick": 17,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 3.823834196891198,
+          "accumulated": 67.0316269430052,
+          "plantedFootWorldPosition": -216.9633730569948,
+          "footSkateEstimate": 3.823834196891198,
+          "deltaChange": 1.0065077720207114
+        },
+        {
+          "tick": 18,
+          "frame": 4,
+          "role": "first_up_late_swing",
+          "delta": 2.8173264248704584,
+          "accumulated": 69.84895336787565,
+          "plantedFootWorldPosition": -214.14604663212435,
+          "footSkateEstimate": 2.8173264248704584,
+          "deltaChange": 1.0065077720207398
+        },
+        {
+          "tick": 19,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.1510466321243484,
+          "accumulated": 72,
+          "plantedFootWorldPosition": -260.67,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.6662797927461099
+        },
+        {
+          "tick": 20,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.066493955094984,
+          "accumulated": 74.06649395509498,
+          "plantedFootWorldPosition": -258.60350604490503,
+          "footSkateEstimate": 2.066493955094984,
+          "deltaChange": 0.08455267702936453
+        },
+        {
+          "tick": 21,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.1683937823834185,
+          "accumulated": 76.2348877374784,
+          "plantedFootWorldPosition": -256.4351122625216,
+          "footSkateEstimate": 2.1683937823834185,
+          "deltaChange": 0.10189982728843461
+        },
+        {
+          "tick": 22,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.332469775474948,
+          "accumulated": 78.56735751295335,
+          "plantedFootWorldPosition": -254.10264248704664,
+          "footSkateEstimate": 2.3324697754749764,
+          "deltaChange": 0.16407599309152943
+        },
+        {
+          "tick": 23,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.517271157167528,
+          "accumulated": 81.08462867012088,
+          "plantedFootWorldPosition": -251.58537132987914,
+          "footSkateEstimate": 2.5172711571674995,
+          "deltaChange": 0.18480138169257998
+        },
+        {
+          "tick": 24,
+          "frame": 5,
+          "role": "opposite_foot_contact",
+          "delta": 2.6813471502590573,
+          "accumulated": 83.76597582037994,
+          "plantedFootWorldPosition": -248.90402417962008,
+          "footSkateEstimate": 2.6813471502590573,
+          "deltaChange": 0.16407599309152943
+        },
+        {
+          "tick": 25,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.783246977547492,
+          "accumulated": 86.54922279792743,
+          "plantedFootWorldPosition": -259.98077720207255,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.10189982728843461
+        },
+        {
+          "tick": 26,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 2.844932642487038,
+          "accumulated": 89.39415544041447,
+          "plantedFootWorldPosition": -257.1358445595855,
+          "footSkateEstimate": 2.844932642487038,
+          "deltaChange": 0.06168566493954586
+        },
+        {
+          "tick": 27,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.160538860103628,
+          "accumulated": 92.5546943005181,
+          "plantedFootWorldPosition": -253.9753056994819,
+          "footSkateEstimate": 3.1605388601035997,
+          "deltaChange": 0.31560621761659036
+        },
+        {
+          "tick": 28,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 3.637305699481857,
+          "accumulated": 96.19199999999995,
+          "plantedFootWorldPosition": -250.33800000000005,
+          "footSkateEstimate": 3.637305699481857,
+          "deltaChange": 0.4767668393782287
+        },
+        {
+          "tick": 29,
+          "frame": 6,
+          "role": "opposite_foot_down_compression",
+          "delta": 4.114072538860114,
+          "accumulated": 100.30607253886006,
+          "plantedFootWorldPosition": -246.22392746113994,
+          "footSkateEstimate": 4.114072538860114,
+          "deltaChange": 0.47676683937825715
+        },
+        {
+          "tick": 30,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.429678756476676,
+          "accumulated": 104.73575129533674,
+          "plantedFootWorldPosition": -214.73424870466326,
+          "footSkateEstimate": 31.48967875647668,
+          "deltaChange": 0.31560621761656193
+        },
+        {
+          "tick": 31,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.524773316062181,
+          "accumulated": 109.26052461139892,
+          "plantedFootWorldPosition": -210.20947538860108,
+          "footSkateEstimate": 4.524773316062181,
+          "deltaChange": 0.09509455958550461
+        },
+        {
+          "tick": 32,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 4.830796632124361,
+          "accumulated": 114.09132124352328,
+          "plantedFootWorldPosition": -205.37867875647672,
+          "footSkateEstimate": 4.830796632124361,
+          "deltaChange": 0.3060233160621806
+        },
+        {
+          "tick": 33,
+          "frame": 7,
+          "role": "opposite_passing",
+          "delta": 5.241742227979273,
+          "accumulated": 119.33306347150256,
+          "plantedFootWorldPosition": -200.13693652849744,
+          "footSkateEstimate": 5.241742227979273,
+          "deltaChange": 0.41094559585491197
+        },
+        {
+          "tick": 34,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.547765544041454,
+          "accumulated": 124.88082901554401,
+          "plantedFootWorldPosition": -194.589170984456,
+          "footSkateEstimate": 5.547765544041454,
+          "deltaChange": 0.3060233160621806
+        },
+        {
+          "tick": 35,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 5.4966217616580195,
+          "accumulated": 130.37745077720203,
+          "plantedFootWorldPosition": -189.09254922279797,
+          "footSkateEstimate": 5.4966217616580195,
+          "deltaChange": 0.0511437823834342
+        },
+        {
+          "tick": 36,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 4.83034196891191,
+          "accumulated": 135.20779274611394,
+          "plantedFootWorldPosition": -184.26220725388606,
+          "footSkateEstimate": 4.83034196891191,
+          "deltaChange": 0.6662797927461099
+        },
+        {
+          "tick": 37,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 3.823834196891198,
+          "accumulated": 139.03162694300514,
+          "plantedFootWorldPosition": -180.43837305699486,
+          "footSkateEstimate": 3.823834196891198,
+          "deltaChange": 1.0065077720207114
+        },
+        {
+          "tick": 38,
+          "frame": 8,
+          "role": "opposite_up_return",
+          "delta": 2.8173264248704584,
+          "accumulated": 141.8489533678756,
+          "plantedFootWorldPosition": -177.6210466321244,
+          "footSkateEstimate": 2.8173264248704584,
+          "deltaChange": 1.0065077720207398
+        },
+        {
+          "tick": 39,
+          "frame": 1,
+          "role": "first_foot_contact",
+          "delta": 2.1510466321243484,
+          "accumulated": 143.99999999999994,
+          "plantedFootWorldPosition": -130.42500000000007,
+          "footSkateEstimate": 0,
+          "deltaChange": 0.6662797927461099
+        }
+      ]
+    }
+  },
+  "transitionResults": {
+    "walk_v2_idle_to_forward": {
+      "state": "walk_forward",
+      "artworkFrame": "walk_forward_contact",
+      "root": [
+        -73.933506044905,
+        0
+      ],
+      "perTickDisplacement": 2.066493955094998,
+      "transitionState": "idle_to_walk_forward",
+      "fallbackWarning": null
+    },
+    "walk_v2_continuous": {
+      "state": "walk_forward",
+      "artworkFrame": "walk_forward_contact",
+      "root": [
+        77.08462867012094,
+        0
+      ],
+      "perTickDisplacement": 2.517271157167528,
+      "transitionState": "continuous_forward_walk",
+      "fallbackWarning": null
+    },
+    "walk_v2_forward_to_idle": {
+      "state": "idle",
+      "artworkFrame": "idle_00",
+      "root": [
+        -8.9683730569948,
+        0
+      ],
+      "perTickDisplacement": 0,
+      "transitionState": "walk_forward_to_idle",
+      "fallbackWarning": null
+    },
+    "walk_v2_repeated_start_stop": {
+      "state": "walk_forward",
+      "artworkFrame": "walk_forward_neutral_departure",
+      "root": [
+        -14.335917098445584,
+        0
+      ],
+      "perTickDisplacement": 3.160538860103628,
+      "transitionState": "continuous_forward_walk",
+      "fallbackWarning": null
+    },
+    "walk_v2_forward_to_backward": {
+      "state": "walk_backward",
+      "artworkFrame": "walk_backward_neutral_departure",
+      "root": [
+        -67.86693652849736,
+        0
+      ],
+      "perTickDisplacement": -2.799999999999997,
+      "transitionState": "walk_backward_stable",
+      "fallbackWarning": "DEBUG FALLBACK - MISSING walk_backward_first_passing"
+    },
+    "walk_v2_corner_approach": {
+      "state": "walk_forward",
+      "artworkFrame": "walk_forward_opposite_down",
+      "root": [
+        370.958082866135,
+        0
+      ],
+      "perTickDisplacement": 0.20245599396855596,
+      "transitionState": "continuous_forward_walk",
+      "fallbackWarning": null
+    },
+    "walk_v2_side_switch": {
+      "state": "idle",
+      "artworkFrame": "idle_00",
+      "root": [
+        360,
+        0
+      ],
+      "perTickDisplacement": 398.739475388601,
+      "transitionState": "side_switch",
+      "fallbackWarning": null
+    },
+    "walk_v2_mirrored_p2": {
+      "state": "walk_forward",
+      "artworkFrame": "walk_forward_opposite_contact",
+      "root": [
+        20.9683730569948,
+        0
+      ],
+      "perTickDisplacement": -3.823834196891191,
+      "transitionState": "continuous_forward_walk",
+      "fallbackWarning": null
+    },
+    "walk_v2_to_standing_heavy": {
+      "state": "standing_heavy",
+      "artworkFrame": "idle_00",
+      "root": [
+        -38.73947538860102,
+        0
+      ],
+      "perTickDisplacement": 0,
+      "transitionState": "walk_forward_to_standing_heavy",
+      "fallbackWarning": null
+    },
+    "walk_v2_to_universal_grab": {
+      "state": "universal_grab_review",
+      "artworkFrame": "universal_grab_reach",
+      "root": [
+        -38.73947538860102,
+        0
+      ],
+      "perTickDisplacement": 0,
+      "transitionState": "walk_forward_to_universal_grab_review",
+      "fallbackWarning": null
+    },
+    "walk_v2_to_command_grab": {
+      "state": "command_grab_review",
+      "artworkFrame": "command_grab_01_mounted_startup",
+      "root": [
+        -38.73947538860102,
+        0
+      ],
+      "perTickDisplacement": 0,
+      "transitionState": "walk_forward_to_command_grab_review",
+      "fallbackWarning": null
+    },
+    "walk_v2_to_block": {
+      "state": "standing_block",
+      "artworkFrame": "standing_block_entry",
+      "root": [
+        -38.73947538860102,
+        0
+      ],
+      "perTickDisplacement": 0,
+      "transitionState": "walk_forward_to_standing_block",
+      "fallbackWarning": null
+    },
+    "walk_v2_to_crouch": {
+      "state": "crouch",
+      "artworkFrame": "crouch",
+      "root": [
+        -38.73947538860102,
+        0
+      ],
+      "perTickDisplacement": 0,
+      "transitionState": "walk_forward_to_crouch",
+      "fallbackWarning": null
+    }
+  },
+  "playback": {
+    "authoredP1": [
+      {
+        "filename": "01.png",
+        "durationTicks": 6,
+        "sourceId": "walk_forward_contact",
+        "role": "first_foot_contact"
+      },
+      {
+        "filename": "02.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_neutral_departure",
+        "role": "first_foot_down_compression"
+      },
+      {
+        "filename": "03.png",
+        "durationTicks": 4,
+        "sourceId": "walk_forward_passing",
+        "role": "first_passing"
+      },
+      {
+        "filename": "04.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_opposite_contact",
+        "role": "first_up_late_swing"
+      },
+      {
+        "filename": "05.png",
+        "durationTicks": 6,
+        "sourceId": "walk_forward_return",
+        "role": "opposite_foot_contact"
+      },
+      {
+        "filename": "06.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_opposite_down",
+        "role": "opposite_foot_down_compression"
+      },
+      {
+        "filename": "07.png",
+        "durationTicks": 4,
+        "sourceId": "walk_forward_opposite_passing",
+        "role": "opposite_passing"
+      },
+      {
+        "filename": "08.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_opposite_up_return",
+        "role": "opposite_up_return"
+      }
+    ],
+    "mirroredP2": [
+      {
+        "filename": "01.png",
+        "durationTicks": 6,
+        "sourceId": "walk_forward_contact",
+        "role": "first_foot_contact"
+      },
+      {
+        "filename": "02.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_neutral_departure",
+        "role": "first_foot_down_compression"
+      },
+      {
+        "filename": "03.png",
+        "durationTicks": 4,
+        "sourceId": "walk_forward_passing",
+        "role": "first_passing"
+      },
+      {
+        "filename": "04.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_opposite_contact",
+        "role": "first_up_late_swing"
+      },
+      {
+        "filename": "05.png",
+        "durationTicks": 6,
+        "sourceId": "walk_forward_return",
+        "role": "opposite_foot_contact"
+      },
+      {
+        "filename": "06.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_opposite_down",
+        "role": "opposite_foot_down_compression"
+      },
+      {
+        "filename": "07.png",
+        "durationTicks": 4,
+        "sourceId": "walk_forward_opposite_passing",
+        "role": "opposite_passing"
+      },
+      {
+        "filename": "08.png",
+        "durationTicks": 5,
+        "sourceId": "walk_forward_opposite_up_return",
+        "role": "opposite_up_return"
+      }
+    ]
+  },
+  "backwardWalk": {
+    "complete": false,
+    "realRoles": 5,
+    "missingRoles": 3,
+    "status": "BLOCKED_ON_THREE_MANUAL_PAINTOVERS"
+  },
+  "candidateBoundary": {
+    "artworkRegenerated": false,
+    "finalAtlasCreated": false,
+    "productionRoster": false,
+    "legacyGameJsModifiedByTask": false
+  },
+  "consoleErrors": [],
+  "serverLogs": [
+    "",
+    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m1566\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+    "",
+    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m52934\u001b[22m/\u001b[39m",
+    ""
+  ]
+}

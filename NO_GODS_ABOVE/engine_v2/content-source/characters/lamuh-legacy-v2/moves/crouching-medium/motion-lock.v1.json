@@ -1,0 +1,343 @@
+{
+  "schemaVersion": "1.0.0",
+  "moveId": "crouching_medium",
+  "status": "V1_ALIAS_EVIDENCE_LOCKED_FOR_DISTINCT_V2_LOW_SWEEP_MODERNIZATION",
+  "candidateOnly": true,
+  "deployable": false,
+  "simulationHz": 60,
+  "legacySourceFrameCount": 8,
+  "authoredFrameCount": 8,
+  "sourceMotionReusable": true,
+  "sourceArtworkReusableAsLegacyEvidence": true,
+  "sourceArtworkRuntimeReusable": false,
+  "legacyGameplayEvidence": {
+    "durationTicks": 19,
+    "damage": 54,
+    "currentV2CandidateDamage": 44,
+    "historicalContactTick": null,
+    "legacyArtSource": "standing_medium_v1_alias",
+    "note": "V1 Crouching Medium had no distinct source row; it aliased Standing Medium artwork. Exact per-pose holds and frame-indexed contact were not stored."
+  },
+  "authoredRootContract": {
+    "kind": "in_place_bottom_center",
+    "legacyRoot": {
+      "x": 224,
+      "y": 382
+    },
+    "v2CandidateRoot": {
+      "x": 768,
+      "y": 1360
+    },
+    "runtimeRootTranslation": false,
+    "visualRecenteringProhibited": true,
+    "perFrameRendererScaleProhibited": true,
+    "note": "Generated source-camera differences may be repaired during source normalization, but review/runtime presentation uses one fixed scale and one fixed root."
+  },
+  "strikingLimb": "lead_leg_same_limb_low_sweep_through_contact_follow_through_and_retraction",
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1,
+    "impactFrame": 3,
+    "rule": "Only authored V2 frame 03 may show contact VFX. Frames 04-07 remain same-leg follow-through, retraction, balance recovery, and guarded crouch exit."
+  },
+  "modernizationDecision": {
+    "classification": "MODERNIZE",
+    "reason": "V1 provided medium-weight gameplay timing and a Standing Medium artwork alias, not a distinct crouching attack animation.",
+    "preserve": [
+      "medium-weight anticipation rhythm",
+      "committed hip and torso rotation",
+      "wide grounded base",
+      "fast strike acceleration after the load",
+      "coat and loc follow-through",
+      "recovery toward guarded neutral"
+    ],
+    "authorForV2": [
+      "distinct low sweep silhouette",
+      "lead-leg single-strike trajectory",
+      "rear-foot support and visible hip mechanics",
+      "crouch-compatible entry and exit",
+      "outline-free NGA V2 artwork",
+      "one-visible-impact parity"
+    ],
+    "identityRead": "Sweep Line is a body-driven lead-leg low sweep: longer and more committed than Low Check, but still agile and distinctly Lamuh rather than a slow Swahili-style heavy."
+  },
+  "legacyFrames": [
+    {
+      "index": 0,
+      "id": "standing_medium_frame_00",
+      "sha256": "403D147AAF88F7C70FCC83618F11152E3873B9BF6690655A43BCD1811313D854",
+      "motionTruth": "Wide ready stance with grounded weight.",
+      "v2Use": "Entry direction and medium commitment evidence only."
+    },
+    {
+      "index": 1,
+      "id": "standing_medium_frame_01",
+      "sha256": "7E5D48F7823764D7C5F243AB793976BA34071A2C44BBD5ECC6EBF87482001F93",
+      "motionTruth": "Upper body begins a committed load.",
+      "v2Use": "Anticipation exposure and torso-load evidence."
+    },
+    {
+      "index": 2,
+      "id": "standing_medium_frame_02",
+      "sha256": "B3D60206683E0A8DBD48EC7B65FF370931DC12D81F592D7A24EE1C3777942FD1",
+      "motionTruth": "Cross-body compression precedes acceleration.",
+      "v2Use": "Hip coil and compressed silhouette evidence."
+    },
+    {
+      "index": 3,
+      "id": "standing_medium_frame_03",
+      "sha256": "BA679B952879F5102283CA9C22443630FF4897233F8F931AA6E8788C4B6CAFA6",
+      "motionTruth": "First committed strike extension.",
+      "v2Use": "Single-contact timing and fast acceleration evidence."
+    },
+    {
+      "index": 4,
+      "id": "standing_medium_frame_04",
+      "sha256": "1C2ED0C648AE67F4DCB781FFCAEAAB9759BA837C686E754C6D5295C4E554F85A",
+      "motionTruth": "Forward force continues through the body.",
+      "v2Use": "Follow-through direction evidence; no second contact."
+    },
+    {
+      "index": 5,
+      "id": "standing_medium_frame_05",
+      "sha256": "651B49B8A55398D59A00C6DF32CCC84C2446816D20BDB6A8B486549EDFDB803A",
+      "motionTruth": "Legacy row begins an unrelated knee action.",
+      "v2Use": "Retire the second attack; keep only momentum and secondary-motion lag."
+    },
+    {
+      "index": 6,
+      "id": "standing_medium_frame_06",
+      "sha256": "9B2D159900099D5D3FE4F2BB0DB00368C7C179B4D1A90BA74B86623E41090651",
+      "motionTruth": "Legacy row shifts into a high-kick tail.",
+      "v2Use": "Retire the extra strike; preserve recovery exposure."
+    },
+    {
+      "index": 7,
+      "id": "standing_medium_frame_07",
+      "sha256": "6F876A5ABEA3E965569D5EFCB5D1E6815E4271230793F1F8FBBC6EDA5C5BE8DB",
+      "motionTruth": "Guarded return direction.",
+      "v2Use": "Connected recovery endpoint evidence."
+    }
+  ],
+  "v2Frames": [
+    {
+      "index": 0,
+      "role": "guarded_crouch_entry",
+      "constraint": "Low mobile guard; both feet grounded; no VFX."
+    },
+    {
+      "index": 1,
+      "role": "lead_leg_sweep_load",
+      "constraint": "Weight settles over the rear support leg while the lead hip draws back."
+    },
+    {
+      "index": 2,
+      "role": "lead_leg_sweep_acceleration",
+      "constraint": "Same lead leg begins the low horizontal arc; torso counter-rotates; no visible impact."
+    },
+    {
+      "index": 3,
+      "role": "single_low_sweep_contact",
+      "constraint": "Only visible impact; lead leg fully extends low with the rear foot visibly supporting the rotation."
+    },
+    {
+      "index": 4,
+      "role": "same_leg_sweep_follow_through",
+      "constraint": "Continue the same leg and hip arc past contact with no second strike or VFX."
+    },
+    {
+      "index": 5,
+      "role": "lead_leg_retraction",
+      "constraint": "The same leg retracts under the body while coat and locs finish their lag."
+    },
+    {
+      "index": 6,
+      "role": "crouched_balance_recovery",
+      "constraint": "Weight recenters through the feet; hands restore guard without snapping."
+    },
+    {
+      "index": 7,
+      "role": "connected_guarded_crouch_exit",
+      "constraint": "Return to guarded crouch with residual rotation; do not duplicate the entry exactly."
+    }
+  ],
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "durationTicks": 19,
+      "exposureTicks": [
+        2,
+        2,
+        1,
+        4,
+        3,
+        3,
+        2,
+        2
+      ],
+      "phaseTicks": {
+        "startup": 5,
+        "active": 4,
+        "recovery": 10
+      }
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "durationTicks": 22,
+      "exposureTicks": [
+        3,
+        2,
+        1,
+        5,
+        3,
+        3,
+        2,
+        3
+      ],
+      "phaseTicks": {
+        "startup": 6,
+        "active": 5,
+        "recovery": 11
+      }
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+      "durationTicks": 25,
+      "exposureTicks": [
+        4,
+        2,
+        1,
+        6,
+        4,
+        3,
+        2,
+        3
+      ],
+      "phaseTicks": {
+        "startup": 7,
+        "active": 6,
+        "recovery": 12
+      }
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_4",
+      "hitstopTicks": 4
+    },
+    "I2": {
+      "label": "READABLE_5",
+      "hitstopTicks": 5
+    },
+    "I3": {
+      "label": "FIRMER_6",
+      "hitstopTicks": 6
+    }
+  },
+  "recommendedImpactCandidate": "I2",
+  "benchmarkQuestions": [
+    "Does Sweep Line read as a genuinely low lead-leg sweep rather than resized Standing Medium artwork?",
+    "Does the rear support leg visibly drive the hip rotation without root sliding?",
+    "Is frame 03 the only visible impact, with frame 04 continuing the same leg arc?",
+    "Do frames 05-07 retract and recover continuously into crouch guard?",
+    "Does B add readable load and recovery while leaving frames 02-03 fast?"
+  ],
+  "approvalBoundary": {
+    "crouchingLightMotionAndTimingApprovedOnly": true,
+    "crouchingMediumMotionApproved": true,
+    "crouchingMediumTimingApproved": false,
+    "selectedTimingCandidate": "B",
+    "crouchingMediumCombatProfileApproved": false,
+    "runtimeArtApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "crouchingMediumTimingStatus": "PENDING_V2_RETIMING_AFTER_GAMEPLAY_RECONCILIATION"
+  },
+  "supersededTimingCandidates": {
+    "reason": "Superseded on 2026-09-03 by the same gameplay-reconciliation pass. Total duration and startup were already correct, but the contact frame was held for only 3 of the 5 ticks its hitbox is live, so the impact pose left the screen while the move was still able to hit. Exposure is redistributed so the contact pose covers the whole active window. Frames, roles and impact frame are unchanged.",
+    "supersededOn": "2026-09-03",
+    "previousCandidates": {
+      "A": {
+        "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+        "durationTicks": 19,
+        "exposureTicks": [
+          2,
+          2,
+          1,
+          3,
+          2,
+          2,
+          3,
+          4
+        ],
+        "phaseTicks": {
+          "startup": 5,
+          "active": 5,
+          "recovery": 9
+        }
+      },
+      "B": {
+        "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+        "durationTicks": 22,
+        "exposureTicks": [
+          3,
+          2,
+          1,
+          3,
+          2,
+          3,
+          4,
+          4
+        ],
+        "phaseTicks": {
+          "startup": 6,
+          "active": 5,
+          "recovery": 11
+        }
+      },
+      "C": {
+        "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+        "durationTicks": 25,
+        "exposureTicks": [
+          4,
+          2,
+          1,
+          3,
+          3,
+          3,
+          4,
+          5
+        ],
+        "phaseTicks": {
+          "startup": 7,
+          "active": 6,
+          "recovery": 12
+        }
+      }
+    },
+    "previousApproval": {
+      "crouchingLightMotionAndTimingApprovedOnly": true,
+      "crouchingMediumMotionApproved": true,
+      "crouchingMediumTimingApproved": true,
+      "selectedTimingCandidate": "B",
+      "crouchingMediumCombatProfileApproved": false,
+      "runtimeArtApproved": false,
+      "firstPlayableApproved": false,
+      "productionApproved": false,
+      "deployable": false
+    }
+  },
+  "gameplayFrameDataReconciliation": {
+    "authority": "repo://NO_GODS_ABOVE/engine_v2/src/data/fighters.ts legacyAttacks",
+    "startup": 6,
+    "active": 5,
+    "recovery": 11,
+    "totalTicks": 22,
+    "recommendedCandidateMatchesCombatData": true,
+    "contactFrameFirstTickEqualsStartup": true,
+    "contactFrameHeldForFullActiveWindow": true,
+    "authoredFramesDroppedAtRuntime": 0
+  }
+}

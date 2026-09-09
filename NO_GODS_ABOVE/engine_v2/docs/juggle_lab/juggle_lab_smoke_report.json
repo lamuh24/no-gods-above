@@ -1,0 +1,199 @@
+{
+  "contract": "juggle_animation_lab_v1",
+  "status": "candidate_only",
+  "deployable": false,
+  "page": "/juggle-lab.html",
+  "browser": "chrome",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "routes": {
+    "air_light_medium_heavy": {
+      "attackFrames": [
+        "crouching_heavy_anticipation",
+        "crouching_heavy_acceleration",
+        "crouching_heavy_contact",
+        "air_light_chamber",
+        "air_light_contact",
+        "air_medium_load",
+        "air_medium_contact",
+        "air_heavy_load",
+        "air_heavy_contact",
+        "air_heavy_carry",
+        "air_heavy_landing_recovery"
+      ],
+      "distinctFrames": 18,
+      "observedAttacks": [
+        "crouching_heavy",
+        "air_light",
+        "air_medium",
+        "air_heavy"
+      ],
+      "peakComboCount": 4,
+      "peakJuggleSpent": 5,
+      "knockdownSeen": "soft"
+    },
+    "air_five_action": {
+      "attackFrames": [
+        "crouching_heavy_anticipation",
+        "crouching_heavy_acceleration",
+        "crouching_heavy_contact",
+        "air_light_chamber",
+        "air_light_contact",
+        "air_medium_load",
+        "air_medium_contact",
+        "air_heavy_load",
+        "air_heavy_contact",
+        "air_heavy_carry"
+      ],
+      "distinctFrames": 16,
+      "observedAttacks": [
+        "crouching_heavy",
+        "air_light",
+        "air_medium",
+        "air_light",
+        "air_medium",
+        "air_heavy"
+      ],
+      "peakComboCount": 6,
+      "peakJuggleSpent": 8,
+      "knockdownSeen": "soft"
+    },
+    "air_heavy_only": {
+      "attackFrames": [
+        "crouching_heavy_anticipation",
+        "crouching_heavy_acceleration",
+        "crouching_heavy_contact",
+        "air_heavy_load",
+        "air_heavy_contact",
+        "air_heavy_carry",
+        "air_heavy_landing_recovery"
+      ],
+      "distinctFrames": 14,
+      "observedAttacks": [
+        "crouching_heavy",
+        "air_heavy"
+      ],
+      "peakComboCount": 2,
+      "peakJuggleSpent": 2,
+      "knockdownSeen": "soft"
+    },
+    "ground_chain": {
+      "attackFrames": [
+        "standing_light_chamber",
+        "standing_light_extension",
+        "standing_light_contact",
+        "standing_medium_hip_drive",
+        "standing_medium_knee_contact",
+        "standing_heavy_extension",
+        "standing_heavy_impact",
+        "standing_heavy_recoil",
+        "standing_heavy_recovery"
+      ],
+      "distinctFrames": 13,
+      "observedAttacks": [
+        "standing_light",
+        "standing_medium",
+        "standing_heavy"
+      ],
+      "peakComboCount": 3,
+      "peakJuggleSpent": 0,
+      "knockdownSeen": "soft"
+    }
+  },
+  "primaryRoute": "air_light_medium_heavy",
+  "captures": [
+    {
+      "tick": 1,
+      "frame": "crouching_heavy_anticipation",
+      "attack": "crouching_heavy",
+      "phase": "startup",
+      "ticks": 1,
+      "screenshot": "01_crouching_heavy_startup_crouching_heavy_anticipation.png"
+    },
+    {
+      "tick": 5,
+      "frame": "crouching_heavy_acceleration",
+      "attack": "crouching_heavy",
+      "phase": "startup",
+      "ticks": 1,
+      "screenshot": "02_crouching_heavy_startup_crouching_heavy_acceleration.png"
+    },
+    {
+      "tick": 9,
+      "frame": "crouching_heavy_contact",
+      "attack": "crouching_heavy",
+      "phase": "active",
+      "ticks": 1,
+      "screenshot": "03_crouching_heavy_active_crouching_heavy_contact.png"
+    },
+    {
+      "tick": 21,
+      "frame": "air_light_chamber",
+      "attack": "air_light",
+      "phase": "startup",
+      "ticks": 1,
+      "screenshot": "04_air_light_startup_air_light_chamber.png"
+    },
+    {
+      "tick": 23,
+      "frame": "air_light_contact",
+      "attack": "air_light",
+      "phase": "active",
+      "ticks": 1,
+      "screenshot": "05_air_light_active_air_light_contact.png"
+    },
+    {
+      "tick": 27,
+      "frame": "air_medium_load",
+      "attack": "air_medium",
+      "phase": "startup",
+      "ticks": 1,
+      "screenshot": "06_air_medium_startup_air_medium_load.png"
+    },
+    {
+      "tick": 31,
+      "frame": "air_medium_contact",
+      "attack": "air_medium",
+      "phase": "active",
+      "ticks": 1,
+      "screenshot": "07_air_medium_active_air_medium_contact.png"
+    },
+    {
+      "tick": 36,
+      "frame": "air_heavy_load",
+      "attack": "air_heavy",
+      "phase": "startup",
+      "ticks": 1,
+      "screenshot": "08_air_heavy_startup_air_heavy_load.png"
+    },
+    {
+      "tick": 41,
+      "frame": "air_heavy_contact",
+      "attack": "air_heavy",
+      "phase": "active",
+      "ticks": 1,
+      "screenshot": "09_air_heavy_active_air_heavy_contact.png"
+    },
+    {
+      "tick": 53,
+      "frame": "air_heavy_carry",
+      "attack": "air_heavy",
+      "phase": "recovery",
+      "ticks": 1,
+      "screenshot": "10_air_heavy_recovery_air_heavy_carry.png"
+    },
+    {
+      "tick": 60,
+      "frame": "air_heavy_landing_recovery",
+      "attack": "air_heavy",
+      "phase": "recovery",
+      "ticks": 1,
+      "screenshot": "11_air_heavy_recovery_air_heavy_landing_recovery.png"
+    }
+  ],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "failedRequests": []
+}

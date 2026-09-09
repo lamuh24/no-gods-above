@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0-production-arena-package",
+  "arenaId": "the_last_tribunal",
+  "displayName": "The Last Tribunal",
+  "status": "production_arena_graybox_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_graybox_and_concept_approval",
+  "brief": "arena.brief.json",
+  "presentationEvents": "presentation-events.json",
+  "artPack": "art-pack.spec.json",
+  "validationPlan": "validation-plan.json",
+  "conceptDirection": "concept/concept-direction.json",
+  "grayboxContract": "graybox/graybox.contract.json",
+  "inherits": {
+    "stageContract": "../../../src/stage/stage_vertical_slice_v1.json",
+    "stageApproval": "../../approvals/stage_pipeline_vertical_slice_v1.approval.json",
+    "briefApproval": "../../approvals/the_last_tribunal.production-arena-brief-v1.approval.json"
+  },
+  "authorization": {
+    "finalArt": false,
+    "runtimeIntegration": false,
+    "gameplayChanges": false,
+    "deployment": false
+  }
+}

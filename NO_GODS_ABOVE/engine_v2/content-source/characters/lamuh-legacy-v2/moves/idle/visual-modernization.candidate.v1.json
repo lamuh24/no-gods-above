@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_idle_modern_visual_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": true,
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/movement-modernization-v1.hash-lock.json",
+    "sha256": "F67FF3CA8DB0CB87033739BAF317D660632A51B113B5056C21CF6AD970040DC3"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-movement-modernization-v1/normalization.report.json",
+    "sha256": "BD5043A4EE513082FCC62B871AD9A114C56592FB8D0105E4830067CA42871797"
+  },
+  "state": {
+    "sourceFrameCount": 8,
+    "authoredFrameCount": 4,
+    "selectedLegacyFrames": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "selectedSourceFrames": null,
+    "exposureTicks": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "durationTicks": 60,
+    "loop": true,
+    "frames": [
+      {
+        "index": 0,
+        "role": "base_ready",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+        "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+        "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.94899,
+        "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 562,
+          "minY": 560,
+          "maxX": 973,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 772.15,
+          "y": 969.04
+        }
+      },
+      {
+        "index": 1,
+        "role": "inhale_rise",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-01.png",
+        "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88",
+        "sourceSha256": "96A9F93DFE424E63CAAFF4659F496B9BD4437EB047DC8A5C343DD6A8804863A6",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.88398,
+        "legacySha256": "0ED2EBCD85DB9CF67C49A89DD9F2DC8099BCA7DF831AE4498B6E5EFBDDCACA13",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 543,
+          "minY": 560,
+          "maxX": 992,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 768.24,
+          "y": 968.04
+        }
+      },
+      {
+        "index": 2,
+        "role": "exhale_settle",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-02.png",
+        "sha256": "6D0AB0BA63F6875BA808839F9A94D39E1FF4E2EAD7275243553EB728864B59B0",
+        "sourceSha256": "1ABFB7C4C8BBCD625A3E26188739606889F7C93D7068AA5019028BFD5EAEC453",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.79523,
+        "legacySha256": "BD7F329416B55F80CCAED8E90EE476C17BF21A1177C30A17FED89A9FAF8192DE",
+        "legacyIndex": 4,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 547,
+          "minY": 560,
+          "maxX": 987,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 775.32,
+          "y": 974.38
+        }
+      },
+      {
+        "index": 3,
+        "role": "return_weight_shift",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/idle-03.png",
+        "sha256": "C94D57324E6ED0E9E6B0F708AC23CF25EE1EE767EDAFB8861B6A98814B29DB5F",
+        "sourceSha256": "AC5E5D53F16774C4F4AB8FA758ED8804F67CCE6820CDC40916631813E57DF44A",
+        "sourceType": "modernized_still_candidate",
+        "sourceFrameIndex": null,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.72202,
+        "legacySha256": "EE680E8095CC2825CA0575DFA03F993D2B9DC85F2D4E4931536583F67C4E8EA7",
+        "legacyIndex": 6,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 540,
+          "minY": 560,
+          "maxX": 995,
+          "maxY": 1359
+        },
+        "bodyCenter": {
+          "x": 779.71,
+          "y": 971.42
+        }
+      }
+    ]
+  },
+  "approvalStatus": "awaiting_human_combined_modern_style_playtest",
+  "humanApproval": null
+}

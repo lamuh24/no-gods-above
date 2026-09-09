@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "1.0.0-stage-presentation-events",
+  "arenaId": "the_last_tribunal",
+  "status": "production_arena_graybox_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_graybox_and_concept_approval",
+  "eventIdTemplate": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+  "dedupeKeyFields": ["matchId", "simulationFrame", "arenaId", "sourceEntityId", "moveInstance", "eventIndex"],
+  "durationPolicy": {
+    "arenaDefaultDurationsAre": "test_values_not_global_move_limits",
+    "moveAuthoredDurationSupport": "arbitrary_positive_fixed_tick_lengths",
+    "identityAndReconstructionIndependentOfDuration": true
+  },
+  "events": [
+    {
+      "id": "throw_camera",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the authoritative thrower's stable fighter entity ID.",
+        "eventIndexRule": "Use the authored throw-camera presentation marker index within the move instance."
+      },
+      "triggerConditions": [
+        "The deterministic combat kernel confirms the throw and emits its presentation marker.",
+        "The move instance and event index have not been consumed on the current replay timeline."
+      ],
+      "durationTicks": 24,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "throw_close", "entryTicks": 6, "holdTicks": 6, "returnTicks": 12, "volumeId": "close_combat" },
+      "abortRules": [
+        "Abort if rollback removes the authoritative throw confirmation.",
+        "Abort on round reset, match termination, or presentation-state teardown.",
+        "Abort if the source move instance is replaced before the marker tick; return through the approved gameplay pose without writing simulation state."
+      ],
+      "rollbackReplayRules": [
+        "Restore the presentation-event cursor to the rollback frame.",
+        "Re-emitting the same deterministic event ID resumes or reconstructs the same tick-relative camera pose and never duplicates one-shot reactions.",
+        "If the event no longer exists after replay, discard it and use the approved gameplay camera pose for that tick."
+      ],
+      "mirroredFacingBehavior": "Freeze attacker facing at the trigger tick and multiply lateral camera offsets by authoredFacingSign; do not mirror vertical or depth values.",
+      "returnToGameplayFraming": "Blend for exactly 12 fixed simulation ticks to the approved gameplay camera computed from the unordered fighter pair.",
+      "visibilityRequirements": [
+        "Attacker and defender roots, heads, and floor-contact region remain inside the safe frame with at least 0.8 world-unit root margin.",
+        "Neither fighter may be hidden by tribunal architecture, foreground decals, shadows, or stage effects."
+      ]
+    },
+    {
+      "id": "command_grab_camera",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the authoritative command-grab attacker's stable fighter entity ID.",
+        "eventIndexRule": "Use the authored command-grab camera marker index within the confirmed move instance."
+      },
+      "triggerConditions": [
+        "The combat kernel confirms the command grab against a valid defender.",
+        "The authored camera marker is reached and its deterministic ID is new on the current replay timeline."
+      ],
+      "durationTicks": 32,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "command_grab_close", "entryTicks": 8, "holdTicks": 12, "returnTicks": 12, "volumeId": "close_combat" },
+      "abortRules": [
+        "Abort if rollback removes the command-grab confirmation.",
+        "Abort on round reset, match termination, disconnect, or presentation-state teardown.",
+        "Abort if either required entity becomes unavailable; never hold a camera on a stale render root."
+      ],
+      "rollbackReplayRules": [
+        "Restore event cursor, captured facing sign, and elapsed camera tick from deterministic replay state.",
+        "Dedupe by the complete event ID so replay cannot restart impact emphasis or environmental reactions twice.",
+        "Recompute the constrained pose from serialized fighter roots at each replayed tick."
+      ],
+      "mirroredFacingBehavior": "Author the track attacker-facing-right; multiply lateral X by the captured facing sign and keep both fighters' runtime mirroring independent.",
+      "returnToGameplayFraming": "Use the standard 12-tick smoothstep-fixed-tick return and require both current fighter roots throughout the blend.",
+      "visibilityRequirements": [
+        "Attacker and defender silhouettes remain complete through lift, impact, and recovery; floor contact is visible at entry and exit.",
+        "The defender may overlap the attacker as authored but may not leave frame or disappear behind the oculus, columns, or foreground."
+      ]
+    },
+    {
+      "id": "super_camera",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the super attacker's stable fighter entity ID.",
+        "eventIndexRule": "Use the authored super-camera marker index; full tracks require the move's approved confirm condition."
+      },
+      "triggerConditions": [
+        "The deterministic super state reaches its approved camera marker and any required hit-confirm condition is true.",
+        "The event ID is not already active or consumed on the current replay timeline."
+      ],
+      "durationTicks": 42,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "super_wide", "entryTicks": 8, "holdTicks": 22, "returnTicks": 12, "volumeId": "wide_super" },
+      "abortRules": [
+        "Abort if rollback removes the activation, marker, or required hit confirm.",
+        "Abort on round reset, match termination, disconnect, or presentation-state teardown.",
+        "Whiffed supers may use only their separately approved non-cinematic presentation and cannot promote themselves into this track."
+      ],
+      "rollbackReplayRules": [
+        "Restore the event cursor and elapsed tick, then derive the same camera pose from replayed serialized roots.",
+        "Dedupe camera emphasis, stage reaction markers, audio cues, and flashes with the deterministic event ID.",
+        "Discard the track if the confirm disappears and transition to the gameplay pose appropriate to the replayed tick."
+      ],
+      "mirroredFacingBehavior": "Mirror lateral offsets and screen-leading room from captured attacker facing; the beam or projectile direction remains combat-authored, not camera-authored.",
+      "returnToGameplayFraming": "Return in 12 fixed ticks to the current gameplay camera and re-evaluate both-root containment every tick.",
+      "visibilityRequirements": [
+        "Both fighters remain identifiable with the complete attack line or projectile travel corridor visible.",
+        "No stage emission, eclipse corona, or architecture may erase defender silhouette or active VFX."
+      ]
+    },
+    {
+      "id": "ultimate_camera",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the ultimate attacker's stable fighter entity ID.",
+        "eventIndexRule": "Use the authored ultimate-camera marker index within the authoritative move instance."
+      },
+      "triggerConditions": [
+        "The deterministic ultimate state reaches its approved cinematic marker and required confirmation rule.",
+        "The presentation system has valid serialized roots for both fighters at the trigger tick."
+      ],
+      "durationTicks": 60,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "ultimate_tribunal", "entryTicks": 10, "holdTicks": 38, "returnTicks": 12, "volumeId": "ultimate" },
+      "abortRules": [
+        "Abort if rollback removes activation, confirmation, or the cinematic marker.",
+        "Abort on round reset, match termination, disconnect, or presentation-state teardown.",
+        "Abort to the deterministic camera pose for the replayed tick; never complete an orphaned stage reaction."
+      ],
+      "rollbackReplayRules": [
+        "Reconstruct track time from simulationFrame minus the event's authoritative trigger frame.",
+        "Dedupe all camera, light-response, and environmental presentation markers using the complete event ID.",
+        "Sample only fixed authored camera values and serialized roots; wall-clock time and random values are prohibited."
+      ],
+      "mirroredFacingBehavior": "Author attacker-facing-right, mirror constrained lateral offsets from the captured trigger-facing sign, and never free-orbit across the combat plane.",
+      "returnToGameplayFraming": "Blend for 12 fixed ticks from the constrained ultimate pose to the approved gameplay camera with both fighters contained.",
+      "visibilityRequirements": [
+        "Attacker and defender remain visible through setup and impact, including the defender's resulting floor or airborne relationship.",
+        "Any full-screen treatment must preserve readable fighter silhouettes and cannot use the arena background as a substitute for required character visibility."
+      ]
+    },
+    {
+      "id": "round_finisher",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the authoritative round winner's stable fighter entity ID.",
+        "eventIndexRule": "Use the round-end presentation marker index emitted after the result is locked."
+      },
+      "triggerConditions": [
+        "The deterministic combat kernel has locked the round result and winner.",
+        "The finisher presentation marker is emitted for the first time on the current replay timeline."
+      ],
+      "durationTicks": 48,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "round_finisher_tribunal", "entryTicks": 8, "holdTicks": 28, "returnTicks": 12, "volumeId": "finisher" },
+      "abortRules": [
+        "Abort if rollback crosses before the locked round result or changes the winner.",
+        "Abort on match termination, disconnect, or presentation-state teardown.",
+        "Skip or shorten only when the authoritative match-flow state requests an immediate transition."
+      ],
+      "rollbackReplayRules": [
+        "Restore the locked-result marker and event cursor from replay state.",
+        "The same deterministic ID cannot duplicate victory flashes, environmental reactions, or camera entry.",
+        "If the winner changes after replay, destroy the old track and instantiate only the newly emitted deterministic event."
+      ],
+      "mirroredFacingBehavior": "Frame the winner from captured round-end facing and mirror only lateral composition; preserve actual left/right corner context.",
+      "returnToGameplayFraming": "If another playable round follows, return in 12 fixed ticks to the approved spawn framing; otherwise hand off to the deterministic victory track without writing gameplay state.",
+      "visibilityRequirements": [
+        "Winner and defeated fighter remain visible with floor contact and corner relationship legible.",
+        "The oculus may support the composition but may not replace, silhouette, or occlude either fighter."
+      ]
+    },
+    {
+      "id": "intro",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the match-flow entity ID as sourceEntityId for the two-fighter intro sequence.",
+        "eventIndexRule": "Use the authored arena intro marker index in deterministic match-flow order."
+      },
+      "triggerConditions": [
+        "The deterministic match-flow state enters intro before player control is enabled.",
+        "Both fighter spawn roots and the selected arena ID are finalized."
+      ],
+      "durationTicks": 72,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "intro_tribunal", "entryTicks": 12, "holdTicks": 48, "returnTicks": 12, "volumeId": "intro_victory" },
+      "abortRules": [
+        "Abort when match flow skips intro or rollback returns before intro entry.",
+        "Abort on disconnect, stage unload, or presentation-state teardown.",
+        "Fast-forward only on an authoritative match-flow skip marker shared by all peers."
+      ],
+      "rollbackReplayRules": [
+        "Restore intro marker order and elapsed tick from deterministic match-flow replay.",
+        "Dedupe all stage reveals and character presentation cues by event ID.",
+        "A skipped intro remains skipped only when the deterministic skip marker is present after replay."
+      ],
+      "mirroredFacingBehavior": "Use finalized P1/P2 spawn sides and mirror lateral moves when the match configuration swaps sides; do not change authored fighter-facing rules.",
+      "returnToGameplayFraming": "Complete the final 12 ticks at the approved default gameplay pose before player control becomes active.",
+      "visibilityRequirements": [
+        "Both fighters must be shown clearly before control begins, with P1/P2 sides and floor roots legible.",
+        "Arena reveal frames may temporarily favor environment scale only before both fighters enter; the final hold must contain both."
+      ]
+    },
+    {
+      "id": "victory",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the authoritative match winner's stable fighter entity ID.",
+        "eventIndexRule": "Use the match-result victory marker index after outcome lock."
+      },
+      "triggerConditions": [
+        "The deterministic match result is locked and exposes the winner entity.",
+        "Round-finisher handoff or match flow emits the victory marker."
+      ],
+      "durationTicks": 90,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "victory_tribunal", "entryTicks": 12, "holdTicks": 66, "returnTicks": 12, "volumeId": "intro_victory" },
+      "abortRules": [
+        "Abort if rollback crosses before the locked match outcome or changes the winner.",
+        "Abort on disconnect, stage unload, rematch reset, or presentation-state teardown.",
+        "Exit only on an authoritative match-flow transition; local UI timing cannot change the event identity."
+      ],
+      "rollbackReplayRules": [
+        "Reconstruct winner, elapsed tick, and stage reaction cursor from replayed match-flow state.",
+        "Dedupe victory light response, banner motion, and camera entry with the deterministic ID.",
+        "If the match outcome changes, remove the stale victory track before creating the new deterministic event."
+      ],
+      "mirroredFacingBehavior": "Mirror winner-leading lateral composition according to the winner's captured side while keeping the defeated fighter's real position visible.",
+      "returnToGameplayFraming": "On rematch or next-round reset, use the final 12 ticks to reach approved spawn framing; otherwise the last pose hands off to non-gameplay match flow.",
+      "visibilityRequirements": [
+        "The winner remains primary and the defeated fighter remains visible or clearly grounded in the same arena frame until the authorized transition.",
+        "Victory lighting and eclipse emission cannot erase either costume value range."
+      ]
+    },
+    {
+      "id": "environmental_reaction",
+      "deterministicEventId": {
+        "template": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}",
+        "sourceEntityRule": "Use the stable fighter or match-flow entity whose authoritative presentation marker requested the reaction.",
+        "eventIndexRule": "Use the authored reaction marker index; reactionId is payload data and never replaces the event index."
+      },
+      "triggerConditions": [
+        "An approved deterministic presentation marker names an arena reaction ID.",
+        "The reaction ID is allow-listed and the complete deterministic event ID is new on the replay timeline."
+      ],
+      "durationTicks": 30,
+      "durationSource": "arena_default_test_value_overridden_by_deterministic_move_authorship",
+      "cameraTrack": { "shotId": "none", "entryTicks": 0, "holdTicks": 30, "returnTicks": 0, "volumeId": "environment_only" },
+      "abortRules": [
+        "Abort if rollback removes the requesting presentation marker.",
+        "Abort on round reset, stage unload, or presentation-state teardown.",
+        "Silently reject unknown reaction IDs and any reaction that requests gameplay or camera authority."
+      ],
+      "rollbackReplayRules": [
+        "Restore the reaction cursor and derive its phase from the fixed simulation tick.",
+        "Dedupe dust, banner, corona, light-response, and sound markers by deterministic event ID.",
+        "Use authored fixed curves or match-seeded values only; Math.random and wall-clock sampling are prohibited."
+      ],
+      "mirroredFacingBehavior": "Mirror directional reaction emitters around the event source when facing-sensitive; arena-wide reactions remain symmetric and never alter fighter facing.",
+      "returnToGameplayFraming": "The event never overrides the gameplay camera, so no camera return is needed; removing it leaves the current approved framing unchanged.",
+      "visibilityRequirements": [
+        "The reaction may not occlude either fighter or exceed the foreground and VFX safety masks.",
+        "Attacker and defender visibility takes priority over dust, emission, banner motion, and light response."
+      ]
+    }
+  ]
+}

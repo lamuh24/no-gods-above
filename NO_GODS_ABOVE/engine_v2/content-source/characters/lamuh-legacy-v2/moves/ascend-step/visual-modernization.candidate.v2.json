@@ -1,0 +1,325 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_ascend_step_single_dash_punch_candidate_v2",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "v1Disposition": "MODERNIZE",
+  "supersedesRejectedCandidate": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-two-beat-v1.rejection.json",
+    "sha256": "422CC099A7C1DEA07472CF1B57CB927C7E788D5B4EF9D677699F103BA24A1D66",
+    "decision": "REJECTED_FOR_MOTION_REVISION"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-dash-punch-v2.hash-lock.json",
+    "sha256": "91427F2786DF65E7F016B03DA337259DB403E3A49040D7681F2F64DC47CB7764"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalization.report.json",
+    "sha256": "5D9927078F5B3AB31044795CAB8D9AAC0AD429F3188997542EF257E88DDFDBB7"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "idle_identity_lock_with_aura_ignition",
+      "sourceV1Indices": [
+        0
+      ],
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalized/ascend-step-dash-punch-00.png",
+      "sha256": "957E5EA248D3253D927401296B739F5050B3C4E1E73AA631D7AD0F7967D219B9",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 562,
+        "minY": 560,
+        "maxX": 973,
+        "maxY": 1359
+      }
+    },
+    {
+      "index": 1,
+      "role": "approved_low_dash_launch",
+      "sourceV1Indices": [
+        1
+      ],
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalized/ascend-step-dash-punch-01.png",
+      "sha256": "099EEFC36859149567E37BA46D0F7ADEBB79332EC69CF92EB69A37EF9100F64E",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 310,
+        "minY": 510,
+        "maxX": 1078,
+        "maxY": 1420
+      }
+    },
+    {
+      "index": 2,
+      "role": "approved_fast_horizontal_dash_carry",
+      "sourceV1Indices": [
+        2
+      ],
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalized/ascend-step-dash-punch-02.png",
+      "sha256": "726A49D545AB50C2DD64F1690D26C20207CF7FD90F70EE06DB967EA0A329D332",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 310,
+        "minY": 510,
+        "maxX": 1069,
+        "maxY": 1420
+      }
+    },
+    {
+      "index": 3,
+      "role": "approved_single_straight_punch_contact",
+      "sourceV1Indices": [
+        5
+      ],
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalized/ascend-step-dash-punch-03.png",
+      "sha256": "4102A2B254B0DAC32775E2A46D0386600B65680E1969EAECC51547F18A19F05D",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 400,
+        "minY": 561,
+        "maxX": 1094,
+        "maxY": 1363
+      }
+    },
+    {
+      "index": 4,
+      "role": "approved_same_arm_punch_carry_through",
+      "sourceV1Indices": [
+        5
+      ],
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalized/ascend-step-dash-punch-04.png",
+      "sha256": "BA50585DB1F51F7D8BADB2BB2C9B084612E05DECBAF0F2710DFCFBBA7FEEC7E3",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 400,
+        "minY": 561,
+        "maxX": 1102,
+        "maxY": 1363
+      }
+    },
+    {
+      "index": 5,
+      "role": "approved_idle_identity_recovery",
+      "sourceV1Indices": [
+        6
+      ],
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalized/ascend-step-dash-punch-05.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 543,
+        "minY": 560,
+        "maxX": 992,
+        "maxY": 1359
+      }
+    }
+  ],
+  "timingCandidates": {
+    "A": {
+      "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+      "phaseTicks": {
+        "startup": 5,
+        "active": 6,
+        "recovery": 15
+      },
+      "durationTicks": 26,
+      "exposureTicks": [
+        2,
+        2,
+        1,
+        6,
+        6,
+        9
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 6,
+        "active": 6,
+        "recovery": 18
+      },
+      "durationTicks": 30,
+      "exposureTicks": [
+        3,
+        2,
+        1,
+        6,
+        7,
+        11
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE",
+      "phaseTicks": {
+        "startup": 8,
+        "active": 7,
+        "recovery": 19
+      },
+      "durationTicks": 34,
+      "exposureTicks": [
+        4,
+        3,
+        1,
+        7,
+        8,
+        11
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_6",
+      "hitstopTicks": 6,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_7",
+      "hitstopTicks": 7,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "WEIGHTED_8",
+      "hitstopTicks": 8,
+      "contactExposureDelta": 1,
+      "recoilExposureDelta": 1,
+      "recoveryExposureDelta": -2
+    }
+  },
+  "rootMotionContract": {
+    "owner": "simulation",
+    "startTick": 4,
+    "endTick": 15,
+    "velocityPerTick": 9.2,
+    "rendererDrivesGameplay": false,
+    "authoredException": null
+  },
+  "combatCandidate": {
+    "runtimeAttackId": "legacy_ascend_step",
+    "damage": 62,
+    "hitstop": 7,
+    "hitstun": 30,
+    "blockstun": 17,
+    "knockbackX": 5.2,
+    "knockbackY": -5,
+    "level": "mid",
+    "knockdown": "soft",
+    "approval": null
+  },
+  "singleActionContract": {
+    "oneContinuousPhysicalAction": true,
+    "groundedDashForward": true,
+    "strikingLimb": "right_arm",
+    "punchOnly": true,
+    "contactFrame": 3,
+    "visibleImpactCount": 1,
+    "gameplayHitCount": 1,
+    "risingStrikeRemoved": true,
+    "airborneFollowupRemoved": true,
+    "secondStrikeRemoved": true,
+    "poseProgression": [
+      "approved idle aura ignition",
+      "approved low dash launch",
+      "approved fast dash carry",
+      "approved single punch contact",
+      "approved same-arm follow-through",
+      "approved idle recovery"
+    ]
+  },
+  "mobilityIdentity": {
+    "primaryRead": "movement_first_dash_with_single_punch_end_beat",
+    "dashAura": true,
+    "auraPalette": [
+      "white_core",
+      "cyan",
+      "restrained_gold"
+    ],
+    "auraFrames": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "strongestAuraFrame": 2,
+    "impactExplosion": false,
+    "afterimageBodyClone": false,
+    "worldTravelOwner": "deterministic_simulation"
+  },
+  "preservationBoundary": {
+    "protectedLegacyFramesModified": false,
+    "sourceOrderPreserved": false,
+    "approvedV2Disposition": "MODERNIZE",
+    "retainedLegacyQualities": [
+      "forward-loaded momentum",
+      "low dash energy",
+      "coat and loc drag",
+      "forward follow-through",
+      "grounded recovery direction"
+    ],
+    "retiredLegacyBeats": [
+      "rising palm contact",
+      "airborne palm follow-through",
+      "extended airborne second strike"
+    ],
+    "explicitRootMotionOwner": "deterministic simulation legacy_ascend_step rootMotion ticks 4-15 at velocity 9.2"
+  },
+  "approvalStatus": "awaiting_human_ascend_step_medium_targeted_motion_repair_review",
+  "identityLock": {
+    "matureAdultProportions": true,
+    "noChibiProportions": true,
+    "boxedBeardAndMustache": true,
+    "longBlackLocs": true,
+    "noPurpleOutline": true,
+    "sameSequenceScale": true,
+    "compactFramesUsePoseCompressionNotPerFrameScale": true,
+    "internalVisualAudit": "PASS_CANDIDATE_INTERNAL_REVIEW",
+    "directionReceipt": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/adult-proportion-v2.human-direction.json",
+      "sha256": "DDBC4E24195D104A2B040C14091F961A15B4C0DA03CC03BF188032054856B10C"
+    },
+    "humanApproval": null
+  },
+  "humanApproval": {
+    "motion": null,
+    "timing": null,
+    "combatProfile": null,
+    "transitions": null,
+    "adultProportions": null
+  }
+}

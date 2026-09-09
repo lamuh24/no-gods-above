@@ -1,0 +1,46 @@
+{
+  "sourceType": "ai_assisted",
+  "tool": "Built-in imagegen and source-preserving normalization",
+  "createdAt": "2026-09-05T18:10:56.881Z",
+  "model": null,
+  "seed": null,
+  "promptHash": null,
+  "references": [
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/atlases/lamuh_sheet_5_specials_atlas.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/raw/heavy-windup-landing.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/raw/heavy-release.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/heavy-authored-aura-v3.report.json",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/normalization.report.json",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/raw-aura-redraw.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/raw-aura-magenta.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/prompt.md"
+  ],
+  "cleanupOperations": [
+    "edge_connected_checker_cutout",
+    "exterior_matte_unmix",
+    "constant_anatomical_scale",
+    "manual_pelvis_registration",
+    "virtual_ground_for_air_poses",
+    "approved_idle_endpoints",
+    "native_aura_export_pose_aligned_preserved_opaque_body",
+    "generated_surrounding_aura_identity_edit",
+    "magenta_matte_unmix",
+    "audited_whitespace_slicing_preserved_absolute_root"
+  ],
+  "revisionChain": [
+    "V1_HEAVEN_SPLITTER",
+    "V2_NEAR_ARM_UPPERCUT_CANDIDATE",
+    "H_V2_DISTINCT_CINEMATIC_BODY",
+    "H_V3_AURA_IN_INDIVIDUAL_SOURCE_FRAMES",
+    "H_V4_REDRAWN_SURROUNDING_AURA"
+  ],
+  "humanApproval": {
+    "state": "pending",
+    "approvedAt": null,
+    "approvedBy": null
+  },
+  "licensingNotes": [
+    "Local Lamuh candidate only."
+  ]
+}

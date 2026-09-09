@@ -2892,61 +2892,31 @@
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
           "height": 1536,
-          "id": "command_grab_victim_post_release_airborne",
+          "id": "knockdown_recovery_01_launch_reaction",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "9E916A8F924ECA05710404BFFC7FA4DB911961590377F25BB7EDDC0574A90B10",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/01_command_grab_victim_post_release_airborne.png",
+          "sha256": "7B0212226FD30A878901FC15F5586EF809E07BBA0BFFD6E88DFED369DF4A7C73",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/01_launch_reaction.png",
           "width": 1536
         },
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
           "height": 1536,
-          "id": "command_grab_victim_airborne_carry_hang",
+          "id": "knockdown_recovery_02_airborne_tumble",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "90F7EABB72C30CC68222D2235D5BC870D69C76E20C08980FAC13A357BC3E54FE",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/02_command_grab_victim_airborne_carry_hang.png",
+          "sha256": "1574E722E395A86A9508713786E55FC8DA048E7514AF80585D1E8D94842F40A1",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png",
           "width": 1536
         },
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
           "height": 1536,
-          "id": "command_grab_victim_midair_shot_reaction",
+          "id": "knockdown_recovery_03_ground_impact",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "A8CE179086F47887538B1F338A935A035100333A4EBCF79F0C909BC077FB4FE8",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/03_command_grab_victim_midair_shot_reaction.png",
-          "width": 1536
-        },
-        {
-          "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
-          "height": 1536,
-          "id": "command_grab_victim_post_shot_fall",
-          "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
-          "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "BBAF2B2AC09344EEAB42C2885D19F022A8DF51874C32EF77417C28EC848B78CF",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/04_command_grab_victim_post_shot_fall.png",
-          "width": 1536
-        },
-        {
-          "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
-          "height": 1536,
-          "id": "command_grab_victim_descent_landing_prep",
-          "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
-          "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "403F30F78326355C9BC93E4BDA3443DA692BEBC0286297CDBEF44CFB4D79D841",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/05_command_grab_victim_descent_landing_prep.png",
-          "width": 1536
-        },
-        {
-          "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
-          "height": 1536,
-          "id": "command_grab_victim_impact_downed",
-          "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
-          "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "73BC5944CE52F9B21AB9529562A13FBDC94F4F5CBC8DEDBB68C657A86266F6BD",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/06_command_grab_victim_impact_downed.png",
+          "sha256": "DBE082B7386C35AE7EA60387F6B97CE34F0095340D6174B1926C4678E6AA2874",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png",
           "width": 1536
         }
       ],
@@ -3971,7 +3941,7 @@
       "gameplayTimingStatus": {
         "authoritative": false,
         "candidateValues": {
-          "reviewState": "awaiting_human_crouching_heavy_motion_review",
+          "reviewState": "APPROVED_AS_CURRENT_SANDBOX_MOVESET_2026_08_12",
           "rootMotionAuthority": "simulation_owned_or_not_applicable",
           "timingAuthority": "candidate_responsive_heavy_sweep_32_ticks"
         },
@@ -4788,24 +4758,24 @@
             "y": 768
           },
           "farFoot": {
-            "x": 882,
-            "y": 1407
+            "x": 916,
+            "y": 1406
           },
           "feet": {
-            "x": 618,
-            "y": 1407
+            "x": 635,
+            "y": 1406
           },
           "frame": 0,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
-            "x": 618,
-            "y": 1407
+            "x": 635,
+            "y": 1406
           },
           "root": {
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_01_anticipation"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_01_guarded_crouch_preparation"
         },
         {
           "effect": {
@@ -4813,24 +4783,24 @@
             "y": 768
           },
           "farFoot": {
-            "x": 969,
+            "x": 885,
             "y": 1407
           },
           "feet": {
-            "x": 582,
+            "x": 651,
             "y": 1407
           },
-          "frame": 4,
+          "frame": 12,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
-            "x": 582,
+            "x": 651,
             "y": 1407
           },
           "root": {
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_02_kick_acceleration"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_02_opposed_split_alignment"
         },
         {
           "effect": {
@@ -4838,24 +4808,24 @@
             "y": 768
           },
           "farFoot": {
-            "x": 995,
+            "x": 953,
             "y": 1407
           },
           "feet": {
-            "x": 611,
+            "x": 583,
             "y": 1407
           },
-          "frame": 6,
+          "frame": 21,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
-            "x": 611,
+            "x": 583,
             "y": 1407
           },
           "root": {
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_03_low_side_kick_contact"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_03_simultaneous_contact"
         },
         {
           "effect": {
@@ -4863,24 +4833,49 @@
             "y": 768
           },
           "farFoot": {
-            "x": 826,
+            "x": 919,
             "y": 1407
           },
           "feet": {
-            "x": 568,
+            "x": 616,
             "y": 1407
           },
-          "frame": 8,
+          "frame": 28,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
-            "x": 568,
+            "x": 616,
             "y": 1407
           },
           "root": {
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_04_leg_retraction"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_04_opposed_dual_recoil"
+        },
+        {
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "farFoot": {
+            "x": 909,
+            "y": 1407
+          },
+          "feet": {
+            "x": 627,
+            "y": 1407
+          },
+          "frame": 38,
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority",
+          "nearFoot": {
+            "x": 627,
+            "y": 1407
+          },
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_05_controlled_pistol_lowering"
         },
         {
           "effect": {
@@ -4889,40 +4884,40 @@
           },
           "farFoot": {
             "x": 916,
-            "y": 1407
+            "y": 1406
           },
           "feet": {
             "x": 635,
-            "y": 1407
+            "y": 1406
           },
-          "frame": 12,
+          "frame": 49,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 635,
-            "y": 1407
+            "y": 1406
           },
           "root": {
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_05_planted_crouch_recovery"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_06_crouched_recovery"
         }
       ],
       "approvalRecords": [
         "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json"
       ],
       "combatTrack": {
-        "active": 2,
+        "active": 7,
         "blockstun": 0,
         "boxes": [],
         "cancelWindows": [],
         "damage": 0,
         "hitstop": 0,
         "hitstun": 0,
-        "recovery": 12,
-        "startup": 6,
+        "recovery": 32,
+        "startup": 21,
         "timingAuthorship": {
-          "authoredTotalDuration": 20,
+          "authoredTotalDuration": 60,
           "durationBasis": [
             "move_weight",
             "readability",
@@ -4943,29 +4938,34 @@
       "exitPoseId": "crouch",
       "exposures": [
         {
-          "duration": 4,
-          "sourceFrameId": "crouching_medium_motion_v1_01_anticipation",
+          "duration": 12,
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_01_guarded_crouch_preparation",
           "start": 0
         },
         {
-          "duration": 2,
-          "sourceFrameId": "crouching_medium_motion_v1_02_kick_acceleration",
-          "start": 4
-        },
-        {
-          "duration": 2,
-          "sourceFrameId": "crouching_medium_motion_v1_03_low_side_kick_contact",
-          "start": 6
-        },
-        {
-          "duration": 4,
-          "sourceFrameId": "crouching_medium_motion_v1_04_leg_retraction",
-          "start": 8
-        },
-        {
-          "duration": 8,
-          "sourceFrameId": "crouching_medium_motion_v1_05_planted_crouch_recovery",
+          "duration": 9,
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_02_opposed_split_alignment",
           "start": 12
+        },
+        {
+          "duration": 7,
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_03_simultaneous_contact",
+          "start": 21
+        },
+        {
+          "duration": 10,
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_04_opposed_dual_recoil",
+          "start": 28
+        },
+        {
+          "duration": 11,
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_05_controlled_pistol_lowering",
+          "start": 38
+        },
+        {
+          "duration": 11,
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_06_crouched_recovery",
+          "start": 49
         }
       ],
       "facingBehavior": {
@@ -4977,7 +4977,7 @@
       "gameplayTimingStatus": {
         "authoritative": false,
         "candidateValues": {
-          "reviewState": "awaiting_human_crouching_medium_motion_review",
+          "reviewState": "APPROVED_AS_CURRENT_SANDBOX_MOVESET_2026_08_12",
           "rootMotionAuthority": "simulation_owned_or_not_applicable",
           "timingAuthority": "candidate_responsive_medium_20_ticks"
         },
@@ -4993,13 +4993,13 @@
         {
           "contractVersion": "forge_stance_grounding_v2_source_review_authority",
           "farFoot": {
-            "x": 882,
-            "y": 1407
+            "x": 916,
+            "y": 1406
           },
           "farFootRole": "source_review_depth_contact_reference",
           "nearFoot": {
-            "x": 618,
-            "y": 1407
+            "x": 635,
+            "y": 1406
           },
           "nearFootRole": "source_review_contact_reference",
           "projectedGroundPlaneY": 1408,
@@ -5007,17 +5007,17 @@
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_01_anticipation"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_01_guarded_crouch_preparation"
         },
         {
           "contractVersion": "forge_stance_grounding_v2_source_review_authority",
           "farFoot": {
-            "x": 969,
+            "x": 885,
             "y": 1407
           },
           "farFootRole": "source_review_depth_contact_reference",
           "nearFoot": {
-            "x": 582,
+            "x": 651,
             "y": 1407
           },
           "nearFootRole": "source_review_contact_reference",
@@ -5026,17 +5026,17 @@
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_02_kick_acceleration"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_02_opposed_split_alignment"
         },
         {
           "contractVersion": "forge_stance_grounding_v2_source_review_authority",
           "farFoot": {
-            "x": 995,
+            "x": 953,
             "y": 1407
           },
           "farFootRole": "source_review_depth_contact_reference",
           "nearFoot": {
-            "x": 611,
+            "x": 583,
             "y": 1407
           },
           "nearFootRole": "source_review_contact_reference",
@@ -5045,17 +5045,17 @@
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_03_low_side_kick_contact"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_03_simultaneous_contact"
         },
         {
           "contractVersion": "forge_stance_grounding_v2_source_review_authority",
           "farFoot": {
-            "x": 826,
+            "x": 919,
             "y": 1407
           },
           "farFootRole": "source_review_depth_contact_reference",
           "nearFoot": {
-            "x": 568,
+            "x": 616,
             "y": 1407
           },
           "nearFootRole": "source_review_contact_reference",
@@ -5064,18 +5064,37 @@
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_04_leg_retraction"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_04_opposed_dual_recoil"
+        },
+        {
+          "contractVersion": "forge_stance_grounding_v2_source_review_authority",
+          "farFoot": {
+            "x": 909,
+            "y": 1407
+          },
+          "farFootRole": "source_review_depth_contact_reference",
+          "nearFoot": {
+            "x": 627,
+            "y": 1407
+          },
+          "nearFootRole": "source_review_contact_reference",
+          "projectedGroundPlaneY": 1408,
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_05_controlled_pistol_lowering"
         },
         {
           "contractVersion": "forge_stance_grounding_v2_source_review_authority",
           "farFoot": {
             "x": 916,
-            "y": 1407
+            "y": 1406
           },
           "farFootRole": "source_review_depth_contact_reference",
           "nearFoot": {
             "x": 635,
-            "y": 1407
+            "y": 1406
           },
           "nearFootRole": "source_review_contact_reference",
           "projectedGroundPlaneY": 1408,
@@ -5083,7 +5102,7 @@
             "x": 768,
             "y": 1408
           },
-          "sourceFrameId": "crouching_medium_motion_v1_05_planted_crouch_recovery"
+          "sourceFrameId": "crouching_medium_opposed_split_shot_v6_06_crouched_recovery"
         }
       ],
       "id": "crouching_medium",
@@ -5119,37 +5138,37 @@
       "phases": {
         "active": [
           {
-            "end": 7,
-            "start": 6
+            "end": 27,
+            "start": 21
           }
         ],
         "anticipation": [
           {
-            "end": 5,
+            "end": 20,
             "start": 0
           }
         ],
         "followThrough": [
           {
-            "end": 19,
-            "start": 8
+            "end": 59,
+            "start": 28
           }
         ],
         "impact": [
           {
-            "end": 7,
-            "start": 6
+            "end": 27,
+            "start": 21
           }
         ],
         "recovery": [
           {
-            "end": 19,
-            "start": 8
+            "end": 59,
+            "start": 28
           }
         ],
         "startup": [
           {
-            "end": 5,
+            "end": 20,
             "start": 0
           }
         ]
@@ -5175,56 +5194,66 @@
         }
       ],
       "presentationTrack": [],
-      "simulationLength": 20,
+      "simulationLength": 60,
       "sourceFrames": [
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json",
           "height": 1536,
-          "id": "crouching_medium_motion_v1_01_anticipation",
+          "id": "crouching_medium_opposed_split_shot_v6_01_guarded_crouch_preparation",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/01_anticipation.png",
+          "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/01_guarded_crouch_preparation.png",
           "width": 1536
         },
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json",
           "height": 1536,
-          "id": "crouching_medium_motion_v1_02_kick_acceleration",
+          "id": "crouching_medium_opposed_split_shot_v6_02_opposed_split_alignment",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "9DB272E63CBAD90D4BBBEB093F60A525281F581581F2D3E32F5D406DFBF239D7",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/02_kick_acceleration.png",
+          "sha256": "A10CFD6AC3220EA97FB9CBC8369A87C7CC2765BC5CB4F70E862C70334E7441BE",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/02_opposed_split_alignment.png",
           "width": 1536
         },
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json",
           "height": 1536,
-          "id": "crouching_medium_motion_v1_03_low_side_kick_contact",
+          "id": "crouching_medium_opposed_split_shot_v6_03_simultaneous_contact",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/03_low_side_kick_contact.png",
+          "sha256": "A7EC6A083E446E98FAA6CF413E4FF96651857F12C5E33CEA6411FEC8035ECEC2",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/03_opposed_simultaneous_double_shot_contact.png",
           "width": 1536
         },
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json",
           "height": 1536,
-          "id": "crouching_medium_motion_v1_04_leg_retraction",
+          "id": "crouching_medium_opposed_split_shot_v6_04_opposed_dual_recoil",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "EE109DE74710BA3A3E2DAD19EE432024618995CEC99EB5F8F04D83F8D5197B90",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/04_leg_retraction.png",
+          "sha256": "65052D04C6F9564A511200B528FBE780542C46EB3FA39B118C9E81872035B4B6",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/04_opposed_dual_recoil.png",
           "width": 1536
         },
         {
           "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json",
           "height": 1536,
-          "id": "crouching_medium_motion_v1_05_planted_crouch_recovery",
+          "id": "crouching_medium_opposed_split_shot_v6_05_controlled_pistol_lowering",
           "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
           "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
-          "sha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
-          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/05_planted_crouch_recovery.png",
+          "sha256": "B2177023863AB3AD52DB701831AECA9612CB084F3AFFDC7079BD38F9183AE003",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/05_controlled_pistol_lowering.png",
+          "width": 1536
+        },
+        {
+          "approvalUri": "repo://tools/nga-forge/production/characters/swahili/status/crouching-medium-motion-v1.status.json",
+          "height": 1536,
+          "id": "crouching_medium_opposed_split_shot_v6_06_crouched_recovery",
+          "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json",
+          "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+          "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+          "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/06_crouched_recovery.png",
           "width": 1536
         }
       ],
@@ -9328,7 +9357,7 @@
             "x": 570,
             "y": 1408
           },
-          "frame": 12,
+          "frame": 6,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 570,
@@ -9353,7 +9382,7 @@
             "x": 649,
             "y": 1407
           },
-          "frame": 22,
+          "frame": 16,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 649,
@@ -9378,7 +9407,7 @@
             "x": 647,
             "y": 1408
           },
-          "frame": 27,
+          "frame": 21,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 647,
@@ -9403,7 +9432,7 @@
             "x": 703,
             "y": 1408
           },
-          "frame": 30,
+          "frame": 24,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 703,
@@ -9428,7 +9457,7 @@
             "x": 557,
             "y": 1408
           },
-          "frame": 36,
+          "frame": 30,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 557,
@@ -9453,7 +9482,7 @@
             "x": 570,
             "y": 1408
           },
-          "frame": 41,
+          "frame": 35,
           "groundingContract": "forge_stance_grounding_v2_source_review_authority",
           "nearFoot": {
             "x": 570,
@@ -9526,39 +9555,39 @@
       "exitPoseId": "neutral_stand",
       "exposures": [
         {
-          "duration": 12,
+          "duration": 6,
           "sourceFrameId": "idle_00",
           "start": 0
         },
         {
           "duration": 10,
           "sourceFrameId": "standing_heavy_anticipation_v2",
-          "start": 12
+          "start": 6
         },
         {
           "duration": 5,
           "sourceFrameId": "standing_heavy_preparation",
-          "start": 22
+          "start": 16
         },
         {
           "duration": 3,
           "sourceFrameId": "standing_heavy_extension",
-          "start": 27
+          "start": 21
         },
         {
           "duration": 6,
           "sourceFrameId": "standing_heavy_impact_v2",
-          "start": 30
+          "start": 24
         },
         {
           "duration": 5,
           "sourceFrameId": "standing_heavy_recoil_v2",
-          "start": 36
+          "start": 30
         },
         {
-          "duration": 9,
+          "duration": 15,
           "sourceFrameId": "standing_heavy_recovery",
-          "start": 41
+          "start": 35
         },
         {
           "duration": 25,
@@ -9579,6 +9608,7 @@
           "rootMotionAuthority": "simulation_owned_or_not_applicable",
           "timingAuthority": "authoritative_v1_balance_baseline"
         },
+        "humanReviewStatus": "PENDING_HUMAN_REVIEW_OF_CONTACT_WINDOW_REPAIR",
         "notes": [
           "Every move keeps its independently authored 60 Hz duration.",
           "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
@@ -14521,5 +14551,5 @@
     ]
   },
   "schemaVersion": "2.1.0-runtime",
-  "sourceDigest": "0359f9900e54a2941f18f0e75739b5bc220c653afc8d40284da5411c388437c8"
+  "sourceDigest": "23ea6b712c1ef65a6c63ae18fa67ef1607d356bd78493fc3ebf81e9b445d6f74"
 }

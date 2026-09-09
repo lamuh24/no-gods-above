@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_gameplay_review",
+  "subject": "lamuh_legacy_v2.fighter_pushbox_separation.candidate.v1",
+  "approvedAt": "2026-09-04",
+  "sourceApplication": "Codex desktop",
+  "userInput": "pass for now but mark it",
+  "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+  "approvalScope": "lamuh_vs_lamuh_deterministic_pushbox_separation_only",
+  "starredForRevisit": true,
+  "revisitReason": "user_requested_pass_for_now_and_mark_for_revisit",
+  "accepted": [
+    "68-unit Lamuh V2 fighter pushbox keeps adult-proportion bodies visibly separated",
+    "deterministic wall-aware pressure resolution prevents fighter overlap outside authored throws",
+    "fighter separation remains active during hitstop",
+    "Ascend Step Heavy collision-aware side-switch placement preserves victim position and expands attacker spacing only when needed"
+  ],
+  "reviewEvidence": {
+    "sandboxRoute": "/lamuh-legacy-sandbox.html",
+    "scenario": "Pushbox pressure",
+    "screenshot": "engine_v2/artifacts/lamuh-legacy-v2/fighter-pushbox-pressure-approved-2026-09-04.png",
+    "screenshotSha256": "0EE3D971140DD238117B3A4C5548EC56F18EABBE354D64C6F0B1DAA651D166BC"
+  },
+  "approvalBoundary": {
+    "fighterPushboxSeparationApprovedForCurrentBaseline": true,
+    "starredForRevisit": true,
+    "throwOverlapExceptionApproved": true,
+    "animationMotionApproved": false,
+    "combatProfilesApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "candidateOnly": true,
+  "legacySourceRemainsImmutable": true
+}

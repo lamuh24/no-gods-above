@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0-human-motion-rejection",
+  "record": "SWAHILI_FORWARD_WALK_V2_CONTACT_WEIGHTED_ROOT_V1",
+  "decision": "REJECTED_BY_HUMAN_REVIEW",
+  "reason": "whole_fighter_skips_forward_due_to_extreme_root_velocity_contrast",
+  "reportedObservation": "looks like he is skipping forward",
+  "supersededBy": "contact_aware_smoothstep_v2",
+  "rejectedMetrics": {
+    "minimumDisplacementPerTick": 0.581,
+    "maximumDisplacementPerTick": 7.161,
+    "peakToMinimumRatio": 12.326,
+    "maximumTickToTickDeltaChange": 6.581
+  },
+  "preservation": {
+    "artworkPixelsChanged": false,
+    "timingExposuresChanged": false,
+    "gameplayDistanceChanged": false,
+    "commandGrabChanged": false
+  },
+  "candidateOnly": true,
+  "deployable": false
+}

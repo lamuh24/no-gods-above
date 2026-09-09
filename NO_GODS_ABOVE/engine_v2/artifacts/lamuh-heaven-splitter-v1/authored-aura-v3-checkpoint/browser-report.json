@@ -1,0 +1,3311 @@
+{
+  "createdAt": "2026-09-05T19:09:04.879Z",
+  "version": "authored-aura-v3",
+  "candidateOnly": true,
+  "deployable": false,
+  "strengths": [
+    "light",
+    "medium",
+    "heavy"
+  ],
+  "cases": [
+    {
+      "side": "p1",
+      "strength": "light",
+      "outcome": "hit",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-light-hit-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-light-hit-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 427.4999633789063,
+            "minY": 224.20001220703125,
+            "maxX": 586.4999633789063,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-light-hit-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 441.4999633789063,
+            "minY": 325,
+            "maxX": 584.4999633789063,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-light-hit-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 461.4999633789063,
+            "minY": 299,
+            "maxX": 587.4999633789063,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [
+        {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_light",
+          "hitOrdinal": 1,
+          "damage": 44,
+          "scaling": 1,
+          "baseHitstun": 22,
+          "effectiveHitstun": 30,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 1,
+          "juggleLimit": 8,
+          "actorPhaseTick": 7,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 425.3999877929688,
+        "minY": 224.20001220703125,
+        "maxX": 863.9000610351562,
+        "maxY": 543
+      },
+      "damage": 44,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "light",
+      "outcome": "stand_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-light-stand_block-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-light-stand_block-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -29.06255,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 424.8186889648438,
+            "minY": 224.20001220703125,
+            "maxX": 583.8186889648438,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-light-stand_block-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -29.06255,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 438.8186889648438,
+            "minY": 325,
+            "maxX": 581.8186889648438,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-light-stand_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -29.06255,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 458.8186889648438,
+            "minY": 299,
+            "maxX": 584.8186889648438,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [
+        {
+          "tick": 6,
+          "outcome": "block",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_light",
+          "hitOrdinal": 0,
+          "damage": 0,
+          "scaling": 1,
+          "baseHitstun": 0,
+          "effectiveHitstun": 0,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8,
+          "actorPhaseTick": 7,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 424.8186889648438,
+        "minY": 224.20001220703125,
+        "maxX": 681.3313354492187,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "light",
+      "outcome": "crouch_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-light-crouch_block-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-light-crouch_block-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -30.00005,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 423.5999389648438,
+            "minY": 224.20001220703125,
+            "maxX": 582.5999389648438,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-light-crouch_block-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -30.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 437.5999389648438,
+            "minY": 325,
+            "maxX": 580.5999389648438,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-light-crouch_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -30.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 457.5999389648438,
+            "minY": 299,
+            "maxX": 583.5999389648438,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [],
+      "bounds": {
+        "minX": 423.5999389648438,
+        "minY": 224.20001220703125,
+        "maxX": 673.6000122070312,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "light",
+      "outcome": "whiff",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-light-whiff-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -133,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 304.70000610351565,
+            "minY": 245,
+            "maxX": 457.70000610351565,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-light-whiff-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -127,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 297.4999938964844,
+            "minY": 224.20001220703125,
+            "maxX": 456.4999938964844,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-light-whiff-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -127,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 311.4999938964844,
+            "minY": 325,
+            "maxX": 454.4999938964844,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-light-whiff-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -127,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 331.4999938964844,
+            "minY": 299,
+            "maxX": 457.4999938964844,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [],
+      "bounds": {
+        "minX": 294.1,
+        "minY": 224.20001220703125,
+        "maxX": 804.9,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "light",
+      "outcome": "anti_air",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-light-anti_air-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-light-anti_air-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 427.4999633789063,
+            "minY": 224.20001220703125,
+            "maxX": 586.4999633789063,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-light-anti_air-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 441.4999633789063,
+            "minY": 325,
+            "maxX": 584.4999633789063,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-light-anti_air-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 461.4999633789063,
+            "minY": 299,
+            "maxX": 587.4999633789063,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [
+        {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_light",
+          "hitOrdinal": 1,
+          "damage": 44,
+          "scaling": 1,
+          "baseHitstun": 22,
+          "effectiveHitstun": 30,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 1,
+          "juggleLimit": 8,
+          "actorPhaseTick": 7,
+          "victimWasAirborneBeforeCollision": true
+        }
+      ],
+      "bounds": {
+        "minX": 425.3999877929688,
+        "minY": 217.64999389648438,
+        "maxX": 886.6500610351562,
+        "maxY": 543
+      },
+      "damage": 44,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "outcome": "hit",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-medium-hit-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-medium-hit-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -21.00005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 435.299951171875,
+            "minY": 193,
+            "maxX": 594.299951171875,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-medium-hit-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 449.299951171875,
+            "minY": 325,
+            "maxX": 592.299951171875,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-medium-hit-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 469.299951171875,
+            "minY": 299,
+            "maxX": 595.299951171875,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [
+        {
+          "tick": 9,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_medium",
+          "hitOrdinal": 1,
+          "damage": 62,
+          "scaling": 1,
+          "baseHitstun": 28,
+          "effectiveHitstun": 36,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 10,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 425.3999877929688,
+        "minY": 193,
+        "maxX": 951.2600463867187,
+        "maxY": 543
+      },
+      "damage": 62,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "outcome": "stand_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-medium-stand_block-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-medium-stand_block-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -24.45005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 430.8149047851563,
+            "minY": 193,
+            "maxX": 589.8149047851563,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-medium-stand_block-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -24.45005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 444.8149047851563,
+            "minY": 325,
+            "maxX": 587.8149047851563,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-medium-stand_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -24.45005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 464.8149047851563,
+            "minY": 299,
+            "maxX": 590.8149047851563,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [
+        {
+          "tick": 9,
+          "outcome": "block",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_medium",
+          "hitOrdinal": 0,
+          "damage": 0,
+          "scaling": 1,
+          "baseHitstun": 0,
+          "effectiveHitstun": 0,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8,
+          "actorPhaseTick": 10,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 425.3999877929688,
+        "minY": 193,
+        "maxX": 691.0650390625,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "outcome": "crouch_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-medium-crouch_block-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-medium-crouch_block-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 427.4999633789063,
+            "minY": 193,
+            "maxX": 586.4999633789063,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-medium-crouch_block-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 441.4999633789063,
+            "minY": 325,
+            "maxX": 584.4999633789063,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-medium-crouch_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 461.4999633789063,
+            "minY": 299,
+            "maxX": 587.4999633789063,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [],
+      "bounds": {
+        "minX": 425.3999877929688,
+        "minY": 193,
+        "maxX": 676.700048828125,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "outcome": "whiff",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-medium-whiff-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -133,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 304.70000610351565,
+            "minY": 245,
+            "maxX": 457.70000610351565,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-medium-whiff-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -121,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 305.3000122070313,
+            "minY": 193,
+            "maxX": 464.3000122070313,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-medium-whiff-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -121,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 319.3000122070313,
+            "minY": 325,
+            "maxX": 462.3000122070313,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-medium-whiff-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -121,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 339.3000122070313,
+            "minY": 299,
+            "maxX": 465.3000122070313,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [],
+      "bounds": {
+        "minX": 294.1,
+        "minY": 193,
+        "maxX": 804.9,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "outcome": "anti_air",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p1-medium-anti_air-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 434.6999145507813,
+            "minY": 245,
+            "maxX": 587.6999145507813,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p1-medium-anti_air-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": -21.00005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 435.299951171875,
+            "minY": 193,
+            "maxX": 594.299951171875,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p1-medium-anti_air-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": -21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 449.299951171875,
+            "minY": 325,
+            "maxX": 592.299951171875,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p1-medium-anti_air-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 469.299951171875,
+            "minY": 299,
+            "maxX": 595.299951171875,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [
+        {
+          "tick": 9,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_medium",
+          "hitOrdinal": 1,
+          "damage": 62,
+          "scaling": 1,
+          "baseHitstun": 28,
+          "effectiveHitstun": 36,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 10,
+          "victimWasAirborneBeforeCollision": true
+        }
+      ],
+      "bounds": {
+        "minX": 425.3999877929688,
+        "minY": 193,
+        "maxX": 959.5800537109375,
+        "maxY": 543
+      },
+      "damage": 62,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "outcome": "hit",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p1-heavy-hit-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p1-heavy-hit-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p1-heavy-hit-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 337.6999145507813,
+            "minY": 202,
+            "maxX": 684.6999145507813,
+            "maxY": 549
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p1-heavy-hit-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": -15.000050000000002,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 358.0999389648438,
+            "minY": 113.79998779296875,
+            "maxX": 705.0999389648438,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p1-heavy-hit-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": -15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 457.0999389648438,
+            "minY": 346,
+            "maxX": 617.0999389648438,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p1-heavy-hit-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 477.0999389648438,
+            "minY": 299,
+            "maxX": 603.0999389648438,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [
+        {
+          "tick": 13,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_heavy",
+          "hitOrdinal": 1,
+          "damage": 80,
+          "scaling": 1,
+          "baseHitstun": 34,
+          "effectiveHitstun": 42,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 14,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 332.6999145507813,
+        "minY": 113.79998779296875,
+        "maxX": 1021.4,
+        "maxY": 549
+      },
+      "damage": 80,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "outcome": "stand_block",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p1-heavy-stand_block-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p1-heavy-stand_block-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p1-heavy-stand_block-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 334.6999145507813,
+            "minY": 197,
+            "maxX": 681.6999145507813,
+            "maxY": 544
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p1-heavy-stand_block-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": -19.050049999999995,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 352.8349243164063,
+            "minY": 113.79998779296875,
+            "maxX": 699.8349243164063,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p1-heavy-stand_block-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": -19.050049999999995,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 451.8349243164063,
+            "minY": 346,
+            "maxX": 611.8349243164063,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p1-heavy-stand_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -19.050049999999995,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 471.8349243164063,
+            "minY": 299,
+            "maxX": 597.8349243164063,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [
+        {
+          "tick": 13,
+          "outcome": "block",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_heavy",
+          "hitOrdinal": 0,
+          "damage": 0,
+          "scaling": 1,
+          "baseHitstun": 0,
+          "effectiveHitstun": 0,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8,
+          "actorPhaseTick": 14,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 334.3999877929688,
+        "minY": 113.79998779296875,
+        "maxX": 701.33505859375,
+        "maxY": 547
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "outcome": "crouch_block",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p1-heavy-crouch_block-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p1-heavy-crouch_block-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p1-heavy-crouch_block-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 334.6999145507813,
+            "minY": 197,
+            "maxX": 681.6999145507813,
+            "maxY": 544
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p1-heavy-crouch_block-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": -24.00005,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 346.3999267578125,
+            "minY": 113.79998779296875,
+            "maxX": 693.3999267578125,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p1-heavy-crouch_block-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": -24.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 445.3999267578125,
+            "minY": 346,
+            "maxX": 605.3999267578125,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p1-heavy-crouch_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -24.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 465.3999267578125,
+            "minY": 299,
+            "maxX": 591.3999267578125,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [],
+      "bounds": {
+        "minX": 334.3999877929688,
+        "minY": 113.79998779296875,
+        "maxX": 693.3999267578125,
+        "maxY": 547
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "outcome": "whiff",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p1-heavy-whiff-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p1-heavy-whiff-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p1-heavy-whiff-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": -133,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 204.70000610351565,
+            "minY": 197,
+            "maxX": 551.7000061035156,
+            "maxY": 544
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p1-heavy-whiff-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": -115,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 228.10000000000002,
+            "minY": 113.79998779296875,
+            "maxX": 575.1,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p1-heavy-whiff-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": -115,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 327.1,
+            "minY": 346,
+            "maxX": 487.1,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p1-heavy-whiff-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -115,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 347.1,
+            "minY": 299,
+            "maxX": 473.1,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [],
+      "bounds": {
+        "minX": 203.10000000000002,
+        "minY": 113.79998779296875,
+        "maxX": 804.9,
+        "maxY": 547
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "outcome": "anti_air",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p1-heavy-anti_air-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p1-heavy-anti_air-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p1-heavy-anti_air-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": -33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 337.6999145507813,
+            "minY": 202,
+            "maxX": 684.6999145507813,
+            "maxY": 549
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p1-heavy-anti_air-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": -15.000050000000002,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 358.0999389648438,
+            "minY": 113.79998779296875,
+            "maxX": 705.0999389648438,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p1-heavy-anti_air-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": -15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 457.0999389648438,
+            "minY": 346,
+            "maxX": 617.0999389648438,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p1-heavy-anti_air-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": -15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 477.0999389648438,
+            "minY": 299,
+            "maxX": 603.0999389648438,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [
+        {
+          "tick": 13,
+          "outcome": "hit",
+          "attacker": "p1",
+          "defender": "p2",
+          "attackId": "legacy_heaven_splitter_heavy",
+          "hitOrdinal": 1,
+          "damage": 80,
+          "scaling": 1,
+          "baseHitstun": 34,
+          "effectiveHitstun": 42,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 14,
+          "victimWasAirborneBeforeCollision": true
+        }
+      ],
+      "bounds": {
+        "minX": 332.6999145507813,
+        "minY": 113.79998779296875,
+        "maxX": 1035.5000366210938,
+        "maxY": 549
+      },
+      "damage": 80,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "outcome": "hit",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-light-hit-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-light-hit-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 533.5000366210937,
+            "minY": 224.20001220703125,
+            "maxX": 692.5000366210937,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-light-hit-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 535.5000366210937,
+            "minY": 325,
+            "maxX": 678.5000366210937,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-light-hit-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.5000366210937,
+            "minY": 299,
+            "maxX": 658.5000366210937,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [
+        {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_light",
+          "hitOrdinal": 1,
+          "damage": 44,
+          "scaling": 1,
+          "baseHitstun": 22,
+          "effectiveHitstun": 30,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 1,
+          "juggleLimit": 8,
+          "actorPhaseTick": 7,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 256.0999389648438,
+        "minY": 224.20001220703125,
+        "maxX": 694.6000122070312,
+        "maxY": 543
+      },
+      "damage": 44,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "outcome": "stand_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-light-stand_block-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-light-stand_block-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 29.06255,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 536.1813110351562,
+            "minY": 224.20001220703125,
+            "maxX": 695.1813110351562,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-light-stand_block-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 29.06255,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 538.1813110351562,
+            "minY": 325,
+            "maxX": 681.1813110351562,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-light-stand_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 29.06255,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 535.1813110351562,
+            "minY": 299,
+            "maxX": 661.1813110351562,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [
+        {
+          "tick": 6,
+          "outcome": "block",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_light",
+          "hitOrdinal": 0,
+          "damage": 0,
+          "scaling": 1,
+          "baseHitstun": 0,
+          "effectiveHitstun": 0,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8,
+          "actorPhaseTick": 7,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 438.6686950683594,
+        "minY": 224.20001220703125,
+        "maxX": 695.1813110351562,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "outcome": "crouch_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-light-crouch_block-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-light-crouch_block-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 30.00005,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 537.4000610351562,
+            "minY": 224.20001220703125,
+            "maxX": 696.4000610351562,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-light-crouch_block-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 30.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 539.4000610351562,
+            "minY": 325,
+            "maxX": 682.4000610351562,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-light-crouch_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 30.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 536.4000610351562,
+            "minY": 299,
+            "maxX": 662.4000610351562,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [],
+      "bounds": {
+        "minX": 446.3999877929688,
+        "minY": 224.20001220703125,
+        "maxX": 696.4000610351562,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "outcome": "whiff",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-light-whiff-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 133,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 662.3000244140625,
+            "minY": 245,
+            "maxX": 815.3000244140625,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-light-whiff-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 127,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 663.4999755859375,
+            "minY": 224.20001220703125,
+            "maxX": 822.4999755859375,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-light-whiff-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 127,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 665.4999755859375,
+            "minY": 325,
+            "maxX": 808.4999755859375,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-light-whiff-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 127,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 662.4999755859375,
+            "minY": 299,
+            "maxX": 788.4999755859375,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [],
+      "bounds": {
+        "minX": 315.1,
+        "minY": 224.20001220703125,
+        "maxX": 825.9,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "outcome": "anti_air",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-light-anti_air-contact-pose.png",
+          "phaseTick": 7,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-light-anti_air-apex.png",
+          "phaseTick": 14,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": -16
+          },
+          "spriteCompositeBounds": {
+            "minX": 533.5000366210937,
+            "minY": 224.20001220703125,
+            "maxX": 692.5000366210937,
+            "maxY": 516.2000122070312
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-light-anti_air-landing.png",
+          "phaseTick": 24,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 535.5000366210937,
+            "minY": 325,
+            "maxX": 678.5000366210937,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-light-anti_air-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.5000366210937,
+            "minY": 299,
+            "maxX": 658.5000366210937,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 68,
+      "contacts": [
+        {
+          "tick": 6,
+          "outcome": "hit",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_light",
+          "hitOrdinal": 1,
+          "damage": 44,
+          "scaling": 1,
+          "baseHitstun": 22,
+          "effectiveHitstun": 30,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 1,
+          "juggleLimit": 8,
+          "actorPhaseTick": 7,
+          "victimWasAirborneBeforeCollision": true
+        }
+      ],
+      "bounds": {
+        "minX": 233.34993896484377,
+        "minY": 217.64999389648438,
+        "maxX": 694.6000122070312,
+        "maxY": 543
+      },
+      "damage": 44,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "outcome": "hit",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-medium-hit-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-medium-hit-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 21.00005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 525.700048828125,
+            "minY": 193,
+            "maxX": 684.700048828125,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-medium-hit-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 527.700048828125,
+            "minY": 325,
+            "maxX": 670.700048828125,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-medium-hit-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 524.700048828125,
+            "minY": 299,
+            "maxX": 650.700048828125,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [
+        {
+          "tick": 9,
+          "outcome": "hit",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_medium",
+          "hitOrdinal": 1,
+          "damage": 62,
+          "scaling": 1,
+          "baseHitstun": 28,
+          "effectiveHitstun": 36,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 10,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 168.73992309570315,
+        "minY": 193,
+        "maxX": 694.6000122070312,
+        "maxY": 543
+      },
+      "damage": 62,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "outcome": "stand_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-medium-stand_block-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-medium-stand_block-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 24.45005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 530.1850952148437,
+            "minY": 193,
+            "maxX": 689.1850952148437,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-medium-stand_block-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 24.45005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.1850952148437,
+            "minY": 325,
+            "maxX": 675.1850952148437,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-medium-stand_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 24.45005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 529.1850952148437,
+            "minY": 299,
+            "maxX": 655.1850952148437,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [
+        {
+          "tick": 9,
+          "outcome": "block",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_medium",
+          "hitOrdinal": 0,
+          "damage": 0,
+          "scaling": 1,
+          "baseHitstun": 0,
+          "effectiveHitstun": 0,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8,
+          "actorPhaseTick": 10,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 428.9349304199219,
+        "minY": 193,
+        "maxX": 694.6000122070312,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "outcome": "crouch_block",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-medium-crouch_block-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-medium-crouch_block-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 533.5000366210937,
+            "minY": 193,
+            "maxX": 692.5000366210937,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-medium-crouch_block-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 535.5000366210937,
+            "minY": 325,
+            "maxX": 678.5000366210937,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-medium-crouch_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 27.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.5000366210937,
+            "minY": 299,
+            "maxX": 658.5000366210937,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [],
+      "bounds": {
+        "minX": 443.2999206542969,
+        "minY": 193,
+        "maxX": 694.6000122070312,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "outcome": "whiff",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-medium-whiff-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 133,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 662.3000244140625,
+            "minY": 245,
+            "maxX": 815.3000244140625,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-medium-whiff-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 121,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 655.6999877929687,
+            "minY": 193,
+            "maxX": 814.6999877929687,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-medium-whiff-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 121,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 657.6999877929687,
+            "minY": 325,
+            "maxX": 800.6999877929687,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-medium-whiff-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 121,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 654.6999877929687,
+            "minY": 299,
+            "maxX": 780.6999877929687,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [],
+      "bounds": {
+        "minX": 315.1,
+        "minY": 193,
+        "maxX": 825.9,
+        "maxY": 543
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "outcome": "anti_air",
+      "screenshots": {
+        "contact-pose": {
+          "file": "p2-medium-anti_air-contact-pose.png",
+          "phaseTick": 10,
+          "activeFrame": 3,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 532.3000854492187,
+            "minY": 245,
+            "maxX": 685.3000854492187,
+            "maxY": 539
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png"
+        },
+        "apex": {
+          "file": "p2-medium-anti_air-apex.png",
+          "phaseTick": 20,
+          "activeFrame": 4,
+          "actorPosition": {
+            "x": 21.00005,
+            "y": -40
+          },
+          "spriteCompositeBounds": {
+            "minX": 525.700048828125,
+            "minY": 193,
+            "maxX": 684.700048828125,
+            "maxY": 485
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png"
+        },
+        "landing": {
+          "file": "p2-medium-anti_air-landing.png",
+          "phaseTick": 33,
+          "activeFrame": 8,
+          "actorPosition": {
+            "x": 21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 527.700048828125,
+            "minY": 325,
+            "maxX": 670.700048828125,
+            "maxY": 543
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png"
+        },
+        "neutral-return": {
+          "file": "p2-medium-anti_air-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 21.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 524.700048828125,
+            "minY": 299,
+            "maxX": 650.700048828125,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 75,
+      "contacts": [
+        {
+          "tick": 9,
+          "outcome": "hit",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_medium",
+          "hitOrdinal": 1,
+          "damage": 62,
+          "scaling": 1,
+          "baseHitstun": 28,
+          "effectiveHitstun": 36,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 10,
+          "victimWasAirborneBeforeCollision": true
+        }
+      ],
+      "bounds": {
+        "minX": 160.41994628906252,
+        "minY": 193,
+        "maxX": 694.6000122070312,
+        "maxY": 543
+      },
+      "damage": 62,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "outcome": "hit",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p2-heavy-hit-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p2-heavy-hit-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p2-heavy-hit-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 441.3000854492187,
+            "minY": 202,
+            "maxX": 788.3000854492187,
+            "maxY": 549
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p2-heavy-hit-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": 15.000050000000002,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 414.9000610351562,
+            "minY": 113.79998779296875,
+            "maxX": 761.9000610351562,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p2-heavy-hit-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": 15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 502.9000610351562,
+            "minY": 346,
+            "maxX": 662.9000610351562,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p2-heavy-hit-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 516.9000610351562,
+            "minY": 299,
+            "maxX": 642.9000610351562,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [
+        {
+          "tick": 13,
+          "outcome": "hit",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_heavy",
+          "hitOrdinal": 1,
+          "damage": 80,
+          "scaling": 1,
+          "baseHitstun": 34,
+          "effectiveHitstun": 42,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 14,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 98.60000000000002,
+        "minY": 113.79998779296875,
+        "maxX": 788.3000854492187,
+        "maxY": 549
+      },
+      "damage": 80,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "outcome": "stand_block",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p2-heavy-stand_block-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p2-heavy-stand_block-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p2-heavy-stand_block-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 438.3000854492187,
+            "minY": 197,
+            "maxX": 785.3000854492187,
+            "maxY": 544
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p2-heavy-stand_block-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": 19.050049999999995,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 420.1650756835937,
+            "minY": 113.79998779296875,
+            "maxX": 767.1650756835937,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p2-heavy-stand_block-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": 19.050049999999995,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 508.1650756835937,
+            "minY": 346,
+            "maxX": 668.1650756835937,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p2-heavy-stand_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 19.050049999999995,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 522.1650756835937,
+            "minY": 299,
+            "maxX": 648.1650756835937,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [
+        {
+          "tick": 13,
+          "outcome": "block",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_heavy",
+          "hitOrdinal": 0,
+          "damage": 0,
+          "scaling": 1,
+          "baseHitstun": 0,
+          "effectiveHitstun": 0,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 0,
+          "juggleLimit": 8,
+          "actorPhaseTick": 14,
+          "victimWasAirborneBeforeCollision": false
+        }
+      ],
+      "bounds": {
+        "minX": 418.66494140625,
+        "minY": 113.79998779296875,
+        "maxX": 785.6000122070312,
+        "maxY": 547
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "outcome": "crouch_block",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p2-heavy-crouch_block-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p2-heavy-crouch_block-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p2-heavy-crouch_block-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 438.3000854492187,
+            "minY": 197,
+            "maxX": 785.3000854492187,
+            "maxY": 544
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p2-heavy-crouch_block-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": 24.00005,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 426.6000732421875,
+            "minY": 113.79998779296875,
+            "maxX": 773.6000732421875,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p2-heavy-crouch_block-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": 24.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 514.6000732421875,
+            "minY": 346,
+            "maxX": 674.6000732421875,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p2-heavy-crouch_block-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 24.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 528.6000732421875,
+            "minY": 299,
+            "maxX": 654.6000732421875,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [],
+      "bounds": {
+        "minX": 426.6000732421875,
+        "minY": 113.79998779296875,
+        "maxX": 785.6000122070312,
+        "maxY": 547
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "outcome": "whiff",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p2-heavy-whiff-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p2-heavy-whiff-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p2-heavy-whiff-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": 133,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 568.3000244140625,
+            "minY": 197,
+            "maxX": 915.3000244140625,
+            "maxY": 544
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p2-heavy-whiff-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": 115,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 544.9,
+            "minY": 113.79998779296875,
+            "maxX": 891.9,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p2-heavy-whiff-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": 115,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 632.9,
+            "minY": 346,
+            "maxX": 792.9,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p2-heavy-whiff-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 115,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 646.9,
+            "minY": 299,
+            "maxX": 772.9,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [],
+      "bounds": {
+        "minX": 315.1,
+        "minY": 113.79998779296875,
+        "maxX": 916.9,
+        "maxY": 547
+      },
+      "damage": 0,
+      "passed": true
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "outcome": "anti_air",
+      "screenshots": {
+        "aura-coil": {
+          "file": "p2-heavy-anti_air-aura-coil.png",
+          "phaseTick": 9,
+          "activeFrame": 3,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-03.png"
+        },
+        "aura-gather": {
+          "file": "p2-heavy-anti_air-aura-gather.png",
+          "phaseTick": 12,
+          "activeFrame": 4,
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-04.png"
+        },
+        "contact-pose": {
+          "file": "p2-heavy-anti_air-contact-pose.png",
+          "phaseTick": 14,
+          "activeFrame": 5,
+          "actorPosition": {
+            "x": 33.00005,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 441.3000854492187,
+            "minY": 202,
+            "maxX": 788.3000854492187,
+            "maxY": 549
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png"
+        },
+        "apex": {
+          "file": "p2-heavy-anti_air-apex.png",
+          "phaseTick": 26,
+          "activeFrame": 6,
+          "actorPosition": {
+            "x": 15.000050000000002,
+            "y": -64
+          },
+          "spriteCompositeBounds": {
+            "minX": 414.9000610351562,
+            "minY": 113.79998779296875,
+            "maxX": 761.9000610351562,
+            "maxY": 460.79998779296875
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-06.png"
+        },
+        "landing": {
+          "file": "p2-heavy-anti_air-landing.png",
+          "phaseTick": 43,
+          "activeFrame": 10,
+          "actorPosition": {
+            "x": 15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 502.9000610351562,
+            "minY": 346,
+            "maxX": 662.9000610351562,
+            "maxY": 542
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-10.png"
+        },
+        "neutral-return": {
+          "file": "p2-heavy-anti_air-neutral-return.png",
+          "phaseTick": 0,
+          "activeFrame": null,
+          "actorPosition": {
+            "x": 15.000050000000002,
+            "y": 0
+          },
+          "spriteCompositeBounds": {
+            "minX": 516.9000610351562,
+            "minY": 299,
+            "maxX": 642.9000610351562,
+            "maxY": 541
+          },
+          "actualSourcePath": "/lamuh-legacy-v2/movement-v2/idle-00.png"
+        }
+      },
+      "bodySamples": 85,
+      "contacts": [
+        {
+          "tick": 13,
+          "outcome": "hit",
+          "attacker": "p2",
+          "defender": "p1",
+          "attackId": "legacy_heaven_splitter_heavy",
+          "hitOrdinal": 1,
+          "damage": 80,
+          "scaling": 1,
+          "baseHitstun": 34,
+          "effectiveHitstun": 42,
+          "hitstunDecay": 0,
+          "juggleBefore": 0,
+          "juggleAfter": 2,
+          "juggleLimit": 8,
+          "actorPhaseTick": 14,
+          "victimWasAirborneBeforeCollision": true
+        }
+      ],
+      "bounds": {
+        "minX": 84.49993286132815,
+        "minY": 113.79998779296875,
+        "maxX": 788.3000854492187,
+        "maxY": 549
+      },
+      "damage": 80,
+      "passed": true
+    }
+  ],
+  "keyboard": [
+    {
+      "strength": "light",
+      "chord": "U then W+J",
+      "actualDOMKeyEvents": true,
+      "passed": true
+    },
+    {
+      "strength": "medium",
+      "chord": "U then W+K",
+      "actualDOMKeyEvents": true,
+      "passed": true
+    },
+    {
+      "strength": "heavy",
+      "chord": "U then W+L",
+      "actualDOMKeyEvents": true,
+      "passed": true
+    }
+  ],
+  "cornerContainment": [
+    {
+      "side": "p1",
+      "strength": "light",
+      "space": "left_corner",
+      "passed": true,
+      "screenshot": "p1-light-left_corner-apex.png"
+    },
+    {
+      "side": "p1",
+      "strength": "light",
+      "space": "right_corner",
+      "passed": true,
+      "screenshot": "p1-light-right_corner-apex.png"
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "space": "left_corner",
+      "passed": true,
+      "screenshot": "p1-medium-left_corner-apex.png"
+    },
+    {
+      "side": "p1",
+      "strength": "medium",
+      "space": "right_corner",
+      "passed": true,
+      "screenshot": "p1-medium-right_corner-apex.png"
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "space": "left_corner",
+      "passed": true,
+      "screenshot": "p1-heavy-left_corner-apex.png"
+    },
+    {
+      "side": "p1",
+      "strength": "heavy",
+      "space": "right_corner",
+      "passed": true,
+      "screenshot": "p1-heavy-right_corner-apex.png"
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "space": "left_corner",
+      "passed": true,
+      "screenshot": "p2-light-left_corner-apex.png"
+    },
+    {
+      "side": "p2",
+      "strength": "light",
+      "space": "right_corner",
+      "passed": true,
+      "screenshot": "p2-light-right_corner-apex.png"
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "space": "left_corner",
+      "passed": true,
+      "screenshot": "p2-medium-left_corner-apex.png"
+    },
+    {
+      "side": "p2",
+      "strength": "medium",
+      "space": "right_corner",
+      "passed": true,
+      "screenshot": "p2-medium-right_corner-apex.png"
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "space": "left_corner",
+      "passed": true,
+      "screenshot": "p2-heavy-left_corner-apex.png"
+    },
+    {
+      "side": "p2",
+      "strength": "heavy",
+      "space": "right_corner",
+      "passed": true,
+      "screenshot": "p2-heavy-right_corner-apex.png"
+    }
+  ],
+  "failures": [],
+  "browserErrors": [],
+  "ignoredHotReloads": [],
+  "renderedLayerBoundsMethod": "Actual prepared sprite alpha plus CanvasRenderingContext2D current transform, sampled every simulation tick. Heavy V3 includes the authored aura: these are composite bounds, not isolated body/anatomy bounds. Opaque body preservation receives a separate exact-pixel audit.",
+  "recordings": [
+    {
+      "file": "heaven-family-1x.webm",
+      "playbackRate": 1,
+      "actualCanvasCapture": true,
+      "bytes": 1418582,
+      "motionSamples": [
+        {
+          "strength": "light",
+          "sampledFrames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "firstTick": 1,
+          "lastTick": 113,
+          "minimumY": -16
+        },
+        {
+          "strength": "medium",
+          "sampledFrames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "firstTick": 1,
+          "lastTick": 119,
+          "minimumY": -40
+        },
+        {
+          "strength": "heavy",
+          "sampledFrames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "firstTick": 0,
+          "lastTick": 118,
+          "minimumY": -64
+        }
+      ]
+    },
+    {
+      "file": "heaven-family-half-speed.webm",
+      "playbackRate": 0.5,
+      "actualCanvasCapture": true,
+      "bytes": 2166654,
+      "motionSamples": [
+        {
+          "strength": "light",
+          "sampledFrames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "firstTick": 1,
+          "lastTick": 107,
+          "minimumY": -16
+        },
+        {
+          "strength": "medium",
+          "sampledFrames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "firstTick": 1,
+          "lastTick": 107,
+          "minimumY": -40
+        },
+        {
+          "strength": "heavy",
+          "sampledFrames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "firstTick": 1,
+          "lastTick": 106,
+          "minimumY": -64
+        }
+      ]
+    }
+  ],
+  "authoredAuraPixelAudit": [
+    {
+      "index": 1,
+      "actualCompositeSha256": "CD8859FC0022F45251C07E7792F8E622F065A45E9A9C27A1D2D189ADDD199452",
+      "expectedCompositeSha256": "CD8859FC0022F45251C07E7792F8E622F065A45E9A9C27A1D2D189ADDD199452",
+      "actualBodySha256": "E54D76032F008E27083E80459D1096444DA0607DA9BE905009FDFB89753AD45D",
+      "expectedBodySha256": "E54D76032F008E27083E80459D1096444DA0607DA9BE905009FDFB89753AD45D",
+      "opaquePixels": 172474,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    },
+    {
+      "index": 2,
+      "actualCompositeSha256": "23513153F1F95313E6CCB6A7EE61405DC80126837E6E4D0BF062B5ADCA5C8B43",
+      "expectedCompositeSha256": "23513153F1F95313E6CCB6A7EE61405DC80126837E6E4D0BF062B5ADCA5C8B43",
+      "actualBodySha256": "0E5FAC004BF4E4F8E2DC0A97A670635760FA90F4B5B22D4521F3FCD692793C98",
+      "expectedBodySha256": "0E5FAC004BF4E4F8E2DC0A97A670635760FA90F4B5B22D4521F3FCD692793C98",
+      "opaquePixels": 189698,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    },
+    {
+      "index": 3,
+      "actualCompositeSha256": "A8D7FEB4A94151A9B70C4D5C116632D25F6855CC5FA20A2E30B0A349DC818F80",
+      "expectedCompositeSha256": "A8D7FEB4A94151A9B70C4D5C116632D25F6855CC5FA20A2E30B0A349DC818F80",
+      "actualBodySha256": "A4B80D45D160A8FE041E9FA3F1587B7C1C5640AB18A0BDFF32D0C00FC9F4FBB9",
+      "expectedBodySha256": "A4B80D45D160A8FE041E9FA3F1587B7C1C5640AB18A0BDFF32D0C00FC9F4FBB9",
+      "opaquePixels": 165819,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 843518
+    },
+    {
+      "index": 4,
+      "actualCompositeSha256": "E2C1CD0526B32572B398CDFC290B2842870BD6CD9E85B0F1ED9C4E75A1911F7F",
+      "expectedCompositeSha256": "E2C1CD0526B32572B398CDFC290B2842870BD6CD9E85B0F1ED9C4E75A1911F7F",
+      "actualBodySha256": "39DC7F0D380598DBFA0EA1D921C26E95710BCCCFB2583633D72612B239D85081",
+      "expectedBodySha256": "39DC7F0D380598DBFA0EA1D921C26E95710BCCCFB2583633D72612B239D85081",
+      "opaquePixels": 206354,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 820983
+    },
+    {
+      "index": 5,
+      "actualCompositeSha256": "480BE6BD57575632D2271CDDB4888268E229B44075515FCD5B471198012563B3",
+      "expectedCompositeSha256": "480BE6BD57575632D2271CDDB4888268E229B44075515FCD5B471198012563B3",
+      "actualBodySha256": "6BC76E8E6CE0F987418E1829C85F9CBBEAE81EDA1DD9C4CC890BE8F08995AE6E",
+      "expectedBodySha256": "6BC76E8E6CE0F987418E1829C85F9CBBEAE81EDA1DD9C4CC890BE8F08995AE6E",
+      "opaquePixels": 216412,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 819049
+    },
+    {
+      "index": 6,
+      "actualCompositeSha256": "0AEB8B28908C0592C32554369ED3D52BCA62EB770C8E8E5E74E8ECCBF8D6EE06",
+      "expectedCompositeSha256": "0AEB8B28908C0592C32554369ED3D52BCA62EB770C8E8E5E74E8ECCBF8D6EE06",
+      "actualBodySha256": "94BDAD88C7E5CB59988CBCFD4DFBF02CB0B13FC1289C630A96BDE26FE50998F3",
+      "expectedBodySha256": "94BDAD88C7E5CB59988CBCFD4DFBF02CB0B13FC1289C630A96BDE26FE50998F3",
+      "opaquePixels": 224574,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 811185
+    },
+    {
+      "index": 7,
+      "actualCompositeSha256": "1B9D071EA5C3C137E0F9AB4A22214EBD2D0D1362CA8B094AF35478972B7912AF",
+      "expectedCompositeSha256": "1B9D071EA5C3C137E0F9AB4A22214EBD2D0D1362CA8B094AF35478972B7912AF",
+      "actualBodySha256": "6A0A493E1221BF3C7C444C6CED3C024F66D0D355D0AD6BA5FA22301795CE02E1",
+      "expectedBodySha256": "6A0A493E1221BF3C7C444C6CED3C024F66D0D355D0AD6BA5FA22301795CE02E1",
+      "opaquePixels": 203537,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 820452
+    },
+    {
+      "index": 8,
+      "actualCompositeSha256": "BED8BF8A3FE026A5D05E9C2A152F15CB6C8382993FF8E384D06AF4D26699736D",
+      "expectedCompositeSha256": "BED8BF8A3FE026A5D05E9C2A152F15CB6C8382993FF8E384D06AF4D26699736D",
+      "actualBodySha256": "3C726A80D5E2162971ECF18DF7196CB355AC2F5F90ADB87E197F77059B552CC5",
+      "expectedBodySha256": "3C726A80D5E2162971ECF18DF7196CB355AC2F5F90ADB87E197F77059B552CC5",
+      "opaquePixels": 153689,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    },
+    {
+      "index": 9,
+      "actualCompositeSha256": "3DF07DFB1362B336EA4CC58960C375D746E8D88DD1FB1F3B8DF449F8E316C38F",
+      "expectedCompositeSha256": "3DF07DFB1362B336EA4CC58960C375D746E8D88DD1FB1F3B8DF449F8E316C38F",
+      "actualBodySha256": "FD583BADDCC12CF6189A56386DBD41DD4DC65F96E87615157EB11665D739B4CD",
+      "expectedBodySha256": "FD583BADDCC12CF6189A56386DBD41DD4DC65F96E87615157EB11665D739B4CD",
+      "opaquePixels": 185853,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    },
+    {
+      "index": 10,
+      "actualCompositeSha256": "69B27990A759CD4FE9B6045223DA40BCFAC73C97BB20DBB85B2A761826637621",
+      "expectedCompositeSha256": "69B27990A759CD4FE9B6045223DA40BCFAC73C97BB20DBB85B2A761826637621",
+      "actualBodySha256": "24749482DAEC162A9BBA2C7E587EA9ED3B6A26688267E2B2B1E19F8E9868B6D1",
+      "expectedBodySha256": "24749482DAEC162A9BBA2C7E587EA9ED3B6A26688267E2B2B1E19F8E9868B6D1",
+      "opaquePixels": 176507,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    },
+    {
+      "index": 11,
+      "actualCompositeSha256": "8C54855C79D0C56580D33B7F3C00C54793F9FCBBDDF2F81ACAC89AB243436B89",
+      "expectedCompositeSha256": "8C54855C79D0C56580D33B7F3C00C54793F9FCBBDDF2F81ACAC89AB243436B89",
+      "actualBodySha256": "2B53ED84F9FA8ED4FC27AA893CE7B23E5CDA334A75817E6F0FEA6254F28988E5",
+      "expectedBodySha256": "2B53ED84F9FA8ED4FC27AA893CE7B23E5CDA334A75817E6F0FEA6254F28988E5",
+      "opaquePixels": 199700,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    },
+    {
+      "index": 12,
+      "actualCompositeSha256": "7DA7A7F6989F70CE0EAF8843E9D0B4BCA4023F252D1A1793429588F1C9AF27CF",
+      "expectedCompositeSha256": "7DA7A7F6989F70CE0EAF8843E9D0B4BCA4023F252D1A1793429588F1C9AF27CF",
+      "actualBodySha256": "227D63B5B7C514FB6AD2389CE15326FF42D5B334D78A1149DAC76531F8AA3E4F",
+      "expectedBodySha256": "227D63B5B7C514FB6AD2389CE15326FF42D5B334D78A1149DAC76531F8AA3E4F",
+      "opaquePixels": 179564,
+      "changedOpaquePixels": 0,
+      "auraOutsideBodyPixels": 0
+    }
+  ],
+  "authoredAuraSelection": {
+    "actualCompositePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png",
+    "bodyFallbackPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-02.png",
+    "noProceduralOverlay": true,
+    "togglePreservedSimulation": true,
+    "screenshots": [
+      "authored-aura-v3-on.png",
+      "authored-aura-v3-off.png"
+    ]
+  },
+  "comparison": {
+    "defaultMove": "heaven_splitter_medium",
+    "halfSpeedSelected": true,
+    "frameAdvancePassed": true,
+    "screenshot": "comparison-medium-half-speed.png",
+    "authoredAura": {
+      "actualCompositePath": "/lamuh-legacy-v2/heaven-heavy-aura-v3/heavy-aura-05.png",
+      "actualBodyOnlyPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-02.png",
+      "noDoubleOverlay": true
+    }
+  },
+  "compactViewport": {
+    "innerWidth": 760,
+    "innerHeight": 720,
+    "scrollWidth": 760,
+    "canvas": {
+      "left": 25,
+      "right": 734.984375,
+      "top": 144.140625,
+      "bottom": 538.0625
+    },
+    "strength": "heavy",
+    "passed": true,
+    "screenshot": "compact-viewport-apex.png"
+  },
+  "passed": true
+}

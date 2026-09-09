@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/provenance.schema.json",
+  "title": "NGA Asset Provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sourceType", "tool", "model", "createdAt", "promptHash", "references", "revisionChain", "cleanupOperations", "humanApproval", "licensingNotes"],
+  "properties": {
+    "sourceType": { "enum": ["human_authored", "ai_assisted", "legacy_import", "contract_fixture"] },
+    "tool": { "type": "string", "minLength": 1 },
+    "model": { "type": ["string", "null"] },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "promptHash": { "type": ["string", "null"] },
+    "seed": { "type": ["string", "integer", "null"] },
+    "references": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "revisionChain": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "cleanupOperations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "humanApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "approvedBy", "approvedAt"],
+      "properties": {
+        "state": { "enum": ["pending", "approved", "rejected"] },
+        "approvedBy": { "type": ["string", "null"] },
+        "approvedAt": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "licensingNotes": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_animation_review",
+  "subject": "lamuh_legacy_v2.crouching_medium.sweep_line.candidate.v1",
+  "approvedAt": "2026-08-27",
+  "sourceApplication": "Codex desktop",
+  "userInput": "passes",
+  "decisions": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED",
+    "timing": "APPROVED_V2_RETIMING",
+    "selectedTimingCandidate": "B",
+    "selectedDurationTicks": 22
+  },
+  "approvalScope": "crouching_medium_motion_and_candidate_b_visual_retiming_only",
+  "accepted": [
+    "eight-frame single low sweep sequence",
+    "one visible contact equal to one gameplay hit",
+    "fixed crouched root and fixed runtime renderer scale",
+    "outline-free NGA V2 style",
+    "same-leg follow-through, retraction and connected crouch recovery"
+  ],
+  "approvalBoundary": {
+    "crouchingMediumMotionApproved": true,
+    "crouchingMediumTimingCandidateBApproved": true,
+    "impactProfileApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "nextAuthorizedCandidateWork": "crouching_heavy_crown_riser_preservation_first_reconstruction",
+  "stopAt": "human_motion_and_timing_review",
+  "legacySourceRemainsImmutable": true
+}

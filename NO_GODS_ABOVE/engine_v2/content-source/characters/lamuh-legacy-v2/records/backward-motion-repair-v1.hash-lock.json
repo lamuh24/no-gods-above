@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.walk_backward_dash_backward.directional_motion_repair.candidate.v1",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "legacySourceImmutable": true,
+  "generationMode": "OpenAI built-in image generation reference edit mode",
+  "generationPromptSummary": "Right-facing Lamuh visibly retreats left: guarded backpedal for Walk Back and recoil, takeoff, airborne retreat, landing catch, and planted brake for Back Dash.",
+  "timingPreserved": {
+    "walk_backward": {
+      "frames": 6,
+      "exposures": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "duration": 18,
+      "loop": true
+    },
+    "dash_backward": {
+      "frames": 5,
+      "exposures": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "duration": 20,
+      "loop": false
+    }
+  },
+  "sourceSheets": {
+    "walk_backward": {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/raw/walk-backward-source-sheet.png",
+      "sha256": "DA825D72EEDC62D3CF1A12C90B61F0537523A88A92E532F026CF6A987915D2DC",
+      "authoredFrameCount": 6,
+      "generationMode": "OpenAI built-in image generation reference edit mode"
+    },
+    "dash_backward": {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/raw/dash-backward-source-sheet.png",
+      "sha256": "F1BEB1CCB6AF2676DB3CF4AC6DE4C6194CC2D4AF57EDC566373C70C66E64F5F6",
+      "authoredFrameCount": 5,
+      "generationMode": "OpenAI built-in image generation reference edit mode"
+    }
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalization.report.json",
+    "sha256": "CFDE17C5CFF88EDC07808DD02BCA709A95A651CFDD2A56C86EADF84A56A02321"
+  },
+  "contactSheets": {
+    "walk_backward": {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/walk-backward-numbered-contact-sheet.png",
+      "sha256": "A1D59F8CE6744756547DDF0BCD62ABAFFA76E1B240348D103C81E88967277E04"
+    },
+    "dash_backward": {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/dash-backward-numbered-contact-sheet.png",
+      "sha256": "C05C0DF90D82E945AD542B4A59D5B6B91785F44A0967A0BFA17B8C52BFA433E9"
+    }
+  },
+  "protectedLegacyFrames": [
+    {
+      "state": "walk_backward",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/walk_backward/walk_backward_00.png",
+      "sha256": "D15657479427DC1419D64296FF31EACE3026B15C883B9799C089FAC63AF50079"
+    },
+    {
+      "state": "walk_backward",
+      "legacyIndex": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/walk_backward/walk_backward_01.png",
+      "sha256": "B6FB744F885AA9686BA7024F334A7901AF832779C48F28EFEDD330485003B209"
+    },
+    {
+      "state": "walk_backward",
+      "legacyIndex": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/walk_backward/walk_backward_02.png",
+      "sha256": "DD65FA8D797105CB9D316C1D045984124C063AA369754DF868DC34E87D6F7DE3"
+    },
+    {
+      "state": "walk_backward",
+      "legacyIndex": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/walk_backward/walk_backward_03.png",
+      "sha256": "7F489EDB40E2490810C967413C7FCC19C56E3156FAEF649CE3843FAFACD344BC"
+    },
+    {
+      "state": "walk_backward",
+      "legacyIndex": 4,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/walk_backward/walk_backward_04.png",
+      "sha256": "60E70D5CA279C7A2D4A61404F0873C2AF82CED8EC70787E7757E8A5446A5AD07"
+    },
+    {
+      "state": "walk_backward",
+      "legacyIndex": 5,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/walk_backward/walk_backward_05.png",
+      "sha256": "8255E593F1361F530F5A2E68CE641D2D5999223DE561BC159A180BD339E6AEC2"
+    },
+    {
+      "state": "dash_backward",
+      "legacyIndex": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/dash_backward/dash_backward_00.png",
+      "sha256": "4B1E4D0AF3724563E6D47795E8C0EF26B1DECCF334BA3E6AD778BD9DB037149A"
+    },
+    {
+      "state": "dash_backward",
+      "legacyIndex": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/dash_backward/dash_backward_01.png",
+      "sha256": "EE2181BE2769829AEEAE6FD7DA828BE4FC21938992AAEE476687351AE2D8F9EF"
+    },
+    {
+      "state": "dash_backward",
+      "legacyIndex": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/dash_backward/dash_backward_02.png",
+      "sha256": "22CC4CB0B086BC045F4F34123009AFFD14D8F61A2FF9F42C8B322DAAA1647752"
+    },
+    {
+      "state": "dash_backward",
+      "legacyIndex": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/dash_backward/dash_backward_03.png",
+      "sha256": "4E9A6905FB07A5AE46F391C02B3450E3CD5B6F34F74B6BB734814EB2AFCD22E5"
+    },
+    {
+      "state": "dash_backward",
+      "legacyIndex": 4,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/dash_backward/dash_backward_04.png",
+      "sha256": "1BAFB224C6186A2E7445BFFE61FAA35D4AF603E602940F2AC64A02EF83702166"
+    }
+  ],
+  "sourceFrames": [
+    {
+      "state": "walk_backward",
+      "index": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/walk_backward/walk-backward-00.png",
+      "sha256": "889CC5678DF2537675107C7858A512AF31219C83DD1E6E1C79424DD6C105B5E2"
+    },
+    {
+      "state": "walk_backward",
+      "index": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/walk_backward/walk-backward-01.png",
+      "sha256": "A1F5D7684798DEF5B5BAAFF7568343147C974861F3D3EDA5FEB0659B0175FAB7"
+    },
+    {
+      "state": "walk_backward",
+      "index": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/walk_backward/walk-backward-02.png",
+      "sha256": "79A805463FD5E35F00825B673845577A2DAF4D80BD774ED99851EDFC4C5A54E5"
+    },
+    {
+      "state": "walk_backward",
+      "index": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/walk_backward/walk-backward-03.png",
+      "sha256": "CF3D3CBB0C6A39F929929FE1DE51A734E54AFF9A48035FE0D7FDDCFE2361A62C"
+    },
+    {
+      "state": "walk_backward",
+      "index": 4,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/walk_backward/walk-backward-04.png",
+      "sha256": "CB5350D5DD6B45402098A4FE004F9F5CBA3E475FE1BC62635521F5AFD9746F52"
+    },
+    {
+      "state": "walk_backward",
+      "index": 5,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/walk_backward/walk-backward-05.png",
+      "sha256": "ACDFF61B700922DA0E314404D71C1D0019937E699123AEE1EC7B76C09C4FFA0F"
+    },
+    {
+      "state": "dash_backward",
+      "index": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/dash_backward/dash-backward-00.png",
+      "sha256": "BAEC8AD65EDA0806CC250C9A5B17C08ED7D86DB832A8D788A5746B38131B5D89"
+    },
+    {
+      "state": "dash_backward",
+      "index": 1,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/dash_backward/dash-backward-01.png",
+      "sha256": "7B0220EC3ADBBC0A1C478E2A39D95FE2F204A5C66C199D9F21355785B21ADE1A"
+    },
+    {
+      "state": "dash_backward",
+      "index": 2,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/dash_backward/dash-backward-02.png",
+      "sha256": "6FCE02BCA1F66040D2A9FDEA0749FE2F0473E87A0C95B724014E5DC02F7630B6"
+    },
+    {
+      "state": "dash_backward",
+      "index": 3,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/dash_backward/dash-backward-03.png",
+      "sha256": "610E15724BB553285F7B25F541BEB6C6D5BFB277EFEF24FDCCC866423AA69D4E"
+    },
+    {
+      "state": "dash_backward",
+      "index": 4,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/candidates/backward-motion-repair-v1/dash_backward/dash-backward-04.png",
+      "sha256": "B8063FBE8A30248DB5203B51A8BD107B68FE00040E31E227359B9DA6342E55EE"
+    }
+  ],
+  "normalizedFrames": [
+    {
+      "state": "walk_backward",
+      "index": 0,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/walk-backward-00.png",
+      "sha256": "97AFBC2BF7DFB5C9B4E30DD7B4A37CA90117BC00F21807F53E864F463B57F508"
+    },
+    {
+      "state": "walk_backward",
+      "index": 1,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/walk-backward-01.png",
+      "sha256": "28587DDE8B9E321ECF4B7672E7BEBF970ABC79478B40F9219058CE830A3DFE7C"
+    },
+    {
+      "state": "walk_backward",
+      "index": 2,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/walk-backward-02.png",
+      "sha256": "7FE3054A6996609C3B9568AE6BF5C526B09CF31F5840A28CC4C536E3E471588E"
+    },
+    {
+      "state": "walk_backward",
+      "index": 3,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/walk-backward-03.png",
+      "sha256": "6A46153B14F487B484D040920CC07A3EF52C3DC06DAF395A3C6F3F15C0D1451B"
+    },
+    {
+      "state": "walk_backward",
+      "index": 4,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/walk-backward-04.png",
+      "sha256": "46C27A7A5C675E40D9B50F790388EF868341505870780034D5AD81477C9EBBC9"
+    },
+    {
+      "state": "walk_backward",
+      "index": 5,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/walk-backward-05.png",
+      "sha256": "29BA7B07D212FF5607CB5F7958B7AFC3F1292331D0B0CE4FBA3F038F2722BD5B"
+    },
+    {
+      "state": "dash_backward",
+      "index": 0,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/dash-backward-00.png",
+      "sha256": "D9297590794F26063692E9B7010AE9174FEEC18DB550279E209E73B8CB471A3F"
+    },
+    {
+      "state": "dash_backward",
+      "index": 1,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/dash-backward-01.png",
+      "sha256": "AA84C22D28E72AC59E072F9C7BCA1BCEC14FE5CED61D256194F680FAAE507C9B"
+    },
+    {
+      "state": "dash_backward",
+      "index": 2,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/dash-backward-02.png",
+      "sha256": "AF534469E5D3FED65D17EF92336AD3D42A393347C04817C0F5C11FC787A0DEA0"
+    },
+    {
+      "state": "dash_backward",
+      "index": 3,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/dash-backward-03.png",
+      "sha256": "6511FDC5137C9DA4CAFDD98FB36834689F0E420293A8CF685080D8FB378A8BA3"
+    },
+    {
+      "state": "dash_backward",
+      "index": 4,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalized/dash-backward-04.png",
+      "sha256": "467188A84B8A204ED4BE249454D66E7A1A9B8CCD3075498F2BE6D363A6538062"
+    }
+  ],
+  "approvalBoundary": {
+    "walkBackwardDirectionalMotionApproved": false,
+    "dashBackwardDirectionalMotionApproved": false,
+    "transitionsApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

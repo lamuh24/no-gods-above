@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.ascend_step.heavy.candidate.v1",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "generationMode": "Exact approved runtime body-frame reuse with separate VFX-only dash, charge, teleport, and blast compositing",
+  "generationPromptSummary": "Ten-pose Ascend Step Heavy: exact approved Lamuh idle, dash, guard, punch, recoil, and recovery body frames; deterministic behind-target side switch; brief pause; growing VFX-only energy ball; and exactly one complete VFX-only blast. No generated avatar pixels are present.",
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalization.report.json",
+    "sha256": "FB15273A57346F518E1FF858AF015470D9EE557CCD2FB3D05CCCB4ECC9FAAF1E"
+  },
+  "contactSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/ascend-step-heavy-numbered-contact-sheet.png",
+    "sha256": "DB560A59FC73194380EE44EF493AD38E14B35344A06C92C22257AC8E04E4FD6E"
+  },
+  "rawSources": [
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+      "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/dash-forward-00.png",
+      "sha256": "77576556FA57C83C1625BEC36AE19F23054CE93FA0BC82B7F7FC2B46B4C4DB76"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/dash-forward-03.png",
+      "sha256": "45F0B7EC3FAB5EE1B567067B960904B1F061229E252E9FCFFD7776070D87BF1C"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/effects/dash-trail.overlay.png",
+      "sha256": "04BECB6C4791850EDC0A06DAC978F570E03E4F63C5B6D253678B21C1153D8DC4"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/standing-light-v2/standing-light-01.png",
+      "sha256": "D5963F748806A8A0A0E87D1DEAD583E3DAF65312A6BBD4FFDC02A7E574EDE40A"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/standing-light-v2/standing-light-02.png",
+      "sha256": "8E2326F54B73ADD8F0CC1B956DD3A1C89A7A2EFA685ECA275AC3A787445C15F8"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/standing-light-v2/standing-light-03.png",
+      "sha256": "3A77DBA2AEDCF26A102BDEB329090D69F70732BFFBE77666B89B7BE0D4783804"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-01.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88"
+    }
+  ],
+  "normalizedFrames": [
+    {
+      "index": 0,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-00.png",
+      "sha256": "957E5EA248D3253D927401296B739F5050B3C4E1E73AA631D7AD0F7967D219B9"
+    },
+    {
+      "index": 1,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-01.png",
+      "sha256": "099EEFC36859149567E37BA46D0F7ADEBB79332EC69CF92EB69A37EF9100F64E"
+    },
+    {
+      "index": 2,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-02.png",
+      "sha256": "726A49D545AB50C2DD64F1690D26C20207CF7FD90F70EE06DB967EA0A329D332"
+    },
+    {
+      "index": 3,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-03.png",
+      "sha256": "89876C986AEE19704CCFCDF2343BF4C1B7462C85A45446549FE657F1720FF5D7"
+    },
+    {
+      "index": 4,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-04.png",
+      "sha256": "B3C343C9A4FA69EDBBC3E947BC3EE38E7D08D2FBAED1E4572F1669CB10127EC4"
+    },
+    {
+      "index": 5,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-05.png",
+      "sha256": "83403F1CD4B6982653556FBBC8DA04E9E080946891558ABA92E40B1DF89297ED"
+    },
+    {
+      "index": 6,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-06.png",
+      "sha256": "ABE0FE427E68B6952DD02DCBC9E42534E7E8680BE1991BD32FE80325AD0E9FF5"
+    },
+    {
+      "index": 7,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-07.png",
+      "sha256": "DE65B3B3AC2C036227B6D4BBFFF09B5FB0F73E1548F6FC80478D2FD409ED4717"
+    },
+    {
+      "index": 8,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-08.png",
+      "sha256": "3A77DBA2AEDCF26A102BDEB329090D69F70732BFFBE77666B89B7BE0D4783804"
+    },
+    {
+      "index": 9,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalized/ascend-step-heavy-09.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88"
+    }
+  ],
+  "approvalBoundary": {
+    "motionApproved": false,
+    "timingApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

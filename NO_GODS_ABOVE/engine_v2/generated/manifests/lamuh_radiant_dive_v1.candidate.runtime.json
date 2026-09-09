@@ -1,0 +1,2247 @@
+{
+  "schemaVersion": "2.1.0-runtime",
+  "compilerVersion": "0.1.0",
+  "sourceDigest": "5fd39b9fe8317c7867794aaa2d566491fa48c8d4ec866d56afc182f6c85345b1",
+  "fighterId": "lamuh_radiant_dive_v1",
+  "bundleVersion": 1,
+  "deployable": false,
+  "packageGroups": {
+    "air_specials": [
+      "radiant_dive_light",
+      "radiant_dive_medium",
+      "radiant_dive_heavy"
+    ]
+  },
+  "animations": [
+    {
+      "id": "radiant_dive_heavy",
+      "version": 1,
+      "simulationLength": 49,
+      "exposures": [
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_0",
+          "start": 0,
+          "duration": 9
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_1",
+          "start": 9,
+          "duration": 5
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_2",
+          "start": 14,
+          "duration": 12
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_3",
+          "start": 26,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_4",
+          "start": 29,
+          "duration": 8
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_5",
+          "start": 37,
+          "duration": 8
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_6",
+          "start": 45,
+          "duration": 4
+        }
+      ],
+      "entryPoseId": "airborne",
+      "exitPoseId": "neutral_stand",
+      "transitions": [],
+      "landing": [
+        {
+          "start": 29,
+          "end": 48,
+          "result": "special_landing"
+        }
+      ],
+      "combatTrack": {
+        "startup": 14,
+        "active": 12,
+        "recovery": 20,
+        "damage": 76,
+        "hitstop": 9,
+        "hitstun": 28,
+        "blockstun": 17,
+        "boxes": [
+          {
+            "frame": 14,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 15,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 16,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 17,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 18,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 19,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 20,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 21,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 22,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 23,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 24,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          },
+          {
+            "frame": 25,
+            "kind": "hit",
+            "x": 14,
+            "y": -28,
+            "width": 54,
+            "height": 50
+          }
+        ],
+        "cancelWindows": [],
+        "timingAuthorship": {
+          "simulationTickRateHz": 60,
+          "authoredTotalDuration": 49,
+          "durationModel": "independently_authored_per_move",
+          "durationBasis": [
+            "move_weight",
+            "readability",
+            "combat_role",
+            "risk_reward",
+            "character_identity",
+            "animation_quality",
+            "balance"
+          ],
+          "uniformDurationNormalizationProhibited": true,
+          "visualGameplayAlignment": "aligned_by_default",
+          "timingExceptions": []
+        },
+        "authoredDiveTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_radiant_dive_heavy",
+          "track": {
+            "minimumHeight": 60,
+            "maximumHeight": 180,
+            "landingApproachHeight": 24,
+            "windupVelocity": {
+              "x": 0.8,
+              "y": 0.5
+            },
+            "strikeVelocity": {
+              "x": 3,
+              "y": 12
+            },
+            "gatherVelocity": {
+              "x": 0.5,
+              "y": 12
+            },
+            "landingRecoveryTicks": 20
+          },
+          "maximumAirTicks": 29,
+          "landingPhase": "dive_landing",
+          "landingTrigger": "actual_floor_contact",
+          "airExposurePolicy": "stage_driven",
+          "hitstopFreezes": true,
+          "maxHits": 1,
+          "phaseExposures": {
+            "windup": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_0",
+                "duration": 9
+              },
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_1",
+                "duration": 5
+              }
+            ],
+            "strike": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_2",
+                "duration": 12
+              }
+            ],
+            "gather": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_3",
+                "duration": 1
+              }
+            ],
+            "landing": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_4",
+                "duration": 8
+              },
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_5",
+                "duration": 8
+              },
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_6",
+                "duration": 4
+              }
+            ]
+          }
+        }
+      },
+      "presentationTrack": [],
+      "sourceFrames": [
+        {
+          "id": "radiant_dive_heavy_frame_0",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/heavy-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "D63886FEACDF4B35FD17E6FC200F5A8447522EC19C25FA980BDC27D0EB99D7AF",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_heavy_frame_1",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/heavy-01.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "C261F0686B371E853A2046508C2333A5EE33512DD8562779F2813C0025893F39",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_heavy_frame_2",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/heavy-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "68E987B587D24D18F321B5460D1DD831F5AE12205A2B2D3C6D9D461AC3259BED",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_heavy_frame_3",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/heavy-03.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "9C7DBCDF0B7E1027B2FAFF9C48ACAABD786DC593474ABAAE07DBA19C77944275",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_heavy_frame_4",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-05.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_heavy_frame_5",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-06.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_heavy_frame_6",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        }
+      ],
+      "phases": {
+        "anticipation": [],
+        "startup": [
+          {
+            "start": 0,
+            "end": 13
+          }
+        ],
+        "active": [
+          {
+            "start": 14,
+            "end": 25
+          }
+        ],
+        "impact": [],
+        "followThrough": [
+          {
+            "start": 26,
+            "end": 28
+          }
+        ],
+        "recovery": [
+          {
+            "start": 29,
+            "end": 48
+          }
+        ]
+      },
+      "interruptPoses": [
+        {
+          "id": "airborne",
+          "facing": "forward",
+          "elevation": "airborne",
+          "plantedFoot": "none",
+          "weight": "airborne",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "airborne_lamuh_arc",
+          "verticalMotion": "falling"
+        },
+        {
+          "id": "neutral_stand",
+          "facing": "forward",
+          "elevation": "grounded",
+          "plantedFoot": "both",
+          "weight": "neutral",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "upright_lamuh_ready",
+          "verticalMotion": "stationary"
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "radiant_dive_heavy_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 9,
+          "sourceFrameId": "radiant_dive_heavy_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 14,
+          "sourceFrameId": "radiant_dive_heavy_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 26,
+          "sourceFrameId": "radiant_dive_heavy_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 29,
+          "sourceFrameId": "radiant_dive_heavy_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 37,
+          "sourceFrameId": "radiant_dive_heavy_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 45,
+          "sourceFrameId": "radiant_dive_heavy_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1354,
+            "x": 946
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        }
+      ],
+      "groundingTrack": [
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_heavy_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        }
+      ],
+      "facingBehavior": {
+        "authoredFacing": "P1_screen_right",
+        "runtimeP2": "horizontal_mirror_screen_left",
+        "mirrorAxisX": 768,
+        "losslessMirrorRequired": true
+      },
+      "playbackPolicy": {
+        "mode": "external_gameplay_state",
+        "cursorOwner": "simulation",
+        "hitstopFreezesCursor": true,
+        "holdBehavior": "clamp_to_gameplay_state"
+      },
+      "interruptionBehavior": {
+        "owner": "simulation",
+        "allowedSources": [
+          "incoming_hit",
+          "incoming_throw",
+          "round_end",
+          "forced_state"
+        ],
+        "onInterrupt": "simulation_selects_target_state",
+        "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+      },
+      "transitionCompatibility": [
+        {
+          "fromStates": [
+            "jump"
+          ],
+          "toState": "radiant_dive_heavy",
+          "condition": "airborne_special_input_height_budget_and_once_per_airtime_gate",
+          "addsGameplayFrames": false
+        }
+      ],
+      "gameplayTimingStatus": {
+        "owner": "simulation",
+        "state": "sandbox_candidate_awaiting_combat_approval",
+        "authoritative": false,
+        "candidateValues": {
+          "startup": 14,
+          "active": 12,
+          "recovery": 20,
+          "damage": 76,
+          "maximumAirTicks": 29,
+          "variableLanding": true
+        },
+        "notes": [
+          "One continuous near-arm descending open palm; the disconnected protected late kick is retired, not a second hit.",
+          "Windup/strike/gather follow current airborne position; actual floor contact starts committed 10/14/20 landing recovery.",
+          "No invulnerability, OTG, homing, extra shockwave damage, renderer-driven motion or repeat-Dive refund.",
+          "B is a measured no-hit height-180 reference, not a universal landing clock. A/C are visual comparison only.",
+          "Heavy surrounding aura is embedded motion artwork on hit, block and whiff; no runtime aura spawn or impact claim.",
+          "Fixed canvas/root registration and PNG checks do not constitute anatomical, contact-alignment or human motion approval."
+        ]
+      },
+      "presentationSockets": [
+        {
+          "id": "dive_open_palm",
+          "y": 1354,
+          "x": 946,
+          "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+          "eventTypes": [
+            "spawn_vfx"
+          ]
+        }
+      ],
+      "approvalRecords": [
+        "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json"
+      ]
+    },
+    {
+      "id": "radiant_dive_light",
+      "version": 1,
+      "simulationLength": 53,
+      "exposures": [
+        {
+          "sourceFrameId": "radiant_dive_light_frame_0",
+          "start": 0,
+          "duration": 5
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_1",
+          "start": 5,
+          "duration": 2
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_2",
+          "start": 7,
+          "duration": 10
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_3",
+          "start": 17,
+          "duration": 26
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_4",
+          "start": 43,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_5",
+          "start": 47,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_6",
+          "start": 51,
+          "duration": 2
+        }
+      ],
+      "entryPoseId": "airborne",
+      "exitPoseId": "neutral_stand",
+      "transitions": [],
+      "landing": [
+        {
+          "start": 43,
+          "end": 52,
+          "result": "special_landing"
+        }
+      ],
+      "combatTrack": {
+        "startup": 7,
+        "active": 10,
+        "recovery": 10,
+        "damage": 40,
+        "hitstop": 5,
+        "hitstun": 18,
+        "blockstun": 11,
+        "boxes": [
+          {
+            "frame": 7,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 8,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 9,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 10,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 11,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 12,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 13,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 14,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 15,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 16,
+            "kind": "hit",
+            "x": 40,
+            "y": -62,
+            "width": 54,
+            "height": 46
+          }
+        ],
+        "cancelWindows": [],
+        "timingAuthorship": {
+          "simulationTickRateHz": 60,
+          "authoredTotalDuration": 53,
+          "durationModel": "independently_authored_per_move",
+          "durationBasis": [
+            "move_weight",
+            "readability",
+            "combat_role",
+            "risk_reward",
+            "character_identity",
+            "animation_quality",
+            "balance"
+          ],
+          "uniformDurationNormalizationProhibited": true,
+          "visualGameplayAlignment": "aligned_by_default",
+          "timingExceptions": []
+        },
+        "authoredDiveTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_radiant_dive_light",
+          "track": {
+            "minimumHeight": 32,
+            "maximumHeight": 180,
+            "landingApproachHeight": 10,
+            "windupVelocity": {
+              "x": 0.8,
+              "y": 0.5
+            },
+            "strikeVelocity": {
+              "x": 7,
+              "y": 5
+            },
+            "gatherVelocity": {
+              "x": 2,
+              "y": 5
+            },
+            "landingRecoveryTicks": 10
+          },
+          "maximumAirTicks": 43,
+          "landingPhase": "dive_landing",
+          "landingTrigger": "actual_floor_contact",
+          "airExposurePolicy": "stage_driven",
+          "hitstopFreezes": true,
+          "maxHits": 1,
+          "phaseExposures": {
+            "windup": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_0",
+                "duration": 5
+              },
+              {
+                "sourceFrameId": "radiant_dive_light_frame_1",
+                "duration": 2
+              }
+            ],
+            "strike": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_2",
+                "duration": 10
+              }
+            ],
+            "gather": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_3",
+                "duration": 1
+              }
+            ],
+            "landing": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_4",
+                "duration": 4
+              },
+              {
+                "sourceFrameId": "radiant_dive_light_frame_5",
+                "duration": 4
+              },
+              {
+                "sourceFrameId": "radiant_dive_light_frame_6",
+                "duration": 2
+              }
+            ]
+          }
+        }
+      },
+      "presentationTrack": [],
+      "sourceFrames": [
+        {
+          "id": "radiant_dive_light_frame_0",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/light-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "6C5DA84927C7CBA4CC40DBE6465E58A8E14FE66BEAC94DC951AF09B92C2CC872",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_light_frame_1",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/light-01.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "AD4C5FA1320EA73DD2E93E805DEC980447C0B1A1B0C396D98CDB2CAA00856861",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_light_frame_2",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/light-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "BA36F31C42F2527DF7EE93A1EFBD4D1C7F10AF824FCCF6CC34A99BADD7E658A3",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_light_frame_3",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/light-03.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "0877834AFCC68D3D5A540F557ADE23575A376FA6F6F30DC5AF9651BB22386878",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_light_frame_4",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-05.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_light_frame_5",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-06.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_light_frame_6",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        }
+      ],
+      "phases": {
+        "anticipation": [],
+        "startup": [
+          {
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "active": [
+          {
+            "start": 7,
+            "end": 16
+          }
+        ],
+        "impact": [],
+        "followThrough": [
+          {
+            "start": 17,
+            "end": 42
+          }
+        ],
+        "recovery": [
+          {
+            "start": 43,
+            "end": 52
+          }
+        ]
+      },
+      "interruptPoses": [
+        {
+          "id": "airborne",
+          "facing": "forward",
+          "elevation": "airborne",
+          "plantedFoot": "none",
+          "weight": "airborne",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "airborne_lamuh_arc",
+          "verticalMotion": "falling"
+        },
+        {
+          "id": "neutral_stand",
+          "facing": "forward",
+          "elevation": "grounded",
+          "plantedFoot": "both",
+          "weight": "neutral",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "upright_lamuh_ready",
+          "verticalMotion": "stationary"
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "radiant_dive_light_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 5,
+          "sourceFrameId": "radiant_dive_light_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 7,
+          "sourceFrameId": "radiant_dive_light_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 17,
+          "sourceFrameId": "radiant_dive_light_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 43,
+          "sourceFrameId": "radiant_dive_light_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 47,
+          "sourceFrameId": "radiant_dive_light_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 51,
+          "sourceFrameId": "radiant_dive_light_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1189,
+            "x": 1056
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        }
+      ],
+      "groundingTrack": [
+        {
+          "sourceFrameId": "radiant_dive_light_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_light_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        }
+      ],
+      "facingBehavior": {
+        "authoredFacing": "P1_screen_right",
+        "runtimeP2": "horizontal_mirror_screen_left",
+        "mirrorAxisX": 768,
+        "losslessMirrorRequired": true
+      },
+      "playbackPolicy": {
+        "mode": "external_gameplay_state",
+        "cursorOwner": "simulation",
+        "hitstopFreezesCursor": true,
+        "holdBehavior": "clamp_to_gameplay_state"
+      },
+      "interruptionBehavior": {
+        "owner": "simulation",
+        "allowedSources": [
+          "incoming_hit",
+          "incoming_throw",
+          "round_end",
+          "forced_state"
+        ],
+        "onInterrupt": "simulation_selects_target_state",
+        "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+      },
+      "transitionCompatibility": [
+        {
+          "fromStates": [
+            "jump"
+          ],
+          "toState": "radiant_dive_light",
+          "condition": "airborne_special_input_height_budget_and_once_per_airtime_gate",
+          "addsGameplayFrames": false
+        }
+      ],
+      "gameplayTimingStatus": {
+        "owner": "simulation",
+        "state": "sandbox_candidate_awaiting_combat_approval",
+        "authoritative": false,
+        "candidateValues": {
+          "startup": 7,
+          "active": 10,
+          "recovery": 10,
+          "damage": 40,
+          "maximumAirTicks": 43,
+          "variableLanding": true
+        },
+        "notes": [
+          "One continuous near-arm descending open palm; the disconnected protected late kick is retired, not a second hit.",
+          "Windup/strike/gather follow current airborne position; actual floor contact starts committed 10/14/20 landing recovery.",
+          "No invulnerability, OTG, homing, extra shockwave damage, renderer-driven motion or repeat-Dive refund.",
+          "B is a measured no-hit height-180 reference, not a universal landing clock. A/C are visual comparison only.",
+          "Heavy surrounding aura is embedded motion artwork on hit, block and whiff; no runtime aura spawn or impact claim.",
+          "Fixed canvas/root registration and PNG checks do not constitute anatomical, contact-alignment or human motion approval."
+        ]
+      },
+      "presentationSockets": [
+        {
+          "id": "dive_open_palm",
+          "y": 1189,
+          "x": 1056,
+          "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+          "eventTypes": [
+            "spawn_vfx"
+          ]
+        }
+      ],
+      "approvalRecords": [
+        "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json"
+      ]
+    },
+    {
+      "id": "radiant_dive_medium",
+      "version": 1,
+      "simulationLength": 47,
+      "exposures": [
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_0",
+          "start": 0,
+          "duration": 6
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_1",
+          "start": 6,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_2",
+          "start": 10,
+          "duration": 10
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_3",
+          "start": 20,
+          "duration": 13
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_4",
+          "start": 33,
+          "duration": 6
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_5",
+          "start": 39,
+          "duration": 6
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_6",
+          "start": 45,
+          "duration": 2
+        }
+      ],
+      "entryPoseId": "airborne",
+      "exitPoseId": "neutral_stand",
+      "transitions": [],
+      "landing": [
+        {
+          "start": 33,
+          "end": 46,
+          "result": "special_landing"
+        }
+      ],
+      "combatTrack": {
+        "startup": 10,
+        "active": 10,
+        "recovery": 14,
+        "damage": 58,
+        "hitstop": 7,
+        "hitstun": 24,
+        "blockstun": 14,
+        "boxes": [
+          {
+            "frame": 10,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 11,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 12,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 13,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 14,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 15,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 16,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 17,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 18,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          },
+          {
+            "frame": 19,
+            "kind": "hit",
+            "x": 38,
+            "y": -55,
+            "width": 54,
+            "height": 46
+          }
+        ],
+        "cancelWindows": [],
+        "timingAuthorship": {
+          "simulationTickRateHz": 60,
+          "authoredTotalDuration": 47,
+          "durationModel": "independently_authored_per_move",
+          "durationBasis": [
+            "move_weight",
+            "readability",
+            "combat_role",
+            "risk_reward",
+            "character_identity",
+            "animation_quality",
+            "balance"
+          ],
+          "uniformDurationNormalizationProhibited": true,
+          "visualGameplayAlignment": "aligned_by_default",
+          "timingExceptions": []
+        },
+        "authoredDiveTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_radiant_dive_medium",
+          "track": {
+            "minimumHeight": 44,
+            "maximumHeight": 180,
+            "landingApproachHeight": 16,
+            "windupVelocity": {
+              "x": 0.8,
+              "y": 0.5
+            },
+            "strikeVelocity": {
+              "x": 5,
+              "y": 8
+            },
+            "gatherVelocity": {
+              "x": 1,
+              "y": 8
+            },
+            "landingRecoveryTicks": 14
+          },
+          "maximumAirTicks": 33,
+          "landingPhase": "dive_landing",
+          "landingTrigger": "actual_floor_contact",
+          "airExposurePolicy": "stage_driven",
+          "hitstopFreezes": true,
+          "maxHits": 1,
+          "phaseExposures": {
+            "windup": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_0",
+                "duration": 6
+              },
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_1",
+                "duration": 4
+              }
+            ],
+            "strike": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_2",
+                "duration": 10
+              }
+            ],
+            "gather": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_3",
+                "duration": 1
+              }
+            ],
+            "landing": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_4",
+                "duration": 6
+              },
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_5",
+                "duration": 6
+              },
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_6",
+                "duration": 2
+              }
+            ]
+          }
+        }
+      },
+      "presentationTrack": [],
+      "sourceFrames": [
+        {
+          "id": "radiant_dive_medium_frame_0",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/medium-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "62EEB23F9888F26AFBAAC899776A5051912E1AE43A8ABACAA7968C961B82CC7E",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_medium_frame_1",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/medium-01.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "4354450DA63B99463A9AD34F0E7465F2B24820FD99F76B474DA2424620839F45",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_medium_frame_2",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/medium-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "CC11A44AA474FC393C4E031281201ECA387305CAC687BB448CC9396C283BBC10",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_medium_frame_3",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-frames-v1/medium-03.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "38A4FC2E0791F2576A0959F76B4222D129A209312FC1F4E98A0F0284416936B6",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_medium_frame_4",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-05.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_medium_frame_5",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-06.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        },
+        {
+          "id": "radiant_dive_medium_frame_6",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/registration.json"
+        }
+      ],
+      "phases": {
+        "anticipation": [],
+        "startup": [
+          {
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "active": [
+          {
+            "start": 10,
+            "end": 19
+          }
+        ],
+        "impact": [],
+        "followThrough": [
+          {
+            "start": 20,
+            "end": 32
+          }
+        ],
+        "recovery": [
+          {
+            "start": 33,
+            "end": 46
+          }
+        ]
+      },
+      "interruptPoses": [
+        {
+          "id": "airborne",
+          "facing": "forward",
+          "elevation": "airborne",
+          "plantedFoot": "none",
+          "weight": "airborne",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "airborne_lamuh_arc",
+          "verticalMotion": "falling"
+        },
+        {
+          "id": "neutral_stand",
+          "facing": "forward",
+          "elevation": "grounded",
+          "plantedFoot": "both",
+          "weight": "neutral",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "upright_lamuh_ready",
+          "verticalMotion": "stationary"
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "radiant_dive_medium_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 6,
+          "sourceFrameId": "radiant_dive_medium_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 10,
+          "sourceFrameId": "radiant_dive_medium_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 20,
+          "sourceFrameId": "radiant_dive_medium_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 33,
+          "sourceFrameId": "radiant_dive_medium_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 39,
+          "sourceFrameId": "radiant_dive_medium_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        },
+        {
+          "frame": 45,
+          "sourceFrameId": "radiant_dive_medium_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1220,
+            "x": 1045
+          },
+          "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+        }
+      ],
+      "groundingTrack": [
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        },
+        {
+          "sourceFrameId": "radiant_dive_medium_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "virtual_ground_reference_not_measured_foot",
+          "farFootRole": "virtual_ground_reference_not_measured_foot",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "pelvis_virtual_ground_v1"
+        }
+      ],
+      "facingBehavior": {
+        "authoredFacing": "P1_screen_right",
+        "runtimeP2": "horizontal_mirror_screen_left",
+        "mirrorAxisX": 768,
+        "losslessMirrorRequired": true
+      },
+      "playbackPolicy": {
+        "mode": "external_gameplay_state",
+        "cursorOwner": "simulation",
+        "hitstopFreezesCursor": true,
+        "holdBehavior": "clamp_to_gameplay_state"
+      },
+      "interruptionBehavior": {
+        "owner": "simulation",
+        "allowedSources": [
+          "incoming_hit",
+          "incoming_throw",
+          "round_end",
+          "forced_state"
+        ],
+        "onInterrupt": "simulation_selects_target_state",
+        "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+      },
+      "transitionCompatibility": [
+        {
+          "fromStates": [
+            "jump"
+          ],
+          "toState": "radiant_dive_medium",
+          "condition": "airborne_special_input_height_budget_and_once_per_airtime_gate",
+          "addsGameplayFrames": false
+        }
+      ],
+      "gameplayTimingStatus": {
+        "owner": "simulation",
+        "state": "sandbox_candidate_awaiting_combat_approval",
+        "authoritative": false,
+        "candidateValues": {
+          "startup": 10,
+          "active": 10,
+          "recovery": 14,
+          "damage": 58,
+          "maximumAirTicks": 33,
+          "variableLanding": true
+        },
+        "notes": [
+          "One continuous near-arm descending open palm; the disconnected protected late kick is retired, not a second hit.",
+          "Windup/strike/gather follow current airborne position; actual floor contact starts committed 10/14/20 landing recovery.",
+          "No invulnerability, OTG, homing, extra shockwave damage, renderer-driven motion or repeat-Dive refund.",
+          "B is a measured no-hit height-180 reference, not a universal landing clock. A/C are visual comparison only.",
+          "Heavy surrounding aura is embedded motion artwork on hit, block and whiff; no runtime aura spawn or impact claim.",
+          "Fixed canvas/root registration and PNG checks do not constitute anatomical, contact-alignment or human motion approval."
+        ]
+      },
+      "presentationSockets": [
+        {
+          "id": "dive_open_palm",
+          "y": 1220,
+          "x": 1045,
+          "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+          "eventTypes": [
+            "spawn_vfx"
+          ]
+        }
+      ],
+      "approvalRecords": [
+        "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/radiant-dive-packages/records/human-review.pending.json"
+      ]
+    }
+  ]
+}

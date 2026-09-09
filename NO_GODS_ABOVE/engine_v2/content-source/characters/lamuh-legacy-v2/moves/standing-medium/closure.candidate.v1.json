@@ -1,0 +1,263 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "standing_medium_single_hit_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "motionLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/standing-medium/motion-lock.v1.json",
+    "sha256": "02F1CEC03E1BA2B1B129B9B0EABB4BA918AEF65C4CEBDA565BBDA10D6BF7CB6C"
+  },
+  "styleApproval": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/style-checkpoint-v1.approval.json",
+    "sha256": "9B671312457675BBCC8B5A8A1256041B4453A5A433B724740FDDDE4694069462",
+    "decision": "APPROVED_WITH_TARGETED_REPAIR"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalization.report.json",
+    "sha256": "8D21C084FEA5402B0C2E6BD08630884A9C5858A8743092D69554711620274988"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "wide_ready_entry",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-00.png",
+      "sha256": "343FEA60E3EFDF7FD59FFC9FE69C415D2580704BC5134C6878D0505AC9E441DE",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 492,
+        "minY": 649,
+        "maxX": 1020,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 1,
+      "role": "rear_hand_load",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-01.png",
+      "sha256": "4839BE5246435A937F870E3692DA36662A3BEF2AF57326CB3FECBDEDD1AE8BA1",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 438,
+        "minY": 637,
+        "maxX": 1111,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 2,
+      "role": "cross_body_hip_coil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-02.png",
+      "sha256": "936D83D87E782008F09FFD4D1BE4600B979757D594BD614C8EDD5EF7F3D2B1E9",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 430,
+        "minY": 638,
+        "maxX": 1117,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 3,
+      "role": "rear_cross_acceleration",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-03.png",
+      "sha256": "12FFA614783D0E35D01F3424AF201215F59ABFC03F1C774826C33409E839A556",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 457,
+        "minY": 637,
+        "maxX": 1086,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 4,
+      "role": "single_rear_cross_contact",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-04.png",
+      "sha256": "D0A006D320BD4B49C9BF2AD90E48FAF4A468180B23E07D527BFE28AC8DA04511",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 447,
+        "minY": 633,
+        "maxX": 1108,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 5,
+      "role": "same_arm_shoulder_overshoot",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-05.png",
+      "sha256": "5272CC95D81AC462BCD55D42A11F2696E2FDE8D0E91CABD47D55FE342F912B87",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 445,
+        "minY": 636,
+        "maxX": 1089,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 6,
+      "role": "rear_arm_recoil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-06.png",
+      "sha256": "1FAB167A11DEAA96D30BFDB10F7C65932E01C877B2E6ADFE89AA453A09FB96FC",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 430,
+        "minY": 636,
+        "maxX": 1000,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 7,
+      "role": "connected_guard_recovery",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-medium-v1/normalized/standing-medium-07.png",
+      "sha256": "CAA44FB5283F05D9D0F0AD61C16B861999D8F2F005C4F0223215A27BF2ED5438",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 427,
+        "minY": 635,
+        "maxX": 997,
+        "maxY": 1360
+      }
+    }
+  ],
+  "contactPresentation": {
+    "publicPath": "/lamuh-legacy-v2/standing-medium-v2/standing-medium-04-hit-composite.png",
+    "sha256": "0A0D2B745C84625394F6C7382C506FC8FC2645DA9D901CBB8DB7A9C26505C07C",
+    "bodyOnlyOnWhiff": true,
+    "allowedOutcomes": [
+      "hit",
+      "block"
+    ],
+    "separationStatus": "OUTCOME_ROUTED_SINGLE_CONTACT_COMPOSITE"
+  },
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "phaseTicks": {
+        "startup": 5,
+        "active": 5,
+        "recovery": 10
+      },
+      "durationTicks": 20,
+      "exposureTicks": [
+        2,
+        1,
+        1,
+        1,
+        5,
+        4,
+        2,
+        4
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 6,
+        "active": 6,
+        "recovery": 11
+      },
+      "durationTicks": 23,
+      "exposureTicks": [
+        2,
+        2,
+        1,
+        1,
+        6,
+        4,
+        3,
+        4
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "WEIGHTED_ALTERNATE_NOT_DEFAULT",
+      "phaseTicks": {
+        "startup": 7,
+        "active": 7,
+        "recovery": 13
+      },
+      "durationTicks": 27,
+      "exposureTicks": [
+        3,
+        2,
+        1,
+        1,
+        7,
+        5,
+        3,
+        5
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_5",
+      "hitstopTicks": 5,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_6",
+      "hitstopTicks": 6,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "WEIGHTED_7",
+      "hitstopTicks": 7,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    }
+  },
+  "approvalStatus": "human_approved_standing_medium_motion_and_b_retiming_candidate_base",
+  "humanApproval": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED",
+    "timing": "APPROVED_V2_RETIMING",
+    "selectedTimingCandidate": "B",
+    "combatProfile": null,
+    "record": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/standing-medium-v1.approval.json",
+      "sha256": "AD3A6EF83EE0F0E29AD302FA229068329D80216BA3E9B4A2D49A1693FC68EBA3"
+    }
+  }
+}

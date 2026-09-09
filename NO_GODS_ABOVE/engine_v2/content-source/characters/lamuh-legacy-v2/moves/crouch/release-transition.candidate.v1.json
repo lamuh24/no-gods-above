@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_crouch_release_transition_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": true,
+  "sourceArtworkReused": true,
+  "gameplayResponsivenessChanged": false,
+  "state": {
+    "sourceFrameCount": 4,
+    "authoredFrameCount": 2,
+    "selectedLegacyFrames": [
+      3,
+      0
+    ],
+    "exposureTicks": [
+      4,
+      4
+    ],
+    "durationTicks": 8,
+    "loop": false,
+    "frames": [
+      {
+        "index": 0,
+        "role": "crouch_release_rising_connector",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-04.png",
+        "sha256": "4719F396A15DEC97264B1A0ADC85D02C3B73AB557374737019FA787D0F98965E",
+        "sourceSha256": "BFEBE2CED0977DC36783ACF299A81DC35A981767B3FBDB516ABF3A895263F273",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "64A1BBB1ABC0C689F7F8B0E35AA55AB4750F9547FCFC5C214D9E07FB6E48A6FC",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 532,
+          "minY": 764,
+          "maxX": 1006,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 795.347,
+          "y": 1091.214
+        }
+      },
+      {
+        "index": 1,
+        "role": "crouch_release_standing_recovery",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-05.png",
+        "sha256": "71AB25B2834118CEDF47ED4CCAA9F267A330D6A480AAF1C953EDC1D933C513AA",
+        "sourceSha256": "C28012D96802E64DA4925C6BCA9EFBB87C4D857E843BDA30C5A60AABB75AF1BD",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "DC3D6607A892A4D8CD2B3C3019B9D8A39AF47D60CD95D0F8EE846F10AF643636",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 558,
+          "minY": 590,
+          "maxX": 980,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 774.218,
+          "y": 983.317
+        }
+      }
+    ]
+  },
+  "transitionContract": {
+    "simulationPhase": "crouch_release",
+    "durationTicks": 8,
+    "immediatelyInterruptibleByAttackJumpDashCrouchWalkOrBlock": true,
+    "rendererOwnsGameplayState": false
+  },
+  "humanApproval": null
+}

@@ -1,0 +1,263 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "crouching_medium_sweep_line_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "motionLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/crouching-medium/motion-lock.v1.json",
+    "sha256": "B9596E380F4DC7E38DDF9BC65D8F5E3E1F6EA46CAED7F8AD43DF31B3BB5E5174"
+  },
+  "styleApproval": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/style-checkpoint-v1.approval.json",
+    "sha256": "9B671312457675BBCC8B5A8A1256041B4453A5A433B724740FDDDE4694069462",
+    "decision": "APPROVED_WITH_TARGETED_REPAIR"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalization.report.json",
+    "sha256": "1C356FA7732BB40BBD8F3DCEFE58D7DABBC6460CDFA4E57D5D4EA6758C34DA85"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "guarded_crouch_entry",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-00.png",
+      "sha256": "F339AF924AF4FAA1442EB47427353E036AABA1DC5EC5B12257693D200FD1ABB9",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 373,
+        "minY": 766,
+        "maxX": 1038,
+        "maxY": 1343
+      }
+    },
+    {
+      "index": 1,
+      "role": "lead_leg_sweep_load",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-01.png",
+      "sha256": "4D3D7DD1471B5B010CF4A639914D8D254711029CE7404294F082291752BE1C29",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 376,
+        "minY": 699,
+        "maxX": 1140,
+        "maxY": 1359
+      }
+    },
+    {
+      "index": 2,
+      "role": "low_sweep_acceleration",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-02.png",
+      "sha256": "DD04F61170E028C3854B29B25E3904B99703E8C3B1ACE9E9620AADFB0371B848",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 407,
+        "minY": 782,
+        "maxX": 1226,
+        "maxY": 1366
+      }
+    },
+    {
+      "index": 3,
+      "role": "single_low_sweep_contact",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-03.png",
+      "sha256": "C1D0E4237A30503C81B4EC0094CFC67D8A7D71950948D05ED3B0A1D4CFC6A440",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 410,
+        "minY": 792,
+        "maxX": 1262,
+        "maxY": 1367
+      }
+    },
+    {
+      "index": 4,
+      "role": "same_leg_sweep_follow_through",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-04.png",
+      "sha256": "F66E5FF2C9451161833FB931EBAF7089D4869977E91203EE432B017F162BD73A",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 369,
+        "minY": 776,
+        "maxX": 1207,
+        "maxY": 1369
+      }
+    },
+    {
+      "index": 5,
+      "role": "lead_leg_retraction",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-05.png",
+      "sha256": "22BF944287113CB0821A3AD2A48AC8135F5FF12EFC3B9D8F481C52B565B4CFBF",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 455,
+        "minY": 688,
+        "maxX": 1035,
+        "maxY": 1365
+      }
+    },
+    {
+      "index": 6,
+      "role": "crouched_balance_recovery",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-06.png",
+      "sha256": "0858FD2E5F544872AC392ED82456881A210B4D05796781B11A70F006D81EFE76",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 495,
+        "minY": 695,
+        "maxX": 1075,
+        "maxY": 1363
+      }
+    },
+    {
+      "index": 7,
+      "role": "connected_guarded_crouch_exit",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-medium-v1/normalized/crouching-medium-07.png",
+      "sha256": "E1DDB5FF8F4A7D1213175C9B6E7A7B3A1982EB8C12C241F0CEA17B9993FDA5AD",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 362,
+        "minY": 640,
+        "maxX": 1084,
+        "maxY": 1367
+      }
+    }
+  ],
+  "contactPresentation": {
+    "publicPath": "/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-03-hit-composite.png",
+    "sha256": "BE29598B10C0ED63116D2F6D8F68F267A13E87367DCA06EAA94F542824287CA7",
+    "bodyOnlyOnWhiff": true,
+    "allowedOutcomes": [
+      "hit",
+      "block"
+    ],
+    "separationStatus": "OUTCOME_ROUTED_SINGLE_LOW_CONTACT_COMPOSITE"
+  },
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "phaseTicks": {
+        "startup": 5,
+        "active": 4,
+        "recovery": 10
+      },
+      "durationTicks": 19,
+      "exposureTicks": [
+        2,
+        2,
+        1,
+        4,
+        3,
+        3,
+        2,
+        2
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 6,
+        "active": 5,
+        "recovery": 11
+      },
+      "durationTicks": 22,
+      "exposureTicks": [
+        3,
+        2,
+        1,
+        5,
+        3,
+        3,
+        2,
+        3
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+      "phaseTicks": {
+        "startup": 7,
+        "active": 6,
+        "recovery": 12
+      },
+      "durationTicks": 25,
+      "exposureTicks": [
+        4,
+        2,
+        1,
+        6,
+        4,
+        3,
+        2,
+        3
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_4",
+      "hitstopTicks": 4,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_5",
+      "hitstopTicks": 5,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "FIRMER_6",
+      "hitstopTicks": 6,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    }
+  },
+  "approvalStatus": "human_approved_crouching_medium_motion_and_b_retiming_candidate_base",
+  "humanApproval": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED",
+    "timing": "APPROVED_V2_RETIMING",
+    "selectedTimingCandidate": "B",
+    "combatProfile": null,
+    "record": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/crouching-medium-v1.approval.json",
+      "sha256": "9D118C0ED40EC994A0E785CA627B9F6F6879C7B93B91DCB3D3FD4E348D48F0E2"
+    }
+  }
+}

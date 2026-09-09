@@ -1,0 +1,40 @@
+{
+  "sourceType": "ai_assisted",
+  "tool": "Built-in imagegen and source-preserving normalization",
+  "createdAt": "2026-09-05T20:39:54.360Z",
+  "model": null,
+  "seed": null,
+  "promptHash": null,
+  "references": [
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-radiant-dive-v1/normalization.report.json",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-radiant-dive-v1/raw-family-repair-v2.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-radiant-dive-v1/raw-heavy-aura-v3.png",
+    "repo://tools/nga-forge/review/lamuh-legacy-v2-radiant-dive-v1/raw-heavy-connector-single-v5.png",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/atlases/lamuh_sheet_5_specials_atlas.png",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-05.png",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-06.png",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png"
+  ],
+  "cleanupOperations": [
+    "generated_same_arm_motion_revision",
+    "magenta_matte_unmix_preserve_white_fabric",
+    "constant_source_camera_scale",
+    "explicit_pelvis_virtual_ground_registration",
+    "single_pose_connector_resolution_restoration_not_anatomical_bbox_scaling",
+    "existing_jump_catch_settle_and_idle_reused"
+  ],
+  "revisionChain": [
+    "PROTECTED_V1_RADIANT_DIVE",
+    "V2_SINGLE_NEAR_ARM_AIR_SPECIAL_CANDIDATE",
+    "HEAVY_SURROUNDING_AURA_SOURCE_ART",
+    "HEAVY_CONNECTOR_SINGLE_V5_SAME_ARM_AND_TWO_LEGS"
+  ],
+  "humanApproval": {
+    "state": "pending",
+    "approvedAt": null,
+    "approvedBy": null
+  },
+  "licensingNotes": [
+    "Local Lamuh candidate only."
+  ]
+}

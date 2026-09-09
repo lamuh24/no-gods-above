@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "idle",
+  "version": 1,
+  "promotionState": "retired",
+  "simulationLength": 20,
+  "sourceFrames": [
+    { "id": "idle_a", "sourceUri": "fixture://lamuh/idle/a", "width": 312, "height": 352 },
+    { "id": "idle_b", "sourceUri": "fixture://lamuh/idle/b", "width": 316, "height": 352 }
+  ],
+  "exposures": [
+    { "sourceFrameId": "idle_a", "start": 0, "duration": 10 },
+    { "sourceFrameId": "idle_b", "start": 10, "duration": 10 }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [],
+    "recovery": []
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "mirror_energy_idle",
+    "handOccupancy": { "left": "free", "right": "free" },
+    "silhouette": "upright_guard",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "mirror_energy_idle",
+    "handOccupancy": { "left": "free", "right": "free" },
+    "silhouette": "upright_guard",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [],
+  "transitions": [
+    {
+      "id": "idle_to_standing_heavy",
+      "fromPose": "neutral_stand",
+      "toAnimation": "standing_heavy",
+      "type": "clean_cut",
+      "simulationWindow": { "start": 0, "end": 19 },
+      "visualFrames": [],
+      "addsGameplayFrames": false,
+      "maskEventId": null
+    }
+  ],
+  "landing": [],
+  "anchors": [
+    { "frame": 0, "root": { "x": 0, "y": 0 }, "feet": { "x": 0, "y": 0 }, "effect": { "x": 38, "y": -176 } },
+    { "frame": 10, "root": { "x": 0, "y": 0 }, "feet": { "x": 0, "y": 0 }, "effect": { "x": 40, "y": -174 } }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 0,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": []
+  },
+  "presentationTrack": [],
+  "validation": {
+    "hardGates": ["contract_shape", "exposure_coverage", "transition_coverage", "provenance_present"],
+    "creativeWarnings": ["legacy_character_art_rejected", "REJECTED_FOR_CHARACTER_ART_REVISION"],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "contract_fixture",
+    "tool": "Codex",
+    "model": null,
+    "createdAt": "2026-07-12T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": ["Production Ecosystem Architectural Review"],
+    "revisionChain": ["contract-v1"],
+    "cleanupOperations": [],
+    "humanApproval": { "state": "rejected", "approvedBy": null, "approvedAt": null },
+    "licensingNotes": ["REJECTED_FOR_CHARACTER_ART_REVISION. Non-deployable legacy technical fixture only."]
+  }
+}

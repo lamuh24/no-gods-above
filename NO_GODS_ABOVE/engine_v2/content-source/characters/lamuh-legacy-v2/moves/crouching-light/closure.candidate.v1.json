@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "crouching_light_distinct_low_single_hit_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "motionLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/crouching-light/motion-lock.v1.json",
+    "sha256": "2FE728B13B014B487423A2267DA3D2D438ECE2D9B11E06DF87AF03A3AA92BEA2"
+  },
+  "styleApproval": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/style-checkpoint-v1.approval.json",
+    "sha256": "9B671312457675BBCC8B5A8A1256041B4453A5A433B724740FDDDE4694069462",
+    "decision": "APPROVED_WITH_TARGETED_REPAIR"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalization.report.json",
+    "sha256": "C4CDFC23A58610A63DFD908804EB07A60BBE716F5622DF157DE9906F5A25E383"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "guarded_crouch_entry",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-00.png",
+      "sha256": "9F3A10CDB585B33759E158EE55957F5F907F5352C677900548F172F82F30A888",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 428,
+        "minY": 687,
+        "maxX": 1116,
+        "maxY": 1360
+      }
+    },
+    {
+      "index": 1,
+      "role": "lead_palm_low_chamber",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-01.png",
+      "sha256": "81E29A92C6E3BEBFC936368CC2DCDE1A58B522B4BD31A839D7F224D90E095D56",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 422,
+        "minY": 667,
+        "maxX": 1105,
+        "maxY": 1351
+      }
+    },
+    {
+      "index": 2,
+      "role": "low_palm_acceleration",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-02.png",
+      "sha256": "EFB377B7247674DAD0303E061CC8253B7A8AE5C2572A63D32B64A1F53CAFE37E",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 410,
+        "minY": 703,
+        "maxX": 1087,
+        "maxY": 1374
+      }
+    },
+    {
+      "index": 3,
+      "role": "single_low_palm_contact",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-03.png",
+      "sha256": "B276688EA7B99F4ACB12797FE2A943703D4A27D713DC4C802EFD9C44739EDEA5",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 380,
+        "minY": 673,
+        "maxX": 1141,
+        "maxY": 1363
+      }
+    },
+    {
+      "index": 4,
+      "role": "same_arm_low_follow_through",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-04.png",
+      "sha256": "2E9C5E6E31D50654464027DCBAFADE6D2D745C7D4A8BBCDAC80E3CDE6D7D8FC7",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 406,
+        "minY": 665,
+        "maxX": 1138,
+        "maxY": 1354
+      }
+    },
+    {
+      "index": 5,
+      "role": "lead_arm_crouched_recoil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-05.png",
+      "sha256": "FEA392328549C7043B93FC0F1A1B507DFCEC0EF178A9BF2FC0A549A2C8461E20",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 441,
+        "minY": 719,
+        "maxX": 1066,
+        "maxY": 1372
+      }
+    },
+    {
+      "index": 6,
+      "role": "connected_crouch_recovery",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-crouching-light-v1/normalized/crouching-light-06.png",
+      "sha256": "6E3A6917E98BFE708D9E01912B26D679834AC87567F66B4813AAED9C3954364E",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 446,
+        "minY": 717,
+        "maxX": 1054,
+        "maxY": 1374
+      }
+    }
+  ],
+  "contactPresentation": {
+    "publicPath": "/lamuh-legacy-v2/crouching-light-v2/crouching-light-03-hit-composite.png",
+    "sha256": "9ABC648B2D957D18B29B8D6FDF59A895A64DF910358686A9B9D2ABD94B9A14E8",
+    "bodyOnlyOnWhiff": true,
+    "allowedOutcomes": [
+      "hit",
+      "block"
+    ],
+    "separationStatus": "OUTCOME_ROUTED_SINGLE_CONTACT_COMPOSITE"
+  },
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "phaseTicks": {
+        "startup": 3,
+        "active": 3,
+        "recovery": 6
+      },
+      "durationTicks": 12,
+      "exposureTicks": [
+        1,
+        1,
+        1,
+        3,
+        3,
+        2,
+        1
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 3,
+        "active": 4,
+        "recovery": 7
+      },
+      "durationTicks": 14,
+      "exposureTicks": [
+        1,
+        1,
+        1,
+        4,
+        3,
+        2,
+        2
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+      "phaseTicks": {
+        "startup": 4,
+        "active": 5,
+        "recovery": 8
+      },
+      "durationTicks": 17,
+      "exposureTicks": [
+        2,
+        1,
+        1,
+        5,
+        3,
+        3,
+        2
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_2",
+      "hitstopTicks": 2,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_3",
+      "hitstopTicks": 3,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "FIRMER_4",
+      "hitstopTicks": 4,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    }
+  },
+  "approvalStatus": "human_approved_crouching_light_motion_and_b_retiming_candidate_base",
+  "humanApproval": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED",
+    "timing": "APPROVED_V2_RETIMING",
+    "selectedTimingCandidate": "B",
+    "combatProfile": null,
+    "record": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/crouching-light-v1.approval.json",
+      "sha256": "A4F7FB2154D2F5D2E1E41CF68F37DF062A67C911ECB90BF9888A639CF0E7CFA0"
+    }
+  }
+}

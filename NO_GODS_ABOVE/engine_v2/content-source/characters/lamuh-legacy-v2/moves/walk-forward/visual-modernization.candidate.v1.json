@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_walk_forward_modern_visual_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": true,
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/movement-modernization-v1.hash-lock.json",
+    "sha256": "F67FF3CA8DB0CB87033739BAF317D660632A51B113B5056C21CF6AD970040DC3"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-movement-modernization-v1/normalization.report.json",
+    "sha256": "BD5043A4EE513082FCC62B871AD9A114C56592FB8D0105E4830067CA42871797"
+  },
+  "state": {
+    "sourceFrameCount": 192,
+    "authoredFrameCount": 16,
+    "selectedLegacyFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "selectedSourceFrames": [
+      0,
+      12,
+      24,
+      36,
+      48,
+      60,
+      72,
+      84,
+      96,
+      108,
+      120,
+      132,
+      144,
+      156,
+      168,
+      180
+    ],
+    "exposureTicks": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "durationTicks": 32,
+    "loop": true,
+    "frames": [
+      {
+        "index": 0,
+        "role": "grounded_entry",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-00.png",
+        "sha256": "29EF9211F71572C39646BD18DE1578BF92D9DEBAF57D5A7FCFC779B5135FF291",
+        "sourceSha256": "A6AFB0251CED8D03AD02031BBC56A2E779E3426D66CE8DE12999C17C96B7EDC2",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 0,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "4AF7A0960CD61ECBB600F8B4D8C5E1D116C51383EC0CBC22F16EACFD70502A53",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 536,
+          "minY": 561,
+          "maxX": 990,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 775.03,
+          "y": 972.34
+        }
+      },
+      {
+        "index": 1,
+        "role": "first_step_departure",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-01.png",
+        "sha256": "348FDFB52F48FC7B2030EF975E7178F4C9CC14AF2ABBFDB2492BB960B9D2539F",
+        "sourceSha256": "4FC5299E4AF0A5796D051D929FF0E60F679CB996BC4C579DE64FDA4761592396",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 12,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "EC8C6555E246B5DEE9463FFAA05FD0D21AFBA10202A25E610CFBF6DAAF4266E5",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 539,
+          "minY": 563,
+          "maxX": 990,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 776.11,
+          "y": 972.41
+        }
+      },
+      {
+        "index": 2,
+        "role": "first_step_passing",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-02.png",
+        "sha256": "3AE7E9902C2E92CA4BD0B577E2A0A577001B750B95BFCAD3BD2641833743854F",
+        "sourceSha256": "E21E0C6317495B696A807B97D6B0345EE97739C72C1ABA3DDD6BEA886A951367",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 24,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "8956C560867D3D4CDB84208EE9D83624E5D6087A5B74091319CD687C24357B58",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 575,
+          "minY": 566,
+          "maxX": 1003,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 787.74,
+          "y": 965.87
+        }
+      },
+      {
+        "index": 3,
+        "role": "first_step_contact",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-03.png",
+        "sha256": "85C41A9F6CD6DBDE80EA95E74B519D48E13CF9327B6699C12BE7340C656065DE",
+        "sourceSha256": "32125B36084CCEC2CB178AD987138912335C4703223F168F0B4EBD9784050FC4",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 36,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "1E99E0A4FCC37FF569E7A0AE377DFAFF48661DB4B307442CF9CF1DE7D67067F6",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 560,
+          "minY": 562,
+          "maxX": 994,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 779.13,
+          "y": 943.48
+        }
+      },
+      {
+        "index": 4,
+        "role": "first_weight_transfer",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-04.png",
+        "sha256": "7C43B92F1E47C40AE393619F7C31E2DA9FDB866E166400C616CB9703512FD840",
+        "sourceSha256": "182B86E910286B88407CB317CFE902B0AFE1311E84D23563E4D40D69D53A6C19",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 48,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "8DEC63FE2FBFFFDFD1C4E9925EFF0B22735B3AEBD297BDF6D155B8D21E957843",
+        "legacyIndex": 4,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 575,
+          "minY": 547,
+          "maxX": 977,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 775.49,
+          "y": 929.91
+        }
+      },
+      {
+        "index": 5,
+        "role": "second_step_departure",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-05.png",
+        "sha256": "44F6F256008346698C284E397BDF53BB8803595396234B45049CC472E3086191",
+        "sourceSha256": "D71B75D5C13B07B28F20979906AFDC272827ED086BE3156BA50734020675E84E",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 60,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "72C5D31E3B99168A0529BC5EE5A591E293897889DE60B062015F47D618275D44",
+        "legacyIndex": 5,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 572,
+          "minY": 554,
+          "maxX": 982,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 768.34,
+          "y": 948.95
+        }
+      },
+      {
+        "index": 6,
+        "role": "second_step_passing",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-06.png",
+        "sha256": "710F7EB913B0C521F78C58F32D01D075FFBEB595E1D271621D36C0B9E2FDC16B",
+        "sourceSha256": "58D8732BEF09EEC303E2A796F0F4C1494E333C7862D554E1CAEC7CC300EB6022",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 72,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "4AF7A0960CD61ECBB600F8B4D8C5E1D116C51383EC0CBC22F16EACFD70502A53",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 524,
+          "minY": 570,
+          "maxX": 1006,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 768.59,
+          "y": 982.74
+        }
+      },
+      {
+        "index": 7,
+        "role": "second_step_contact",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-07.png",
+        "sha256": "0FE6C082336192E88859969A10437BEDA9986D83F5854A2F2B29C222AF952E36",
+        "sourceSha256": "3E415893A9F7AD9BD03918B541399DB45D9E62636ACF5356297DD3240B7CAA52",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 84,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "EC8C6555E246B5DEE9463FFAA05FD0D21AFBA10202A25E610CFBF6DAAF4266E5",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 562,
+          "minY": 564,
+          "maxX": 986,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 780.19,
+          "y": 967.31
+        }
+      },
+      {
+        "index": 8,
+        "role": "second_weight_transfer",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-08.png",
+        "sha256": "C61C26F2BC52CFE3363BF13AB5E88F5892560178434C65A477742E38BB1398C9",
+        "sourceSha256": "010C6FE83B68D42C6F99A7EBB46AF64C75A8D638A59A02E92838EABC03BA146A",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 96,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "8956C560867D3D4CDB84208EE9D83624E5D6087A5B74091319CD687C24357B58",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 560,
+          "minY": 559,
+          "maxX": 992,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 777.21,
+          "y": 945.55
+        }
+      },
+      {
+        "index": 9,
+        "role": "third_step_departure",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-09.png",
+        "sha256": "E906BE0DA90612B2AADBBAFC09FD57FD50912720AD4FFE31F47EAF718CD82C6D",
+        "sourceSha256": "003D7434C0D34119006F1096D3B5665738CCDE4C9A8A0082E3D2D51F038269E6",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 108,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "1E99E0A4FCC37FF569E7A0AE377DFAFF48661DB4B307442CF9CF1DE7D67067F6",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 573,
+          "minY": 548,
+          "maxX": 965,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 769.74,
+          "y": 943.24
+        }
+      },
+      {
+        "index": 10,
+        "role": "third_step_passing",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-10.png",
+        "sha256": "1E16C9E0C27BF476750E41253D4CDB5F90DBA8635210FF6BAE0A68A5AA1C7DB4",
+        "sourceSha256": "2CA17AC16ACC8D47E3806F4725ACBDEF60176C25F08B489C28EB13C66C555118",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 120,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "8DEC63FE2FBFFFDFD1C4E9925EFF0B22735B3AEBD297BDF6D155B8D21E957843",
+        "legacyIndex": 4,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 524,
+          "minY": 573,
+          "maxX": 1006,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 772,
+          "y": 983.8
+        }
+      },
+      {
+        "index": 11,
+        "role": "third_step_contact",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-11.png",
+        "sha256": "B2413CACF9B53581F962729463349B882A683FA8FAE72CBB50FC98C7A6534025",
+        "sourceSha256": "55F3E7E9B7F54B527F6FEB0F17B6EEFF83EC8990CCA64FEE9840D789C06C9048",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 132,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "72C5D31E3B99168A0529BC5EE5A591E293897889DE60B062015F47D618275D44",
+        "legacyIndex": 5,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 575,
+          "minY": 551,
+          "maxX": 994,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 781.6,
+          "y": 950.08
+        }
+      },
+      {
+        "index": 12,
+        "role": "settle_transfer",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-12.png",
+        "sha256": "578E634027EBA20EE6317E12277FD044081AD22CA350B83E8761B3E9D48AC219",
+        "sourceSha256": "4293A66ABD5C66B5C90BE0FCA78884CB8385B82EE26A96DEF3E234DAD20D3EA6",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 144,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "4AF7A0960CD61ECBB600F8B4D8C5E1D116C51383EC0CBC22F16EACFD70502A53",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 567,
+          "minY": 554,
+          "maxX": 977,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 772.74,
+          "y": 931.5
+        }
+      },
+      {
+        "index": 13,
+        "role": "stride_close",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-13.png",
+        "sha256": "D39252A1E1222035324E26C621796002E649C77CBBE0BADDC8DC1FC21DB5A8B6",
+        "sourceSha256": "B7E162AAC738C8B270220CF1E47E4D9D5685AA6F98D2E6B8E12FB7C68C8B8A2D",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 156,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "EC8C6555E246B5DEE9463FFAA05FD0D21AFBA10202A25E610CFBF6DAAF4266E5",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 526,
+          "minY": 573,
+          "maxX": 1000,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 772.16,
+          "y": 979.22
+        }
+      },
+      {
+        "index": 14,
+        "role": "planted_recovery",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-14.png",
+        "sha256": "0065C6E1838EF3DD40F70DC66C079AA4B23973C02E51D74F9A55609D6CA8BE49",
+        "sourceSha256": "5E77721938A46CF8CED49A8B46A0C4C83AFACE07363F7926FA1FB476CE46416F",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 168,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "8DEC63FE2FBFFFDFD1C4E9925EFF0B22735B3AEBD297BDF6D155B8D21E957843",
+        "legacyIndex": 4,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 562,
+          "minY": 554,
+          "maxX": 999,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 776.91,
+          "y": 943.65
+        }
+      },
+      {
+        "index": 15,
+        "role": "loop_close",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-forward-15.png",
+        "sha256": "D9073F0EC314A2D82C47D54BF3F9D86C24B7D54EB3882CBAC9EE6BAF6B58891C",
+        "sourceSha256": "001458C222DC8324D87C5B3FD96548C4E99E683043EDB0613EB174A12BDFA76C",
+        "sourceType": "user_video",
+        "sourceFrameIndex": 180,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": "72C5D31E3B99168A0529BC5EE5A591E293897889DE60B062015F47D618275D44",
+        "legacyIndex": 5,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 516,
+          "minY": 558,
+          "maxX": 1018,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 769.5,
+          "y": 978.16
+        }
+      }
+    ]
+  },
+  "approvalStatus": "awaiting_human_combined_modern_style_playtest",
+  "humanApproval": null
+}

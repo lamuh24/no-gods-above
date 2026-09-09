@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "standing_heavy_closure_candidate_v1",
+  "promotionState": "candidate",
+  "deployable": false,
+  "productionApproved": false,
+  "motionLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/standing-heavy/motion-lock.v1.json",
+    "sha256": "B6F62455B2FD68C0515E278F45B8C5124CC3CAB2A9D9A7019639886680DAD35E"
+  },
+  "styleApproval": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/style-checkpoint-v1.approval.json",
+    "sha256": "9B671312457675BBCC8B5A8A1256041B4453A5A433B724740FDDDE4694069462",
+    "decision": "APPROVED_WITH_TARGETED_REPAIR"
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalization.report.json",
+    "sha256": "BF62369C93D5E3CBFF8B521D662057F4568E22A16095F76F5F2F9050080A20CD"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "role": "loaded_anticipation",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-00.png",
+      "sha256": "77DC8F9EE13BA864F94429F5A2EA83B463653CE1CF1361B6BA3111957BB8A3F8",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 428,
+        "minY": 798,
+        "maxX": 1107,
+        "maxY": 1361
+      }
+    },
+    {
+      "index": 1,
+      "role": "guarded_hip_coil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-01.png",
+      "sha256": "EE869249DCEA0157B5AA21902358A8D3F5896814EA1A507295773A765B497D41",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 415,
+        "minY": 761,
+        "maxX": 1120,
+        "maxY": 1362
+      }
+    },
+    {
+      "index": 2,
+      "role": "right_leg_launch",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-02.png",
+      "sha256": "9E15CAFAE96D1E5B7A80E14B1819E993E9247D90A5277368136D09C6D603A097",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 622,
+        "minY": 691,
+        "maxX": 1385,
+        "maxY": 1361
+      }
+    },
+    {
+      "index": 3,
+      "role": "single_high_kick_contact_body_scale_repaired",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-03.png",
+      "sha256": "AC376111D67F55C0C0BA336390FF0A95ED20F670D4A5AC2A0C71AADE0BE2103C",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 564,
+        "minY": 667,
+        "maxX": 1368,
+        "maxY": 1362
+      }
+    },
+    {
+      "index": 4,
+      "role": "post_contact_overshoot",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-04.png",
+      "sha256": "C5C4874242B0A3CC14544C3B3684C5EFFB4F50B2B4CF3FD6D151D99C5D3D7713",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 554,
+        "minY": 667,
+        "maxX": 1378,
+        "maxY": 1362
+      }
+    },
+    {
+      "index": 5,
+      "role": "same_leg_recoil",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-05.png",
+      "sha256": "8DFC2AAEF502E1209E974BC5F4FAEFF19691C5DD29FEE5E62193EA6176B3C87E",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 604,
+        "minY": 600,
+        "maxX": 1107,
+        "maxY": 1364
+      }
+    },
+    {
+      "index": 6,
+      "role": "low_rotational_recovery",
+      "sourceUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-standing-heavy-closure-v1/normalized/standing-heavy-06.png",
+      "sha256": "4B9C0ABA12151C2FA558977FBD96500A8B0119DF819D0DE0BADD0984127DAC0D",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 446,
+        "minY": 660,
+        "maxX": 1056,
+        "maxY": 1358
+      }
+    }
+  ],
+  "contactPresentation": {
+    "publicPath": "/lamuh-legacy-v2/standing-heavy-v2/standing-heavy-03-hit-composite.png",
+    "sha256": "FA9A599ED752168D93AA34F425D5EC11806403E154B793D9CA7D55EB2AC93297",
+    "bodyOnlyOnWhiff": true,
+    "allowedOutcomes": [
+      "hit",
+      "block"
+    ],
+    "separationStatus": "OUTCOME_ROUTED_COMPOSITE_WITH_LAYER_POLISH_DEBT"
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+      "phaseTicks": {
+        "startup": 9,
+        "active": 5,
+        "recovery": 18
+      },
+      "durationTicks": 32,
+      "exposureTicks": [
+        4,
+        3,
+        2,
+        5,
+        4,
+        6,
+        8
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 11,
+        "active": 5,
+        "recovery": 21
+      },
+      "durationTicks": 37,
+      "exposureTicks": [
+        5,
+        4,
+        2,
+        5,
+        5,
+        7,
+        9
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE",
+      "phaseTicks": {
+        "startup": 13,
+        "active": 6,
+        "recovery": 23
+      },
+      "durationTicks": 42,
+      "exposureTicks": [
+        6,
+        4,
+        3,
+        6,
+        6,
+        8,
+        9
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_8",
+      "hitstopTicks": 8,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "READABLE_9",
+      "hitstopTicks": 9,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 1,
+      "recoveryExposureDelta": -1
+    },
+    "I3": {
+      "label": "WEIGHTED_10",
+      "hitstopTicks": 10,
+      "contactExposureDelta": 1,
+      "recoilExposureDelta": 1,
+      "recoveryExposureDelta": -2
+    }
+  },
+  "approvalStatus": "awaiting_human_lamuh_v2_first_playable_closure_review"
+}

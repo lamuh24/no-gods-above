@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "characterId": "lamuh_legacy_v2",
+  "candidateOnly": true,
+  "deployable": false,
+  "selectableProductionRoster": false,
+  "technicalStatus": "HEAVEN_V4_ACCEPTED_RADIANT_DIVE_STATE_DRIVEN_PLAYABLE_CANDIDATE",
+  "humanReviewStatus": "awaiting_human_radiant_dive_family_review",
+  "productionApproved": false,
+  "simulationHz": 60,
+  "timingCandidate": "B",
+  "coverage": {
+    "movement": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "dash_forward",
+      "dash_backward",
+      "crouch",
+      "jump",
+      "air_dash_forward",
+      "air_dash_backward",
+      "turn_facing"
+    ],
+    "defense": [
+      "standing_block",
+      "light_reaction"
+    ],
+    "groundNormals": [
+      "standing_light",
+      "standing_medium",
+      "standing_heavy",
+      "crouching_light",
+      "crouching_medium",
+      "crouching_heavy"
+    ],
+    "airNormals": [
+      "air_light",
+      "air_medium",
+      "air_heavy"
+    ],
+    "specials": [
+      "ascend_step_light",
+      "ascend_step",
+      "ascend_step_heavy",
+      "celestial_palm_light",
+      "celestial_palm_medium",
+      "celestial_palm_heavy",
+      "heaven_splitter_light",
+      "heaven_splitter_medium",
+      "heaven_splitter_heavy",
+      "radiant_dive_light",
+      "radiant_dive_medium",
+      "radiant_dive_heavy"
+    ],
+    "grabs": [
+      "universal_grab_startup",
+      "grab_connect",
+      "grab_whiff",
+      "forward_throw",
+      "back_throw",
+      "throw_recovery"
+    ]
+  },
+  "knownArtDebt": [
+    "standard-height victim is procedural",
+    "launch reaction lacks a dedicated authored row",
+    "modern movement, ground-normal, and air-normal artwork remains candidate-only pending per-set human motion, scale, transition, and timing gates",
+    "dedicated Turn / Facing is accepted for the current production baseline with polish debt and starred for revisit; the art remains candidate-only and is not promoted",
+    "dedicated standard-grab and throw attacker art passed human motion/interaction review but remains candidate-only and is not runtime-promoted",
+    "Forward special L/M/H family is provisionally accepted and starred; Medium rising-heel contact height and landing registration remain polish debt. No art promotion or final balance approval."
+  ],
+  "reviewQuestions": [
+    "Did V2 retain or improve V1 smoothness?",
+    "Are attacks still too fast?",
+    "Are state entries and exits natural?",
+    "Does the standard grab feel physical and readable?",
+    "Did Lamuh keep his animation identity?"
+  ],
+  "goalBranch": "codex/lamuh-legacy-v2-rebuild-v1",
+  "forgePackageCount": 27,
+  "currentReviewGate": {
+    "status": "awaiting_human_radiant_dive_family_review",
+    "requiredDecisions": [
+      "dash_forward_motion_and_transition",
+      "walk_backward_directional_motion_and_transition",
+      "dash_backward_motion_and_transition",
+      "air_dash_forward_motion_and_transition",
+      "air_dash_backward_motion_and_transition",
+      "standing_block_motion_and_transition",
+      "crouch_motion_and_transition",
+      "jump_motion_and_transition",
+      "combined_movement_scale_and_flow",
+      "crouching_block_motion_identity_and_transition",
+      "jump_adult_proportion_and_transition",
+      "all_normals_idle_and_transition_combined_flow"
+    ],
+    "comparisonRoute": "/lamuh-v1-v2-review.html",
+    "sandboxRoute": "/lamuh-legacy-sandbox.html",
+    "stopBoundary": "human_review_radiant_dive_before_later_family_or_promotion",
+    "backwardMotionRepair": {
+      "status": "awaiting_human_walk_backward_and_dash_backward_directional_review",
+      "walkBackward": null,
+      "dashBackward": null,
+      "timingChanged": false,
+      "simulationTravelChanged": false
+    },
+    "walkBackVideoRebuild": {
+      "status": "awaiting_human_video_derived_walk_backward_review",
+      "motion": null,
+      "transitions": null,
+      "generatedArtwork": false,
+      "timingChanged": false,
+      "simulationTravelChanged": false
+    },
+    "focusDecisions": [
+      "radiant_dive_airborne_entry_and_angle",
+      "radiant_dive_one_hit_and_landing",
+      "radiant_dive_adult_identity_and_scale",
+      "radiant_dive_counterplay"
+    ],
+    "starredForRevisit": [
+      {
+        "subject": "turn_facing_motion_mirrored_parity_and_transition",
+        "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+        "reason": "user_requested_may_come_back_to_it"
+      },
+      {
+        "subject": "fighter_pushbox_separation",
+        "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+        "reason": "user_requested_pass_for_now_and_mark_for_revisit",
+        "approvalReceipt": {
+          "path": "records/fighter-pushbox-separation-v1.approval.json",
+          "sha256": "A7E529AA9534B0E83A23833DD5256325658D0B630D67451C2853A97AA0944889"
+        }
+      },
+      {
+        "subject": "forward_special_family_light_medium_heavy",
+        "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+        "reason": "user_requested_mark_forward_specials_and_proceed",
+        "approvalReceipt": {
+          "path": "records/forward-special-family-v1.approval.json",
+          "sha256": "3FA255F97DA9B05F576580ACCF7A93722E8883E649D50FB19FC37EFDFB9AF5A1"
+        }
+      }
+    ],
+    "rejectedCandidate": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-two-beat-v1.rejection.json",
+      "sha256": "422CC099A7C1DEA07472CF1B57CB927C7E788D5B4EF9D677699F103BA24A1D66",
+      "decision": "REJECTED_FOR_MOTION_REVISION"
+    },
+    "activeMotionContract": "radiant_dive_single_descending_near_arm_strike_connected_landing"
+  },
+  "additiveForgeBundles": [
+    {
+      "path": "celestial-palm-packages/celestial-palm.bundle.json",
+      "packageCount": 3,
+      "role": "neutral_specials"
+    },
+    {
+      "path": "heaven-splitter-packages/heaven-splitter.bundle.json",
+      "packageCount": 3,
+      "role": "up_specials"
+    },
+    {
+      "path": "radiant-dive-packages/radiant-dive.bundle.json",
+      "packageCount": 3,
+      "role": "air_specials"
+    }
+  ],
+  "celestialPalmApproval": {
+    "path": "records/celestial-palm-v1.approval.json",
+    "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+  },
+  "heavenSplitterApproval": {
+    "path": "records/heaven-splitter-v4.approval.json",
+    "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+  }
+}

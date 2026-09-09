@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_animation_review",
+  "subject": "lamuh_legacy_v2.standard_grab_throw_animation_family.candidate.v1",
+  "approvedAt": "2026-09-03",
+  "sourceApplication": "Codex desktop",
+  "userInput": "bpth grabs are fine we can move onn to the special moves now",
+  "decisions": {
+    "standardGrab": "APPROVED_STANDARD_GRAB",
+    "forwardThrow": "APPROVED_FORWARD_THROW",
+    "backThrow": "APPROVED_BACK_THROW"
+  },
+  "approvalScope": "standard_grab_forward_throw_back_throw_motion_standard_humanoid_interaction_and_neutral_transitions_only",
+  "accepted": [
+    "fast readable universal grab reach, secure, whiff, and short recovery",
+    "body-driven forward throw with visible momentum and forward release",
+    "body-driven back throw with pivot, controlled redirect, and side switch",
+    "deterministic standard-height humanoid victim track without global scaling",
+    "fixed-root adult Lamuh scale and outline-free NGA V2 visual identity"
+  ],
+  "approvedCandidate": {
+    "hashLock": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+    "hashLockSha256": "ACBB47986794CBFCB4CA8870D28234A35A020DF307D7748AB72E235C96BAE4EF",
+    "normalizationReport": "tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json",
+    "normalizationReportSha256": "02D919FD75C9DEECC84B7D329D043227AA6FE6EE327F80875DA7C471BF977C33",
+    "contactSheet": "tools/nga-forge/review/lamuh-legacy-v2-throws-v1/throw-family-numbered-contact-sheet.png",
+    "contactSheetSha256": "46EB592BE432F4D659AE08227CFF132F91E678FBA43EB799F4999A8FFF02014F",
+    "standardGrabDurationTicks": 20,
+    "forwardThrowDurationTicks": 32,
+    "backThrowDurationTicks": 36,
+    "victimClass": "standard_humanoid"
+  },
+  "approvalBoundary": {
+    "standardGrabApproved": true,
+    "forwardThrowApproved": true,
+    "backThrowApproved": true,
+    "standardHumanoidVictimInteractionApproved": true,
+    "futureVictimClassesApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "nextAuthorizedCandidateWork": "ascend_step_signature_special_motion_timing_transition_and_combat_profile_review",
+  "legacySourceRemainsImmutable": true
+}

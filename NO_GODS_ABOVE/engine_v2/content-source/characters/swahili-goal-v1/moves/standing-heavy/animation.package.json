@@ -80,37 +80,37 @@
     {
       "sourceFrameId": "idle_00",
       "start": 0,
-      "duration": 12
+      "duration": 6
     },
     {
       "sourceFrameId": "standing_heavy_anticipation_v2",
-      "start": 12,
+      "start": 6,
       "duration": 10
     },
     {
       "sourceFrameId": "standing_heavy_preparation",
-      "start": 22,
+      "start": 16,
       "duration": 5
     },
     {
       "sourceFrameId": "standing_heavy_extension",
-      "start": 27,
+      "start": 21,
       "duration": 3
     },
     {
       "sourceFrameId": "standing_heavy_impact_v2",
-      "start": 30,
+      "start": 24,
       "duration": 6
     },
     {
       "sourceFrameId": "standing_heavy_recoil_v2",
-      "start": 36,
+      "start": 30,
       "duration": 5
     },
     {
       "sourceFrameId": "standing_heavy_recovery",
-      "start": 41,
-      "duration": 9
+      "start": 35,
+      "duration": 15
     },
     {
       "sourceFrameId": "idle_00",
@@ -229,7 +229,7 @@
       "groundingContract": "forge_stance_grounding_v2_source_review_authority"
     },
     {
-      "frame": 12,
+      "frame": 6,
       "sourceFrameId": "standing_heavy_anticipation_v2",
       "root": {
         "x": 768,
@@ -254,7 +254,7 @@
       "groundingContract": "forge_stance_grounding_v2_source_review_authority"
     },
     {
-      "frame": 22,
+      "frame": 16,
       "sourceFrameId": "standing_heavy_preparation",
       "root": {
         "x": 768,
@@ -279,7 +279,7 @@
       "groundingContract": "forge_stance_grounding_v2_source_review_authority"
     },
     {
-      "frame": 27,
+      "frame": 21,
       "sourceFrameId": "standing_heavy_extension",
       "root": {
         "x": 768,
@@ -304,7 +304,7 @@
       "groundingContract": "forge_stance_grounding_v2_source_review_authority"
     },
     {
-      "frame": 30,
+      "frame": 24,
       "sourceFrameId": "standing_heavy_impact_v2",
       "root": {
         "x": 768,
@@ -329,7 +329,7 @@
       "groundingContract": "forge_stance_grounding_v2_source_review_authority"
     },
     {
-      "frame": 36,
+      "frame": 30,
       "sourceFrameId": "standing_heavy_recoil_v2",
       "root": {
         "x": 768,
@@ -354,7 +354,7 @@
       "groundingContract": "forge_stance_grounding_v2_source_review_authority"
     },
     {
-      "frame": 41,
+      "frame": 35,
       "sourceFrameId": "standing_heavy_recovery",
       "root": {
         "x": 768,
@@ -627,7 +627,8 @@
       "Every move keeps its independently authored 60 Hz duration.",
       "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
       "Artwork never controls collision, movement, capture, release, hit results, or rollback."
-    ]
+    ],
+    "humanReviewStatus": "PENDING_HUMAN_REVIEW_OF_CONTACT_WINDOW_REPAIR"
   },
   "presentationSockets": [
     {
@@ -656,7 +657,8 @@
       "simulation_owns_cursor",
       "mirror_round_trip",
       "pixel_exact_atlas_reconstruction",
-      "provenance_present"
+      "provenance_present",
+      "contact_window_alignment"
     ],
     "creativeWarnings": [
       "APPROVED_RECOMMENDED_PROFILE",
@@ -669,7 +671,7 @@
     "sourceType": "approved_or_human_review_candidate_exact_rgba",
     "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
     "model": null,
-    "createdAt": "2026-07-26T00:00:00Z",
+    "createdAt": "2026-08-13T00:00:00Z",
     "promptHash": null,
     "seed": null,
     "references": [
@@ -889,5 +891,264 @@
     },
     "victimFrames": [],
     "interactionContract": null
+  },
+  "supersededExposureTrack": {
+    "reason": "Superseded on 2026-09-03. The impact pose was scheduled at ticks 30-35 while this package's own combatTrack declares the hitbox live at ticks 24-28, so the strongest pose of the clip never appeared while the move could hit; ticks 24-28 showed the preparation and extension poses instead. The clip also opened on 12 ticks of static idle. Every animated frame keeps its authored duration; the head idle hold is shortened by 6 ticks and those 6 ticks are given to the visible recovery so the return to neutral reads instead of snapping.",
+    "supersededOn": "2026-09-03",
+    "previous": {
+      "exposures": [
+        {
+          "sourceFrameId": "idle_00",
+          "start": 0,
+          "duration": 12
+        },
+        {
+          "sourceFrameId": "standing_heavy_anticipation_v2",
+          "start": 12,
+          "duration": 10
+        },
+        {
+          "sourceFrameId": "standing_heavy_preparation",
+          "start": 22,
+          "duration": 5
+        },
+        {
+          "sourceFrameId": "standing_heavy_extension",
+          "start": 27,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "standing_heavy_impact_v2",
+          "start": 30,
+          "duration": 6
+        },
+        {
+          "sourceFrameId": "standing_heavy_recoil_v2",
+          "start": 36,
+          "duration": 5
+        },
+        {
+          "sourceFrameId": "standing_heavy_recovery",
+          "start": 41,
+          "duration": 9
+        },
+        {
+          "sourceFrameId": "idle_00",
+          "start": 50,
+          "duration": 25
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "idle_00",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 591,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 591,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 851,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 12,
+          "sourceFrameId": "standing_heavy_anticipation_v2",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 570,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 570,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 828,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 22,
+          "sourceFrameId": "standing_heavy_preparation",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 649,
+            "y": 1407
+          },
+          "nearFoot": {
+            "x": 649,
+            "y": 1407
+          },
+          "farFoot": {
+            "x": 955,
+            "y": 1407
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 27,
+          "sourceFrameId": "standing_heavy_extension",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 647,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 647,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 1013,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 30,
+          "sourceFrameId": "standing_heavy_impact_v2",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 703,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 703,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 1043,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 36,
+          "sourceFrameId": "standing_heavy_recoil_v2",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 557,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 557,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 827,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 41,
+          "sourceFrameId": "standing_heavy_recovery",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 570,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 570,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 808,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        },
+        {
+          "frame": 50,
+          "sourceFrameId": "idle_00",
+          "root": {
+            "x": 768,
+            "y": 1408
+          },
+          "feet": {
+            "x": 591,
+            "y": 1408
+          },
+          "nearFoot": {
+            "x": 591,
+            "y": 1408
+          },
+          "farFoot": {
+            "x": 851,
+            "y": 1408
+          },
+          "effect": {
+            "x": 768,
+            "y": 768
+          },
+          "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+        }
+      ]
+    }
+  },
+  "contactWindowReconciliation": {
+    "impactFrameId": "standing_heavy_impact_v2",
+    "impactStartTick": 24,
+    "impactEndTick": 29,
+    "declaredActiveStart": 24,
+    "declaredActiveEnd": 28,
+    "impactCoversDeclaredActiveWindow": true,
+    "openQuestion": "This package declares a 75-tick move (24/5/46). The deterministic simulation runs standing_heavy as 8/5/17 = 30 ticks, and there is no swahili FighterKind, so this package does not drive gameplay. Reconciling the authored duration with the simulation is a separate human decision and is NOT resolved here."
   }
 }

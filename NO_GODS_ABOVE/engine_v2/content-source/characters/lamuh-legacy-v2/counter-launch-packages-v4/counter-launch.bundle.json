@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "lamuh_counter_launch_v4",
+  "displayName": "Lamuh counter rising kick diagonal ball candidate",
+  "bundleVersion": 1,
+  "promotionState": "candidate",
+  "runtimeProfile": {
+    "worldHeight": 164,
+    "centerline": 224,
+    "footPosition": 382,
+    "handReach": 120,
+    "universalCapabilities": [
+      "ground_normals",
+      "air_normals",
+      "standing_block",
+      "hit_reaction",
+      "standard_throw"
+    ]
+  },
+  "poseLibrary": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "crouch",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "low",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "compact_low_lamuh",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "airborne",
+      "facing": "forward",
+      "elevation": "airborne",
+      "plantedFoot": "none",
+      "weight": "airborne",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "airborne_lamuh_arc",
+      "verticalMotion": "rising"
+    }
+  ],
+  "animationPackages": [
+    "stance/animation.package.json",
+    "kick/animation.package.json",
+    "ball/animation.package.json"
+  ],
+  "packageGroups": {
+    "counter_launch": [
+      "divine_counter_launch_stance",
+      "divine_counter_launch_kick",
+      "divine_counter_launch_ball"
+    ]
+  },
+  "design": {
+    "characterBible": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/COMBAT_IDENTITY.md",
+    "palette": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-lock.v1.json",
+    "forbiddenMutations": [
+      "identity_drift",
+      "major_scale_drift",
+      "root_teleportation",
+      "broken_anatomy",
+      "costume_mutation",
+      "squash_stretch_suppression"
+    ]
+  }
+}

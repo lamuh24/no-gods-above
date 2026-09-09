@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/production-arena-brief.schema.json",
+  "title": "NGA Production Arena Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "status", "deployable", "approvalState", "identity", "composition", "readability", "cameraRequirements", "ambientMotion", "prohibitedVisualNoise", "performanceBudget", "artAssetList", "productionContract", "humanDecisions"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0-production-arena-brief" },
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "status": { "enum": ["production_arena_brief_candidate", "approved"] },
+    "deployable": { "const": false },
+    "approvalState": { "enum": ["awaiting_human_stage_brief_approval", "APPROVED_AS_PRODUCTION_ARENA_BRIEF_V1"] },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["arenaName", "lore", "narrativePurpose", "timeOfDay", "primaryMood", "dominantColorFamilies"],
+      "properties": {
+        "arenaName": { "type": "string", "minLength": 1 },
+        "lore": { "type": "string", "minLength": 1 },
+        "narrativePurpose": { "type": "string", "minLength": 1 },
+        "timeOfDay": { "type": "string", "minLength": 1 },
+        "primaryMood": { "type": "string", "minLength": 1 },
+        "dominantColorFamilies": { "type": "array", "minItems": 4, "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "composition": { "type": "object", "required": ["foreground", "midground", "background", "gameplayFloor", "stageSilhouette"] },
+    "readability": { "type": "object", "required": ["contrastZonesBehindFighters", "vfxVisibilityZones", "jumpHeight", "corners"] },
+    "cameraRequirements": { "type": "object", "required": ["commandGrab", "super", "ultimate", "roundFinisher"] },
+    "ambientMotion": { "type": "object", "required": ["permitted", "deterministicCapturePolicy"] },
+    "prohibitedVisualNoise": { "type": "array", "minItems": 6, "items": { "type": "string" }, "uniqueItems": true },
+    "performanceBudget": { "type": "object", "required": ["targetFps", "maxTotalDrawCalls", "maxStageDrawCalls", "maxVisibleTriangles", "maxLoadedTriangles", "maxStageTextures", "maxTotalTextureMemoryMb", "maxMaterialVariants", "maxDynamicLights"] },
+    "artAssetList": { "type": "array", "minItems": 12, "items": { "type": "object", "required": ["id", "category", "required", "purpose"] } },
+    "productionContract": {
+      "type": "object",
+      "required": ["combatPlaneOrigin", "floorY", "worldScale", "gameplayBounds", "spawnPositions", "wallBounceAnchors", "defaultCameraPosition", "cameraZoomRange", "jumpCameraRange", "stageEdgeBehavior", "cinematicSafeZones", "foregroundOcclusionLimits", "parallaxDepthValues", "lightDirection", "shadowDirection", "contrastZoneMasks", "vfxSafetyRegions"]
+    },
+    "humanDecisions": { "type": "array", "minItems": 6, "items": { "type": "string" }, "uniqueItems": true }
+  }
+}
