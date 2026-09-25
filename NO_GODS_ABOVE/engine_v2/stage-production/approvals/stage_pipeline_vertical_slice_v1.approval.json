@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0-stage-approval",
+  "approvalId": "stage_pipeline_vertical_slice_v1",
+  "result": "STAGE_PIPELINE_VERTICAL_SLICE_APPROVED",
+  "approvedBy": "human_user",
+  "approvedAt": "2026-07-14",
+  "approvedScope": [
+    "deterministic 2D combat-plane to 3D presentation mapping",
+    "constrained perspective gameplay camera",
+    "sprite billboard, root, mirror, grounding, and shadow presentation",
+    "rollback-safe constrained cinematic camera mechanism",
+    "WebGL2 stage vertical-slice validation harness"
+  ],
+  "preservedArchitecture": [
+    "combatPlane",
+    "cameraRig",
+    "spritePresentation",
+    "deterministicCombatKernel",
+    "legacyGameJs"
+  ],
+  "productionArenaArtAuthorized": false,
+  "runtimeIntegrationAuthorized": false,
+  "deployable": false,
+  "nextGate": "awaiting_human_stage_brief_approval"
+}

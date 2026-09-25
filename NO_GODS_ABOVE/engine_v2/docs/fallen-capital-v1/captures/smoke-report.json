@@ -1,0 +1,556 @@
+{
+  "timestamp": "2026-09-14T01:48:34.002Z",
+  "origin": "http://127.0.0.1:4175",
+  "checks": [
+    "actual Lamuh and Swahili presenters loaded",
+    "28 degree camera and fixed combat plane",
+    "repeated renderer calls leave complete serialized match state untouched",
+    "renderer dispose is idempotent and removes owned canvas",
+    "both players deal damage via real heavy input",
+    "actual jump stays visible head to foot",
+    "actual projectile spawns and character presenter draws it",
+    "actual hit-confirmed ultimate reaches charge and beam with screenshot",
+    "cinematic uses screen-space bars and bounded orbit",
+    "synthetic left-corner body containment",
+    "synthetic right-corner body containment",
+    "synthetic max-width-ceiling body containment",
+    "return to select disposes stage canvas",
+    "reentry supports swapped fighters with one arena canvas ({\"chosen\":{\"p1\":\"swahili\",\"p2\":\"lamuh\"},\"count\":1})",
+    "training grid remains selectable fallback",
+    "no browser console or page errors",
+    "no failed HTTP or asset requests",
+    "synthetic missing background degrades to playable grid without an uncaught error"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "actualInput": {
+    "exchange": {
+      "events": [
+        {
+          "attacker": "p1",
+          "outcome": "hit",
+          "damage": 82
+        },
+        {
+          "attacker": "p2",
+          "outcome": "hit",
+          "damage": 85
+        }
+      ],
+      "health": [
+        915,
+        918
+      ]
+    },
+    "jump": {
+      "minY": -137.19999999999993,
+      "minHead": 171.90544143768653,
+      "maxFeet": 711.9218800147078,
+      "arena": {
+        "stageId": "fallen-capital",
+        "displayName": "The Fallen Capital",
+        "stageLoaded": true,
+        "textureReady": true,
+        "backgroundUrl": "./stages/fallen-capital/background.png",
+        "disposed": false,
+        "cameraPosition": [
+          0,
+          5.039529999999999,
+          18.885648128317907
+        ],
+        "cameraFov": 28,
+        "cameraTarget": [
+          0,
+          3.289529999999999,
+          0
+        ],
+        "cameraDistance": 18.885648128317907,
+        "orbitDegrees": 0,
+        "phase": "gameplay",
+        "projection": "PerspectiveCamera",
+        "fixedCombatPlane": true,
+        "simulatedStateMutated": false,
+        "bounds": {
+          "left": -420,
+          "right": 420,
+          "groundY": 0,
+          "leftWorld": -8.4,
+          "rightWorld": 8.4
+        },
+        "endpoints": {
+          "left": {
+            "x": 12.231175204809919,
+            "y": 757.3990566968963
+          },
+          "right": {
+            "x": 1587.76882479519,
+            "y": 757.3990566968963
+          },
+          "center": {
+            "x": 800,
+            "y": 757.3990566968963
+          }
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "tick": 24,
+        "renderCalls": 28,
+        "triangles": 2414,
+        "geometries": 27,
+        "textures": 6
+      }
+    },
+    "projectile": {
+      "spawned": true,
+      "attackId": "legacy_celestial_palm_heavy",
+      "point": {
+        "x": 839.0430092040493,
+        "y": 483.85152597814056
+      },
+      "drawn": true
+    },
+    "cinematicFrame": {
+      "phases": [
+        "charge",
+        "charge",
+        "charge",
+        "beam",
+        "beam",
+        "beam",
+        "beam",
+        "beam",
+        "beam",
+        "beam"
+      ],
+      "phase": "beam",
+      "bars": true,
+      "orbit": -3.410560657416368
+    },
+    "ultimatePhases": [
+      "confirm",
+      "elbow",
+      "knee",
+      "charge",
+      "beam",
+      "recovery"
+    ]
+  },
+  "syntheticStress": {
+    "left-corner": {
+      "points": [
+        {
+          "x": 481.7732851459435,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 475.8035411702442,
+          "y": 360.8433280631411
+        },
+        {
+          "x": 636.0650256812436,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 632.9897030270955,
+          "y": 360.8433280631411
+        },
+        {
+          "x": 703.5676621654374,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 701.7586488394679,
+          "y": 360.8433280631411
+        },
+        {
+          "x": 857.8594027007375,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 858.9448106963191,
+          "y": 360.8433280631411
+        }
+      ],
+      "arena": {
+        "stageId": "fallen-capital",
+        "displayName": "The Fallen Capital",
+        "stageLoaded": true,
+        "textureReady": true,
+        "backgroundUrl": "./stages/fallen-capital/background.png",
+        "disposed": false,
+        "cameraPosition": [
+          -5.6,
+          4.476,
+          18.4
+        ],
+        "cameraFov": 28,
+        "cameraTarget": [
+          -5.6,
+          2.726,
+          0
+        ],
+        "cameraDistance": 18.4,
+        "orbitDegrees": 0,
+        "phase": "gameplay",
+        "projection": "PerspectiveCamera",
+        "fixedCombatPlane": true,
+        "simulatedStateMutated": false,
+        "bounds": {
+          "left": -420,
+          "right": 420,
+          "groundY": 0,
+          "leftWorld": -8.4,
+          "rightWorld": 8.4
+        },
+        "endpoints": {
+          "left": {
+            "x": 529.9894540632248,
+            "y": 711.9218800147078
+          },
+          "right": {
+            "x": 2150.052729683876,
+            "y": 711.9218800147078
+          },
+          "center": {
+            "x": 1340.0210918735504,
+            "y": 711.9218800147078
+          }
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "tick": 1,
+        "renderCalls": 25,
+        "triangles": 2388,
+        "geometries": 27,
+        "textures": 6
+      }
+    },
+    "right-corner": {
+      "points": [
+        {
+          "x": 742.1405972992625,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 741.0551893036808,
+          "y": 360.8433280631411
+        },
+        {
+          "x": 896.4323378345628,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 898.2413511605321,
+          "y": 360.8433280631411
+        },
+        {
+          "x": 963.9349743187564,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 967.0102969729044,
+          "y": 360.8433280631411
+        },
+        {
+          "x": 1118.2267148540564,
+          "y": 711.9218800147078
+        },
+        {
+          "x": 1124.1964588297558,
+          "y": 360.8433280631411
+        }
+      ],
+      "arena": {
+        "stageId": "fallen-capital",
+        "displayName": "The Fallen Capital",
+        "stageLoaded": true,
+        "textureReady": true,
+        "backgroundUrl": "./stages/fallen-capital/background.png",
+        "disposed": false,
+        "cameraPosition": [
+          5.6,
+          4.476,
+          18.4
+        ],
+        "cameraFov": 28,
+        "cameraTarget": [
+          5.6,
+          2.726,
+          0
+        ],
+        "cameraDistance": 18.4,
+        "orbitDegrees": 0,
+        "phase": "gameplay",
+        "projection": "PerspectiveCamera",
+        "fixedCombatPlane": true,
+        "simulatedStateMutated": false,
+        "bounds": {
+          "left": -420,
+          "right": 420,
+          "groundY": 0,
+          "leftWorld": -8.4,
+          "rightWorld": 8.4
+        },
+        "endpoints": {
+          "left": {
+            "x": -550.0527296838758,
+            "y": 711.9218800147078
+          },
+          "right": {
+            "x": 1070.010545936775,
+            "y": 711.9218800147078
+          },
+          "center": {
+            "x": 259.9789081264497,
+            "y": 711.9218800147078
+          }
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "tick": 1,
+        "renderCalls": 25,
+        "triangles": 2388,
+        "geometries": 27,
+        "textures": 6
+      }
+    },
+    "max-width-ceiling": {
+      "points": [
+        {
+          "x": 158.69512897331984,
+          "y": 465.80516530457857
+        },
+        {
+          "x": 152.11957713565755,
+          "y": 201.63842084568128
+        },
+        {
+          "x": 273.98589230395896,
+          "y": 465.80516530457857
+        },
+        {
+          "x": 268.5924621449776,
+          "y": 201.63842084568128
+        },
+        {
+          "x": 1320.8167500050338,
+          "y": 720.3684062386288
+        },
+        {
+          "x": 1326.103589981022,
+          "y": 461.4223804694349
+        },
+        {
+          "x": 1434.9683664444933,
+          "y": 720.3684062386288
+        },
+        {
+          "x": 1441.4139658672734,
+          "y": 461.4223804694349
+        }
+      ],
+      "arena": {
+        "stageId": "fallen-capital",
+        "displayName": "The Fallen Capital",
+        "stageLoaded": true,
+        "textureReady": true,
+        "backgroundUrl": "./stages/fallen-capital/background.png",
+        "disposed": false,
+        "cameraPosition": [
+          0,
+          5.54713,
+          24.99616668450074
+        ],
+        "cameraFov": 28,
+        "cameraTarget": [
+          0,
+          3.79713,
+          0
+        ],
+        "cameraDistance": 24.99616668450074,
+        "orbitDegrees": 0,
+        "phase": "gameplay",
+        "projection": "PerspectiveCamera",
+        "fixedCombatPlane": true,
+        "simulatedStateMutated": false,
+        "bounds": {
+          "left": -420,
+          "right": 420,
+          "groundY": 0,
+          "leftWorld": -8.4,
+          "rightWorld": 8.4
+        },
+        "endpoints": {
+          "left": {
+            "x": 200.7040136928377,
+            "y": 720.3684062386288
+          },
+          "right": {
+            "x": 1399.2959863071621,
+            "y": 720.3684062386288
+          },
+          "center": {
+            "x": 800,
+            "y": 720.3684062386288
+          }
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "tick": 1,
+        "renderCalls": 28,
+        "triangles": 2414,
+        "geometries": 27,
+        "textures": 6
+      }
+    },
+    "missingBackground": {
+      "tickAdvanced": true,
+      "stageVisible": true,
+      "remainingArena": false,
+      "label": "TRAINING GRID · stage unavailable"
+    }
+  },
+  "initial": {
+    "chosen": {
+      "p1": "lamuh",
+      "p2": "swahili"
+    },
+    "arena": {
+      "stageId": "fallen-capital",
+      "displayName": "The Fallen Capital",
+      "stageLoaded": true,
+      "textureReady": true,
+      "backgroundUrl": "./stages/fallen-capital/background.png",
+      "disposed": false,
+      "cameraPosition": [
+        0,
+        4.476,
+        18.4
+      ],
+      "cameraFov": 28,
+      "cameraTarget": [
+        0,
+        2.726,
+        0
+      ],
+      "cameraDistance": 18.4,
+      "orbitDegrees": 0,
+      "phase": "gameplay",
+      "projection": "PerspectiveCamera",
+      "fixedCombatPlane": true,
+      "simulatedStateMutated": false,
+      "bounds": {
+        "left": -420,
+        "right": 420,
+        "groundY": 0,
+        "leftWorld": -8.4,
+        "rightWorld": 8.4
+      },
+      "endpoints": {
+        "left": {
+          "x": -10.031637810325478,
+          "y": 711.9218800147078
+        },
+        "right": {
+          "x": 1610.0316378103255,
+          "y": 711.9218800147078
+        },
+        "center": {
+          "x": 800,
+          "y": 711.9218800147078
+        }
+      },
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "tick": 12,
+      "renderCalls": 28,
+      "triangles": 2414,
+      "geometries": 27,
+      "textures": 6
+    },
+    "stage": {
+      "left": -420,
+      "right": 420,
+      "groundY": 0,
+      "ceilingY": -180
+    }
+  },
+  "renderPurity": {
+    "unchanged": true,
+    "diagnostics": {
+      "stageId": "fallen-capital",
+      "displayName": "The Fallen Capital",
+      "stageLoaded": true,
+      "textureReady": true,
+      "backgroundUrl": "./stages/fallen-capital/background.png",
+      "disposed": false,
+      "cameraPosition": [
+        0,
+        4.476,
+        18.4
+      ],
+      "cameraFov": 28,
+      "cameraTarget": [
+        0,
+        2.726,
+        0
+      ],
+      "cameraDistance": 18.4,
+      "orbitDegrees": 0,
+      "phase": "gameplay",
+      "projection": "PerspectiveCamera",
+      "fixedCombatPlane": true,
+      "simulatedStateMutated": false,
+      "bounds": {
+        "left": -420,
+        "right": 420,
+        "groundY": 0,
+        "leftWorld": -8.4,
+        "rightWorld": 8.4
+      },
+      "endpoints": {
+        "left": {
+          "x": -10.031637810325478,
+          "y": 711.9218800147078
+        },
+        "right": {
+          "x": 1610.0316378103255,
+          "y": 711.9218800147078
+        },
+        "center": {
+          "x": 800,
+          "y": 711.9218800147078
+        }
+      },
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "tick": 12,
+      "renderCalls": 28,
+      "triangles": 2414,
+      "geometries": 27,
+      "textures": 6
+    },
+    "disposed": true,
+    "remainingCanvas": 0
+  },
+  "reentry": {
+    "chosen": {
+      "p1": "swahili",
+      "p2": "lamuh"
+    },
+    "count": 1
+  },
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/transition.schema.json",
+  "title": "NGA Animation Transition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "fromPose", "toAnimation", "type", "simulationWindow", "visualFrames", "addsGameplayFrames"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "fromPose": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "toAnimation": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "type": { "enum": ["clean_cut", "impact_masked", "smear_bridge", "authored_micro_transition"] },
+    "simulationWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "type": "integer", "minimum": 0 },
+        "end": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "visualFrames": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "addsGameplayFrames": { "const": false },
+    "maskEventId": { "type": ["string", "null"] }
+  }
+}

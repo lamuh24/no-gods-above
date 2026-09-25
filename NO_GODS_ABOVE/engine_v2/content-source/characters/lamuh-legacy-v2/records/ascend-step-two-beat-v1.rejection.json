@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.ascend_step.two_beat_candidate.v1",
+  "date": "2026-09-03",
+  "decision": "REJECTED_FOR_MOTION_REVISION",
+  "userDirection": "ascend step should not be 2 moves its confusing it should just be a dash forward with a punch",
+  "reason": "The rising contact followed by an airborne punch reads as two separate attacks instead of one continuous special.",
+  "preservedAsHistory": true,
+  "supersessionBoundary": {
+    "light": "still_applies_one_dash_punch",
+    "medium": "superseded_by_later_live_user_direction_for_a_connected_slide_kick_into_back_handspring_launcher",
+    "heavy": "not_applicable_heavy_keeps_approach_switch_blast"
+  },
+  "rejectedCandidate": {
+    "normalizationReport": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-modernization-v1/normalization.report.json",
+    "sidecar": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/ascend-step/visual-modernization.candidate.v1.json",
+    "hashLock": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-modernization-v1.hash-lock.json"
+  },
+  "replacementDirection": {
+    "v2Disposition": "MODERNIZE",
+    "action": "one_grounded_forward_dash_into_one_right_arm_straight_punch",
+    "visibleImpactCount": 1,
+    "gameplayHitCount": 1,
+    "removedBeats": [
+      "rising_palm_contact",
+      "airborne_palm_follow_through",
+      "airborne_second_strike"
+    ]
+  },
+  "approvalBoundary": {
+    "replacementMotionApproved": false,
+    "replacementTimingApproved": false,
+    "combatProfileApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

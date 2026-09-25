@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/stage-production.schema.json",
+  "title": "NGA Stage Production Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "displayName",
+    "status",
+    "authority",
+    "combatPlane",
+    "camera",
+    "spriteIntegration",
+    "artDirection",
+    "grounding",
+    "collision",
+    "cinematicCameras",
+    "assets",
+    "validation"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "2.2.0-stage-contract" },
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["candidate", "approved", "retired"] },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gameplayPlane", "renderingMayAffectGameplay", "prohibitedDependencies"],
+      "properties": {
+        "gameplayPlane": { "const": "deterministic_2d" },
+        "renderingMayAffectGameplay": { "const": false },
+        "prohibitedDependencies": { "type": "array", "minItems": 7, "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "combatPlane": { "$ref": "#/$defs/combatPlane" },
+    "camera": { "$ref": "#/$defs/camera" },
+    "spriteIntegration": { "$ref": "#/$defs/spriteIntegration" },
+    "artDirection": { "type": "object" },
+    "grounding": { "type": "object" },
+    "collision": { "$ref": "#/$defs/collision" },
+    "cinematicCameras": { "$ref": "#/$defs/cinematicCameras" },
+    "assets": { "$ref": "#/$defs/assets" },
+    "validation": { "$ref": "#/$defs/validation" }
+  },
+  "$defs": {
+    "vec3": {
+      "type": "array",
+      "prefixItems": [{ "type": "number" }, { "type": "number" }, { "type": "number" }],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "right"],
+      "properties": { "left": { "type": "number" }, "right": { "type": "number" } }
+    },
+    "combatPlane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "floorY", "baselineY", "simulationBounds", "worldBounds", "wallAnchors", "cameraSafeRegion", "fighterWorldScale", "simulationPixelsToWorldUnits", "spritePixelsToWorldUnits"],
+      "properties": {
+        "origin": { "$ref": "#/$defs/vec3" },
+        "floorY": { "type": "number" },
+        "baselineY": { "type": "number" },
+        "simulationBounds": { "$ref": "#/$defs/range" },
+        "worldBounds": { "$ref": "#/$defs/range" },
+        "wallAnchors": { "$ref": "#/$defs/range" },
+        "cameraSafeRegion": {
+          "type": "object",
+          "required": ["left", "right", "bottom", "top"],
+          "properties": { "left": { "type": "number" }, "right": { "type": "number" }, "bottom": { "type": "number" }, "top": { "type": "number" } }
+        },
+        "fighterWorldScale": { "type": "number", "exclusiveMinimum": 0 },
+        "simulationPixelsToWorldUnits": { "type": "number", "exclusiveMinimum": 0 },
+        "spritePixelsToWorldUnits": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "fovDegrees", "near", "far", "defaultPosition", "defaultTarget", "zoom", "framing", "stageEdgeBehavior", "jumpFraming", "sideSwitchBehavior", "deterministicInputs", "cinematicOverrideRule", "returnToGameplay"],
+      "properties": {
+        "strategy": { "const": "constrained_perspective" },
+        "fovDegrees": { "type": "number", "minimum": 20, "maximum": 45 },
+        "near": { "type": "number", "exclusiveMinimum": 0 },
+        "far": { "type": "number", "exclusiveMinimum": 1 },
+        "defaultPosition": { "$ref": "#/$defs/vec3" },
+        "defaultTarget": { "$ref": "#/$defs/vec3" },
+        "zoom": { "type": "object", "required": ["minDistance", "maxDistance"], "properties": { "minDistance": { "type": "number" }, "maxDistance": { "type": "number" } } },
+        "framing": { "type": "object" },
+        "stageEdgeBehavior": { "type": "string" },
+        "jumpFraming": { "type": "string" },
+        "sideSwitchBehavior": { "type": "string" },
+        "deterministicInputs": { "type": "array", "minItems": 4, "items": { "type": "string" }, "uniqueItems": true },
+        "cinematicOverrideRule": { "type": "string" },
+        "returnToGameplay": { "type": "object", "required": ["ticks", "easing", "mustContainBothFighters"], "properties": { "ticks": { "type": "integer", "minimum": 1 }, "easing": { "type": "string" }, "mustContainBothFighters": { "const": true } } }
+      }
+    },
+    "spriteIntegration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceCanvas", "sourceRoot", "billboard", "pivot", "canonicalFacing", "runtimeMirroring", "depthPolicy", "sampling", "edgeTreatment", "shadow", "optionalMasks", "antiCardboard"],
+      "properties": {
+        "sourceCanvas": { "type": "object", "required": ["width", "height"], "properties": { "width": { "type": "integer" }, "height": { "type": "integer" } } },
+        "sourceRoot": { "type": "object", "required": ["x", "y"], "properties": { "x": { "type": "integer" }, "y": { "type": "integer" } } },
+        "billboard": { "type": "string" },
+        "pivot": { "type": "string" },
+        "canonicalFacing": { "type": "string" },
+        "runtimeMirroring": { "type": "string" },
+        "depthPolicy": { "type": "string" },
+        "sampling": { "type": "object" },
+        "edgeTreatment": { "type": "object" },
+        "shadow": { "type": "object" },
+        "optionalMasks": { "type": "object" },
+        "antiCardboard": { "type": "array", "minItems": 4, "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "collision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "floor", "leftWall", "rightWall", "cornerDetection", "wallBounceAnchors", "renderGeometryAuthoritative", "hazards"],
+      "properties": {
+        "source": { "const": "serialized_match_state" },
+        "floor": { "type": "number" },
+        "leftWall": { "type": "number" },
+        "rightWall": { "type": "number" },
+        "cornerDetection": { "type": "string" },
+        "wallBounceAnchors": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+        "renderGeometryAuthoritative": { "const": false },
+        "hazards": { "const": "prohibited" }
+      }
+    },
+    "cinematicCameras": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowedContexts", "shots", "visibilityRule", "mirroringRule", "abortRule", "rollbackRule"],
+      "properties": {
+        "allowedContexts": { "type": "array", "minItems": 7, "items": { "type": "string" }, "uniqueItems": true },
+        "shots": { "type": "object", "minProperties": 7, "additionalProperties": { "type": "object", "required": ["durationTicks", "positionOffset", "targetOffset", "minDistance"], "properties": { "durationTicks": { "type": "integer", "minimum": 1 }, "positionOffset": { "$ref": "#/$defs/vec3" }, "targetOffset": { "$ref": "#/$defs/vec3" }, "minDistance": { "type": "number" } } } },
+        "visibilityRule": { "type": "string" },
+        "mirroringRule": { "type": "string" },
+        "abortRule": { "type": "string" },
+        "rollbackRule": { "type": "string" }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["environment", "fighters"],
+      "properties": {
+        "environment": { "type": "array", "items": { "type": "object" } },
+        "fighters": { "type": "array", "minItems": 2, "items": { "type": "object", "required": ["id", "path", "approval", "usage"], "properties": { "id": { "type": "string" }, "path": { "type": "string" }, "approval": { "type": "string" }, "usage": { "type": "string" } } } }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checks", "performanceBudget", "captureIds", "deterministicReplayRequired"],
+      "properties": {
+        "checks": { "type": "array", "minItems": 12, "items": { "type": "string" }, "uniqueItems": true },
+        "performanceBudget": { "type": "object", "required": ["targetFps", "maxDrawCalls", "maxTriangles", "maxTextures", "maxTextureMemoryMb"], "properties": { "targetFps": { "type": "integer" }, "maxDrawCalls": { "type": "integer" }, "maxTriangles": { "type": "integer" }, "maxTextures": { "type": "integer" }, "maxTextureMemoryMb": { "type": "integer" } } },
+        "captureIds": { "type": "array", "minItems": 7, "items": { "type": "string" }, "uniqueItems": true },
+        "deterministicReplayRequired": { "const": true }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "characterId": "sable",
+  "clipId": "crouch_medium",
+  "sheetPath": "assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2/normalized/crouch_medium/v20260702-120021/sable_crouch_medium_normalized_strip.png",
+  "generatedAt": "2026-07-02T16:00:23.342Z",
+  "adapter": "heuristic-validation-score",
+  "score": 88,
+  "status": "warn",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": false,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "POSSIBLE_DUPLICATE_FRAMES: subtle or repeated motion; acceptable only with review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

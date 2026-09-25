@@ -1,0 +1,34 @@
+{
+  "clipId": "forward_light",
+  "category": "normal",
+  "frameCount": 5,
+  "fps": 14,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/clean/forward_light_reference_retry2_attempt1_5f_componentclean.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_light/v20260710-223446/sable_forward_light_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "hitFrames": [
+    2
+  ],
+  "cancelFrames": [
+    4
+  ],
+  "notes": [
+    "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Use five frames: one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard. Claude confirmed retry2 attempt 1 has the correct motion storyboard; component cleanup removed only the disconnected 92-pixel boot sliver in visual frame 2 and 227-pixel floating crystal-fist chunk in visual frame 4. Both hands and both boots remain complete; rescrub contact sheet is ready for review."
+  ],
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-11T04:55:17.361Z",
+  "approvalPolicy": "manual-promote-preview"
+}

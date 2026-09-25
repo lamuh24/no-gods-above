@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-06-28T22:45:45.544Z",
+  "characterId": "sable",
+  "stage": "mvp",
+  "manifestPath": "assets/characters/sable/manifests/preview_animation_clips.json",
+  "gameSyntaxCheck": {
+    "checked": true,
+    "passed": true,
+    "message": "node --check NO_GODS_ABOVE/game.js passed."
+  },
+  "manifestLoads": true,
+  "clipFramesAdvance": true,
+  "baselineStable": true,
+  "harnessPath": "assets/characters/sable/test/sprite_agent_preview.html",
+  "screenshots": {
+    "attempted": false,
+    "captured": false,
+    "reason": "No browser automation dependency is bundled with SpriteForge; open the generated harness manually or add a Playwright adapter later."
+  },
+  "issues": []
+}

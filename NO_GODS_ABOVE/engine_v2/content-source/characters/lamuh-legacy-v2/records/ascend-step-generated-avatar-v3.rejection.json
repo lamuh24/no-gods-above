@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.ascend_step.generated_avatar_candidates",
+  "date": "2026-09-03",
+  "decision": "REJECTED_FOR_MOTION_REVISION",
+  "userDirection": "the avatar looks a different then the idle standce redo the move",
+  "reason": "The separately generated Ascend Step body drifted from the approved Idle face, beard, adult proportions, silhouette, and body scale.",
+  "preservedAsHistory": true,
+  "rejectedEvidence": [
+    "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/history/rejected-identity-drift-v3",
+    "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/history/rejected-identity-drift-v2",
+    "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/raw/ascend-step-dash-punch-chroma-grid-v3.png",
+    "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/raw/ascend-step-heavy-chroma-grid-v2.png",
+    "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/raw/ascend-step-heavy-blast-contact-isolated-v2.png"
+  ],
+  "replacementDirection": {
+    "bodySource": "exact approved Lamuh V2 runtime idle, dash, and standing-light frames",
+    "generatedAvatarPixels": false,
+    "generatedMaterial": "isolated VFX-only aura, teleport, charge, and blast layers",
+    "bodyScale": 1,
+    "fixedRoot": { "x": 768, "y": 1360 },
+    "fullBodyCanvasContainment": true
+  },
+  "approvalBoundary": {
+    "replacementMotionApproved": false,
+    "replacementTimingApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

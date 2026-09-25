@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/presentation-event.schema.json",
+  "title": "NGA Rollback-Safe Presentation Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["index", "frame", "type", "payload", "eventIdTemplate"],
+  "properties": {
+    "index": { "type": "integer", "minimum": 0 },
+    "frame": { "type": "integer", "minimum": 0 },
+    "type": { "enum": ["play_sound", "spawn_vfx", "start_shake", "start_hit_flash", "request_camera_track", "show_dialogue", "freeze_presentation_layer"] },
+    "payload": { "type": "object" },
+    "eventIdTemplate": { "const": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}" }
+  }
+}

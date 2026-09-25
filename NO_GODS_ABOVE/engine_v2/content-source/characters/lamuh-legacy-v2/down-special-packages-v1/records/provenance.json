@@ -1,0 +1,36 @@
+{
+  "sourceType": "ai_assisted",
+  "tool": "Built-in imagegen and source-preserving normalization",
+  "createdAt": "2026-09-08T01:28:36.840Z",
+  "model": null,
+  "seed": null,
+  "promptHash": null,
+  "references": [
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/light-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/medium-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/heavy-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/wave-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/connector-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/front-connector-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-down-specials-v1/heel-normalization.json"
+  ],
+  "cleanupOperations": [
+    "dedicated_backward_retreat_candidate",
+    "single_sequence_scale",
+    "fixed_source_root",
+    "exact_idle_endpoints_reused",
+    "medium_heavy_complete_visual_blink_no_invulnerability"
+  ],
+  "revisionChain": [
+    "USER_APPROVED_DOWN_AURA_SWEEP_FAMILY_V1"
+  ],
+  "humanApproval": {
+    "state": "pending",
+    "approvedAt": null,
+    "approvedBy": null
+  },
+  "licensingNotes": [
+    "Local Lamuh candidate only."
+  ],
+  "promptProvenance": "repo://tools/nga-forge/review/lamuh-down-specials-v1/README.md"
+}

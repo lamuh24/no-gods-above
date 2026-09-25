@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-09T18:27:56.170Z",
+  "characterId": "sable",
+  "clipId": "hit_stun",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-142754/sable_hit_stun_normalized_strip.png",
+  "expected": {
+    "clipId": "hit_stun",
+    "category": "damage",
+    "frameCount": 8,
+    "fps": 10,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-142754/sable_hit_stun_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": [
+      "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 8,
+    "rows": 1,
+    "frameCount": 8
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "POSSIBLE_DUPLICATE_FRAMES",
+      "message": "2 near-duplicate frame pair(s) detected. Held frames can be okay, but review the motion."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 23747,
+      "bbox": {
+        "x": 145,
+        "y": 30,
+        "width": 159,
+        "height": 352,
+        "right": 303,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111001111111111111000011111111111000000111111111111000111111111111000011111111111100000111111111110010011111111110001001111111111001100111111111100110011111111110111101111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 20208,
+      "bbox": {
+        "x": 160,
+        "y": 33,
+        "width": 128,
+        "height": 349,
+        "right": 287,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111000111111111111100011111111111110001111111111111000001111111111100000111111111110000111111111111100001111111111110000111111111111001011111111111000111111111111100111111111111100111111111111110011111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 20826,
+      "bbox": {
+        "x": 149,
+        "y": 34,
+        "width": 150,
+        "height": 348,
+        "right": 298,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111110001111111111111000001111111111100000111111111111000011111111111110001111111111111000111111111111100001111111111110000111111111111001011111111111100101111111111100110111111111110011011111111111001111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 21000,
+      "bbox": {
+        "x": 153,
+        "y": 60,
+        "width": 143,
+        "height": 322,
+        "right": 295,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111110011111111111110000111111111111000011111111111100001111111111110000111111111111000011111111111100001111111111110000011111111111001001111111111001100111111111100111011111111110011111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 23296,
+      "bbox": {
+        "x": 149,
+        "y": 42,
+        "width": 150,
+        "height": 340,
+        "right": 298,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110001111111111110000111111111111000011111111111100001111111111110000111111111110000111111111111100001111111111110000111111111110001001111111111001100111111111100110011111111110011101111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 23088,
+      "bbox": {
+        "x": 144,
+        "y": 38,
+        "width": 161,
+        "height": 344,
+        "right": 304,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111100011111111111110001111111111111000001111111111000000111111111100000111111111111000011111111111100001111111111110010011111111110011001111111111001100111111111100110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 23418,
+      "bbox": {
+        "x": 148,
+        "y": 34,
+        "width": 152,
+        "height": 348,
+        "right": 299,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110001111111111110001111111111111000001111111111000000111111111110001111111111111000011111111111100001111111111110010011111111110001001111111111001100111111111100110011111111110011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 23431,
+      "bbox": {
+        "x": 146,
+        "y": 34,
+        "width": 157,
+        "height": 348,
+        "right": 302,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110001111111111110001111111111111000001111111111000000111111111110000111111111111000011111111111100001111111111110010011111111110001001111111111001100111111111100110011111111110111001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 5,
+      "frameB": 7,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 6,
+      "frameB": 7,
+      "hammingDistance": 2
+    }
+  ],
+  "autoFixRecommended": false
+}

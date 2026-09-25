@@ -1,0 +1,4387 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "awaiting_human_radiant_dive_family_review",
+  "candidateOnly": true,
+  "deployable": false,
+  "variants": {
+    "light": {
+      "status": "awaiting_human_radiant_dive_family_review",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 7,
+        "historicalDurationTicks": 29,
+        "reconstructedExposureTicks": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5
+        ],
+        "exposureEvidence": "RECONSTRUCTION_ONLY_CURRENT_PROTECTED_5_6_18_NOMINAL_DURATION",
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 126,
+            "maxX": 321,
+            "minY": 54,
+            "maxY": 376
+          },
+          {
+            "minX": 124,
+            "maxX": 324,
+            "minY": 55,
+            "maxY": 378
+          },
+          {
+            "minX": 138,
+            "maxX": 312,
+            "minY": 55,
+            "maxY": 378
+          },
+          {
+            "minX": 106,
+            "maxX": 341,
+            "minY": 54,
+            "maxY": 381
+          },
+          {
+            "minX": 135,
+            "maxX": 313,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 36,
+            "maxX": 411,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 97,
+            "maxX": 354,
+            "minY": 52,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 229.2499924253901,
+            "x": 219.60333282835933
+          },
+          {
+            "y": 231.61138591047344,
+            "x": 217.15001996989156
+          },
+          {
+            "y": 225.6629984581431,
+            "x": 221.67031472019832
+          },
+          {
+            "y": 226.72038204270646,
+            "x": 220.69851427836377
+          },
+          {
+            "y": 227.1252813647672,
+            "x": 224.81684634521977
+          },
+          {
+            "y": 230.818389865141,
+            "x": 185.08434818144667
+          },
+          {
+            "y": 203.16969696969696,
+            "x": 207.01933842239185
+          }
+        ],
+        "contactFrame": null,
+        "exactContactTick": null,
+        "note": "Protected current P1 metadata is 5/6/18, 29 nominal ticks. Exact historical V1 exposures/contact are unrecoverable; these equalized comparison holds are not original timing. Late kick remains historical only."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "authoredWorldRootPath": [
+          {
+            "x": 0.8000000000000114,
+            "y": -179.5
+          },
+          {
+            "x": 1.6000000000000227,
+            "y": -179
+          },
+          {
+            "x": 2.400000000000034,
+            "y": -178.5
+          },
+          {
+            "x": 3.2000000000000455,
+            "y": -178
+          },
+          {
+            "x": 4.000000000000057,
+            "y": -177.5
+          },
+          {
+            "x": 4.800000000000068,
+            "y": -177
+          },
+          {
+            "x": 11.800000000000068,
+            "y": -172
+          },
+          {
+            "x": 18.800000000000068,
+            "y": -167
+          },
+          {
+            "x": 25.800000000000068,
+            "y": -162
+          },
+          {
+            "x": 32.80000000000007,
+            "y": -157
+          },
+          {
+            "x": 39.80000000000007,
+            "y": -152
+          },
+          {
+            "x": 46.80000000000007,
+            "y": -147
+          },
+          {
+            "x": 53.80000000000007,
+            "y": -142
+          },
+          {
+            "x": 60.80000000000007,
+            "y": -137
+          },
+          {
+            "x": 67.80000000000007,
+            "y": -132
+          },
+          {
+            "x": 74.80000000000007,
+            "y": -127
+          },
+          {
+            "x": 76.80000000000007,
+            "y": -122
+          },
+          {
+            "x": 78.80000000000007,
+            "y": -117
+          },
+          {
+            "x": 80.80000000000007,
+            "y": -112
+          },
+          {
+            "x": 82.80000000000007,
+            "y": -107
+          },
+          {
+            "x": 84.80000000000007,
+            "y": -102
+          },
+          {
+            "x": 86.80000000000007,
+            "y": -97
+          },
+          {
+            "x": 88.80000000000007,
+            "y": -92
+          },
+          {
+            "x": 90.80000000000007,
+            "y": -87
+          },
+          {
+            "x": 92.80000000000007,
+            "y": -82
+          },
+          {
+            "x": 94.80000000000007,
+            "y": -77
+          },
+          {
+            "x": 96.80000000000007,
+            "y": -72
+          },
+          {
+            "x": 98.80000000000007,
+            "y": -67
+          },
+          {
+            "x": 100.80000000000007,
+            "y": -62
+          },
+          {
+            "x": 102.80000000000007,
+            "y": -57
+          },
+          {
+            "x": 104.80000000000007,
+            "y": -52
+          },
+          {
+            "x": 106.80000000000007,
+            "y": -47
+          },
+          {
+            "x": 108.80000000000007,
+            "y": -42
+          },
+          {
+            "x": 110.80000000000007,
+            "y": -37
+          },
+          {
+            "x": 112.80000000000007,
+            "y": -32
+          },
+          {
+            "x": 114.80000000000007,
+            "y": -27
+          },
+          {
+            "x": 116.80000000000007,
+            "y": -22
+          },
+          {
+            "x": 118.80000000000007,
+            "y": -17
+          },
+          {
+            "x": 120.80000000000007,
+            "y": -12
+          },
+          {
+            "x": 122.80000000000007,
+            "y": -7
+          },
+          {
+            "x": 124.80000000000007,
+            "y": -2
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          },
+          {
+            "x": 126.80000000000007,
+            "y": 0
+          }
+        ],
+        "frames": [
+          {
+            "strength": "light",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/light-00.png",
+            "bodyCenter": {
+              "y": 913.7016573120608,
+              "x": 783.5780660273125
+            },
+            "index": 0,
+            "sourcePelvis": {
+              "y": 226,
+              "x": 176
+            },
+            "sourceRegistration": {
+              "y": 382.3636363636364,
+              "x": 164.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "CD2B6C189697D651681DEF7A277AF5A510FBC1DF91C826779569364A6574DC95",
+            "visibleBounds": {
+              "minX": 460,
+              "maxX": 1097,
+              "minY": 549,
+              "maxY": 1313
+            },
+            "role": "near-arm airborne chamber",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "6C5DA84927C7CBA4CC40DBE6465E58A8E14FE66BEAC94DC951AF09B92C2CC872",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0.8000000000000114,
+              "y": -179.5
+            }
+          },
+          {
+            "strength": "light",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/light-01.png",
+            "bodyCenter": {
+              "y": 915.794178172272,
+              "x": 817.5145107302557
+            },
+            "index": 1,
+            "sourcePelvis": {
+              "y": 247,
+              "x": 453
+            },
+            "sourceRegistration": {
+              "y": 403.3636363636364,
+              "x": 128.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "D295F77A6901D1041187FA5605E5FBFE82E8F2E965735D55C2D8DAFBA2FC75C1",
+            "visibleBounds": {
+              "minX": 463,
+              "maxX": 1106,
+              "minY": 607,
+              "maxY": 1216
+            },
+            "role": "same-arm descending connector",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "AD4C5FA1320EA73DD2E93E805DEC980447C0B1A1B0C396D98CDB2CAA00856861",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 4.000000000000057,
+              "y": -177.5
+            }
+          },
+          {
+            "strength": "light",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/light-02.png",
+            "bodyCenter": {
+              "y": 891.4450363884466,
+              "x": 883.4409768023653
+            },
+            "index": 2,
+            "sourcePelvis": {
+              "y": 281,
+              "x": 734
+            },
+            "sourceRegistration": {
+              "y": 437.3636363636364,
+              "x": 95.36363636363636
+            },
+            "edgeContact": false,
+            "sourceSha256": "71DD0A3A02D8AFDE5F2632B79AD83CCC6473A845646888C5DB4845F538088094",
+            "visibleBounds": {
+              "minX": 571,
+              "maxX": 1156,
+              "minY": 629,
+              "maxY": 1230
+            },
+            "role": "ONE descending palm CONTACT",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "BA36F31C42F2527DF7EE93A1EFBD4D1C7F10AF824FCCF6CC34A99BADD7E658A3",
+            "contact": true,
+            "visibleImpact": true,
+            "authoredWorldRootOffset": {
+              "x": 11.800000000000068,
+              "y": -172
+            }
+          },
+          {
+            "strength": "light",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/light-03.png",
+            "bodyCenter": {
+              "y": 893.72462120638,
+              "x": 777.4234708054827
+            },
+            "index": 3,
+            "sourcePelvis": {
+              "y": 264,
+              "x": 1091
+            },
+            "sourceRegistration": {
+              "y": 420.3636363636364,
+              "x": 138.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "459871595164CE6765D0AF1B3631E0F3652330ECE71602C1C12AF35FC938C395",
+            "visibleBounds": {
+              "minX": 477,
+              "maxX": 1031,
+              "minY": 563,
+              "maxY": 1252
+            },
+            "role": "airborne knee gather",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "0877834AFCC68D3D5A540F557ADE23575A376FA6F6F30DC5AF9651BB22386878",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 76.80000000000007,
+              "y": -122
+            }
+          },
+          {
+            "index": 4,
+            "role": "existing two-foot landing catch",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/jump-05.png",
+            "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80",
+            "sourceSha256": "93AA80E6DD028921E67BB6AF59CF3D4517CC797982770B564002A3E29BD79972",
+            "sourceType": "imagegen_reference_edit",
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 1.937046,
+            "legacySha256": "B2891856AAFFBF2B59FA453FD1737C2E3294BA828DADB8DA906BF73AD7D02AFD",
+            "legacyIndex": 3,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 548,
+              "minY": 834,
+              "maxX": 990,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "x": 783.4,
+              "y": 1117.2
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 126.80000000000007,
+              "y": 0
+            }
+          },
+          {
+            "index": 5,
+            "role": "existing guarded landing settle",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/jump-06.png",
+            "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0",
+            "sourceSha256": "5814B55FF7F531815BAA589DA8C63CC758E91B4E4CD0B7CCF0F2FCFDED6CF2F2",
+            "sourceType": "imagegen_reference_edit",
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 1.937046,
+            "legacySha256": "DCA31F24EB3384B43B5D2E86A216358E04A866055474429B632B09BEDC2CFECC",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 597,
+              "minY": 561,
+              "maxX": 941,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "x": 767.89,
+              "y": 966.29
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 126.80000000000007,
+              "y": 0
+            }
+          },
+          {
+            "index": 6,
+            "role": "existing idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 126.80000000000007,
+              "y": 0
+            }
+          }
+        ],
+        "contactFrame": 2,
+        "contactFrames": [
+          2
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/light-02.png",
+          "sha256": "BA36F31C42F2527DF7EE93A1EFBD4D1C7F10AF824FCCF6CC34A99BADD7E658A3",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "classification": "opaque_body",
+          "separationStatus": "source_motion_art_separate_from_authoritative_hit_confirm_feedback"
+        },
+        "singleSequenceScale": 2.75,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "manual_pelvis_registered_virtual_ground_not_foot_plant",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "y": 1189,
+          "x": 1056
+        },
+        "releaseSocketEvidence": "manual_visible_open_palm_center_on_normalized_source",
+        "releaseSocketMethod": "manual_center_of_visible_open_palm_on_normalized_contact; source pixels, not simulation root",
+        "sourceRegistrationNotes": [],
+        "authoredDiveTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_radiant_dive_light",
+          "track": {
+            "minimumHeight": 32,
+            "maximumHeight": 180,
+            "landingApproachHeight": 10,
+            "windupVelocity": {
+              "x": 0.8,
+              "y": 0.5
+            },
+            "strikeVelocity": {
+              "x": 7,
+              "y": 5
+            },
+            "gatherVelocity": {
+              "x": 2,
+              "y": 5
+            },
+            "landingRecoveryTicks": 10
+          },
+          "maximumAirTicks": 43,
+          "landingPhase": "dive_landing",
+          "landingTrigger": "actual_floor_contact",
+          "airExposurePolicy": "stage_driven",
+          "hitstopFreezes": true,
+          "maxHits": 1,
+          "phaseExposures": {
+            "windup": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_0",
+                "duration": 5
+              },
+              {
+                "sourceFrameId": "radiant_dive_light_frame_1",
+                "duration": 2
+              }
+            ],
+            "strike": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_2",
+                "duration": 10
+              }
+            ],
+            "gather": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_3",
+                "duration": 1
+              }
+            ],
+            "landing": [
+              {
+                "sourceFrameId": "radiant_dive_light_frame_4",
+                "duration": 4
+              },
+              {
+                "sourceFrameId": "radiant_dive_light_frame_5",
+                "duration": 4
+              },
+              {
+                "sourceFrameId": "radiant_dive_light_frame_6",
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "referencePlayback": {
+          "entryHeight": 180,
+          "outcome": "distant_whiff",
+          "hitstopTicks": 0,
+          "includesFirstIdleCompletion": true,
+          "simulationCursorConvention": "post_tick_first_move_tick_1",
+          "fixedRuntimeLandingTick": false,
+          "durationTicks": 52,
+          "exposureTicks": [
+            4,
+            2,
+            10,
+            25,
+            4,
+            4,
+            3
+          ],
+          "samples": [
+            {
+              "simulationTick": 0,
+              "phase": "attack",
+              "phaseTick": 1,
+              "stage": "windup",
+              "stageTick": 1,
+              "frameIndex": 0,
+              "root": {
+                "x": 0.8000000000000114,
+                "y": -179.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 1,
+              "phase": "attack",
+              "phaseTick": 2,
+              "stage": "windup",
+              "stageTick": 2,
+              "frameIndex": 0,
+              "root": {
+                "x": 1.6000000000000227,
+                "y": -179
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 2,
+              "phase": "attack",
+              "phaseTick": 3,
+              "stage": "windup",
+              "stageTick": 3,
+              "frameIndex": 0,
+              "root": {
+                "x": 2.400000000000034,
+                "y": -178.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 3,
+              "phase": "attack",
+              "phaseTick": 4,
+              "stage": "windup",
+              "stageTick": 4,
+              "frameIndex": 0,
+              "root": {
+                "x": 3.2000000000000455,
+                "y": -178
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 4,
+              "phase": "attack",
+              "phaseTick": 5,
+              "stage": "windup",
+              "stageTick": 5,
+              "frameIndex": 1,
+              "root": {
+                "x": 4.000000000000057,
+                "y": -177.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 5,
+              "phase": "attack",
+              "phaseTick": 6,
+              "stage": "windup",
+              "stageTick": 6,
+              "frameIndex": 1,
+              "root": {
+                "x": 4.800000000000068,
+                "y": -177
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 6,
+              "phase": "attack",
+              "phaseTick": 7,
+              "stage": "strike",
+              "stageTick": 0,
+              "frameIndex": 2,
+              "root": {
+                "x": 11.800000000000068,
+                "y": -172
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 7,
+              "phase": "attack",
+              "phaseTick": 8,
+              "stage": "strike",
+              "stageTick": 1,
+              "frameIndex": 2,
+              "root": {
+                "x": 18.800000000000068,
+                "y": -167
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 8,
+              "phase": "attack",
+              "phaseTick": 9,
+              "stage": "strike",
+              "stageTick": 2,
+              "frameIndex": 2,
+              "root": {
+                "x": 25.800000000000068,
+                "y": -162
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 9,
+              "phase": "attack",
+              "phaseTick": 10,
+              "stage": "strike",
+              "stageTick": 3,
+              "frameIndex": 2,
+              "root": {
+                "x": 32.80000000000007,
+                "y": -157
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 10,
+              "phase": "attack",
+              "phaseTick": 11,
+              "stage": "strike",
+              "stageTick": 4,
+              "frameIndex": 2,
+              "root": {
+                "x": 39.80000000000007,
+                "y": -152
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 11,
+              "phase": "attack",
+              "phaseTick": 12,
+              "stage": "strike",
+              "stageTick": 5,
+              "frameIndex": 2,
+              "root": {
+                "x": 46.80000000000007,
+                "y": -147
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 12,
+              "phase": "attack",
+              "phaseTick": 13,
+              "stage": "strike",
+              "stageTick": 6,
+              "frameIndex": 2,
+              "root": {
+                "x": 53.80000000000007,
+                "y": -142
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 13,
+              "phase": "attack",
+              "phaseTick": 14,
+              "stage": "strike",
+              "stageTick": 7,
+              "frameIndex": 2,
+              "root": {
+                "x": 60.80000000000007,
+                "y": -137
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 14,
+              "phase": "attack",
+              "phaseTick": 15,
+              "stage": "strike",
+              "stageTick": 8,
+              "frameIndex": 2,
+              "root": {
+                "x": 67.80000000000007,
+                "y": -132
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 15,
+              "phase": "attack",
+              "phaseTick": 16,
+              "stage": "strike",
+              "stageTick": 9,
+              "frameIndex": 2,
+              "root": {
+                "x": 74.80000000000007,
+                "y": -127
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 16,
+              "phase": "attack",
+              "phaseTick": 17,
+              "stage": "gather",
+              "stageTick": 0,
+              "frameIndex": 3,
+              "root": {
+                "x": 76.80000000000007,
+                "y": -122
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 17,
+              "phase": "attack",
+              "phaseTick": 18,
+              "stage": "gather",
+              "stageTick": 1,
+              "frameIndex": 3,
+              "root": {
+                "x": 78.80000000000007,
+                "y": -117
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 18,
+              "phase": "attack",
+              "phaseTick": 19,
+              "stage": "gather",
+              "stageTick": 2,
+              "frameIndex": 3,
+              "root": {
+                "x": 80.80000000000007,
+                "y": -112
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 19,
+              "phase": "attack",
+              "phaseTick": 20,
+              "stage": "gather",
+              "stageTick": 3,
+              "frameIndex": 3,
+              "root": {
+                "x": 82.80000000000007,
+                "y": -107
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 20,
+              "phase": "attack",
+              "phaseTick": 21,
+              "stage": "gather",
+              "stageTick": 4,
+              "frameIndex": 3,
+              "root": {
+                "x": 84.80000000000007,
+                "y": -102
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 21,
+              "phase": "attack",
+              "phaseTick": 22,
+              "stage": "gather",
+              "stageTick": 5,
+              "frameIndex": 3,
+              "root": {
+                "x": 86.80000000000007,
+                "y": -97
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 22,
+              "phase": "attack",
+              "phaseTick": 23,
+              "stage": "gather",
+              "stageTick": 6,
+              "frameIndex": 3,
+              "root": {
+                "x": 88.80000000000007,
+                "y": -92
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 23,
+              "phase": "attack",
+              "phaseTick": 24,
+              "stage": "gather",
+              "stageTick": 7,
+              "frameIndex": 3,
+              "root": {
+                "x": 90.80000000000007,
+                "y": -87
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 24,
+              "phase": "attack",
+              "phaseTick": 25,
+              "stage": "gather",
+              "stageTick": 8,
+              "frameIndex": 3,
+              "root": {
+                "x": 92.80000000000007,
+                "y": -82
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 25,
+              "phase": "attack",
+              "phaseTick": 26,
+              "stage": "gather",
+              "stageTick": 9,
+              "frameIndex": 3,
+              "root": {
+                "x": 94.80000000000007,
+                "y": -77
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 26,
+              "phase": "attack",
+              "phaseTick": 27,
+              "stage": "gather",
+              "stageTick": 10,
+              "frameIndex": 3,
+              "root": {
+                "x": 96.80000000000007,
+                "y": -72
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 27,
+              "phase": "attack",
+              "phaseTick": 28,
+              "stage": "gather",
+              "stageTick": 11,
+              "frameIndex": 3,
+              "root": {
+                "x": 98.80000000000007,
+                "y": -67
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 28,
+              "phase": "attack",
+              "phaseTick": 29,
+              "stage": "gather",
+              "stageTick": 12,
+              "frameIndex": 3,
+              "root": {
+                "x": 100.80000000000007,
+                "y": -62
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 29,
+              "phase": "attack",
+              "phaseTick": 30,
+              "stage": "gather",
+              "stageTick": 13,
+              "frameIndex": 3,
+              "root": {
+                "x": 102.80000000000007,
+                "y": -57
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 30,
+              "phase": "attack",
+              "phaseTick": 31,
+              "stage": "gather",
+              "stageTick": 14,
+              "frameIndex": 3,
+              "root": {
+                "x": 104.80000000000007,
+                "y": -52
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 31,
+              "phase": "attack",
+              "phaseTick": 32,
+              "stage": "gather",
+              "stageTick": 15,
+              "frameIndex": 3,
+              "root": {
+                "x": 106.80000000000007,
+                "y": -47
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 32,
+              "phase": "attack",
+              "phaseTick": 33,
+              "stage": "gather",
+              "stageTick": 16,
+              "frameIndex": 3,
+              "root": {
+                "x": 108.80000000000007,
+                "y": -42
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 33,
+              "phase": "attack",
+              "phaseTick": 34,
+              "stage": "gather",
+              "stageTick": 17,
+              "frameIndex": 3,
+              "root": {
+                "x": 110.80000000000007,
+                "y": -37
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 34,
+              "phase": "attack",
+              "phaseTick": 35,
+              "stage": "gather",
+              "stageTick": 18,
+              "frameIndex": 3,
+              "root": {
+                "x": 112.80000000000007,
+                "y": -32
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 35,
+              "phase": "attack",
+              "phaseTick": 36,
+              "stage": "gather",
+              "stageTick": 19,
+              "frameIndex": 3,
+              "root": {
+                "x": 114.80000000000007,
+                "y": -27
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 36,
+              "phase": "attack",
+              "phaseTick": 37,
+              "stage": "gather",
+              "stageTick": 20,
+              "frameIndex": 3,
+              "root": {
+                "x": 116.80000000000007,
+                "y": -22
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 37,
+              "phase": "attack",
+              "phaseTick": 38,
+              "stage": "gather",
+              "stageTick": 21,
+              "frameIndex": 3,
+              "root": {
+                "x": 118.80000000000007,
+                "y": -17
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 38,
+              "phase": "attack",
+              "phaseTick": 39,
+              "stage": "gather",
+              "stageTick": 22,
+              "frameIndex": 3,
+              "root": {
+                "x": 120.80000000000007,
+                "y": -12
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 39,
+              "phase": "attack",
+              "phaseTick": 40,
+              "stage": "gather",
+              "stageTick": 23,
+              "frameIndex": 3,
+              "root": {
+                "x": 122.80000000000007,
+                "y": -7
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 40,
+              "phase": "attack",
+              "phaseTick": 41,
+              "stage": "gather",
+              "stageTick": 24,
+              "frameIndex": 3,
+              "root": {
+                "x": 124.80000000000007,
+                "y": -2
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 41,
+              "phase": "dive_landing",
+              "phaseTick": 0,
+              "stage": "landing",
+              "stageTick": 0,
+              "frameIndex": 4,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 42,
+              "phase": "dive_landing",
+              "phaseTick": 1,
+              "stage": "landing",
+              "stageTick": 1,
+              "frameIndex": 4,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 43,
+              "phase": "dive_landing",
+              "phaseTick": 2,
+              "stage": "landing",
+              "stageTick": 2,
+              "frameIndex": 4,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 44,
+              "phase": "dive_landing",
+              "phaseTick": 3,
+              "stage": "landing",
+              "stageTick": 3,
+              "frameIndex": 4,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 45,
+              "phase": "dive_landing",
+              "phaseTick": 4,
+              "stage": "landing",
+              "stageTick": 4,
+              "frameIndex": 5,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 46,
+              "phase": "dive_landing",
+              "phaseTick": 5,
+              "stage": "landing",
+              "stageTick": 5,
+              "frameIndex": 5,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 47,
+              "phase": "dive_landing",
+              "phaseTick": 6,
+              "stage": "landing",
+              "stageTick": 6,
+              "frameIndex": 5,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 48,
+              "phase": "dive_landing",
+              "phaseTick": 7,
+              "stage": "landing",
+              "stageTick": 7,
+              "frameIndex": 5,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 49,
+              "phase": "dive_landing",
+              "phaseTick": 8,
+              "stage": "landing",
+              "stageTick": 8,
+              "frameIndex": 6,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 50,
+              "phase": "dive_landing",
+              "phaseTick": 9,
+              "stage": "landing",
+              "stageTick": 9,
+              "frameIndex": 6,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 51,
+              "phase": "idle",
+              "phaseTick": 0,
+              "stage": "complete",
+              "stageTick": 0,
+              "frameIndex": 6,
+              "root": {
+                "x": 126.80000000000007,
+                "y": 0
+              },
+              "grounded": true
+            }
+          ]
+        },
+        "auraBakedIntoFrames": false,
+        "runtimeAuraOverlay": false,
+        "preservationBoundary": {
+          "protectedLegacyFramesModified": false,
+          "sourceOrderPreserved": false,
+          "approvedV2Disposition": "Forward Palm Heaven and movement source bytes unchanged",
+          "retainedLegacyQualities": [
+            "descending hand strike",
+            "forward air approach"
+          ],
+          "retiredLegacyBeats": [
+            "disconnected late side kick"
+          ],
+          "explicitRootMotionOwner": "deterministic_simulation"
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "VISUAL_COMPARISON_ONLY",
+          "phaseTicks": {
+            "startup": 6,
+            "active": 10,
+            "recovery": 9
+          },
+          "durationTicks": 50,
+          "exposureTicks": [
+            3,
+            2,
+            10,
+            25,
+            4,
+            3,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": true,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED_REFERENCE",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 10,
+            "recovery": 10
+          },
+          "durationTicks": 52,
+          "exposureTicks": [
+            4,
+            2,
+            10,
+            25,
+            4,
+            4,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": false,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        },
+        "C": {
+          "label": "VISUAL_COMPARISON_ONLY",
+          "phaseTicks": {
+            "startup": 9,
+            "active": 10,
+            "recovery": 12
+          },
+          "durationTicks": 56,
+          "exposureTicks": [
+            6,
+            2,
+            10,
+            25,
+            4,
+            6,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": true,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 4,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 5,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 6,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      }
+    },
+    "medium": {
+      "status": "awaiting_human_radiant_dive_family_review",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 7,
+        "historicalDurationTicks": 29,
+        "reconstructedExposureTicks": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5
+        ],
+        "exposureEvidence": "RECONSTRUCTION_ONLY_CURRENT_PROTECTED_5_6_18_NOMINAL_DURATION",
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 126,
+            "maxX": 321,
+            "minY": 54,
+            "maxY": 376
+          },
+          {
+            "minX": 124,
+            "maxX": 324,
+            "minY": 55,
+            "maxY": 378
+          },
+          {
+            "minX": 138,
+            "maxX": 312,
+            "minY": 55,
+            "maxY": 378
+          },
+          {
+            "minX": 106,
+            "maxX": 341,
+            "minY": 54,
+            "maxY": 381
+          },
+          {
+            "minX": 135,
+            "maxX": 313,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 36,
+            "maxX": 411,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 97,
+            "maxX": 354,
+            "minY": 52,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 229.2499924253901,
+            "x": 219.60333282835933
+          },
+          {
+            "y": 231.61138591047344,
+            "x": 217.15001996989156
+          },
+          {
+            "y": 225.6629984581431,
+            "x": 221.67031472019832
+          },
+          {
+            "y": 226.72038204270646,
+            "x": 220.69851427836377
+          },
+          {
+            "y": 227.1252813647672,
+            "x": 224.81684634521977
+          },
+          {
+            "y": 230.818389865141,
+            "x": 185.08434818144667
+          },
+          {
+            "y": 203.16969696969696,
+            "x": 207.01933842239185
+          }
+        ],
+        "contactFrame": null,
+        "exactContactTick": null,
+        "note": "Protected current P1 metadata is 5/6/18, 29 nominal ticks. Exact historical V1 exposures/contact are unrecoverable; these equalized comparison holds are not original timing. Late kick remains historical only."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "authoredWorldRootPath": [
+          {
+            "x": 0.8000000000000114,
+            "y": -179.5
+          },
+          {
+            "x": 1.6000000000000227,
+            "y": -179
+          },
+          {
+            "x": 2.400000000000034,
+            "y": -178.5
+          },
+          {
+            "x": 3.2000000000000455,
+            "y": -178
+          },
+          {
+            "x": 4.000000000000057,
+            "y": -177.5
+          },
+          {
+            "x": 4.800000000000068,
+            "y": -177
+          },
+          {
+            "x": 5.60000000000008,
+            "y": -176.5
+          },
+          {
+            "x": 6.400000000000091,
+            "y": -176
+          },
+          {
+            "x": 7.200000000000102,
+            "y": -175.5
+          },
+          {
+            "x": 12.200000000000102,
+            "y": -167.5
+          },
+          {
+            "x": 17.200000000000102,
+            "y": -159.5
+          },
+          {
+            "x": 22.200000000000102,
+            "y": -151.5
+          },
+          {
+            "x": 27.200000000000102,
+            "y": -143.5
+          },
+          {
+            "x": 32.2000000000001,
+            "y": -135.5
+          },
+          {
+            "x": 37.2000000000001,
+            "y": -127.5
+          },
+          {
+            "x": 42.2000000000001,
+            "y": -119.5
+          },
+          {
+            "x": 47.2000000000001,
+            "y": -111.5
+          },
+          {
+            "x": 52.2000000000001,
+            "y": -103.5
+          },
+          {
+            "x": 57.2000000000001,
+            "y": -95.5
+          },
+          {
+            "x": 58.2000000000001,
+            "y": -87.5
+          },
+          {
+            "x": 59.2000000000001,
+            "y": -79.5
+          },
+          {
+            "x": 60.2000000000001,
+            "y": -71.5
+          },
+          {
+            "x": 61.2000000000001,
+            "y": -63.5
+          },
+          {
+            "x": 62.2000000000001,
+            "y": -55.5
+          },
+          {
+            "x": 63.2000000000001,
+            "y": -47.5
+          },
+          {
+            "x": 64.2000000000001,
+            "y": -39.5
+          },
+          {
+            "x": 65.2000000000001,
+            "y": -31.5
+          },
+          {
+            "x": 66.2000000000001,
+            "y": -23.5
+          },
+          {
+            "x": 67.2000000000001,
+            "y": -15.5
+          },
+          {
+            "x": 68.2000000000001,
+            "y": -7.5
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          },
+          {
+            "x": 69.2000000000001,
+            "y": 0
+          }
+        ],
+        "frames": [
+          {
+            "strength": "medium",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/medium-00.png",
+            "bodyCenter": {
+              "y": 936.4452298437493,
+              "x": 766.7311782668211
+            },
+            "index": 0,
+            "sourcePelvis": {
+              "y": 589,
+              "x": 161
+            },
+            "sourceRegistration": {
+              "y": 315.3636363636364,
+              "x": 149.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "6AA5C0952C840DEE6CE3892D5F941196D37E078F16716CD5B16234978D49B053",
+            "visibleBounds": {
+              "minX": 435,
+              "maxX": 1031,
+              "minY": 612,
+              "maxY": 1310
+            },
+            "role": "near-arm airborne chamber",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "62EEB23F9888F26AFBAAC899776A5051912E1AE43A8ABACAA7968C961B82CC7E",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0.8000000000000114,
+              "y": -179.5
+            }
+          },
+          {
+            "strength": "medium",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/medium-01.png",
+            "bodyCenter": {
+              "y": 888.5809074796992,
+              "x": 815.4030836238952
+            },
+            "index": 1,
+            "sourcePelvis": {
+              "y": 642,
+              "x": 430
+            },
+            "sourceRegistration": {
+              "y": 368.3636363636364,
+              "x": 105.36363636363636
+            },
+            "edgeContact": false,
+            "sourceSha256": "F42495DE6A9626FEE8FE5031A2FCD26273AA6C42AD1508360141E5821A79E982",
+            "visibleBounds": {
+              "minX": 548,
+              "maxX": 1061,
+              "minY": 549,
+              "maxY": 1241
+            },
+            "role": "same-arm descending connector",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "4354450DA63B99463A9AD34F0E7465F2B24820FD99F76B474DA2424620839F45",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 4.800000000000068,
+              "y": -177
+            }
+          },
+          {
+            "strength": "medium",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/medium-02.png",
+            "bodyCenter": {
+              "y": 897.568171799646,
+              "x": 894.4299662480015
+            },
+            "index": 2,
+            "sourcePelvis": {
+              "y": 645,
+              "x": 738
+            },
+            "sourceRegistration": {
+              "y": 371.3636363636364,
+              "x": 99.36363636363636
+            },
+            "edgeContact": false,
+            "sourceSha256": "1752558B8B7D3AB676195AAE1F8E6661F62DB6CA505BC9CA174F2365C0239872",
+            "visibleBounds": {
+              "minX": 642,
+              "maxX": 1128,
+              "minY": 621,
+              "maxY": 1266
+            },
+            "role": "ONE descending palm CONTACT",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "CC11A44AA474FC393C4E031281201ECA387305CAC687BB448CC9396C283BBC10",
+            "contact": true,
+            "visibleImpact": true,
+            "authoredWorldRootOffset": {
+              "x": 12.200000000000102,
+              "y": -167.5
+            }
+          },
+          {
+            "strength": "medium",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": false,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/medium-03.png",
+            "bodyCenter": {
+              "y": 882.5067482300601,
+              "x": 791.737530211965
+            },
+            "index": 3,
+            "sourcePelvis": {
+              "y": 652,
+              "x": 1086
+            },
+            "sourceRegistration": {
+              "y": 378.3636363636364,
+              "x": 133.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "38E09CAF948BDBAA1231F074F204183F8288E801379F031CBDFA38F85E6450FF",
+            "visibleBounds": {
+              "minX": 482,
+              "maxX": 1036,
+              "minY": 557,
+              "maxY": 1203
+            },
+            "role": "airborne knee gather",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "38A4FC2E0791F2576A0959F76B4222D129A209312FC1F4E98A0F0284416936B6",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 58.2000000000001,
+              "y": -87.5
+            }
+          },
+          {
+            "index": 4,
+            "role": "existing two-foot landing catch",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/jump-05.png",
+            "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80",
+            "sourceSha256": "93AA80E6DD028921E67BB6AF59CF3D4517CC797982770B564002A3E29BD79972",
+            "sourceType": "imagegen_reference_edit",
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 1.937046,
+            "legacySha256": "B2891856AAFFBF2B59FA453FD1737C2E3294BA828DADB8DA906BF73AD7D02AFD",
+            "legacyIndex": 3,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 548,
+              "minY": 834,
+              "maxX": 990,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "x": 783.4,
+              "y": 1117.2
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 69.2000000000001,
+              "y": 0
+            }
+          },
+          {
+            "index": 5,
+            "role": "existing guarded landing settle",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/jump-06.png",
+            "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0",
+            "sourceSha256": "5814B55FF7F531815BAA589DA8C63CC758E91B4E4CD0B7CCF0F2FCFDED6CF2F2",
+            "sourceType": "imagegen_reference_edit",
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 1.937046,
+            "legacySha256": "DCA31F24EB3384B43B5D2E86A216358E04A866055474429B632B09BEDC2CFECC",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 597,
+              "minY": 561,
+              "maxX": 941,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "x": 767.89,
+              "y": 966.29
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 69.2000000000001,
+              "y": 0
+            }
+          },
+          {
+            "index": 6,
+            "role": "existing idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 69.2000000000001,
+              "y": 0
+            }
+          }
+        ],
+        "contactFrame": 2,
+        "contactFrames": [
+          2
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/medium-02.png",
+          "sha256": "CC11A44AA474FC393C4E031281201ECA387305CAC687BB448CC9396C283BBC10",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "classification": "opaque_body",
+          "separationStatus": "source_motion_art_separate_from_authoritative_hit_confirm_feedback"
+        },
+        "singleSequenceScale": 2.75,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "manual_pelvis_registered_virtual_ground_not_foot_plant",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "y": 1220,
+          "x": 1045
+        },
+        "releaseSocketEvidence": "manual_visible_open_palm_center_on_normalized_source",
+        "releaseSocketMethod": "manual_center_of_visible_open_palm_on_normalized_contact; source pixels, not simulation root",
+        "sourceRegistrationNotes": [],
+        "authoredDiveTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_radiant_dive_medium",
+          "track": {
+            "minimumHeight": 44,
+            "maximumHeight": 180,
+            "landingApproachHeight": 16,
+            "windupVelocity": {
+              "x": 0.8,
+              "y": 0.5
+            },
+            "strikeVelocity": {
+              "x": 5,
+              "y": 8
+            },
+            "gatherVelocity": {
+              "x": 1,
+              "y": 8
+            },
+            "landingRecoveryTicks": 14
+          },
+          "maximumAirTicks": 33,
+          "landingPhase": "dive_landing",
+          "landingTrigger": "actual_floor_contact",
+          "airExposurePolicy": "stage_driven",
+          "hitstopFreezes": true,
+          "maxHits": 1,
+          "phaseExposures": {
+            "windup": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_0",
+                "duration": 6
+              },
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_1",
+                "duration": 4
+              }
+            ],
+            "strike": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_2",
+                "duration": 10
+              }
+            ],
+            "gather": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_3",
+                "duration": 1
+              }
+            ],
+            "landing": [
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_4",
+                "duration": 6
+              },
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_5",
+                "duration": 6
+              },
+              {
+                "sourceFrameId": "radiant_dive_medium_frame_6",
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "referencePlayback": {
+          "entryHeight": 180,
+          "outcome": "distant_whiff",
+          "hitstopTicks": 0,
+          "includesFirstIdleCompletion": true,
+          "simulationCursorConvention": "post_tick_first_move_tick_1",
+          "fixedRuntimeLandingTick": false,
+          "durationTicks": 45,
+          "exposureTicks": [
+            5,
+            4,
+            10,
+            11,
+            6,
+            6,
+            3
+          ],
+          "samples": [
+            {
+              "simulationTick": 0,
+              "phase": "attack",
+              "phaseTick": 1,
+              "stage": "windup",
+              "stageTick": 1,
+              "frameIndex": 0,
+              "root": {
+                "x": 0.8000000000000114,
+                "y": -179.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 1,
+              "phase": "attack",
+              "phaseTick": 2,
+              "stage": "windup",
+              "stageTick": 2,
+              "frameIndex": 0,
+              "root": {
+                "x": 1.6000000000000227,
+                "y": -179
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 2,
+              "phase": "attack",
+              "phaseTick": 3,
+              "stage": "windup",
+              "stageTick": 3,
+              "frameIndex": 0,
+              "root": {
+                "x": 2.400000000000034,
+                "y": -178.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 3,
+              "phase": "attack",
+              "phaseTick": 4,
+              "stage": "windup",
+              "stageTick": 4,
+              "frameIndex": 0,
+              "root": {
+                "x": 3.2000000000000455,
+                "y": -178
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 4,
+              "phase": "attack",
+              "phaseTick": 5,
+              "stage": "windup",
+              "stageTick": 5,
+              "frameIndex": 0,
+              "root": {
+                "x": 4.000000000000057,
+                "y": -177.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 5,
+              "phase": "attack",
+              "phaseTick": 6,
+              "stage": "windup",
+              "stageTick": 6,
+              "frameIndex": 1,
+              "root": {
+                "x": 4.800000000000068,
+                "y": -177
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 6,
+              "phase": "attack",
+              "phaseTick": 7,
+              "stage": "windup",
+              "stageTick": 7,
+              "frameIndex": 1,
+              "root": {
+                "x": 5.60000000000008,
+                "y": -176.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 7,
+              "phase": "attack",
+              "phaseTick": 8,
+              "stage": "windup",
+              "stageTick": 8,
+              "frameIndex": 1,
+              "root": {
+                "x": 6.400000000000091,
+                "y": -176
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 8,
+              "phase": "attack",
+              "phaseTick": 9,
+              "stage": "windup",
+              "stageTick": 9,
+              "frameIndex": 1,
+              "root": {
+                "x": 7.200000000000102,
+                "y": -175.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 9,
+              "phase": "attack",
+              "phaseTick": 10,
+              "stage": "strike",
+              "stageTick": 0,
+              "frameIndex": 2,
+              "root": {
+                "x": 12.200000000000102,
+                "y": -167.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 10,
+              "phase": "attack",
+              "phaseTick": 11,
+              "stage": "strike",
+              "stageTick": 1,
+              "frameIndex": 2,
+              "root": {
+                "x": 17.200000000000102,
+                "y": -159.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 11,
+              "phase": "attack",
+              "phaseTick": 12,
+              "stage": "strike",
+              "stageTick": 2,
+              "frameIndex": 2,
+              "root": {
+                "x": 22.200000000000102,
+                "y": -151.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 12,
+              "phase": "attack",
+              "phaseTick": 13,
+              "stage": "strike",
+              "stageTick": 3,
+              "frameIndex": 2,
+              "root": {
+                "x": 27.200000000000102,
+                "y": -143.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 13,
+              "phase": "attack",
+              "phaseTick": 14,
+              "stage": "strike",
+              "stageTick": 4,
+              "frameIndex": 2,
+              "root": {
+                "x": 32.2000000000001,
+                "y": -135.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 14,
+              "phase": "attack",
+              "phaseTick": 15,
+              "stage": "strike",
+              "stageTick": 5,
+              "frameIndex": 2,
+              "root": {
+                "x": 37.2000000000001,
+                "y": -127.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 15,
+              "phase": "attack",
+              "phaseTick": 16,
+              "stage": "strike",
+              "stageTick": 6,
+              "frameIndex": 2,
+              "root": {
+                "x": 42.2000000000001,
+                "y": -119.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 16,
+              "phase": "attack",
+              "phaseTick": 17,
+              "stage": "strike",
+              "stageTick": 7,
+              "frameIndex": 2,
+              "root": {
+                "x": 47.2000000000001,
+                "y": -111.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 17,
+              "phase": "attack",
+              "phaseTick": 18,
+              "stage": "strike",
+              "stageTick": 8,
+              "frameIndex": 2,
+              "root": {
+                "x": 52.2000000000001,
+                "y": -103.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 18,
+              "phase": "attack",
+              "phaseTick": 19,
+              "stage": "strike",
+              "stageTick": 9,
+              "frameIndex": 2,
+              "root": {
+                "x": 57.2000000000001,
+                "y": -95.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 19,
+              "phase": "attack",
+              "phaseTick": 20,
+              "stage": "gather",
+              "stageTick": 0,
+              "frameIndex": 3,
+              "root": {
+                "x": 58.2000000000001,
+                "y": -87.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 20,
+              "phase": "attack",
+              "phaseTick": 21,
+              "stage": "gather",
+              "stageTick": 1,
+              "frameIndex": 3,
+              "root": {
+                "x": 59.2000000000001,
+                "y": -79.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 21,
+              "phase": "attack",
+              "phaseTick": 22,
+              "stage": "gather",
+              "stageTick": 2,
+              "frameIndex": 3,
+              "root": {
+                "x": 60.2000000000001,
+                "y": -71.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 22,
+              "phase": "attack",
+              "phaseTick": 23,
+              "stage": "gather",
+              "stageTick": 3,
+              "frameIndex": 3,
+              "root": {
+                "x": 61.2000000000001,
+                "y": -63.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 23,
+              "phase": "attack",
+              "phaseTick": 24,
+              "stage": "gather",
+              "stageTick": 4,
+              "frameIndex": 3,
+              "root": {
+                "x": 62.2000000000001,
+                "y": -55.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 24,
+              "phase": "attack",
+              "phaseTick": 25,
+              "stage": "gather",
+              "stageTick": 5,
+              "frameIndex": 3,
+              "root": {
+                "x": 63.2000000000001,
+                "y": -47.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 25,
+              "phase": "attack",
+              "phaseTick": 26,
+              "stage": "gather",
+              "stageTick": 6,
+              "frameIndex": 3,
+              "root": {
+                "x": 64.2000000000001,
+                "y": -39.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 26,
+              "phase": "attack",
+              "phaseTick": 27,
+              "stage": "gather",
+              "stageTick": 7,
+              "frameIndex": 3,
+              "root": {
+                "x": 65.2000000000001,
+                "y": -31.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 27,
+              "phase": "attack",
+              "phaseTick": 28,
+              "stage": "gather",
+              "stageTick": 8,
+              "frameIndex": 3,
+              "root": {
+                "x": 66.2000000000001,
+                "y": -23.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 28,
+              "phase": "attack",
+              "phaseTick": 29,
+              "stage": "gather",
+              "stageTick": 9,
+              "frameIndex": 3,
+              "root": {
+                "x": 67.2000000000001,
+                "y": -15.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 29,
+              "phase": "attack",
+              "phaseTick": 30,
+              "stage": "gather",
+              "stageTick": 10,
+              "frameIndex": 3,
+              "root": {
+                "x": 68.2000000000001,
+                "y": -7.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 30,
+              "phase": "dive_landing",
+              "phaseTick": 0,
+              "stage": "landing",
+              "stageTick": 0,
+              "frameIndex": 4,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 31,
+              "phase": "dive_landing",
+              "phaseTick": 1,
+              "stage": "landing",
+              "stageTick": 1,
+              "frameIndex": 4,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 32,
+              "phase": "dive_landing",
+              "phaseTick": 2,
+              "stage": "landing",
+              "stageTick": 2,
+              "frameIndex": 4,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 33,
+              "phase": "dive_landing",
+              "phaseTick": 3,
+              "stage": "landing",
+              "stageTick": 3,
+              "frameIndex": 4,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 34,
+              "phase": "dive_landing",
+              "phaseTick": 4,
+              "stage": "landing",
+              "stageTick": 4,
+              "frameIndex": 4,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 35,
+              "phase": "dive_landing",
+              "phaseTick": 5,
+              "stage": "landing",
+              "stageTick": 5,
+              "frameIndex": 4,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 36,
+              "phase": "dive_landing",
+              "phaseTick": 6,
+              "stage": "landing",
+              "stageTick": 6,
+              "frameIndex": 5,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 37,
+              "phase": "dive_landing",
+              "phaseTick": 7,
+              "stage": "landing",
+              "stageTick": 7,
+              "frameIndex": 5,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 38,
+              "phase": "dive_landing",
+              "phaseTick": 8,
+              "stage": "landing",
+              "stageTick": 8,
+              "frameIndex": 5,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 39,
+              "phase": "dive_landing",
+              "phaseTick": 9,
+              "stage": "landing",
+              "stageTick": 9,
+              "frameIndex": 5,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 40,
+              "phase": "dive_landing",
+              "phaseTick": 10,
+              "stage": "landing",
+              "stageTick": 10,
+              "frameIndex": 5,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 41,
+              "phase": "dive_landing",
+              "phaseTick": 11,
+              "stage": "landing",
+              "stageTick": 11,
+              "frameIndex": 5,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 42,
+              "phase": "dive_landing",
+              "phaseTick": 12,
+              "stage": "landing",
+              "stageTick": 12,
+              "frameIndex": 6,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 43,
+              "phase": "dive_landing",
+              "phaseTick": 13,
+              "stage": "landing",
+              "stageTick": 13,
+              "frameIndex": 6,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 44,
+              "phase": "idle",
+              "phaseTick": 0,
+              "stage": "complete",
+              "stageTick": 0,
+              "frameIndex": 6,
+              "root": {
+                "x": 69.2000000000001,
+                "y": 0
+              },
+              "grounded": true
+            }
+          ]
+        },
+        "auraBakedIntoFrames": false,
+        "runtimeAuraOverlay": false,
+        "preservationBoundary": {
+          "protectedLegacyFramesModified": false,
+          "sourceOrderPreserved": false,
+          "approvedV2Disposition": "Forward Palm Heaven and movement source bytes unchanged",
+          "retainedLegacyQualities": [
+            "descending hand strike",
+            "forward air approach"
+          ],
+          "retiredLegacyBeats": [
+            "disconnected late side kick"
+          ],
+          "explicitRootMotionOwner": "deterministic_simulation"
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "VISUAL_COMPARISON_ONLY",
+          "phaseTicks": {
+            "startup": 9,
+            "active": 10,
+            "recovery": 13
+          },
+          "durationTicks": 43,
+          "exposureTicks": [
+            4,
+            4,
+            10,
+            11,
+            6,
+            5,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": true,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED_REFERENCE",
+          "phaseTicks": {
+            "startup": 10,
+            "active": 10,
+            "recovery": 14
+          },
+          "durationTicks": 45,
+          "exposureTicks": [
+            5,
+            4,
+            10,
+            11,
+            6,
+            6,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": false,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        },
+        "C": {
+          "label": "VISUAL_COMPARISON_ONLY",
+          "phaseTicks": {
+            "startup": 12,
+            "active": 10,
+            "recovery": 16
+          },
+          "durationTicks": 49,
+          "exposureTicks": [
+            7,
+            4,
+            10,
+            11,
+            6,
+            8,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": true,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 6,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 7,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 8,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      }
+    },
+    "heavy": {
+      "status": "awaiting_human_radiant_dive_family_review",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 7,
+        "historicalDurationTicks": 29,
+        "reconstructedExposureTicks": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5
+        ],
+        "exposureEvidence": "RECONSTRUCTION_ONLY_CURRENT_PROTECTED_5_6_18_NOMINAL_DURATION",
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 126,
+            "maxX": 321,
+            "minY": 54,
+            "maxY": 376
+          },
+          {
+            "minX": 124,
+            "maxX": 324,
+            "minY": 55,
+            "maxY": 378
+          },
+          {
+            "minX": 138,
+            "maxX": 312,
+            "minY": 55,
+            "maxY": 378
+          },
+          {
+            "minX": 106,
+            "maxX": 341,
+            "minY": 54,
+            "maxY": 381
+          },
+          {
+            "minX": 135,
+            "maxX": 313,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 36,
+            "maxX": 411,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 97,
+            "maxX": 354,
+            "minY": 52,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 229.2499924253901,
+            "x": 219.60333282835933
+          },
+          {
+            "y": 231.61138591047344,
+            "x": 217.15001996989156
+          },
+          {
+            "y": 225.6629984581431,
+            "x": 221.67031472019832
+          },
+          {
+            "y": 226.72038204270646,
+            "x": 220.69851427836377
+          },
+          {
+            "y": 227.1252813647672,
+            "x": 224.81684634521977
+          },
+          {
+            "y": 230.818389865141,
+            "x": 185.08434818144667
+          },
+          {
+            "y": 203.16969696969696,
+            "x": 207.01933842239185
+          }
+        ],
+        "contactFrame": null,
+        "exactContactTick": null,
+        "note": "Protected current P1 metadata is 5/6/18, 29 nominal ticks. Exact historical V1 exposures/contact are unrecoverable; these equalized comparison holds are not original timing. Late kick remains historical only."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "authoredWorldRootPath": [
+          {
+            "x": 0.8000000000000114,
+            "y": -179.5
+          },
+          {
+            "x": 1.6000000000000227,
+            "y": -179
+          },
+          {
+            "x": 2.400000000000034,
+            "y": -178.5
+          },
+          {
+            "x": 3.2000000000000455,
+            "y": -178
+          },
+          {
+            "x": 4.000000000000057,
+            "y": -177.5
+          },
+          {
+            "x": 4.800000000000068,
+            "y": -177
+          },
+          {
+            "x": 5.60000000000008,
+            "y": -176.5
+          },
+          {
+            "x": 6.400000000000091,
+            "y": -176
+          },
+          {
+            "x": 7.200000000000102,
+            "y": -175.5
+          },
+          {
+            "x": 8.000000000000114,
+            "y": -175
+          },
+          {
+            "x": 8.800000000000125,
+            "y": -174.5
+          },
+          {
+            "x": 9.600000000000136,
+            "y": -174
+          },
+          {
+            "x": 10.400000000000148,
+            "y": -173.5
+          },
+          {
+            "x": 13.400000000000148,
+            "y": -161.5
+          },
+          {
+            "x": 16.400000000000148,
+            "y": -149.5
+          },
+          {
+            "x": 19.400000000000148,
+            "y": -137.5
+          },
+          {
+            "x": 22.400000000000148,
+            "y": -125.5
+          },
+          {
+            "x": 25.400000000000148,
+            "y": -113.5
+          },
+          {
+            "x": 28.400000000000148,
+            "y": -101.5
+          },
+          {
+            "x": 31.400000000000148,
+            "y": -89.5
+          },
+          {
+            "x": 34.40000000000015,
+            "y": -77.5
+          },
+          {
+            "x": 37.40000000000015,
+            "y": -65.5
+          },
+          {
+            "x": 40.40000000000015,
+            "y": -53.5
+          },
+          {
+            "x": 43.40000000000015,
+            "y": -41.5
+          },
+          {
+            "x": 46.40000000000015,
+            "y": -29.5
+          },
+          {
+            "x": 46.90000000000015,
+            "y": -17.5
+          },
+          {
+            "x": 47.40000000000015,
+            "y": -5.5
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          },
+          {
+            "x": 47.90000000000015,
+            "y": 0
+          }
+        ],
+        "frames": [
+          {
+            "strength": "heavy",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": true,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/heavy-00.png",
+            "bodyCenter": {
+              "y": 939.3229489054025,
+              "x": 769.939995382716
+            },
+            "index": 0,
+            "sourcePelvis": {
+              "y": 968,
+              "x": 151
+            },
+            "sourceRegistration": {
+              "y": 345.3636363636364,
+              "x": 139.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "04C59FAB676B2028EA023E4AA839634F2A03CDBF97A5B9D75DB13D40DA80C1CF",
+            "visibleBounds": {
+              "minX": 455,
+              "maxX": 1092,
+              "minY": 497,
+              "maxY": 1362
+            },
+            "role": "near-arm airborne chamber",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "D63886FEACDF4B35FD17E6FC200F5A8447522EC19C25FA980BDC27D0EB99D7AF",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0.8000000000000114,
+              "y": -179.5
+            }
+          },
+          {
+            "strength": "heavy",
+            "sourceScale": 1.4143646408839778,
+            "magentaRemaining": 0,
+            "auraBaked": true,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/heavy-01.png",
+            "bodyCenter": {
+              "y": 926.0509942833094,
+              "x": 874.4168507932054
+            },
+            "index": 1,
+            "sourcePelvis": {
+              "y": 657.5390625,
+              "x": 565.625
+            },
+            "sourceRegistration": {
+              "y": 961.5625,
+              "x": 543
+            },
+            "edgeContact": false,
+            "sourceSha256": "04EAF06C5B9C2ED5BDF2B10444CF111395843B645ACA0315746C50316534B6F2",
+            "visibleBounds": {
+              "minX": 441,
+              "maxX": 1232,
+              "minY": 319,
+              "maxY": 1454
+            },
+            "role": "same-arm descending connector",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "cameraPolicy": "normalized_contact_reference_resolution_restore_not_pose_bbox_scale",
+            "sha256": "C261F0686B371E853A2046508C2333A5EE33512DD8562779F2813C0025893F39",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 7.200000000000102,
+              "y": -175.5
+            }
+          },
+          {
+            "strength": "heavy",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": true,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/heavy-02.png",
+            "bodyCenter": {
+              "y": 960.9934459442112,
+              "x": 872.7601491001011
+            },
+            "index": 2,
+            "sourcePelvis": {
+              "y": 981,
+              "x": 773
+            },
+            "sourceRegistration": {
+              "y": 358.3636363636364,
+              "x": 134.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "77C7DC6020F156575D84D8CA4C4DA095A7EB9C176B7A5AC9EBBACA93BE4B5936",
+            "visibleBounds": {
+              "minX": 461,
+              "maxX": 1229,
+              "minY": 387,
+              "maxY": 1488
+            },
+            "role": "ONE descending palm CONTACT",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "68E987B587D24D18F321B5460D1DD831F5AE12205A2B2D3C6D9D461AC3259BED",
+            "contact": true,
+            "visibleImpact": true,
+            "authoredWorldRootOffset": {
+              "x": 13.400000000000148,
+              "y": -161.5
+            }
+          },
+          {
+            "strength": "heavy",
+            "sourceScale": 2.75,
+            "magentaRemaining": 0,
+            "auraBaked": true,
+            "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/heavy-03.png",
+            "bodyCenter": {
+              "y": 869.3464867674645,
+              "x": 802.7764775012995
+            },
+            "index": 3,
+            "sourcePelvis": {
+              "y": 1059,
+              "x": 1085
+            },
+            "sourceRegistration": {
+              "y": 436.3636363636364,
+              "x": 132.36363636363637
+            },
+            "edgeContact": false,
+            "sourceSha256": "8DF8F02F2D236B9C58F84C2208AE917778C0C56A71F38EC3A1157D4EBA79CDED",
+            "visibleBounds": {
+              "minX": 504,
+              "maxX": 1081,
+              "minY": 461,
+              "maxY": 1219
+            },
+            "role": "airborne knee gather",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "9C7DBCDF0B7E1027B2FAFF9C48ACAABD786DC593474ABAAE07DBA19C77944275",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 46.90000000000015,
+              "y": -17.5
+            }
+          },
+          {
+            "index": 4,
+            "role": "existing two-foot landing catch",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/jump-05.png",
+            "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80",
+            "sourceSha256": "93AA80E6DD028921E67BB6AF59CF3D4517CC797982770B564002A3E29BD79972",
+            "sourceType": "imagegen_reference_edit",
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 1.937046,
+            "legacySha256": "B2891856AAFFBF2B59FA453FD1737C2E3294BA828DADB8DA906BF73AD7D02AFD",
+            "legacyIndex": 3,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 548,
+              "minY": 834,
+              "maxX": 990,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "x": 783.4,
+              "y": 1117.2
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 47.90000000000015,
+              "y": 0
+            }
+          },
+          {
+            "index": 5,
+            "role": "existing guarded landing settle",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/jump-06.png",
+            "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0",
+            "sourceSha256": "5814B55FF7F531815BAA589DA8C63CC758E91B4E4CD0B7CCF0F2FCFDED6CF2F2",
+            "sourceType": "imagegen_reference_edit",
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 1.937046,
+            "legacySha256": "DCA31F24EB3384B43B5D2E86A216358E04A866055474429B632B09BEDC2CFECC",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 597,
+              "minY": 561,
+              "maxX": 941,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "x": 767.89,
+              "y": 966.29
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 47.90000000000015,
+              "y": 0
+            }
+          },
+          {
+            "index": 6,
+            "role": "existing idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 47.90000000000015,
+              "y": 0
+            }
+          }
+        ],
+        "contactFrame": 2,
+        "contactFrames": [
+          2
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/radiant-dive-v1/heavy-02.png",
+          "sha256": "68E987B587D24D18F321B5460D1DD831F5AE12205A2B2D3C6D9D461AC3259BED",
+          "bodyOnlyOnWhiff": false,
+          "bodyOnlyForAllOutcomes": false,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "classification": "authored_body_plus_motion_aura",
+          "separationStatus": "source_motion_art_separate_from_authoritative_hit_confirm_feedback"
+        },
+        "singleSequenceScale": 2.75,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "manual_pelvis_registered_virtual_ground_not_foot_plant",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "y": 1354,
+          "x": 946
+        },
+        "releaseSocketEvidence": "manual_visible_open_palm_center_on_normalized_source",
+        "releaseSocketMethod": "manual_center_of_visible_open_palm_on_normalized_contact; source pixels, not simulation root",
+        "sourceRegistrationNotes": [
+          "1448x1086 render of2048x1536 normalized reference; exact4:3 resolution restoration only; no anatomical bbox scaling"
+        ],
+        "authoredDiveTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_radiant_dive_heavy",
+          "track": {
+            "minimumHeight": 60,
+            "maximumHeight": 180,
+            "landingApproachHeight": 24,
+            "windupVelocity": {
+              "x": 0.8,
+              "y": 0.5
+            },
+            "strikeVelocity": {
+              "x": 3,
+              "y": 12
+            },
+            "gatherVelocity": {
+              "x": 0.5,
+              "y": 12
+            },
+            "landingRecoveryTicks": 20
+          },
+          "maximumAirTicks": 29,
+          "landingPhase": "dive_landing",
+          "landingTrigger": "actual_floor_contact",
+          "airExposurePolicy": "stage_driven",
+          "hitstopFreezes": true,
+          "maxHits": 1,
+          "phaseExposures": {
+            "windup": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_0",
+                "duration": 9
+              },
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_1",
+                "duration": 5
+              }
+            ],
+            "strike": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_2",
+                "duration": 12
+              }
+            ],
+            "gather": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_3",
+                "duration": 1
+              }
+            ],
+            "landing": [
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_4",
+                "duration": 8
+              },
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_5",
+                "duration": 8
+              },
+              {
+                "sourceFrameId": "radiant_dive_heavy_frame_6",
+                "duration": 4
+              }
+            ]
+          }
+        },
+        "referencePlayback": {
+          "entryHeight": 180,
+          "outcome": "distant_whiff",
+          "hitstopTicks": 0,
+          "includesFirstIdleCompletion": true,
+          "simulationCursorConvention": "post_tick_first_move_tick_1",
+          "fixedRuntimeLandingTick": false,
+          "durationTicks": 48,
+          "exposureTicks": [
+            8,
+            5,
+            12,
+            2,
+            8,
+            8,
+            5
+          ],
+          "samples": [
+            {
+              "simulationTick": 0,
+              "phase": "attack",
+              "phaseTick": 1,
+              "stage": "windup",
+              "stageTick": 1,
+              "frameIndex": 0,
+              "root": {
+                "x": 0.8000000000000114,
+                "y": -179.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 1,
+              "phase": "attack",
+              "phaseTick": 2,
+              "stage": "windup",
+              "stageTick": 2,
+              "frameIndex": 0,
+              "root": {
+                "x": 1.6000000000000227,
+                "y": -179
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 2,
+              "phase": "attack",
+              "phaseTick": 3,
+              "stage": "windup",
+              "stageTick": 3,
+              "frameIndex": 0,
+              "root": {
+                "x": 2.400000000000034,
+                "y": -178.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 3,
+              "phase": "attack",
+              "phaseTick": 4,
+              "stage": "windup",
+              "stageTick": 4,
+              "frameIndex": 0,
+              "root": {
+                "x": 3.2000000000000455,
+                "y": -178
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 4,
+              "phase": "attack",
+              "phaseTick": 5,
+              "stage": "windup",
+              "stageTick": 5,
+              "frameIndex": 0,
+              "root": {
+                "x": 4.000000000000057,
+                "y": -177.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 5,
+              "phase": "attack",
+              "phaseTick": 6,
+              "stage": "windup",
+              "stageTick": 6,
+              "frameIndex": 0,
+              "root": {
+                "x": 4.800000000000068,
+                "y": -177
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 6,
+              "phase": "attack",
+              "phaseTick": 7,
+              "stage": "windup",
+              "stageTick": 7,
+              "frameIndex": 0,
+              "root": {
+                "x": 5.60000000000008,
+                "y": -176.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 7,
+              "phase": "attack",
+              "phaseTick": 8,
+              "stage": "windup",
+              "stageTick": 8,
+              "frameIndex": 0,
+              "root": {
+                "x": 6.400000000000091,
+                "y": -176
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 8,
+              "phase": "attack",
+              "phaseTick": 9,
+              "stage": "windup",
+              "stageTick": 9,
+              "frameIndex": 1,
+              "root": {
+                "x": 7.200000000000102,
+                "y": -175.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 9,
+              "phase": "attack",
+              "phaseTick": 10,
+              "stage": "windup",
+              "stageTick": 10,
+              "frameIndex": 1,
+              "root": {
+                "x": 8.000000000000114,
+                "y": -175
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 10,
+              "phase": "attack",
+              "phaseTick": 11,
+              "stage": "windup",
+              "stageTick": 11,
+              "frameIndex": 1,
+              "root": {
+                "x": 8.800000000000125,
+                "y": -174.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 11,
+              "phase": "attack",
+              "phaseTick": 12,
+              "stage": "windup",
+              "stageTick": 12,
+              "frameIndex": 1,
+              "root": {
+                "x": 9.600000000000136,
+                "y": -174
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 12,
+              "phase": "attack",
+              "phaseTick": 13,
+              "stage": "windup",
+              "stageTick": 13,
+              "frameIndex": 1,
+              "root": {
+                "x": 10.400000000000148,
+                "y": -173.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 13,
+              "phase": "attack",
+              "phaseTick": 14,
+              "stage": "strike",
+              "stageTick": 0,
+              "frameIndex": 2,
+              "root": {
+                "x": 13.400000000000148,
+                "y": -161.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 14,
+              "phase": "attack",
+              "phaseTick": 15,
+              "stage": "strike",
+              "stageTick": 1,
+              "frameIndex": 2,
+              "root": {
+                "x": 16.400000000000148,
+                "y": -149.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 15,
+              "phase": "attack",
+              "phaseTick": 16,
+              "stage": "strike",
+              "stageTick": 2,
+              "frameIndex": 2,
+              "root": {
+                "x": 19.400000000000148,
+                "y": -137.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 16,
+              "phase": "attack",
+              "phaseTick": 17,
+              "stage": "strike",
+              "stageTick": 3,
+              "frameIndex": 2,
+              "root": {
+                "x": 22.400000000000148,
+                "y": -125.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 17,
+              "phase": "attack",
+              "phaseTick": 18,
+              "stage": "strike",
+              "stageTick": 4,
+              "frameIndex": 2,
+              "root": {
+                "x": 25.400000000000148,
+                "y": -113.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 18,
+              "phase": "attack",
+              "phaseTick": 19,
+              "stage": "strike",
+              "stageTick": 5,
+              "frameIndex": 2,
+              "root": {
+                "x": 28.400000000000148,
+                "y": -101.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 19,
+              "phase": "attack",
+              "phaseTick": 20,
+              "stage": "strike",
+              "stageTick": 6,
+              "frameIndex": 2,
+              "root": {
+                "x": 31.400000000000148,
+                "y": -89.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 20,
+              "phase": "attack",
+              "phaseTick": 21,
+              "stage": "strike",
+              "stageTick": 7,
+              "frameIndex": 2,
+              "root": {
+                "x": 34.40000000000015,
+                "y": -77.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 21,
+              "phase": "attack",
+              "phaseTick": 22,
+              "stage": "strike",
+              "stageTick": 8,
+              "frameIndex": 2,
+              "root": {
+                "x": 37.40000000000015,
+                "y": -65.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 22,
+              "phase": "attack",
+              "phaseTick": 23,
+              "stage": "strike",
+              "stageTick": 9,
+              "frameIndex": 2,
+              "root": {
+                "x": 40.40000000000015,
+                "y": -53.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 23,
+              "phase": "attack",
+              "phaseTick": 24,
+              "stage": "strike",
+              "stageTick": 10,
+              "frameIndex": 2,
+              "root": {
+                "x": 43.40000000000015,
+                "y": -41.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 24,
+              "phase": "attack",
+              "phaseTick": 25,
+              "stage": "strike",
+              "stageTick": 11,
+              "frameIndex": 2,
+              "root": {
+                "x": 46.40000000000015,
+                "y": -29.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 25,
+              "phase": "attack",
+              "phaseTick": 26,
+              "stage": "gather",
+              "stageTick": 0,
+              "frameIndex": 3,
+              "root": {
+                "x": 46.90000000000015,
+                "y": -17.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 26,
+              "phase": "attack",
+              "phaseTick": 27,
+              "stage": "gather",
+              "stageTick": 1,
+              "frameIndex": 3,
+              "root": {
+                "x": 47.40000000000015,
+                "y": -5.5
+              },
+              "grounded": false
+            },
+            {
+              "simulationTick": 27,
+              "phase": "dive_landing",
+              "phaseTick": 0,
+              "stage": "landing",
+              "stageTick": 0,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 28,
+              "phase": "dive_landing",
+              "phaseTick": 1,
+              "stage": "landing",
+              "stageTick": 1,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 29,
+              "phase": "dive_landing",
+              "phaseTick": 2,
+              "stage": "landing",
+              "stageTick": 2,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 30,
+              "phase": "dive_landing",
+              "phaseTick": 3,
+              "stage": "landing",
+              "stageTick": 3,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 31,
+              "phase": "dive_landing",
+              "phaseTick": 4,
+              "stage": "landing",
+              "stageTick": 4,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 32,
+              "phase": "dive_landing",
+              "phaseTick": 5,
+              "stage": "landing",
+              "stageTick": 5,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 33,
+              "phase": "dive_landing",
+              "phaseTick": 6,
+              "stage": "landing",
+              "stageTick": 6,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 34,
+              "phase": "dive_landing",
+              "phaseTick": 7,
+              "stage": "landing",
+              "stageTick": 7,
+              "frameIndex": 4,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 35,
+              "phase": "dive_landing",
+              "phaseTick": 8,
+              "stage": "landing",
+              "stageTick": 8,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 36,
+              "phase": "dive_landing",
+              "phaseTick": 9,
+              "stage": "landing",
+              "stageTick": 9,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 37,
+              "phase": "dive_landing",
+              "phaseTick": 10,
+              "stage": "landing",
+              "stageTick": 10,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 38,
+              "phase": "dive_landing",
+              "phaseTick": 11,
+              "stage": "landing",
+              "stageTick": 11,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 39,
+              "phase": "dive_landing",
+              "phaseTick": 12,
+              "stage": "landing",
+              "stageTick": 12,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 40,
+              "phase": "dive_landing",
+              "phaseTick": 13,
+              "stage": "landing",
+              "stageTick": 13,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 41,
+              "phase": "dive_landing",
+              "phaseTick": 14,
+              "stage": "landing",
+              "stageTick": 14,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 42,
+              "phase": "dive_landing",
+              "phaseTick": 15,
+              "stage": "landing",
+              "stageTick": 15,
+              "frameIndex": 5,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 43,
+              "phase": "dive_landing",
+              "phaseTick": 16,
+              "stage": "landing",
+              "stageTick": 16,
+              "frameIndex": 6,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 44,
+              "phase": "dive_landing",
+              "phaseTick": 17,
+              "stage": "landing",
+              "stageTick": 17,
+              "frameIndex": 6,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 45,
+              "phase": "dive_landing",
+              "phaseTick": 18,
+              "stage": "landing",
+              "stageTick": 18,
+              "frameIndex": 6,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 46,
+              "phase": "dive_landing",
+              "phaseTick": 19,
+              "stage": "landing",
+              "stageTick": 19,
+              "frameIndex": 6,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            },
+            {
+              "simulationTick": 47,
+              "phase": "idle",
+              "phaseTick": 0,
+              "stage": "complete",
+              "stageTick": 0,
+              "frameIndex": 6,
+              "root": {
+                "x": 47.90000000000015,
+                "y": 0
+              },
+              "grounded": true
+            }
+          ]
+        },
+        "auraBakedIntoFrames": true,
+        "runtimeAuraOverlay": false,
+        "preservationBoundary": {
+          "protectedLegacyFramesModified": false,
+          "sourceOrderPreserved": false,
+          "approvedV2Disposition": "Forward Palm Heaven and movement source bytes unchanged",
+          "retainedLegacyQualities": [
+            "descending hand strike",
+            "forward air approach"
+          ],
+          "retiredLegacyBeats": [
+            "disconnected late side kick"
+          ],
+          "explicitRootMotionOwner": "deterministic_simulation"
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "VISUAL_COMPARISON_ONLY",
+          "phaseTicks": {
+            "startup": 13,
+            "active": 12,
+            "recovery": 19
+          },
+          "durationTicks": 46,
+          "exposureTicks": [
+            7,
+            5,
+            12,
+            2,
+            8,
+            7,
+            5
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": true,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED_REFERENCE",
+          "phaseTicks": {
+            "startup": 14,
+            "active": 12,
+            "recovery": 20
+          },
+          "durationTicks": 48,
+          "exposureTicks": [
+            8,
+            5,
+            12,
+            2,
+            8,
+            8,
+            5
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": false,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        },
+        "C": {
+          "label": "VISUAL_COMPARISON_ONLY",
+          "phaseTicks": {
+            "startup": 16,
+            "active": 12,
+            "recovery": 22
+          },
+          "durationTicks": 52,
+          "exposureTicks": [
+            10,
+            5,
+            12,
+            2,
+            8,
+            10,
+            5
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false,
+          "visualComparisonOnly": true,
+          "durationModel": "height_180_state_driven_reference_not_fixed_landing",
+          "runtimePhaseTimingsUnchanged": true
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 8,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 9,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 10,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      }
+    }
+  },
+  "humanApproval": {
+    "family": null,
+    "light": null,
+    "medium": null,
+    "heavy": null
+  },
+  "contactSheets": [
+    "/lamuh-legacy-v2/radiant-dive-v1/radiant-dive-numbered-contact-sheet.png"
+  ],
+  "reviewNotes": [
+    "One continuous near-arm descending open palm; the disconnected protected late kick is retired, not a second hit.",
+    "Windup/strike/gather follow current airborne position; actual floor contact starts committed 10/14/20 landing recovery.",
+    "No invulnerability, OTG, homing, extra shockwave damage, renderer-driven motion or repeat-Dive refund.",
+    "B is a measured no-hit height-180 reference, not a universal landing clock. A/C are visual comparison only.",
+    "Heavy surrounding aura is embedded motion artwork on hit, block and whiff; no runtime aura spawn or impact claim.",
+    "Fixed canvas/root registration and PNG checks do not constitute anatomical, contact-alignment or human motion approval."
+  ],
+  "normalizationReport": "repo://tools/nga-forge/review/lamuh-legacy-v2-radiant-dive-v1/normalization.report.json"
+}

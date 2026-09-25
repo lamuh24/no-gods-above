@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0-production-arena-brief",
+  "id": "arena_id",
+  "status": "production_arena_brief_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_stage_brief_approval",
+  "identity": {
+    "arenaName": "Human-readable arena name",
+    "lore": "Why this place exists in NGA.",
+    "narrativePurpose": "What this arena communicates during play.",
+    "timeOfDay": "Authored time and sky condition.",
+    "primaryMood": "Primary emotional read.",
+    "dominantColorFamilies": ["family_one", "family_two", "family_three", "family_four"]
+  },
+  "composition": {
+    "foreground": "Foreground forms and occlusion policy.",
+    "midground": "Fighter-adjacent structural composition.",
+    "background": "Deep vista and focal landmark.",
+    "gameplayFloor": "Flat visual treatment mapped to the deterministic floor.",
+    "stageSilhouette": "Large-form silhouette at gameplay distance."
+  },
+  "readability": {
+    "contrastZonesBehindFighters": "Value and saturation policy behind fighter bodies.",
+    "vfxVisibilityZones": "Beam, projectile, and hit-spark contrast corridors.",
+    "jumpHeight": "Readability through the approved jump camera range.",
+    "corners": "Corner landmarks and low-noise background policy."
+  },
+  "cameraRequirements": {
+    "commandGrab": "Constrained shot requirements.",
+    "super": "Constrained shot requirements.",
+    "ultimate": "Constrained shot requirements.",
+    "roundFinisher": "Constrained shot requirements."
+  },
+  "ambientMotion": {
+    "permitted": ["Authored low-frequency motion outside the combat read."],
+    "deterministicCapturePolicy": "Freeze or seed ambient motion for comparisons and rollback captures."
+  },
+  "prohibitedVisualNoise": [
+    "strobing lights",
+    "foreground occlusion over fighters",
+    "high-frequency detail behind fighter silhouettes",
+    "bright landmarks behind torso height",
+    "unseeded random reactions",
+    "debris crossing the combat lane"
+  ],
+  "performanceBudget": {
+    "targetFps": 60,
+    "maxTotalDrawCalls": 80,
+    "maxStageDrawCalls": 48,
+    "maxVisibleTriangles": 35000,
+    "maxLoadedTriangles": 60000,
+    "maxStageTextures": 12,
+    "maxTotalTextureMemoryMb": 96,
+    "maxMaterialVariants": 8,
+    "maxDynamicLights": 2
+  },
+  "artAssetList": [
+    { "id": "asset_01", "category": "3d_geometry", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_02", "category": "painted_plane", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_03", "category": "foreground_decal", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_04", "category": "background_layer", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_05", "category": "material_definition", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_06", "category": "light_map", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_07", "category": "shadow_receiver", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_08", "category": "atmospheric_effect", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_09", "category": "optional_mask", "required": false, "purpose": "Describe asset." },
+    { "id": "asset_10", "category": "presentation_mesh", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_11", "category": "preview_thumbnail", "required": true, "purpose": "Describe asset." },
+    { "id": "asset_12", "category": "validation_capture", "required": true, "purpose": "Describe asset." }
+  ],
+  "productionContract": {
+    "combatPlaneOrigin": [0, 0, 0],
+    "floorY": 0,
+    "worldScale": { "simulationPixelsToWorldUnits": 0.02, "spritePixelsToWorldUnits": 0.0033, "fighterWorldScale": 1 },
+    "gameplayBounds": { "simulation": { "left": -420, "right": 420 }, "world": { "left": -8.4, "right": 8.4 } },
+    "spawnPositions": { "p1": { "simulationX": -76, "worldX": -1.52 }, "p2": { "simulationX": 76, "worldX": 1.52 } },
+    "wallBounceAnchors": { "simulation": { "left": -420, "right": 420 }, "world": { "left": -8.4, "right": 8.4 } },
+    "defaultCameraPosition": [0, 5.3, 20],
+    "cameraZoomRange": { "minDistance": 20, "maxDistance": 32 },
+    "jumpCameraRange": { "rootY": [0, 3.6], "targetY": [2.8, 4.32], "distance": [20, 21.82] },
+    "stageEdgeBehavior": "Inherit the approved Stage V1 safe-center clamp.",
+    "cinematicSafeZones": [],
+    "foregroundOcclusionLimits": {},
+    "parallaxDepthValues": {},
+    "lightDirection": [6, 10, 8],
+    "shadowDirection": [-0.45, 0, -0.75],
+    "contrastZoneMasks": [],
+    "vfxSafetyRegions": []
+  },
+  "humanDecisions": [
+    "approve arena identity",
+    "approve composition",
+    "approve palette",
+    "approve lighting",
+    "approve performance budget",
+    "authorize concept art production"
+  ]
+}

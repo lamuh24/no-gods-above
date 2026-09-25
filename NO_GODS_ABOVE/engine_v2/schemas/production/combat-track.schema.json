@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/combat-track.schema.json",
+  "title": "NGA Combat Track",
+  "description": "Authoritative per-move combat timing. The 60 Hz simulation rate defines tick duration only; production move lengths are independently authored and must never be normalized to a shared duration.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["startup", "active", "recovery", "damage", "hitstop", "hitstun", "blockstun", "boxes", "cancelWindows"],
+  "properties": {
+    "startup": { "type": "integer", "minimum": 0, "description": "Independently authored startup ticks for this move." },
+    "active": { "type": "integer", "minimum": 0, "description": "Authoritative active ticks for this move." },
+    "recovery": { "type": "integer", "minimum": 0, "description": "Committed recovery ticks; do not shorten merely to match another move or category." },
+    "damage": { "type": "integer", "minimum": 0 },
+    "hitstop": { "type": "integer", "minimum": 0 },
+    "hitstun": { "type": "integer", "minimum": 0 },
+    "blockstun": { "type": "integer", "minimum": 0 },
+    "authoredDiveTrack": {
+      "description": "Optional current-air-position dive. simulationLength and authoredTotalDuration become a conservative tooling envelope (maximumAirTicks plus landing recovery), NOT a fixed floor-contact tick. Runtime uses simulation stage and local stage tick; gather holds until actual floor contact. Packages without this optional track retain strict startup + active + recovery = simulationLength.",
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "attackId", "track", "maximumAirTicks", "landingPhase", "landingTrigger", "airExposurePolicy", "hitstopFreezes", "maxHits", "phaseExposures"],
+      "properties": {
+        "owner": { "const": "deterministic_simulation" },
+        "attackId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "maximumAirTicks": { "type": "integer", "minimum": 1, "description": "Conservative startup + ceil(maximumHeight / min(strikeVelocity.y, gatherVelocity.y)); hitstop excludes local progression." },
+        "landingPhase": { "const": "dive_landing" },
+        "landingTrigger": { "const": "actual_floor_contact" },
+        "airExposurePolicy": { "const": "stage_driven" },
+        "hitstopFreezes": { "const": true },
+        "maxHits": { "const": 1 },
+        "track": {
+          "type": "object", "additionalProperties": false,
+          "required": ["minimumHeight", "maximumHeight", "landingApproachHeight", "windupVelocity", "strikeVelocity", "gatherVelocity", "landingRecoveryTicks"],
+          "properties": {
+            "minimumHeight": { "type": "number", "exclusiveMinimum": 0 },
+            "maximumHeight": { "type": "number", "exclusiveMinimum": 0 },
+            "landingApproachHeight": { "type": "number", "exclusiveMinimum": 0, "description": "Before integrating a strike tick that would enter this floor-relative height, simulation retires contact and starts the non-damaging gather stage. Must be below minimumHeight; this can shorten, never extend, the maximum active window." },
+            "windupVelocity": {
+              "type": "object", "additionalProperties": false, "required": ["x", "y"],
+              "properties": { "x": { "type": "number", "minimum": 0 }, "y": { "type": "number", "minimum": 0 } }
+            },
+            "strikeVelocity": { "$ref": "#/$defs/descendingVelocity" },
+            "gatherVelocity": { "$ref": "#/$defs/descendingVelocity" },
+            "landingRecoveryTicks": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "phaseExposures": {
+          "type": "object", "additionalProperties": false, "required": ["windup", "strike", "gather", "landing"],
+          "properties": {
+            "windup": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/diveExposure" }, "description": "Durations sum to combat startup." },
+            "strike": { "type": "array", "minItems": 1, "maxItems": 1, "items": { "$ref": "#/$defs/diveExposure" }, "description": "One continuous contact pose; duration equals combat active." },
+            "gather": { "type": "array", "minItems": 1, "maxItems": 1, "items": { "$ref": "#/$defs/diveExposure" }, "description": "One duration-1 non-damaging pose held until actual floor contact." },
+            "landing": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/diveExposure" }, "description": "Durations sum to the committed landingRecoveryTicks, beginning at actual floor contact." }
+          }
+        }
+      }
+    },
+    "counterTrack": {
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "attackId", "hitstopFreezes", "trigger", "responseMode", "start", "end", "responseStartup", "responseActive", "responseRecovery", "responseStrikeInvulnThrough"],
+      "properties": {
+        "owner": { "const": "deterministic_simulation" }, "attackId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "hitstopFreezes": { "const": true }, "trigger": { "const": "incoming_body_strike" }, "responseMode": { "const": "nested_definition_same_attack_id" },
+        "start": { "type": "integer", "minimum": 0 }, "end": { "type": "integer", "minimum": 0 },
+        "responseStartup": { "type": "integer", "minimum": 1 }, "responseActive": { "type": "integer", "minimum": 1 }, "responseRecovery": { "type": "integer", "minimum": 1 }, "responseStrikeInvulnThrough": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "rootMotionTrack": {
+      "description": "Optional simulation-owned horizontal segments. Inclusive tick ranges are ordered and non-overlapping; cannot coexist with selfMotionTrack or authoredDiveTrack.",
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "attackId", "hitstopFreezes", "segments"],
+      "properties": {
+        "owner": { "const": "deterministic_simulation" },
+        "attackId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "hitstopFreezes": { "const": true },
+        "segments": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["start", "end", "velocity"],
+            "properties": { "start": { "type": "integer", "minimum": 0 }, "end": { "type": "integer", "minimum": 0 }, "velocity": { "type": "number" } }
+          }
+        }
+      }
+    },
+    "selfMotionTrack": {
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "attackId", "hop", "rootMotion", "interruption", "hitstopFreezes"],
+      "properties": {
+        "owner": { "const": "deterministic_simulation" }, "attackId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "hop": { "type": "object", "additionalProperties": false, "required": ["takeoffTick", "apexTick", "landTick", "height"], "properties": { "takeoffTick": { "type": "integer", "minimum": 0 }, "apexTick": { "type": "integer", "minimum": 1 }, "landTick": { "type": "integer", "minimum": 2 }, "height": { "type": "number", "exclusiveMinimum": 0 } } },
+        "rootMotion": { "type": "object", "additionalProperties": false, "required": ["start", "end", "velocity"], "properties": { "start": { "type": "integer", "minimum": 0 }, "end": { "type": "integer", "minimum": 0 }, "velocity": { "type": "number" } } },
+        "interruption": { "const": "handoff_current_position_and_velocity_to_physics" }, "hitstopFreezes": { "const": true }
+      }
+    },
+    "projectileTrack": {
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "attackId", "releaseTick", "maxHits", "independentAfterRelease", "bodyHitboxes", "damage", "spawnOffset", "speed", "gravity", "maxTravel", "lifeTicks", "collisionRect"],
+      "properties": {
+        "owner": { "const": "deterministic_simulation" },
+        "attackId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "releaseTick": { "type": "integer", "minimum": 0 },
+        "maxHits": { "const": 1 },
+        "independentAfterRelease": { "const": true },
+        "bodyHitboxes": { "const": false },
+        "damage": { "type": "integer", "minimum": 1 },
+        "spawnOffset": { "type": "object", "additionalProperties": false, "required": ["x", "y"], "properties": { "x": { "type": "number" }, "y": { "type": "number" } } },
+        "speed": { "type": "number", "exclusiveMinimum": 0 },
+        "gravity": { "type": "number", "minimum": 0 },
+        "maxTravel": { "type": "number", "exclusiveMinimum": 0 },
+        "lifeTicks": { "type": "integer", "minimum": 1 },
+        "collisionRect": { "type": "object", "additionalProperties": false, "required": ["x", "y", "w", "h"], "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "w": { "type": "number", "exclusiveMinimum": 0 }, "h": { "type": "number", "exclusiveMinimum": 0 } } }
+      }
+    },
+    "boxes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["frame", "kind", "x", "y", "width", "height"],
+        "properties": {
+          "frame": { "type": "integer", "minimum": 0 },
+          "kind": { "enum": ["push", "hurt", "hit", "throw", "reflect", "proximity_guard"] },
+          "x": { "type": "integer" },
+          "y": { "type": "integer" },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "cancelWindows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start", "end", "targets"],
+        "properties": {
+          "start": { "type": "integer", "minimum": 0 },
+          "end": { "type": "integer", "minimum": 0 },
+          "targets": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-z0-9_]+$" } }
+        }
+      }
+    },
+    "timingAuthorship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["simulationTickRateHz", "authoredTotalDuration", "durationModel", "durationBasis", "uniformDurationNormalizationProhibited", "visualGameplayAlignment", "timingExceptions"],
+      "properties": {
+        "simulationTickRateHz": { "const": 60 },
+        "authoredTotalDuration": { "type": "integer", "minimum": 1 },
+        "durationModel": { "const": "independently_authored_per_move" },
+        "durationBasis": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["move_weight", "readability", "combat_role", "risk_reward", "character_identity", "animation_quality", "balance"]
+          }
+        },
+        "uniformDurationNormalizationProhibited": { "const": true },
+        "visualGameplayAlignment": { "const": "aligned_by_default" },
+        "timingExceptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["start", "end", "visualState", "gameplayState", "reason", "approvalStatus"],
+            "properties": {
+              "start": { "type": "integer", "minimum": 0 },
+              "end": { "type": "integer", "minimum": 0 },
+              "visualState": { "type": "string", "minLength": 1 },
+              "gameplayState": { "type": "string", "minLength": 1 },
+              "reason": { "type": "string", "minLength": 1 },
+              "approvalStatus": { "const": "approved" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "descendingVelocity": {
+      "type": "object", "additionalProperties": false, "required": ["x", "y"],
+      "properties": { "x": { "type": "number", "minimum": 0 }, "y": { "type": "number", "exclusiveMinimum": 0 } }
+    },
+    "diveExposure": {
+      "type": "object", "additionalProperties": false, "required": ["sourceFrameId", "duration"],
+      "properties": { "sourceFrameId": { "type": "string", "pattern": "^[a-z0-9_]+$" }, "duration": { "type": "integer", "minimum": 1 } }
+    }
+  }
+}

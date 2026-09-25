@@ -1,0 +1,67 @@
+name: NGA Agent Readonly Audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readonly-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Readonly file checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          report="nga-agent-readonly-report.txt"
+          : > "$report"
+          echo "NGA Agent Readonly Audit" >> "$report"
+          echo "Triggered manually by workflow_dispatch." >> "$report"
+          echo "" >> "$report"
+
+          required_files=(
+            "AGENTS.md"
+            "CLAUDE.md"
+            "agent/memory/character_truth.md"
+            "agent/memory/visual_rules.md"
+            "agent/memory/decisions.md"
+            "agent/memory/future_automation_plan.md"
+            "agent/templates/asset_request.md"
+            ".github/PULL_REQUEST_TEMPLATE.md"
+          )
+
+          for path in "${required_files[@]}"; do
+            if [[ -f "$path" ]]; then
+              echo "OK $path" | tee -a "$report"
+            else
+              echo "MISSING $path" | tee -a "$report"
+              exit 1
+            fi
+          done
+
+          if [[ -f "NO_GODS_ABOVE/game.js" ]]; then
+            echo "" >> "$report"
+            echo "Running node --check NO_GODS_ABOVE/game.js" | tee -a "$report"
+            node --check NO_GODS_ABOVE/game.js | tee -a "$report"
+          else
+            echo "SKIP NO_GODS_ABOVE/game.js not found" | tee -a "$report"
+          fi
+
+          echo "" >> "$report"
+          echo "No commits, PRs, deploys, Codex calls, Claude calls, image generation, or paid API calls were run." >> "$report"
+
+      # Do not add schedule/cron until the supervised Issue -> Codex branch -> PR -> Claude review -> human merge loop has succeeded on several tasks.
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: nga-agent-readonly-report
+          path: nga-agent-readonly-report.txt

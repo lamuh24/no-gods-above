@@ -1,0 +1,58 @@
+{
+  "name": "no-gods-above-steam-shell",
+  "version": "0.1.0-steam-demo",
+  "private": true,
+  "description": "Steam desktop wrapper for No Gods Above.",
+  "author": "No Gods Above",
+  "main": "main.js",
+  "scripts": {
+    "dev": "npm run stage:web && electron . --dev",
+    "stage:web": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ../scripts/stage-steam-web-build.ps1",
+    "start": "npm run stage:web && electron .",
+    "build": "npm run stage:web",
+    "package:win": "npm run stage:web && electron-builder --win dir",
+    "steam:stage": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ../scripts/stage-steam-release.ps1",
+    "pack:win": "npm run package:win",
+    "dist:win": "npm run package:win"
+  },
+  "devDependencies": {
+    "electron": "^42.5.0",
+    "electron-builder": "^26.0.12",
+    "peerjs": "1.5.4"
+  },
+  "build": {
+    "appId": "com.nogodsabove.game",
+    "productName": "No Gods Above",
+    "executableName": "NoGodsAbove",
+    "directories": {
+      "output": "release"
+    },
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/game",
+        "to": "game",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "dir"
+      ]
+    },
+    "nsis": {
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "artifactName": "NoGodsAbove-${version}-Setup.${ext}"
+    }
+  }
+}

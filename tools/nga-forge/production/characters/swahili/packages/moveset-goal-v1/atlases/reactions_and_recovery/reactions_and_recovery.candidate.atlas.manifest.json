@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_CANDIDATE_FAMILY_ATLAS",
+  "family": "reactions_and_recovery",
+  "candidateOnly": true,
+  "deployable": false,
+  "finalShippingAtlas": false,
+  "packing": {
+    "algorithm": "deterministic_variable_trim_shelf_pages",
+    "maxPageSize": [
+      4096,
+      4096
+    ],
+    "extrudePixels": 1,
+    "gapPixels": 2,
+    "explicitSourceBounds": true,
+    "anchorOffsetsPreserved": true
+  },
+  "pageCount": 1,
+  "sourceAssetCount": 16,
+  "pages": [
+    {
+      "pageIndex": 0,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/reactions_and_recovery/reactions_and_recovery.candidate.page-01.png",
+      "width": 4090,
+      "height": 3652,
+      "sha256": "E0DACA23EA22DFD960988538ABE64A399C279190D966114AC5A96912562A573F"
+    }
+  ],
+  "frames": {
+    "asset_01e5a9544c3ceaa4": {
+      "pageIndex": 0,
+      "region": {
+        "x": 657,
+        "y": 2749,
+        "width": 678,
+        "height": 682
+      },
+      "sourceBounds": {
+        "x": 429,
+        "y": 726,
+        "width": 678,
+        "height": 682
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png",
+      "sourceSha256": "01E5A9544C3CEAA47F137608AE66DCD8B96DB96C7643C69C28CC75A9D3A866A6",
+      "sourcePixelSha256": "BA4BDF8E05FCBC0C1AEF057F13A1C5484CEB41D3A79DA6F700DEAF8415573AFB",
+      "anchorOffset": {
+        "rootX": 339,
+        "rootY": 682
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_09_neutral_get_up"
+        }
+      ]
+    },
+    "asset_1574e722e395a86a": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2662,
+        "y": 1074,
+        "width": 561,
+        "height": 766
+      },
+      "sourceBounds": {
+        "x": 488,
+        "y": 642,
+        "width": 561,
+        "height": 766
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png",
+      "sourceSha256": "1574E722E395A86A9508713786E55FC8DA048E7514AF80585D1E8D94842F40A1",
+      "sourcePixelSha256": "7F96DD25CEE67B6DA792973998618805A3479FA276E8E868CDDF9312996521BF",
+      "anchorOffset": {
+        "rootX": 280,
+        "rootY": 766
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_02_airborne_tumble"
+        }
+      ]
+    },
+    "asset_1728c8728d439290": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 1074,
+        "width": 942,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 278,
+        "y": 340,
+        "width": 942,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_entry.png",
+      "sourceSha256": "1728C8728D43929080A0D08DB38DF56CAE0B86F5C9AFB82F8E98D428C8808ED3",
+      "sourcePixelSha256": "FA326C62C475C4193C0AD8E1E9A9A6BC3E99A192A946D50F7FBE8438736472C1",
+      "anchorOffset": {
+        "rootX": 490,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "light_hit_reaction",
+          "sourceFrameId": "light_hit_entry"
+        }
+      ]
+    },
+    "asset_2eba6c233687ce34": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 920,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 166,
+        "y": 341,
+        "width": 920,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png",
+      "sourceSha256": "2EBA6C233687CE3426B9439DFF334F82811292952E9276DF9F26140CDBAC9096",
+      "sourcePixelSha256": "7CE7FD7C2BBF8BB78806A8C43544F2BB0FC36BE84789D54F0E3DC66CDADB974A",
+      "anchorOffset": {
+        "rootX": 602,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "heavy_hit_reaction",
+          "sourceFrameId": "heavy_hit_reaction"
+        }
+      ]
+    },
+    "asset_50d7f88c80c71414": {
+      "pageIndex": 0,
+      "region": {
+        "x": 927,
+        "y": 3,
+        "width": 899,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 294,
+        "y": 340,
+        "width": 899,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/light_hit_reaction.png",
+      "sourceSha256": "50D7F88C80C71414CA0474E7DECF8EC7612924149F5FEC5381B95370CFFCB6F7",
+      "sourcePixelSha256": "24521962A7D00407B9DCF560C46F3F1567CDFCA2B4EAE4576C36EBB73489ED13",
+      "anchorOffset": {
+        "rootX": 474,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "light_hit_reaction",
+          "sourceFrameId": "light_hit_reaction"
+        }
+      ]
+    },
+    "asset_5c3f8993bc3d8c25": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1111,
+        "y": 2145,
+        "width": 1043,
+        "height": 475
+      },
+      "sourceBounds": {
+        "x": 246,
+        "y": 933,
+        "width": 1043,
+        "height": 475
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png",
+      "sourceSha256": "5C3F8993BC3D8C2588E75ABDA754B45313134857CE8D9426861AE283E3D31A31",
+      "sourcePixelSha256": "4D612C1E9CBB244470C5454CEC81225CEEEAD715FEF68192AE2D2AEF2036F6E4",
+      "anchorOffset": {
+        "rootX": 522,
+        "rootY": 475
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_05_face_up_knockdown"
+        }
+      ]
+    },
+    "asset_7b0212226fd30a87": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1734,
+        "y": 1074,
+        "width": 924,
+        "height": 779
+      },
+      "sourceBounds": {
+        "x": 306,
+        "y": 629,
+        "width": 924,
+        "height": 779
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/01_launch_reaction.png",
+      "sourceSha256": "7B0212226FD30A878901FC15F5586EF809E07BBA0BFFD6E88DFED369DF4A7C73",
+      "sourcePixelSha256": "9DC3B4970F9319E370890F5BD7BE32F68C53F6D7991164E26B52AC73283EA078",
+      "anchorOffset": {
+        "rootX": 462,
+        "rootY": 779
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_01_launch_reaction"
+        }
+      ]
+    },
+    "asset_8c81c0b7423733b4": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1339,
+        "y": 2749,
+        "width": 709,
+        "height": 900
+      },
+      "sourceBounds": {
+        "x": 414,
+        "y": 508,
+        "width": 709,
+        "height": 900
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png",
+      "sourceSha256": "8C81C0B7423733B42FBE5B5812A052C460F279165FA6056DE35D0440D46A060D",
+      "sourcePixelSha256": "548BEDE1071DDD3B6D6EB4B1DB376121D2BDDA9EF500E2915901DFFE2A68C928",
+      "anchorOffset": {
+        "rootX": 354,
+        "rootY": 900
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_10_rise_to_stand"
+        }
+      ]
+    },
+    "asset_c4048fb7106aab0a": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1830,
+        "y": 3,
+        "width": 935,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 130,
+        "y": 340,
+        "width": 935,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_entry.png",
+      "sourceSha256": "C4048FB7106AAB0A6E365367CEB6C1B6B64B922DF56EB4F628531272A10662A7",
+      "sourcePixelSha256": "AFA9EBFD64DC9EBA31FD9AEB7DD7E6DAA9169CC962D88AA2CD00FC547C4E3AED",
+      "anchorOffset": {
+        "rootX": 638,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "heavy_hit_reaction",
+          "sourceFrameId": "heavy_hit_entry"
+        }
+      ]
+    },
+    "asset_c5a6c7f05bd01ccc": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 2749,
+        "width": 650,
+        "height": 670
+      },
+      "sourceBounds": {
+        "x": 443,
+        "y": 738,
+        "width": 650,
+        "height": 670
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png",
+      "sourceSha256": "C5A6C7F05BD01CCCE0B275F35C3BC5F971C9FDF56B75A61BD745F45FD082AC20",
+      "sourcePixelSha256": "D3D21DF1742BDCE594342FD150C7F3F7B9072CB9322841A8FF7CBE82EC4E7300",
+      "anchorOffset": {
+        "rootX": 325,
+        "rootY": 670
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_08_push_to_kneel"
+        }
+      ]
+    },
+    "asset_dbe082b7386c35ae": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3227,
+        "y": 1074,
+        "width": 860,
+        "height": 669
+      },
+      "sourceBounds": {
+        "x": 338,
+        "y": 739,
+        "width": 860,
+        "height": 669
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png",
+      "sourceSha256": "DBE082B7386C35AE7EA60387F6B97CE34F0095340D6174B1926C4678E6AA2874",
+      "sourcePixelSha256": "E9AC8BE961A16DBBFA595A5D7B5C7880C468A551907B55F164942BC176106525",
+      "anchorOffset": {
+        "rootX": 430,
+        "rootY": 669
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_03_ground_impact"
+        }
+      ]
+    },
+    "asset_e12dce0e7cab12f4": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2989,
+        "y": 2145,
+        "width": 882,
+        "height": 600
+      },
+      "sourceBounds": {
+        "x": 327,
+        "y": 808,
+        "width": 882,
+        "height": 600
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/07_face_up_roll_brace.png",
+      "sourceSha256": "E12DCE0E7CAB12F4B0E03C4F686DC11A2C2CB3BC59499CEACDF44B58F4E164DD",
+      "sourcePixelSha256": "B0FECD0E978EED33AA2B6FCC56E24BA0599CBF7D28FCA8B31438FCC4751F9A19",
+      "anchorOffset": {
+        "rootX": 441,
+        "rootY": 600
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_07_face_up_roll_brace"
+        }
+      ]
+    },
+    "asset_e5b0b19c233d7599": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2158,
+        "y": 2145,
+        "width": 827,
+        "height": 555
+      },
+      "sourceBounds": {
+        "x": 354,
+        "y": 853,
+        "width": 827,
+        "height": 555
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/06_shoulder_roll_knee_draw.png",
+      "sourceSha256": "E5B0B19C233D7599BF91CF2478D22425B759150ECB25A0332551A4C24FA1E8F2",
+      "sourcePixelSha256": "54ED3B547EE1B097743B771B670DEA48C7B51C68F37830844C817C5E7834789F",
+      "anchorOffset": {
+        "rootX": 414,
+        "rootY": 555
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_06_shoulder_roll_knee_draw"
+        }
+      ]
+    },
+    "asset_f612ee1a43b87d6a": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2769,
+        "y": 3,
+        "width": 1039,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 152,
+        "y": 340,
+        "width": 1039,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_recovery.png",
+      "sourceSha256": "F612EE1A43B87D6A6F2C321EF77BA2B82E6031C5E4A22652FDB1A82330AF79EB",
+      "sourcePixelSha256": "8A1BF249E11FD30BFA72A8DADC9368D86342564EFDDFF249E9448151E895E767",
+      "anchorOffset": {
+        "rootX": 616,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "heavy_hit_reaction",
+          "sourceFrameId": "heavy_hit_recovery"
+        }
+      ]
+    },
+    "asset_fc73b12790cc069b": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 2145,
+        "width": 1104,
+        "height": 560
+      },
+      "sourceBounds": {
+        "x": 216,
+        "y": 848,
+        "width": 1104,
+        "height": 560
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png",
+      "sourceSha256": "FC73B12790CC069B4645A8D43620BCF34787A3EEAD4EDE06DEE09FCC9FC1EBB9",
+      "sourcePixelSha256": "37B90590B4442628AD0C9F0C69054227F6A49EDD73248F44A08D3C149F511C38",
+      "anchorOffset": {
+        "rootX": 552,
+        "rootY": 560
+      },
+      "aliases": [
+        {
+          "packageId": "knockdown_recovery",
+          "sourceFrameId": "knockdown_recovery_04_impact_settle"
+        }
+      ]
+    },
+    "asset_ff44928ab1f4be56": {
+      "pageIndex": 0,
+      "region": {
+        "x": 949,
+        "y": 1074,
+        "width": 781,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 319,
+        "y": 340,
+        "width": 781,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_recovery.png",
+      "sourceSha256": "FF44928AB1F4BE560769D1BA76DD671876DBF2F07128506C799C61732B65DEC7",
+      "sourcePixelSha256": "8FB15C73B23A72CBE6AF7356EFBF168D17E1A1C96F4EB4D86A3675B9F66C1A08",
+      "anchorOffset": {
+        "rootX": 449,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "light_hit_reaction",
+          "sourceFrameId": "light_hit_recovery"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "pixelExactReconstruction": true,
+    "reconstructionMismatches": []
+  }
+}

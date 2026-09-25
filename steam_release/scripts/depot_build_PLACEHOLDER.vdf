@@ -1,0 +1,13 @@
+// SteamPipe depot build template for the Windows No Gods Above demo.
+// Replace STEAM_DEPOT_ID_PLACEHOLDER with the real Windows depot ID.
+"DepotBuildConfig"
+{
+    "DepotID" "STEAM_DEPOT_ID_PLACEHOLDER"
+    "ContentRoot" "content/NoGodsAbove"
+    "FileMapping"
+    {
+        "LocalPath" "*"
+        "DepotPath" "."
+        "recursive" "1"
+    }
+}

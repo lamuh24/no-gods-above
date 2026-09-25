@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_CANDIDATE_FAMILY_ATLAS",
+  "family": "defense",
+  "candidateOnly": true,
+  "deployable": false,
+  "finalShippingAtlas": false,
+  "packing": {
+    "algorithm": "deterministic_variable_trim_shelf_pages",
+    "maxPageSize": [
+      4096,
+      4096
+    ],
+    "extrudePixels": 1,
+    "gapPixels": 2,
+    "explicitSourceBounds": true,
+    "anchorOffsetsPreserved": true
+  },
+  "pageCount": 1,
+  "sourceAssetCount": 6,
+  "pages": [
+    {
+      "pageIndex": 0,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/defense/defense.candidate.page-01.png",
+      "width": 4037,
+      "height": 2144,
+      "sha256": "789D7241DDD67FAA9B27E407545FB0B44D11CC98645DA6A1E22DBB5AB7102BDE"
+    }
+  ],
+  "frames": {
+    "asset_17dec08de0281fc7": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 1074,
+        "width": 736,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 322,
+        "y": 340,
+        "width": 736,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/standing_block_release.png",
+      "sourceSha256": "17DEC08DE0281FC74837B212CFCAB781AEB7CF6AE6F782D985211C1870119218",
+      "sourcePixelSha256": "DBB255928E898FA959A29334C2A843784DC061E13BFACFF7A7D4E44FBAA12D77",
+      "anchorOffset": {
+        "rootX": 446,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "standing_block",
+          "sourceFrameId": "standing_block_release"
+        }
+      ]
+    },
+    "asset_1995d4f21aba5e65": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2377,
+        "y": 3,
+        "width": 912,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 341,
+        "width": 912,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_release.png",
+      "sourceSha256": "1995D4F21ABA5E6568DFCD05F92AE3F88D9FE83975DD9DE8293A81DE32718DF6",
+      "sourcePixelSha256": "1B4B02C855D624EA84FE29899AF60BA6A39B13E8422B63F4D5669DDF37B980FF",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_block",
+          "sourceFrameId": "crouching_block_release"
+        }
+      ]
+    },
+    "asset_3c73eee7725e8810": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 776,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 334,
+        "y": 340,
+        "width": 776,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouching_block_v2.png",
+      "sourceSha256": "3C73EEE7725E881064723C23CF82A50A5AB174B2EDB98F4BA6C9CF2DA5315018",
+      "sourcePixelSha256": "4635096ADF50FF68364BEFBEAE278E414C49C55E2B330499E78676CA2E26F8E5",
+      "anchorOffset": {
+        "rootX": 434,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_block",
+          "sourceFrameId": "crouching_block_v2"
+        }
+      ]
+    },
+    "asset_797b81c73bdb75a6": {
+      "pageIndex": 0,
+      "region": {
+        "x": 783,
+        "y": 3,
+        "width": 739,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 322,
+        "y": 340,
+        "width": 739,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/standing_block.png",
+      "sourceSha256": "797B81C73BDB75A68C1471E25D5551DB30A2009594481CDAD8CA5EDB66EBB9F8",
+      "sourcePixelSha256": "7D491B0302F71C8D15B223A39CEA02A5A90A9A5167B32576D6CD299B2E8064BD",
+      "anchorOffset": {
+        "rootX": 446,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "standing_block",
+          "sourceFrameId": "standing_block"
+        }
+      ]
+    },
+    "asset_af54a25a0b991413": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1526,
+        "y": 3,
+        "width": 847,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 333,
+        "y": 341,
+        "width": 847,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_entry.png",
+      "sourceSha256": "AF54A25A0B991413E9EFB3EA7F046A04841D228CB9720D491041AE5E1B1521A8",
+      "sourcePixelSha256": "779F0EC39D2BEBD58800A19802184684EFBD81C8A0D030764325B1D2A47EA727",
+      "anchorOffset": {
+        "rootX": 435,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "crouching_block",
+          "sourceFrameId": "crouching_block_entry"
+        }
+      ]
+    },
+    "asset_c10b7c39d0b96058": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3293,
+        "y": 3,
+        "width": 741,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 317,
+        "y": 340,
+        "width": 741,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/standing_block_entry.png",
+      "sourceSha256": "C10B7C39D0B9605849CD0A07F7BC6154DFC38A9CC39D5C48969EDB8CE79EE32A",
+      "sourcePixelSha256": "665A970B247200ECCB44BD8495B169BA99FBF2C53E3F09D459AACF9CF143AF18",
+      "anchorOffset": {
+        "rootX": 451,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "standing_block",
+          "sourceFrameId": "standing_block_entry"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "pixelExactReconstruction": true,
+    "reconstructionMismatches": []
+  }
+}

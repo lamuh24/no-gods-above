@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-10T18:18:28.499Z",
+  "characterId": "sable",
+  "clipId": "back_heavy",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_heavy/v20260710-141827/sable_back_heavy_normalized_strip.png",
+  "expected": {
+    "clipId": "back_heavy",
+    "category": "normal",
+    "frameCount": 6,
+    "fps": 11,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_heavy/v20260710-141827/sable_back_heavy_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hitFrames": [
+      3
+    ],
+    "cancelFrames": [
+      5
+    ],
+    "notes": [
+      "full-rebuild-v3 directional normal. Heavy defensive/back normal with stronger commitment and recovery, not a Void Anchor placement. Frame target lowered from 12 to 6 after the first 7-frame text-only attempt failed the pre-contact reach gate; one committed right-arm retreating counter-strike, contact on visual frame 4/index 3, follow-through, and recovery toward guard."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 6,
+    "rows": 1,
+    "frameCount": 6
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "SCALE_DRIFT",
+      "message": "Frame height drift is 35px (317px..352px); max is 34px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 26775,
+      "bbox": {
+        "x": 130,
+        "y": 30,
+        "width": 188,
+        "height": 352,
+        "right": 317,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000001111111111100000111111111110001111111111111000011111111111100000111111111110010011111111110011001111111111001100111111111001110011111111100111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 29395,
+      "bbox": {
+        "x": 130,
+        "y": 59,
+        "width": 188,
+        "height": 323,
+        "right": 317,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111001111111111110000111111111110000001111111111000000111111111110000011111111111000011111111111100000111111111110000001111111111000001111111111000100111111111001110011111111110111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 27150,
+      "bbox": {
+        "x": 84,
+        "y": 65,
+        "width": 280,
+        "height": 317,
+        "right": 363,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111001111111111111000111111111111000000011111111000000011111111110001111111111110000111111111111000000111111111100000011111111100011001111111100011101111111110011110011111111001111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 26341,
+      "bbox": {
+        "x": 81,
+        "y": 59,
+        "width": 286,
+        "height": 323,
+        "right": 366,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111110001111111111111000111111111111000000011111111000000111111111110001111111111110000111111111111000001111111111100100011111111100010011111111100111001111111110011100011111111001111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 25539,
+      "bbox": {
+        "x": 144,
+        "y": 63,
+        "width": 160,
+        "height": 319,
+        "right": 303,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111001111111111111000111111111111000011111111111100001111111111100000111111111110000011111111111100000111111111111000011111111111000001111111111100001111111111100001111111111110010111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 25602,
+      "bbox": {
+        "x": 131,
+        "y": 50,
+        "width": 186,
+        "height": 332,
+        "right": 316,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111110001111111111111000111111111111000001111111111100000111111111110000011111111111000011111111111100000111111111110000011111111111001001111111111001100111111111001110011111111100111000111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

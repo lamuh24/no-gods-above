@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_universal_grab_attempt_visual_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "standardVictimClass": "standard_humanoid",
+  "timingAndCombatChanged": false,
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json",
+    "sha256": "02D919FD75C9DEECC84B7D329D043227AA6FE6EE327F80875DA7C471BF977C33"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+    "sha256": "532DD6D2B211301CAC1B0F45BE4101B8F94B3BEA473B99A81F33E92FA3A8C0AD"
+  },
+  "sequence": {
+    "id": "universal_grab_attempt",
+    "authoredFrameCount": 6,
+    "totalTicks": 20,
+    "exposureTicks": [
+      3,
+      2,
+      3,
+      3,
+      4,
+      5
+    ],
+    "connectTick": 4,
+    "releaseTick": null,
+    "frames": [
+      {
+        "index": 0,
+        "role": "guarded_neutral_entry",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/universal-grab-attempt/universal-grab-attempt-00.png",
+        "sha256": "0E48089A56ED72F3DC9BD7EC9337F5FBBB65AC75DB9C5555E965F00BCFCE6574",
+        "sourceSha256": "1A799BB3624D79A129F00F2F7BE6EC94C048D369EFC09BFC10F72682E2157526",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 467,
+          "minY": 585,
+          "maxX": 1044,
+          "maxY": 1366
+        },
+        "bodyCenter": {
+          "x": 757.61,
+          "y": 1000.56
+        }
+      },
+      {
+        "index": 1,
+        "role": "body_driven_reach",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/universal-grab-attempt/universal-grab-attempt-01.png",
+        "sha256": "71F691A15CB3FD974B28FF5C36E0EF2857A0F74D85298571D889574D4DA7701D",
+        "sourceSha256": "1A799BB3624D79A129F00F2F7BE6EC94C048D369EFC09BFC10F72682E2157526",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 479,
+          "minY": 601,
+          "maxX": 1248,
+          "maxY": 1368
+        },
+        "bodyCenter": {
+          "x": 826.2,
+          "y": 995.11
+        }
+      },
+      {
+        "index": 2,
+        "role": "maximum_reach",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/universal-grab-attempt/universal-grab-attempt-02.png",
+        "sha256": "B3D39C925A8C8669FC00FE9795D18F91C512C9D1E1151E7DC354ECDE4AE9DB66",
+        "sourceSha256": "1A799BB3624D79A129F00F2F7BE6EC94C048D369EFC09BFC10F72682E2157526",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 487,
+          "minY": 623,
+          "maxX": 1214,
+          "maxY": 1368
+        },
+        "bodyCenter": {
+          "x": 818.95,
+          "y": 1005.52
+        }
+      },
+      {
+        "index": 3,
+        "role": "secure_ready",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/universal-grab-attempt/universal-grab-attempt-03.png",
+        "sha256": "519EE491238DE80363BE429055199EEA8630890F12A5E0ECB598779F25E3B699",
+        "sourceSha256": "1A799BB3624D79A129F00F2F7BE6EC94C048D369EFC09BFC10F72682E2157526",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 487,
+          "minY": 631,
+          "maxX": 1032,
+          "maxY": 1370
+        },
+        "bodyCenter": {
+          "x": 765.17,
+          "y": 1022.74
+        }
+      },
+      {
+        "index": 4,
+        "role": "whiff_recoil",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/universal-grab-attempt/universal-grab-attempt-04.png",
+        "sha256": "A57B5D7246CACD893C20F0A18C586D4A42771EDC6CF3D969B9AFF1211635BD2F",
+        "sourceSha256": "1A799BB3624D79A129F00F2F7BE6EC94C048D369EFC09BFC10F72682E2157526",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 511,
+          "minY": 619,
+          "maxX": 996,
+          "maxY": 1378
+        },
+        "bodyCenter": {
+          "x": 743.65,
+          "y": 1026.64
+        }
+      },
+      {
+        "index": 5,
+        "role": "guarded_recovery",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/universal-grab-attempt/universal-grab-attempt-05.png",
+        "sha256": "BC0E498FBEE97D22EF94EDEAE0388C3EFB4791F7F0090D4DF5BA6E46C955D36D",
+        "sourceSha256": "1A799BB3624D79A129F00F2F7BE6EC94C048D369EFC09BFC10F72682E2157526",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 465,
+          "minY": 597,
+          "maxX": 1046,
+          "maxY": 1374
+        },
+        "bodyCenter": {
+          "x": 756.72,
+          "y": 1010.57
+        }
+      }
+    ]
+  },
+  "approvalStatus": "APPROVED_STANDARD_GRAB",
+  "humanApproval": "APPROVED_STANDARD_GRAB",
+  "approvalReceipt": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/standard-grab-throw-family-v1.approval.json",
+    "sha256": "68A394EF16F12FB35C1C1D760A88E74989C9AC498616DE64085F5F29DB487A3A"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0-arena-concept-direction",
+  "arenaId": "the_last_tribunal",
+  "status": "production_arena_graybox_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_graybox_and_concept_approval",
+  "generationMode": "built_in_image_generation",
+  "compositionBoard": {
+    "path": "concept_composition_board_v1.png",
+    "sha256": "E8921A73260B9894666A6CFF1962CDFDECBF998ABA46592C1E398D83C4587958",
+    "purpose": "Concept-only review board for eight coordinated camera compositions; never loaded by runtime."
+  },
+  "requiredViews": [
+    "wide_establishing",
+    "standard_gameplay_camera",
+    "left_corner",
+    "right_corner",
+    "jump_height",
+    "command_grab",
+    "super_ultimate_wide",
+    "intro_victory"
+  ],
+  "approvedCarryForward": [
+    "high central eclipse above standard fighter head band",
+    "broad dark value grouping through the combat lane",
+    "matte floor and restrained radial judgment motif",
+    "empty gallery depth and solemn institutional silhouette",
+    "cathedral-red banners outside the core contrast zone",
+    "asymmetric camera compositions that preserve the same arena identity"
+  ],
+  "grayboxCorrections": [
+    "reduce statues, small brass trim, and gallery micro-detail behind fighters",
+    "keep the oculus higher than generated panels place it during jump framing",
+    "lower brass luminance so Swahili gold trim remains distinct",
+    "remove foreground scales and ornaments that could violate the four-percent edge occlusion limit",
+    "simplify floor rings and eliminate high-frequency radial linework in the core lane"
+  ],
+  "contrastStudySource": "../graybox/captures/contrast_study_clean.png",
+  "promptRecord": "concept_composition_board_v1.prompt.md"
+}

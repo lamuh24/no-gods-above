@@ -1,0 +1,37 @@
+{
+  "clipId": "crouch",
+  "category": "movement",
+  "frameCount": 8,
+  "fps": 8,
+  "loop": true,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/crouch/vzzzzz-crouch01-thresholded/sable_crouch_8.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/crouch/v20260709-135936/sable_crouch_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 movement pass. Low guarded crouch loop with readable knees, boots, torso, and forearm crystals; not a Ground Rift special and not idle with lowered opacity."
+  ],
+  "validation": {
+    "maxScaleDriftPx": 110,
+    "scaleDriftRationale": "Crouch movement intentionally includes a standing-to-low silhouette height change; baseline, center, facing, and global normalization must still remain stable."
+  },
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-11T04:55:17.251Z",
+  "approvalPolicy": "manual-promote-preview"
+}

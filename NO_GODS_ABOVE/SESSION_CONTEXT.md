@@ -2,7 +2,51 @@
 
 ## Last Updated
 Agent: Codex
-Date: 2026-05-31
+Date: 2026-06-26 (Steam packaging checkpoint audit)
+
+## What Was Done (Codex 2026-06-26 Steam packaging checkpoint audit)
+- Audited the dirty working tree before any Sable/gameplay work.
+- Confirmed `NO_GODS_ABOVE/game.js`, `NO_GODS_ABOVE/index.html`, and `NO_GODS_ABOVE/style.css` contain mobile runtime/UI/animation alias work, not Steam packaging changes.
+- Confirmed `NO_GODS_ABOVE/assets/sprites/mobile_alpha/` contains generated mobile transparent runtime atlases and `CONTENT/` contains Sable/lore/promo material. Neither is required for the Steam packaging checkpoint.
+- Created a packaging-only staged set and left runtime/mobile/content work unstaged.
+
+## What's Next (Codex 2026-06-26 Steam packaging checkpoint audit)
+- If the staged set is approved, commit with `prepare steam desktop packaging checkpoint`.
+- After that checkpoint, create or switch to `feature/sable-playable-mvp` before starting Sable work.
+
+## Gotchas / Watch Out For (Codex 2026-06-26 Steam packaging checkpoint audit)
+- Obsidian Local REST sync was attempted at `https://127.0.0.1:27124/` and `http://127.0.0.1:27124/`; both returned HTTP `000`.
+- Fallback note written to `C:\Users\qchee\OneDrive\Documents\LAMUH\LAMUH\Agent Sync\2026-06-26-no-gods-above-packaging-checkpoint-audit.md`.
+
+## What Was Done (Codex 2026-06-26 Steam Windows demo packaging)
+- Prepared a Steam Windows desktop packaging lane for the existing static Canvas game without changing gameplay, roster, combat tuning, or runtime asset mappings.
+- Added/updated Steam tooling in the repo root and `steam/`:
+  - root `package.json` convenience scripts for desktop dev/start/build/package.
+  - `steam/desktop/` Electron shell for `NoGodsAbove.exe`.
+  - `steam/scripts/stage-steam-web-build.ps1` to reuse `_stage_deploy.ps1`, stage runtime assets, vendor PeerJS locally for Electron, rewrite staged HTML to `vendor/peerjs.min.js`, and write build metadata.
+  - `steam/scripts/build-windows-steam.ps1` to install dependencies, fail on npm/package errors, build Windows Electron output, and stage release content.
+  - `steam/scripts/stage-steam-release.ps1` to copy the unpacked package to `steam_release/content/NoGodsAbove/`.
+  - `steam/scripts/write-steampipe-vdf.ps1` to generate SteamPipe VDFs after real Steamworks App ID and Depot ID are known.
+- Added `NO_GODS_ABOVE/docs/steam_release_plan.md` and updated `NO_GODS_ABOVE/docs/deployment_checklist.md` with the Steam packaging path.
+- Built a Windows package successfully at `steam_release/content/NoGodsAbove/NoGodsAbove.exe` using Electron 42.5.0. The generated release folder is ignored by git.
+
+## In Progress (Codex 2026-06-26 Steam Windows demo packaging)
+- Human Steamworks setup is still required: partner/app access, Steam Direct app fee, App ID, Depot ID, store assets, launch option, build/store review, and Coming Soon timing.
+
+## Key Decisions (Codex 2026-06-26 Steam Windows demo packaging)
+- First Steam target is a Windows desktop wrapper around the current web game, not a gameplay rewrite or Steamworks SDK integration.
+- Steam staging vendors PeerJS for the packaged app so it does not need unpkg to boot, but Online Versus still uses PeerJS public signaling rather than Steam networking.
+- Do not upload the full `NO_GODS_ABOVE` source folder to Steam; use the staged release output.
+
+## What's Next (Codex 2026-06-26 Steam Windows demo packaging)
+- Create the Steamworks app/depot and rerun `steam/scripts/write-steampipe-vdf.ps1` with the real App ID and Depot ID.
+- Add final capsule/header/library art, screenshots, trailer, descriptions, and questionnaire answers.
+- Run hands-on Steam executable QA through Local Versus, Training, every public fighter, keyboard/controller, fullscreen, and exit flow before uploading.
+
+## Gotchas / Watch Out For (Codex 2026-06-26 Steam Windows demo packaging)
+- Validation passed: `node --check` for `NO_GODS_ABOVE/game.js`, `steam/desktop/main.js`, and `steam/desktop/preload.js`; `npm audit` in `steam/desktop` found 0 vulnerabilities; Steam web staging copied 128 assets with 0 missing; Windows package built 376 files / ~590.1 MB; sample VDF generation succeeded; packaged executable launch smoke stayed alive for 8 seconds and was cleaned up.
+- `git diff --check` still reports only existing LF/CRLF normalization warnings on edited text files.
+- Browser deep gameplay smoke was not rerun against the Electron package in this pass; run hands-on QA before uploading to Steam.
 
 ## What Was Done
 - Replaced the rejected Seris Sheet 4 Row 1 / Air Medium polish with a fresh generated row-only strip. The previous existing-frame cleanup approach was discarded, and `scripts\polish_seris_revamp_final.py` was removed so it is not reused.

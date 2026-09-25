@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "1.0.0",
+  "moveId": "crouching_light",
+  "status": "V1_ALIAS_EVIDENCE_LOCKED_FOR_DISTINCT_V2_LOW_ATTACK_MODERNIZATION",
+  "candidateOnly": true,
+  "deployable": false,
+  "simulationHz": 60,
+  "legacySourceFrameCount": 4,
+  "authoredFrameCount": 7,
+  "sourceMotionReusable": true,
+  "sourceArtworkReusableAsLegacyEvidence": true,
+  "sourceArtworkRuntimeReusable": false,
+  "legacyGameplayEvidence": {
+    "durationTicks": 14,
+    "damage": 32,
+    "currentV2CandidateDamage": 22,
+    "historicalContactTick": null,
+    "legacyArtSource": "standing_light_v1_alias",
+    "note": "V1 Crouching Light had no distinct source row; it aliased Standing Light artwork. Exact per-pose holds and frame-indexed contact were not stored."
+  },
+  "authoredRootContract": {
+    "kind": "in_place_bottom_center",
+    "legacyRoot": {
+      "x": 224,
+      "y": 382
+    },
+    "v2CandidateRoot": {
+      "x": 768,
+      "y": 1360
+    },
+    "runtimeRootTranslation": false,
+    "visualRecenteringProhibited": true,
+    "perFrameRendererScaleProhibited": true,
+    "note": "Generated source-camera differences may be repaired during source normalization, but review/runtime presentation uses one fixed scale and one fixed root."
+  },
+  "strikingLimb": "lead_arm_same_limb_low_palm_check_through_contact_and_recovery",
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1,
+    "impactFrame": 3,
+    "rule": "Only authored V2 frame 03 may show contact VFX. Frames 04-06 remain same-arm follow-through, recoil and crouched recovery."
+  },
+  "modernizationDecision": {
+    "classification": "MODERNIZE",
+    "reason": "V1 provided gameplay timing and a Standing Light artwork alias, not a distinct crouching attack animation.",
+    "preserve": [
+      "compact lead-arm attack rhythm",
+      "wide planted base",
+      "fast strike acceleration",
+      "body-driven shoulder and hip motion",
+      "coat and loc follow-through",
+      "guard-return direction"
+    ],
+    "authorForV2": [
+      "distinct low silhouette",
+      "crouch-compatible entry and exit",
+      "single low palm-check trajectory",
+      "outline-free NGA V2 artwork",
+      "one-visible-impact parity"
+    ],
+    "identityRead": "A fast body-driven low check, clearly lighter and lower than Standing Medium and distinct from Standing Light without borrowing Swahili's weapon identity."
+  },
+  "legacyFrames": [
+    {
+      "index": 0,
+      "id": "standing_light_frame_00",
+      "sha256": "3A6095A6DFB31DD0E2FCA90F1AF48DDE765F2C021E352728F57B8D12AB5C02ED",
+      "motionTruth": "Wide ready stance with both feet grounded.",
+      "v2Use": "Planted-base and entry-direction evidence only."
+    },
+    {
+      "index": 1,
+      "id": "standing_light_frame_01",
+      "sha256": "CC53C53C9C7690D023AC3092AC4DAB52EE1F46E91A3BD7F120AF720099332C50",
+      "motionTruth": "Compact lead-arm straight trajectory.",
+      "v2Use": "Lead-arm acceleration and contact-path evidence."
+    },
+    {
+      "index": 2,
+      "id": "standing_light_frame_02",
+      "sha256": "8BBA05D4CA0FC65D5D49BE03E21022CE8BDDC9CF4A32841B43EBEE100AACB1F4",
+      "motionTruth": "Guarded body compression with weight settled through the legs.",
+      "v2Use": "Low chamber and recoil-direction evidence."
+    },
+    {
+      "index": 3,
+      "id": "standing_light_frame_03",
+      "sha256": "D36B1378B5D8B167803C59CA188EE8F2ECC576FAC57ACC56939FD42DE727DFF5",
+      "motionTruth": "Second full extension in the aliased row conflicts with one-hit playback.",
+      "v2Use": "Forward-momentum evidence only; no second contact."
+    }
+  ],
+  "v2Frames": [
+    {
+      "index": 0,
+      "role": "guarded_crouch_entry",
+      "constraint": "Deep but mobile crouch; both feet planted; no VFX."
+    },
+    {
+      "index": 1,
+      "role": "lead_palm_low_chamber",
+      "constraint": "Compact anticipation with rear hand guarding and torso compressed."
+    },
+    {
+      "index": 2,
+      "role": "low_palm_acceleration",
+      "constraint": "Same lead arm drives low from shoulder and hip; no visible impact."
+    },
+    {
+      "index": 3,
+      "role": "single_low_palm_contact",
+      "constraint": "Only visible impact; one low horizontal palm-check silhouette."
+    },
+    {
+      "index": 4,
+      "role": "same_arm_low_follow_through",
+      "constraint": "Continue the same shoulder, palm and torso path with no second strike."
+    },
+    {
+      "index": 5,
+      "role": "lead_arm_crouched_recoil",
+      "constraint": "Retract the same arm while coat and locs finish their lag."
+    },
+    {
+      "index": 6,
+      "role": "connected_crouch_recovery",
+      "constraint": "Return to a guarded crouch with residual momentum; do not duplicate the entry exactly."
+    }
+  ],
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "durationTicks": 12,
+      "exposureTicks": [
+        1,
+        1,
+        1,
+        3,
+        3,
+        2,
+        1
+      ],
+      "phaseTicks": {
+        "startup": 3,
+        "active": 3,
+        "recovery": 6
+      }
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "durationTicks": 14,
+      "exposureTicks": [
+        1,
+        1,
+        1,
+        4,
+        3,
+        2,
+        2
+      ],
+      "phaseTicks": {
+        "startup": 3,
+        "active": 4,
+        "recovery": 7
+      }
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+      "durationTicks": 17,
+      "exposureTicks": [
+        2,
+        1,
+        1,
+        5,
+        3,
+        3,
+        2
+      ],
+      "phaseTicks": {
+        "startup": 4,
+        "active": 5,
+        "recovery": 8
+      }
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_2",
+      "hitstopTicks": 2
+    },
+    "I2": {
+      "label": "READABLE_3",
+      "hitstopTicks": 3
+    },
+    "I3": {
+      "label": "FIRMER_4",
+      "hitstopTicks": 4
+    }
+  },
+  "recommendedImpactCandidate": "I2",
+  "benchmarkQuestions": [
+    "Does the entry read as a true crouching state rather than a scaled-down Standing Light?",
+    "Does frame 01 expose intent while frames 02-03 retain a fast Light snap?",
+    "Is frame 03 the only visible impact?",
+    "Do frames 04-06 read as same-arm follow-through, recoil and connected crouch recovery?",
+    "Does the fixed root remain planted with no scale pumping or pose teleportation?"
+  ],
+  "approvalBoundary": {
+    "standingMediumMotionAndTimingApprovedOnly": true,
+    "crouchingLightMotionApproved": true,
+    "crouchingLightTimingApproved": false,
+    "crouchingLightMotionStatus": "APPROVED_V1_MOTION_PRESERVED",
+    "crouchingLightTimingStatus": "PENDING_V2_RETIMING_AFTER_GAMEPLAY_RECONCILIATION",
+    "selectedTimingCandidate": "B",
+    "crouchingLightCombatProfileApproved": false,
+    "runtimeArtApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  },
+  "supersededTimingCandidates": {
+    "reason": "Superseded on 2026-09-03 by a gameplay-reconciliation pass. The approved candidates were authored against a 1-tick active window that does not exist in src/data/fighters.ts, so candidate B was longer than the move it belongs to. The build therefore emitted a truncated runtime timeline that dropped authored frames and placed the contact pose outside the live hitbox window. The replacement candidates keep the same authored frames, roles and impact frame, and only redistribute exposure so that candidate B equals the combat frame data exactly.",
+    "supersededOn": "2026-09-03",
+    "previousCandidates": {
+      "A": {
+        "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+        "durationTicks": 14,
+        "exposureTicks": [
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          4
+        ],
+        "phaseTicks": {
+          "startup": 5,
+          "active": 1,
+          "recovery": 8
+        }
+      },
+      "B": {
+        "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+        "durationTicks": 16,
+        "exposureTicks": [
+          3,
+          2,
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        "phaseTicks": {
+          "startup": 6,
+          "active": 1,
+          "recovery": 9
+        }
+      },
+      "C": {
+        "label": "HEAVIER_ALTERNATE_NOT_DEFAULT",
+        "durationTicks": 18,
+        "exposureTicks": [
+          3,
+          3,
+          1,
+          2,
+          2,
+          3,
+          4
+        ],
+        "phaseTicks": {
+          "startup": 7,
+          "active": 2,
+          "recovery": 9
+        }
+      }
+    },
+    "previousApproval": {
+      "standingMediumMotionAndTimingApprovedOnly": true,
+      "crouchingLightMotionApproved": true,
+      "crouchingLightTimingApproved": true,
+      "crouchingLightMotionStatus": "APPROVED_V1_MOTION_PRESERVED",
+      "crouchingLightTimingStatus": "APPROVED_V2_RETIMING",
+      "selectedTimingCandidate": "B",
+      "crouchingLightCombatProfileApproved": false,
+      "runtimeArtApproved": false,
+      "productionApproved": false,
+      "deployable": false
+    }
+  },
+  "gameplayFrameDataReconciliation": {
+    "authority": "repo://NO_GODS_ABOVE/engine_v2/src/data/fighters.ts legacyAttacks",
+    "startup": 3,
+    "active": 4,
+    "recovery": 7,
+    "totalTicks": 14,
+    "recommendedCandidateMatchesCombatData": true,
+    "contactFrameFirstTickEqualsStartup": true,
+    "contactFrameHeldForFullActiveWindow": true,
+    "authoredFramesDroppedAtRuntime": 0
+  }
+}

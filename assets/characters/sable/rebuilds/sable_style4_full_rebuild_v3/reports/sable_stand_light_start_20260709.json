@@ -1,0 +1,65 @@
+{
+  "character": "sable",
+  "stage": "full-rebuild-v3",
+  "clip": "stand_light",
+  "date": "2026-07-09",
+  "status": "started_not_preview_approved",
+  "approvedForLiveRoster": false,
+  "livePromotion": false,
+  "generationMode": "built_in_imagegen_then_local_chroma_removal_and_repack",
+  "candidate1": {
+    "folder": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-stand-light-codex-draft-01",
+    "rawChroma": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-stand-light-codex-draft-01/sable_stand_light_codex_raw_chroma.png",
+    "alpha": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-stand-light-codex-draft-01/sable_stand_light_codex_alpha.png",
+    "packed": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-stand-light-codex-draft-01/sable_stand_light_codex_packed_8x1_448.png",
+    "cleaned": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-stand-light-codex-draft-01/sable_stand_light_codex_packed_8x1_448_cleaned.png",
+    "validation": {
+      "overallStatus": "manual_review_required",
+      "technicalStatus": "warn",
+      "visualStatus": "manual_review_required",
+      "issues": ["detached components in active/recovery frames"]
+    },
+    "use": "draft_reference_only"
+  },
+  "candidate2": {
+    "folder": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-z-stand-light-codex-draft-02",
+    "rawChroma": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-z-stand-light-codex-draft-02/sable_stand_light_codex_draft02_raw_chroma.png",
+    "alpha": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-z-stand-light-codex-draft-02/sable_stand_light_codex_draft02_alpha.png",
+    "packed": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-z-stand-light-codex-draft-02/sable_stand_light_codex_draft02_packed_8x1_448.png",
+    "bodyOnlyCleaned": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/stand_light/v20260709-z-stand-light-codex-draft-02/sable_stand_light_codex_draft02_bodyonly_cleaned_8x1_448.png",
+    "normalized": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_light/v20260709-085150/sable_stand_light_normalized_strip.png",
+    "currentManifestNormalized": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/stand_light/v20260709-085641/sable_stand_light_normalized_strip.png",
+    "validation": {
+      "overallStatus": "manual_review_required",
+      "technicalStatus": "warn",
+      "visualStatus": "manual_review_required",
+      "fixedIssues": ["detached components"],
+      "remainingIssues": ["possible duplicate frames: 0/7 and 4/5"]
+    },
+    "use": "best_current_preview_candidate_not_approved"
+  },
+  "exportResult": {
+    "commands": [
+      "npm.cmd run sprite-agent -- export --character sable --stage full-rebuild-v3",
+      "npm.cmd run sprite-agent -- run-queue --character sable --stage full-rebuild-v3 --clips \"stand_light\" --approval-policy previewAuto --skip-approved",
+      "npm.cmd run sprite-agent -- run-queue --character sable --stage full-rebuild-v3 --clips \"<39 clips>\" --approval-policy previewAuto --skip-approved"
+    ],
+    "exportedPreviewClips": 1,
+    "exportedClipIds": ["stand_light"],
+    "missingClips": 38,
+    "manifest": "assets/characters/sable/manifests/preview_animation_clips_full_rebuild_v3.json",
+    "reason": "stand_light is present in the preview manifest with validationStatus manual_review_required; it is not preview-approved or live-approved"
+  },
+  "nextFix": [
+    "remove detached shards or loose particles",
+    "make frame 4 active pose and frame 5 follow-through visually distinct",
+    "make frame 7 recovery non-identical to frame 0",
+    "preserve Sable identity, scale, baseline, and Style 4 pixel reference"
+  ],
+  "boundaries": {
+    "liveGameplayRuntimeFilesTouched": false,
+    "publicRosterTouched": false,
+    "combatBalanceTouched": false,
+    "stagedOrCommitted": false
+  }
+}

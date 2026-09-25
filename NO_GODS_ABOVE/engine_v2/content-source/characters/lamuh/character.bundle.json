@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "lamuh_legacy_motion_fixture",
+  "displayName": "LAMUH Legacy Motion Fixture",
+  "bundleVersion": 1,
+  "promotionState": "retired",
+  "runtimeProfile": {
+    "worldHeight": 352,
+    "centerline": 0,
+    "footPosition": 0,
+    "handReach": 94,
+    "universalCapabilities": [
+      "ground_normals",
+      "air_normals",
+      "block",
+      "knockdown",
+      "getup",
+      "standard_throw"
+    ]
+  },
+  "design": {
+    "characterBible": "rejected://obsolete-lamuh-character-art",
+    "palette": "fixture://lamuh-legacy-motion-fixture/palette",
+    "forbiddenMutations": [
+      "identity_drift",
+      "outfit_drift",
+      "scale_pumping",
+      "mid_clip_limb_swap"
+    ]
+  },
+  "poseLibrary": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "mirror_energy_idle",
+      "handOccupancy": { "left": "free", "right": "free" },
+      "silhouette": "upright_guard",
+      "verticalMotion": "stationary"
+    },
+    {
+      "id": "forward_weighted",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "left",
+      "weight": "forward",
+      "weaponState": "mirror_energy_strike",
+      "handOccupancy": { "left": "guard", "right": "strike" },
+      "silhouette": "extended_punch",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "animationPackages": [
+    "moves/idle/animation.package.json",
+    "moves/standing-heavy/animation.package.json"
+  ],
+  "packageGroups": {
+    "core": ["idle"],
+    "normals": ["standing_heavy"]
+  }
+}

@@ -68,6 +68,20 @@ Git safety / checkpoints / rollback:
 
 - `NO_GODS_ABOVE/skills/git_checkpoint_safety_skill.md`
 
+## Codex / Claude Collaboration Safety
+
+- One task = one branch = one PR.
+- Use GitHub Issues as the task board.
+- Declare file scope before editing.
+- Do not push to master.
+- Do not deploy without human instruction.
+- Read `agent/memory/character_truth.md` before touching roster, portraits, sprites, marketing art, or asset prompts.
+- Read `agent/memory/visual_rules.md` before touching UI, art, stage, VFX assets, or asset prompts.
+- Do not edit `agent/memory/character_truth.md`, `agent/memory/visual_rules.md`, `AGENTS.md`, or `CLAUDE.md` except in explicit documentation/process PRs.
+- Run validation before PR.
+- Include screenshots for visual changes.
+- Update `SESSION_CONTEXT.md` only according to the existing project convention. If it is too large, recommend a future cap/archive task instead of aggressively rewriting it.
+
 ## Character And Sprite Work
 
 Before any character, sprite-sheet, atlas, VFX-sheet, animation mapping, or visual coverage work:

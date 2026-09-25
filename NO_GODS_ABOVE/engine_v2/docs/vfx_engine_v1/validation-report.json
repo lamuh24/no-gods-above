@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "record": "NGA_VFX_ENGINE_V1_VALIDATION",
+  "generatedAt": "2026-08-16",
+  "status": "PASS_CANDIDATE_ONLY_VERTICAL_SLICE",
+  "candidateOnly": true,
+  "deployable": false,
+  "renderingOnly": true,
+  "simulationAuthority": false,
+  "productionRoster": false,
+  "fighterArtworkBakedIn": false,
+  "sourceAggregateSha256": "7E0F0CD886F9A649B267C767559F1C76196AA70C9FFF7635EB396AF29823666E",
+  "coverage": {
+    "presetCount": 8,
+    "supportedPrimitiveKinds": [
+      "flash",
+      "smoke",
+      "spark",
+      "ring",
+      "beam",
+      "projectile",
+      "trail",
+      "debris"
+    ],
+    "presetExercisedPrimitiveKinds": [
+      "flash",
+      "smoke",
+      "spark",
+      "ring",
+      "projectile",
+      "trail",
+      "debris"
+    ],
+    "beamBackendStatus": "implemented_not_yet_exercised_by_a_v1_preset",
+    "anchorModes": [
+      "owner_socket",
+      "impact_point",
+      "world",
+      "previous_position"
+    ],
+    "visibilityGates": [
+      "always",
+      "on_hit",
+      "on_block",
+      "on_whiff"
+    ],
+    "playbackSpeeds": [
+      0.5,
+      1,
+      2
+    ],
+    "facingModes": [
+      "right",
+      "left"
+    ]
+  },
+  "automatedValidation": {
+    "typescript": "PASS npm.cmd run build:sim",
+    "focusedVfxTests": "PASS 8/8",
+    "standaloneVfxBuild": "PASS 9 modules transformed",
+    "engineV2Validate": "PASS",
+    "engineV2ProductionBuild": "PASS with existing non-blocking large-chunk warning",
+    "swahiliProtectedBaseline": "PASS 8/8",
+    "textHygiene": "PASS",
+    "schemaParse": "PASS"
+  },
+  "browserValidation": {
+    "url": "http://127.0.0.1:4194/vfx-lab.html",
+    "http": 200,
+    "title": "NGA VFX Engine V1 Lab",
+    "allEightPresetsRendered": true,
+    "opposedSplitShotBothFacingsReviewed": true,
+    "hitGateReviewed": true,
+    "blockGateReviewed": true,
+    "whiffGateReviewed": true,
+    "movingAnchorReviewed": true,
+    "alphaCheckerReviewed": true,
+    "halfSpeedControlExercised": true,
+    "consoleWarnings": 0,
+    "consoleErrors": 0
+  },
+  "gauntlet": {
+    "qualityBar": "Effects must be readable without fighter art, deterministic at 60 Hz, correctly anchored and mirrored, outcome-gated, and unable to mutate simulation.",
+    "freshCritiqueFinding": "The first opposed split-shot flash shape was mirrored in data but too radial to communicate outward barrel direction.",
+    "highestLeverageRepair": "Replaced the large symmetric star with a directional muzzle cone plus compact ignition star while preserving timing, sockets, smoke, shells, and frame checksums.",
+    "bestCheckpointRetained": true
+  },
+  "protectedState": {
+    "legacyGameJsSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+    "engineCoreSha256": "3B3941791299589F3FD71A56448BFF3CC8109D08825207A661D8F76A40F864C7",
+    "inputSha256": "D79F74DE29FCA5B5469D0BD5C459B3C5A791FA91AF585ACF4882B67736F5F922",
+    "typesSha256": "F20DBBFE37CF1B77FD6F4212EB153F617E29030D5F8EC5D1D355C8A1CE3772A7",
+    "fightersSha256": "42586CE35A04D50797B3CA26254151EB1CF2658F268861E93A42247C545A9A32",
+    "unchanged": true
+  },
+  "buildArtifacts": {
+    "htmlSha256": "AC6A6A37C2135A33C9469BDA12D972FFD2E30D70B22735EDC74864A45F7ED8A9",
+    "cssSha256": "0008E6A82F438721F99D3419F8858DDCA403873281754ACD697CF6727E9B9393",
+    "javascriptSha256": "F647F52C20E1A73562DEBFCA4D6C02B9F5A01489020826EB4C36C80E2DA12E6B"
+  },
+  "knownLimits": [
+    "V1 is not yet connected to rollback-safe combat presentation events.",
+    "The included presets are procedural review references, not human-approved final character VFX.",
+    "The beam primitive backend is implemented but does not yet have a dedicated V1 browser-reviewed preset.",
+    "Character-specific socket coordinates, palette locks, timing, and scale still require move-by-move review.",
+    "The V1 renderer is Canvas 2D; a later shader or texture-atlas backend may implement the same pure sampling contract."
+  ],
+  "nextRecommendedSlice": "Add a read-only combat presentation-event adapter and a socket authoring overlay for one approved move, keeping the effect catalog and combat simulation separate."
+}

@@ -1,0 +1,23 @@
+{
+  "characterId": "sable",
+  "clipId": "back_special_heavy",
+  "sheetPath": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-194620/sable_back_special_heavy_normalized_strip.png",
+  "generatedAt": "2026-07-10T23:46:22.126Z",
+  "adapter": "heuristic-validation-score",
+  "score": 0,
+  "status": "fail",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": true,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_ascend_step_light_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "v1Disposition": "MODERNIZE",
+  "sharedVisualSource": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-dash-punch-v2.hash-lock.json",
+    "sha256": "91427F2786DF65E7F016B03DA337259DB403E3A49040D7681F2F64DC47CB7764"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "sourceV1Indices": [
+        0
+      ],
+      "role": "idle_identity_lock_with_aura_ignition",
+      "publicPath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-00.png",
+      "sha256": "957E5EA248D3253D927401296B739F5050B3C4E1E73AA631D7AD0F7967D219B9",
+      "sourceSha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 562,
+        "minY": 560,
+        "maxX": 973,
+        "maxY": 1359
+      },
+      "bodyCenter": {
+        "x": 765.36,
+        "y": 968.85
+      },
+      "contact": false,
+      "visibleImpact": false
+    },
+    {
+      "index": 1,
+      "sourceV1Indices": [
+        1
+      ],
+      "role": "approved_low_dash_launch",
+      "publicPath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-01.png",
+      "sha256": "099EEFC36859149567E37BA46D0F7ADEBB79332EC69CF92EB69A37EF9100F64E",
+      "sourceSha256": "77576556FA57C83C1625BEC36AE19F23054CE93FA0BC82B7F7FC2B46B4C4DB76",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 310,
+        "minY": 510,
+        "maxX": 1078,
+        "maxY": 1420
+      },
+      "bodyCenter": {
+        "x": 690.68,
+        "y": 965.86
+      },
+      "contact": false,
+      "visibleImpact": false
+    },
+    {
+      "index": 2,
+      "sourceV1Indices": [
+        2
+      ],
+      "role": "approved_fast_horizontal_dash_carry",
+      "publicPath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-02.png",
+      "sha256": "726A49D545AB50C2DD64F1690D26C20207CF7FD90F70EE06DB967EA0A329D332",
+      "sourceSha256": "45F0B7EC3FAB5EE1B567067B960904B1F061229E252E9FCFFD7776070D87BF1C",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 310,
+        "minY": 510,
+        "maxX": 1069,
+        "maxY": 1420
+      },
+      "bodyCenter": {
+        "x": 690.42,
+        "y": 965.74
+      },
+      "contact": false,
+      "visibleImpact": false
+    },
+    {
+      "index": 3,
+      "sourceV1Indices": [
+        5
+      ],
+      "role": "approved_single_straight_punch_contact",
+      "publicPath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-03.png",
+      "sha256": "4102A2B254B0DAC32775E2A46D0386600B65680E1969EAECC51547F18A19F05D",
+      "sourceSha256": "8E2326F54B73ADD8F0CC1B956DD3A1C89A7A2EFA685ECA275AC3A787445C15F8",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 400,
+        "minY": 561,
+        "maxX": 1094,
+        "maxY": 1363
+      },
+      "bodyCenter": {
+        "x": 693.19,
+        "y": 932.58
+      },
+      "contact": true,
+      "visibleImpact": true
+    },
+    {
+      "index": 4,
+      "sourceV1Indices": [
+        5
+      ],
+      "role": "approved_same_arm_punch_carry_through",
+      "publicPath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-04.png",
+      "sha256": "BA50585DB1F51F7D8BADB2BB2C9B084612E05DECBAF0F2710DFCFBBA7FEEC7E3",
+      "sourceSha256": "3A77DBA2AEDCF26A102BDEB329090D69F70732BFFBE77666B89B7BE0D4783804",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 400,
+        "minY": 561,
+        "maxX": 1102,
+        "maxY": 1363
+      },
+      "bodyCenter": {
+        "x": 693.53,
+        "y": 932.78
+      },
+      "contact": false,
+      "visibleImpact": false
+    },
+    {
+      "index": 5,
+      "sourceV1Indices": [
+        6
+      ],
+      "role": "approved_idle_identity_recovery",
+      "publicPath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-05.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88",
+      "sourceSha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "visibleBounds": {
+        "minX": 543,
+        "minY": 560,
+        "maxX": 992,
+        "maxY": 1359
+      },
+      "bodyCenter": {
+        "x": 768.24,
+        "y": 968.04
+      },
+      "contact": false,
+      "visibleImpact": false
+    }
+  ],
+  "timingCandidates": {
+    "A": {
+      "label": "QUICK_LEGACY_RHYTHM",
+      "phaseTicks": {
+        "startup": 4,
+        "active": 4,
+        "recovery": 10
+      },
+      "durationTicks": 18,
+      "exposureTicks": [
+        2,
+        1,
+        1,
+        4,
+        4,
+        6
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "QUICK_MOBILITY_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 5,
+        "active": 4,
+        "recovery": 11
+      },
+      "durationTicks": 20,
+      "exposureTicks": [
+        2,
+        2,
+        1,
+        4,
+        5,
+        6
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "READABLE_LIGHT_ALTERNATE",
+      "phaseTicks": {
+        "startup": 6,
+        "active": 5,
+        "recovery": 12
+      },
+      "durationTicks": 23,
+      "exposureTicks": [
+        3,
+        2,
+        1,
+        5,
+        5,
+        7
+      ],
+      "preservesSourceFrameOrder": false,
+      "preservesAuthoredFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "rootMotionContract": {
+    "owner": "simulation",
+    "startTick": 2,
+    "endTick": 7,
+    "velocityPerTick": 8.3,
+    "rendererDrivesGameplay": false,
+    "authoredException": null
+  },
+  "combatCandidate": {
+    "runtimeAttackId": "legacy_ascend_step_light",
+    "damage": 32,
+    "hitstop": 5,
+    "hitstun": 22,
+    "blockstun": 12,
+    "knockbackX": 3.5,
+    "knockbackY": 0,
+    "level": "mid",
+    "knockdown": "none",
+    "approval": null
+  },
+  "mobilityIdentity": {
+    "primaryRead": "quick_short_range_movement_dash_with_single_punch_end_beat",
+    "dashAura": true,
+    "auraPalette": [
+      "white_core",
+      "cyan",
+      "restrained_gold"
+    ],
+    "auraFrames": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "strongestAuraFrame": 2,
+    "impactExplosion": false,
+    "afterimageBodyClone": false,
+    "worldTravelOwner": "deterministic_simulation",
+    "variation": "light"
+  },
+  "approvalStatus": "awaiting_human_ascend_step_medium_targeted_motion_repair_review",
+  "humanApproval": {
+    "motion": null,
+    "timing": null,
+    "combatProfile": null,
+    "transitions": null,
+    "adultProportions": null
+  }
+}

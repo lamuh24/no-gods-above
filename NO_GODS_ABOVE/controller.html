@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <title>NGA Phone Controller</title>
+    <meta name="theme-color" content="#090507">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #060305;
+        --panel: rgba(14, 7, 10, 0.78);
+        --line: rgba(243, 211, 141, 0.36);
+        --gold: #ffe5a7;
+        --red: #e54f55;
+        --blue: #5aa8ff;
+        --amber: #f0bf4f;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% -10%, rgba(221, 58, 72, 0.26), transparent 42%),
+          linear-gradient(180deg, #13060a, var(--bg));
+        color: var(--gold);
+        font-family: "Segoe UI", system-ui, sans-serif;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 10px;
+        padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+      }
+
+      header,
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        min-height: 42px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(0.92rem, 4vw, 1.4rem);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .status {
+        min-width: 12ch;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(5, 2, 4, 0.62);
+        color: rgba(255, 236, 196, 0.9);
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .status.good {
+        color: #9cf0a8;
+      }
+
+      .status.error {
+        color: #ff927d;
+      }
+
+      .pair {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      input {
+        width: 7.4ch;
+        padding: 7px 6px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(4, 2, 4, 0.7);
+        color: var(--gold);
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 900;
+        letter-spacing: 0.22em;
+        text-align: center;
+        text-transform: uppercase;
+        outline: none;
+      }
+
+      button {
+        min-width: 46px;
+        min-height: 46px;
+        border: 2px solid rgba(255, 221, 151, 0.34);
+        border-radius: 999px;
+        background: rgba(20, 8, 12, 0.66);
+        color: rgba(255, 238, 205, 0.94);
+        box-shadow:
+          inset 0 0 18px rgba(255, 226, 155, 0.08),
+          0 10px 26px rgba(0, 0, 0, 0.24);
+        font: 900 0.9rem "Segoe UI", system-ui, sans-serif;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        touch-action: none;
+      }
+
+      button.active {
+        border-color: rgba(255, 239, 185, 0.92);
+        background: rgba(255, 185, 80, 0.46);
+        color: #fff7df;
+      }
+
+      button:disabled {
+        opacity: 0.5;
+      }
+
+      .connect {
+        min-width: 84px;
+        min-height: 40px;
+        border-radius: 6px;
+        font-size: 0.72rem;
+      }
+
+      .pad {
+        min-height: 0;
+        display: grid;
+        grid-template-columns: minmax(198px, 0.92fr) minmax(240px, 1.08fr);
+        gap: clamp(12px, 3vw, 28px);
+        align-items: end;
+      }
+
+      .dpad {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(58px, 76px));
+        grid-template-rows: repeat(3, minmax(58px, 76px));
+        grid-template-areas:
+          ". up ."
+          "left center right"
+          ". down .";
+        justify-content: start;
+        gap: 8px;
+      }
+
+      .up { grid-area: up; }
+      .left { grid-area: left; }
+      .right { grid-area: right; }
+      .down { grid-area: down; }
+      .center {
+        grid-area: center;
+        border-radius: 18px;
+        opacity: 0.64;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(56px, 72px));
+        grid-auto-rows: minmax(56px, 72px);
+        justify-content: end;
+        gap: 10px;
+      }
+
+      .light { background: rgba(61, 118, 205, 0.48); }
+      .medium { background: rgba(206, 151, 44, 0.5); }
+      .heavy { background: rgba(198, 58, 61, 0.5); }
+      .special { background: rgba(109, 68, 194, 0.48); }
+      .ultimate {
+        grid-column: span 2;
+        border-radius: 18px;
+        background: rgba(170, 49, 146, 0.52);
+      }
+      .grab,
+      .dash {
+        border-radius: 18px;
+        font-size: 0.76rem;
+      }
+
+      .system {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .system button {
+        min-height: 38px;
+        min-width: 78px;
+        border-radius: 6px;
+        font-size: 0.68rem;
+      }
+
+      @media (orientation: portrait) {
+        body::before {
+          content: "ROTATE PHONE";
+          position: fixed;
+          inset: 0;
+          z-index: 10;
+          display: grid;
+          place-items: center;
+          background: rgba(4, 2, 4, 0.96);
+          color: var(--gold);
+          font-size: 1.35rem;
+          font-weight: 1000;
+          letter-spacing: 0.14em;
+        }
+      }
+
+      @media (max-width: 720px) and (orientation: landscape) {
+        body {
+          gap: 6px;
+          padding-top: max(6px, env(safe-area-inset-top));
+          padding-bottom: max(6px, env(safe-area-inset-bottom));
+        }
+
+        .pad {
+          grid-template-columns: minmax(184px, 0.88fr) minmax(260px, 1.12fr);
+        }
+
+        .dpad {
+          grid-template-columns: repeat(3, minmax(52px, 66px));
+          grid-template-rows: repeat(3, minmax(52px, 66px));
+          gap: 6px;
+        }
+
+        .actions {
+          grid-template-columns: repeat(4, minmax(52px, 66px));
+          grid-auto-rows: minmax(50px, 62px);
+          gap: 7px;
+        }
+
+        .system button {
+          min-height: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>NGA P2 PAD</h1>
+      <div class="pair">
+        <input id="room-code" maxlength="5" autocomplete="off" spellcheck="false" aria-label="Room code">
+        <button id="connect-button" class="connect" type="button">Connect</button>
+      </div>
+      <div id="status" class="status">Idle</div>
+    </header>
+
+    <main class="pad" aria-label="Phone controller">
+      <section class="dpad" aria-label="Movement">
+        <button class="up" type="button" data-dir="8">UP</button>
+        <button class="left" type="button" data-dir="1">LEFT</button>
+        <button class="center" type="button" disabled>P2</button>
+        <button class="right" type="button" data-dir="2">RIGHT</button>
+        <button class="down" type="button" data-dir="4">DOWN</button>
+      </section>
+
+      <section class="actions" aria-label="Actions">
+        <button class="light" type="button" data-strike="light">L</button>
+        <button class="medium" type="button" data-strike="medium">M</button>
+        <button class="heavy" type="button" data-strike="heavy">H</button>
+        <button class="special" type="button" data-special="true">SP</button>
+        <button class="grab" type="button" data-action="grab">Grab</button>
+        <button class="dash" type="button" data-action="dash">Dash</button>
+        <button class="ultimate" type="button" data-action="ultimate">Ultimate</button>
+      </section>
+    </main>
+
+    <footer class="system" aria-label="Menu actions">
+      <button type="button" data-action="confirm">Confirm</button>
+      <button type="button" data-action="back">Back</button>
+      <button type="button" data-action="pause">Pause</button>
+      <button type="button" data-action="rematch">Rematch</button>
+      <button type="button" data-action="select">Select</button>
+    </footer>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script>
+      (() => {
+        "use strict";
+
+        const PHONE_PROTOCOL_VERSION = 1;
+        const PHONE_PEER_PREFIX = "nga-pad-";
+        const DIR_UP = 8;
+        const statusEl = document.getElementById("status");
+        const codeInput = document.getElementById("room-code");
+        const connectButton = document.getElementById("connect-button");
+        let peer = null;
+        let conn = null;
+        let directionMask = 0;
+        let specialHeld = false;
+        let specialChordUsed = false;
+        let heartbeat = null;
+        let nextInputId = 1;
+
+        function setStatus(text, tone = "") {
+          statusEl.textContent = text;
+          statusEl.classList.toggle("good", tone === "good");
+          statusEl.classList.toggle("error", tone === "error");
+        }
+
+        function cleanCode(value) {
+          return String(value || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 5);
+        }
+
+        function send(message) {
+          if (!conn || !conn.open) return false;
+          conn.send(message);
+          return true;
+        }
+
+        function sendDir() {
+          send({ t: "dir", m: directionMask });
+        }
+
+        function makeInputId() {
+          nextInputId += 1;
+          return nextInputId;
+        }
+
+        function withInputId(message, inputId) {
+          if (inputId !== undefined && inputId !== null) message.id = inputId;
+          return message;
+        }
+
+        function sendAction(action, inputId) {
+          if (send(withInputId({ t: "act", a: action }, inputId))) {
+            try { navigator.vibrate?.(18); } catch { /* best effort */ }
+          }
+        }
+
+        function sendButton(button, down, inputId) {
+          if (send(withInputId({ t: "btn", b: button, d: Boolean(down) }, inputId)) && down) {
+            try { navigator.vibrate?.(18); } catch { /* best effort */ }
+            return true;
+          }
+          return false;
+        }
+
+        function tapButton(button) {
+          const inputId = makeInputId();
+          if (!sendButton(button, true, inputId)) return;
+          sendAction(button, inputId);
+          window.setTimeout(() => sendButton(button, false, inputId), 60);
+        }
+
+        function startHeartbeat() {
+          clearInterval(heartbeat);
+          heartbeat = setInterval(() => {
+            sendDir();
+            send({ t: "ping", at: Date.now() });
+          }, 420);
+        }
+
+        function stopConnection() {
+          clearInterval(heartbeat);
+          heartbeat = null;
+          try { conn?.close(); } catch { /* already closed */ }
+          try { peer?.destroy(); } catch { /* already destroyed */ }
+          conn = null;
+          peer = null;
+          directionMask = 0;
+          specialHeld = false;
+          specialChordUsed = false;
+          document.querySelectorAll(".active").forEach((button) => button.classList.remove("active"));
+        }
+
+        function connectToRoom() {
+          const code = cleanCode(codeInput.value);
+          codeInput.value = code;
+          if (code.length < 4) {
+            setStatus("Bad code", "error");
+            return;
+          }
+          if (typeof Peer === "undefined") {
+            setStatus("PeerJS missing", "error");
+            return;
+          }
+          stopConnection();
+          setStatus("Connecting");
+          peer = new Peer();
+          peer.on("open", () => {
+            conn = peer.connect(PHONE_PEER_PREFIX + code.toLowerCase(), { reliable: true });
+            conn.on("open", () => {
+              send({ t: "hello", v: PHONE_PROTOCOL_VERSION, ua: navigator.userAgent.slice(0, 80) });
+              sendDir();
+              startHeartbeat();
+              setStatus("Connected", "good");
+            });
+            conn.on("data", (message) => {
+              if (message?.t === "welcome") setStatus("P2 ready", "good");
+              if (message?.t === "status" && message.text) setStatus(message.text, message.tone || "");
+            });
+            conn.on("close", () => setStatus("Disconnected", "error"));
+            conn.on("error", () => setStatus("Link error", "error"));
+          });
+          peer.on("error", () => setStatus("Peer error", "error"));
+        }
+
+        function bindHold(button, onDown, onUp) {
+          const down = (event) => {
+            event.preventDefault();
+            try { button.setPointerCapture?.(event.pointerId); } catch { /* not required */ }
+            button.classList.add("active");
+            onDown();
+          };
+          const up = (event) => {
+            event.preventDefault();
+            button.classList.remove("active");
+            onUp();
+          };
+          button.addEventListener("pointerdown", down);
+          button.addEventListener("pointerup", up);
+          button.addEventListener("pointercancel", up);
+          button.addEventListener("lostpointercapture", up);
+          button.addEventListener("contextmenu", (event) => event.preventDefault());
+        }
+
+        function strikeAction(button) {
+          const specialMap = { light: "special1", medium: "special2", heavy: "special3" };
+          if (specialHeld) {
+            specialChordUsed = true;
+            return specialMap[button.dataset.strike];
+          }
+          return button.dataset.strike;
+        }
+
+        document.querySelectorAll("[data-dir]").forEach((button) => {
+          const bit = Number(button.dataset.dir) || 0;
+          bindHold(
+            button,
+            () => {
+              directionMask |= bit;
+              sendDir();
+              if (bit === DIR_UP) sendAction("jump");
+            },
+            () => {
+              directionMask &= ~bit;
+              sendDir();
+            }
+          );
+        });
+
+        document.querySelectorAll("[data-strike]").forEach((button) => {
+          bindHold(
+            button,
+            () => {
+              const action = strikeAction(button);
+              const inputId = makeInputId();
+              button.dataset.activeButton = action;
+              button.dataset.activeInputId = String(inputId);
+              sendButton(action, true, inputId);
+              sendAction(action, inputId);
+            },
+            () => {
+              const action = button.dataset.activeButton || strikeAction(button);
+              const inputId = button.dataset.activeInputId ? Number(button.dataset.activeInputId) : undefined;
+              sendButton(action, false, inputId);
+              delete button.dataset.activeButton;
+              delete button.dataset.activeInputId;
+            }
+          );
+        });
+
+        const specialButton = document.querySelector("[data-special]");
+        if (specialButton) {
+          bindHold(
+            specialButton,
+            () => {
+              specialHeld = true;
+              specialChordUsed = false;
+            },
+            () => {
+              if (!specialChordUsed) tapButton("special1");
+              specialHeld = false;
+              specialChordUsed = false;
+            }
+          );
+        }
+
+        document.querySelectorAll("[data-action]").forEach((button) => {
+          bindHold(
+            button,
+            () => {
+              const action = button.dataset.action;
+              sendAction(specialHeld && action === "dash" ? "superdash" : action);
+            },
+            () => {}
+          );
+        });
+
+        connectButton.addEventListener("click", connectToRoom);
+        codeInput.addEventListener("input", () => {
+          codeInput.value = cleanCode(codeInput.value);
+        });
+        codeInput.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") connectToRoom();
+        });
+        window.addEventListener("pagehide", () => {
+          send({ t: "bye" });
+          stopConnection();
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const initialCode = cleanCode(params.get("room"));
+        if (initialCode) {
+          codeInput.value = initialCode;
+          connectToRoom();
+        } else {
+          setStatus("Enter code");
+          codeInput.focus({ preventScroll: true });
+        }
+      })();
+    </script>
+  </body>
+</html>

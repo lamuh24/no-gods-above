@@ -1,0 +1,29 @@
+{
+  "characterId": "sable",
+  "clipId": "crouch",
+  "sheetPath": "assets/characters/sable/normalized/crouch/v20260628-165400/sable_crouch_normalized_strip.png",
+  "generatedAt": "2026-06-28T20:54:00.921Z",
+  "adapter": "heuristic-validation-score",
+  "score": 0,
+  "status": "fail",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": false,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "BODY_TOO_SMALL: scale/readability risk.",
+    "POSSIBLE_DUPLICATE_FRAMES: subtle or repeated motion; acceptable only with review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

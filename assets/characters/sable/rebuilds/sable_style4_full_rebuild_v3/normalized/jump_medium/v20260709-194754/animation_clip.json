@@ -1,0 +1,34 @@
+{
+  "clipId": "jump_medium",
+  "category": "normal",
+  "frameCount": 5,
+  "fps": 12,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/jump_medium/vzzzzzzzzzz-jumpmedium05-5f/sable_jump_medium_5.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/jump_medium/v20260709-194754/sable_jump_medium_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "hitFrames": [
+    2
+  ],
+  "cancelFrames": [
+    4
+  ],
+  "notes": [
+    "full-rebuild-v3 normal attack. Aerial medium with a clearer arc and longer reach than light, preserving stable airborne scale. Frame target lowered from 10 to 5 after Claude rejected 10-frame text-only attempts for pose-pumping/multi-hit read and approved trimming the duplicate sixth frame from attempt 1; contact is visual frame 3/index 2, recovery/cancel is visual frame 5/index 4, and the clip must avoid a second reach peak."
+  ],
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-11T04:55:17.347Z",
+  "approvalPolicy": "manual-promote-preview"
+}

@@ -1,0 +1,21 @@
+{
+  "characterId": "sable",
+  "clipId": "walk_forward",
+  "sheetPath": "assets/characters/sable/normalized/walk_forward/v20260629-090401/sable_walk_forward_normalized_strip.png",
+  "generatedAt": "2026-06-29T13:04:03.262Z",
+  "adapter": "heuristic-validation-score",
+  "score": 88,
+  "status": "warn",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": false,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "POSSIBLE_DUPLICATE_FRAMES: subtle or repeated motion; acceptable only with review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

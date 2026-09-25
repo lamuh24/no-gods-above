@@ -1,0 +1,929 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "jump_fall_landing",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 45,
+  "sourceFrames": [
+    {
+      "id": "jump_v1_anticipation",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/01_jump_anticipation.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "22D7B448AB5F9EED95D85FE5B39BD5C51481BDE4F48080E02B8A410D9B33DD79",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_takeoff",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/02_takeoff.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "49FA55DB968FEAAA263768FE97243313871C9EABEE764CCE9CD6D87F07696CEF",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_rising",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/03_rising_jump.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "D051A2377D59A3EBC2B225A00212D5E998AC4F6ED4BED67DBE9EA60E38EB04E8",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_apex",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/04_jump_apex.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "7B5850C074D6209DCE4DF3DA1BF580F3FFE2BC4BFE019272190ECDB46C362A4B",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_falling",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/05_falling.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "A159E1BE748E1D677D06D99CC64524B02952F3E7E4F08A10E486616E69334018",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_soft_landing",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/06_soft_landing.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "3BB12FF9626C293C90B3014D48FF74C94034C6E25AA71530E091F50A48A44D39",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_attack_landing_recovery",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/07_attack_landing_recovery.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "77B10A87B117A38BCB82C9EC1F0F9423676150A075ABAAE3E46EE6D0B0FEAF32",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    },
+    {
+      "id": "jump_v1_hard_landing_compatibility",
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/08_hard_landing_compatibility.png",
+      "width": 1536,
+      "height": 1536,
+      "sha256": "E28294F729E88D511A74870B87F6455183EA6C44E92BBE3371778FBA16361208",
+      "approvalUri": "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "provenanceUri": "repo://tools/nga-forge/production/characters/swahili/production-entry.json",
+      "metadataUri": "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "jump_v1_anticipation",
+      "start": 0,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "jump_v1_takeoff",
+      "start": 4,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "jump_v1_rising",
+      "start": 7,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "jump_v1_apex",
+      "start": 11,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "jump_v1_falling",
+      "start": 14,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "jump_v1_soft_landing",
+      "start": 18,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "jump_v1_attack_landing_recovery",
+      "start": 24,
+      "duration": 9
+    },
+    {
+      "sourceFrameId": "jump_v1_hard_landing_compatibility",
+      "start": 33,
+      "duration": 12
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [],
+    "active": [],
+    "impact": [],
+    "followThrough": [
+      {
+        "start": 0,
+        "end": 44
+      }
+    ],
+    "recovery": [
+      {
+        "start": 0,
+        "end": 44
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+    "handOccupancy": {
+      "left": "pistol_or_authored_control",
+      "right": "pistol_or_authored_control"
+    },
+    "silhouette": "calm_low_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "dual_pistols_and_canonical_rigid_scythe_preserved",
+      "handOccupancy": {
+        "left": "pistol_or_authored_control",
+        "right": "pistol_or_authored_control"
+      },
+      "silhouette": "calm_low_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "jump_v1_anticipation",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 587,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 587,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 854,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 4,
+      "sourceFrameId": "jump_v1_takeoff",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 601,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 601,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 840,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 7,
+      "sourceFrameId": "jump_v1_rising",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 602,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 602,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 838,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 11,
+      "sourceFrameId": "jump_v1_apex",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 590,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 590,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 851,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 14,
+      "sourceFrameId": "jump_v1_falling",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 589,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 589,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 852,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 18,
+      "sourceFrameId": "jump_v1_soft_landing",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 592,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 592,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 848,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 24,
+      "sourceFrameId": "jump_v1_attack_landing_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 593,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 593,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 849,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "frame": 33,
+      "sourceFrameId": "jump_v1_hard_landing_compatibility",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "feet": {
+        "x": 557,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 557,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 883,
+        "y": 1408
+      },
+      "effect": {
+        "x": 768,
+        "y": 768
+      },
+      "groundingContract": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "groundingTrack": [
+    {
+      "sourceFrameId": "jump_v1_anticipation",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 587,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 854,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_takeoff",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 601,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 840,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_rising",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 602,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 838,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_apex",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 590,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 851,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_falling",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 589,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 852,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_soft_landing",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 592,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 848,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_attack_landing_recovery",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 593,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 849,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    },
+    {
+      "sourceFrameId": "jump_v1_hard_landing_compatibility",
+      "root": {
+        "x": 768,
+        "y": 1408
+      },
+      "nearFoot": {
+        "x": 557,
+        "y": 1408
+      },
+      "farFoot": {
+        "x": 883,
+        "y": 1408
+      },
+      "nearFootRole": "source_review_contact_reference",
+      "farFootRole": "source_review_depth_contact_reference",
+      "projectedGroundPlaneY": 1408,
+      "contractVersion": "forge_stance_grounding_v2_source_review_authority"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "playbackPolicy": {
+    "mode": "external_gameplay_state",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "clamp_to_gameplay_state"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state",
+      "rollback_restore"
+    ],
+    "onInterrupt": "simulation_selects_authoritative_reaction_or_neutral_branch",
+    "returnStatePolicy": "simulation selects the next compatible state; artwork never controls collision or state"
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch",
+        "airborne",
+        "jump_fall_landing"
+      ],
+      "toState": "jump_fall_landing",
+      "condition": "isolated_swahili_sandbox_selects_candidate_state",
+      "addsGameplayFrames": false
+    },
+    {
+      "fromStates": [
+        "jump_fall_landing"
+      ],
+      "toState": "idle",
+      "condition": "simulation_owned_candidate_sequence_complete_or_external_state_changes",
+      "addsGameplayFrames": false
+    }
+  ],
+  "combatTrack": {
+    "startup": 0,
+    "active": 0,
+    "recovery": 45,
+    "damage": 0,
+    "hitstop": 0,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 45,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "gameplayTimingStatus": {
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "owner": "simulation",
+    "candidateValues": {
+      "reviewState": "approved_current_forge_baseline",
+      "timingAuthority": "simulation_trajectory_with_review_exposure_defaults",
+      "rootMotionAuthority": "existing_sandbox_simulation_only"
+    },
+    "notes": [
+      "Every move keeps its independently authored 60 Hz duration.",
+      "Candidate timing is not authoritative unless the source record explicitly marks it authoritative.",
+      "Artwork never controls collision, movement, capture, release, hit results, or rollback."
+    ]
+  },
+  "presentationSockets": [
+    {
+      "id": "character_center",
+      "x": 768,
+      "y": 768,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "frame_change",
+        "optional_vfx",
+        "optional_sound",
+        "optional_camera"
+      ]
+    }
+  ],
+  "presentationTrack": [],
+  "approvalRecords": [
+    "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "simulation_owns_cursor",
+      "mirror_round_trip",
+      "pixel_exact_atlas_reconstruction",
+      "provenance_present"
+    ],
+    "creativeWarnings": [
+      "approved_current_forge_baseline",
+      "source-review grounding records remain authoritative; package alpha bounds do not replace foot-contact review",
+      "candidate package only; no production roster or deployment authorization"
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "approved_or_human_review_candidate_exact_rgba",
+    "tool": "NGA Forge deterministic Swahili Moveset Goal V1 package compiler",
+    "model": null,
+    "createdAt": "2026-08-13T00:00:00Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "repo://tools/nga-forge/production/characters/swahili/coverage/swahili-moveset-goal-v1.final.matrix.json",
+      "repo://tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/engine-sequence-snapshot.json"
+    ],
+    "revisionChain": [
+      "approved_current_forge_baseline",
+      "jump_fall_landing_goal_v1_candidate_package"
+    ],
+    "cleanupOperations": [
+      "metadata_only_package_authoring",
+      "source_pixels_unchanged"
+    ],
+    "humanApproval": {
+      "state": "approved",
+      "approvedBy": "recorded_human_approval",
+      "approvedAt": "recorded_in_source_evidence"
+    },
+    "licensingNotes": [
+      "Candidate-only Engine V2 sandbox package; not approved for the production roster, shipping atlas, or deployment."
+    ]
+  },
+  "goalV1Extension": {
+    "reviewState": "approved_current_forge_baseline",
+    "sourceAlphaAudit": {
+      "jump_v1_anticipation": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          275,
+          343,
+          1167,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 393835,
+        "semiTransparentPixelCount": 29586,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "jump_v1_takeoff": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          322,
+          344,
+          1120,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 346935,
+        "semiTransparentPixelCount": 25394,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "jump_v1_rising": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          326,
+          342,
+          1115,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367140,
+        "semiTransparentPixelCount": 28371,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "jump_v1_apex": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          287,
+          343,
+          1155,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 408475,
+        "semiTransparentPixelCount": 31677,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 4,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "jump_v1_falling": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          284,
+          343,
+          1158,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 346596,
+        "semiTransparentPixelCount": 28053,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "jump_v1_soft_landing": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          293,
+          343,
+          1148,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 401759,
+        "semiTransparentPixelCount": 32059,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 5,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "jump_v1_attack_landing_recovery": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          295,
+          343,
+          1148,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 344424,
+        "semiTransparentPixelCount": 28126,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "jump_v1_hard_landing_compatibility": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          178,
+          345,
+          1263,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 463908,
+        "semiTransparentPixelCount": 31957,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 46,
+        "pass": true
+      }
+    },
+    "victimFrames": [],
+    "interactionContract": null
+  }
+}

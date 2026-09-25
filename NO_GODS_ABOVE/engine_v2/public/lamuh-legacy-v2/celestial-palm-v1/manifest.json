@@ -1,0 +1,1471 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "APPROVED_AS_PRODUCTION_BASELINE",
+  "candidateOnly": true,
+  "deployable": false,
+  "variants": {
+    "light": {
+      "status": "APPROVED_AS_PRODUCTION_BASELINE",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 6,
+        "historicalDurationTicks": 29,
+        "reconstructedExposureTicks": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "exposureEvidence": "reconstructed; exact per-pose exposure not recoverable",
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 142,
+            "maxX": 307,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 132,
+            "maxX": 314,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 37,
+            "maxX": 408,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 43,
+            "maxX": 402,
+            "minY": 74,
+            "maxY": 381
+          },
+          {
+            "minX": 50,
+            "maxX": 394,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 108,
+            "maxX": 338,
+            "minY": 72,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 226.5,
+            "x": 224.5
+          },
+          {
+            "y": 226.5,
+            "x": 223
+          },
+          {
+            "y": 226.5,
+            "x": 222.5
+          },
+          {
+            "y": 227.5,
+            "x": 222.5
+          },
+          {
+            "y": 226.5,
+            "x": 222
+          },
+          {
+            "y": 226.5,
+            "x": 223
+          }
+        ],
+        "contactFrame": 2,
+        "exactContactTick": null,
+        "note": "Protected V1 six-pose Palm family. Reconstructed holds, not recovered exact timing. New strength variants are V2 authoring."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "frames": [
+          {
+            "index": 0,
+            "role": "idle entry",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false
+          },
+          {
+            "index": 1,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-01.png",
+            "sha256": "489A359F87F13F2917DB9627E624CFFF00C6A5A17CA6D6E7002B6D979DBB6CF0",
+            "sourceSha256": "3031D6AFF18FC32CF7E6D114BB9971071271750F7E09F462E077AE42A91AAC7B",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 479,
+              "x": 92
+            },
+            "visibleBounds": {
+              "minX": 585,
+              "maxX": 1080,
+              "minY": 596,
+              "maxY": 1361
+            },
+            "bodyCenter": {
+              "y": 989.2376723824513,
+              "x": 836.4408757451853
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "compact open-palm load"
+          },
+          {
+            "index": 2,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-02.png",
+            "sha256": "708C61B5183C838A0DC491E3611BEF68E7E5F70BF850E101FD5C360B89F073E7",
+            "sourceSha256": "B56721671F27F95CE3E37240307AD55DF1C31F54448C59F3D17B0398EC032CEF",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 480,
+              "x": 41.5
+            },
+            "visibleBounds": {
+              "minX": 619,
+              "maxX": 1218,
+              "minY": 604,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 983.7756834850055,
+              "x": 877.0266626348731
+            },
+            "contact": true,
+            "visibleImpact": false,
+            "role": "single ki release"
+          },
+          {
+            "index": 3,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-03.png",
+            "sha256": "C9167BD08CFE53E8FB7DBDE68C41EBEA5327208EBBDE0E365681E74F8D69EFED",
+            "sourceSha256": "C66D111E9E671438D218007D5B9E8A3E35FF2106DD8C3CB34C6CF5AA6A92976C",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 480,
+              "x": 35
+            },
+            "visibleBounds": {
+              "minX": 618,
+              "maxX": 1177,
+              "minY": 598,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 982.9267447686765,
+              "x": 874.284865548424
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "same-palm carry"
+          },
+          {
+            "index": 4,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-05.png",
+            "sha256": "2FAAA8FE85EBB0D22A88CCE2635F7EB4695DF56A99A148A94FAD37CE7E721A68",
+            "sourceSha256": "614591D18E827D1AD2E21B8DC048A6DD08A9C74C4F6C765E5360918BC66908C1",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 431,
+              "x": 66.5
+            },
+            "visibleBounds": {
+              "minX": 594,
+              "maxX": 1125,
+              "minY": 608,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 990.0032003951354,
+              "x": 831.0770665228589
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "elbow recoil"
+          },
+          {
+            "index": 5,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-06.png",
+            "sha256": "287B66D1BCE7ADB18CA5263DD694230C007EB0A31718F9F1B5B814723D0D1FCB",
+            "sourceSha256": "896A60C0DDE2F1BE3A4F739BA3CAC44A1231B9AF599847FC0B03263BD6070A4E",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 432,
+              "x": 62
+            },
+            "visibleBounds": {
+              "minX": 579,
+              "maxX": 1028,
+              "minY": 605,
+              "maxY": 1361
+            },
+            "bodyCenter": {
+              "y": 995.8280282605684,
+              "x": 799.0840037936509
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "guard return"
+          },
+          {
+            "index": 6,
+            "role": "approved idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false
+          }
+        ],
+        "contactFrame": 2,
+        "contactFrames": [
+          2
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-02.png",
+          "sha256": "708C61B5183C838A0DC491E3611BEF68E7E5F70BF850E101FD5C360B89F073E7",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "separationStatus": "simulation_owned_projectile_separate_from_opaque_body"
+        },
+        "singleSequenceScale": 1.88679245,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "fixed root; one scale per source; tracked support sandal; approved idle endpoints",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "x": 1205,
+          "y": 765
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "COMPACT_V2_VARIANT",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 2,
+            "recovery": 15
+          },
+          "durationTicks": 24,
+          "exposureTicks": [
+            2,
+            5,
+            2,
+            2,
+            3,
+            5,
+            5
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED",
+          "phaseTicks": {
+            "startup": 9,
+            "active": 2,
+            "recovery": 17
+          },
+          "durationTicks": 28,
+          "exposureTicks": [
+            2,
+            7,
+            2,
+            2,
+            3,
+            5,
+            7
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_V2_ALTERNATE",
+          "phaseTicks": {
+            "startup": 11,
+            "active": 2,
+            "recovery": 19
+          },
+          "durationTicks": 32,
+          "exposureTicks": [
+            2,
+            9,
+            2,
+            2,
+            3,
+            5,
+            9
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "COMPACT",
+          "hitstopTicks": 3,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 4,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "HEAVIER",
+          "hitstopTicks": 5,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      },
+      "approvalReceipt": {
+        "path": "records/celestial-palm-v1.approval.json",
+        "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+      }
+    },
+    "medium": {
+      "status": "APPROVED_AS_PRODUCTION_BASELINE",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 6,
+        "historicalDurationTicks": 29,
+        "reconstructedExposureTicks": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "exposureEvidence": "reconstructed; exact per-pose exposure not recoverable",
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 142,
+            "maxX": 307,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 132,
+            "maxX": 314,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 37,
+            "maxX": 408,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 43,
+            "maxX": 402,
+            "minY": 74,
+            "maxY": 381
+          },
+          {
+            "minX": 50,
+            "maxX": 394,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 108,
+            "maxX": 338,
+            "minY": 72,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 226.5,
+            "x": 224.5
+          },
+          {
+            "y": 226.5,
+            "x": 223
+          },
+          {
+            "y": 226.5,
+            "x": 222.5
+          },
+          {
+            "y": 227.5,
+            "x": 222.5
+          },
+          {
+            "y": 226.5,
+            "x": 222
+          },
+          {
+            "y": 226.5,
+            "x": 223
+          }
+        ],
+        "contactFrame": 2,
+        "exactContactTick": null,
+        "note": "Protected V1 six-pose Palm family. Reconstructed holds, not recovered exact timing. New strength variants are V2 authoring."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "frames": [
+          {
+            "index": 0,
+            "role": "idle entry",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false
+          },
+          {
+            "index": 1,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-01.png",
+            "sha256": "489A359F87F13F2917DB9627E624CFFF00C6A5A17CA6D6E7002B6D979DBB6CF0",
+            "sourceSha256": "3031D6AFF18FC32CF7E6D114BB9971071271750F7E09F462E077AE42A91AAC7B",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 479,
+              "x": 92
+            },
+            "visibleBounds": {
+              "minX": 585,
+              "maxX": 1080,
+              "minY": 596,
+              "maxY": 1361
+            },
+            "bodyCenter": {
+              "y": 989.2376723824513,
+              "x": 836.4408757451853
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "loaded open-palm guard"
+          },
+          {
+            "index": 2,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-02.png",
+            "sha256": "708C61B5183C838A0DC491E3611BEF68E7E5F70BF850E101FD5C360B89F073E7",
+            "sourceSha256": "B56721671F27F95CE3E37240307AD55DF1C31F54448C59F3D17B0398EC032CEF",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 480,
+              "x": 41.5
+            },
+            "visibleBounds": {
+              "minX": 619,
+              "maxX": 1218,
+              "minY": 604,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 983.7756834850055,
+              "x": 877.0266626348731
+            },
+            "contact": true,
+            "visibleImpact": false,
+            "role": "single ki release"
+          },
+          {
+            "index": 3,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-03.png",
+            "sha256": "C9167BD08CFE53E8FB7DBDE68C41EBEA5327208EBBDE0E365681E74F8D69EFED",
+            "sourceSha256": "C66D111E9E671438D218007D5B9E8A3E35FF2106DD8C3CB34C6CF5AA6A92976C",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 480,
+              "x": 35
+            },
+            "visibleBounds": {
+              "minX": 618,
+              "maxX": 1177,
+              "minY": 598,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 982.9267447686765,
+              "x": 874.284865548424
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "shoulder carry"
+          },
+          {
+            "index": 4,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-04.png",
+            "sha256": "F9BAD73A4C570434D0A3AACBAE06495D6A8574E631B1992A76222DE4396DC11D",
+            "sourceSha256": "E16B5C99F810BB35FB0F8C7BDC77061C8FA2D246DF301400265CF32F11B0E70B",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 429,
+              "x": 107.5
+            },
+            "visibleBounds": {
+              "minX": 575,
+              "maxX": 1202,
+              "minY": 607,
+              "maxY": 1361
+            },
+            "bodyCenter": {
+              "y": 977.2357426779212,
+              "x": 847.769774940469
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "coat follow-through"
+          },
+          {
+            "index": 5,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-05.png",
+            "sha256": "2FAAA8FE85EBB0D22A88CCE2635F7EB4695DF56A99A148A94FAD37CE7E721A68",
+            "sourceSha256": "614591D18E827D1AD2E21B8DC048A6DD08A9C74C4F6C765E5360918BC66908C1",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 431,
+              "x": 66.5
+            },
+            "visibleBounds": {
+              "minX": 594,
+              "maxX": 1125,
+              "minY": 608,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 990.0032003951354,
+              "x": 831.0770665228589
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "elbow recoil"
+          },
+          {
+            "index": 6,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-06.png",
+            "sha256": "287B66D1BCE7ADB18CA5263DD694230C007EB0A31718F9F1B5B814723D0D1FCB",
+            "sourceSha256": "896A60C0DDE2F1BE3A4F739BA3CAC44A1231B9AF599847FC0B03263BD6070A4E",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 432,
+              "x": 62
+            },
+            "visibleBounds": {
+              "minX": 579,
+              "maxX": 1028,
+              "minY": 605,
+              "maxY": 1361
+            },
+            "bodyCenter": {
+              "y": 995.8280282605684,
+              "x": 799.0840037936509
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "guard return"
+          },
+          {
+            "index": 7,
+            "role": "approved idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false
+          }
+        ],
+        "contactFrame": 2,
+        "contactFrames": [
+          2
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-02.png",
+          "sha256": "708C61B5183C838A0DC491E3611BEF68E7E5F70BF850E101FD5C360B89F073E7",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "separationStatus": "simulation_owned_projectile_separate_from_opaque_body"
+        },
+        "singleSequenceScale": 1.88679245,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "fixed root; one scale per source; tracked support sandal; approved idle endpoints",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "x": 1205,
+          "y": 765
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "COMPACT_V2_VARIANT",
+          "phaseTicks": {
+            "startup": 12,
+            "active": 3,
+            "recovery": 21
+          },
+          "durationTicks": 36,
+          "exposureTicks": [
+            4,
+            8,
+            3,
+            3,
+            4,
+            5,
+            5,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED",
+          "phaseTicks": {
+            "startup": 14,
+            "active": 3,
+            "recovery": 23
+          },
+          "durationTicks": 40,
+          "exposureTicks": [
+            4,
+            10,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_V2_ALTERNATE",
+          "phaseTicks": {
+            "startup": 16,
+            "active": 3,
+            "recovery": 25
+          },
+          "durationTicks": 44,
+          "exposureTicks": [
+            4,
+            12,
+            3,
+            3,
+            4,
+            5,
+            5,
+            8
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "COMPACT",
+          "hitstopTicks": 4,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 5,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "HEAVIER",
+          "hitstopTicks": 6,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      },
+      "approvalReceipt": {
+        "path": "records/celestial-palm-v1.approval.json",
+        "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+      }
+    },
+    "heavy": {
+      "status": "APPROVED_AS_PRODUCTION_BASELINE",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 6,
+        "historicalDurationTicks": 29,
+        "reconstructedExposureTicks": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "exposureEvidence": "reconstructed; exact per-pose exposure not recoverable",
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 142,
+            "maxX": 307,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 132,
+            "maxX": 314,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 37,
+            "maxX": 408,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 43,
+            "maxX": 402,
+            "minY": 74,
+            "maxY": 381
+          },
+          {
+            "minX": 50,
+            "maxX": 394,
+            "minY": 72,
+            "maxY": 381
+          },
+          {
+            "minX": 108,
+            "maxX": 338,
+            "minY": 72,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 226.5,
+            "x": 224.5
+          },
+          {
+            "y": 226.5,
+            "x": 223
+          },
+          {
+            "y": 226.5,
+            "x": 222.5
+          },
+          {
+            "y": 227.5,
+            "x": 222.5
+          },
+          {
+            "y": 226.5,
+            "x": 222
+          },
+          {
+            "y": 226.5,
+            "x": 223
+          }
+        ],
+        "contactFrame": 2,
+        "exactContactTick": null,
+        "note": "Protected V1 six-pose Palm family. Reconstructed holds, not recovered exact timing. New strength variants are V2 authoring."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "frames": [
+          {
+            "index": 0,
+            "role": "idle entry",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false
+          },
+          {
+            "index": 1,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/heavy/heavy-02.png",
+            "sha256": "AF21381CA0177E3DF0041FA6DEC7169EC167D41F7C7E78426A8764A64F007D30",
+            "sourceSha256": "F55930463D95142C1589676CA2C3699184D09FC261B27CD9B3A51F790AF7B0AC",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 478,
+              "x": 23.5
+            },
+            "visibleBounds": {
+              "minX": 620,
+              "maxX": 1113,
+              "minY": 673,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 1041.0743825914644,
+              "x": 880.207148361528
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "deep crossed-forearm coil"
+          },
+          {
+            "index": 2,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/heavy/heavy-03.png",
+            "sha256": "FC029CDE641F5CD77B1A886F5B317415571C7DCF9CE70C632E057BC1413AD861",
+            "sourceSha256": "250AD57F9C6CAC6E0C9FBFB8F2DE3D7354959A46CA9F0882C17054900A7205B4",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 479,
+              "x": 43
+            },
+            "visibleBounds": {
+              "minX": 618,
+              "maxX": 1300,
+              "minY": 701,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 1040.3401787105245,
+              "x": 985.3530868181515
+            },
+            "contact": true,
+            "visibleImpact": false,
+            "role": "single braced-palm release"
+          },
+          {
+            "index": 3,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/heavy/heavy-04.png",
+            "sha256": "DC0BB4859CF85013748C6E4E2770A0F7ADB3A2F51C79B669CA725D7E5F9E2A53",
+            "sourceSha256": "04074429C11C542CC3B1FBAED961A295E2209AC48CEE9FB9251ED1D56D3B1E8C",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 410,
+              "x": 73.5
+            },
+            "visibleBounds": {
+              "minX": 613,
+              "maxX": 1249,
+              "minY": 682,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 1021.2467589907906,
+              "x": 928.3160561414544
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "coat and hip follow-through"
+          },
+          {
+            "index": 4,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/heavy/heavy-05.png",
+            "sha256": "1E8F11CDB40064365673AD4154FDDEFE05A7D7CEC64473917A10903D148DF083",
+            "sourceSha256": "2FA16C4EEA6BEBC0772A1C5A54C30E9A644339C961BD0D012BEA27FAF459926C",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 413,
+              "x": 45.5
+            },
+            "visibleBounds": {
+              "minX": 619,
+              "maxX": 1104,
+              "minY": 689,
+              "maxY": 1362
+            },
+            "bodyCenter": {
+              "y": 1040.7030876700944,
+              "x": 848.489339877428
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "weight catch and recoil"
+          },
+          {
+            "index": 5,
+            "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/palm/palm-06.png",
+            "sha256": "287B66D1BCE7ADB18CA5263DD694230C007EB0A31718F9F1B5B814723D0D1FCB",
+            "sourceSha256": "896A60C0DDE2F1BE3A4F739BA3CAC44A1231B9AF599847FC0B03263BD6070A4E",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "supportFoot": {
+              "y": 1360,
+              "x": 664
+            },
+            "sourceSupportFoot": {
+              "y": 432,
+              "x": 62
+            },
+            "visibleBounds": {
+              "minX": 579,
+              "maxX": 1028,
+              "minY": 605,
+              "maxY": 1361
+            },
+            "bodyCenter": {
+              "y": 995.8280282605684,
+              "x": 799.0840037936509
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "role": "guard return"
+          },
+          {
+            "index": 6,
+            "role": "approved idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false
+          }
+        ],
+        "contactFrame": 2,
+        "contactFrames": [
+          2
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/celestial-palm-v1/heavy/heavy-03.png",
+          "sha256": "FC029CDE641F5CD77B1A886F5B317415571C7DCF9CE70C632E057BC1413AD861",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "separationStatus": "simulation_owned_projectile_separate_from_opaque_body"
+        },
+        "singleSequenceScale": 1.88679245,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "fixed root; one scale per source; tracked support sandal; approved idle endpoints",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "x": 1331,
+          "y": 844
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "COMPACT_V2_VARIANT",
+          "phaseTicks": {
+            "startup": 19,
+            "active": 4,
+            "recovery": 29
+          },
+          "durationTicks": 52,
+          "exposureTicks": [
+            5,
+            14,
+            4,
+            6,
+            7,
+            8,
+            8
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED",
+          "phaseTicks": {
+            "startup": 21,
+            "active": 4,
+            "recovery": 31
+          },
+          "durationTicks": 56,
+          "exposureTicks": [
+            5,
+            16,
+            4,
+            6,
+            7,
+            8,
+            10
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_V2_ALTERNATE",
+          "phaseTicks": {
+            "startup": 23,
+            "active": 4,
+            "recovery": 33
+          },
+          "durationTicks": 60,
+          "exposureTicks": [
+            5,
+            18,
+            4,
+            6,
+            7,
+            8,
+            12
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "COMPACT",
+          "hitstopTicks": 6,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 7,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "HEAVIER",
+          "hitstopTicks": 8,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      },
+      "approvalReceipt": {
+        "path": "records/celestial-palm-v1.approval.json",
+        "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+      }
+    }
+  },
+  "humanApproval": {
+    "family": "APPROVED_AS_PRODUCTION_BASELINE",
+    "light": "APPROVED_AS_PRODUCTION_BASELINE",
+    "medium": "APPROVED_AS_PRODUCTION_BASELINE",
+    "heavy": "APPROVED_AS_PRODUCTION_BASELINE"
+  },
+  "normalizationReport": "repo://tools/nga-forge/review/lamuh-legacy-v2-celestial-palm-v1/normalization.report.json",
+  "reviewNotes": [
+    "Local candidate: body motion, scale, sleeve alpha, support-foot registration and projectile counterplay need human review.",
+    "L/M deliberately share the legacy straight-palm action with different exposure/reach; H uses a separate braced load/recoil.",
+    "A/C are visual review candidates only; B owns playable timing.",
+    "No source V1 pixels or previously accepted forward-special frame/timing was changed."
+  ],
+  "contactSheets": [
+    "/lamuh-legacy-v2/celestial-palm-v1/palm-numbered-contact-sheet.png",
+    "/lamuh-legacy-v2/celestial-palm-v1/heavy-numbered-contact-sheet.png"
+  ],
+  "approvalReceipt": {
+    "path": "records/celestial-palm-v1.approval.json",
+    "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+  },
+  "approvalScope": "shown_current_review_family_and_B_profile_only",
+  "approvalBoundary": {
+    "currentReviewFamilyApproved": true,
+    "proceedToNextSpecialFamily": true,
+    "rosterPromotion": false,
+    "runtimeArtPromotion": false,
+    "finalCharacterApproval": false,
+    "fullProductionApproval": false,
+    "combatBalanceFinal": false,
+    "reactionPackApproved": false,
+    "deployable": false
+  }
+}

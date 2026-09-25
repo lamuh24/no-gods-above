@@ -1,7 +1,23 @@
 # LAMUH Animation Manifest and Sprite-Sheet Remake Plan
 
+## 2026-09-08 — New Legacy V2 down-special family
+
+User-approved new concept, now local candidate: Light low aura sweep; Medium advancing turning sweep; Heavy heel slam with independent short low groundwave. Inputs S+U+J/K/L. Source/public `down-specials-v1`, Forge `down-special-packages-v1`; durations28/42/56 with one hit each. Runtime source sequences8/10/9 include repaired turning/heel connectors and approved idle endpoints. Existing artwork/specials unchanged. Core/replay/blocking/one-hit and Forge/source checks plus full build pass; browser confirms32/48/66damage. Human motion approval remains pending, especially Medium pivot height and turn spacing. Provenance/normalization/critique: `tools/nga-forge/review/lamuh-down-specials-v1/README.md`.
+
 Last updated: 2026-06-06
 Agent: Codex
+
+## 2026-09-08 — Legacy V2 Divine counter launch candidate
+
+Neutral projectile follow-up: Neutral Celestial Palm L/M/H now reuse existing counter/forward cyan-white-gold aura-ball sprites in the sandbox, with size ratios26/48,34/48,42/48 to retain strength readability. Only renderer mapping changed; body art, source images, damage, timing, speed, hitboxes and other moves preserved. Full build, 12 Palm gameplay groups and new aura-render routing tests pass; browser screenshots verified Light/Heavy right and Medium mirrored left. Existing content test fails on stale next-review label (Heaven expected, Radiant actual), unrelated and not rewritten. Candidate visual review pending; no deploy/push/promotion.
+
+Latest far-launch retiming: response55, kick12–14, ball32 after a longer charge. Standard live test has308-unit separation at release and two contacts/68damage. Art unchanged; human approval pending. This supersedes48/release25 below.
+
+Newest counter-only request supersedes the historical single-blast response: triggered aura vanish → same-leg rising kick → planted diagonal aura-ball shot. Stance40ticks/window6–17 remains; response48ticks, kick12–14 and ballrelease25. Damage28+44nominal/68scaled standard route, fixed launch/projectile velocity, no victim teleport or homing. Other special families and original sources remain preserved.
+
+Eight new adult-bearded source poses use2048x1536/root(768,1360), uniform2.45camera calibration, realalpha and green0. Counter-only stance reuses the new matching cyan-white-gold guard. Individual source folder `engine_v2/content-source/characters/lamuh-legacy-v2/counter-launch-frames-v4`; additive Forge bundle `counter-launch-packages-v4`; public manifest and animation-only preview under `counter-launch-v4`. Sandbox `Heavy counter SUCCESS` uses this candidate. OldV3 is historical, not deleted.
+
+Build, focused simulation/replay/mirrored/corner checks, physical heel/palm alignment, source hashes and Forge validation pass. Independent static review found no hard limb/anatomy or duplicated-ball failure; contact/recovery spacing awaits human1x/.5x judgment. Browser attachment failed this session, so live visual approval is not claimed. Source prompts and complete evidence: `tools/nga-forge/review/lamuh-counter-launch-v4/README.md` from repository root. Candidate-only; no production promotion or deployment.
 
 ## Scope Lock
 
@@ -209,6 +225,14 @@ Ascended LAMUH must look like the same exact person powered up. Keep the same fa
 
 Legend: "Works" means a runtime alias resolves to a non-missing row. "Acceptable" means visually acceptable as final art. Many rows work only as temporary fallback art.
 
+Engine V2 rebuild gate (candidate-only, nondeployable):
+
+- Standing Light: V1 motion preserved and human-approved with timing candidate B (`18` ticks). This approves only that clip's motion and visual retiming; combat profile, runtime promotion, production baseline, and first-playable closure remain unapproved.
+- Standing Medium: V1 motion and the outline-free eight-pose modernization are human-approved with timing candidate B (`24` ticks). This approves only that clip's motion and visual retiming; impact profile, combat profile, runtime promotion, production baseline, and first-playable closure remain unapproved.
+- Crouching Light: legacy source truth is a four-frame Standing Light artwork alias rather than a distinct crouching row. The seven-pose outline-free V2 modernization is human-approved for preserved motion and timing candidate B (`16` ticks): a body-driven low palm check with fixed root, one visible impact, same-arm follow-through, and connected crouch recovery. This approval is limited to motion and visual retiming; impact profile, combat profile, runtime promotion, production baseline, and first-playable closure remain unapproved.
+- Crouching Medium: legacy source truth is an eight-frame Standing Medium artwork alias rather than a distinct crouching row. The eight-pose outline-free `Sweep Line` V2 modernization is now a human-review candidate: fixed authored root, same lead leg through load/contact/follow-through/retraction, frame `03` as the only visible impact, and independent timing candidates A/B/C at `19`/`22`/`25` ticks. Motion, timing, impact, combat profile, runtime promotion, production baseline, and first-playable closure remain unapproved.
+- Standing Heavy: the prior contact-scale repair remains the only approved Heavy repair; broader Heavy motion/timing and first-playable approval remain separate gates.
+
 | Key | Move name | Purpose | Current fallback/source | Works | Acceptable | Bespoke art | Frames | Visual direction | Form |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `lamuh_idle` | Idle | Neutral stance | Processed Sheet 1 Row 0 | Yes | Candidate | Must-have | 8 | Grounded, coiled, coat readable, mirror hand ready | Shared |
@@ -281,6 +305,14 @@ Mirror Pierce must be a signature rush-through and blast move with unique body p
 
 ## Integration Notes
 
+### Engine V2 Legacy air-normal smooth single-hit candidate — 2026-08-29
+
+- `air_light` / Jump Light is now a five-frame authored V2 reconstruction: compact same-arm palm chamber, extension connector, one open-palm contact, held same-arm follow-through, and guarded recovery. Its protected V1 motion references are `1, 1, 2, 2, 3`; the connector strip is explicitly targeted V2 reconstruction art rather than falsely labeled pixel-identical V1 source. The ambiguous fist-looking source index `0` remains hash-protected but excluded. Visible impacts: `1`; registered hits: `1`; recommended B exposure: `2, 1, 5, 2, 3` ticks (`13` total).
+- `air_medium` / Jump Medium is now a six-frame authored V2 reconstruction: same-leg compact chamber, extension connector, one side-kick contact, retraction connector, knee recoil, and guarded recovery. Its protected V1 motion references are `1, 1, 2, 4, 4, 5`; the fist entry and cross-punch remain hash-protected source history but are excluded from playback. Visible impacts: `1`; registered hits: `1`; recommended B exposure: `3, 3, 4, 3, 4, 4` ticks (`21` total).
+- Jump Medium deals its existing `44` damage in the single kick hit and retains a total juggle cost of `2`.
+- Both moves use one fixed sequence scale and the shared authored root. First-frame cross-move scale delta is `1.34%`; contact presentation is body-only with contact VFX disabled. These are local review candidates only: human motion, timing, transition, and combat-profile approval remain unset.
+- Review controls: `j.L one-hit check` and `j.M one-hit check` in `lamuh-legacy-sandbox.html`; side-by-side timing/contact review remains in `lamuh-v1-v2-review.html`.
+
 Place replacement base runtime sheets under `NO_GODS_ABOVE/assets/sprites/lamuh_final/` unless a new staging folder is intentionally introduced. Place replacement ascended body sheets in the same LAMUH final folder, but keep them separate from base sheets until they pass identity review.
 
 Preferred future wiring path:
@@ -311,3 +343,271 @@ Hitboxes/debug boxes are not forced on by default. `state.debug` initializes fal
 - Crown Beam now uses the dedicated neutral-special atlas Row 2 body frames plus separate Row 5/runtime beam VFX; future art can still improve the bespoke body pose, but it should preserve the body/VFX separation.
 - The reactions/defense atlas is coverage-ready but not polish-final: the source's wide wall-bounce/knockdown rows carry minor edge slivers, and Row 2 frame 7 is repaired by holding Row 2 frame 6 because the generated source cell was only a shoe fragment.
 - Old Sheet 8 Rows 5-7 remain deprecated as final ascended body art and are preserved only as fallback/history; active super coverage uses the golden-locs ascended atlas.
+
+## Engine V2 Targeted Air Medium Foot Repair - 2026-08-31
+
+- The user-reported duplicate third foot was removed from the Air Medium extension/contact artwork. The repaired candidate preserves the approved same-leg chamber, extension, single contact, retraction, knee recoil, and guarded recovery flow.
+- Gameplay remains unchanged at one registered hit, `44` damage, and the recommended `21`-tick visual duration. The protected V1 source, authored root, scale contract, inputs, hitbox timing, cancel rules, and unrelated moves were not changed.
+- This is a targeted visual repair only. It does not promote the full air-normal set, first playable, or production baseline.
+
+## Engine V2 Dedicated Standard Grab and Throw Animation Candidate - 2026-08-31
+
+No usable V1 universal-grab, forward-throw, or back-throw attacker artwork was recoverable, so these clips are explicitly classified as new V2 missing-state authoring rather than preserved legacy motion. The previous Standing Medium placeholder has been removed from all three throw paths.
+
+| Clip | Frames | Authored visual exposure | Gameplay alignment | Motion contract |
+| --- | ---: | --- | --- | --- |
+| Universal grab attempt / whiff | 6 | `3 / 2 / 3 / 3 / 4 / 5` (`20` visual ticks) | Pending reach and deterministic whiff recovery retain the existing gameplay contract | Guarded entry, body-driven reach, maximum reach, secure-ready hold, whiff recoil, connected recovery |
+| Forward throw | 6 | `6 / 2 / 3 / 4 / 5 / 12` (`32` ticks) | Existing connect tick `4`, release tick `14`, total `32`, damage `70`, hitstop `6` | Secure, step-in load, hip drive, decisive forward release, follow-through, guarded recovery |
+| Back throw | 6 | `6 / 2 / 4 / 4 / 6 / 14` (`36` ticks) | Existing connect tick `4`, release tick `16`, total `36`, damage `75`, hitstop `7` | Secure, draw close and plant, pivot load, controlled rear redirect, side-switch release, unwind/recovery |
+
+Normalization and visual-integrity contract:
+
+- `18` transparent modern-style Lamuh frames use a `2048 x 1536` canvas, fixed authored root `(768, 1360)`, and one sequence-wide `2.0` scale. There is no per-frame scaling or visual recentering.
+- Component-aware silhouette extraction keeps extended limbs attached and removes neighboring-cell fragments. All sequence frames are distinct, no meaningful magenta remains, no frame touches a canvas edge, and the standing-pose height delta stays within `7.5%` of the `800 px` body-height reference.
+- The standard-height victim track remains deterministic and body-driven. The victim is never globally scaled or arbitrarily teleported; forward and back trajectories remain authored from Lamuh's secure, drive, pivot, and release phases.
+- The dedicated attacker art changes presentation only. Deterministic 60 Hz simulation ownership, damage, hitstop, throw connect/release ticks, side-switch behavior, replay/checksum behavior, inputs, and whiff safety remain unchanged.
+
+Review artifacts:
+
+- Numbered contact sheet: `tools/nga-forge/review/lamuh-legacy-v2-throws-v1/throw-family-numbered-contact-sheet.png`
+- Normalization evidence: `tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json`
+- Local playtest: `http://127.0.0.1:4177/lamuh-legacy-sandbox.html`
+
+Human gate: `awaiting_human_standard_grab_forward_throw_back_throw_review`. This is a local candidate only. Required review outcomes are `APPROVED_STANDARD_GRAB`, `APPROVED_FORWARD_THROW`, and `APPROVED_BACK_THROW`, or a targeted rejection/repair status. Small, large, non-humanoid, and extreme-proportion victim classes remain `DEFERRED_NOT_BLOCKING`. No deployment or production promotion is authorized by this package.
+
+## Engine V2 Modern Crouch and Jump Candidate - 2026-09-01
+
+The protected four-frame V1 crouch and four-frame V1 jump sources remain unchanged and hash-locked. Their low guarded crouch and raised-knee airborne silhouettes were retained as motion references, while the obsolete purple-edged artwork was rebuilt in the approved modern Lamuh style.
+
+| Clip | Frames | Authored exposure | Live presentation mapping |
+| --- | ---: | --- | --- |
+| Crouch | 6 | `3 / 3 / 6 / 6 / 4 / 4` (`26` review ticks) | Lowering entry/connector play on crouch entry; Frames 02-03 form the held low loop. Rising connector/recovery are comparison-ready, but live crouch-to-stand integration remains targeted debt. |
+| Jump / fall / landing | 7 | `4 / 3 / 5 / 4 / 5 / 4 / 3` (`28` review ticks) | Jump startup uses anticipation; vertical velocity selects takeoff, rise, apex, and fall; landing recovery uses compression then guarded recovery. Simulation owns all world travel. |
+
+Normalization and identity contract:
+
+- All `13` frames use the existing `2048 x 1536` movement canvas and fixed authored root `(768, 1360)`.
+- Each generated source sheet receives one baked camera correction (`1.63934426` crouch, `2.17391304` jump) against the `800 px` modern idle reference. There is no per-frame or runtime rescaling and no renderer-driven travel.
+- Fixed-scale standing bounds are `802 px` for crouch entry, `773 px` for crouch recovery, and `802 px` for jump recovery. Crouch compression and airborne tuck intentionally reduce silhouette height without changing anatomy scale.
+- Dominant-green cleanup, distant-component rejection, alpha-zero RGB clearing, and magenta rejection pass. No frame touches an edge and no meaningful purple/magenta pixels remain. The frame scrub caught and removed one neighboring-cell coat fragment from the falling connector before integration.
+- Lamuh retains the approved modern identity: same face, skin tone, athletic proportions, long dark locs, white/gold coat, black clothing, cyan accents, and neutral dark linework.
+
+Review artifacts:
+
+- Fixed-scale numbered sheet: `tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/crouch-jump-numbered-contact-sheet.png`
+- Normalization report: `tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalization.report.json`
+- Hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/crouch-jump-modernization-v1.hash-lock.json`
+- Side-by-side review: `http://127.0.0.1:4177/lamuh-v1-v2-review.html`
+- Combined playtest: `http://127.0.0.1:4177/lamuh-legacy-sandbox.html` using `Crouch movement` and `Jump movement`.
+
+Technical validation passes the Lamuh deterministic/content/closure suites, production build, live crouch/rise/apex/landing browser smoke, V1/V2 comparison smoke, fixed-root evidence, and zero-purple checks. Gameplay values, jump physics, landing recovery, input routing, hitboxes, attacks, throws, and the protected legacy `game.js` remain unchanged.
+
+Human gate: `awaiting_human_crouch_jump_standard_grab_forward_throw_back_throw_and_combined_movement_review`. Crouch motion, jump motion, scale, transitions, standard grab, forward throw, and back throw remain move-specific candidate reviews. Nothing is production-approved or deployable.
+
+## Engine V2 Modern Dash, Air Dash, and Standing Block Candidate - 2026-09-01
+
+The protected V1 motion remains unchanged and hash-locked. Forward/back ground-dash momentum, air-dash body arcs, coat/loc drag, and the raised-knee standing guard were retained as motion references, while the obsolete purple-edged art was rebuilt in the approved modern Lamuh style.
+
+| Clip | Frames | Authored exposure | Simulation ownership |
+| --- | ---: | --- | --- |
+| Dash Forward | 6 | `3 / 3 / 3 / 3 / 3 / 3` (`18` ticks) | Existing deterministic ground travel and collision remain unchanged. |
+| Dash Backward | 5 | `4 / 4 / 4 / 4 / 4` (`20` ticks) | Existing deterministic retreat travel and collision remain unchanged; the generated upright sixth pose was retired to avoid a terminal size/pose pop. |
+| Air Dash Forward | 6 | `2 / 2 / 2 / 3 / 3 / 2` (`14` ticks) | Existing deterministic air travel, duration, and one-use-per-airtime rule remain unchanged. |
+| Air Dash Backward | 5 | `2 / 2 / 3 / 3 / 4` (`14` ticks) | Existing deterministic air travel, duration, and one-use-per-airtime rule remain unchanged. |
+| Standing Block | 4 | `4 / 4 / 4 / 4` (`16`-tick loop) | Existing block input, guard rules, hurtboxes, and combat state remain unchanged. Crouching Block was not modified. |
+
+Normalization and identity contract:
+
+- All `26` frames use the shared `2048 x 1536` modern-movement canvas and fixed authored root `(768, 1360)`.
+- Each source sequence receives one baked scale; there is no per-frame scale, runtime rescale, visual recentering, sprite-authored travel, or renderer-driven gameplay.
+- Frame scrub removed a detached neighboring-cell foot from Dash Forward and connected grey ground dust from the final Dash Backward pose. All normalized frames are unique, no frame touches an edge, and meaningful purple/magenta and bright-red artifact counts are zero.
+- Lamuh retains the approved identity lock: warm-brown skin, long black locs, white/gold coat, black clothing, cyan/gold details, athletic proportions, and neutral dark ink rather than the legacy purple outline.
+
+Review and runtime evidence:
+
+- Normalization report: `tools/nga-forge/review/lamuh-legacy-v2-dash-block-modernization-v1/normalization.report.json`
+- Per-clip numbered sheets: `tools/nga-forge/review/lamuh-legacy-v2-dash-block-modernization-v1/*-numbered-contact-sheet.png`
+- Candidate hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/dash-block-modernization-v1.hash-lock.json`
+- Side-by-side review: `http://127.0.0.1:4177/lamuh-v1-v2-review.html`, defaulting to Dash Forward.
+- Combined playtest: `http://127.0.0.1:4177/lamuh-legacy-sandbox.html` with dedicated `Dash forward`, `Dash backward`, `Air dash forward`, `Air dash backward`, and `Standing block` scenarios. Shift remains a valid dash shortcut.
+
+Validation passes the Lamuh deterministic/content/closure suite, TypeScript/Vite production build, live comparison and sandbox browser smoke, fixed-root/hash checks, and zero-purple checks. The browser receipt records all five states using the modern movement package with zero console errors and zero failed requests.
+
+Human gate: `awaiting_human_dash_air_dash_standing_block_crouch_jump_grab_throw_and_combined_movement_review`. This is a local candidate only. Dash, air-dash, standing-block, scale, and transition approvals remain unset; no runtime production promotion or deployment is authorized.
+
+## Walk Back and Back Dash Directional-Motion Repair - 2026-09-01
+
+Human playtest found that the simulation moved Lamuh backward while the prior poses still read like forward travel. Only `walk_backward` and `dash_backward` artwork was repaired. Inputs, deterministic displacement, collision, and authored durations remain unchanged.
+
+| Clip | Frames | Authored exposure | Directional read |
+| --- | ---: | --- | --- |
+| Walk Back | 6 | `3 / 3 / 3 / 3 / 3 / 3` (`18` ticks, loop) | Right-facing guard, rearward foot placement and leftward weight transfer; coat and locs trail right. |
+| Back Dash | 5 | `4 / 4 / 4 / 4 / 4` (`20` ticks) | Guarded recoil, backward takeoff, airborne retreat, landing catch and planted brake; no forward-sprint silhouette. |
+
+All `11` frames use one scale per sequence, the existing `2048 x 1536` canvas, and fixed authored root `(768, 1360)`. Normalized frames are distinct, touch no canvas edge, contain no meaningful purple/magenta pixels, and remain candidate-only.
+
+- Normalization report: `tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/normalization.report.json`
+- Numbered sheets: `tools/nga-forge/review/lamuh-legacy-v2-backward-motion-repair-v1/walk-backward-numbered-contact-sheet.png` and `dash-backward-numbered-contact-sheet.png`
+- Candidate hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/backward-motion-repair-v1.hash-lock.json`
+- Side-by-side review: `http://127.0.0.1:4177/lamuh-v1-v2-review.html`
+- Combined playtest: `http://127.0.0.1:4177/lamuh-legacy-sandbox.html` using dedicated `Walk backward` and `Dash backward` scenarios.
+
+Human gate: `awaiting_human_walk_backward_and_dash_backward_directional_review`. Neither directional repair nor its transitions are production-approved or deployable.
+
+## Walk Back Video-Derived Supersession - 2026-09-01
+
+The generated six-frame Walk Back candidate above is superseded for active review by a cycle reconstructed exclusively from the user-supplied walking video. Back Dash remains unchanged.
+
+| Clip | Video source frames | Authored exposure | Runtime contract |
+| --- | --- | --- | --- |
+| Walk Back | `72 / 60 / 48 / 36 / 24 / 12 / 0` | `3 / 3 / 2 / 3 / 2 / 2 / 3` (`18` ticks, loop) | The approved forward-walk gait is played in reverse chronological order while right-facing simulation movement remains leftward. Fixed root `(768, 1360)` and movement physics are unchanged. |
+
+- Supplied video SHA-256: `C3D745562609834CEB3FF3DA63047874B0A068688A104EDBF39CB67CACAB0E40`
+- Source copy: `tools/nga-forge/review/lamuh-legacy-v2-forward-walk-video-v1/source/lamuh-forward-walk-user-reference-20260827.mp4`
+- Normalization report: `tools/nga-forge/review/lamuh-legacy-v2-walk-back-video-rebuild-v1/normalization.report.json`
+- Numbered frame scrub: `tools/nga-forge/review/lamuh-legacy-v2-walk-back-video-rebuild-v1/walk-backward-video-numbered-contact-sheet.png`
+- Candidate hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/walk-back-video-rebuild-v1.hash-lock.json`
+- Active mapping uses `7` video-derived frames with one sequence scale (`0.8658`), fixed authored root, zero runtime/per-frame scaling, and zero meaningful purple pixels in the live smoke receipt.
+- The superseded generated Walk Back frames remain historical candidate evidence only and are not referenced by the active `walk_backward` state.
+
+Human gate: `awaiting_human_walk_backward_video_rebuild_review`. This remains a local, nondeployable candidate. Approval is unset until the reversed video gait, leftward retreat read, and entry/exit transitions pass human playtest.
+
+## Crouching Block and Adult-Proportion Jump Identity Repair - 2026-09-01
+
+The first two generated Crouching Block strips were rejected and preserved as review evidence: one omitted Lamuh's boxed beard and used chibi head-to-body proportions; the second restored the beard but retained excessive torso/limb compression. The active candidate restores the mature angular face, connected beard and mustache, adult torso and limb proportions, and modern outline-free rendering while preserving the four V1 low-guard beats.
+
+| Clip | Frames | Authored exposure | Runtime contract |
+| --- | ---: | --- | --- |
+| Crouching Block | 4 | `3 / 3 / 4 / 6` (`16` ticks, final-frame hold) | Existing block input, crouch-block flag, hurtboxes, and combat rules remain simulation-owned. |
+| Jump / Fall / Landing | 7 | `4 / 3 / 5 / 4 / 5 / 4 / 3` (`28` review ticks) | Existing timing and physics-driven takeoff/rise/apex/fall/landing selection remain unchanged. |
+
+Both sequences use the shared `2048 x 1536` movement canvas, fixed authored root `(768, 1360)`, and one baked scale per sequence. The Jump standing recovery matches the modern Idle visible height within `0.25%`; no per-frame or runtime scale correction is used. Normalization reports record zero edge touches, zero meaningful purple/magenta pixels, zero bright-red fringe, and unique frame hashes.
+
+- Crouching Block numbered scrub: `tools/nga-forge/review/lamuh-legacy-v2-crouching-block-modernization-v1/crouching-block-numbered-contact-sheet.png`
+- Jump numbered scrub: `tools/nga-forge/review/lamuh-legacy-v2-jump-adult-proportion-repair-v1/jump-adult-proportion-numbered-contact-sheet.png`
+- Rejected Crouching Block evidence: `tools/nga-forge/review/lamuh-legacy-v2-crouching-block-modernization-v1/rejected-generations.candidate.v1.json`
+- Crouching Block hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/crouching-block-modernization-v1.hash-lock.json`
+- Jump repair hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/jump-adult-proportion-repair-v1.hash-lock.json`
+- Readiness audit: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/NORMALS_IDLE_TRANSITION_READINESS_AUDIT.md`
+
+The comparison and sandbox browser smoke pass with both states using `modern_movement`, zero purple fallback, and unchanged deterministic combat authority. This remains a local candidate. Beard/adult identity, Crouching Block motion, Jump motion, and combined transitions require human approval before starting broader specials production.
+
+## Engine V2 Live Crouch-to-Stand Transition Integration - 2026-09-02
+
+The modern Crouch package already contained an authored rising connector and standing recovery at the approved fixed root and adult anatomy scale. Those two frames are now reused directly instead of generating replacement art.
+
+| Clip | Frames | Authored exposure | Runtime contract |
+| --- | ---: | --- | --- |
+| Crouch to Stand | Crouch Frames `04-05` | `4 / 4` (`8` visible ticks) | Explicit deterministic `crouch_release` phase; standing gameplay boxes apply immediately; attack, jump, dash, crouch, walk, or block input interrupts without waiting for the visual recovery. |
+
+- Canvas/root remain `2048 x 1536` and `(768, 1360)` with no per-frame or runtime rescaling.
+- The renderer reads the simulation phase and never owns transition state.
+- V1 had no dedicated crouch-release clip, so the comparison route labels the V1 side unavailable instead of disguising V2 missing-state work as preserved source art.
+- Replay checksums reproduce exactly; the focused regression also proves Standing Light and Walk Forward preempt the release immediately.
+- Browser evidence records `phase: crouch_release`, `visualPackage: modern_movement`, and zero meaningful purple pixels.
+
+Review artifacts:
+
+- Comparison capture: `NO_GODS_ABOVE/engine_v2/artifacts/lamuh-legacy-v2/v1-v2-crouch-release-live-transition-review.png`
+- Sandbox capture: `NO_GODS_ABOVE/engine_v2/artifacts/lamuh-legacy-v2/crouch-release-live-transition.png`
+- Candidate record: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/crouch/release-transition.candidate.v1.json`
+
+Human decision (2026-09-02): `APPROVED_V1_MOTION_PRESERVED` for `crouch_to_stand_motion_and_transition_only`, recorded from the user's `passes` response in `records/crouch-release-v1.approval.json`. V1 had no dedicated release clip, so this status accepts the preservation-first V2 connector and flow rather than claiming a one-to-one legacy clip. The whole fighter, combined movement, combat profile, production baseline, and deployment remain unapproved. Dedicated turn/facing art is the next transition gate, and broader specials production remains stopped.
+
+## Engine V2 Dedicated Turn / Facing Transition Candidate - 2026-09-02
+
+The V1 audit found no dedicated Lamuh turn/facing clip. V2 therefore treats this as explicit missing-state authoring, not preserved legacy footage. The candidate keeps the approved adult Idle identity, boxed beard and mustache, long loc silhouette, white coat/gold trim/cyan sash design, and outline-free game style.
+
+| Clip | Frames | Authored exposure | Runtime contract |
+| --- | ---: | --- | --- |
+| Turn / Facing | `ready entry / rear three-quarter pivot / weight transfer / settle` | `2 / 3 / 3 / 4` (`12` visible ticks) | Gameplay facing swaps on tick `0`; fixed-root presentation reads `turnStartingFacing`; the opposite direction mirrors the whole canonical sequence; every normal movement, defense, jump, dash, throw, or attack input may interrupt immediately. |
+
+- All four frames use one sequence normalization scale, the shared `2048 x 1536` movement canvas, and fixed root `(768, 1360)`; there is no per-frame renderer scale or visual recentering.
+- Normalized visible-height spread is `2%` and the Idle median-height delta is `0.12%`.
+- Normalization found four unique frames and zero meaningful purple/magenta pixels.
+- The first generation is retained as rejected evidence because it baked a checkerboard background and repeated the settle pose.
+- Renderer state never drives gameplay facing, collision, input, replay, rollback, or checksums.
+- Turn-only deterministic state joins the checksum projection while active; historical pre-turn checksum fixtures remain byte-compatible.
+
+Review artifacts:
+
+- Numbered contact sheet: `tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/turn-facing-numbered-contact-sheet.png`
+- Normalization report: `tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json`
+- Hash lock: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/turn-facing-modernization-v1.hash-lock.json`
+- Candidate contract: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/moves/turn-facing/visual-modernization.candidate.v1.json`
+
+Human decision (2026-09-02): `APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT` for `turn_facing_motion_mirrored_parity_and_transition_only`, recorded from the user's `passes but star this one because we may come back to it` response in `records/turn-facing-v1.approval.json`. The clip is visibly marked `★ revisit`; this is not final production approval. No combined-fighter approval, combat-profile approval, runtime promotion, deployment, merge, push, or PR is implied. The current gate advances to independent Standard Grab, Forward Throw, and Back Throw review, and broader specials production remains stopped.
+
+## Standard Grab / Throw Approval and Ascend Step L/M/H V2 Family - 2026-09-03
+
+Human decision: `APPROVED_STANDARD_GRAB`, `APPROVED_FORWARD_THROW`, and `APPROVED_BACK_THROW` for the dedicated attacker motion, standard-height humanoid interaction, and neutral transitions. The scoped receipt is `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/standard-grab-throw-family-v1.approval.json`. This does not approve alternate victim classes, the throw combat profile, runtime art promotion, the whole first playable, production, or deployment.
+
+Ascend Step is the first active special-family gate. Its seven protected V1 source poses remain hash-locked and unmodified. The earlier V2 rising-palm/airborne-strike, fixed-root backflip, and simultaneous double-leg handspring versions remain preserved as rejected or superseded evidence. Light keeps the movement-first dash-punch and Heavy keeps the approach/behind-switch/blast candidate. Medium now uses the targeted repair requested at the human gate: a traveling low slide kick retracts into a dedicated coil, both hands reach backward and plant, one heel becomes the clear asymmetric rising launcher while the other leg bends for counterbalance, then a separately authored tuck resolves into a compressed two-foot landing.
+
+| Strength | Candidate A | Candidate B (recommended) | Candidate C | Gameplay role |
+| --- | ---: | ---: | ---: | --- |
+| Light | `18` ticks | `20` ticks | `23` ticks | Shortest travel, fastest recovery, lowest reward, no knockdown |
+| Medium | `44` ticks | `48` ticks | `52` ticks | Traveling low slide contact into planted-hands back-handspring and one rising-heel launcher contact |
+| Heavy | `38` ticks | `42` ticks | `46` ticks | Approach, legal behind-target side switch, one high-impact rear blast |
+
+- Light retains six distinct poses assembled from approved `idle`, `dash_forward`, and `standing_light` runtime frames. Medium has sixteen distinct frames: seven exact approved slide/recovery frames plus nine animation frames derived from six bounded missing-state sources (coil, backward two-hand reach, plant, asymmetric rising heel, post-contact tuck, and landing). Three missing-state in-betweens use rigid rotation only. Heavy retains ten distinct frames: approved Idle aura load, two approved dash poses, VFX-only teleport streak, approved reappearance, pause, growing orb, one blast contact, approved recoil, and approved Idle recovery.
+- Medium keeps one locked authored character scale with no per-frame body scaling. Its source-canvas anchor remains stable while deterministic simulation-owned root segments visibly carry Lamuh forward through the slide and redirect him backward through the handspring. Only Heavy's teleport-streak frame intentionally omits the body.
+- The Heavy arm-continuity repair keeps both arms and the whole body readable. Charge and blast effects are isolated VFX-only sources composited over untouched approved body sprites, preventing body transparency and preserving the complete cyan-white/gold effect.
+- All frames share the `2048 x 1536` canvas. Chibi scaling, generated face changes, purple outlines, arbitrary body cutouts, and off-canvas body cropping are forbidden.
+- Adult identity remains a hard gate across every frame: mature face, boxed beard and mustache, long black locs, adult torso/limb proportions, white/gold coat, black clothing, and cyan sash.
+- The deterministic simulation owns all travel and contacts. Light uses root motion on ticks `2-7`. Medium moves forward on ticks `2-11`, redirects on ticks `12-16`, continues the backward handspring on ticks `17-26`, and settles on ticks `27-33`; its slide hitbox is active on ticks `7-9` and its rising-heel launcher on ticks `26-28`. Heavy approaches on ticks `4-11`, switches on tick `14` only when legal and within `150` units, never moves the victim, and activates its only hit on ticks `24-28` after the authored pause and growth.
+- Recommended combat candidates are Light `32` damage / `5` hitstop, Medium `70` base damage over two hits (`26` plus `44`, `66` expected after route scaling) with `5` then `8` hitstop, and Heavy `84` / `9`. Medium has exactly two visible contacts and exactly two registered hits; Light and Heavy remain one-hit. Renderer timing never drives gameplay, replay, rollback, or checksums.
+- VFX-only sources are hash-locked: Light/Medium dash aura `EDD5B9DD5C0861010814DDCE061AC22FA29CDACC1F1EFB0A6E38F562B4D864DF`; Heavy charge/blast `03C12E1613BD5684FC3DB960D76AA23745A9D3D06B673A894CBA611304EED743`. Body identity is locked separately by the exact approved source-frame hashes in each normalization report.
+
+Review artifacts:
+
+- Light numbered sheet: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/ascend-step-dash-punch-numbered-contact-sheet.png`
+- Light normalization report: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-dash-punch-v2/normalization.report.json`
+- Medium numbered sheet: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-slide-flip-numbered-contact-sheet.png`
+- Medium root-path overlay: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-authored-root-path-overlay.png`
+- Medium silhouette sheet: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-silhouette-only-sheet.png`
+- Medium slide/coil/plant close-up: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-slide-coil-hand-plant-closeup.png`
+- Medium handspring/rising-kick close-up: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-handspring-rising-kick-closeup.png`
+- Medium VFX-off sheet: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-vfx-off-numbered-sheet.png`
+- Medium old-vs-repaired sheet: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-old-vs-repaired-comparison.png`
+- Medium normalization report: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalization.report.json`
+- Heavy numbered sheet: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/ascend-step-heavy-numbered-contact-sheet.png`
+- Heavy normalization report: `tools/nga-forge/review/lamuh-legacy-v2-ascend-step-heavy-v1/normalization.report.json`
+- Candidate locks: `NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-dash-punch-v2.hash-lock.json`, `ascend-step-medium-slide-flip-v1.hash-lock.json`, and `ascend-step-heavy-v1.hash-lock.json`
+- Forge packages: `moves/ascend-step-light/animation.package.json`, `moves/ascend-step/animation.package.json`, and `moves/ascend-step-heavy/animation.package.json`
+- Live playtest route: `http://127.0.0.1:4177/lamuh-legacy-sandbox.html` with the arena left open at full-body framing.
+
+The focused Lamuh suite, TypeScript/Vite build, Forge compilation, and live browser smoke pass. Browser evidence confirms Lamuh-vs-Lamuh rendering, visible arena bounds `[-280, 280]`, the first grounded slide hit, the second upward launch hit, the authored post-contact tuck, `66` total scaled route damage, and two deterministic presentation events. Forge compilation produced all `27` first-playable packages. Protected `game.js` remains SHA-256 `D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B`. Current status is `awaiting_human_ascend_step_medium_targeted_motion_repair_review`; the full-body sandbox is open at 1x for human verification. No next special, promotion, deployment, merge, push, or PR is authorized.
+# 2026-09-05 — Lamuh Legacy V2 quality candidate addendum
+
+The Engine V2 sandbox now has a separate 12-frame adult-proportion reaction candidate for light/heavy response, launch/fall, ground state and get-up. It uses individual normalized source frames, one fixed sequence scale, simulation-state-selected one-shot playback, and an additive five-animation Forge bundle. Existing movement, normals, Ascend Step family and accepted throw body artwork is preserved: 185 current frames are hash-locked by `engine_v2/content-source/characters/lamuh-legacy-v2/quality-preserved-art.lock.json`.
+
+Contact feedback is now an independently rendered, collision-triggered sprite-socket layer; it does not replace the body with a separately redrawn composite. Down Heavy's rejected decoration remains off. Legacy fallback/composites remain accessible only through the explicit previous-visual comparison. The sandbox preloads all frame sources before running and offers a clean full-body playtest.
+
+Status: candidate-only, deployable false. New reactions and impact feedback have **not** received human approval. Support-foot registration through recoil/get-up and Ascend M heel-to-victim contact height remain starred review debt. A fixed canvas root is not proof of an anatomically planted foot. The prior scoped pushbox provisional pass is recorded without promoting animation or the character.
+
+See [quality benchmark and current moveset audit](../engine_v2/content-source/characters/lamuh-legacy-v2/QUALITY_BENCHMARK_AUDIT_2026-09-05.md) for ArcSys reference sources, verified timing/roles, core cancel/placeholder/reaction fixes, evidence, applied NGA skills and the next human gate. Historical material below remains preserved and should not be mistaken for current implemented coverage.
+
+# 2026-09-05 — special-family progress and distinct cinematic Heavy
+
+Newest review state: forward Ascend L/M/H provisionally accepted/starred; Celestial Palm L/M/H passed the shown current-family baseline, not whole-character/art promotion. Both decisions retain exact frame/B-profile hashes. Palm projectiles are real simulation-owned detached shots, not body-hitbox stand-ins.
+
+Heaven Splitter Up+Special L/M/H is the next pending family:36/43/53 ticks with one uppercut and explicit simulation-owned16/40/64-height hops. The legacy seven-pose rising arc remains available for comparison; its shrinking sprites and detached sandal were not reproduced. Adult near-arm performance is explicitly a modernization of the legacy far-arm motion, not falsely declared exact reuse.
+
+At the user's request Heavy V2 now has14 separately authored active poses: idle→sink→wind-back→coil→rising connector→one uppercut→full extension→apex release→gather→landing approach→two-foot catch→settle→guard→idle. Light/Medium's11-pose performances stay unchanged. New H art uses documented per-source camera calibration, no per-frame height normalization. A narrow separate ki arc, background framing and a short confirmed-hit camera impulse strengthen Heavy without extra hits, body zoom, victim teleport or cinematic lock.
+
+Individual normalized RGBA source folders: `heaven-splitter-frames-v1/` and `heaven-heavy-frames-v2/` under the Lamuh Engine V2 content source. Previous shared-Light H closure is retained in `records/heaven-heavy-v1.extended-light.rejection.json`. New sources remain candidates. See [special-family review checkpoint](../engine_v2/content-source/characters/lamuh-legacy-v2/SPECIAL_FAMILY_REVIEW_2026-09-05.md) for exact gameplay, source, validation and review-debt boundaries.
+
+## Follow-up — Heavy authored aura V3
+
+The user requested aura around the uppercut, then clarified it must be part of the animation itself. V3 uses composite individual PNG source frames in `heaven-heavy-aura-frames-v3/`: aura cels3–7 match coil, rising connector, contact, extension and apex fade. Body-only V2 frames and exact idle endpoints remain preserved. The existing editable aura was exported deterministically rather than redrawing the character; all fully opaque body pixels compare unchanged. Same14-pose/53-tick/one-hit motion and combat. The runtime and comparison consume the aura-bearing sprites directly and do not draw another aura overlay. VFX-off uses retained clean body sources. No new aura spawn event in the Heavy Forge package; hit-confirmed feedback remains separate. Candidate-only pending human review.
+
+## Latest follow-up — proper surrounding aura redraw V4
+
+### 2026-09-07 forward-family follow-up
+
+Sandbox forward L/M/H now use separate `forward-clean-v1/manifest.json` candidates with flowing cyan-white-gold aura matching newer offensive moves. Light: nine slots/20 ticks/one contact at5; Medium: sixteen slots/48 ticks/contacts7 and26; Heavy: eleven slots/42 ticks/contact24. New individual source frames reside in `forward-light-clean-v2`, `forward-medium-connectors-v4`, and `ascend-heavy-clean-v2`; older art and Divine shared sources remain unchanged. Human motion review pending; Heavy old two-tick disappearance remains polish debt. This is sandbox-only candidate integration, not production or legacy comparison promotion.
+
+User requested the sprite sheet itself be redone. Six newly illustrated release poses now carry flowing cyan/white/gold energy around the whole body and rising fist in `heaven-heavy-aura-redraw-frames-v4/`. These replace active slots3–8 only; other eight slots and the53-tick/one-hit/80-damage profile remain unchanged. Aura continues as contracting wisps through tick34 and is absent from landing approach at35. Corrected whitespace slicing and near-magenta unmix preserve the complete aura and white clothing, with one fixed original release scale and root; no body-height normalization. V3 remains protected history, not the active aura target.
+
+VFX-off/silhouette now mean previous clean-pose comparison, not pixel-identical aura removal from the regenerated art. Runtime and Forge do not add a second aura. Six-frame and complete14-frame contact sheets, raw sources, exact prompts, alpha/crop/hash report: `tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/` from repository root. Static normalization/independent art review and focused content/build tests pass; current motion evidence and approval boundary are documented in the special-family checkpoint. Human review remains pending; no promotion or deployment.

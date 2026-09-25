@@ -1,0 +1,33 @@
+{
+  "clipId": "knockdown",
+  "category": "damage",
+  "frameCount": 8,
+  "fps": 10,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/knockdown/vzzzz-knockdown01/sable_knockdown_8.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/knockdown/v20260709-143533/sable_knockdown_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 reaction pass. Readable fall/grounded knockdown sequence with full body visible, consistent costume details, and no cropping of hair, hands, feet, or boots."
+  ],
+  "validation": {
+    "maxScaleDriftPx": 180,
+    "scaleDriftRationale": "Knockdown intentionally transitions from standing recoil to low/grounded body poses; baseline, center, facing, and global normalization must still remain stable."
+  },
+  "validationStatus": "manual_review_required"
+}

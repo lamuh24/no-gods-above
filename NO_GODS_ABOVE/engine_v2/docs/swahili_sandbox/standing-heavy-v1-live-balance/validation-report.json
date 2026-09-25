@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "reportId": "swahili_standing_heavy_v1_live_balance_validation",
+  "profileId": "SWAHILI_STANDING_HEAVY_COMBAT_PROFILE_V1",
+  "approval": "APPROVED_RECOMMENDED_PROFILE",
+  "status": "awaiting_human_standing_heavy_live_balance_review",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "legacyGameJsModified": false,
+  "actualAdvantages": {
+    "normalHit": { "tick24": 5, "tick28": 9 },
+    "block": { "tick24": -31, "tick28": -27 },
+    "counterHit": { "tick24": 13, "tick28": 17 }
+  },
+  "punishability": {
+    "block": "defender exits blockstun with 31 to 27 move ticks before Swahili returns to idle",
+    "whiff": "46 authored recovery ticks remain after the active window closes",
+    "assessment": "severe and clearly committal in the isolated sandbox"
+  },
+  "rewardAssessment": {
+    "normalHit": "120 damage and +5 to +9 are justified by 24 startup ticks, strict point-blank reach, no cancel, and 46 recovery ticks",
+    "counterHit": "138 damage and +13 to +17 are strong but did not appear excessive in isolated sandbox testing; matchup and command-grab follow-up testing remains a human balance decision"
+  },
+  "range": {
+    "standingStrictOverlap": "root separation < 200",
+    "crouchingStrictOverlap": "root separation < 196",
+    "testedStandingHit": 199.5,
+    "testedCrouchingHit": 195.5,
+    "testedOutsideWhiff": 200.5,
+    "assessment": "point-blank attached strike; no projectile or zoning behavior"
+  },
+  "resources": {
+    "normalHit": { "meter": 12, "scalingBefore": 1.0, "scalingAfter": 0.92 },
+    "counterHit": { "meter": 12, "scalingBefore": 1.0, "scalingAfter": 0.92 },
+    "block": { "meter": 4, "scalingBefore": 1.0, "scalingAfter": 1.0 },
+    "whiff": { "meter": 0, "scalingBefore": 1.0, "scalingAfter": 1.0 }
+  },
+  "defects": [
+    {
+      "id": "standing_heavy_attack_arm_hurtbox_window",
+      "before": "attack-arm hurtbox was active on visual ticks 22 through 35",
+      "after": "attack-arm hurtbox is active only on approved active ticks 24 through 28",
+      "sourcePixelsChanged": false,
+      "artworkExposureChanged": false,
+      "resolved": true
+    }
+  ],
+  "automatedValidation": {
+    "engineV2Tests": "passed",
+    "standingHeavyFocusedTests": 10,
+    "renderedBrowserScenarios": 52,
+    "consoleErrors": 0,
+    "rollbackReplay": "passed",
+    "captureReport": "../captures/sandbox_browser_report.json",
+    "captureIndex": "../captures/capture_index.html"
+  },
+  "liveBrowserValidation": {
+    "url": "http://127.0.0.1:4173/sandbox.html",
+    "status": "passed_agent_driven_manual_browser_review",
+    "scenariosExercised": 17,
+    "rollbackReplay": "standing_heavy_rollback_replay_pass",
+    "visualOverlayDefects": [],
+    "browserErrors": []
+  },
+  "sourcePixelsChanged": false,
+  "productionRuntimeIntegrated": false,
+  "finalDecision": "human live balance approval remains required"
+}

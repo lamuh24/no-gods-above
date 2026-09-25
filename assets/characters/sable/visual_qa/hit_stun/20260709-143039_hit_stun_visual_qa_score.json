@@ -1,0 +1,22 @@
+{
+  "characterId": "sable",
+  "clipId": "hit_stun",
+  "sheetPath": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-143038/sable_hit_stun_normalized_strip.png",
+  "generatedAt": "2026-07-09T18:30:39.590Z",
+  "adapter": "heuristic-validation-score",
+  "score": 76,
+  "status": "warn",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": false,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "SCALE_DRIFT: scale/readability risk.",
+    "POSSIBLE_DUPLICATE_FRAMES: subtle or repeated motion; acceptable only with review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

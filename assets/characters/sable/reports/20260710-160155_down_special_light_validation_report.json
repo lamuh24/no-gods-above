@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-10T20:01:55.657Z",
+  "characterId": "sable",
+  "clipId": "down_special_light",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/down_special_light/v20260710-160154/sable_down_special_light_normalized_strip.png",
+  "expected": {
+    "clipId": "down_special_light",
+    "category": "special",
+    "frameCount": 7,
+    "fps": 12,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/down_special_light/v20260710-160154/sable_down_special_light_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hitFrames": [
+      4
+    ],
+    "cancelFrames": [
+      6
+    ],
+    "notes": [
+      "full-rebuild-v3 special family: Ground Rift LIGHT. Fast tiny rift at Sable's feet, smallest low VFX and least crouch commitment. Frame target lowered from 12 to 7 after trimming a redundant final guard from the text-only attempt; one small grounded rift at Sable's feet, active on visual frame 5/index 4, compact intentional low VFX, and recovery toward guard."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 7,
+    "rows": 1,
+    "frameCount": 7
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "SCALE_DRIFT",
+      "message": "Frame height drift is 114px (238px..352px); max is 34px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 27304,
+      "bbox": {
+        "x": 127,
+        "y": 30,
+        "width": 194,
+        "height": 352,
+        "right": 320,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000001111111111100000111111111110001111111111111000011111111111100000111111111110010011111111110011001111111111001100111111111001110011111111100111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 27249,
+      "bbox": {
+        "x": 135,
+        "y": 88,
+        "width": 178,
+        "height": 294,
+        "right": 312,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111100011111111111100001111111111100000111111111110000011111111110000001111111111000000111111111110000001111111111000001111111111000100111111111100110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 22548,
+      "bbox": {
+        "x": 108,
+        "y": 140,
+        "width": 233,
+        "height": 242,
+        "right": 340,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111110001111111111110000111111111111000011111111111000001111111111100000111111111110000001111111110001100111111111001100001111111101111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 22772,
+      "bbox": {
+        "x": 117,
+        "y": 144,
+        "width": 214,
+        "height": 238,
+        "right": 330,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000111111111111000011111111111000001111111111100000111111111110000011111111111000001111111110000100111111111000010001111111111001000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 25809,
+      "bbox": {
+        "x": 96,
+        "y": 115,
+        "width": 257,
+        "height": 267,
+        "right": 352,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111000111111111111000011111111111000011111111111100001111111111110000011111111111000001111111111000100111111111000000011111111100000000111111111111101111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 26115,
+      "bbox": {
+        "x": 109,
+        "y": 53,
+        "width": 230,
+        "height": 329,
+        "right": 338,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111100011111111111100001111111111100000111111111110000011111111111000001111111111100001111111111110000011111111111000001111111111100100111111111100110011111111110010001111111111101111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 26869,
+      "bbox": {
+        "x": 130,
+        "y": 35,
+        "width": 188,
+        "height": 347,
+        "right": 317,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000111111111111000001111111111100000111111111110001111111111111000011111111111100000111111111110010011111111110011001111111111001100111111111001110011111111100111000111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 0,
+      "frameB": 6,
+      "hammingDistance": 1
+    }
+  ],
+  "autoFixRecommended": false
+}

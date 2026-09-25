@@ -3,6 +3,7 @@
 
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
+  const touchControls = document.getElementById("touch-controls");
   const startButton = document.getElementById("start-button");
   const trainingButton = document.getElementById("training-button");
   const arcadeButton = document.getElementById("arcade-button");
@@ -97,6 +98,16 @@
   const onlineConnectButton = document.getElementById("online-connect-button");
   const onlineStatusEl = document.getElementById("online-status");
   const onlineBackButton = document.getElementById("online-back-button");
+  const phoneControllerMenu = document.getElementById("phone-controller-menu");
+  const phoneControllerCodeEl = document.getElementById("phone-controller-code");
+  const phoneControllerLinkEl = document.getElementById("phone-controller-link");
+  const phoneControllerLocalLinkEl = document.getElementById("phone-controller-local-link");
+  const phoneControllerStatusEl = document.getElementById("phone-controller-status");
+  const phoneControllerStartButton = document.getElementById("phone-controller-start");
+  const phoneControllerRefreshButton = document.getElementById("phone-controller-refresh");
+  const phoneControllerBackButton = document.getElementById("phone-controller-back");
+  let touchControlsAvailable = false;
+  let touchControlsVisible = false;
 
   const W = canvas.width;
   const H = canvas.height;
@@ -121,6 +132,7 @@
     FLOW_STEP_STAGE_SELECT,
     FLOW_STEP_MATCH_INTRO
   ];
+  const PUBLIC_PHONE_CONTROLLER_URL = "https://no-gods-above.netlify.app/controller.html";
   const STANDARD_FIGHTING_SPEED_TUNING = {
     groundSpeedMultiplier: 1.18,
     airDriftMultiplier: 1.25,
@@ -276,7 +288,8 @@
       platformSpeedTuning: PLATFORM_ARENA_CONFIG.platformSpeedTuning,
       background: PLATFORM_ARENA_CONFIG.background,
       movement: PLATFORM_ARENA_CONFIG.movement,
-      combat: PLATFORM_ARENA_CONFIG.combat
+      combat: PLATFORM_ARENA_CONFIG.combat,
+      ringOut: true
     },
     [ECLIPSE_ROOFTOP_STAGE_ID]: {
       id: ECLIPSE_ROOFTOP_STAGE_ID,
@@ -300,6 +313,9 @@
   const debugParams = new URLSearchParams(window.location.search);
   const SERIS_HIDDEN_TEST_ENABLED = debugParams.has("serisTest");
   const LAMUH_HIDDEN_TEST_ENABLED = debugParams.has("lamuhTest");
+  const SABLE_HIDDEN_TEST_ENABLED = debugParams.has("sableTest");
+  const sableSelectCard = document.querySelector('[data-character="sable"]');
+  if (sableSelectCard) sableSelectCard.classList.toggle("hidden", !SABLE_HIDDEN_TEST_ENABLED);
   const CELESTE_HIDDEN_TEST_ENABLED = debugParams.has("celesteTest");
   const PLATFORM_TEST_DEBUG_ENABLED = debugParams.has("platformTest");
   const CELESTE_FRAME_DEBUG_ENABLED = CELESTE_HIDDEN_TEST_ENABLED && debugParams.has("celesteFrameDebug");
@@ -326,6 +342,183 @@
   const SUPER_DASH_SPEED = 920;
   const SUPER_DASH_COOLDOWN = 28 / 60;
   const INPUT_BUFFER = 14 / 60;
+  // Impact presentation ("juice") tuning
+  const HIT_FLASH_HEAVY = 0.11;
+  const HIT_FLASH_LIGHT = 0.055;
+  const IMPACT_SQUASH_TIME = 0.14;
+  const LAND_SQUASH_TIME = 0.12;
+  const GHOST_LIFE = 0.22;
+  const GHOST_INTERVAL = 0.03;
+  const GHOST_MAX = 5;
+  // Anti-spam: repeating the same landed move decays its damage and meter gain.
+  const STALE_MOVE_WINDOW = 7;
+  const STALE_MOVE_MAX_TRACK = 6;
+  const STALE_MOVE_SCALE = 0.82;
+  const STALE_MOVE_MIN_SCALE = 0.45;
+  const BLOCKED_ATTACKER_PUSHBACK = 150;
+  // Double jump
+  const AIR_JUMP_VELOCITY_SCALE = 0.94;
+  // Grabs: grounded command grab that beats block; whiffs on airborne/stunned targets.
+  const GRAB_RANGE = 110;
+  const GRAB_STARTUP = 7 / 60;
+  const GRAB_HOLD = 0.24;
+  const GRAB_TOSS_RECOVERY = 0.18;
+  const GRAB_WHIFF_RECOVERY = 0.38;
+  const GRAB_DAMAGE = 72;
+  const GRAB_COOLDOWN = 0.5;
+  const GRAB_TOSS_VX = 460;
+  const GRAB_TOSS_VY = -420;
+  // Match structure
+  const ROUNDS_TO_WIN = 2;
+  const KO_SLOWMO_TIME = 1.05;
+  const KO_SLOWMO_SCALE = 0.3;
+  const ROUND_TRANSITION_TIME = 2.3;
+  const ROUND_FREEZE_TIME = 1.5;
+  // Ring-out (platform stages): fall past the ledges and below the kill depth to lose the round.
+  const RINGOUT_EDGE_GRACE = 46;
+  const RINGOUT_KILL_DEPTH = 320;
+  const RINGOUT_BLAST_MARGIN = 260;
+
+  // Audio: files are AI-generated and dropped into assets/audio/ (see docs/ASSET_REQUESTS.md).
+  // Every play call degrades silently while a file is missing, so audio can land incrementally.
+  // SFX are procedural placeholder WAVs (tools/generate_placeholder_sfx.js)
+  // until AI-generated finals replace them; announcer/music stay .ogg slots.
+  const AUDIO_SFX_PATHS = {
+    hit_light: "assets/audio/sfx/hit_light.wav",
+    hit_medium: "assets/audio/sfx/hit_medium.wav",
+    hit_heavy: "assets/audio/sfx/hit_heavy.wav",
+    hit_super: "assets/audio/sfx/hit_super.wav",
+    block: "assets/audio/sfx/block.wav",
+    whoosh: "assets/audio/sfx/whoosh.wav",
+    jump: "assets/audio/sfx/jump.wav",
+    double_jump: "assets/audio/sfx/double_jump.wav",
+    dash: "assets/audio/sfx/dash.wav",
+    super_dash: "assets/audio/sfx/super_dash.wav",
+    grab_catch: "assets/audio/sfx/grab_catch.wav",
+    grab_toss: "assets/audio/sfx/grab_toss.wav",
+    super_flash: "assets/audio/sfx/super_flash.wav",
+    ko: "assets/audio/sfx/ko.wav",
+    announcer_round1: "assets/audio/announcer/round_1.ogg",
+    announcer_round2: "assets/audio/announcer/round_2.ogg",
+    announcer_final: "assets/audio/announcer/final_round.ogg",
+    announcer_fight: "assets/audio/announcer/fight.ogg",
+    announcer_ko: "assets/audio/announcer/ko.ogg",
+    announcer_ringout: "assets/audio/announcer/ring_out.ogg",
+    ui_move: "assets/audio/sfx/ui_move.wav",
+    ui_confirm: "assets/audio/sfx/ui_confirm.wav"
+  };
+  const AUDIO_MUSIC_PATHS = {
+    title: "assets/audio/music/title_theme.ogg",
+    battle: "assets/audio/music/battle_theme.ogg"
+  };
+
+  function readStoredVolume(key, fallback) {
+    try {
+      const raw = window.localStorage.getItem(key);
+      const value = raw === null ? NaN : Number(raw);
+      return Number.isFinite(value) ? Math.min(Math.max(value, 0), 1) : fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  const audioSystem = {
+    sfx: {},
+    failed: new Set(),
+    music: null,
+    musicKey: null,
+    pendingMusicKey: null,
+    unlocked: false,
+    master: readStoredVolume("nga_master_volume", 0.9),
+    muted: readStoredVolume("nga_muted", 0) >= 1
+  };
+
+  function storeVolumeSettings() {
+    try {
+      window.localStorage.setItem("nga_master_volume", String(audioSystem.master));
+      window.localStorage.setItem("nga_muted", audioSystem.muted ? "1" : "0");
+    } catch {
+      /* storage unavailable */
+    }
+  }
+
+  const activeSfxNodes = new Set();
+
+  function playSfx(key, volume = 1, rate = 1) {
+    if (audioSystem.muted || audioSystem.failed.has(key)) return;
+    const path = AUDIO_SFX_PATHS[key];
+    if (!path) return;
+    let base = audioSystem.sfx[key];
+    if (!base) {
+      base = new Audio(path);
+      base.preload = "auto";
+      base.addEventListener("error", () => audioSystem.failed.add(key), { once: true });
+      audioSystem.sfx[key] = base;
+    }
+    const node = base.cloneNode();
+    // Hold a reference until playback ends — GC'd audio elements abort their
+    // network fetch mid-flight (console noise + dropped sounds on iOS).
+    activeSfxNodes.add(node);
+    const release = () => activeSfxNodes.delete(node);
+    node.addEventListener("ended", release, { once: true });
+    node.addEventListener("error", release, { once: true });
+    setTimeout(release, 4000);
+    node.volume = Math.min(Math.max(volume * audioSystem.master, 0), 1);
+    node.playbackRate = rate;
+    const attempt = node.play();
+    if (attempt && attempt.catch) attempt.catch(() => { /* autoplay gate or missing file */ });
+  }
+
+  function playMusic(key) {
+    if (audioSystem.musicKey === key || audioSystem.failed.has(`music_${key}`)) return;
+    const path = AUDIO_MUSIC_PATHS[key];
+    if (!path) return;
+    stopMusic();
+    const node = new Audio(path);
+    node.loop = true;
+    node.volume = audioSystem.muted ? 0 : Math.min(audioSystem.master * 0.55, 1);
+    node.addEventListener("error", () => {
+      audioSystem.failed.add(`music_${key}`);
+      if (audioSystem.musicKey === key) audioSystem.musicKey = null;
+    }, { once: true });
+    audioSystem.music = node;
+    audioSystem.musicKey = key;
+    audioSystem.pendingMusicKey = key;
+    const attempt = node.play();
+    if (attempt && attempt.catch) attempt.catch(() => { /* retried on first user gesture */ });
+  }
+
+  function stopMusic() {
+    if (audioSystem.music) {
+      audioSystem.music.pause();
+      audioSystem.music = null;
+      audioSystem.musicKey = null;
+    }
+  }
+
+  function unlockAudio() {
+    if (audioSystem.unlocked) return;
+    audioSystem.unlocked = true;
+    if (audioSystem.music && audioSystem.music.paused) {
+      const attempt = audioSystem.music.play();
+      if (attempt && attempt.catch) attempt.catch(() => {});
+    }
+  }
+
+  function adjustMasterVolume(delta) {
+    audioSystem.master = Math.min(Math.max(audioSystem.master + delta, 0), 1);
+    audioSystem.muted = false;
+    if (audioSystem.music) audioSystem.music.volume = Math.min(audioSystem.master * 0.55, 1);
+    storeVolumeSettings();
+    return Math.round(audioSystem.master * 100);
+  }
+
+  function toggleMute() {
+    audioSystem.muted = !audioSystem.muted;
+    if (audioSystem.music) audioSystem.music.volume = audioSystem.muted ? 0 : Math.min(audioSystem.master * 0.55, 1);
+    storeVolumeSettings();
+    return audioSystem.muted;
+  }
   const DOUBLE_TAP_DASH_WINDOW = 0.28;
   const AIR_RECOVERY_DURATION = 16 / 60;
   const LANDING_RECOVERY = 6 / 60;
@@ -515,6 +708,7 @@
     celesteFinalDefense: "assets/sprites/celeste_final/celeste_sheet_5_defense_reactions_atlas.png?v=celeste-phase5-4-1",
     celesteFinalOctavaBody: "assets/sprites/celeste_final/celeste_sheet_6_octava_body_atlas.png?v=celeste-phase5-4-1",
     celesteFinalVfx: "assets/sprites/celeste_final/celeste_sheet_7_detached_vfx_runtime_atlas.png?v=celeste-phase5-4-1",
+    sablePlaceholderAtlas: "assets/sprites/sable_placeholder/sable_mvp_placeholder_atlas.png?v=sable-mvp-1",
     vfx: "assets/effects/combat/combat_vfx_sheet.png"
   };
 
@@ -580,8 +774,57 @@
     celesteFinalUpAirAttacks: { cols: 4, rows: 6, cellWidth: 768, cellHeight: 576, baselineY: 488, scale: 0.66, frameCounts: [4, 4, 4, 4, 4, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     celesteFinalSpecials: { cols: 4, rows: 6, cellWidth: 1280, cellHeight: 576, baselineY: 488, scale: 0.66, frameCounts: [4, 4, 4, 4, 4, 4], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
     celesteFinalDefense: { cols: 5, rows: 8, cellWidth: 1536, cellHeight: 544, baselineY: 438, scale: 0.66, frameCounts: [4, 3, 4, 4, 4, 5, 4, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
-    celesteFinalOctavaBody: { cols: 5, rows: 2, cellWidth: 896, cellHeight: 768, baselineY: 690, scale: 0.62, frameCounts: [5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true }
+    celesteFinalOctavaBody: { cols: 5, rows: 2, cellWidth: 896, cellHeight: 768, baselineY: 690, scale: 0.62, frameCounts: [5, 5], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true },
+    sablePlaceholderAtlas: { cols: 4, rows: 20, cellSize: 320, baselineY: 300, scale: 1.38, frameCounts: Array(20).fill(4), fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true }
   };
+
+  // Sable full-rebuild-v3 strips, available only through the hidden ?sableTest gate.
+  // One Nx1 448px strip per clip, registered programmatically.
+  const SABLE_REBUILD_CLIP_FRAMES = {
+    idle: 4, walk_forward: 6, walk_backward: 8, jump: 8, crouch: 8, block: 8,
+    hit_stun: 8, knockdown: 8, getup: 5,
+    stand_light: 8, stand_medium: 10, stand_heavy: 8,
+    crouch_light: 7, crouch_medium: 8, crouch_heavy: 8,
+    jump_light: 7, jump_medium: 5, jump_heavy: 6,
+    forward_light: 5, forward_medium: 6, forward_heavy: 6,
+    back_light: 5, back_medium: 5, back_heavy: 6,
+    neutral_special_light: 7, neutral_special_medium: 8, neutral_special_heavy: 9,
+    forward_special_light: 7, forward_special_medium: 9, forward_special_heavy: 9,
+    back_special_light: 6, back_special_medium: 6, back_special_heavy: 7,
+    down_special_light: 7, down_special_medium: 8, down_special_heavy: 8,
+    up_special_light: 6, up_special_medium: 7, up_special_heavy: 8
+  };
+  for (const [sableClip, sableFrames] of Object.entries(SABLE_REBUILD_CLIP_FRAMES)) {
+    // Sable is hidden from public play — only download her strips on ?sableTest.
+    assetPaths[`sableRb_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_rebuild_v2/${sableClip}.png?v=sable-full-rebuild-v3-preview-4` : null;
+    sheetMeta[`sableRb_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.86, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
+  }
+  const SABLE_MVP_CLIP_FRAMES = {
+    idle: 8,
+    crouch: 8,
+    block: 4,
+    hit_stun: 4,
+    walk_forward: 8,
+    jump: 6,
+    stand_light: 6,
+    stand_medium: 6,
+    stand_heavy: 8,
+    jump_light: 6,
+    jump_medium: 6,
+    jump_heavy: 8,
+    neutral_special_light: 8,
+    forward_special_light: 8,
+    forward_special_medium: 8,
+    forward_special_heavy: 8,
+    back_special_light: 8,
+    down_special_light: 8,
+    up_special_light: 8
+  };
+  for (const [sableClip, sableFrames] of Object.entries(SABLE_MVP_CLIP_FRAMES)) {
+    assetPaths[`sableMvp_${sableClip}`] = SABLE_HIDDEN_TEST_ENABLED ? `assets/sprites/sable_mvp_runtime/${sableClip}.png?v=sable-mvp-strong-anim-1` : null;
+    sheetMeta[`sableMvp_${sableClip}`] = { cols: sableFrames, rows: 1, cellSize: 448, baselineY: 382, scale: 0.98, frameCounts: [sableFrames], fixedSourceCells: true, anchorMode: "lockedFrameBottomCenter", skipSanitize: true };
+  }
+  if (!SABLE_HIDDEN_TEST_ENABLED) assetPaths.sablePlaceholderAtlas = null;
 
   const baselineMovementStats = {
     walkForward: WALK_FORWARD,
@@ -686,6 +929,14 @@
       { threshold: 0.93, move: "enemy_special_1" }
     ],
     fallbackAttack: "enemy_special_3"
+  };
+
+  // AI difficulty presets. Per-character `profile.ai` fields with the same names
+  // override these (set a chance to 0 to disable that behavior for a character).
+  const ENEMY_AI_DIFFICULTY_PRESETS = {
+    easy: { blockChance: 0.16, blockHold: 0.34, antiAirChance: 0.2, comboChance: 0.3, dashInChance: 0.12, retreatChance: 0.3, grabChance: 0.12, cooldownScale: 1.25 },
+    normal: { blockChance: 0.4, blockHold: 0.42, antiAirChance: 0.5, comboChance: 0.62, dashInChance: 0.28, retreatChance: 0.35, grabChance: 0.3, cooldownScale: 1 },
+    hard: { blockChance: 0.64, blockHold: 0.5, antiAirChance: 0.78, comboChance: 0.88, dashInChance: 0.45, retreatChance: 0.4, grabChance: 0.5, cooldownScale: 0.72 }
   };
 
   const nyxMovementStats = {
@@ -1381,6 +1632,271 @@
     ultimate: { type: "ultimate", attack: "ultimate" }
   };
 
+  const SABLE_VOID_ANCHOR_ARM_TIME = 0.26;
+  const SABLE_VOID_ANCHOR_LIFE = 2.25;
+  const SABLE_VOID_ANCHOR_RADIUS = 54;
+  const SABLE_VOID_ANCHOR_DAMAGE = 24;
+  const SABLE_VOID_ANCHOR_HITSTUN = 16;
+
+  const sableMovementStats = {
+    ...cloneData(baselineMovementStats),
+    walkForward: 242,
+    walkBack: 214,
+    dashSpeed: 805,
+    dashDuration: 13 / 60,
+    dashCooldown: 24 / 60,
+    superDashSpeed: 895,
+    superDashCooldown: 32 / 60
+  };
+
+  const sableJumpStats = {
+    ...cloneData(baselineJumpStats),
+    jumpVelocity: -718,
+    gravity: 1740,
+    juggleGravity: 1210,
+    airRecoveryGravity: 1600,
+    landingRecovery: 6 / 60
+  };
+
+  const sableAirDashStats = {
+    ...cloneData(baselineAirDashStats),
+    speed: 780,
+    duration: 11 / 60,
+    cooldown: 18 / 60
+  };
+
+  const sableHitboxes = {
+    light: { w: 78, h: 54, ox: 40, oy: -76 },
+    medium: { w: 118, h: 62, ox: 50, oy: -84 },
+    heavy: { w: 148, h: 80, ox: 58, oy: -94 },
+    low: { w: 130, h: 38, ox: 46, oy: -40 },
+    jump: { w: 104, h: 68, ox: 42, oy: -88 },
+    up: { w: 112, h: 120, ox: 34, oy: -150 },
+    voidShard: { w: 82, h: 34, ox: 58, oy: -92 },
+    phaseLunge: { w: 138, h: 66, ox: 56, oy: -86 },
+    voidAnchor: { w: 0, h: 0, ox: 0, oy: 0 },
+    groundRift: { w: 152, h: 44, ox: 56, oy: -44 },
+    phaseStep: { w: 116, h: 132, ox: 34, oy: -150 },
+    ultimate: { w: 275, h: 138, ox: 82, oy: -116 }
+  };
+
+  function buildSablePlayerAttacks() {
+    const attacks = {
+      neutral_light: attackDef(22, 3, 5, 6, 18, 10, -14, "light", { autoCombo: true, cancelOnHit: ["neutral_medium"], dashCancel: true, stepForward: 62 }),
+      neutral_medium: attackDef(42, 5, 6, 10, 28, 28, -54, "medium", { cancelOnHit: ["neutral_heavy", "neutral_light_special", "forward_light_special", "down_light_special"], jumpCancel: true, dashCancel: true, stepForward: 70 }),
+      neutral_heavy: attackDef(64, 8, 5, 17, 38, 76, -250, "heavy", { cancelOnHit: ["down_medium_special"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+      forward_light: attackDef(26, 4, 4, 7, 19, 42, -16, "light", { cancelOnHit: ["forward_medium", "neutral_medium"], dashCancel: true, stepForward: 86 }),
+      forward_medium: attackDef(46, 6, 5, 12, 29, 68, -56, "medium", { cancelOnHit: ["forward_heavy", "forward_light_special"], jumpCancel: true, dashCancel: true, stepForward: 78 }),
+      forward_heavy: attackDef(70, 10, 5, 20, 40, 94, -230, "heavy", { softKnockdown: true, dashCancel: true }),
+      back_light: attackDef(24, 4, 4, 8, 18, 30, -16, "light", { cancelOnHit: ["back_medium", "neutral_medium"], dashCancel: true }),
+      back_medium: attackDef(40, 6, 5, 11, 27, 48, -48, "medium", { cancelOnHit: ["back_heavy", "back_light_special"], jumpCancel: true, dashCancel: true }),
+      back_heavy: attackDef(62, 9, 5, 20, 38, 54, -330, "heavy", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+      up_light: attackDef(22, 4, 5, 8, 22, 24, -115, "up", { cancelOnHit: ["up_medium"], jumpCancel: true, dashCancel: true }),
+      up_medium: attackDef(40, 7, 5, 15, 34, 40, -430, "up", { launcher: true, cancelOnHit: ["jump_light", "up_light_special"], jumpCancel: true, dashCancel: true, softKnockdown: true }),
+      up_heavy: attackDef(58, 10, 6, 24, 38, 52, -480, "up", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+      down_light: attackDef(20, 3, 4, 7, 17, 30, 0, "low", { cancelOnHit: ["down_medium", "neutral_medium"] }),
+      down_medium: attackDef(38, 5, 5, 11, 26, 44, -24, "low", { cancelOnHit: ["down_heavy", "down_light_special"], jumpCancel: true, dashCancel: true }),
+      down_heavy: attackDef(58, 8, 5, 19, 40, 48, -420, "low", { launcher: true, jumpCancel: true, dashCancel: true, softKnockdown: true }),
+      jump_light: attackDef(20, 3, 5, 5, 21, 26, -14, "jump", { air: true, cancelOnHit: ["jump_medium"], dashCancel: true }),
+      jump_medium: attackDef(38, 5, 6, 9, 30, 36, -28, "jump", { air: true, cancelOnHit: ["jump_heavy", "air_light_special"], dashCancel: true }),
+      jump_heavy: attackDef(58, 7, 6, 15, 36, 48, 180, "jump", { air: true, softKnockdown: true, dashCancel: true }),
+      neutral_light_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "neutral_light_special", visualProfile: "voidShard" }),
+      neutral_medium_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "neutral_medium_special", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      neutral_heavy_special: attackDef(26, 8, 4, 18, 24, 48, -30, "voidShard", { projectile: true, projectileSpeed: 350, noHit: true, meter: 7, anim: "neutral_heavy_special", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      forward_light_special: attackDef(42, 6, 5, 19, 27, 82, -54, "phaseLunge", { dash: true, dashSpeed: 520, dashTime: 0.16, dashCancel: true, softKnockdown: true, meter: 8, anim: "forward_light_special", variantRole: "short" }),
+      forward_medium_special: attackDef(50, 8, 5, 24, 30, 102, -62, "phaseLunge", { dash: true, dashSpeed: 620, dashTime: 0.18, softKnockdown: true, meter: 12, anim: "forward_medium_special", variantRole: "far" }),
+      forward_heavy_special: attackDef(62, 10, 5, 33, 34, 132, -88, "phaseLunge", { dash: true, dashSpeed: 720, dashTime: 0.21, softKnockdown: true, meter: 16, anim: "forward_heavy_special", variantRole: "heavy_punish" }),
+      back_light_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "back_light_special" }),
+      back_medium_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "back_medium_special", intentionalAliasOf: "back_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      back_heavy_special: attackDef(0, 13, 0, 24, 0, 0, 0, "voidAnchor", { noHit: true, voidAnchor: true, meter: 8, anim: "back_heavy_special", intentionalAliasOf: "back_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      down_light_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "down_light_special" }),
+      down_medium_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "down_medium_special", intentionalAliasOf: "down_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      down_heavy_special: attackDef(30, 8, 7, 18, 24, 38, -150, "groundRift", { softKnockdown: true, meter: 8, anim: "down_heavy_special", intentionalAliasOf: "down_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      up_light_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "up_light_special" }),
+      up_medium_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "up_medium_special", intentionalAliasOf: "up_special", aliasReason: "Shared gameplay with a distinct medium visual strip." }),
+      up_heavy_special: attackDef(34, 5, 5, 20, 26, 34, -300, "phaseStep", { rise: true, riseVelocity: -340, riseTime: 0.17, softKnockdown: true, meter: 8, anim: "up_heavy_special", intentionalAliasOf: "up_special", aliasReason: "Shared gameplay with a distinct heavy visual strip." }),
+      air_light_special: attackDef(26, 8, 4, 18, 24, 48, 18, "voidShard", { air: true, projectile: true, projectileSpeed: 330, noHit: true, meter: 7, anim: "air_void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable air special compatibility slots fall back to Void Shard for MVP." }),
+      air_medium_special: attackDef(26, 8, 4, 18, 24, 48, 18, "voidShard", { air: true, projectile: true, projectileSpeed: 330, noHit: true, meter: 7, anim: "air_void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable air special compatibility slots fall back to Void Shard for MVP." }),
+      air_heavy_special: attackDef(26, 8, 4, 18, 24, 48, 18, "voidShard", { air: true, projectile: true, projectileSpeed: 330, noHit: true, meter: 7, anim: "air_void_shard", visualProfile: "voidShard", intentionalAliasOf: "neutral_special", aliasReason: "Sable air special compatibility slots fall back to Void Shard for MVP." }),
+      super_dash: attackDef(48, 3, 22, 10, 30, 92, -210, "phaseLunge", { superDash: true, dashCancel: true, anim: "phase_lunge", blockstun: 20, meter: 10 }),
+      ultimate: attackDef(190, 12, 18, 36, 50, 250, -220, "ultimate", { ultimate: true, hardKnockdown: true, anim: "void_shard" }),
+      taunt: attackDef(0, 0, 0, 30, 0, 0, 0, "light", { noHit: true })
+    };
+    attacks.neutral_special = cloneData(attacks.neutral_light_special);
+    attacks.forward_special = cloneData(attacks.forward_light_special);
+    attacks.back_special = cloneData(attacks.back_light_special);
+    attacks.down_special = cloneData(attacks.down_light_special);
+    attacks.up_special = cloneData(attacks.up_light_special);
+    attacks.air_special = cloneData(attacks.air_light_special);
+    attacks.special_1 = cloneData(attacks.neutral_light_special);
+    attacks.special_2 = cloneData(attacks.neutral_medium_special);
+    attacks.special_2.flags.intentionalAliasOf = "neutral_special";
+    attacks.special_2.flags.aliasReason = "Neutral medium shortcut aliases to Sable's single-version Void Shard.";
+    attacks.special_3 = cloneData(attacks.neutral_heavy_special);
+    attacks.special_3.flags.intentionalAliasOf = "neutral_special";
+    attacks.special_3.flags.aliasReason = "Neutral heavy shortcut aliases to Sable's single-version Void Shard.";
+    return attacks;
+  }
+
+  function buildSableEnemyAttacks() {
+    const player = buildSablePlayerAttacks();
+    const enemy = {};
+    const neutralBasicEnemyKeys = {
+      neutral_light: "enemy_light_attack",
+      neutral_medium: "enemy_medium_attack",
+      neutral_heavy: "enemy_heavy_attack"
+    };
+    for (const [key, value] of Object.entries(player)) {
+      const enemyKey = neutralBasicEnemyKeys[key] || `enemy_${key}`;
+      enemy[enemyKey] = cloneData(value);
+      enemy[enemyKey].flags.enemy = true;
+      enemy[enemyKey].damage = Math.max(0, Math.floor(enemy[enemyKey].damage * 0.92));
+      enemy[enemyKey].recovery += 1;
+    }
+    enemy.enemy_light_attack = cloneData(enemy.enemy_light_attack || enemy.enemy_light);
+    enemy.enemy_medium_attack = cloneData(enemy.enemy_medium_attack || enemy.enemy_medium);
+    enemy.enemy_heavy_attack = cloneData(enemy.enemy_heavy_attack || enemy.enemy_heavy);
+    enemy.enemy_special_1 = cloneData(enemy.enemy_neutral_light_special);
+    enemy.enemy_special_2 = cloneData(enemy.enemy_neutral_medium_special);
+    enemy.enemy_special_2.flags.intentionalAliasOf = "enemy_neutral_special";
+    enemy.enemy_special_2.flags.aliasReason = "Neutral medium shortcut aliases to Sable's single-version Void Shard.";
+    enemy.enemy_special_3 = cloneData(enemy.enemy_neutral_heavy_special);
+    enemy.enemy_special_3.flags.intentionalAliasOf = "enemy_neutral_special";
+    enemy.enemy_special_3.flags.aliasReason = "Neutral heavy shortcut aliases to Sable's single-version Void Shard.";
+    enemy.enemy_neutral_special = cloneData(enemy.enemy_neutral_light_special);
+    enemy.enemy_forward_special = cloneData(enemy.enemy_forward_light_special);
+    enemy.enemy_back_special = cloneData(enemy.enemy_back_light_special);
+    enemy.enemy_down_special = cloneData(enemy.enemy_down_light_special);
+    enemy.enemy_up_special = cloneData(enemy.enemy_up_light_special);
+    enemy.enemy_air_special = cloneData(enemy.enemy_air_light_special);
+    return enemy;
+  }
+
+  function buildSableSpecialMoves() {
+    const placeholderArt = "MVP placeholder atlas and procedural VFX";
+    const unique = (displayName, input, variantBehavior, purpose) => ({
+      displayName,
+      input,
+      variantBehavior,
+      unique: true,
+      purpose,
+      artStatus: placeholderArt
+    });
+    const alias = (displayName, input, aliasOf, purpose) => ({
+      displayName,
+      input,
+      variantBehavior: `Intentional alias to ${aliasOf}.`,
+      unique: false,
+      aliasOf,
+      purpose,
+      artStatus: placeholderArt
+    });
+    const metadata = {
+      special_1: alias("Void Shard", "Special 1 shortcut", "neutral_special", "Compatibility shortcut for Sable's neutral pressure tool."),
+      special_2: alias("Void Shard", "Special 2 shortcut", "neutral_special", "Compatibility shortcut; no separate neutral medium variant in the MVP."),
+      special_3: alias("Void Shard", "Special 3 shortcut", "neutral_special", "Compatibility shortcut; no separate neutral heavy variant in the MVP."),
+      neutral_special: unique("Void Shard", "Neutral Special", "Single slow projectile / pressure pulse.", "Controls space without Lamuh-level damage."),
+      neutral_light_special: alias("Void Shard", "Neutral + Light Special", "neutral_special", "Light button compatibility slot for the base neutral special."),
+      neutral_medium_special: alias("Void Shard", "Neutral + Medium Special", "neutral_special", "Intentional fallback; Sable neutral special is single-version."),
+      neutral_heavy_special: alias("Void Shard", "Neutral + Heavy Special", "neutral_special", "Intentional fallback; Sable neutral special is single-version."),
+      forward_special: alias("Short Phase Lunge", "Forward Special", "forward_light_special", "Family shortcut for the light approach lunge."),
+      forward_light_special: unique("Short Phase Lunge", "Forward + Light Special", "Short, faster approach lunge.", "Close-space punish and combo routing."),
+      forward_medium_special: unique("Far Phase Lunge", "Forward + Medium Special", "Longer approach with more recovery.", "Midrange whiff punish and spacing callout."),
+      forward_heavy_special: unique("Heavy Phase Lunge", "Forward + Heavy Special", "Farthest and strongest lunge with heavier recovery.", "Commitment punish / route ender."),
+      back_special: unique("Void Anchor", "Back Special", "Single trap placement.", "Sets a temporary anchor behind Sable for evasive punishment."),
+      back_light_special: alias("Void Anchor", "Back + Light Special", "back_special", "Light button compatibility slot for the base trap."),
+      back_medium_special: alias("Void Anchor", "Back + Medium Special", "back_special", "Intentional fallback; no separate medium trap."),
+      back_heavy_special: alias("Void Anchor", "Back + Heavy Special", "back_special", "Intentional fallback; no separate heavy trap."),
+      down_special: unique("Ground Rift", "Down Special", "Single ground snare / low-space check.", "Stops grounded approach and sets light pop-up pressure."),
+      down_light_special: alias("Ground Rift", "Down + Light Special", "down_special", "Light button compatibility slot for the base rift."),
+      down_medium_special: alias("Ground Rift", "Down + Medium Special", "down_special", "Intentional fallback; no separate medium rift."),
+      down_heavy_special: alias("Ground Rift", "Down + Heavy Special", "down_special", "Intentional fallback; no separate heavy rift."),
+      up_special: unique("Vertical Phase", "Up Special", "Single vertical phase step / anti-air.", "Anti-air and escape coverage without invincible spam."),
+      up_light_special: alias("Vertical Phase", "Up + Light Special", "up_special", "Light button compatibility slot for the base vertical phase."),
+      up_medium_special: alias("Vertical Phase", "Up + Medium Special", "up_special", "Intentional fallback; no separate medium vertical phase."),
+      up_heavy_special: alias("Vertical Phase", "Up + Heavy Special", "up_special", "Intentional fallback; no separate heavy vertical phase."),
+      air_special: alias("Void Shard", "Air Special", "neutral_special", "Air compatibility fallback to the neutral shard."),
+      air_light_special: alias("Void Shard", "Air + Light Special", "neutral_special", "Air compatibility fallback to the neutral shard."),
+      air_medium_special: alias("Void Shard", "Air + Medium Special", "neutral_special", "Air compatibility fallback to the neutral shard."),
+      air_heavy_special: alias("Void Shard", "Air + Heavy Special", "neutral_special", "Air compatibility fallback to the neutral shard."),
+      super_dash: unique("Phase Dash", "Dash shortcut", "System mobility action, not counted as a core special.", "Movement extension using existing super dash rules."),
+      ultimate: unique("Void Cartography", "Ultimate", "MVP placeholder ultimate.", "Round-ending burst placeholder until Sable ultimate production.")
+    };
+    const withMeta = (key, data) => ({ ...data, metadata: cloneData(metadata[key] || {}) });
+    const moves = {
+      special_1: withMeta("special_1", { type: "voidShard", attack: "special_1", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      special_2: withMeta("special_2", { type: "voidShard", attack: "special_2", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      special_3: withMeta("special_3", { type: "voidShard", attack: "special_3", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      neutral_special: withMeta("neutral_special", { type: "voidShard", attack: "neutral_special", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      neutral_light_special: withMeta("neutral_light_special", { type: "voidShard", attack: "neutral_light_special", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      neutral_medium_special: withMeta("neutral_medium_special", { type: "voidShard", attack: "neutral_medium_special", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      neutral_heavy_special: withMeta("neutral_heavy_special", { type: "voidShard", attack: "neutral_heavy_special", projectileWidth: 88, projectileHeight: 28, projectileLife: 1.3, spawnOffsetX: 104, spawnOffsetY: -92 }),
+      forward_special: withMeta("forward_special", { type: "phaseLunge", attack: "forward_special" }),
+      forward_light_special: withMeta("forward_light_special", { type: "phaseLunge", attack: "forward_light_special" }),
+      forward_medium_special: withMeta("forward_medium_special", { type: "phaseLunge", attack: "forward_medium_special" }),
+      forward_heavy_special: withMeta("forward_heavy_special", { type: "phaseLunge", attack: "forward_heavy_special" }),
+      back_special: withMeta("back_special", { type: "voidAnchor", attack: "back_special" }),
+      back_light_special: withMeta("back_light_special", { type: "voidAnchor", attack: "back_light_special" }),
+      back_medium_special: withMeta("back_medium_special", { type: "voidAnchor", attack: "back_medium_special" }),
+      back_heavy_special: withMeta("back_heavy_special", { type: "voidAnchor", attack: "back_heavy_special" }),
+      down_special: withMeta("down_special", { type: "groundRift", attack: "down_special" }),
+      down_light_special: withMeta("down_light_special", { type: "groundRift", attack: "down_light_special" }),
+      down_medium_special: withMeta("down_medium_special", { type: "groundRift", attack: "down_medium_special" }),
+      down_heavy_special: withMeta("down_heavy_special", { type: "groundRift", attack: "down_heavy_special" }),
+      up_special: withMeta("up_special", { type: "verticalPhase", attack: "up_special" }),
+      up_light_special: withMeta("up_light_special", { type: "verticalPhase", attack: "up_light_special" }),
+      up_medium_special: withMeta("up_medium_special", { type: "verticalPhase", attack: "up_medium_special" }),
+      up_heavy_special: withMeta("up_heavy_special", { type: "verticalPhase", attack: "up_heavy_special" }),
+      air_special: withMeta("air_special", { type: "airVoidShard", attack: "air_special", projectileWidth: 82, projectileHeight: 26, projectileLife: 1.0, spawnOffsetX: 92, spawnOffsetY: -74 }),
+      air_light_special: withMeta("air_light_special", { type: "airVoidShard", attack: "air_light_special", projectileWidth: 82, projectileHeight: 26, projectileLife: 1.0, spawnOffsetX: 92, spawnOffsetY: -74 }),
+      air_medium_special: withMeta("air_medium_special", { type: "airVoidShard", attack: "air_medium_special", projectileWidth: 82, projectileHeight: 26, projectileLife: 1.0, spawnOffsetX: 92, spawnOffsetY: -74 }),
+      air_heavy_special: withMeta("air_heavy_special", { type: "airVoidShard", attack: "air_heavy_special", projectileWidth: 82, projectileHeight: 26, projectileLife: 1.0, spawnOffsetX: 92, spawnOffsetY: -74 }),
+      super_dash: withMeta("super_dash", { type: "phaseDash", attack: "super_dash" }),
+      ultimate: withMeta("ultimate", { type: "ultimate", attack: "ultimate" })
+    };
+    for (const [key, value] of Object.entries({ ...moves })) {
+      moves[`enemy_${key}`] = { ...cloneData(value), attack: `enemy_${value.attack}` };
+    }
+    return moves;
+  }
+
+  const sablePlayerAttacks = buildSablePlayerAttacks();
+  const sableEnemyAttacks = buildSableEnemyAttacks();
+  const sableSpecialMoves = buildSableSpecialMoves();
+  const sableComboRoutes = {
+    autoCombos: {
+      neutral_light: "neutral_medium",
+      neutral_medium: "neutral_heavy",
+      up_light: "up_medium",
+      enemy_light_attack: "enemy_medium_attack",
+      enemy_medium_attack: "enemy_heavy_attack",
+      enemy_up_light: "enemy_up_medium"
+    },
+    airCombos: {
+      jump_light: "jump_medium",
+      jump_medium: "jump_heavy",
+      enemy_jump_light: "enemy_jump_medium",
+      enemy_jump_medium: "enemy_jump_heavy"
+    }
+  };
+
+  const sableEnemyAI = {
+    ...cloneData(baselineEnemyAI),
+    walkSpeed: 148,
+    attackRange: 312,
+    farRange: 360,
+    farAttack: "enemy_neutral_light_special",
+    minCooldown: 1.05,
+    maxCooldown: 1.72,
+    weightedAttacks: [
+      { threshold: 0.32, move: "enemy_light_attack" },
+      { threshold: 0.56, move: "enemy_medium_attack" },
+      { threshold: 0.75, move: "enemy_neutral_light_special" },
+      { threshold: 0.9, move: "enemy_forward_light_special" }
+    ],
+    fallbackAttack: "enemy_back_light_special"
+  };
+
   const CELESTE_DEFAULT_SOCKETS = {
     root: { x: 0, y: 0 },
     feetBase: { x: 0, y: 0 },
@@ -1751,6 +2267,45 @@
       buildPlayerAnimations: buildLamuhLegacyPlayerAnimations,
       buildEnemyAnimations: buildLamuhLegacyEnemyAnimations
     },
+    sable: {
+      id: "sable",
+      name: "SABLE",
+      shortName: "SABLE",
+      subtitle: "THE VOID CARTOGRAPHER",
+      role: "VOID SPACE CONTROL",
+      health: 900,
+      movement: cloneData(sableMovementStats),
+      jump: cloneData(sableJumpStats),
+      airDash: cloneData(sableAirDashStats),
+      attacks: {
+        player: cloneData(sablePlayerAttacks),
+        enemy: cloneData(sableEnemyAttacks)
+      },
+      comboRoutes: cloneData(sableComboRoutes),
+      hitboxes: cloneData(sableHitboxes),
+      hurtboxes: {
+        standing: { w: 60, h: 158 },
+        crouching: { w: 62, h: 88 },
+        dead: { w: 74, h: 58 }
+      },
+      specialMoves: cloneData(sableSpecialMoves),
+      ai: cloneData(sableEnemyAI),
+      effects: { dashTrail: true, placeholderVoid: true },
+      projectileColor: "#b8a5ff",
+      trailColor: "#3c2d66",
+      ultimateBurstColor: "#9f8cff",
+      hurtboxWidth: 60,
+      playable: true,
+      futurePlayer2: true,
+      placeholderArt: "sable_mvp_placeholder_atlas",
+      sheets: {
+        placeholder: "sablePlaceholderAtlas"
+      },
+      // Full-rebuild-v3 strips wired only through the hidden ?sableTest preview gate.
+      // Placeholder atlas remains loaded as the fallback for any missing strip.
+      buildPlayerAnimations: buildSableRebuildPlayerAnimations,
+      buildEnemyAnimations: buildSableRebuildEnemyAnimations
+    },
     seris: {
       id: "seris",
       name: "SERIS",
@@ -1863,7 +2418,10 @@
     hydrateCharacterProfile(profile);
   }
 
-  const selectableCharacterIds = ["kairo", "vanta", "nyx", "sol", "seris", "lamuh", "lamuh_legacy", "celeste"];
+  const selectableCharacterIds = [
+    "kairo", "vanta", "nyx", "sol", "seris", "lamuh", "lamuh_legacy", "celeste",
+    ...(SABLE_HIDDEN_TEST_ENABLED ? ["sable"] : [])
+  ];
   const MODE_FLOW_DATA = {
     online: {
       id: "online",
@@ -1882,7 +2440,10 @@
       kicker: "Same Screen",
       description: "Pick P1, pick P2, choose an arena, then fight.",
       panel: "local",
-      actions: [{ label: "Continue", action: "fighter-select", mode: "versus" }]
+      actions: [
+        { label: "Continue", action: "fighter-select", mode: "versus" },
+        { label: "Pair Phone", action: "phone-controller" }
+      ]
     },
     training: {
       id: "training",
@@ -1945,6 +2506,14 @@
       strengths: ["Space control", "Delayed hits", "Special pressure"],
       quote: "The halo is not mercy."
     },
+    sable: {
+      archetype: "Void Cartographer",
+      difficulty: "4/5",
+      description: "Void spacing, traps, and evasive punishment.",
+      playstyle: "Sable wins by making lanes unsafe, slipping out of direct pressure, and punishing overextensions.",
+      strengths: ["Space control", "Anchor traps", "Evasive punishes"],
+      quote: "The shortest path is through the dark."
+    },
     lamuh: {
       archetype: "Celestial Ki",
       difficulty: "5/5",
@@ -1993,7 +2562,8 @@
   };
   const hiddenTestCharacterIds = [
     ...(SERIS_HIDDEN_TEST_ENABLED ? ["seris"] : []),
-    ...(LAMUH_HIDDEN_TEST_ENABLED ? ["lamuh"] : [])
+    ...(LAMUH_HIDDEN_TEST_ENABLED ? ["lamuh"] : []),
+    ...(SABLE_HIDDEN_TEST_ENABLED ? ["sable"] : [])
   ];
   const selectShortcutCharacterIds = {
     Digit1: "kairo",
@@ -2025,7 +2595,8 @@
     ultimateA: "KeyI",
     ultimateB: "KeyO",
     dash: ["ShiftLeft", "ShiftRight"],
-    taunt: "KeyT"
+    taunt: "KeyT",
+    grab: "Space"
   };
   const P2_CONTROLS = {
     left: "ArrowLeft",
@@ -2039,7 +2610,8 @@
     special1: "Numpad4",
     special2: "Numpad5",
     special3: "Numpad6",
-    ultimate: "Numpad0"
+    ultimate: "Numpad0",
+    grab: "Numpad7"
   };
 
   const GAMEPAD_DEADZONE = 0.35;
@@ -2083,25 +2655,55 @@
     userGestureSeen: false
   };
 
+  const phoneController = {
+    peer: null,
+    conn: null,
+    roomCode: null,
+    connected: false,
+    phase: "idle",
+    connectTimer: null,
+    directionMask: 0,
+    lastStatusText: "",
+    previousFrame: null,
+    lastSeenAt: 0,
+    recentActionIds: new Map()
+  };
+
   const moves = characterProfiles.kairo.moves.player;
 
   const state = {
     mode: "loading",
     paused: false,
     debug: false,
+    aiDifficulty: "normal",
     time: 0,
     hitPause: 0,
     cameraShake: 0,
+    screenFlash: 0,
+    timeScale: 1,
+    koSlowmoTimer: 0,
+    roundNumber: 1,
+    roundWins: { p1: 0, p2: 0 },
+    roundTransition: null,
+    roundFreeze: 0,
+    announcedFight: true,
+    announce: null,
+    superFlash: null,
+    lastKoRingout: false,
+    testMode: false,
+    assetsReady: false,
     messageTimer: 0,
     keys: new Set(),
     keyboardKeys: new Set(),
     gamepadKeys: new Set(),
+    phoneKeys: new Set(),
     netKeys: new Set(),
     images: {},
     frameBoxes: {},
     particles: [],
     projectiles: [],
     celesteTraps: [],
+    voidAnchors: [],
     nyxSignatureEffects: [],
     lamuhSpecialEffects: [],
     lamuhUltimateBeams: [],
@@ -2189,12 +2791,33 @@
 
   function clampToStageX(x) {
     const bounds = getStageBounds();
+    if (ringOutActive()) {
+      // Ring-out stages have no side walls — only a distant blast boundary.
+      return clamp(x, bounds.left - RINGOUT_BLAST_MARGIN, bounds.right + RINGOUT_BLAST_MARGIN);
+    }
     return clamp(x, bounds.left, bounds.right);
+  }
+
+  function ringOutActive(stage = getActiveStagePreset()) {
+    // Automated smoke harnesses opt out via testMode; live play keeps ring-outs.
+    return !!stage.ringOut && !state.testMode;
+  }
+
+  function getRingOutEdges() {
+    const stage = getActiveStagePreset();
+    if (!ringOutActive(stage)) return null;
+    return { left: stage.leftBound - RINGOUT_EDGE_GRACE, right: stage.rightBound + RINGOUT_EDGE_GRACE };
+  }
+
+  function enableTestMatchMode() {
+    state.testMode = true;
+    state.roundFreeze = 0;
+    state.announcedFight = true;
   }
 
   function syncInputKeys() {
     const filteredKeyboardKeys = [...state.keyboardKeys].filter((code) => shouldUseKeyboardKey(code));
-    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys, ...state.netKeys]);
+    state.keys = new Set([...filteredKeyboardKeys, ...state.gamepadKeys, ...state.phoneKeys, ...state.netKeys]);
   }
 
   function setKeyboardKey(code, pressed) {
@@ -2216,9 +2839,20 @@
     }
   }
 
+  function setPhoneKey(code, pressed) {
+    if (!code) return;
+    if (pressed) {
+      state.phoneKeys.add(code);
+    } else {
+      state.phoneKeys.delete(code);
+    }
+    syncInputKeys();
+  }
+
   function clearInputKeys() {
     state.keyboardKeys.clear();
     state.gamepadKeys.clear();
+    state.phoneKeys.clear();
     state.netKeys.clear();
     state.keys.clear();
   }
@@ -2247,8 +2881,12 @@
   const P1_KEYBOARD_CODES = new Set(controlCodesFor(P1_CONTROLS));
   const P2_KEYBOARD_CODES = new Set(controlCodesFor(P2_CONTROLS));
 
+  function isPhoneControllerAssigned(side) {
+    return side === "p2" && phoneController.connected;
+  }
+
   function isKeyboardEnabledForPlayer(side) {
-    return !isFightMode() || gamepadInput.assignments[side] === null;
+    return !isFightMode() || (gamepadInput.assignments[side] === null && !isPhoneControllerAssigned(side));
   }
 
   function shouldUseKeyboardKey(code) {
@@ -3292,6 +3930,295 @@
     return enemy;
   }
 
+  function buildSableRebuildPlayerAnimations(sheets) {
+    const base = buildSablePlaceholderPlayerAnimations(sheets);
+    const rb = (clip) => [`sableRb_${clip}`, 0];
+    return {
+      ...base,
+      idle: rb("idle"),
+      select_idle: rb("idle"),
+      intro_pose: rb("idle"),
+      intro: rb("idle"),
+      taunt: rb("idle"),
+      victory: rb("idle"),
+      level_up: rb("idle"),
+      walk_forward: rb("walk_forward"),
+      walk_back: rb("walk_backward"),
+      dash: rb("walk_forward"),
+      dash_forward: rb("walk_forward"),
+      phase_dash: rb("walk_forward"),
+      dash_back: rb("walk_backward"),
+      air_dash_forward: rb("jump"),
+      air_dash_back: rb("jump"),
+      crouch: rb("crouch"),
+      low_stance: rb("crouch"),
+      jump_up: rb("jump"),
+      rising: rb("jump"),
+      jump_forward: rb("jump"),
+      jump_back: rb("jump"),
+      fall: rb("jump"),
+      neutral_air_drift: rb("jump"),
+      air_recovery: rb("jump"),
+      fall_transition: rb("jump"),
+      block: rb("block"),
+      guard_idle: rb("block"),
+      stand_block: rb("block"),
+      crouch_block: rb("block"),
+      air_block: rb("block"),
+      damaged: rb("hit_stun"),
+      light_hitstun: rb("hit_stun"),
+      medium_hitstun: rb("hit_stun"),
+      heavy_hitstun: rb("hit_stun"),
+      knockback: rb("hit_stun"),
+      launch_hitstun: rb("hit_stun"),
+      air_hitstun: rb("hit_stun"),
+      knockdown_fall: rb("knockdown"),
+      grounded: rb("knockdown"),
+      downed: rb("knockdown"),
+      death: rb("knockdown"),
+      ko: rb("knockdown"),
+      defeat: rb("knockdown"),
+      get_up: rb("getup"),
+      recovery: rb("getup"),
+      recovery_get_up: rb("getup"),
+      neutral_light: rb("stand_light"),
+      light_attack: rb("stand_light"),
+      neutral_medium: rb("stand_medium"),
+      medium_attack: rb("stand_medium"),
+      neutral_heavy: rb("stand_heavy"),
+      heavy_attack: rb("stand_heavy"),
+      launcher: rb("stand_heavy"),
+      down_light: rb("crouch_light"),
+      down_medium: rb("crouch_medium"),
+      down_heavy: rb("crouch_heavy"),
+      forward_light: rb("forward_light"),
+      forward_medium: rb("forward_medium"),
+      forward_heavy: rb("forward_heavy"),
+      back_light: rb("back_light"),
+      back_medium: rb("back_medium"),
+      back_heavy: rb("back_heavy"),
+      jump_light: rb("jump_light"),
+      air_light: rb("jump_light"),
+      jump_medium: rb("jump_medium"),
+      air_medium: rb("jump_medium"),
+      jump_heavy: rb("jump_heavy"),
+      air_heavy: rb("jump_heavy"),
+      up_light: rb("up_special_light"),
+      up_medium: rb("up_special_medium"),
+      up_heavy: rb("up_special_heavy"),
+      special_1: rb("neutral_special_light"),
+      special_2: rb("neutral_special_medium"),
+      special_3: rb("neutral_special_heavy"),
+      neutral_special: rb("neutral_special_light"),
+      neutral_light_special: rb("neutral_special_light"),
+      neutral_medium_special: rb("neutral_special_medium"),
+      neutral_heavy_special: rb("neutral_special_heavy"),
+      void_shard: rb("neutral_special_light"),
+      forward_special: rb("forward_special_light"),
+      forward_light_special: rb("forward_special_light"),
+      forward_medium_special: rb("forward_special_medium"),
+      forward_heavy_special: rb("forward_special_heavy"),
+      phase_lunge: rb("forward_special_light"),
+      back_special: rb("back_special_light"),
+      back_light_special: rb("back_special_light"),
+      back_medium_special: rb("back_special_medium"),
+      back_heavy_special: rb("back_special_heavy"),
+      void_anchor: rb("back_special_light"),
+      down_special: rb("down_special_light"),
+      down_light_special: rb("down_special_light"),
+      down_medium_special: rb("down_special_medium"),
+      down_heavy_special: rb("down_special_heavy"),
+      ground_rift: rb("down_special_light"),
+      up_special: rb("up_special_light"),
+      up_light_special: rb("up_special_light"),
+      up_medium_special: rb("up_special_medium"),
+      up_heavy_special: rb("up_special_heavy"),
+      vertical_phase: rb("up_special_light"),
+      air_special: rb("neutral_special_light"),
+      air_light_special: rb("neutral_special_light"),
+      air_void_shard: rb("neutral_special_light"),
+      air_medium_special: rb("forward_special_medium"),
+      air_phase_lunge: rb("forward_special_medium"),
+      air_heavy_special: rb("down_special_heavy"),
+      air_rift_drop: rb("down_special_heavy"),
+      super_dash: rb("forward_special_medium"),
+      ultimate: rb("neutral_special_heavy")
+    };
+  }
+
+  function buildSableRebuildEnemyAnimations(sheets) {
+    const player = buildSableRebuildPlayerAnimations(sheets);
+    const enemy = {};
+    for (const [key, value] of Object.entries(player)) {
+      enemy[`enemy_${key}`] = value;
+    }
+    enemy.enemy_light_attack = player.neutral_light;
+    enemy.enemy_medium_attack = player.neutral_medium;
+    enemy.enemy_heavy_attack = player.neutral_heavy;
+    return enemy;
+  }
+
+  function buildSablePlaceholderPlayerAnimations(sheets) {
+    const sheet = sheets.placeholder;
+    return {
+      idle: [sheet, 0],
+      select_idle: [sheet, 0],
+      intro_pose: [sheet, 0],
+      intro: [sheet, 0],
+      walk_forward: [sheet, 1],
+      walk_back: [sheet, 1],
+      dash: [sheet, 2],
+      dash_forward: [sheet, 2],
+      dash_back: [sheet, 2],
+      phase_dash: [sheet, 2],
+      crouch: [sheet, 3],
+      low_stance: [sheet, 3],
+      jump_up: [sheet, 4],
+      rising: [sheet, 4],
+      jump_forward: [sheet, 4],
+      jump_back: [sheet, 4],
+      fall: [sheet, 4],
+      neutral_air_drift: [sheet, 4],
+      air_dash_forward: [sheet, 2],
+      air_dash_back: [sheet, 2],
+      block: [sheet, 5],
+      guard_idle: [sheet, 5],
+      stand_block: [sheet, 5],
+      crouch_block: [sheet, 5],
+      air_block: [sheet, 5],
+      damaged: [sheet, 6],
+      light_hitstun: [sheet, 6],
+      medium_hitstun: [sheet, 6],
+      heavy_hitstun: [sheet, 6],
+      knockback: [sheet, 6],
+      launch_hitstun: [sheet, 6],
+      air_hitstun: [sheet, 6],
+      knockdown_fall: [sheet, 7],
+      grounded: [sheet, 7],
+      downed: [sheet, 7],
+      get_up: [sheet, 7],
+      recovery: [sheet, 7],
+      recovery_get_up: [sheet, 7],
+      death: [sheet, 7],
+      ko: [sheet, 7],
+      defeat: [sheet, 7],
+      neutral_light: [sheet, 8],
+      light_attack: [sheet, 8],
+      forward_light: [sheet, 8],
+      back_light: [sheet, 8],
+      down_light: [sheet, 8],
+      neutral_medium: [sheet, 9],
+      medium_attack: [sheet, 9],
+      forward_medium: [sheet, 9],
+      back_medium: [sheet, 9],
+      down_medium: [sheet, 9],
+      neutral_heavy: [sheet, 10],
+      heavy_attack: [sheet, 10],
+      forward_heavy: [sheet, 10],
+      back_heavy: [sheet, 10],
+      down_heavy: [sheet, 10],
+      up_light: [sheet, 18],
+      up_medium: [sheet, 18],
+      up_heavy: [sheet, 18],
+      launcher: [sheet, 10],
+      jump_light: [sheet, 11],
+      air_light: [sheet, 11],
+      jump_medium: [sheet, 12],
+      air_medium: [sheet, 12],
+      jump_heavy: [sheet, 13],
+      air_heavy: [sheet, 13],
+      air_recovery: [sheet, 4],
+      fall_transition: [sheet, 4],
+      special_1: [sheet, 14],
+      neutral_special: [sheet, 14],
+      neutral_light_special: [sheet, 14],
+      neutral_medium_special: [sheet, 14],
+      neutral_heavy_special: [sheet, 14],
+      void_shard: [sheet, 14],
+      special_2: [sheet, 14],
+      special_3: [sheet, 14],
+      forward_special: [sheet, 15],
+      forward_light_special: [sheet, 15],
+      forward_medium_special: [sheet, 15],
+      forward_heavy_special: [sheet, 15],
+      phase_lunge: [sheet, 15],
+      back_special: [sheet, 16],
+      back_light_special: [sheet, 16],
+      back_medium_special: [sheet, 16],
+      back_heavy_special: [sheet, 16],
+      void_anchor: [sheet, 16],
+      down_special: [sheet, 17],
+      down_light_special: [sheet, 17],
+      down_medium_special: [sheet, 17],
+      down_heavy_special: [sheet, 17],
+      ground_rift: [sheet, 17],
+      up_special: [sheet, 18],
+      up_light_special: [sheet, 18],
+      up_medium_special: [sheet, 18],
+      up_heavy_special: [sheet, 18],
+      vertical_phase: [sheet, 18],
+      air_special: [sheet, 14],
+      air_light_special: [sheet, 14],
+      air_void_shard: [sheet, 14],
+      air_medium_special: [sheet, 15],
+      air_phase_lunge: [sheet, 15],
+      air_heavy_special: [sheet, 17],
+      air_rift_drop: [sheet, 17],
+      super_dash: [sheet, 15],
+      ultimate: [sheet, 19],
+      victory: [sheet, 19],
+      level_up: [sheet, 19],
+      taunt: [sheet, 0]
+    };
+  }
+
+  function buildSablePlaceholderEnemyAnimations(sheets) {
+    const player = buildSablePlaceholderPlayerAnimations(sheets);
+    const enemy = {};
+    for (const [key, value] of Object.entries(player)) {
+      enemy[`enemy_${key}`] = value;
+    }
+    enemy.enemy_idle = player.idle;
+    enemy.enemy_walk_forward = player.walk_forward;
+    enemy.enemy_walk_back = player.walk_back;
+    enemy.enemy_dash = player.dash;
+    enemy.enemy_dash_forward = player.dash_forward;
+    enemy.enemy_dash_back = player.dash_back;
+    enemy.enemy_air_dash_forward = player.air_dash_forward;
+    enemy.enemy_air_dash_back = player.air_dash_back;
+    enemy.enemy_crouch = player.crouch;
+    enemy.enemy_block = player.block;
+    enemy.enemy_damaged = player.damaged;
+    enemy.enemy_knockback = player.knockback;
+    enemy.enemy_get_up = player.get_up;
+    enemy.enemy_light_attack = player.neutral_light;
+    enemy.enemy_medium_attack = player.neutral_medium;
+    enemy.enemy_heavy_attack = player.neutral_heavy;
+    enemy.enemy_forward_light = player.forward_light;
+    enemy.enemy_forward_medium = player.forward_medium;
+    enemy.enemy_forward_heavy = player.forward_heavy;
+    enemy.enemy_back_light = player.back_light;
+    enemy.enemy_back_medium = player.back_medium;
+    enemy.enemy_back_heavy = player.back_heavy;
+    enemy.enemy_down_light = player.down_light;
+    enemy.enemy_down_medium = player.down_medium;
+    enemy.enemy_down_heavy = player.down_heavy;
+    enemy.enemy_jump_light = player.jump_light;
+    enemy.enemy_jump_medium = player.jump_medium;
+    enemy.enemy_jump_heavy = player.jump_heavy;
+    enemy.enemy_special_1 = player.special_1;
+    enemy.enemy_special_2 = player.special_2;
+    enemy.enemy_special_3 = player.special_3;
+    enemy.enemy_neutral_special = player.neutral_special;
+    enemy.enemy_forward_special = player.forward_special;
+    enemy.enemy_back_special = player.back_special;
+    enemy.enemy_down_special = player.down_special;
+    enemy.enemy_up_special = player.up_special;
+    enemy.enemy_air_special = player.air_special;
+    enemy.enemy_ultimate = player.ultimate;
+    return enemy;
+  }
+
   function buildCelestePlaceholderPlayerAnimations(sheets) {
     const sheet = sheets.placeholder;
     return {
@@ -3780,6 +4707,7 @@
   function getOpponentId(characterId) {
     if (characterId === "nyx") return "kairo";
     if (characterId === "sol") return "vanta";
+    if (characterId === "sable") return "lamuh";
     if (characterId === "celeste") return "vanta";
     if (characterId === "vanta") return "nyx";
     return "vanta";
@@ -3801,8 +4729,16 @@
     return usesLamuhArt(f) || usesLamuhLegacyArt(f);
   }
 
+  function usesSableArt(f) {
+    return f?.profile?.id === "sable";
+  }
+
   function usesCelestePlaceholder(f) {
     return f?.profile?.id === "celeste";
+  }
+
+  function usesFullDirectionalBasics(f) {
+    return usesCelestePlaceholder(f) || usesSableArt(f);
   }
 
   function getCelesteBaseAnimKey(animKey = "") {
@@ -3931,7 +4867,7 @@
   }
 
   function usesNewGenerationArt(f) {
-    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "lamuh" || f?.profile?.id === "lamuh_legacy" || f?.profile?.id === "celeste";
+    return f?.profile?.id === "nyx" || f?.profile?.id === "sol" || f?.profile?.id === "seris" || f?.profile?.id === "sable" || f?.profile?.id === "lamuh" || f?.profile?.id === "lamuh_legacy" || f?.profile?.id === "celeste";
   }
 
   function withEnemyPrefix(f, anim) {
@@ -3969,6 +4905,7 @@
     if (!f.activeMove) return null;
     if (f.profile?.id === "sol") return getSolActionPhaseAnim(f, moveData);
     if (f.profile?.id === "seris") return getSerisActionPhaseAnim(f, moveData);
+    if (f.profile?.id === "sable") return getSableActionPhaseAnim(f, moveData);
     if (f.profile?.id === "lamuh") return getLamuhActionPhaseAnim(f, moveData);
     if (!usesNyxArt(f)) return null;
     const moveKey = f.activeMove.replace(/^enemy_/, "");
@@ -4009,6 +4946,23 @@
     }
     if (moveKey === "special_2") return withEnemyPrefix(f, "sanctum_sweep");
     if (moveKey === "special_3" || moveKey === "ultimate") return withEnemyPrefix(f, "divine_recoil");
+    return null;
+  }
+
+  function getSableActionPhaseAnim(f, moveData) {
+    const moveKey = f.activeMove.replace(/^enemy_/, "");
+    const identityAnimEnd = Math.max(moveData.startup + moveData.active, moveData.duration * 0.76);
+    if (moveKey.includes("neutral_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (["special_1", "special_2", "special_3"].includes(moveKey)) return withEnemyPrefix(f, { special_1: "neutral_light_special", special_2: "neutral_medium_special", special_3: "neutral_heavy_special" }[moveKey]);
+    if (moveKey.includes("forward_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("back_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("down_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("up_") && moveKey.includes("_special")) return withEnemyPrefix(f, moveKey);
+    if (moveKey.includes("air_light_special") || moveKey === "air_special") return withEnemyPrefix(f, "air_void_shard");
+    if (moveKey.includes("air_medium_special")) return withEnemyPrefix(f, "air_phase_lunge");
+    if (moveKey.includes("air_heavy_special")) return withEnemyPrefix(f, "air_rift_drop");
+    if (moveKey === "super_dash") return withEnemyPrefix(f, "phase_lunge");
+    if (moveKey === "ultimate") return withEnemyPrefix(f, f.actionTime <= identityAnimEnd ? "void_shard" : "idle");
     return null;
   }
 
@@ -4166,6 +5120,24 @@
       dashDirection: facing,
       superDashCooldown: 0,
       aiCooldown: kind === "enemy" ? 0.4 : 0,
+      aiBlockTimer: 0,
+      aiDecisionTimer: 0,
+      aiApproachStyle: "walk",
+      aiThreatRead: null,
+      aiComboRolledFor: null,
+      animSegmentStart: 0,
+      hitFlashTimer: 0,
+      impactSquashTimer: 0,
+      landSquashTimer: 0,
+      ghosts: [],
+      lastGhostAt: -Infinity,
+      staleMoves: [],
+      staleRecorded: false,
+      chainUsed: null,
+      airJumpUsed: false,
+      grabState: null,
+      grabbedBy: null,
+      grabCooldown: 0,
       activeMove: null,
       hasHit: false,
       hitCount: 0,
@@ -4198,9 +5170,106 @@
     };
   }
 
+  function initMatchFlowButtons() {
+    // Tap-friendly overlay actions — Esc/R don't exist on phones.
+    const dispatch = (code) => {
+      window.dispatchEvent(new KeyboardEvent("keydown", { code, bubbles: true }));
+      window.dispatchEvent(new KeyboardEvent("keyup", { code, bubbles: true }));
+    };
+    document.getElementById("match-flow-rematch")?.addEventListener("click", () => dispatch("KeyR"));
+    document.getElementById("match-flow-select")?.addEventListener("click", () => dispatch("Escape"));
+    const resume = document.getElementById("match-flow-resume");
+    resume?.addEventListener("click", () => dispatch("KeyP"));
+  }
+
+  function initTouchControls() {
+    if (!touchControls) return;
+    const coarse = (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) || "ontouchstart" in window;
+    if (!coarse) return;
+    touchControlsAvailable = true;
+    document.body.classList.add("touch-mode");
+    updateTouchControlsVisibility();
+    const press = (code, down) => {
+      window.dispatchEvent(new KeyboardEvent(down ? "keydown" : "keyup", { code, bubbles: true }));
+    };
+    const bind = (btn, onDown, onUp) => {
+      const start = (ev) => {
+        ev.preventDefault();
+        unlockAudio();
+        btn.classList.add("active");
+        onDown();
+      };
+      const end = (ev) => {
+        ev.preventDefault();
+        btn.classList.remove("active");
+        onUp();
+      };
+      btn.addEventListener("touchstart", start, { passive: false });
+      btn.addEventListener("touchend", end, { passive: false });
+      btn.addEventListener("touchcancel", end, { passive: false });
+      btn.addEventListener("contextmenu", (ev) => ev.preventDefault());
+    };
+    touchControls.querySelectorAll("[data-touch-key]").forEach((btn) => {
+      const code = btn.dataset.touchKey;
+      bind(btn, () => press(code, true), () => press(code, false));
+    });
+    const ult = touchControls.querySelector("[data-touch-ultimate]");
+    if (ult) {
+      // Ultimate is a two-key chord on keyboard (I+O); the button plays it in order.
+      bind(
+        ult,
+        () => {
+          press(P1_CONTROLS.ultimateB, true);
+          press(P1_CONTROLS.ultimateA, true);
+        },
+        () => {
+          press(P1_CONTROLS.ultimateA, false);
+          press(P1_CONTROLS.ultimateB, false);
+        }
+      );
+    }
+  }
+
+  function releaseTouchInputs() {
+    if (!touchControls) return;
+    touchControls.querySelectorAll(".touch-btn.active").forEach((btn) => btn.classList.remove("active"));
+    touchControls.querySelectorAll("[data-touch-key]").forEach((btn) => {
+      const code = btn.dataset.touchKey;
+      if (code) window.dispatchEvent(new KeyboardEvent("keyup", { code, bubbles: true }));
+    });
+    window.dispatchEvent(new KeyboardEvent("keyup", { code: P1_CONTROLS.ultimateA, bubbles: true }));
+    window.dispatchEvent(new KeyboardEvent("keyup", { code: P1_CONTROLS.ultimateB, bubbles: true }));
+  }
+
+  function setTouchControlsVisible(active) {
+    if (!touchControlsAvailable || !touchControls) return;
+    if (touchControlsVisible && !active) releaseTouchInputs();
+    touchControlsVisible = active;
+    touchControls.classList.toggle("hidden", !active);
+    touchControls.setAttribute("aria-hidden", active ? "false" : "true");
+    document.body.classList.toggle("touch-controls-active", active);
+  }
+
+  function updateTouchControlsVisibility() {
+    setTouchControlsVisible(isFightMode() && !state.paused && !state.matchEnded);
+  }
+
+  function registerServiceWorker() {
+    if (!("serviceWorker" in navigator)) return;
+    if (!["https:", "http:"].includes(window.location.protocol)) return;
+    try {
+      navigator.serviceWorker.register("sw.js").catch(() => { /* offline cache is best-effort */ });
+    } catch {
+      /* unsupported context */
+    }
+  }
+
   async function boot() {
     await loadAssets();
     document.documentElement.style.setProperty("--title-bg", `url("${assetPaths.title}")`);
+    initTouchControls();
+    initMatchFlowButtons();
+    registerServiceWorker();
     renderControlsDisplay(selectControlsDisplay, true);
     renderControlsDisplay(matchControlsDisplay, false);
     renderControlsDisplay(titleControlsPanel, true);
@@ -4223,34 +5292,95 @@
     requestAnimationFrame(loop);
   }
 
+  const NO_CHROMA_ASSET_KEYS = new Set([
+    "stage",
+    "title",
+    "mainMenuBackground",
+    "eclipseFarBackground",
+    "eclipseMidground",
+    "eclipseMainPlatform",
+    "eclipseSidePlatformLeft",
+    "eclipseSidePlatformRight",
+    "eclipseForeground",
+    "eclipseStageSelectCard",
+    "nyxPhantomSlash"
+  ]);
+  // Assets required before the title screen shows. Everything else streams in
+  // behind the menus so mobile/slow connections boot in seconds instead of
+  // waiting on ~200MB of fighter sheets (fights show placeholders until ready).
+  const CORE_ASSET_KEYS = new Set([
+    "title",
+    "mainMenuBackground",
+    "stage",
+    "eclipseStageSelectCard"
+  ]);
+
+  async function loadAssetEntry(key, path) {
+    if (!path) {
+      state.images[key] = null;
+      return;
+    }
+    const image = await loadImage(path);
+    if (!image) {
+      state.images[key] = null;
+      return;
+    }
+    const keyed = NO_CHROMA_ASSET_KEYS.has(key) ? image : chromaKey(image);
+    state.images[key] = sheetMeta[key] && !sheetMeta[key].skipSanitize ? sanitizeSpriteSheet(keyed, sheetMeta[key]) : keyed;
+  }
+
+  const assetLoadPromises = {};
+
   async function loadAssets() {
     const entries = Object.entries(assetPaths);
-    await Promise.all(entries.map(async ([key, path]) => {
-      if (!path) {
-        state.images[key] = null;
-        return;
+    const core = entries.filter(([key]) => CORE_ASSET_KEYS.has(key));
+    const rest = entries.filter(([key]) => !CORE_ASSET_KEYS.has(key));
+    state.assetsReady = false;
+    const startEntry = ([key, path]) => {
+      assetLoadPromises[key] = loadAssetEntry(key, path);
+      return assetLoadPromises[key];
+    };
+    await Promise.all(core.map(startEntry));
+    state.frameBoxes = buildSpriteFrameBoxes();
+    Promise.all(rest.map(startEntry)).then(() => {
+      state.frameBoxes = buildSpriteFrameBoxes();
+      state.assetsReady = true;
+    });
+  }
+
+  // Every sheet key a character's animation tables can reference — the exact
+  // set drawFighter needs before this character can render as real art.
+  function getCharacterSheetKeys(characterId) {
+    const profile = getCharacterProfile(characterId);
+    const keys = new Set();
+    for (const table of [profile?.playerAnimations, profile?.enemyAnimations]) {
+      for (const entry of Object.values(table || {})) {
+        if (Array.isArray(entry) && entry[0]) keys.add(entry[0]);
       }
-      const chroma = ![
-        "stage",
-        "title",
-        "mainMenuBackground",
-        "eclipseFarBackground",
-        "eclipseMidground",
-        "eclipseMainPlatform",
-        "eclipseSidePlatformLeft",
-        "eclipseSidePlatformRight",
-        "eclipseForeground",
-        "eclipseStageSelectCard",
-        "nyxPhantomSlash"
-      ].includes(key);
-      const image = await loadImage(path);
-      if (!image) {
-        state.images[key] = null;
-        return;
+    }
+    return [...keys];
+  }
+
+  function areFighterAssetsReady(...characterIds) {
+    // state.images[key] is undefined while loading, image-or-null once settled.
+    return characterIds.every((id) =>
+      getCharacterSheetKeys(id).every((key) => state.images[key] !== undefined || !assetPaths[key])
+    );
+  }
+
+  async function ensureFighterAssetsLoaded(...characterIds) {
+    const pending = [];
+    for (const id of characterIds) {
+      for (const key of getCharacterSheetKeys(id)) {
+        if (state.images[key] === undefined && assetLoadPromises[key]) pending.push(assetLoadPromises[key]);
       }
-      const keyed = chroma ? chromaKey(image) : image;
-      state.images[key] = sheetMeta[key] && !sheetMeta[key].skipSanitize ? sanitizeSpriteSheet(keyed, sheetMeta[key]) : keyed;
-    }));
+    }
+    if (!pending.length) return;
+    // Never hang the flow forever on a dead connection — placeholders after 30s.
+    await Promise.race([
+      Promise.all(pending),
+      new Promise((resolve) => setTimeout(resolve, 30000))
+    ]);
     state.frameBoxes = buildSpriteFrameBoxes();
   }
 
@@ -4734,7 +5864,8 @@
     return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
   }
 
-  function resetRound() {
+  function resetRound(options = {}) {
+    const keepScore = !!options.keepScore;
     const versusMode = state.mode === "versus";
     const playerId = versusMode ? state.selectedP1CharacterId : state.selectedPlayerId;
     const enemyId = versusMode ? state.selectedP2CharacterId : getOpponentId(playerId);
@@ -4747,12 +5878,33 @@
     clearInputKeys();
     state.p1DashTap = { code: null, time: -Infinity };
     state.p2DashTap = { code: null, time: -Infinity };
+    const previousEnemyAI = state.enemyAI;
     state.player = makeFighter("player", stage.spawnP1X, 1, playerId);
     state.enemy = makeFighter("enemy", stage.spawnP2X, -1, enemyId);
-    if (versusMode) state.enemyAI = false;
+    if (versusMode) state.enemyAI = keepScore ? previousEnemyAI : false;
+    if (!keepScore) {
+      state.roundNumber = 1;
+      state.roundWins = { p1: 0, p2: 0 };
+    }
+    state.roundTransition = null;
+    state.koSlowmoTimer = 0;
+    state.lastKoRingout = false;
+    state.superFlash = null;
+    playMusic("battle");
+    if (versusMode && !state.testMode) {
+      const finalRound = state.roundWins.p1 === ROUNDS_TO_WIN - 1 && state.roundWins.p2 === ROUNDS_TO_WIN - 1;
+      state.roundFreeze = ROUND_FREEZE_TIME;
+      state.announcedFight = false;
+      announce(finalRound ? "FINAL ROUND" : `ROUND ${state.roundNumber}`, 0.85);
+      playSfx(finalRound ? "announcer_final" : state.roundNumber === 1 ? "announcer_round1" : "announcer_round2");
+    } else {
+      state.roundFreeze = 0;
+      state.announcedFight = true;
+    }
     state.particles = [];
     state.projectiles = [];
     state.celesteTraps = [];
+    state.voidAnchors = [];
     state.nyxSignatureEffects = [];
     state.lamuhSpecialEffects = [];
     state.lamuhUltimateBeams = [];
@@ -4800,9 +5952,34 @@
   }
 
   function endMatch(defeated) {
-    if (!defeated || state.matchEnded) return;
+    if (!defeated || state.matchEnded || state.roundTransition) return;
     // Online guests only end the match from a host snapshot, never from local prediction.
     if (netIsActive() && net.role === "guest" && !net.applyingSnapshot) return;
+    const p1Won = defeated.kind === "enemy";
+
+    // Best-of-N rounds in versus; training stays single-round for fast lab loops.
+    const roundsEnabled = state.mode === "versus" && !netIsActive();
+    if (roundsEnabled) {
+      state.roundWins[p1Won ? "p1" : "p2"] += 1;
+      state.koSlowmoTimer = KO_SLOWMO_TIME;
+      announce(state.lastKoRingout ? "RING OUT" : "K.O.", 1.4);
+      playSfx(state.lastKoRingout ? "announcer_ringout" : "announcer_ko");
+      playSfx("ko");
+      state.lastKoRingout = false;
+      if (state.roundWins[p1Won ? "p1" : "p2"] < ROUNDS_TO_WIN) {
+        state.roundTransition = { timer: ROUND_TRANSITION_TIME };
+        defeated.hp = Math.max(defeated.hp, 0);
+        resetCombo(true);
+        return;
+      }
+    } else {
+      playSfx("announcer_ko");
+      playSfx("ko");
+    }
+    finishMatch(defeated);
+  }
+
+  function finishMatch(defeated) {
     const p1Won = defeated.kind === "enemy";
     const winner = p1Won ? state.player : state.enemy;
     const loser = defeated;
@@ -4814,6 +5991,7 @@
     state.messageTimer = 2.4;
     clearInputKeys();
     state.projectiles = [];
+    state.voidAnchors = [];
     resetCombo(true);
     loser.dead = true;
     loser.hitstun = 999;
@@ -4876,6 +6054,7 @@
     titleScreen.classList.add("hidden");
     modeDetailScreen?.classList.add("hidden");
     onlineMenu?.classList.add("hidden");
+    phoneControllerMenu?.classList.add("hidden");
     characterSelect.classList.add("hidden");
     fighterConfirmScreen?.classList.add("hidden");
     stageSelectScreen?.classList.add("hidden");
@@ -4886,6 +6065,7 @@
   function showMainMenu() {
     hideFlowScreens();
     titleScreen.classList.remove("hidden");
+    playMusic("title");
     state.mode = "title";
     state.flowStep = FLOW_STEP_MAIN_MENU;
     setSelectControlsOpen(false);
@@ -4912,6 +6092,10 @@
       onlineJoinPanel?.classList.remove("hidden");
       setOnlinePhase("idle", "Enter the host's room code.");
       onlineCodeInput?.focus();
+      return;
+    }
+    if (action.action === "phone-controller") {
+      showPhoneControllerMenu(true);
       return;
     }
     if (action.action === "fighter-select") {
@@ -5213,7 +6397,7 @@
     focusCurrentSelectStep();
   }
 
-  function startConfirmedMatch() {
+  async function startConfirmedMatch() {
     if (netIsActive()) {
       if (net.role === "host" && state.p1Ready && state.p2Ready) {
         netSend({ t: "start", p1: state.selectedP1CharacterId, p2: state.selectedP2CharacterId, s: state.selectedStagePresetId });
@@ -5221,7 +6405,17 @@
       }
       return;
     }
-    if (state.selectGameMode === "training") {
+    // Never enter a fight before both fighters' sheets exist — otherwise the
+    // renderer falls back to debug placeholder figures ("blocks").
+    const training = state.selectGameMode === "training";
+    const p1Id = training ? state.selectedPlayerId : state.selectedP1CharacterId;
+    const p2Id = training ? getOpponentId(p1Id) : state.selectedP2CharacterId;
+    if (!areFighterAssetsReady(p1Id, p2Id)) {
+      showMatchFlowOverlay("LOADING", "Downloading fighter art...", "First play on this device only", false, "loading");
+      await ensureFighterAssetsLoaded(p1Id, p2Id);
+      hideMatchFlowOverlay();
+    }
+    if (training) {
       startTraining(state.selectedPlayerId);
       return;
     }
@@ -5257,7 +6451,9 @@
       Numpad3: "Numpad 3",
       Numpad4: "Numpad 4",
       Numpad5: "Numpad 5",
-      Numpad6: "Numpad 6"
+      Numpad6: "Numpad 6",
+      Numpad7: "Numpad 7",
+      Space: "Space"
     };
     return labels[code] || code.replace(/^Key/, "").replace(/^Digit/, "");
   }
@@ -5279,6 +6475,7 @@
       controlRow("Dash", `${keyChip(P1_CONTROLS.dash[0])}${keyRepeat(P1_CONTROLS.left)}${keyRepeat(P1_CONTROLS.right)}`, "Shift or double tap"),
       controlRow("Attacks", `${keyChip(P1_CONTROLS.light)}${keyChip(P1_CONTROLS.medium)}${keyChip(P1_CONTROLS.heavy)}`, "Light / Medium / Heavy"),
       controlRow("Specials", `${keyCombo(P1_CONTROLS.modifier, P1_CONTROLS.light)}${keyCombo(P1_CONTROLS.modifier, P1_CONTROLS.medium)}${keyCombo(P1_CONTROLS.modifier, P1_CONTROLS.heavy)}`),
+      controlRow("Grab", keyChip(P1_CONTROLS.grab), "beats block"),
       controlRow("Ultimate", keyCombo(P1_CONTROLS.ultimateA, P1_CONTROLS.ultimateB))
     ];
     const p2Rows = [
@@ -5287,12 +6484,14 @@
       controlRow("Dash", `${keyRepeat(P2_CONTROLS.left)}${keyRepeat(P2_CONTROLS.right)}`, "double tap"),
       controlRow("Attacks", `${keyChip(P2_CONTROLS.light)}${keyChip(P2_CONTROLS.medium)}${keyChip(P2_CONTROLS.heavy)}`, "Light / Medium / Heavy"),
       controlRow("Specials", `${keyChip(P2_CONTROLS.special1)}${keyChip(P2_CONTROLS.special2)}${keyChip(P2_CONTROLS.special3)}`),
+      controlRow("Grab", keyChip(P2_CONTROLS.grab), "beats block"),
       controlRow("Ultimate", keyChip(P2_CONTROLS.ultimate))
     ];
     const padRows = [
       controlRow("Move", `${keyChip("LS")}${keyChip("D-pad")}`),
       controlRow("Jump / Guard", `${keyChip("Up")}${keyChip("Down")}`),
       controlRow("Attacks", `${keyChip("X/Square")}${keyChip("A/Cross")}${keyChip("B/Circle")}`, "Light / Medium / Heavy"),
+      controlRow("Grab", keyCombo("X/Square", "A/Cross"), "together, beats block"),
       controlRow("Specials", `${keyChip("Y/Triangle")}${keyChip("LB/L1")}${keyChip("LT/L2")}`, "hold + attack"),
       controlRow("Dash / Ult", `${keyChip("RB/R1")}${keyChip("RT/R2")}`),
       controlRow("Menu", `${keyChip("Start")}${keyChip("View/Share")}`, "Pause / Assign")
@@ -5470,6 +6669,7 @@
   }
 
   function confirmFighterLock() {
+    playSfx("ui_confirm", 0.7);
     const pending = isLaunchableCharacterId(state.pendingConfirmCharacterId) ? state.pendingConfirmCharacterId : state.selectCursorCharacterId;
     state.selectCursorCharacterId = pending;
     if (netIsActive()) {
@@ -5820,6 +7020,7 @@
   }
 
   function cycleCharacterSelect(delta) {
+    playSfx("ui_move", 0.5);
     const ids = selectableCharacterIds;
     const currentIndex = Math.max(0, ids.indexOf(state.selectCursorCharacterId));
     const nextIndex = (currentIndex + delta + ids.length) % ids.length;
@@ -5919,8 +7120,15 @@
       startMove(side === "p1" ? "ultimate" : "enemy_ultimate", fighter);
       return;
     }
-    if (justPressed(input, previous, "light")) startGamepadAttack(side, input, 1);
-    if (justPressed(input, previous, "medium")) startGamepadAttack(side, input, 2);
+    // Throw macro: light+medium together grabs (standard pad throw input).
+    const lightNow = justPressed(input, previous, "light");
+    const mediumNow = justPressed(input, previous, "medium");
+    if ((lightNow && input.buttons.medium) || (mediumNow && input.buttons.light)) {
+      startGrab(fighter);
+      return;
+    }
+    if (lightNow) startGamepadAttack(side, input, 1);
+    if (mediumNow) startGamepadAttack(side, input, 2);
     if (justPressed(input, previous, "heavy")) startGamepadAttack(side, input, 3);
   }
 
@@ -5973,8 +7181,9 @@
       const controllerNumber = pads.findIndex((entry) => entry.index === pad.index) + 1;
       return `Controller ${controllerNumber} ${getGamepadLabel(pad)}`;
     };
-    const statusText = pads.length
-      ? `Inputs: P1 ${padText(p1Pad)} | P2 ${padText(p2Pad)}`
+    const p2InputText = phoneController.connected ? "Phone" : padText(p2Pad);
+    const statusText = pads.length || phoneController.connected
+      ? `Inputs: P1 ${padText(p1Pad)} | P2 ${p2InputText}`
       : "Controllers: none detected - press a controller button after load";
     if (statusText === gamepadInput.lastStatusText) return;
     gamepadInput.lastStatusText = statusText;
@@ -6017,17 +7226,42 @@
     const last = state.lastNow || now;
     state.lastNow = now;
     const rawDt = Math.min((now - last) / 1000, 1 / 30);
-    const dt = state.paused ? 0 : rawDt;
+    if (state.koSlowmoTimer > 0) {
+      state.koSlowmoTimer = Math.max(0, state.koSlowmoTimer - rawDt);
+      state.timeScale = KO_SLOWMO_SCALE;
+    } else {
+      state.timeScale = 1;
+    }
+    const dt = state.paused ? 0 : rawDt * state.timeScale;
     pollGamepads();
     update(dt);
     netTick(rawDt);
     updateStageCamera(rawDt);
+    updateTouchControlsVisibility();
     render();
     requestAnimationFrame(loop);
   }
 
+  function announce(text, duration = 0.9) {
+    state.announce = { text, timer: duration, duration };
+  }
+
+  function startNextRound() {
+    state.roundNumber += 1;
+    resetRound({ keepScore: true });
+  }
+
   function update(dt) {
     state.time += dt;
+    if (state.screenFlash > 0) state.screenFlash = Math.max(0, state.screenFlash - dt * 2.4);
+    if (state.announce && state.announce.timer > 0) {
+      state.announce.timer -= dt;
+      if (state.announce.timer <= 0) state.announce = null;
+    }
+    if (state.superFlash) {
+      state.superFlash.timer -= dt;
+      if (state.superFlash.timer <= 0) state.superFlash = null;
+    }
     updateParticles(dt);
     updateNyxSignatureEffects(dt);
     updateLamuhSpecialEffects(dt);
@@ -6039,6 +7273,31 @@
 
     if (state.messageTimer > 0) {
       state.messageTimer -= dt;
+    }
+
+    if (state.roundFreeze > 0) {
+      state.roundFreeze = Math.max(0, state.roundFreeze - dt);
+      if (state.roundFreeze <= 0.6 && !state.announcedFight) {
+        state.announcedFight = true;
+        announce("FIGHT!", 0.6);
+        playSfx("announcer_fight");
+      }
+      updateHud();
+      return;
+    }
+
+    if (state.roundTransition) {
+      const transition = state.roundTransition;
+      transition.timer -= dt;
+      updateProjectiles(dt);
+      updatePlayer(dt);
+      updateEnemy(dt);
+      updateHud();
+      if (transition.timer <= 0) {
+        state.roundTransition = null;
+        startNextRound();
+      }
+      return;
     }
 
     if (state.matchEnded) {
@@ -6059,6 +7318,7 @@
 
     updateProjectiles(dt);
     updateCelesteTraps(dt);
+    updateVoidAnchors(dt);
     updateCombo(dt);
     updatePlayer(dt);
     updateEnemy(dt);
@@ -6069,7 +7329,8 @@
   function updatePlayer(dt) {
     const p = state.player;
     const e = state.enemy;
-    p.facing = p.x <= e.x ? 1 : -1;
+    // Facing locks for the duration of a move so attacks can't flip mid-swing.
+    if (!p.action) p.facing = p.x <= e.x ? 1 : -1;
     p.crouching = false;
     p.blocking = false;
     tickFighterTimers(p, dt);
@@ -6084,6 +7345,11 @@
       p.vx = 0;
       integrate(p, dt);
       endMatch(p);
+      return;
+    }
+
+    if (updateGrab(p, dt)) {
+      integrate(p, dt);
       return;
     }
 
@@ -6151,10 +7417,18 @@
     } else if (p.action) {
       updateAction(p, dt);
     } else {
-      readMovement(p, P1_CONTROLS);
+      if (!consumeBufferedNeutralMove(p)) readMovement(p, P1_CONTROLS);
     }
 
     integrate(p, dt);
+  }
+
+  function consumeBufferedNeutralMove(f) {
+    if (!f.bufferedMove) return false;
+    const key = f.bufferedMove.key;
+    f.bufferedMove = null;
+    startMove(key, f);
+    return !!f.action;
   }
 
   function readMovement(p, controls) {
@@ -6213,6 +7487,7 @@
 
   function resolveWallBounce(f) {
     if (!WALL_BOUNCE_ENABLED || !f.wallBounceEligible || f.grounded) return false;
+    if (ringOutActive()) return false; // no walls to bounce off — fly out instead
     const { left: leftWall, right: rightWall } = getStageBounds();
     const hitLeftWall = f.x <= leftWall && f.vx < 0;
     const hitRightWall = f.x >= rightWall && f.vx > 0;
@@ -6270,6 +7545,14 @@
       f.bufferedMove.timer -= dt;
       if (f.bufferedMove.timer <= 0) f.bufferedMove = null;
     }
+    if (f.grabCooldown > 0) f.grabCooldown = Math.max(0, f.grabCooldown - dt);
+    if (f.hitFlashTimer > 0) f.hitFlashTimer = Math.max(0, f.hitFlashTimer - dt);
+    if (f.impactSquashTimer > 0) f.impactSquashTimer = Math.max(0, f.impactSquashTimer - dt);
+    if (f.landSquashTimer > 0) f.landSquashTimer = Math.max(0, f.landSquashTimer - dt);
+    if (f.ghosts && f.ghosts.length) {
+      for (const g of f.ghosts) g.life -= dt;
+      f.ghosts = f.ghosts.filter((g) => g.life > 0);
+    }
   }
 
   function updateMirrorPierceHold(f, dt) {
@@ -6293,7 +7576,7 @@
   function updateEnemy(dt) {
     const e = state.enemy;
     const p = state.player;
-    e.facing = e.x <= p.x ? 1 : -1;
+    if (!e.action) e.facing = e.x <= p.x ? 1 : -1;
     e.crouching = false;
     e.blocking = false;
     tickFighterTimers(e, dt);
@@ -6311,12 +7594,15 @@
     if (e.dead) {
       e.anim = "enemy_death";
       e.vx = 0;
+    } else if (updateGrab(e, dt)) {
+      // grab flow owns this frame
     } else if (e.blockstun > 0) {
       e.blockstun = Math.max(0, e.blockstun - dt);
       e.anim = getHitReactionAnim(e, "enemy_block");
       e.vx *= 0.32;
       if (e.blockstun <= 0) e.reactionAnim = null;
     } else if (e.action) {
+      maybeQueueEnemyComboFollowup(e);
       updateAction(e, dt);
     } else if (e.hitstun > 0) {
       e.hitstun = Math.max(0, e.hitstun - dt);
@@ -6357,7 +7643,7 @@
       if (state.enemyAI) {
         updateEnemyAI(e, p, dt);
       } else if (state.mode === "versus") {
-        readMovement(e, P2_CONTROLS);
+        if (!consumeBufferedNeutralMove(e)) readMovement(e, P2_CONTROLS);
       } else {
         e.vx *= 0.55;
         if (Math.abs(e.vx) < 5) e.vx = 0;
@@ -6381,10 +7667,50 @@
     f.meter = clamp(f.meter + amount, 0, METER_MAX);
   }
 
+  function getEnemyAIDifficulty() {
+    return ENEMY_AI_DIFFICULTY_PRESETS[state.aiDifficulty] || ENEMY_AI_DIFFICULTY_PRESETS.normal;
+  }
+
+  function keepAIOnStage(e) {
+    const edges = getRingOutEdges();
+    if (!edges || !e.grounded) return;
+    const margin = 70;
+    if (e.x <= edges.left + margin && e.vx < 0) e.vx = 0;
+    if (e.x >= edges.right - margin && e.vx > 0) e.vx = 0;
+  }
+
+  function getIncomingPlayerThreat(e, p, distance, ai) {
+    if (!p.action || !p.activeMove) return false;
+    const moveData = getMove(p);
+    if (!moveData) return false;
+    if (p.actionTime > moveData.startup + moveData.active) return false;
+    if (moveData.flags.projectile) return true;
+    if (moveData.flags.noHit) return false;
+    return distance <= ai.attackRange + 60;
+  }
+
+  function maybeQueueEnemyComboFollowup(e) {
+    if (!state.enemyAI || !e.action || !e.hasHit || e.bufferedMove) return;
+    if (e.aiComboRolledFor === e.activeMove) return;
+    e.aiComboRolledFor = e.activeMove;
+    const current = getMove(e);
+    const ladder = { enemy_light_attack: "enemy_medium_attack", enemy_medium_attack: "enemy_heavy_attack" };
+    const next = current?.flags?.cancelOnHit?.[0] || ladder[e.activeMove];
+    if (!next || !getMove(e, next)) return;
+    const ai = e.profile.ai || baselineEnemyAI;
+    const diff = getEnemyAIDifficulty();
+    if (Math.random() < (ai.comboChance ?? diff.comboChance)) {
+      e.bufferedMove = { key: next, timer: INPUT_BUFFER };
+    }
+  }
+
   function updateEnemyAI(e, p, dt) {
     const distance = Math.abs(p.x - e.x);
     const ai = e.profile.ai || baselineEnemyAI;
+    const diff = getEnemyAIDifficulty();
     e.aiCooldown = Math.max(0, e.aiCooldown - dt);
+    e.aiBlockTimer = Math.max(0, (e.aiBlockTimer || 0) - dt);
+    e.aiDecisionTimer = Math.max(0, (e.aiDecisionTimer || 0) - dt);
     e.facing = e.x <= p.x ? 1 : -1;
 
     if (p.dead) {
@@ -6393,21 +7719,87 @@
       return;
     }
 
+    // Reactive guard: one read per player move, then commit to a short block.
+    if (getIncomingPlayerThreat(e, p, distance, ai)) {
+      if (e.grounded && e.aiThreatRead !== p.activeMove) {
+        e.aiThreatRead = p.activeMove;
+        if (Math.random() < (ai.blockChance ?? diff.blockChance)) {
+          e.aiBlockTimer = Math.max(e.aiBlockTimer, ai.blockHold ?? diff.blockHold);
+        }
+      }
+    } else if (!p.action) {
+      e.aiThreatRead = null;
+    }
+
+    if (e.aiBlockTimer > 0 && e.grounded) {
+      e.blocking = true;
+      e.vx = -e.facing * ai.walkSpeed * 0.35;
+      keepAIOnStage(e);
+      e.anim = usesNewGenerationArt(e) ? "enemy_walk_back" : "enemy_block";
+      return;
+    }
+
+    // Anti-air read against jump-ins once the player stops rising.
+    if (!p.grounded && p.vy > -140 && distance <= (ai.antiAirRange || 240) && e.grounded && e.aiCooldown <= 0) {
+      if (Math.random() < (ai.antiAirChance ?? diff.antiAirChance)) {
+        startEnemyMove(ai.antiAirAttack || "enemy_heavy_attack");
+        e.aiCooldown = ai.minCooldown * 0.7 * diff.cooldownScale;
+        return;
+      }
+      e.aiCooldown = Math.max(e.aiCooldown, 0.24);
+    }
+
     if (distance > ai.attackRange) {
+      if (e.aiDecisionTimer <= 0) {
+        e.aiDecisionTimer = 0.4 + Math.random() * 0.35;
+        e.aiApproachStyle = e.grounded && e.dashCooldown <= 0 && distance > ai.attackRange * 1.35 && Math.random() < (ai.dashInChance ?? diff.dashInChance)
+          ? "dash"
+          : "walk";
+      }
+      if (e.aiApproachStyle === "dash" && e.grounded && e.dashCooldown <= 0) {
+        const movement = getMovementStats(e);
+        e.dashTimer = movement.dashDuration;
+        e.dashCooldown = movement.dashCooldown;
+        e.dashDirection = e.facing;
+        e.aiApproachStyle = "walk";
+        e.anim = getDashAnim(e);
+        return;
+      }
       e.vx = e.facing * ai.walkSpeed;
       e.anim = "enemy_walk_forward";
+      return;
+    }
+
+    // In range but still cooling down: keep spacing honest instead of standing still.
+    if (e.aiCooldown > 0) {
+      if (e.aiDecisionTimer <= 0) {
+        e.aiDecisionTimer = 0.3 + Math.random() * 0.3;
+        e.aiApproachStyle = distance < ai.attackRange * 0.55 && Math.random() < (ai.retreatChance ?? diff.retreatChance) ? "retreat" : "hold";
+      }
+      if (e.aiApproachStyle === "retreat" && e.grounded) {
+        e.blocking = true;
+        e.vx = -e.facing * ai.walkSpeed * 0.6;
+        keepAIOnStage(e);
+        e.anim = usesNewGenerationArt(e) ? "enemy_walk_back" : "enemy_block";
+        return;
+      }
+      e.vx *= 0.55;
+      if (Math.abs(e.vx) < 5) e.vx = 0;
+      e.anim = "enemy_idle";
       return;
     }
 
     e.vx *= 0.55;
     if (Math.abs(e.vx) < 5) e.vx = 0;
     e.anim = "enemy_idle";
-
-    if (e.aiCooldown <= 0) {
-      const attack = chooseEnemyAttack(distance);
-      startEnemyMove(attack);
-      e.aiCooldown = ai.minCooldown + Math.random() * (ai.maxCooldown - ai.minCooldown);
+    // Throw beats turtling: if the player is guarding at point blank, sometimes grab.
+    if (p.blocking && p.grounded && distance <= GRAB_RANGE * 0.95 && e.grabCooldown <= 0 && Math.random() < (ai.grabChance ?? diff.grabChance)) {
+      startGrab(e);
+      e.aiCooldown = ai.minCooldown * diff.cooldownScale;
+      return;
     }
+    startEnemyMove(chooseEnemyAttack(distance));
+    e.aiCooldown = (ai.minCooldown + Math.random() * (ai.maxCooldown - ai.minCooldown)) * diff.cooldownScale;
   }
 
   function chooseEnemyAttack(distance) {
@@ -6424,7 +7816,13 @@
     const moveData = getMove(f);
     if (!moveData) return;
     f.actionTime += dt;
-    f.anim = getCharacterActionPhaseAnim(f, moveData) || f.anim;
+    const phaseAnim = getCharacterActionPhaseAnim(f, moveData);
+    if (phaseAnim && phaseAnim !== f.anim) {
+      f.anim = phaseAnim;
+      // Anim rows swapped mid-move play from their own first frame; a swap on the
+      // first tick still counts as the start of the move.
+      f.animSegmentStart = f.actionTime < 0.04 ? 0 : f.actionTime;
+    }
     f.vx *= moveData.flags.dash ? 0.98 : f.grounded ? 0.46 : 0.88;
 
     if (moveData.flags.superDash) updateSuperDashVelocity(f);
@@ -6449,6 +7847,10 @@
     }
     if (moveData.flags.tiEncore && !f.spawnedTrap && f.actionTime >= moveData.startup) {
       spawnCelesteTrap(f);
+      f.spawnedTrap = true;
+    }
+    if (moveData.flags.voidAnchor && !f.spawnedTrap && f.actionTime >= moveData.startup) {
+      spawnVoidAnchor(f, moveData);
       f.spawnedTrap = true;
     }
     if (!moveData.flags.noHit && isMoveActive(f)) {
@@ -6529,6 +7931,20 @@
     resolveWallBounce(f);
     resolveStageLanding(f, previousY, wasGrounded);
 
+    const stage = getActiveStagePreset();
+    if (ringOutActive(stage)) {
+      if (f.grounded && !f.standingPlatformId && (f.x < stage.leftBound - RINGOUT_EDGE_GRACE || f.x > stage.rightBound + RINGOUT_EDGE_GRACE)) {
+        f.grounded = false; // walked off the ledge
+      }
+      if (f.y > stage.groundY + RINGOUT_KILL_DEPTH && !f.dead && !state.matchEnded && !state.roundTransition) {
+        f.hp = 0;
+        state.lastKoRingout = true;
+        state.cameraShake = Math.max(state.cameraShake, 10);
+        spawnBurst(f.x, stage.groundY + 60, "#ff9a5c", 30, 0.35, "shock");
+        endMatch(f);
+      }
+    }
+
     f.x = clampToStageX(f.x);
   }
 
@@ -6590,9 +8006,13 @@
     spawnBurst(barrier.x, barrier.y, celesteSpiritColors.LA.secondary, 24, 0.22, "ring");
   }
 
+  function matchInputLocked() {
+    return state.roundFreeze > 0 || !!state.roundTransition;
+  }
+
   function startMove(key, fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.paused || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.dashTimer > 0 || p.airDashTimer > 0) return;
+    if (!isFightMode() || state.paused || state.matchEnded || matchInputLocked() || state.lamuhCinematicUltimate || p.dead) return;
     const data = getMove(p, key);
     if (!data) return;
     if (data.flags.ultimate && p.meter < METER_MAX) {
@@ -6600,7 +8020,12 @@
       return;
     }
     if (!canStartCelestePhase2Move(p, data, key)) return;
-    if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0 || p.landingTimer > 0) return;
+    if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0) return;
+    if (p.dashTimer > 0 || p.airDashTimer > 0 || p.recoveryTimer > 0 || p.landingTimer > 0) {
+      // Inputs pressed slightly early are buffered and fire at neutral.
+      p.bufferedMove = { key, timer: INPUT_BUFFER };
+      return;
+    }
 
     if (p.action) {
       if (canCancelInto(p, key)) {
@@ -6625,6 +8050,10 @@
   function beginMove(f, key) {
     const data = getMove(f, key);
     if (!data) return;
+    // Chain bookkeeping: cancels extend the current string, fresh moves reset it.
+    const chained = !!f.action;
+    if (!chained || !f.chainUsed) f.chainUsed = new Set();
+    f.chainUsed.add(normalizeMoveKey(key));
     f.action = "attack";
     f.actionTime = 0;
     f.activeMove = key;
@@ -6646,6 +8075,9 @@
     f.lamuhReboundFlash = false;
     f.lamuhAscendTrail = -Infinity;
     f.bufferedMove = null;
+    f.animSegmentStart = 0;
+    f.aiComboRolledFor = null;
+    f.staleRecorded = false;
     f.anim = getMoveAnimKey(f, key, data);
     if (f.grounded && !data.flags.dash && !data.flags.rise && !data.flags.superDash) {
       f.vx = 0;
@@ -6662,6 +8094,10 @@
     if (data.flags.ultimate) {
       f.meter = 0;
       state.cameraShake = 12;
+      state.superFlash = { timer: 0.5, duration: 0.5, kind: f.kind };
+      state.hitPause = Math.max(state.hitPause, 0.34);
+      state.screenFlash = Math.max(state.screenFlash, 0.3);
+      playSfx("super_flash");
       spawnBurst(f.x + f.facing * 150, f.y - 95, f.profile.ultimateBurstColor || "#d66bff", 34);
       if (usesNyxArt(f)) spawnNyxUltimateVisual(f);
       if (usesLamuhArt(f)) {
@@ -6678,11 +8114,32 @@
     }
     spawnLamuhSpecialEffectForMove(f, key);
     spawnCelesteSpiritBurstForMove(f);
+    const tier = getMoveStrengthTier(key, data);
+    playSfx(data.flags.superDash ? "super_dash" : "whoosh", 0.5 + tier * 0.12, 1.18 - tier * 0.09);
   }
 
   function getMoveAnimKey(f, key, data) {
     if (data.flags.anim) return f.kind === "enemy" ? `enemy_${data.flags.anim}` : data.flags.anim;
     return key;
+  }
+
+  function normalizeMoveKey(key = "") {
+    return key.replace(/^enemy_/, "");
+  }
+
+  // Cancel hierarchy tiers: 1 light, 2 medium, 3 heavy, 4 special, 5 super/ultimate.
+  // Unknown keys count as specials so custom-named moves slot into the ladder.
+  function getMoveStrengthTier(key, data) {
+    if (data?.flags?.ultimate) return 5;
+    const k = normalizeMoveKey(key);
+    if (/special/.test(k)) return 4;
+    if (/(^|_)light/.test(k)) return 1;
+    if (/(^|_)medium/.test(k)) return 2;
+    if (/(^|_)heavy/.test(k)) return 3;
+    if (data?.boxType === "light") return 1;
+    if (data?.boxType === "medium" || data?.boxType === "low" || data?.boxType === "jump") return 2;
+    if (data?.boxType === "heavy") return 3;
+    return 4;
   }
 
   function canCancelInto(f, nextKey) {
@@ -6700,6 +8157,20 @@
     if (current.flags.cancelOnHit?.includes(nextKey)) return hitCancelReady;
     if (current.flags.dashCancel && next.flags.superDash) return lateCancel || hitCancelReady;
     if (next.flags.projectile && current.flags.cancelOnHit?.includes(nextKey)) return hitCancelReady;
+
+    // Universal gatling / cancel ladder (on contact): normals chain upward in
+    // strength and into specials; specials cancel into super. Each move may be
+    // used once per string (revolver rule) so ladders stay finite.
+    const curKey = normalizeMoveKey(f.activeMove || "");
+    const nxtKey = normalizeMoveKey(nextKey);
+    if (curKey === nxtKey) return false;
+    if (f.chainUsed && f.chainUsed.has(nxtKey)) return false;
+    const curTier = getMoveStrengthTier(f.activeMove || "", current);
+    const nextTier = getMoveStrengthTier(nextKey, next);
+    if (curTier >= 4) return nextTier >= 5 && hitCancelReady;
+    if (nextTier >= 4) return hitCancelReady;
+    if (nextTier > curTier) return basicChainReady;
+    if (nextTier === curTier && curTier === 1) return basicChainReady;
     return false;
   }
 
@@ -6911,9 +8382,117 @@
     }
   }
 
+  function getGrabTarget(f) {
+    return f.kind === "player" ? state.enemy : state.player;
+  }
+
+  function canBeGrabbed(target) {
+    return !!target && !target.dead && target.grounded && !target.grabbedBy && !target.grabState &&
+      target.hitstun <= 0 && target.knockdownTimer <= 0 && target.recoveryTimer <= 0 &&
+      !state.lamuhCinematicUltimate;
+  }
+
+  function releaseGrabLinks(f) {
+    if (!f) return;
+    const other = getGrabTarget(f);
+    if (other && other.grabbedBy === f.kind) other.grabbedBy = null;
+    if (f.grabState) f.grabState = null;
+  }
+
+  function startGrab(fighter = state.player) {
+    const p = fighter;
+    if (!isFightMode() || state.paused || state.matchEnded || matchInputLocked() || state.lamuhCinematicUltimate || p.dead) return;
+    if (!p.grounded || p.action || p.grabState || p.grabbedBy || p.grabCooldown > 0) return;
+    if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0 || p.landingTimer > 0 || p.dashTimer > 0 || p.airDashTimer > 0) return;
+    p.grabState = { phase: "startup", t: 0 };
+    p.grabCooldown = GRAB_COOLDOWN;
+    p.vx = 0;
+  }
+
+  // Returns true while a grab (as grabber or victim) owns this fighter's update.
+  function updateGrab(f, dt) {
+    if (f.grabbedBy) {
+      f.anim = getHitReactionAnim(f, f.kind === "player" ? "damaged" : "enemy_damaged");
+      f.vx = 0;
+      f.vy = 0;
+      return true;
+    }
+    const grab = f.grabState;
+    if (!grab) return false;
+    grab.t += dt;
+    const target = getGrabTarget(f);
+    if (grab.phase === "startup") {
+      f.anim = withEnemyPrefix(f, "walk_forward");
+      f.vx = f.facing * 60;
+      if (grab.t >= GRAB_STARTUP) {
+        const distance = Math.abs(target.x - f.x);
+        const inFront = (target.x - f.x) * f.facing >= 0;
+        if (canBeGrabbed(target) && inFront && distance <= GRAB_RANGE) {
+          grab.phase = "hold";
+          grab.t = 0;
+          target.grabbedBy = f.kind;
+          target.action = null;
+          target.activeMove = null;
+          target.bufferedMove = null;
+          target.chainUsed = null;
+          target.blockstun = 0;
+          target.blocking = false;
+          target.x = clampToStageX(f.x + f.facing * 74);
+          state.cameraShake = Math.max(state.cameraShake, 4);
+          state.hitPause = Math.max(state.hitPause, 0.05);
+          playSfx("grab_catch");
+        } else {
+          grab.phase = "whiff";
+          grab.t = 0;
+        }
+      }
+      return true;
+    }
+    if (grab.phase === "hold") {
+      f.vx = 0;
+      f.anim = withEnemyPrefix(f, "idle");
+      if (grab.t >= GRAB_HOLD) {
+        grab.phase = "toss";
+        grab.t = 0;
+        const victim = target;
+        if (victim && victim.grabbedBy === f.kind) {
+          // Forward throw by default; holding back throws behind (side switch).
+          let dir = f.facing;
+          const humanControlled = f.kind === "player" || (state.mode === "versus" && !state.enemyAI);
+          if (humanControlled) {
+            const controls = getFighterControls(f);
+            const back = f.facing === 1 ? controls.left : controls.right;
+            if (state.keys.has(back)) dir = -f.facing;
+          }
+          victim.grabbedBy = null;
+          victim.hp = Math.max(0, victim.hp - GRAB_DAMAGE);
+          victim.grounded = false;
+          victim.standingPlatformId = null;
+          victim.vx = dir * GRAB_TOSS_VX;
+          victim.vy = GRAB_TOSS_VY;
+          victim.hitstun = 0.42;
+          victim.pendingKnockdown = Math.max(victim.pendingKnockdown, SOFT_KNOCKDOWN);
+          victim.hitFlashTimer = Math.max(victim.hitFlashTimer, HIT_FLASH_HEAVY);
+          victim.impactSquashTimer = Math.max(victim.impactSquashTimer, IMPACT_SQUASH_TIME);
+          playSfx("grab_toss");
+          applyImpactFeedback({ flags: {}, boxType: "heavy", damage: GRAB_DAMAGE }, victim.x, victim.y - 80, false);
+          registerComboHit(f, victim, { damage: GRAB_DAMAGE, flags: {} });
+          if (shouldGainMeter(f)) growFighterMeter(f, Math.ceil(GRAB_DAMAGE / 12));
+          if (victim.hp <= 0) endMatch(victim);
+        }
+      }
+      return true;
+    }
+    f.vx *= 0.6;
+    f.anim = withEnemyPrefix(f, "idle");
+    const recovery = grab.phase === "whiff" ? GRAB_WHIFF_RECOVERY : GRAB_TOSS_RECOVERY;
+    if (grab.t >= recovery) f.grabState = null;
+    return true;
+  }
+
   function startDash(fighter = state.player, controls = P1_CONTROLS) {
     const p = fighter;
-    if (!isFightMode() || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (!isFightMode() || state.matchEnded || matchInputLocked() || state.lamuhCinematicUltimate || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action) {
       if (!canDashCancel(p)) return;
       clearAction(p);
@@ -6935,6 +8514,7 @@
       p.dashDirection = direction;
     }
     p.anim = getDashAnim(p);
+    playSfx("dash", 0.65);
     if (p.profile.effects?.dashTrail) {
       spawnTrail(p.x, p.y - 80);
     }
@@ -6942,7 +8522,7 @@
 
   function startSuperDash(fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.superDashCooldown > 0) return;
+    if (!isFightMode() || state.matchEnded || matchInputLocked() || state.lamuhCinematicUltimate || p.dead || p.superDashCooldown > 0) return;
     if (p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
     if (p.action && !canDashCancel(p)) {
       p.bufferedMove = { key: "super_dash", timer: INPUT_BUFFER };
@@ -6981,13 +8561,25 @@
 
   function jump(fighter = state.player) {
     const p = fighter;
-    if (!isFightMode() || state.matchEnded || state.lamuhCinematicUltimate || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (!isFightMode() || state.matchEnded || matchInputLocked() || state.lamuhCinematicUltimate || p.dead || p.blockstun > 0 || p.hitstun > 0 || p.knockdownTimer > 0 || p.recoveryTimer > 0) return;
+    if (p.grabState || p.grabbedBy) return;
     if (p.action) {
       if (!canJumpCancel(p)) return;
       clearAction(p);
     }
-    if (!p.grounded) return;
+    if (!p.grounded) {
+      // Double jump: one per airtime, slightly weaker, resets on landing.
+      if (p.airJumpUsed || p.airDashTimer > 0) return;
+      p.airJumpUsed = true;
+      p.vy = getJumpStats(p).jumpVelocity * AIR_JUMP_VELOCITY_SCALE;
+      p.landingTimer = 0;
+      spawnBurst(p.x, p.y - 34, "#dcefff", 13, 0.2, "burst");
+      playSfx("double_jump", 0.7);
+      if (usesCelestePlaceholder(p)) p.upAttackGrace = 0.08;
+      return;
+    }
     if (isPlatformTestStage() && handleDropThroughJump(p)) return;
+    playSfx("jump", 0.6);
     p.vy = getJumpStats(p).jumpVelocity;
     p.grounded = false;
     p.standingPlatformId = null;
@@ -7025,6 +8617,9 @@
     f.lamuhPiercePalmFxAt = -Infinity;
     f.bufferedMove = null;
     f.cinematicAnimDuration = null;
+    f.animSegmentStart = 0;
+    f.staleRecorded = false;
+    f.chainUsed = null;
   }
 
   function clearMirrorPierceHoldForOpponent(attacker) {
@@ -7309,7 +8904,35 @@
     const hitStop = profile.hitStop * (getFightingSpeedTuning()?.hitstopMultiplier ?? 1);
     state.hitPause = Math.max(state.hitPause, hitStop);
     state.cameraShake = Math.max(state.cameraShake, profile.shake);
+    if (profile.dramatic && !blocked) {
+      state.screenFlash = Math.max(state.screenFlash, profile.hitStop >= 0.1 ? 0.3 : 0.16);
+    }
+    const soundKey = blocked ? "block" : profile.hitStop >= 0.1 ? "hit_super" : profile.dramatic ? "hit_heavy" : profile.hitStop >= 0.03 ? "hit_medium" : "hit_light";
+    playSfx(soundKey, 1, 0.94 + Math.random() * 0.12);
     spawnHitSpark(x, y, profile, blocked);
+  }
+
+  function applyHitPresentation(defender, source, blocked = false) {
+    if (blocked || !defender || defender.dead) return;
+    const flags = source.flags || {};
+    const heavy = flags.launcher || flags.ultimate || flags.hardKnockdown || source.boxType === "heavy" || source.boxType === "ultimate";
+    defender.hitFlashTimer = Math.max(defender.hitFlashTimer || 0, heavy ? HIT_FLASH_HEAVY : HIT_FLASH_LIGHT);
+    defender.impactSquashTimer = Math.max(defender.impactSquashTimer || 0, IMPACT_SQUASH_TIME);
+  }
+
+  function getStaleMoveScale(attacker, moveKey) {
+    if (!moveKey || !attacker.staleMoves || !attacker.staleMoves.length) return 1;
+    const now = state.time;
+    const repeats = attacker.staleMoves.filter((m) => m.key === moveKey && now - m.time <= STALE_MOVE_WINDOW).length;
+    if (!repeats) return 1;
+    return Math.max(STALE_MOVE_MIN_SCALE, Math.pow(STALE_MOVE_SCALE, repeats));
+  }
+
+  function recordStaleMove(attacker, moveKey) {
+    if (!moveKey) return;
+    if (!attacker.staleMoves) attacker.staleMoves = [];
+    attacker.staleMoves.push({ key: moveKey, time: state.time });
+    if (attacker.staleMoves.length > STALE_MOVE_MAX_TRACK) attacker.staleMoves.shift();
   }
 
   function registerComboHit(attacker, defender, moveData) {
@@ -7380,10 +9003,15 @@
       return true;
     }
     const damageScale = blocked ? 1 : getComboDamageScale(attacker);
+    const staleScale = blocked ? 1 : getStaleMoveScale(attacker, attacker.activeMove);
+    if (!blocked && !attacker.staleRecorded) {
+      recordStaleMove(attacker, attacker.activeMove);
+      attacker.staleRecorded = true;
+    }
     const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(attacker), getHeavyComboHitstunScale(attacker, defender, moveData), getCelesteJuggleHitstunScale(attacker, defender, moveData), getPlatformJuggleHitstunScale(attacker, defender, moveData));
     const heavyKnockbackScale = getHeavyComboKnockbackScale(attacker, defender, moveData);
     const knockbackScale = blocked ? 1 : getComboKnockbackScale(attacker) * heavyKnockbackScale * getPlatformKnockbackScale(attacker, defender, moveData);
-    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale));
+    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(moveData.damage * damageScale * staleScale));
     defender.hp = Math.max(0, defender.hp - damage);
     defender.blockstun = blocked ? moveData.blockstun : 0;
     defender.hitstun = blocked ? 0 : moveData.hitstun * hitstunScale;
@@ -7393,6 +9021,8 @@
     defender.hasHit = false;
     defender.spawnedProjectile = false;
     defender.cancelUnlocked = false;
+    releaseGrabLinks(defender);
+    defender.grabbedBy = null;
     setNyxReactionAnim(defender, moveData, blocked);
 
     const dir = attacker.facing;
@@ -7436,12 +9066,17 @@
       if (celesteAirHeavyBounce) state.combo.celesteAirBounceSpent = true;
     } else {
       resetCombo();
+      // Blocked pressure pushes the attacker out so mashing into guard loses spacing.
+      if (attacker.grounded && !moveData.flags.projectile && !moveData.flags.superDash) {
+        attacker.vx = -dir * BLOCKED_ATTACKER_PUSHBACK;
+      }
     }
 
     if (shouldGainMeter(attacker) && !moveData.flags.ultimate) {
-      growFighterMeter(attacker, moveData.flags.meter || Math.ceil(moveData.damage / 12));
+      growFighterMeter(attacker, (moveData.flags.meter || Math.ceil(moveData.damage / 12)) * staleScale);
     }
 
+    applyHitPresentation(defender, moveData, blocked);
     applyImpactFeedback(moveData, hitbox.x + hitbox.w * 0.65, hitbox.y + hitbox.h * 0.45, blocked);
     spawnLamuhImpactVfx(attacker, defender, moveData, hitbox, blocked);
 
@@ -7557,7 +9192,9 @@
     f.platformAirRecoveryTimer = 0;
     f.wallBounceEligible = false;
     f.airDashUsed = false;
+    f.airJumpUsed = false;
     if (!wasGrounded) {
+      f.landSquashTimer = Math.max(f.landSquashTimer || 0, LAND_SQUASH_TIME);
       if (f.pendingKnockdown > 0) {
         f.knockdownTimer = Math.max(f.knockdownTimer, f.pendingKnockdown);
         f.pendingKnockdown = 0;
@@ -7584,7 +9221,8 @@
       }
     }
 
-    if (f.y >= stage.groundY) {
+    const groundEdgesOk = !ringOutActive(stage) || (f.x >= stage.leftBound - RINGOUT_EDGE_GRACE && f.x <= stage.rightBound + RINGOUT_EDGE_GRACE);
+    if (f.y >= stage.groundY && groundEdgesOk) {
       f.y = stage.groundY;
       f.standingPlatformId = null;
       finishFighterLanding(f, wasGrounded);
@@ -7677,6 +9315,8 @@
     defender.mirrorPierceHoldTimer = 0;
     defender.mirrorPierceHoldX = null;
     defender.mirrorPierceHoldY = null;
+    releaseGrabLinks(defender);
+    defender.grabbedBy = null;
     setNyxReactionAnim(defender, projectile, blocked);
     const scaledProjectileKnockbackX = Math.abs(projectile.knockbackX) * knockbackScale;
     const airX = !defender.grounded && !blocked && !projectile.flags?.mirrorPierceBeam ? Math.min(scaledProjectileKnockbackX, MAX_AIR_KNOCKBACK_X) * 0.65 : scaledProjectileKnockbackX;
@@ -7704,6 +9344,7 @@
       growFighterMeter(owner, Math.ceil(projectile.damage / 12));
     }
 
+    applyHitPresentation(defender, projectile, blocked);
     applyImpactFeedback(projectile, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
     spawnLamuhImpactVfx(owner, defender, projectile, box, blocked);
 
@@ -7848,6 +9489,115 @@
     if (defender.hp <= 0) endMatch(defender);
   }
 
+  function spawnVoidAnchor(owner, moveData) {
+    if (!usesSableArt(owner)) return;
+    const stage = getActiveStagePreset();
+    const x = clamp(owner.x - owner.facing * 92, stage.leftBound + 96, stage.rightBound - 96);
+    const y = stage.groundY - 48;
+    state.voidAnchors = state.voidAnchors.filter((anchor) => anchor.ownerKind !== owner.kind || anchor.hit || anchor.detonating);
+    state.voidAnchors.push({
+      ownerKind: owner.kind,
+      ownerCharacterId: owner.profile?.id || owner.characterId,
+      x,
+      y,
+      facing: owner.facing,
+      age: 0,
+      armTime: SABLE_VOID_ANCHOR_ARM_TIME,
+      life: SABLE_VOID_ANCHOR_LIFE,
+      radius: SABLE_VOID_ANCHOR_RADIUS,
+      detonating: false,
+      detonationAge: 0,
+      hit: false,
+      sourceMove: owner.activeMove,
+      moveData
+    });
+    spawnBurst(x, y, owner.profile.projectileColor, 14, 0.18, "ring");
+  }
+
+  function updateVoidAnchors(dt) {
+    for (const anchor of state.voidAnchors) {
+      anchor.age += dt;
+      if (anchor.detonating) {
+        anchor.detonationAge += dt;
+        continue;
+      }
+      const defender = anchor.ownerKind === "player" ? state.enemy : state.player;
+      if (anchor.age < anchor.armTime || !defender || defender.dead) continue;
+      if (intersects(getVoidAnchorBox(anchor), getHurtbox(defender))) {
+        detonateVoidAnchor(anchor, defender);
+      }
+    }
+    state.voidAnchors = state.voidAnchors.filter((anchor) => {
+      if (anchor.detonating) return anchor.detonationAge < 0.22;
+      return !anchor.hit && anchor.age < anchor.life;
+    });
+  }
+
+  function getVoidAnchorBox(anchor, radius = anchor.radius) {
+    return {
+      x: anchor.x - radius,
+      y: anchor.y - radius,
+      w: radius * 2,
+      h: radius * 2
+    };
+  }
+
+  function detonateVoidAnchor(anchor, defender) {
+    anchor.detonating = true;
+    anchor.detonationAge = 0;
+    const box = getVoidAnchorBox(anchor, anchor.radius + 12);
+    const owner = getFighterByKind(anchor.ownerKind);
+    spawnBurst(anchor.x, anchor.y, "#b8a5ff", 32, 0.24, "shock");
+    if (!owner || !defender || defender.dead || !intersects(box, getHurtbox(defender))) {
+      anchor.hit = true;
+      return;
+    }
+    applyVoidAnchorHit(owner, defender, anchor, box);
+    anchor.hit = true;
+  }
+
+  function applyVoidAnchorHit(owner, defender, anchor, box) {
+    const source = {
+      damage: SABLE_VOID_ANCHOR_DAMAGE,
+      hitstun: SABLE_VOID_ANCHOR_HITSTUN,
+      blockstun: 10,
+      knockbackX: 82,
+      knockbackY: -205,
+      boxType: "voidAnchor",
+      flags: { projectileImpact: true, sableVoidAnchor: true, softKnockdown: true }
+    };
+    const attackerIsInFront = (anchor.x > defender.x) === (defender.facing === 1);
+    const blocked = defender.blocking && defender.grounded && attackerIsInFront;
+    const damageScale = blocked ? 1 : Math.min(getComboDamageScale(owner), 0.7);
+    const hitstunScale = blocked ? 1 : Math.min(getComboHitstunScale(owner), 0.72);
+    const damage = blocked ? 0 : Math.max(COMBO_MIN_DAMAGE, Math.ceil(source.damage * damageScale));
+    defender.hp = Math.max(0, defender.hp - damage);
+    defender.blockstun = blocked ? source.blockstun / 60 : 0;
+    defender.hitstun = blocked ? 0 : (source.hitstun / 60) * hitstunScale;
+    defender.action = null;
+    defender.activeMove = null;
+    defender.hasHit = false;
+    defender.spawnedProjectile = false;
+    defender.spawnedTrap = false;
+    defender.cancelUnlocked = false;
+    setNyxReactionAnim(defender, source, blocked);
+    const dir = Math.sign(defender.x - anchor.x) || anchor.facing || owner.facing || 1;
+    defender.vx = dir * (blocked ? 26 : Math.min(source.knockbackX * getComboKnockbackScale(owner), MAX_AIR_KNOCKBACK_X));
+    defender.vy = Math.min(defender.vy, blocked ? 0 : source.knockbackY);
+    applyFightingKnockbackVelocity(defender, blocked);
+    if (!blocked) {
+      defender.grounded = false;
+      defender.pendingKnockdown = Math.max(defender.pendingKnockdown, SOFT_KNOCKDOWN * 0.6);
+      defender.juggleGravityScale = Math.max(defender.juggleGravityScale || 1, getAirJuggleGravityScale(getComboPriorHits(owner, defender) + 1));
+      registerComboHit(owner, defender, source);
+    } else {
+      resetCombo();
+    }
+    if (!blocked && shouldGainMeter(owner)) growFighterMeter(owner, 2);
+    applyImpactFeedback(source, box.x + box.w * 0.5, box.y + box.h * 0.5, blocked);
+    if (defender.hp <= 0) endMatch(defender);
+  }
+
   function isMoveActive(f) {
     const m = getMove(f);
     return f.actionTime >= m.startup && f.actionTime <= m.startup + m.active;
@@ -7888,6 +9638,7 @@
   }
 
   function updateParticles(dt) {
+    if (state.particles.length > 260) state.particles.splice(0, state.particles.length - 260);
     for (const p of state.particles) {
       p.life -= dt;
       p.x += p.vx * dt;
@@ -8711,6 +10462,54 @@
     state.lamuhUltimateBeams = state.lamuhUltimateBeams.filter((beam) => beam.age < beam.life);
   }
 
+  function drawRoundPips() {
+    if (state.mode !== "versus" || !isFightMode()) return;
+    ctx.save();
+    for (let side = 0; side < 2; side += 1) {
+      const count = side === 0 ? state.roundWins.p1 : state.roundWins.p2;
+      for (let i = 0; i < ROUNDS_TO_WIN; i += 1) {
+        const x = side === 0 ? 96 + i * 26 : W - 96 - i * 26;
+        const y = 122;
+        ctx.beginPath();
+        ctx.moveTo(x, y - 9);
+        ctx.lineTo(x + 9, y);
+        ctx.lineTo(x, y + 9);
+        ctx.lineTo(x - 9, y);
+        ctx.closePath();
+        ctx.fillStyle = i < count ? "#ffd25e" : "rgba(255, 255, 255, 0.16)";
+        ctx.strokeStyle = "rgba(255, 210, 94, 0.55)";
+        ctx.lineWidth = 2;
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawAnnounce() {
+    const a = state.announce;
+    if (!a || a.timer <= 0) return;
+    const t = 1 - a.timer / a.duration;
+    const pop = t < 0.18 ? easeOutCubic(t / 0.18) : 1;
+    const fade = a.timer < 0.22 ? a.timer / 0.22 : 1;
+    ctx.save();
+    ctx.globalAlpha = fade;
+    ctx.translate(W / 2, H * 0.42);
+    ctx.scale(0.72 + pop * 0.28, 0.72 + pop * 0.28);
+    ctx.font = "900 96px 'Segoe UI', sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "rgba(20, 4, 8, 0.9)";
+    ctx.strokeText(a.text, 0, 0);
+    const grad = ctx.createLinearGradient(0, -44, 0, 44);
+    grad.addColorStop(0, "#fff7d8");
+    grad.addColorStop(1, "#ffb84d");
+    ctx.fillStyle = grad;
+    ctx.fillText(a.text, 0, 0);
+    ctx.restore();
+  }
+
   function render() {
     ctx.save();
     const shakeX = state.cameraShake ? (Math.random() - 0.5) * state.cameraShake : 0;
@@ -8735,13 +10534,27 @@
       drawCelesteOctavaVfx("front");
       drawProjectiles();
       drawCelesteTraps();
+      drawVoidAnchors();
       drawParticles();
+      if (state.superFlash) {
+        // Super cinematic flash: darken the arena, keep the caster spotlit.
+        const sf = state.superFlash;
+        ctx.fillStyle = `rgba(4, 2, 16, ${Math.min(sf.timer / sf.duration, 1) * 0.62})`;
+        ctx.fillRect(-W * 2, -H * 2, W * 5, H * 5);
+        drawFighter(getFighterByKind(sf.kind));
+      }
       if (state.debug) {
         drawDebug();
         drawCelesteFrameDebugOverlay();
       }
       ctx.restore();
+      if (state.screenFlash > 0) {
+        ctx.fillStyle = `rgba(255, 248, 230, ${Math.min(state.screenFlash, 0.42)})`;
+        ctx.fillRect(0, 0, W, H);
+      }
       drawEclipseRooftopForeground();
+      drawRoundPips();
+      drawAnnounce();
       drawStatusText();
     }
 
@@ -9111,6 +10924,76 @@
     return LAMUH_NEUTRAL_SPECIAL_BODY_CROPS[key] || null;
   }
 
+  function getAttackPhaseFrameSplit(moveData, frameCount, startup, active, recovery) {
+    const flagged = moveData.flags?.phaseFrames;
+    if (flagged) {
+      const s = Math.max(0, Math.round(flagged.startup || 0));
+      const a = Math.max(0, Math.round(flagged.active || 0));
+      const r = Math.max(0, Math.round(flagged.recovery || 0));
+      if (a > 0 && s + a + r === frameCount) return [s, a, r];
+    }
+    const total = startup + active + recovery;
+    if (!(total > 0)) return null;
+    const phases = [startup, active, recovery];
+    const raw = phases.map((len) => (frameCount * len) / total);
+    const counts = raw.map((v, i) => (phases[i] > 0 ? Math.max(1, Math.floor(v)) : 0));
+    let used = counts[0] + counts[1] + counts[2];
+    while (used > frameCount) {
+      const i = counts.indexOf(Math.max(...counts));
+      if (counts[i] <= 1) return null;
+      counts[i] -= 1;
+      used -= 1;
+    }
+    const priority = [1, 0, 2];
+    while (used < frameCount) {
+      let best = 1;
+      let bestFrac = -Infinity;
+      for (const i of priority) {
+        if (phases[i] <= 0) continue;
+        const frac = raw[i] - counts[i];
+        if (frac > bestFrac + 1e-9) {
+          bestFrac = frac;
+          best = i;
+        }
+      }
+      counts[best] += 1;
+      used += 1;
+    }
+    return counts;
+  }
+
+  function getActionAnimationFrame(f, moveData, frameCount, animDuration) {
+    const linear = Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(animDuration, 0.1)) * frameCount));
+    if (!moveData || f.cinematicAnimDuration || frameCount < 2) return linear;
+    const startup = Math.max(moveData.startup || 0, 0);
+    const active = Math.max(moveData.active || 0, 0);
+    const recovery = Math.max((moveData.duration || 0) - startup - active, 0);
+    const t = Math.max(f.actionTime, 0);
+    const segStart = f.animSegmentStart || 0;
+    if (segStart > 0) {
+      // Phase-swapped rows (chain snare, shadow step, crown beam, ...) play their
+      // own full strip across the remainder of the phase they started in.
+      const boundaries = [startup, startup + active, moveData.duration || segStart];
+      let segEnd = boundaries.find((b) => b > segStart + 0.001);
+      if (!Number.isFinite(segEnd) || segEnd <= segStart + 0.001) segEnd = Math.max(moveData.duration || 0, segStart + 0.1);
+      return Math.max(0, Math.min(frameCount - 1, Math.floor(((t - segStart) / (segEnd - segStart)) * frameCount)));
+    }
+    if (!(active > 0) || frameCount < 3) return linear;
+    const split = getAttackPhaseFrameSplit(moveData, frameCount, startup, active, recovery);
+    if (!split) return linear;
+    const [sFrames, aFrames, rFrames] = split;
+    const phaseFrame = (time, len, count, base, ease = 1) => {
+      const progress = Math.pow(Math.min(Math.max(time / Math.max(len, 1e-6), 0), 1), ease);
+      return base + Math.min(count - 1, Math.floor(progress * count));
+    };
+    // Startup eases in (anticipation holds, then snaps to the strike); recovery
+    // eases out (fast settle) — traditional slow-in/fast-strike attack timing.
+    if (t < startup && sFrames > 0) return phaseFrame(t, startup, sFrames, 0, 1.4);
+    if (t < startup + active && aFrames > 0) return Math.min(frameCount - 1, phaseFrame(t - startup, active, aFrames, sFrames));
+    if (rFrames > 0) return Math.min(frameCount - 1, phaseFrame(t - startup - active, recovery, rFrames, sFrames + aFrames, 0.85));
+    return frameCount - 1;
+  }
+
   function drawFighter(f) {
     if (!f) return;
     if (usesCelestePlaceholder(f) && f.profile?.placeholderArt === "procedural_celeste_phase_1") {
@@ -9144,7 +11027,7 @@
     const celesteMeta = isCeleste ? getCelesteAnimationMeta(f, animKey) : null;
     const animDuration = f.cinematicAnimDuration || moveData?.duration || celesteMeta?.frameTiming || 0.5;
     const idleFps = celesteMeta?.frameTiming ? frameCount / Math.max(celesteMeta.frameTiming, 0.1) : 8;
-    let frame = f.action ? Math.min(frameCount - 1, Math.floor((f.actionTime / Math.max(animDuration, 0.1)) * frameCount)) : Math.floor(state.time * idleFps) % frameCount;
+    let frame = f.action ? getActionAnimationFrame(f, moveData, frameCount, animDuration) : Math.floor(state.time * idleFps) % frameCount;
     frame = getLamuhMirrorPierceFrameOverride(f, moveData, frameCount, frame);
     frame = getLamuhNeutralSpecialFrameOverride(f, moveData, frameCount, frame);
     frame = getLamuhReactionDefenseFrameOverride(f, animKey, entry[0], row, frameCount, frame);
@@ -9222,11 +11105,57 @@
 
     drawLamuhAscendedAura(f, animKey, { dx, dy, dw, dh }, "behind");
 
+    // Smear ghosts: sample the sprite during dashes, super dash, and heavy startup.
+    const ghosting = f.dashTimer > 0 || f.airDashTimer > 0 || (f.action && moveData && (moveData.flags.superDash || moveData.flags.dash || (isHeavyComboMove(moveData, f.activeMove || "") && f.actionTime < moveData.startup)));
+    if (ghosting && state.time - (f.lastGhostAt || -Infinity) >= GHOST_INTERVAL) {
+      if (!f.ghosts) f.ghosts = [];
+      f.lastGhostAt = state.time;
+      f.ghosts.push({ image, sx, sy, sw, sh, dx, dy, dw, dh, x: f.x, facing: f.facing, life: GHOST_LIFE });
+      if (f.ghosts.length > GHOST_MAX) f.ghosts.shift();
+    }
+    if (f.ghosts && f.ghosts.length) {
+      for (const g of f.ghosts) {
+        ctx.save();
+        ctx.translate(g.x, 0);
+        ctx.scale(g.facing, 1);
+        ctx.globalAlpha = 0.3 * Math.max(g.life / GHOST_LIFE, 0);
+        ctx.drawImage(g.image, g.sx, g.sy, g.sw, g.sh, g.dx, g.dy, g.dw, g.dh);
+        ctx.restore();
+      }
+    }
+
     ctx.save();
     ctx.translate(f.x, 0);
     ctx.scale(f.facing, 1);
+    // Squash & stretch anchored at the feet: widen on impact, flatten on landing.
+    let squashX = 1;
+    let squashY = 1;
+    if (f.impactSquashTimer > 0) {
+      const s = f.impactSquashTimer / IMPACT_SQUASH_TIME;
+      squashX += 0.07 * s;
+      squashY -= 0.06 * s;
+    }
+    if (f.landSquashTimer > 0) {
+      const s = f.landSquashTimer / LAND_SQUASH_TIME;
+      squashX += 0.06 * s;
+      squashY -= 0.08 * s;
+    }
+    if (squashX !== 1 || squashY !== 1) {
+      ctx.translate(0, f.y);
+      ctx.scale(squashX, squashY);
+      ctx.translate(0, -f.y);
+    }
     ctx.globalAlpha = f.hitstun > 0 && !f.dead ? 0.72 + Math.sin(state.time * 55) * 0.18 : 1;
     ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+    if (f.hitFlashTimer > 0 && !f.dead) {
+      // Additive self-draws brighten toward white — avoids ctx.filter, which
+      // hits a slow path on iOS Safari.
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = 0.8;
+      ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+      ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+      ctx.globalCompositeOperation = "source-over";
+    }
     ctx.restore();
 
     drawLamuhAscendedAura(f, animKey, { dx, dy, dw, dh }, "front");
@@ -10205,6 +12134,7 @@
       if (drawSerisProjectileVfx(projectile)) continue;
       if (drawLamuhProjectileVfx(projectile)) continue;
       if (drawCelesteProjectileVfx(projectile)) continue;
+      if (drawSableProjectileVfx(projectile)) continue;
 
       const box = getProjectileBox(projectile);
       ctx.save();
@@ -10274,6 +12204,82 @@
       }
       ctx.restore();
     }
+  }
+
+  function drawVoidAnchors() {
+    for (const anchor of state.voidAnchors) {
+      const armed = anchor.age >= anchor.armTime;
+      const armingT = clamp(anchor.age / Math.max(anchor.armTime, 0.1), 0, 1);
+      const detonateT = anchor.detonating ? clamp(anchor.detonationAge / 0.22, 0, 1) : 0;
+      const pulse = Math.sin(state.time * (armed ? 11 : 6)) * 0.5 + 0.5;
+      const radius = anchor.detonating ? 34 + detonateT * 52 : 20 + armingT * 22 + pulse * (armed ? 5 : 2);
+      ctx.save();
+      ctx.translate(anchor.x, anchor.y);
+      ctx.globalCompositeOperation = "lighter";
+      ctx.globalAlpha = anchor.detonating ? 0.82 * (1 - detonateT) : armed ? 0.82 : 0.38 + armingT * 0.28;
+      ctx.shadowColor = "#b8a5ff";
+      ctx.shadowBlur = armed ? 24 : 12;
+      ctx.strokeStyle = armed ? "#b8a5ff" : "rgba(210, 200, 255, 0.62)";
+      ctx.fillStyle = "rgba(58, 35, 95, 0.5)";
+      ctx.lineWidth = armed ? 4 : 2;
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.ellipse(0, 0, radius * 0.55, radius * 0.18, -0.35, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha *= 0.55;
+      ctx.strokeStyle = "#f4edff";
+      ctx.beginPath();
+      ctx.moveTo(-radius * 0.5, 0);
+      ctx.lineTo(radius * 0.5, 0);
+      ctx.moveTo(0, -radius * 0.45);
+      ctx.lineTo(0, radius * 0.45);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  function drawSableProjectileVfx(projectile) {
+    if (projectile.ownerCharacterId !== "sable") return false;
+    const box = getProjectileBox(projectile);
+    const age = (projectile.maxLife || 0.7) - projectile.life;
+    const t = clamp(age / Math.max(projectile.maxLife || 0.7, 0.08), 0, 1);
+    const fadeIn = clamp(t / 0.12, 0, 1);
+    const fadeOut = clamp((1 - t) / 0.18, 0, 1);
+    const alpha = Math.min(fadeIn, fadeOut);
+    const pulse = 1 + Math.sin(state.time * 38) * 0.07;
+    ctx.save();
+    ctx.translate(box.x + box.w / 2, box.y + box.h / 2);
+    ctx.scale(projectile.facing || 1, 1);
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = alpha;
+    ctx.shadowColor = "#b8a5ff";
+    ctx.shadowBlur = 20;
+    ctx.fillStyle = "#b8a5ff";
+    ctx.strokeStyle = "rgba(244, 237, 255, 0.86)";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-box.w * 0.5, 0);
+    ctx.lineTo(box.w * 0.18, -box.h * 0.48 * pulse);
+    ctx.lineTo(box.w * 0.5, 0);
+    ctx.lineTo(box.w * 0.18, box.h * 0.48 * pulse);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.globalAlpha = alpha * 0.42;
+    ctx.strokeStyle = "#3c2d66";
+    ctx.beginPath();
+    ctx.ellipse(-box.w * 0.08, 0, box.w * 0.42, box.h * 0.72, -0.18, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalAlpha = alpha * 0.72;
+    ctx.strokeStyle = "#f4edff";
+    ctx.beginPath();
+    ctx.moveTo(-box.w * 0.34, 0);
+    ctx.lineTo(box.w * 0.32, 0);
+    ctx.stroke();
+    ctx.restore();
+    return true;
   }
 
   function drawLamuhProjectileVfx(projectile) {
@@ -10806,6 +12812,9 @@
     for (const projectile of state.projectiles) {
       drawBox(getProjectileBox(projectile), "rgba(255, 45, 69, 0.24)", "#ff2d45");
     }
+    for (const anchor of state.voidAnchors) {
+      drawBox(getVoidAnchorBox(anchor), "rgba(184, 165, 255, 0.22)", "#b8a5ff");
+    }
   }
 
   function drawCelesteFrameDebugOverlay() {
@@ -10938,8 +12947,8 @@
   function chooseAttack(button, fighter = state.player, controls = P1_CONTROLS) {
     const p = fighter;
     if (p.kind === "enemy") return chooseEnemyControlledAttack(button, p, controls);
-    if (usesCelestePlaceholder(p) && p.grounded && state.keys.has(controls.up)) return `up_${button}`;
-    if (usesCelestePlaceholder(p) && p.upAttackGrace > 0 && state.keys.has(controls.up)) return `up_${button}`;
+    if (usesFullDirectionalBasics(p) && p.grounded && state.keys.has(controls.up)) return `up_${button}`;
+    if (usesFullDirectionalBasics(p) && p.upAttackGrace > 0 && state.keys.has(controls.up)) return `up_${button}`;
     if (!p.grounded) return `jump_${button}`;
     if (state.keys.has(controls.down)) return `down_${button}`;
 
@@ -10951,7 +12960,7 @@
   }
 
   function chooseEnemyControlledAttack(button, fighter, controls) {
-    if (usesCelestePlaceholder(fighter)) {
+    if (usesFullDirectionalBasics(fighter)) {
       if (fighter.grounded && state.keys.has(controls.up)) return `enemy_up_${button}`;
       if (fighter.upAttackGrace > 0 && state.keys.has(controls.up)) return `enemy_up_${button}`;
       if (!fighter.grounded) return `enemy_jump_${button}`;
@@ -10978,13 +12987,13 @@
     if (!p) return "neutral_light";
     if (p.kind === "enemy") {
       const autoCombos = getComboRoutes(p).autoCombos;
-      if (usesCelestePlaceholder(p) && p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
-      return usesCelestePlaceholder(p) ? chooseEnemyControlledAttack("light", p, controls) : "enemy_light_attack";
+      if (usesFullDirectionalBasics(p) && p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
+      return usesFullDirectionalBasics(p) ? chooseEnemyControlledAttack("light", p, controls) : "enemy_light_attack";
     }
     const autoCombos = getComboRoutes(p).autoCombos;
     if (p.action && autoCombos[p.activeMove]) return autoCombos[p.activeMove];
-    if (usesCelestePlaceholder(p) && p.grounded && state.keys.has(controls.up)) return chooseAttack("light", p, controls);
-    if (usesCelestePlaceholder(p) && p.upAttackGrace > 0 && state.keys.has(controls.up)) return chooseAttack("light", p, controls);
+    if (usesFullDirectionalBasics(p) && p.grounded && state.keys.has(controls.up)) return chooseAttack("light", p, controls);
+    if (usesFullDirectionalBasics(p) && p.upAttackGrace > 0 && state.keys.has(controls.up)) return chooseAttack("light", p, controls);
     if (p.grounded && !isHoldingDirectionalModifier(p, controls)) return "neutral_light";
     return chooseAttack("light", p, controls);
   }
@@ -10997,6 +13006,9 @@
 
   function chooseSpecialMove(fighter, controls, fallbackKey) {
     const p = fighter;
+    if (usesSableArt(p)) {
+      return chooseSableSpecialMove(p, controls, fallbackKey);
+    }
     if (usesCelestePlaceholder(p)) {
       const prefix = p.kind === "enemy" ? "enemy_" : "";
       if (p.grounded) {
@@ -11042,6 +13054,20 @@
     }
     recordLamuhSpecialDebug(p, controls, fallbackKey, selected, direction);
     return selected;
+  }
+
+  function chooseSableSpecialMove(fighter, controls, fallbackKey) {
+    const p = fighter;
+    const prefix = p.kind === "enemy" ? "enemy_" : "";
+    const strength = getLamuhSpecialStrengthFromFallback(fallbackKey);
+    if (!p.grounded) return `${prefix}neutral_${strength}_special`;
+    if (state.keys.has(controls.down)) return `${prefix}down_${strength}_special`;
+    if (state.keys.has(controls.up)) return `${prefix}up_${strength}_special`;
+    const forward = p.facing === 1 ? controls.right : controls.left;
+    const back = p.facing === 1 ? controls.left : controls.right;
+    if (state.keys.has(forward)) return `${prefix}forward_${strength}_special`;
+    if (state.keys.has(back)) return `${prefix}back_${strength}_special`;
+    return `${prefix}neutral_${strength}_special`;
   }
 
   function chooseLamuhLegacySpecialMove(fighter, controls, fallbackKey) {
@@ -11166,6 +13192,7 @@
 
   function handleKeyDown(e) {
     gamepadInput.userGestureSeen = true;
+    unlockAudio();
     if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.code)) e.preventDefault();
     if (e.repeat) {
       setKeyboardKey(e.code, true);
@@ -11176,6 +13203,14 @@
 
     if (state.mode === "title" && e.code === "Enter") {
       showModeDetail("versus");
+      return;
+    }
+    if (state.mode === "phone-controller") {
+      if (e.code === "Enter") showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
+      if (e.code === "Escape" || e.code === "Backspace") {
+        stopPhoneControllerHost();
+        showModeDetail("versus");
+      }
       return;
     }
     if (state.flowStep === FLOW_STEP_MODE_DETAIL) {
@@ -11191,6 +13226,9 @@
       return;
     }
     if (e.code === "KeyH") state.debug = !state.debug;
+    if (e.code === "KeyM") flashStatus(toggleMute() ? "AUDIO MUTED" : "AUDIO ON", 0.8);
+    if (e.code === "Minus") flashStatus(`VOLUME ${adjustMasterVolume(-0.1)}%`, 0.8);
+    if (e.code === "Equal") flashStatus(`VOLUME ${adjustMasterVolume(0.1)}%`, 0.8);
     if (e.code === "KeyP" && isFightMode()) {
       netAwareTogglePause();
       return;
@@ -11232,6 +13270,7 @@
         else startDash(state.player, P1_CONTROLS);
       }
       if (e.code === P1_CONTROLS.taunt) startMove("taunt", state.player);
+      if (e.code === P1_CONTROLS.grab) startGrab(state.player);
 
       if ((e.code === P1_CONTROLS.ultimateA && state.keys.has(P1_CONTROLS.ultimateB)) || (e.code === P1_CONTROLS.ultimateB && state.keys.has(P1_CONTROLS.ultimateA))) {
         startMove("ultimate", state.player);
@@ -11253,6 +13292,7 @@
       if (e.code === P2_CONTROLS.special2) startMove(chooseSpecialMove(state.enemy, P2_CONTROLS, "enemy_special_2"), state.enemy);
       if (e.code === P2_CONTROLS.special3) startMove(chooseSpecialMove(state.enemy, P2_CONTROLS, "enemy_special_3"), state.enemy);
       if (e.code === P2_CONTROLS.ultimate) startMove("enemy_ultimate", state.enemy);
+      if (e.code === P2_CONTROLS.grab) startGrab(state.enemy);
     }
   }
 
@@ -11272,6 +13312,383 @@
     gamepadInput.userGestureSeen = true;
     refreshGamepadAssignments();
     updateControllerStatus();
+  }
+
+  // ============================================================
+  // LOCAL PHONE CONTROLLER (P2)
+  // A phone connects over PeerJS and feeds P2 through a separate
+  // input source so keyboard/gamepad routing stays intact.
+  // ============================================================
+
+  const PHONE_PROTOCOL_VERSION = 1;
+  const PHONE_PEER_PREFIX = "nga-pad-";
+  const PHONE_CONNECT_TIMEOUT_MS = 25000;
+  const PHONE_BUTTON_KEY_CODES = {
+    light: P2_CONTROLS.light,
+    medium: P2_CONTROLS.medium,
+    heavy: P2_CONTROLS.heavy,
+    special: P2_CONTROLS.special1,
+    special1: P2_CONTROLS.special1,
+    special2: P2_CONTROLS.special2,
+    special3: P2_CONTROLS.special3,
+    grab: P2_CONTROLS.grab,
+    ultimate: P2_CONTROLS.ultimate
+  };
+  const PHONE_BUTTON_ACTIONS = new Set([
+    "light",
+    "medium",
+    "heavy",
+    "special",
+    "special1",
+    "special2",
+    "special3",
+    "grab",
+    "dash",
+    "superdash",
+    "ultimate"
+  ]);
+
+  function phonePeerAvailable() {
+    if (typeof Peer === "undefined") {
+      setPhoneControllerStatus("Phone controller script failed to load.", "error", "failed");
+      return false;
+    }
+    return true;
+  }
+
+  function setPhoneControllerStatus(text, tone = "", phase = phoneController.phase || "idle") {
+    phoneController.phase = phase;
+    if (!phoneControllerStatusEl) return;
+    phoneControllerStatusEl.textContent = text;
+    phoneControllerStatusEl.dataset.phonePhase = phase;
+    phoneControllerStatusEl.classList.toggle("error", tone === "error");
+    phoneControllerStatusEl.classList.toggle("good", tone === "good");
+    phoneControllerStatusEl.classList.toggle("pending", tone === "pending");
+  }
+
+  function getPhoneControllerLocalBaseUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const queryUrl = params.get("ngaControllerUrl");
+    if (queryUrl) return queryUrl;
+    const desktopUrl = window.ngaDesktop?.controllerUrl;
+    if (desktopUrl) return desktopUrl;
+    if (window.location.protocol === "file:") return new URL("controller.html", window.location.href).href;
+    const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+    if (localHosts.has(window.location.hostname)) return new URL("controller.html", window.location.href).href;
+    return new URL("controller.html", window.location.href).href;
+  }
+
+  function getPhoneControllerPublicBaseUrl() {
+    if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+      const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+      if (!localHosts.has(window.location.hostname)) {
+        return new URL("controller.html", window.location.href).href;
+      }
+    }
+    return PUBLIC_PHONE_CONTROLLER_URL;
+  }
+
+  function getPhoneControllerUrl(code = phoneController.roomCode, baseUrl = getPhoneControllerPublicBaseUrl()) {
+    const url = new URL(baseUrl);
+    if (code) url.searchParams.set("room", code);
+    return url.href;
+  }
+
+  function updatePhoneControllerLink() {
+    if (!phoneController.roomCode) return;
+    const url = getPhoneControllerUrl(phoneController.roomCode);
+    if (phoneControllerCodeEl) phoneControllerCodeEl.textContent = phoneController.roomCode;
+    if (phoneControllerLinkEl) {
+      phoneControllerLinkEl.href = url;
+      phoneControllerLinkEl.textContent = `Web controller: ${url}`;
+    }
+    if (phoneControllerLocalLinkEl) {
+      const localUrl = getPhoneControllerUrl(phoneController.roomCode, getPhoneControllerLocalBaseUrl());
+      const showLocalUrl = localUrl !== url;
+      phoneControllerLocalLinkEl.classList.toggle("hidden", !showLocalUrl);
+      phoneControllerLocalLinkEl.href = localUrl;
+      phoneControllerLocalLinkEl.textContent = `Laptop direct: ${localUrl}`;
+    }
+  }
+
+  function clearPhoneConnectTimeout() {
+    if (!phoneController.connectTimer) return;
+    clearTimeout(phoneController.connectTimer);
+    phoneController.connectTimer = null;
+  }
+
+  function schedulePhoneConnectTimeout() {
+    clearPhoneConnectTimeout();
+    phoneController.connectTimer = setTimeout(() => {
+      if (phoneController.connected) return;
+      setPhoneControllerStatus("Waiting for phone - check the code or network.", "pending", "waiting");
+    }, PHONE_CONNECT_TIMEOUT_MS);
+  }
+
+  function clearPhoneControllerKeys() {
+    state.phoneKeys.clear();
+    phoneController.directionMask = 0;
+    phoneController.previousFrame = null;
+    syncInputKeys();
+  }
+
+  function stopPhoneControllerHost() {
+    clearPhoneConnectTimeout();
+    try {
+      phoneController.conn?.send({ t: "status", text: "Closed" });
+    } catch { /* already closed */ }
+    try {
+      phoneController.conn?.close();
+    } catch { /* already closed */ }
+    try {
+      phoneController.peer?.destroy();
+    } catch { /* already destroyed */ }
+    phoneController.peer = null;
+    phoneController.conn = null;
+    phoneController.connected = false;
+    phoneController.phase = "idle";
+    phoneController.lastSeenAt = 0;
+    phoneController.recentActionIds.clear();
+    clearPhoneControllerKeys();
+    updateControllerStatus();
+  }
+
+  function showPhoneControllerMenu(startHost = false) {
+    if (netIsActive()) {
+      showOnlineMenu();
+      setOnlinePhase("failed", "Phone controller is for Local Versus only.", "error");
+      return;
+    }
+    hideFlowScreens();
+    phoneControllerMenu?.classList.remove("hidden");
+    state.mode = "phone-controller";
+    state.flowStep = FLOW_STEP_MODE_DETAIL;
+    if (startHost || !phoneController.peer) startPhoneControllerHost();
+    else {
+      updatePhoneControllerLink();
+      const status = phoneController.connected ? "Phone connected as P2." : "Waiting for phone controller...";
+      setPhoneControllerStatus(status, phoneController.connected ? "good" : "pending", phoneController.phase);
+    }
+  }
+
+  function startPhoneControllerHost() {
+    if (!phonePeerAvailable()) return;
+    stopPhoneControllerHost();
+    const code = makeRoomCode();
+    phoneController.roomCode = code;
+    updatePhoneControllerLink();
+    setPhoneControllerStatus("Creating phone controller room...", "pending", "creating");
+    schedulePhoneConnectTimeout();
+    phoneController.peer = new Peer(PHONE_PEER_PREFIX + code.toLowerCase());
+    phoneController.peer.on("open", () => {
+      setPhoneControllerStatus("Waiting for phone controller...", "good", "waiting");
+    });
+    phoneController.peer.on("connection", (conn) => {
+      if (phoneController.conn && phoneController.connected) {
+        conn.close();
+        return;
+      }
+      bindPhoneControllerConnection(conn);
+    });
+    phoneController.peer.on("error", (err) => {
+      const type = err?.type || "unknown";
+      setPhoneControllerStatus("Phone controller error: " + type, "error", "failed");
+      clearPhoneConnectTimeout();
+    });
+  }
+
+  function bindPhoneControllerConnection(conn) {
+    phoneController.conn = conn;
+    const markConnected = () => {
+      clearPhoneConnectTimeout();
+      phoneController.connected = true;
+      phoneController.lastSeenAt = performance.now();
+      setPhoneControllerStatus("Phone connected as P2.", "good", "connected");
+      updateControllerStatus();
+      phoneControllerSend({ t: "welcome", v: PHONE_PROTOCOL_VERSION });
+      if (isFightMode()) flashStatus("PHONE CONTROLLER P2 CONNECTED", 1.2);
+    };
+    conn.on("open", markConnected);
+    conn.on("data", (message) => {
+      if (!phoneController.connected) markConnected();
+      handlePhoneControllerMessage(message);
+    });
+    conn.on("close", () => {
+      phoneController.connected = false;
+      phoneController.conn = null;
+      clearPhoneControllerKeys();
+      setPhoneControllerStatus("Phone disconnected.", "error", "disconnected");
+      updateControllerStatus();
+    });
+    conn.on("error", () => {
+      setPhoneControllerStatus("Phone controller link error.", "error", "failed");
+    });
+    if (conn.open) markConnected();
+  }
+
+  function phoneControllerSend(message) {
+    if (!phoneController.conn || !phoneController.conn.open) return;
+    try {
+      phoneController.conn.send(message);
+    } catch {
+      /* phone status updates are best-effort */
+    }
+  }
+
+  function readPhoneControllerFrame(mask) {
+    return {
+      connected: phoneController.connected,
+      left: Boolean(mask & 1),
+      right: Boolean(mask & 2),
+      down: Boolean(mask & 4),
+      up: Boolean(mask & 8),
+      buttons: {}
+    };
+  }
+
+  function handlePhoneControllerSelectDirection(mask, previousMask) {
+    if (state.mode !== "select" || netIsActive()) return;
+    const frame = readPhoneControllerFrame(mask);
+    const previous = phoneController.previousFrame || readPhoneControllerFrame(previousMask);
+    handleGamepadSelectInput(frame, previous);
+    phoneController.previousFrame = frame;
+  }
+
+  function applyPhoneDirectionMask(mask) {
+    const normalized = mask & 15;
+    const previousMask = phoneController.directionMask;
+    phoneController.directionMask = normalized;
+    setPhoneKey(P2_CONTROLS.left, normalized & 1);
+    setPhoneKey(P2_CONTROLS.right, normalized & 2);
+    setPhoneKey(P2_CONTROLS.down, normalized & 4);
+    setPhoneKey(P2_CONTROLS.up, normalized & 8);
+    handlePhoneControllerSelectDirection(normalized, previousMask);
+  }
+
+  function handlePhoneControllerMenuAction(action) {
+    if (state.mode === "phone-controller") {
+      if (action === "confirm" || action === "start") showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
+      if (action === "back" || action === "select") {
+        stopPhoneControllerHost();
+        showModeDetail("versus");
+      }
+      return true;
+    }
+    if (state.mode === "title") {
+      if (action === "confirm" || action === "start") showModeDetail("versus");
+      return true;
+    }
+    if (state.mode === "select") {
+      if (state.flowStep === FLOW_STEP_MODE_DETAIL) {
+        if (action === "back" || action === "select") showMainMenu();
+        if (action === "confirm" || action === "start") showCharacterSelect("versus", SELECT_STEP_CHARACTERS);
+        return true;
+      }
+      if (action === "back" || action === "select") {
+        backCharacterSelect();
+        return true;
+      }
+      if (action === "confirm" || action === "start") {
+        confirmCharacterSelect();
+        return true;
+      }
+      return true;
+    }
+    if (!isFightMode()) return false;
+    if (action === "pause") {
+      netAwareTogglePause();
+      return true;
+    }
+    if (action === "rematch") {
+      netBroadcastRematch();
+      return true;
+    }
+    if (action === "select" || action === "back") {
+      netAwareReturnToSelect();
+      return true;
+    }
+    if (state.matchEnded) {
+      if (action === "confirm" || action === "start") netBroadcastRematch();
+      return true;
+    }
+    if (state.paused) {
+      if (action === "confirm" || action === "start") netAwareTogglePause();
+      return true;
+    }
+    return false;
+  }
+
+  function prunePhoneActionIds(now = performance.now()) {
+    for (const [id, timestamp] of phoneController.recentActionIds) {
+      if (now - timestamp > 1500) phoneController.recentActionIds.delete(id);
+    }
+  }
+
+  function consumePhoneActionId(inputId) {
+    if (inputId === undefined || inputId === null || inputId === "") return false;
+    const id = String(inputId);
+    const now = performance.now();
+    prunePhoneActionIds(now);
+    if (phoneController.recentActionIds.has(id)) return true;
+    phoneController.recentActionIds.set(id, now);
+    return false;
+  }
+
+  function handlePhoneControllerAction(action, inputId) {
+    if (!action || !phoneController.connected) return;
+    if (consumePhoneActionId(inputId)) return;
+    phoneController.lastSeenAt = performance.now();
+    const normalizedAction = action === "special" ? "special1" : action;
+    if (handlePhoneControllerMenuAction(normalizedAction)) return;
+    if (!isFightMode() || state.mode !== "versus" || state.paused || state.matchEnded || netIsActive()) return;
+    applyNetAction(state.enemy, normalizedAction);
+  }
+
+  function handlePhoneControllerButton(button, down, inputId) {
+    if (!button || !phoneController.connected) return;
+    const normalizedButton = button === "special" ? "special1" : button;
+    const keyCode = PHONE_BUTTON_KEY_CODES[button] || PHONE_BUTTON_KEY_CODES[normalizedButton];
+    if (keyCode) setPhoneKey(keyCode, Boolean(down));
+    phoneController.lastSeenAt = performance.now();
+    if (down && PHONE_BUTTON_ACTIONS.has(normalizedButton)) {
+      handlePhoneControllerAction(normalizedButton, inputId);
+    }
+  }
+
+  function handlePhoneControllerMessage(message) {
+    if (!message || typeof message !== "object") return;
+    phoneController.lastSeenAt = performance.now();
+    switch (message.t) {
+      case "hello":
+        if (message.v !== PHONE_PROTOCOL_VERSION) {
+          phoneControllerSend({ t: "status", text: "Refresh controller", tone: "error" });
+          setPhoneControllerStatus("Phone controller version mismatch.", "error", "failed");
+          return;
+        }
+        phoneControllerSend({ t: "welcome", v: PHONE_PROTOCOL_VERSION });
+        break;
+      case "dir":
+        applyPhoneDirectionMask(message.m | 0);
+        break;
+      case "act":
+        handlePhoneControllerAction(message.a, message.id);
+        break;
+      case "btn":
+        handlePhoneControllerButton(message.b, Boolean(message.d), message.id);
+        break;
+      case "ping":
+        phoneControllerSend({ t: "status", text: "P2 ready", tone: "good" });
+        break;
+      case "bye":
+        phoneController.connected = false;
+        phoneController.conn = null;
+        clearPhoneControllerKeys();
+        setPhoneControllerStatus("Phone disconnected.", "error", "disconnected");
+        updateControllerStatus();
+        break;
+      default:
+        break;
+    }
   }
 
   // ============================================================
@@ -11758,6 +14175,9 @@
       case "ultimate":
         startMove(prefix ? "enemy_ultimate" : "ultimate", fighter);
         break;
+      case "grab":
+        startGrab(fighter);
+        break;
       default:
         break;
     }
@@ -11793,6 +14213,7 @@
     if (code === "KeyJ") sendGuestAction(held.has("KeyU") ? "special1" : "light");
     if (code === "KeyK") sendGuestAction(held.has("KeyU") ? "special2" : "medium");
     if (code === "KeyL") sendGuestAction(held.has("KeyU") ? "special3" : "heavy");
+    if (code === P1_CONTROLS.grab) sendGuestAction("grab");
   }
 
   function handleNetGuestKeyUp(code) {
@@ -11970,6 +14391,12 @@
     if (e.key === "Enter") joinRoom(onlineCodeInput.value);
   });
   onlineBackButton?.addEventListener("click", closeOnlineMenuToTitle);
+  phoneControllerStartButton?.addEventListener("click", () => showCharacterSelect("versus", SELECT_STEP_CHARACTERS));
+  phoneControllerRefreshButton?.addEventListener("click", startPhoneControllerHost);
+  phoneControllerBackButton?.addEventListener("click", () => {
+    stopPhoneControllerHost();
+    showModeDetail("versus");
+  });
 
   window.addEventListener("keydown", handleKeyDown);
   window.addEventListener("keyup", handleKeyUp);
@@ -12031,6 +14458,7 @@
       return state.selectedStagePresetId;
     },
     startMatch(p1Id = "sol", p2Id = "lamuh", stagePresetId = PLATFORM_TEST_STAGE_ID) {
+      enableTestMatchMode();
       state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
       state.selectedP1CharacterId = isLaunchableCharacterId(p1Id) ? p1Id : "kairo";
       state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "vanta";
@@ -12038,6 +14466,7 @@
       return this.snapshot();
     },
     startTraining(characterId = "sol", stagePresetId = PLATFORM_TEST_STAGE_ID) {
+      enableTestMatchMode();
       state.selectedStagePresetId = STAGE_PRESETS[stagePresetId]?.id || STANDARD_STAGE_ID;
       startTraining(characterId);
       return this.snapshot();
@@ -12194,6 +14623,7 @@
         note: "Crown of No Gods uses a LAMUH-only rush-confirm cinematic. Whiff recovers; confirmed hits play the golden-locs ascended rows and spawn the approved beam during the fire phase."
       },
       startMatch(p1Id = "lamuh", p2Id = "lamuh") {
+        enableTestMatchMode();
         state.selectedP1CharacterId = isLaunchableCharacterId(p1Id) ? p1Id : "lamuh";
         state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "lamuh";
         startLocalVersus();
@@ -12204,12 +14634,14 @@
         return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
       },
       startP2(opponentId = "sol") {
+        enableTestMatchMode();
         state.selectedP1CharacterId = isLaunchableCharacterId(opponentId) ? opponentId : "sol";
         state.selectedP2CharacterId = "lamuh";
         startLocalVersus();
         return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
       },
       startMirror() {
+        enableTestMatchMode();
         state.selectedP1CharacterId = "lamuh";
         state.selectedP2CharacterId = "lamuh";
         startLocalVersus();
@@ -12361,6 +14793,7 @@
         return { mode: state.mode, p1: state.player?.profile?.id, p2: state.enemy?.profile?.id };
       },
       startVersus(p2Id = "vanta") {
+        enableTestMatchMode();
         state.selectedP1CharacterId = "celeste";
         state.selectedP2CharacterId = isLaunchableCharacterId(p2Id) ? p2Id : "vanta";
         startLocalVersus();

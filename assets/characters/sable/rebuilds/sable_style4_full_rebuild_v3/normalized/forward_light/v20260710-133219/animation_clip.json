@@ -1,0 +1,36 @@
+{
+  "clipId": "forward_light",
+  "category": "normal",
+  "frameCount": 6,
+  "fps": 14,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/forward_light/vzzzzzzzzz-forwardlight01-6f-mainbody/sable_forward_light_6.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_light/v20260710-133219/sable_forward_light_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "hitFrames": [
+    2
+  ],
+  "cancelFrames": [
+    5
+  ],
+  "notes": [
+    "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Frame target lowered from 8 to 6 for text-only generation; one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard.",
+    "Human review rejected this preview candidate: Manifest recheck 2026-07-10 found frames 5 and 6 redundantly duplicate the opening guard; trimming both would leave no recovery-to-guard frame."
+  ],
+  "validationStatus": "manual_review_required",
+  "approvedForPreview": false,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-10T17:33:38.351Z",
+  "approvalPolicy": "human-rejected"
+}

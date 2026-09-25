@@ -1,0 +1,146 @@
+{
+  "characterId": "sable",
+  "stage": "style-test",
+  "generatedAt": "2026-06-27T05:22:40.733Z",
+  "clips": [
+    {
+      "clipId": "idle",
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": []
+    },
+    {
+      "clipId": "neutral_light",
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": []
+    },
+    {
+      "clipId": "hit_stun",
+      "category": "damage",
+      "frameCount": 4,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": []
+    },
+    {
+      "clipId": "block",
+      "category": "defense",
+      "frameCount": 4,
+      "fps": 10,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": []
+    },
+    {
+      "clipId": "jump",
+      "category": "movement",
+      "frameCount": 6,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": []
+    },
+    {
+      "clipId": "crouch",
+      "category": "movement",
+      "frameCount": 4,
+      "fps": 10,
+      "loop": true,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hitFrames": [],
+      "cancelFrames": [],
+      "notes": []
+    }
+  ],
+  "manualLoop": [
+    "Generate prompts into prompts/outbox.",
+    "Use a manual image provider.",
+    "Drop generated PNG/WEBP sheets into generated/inbox/<clip>/.",
+    "Run validate, normalize, export, and test.",
+    "Keep results preview-only until explicitly approved."
+  ],
+  "safety": {
+    "previewOnly": true,
+    "liveRosterWiring": "disabled"
+  }
+}

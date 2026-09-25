@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/stage-art-pack.schema.json",
+  "title": "NGA Production Stage Art Pack Specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "arenaId", "status", "deployable", "approvalState", "root", "directoryStructure", "authority", "assets", "budgets", "budgetPolicy", "promotionGates"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0-stage-art-pack" },
+    "arenaId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "status": { "enum": ["production_arena_brief_candidate", "production_arena_graybox_candidate"] },
+    "deployable": { "const": false },
+    "approvalState": { "enum": ["awaiting_human_stage_brief_approval", "awaiting_human_graybox_and_concept_approval"] },
+    "root": { "type": "string", "minLength": 1 },
+    "directoryStructure": { "type": "array", "minItems": 10, "items": { "type": "string" }, "uniqueItems": true },
+    "authority": { "type": "object", "required": ["presentationMeshesAffectCollision", "renderedFloorAffectsGrounding", "artMayDefineWalls", "hazards"] },
+    "assets": { "type": "array", "minItems": 12, "items": { "type": "object", "required": ["id", "category", "pathPattern", "format", "required", "runtimeRole", "validation"] } },
+    "budgets": { "type": "object", "required": ["stageDrawCalls", "visibleTriangles", "loadedTriangles", "stageTextures", "stageTextureMemoryMb", "materialVariants", "dynamicLights", "shadowCasters"] },
+    "budgetPolicy": { "type": "object", "required": ["stageTextureMemoryMb", "durationsAndBudgetsGloballyBinding", "profilingRequired"] },
+    "promotionGates": { "type": "array", "minItems": 6, "items": { "type": "string" }, "uniqueItems": true }
+  }
+}

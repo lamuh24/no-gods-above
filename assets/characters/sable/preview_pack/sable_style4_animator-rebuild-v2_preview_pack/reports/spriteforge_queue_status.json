@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "updatedAt": "2026-07-03T00:00:00.000Z",
+  "character": "sable",
+  "stage": "animator-rebuild-v2",
+  "releaseStatus": "wip_delayed",
+  "previewStatus": "animation_rebuild_required",
+  "candidateArchiveStatus": "failed_animation_quality_candidate",
+  "productionCandidate": false,
+  "approvalPolicy": "previewAuto",
+  "provider": "manual",
+  "currentClip": null,
+  "requestedClips": [
+    "back_light",
+    "back_medium",
+    "back_heavy"
+  ],
+  "completedClips": [
+    "back_light",
+    "back_medium",
+    "back_heavy"
+  ],
+  "failedClips": [
+    "animator_rebuild_v2_pack_quality"
+  ],
+  "waitingClips": [],
+  "missingClips": [],
+  "retriedClips": {},
+  "quarantinedOutputs": [],
+  "approvedPreviewClips": [
+    "back_light",
+    "back_medium",
+    "back_heavy"
+  ],
+  "approvedLiveClips": [],
+  "latestManifest": "assets/characters/sable/manifests/preview_animation_clips_rebuild_v2.json",
+  "latestSmokeReport": "assets/characters/sable/reports/latest_game_smoke_report.json",
+  "nextAction": "Do not promote animator-rebuild-v2 live. Restart Sable animation with a key-pose-first workflow before any public roster approval.",
+  "overallStatus": "animation_rebuild_required",
+  "remainingClips": [],
+  "failureReasons": {
+    "animator_rebuild_v2_pack_quality": "Current animation packs are not release-ready: missing, choppy, and inconsistent animations with insufficient fighting-game readability."
+  }
+}

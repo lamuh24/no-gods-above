@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-06-27T05:45:09.737Z",
+  "characterId": "sable",
+  "clipId": "idle",
+  "sourceSheet": "assets/characters/sable/generated/inbox/idle/sable_idle_style4_generated_20260627-014254.png",
+  "expected": {
+    "clipId": "idle",
+    "category": "movement",
+    "frameCount": 8,
+    "fps": 8,
+    "loop": true,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/generated/inbox/idle/sable_idle_style4_generated_20260627-014254.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": []
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 8,
+    "rows": 1,
+    "frameCount": 8
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_LARGE",
+      "frameIndex": 1,
+      "message": "Body bbox 149x354 exceeds safe box 336x352."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_LARGE",
+      "frameIndex": 2,
+      "message": "Body bbox 149x353 exceeds safe box 336x352."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_LARGE",
+      "frameIndex": 3,
+      "message": "Body bbox 151x354 exceeds safe box 336x352."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_LARGE",
+      "frameIndex": 4,
+      "message": "Body bbox 148x353 exceeds safe box 336x352."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_LARGE",
+      "frameIndex": 7,
+      "message": "Body bbox 133x353 exceeds safe box 336x352."
+    },
+    {
+      "severity": "warn",
+      "code": "POSSIBLE_DUPLICATE_FRAMES",
+      "message": "2 near-duplicate frame pair(s) detected. Held frames can be okay, but review the motion."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 21890,
+      "bbox": {
+        "x": 161,
+        "y": 26,
+        "width": 129,
+        "height": 352,
+        "right": 289,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": 2,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110000111111111111000011111111111100001111111111100000011111111111000001111111111100001111111111110000111111111111000011111111111101101111111111110110011111111111011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 22042,
+      "bbox": {
+        "x": 150,
+        "y": 25,
+        "width": 149,
+        "height": 354,
+        "right": 298,
+        "bottom": 378
+      },
+      "baselineDeltaPx": -4,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110011111111111111000111111111111000011111111111100000111111111110000011111111111000001111111111110000111111111110010011111111111001001111111111100100111111111110010011111111111011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 21674,
+      "bbox": {
+        "x": 150,
+        "y": 25,
+        "width": 149,
+        "height": 353,
+        "right": 298,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110011111111111111000111111111111000011111111111100001111111111110000011111111111000001111111111100001111111111110010111111111111001011111111111100101111111111110010011111111111011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 21675,
+      "bbox": {
+        "x": 149,
+        "y": 25,
+        "width": 151,
+        "height": 354,
+        "right": 299,
+        "bottom": 378
+      },
+      "baselineDeltaPx": -4,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110011111111111110000111111111111000001111111111100000111111111100000111111111111000011111111111110001111111111110000111111111111000011111111111100001111111111110100111111111111011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 21792,
+      "bbox": {
+        "x": 150,
+        "y": 25,
+        "width": 148,
+        "height": 353,
+        "right": 297,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111111000111111111110000011111111111000001111111111110000011111111111000001111111111110001111111111110000111111111111001011111111111100100111111111110010011111111111011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 21968,
+      "bbox": {
+        "x": 152,
+        "y": 26,
+        "width": 141,
+        "height": 352,
+        "right": 292,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": -1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111100001111111111100000011111111110000001111111111100001111111111110000111111111111000011111111111101101111111111110110011111111111011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 21725,
+      "bbox": {
+        "x": 155,
+        "y": 26,
+        "width": 141,
+        "height": 352,
+        "right": 295,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": 2,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000001111111111100000111111111110000011111111111100001111111111110000111111111111010011111111111101001111111111100100111111111110011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 21966,
+      "bbox": {
+        "x": 156,
+        "y": 25,
+        "width": 133,
+        "height": 353,
+        "right": 288,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": -1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100111111111111110011111111111110001111111111111000011111111111000001111111111100000111111111110000011111111111100001111111111110000111111111111010011111111111101001111111111100100111111111110011001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 0,
+      "frameB": 5,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 6,
+      "frameB": 7,
+      "hammingDistance": 0
+    }
+  ],
+  "autoFixRecommended": true
+}

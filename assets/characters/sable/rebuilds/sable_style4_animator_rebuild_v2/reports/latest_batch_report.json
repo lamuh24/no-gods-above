@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-02T22:21:21.708Z",
+  "character": "sable",
+  "stage": "animator-rebuild-v2",
+  "approvalPolicy": "previewAuto",
+  "provider": "manual",
+  "autoApprovePreview": true,
+  "autoApproveLive": false,
+  "clipsAttempted": [
+    "back_light",
+    "back_medium",
+    "back_heavy"
+  ],
+  "clipsSkippedApproved": [],
+  "clipsApprovedForPreview": [
+    "back_light",
+    "back_medium",
+    "back_heavy"
+  ],
+  "clipsFailed": [],
+  "clipsWaitingForGeneration": [],
+  "clipsMissingOutput": [],
+  "clipsRetried": [],
+  "quarantinedOutputs": [],
+  "retryCountByClip": {},
+  "validationSummary": {
+    "back_light": "manual_review_required/pass",
+    "back_medium": "manual_review_required/pass",
+    "back_heavy": "manual_review_required/pass"
+  },
+  "visualQaSummary": {
+    "back_light": {
+      "score": 92,
+      "status": "pass",
+      "summary": "Heuristic visual QA passed measurable preview risks."
+    },
+    "back_medium": {
+      "score": 92,
+      "status": "pass",
+      "summary": "Heuristic visual QA passed measurable preview risks."
+    },
+    "back_heavy": {
+      "score": 92,
+      "status": "pass",
+      "summary": "Heuristic visual QA passed measurable preview risks."
+    }
+  },
+  "smokeTestSummary": {
+    "back_light": "pass",
+    "back_medium": "pass",
+    "back_heavy": "pass"
+  },
+  "remainingClips": [],
+  "humanReviewNeeded": false,
+  "nextAction": "Queue complete. Preview clips remain blocked from live roster promotion.",
+  "notes": [
+    "Preview queue is isolated from live roster wiring.",
+    "AUTO_APPROVE_LIVE is always false.",
+    "Dry run disabled: queue may call the configured provider.",
+    "Character spec and latest brief were loaded before queue execution."
+  ]
+}

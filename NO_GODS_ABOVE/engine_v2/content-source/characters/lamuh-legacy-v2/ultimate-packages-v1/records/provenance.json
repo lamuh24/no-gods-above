@@ -1,0 +1,32 @@
+{
+  "sourceType": "ai_assisted",
+  "tool": "Built-in imagegen and source-preserving normalization",
+  "createdAt": "2026-09-08",
+  "model": null,
+  "seed": null,
+  "promptHash": null,
+  "references": [
+    "repo://tools/nga-forge/review/lamuh-ultimate-v1/combo-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-ultimate-v1/charge-normalization.json",
+    "repo://tools/nga-forge/review/lamuh-ultimate-v1/vfx-normalization.json"
+  ],
+  "cleanupOperations": [
+    "alpha_preserving_normalization",
+    "source_hash_lock",
+    "fixed_root_registration",
+    "exact_idle_reuse"
+  ],
+  "revisionChain": [
+    "USER_APPROVED_CELESTIAL_CROWN_CONCEPT",
+    "ULTIMATE_V1_MOTION_CANDIDATE"
+  ],
+  "humanApproval": {
+    "state": "pending",
+    "approvedAt": null,
+    "approvedBy": null
+  },
+  "licensingNotes": [
+    "Local Lamuh candidate only."
+  ],
+  "promptProvenance": "repo://tools/nga-forge/review/lamuh-ultimate-v1/README.md"
+}

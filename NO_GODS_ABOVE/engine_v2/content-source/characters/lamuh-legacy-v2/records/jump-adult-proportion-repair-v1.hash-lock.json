@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.jump.adult_proportion_repair.candidate.v1",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "legacySourceImmutable": true,
+  "generationMode": "OpenAI built-in image generation reference edit mode",
+  "sourceSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-jump-adult-proportion-repair-v1/raw/jump-source-sheet-adult-proportion-repair.png",
+    "sha256": "8AAEA0618244F5243C72A4A3DA7BFFDBD768C61F896BEE265012E9EEA3F67D14",
+    "generationMode": "OpenAI built-in image generation reference edit mode",
+    "cells": 7
+  },
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-jump-adult-proportion-repair-v1/normalization.report.json",
+    "sha256": "E3B05023182556CC7CC66E78459F201D42C95BD82E66DC3E9E0222014C4BD46F"
+  },
+  "contactSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-jump-adult-proportion-repair-v1/jump-adult-proportion-numbered-contact-sheet.png",
+    "sha256": "A559621E2521AF4738353120A556A382D91B1466A5560FD9307D232125A47757"
+  },
+  "sourceRepairReason": "Preserve the approved seven-pose Jump motion arc while correcting the user-rejected chibi head-to-body ratio, missing beard continuity, and compressed adult anatomy. Timing and simulation-owned travel remain unchanged.",
+  "timingChanged": false,
+  "gameplayChanged": false,
+  "normalizedFrames": [
+    {
+      "index": 0,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-00.png",
+      "sha256": "B9185382042D1A11992D3D857C9DF04028B75C324990C09BB2D0BC1192F01B21"
+    },
+    {
+      "index": 1,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-01.png",
+      "sha256": "93A215BDFA816789CF56AA1587BEA79870F30F0755D60BBD7C820FE88ACCECD6"
+    },
+    {
+      "index": 2,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-02.png",
+      "sha256": "0E1BAE683D6A805BFCCC758CEE0FE0752F35850008F41C5648BDDAD5CED55C61"
+    },
+    {
+      "index": 3,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-03.png",
+      "sha256": "5191667C103370A8E5D6B87F9230C6142AB4FE0825EACAC06B8D145175C4DAA8"
+    },
+    {
+      "index": 4,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-04.png",
+      "sha256": "AC1E3085361F6674E7A3D05027E0A0987ADBDF24D52B4C120EED06C55863974E"
+    },
+    {
+      "index": 5,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-05.png",
+      "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80"
+    },
+    {
+      "index": 6,
+      "publicPath": "/lamuh-legacy-v2/movement-v2/jump-06.png",
+      "sha256": "70A29F9D27CCEC2C098C9C0A7752E16F7028202B4D7962C8A0BB6FD0739264A0"
+    }
+  ],
+  "approvalBoundary": {
+    "motionApproved": false,
+    "adultIdentityApproved": false,
+    "transitionsApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

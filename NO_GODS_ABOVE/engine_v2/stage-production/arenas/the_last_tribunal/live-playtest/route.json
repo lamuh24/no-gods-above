@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0-tribunal-live-playtest-route",
+  "arenaId": "the_last_tribunal",
+  "routeId": "swahili_sandbox_x_the_last_tribunal_graybox",
+  "displayName": "Swahili Sandbox × The Last Tribunal Actual Graybox",
+  "status": "production_arena_live_playtest_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_actual_tribunal_graybox_integration",
+  "humanPlaytestCompleted": false,
+  "launch": {
+    "workingDirectory": "NO_GODS_ABOVE/engine_v2",
+    "command": "npm.cmd run playtest:tribunal",
+    "url": "http://127.0.0.1:4174/tribunal-playtest.html"
+  },
+  "reuse": {
+    "simulation": "src/sandbox/swahiliSandboxSimulation.ts",
+    "runtimeEntry": "src/sandbox/main.ts",
+    "presentation": "src/graybox/actualTribunalGrayboxRenderer.ts",
+    "presentationId": "actual_graybox_v1",
+    "sceneConfig": "stage-production/arenas/the_last_tribunal/graybox/actual_graybox_v1.scene.json",
+    "genericSandboxPresentationBypassed": true,
+    "genericFallbackPolicy": "visible_error_and_abort",
+    "separateFakeStageViewer": false
+  },
+  "authority": {
+    "simulation": "deterministic_60hz",
+    "renderingMayAffectMovement": false,
+    "renderingMayAffectCollision": false,
+    "renderingMayAffectHitDetection": false,
+    "renderingMayAffectStageBoundaries": false,
+    "renderingMayAffectWallInteractions": false,
+    "renderingMayAffectJumpArcs": false,
+    "renderingMayAffectFighterSpacing": false
+  },
+  "preserved": {
+    "legacyGameJs": true,
+    "deterministicCombatRules": true,
+    "swahiliSourceArtwork": true,
+    "approvedAnimationPackages": true,
+    "swahiliHurtboxes": true,
+    "productionRoster": true,
+    "lastTribunalBoundsAndStageContract": true
+  },
+  "incompleteCoverage": {
+    "backwardWalk": "BLOCKED_ON_THREE_MANUAL_PAINTOVERS",
+    "warningVisible": true,
+    "promoted": false
+  },
+  "automatedValidationIsHumanApproval": false,
+  "finalArtAuthorized": false
+}

@@ -1,0 +1,3693 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_CANDIDATE_PACKAGE_OPERATION",
+  "generatedAt": "2026-07-26",
+  "status": "PASS_CANDIDATE_PACKAGES_AND_FAMILY_ATLASES",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionRoster": false,
+  "isolatedSandboxOnly": true,
+  "finalShippingAtlasBuilt": false,
+  "bundle": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/character.bundle.json",
+  "bundleSha256": "6279E9B9F7BA3419D6836672798FA9135BE05F883732B17E1155558FB1025517",
+  "compiledManifest": "NO_GODS_ABOVE/engine_v2/generated/manifests/swahili_moveset_goal_v1.candidate.runtime.json",
+  "compiledManifestSha256": "BEC68B3225CEFAE1BFB5CA724F57E6D6B472702CA500AEC41C3EE911AFFD39C2",
+  "compilerSourceDigest": "0359f9900e54a2941f18f0e75739b5bc220c653afc8d40284da5411c388437c8",
+  "animationPackageCount": 25,
+  "newGoalPackageCount": 18,
+  "reusedExistingPackageCount": 7,
+  "reusedExistingPackages": [
+    {
+      "packageId": "standing_block",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/standing-block/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/standing-block/animation.package.json",
+      "sourceSha256": "14C107187B250D5C1C00B810EECBCC8214147A4F7B316E9FFFB9B9A0A7A08BBA",
+      "candidateCopySha256": "14C107187B250D5C1C00B810EECBCC8214147A4F7B316E9FFFB9B9A0A7A08BBA",
+      "byteIdentical": true
+    },
+    {
+      "packageId": "crouching_block",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/crouching-block/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/crouching-block/animation.package.json",
+      "sourceSha256": "AAB762428284FE4803849452AF0EEB48AD8789BE637C52B6679BD5401F8CBF4F",
+      "candidateCopySha256": "AAB762428284FE4803849452AF0EEB48AD8789BE637C52B6679BD5401F8CBF4F",
+      "byteIdentical": true
+    },
+    {
+      "packageId": "light_hit_reaction",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/light-hit-reaction/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/light-hit-reaction/animation.package.json",
+      "sourceSha256": "EB3EC97724C7A3A916BAD76E502B26234C458F1DEC65A574F99BCFB79ADE5B44",
+      "candidateCopySha256": "EB3EC97724C7A3A916BAD76E502B26234C458F1DEC65A574F99BCFB79ADE5B44",
+      "byteIdentical": true
+    },
+    {
+      "packageId": "heavy_hit_reaction",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/heavy-hit-reaction/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/heavy-hit-reaction/animation.package.json",
+      "sourceSha256": "E5EA754228AB4897A0769A9C09FD3BEFEC9F976FCBF01488A7EC040FE92EDC9A",
+      "candidateCopySha256": "E5EA754228AB4897A0769A9C09FD3BEFEC9F976FCBF01488A7EC040FE92EDC9A",
+      "byteIdentical": true
+    },
+    {
+      "packageId": "universal_grab_attempt",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/universal-grab-attempt/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/universal-grab-attempt/animation.package.json",
+      "sourceSha256": "C0E20D7BC7645A8C2AECD2575C1C6787A01107EFDD646F8F52B2CB382519A40D",
+      "candidateCopySha256": "C0E20D7BC7645A8C2AECD2575C1C6787A01107EFDD646F8F52B2CB382519A40D",
+      "byteIdentical": true
+    },
+    {
+      "packageId": "universal_forward_throw",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/universal-forward-throw/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/universal-forward-throw/animation.package.json",
+      "sourceSha256": "4BA4DDFC31F1CF18CDA50BECA1C419BBF83A9E2E4F930D7FA434A0E48A7AF9CC",
+      "candidateCopySha256": "4BA4DDFC31F1CF18CDA50BECA1C419BBF83A9E2E4F930D7FA434A0E48A7AF9CC",
+      "byteIdentical": true
+    },
+    {
+      "packageId": "universal_backward_throw",
+      "source": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/universal-backward-throw/animation.package.json",
+      "candidateCopy": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/reused/universal-backward-throw/animation.package.json",
+      "sourceSha256": "B11C07C70495EE0F5BE319460A2EF552ECD126BF4045A8FD0FFC61A6A690FD02",
+      "candidateCopySha256": "B11C07C70495EE0F5BE319460A2EF552ECD126BF4045A8FD0FFC61A6A690FD02",
+      "byteIdentical": true
+    }
+  ],
+  "staleCommandGrabPackageExcluded": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/command-grab/animation.package.json",
+  "currentCommandGrabPackage": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili-goal-v1/moves/command-grab-v2/animation.package.json",
+  "atlasFamilies": [
+    {
+      "family": "universal_movement",
+      "manifestPath": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/universal_movement/universal_movement.candidate.atlas.manifest.json",
+      "manifestSha256": "BF70398705901788829CED2EFE4426938DF9A57A7B2EB18607DE04175230A433",
+      "pageCount": 3,
+      "sourceAssetCount": 27,
+      "pixelExactReconstruction": true
+    },
+    {
+      "family": "air_movement",
+      "manifestPath": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/air_movement/air_movement.candidate.atlas.manifest.json",
+      "manifestSha256": "23B27F2B79BA1EABFB48FEE1B77EC8E1B35AF671139F8D7B81460520319BACFA",
+      "pageCount": 2,
+      "sourceAssetCount": 17,
+      "pixelExactReconstruction": true
+    },
+    {
+      "family": "ground_normals",
+      "manifestPath": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/ground_normals/ground_normals.candidate.atlas.manifest.json",
+      "manifestSha256": "4D534DAA8942B3F069BF45BB389EF5BC811E78F83CBD6EEF5E613C55D62DA53F",
+      "pageCount": 3,
+      "sourceAssetCount": 30,
+      "pixelExactReconstruction": true
+    },
+    {
+      "family": "defense",
+      "manifestPath": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/defense/defense.candidate.atlas.manifest.json",
+      "manifestSha256": "B3642E208CDEBD9B3355CF2F1AC85DF9EA75559163D907E58B0870492183E93D",
+      "pageCount": 1,
+      "sourceAssetCount": 6,
+      "pixelExactReconstruction": true
+    },
+    {
+      "family": "reactions_and_recovery",
+      "manifestPath": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/reactions_and_recovery/reactions_and_recovery.candidate.atlas.manifest.json",
+      "manifestSha256": "D5ADBFE302CBFB3766990BE412E06D23F8E94EE1DF70AEEE6ABACC25DBC70D3E",
+      "pageCount": 1,
+      "sourceAssetCount": 16,
+      "pixelExactReconstruction": true
+    },
+    {
+      "family": "grabs",
+      "manifestPath": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/grabs/grabs.candidate.atlas.manifest.json",
+      "manifestSha256": "48D1A09EC54731F77203B985B6FF267944CEFAD00670A723D0BC0F94948BD4C6",
+      "pageCount": 3,
+      "sourceAssetCount": 37,
+      "pixelExactReconstruction": true
+    }
+  ],
+  "atlasPageCount": 13,
+  "uniqueSourceAssetCount": 131,
+  "sourceHashValidation": "PASS_BY_ENGINE_V2_PRODUCTION_CONTRACT_COMPILER",
+  "alphaAudit": {
+    "sourceCount": 131,
+    "failureCount": 0,
+    "failures": [],
+    "records": {
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          289,
+          342,
+          1154,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377984,
+        "semiTransparentPixelCount": 30009,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/01_01_mounted_startup.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          270,
+          340,
+          1111,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 395221,
+        "semiTransparentPixelCount": 28492,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/02_02_hand_reaches_scythe.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          232,
+          340,
+          1126,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 363212,
+        "semiTransparentPixelCount": 26036,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/03_03_scythe_clears_back.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          145,
+          340,
+          1136,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 392942,
+        "semiTransparentPixelCount": 28728,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/04_04_blade_flip_transition.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          340,
+          1122,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 308624,
+        "semiTransparentPixelCount": 22118,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 30,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/05_05_hook_ready_maximum_coil.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          98,
+          372,
+          1360,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 390185,
+        "semiTransparentPixelCount": 28221,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/06_06_lead_foot_plant_weapon_lag.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          98,
+          382,
+          1336,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 385699,
+        "semiTransparentPixelCount": 26228,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/07_07_acceleration_begins_scoop_curve.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          140,
+          609,
+          1477,
+          1344
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 299273,
+        "semiTransparentPixelCount": 26491,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 29,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/08_07_scoop_acceleration_entry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          112,
+          377,
+          1448,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 450607,
+        "semiTransparentPixelCount": 30591,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 45,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/09_08_maximum_speed_scoop.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          173,
+          625,
+          1368,
+          1388
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 296379,
+        "semiTransparentPixelCount": 21870,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 29,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/10_09_first_low_hook_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          168,
+          798,
+          1415,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 273886,
+        "semiTransparentPixelCount": 21372,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 27,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/11_10_impact_compression_secure_scoop_catch.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          177,
+          709,
+          1369,
+          1491
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 336951,
+        "semiTransparentPixelCount": 23722,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/12_12_feet_swept_out_locked.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          177,
+          709,
+          1369,
+          1491
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 336951,
+        "semiTransparentPixelCount": 23722,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/13_13_pelvis_leading_rotation_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          277,
+          678,
+          1503,
+          1463
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 374673,
+        "semiTransparentPixelCount": 27438,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/14_14_locked_low_carry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          493,
+          678,
+          1283,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 287881,
+        "semiTransparentPixelCount": 25351,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 28,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/15_15_continued_carry_head_direction_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          153,
+          627,
+          1418,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 339547,
+        "semiTransparentPixelCount": 26741,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/16_16_airborne_release_head_direction_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          73,
+          517,
+          1419,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 417712,
+        "semiTransparentPixelCount": 29221,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/17_16_to_17_head_reorientation_connector_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          73,
+          517,
+          1419,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 422126,
+        "semiTransparentPixelCount": 30039,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/18_16_airborne_hang.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          378,
+          340,
+          1256,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 398085,
+        "semiTransparentPixelCount": 26844,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/19_17_aim_at_midair.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          376,
+          340,
+          1330,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 364736,
+        "semiTransparentPixelCount": 26333,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/20_18_midair_shot.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          234,
+          340,
+          1214,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 376673,
+        "semiTransparentPixelCount": 27428,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/21_19_post_shot_fall.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          164,
+          340,
+          1208,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367728,
+        "semiTransparentPixelCount": 28513,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/22_20_fall_toward_floor.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          410,
+          340,
+          1315,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367116,
+        "semiTransparentPixelCount": 28071,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/23_21_landing_after_shot.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          410,
+          340,
+          1315,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367116,
+        "semiTransparentPixelCount": 28071,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/24_22_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          364,
+          340,
+          1164,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 345157,
+        "semiTransparentPixelCount": 26536,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/01_guarded_crouch.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          340,
+          1244,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/02_rapid_low_aim.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          230,
+          336,
+          1287,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 487343,
+        "semiTransparentPixelCount": 32189,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 48,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/03_point_blank_shot.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          216,
+          335,
+          1353,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 486764,
+        "semiTransparentPixelCount": 36232,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 48,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/04_compact_recoil.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          249,
+          337,
+          1288,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 467264,
+        "semiTransparentPixelCount": 35004,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 46,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/05_crouched_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          340,
+          1244,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouch.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          340,
+          1244,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouching_block_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          334,
+          340,
+          1110,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 391014,
+        "semiTransparentPixelCount": 24384,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          166,
+          341,
+          1086,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 422074,
+        "semiTransparentPixelCount": 29745,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/light_hit_reaction.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          340,
+          1193,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 411713,
+        "semiTransparentPixelCount": 30768,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/standing_block.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          322,
+          340,
+          1061,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 361582,
+        "semiTransparentPixelCount": 25359,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_entry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          333,
+          341,
+          1180,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 395386,
+        "semiTransparentPixelCount": 28312,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_release.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          341,
+          1220,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 425182,
+        "semiTransparentPixelCount": 27767,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_entry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          130,
+          340,
+          1065,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 428708,
+        "semiTransparentPixelCount": 31394,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          152,
+          340,
+          1191,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 432670,
+        "semiTransparentPixelCount": 32175,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 43,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_entry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          278,
+          340,
+          1220,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 406662,
+        "semiTransparentPixelCount": 33967,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          319,
+          340,
+          1100,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 372210,
+        "semiTransparentPixelCount": 24933,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/standing_block_entry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          317,
+          340,
+          1058,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 362753,
+        "semiTransparentPixelCount": 25584,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/standing_block_release.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          322,
+          340,
+          1058,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 376128,
+        "semiTransparentPixelCount": 27984,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_backward_throw_commitment.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          356,
+          340,
+          1150,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 386977,
+        "semiTransparentPixelCount": 24311,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_forward_throw_commitment.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          350,
+          340,
+          1339,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377568,
+        "semiTransparentPixelCount": 26267,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_capture_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          368,
+          340,
+          1156,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 372520,
+        "semiTransparentPixelCount": 23782,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_reach.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          321,
+          340,
+          1265,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 410520,
+        "semiTransparentPixelCount": 26482,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          293,
+          340,
+          1123,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 376496,
+        "semiTransparentPixelCount": 28642,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/universal_backward_throw_preparation.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          358,
+          340,
+          1147,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 384152,
+        "semiTransparentPixelCount": 23064,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/universal_forward_throw_preparation.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          330,
+          340,
+          1303,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 373076,
+        "semiTransparentPixelCount": 26202,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_01.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          289,
+          339,
+          1159,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 378349,
+        "semiTransparentPixelCount": 31098,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_02.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          288,
+          339,
+          1154,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377720,
+        "semiTransparentPixelCount": 29874,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_03.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          285,
+          338,
+          1153,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377368,
+        "semiTransparentPixelCount": 32489,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/01_launch_reaction.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          306,
+          629,
+          1230,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 324537,
+        "semiTransparentPixelCount": 49830,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 32,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          488,
+          642,
+          1049,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 214888,
+        "semiTransparentPixelCount": 29799,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          338,
+          739,
+          1198,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 326804,
+        "semiTransparentPixelCount": 47998,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 32,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          216,
+          848,
+          1320,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 271451,
+        "semiTransparentPixelCount": 35760,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 27,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          246,
+          933,
+          1289,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 230063,
+        "semiTransparentPixelCount": 38101,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 23,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/06_shoulder_roll_knee_draw.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          354,
+          853,
+          1181,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 225442,
+        "semiTransparentPixelCount": 16986,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 22,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/07_face_up_roll_brace.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          327,
+          808,
+          1209,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 266826,
+        "semiTransparentPixelCount": 18946,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 26,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          443,
+          738,
+          1093,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 235082,
+        "semiTransparentPixelCount": 18741,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 23,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          429,
+          726,
+          1107,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 248247,
+        "semiTransparentPixelCount": 40216,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 6,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 24,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          414,
+          508,
+          1123,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 268206,
+        "semiTransparentPixelCount": 22237,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 26,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_anticipation_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          268,
+          337,
+          1131,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 383601,
+        "semiTransparentPixelCount": 27560,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          353,
+          1439,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 418968,
+        "semiTransparentPixelCount": 32819,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_recoil_v2.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          242,
+          340,
+          1142,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367182,
+        "semiTransparentPixelCount": 32819,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_extension.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          221,
+          353,
+          1440,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 432715,
+        "semiTransparentPixelCount": 33945,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 43,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_preparation.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          337,
+          1311,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 398674,
+        "semiTransparentPixelCount": 33679,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          338,
+          1085,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 372197,
+        "semiTransparentPixelCount": 30555,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/01_compact_chamber.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          283,
+          333,
+          817,
+          1413
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 316895,
+        "semiTransparentPixelCount": 30360,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 31,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/02_low_kick_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          443,
+          336,
+          1380,
+          1409
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 386008,
+        "semiTransparentPixelCount": 45042,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/03_leg_retraction.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          417,
+          333,
+          1290,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377062,
+        "semiTransparentPixelCount": 26082,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/04_planted_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          483,
+          332,
+          1125,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 352411,
+        "semiTransparentPixelCount": 31862,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 35,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/01_air_dash_backward_guarded_recoil.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          395,
+          618,
+          1142,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 213276,
+        "semiTransparentPixelCount": 32901,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/02_air_dash_backward_backward_burst.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          372,
+          657,
+          1164,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 235653,
+        "semiTransparentPixelCount": 41868,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 4,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 23,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/03_air_dash_backward_max_retreat.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          313,
+          669,
+          1224,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 253186,
+        "semiTransparentPixelCount": 39999,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 25,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/04_air_dash_backward_air_brake.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          294,
+          334,
+          1243,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 437066,
+        "semiTransparentPixelCount": 32428,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 43,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/01_air_dash_forward_air_brace.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          382,
+          609,
+          1154,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 256411,
+        "semiTransparentPixelCount": 44622,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 25,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/02_air_dash_forward_forward_burst.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          254,
+          712,
+          1283,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 309361,
+        "semiTransparentPixelCount": 50155,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 30,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/03_air_dash_forward_forward_travel.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          164,
+          788,
+          1372,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 339558,
+        "semiTransparentPixelCount": 51021,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 33,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/04_air_dash_forward_air_brake.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          388,
+          604,
+          1148,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 244456,
+        "semiTransparentPixelCount": 43159,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 24,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-side-switch/01_air_dash_side_switch_rotation_midpoint.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          292,
+          335,
+          1244,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 415131,
+        "semiTransparentPixelCount": 31340,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 4,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/01_jump_anticipation.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          275,
+          343,
+          1167,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 393835,
+        "semiTransparentPixelCount": 29586,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/02_takeoff.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          322,
+          344,
+          1120,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 346935,
+        "semiTransparentPixelCount": 25394,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/03_rising_jump.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          326,
+          342,
+          1115,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 367140,
+        "semiTransparentPixelCount": 28371,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/04_jump_apex.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          287,
+          343,
+          1155,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 408475,
+        "semiTransparentPixelCount": 31677,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 4,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/05_falling.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          284,
+          343,
+          1158,
+          1410
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 346596,
+        "semiTransparentPixelCount": 28053,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/06_soft_landing.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          293,
+          343,
+          1148,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 401759,
+        "semiTransparentPixelCount": 32059,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 5,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/07_attack_landing_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          295,
+          343,
+          1148,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 344424,
+        "semiTransparentPixelCount": 28126,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/08_hard_landing_compatibility.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          178,
+          345,
+          1263,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 463908,
+        "semiTransparentPixelCount": 31957,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 1,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 46,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/turn-side-switch-compatibility-v1/01_turn_pivot_bridge.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          458,
+          343,
+          983,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 312307,
+        "semiTransparentPixelCount": 21830,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 7,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 31,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/01_deep_rotational_anticipation.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          287,
+          335,
+          1126,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 384797,
+        "semiTransparentPixelCount": 28605,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/02_sweep_acceleration.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          133,
+          328,
+          1311,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 499602,
+        "semiTransparentPixelCount": 34362,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 49,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/03_low_ground_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          289,
+          439,
+          1337,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 377730,
+        "semiTransparentPixelCount": 29389,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/04_rotational_carry_past_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          241,
+          419,
+          1338,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 399248,
+        "semiTransparentPixelCount": 29458,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/05_committed_follow_through.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          230,
+          387,
+          1196,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 384079,
+        "semiTransparentPixelCount": 32290,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/06_recovery_unwind.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          297,
+          306,
+          1251,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 415693,
+        "semiTransparentPixelCount": 32516,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/07_planted_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          341,
+          1244,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/01_anticipation.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          311,
+          311,
+          1190,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 414111,
+        "semiTransparentPixelCount": 31104,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/02_kick_acceleration.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          131,
+          293,
+          1421,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 527584,
+        "semiTransparentPixelCount": 37310,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 52,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/03_low_side_kick_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          165,
+          345,
+          1442,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 448221,
+        "semiTransparentPixelCount": 34553,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 44,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/04_leg_retraction.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          267,
+          320,
+          1127,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 410817,
+        "semiTransparentPixelCount": 29036,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_medium/05_planted_crouch_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          341,
+          1244,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 416138,
+        "semiTransparentPixelCount": 25633,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/02_fast_low_extension_connector.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          400,
+          333,
+          1338,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 369779,
+        "semiTransparentPixelCount": 28471,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/04_post_contact_recoil_connector.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          416,
+          329,
+          1337,
+          1411
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 399862,
+        "semiTransparentPixelCount": 29286,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/01_command_grab_victim_post_release_airborne.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          228,
+          546,
+          1307,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 218541,
+        "semiTransparentPixelCount": 43550,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/02_command_grab_victim_airborne_carry_hang.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          276,
+          445,
+          1260,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 201235,
+        "semiTransparentPixelCount": 42157,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 20,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/03_command_grab_victim_midair_shot_reaction.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          336,
+          497,
+          1199,
+          1414
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 190940,
+        "semiTransparentPixelCount": 38777,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 19,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/04_command_grab_victim_post_shot_fall.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          452,
+          716,
+          1084,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 216430,
+        "semiTransparentPixelCount": 44961,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 21,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/05_command_grab_victim_descent_landing_prep.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          266,
+          875,
+          1270,
+          1414
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 224877,
+        "semiTransparentPixelCount": 40370,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 22,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/command-grab-victim-fall-v1/victim-only/06_command_grab_victim_impact_downed.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          279,
+          1032,
+          1257,
+          1412
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 194670,
+        "semiTransparentPixelCount": 35421,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 19,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/01_dash_backward_v3_load_low.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          302,
+          375,
+          1213,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 388386,
+        "semiTransparentPixelCount": 59421,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 9,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/02_dash_backward_v3_push_away.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          366,
+          1221,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 378873,
+        "semiTransparentPixelCount": 56008,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 15,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/03_dash_backward_v3_compact_retreat_hop_slide.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          357,
+          351,
+          1178,
+          1387
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 328021,
+        "semiTransparentPixelCount": 46903,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 11,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 32,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/04_dash_backward_v3_max_retreat.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          359,
+          355,
+          1174,
+          1379
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 346015,
+        "semiTransparentPixelCount": 51656,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 11,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 34,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/05_dash_backward_v3_controlled_landing.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          316,
+          376,
+          1242,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 386819,
+        "semiTransparentPixelCount": 54717,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 13,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/06_dash_backward_v3_guarded_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          335,
+          328,
+          1216,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 410463,
+        "semiTransparentPixelCount": 64537,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 17,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 41,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/01_dash_forward_v2_startup_load.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          295,
+          409,
+          1205,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 395684,
+        "semiTransparentPixelCount": 72209,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 7,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/02_dash_forward_v2_grounded_push_connector.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          73,
+          434,
+          1038,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 389472,
+        "semiTransparentPixelCount": 72386,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 5,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/03_dash_forward_v2_committed_launch.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          238,
+          522,
+          1298,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 396649,
+        "semiTransparentPixelCount": 73938,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 6,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/04_dash_forward_v2_low_travel_carry.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          160,
+          727,
+          1380,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 396504,
+        "semiTransparentPixelCount": 64140,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/05_dash_forward_v2_deceleration_catch.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          356,
+          440,
+          1298,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 387968,
+        "semiTransparentPixelCount": 71068,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 6,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 38,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/06_dash_forward_v2_brake_recovery.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          302,
+          398,
+          1198,
+          1415
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 395340,
+        "semiTransparentPixelCount": 72878,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 21,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/01_walk_forward_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          299,
+          340,
+          1128,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 379606,
+        "semiTransparentPixelCount": 27584,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 37,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/02_walk_forward_neutral_departure.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          298,
+          341,
+          1211,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 403351,
+        "semiTransparentPixelCount": 29141,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/03_walk_forward_passing.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          347,
+          340,
+          1260,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 401963,
+        "semiTransparentPixelCount": 30350,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 40,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/04_walk_forward_opposite_contact.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          308,
+          341,
+          1136,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 362288,
+        "semiTransparentPixelCount": 26140,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 2,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/05_walk_forward_return.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          314,
+          340,
+          1159,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 360607,
+        "semiTransparentPixelCount": 26099,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 0,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 36,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/06_walk_forward_opposite_down.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          216,
+          341,
+          1112,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 424173,
+        "semiTransparentPixelCount": 32993,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 42,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/07_walk_forward_opposite_passing.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          288,
+          340,
+          1129,
+          1407
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 394515,
+        "semiTransparentPixelCount": 27007,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 3,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      },
+      "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/08_walk_forward_opposite_up_return.png": {
+        "canvas": [
+          1536,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaBounds": [
+          298,
+          341,
+          1143,
+          1408
+        ],
+        "transparentCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visiblePixelCount": 397023,
+        "semiTransparentPixelCount": 28116,
+        "magentaPurpleResiduePixelCount": 0,
+        "greenKeyResiduePixelCount": 7,
+        "nearKeyMagentaPixelCount": 0,
+        "nearKeyGreenPixelCount": 0,
+        "isolatedBroadHueTolerancePixels": 39,
+        "pass": true
+      }
+    }
+  },
+  "pixelExactReconstruction": {
+    "pass": true,
+    "mismatchCount": 0,
+    "mismatches": []
+  },
+  "protectedHashLock": {
+    "fileCount": 263,
+    "protectedDigestSha256": "1026F275B478F1505FDD5A992C5FC6923CE4567007B9439FDA19840DE4313E10",
+    "mismatchCount": 0
+  },
+  "legacyGameJsSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+  "humanApprovalStillRequired": [
+    "candidate motion and key-pose quality",
+    "game feel and authoritative timing",
+    "combat balance",
+    "final production promotion"
+  ]
+}

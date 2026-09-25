@@ -1,0 +1,1933 @@
+{
+  "schemaVersion": "2.1.0-runtime",
+  "compilerVersion": "0.1.0",
+  "sourceDigest": "d5e8b7fe013b2f8874b9106794f9da12b9096adc3a870fbcf90f571e47475d7a",
+  "fighterId": "lamuh_divine_vanish_v1",
+  "bundleVersion": 1,
+  "deployable": false,
+  "packageGroups": {
+    "backward_specials": [
+      "divine_vanish_light",
+      "divine_vanish_medium",
+      "divine_vanish_heavy"
+    ]
+  },
+  "animations": [
+    {
+      "id": "divine_vanish_heavy",
+      "version": 1,
+      "simulationLength": 40,
+      "exposures": [
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_0",
+          "start": 0,
+          "duration": 1
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_1",
+          "start": 1,
+          "duration": 7
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_2",
+          "start": 8,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_3",
+          "start": 12,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_4",
+          "start": 15,
+          "duration": 6
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_5",
+          "start": 21,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_6",
+          "start": 24,
+          "duration": 5
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_7",
+          "start": 29,
+          "duration": 5
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_8",
+          "start": 34,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_9",
+          "start": 38,
+          "duration": 2
+        }
+      ],
+      "entryPoseId": "neutral_stand",
+      "exitPoseId": "neutral_stand",
+      "transitions": [],
+      "landing": [],
+      "combatTrack": {
+        "startup": 8,
+        "active": 0,
+        "recovery": 32,
+        "damage": 0,
+        "hitstop": 0,
+        "hitstun": 0,
+        "blockstun": 0,
+        "boxes": [],
+        "cancelWindows": [],
+        "timingAuthorship": {
+          "simulationTickRateHz": 60,
+          "authoredTotalDuration": 40,
+          "durationModel": "independently_authored_per_move",
+          "durationBasis": [
+            "move_weight",
+            "readability",
+            "combat_role",
+            "risk_reward",
+            "character_identity",
+            "animation_quality",
+            "balance"
+          ],
+          "uniformDurationNormalizationProhibited": true,
+          "visualGameplayAlignment": "aligned_by_default",
+          "timingExceptions": []
+        },
+        "rootMotionTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_divine_vanish_heavy",
+          "hitstopFreezes": true,
+          "segments": [
+            {
+              "start": 8,
+              "end": 11,
+              "velocity": -6
+            },
+            {
+              "start": 12,
+              "end": 19,
+              "velocity": -14
+            },
+            {
+              "start": 20,
+              "end": 23,
+              "velocity": -6
+            }
+          ]
+        }
+      },
+      "presentationTrack": [],
+      "sourceFrames": [
+        {
+          "id": "divine_vanish_heavy_frame_0",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_1",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "4078C6685042DE8744C17E3A665ACC0ED8FD957C64A4360CA538EB1ED12F5BAD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_2",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-01.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "06BCEE82C7354C103584505FFD5E119E5B263AD87BF50B825F2A268F503CDF24",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_3",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "A51B99DFB43CB4AC309826D7E4354AF99E694328605C5550E7A49B8C938F69AB",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_4",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-v2/aura-only-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "2991AA69451ACC04002E7253F2096F54E6F1E17BCE247F9DC9E8AA621E5AF7AC",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_5",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "A51B99DFB43CB4AC309826D7E4354AF99E694328605C5550E7A49B8C938F69AB",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_6",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-03.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "9C0708600DA35FF4FF287D5DDAA458FA3A6F772556C82BF23AB040A432A70827",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_7",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-04.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "2541D6B5244E4C3B922802AAD05F258E5D702AEC344AFB7700EB423E6EF31544",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_8",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-05.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "001E927E75EFEF0B1A7967C509E0331AE72C3BADFE77A077BACF3E26E3559BD8",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_heavy_frame_9",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        }
+      ],
+      "phases": {
+        "anticipation": [],
+        "startup": [
+          {
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "active": [],
+        "impact": [],
+        "followThrough": [],
+        "recovery": [
+          {
+            "start": 8,
+            "end": 39
+          }
+        ]
+      },
+      "interruptPoses": [
+        {
+          "id": "neutral_stand",
+          "facing": "forward",
+          "elevation": "grounded",
+          "plantedFoot": "both",
+          "weight": "neutral",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "upright_lamuh_ready",
+          "verticalMotion": "stationary"
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "divine_vanish_heavy_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 1,
+          "sourceFrameId": "divine_vanish_heavy_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 8,
+          "sourceFrameId": "divine_vanish_heavy_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 12,
+          "sourceFrameId": "divine_vanish_heavy_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 15,
+          "sourceFrameId": "divine_vanish_heavy_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 21,
+          "sourceFrameId": "divine_vanish_heavy_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 24,
+          "sourceFrameId": "divine_vanish_heavy_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 29,
+          "sourceFrameId": "divine_vanish_heavy_frame_7",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 34,
+          "sourceFrameId": "divine_vanish_heavy_frame_8",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 38,
+          "sourceFrameId": "divine_vanish_heavy_frame_9",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        }
+      ],
+      "groundingTrack": [
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_7",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_8",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_heavy_frame_9",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        }
+      ],
+      "facingBehavior": {
+        "authoredFacing": "P1_screen_right",
+        "runtimeP2": "horizontal_mirror_screen_left",
+        "mirrorAxisX": 768,
+        "losslessMirrorRequired": true
+      },
+      "playbackPolicy": {
+        "mode": "fixed_timeline",
+        "cursorOwner": "simulation",
+        "hitstopFreezesCursor": true,
+        "holdBehavior": "none"
+      },
+      "interruptionBehavior": {
+        "owner": "simulation",
+        "allowedSources": [
+          "incoming_hit",
+          "incoming_throw",
+          "round_end",
+          "forced_state"
+        ],
+        "onInterrupt": "simulation_selects_target_state",
+        "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+      },
+      "transitionCompatibility": [
+        {
+          "fromStates": [
+            "idle",
+            "walk_forward",
+            "walk_backward",
+            "crouch"
+          ],
+          "toState": "divine_vanish_heavy",
+          "condition": "grounded_back_special_strength_input",
+          "addsGameplayFrames": false
+        }
+      ],
+      "gameplayTimingStatus": {
+        "owner": "simulation",
+        "state": "sandbox_candidate_awaiting_combat_approval",
+        "authoritative": false,
+        "candidateValues": {
+          "startup": 8,
+          "active": 0,
+          "recovery": 32,
+          "damage": 0,
+          "retreatDistance": 160
+        },
+        "notes": [
+          "Grounded backward retreat only: zero damage, zero visible contacts, no hidden punch, teleport or sideswitch.",
+          "No invulnerability, cancel, meter gain, victim motion or collision immunity is granted by the phase aura.",
+          "L/M/H share a continuous retreat and differ in authored distance, load and recovery commitment.",
+          "A/C are visual comparison candidates only; B matches deterministic simulation timing.",
+          "Source-bound surrounding aura is visual motion, not proof of invulnerability or contact; M/H use one complete aura-only disappearance, never partial erased limbs.",
+          "Fixed roots and source hash validation do not constitute human anatomical, cutout or motion approval."
+        ]
+      },
+      "presentationSockets": [
+        {
+          "id": "body_root",
+          "y": 1360,
+          "x": 768,
+          "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+          "eventTypes": [
+            "spawn_vfx"
+          ]
+        }
+      ],
+      "approvalRecords": [
+        "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json"
+      ]
+    },
+    {
+      "id": "divine_vanish_light",
+      "version": 1,
+      "simulationLength": 20,
+      "exposures": [
+        {
+          "sourceFrameId": "divine_vanish_light_frame_0",
+          "start": 0,
+          "duration": 1
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_1",
+          "start": 1,
+          "duration": 2
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_2",
+          "start": 3,
+          "duration": 2
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_3",
+          "start": 5,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_4",
+          "start": 9,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_5",
+          "start": 12,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_6",
+          "start": 15,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_7",
+          "start": 18,
+          "duration": 2
+        }
+      ],
+      "entryPoseId": "neutral_stand",
+      "exitPoseId": "neutral_stand",
+      "transitions": [],
+      "landing": [],
+      "combatTrack": {
+        "startup": 3,
+        "active": 0,
+        "recovery": 17,
+        "damage": 0,
+        "hitstop": 0,
+        "hitstun": 0,
+        "blockstun": 0,
+        "boxes": [],
+        "cancelWindows": [],
+        "timingAuthorship": {
+          "simulationTickRateHz": 60,
+          "authoredTotalDuration": 20,
+          "durationModel": "independently_authored_per_move",
+          "durationBasis": [
+            "move_weight",
+            "readability",
+            "combat_role",
+            "risk_reward",
+            "character_identity",
+            "animation_quality",
+            "balance"
+          ],
+          "uniformDurationNormalizationProhibited": true,
+          "visualGameplayAlignment": "aligned_by_default",
+          "timingExceptions": []
+        },
+        "rootMotionTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_divine_vanish_light",
+          "hitstopFreezes": true,
+          "segments": [
+            {
+              "start": 3,
+              "end": 4,
+              "velocity": -6
+            },
+            {
+              "start": 5,
+              "end": 6,
+              "velocity": -18
+            },
+            {
+              "start": 7,
+              "end": 8,
+              "velocity": -6
+            }
+          ]
+        }
+      },
+      "presentationTrack": [],
+      "sourceFrames": [
+        {
+          "id": "divine_vanish_light_frame_0",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_1",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "4078C6685042DE8744C17E3A665ACC0ED8FD957C64A4360CA538EB1ED12F5BAD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_2",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-01.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "06BCEE82C7354C103584505FFD5E119E5B263AD87BF50B825F2A268F503CDF24",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_3",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "A51B99DFB43CB4AC309826D7E4354AF99E694328605C5550E7A49B8C938F69AB",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_4",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-03.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "9C0708600DA35FF4FF287D5DDAA458FA3A6F772556C82BF23AB040A432A70827",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_5",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-04.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "2541D6B5244E4C3B922802AAD05F258E5D702AEC344AFB7700EB423E6EF31544",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_6",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-05.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "001E927E75EFEF0B1A7967C509E0331AE72C3BADFE77A077BACF3E26E3559BD8",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_light_frame_7",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        }
+      ],
+      "phases": {
+        "anticipation": [],
+        "startup": [
+          {
+            "start": 0,
+            "end": 2
+          }
+        ],
+        "active": [],
+        "impact": [],
+        "followThrough": [],
+        "recovery": [
+          {
+            "start": 3,
+            "end": 19
+          }
+        ]
+      },
+      "interruptPoses": [
+        {
+          "id": "neutral_stand",
+          "facing": "forward",
+          "elevation": "grounded",
+          "plantedFoot": "both",
+          "weight": "neutral",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "upright_lamuh_ready",
+          "verticalMotion": "stationary"
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "divine_vanish_light_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 1,
+          "sourceFrameId": "divine_vanish_light_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 3,
+          "sourceFrameId": "divine_vanish_light_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 5,
+          "sourceFrameId": "divine_vanish_light_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 9,
+          "sourceFrameId": "divine_vanish_light_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 12,
+          "sourceFrameId": "divine_vanish_light_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 15,
+          "sourceFrameId": "divine_vanish_light_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 18,
+          "sourceFrameId": "divine_vanish_light_frame_7",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        }
+      ],
+      "groundingTrack": [
+        {
+          "sourceFrameId": "divine_vanish_light_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_light_frame_7",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        }
+      ],
+      "facingBehavior": {
+        "authoredFacing": "P1_screen_right",
+        "runtimeP2": "horizontal_mirror_screen_left",
+        "mirrorAxisX": 768,
+        "losslessMirrorRequired": true
+      },
+      "playbackPolicy": {
+        "mode": "fixed_timeline",
+        "cursorOwner": "simulation",
+        "hitstopFreezesCursor": true,
+        "holdBehavior": "none"
+      },
+      "interruptionBehavior": {
+        "owner": "simulation",
+        "allowedSources": [
+          "incoming_hit",
+          "incoming_throw",
+          "round_end",
+          "forced_state"
+        ],
+        "onInterrupt": "simulation_selects_target_state",
+        "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+      },
+      "transitionCompatibility": [
+        {
+          "fromStates": [
+            "idle",
+            "walk_forward",
+            "walk_backward",
+            "crouch"
+          ],
+          "toState": "divine_vanish_light",
+          "condition": "grounded_back_special_strength_input",
+          "addsGameplayFrames": false
+        }
+      ],
+      "gameplayTimingStatus": {
+        "owner": "simulation",
+        "state": "sandbox_candidate_awaiting_combat_approval",
+        "authoritative": false,
+        "candidateValues": {
+          "startup": 3,
+          "active": 0,
+          "recovery": 17,
+          "damage": 0,
+          "retreatDistance": 60
+        },
+        "notes": [
+          "Grounded backward retreat only: zero damage, zero visible contacts, no hidden punch, teleport or sideswitch.",
+          "No invulnerability, cancel, meter gain, victim motion or collision immunity is granted by the phase aura.",
+          "L/M/H share a continuous retreat and differ in authored distance, load and recovery commitment.",
+          "A/C are visual comparison candidates only; B matches deterministic simulation timing.",
+          "Source-bound surrounding aura is visual motion, not proof of invulnerability or contact; M/H use one complete aura-only disappearance, never partial erased limbs.",
+          "Fixed roots and source hash validation do not constitute human anatomical, cutout or motion approval."
+        ]
+      },
+      "presentationSockets": [
+        {
+          "id": "body_root",
+          "y": 1360,
+          "x": 768,
+          "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+          "eventTypes": [
+            "spawn_vfx"
+          ]
+        }
+      ],
+      "approvalRecords": [
+        "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json"
+      ]
+    },
+    {
+      "id": "divine_vanish_medium",
+      "version": 1,
+      "simulationLength": 28,
+      "exposures": [
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_0",
+          "start": 0,
+          "duration": 1
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_1",
+          "start": 1,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_2",
+          "start": 5,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_3",
+          "start": 8,
+          "duration": 2
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_4",
+          "start": 10,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_5",
+          "start": 14,
+          "duration": 2
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_6",
+          "start": 16,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_7",
+          "start": 19,
+          "duration": 4
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_8",
+          "start": 23,
+          "duration": 3
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_9",
+          "start": 26,
+          "duration": 2
+        }
+      ],
+      "entryPoseId": "neutral_stand",
+      "exitPoseId": "neutral_stand",
+      "transitions": [],
+      "landing": [],
+      "combatTrack": {
+        "startup": 5,
+        "active": 0,
+        "recovery": 23,
+        "damage": 0,
+        "hitstop": 0,
+        "hitstun": 0,
+        "blockstun": 0,
+        "boxes": [],
+        "cancelWindows": [],
+        "timingAuthorship": {
+          "simulationTickRateHz": 60,
+          "authoredTotalDuration": 28,
+          "durationModel": "independently_authored_per_move",
+          "durationBasis": [
+            "move_weight",
+            "readability",
+            "combat_role",
+            "risk_reward",
+            "character_identity",
+            "animation_quality",
+            "balance"
+          ],
+          "uniformDurationNormalizationProhibited": true,
+          "visualGameplayAlignment": "aligned_by_default",
+          "timingExceptions": []
+        },
+        "rootMotionTrack": {
+          "owner": "deterministic_simulation",
+          "attackId": "legacy_divine_vanish_medium",
+          "hitstopFreezes": true,
+          "segments": [
+            {
+              "start": 5,
+              "end": 7,
+              "velocity": -6
+            },
+            {
+              "start": 8,
+              "end": 12,
+              "velocity": -16
+            },
+            {
+              "start": 13,
+              "end": 15,
+              "velocity": -4
+            }
+          ]
+        }
+      },
+      "presentationTrack": [],
+      "sourceFrames": [
+        {
+          "id": "divine_vanish_medium_frame_0",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_1",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "4078C6685042DE8744C17E3A665ACC0ED8FD957C64A4360CA538EB1ED12F5BAD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_2",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-01.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "06BCEE82C7354C103584505FFD5E119E5B263AD87BF50B825F2A268F503CDF24",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_3",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "A51B99DFB43CB4AC309826D7E4354AF99E694328605C5550E7A49B8C938F69AB",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_4",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-v2/aura-only-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "2991AA69451ACC04002E7253F2096F54E6F1E17BCE247F9DC9E8AA621E5AF7AC",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_5",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-02.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "A51B99DFB43CB4AC309826D7E4354AF99E694328605C5550E7A49B8C938F69AB",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_6",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-03.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "9C0708600DA35FF4FF287D5DDAA458FA3A6F772556C82BF23AB040A432A70827",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_7",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-04.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "2541D6B5244E4C3B922802AAD05F258E5D702AEC344AFB7700EB423E6EF31544",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_8",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-frames-v1/pose-05.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "001E927E75EFEF0B1A7967C509E0331AE72C3BADFE77A077BACF3E26E3559BD8",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        },
+        {
+          "id": "divine_vanish_medium_frame_9",
+          "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+          "width": 2048,
+          "height": 1536,
+          "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+          "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json",
+          "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/provenance.json",
+          "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/registration.json"
+        }
+      ],
+      "phases": {
+        "anticipation": [],
+        "startup": [
+          {
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "active": [],
+        "impact": [],
+        "followThrough": [],
+        "recovery": [
+          {
+            "start": 5,
+            "end": 27
+          }
+        ]
+      },
+      "interruptPoses": [
+        {
+          "id": "neutral_stand",
+          "facing": "forward",
+          "elevation": "grounded",
+          "plantedFoot": "both",
+          "weight": "neutral",
+          "weaponState": "legacy_lamuh_body",
+          "handOccupancy": {
+            "left": "free",
+            "right": "free"
+          },
+          "silhouette": "upright_lamuh_ready",
+          "verticalMotion": "stationary"
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 0,
+          "sourceFrameId": "divine_vanish_medium_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 1,
+          "sourceFrameId": "divine_vanish_medium_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 5,
+          "sourceFrameId": "divine_vanish_medium_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 8,
+          "sourceFrameId": "divine_vanish_medium_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 10,
+          "sourceFrameId": "divine_vanish_medium_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 14,
+          "sourceFrameId": "divine_vanish_medium_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 16,
+          "sourceFrameId": "divine_vanish_medium_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 19,
+          "sourceFrameId": "divine_vanish_medium_frame_7",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 23,
+          "sourceFrameId": "divine_vanish_medium_frame_8",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        },
+        {
+          "frame": 26,
+          "sourceFrameId": "divine_vanish_medium_frame_9",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "feet": {
+            "y": 1360,
+            "x": 768
+          },
+          "effect": {
+            "y": 1360,
+            "x": 768
+          }
+        }
+      ],
+      "groundingTrack": [
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_0",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_1",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_2",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_3",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_4",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_5",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_6",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_7",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_8",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        },
+        {
+          "sourceFrameId": "divine_vanish_medium_frame_9",
+          "root": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "farFoot": {
+            "y": 1360,
+            "x": 768
+          },
+          "nearFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "farFootRole": "fixed_ground_registration_not_anatomical_measurement",
+          "projectedGroundPlaneY": 1360,
+          "contractVersion": "fixed_root_candidate_v1"
+        }
+      ],
+      "facingBehavior": {
+        "authoredFacing": "P1_screen_right",
+        "runtimeP2": "horizontal_mirror_screen_left",
+        "mirrorAxisX": 768,
+        "losslessMirrorRequired": true
+      },
+      "playbackPolicy": {
+        "mode": "fixed_timeline",
+        "cursorOwner": "simulation",
+        "hitstopFreezesCursor": true,
+        "holdBehavior": "none"
+      },
+      "interruptionBehavior": {
+        "owner": "simulation",
+        "allowedSources": [
+          "incoming_hit",
+          "incoming_throw",
+          "round_end",
+          "forced_state"
+        ],
+        "onInterrupt": "simulation_selects_target_state",
+        "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+      },
+      "transitionCompatibility": [
+        {
+          "fromStates": [
+            "idle",
+            "walk_forward",
+            "walk_backward",
+            "crouch"
+          ],
+          "toState": "divine_vanish_medium",
+          "condition": "grounded_back_special_strength_input",
+          "addsGameplayFrames": false
+        }
+      ],
+      "gameplayTimingStatus": {
+        "owner": "simulation",
+        "state": "sandbox_candidate_awaiting_combat_approval",
+        "authoritative": false,
+        "candidateValues": {
+          "startup": 5,
+          "active": 0,
+          "recovery": 23,
+          "damage": 0,
+          "retreatDistance": 110
+        },
+        "notes": [
+          "Grounded backward retreat only: zero damage, zero visible contacts, no hidden punch, teleport or sideswitch.",
+          "No invulnerability, cancel, meter gain, victim motion or collision immunity is granted by the phase aura.",
+          "L/M/H share a continuous retreat and differ in authored distance, load and recovery commitment.",
+          "A/C are visual comparison candidates only; B matches deterministic simulation timing.",
+          "Source-bound surrounding aura is visual motion, not proof of invulnerability or contact; M/H use one complete aura-only disappearance, never partial erased limbs.",
+          "Fixed roots and source hash validation do not constitute human anatomical, cutout or motion approval."
+        ]
+      },
+      "presentationSockets": [
+        {
+          "id": "body_root",
+          "y": 1360,
+          "x": 768,
+          "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+          "eventTypes": [
+            "spawn_vfx"
+          ]
+        }
+      ],
+      "approvalRecords": [
+        "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/divine-vanish-packages/records/human-review.pending.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.air_light.motion_lock.v1",
+  "status": "V1_MOTION_REFERENCE_HASH_LOCKED_WITH_TARGETED_V2_CONNECTORS",
+  "candidateOnly": true,
+  "deployable": false,
+  "protectedAtlas": {
+    "path": "NO_GODS_ABOVE/assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png",
+    "sha256": "1FFCD0B944A166F6DB7B79D485030741A9A2BF85C4C1CD47C6B4F3D76D9E249F"
+  },
+  "legacyFrames": [
+    {
+      "index": 1,
+      "authoredIndex": 0,
+      "row": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/air_light/air_light_01.png",
+      "sha256": "29C3329E3ADF2B05576E7A06115C42A6672834CEE571B7A5306875D0854B0D6D",
+      "relationship": "V1_MOTION_REFERENCE_NOT_PIXEL_IDENTITY_FOR_TARGETED_RECONSTRUCTION"
+    },
+    {
+      "index": 1,
+      "authoredIndex": 1,
+      "row": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/air_light/air_light_01.png",
+      "sha256": "29C3329E3ADF2B05576E7A06115C42A6672834CEE571B7A5306875D0854B0D6D",
+      "relationship": "V1_MOTION_REFERENCE_NOT_PIXEL_IDENTITY_FOR_TARGETED_RECONSTRUCTION"
+    },
+    {
+      "index": 2,
+      "authoredIndex": 2,
+      "row": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/air_light/air_light_02.png",
+      "sha256": "E8D6D0B068BDFCD6AEC7C638D1A835872F9C992854BAA1A0271B3E0349B22D15",
+      "relationship": "V1_MOTION_REFERENCE_NOT_PIXEL_IDENTITY_FOR_TARGETED_RECONSTRUCTION"
+    },
+    {
+      "index": 2,
+      "authoredIndex": 3,
+      "row": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/air_light/air_light_02.png",
+      "sha256": "E8D6D0B068BDFCD6AEC7C638D1A835872F9C992854BAA1A0271B3E0349B22D15",
+      "relationship": "V1_MOTION_REFERENCE_NOT_PIXEL_IDENTITY_FOR_TARGETED_RECONSTRUCTION"
+    },
+    {
+      "index": 3,
+      "authoredIndex": 4,
+      "row": 0,
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/air_light/air_light_03.png",
+      "sha256": "BBE055492AAC34BD96D205FFD1FC1FA6C310F5E4FEB62F2425031B7BFDAA0710",
+      "relationship": "V1_MOTION_REFERENCE_NOT_PIXEL_IDENTITY_FOR_TARGETED_RECONSTRUCTION"
+    }
+  ],
+  "frameProvenance": [
+    {
+      "authoredIndex": 0,
+      "rawFrameIndex": 0,
+      "frameOrigin": "TARGETED_SMOOTH_RECONSTRUCTION",
+      "sourceV1ReferenceIndex": 1,
+      "rawPath": "tools/nga-forge/review/lamuh-legacy-v2-air-normals-v1/raw/air-light-strip-v2-smooth-single-hit.png",
+      "rawSha256": "343E85420BC441893111925A2EFE1498E31F9B1496512D9FDB013CD3E0390372"
+    },
+    {
+      "authoredIndex": 1,
+      "rawFrameIndex": 1,
+      "frameOrigin": "TARGETED_CONNECTOR_ART",
+      "sourceV1ReferenceIndex": 1,
+      "rawPath": "tools/nga-forge/review/lamuh-legacy-v2-air-normals-v1/raw/air-light-strip-v2-smooth-single-hit.png",
+      "rawSha256": "343E85420BC441893111925A2EFE1498E31F9B1496512D9FDB013CD3E0390372"
+    },
+    {
+      "authoredIndex": 2,
+      "rawFrameIndex": 2,
+      "frameOrigin": "TARGETED_SMOOTH_RECONSTRUCTION",
+      "sourceV1ReferenceIndex": 2,
+      "rawPath": "tools/nga-forge/review/lamuh-legacy-v2-air-normals-v1/raw/air-light-strip-v2-smooth-single-hit.png",
+      "rawSha256": "343E85420BC441893111925A2EFE1498E31F9B1496512D9FDB013CD3E0390372"
+    },
+    {
+      "authoredIndex": 3,
+      "rawFrameIndex": 3,
+      "frameOrigin": "TARGETED_CONNECTOR_ART",
+      "sourceV1ReferenceIndex": 2,
+      "rawPath": "tools/nga-forge/review/lamuh-legacy-v2-air-normals-v1/raw/air-light-strip-v2-smooth-single-hit.png",
+      "rawSha256": "343E85420BC441893111925A2EFE1498E31F9B1496512D9FDB013CD3E0390372"
+    },
+    {
+      "authoredIndex": 4,
+      "rawFrameIndex": 4,
+      "frameOrigin": "TARGETED_SMOOTH_RECONSTRUCTION",
+      "sourceV1ReferenceIndex": 3,
+      "rawPath": "tools/nga-forge/review/lamuh-legacy-v2-air-normals-v1/raw/air-light-strip-v2-smooth-single-hit.png",
+      "rawSha256": "343E85420BC441893111925A2EFE1498E31F9B1496512D9FDB013CD3E0390372"
+    }
+  ],
+  "motionPolicy": {
+    "sourceFrameOrderPreserved": true,
+    "targetedConnectorArt": true,
+    "v2Disposition": "MODERNIZE",
+    "motionNote": "Rebuilds Jump Light as one continuous same-arm open-palm action: compact chamber, extension connector, one contact, held same-arm follow-through, and guarded recovery. The ambiguous fist strike remains excluded and the new connector spacing smooths body, coat, and loc travel without adding another hit."
+  },
+  "hitCountContract": {
+    "impactFrame": 2,
+    "impactFrames": [
+      2
+    ],
+    "visibleImpacts": 1,
+    "gameplayHits": 1
+  },
+  "timingCandidates": {
+    "A": {
+      "label": "CURRENT_LEGACY_RUNTIME_RHYTHM",
+      "phaseTicks": {
+        "startup": 2,
+        "active": 5,
+        "recovery": 4
+      },
+      "durationTicks": 11,
+      "exposureTicks": [
+        1,
+        1,
+        5,
+        2,
+        2
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_RECOMMENDED",
+      "phaseTicks": {
+        "startup": 3,
+        "active": 5,
+        "recovery": 5
+      },
+      "durationTicks": 13,
+      "exposureTicks": [
+        2,
+        1,
+        5,
+        2,
+        3
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    },
+    "C": {
+      "label": "HEAVIER_ALTERNATE",
+      "phaseTicks": {
+        "startup": 4,
+        "active": 5,
+        "recovery": 6
+      },
+      "durationTicks": 15,
+      "exposureTicks": [
+        2,
+        2,
+        5,
+        3,
+        3
+      ],
+      "preservesSourceFrameOrder": true,
+      "duplicateMeaninglessFrames": false
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": {
+      "label": "clean restrained impact",
+      "hitstopTicks": 2,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I2": {
+      "label": "recommended readable impact",
+      "hitstopTicks": 3,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    },
+    "I3": {
+      "label": "heavier review alternate",
+      "hitstopTicks": 4,
+      "contactExposureDelta": 0,
+      "recoilExposureDelta": 0,
+      "recoveryExposureDelta": 0
+    }
+  },
+  "recommendedImpactCandidate": "I2",
+  "benchmarkQuestions": [
+    "Do chamber, extension, one palm contact, follow-through, and recovery read as one continuous action?",
+    "Does B keep the palm acceleration fast while the connectors remove the pose jump?",
+    "Does the guarded recovery connect naturally to continued air movement?"
+  ]
+}

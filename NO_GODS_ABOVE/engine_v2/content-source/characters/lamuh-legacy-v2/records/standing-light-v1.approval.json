@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_animation_review",
+  "subject": "lamuh_legacy_v2.standing_light.single_hit_sequence.candidate.v1",
+  "approvedAt": "2026-08-27",
+  "sourceApplication": "Codex desktop",
+  "userInput": "i like it we cann proceed with the next animation",
+  "decisions": {
+    "motion": "APPROVED_V1_MOTION_PRESERVED",
+    "timing": "APPROVED_V2_RETIMING",
+    "selectedTimingCandidate": "B",
+    "selectedDurationTicks": 18
+  },
+  "approvalScope": "standing_light_motion_and_candidate_b_visual_retiming_only",
+  "accepted": [
+    "six-frame compact lead straight",
+    "one visible contact equal to one gameplay hit",
+    "fixed root and fixed runtime renderer scale",
+    "outline-free NGA V2 style",
+    "connected same-arm follow-through, recoil and guard recovery"
+  ],
+  "approvalBoundary": {
+    "standingLightMotionApproved": true,
+    "standingLightTimingCandidateBApproved": true,
+    "impactProfileApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "nextAuthorizedCandidateWork": "standing_medium_preservation_first_single_hit_rebuild",
+  "legacySourceRemainsImmutable": true
+}

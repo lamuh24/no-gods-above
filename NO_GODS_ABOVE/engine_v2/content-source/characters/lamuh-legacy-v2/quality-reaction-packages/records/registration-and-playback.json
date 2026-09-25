@@ -1,0 +1,33 @@
+{
+  "candidateOnly": true,
+  "canvas": {
+    "height": 1536,
+    "width": 2048
+  },
+  "deployable": false,
+  "nearFarFootMeasurement": "UNMEASURED_REGISTRATION_REFERENCES_ONLY",
+  "perFrameScale": false,
+  "root": {
+    "x": 768,
+    "y": 1360
+  },
+  "runtimePresentationException": {
+    "humanApproval": "pending",
+    "mode": "external_gameplay_state",
+    "nominalExposuresAreCombatDurations": false,
+    "ownerSource": "repo://NO_GODS_ABOVE/engine_v2/src/lamuhlegacy/quality.ts",
+    "policy": "one_shot_or_state_selected_hold_never_loop",
+    "simulationAuthorityChanged": false
+  },
+  "sequenceScale": 2.84697509,
+  "sourceManifest": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/reactions-quality.v1.json",
+  "sourceManifestSha256": "91D7E73297D19BCDAC066572046C818A86AE956D646466C304CDCBD21EDAAE01",
+  "warnings": [
+    "Human motion, adult-identity, transition, and support-foot registration review remains pending.",
+    "Fixed canvas root and silhouette-bottom registration are not anatomical support-foot measurements.",
+    "Anchor feet/nearFoot/farFoot coordinates are registration references only; the role labels explicitly exclude support-foot claims.",
+    "Nominal exposure lengths are metadata for review, not combat hitstun, launch, knockdown, or getup durations.",
+    "Runtime selects frames from simulation phase, phaseTick, velocity, grounded state, and remaining stun; it never loops a completed reaction.",
+    "This independent candidate bundle does not replace or modify the existing first-playable bundle or runtime mappings."
+  ]
+}

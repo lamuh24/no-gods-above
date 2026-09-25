@@ -1,0 +1,37 @@
+{
+  "clipId": "hit_stun",
+  "category": "damage",
+  "frameCount": 8,
+  "fps": 10,
+  "loop": false,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/inbox/hit_stun/vzzzzzzz-hitstun02-thresholded/sable_hit_stun_8.png",
+  "normalizedSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/hit_stun/v20260709-143238/sable_hit_stun_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse."
+  ],
+  "validation": {
+    "maxScaleDriftPx": 70,
+    "scaleDriftRationale": "Hit-stun movement intentionally includes recoil, bracing, and stagger-height variation; baseline, center, facing, and global normalization must still remain stable."
+  },
+  "validationStatus": "approved",
+  "approvedForPreview": true,
+  "approvedForLiveRoster": false,
+  "approvedAt": "2026-07-11T04:55:17.265Z",
+  "approvalPolicy": "manual-promote-preview"
+}

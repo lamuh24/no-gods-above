@@ -1,0 +1,21 @@
+{
+  "characterId": "sable",
+  "clipId": "neutral_special_heavy",
+  "sheetPath": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/neutral_special_heavy/v20260710-144615/sable_neutral_special_heavy_normalized_strip.png",
+  "generatedAt": "2026-07-10T18:46:17.860Z",
+  "adapter": "heuristic-validation-score",
+  "score": 80,
+  "status": "warn",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": false,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "SCALE_DRIFT: scale/readability risk."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

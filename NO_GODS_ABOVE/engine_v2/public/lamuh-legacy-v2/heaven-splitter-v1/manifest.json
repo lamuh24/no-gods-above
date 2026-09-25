@@ -1,0 +1,2899 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "APPROVED_AS_PRODUCTION_BASELINE",
+  "candidateOnly": true,
+  "deployable": false,
+  "variants": {
+    "light": {
+      "status": "APPROVED_AS_PRODUCTION_BASELINE",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 7,
+        "historicalDurationTicks": 36,
+        "reconstructedExposureTicks": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6
+        ],
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 97,
+            "maxX": 352,
+            "minY": 75,
+            "maxY": 367
+          },
+          {
+            "minX": 100,
+            "maxX": 345,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 110,
+            "maxX": 338,
+            "minY": 52,
+            "maxY": 381
+          },
+          {
+            "minX": 147,
+            "maxX": 302,
+            "minY": 52,
+            "maxY": 379
+          },
+          {
+            "minX": 153,
+            "maxX": 294,
+            "minY": 52,
+            "maxY": 380
+          },
+          {
+            "minX": 133,
+            "maxX": 314,
+            "minY": 52,
+            "maxY": 381
+          },
+          {
+            "minX": 103,
+            "maxX": 348,
+            "minY": 52,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 221,
+            "x": 224.5
+          },
+          {
+            "y": 218,
+            "x": 222.5
+          },
+          {
+            "y": 216.5,
+            "x": 224
+          },
+          {
+            "y": 215.5,
+            "x": 224.5
+          },
+          {
+            "y": 216,
+            "x": 223.5
+          },
+          {
+            "y": 216.5,
+            "x": 223.5
+          },
+          {
+            "y": 216.5,
+            "x": 225.5
+          }
+        ],
+        "contactFrame": 1,
+        "exactContactTick": null,
+        "note": "Legacy36-tick evidence; exact pose exposures/contact unrecoverable. Seven protected poses shown with reconstructed holds."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "authoredWorldRootPath": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": -4.244897959183675
+          },
+          {
+            "x": 6,
+            "y": -7.836734693877551
+          },
+          {
+            "x": 8,
+            "y": -10.775510204081634
+          },
+          {
+            "x": 8,
+            "y": -13.061224489795919
+          },
+          {
+            "x": 8,
+            "y": -14.693877551020408
+          },
+          {
+            "x": 8,
+            "y": -15.673469387755102
+          },
+          {
+            "x": 8,
+            "y": -16
+          },
+          {
+            "x": 8,
+            "y": -15.84
+          },
+          {
+            "x": 8,
+            "y": -15.36
+          },
+          {
+            "x": 8,
+            "y": -14.56
+          },
+          {
+            "x": 8,
+            "y": -13.44
+          },
+          {
+            "x": 8,
+            "y": -12
+          },
+          {
+            "x": 8,
+            "y": -10.24
+          },
+          {
+            "x": 8,
+            "y": -8.16
+          },
+          {
+            "x": 8,
+            "y": -5.759999999999998
+          },
+          {
+            "x": 8,
+            "y": -3.039999999999999
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          }
+        ],
+        "frames": [
+          {
+            "index": 0,
+            "role": "approved idle entry",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-01.png",
+            "bodyCenter": {
+              "y": 1044.995024298099,
+              "x": 709.4457817339503
+            },
+            "index": 1,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 247,
+              "x": 162
+            },
+            "sourceRegistration": {
+              "y": 348,
+              "x": 162
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "F2EAFF9EF8D7F037BD63608DEBEE4C10C890A2D864DAB896C297EDCB25D8AA30",
+            "visibleBounds": {
+              "minX": 471,
+              "maxX": 940,
+              "minY": 671,
+              "maxY": 1364
+            },
+            "role": "low loaded near-arm coil",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "5967DACEF6C564D634C55FAE6243ED71134F3495DAEF610768EE7DDA012B1689",
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-02.png",
+            "bodyCenter": {
+              "y": 954.9473421324199,
+              "x": 747.136938728389
+            },
+            "index": 2,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 219,
+              "x": 134
+            },
+            "sourceRegistration": {
+              "y": 349,
+              "x": 134
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "0365016E6B59E2B299E89DB44B2D065E7DF78EF77D51CFF277ACB8588A99795F",
+            "visibleBounds": {
+              "minX": 511,
+              "maxX": 999,
+              "minY": 566,
+              "maxY": 1362
+            },
+            "role": "knee gather with near fist chambered",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "7229F2E5FDD5EFBA206298A09EEB1EBD38F39709692243C92CA8FEE19C4B6296",
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "contact": true,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png",
+            "bodyCenter": {
+              "y": 877.6653448016518,
+              "x": 739.3102371608163
+            },
+            "index": 3,
+            "visibleImpact": true,
+            "sourcePelvis": {
+              "y": 204,
+              "x": 128
+            },
+            "sourceRegistration": {
+              "y": 352,
+              "x": 128
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "843CB30850BEE863871966307F38B77B4FD0B10811AC91C11C496439852C096D",
+            "visibleBounds": {
+              "minX": 496,
+              "maxX": 1000,
+              "minY": 381,
+              "maxY": 1353
+            },
+            "role": "single near-arm uppercut extension",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "16525FC28CD4CFB934CDCC3172F4AA991C2C785702B73F7D8352650299363669",
+            "authoredWorldRootOffset": {
+              "x": 2,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png",
+            "bodyCenter": {
+              "y": 891.3724558625139,
+              "x": 703.0545828689854
+            },
+            "index": 4,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 186,
+              "x": 168
+            },
+            "sourceRegistration": {
+              "y": 334,
+              "x": 168
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "81D35E447A051FE41B57775D30179E4466782476982B34760214D19DA1D02DFB",
+            "visibleBounds": {
+              "minX": 446,
+              "maxX": 971,
+              "minY": 381,
+              "maxY": 1345
+            },
+            "role": "same fist apex carry",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "D2FCF91C9E46F51DC929F129B6560C6F71FE9938F918C261D94AF93576BF04D9",
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": -13.061224489795919
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-06.png",
+            "bodyCenter": {
+              "y": 869.8217378818337,
+              "x": 757.4881526377574
+            },
+            "index": 5,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 219,
+              "x": 133
+            },
+            "sourceRegistration": {
+              "y": 367,
+              "x": 133
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "9E5ED5053946E4583ED47BE1817C0B9F1B5F8B607D6665DFB3255A50E27DEE4E",
+            "visibleBounds": {
+              "minX": 502,
+              "maxX": 1022,
+              "minY": 444,
+              "maxY": 1240
+            },
+            "role": "elbow release and gather",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "3897F08B2476EBB702E8D6F8C509D27E1E7535BD03308C90A054160DB5A11ABC",
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": -15.84
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-07.png",
+            "bodyCenter": {
+              "y": 826.6389455578224,
+              "x": 791.7397095883836
+            },
+            "index": 6,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 212,
+              "x": 100
+            },
+            "sourceRegistration": {
+              "y": 360,
+              "x": 100
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "70238C40588103A4A74B69151D4912945C2B3A4A801059129FF261AC580ACC79",
+            "visibleBounds": {
+              "minX": 540,
+              "maxX": 1025,
+              "minY": 474,
+              "maxY": 1155
+            },
+            "role": "guarded tucked descent",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "E4A5FD26D768D1F64ACE1B0A8C307A9F337B3CABA5D3ED9F20546216E092E856",
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": -13.44
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-08.png",
+            "bodyCenter": {
+              "y": 942.4789108355784,
+              "x": 721.2285846121787
+            },
+            "index": 7,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 141,
+              "x": 187
+            },
+            "sourceRegistration": {
+              "y": 289,
+              "x": 187
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "F67C9BA2C64154240E6AF42FC222907AB29ADDB9306F7765D1A495BA5DDDF7D4",
+            "visibleBounds": {
+              "minX": 496,
+              "maxX": 941,
+              "minY": 539,
+              "maxY": 1358
+            },
+            "role": "legs unfold for landing",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "6FB23400AF3C55364CE939186694E234DE8EE52E9C2FE551D3A687DA455AA0E3",
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": -8.16
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png",
+            "bodyCenter": {
+              "y": 1028.0573705933962,
+              "x": 725.3093595469771
+            },
+            "index": 8,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 185,
+              "x": 158
+            },
+            "sourceRegistration": {
+              "y": 287,
+              "x": 158
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "ED723F541C3CD06C92EE6F1433B34D38DD00D4E7B171EF432900CF85D85BD912",
+            "visibleBounds": {
+              "minX": 492,
+              "maxX": 963,
+              "minY": 645,
+              "maxY": 1364
+            },
+            "role": "soft two-foot catch",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "404E7D5D29F55930E12E16DFDC89A0B1DD35D47CC857E6387F9825BAC820A5D5",
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-10.png",
+            "bodyCenter": {
+              "y": 984.6523258940575,
+              "x": 735.4846610770246
+            },
+            "index": 9,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 151,
+              "x": 131
+            },
+            "sourceRegistration": {
+              "y": 289,
+              "x": 131
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "600BE437A41FB8544E325C5C61F57042BFD2D2232D03A89F2FB8C9E4558DE075",
+            "visibleBounds": {
+              "minX": 517,
+              "maxX": 952,
+              "minY": 560,
+              "maxY": 1363
+            },
+            "role": "guard recovery",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "9A322F8DF5B6320F5E9F1447FB4318475230DAB7A2D7A06805E69256090FA461",
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": 0
+            }
+          },
+          {
+            "index": 10,
+            "role": "approved idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 8,
+              "y": 0
+            }
+          }
+        ],
+        "contactFrame": 3,
+        "contactFrames": [
+          3
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png",
+          "sha256": "16525FC28CD4CFB934CDCC3172F4AA991C2C785702B73F7D8352650299363669",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "separationStatus": "opaque_body_separate_phase_arc_and_authoritative_contact_feedback"
+        },
+        "singleSequenceScale": 3.11284047,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "manually audited pelvis x; standing sandal baseline and pelvis-relative virtual ground for airborne poses",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "x": 865,
+          "y": 390
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "COMPACT_V2_VARIANT",
+          "phaseTicks": {
+            "startup": 5,
+            "active": 4,
+            "recovery": 23
+          },
+          "durationTicks": 32,
+          "exposureTicks": [
+            2,
+            1,
+            2,
+            4,
+            4,
+            3,
+            3,
+            3,
+            4,
+            4,
+            2
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED",
+          "phaseTicks": {
+            "startup": 7,
+            "active": 4,
+            "recovery": 25
+          },
+          "durationTicks": 36,
+          "exposureTicks": [
+            2,
+            3,
+            2,
+            4,
+            4,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_V2_ALTERNATE",
+          "phaseTicks": {
+            "startup": 9,
+            "active": 4,
+            "recovery": 27
+          },
+          "durationTicks": 40,
+          "exposureTicks": [
+            2,
+            5,
+            2,
+            4,
+            4,
+            3,
+            3,
+            3,
+            4,
+            4,
+            6
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 4,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 5,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 6,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      },
+      "approvalReceipt": {
+        "path": "records/heaven-splitter-v4.approval.json",
+        "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+      }
+    },
+    "medium": {
+      "status": "APPROVED_AS_PRODUCTION_BASELINE",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 7,
+        "historicalDurationTicks": 36,
+        "reconstructedExposureTicks": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6
+        ],
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 97,
+            "maxX": 352,
+            "minY": 75,
+            "maxY": 367
+          },
+          {
+            "minX": 100,
+            "maxX": 345,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 110,
+            "maxX": 338,
+            "minY": 52,
+            "maxY": 381
+          },
+          {
+            "minX": 147,
+            "maxX": 302,
+            "minY": 52,
+            "maxY": 379
+          },
+          {
+            "minX": 153,
+            "maxX": 294,
+            "minY": 52,
+            "maxY": 380
+          },
+          {
+            "minX": 133,
+            "maxX": 314,
+            "minY": 52,
+            "maxY": 381
+          },
+          {
+            "minX": 103,
+            "maxX": 348,
+            "minY": 52,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 221,
+            "x": 224.5
+          },
+          {
+            "y": 218,
+            "x": 222.5
+          },
+          {
+            "y": 216.5,
+            "x": 224
+          },
+          {
+            "y": 215.5,
+            "x": 224.5
+          },
+          {
+            "y": 216,
+            "x": 223.5
+          },
+          {
+            "y": 216.5,
+            "x": 223.5
+          },
+          {
+            "y": 216.5,
+            "x": 225.5
+          }
+        ],
+        "contactFrame": 1,
+        "exactContactTick": null,
+        "note": "Legacy36-tick evidence; exact pose exposures/contact unrecoverable. Seven protected poses shown with reconstructed holds."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "authoredWorldRootPath": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": -7.599999999999998
+          },
+          {
+            "x": 6,
+            "y": -14.399999999999995
+          },
+          {
+            "x": 8,
+            "y": -20.4
+          },
+          {
+            "x": 10,
+            "y": -25.6
+          },
+          {
+            "x": 12,
+            "y": -30
+          },
+          {
+            "x": 14,
+            "y": -33.6
+          },
+          {
+            "x": 14,
+            "y": -36.4
+          },
+          {
+            "x": 14,
+            "y": -38.4
+          },
+          {
+            "x": 14,
+            "y": -39.6
+          },
+          {
+            "x": 14,
+            "y": -40
+          },
+          {
+            "x": 14,
+            "y": -39.76331360946745
+          },
+          {
+            "x": 14,
+            "y": -39.053254437869825
+          },
+          {
+            "x": 14,
+            "y": -37.869822485207095
+          },
+          {
+            "x": 14,
+            "y": -36.213017751479285
+          },
+          {
+            "x": 14,
+            "y": -34.082840236686394
+          },
+          {
+            "x": 14,
+            "y": -31.4792899408284
+          },
+          {
+            "x": 14,
+            "y": -28.40236686390533
+          },
+          {
+            "x": 14,
+            "y": -24.852071005917157
+          },
+          {
+            "x": 14,
+            "y": -20.828402366863905
+          },
+          {
+            "x": 14,
+            "y": -16.331360946745562
+          },
+          {
+            "x": 14,
+            "y": -11.360946745562131
+          },
+          {
+            "x": 14,
+            "y": -5.917159763313604
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          }
+        ],
+        "frames": [
+          {
+            "index": 0,
+            "role": "approved idle entry",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-01.png",
+            "bodyCenter": {
+              "y": 1044.995024298099,
+              "x": 709.4457817339503
+            },
+            "index": 1,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 247,
+              "x": 162
+            },
+            "sourceRegistration": {
+              "y": 348,
+              "x": 162
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "F2EAFF9EF8D7F037BD63608DEBEE4C10C890A2D864DAB896C297EDCB25D8AA30",
+            "visibleBounds": {
+              "minX": 471,
+              "maxX": 940,
+              "minY": 671,
+              "maxY": 1364
+            },
+            "role": "low loaded near-arm coil",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "5967DACEF6C564D634C55FAE6243ED71134F3495DAEF610768EE7DDA012B1689",
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-02.png",
+            "bodyCenter": {
+              "y": 954.9473421324199,
+              "x": 747.136938728389
+            },
+            "index": 2,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 219,
+              "x": 134
+            },
+            "sourceRegistration": {
+              "y": 349,
+              "x": 134
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "0365016E6B59E2B299E89DB44B2D065E7DF78EF77D51CFF277ACB8588A99795F",
+            "visibleBounds": {
+              "minX": 511,
+              "maxX": 999,
+              "minY": 566,
+              "maxY": 1362
+            },
+            "role": "knee gather with near fist chambered",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "7229F2E5FDD5EFBA206298A09EEB1EBD38F39709692243C92CA8FEE19C4B6296",
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "contact": true,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png",
+            "bodyCenter": {
+              "y": 877.6653448016518,
+              "x": 739.3102371608163
+            },
+            "index": 3,
+            "visibleImpact": true,
+            "sourcePelvis": {
+              "y": 204,
+              "x": 128
+            },
+            "sourceRegistration": {
+              "y": 352,
+              "x": 128
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "843CB30850BEE863871966307F38B77B4FD0B10811AC91C11C496439852C096D",
+            "visibleBounds": {
+              "minX": 496,
+              "maxX": 1000,
+              "minY": 381,
+              "maxY": 1353
+            },
+            "role": "single near-arm uppercut extension",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "16525FC28CD4CFB934CDCC3172F4AA991C2C785702B73F7D8352650299363669",
+            "authoredWorldRootOffset": {
+              "x": 2,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-05.png",
+            "bodyCenter": {
+              "y": 891.3724558625139,
+              "x": 703.0545828689854
+            },
+            "index": 4,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 186,
+              "x": 168
+            },
+            "sourceRegistration": {
+              "y": 334,
+              "x": 168
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "81D35E447A051FE41B57775D30179E4466782476982B34760214D19DA1D02DFB",
+            "visibleBounds": {
+              "minX": 446,
+              "maxX": 971,
+              "minY": 381,
+              "maxY": 1345
+            },
+            "role": "same fist apex carry",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "D2FCF91C9E46F51DC929F129B6560C6F71FE9938F918C261D94AF93576BF04D9",
+            "authoredWorldRootOffset": {
+              "x": 12,
+              "y": -30
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-06.png",
+            "bodyCenter": {
+              "y": 869.8217378818337,
+              "x": 757.4881526377574
+            },
+            "index": 5,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 219,
+              "x": 133
+            },
+            "sourceRegistration": {
+              "y": 367,
+              "x": 133
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "9E5ED5053946E4583ED47BE1817C0B9F1B5F8B607D6665DFB3255A50E27DEE4E",
+            "visibleBounds": {
+              "minX": 502,
+              "maxX": 1022,
+              "minY": 444,
+              "maxY": 1240
+            },
+            "role": "elbow release and gather",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "3897F08B2476EBB702E8D6F8C509D27E1E7535BD03308C90A054160DB5A11ABC",
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": -39.76331360946745
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-07.png",
+            "bodyCenter": {
+              "y": 826.6389455578224,
+              "x": 791.7397095883836
+            },
+            "index": 6,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 212,
+              "x": 100
+            },
+            "sourceRegistration": {
+              "y": 360,
+              "x": 100
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "70238C40588103A4A74B69151D4912945C2B3A4A801059129FF261AC580ACC79",
+            "visibleBounds": {
+              "minX": 540,
+              "maxX": 1025,
+              "minY": 474,
+              "maxY": 1155
+            },
+            "role": "guarded tucked descent",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "E4A5FD26D768D1F64ACE1B0A8C307A9F337B3CABA5D3ED9F20546216E092E856",
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": -34.082840236686394
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-08.png",
+            "bodyCenter": {
+              "y": 942.4789108355784,
+              "x": 721.2285846121787
+            },
+            "index": 7,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 141,
+              "x": 187
+            },
+            "sourceRegistration": {
+              "y": 289,
+              "x": 187
+            },
+            "registration": "pelvis_to_virtual_ground",
+            "sourceSha256": "F67C9BA2C64154240E6AF42FC222907AB29ADDB9306F7765D1A495BA5DDDF7D4",
+            "visibleBounds": {
+              "minX": 496,
+              "maxX": 941,
+              "minY": 539,
+              "maxY": 1358
+            },
+            "role": "legs unfold for landing",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "6FB23400AF3C55364CE939186694E234DE8EE52E9C2FE551D3A687DA455AA0E3",
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": -20.828402366863905
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-09.png",
+            "bodyCenter": {
+              "y": 1028.0573705933962,
+              "x": 725.3093595469771
+            },
+            "index": 8,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 185,
+              "x": 158
+            },
+            "sourceRegistration": {
+              "y": 287,
+              "x": 158
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "ED723F541C3CD06C92EE6F1433B34D38DD00D4E7B171EF432900CF85D85BD912",
+            "visibleBounds": {
+              "minX": 492,
+              "maxX": 963,
+              "minY": 645,
+              "maxY": 1364
+            },
+            "role": "soft two-foot catch",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "404E7D5D29F55930E12E16DFDC89A0B1DD35D47CC857E6387F9825BAC820A5D5",
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": 0
+            }
+          },
+          {
+            "contact": false,
+            "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-10.png",
+            "bodyCenter": {
+              "y": 984.6523258940575,
+              "x": 735.4846610770246
+            },
+            "index": 9,
+            "visibleImpact": false,
+            "sourcePelvis": {
+              "y": 151,
+              "x": 131
+            },
+            "sourceRegistration": {
+              "y": 289,
+              "x": 131
+            },
+            "registration": "pelvis_x_grounded_sandal_y",
+            "sourceSha256": "600BE437A41FB8544E325C5C61F57042BFD2D2232D03A89F2FB8C9E4558DE075",
+            "visibleBounds": {
+              "minX": 517,
+              "maxX": 952,
+              "minY": 560,
+              "maxY": 1363
+            },
+            "role": "guard recovery",
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "sha256": "9A322F8DF5B6320F5E9F1447FB4318475230DAB7A2D7A06805E69256090FA461",
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": 0
+            }
+          },
+          {
+            "index": 10,
+            "role": "approved idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": 0
+            }
+          }
+        ],
+        "contactFrame": 3,
+        "contactFrames": [
+          3
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-03.png",
+          "sha256": "16525FC28CD4CFB934CDCC3172F4AA991C2C785702B73F7D8352650299363669",
+          "bodyOnlyOnWhiff": true,
+          "bodyOnlyForAllOutcomes": true,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "separationStatus": "opaque_body_separate_phase_arc_and_authoritative_contact_feedback"
+        },
+        "singleSequenceScale": 3.11284047,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "manually audited pelvis x; standing sandal baseline and pelvis-relative virtual ground for airborne poses",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "x": 865,
+          "y": 390
+        }
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "COMPACT_V2_VARIANT",
+          "phaseTicks": {
+            "startup": 8,
+            "active": 5,
+            "recovery": 26
+          },
+          "durationTicks": 39,
+          "exposureTicks": [
+            3,
+            3,
+            2,
+            5,
+            6,
+            4,
+            4,
+            4,
+            4,
+            3,
+            1
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED",
+          "phaseTicks": {
+            "startup": 10,
+            "active": 5,
+            "recovery": 28
+          },
+          "durationTicks": 43,
+          "exposureTicks": [
+            3,
+            5,
+            2,
+            5,
+            6,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_V2_ALTERNATE",
+          "phaseTicks": {
+            "startup": 12,
+            "active": 5,
+            "recovery": 30
+          },
+          "durationTicks": 47,
+          "exposureTicks": [
+            3,
+            7,
+            2,
+            5,
+            6,
+            4,
+            4,
+            4,
+            4,
+            3,
+            5
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 6,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 7,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 8,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      },
+      "approvalReceipt": {
+        "path": "records/heaven-splitter-v4.approval.json",
+        "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+      }
+    },
+    "heavy": {
+      "status": "APPROVED_AS_PRODUCTION_BASELINE",
+      "candidateOnly": true,
+      "deployable": false,
+      "rendererAuthoritative": false,
+      "simulationAuthoritative": true,
+      "simulationHz": 60,
+      "v1": {
+        "sourceFrameCount": 7,
+        "historicalDurationTicks": 36,
+        "reconstructedExposureTicks": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6
+        ],
+        "root": {
+          "x": 224,
+          "y": 382
+        },
+        "visibleBounds": [
+          {
+            "minX": 97,
+            "maxX": 352,
+            "minY": 75,
+            "maxY": 367
+          },
+          {
+            "minX": 100,
+            "maxX": 345,
+            "minY": 55,
+            "maxY": 381
+          },
+          {
+            "minX": 110,
+            "maxX": 338,
+            "minY": 52,
+            "maxY": 381
+          },
+          {
+            "minX": 147,
+            "maxX": 302,
+            "minY": 52,
+            "maxY": 379
+          },
+          {
+            "minX": 153,
+            "maxX": 294,
+            "minY": 52,
+            "maxY": 380
+          },
+          {
+            "minX": 133,
+            "maxX": 314,
+            "minY": 52,
+            "maxY": 381
+          },
+          {
+            "minX": 103,
+            "maxX": 348,
+            "minY": 52,
+            "maxY": 381
+          }
+        ],
+        "bodyCenters": [
+          {
+            "y": 221,
+            "x": 224.5
+          },
+          {
+            "y": 218,
+            "x": 222.5
+          },
+          {
+            "y": 216.5,
+            "x": 224
+          },
+          {
+            "y": 215.5,
+            "x": 224.5
+          },
+          {
+            "y": 216,
+            "x": 223.5
+          },
+          {
+            "y": 216.5,
+            "x": 223.5
+          },
+          {
+            "y": 216.5,
+            "x": 225.5
+          }
+        ],
+        "contactFrame": 1,
+        "exactContactTick": null,
+        "note": "Legacy36-tick evidence; exact pose exposures/contact unrecoverable. Seven protected poses shown with reconstructed holds."
+      },
+      "v2": {
+        "canvas": {
+          "height": 1536,
+          "width": 2048
+        },
+        "root": {
+          "y": 1360,
+          "x": 768
+        },
+        "rootPath": [
+          {
+            "x": 768,
+            "y": 1360
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "y": 1360,
+            "x": 768
+          },
+          {
+            "x": 768,
+            "y": 1360
+          }
+        ],
+        "authoredWorldRootPath": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": -10.222222222222229
+          },
+          {
+            "x": 6,
+            "y": -19.55555555555555
+          },
+          {
+            "x": 8,
+            "y": -28
+          },
+          {
+            "x": 10,
+            "y": -35.55555555555556
+          },
+          {
+            "x": 12,
+            "y": -42.222222222222214
+          },
+          {
+            "x": 14,
+            "y": -48
+          },
+          {
+            "x": 16,
+            "y": -52.888888888888886
+          },
+          {
+            "x": 18,
+            "y": -56.888888888888886
+          },
+          {
+            "x": 20,
+            "y": -60
+          },
+          {
+            "x": 20,
+            "y": -62.22222222222222
+          },
+          {
+            "x": 20,
+            "y": -63.55555555555556
+          },
+          {
+            "x": 20,
+            "y": -64
+          },
+          {
+            "x": 20,
+            "y": -63.778546712802765
+          },
+          {
+            "x": 20,
+            "y": -63.11418685121107
+          },
+          {
+            "x": 20,
+            "y": -62.00692041522491
+          },
+          {
+            "x": 20,
+            "y": -60.45674740484429
+          },
+          {
+            "x": 20,
+            "y": -58.463667820069205
+          },
+          {
+            "x": 20,
+            "y": -56.02768166089965
+          },
+          {
+            "x": 20,
+            "y": -53.148788927335644
+          },
+          {
+            "x": 20,
+            "y": -49.82698961937716
+          },
+          {
+            "x": 20,
+            "y": -46.06228373702422
+          },
+          {
+            "x": 20,
+            "y": -41.85467128027682
+          },
+          {
+            "x": 20,
+            "y": -37.20415224913495
+          },
+          {
+            "x": 20,
+            "y": -32.11072664359861
+          },
+          {
+            "x": 20,
+            "y": -26.574394463667822
+          },
+          {
+            "x": 20,
+            "y": -20.595155709342563
+          },
+          {
+            "x": 20,
+            "y": -14.173010380622841
+          },
+          {
+            "x": 20,
+            "y": -7.307958477508649
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          },
+          {
+            "x": 20,
+            "y": 0
+          }
+        ],
+        "frames": [
+          {
+            "index": 0,
+            "role": "approved idle entry",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "auraBaked": true,
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-windup-01.png",
+            "contact": false,
+            "sourceRegistration": {
+              "y": 356,
+              "x": 131
+            },
+            "visibleImpact": false,
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "bodyCenter": {
+              "y": 1074.3037758752535,
+              "x": 789.4541210568815
+            },
+            "sha256": "E54D76032F008E27083E80459D1096444DA0607DA9BE905009FDFB89753AD45D",
+            "index": 1,
+            "visibleBounds": {
+              "minX": 530,
+              "maxX": 1048,
+              "minY": 744,
+              "maxY": 1364
+            },
+            "sourceSha256": "E485D8CDB3FEECD5E6BC6C172370A65F6A98B0D1A4BB3F38C379489D1CF9567F",
+            "sourcePelvis": {
+              "y": 272,
+              "x": 131
+            },
+            "auraBaked": true,
+            "role": "heavy weight sink",
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-windup-02.png",
+            "contact": false,
+            "sourceRegistration": {
+              "y": 360,
+              "x": 114
+            },
+            "visibleImpact": false,
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "bodyCenter": {
+              "y": 1070.186361166631,
+              "x": 761.8142597946946
+            },
+            "sha256": "0E5FAC004BF4E4F8E2DC0A97A670635760FA90F4B5B22D4521F3FCD692793C98",
+            "index": 2,
+            "visibleBounds": {
+              "minX": 473,
+              "maxX": 1008,
+              "minY": 721,
+              "maxY": 1363
+            },
+            "sourceSha256": "89E9F8AA107A8FB7889F4286DC0854EE335DCEC7151996BF745AFF3B1B2E194D",
+            "sourcePelvis": {
+              "y": 279,
+              "x": 114
+            },
+            "auraBaked": true,
+            "role": "deep shoulder wind-back",
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "sourceScale": 2.490272376,
+            "bodyOnlyComparison": "previous clean pose, not a pixel-identical VFX extraction",
+            "artRedrawn": true,
+            "sourceRegistration": {
+              "y": 476,
+              "x": 321
+            },
+            "visibleBounds": {
+              "minX": 340,
+              "maxX": 1082,
+              "minY": 624,
+              "maxY": 1383
+            },
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "auraBaked": true,
+            "bodyOnlySha256": "A4B80D45D160A8FE041E9FA3F1587B7C1C5640AB18A0BDFF32D0C00FC9F4FBB9",
+            "bodyCenter": {
+              "y": 1094.8934850573166,
+              "x": 745.5920709091113
+            },
+            "magentaRemaining": 0,
+            "index": 3,
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-00.png",
+            "edgeContact": false,
+            "sourceSha256": "4A2294E01C83E422A6D496EF05761C17873A321FC3062E7B84E3EE4AF5185A0A",
+            "bodyVisibleBounds": {
+              "minX": 440,
+              "maxX": 991,
+              "minY": 756,
+              "maxY": 1362
+            },
+            "sha256": "D9B38B7AC8B4C538D4A975F98EFD0D05485543626E487F42822277BF81B8412C",
+            "bodyOnlyPublicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-00.png",
+            "sourceCrop": {
+              "y": 0,
+              "width": 490,
+              "height": 500,
+              "x": 0
+            },
+            "role": "compressed near-arm coil",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "sourceScale": 2.490272376,
+            "bodyOnlyComparison": "previous clean pose, not a pixel-identical VFX extraction",
+            "artRedrawn": true,
+            "sourceRegistration": {
+              "y": 476,
+              "x": 226
+            },
+            "visibleBounds": {
+              "minX": 333,
+              "maxX": 1095,
+              "minY": 428,
+              "maxY": 1377
+            },
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "auraBaked": true,
+            "bodyOnlySha256": "39DC7F0D380598DBFA0EA1D921C26E95710BCCCFB2583633D72612B239D85081",
+            "bodyCenter": {
+              "y": 958.6664664465751,
+              "x": 742.6426658477213
+            },
+            "magentaRemaining": 0,
+            "index": 4,
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-01.png",
+            "edgeContact": false,
+            "sourceSha256": "5E122B4147B6B548FD9EB1EF3CF44D56D0882B44B345B4106D6A71E519038B34",
+            "bodyVisibleBounds": {
+              "minX": 416,
+              "maxX": 1010,
+              "minY": 574,
+              "maxY": 1362
+            },
+            "sha256": "A130E61AB50B5B300D05EECC4999C03824E1E153A91C2A9F71DDBE4E5016EDFF",
+            "bodyOnlyPublicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-01.png",
+            "sourceCrop": {
+              "y": 0,
+              "width": 400,
+              "height": 500,
+              "x": 490
+            },
+            "role": "fist rising connector",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "sourceScale": 2.490272376,
+            "bodyOnlyComparison": "previous clean pose, not a pixel-identical VFX extraction",
+            "artRedrawn": true,
+            "sourceRegistration": {
+              "y": 468,
+              "x": 205
+            },
+            "visibleBounds": {
+              "minX": 353,
+              "maxX": 1102,
+              "minY": 268,
+              "maxY": 1402
+            },
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "auraBaked": true,
+            "bodyOnlySha256": "6BC76E8E6CE0F987418E1829C85F9CBBEAE81EDA1DD9C4CC890BE8F08995AE6E",
+            "bodyCenter": {
+              "y": 852.6710756519982,
+              "x": 744.0522888179133
+            },
+            "magentaRemaining": 0,
+            "index": 5,
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-02.png",
+            "edgeContact": false,
+            "sourceSha256": "8251D4041E9DF5A8CCF782D07840935EAAD402520740EBD42E20040253B3153E",
+            "bodyVisibleBounds": {
+              "minX": 413,
+              "maxX": 1017,
+              "minY": 380,
+              "maxY": 1327
+            },
+            "sha256": "8514ED5EE76270E4B0B9123AD4D60E709AAC6F227442C494CDF0520776A8714C",
+            "bodyOnlyPublicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-02.png",
+            "sourceCrop": {
+              "y": 0,
+              "width": 558,
+              "height": 500,
+              "x": 890
+            },
+            "role": "single powerful uppercut CONTACT",
+            "contact": true,
+            "visibleImpact": true,
+            "authoredWorldRootOffset": {
+              "x": 2,
+              "y": 0
+            }
+          },
+          {
+            "sourceScale": 2.490272376,
+            "bodyOnlyComparison": "previous clean pose, not a pixel-identical VFX extraction",
+            "artRedrawn": true,
+            "sourceRegistration": {
+              "y": 433,
+              "x": 318
+            },
+            "visibleBounds": {
+              "minX": 333,
+              "maxX": 1086,
+              "minY": 313,
+              "maxY": 1494
+            },
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "auraBaked": true,
+            "bodyOnlySha256": "94BDAD88C7E5CB59988CBCFD4DFBF02CB0B13FC1289C630A96BDE26FE50998F3",
+            "bodyCenter": {
+              "y": 867.3216654002184,
+              "x": 729.8124078710797
+            },
+            "magentaRemaining": 0,
+            "index": 6,
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-03.png",
+            "edgeContact": false,
+            "sourceSha256": "CD81FBA92B37D4F20A5D695C7AC127AF2D9C9DE2B0216F9CC8DA2621271F3BB6",
+            "bodyVisibleBounds": {
+              "minX": 390,
+              "maxX": 1009,
+              "minY": 412,
+              "maxY": 1355
+            },
+            "sha256": "C28BF49CAD5445A72E4C4FAA6A21FC6D1D954D87B3B107C8104E0412E05B0DF4",
+            "bodyOnlyPublicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-03.png",
+            "sourceCrop": {
+              "y": 500,
+              "width": 490,
+              "height": 586,
+              "x": 0
+            },
+            "role": "full extension and coat drag",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 14,
+              "y": -48
+            }
+          },
+          {
+            "sourceScale": 2.490272376,
+            "bodyOnlyComparison": "previous clean pose, not a pixel-identical VFX extraction",
+            "artRedrawn": true,
+            "sourceRegistration": {
+              "y": 428,
+              "x": 192
+            },
+            "visibleBounds": {
+              "minX": 398,
+              "maxX": 1090,
+              "minY": 348,
+              "maxY": 1392
+            },
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "auraBaked": true,
+            "bodyOnlySha256": "6A0A493E1221BF3C7C444C6CED3C024F66D0D355D0AD6BA5FA22301795CE02E1",
+            "bodyCenter": {
+              "y": 875.4783555999217,
+              "x": 756.3689006185417
+            },
+            "magentaRemaining": 0,
+            "index": 7,
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-04.png",
+            "edgeContact": false,
+            "sourceSha256": "3469E83D91BF4822EF0138F9284DDCA5B463518C7D0AAF1B32909CE312DBE9F7",
+            "bodyVisibleBounds": {
+              "minX": 455,
+              "maxX": 1007,
+              "minY": 442,
+              "maxY": 1332
+            },
+            "sha256": "ED6B60229296AA94E3C3C5BC29A1FDFB99D00597C53B3A50B9BF475056BDC802",
+            "bodyOnlyPublicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-04.png",
+            "sourceCrop": {
+              "y": 500,
+              "width": 400,
+              "height": 586,
+              "x": 490
+            },
+            "role": "apex elbow release",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": -63.778546712802765
+            }
+          },
+          {
+            "sourceScale": 2.490272376,
+            "bodyOnlyComparison": "previous clean pose, not a pixel-identical VFX extraction",
+            "artRedrawn": true,
+            "sourceRegistration": {
+              "y": 525,
+              "x": 213
+            },
+            "visibleBounds": {
+              "minX": 349,
+              "maxX": 1020,
+              "minY": 482,
+              "maxY": 1151
+            },
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "auraBaked": true,
+            "bodyOnlySha256": "3C726A80D5E2162971ECF18DF7196CB355AC2F5F90ADB87E197F77059B552CC5",
+            "bodyCenter": {
+              "y": 833.7053455177468,
+              "x": 741.3525546693797
+            },
+            "magentaRemaining": 0,
+            "index": 8,
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-05.png",
+            "edgeContact": false,
+            "sourceSha256": "27758DDA42F2BBA87212B4DA52E795374B296F0551057610190493EE6198450F",
+            "bodyVisibleBounds": {
+              "minX": 395,
+              "maxX": 965,
+              "minY": 527,
+              "maxY": 1127
+            },
+            "sha256": "90661716D0575C63AAD778DDDE069CE6F7B4C13C763BAE54F4307EA64A87DE94",
+            "bodyOnlyPublicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-release-05.png",
+            "sourceCrop": {
+              "y": 500,
+              "width": 558,
+              "height": 586,
+              "x": 890
+            },
+            "role": "guarded knee gather",
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": -60.45674740484429
+            }
+          },
+          {
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-windup-08.png",
+            "contact": false,
+            "sourceRegistration": {
+              "y": 295,
+              "x": 197
+            },
+            "visibleImpact": false,
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "bodyCenter": {
+              "y": 909.314381754617,
+              "x": 796.381345661834
+            },
+            "sha256": "FD583BADDCC12CF6189A56386DBD41DD4DC65F96E87615157EB11665D739B4CD",
+            "index": 9,
+            "visibleBounds": {
+              "minX": 474,
+              "maxX": 1052,
+              "minY": 588,
+              "maxY": 1243
+            },
+            "sourceSha256": "B57A5813577D390899D0F836C9645D41C2EB22F30EA94FC004E2FC0DCC07DFF6",
+            "sourcePelvis": {
+              "y": 147,
+              "x": 197
+            },
+            "auraBaked": true,
+            "role": "feet unfold for heavy landing",
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": -46.06228373702422
+            }
+          },
+          {
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-windup-09.png",
+            "contact": false,
+            "sourceRegistration": {
+              "y": 257,
+              "x": 131
+            },
+            "visibleImpact": false,
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "bodyCenter": {
+              "y": 1048.4279407851138,
+              "x": 771.776733579975
+            },
+            "sha256": "24749482DAEC162A9BBA2C7E587EA9ED3B6A26688267E2B2B1E19F8E9868B6D1",
+            "index": 10,
+            "visibleBounds": {
+              "minX": 495,
+              "maxX": 1020,
+              "minY": 717,
+              "maxY": 1362
+            },
+            "sourceSha256": "2FA98589B82C51DC57AD5160152B95846AF48EC9E7EAEDD08D2E5DF2FA4704AE",
+            "sourcePelvis": {
+              "y": 163,
+              "x": 131
+            },
+            "auraBaked": true,
+            "role": "deep two-foot landing compression",
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": 0
+            }
+          },
+          {
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-windup-10.png",
+            "contact": false,
+            "sourceRegistration": {
+              "y": 262,
+              "x": 95
+            },
+            "visibleImpact": false,
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "bodyCenter": {
+              "y": 1038.4046200188382,
+              "x": 767.0387535088455
+            },
+            "sha256": "2B53ED84F9FA8ED4FC27AA893CE7B23E5CDA334A75817E6F0FEA6254F28988E5",
+            "index": 11,
+            "visibleBounds": {
+              "minX": 472,
+              "maxX": 1014,
+              "minY": 687,
+              "maxY": 1362
+            },
+            "sourceSha256": "1F9318F274B4C71F1FC22F6A5D04819C13A584DB178701AB975EA29335F22109",
+            "sourcePelvis": {
+              "y": 160,
+              "x": 95
+            },
+            "auraBaked": true,
+            "role": "weight settles and guard returns",
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": 0
+            }
+          },
+          {
+            "publicPath": "/lamuh-legacy-v2/heaven-heavy-v2/heavy-windup-11.png",
+            "contact": false,
+            "sourceRegistration": {
+              "y": 267,
+              "x": 119
+            },
+            "visibleImpact": false,
+            "root": {
+              "y": 1360,
+              "x": 768
+            },
+            "bodyCenter": {
+              "y": 1001.7848330729087,
+              "x": 772.545227080078
+            },
+            "sha256": "227D63B5B7C514FB6AD2389CE15326FF42D5B334D78A1149DAC76531F8AA3E4F",
+            "index": 12,
+            "visibleBounds": {
+              "minX": 556,
+              "maxX": 994,
+              "minY": 606,
+              "maxY": 1364
+            },
+            "sourceSha256": "E5871B63BE61F86CD27555919C039F9FD6E3CE1ACCD4934365957E40DF0447C2",
+            "sourcePelvis": {
+              "y": 155,
+              "x": 119
+            },
+            "auraBaked": true,
+            "role": "coat-lag ready recovery",
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": 0
+            }
+          },
+          {
+            "index": 13,
+            "role": "approved idle endpoint",
+            "publicPath": "/lamuh-legacy-v2/movement-v2/idle-00.png",
+            "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+            "sourceSha256": "D207D76BB98D47B1EF0A8C2657B8C026CBE48D813AA66D650142191E1D9A2F27",
+            "sourceType": "modernized_still_candidate",
+            "sourceFrameIndex": null,
+            "bodyScaleCorrection": 1,
+            "sourceScaleCorrection": 0.94899,
+            "legacySha256": "54719DF801E5BEE28F1122A0A43C2EF373381AEFA9A2B55BF9B7777576FE7523",
+            "legacyIndex": 0,
+            "root": {
+              "x": 768,
+              "y": 1360
+            },
+            "visibleBounds": {
+              "minX": 562,
+              "minY": 560,
+              "maxX": 973,
+              "maxY": 1359
+            },
+            "bodyCenter": {
+              "x": 772.15,
+              "y": 969.04
+            },
+            "auraBaked": true,
+            "contact": false,
+            "visibleImpact": false,
+            "authoredWorldRootOffset": {
+              "x": 20,
+              "y": 0
+            }
+          }
+        ],
+        "contactFrame": 5,
+        "contactFrames": [
+          5
+        ],
+        "contactPresentation": {
+          "publicPath": "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/release-02.png",
+          "sha256": "8514ED5EE76270E4B0B9123AD4D60E709AAC6F227442C494CDF0520776A8714C",
+          "bodyOnlyOnWhiff": false,
+          "bodyOnlyForAllOutcomes": false,
+          "vfxEnabled": false,
+          "allowedOutcomes": [],
+          "separationStatus": "authored_body_aura_pixels_separate_hit_confirm_feedback",
+          "classification": "authored_body_plus_motion_aura"
+        },
+        "singleSequenceScale": 3.11284047,
+        "perFrameRescale": false,
+        "visualRecentering": false,
+        "placementPolicy": "manually audited pelvis x; standing sandal baseline and pelvis-relative virtual ground for airborne poses",
+        "visibleImpactCount": 1,
+        "gameplayHitCount": 1,
+        "releaseSocket": {
+          "x": 890,
+          "y": 420
+        },
+        "sourceArtCameraCorrections": [
+          1,
+          0.8
+        ],
+        "cinematicRevision": {
+          "version": 4,
+          "bodyPerformance": "deep coil, rising-fist connector, full uppercut extension, guarded gather, heavy two-foot catch",
+          "camera": "short confirmed-hit impulse, no body rescale or zoom",
+          "contactOnlyCamera": true,
+          "aura": {
+            "source": "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/normalization.report.json",
+            "layer": "redrawn_surrounding_aura_in_source_art",
+            "anchor": "actor_root_and_rising_fist",
+            "followsActor": true,
+            "mirrorsAttackFacing": true,
+            "startTick": 9,
+            "fullExposureTicks": [
+              14,
+              26
+            ],
+            "endTickExclusive": 35,
+            "alphaRange": [
+              0,
+              1
+            ],
+            "palette": "cyan_gold",
+            "hitstopFreezes": true,
+            "addsHits": false,
+            "runtimeOverlay": false,
+            "sourcePoseIndices": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "fadePoseIndex": 7,
+            "bodyOnlyFallbackRetained": true,
+            "fadePoseIndices": [
+              7,
+              8
+            ],
+            "bodyOnlyComparison": "previous clean poses, not pixel-identical aura removal"
+          },
+          "artRedrawn": true,
+          "pixelExactBodyPreservation": false
+        },
+        "auraBakedIntoFrames": true
+      },
+      "timingCandidates": {
+        "A": {
+          "label": "COMPACT_V2_VARIANT",
+          "phaseTicks": {
+            "startup": 12,
+            "active": 6,
+            "recovery": 31
+          },
+          "durationTicks": 49,
+          "exposureTicks": [
+            2,
+            3,
+            2,
+            3,
+            2,
+            6,
+            7,
+            3,
+            5,
+            8,
+            2,
+            3,
+            2,
+            1
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "B": {
+          "label": "RECOMMENDED_GAMEPLAY_ALIGNED",
+          "phaseTicks": {
+            "startup": 14,
+            "active": 6,
+            "recovery": 33
+          },
+          "durationTicks": 53,
+          "exposureTicks": [
+            2,
+            3,
+            4,
+            3,
+            2,
+            6,
+            7,
+            3,
+            5,
+            8,
+            4,
+            3,
+            2,
+            1
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        },
+        "C": {
+          "label": "HEAVIER_V2_ALTERNATE",
+          "phaseTicks": {
+            "startup": 16,
+            "active": 6,
+            "recovery": 35
+          },
+          "durationTicks": 57,
+          "exposureTicks": [
+            2,
+            3,
+            6,
+            3,
+            2,
+            6,
+            7,
+            3,
+            5,
+            8,
+            6,
+            3,
+            2,
+            1
+          ],
+          "preservesSourceFrameOrder": true,
+          "duplicateMeaninglessFrames": false
+        }
+      },
+      "recommendedTimingCandidate": "B",
+      "impactCandidates": {
+        "I1": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 8,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I2": {
+          "label": "AUTHORED",
+          "hitstopTicks": 9,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        },
+        "I3": {
+          "label": "VISUAL_IMPACT_COMPARISON",
+          "hitstopTicks": 10,
+          "contactExposureDelta": 0,
+          "recoilExposureDelta": 0,
+          "recoveryExposureDelta": 0
+        }
+      },
+      "recommendedImpactCandidate": "I2",
+      "unsupported": {
+        "counterHit": "UNSUPPORTED — not invented"
+      },
+      "approvalReceipt": {
+        "path": "records/heaven-splitter-v4.approval.json",
+        "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+      }
+    }
+  },
+  "humanApproval": {
+    "family": "APPROVED_AS_PRODUCTION_BASELINE",
+    "light": "APPROVED_AS_PRODUCTION_BASELINE",
+    "medium": "APPROVED_AS_PRODUCTION_BASELINE",
+    "heavy": "APPROVED_AS_PRODUCTION_BASELINE"
+  },
+  "contactSheets": [
+    "/lamuh-legacy-v2/heaven-splitter-v1/heaven-numbered-contact-sheet.png",
+    "/lamuh-legacy-v2/heaven-heavy-aura-redraw-v4/heavy-redrawn-aura-active-contact-sheet.png"
+  ],
+  "reviewNotes": [
+    "One near-arm uppercut throughout; modernized from legacy far-arm uppercut, not exact striking-arm preservation.",
+    "Original seven-pose rising arc remains protected; legacy airborne scale shrink and detached sandal were not reproduced.",
+    "Authored hop and vulnerable recovery belong to simulation; no invulnerability, extra hit or renderer-driven height.",
+    "Adult identity, alpha, physical contact and landing require human playback judgment.",
+    "B is gameplay-aligned. A/C retime anticipation/recovery for visual comparison only."
+  ],
+  "normalizationReport": "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/normalization.report.json",
+  "heavyCinematicRevision": {
+    "version": 4,
+    "status": "APPROVED_AS_PRODUCTION_BASELINE",
+    "normalizationReport": "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/heavy-v2.normalization.report.json",
+    "authoredAuraReport": "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/normalization.report.json",
+    "runtimeAuraOverlay": false,
+    "combatChanged": false,
+    "lightMediumChanged": false,
+    "distinctHeavyBody": true,
+    "cameraImpulseMaxPixels": 6,
+    "noZoom": true,
+    "oneHit": true,
+    "artRedrawn": true,
+    "pixelExactBodyPreservation": false
+  },
+  "approvalReceipt": {
+    "path": "records/heaven-splitter-v4.approval.json",
+    "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+  },
+  "approvalScope": "shown_current_review_family_and_B_profile_only",
+  "approvalBoundary": {
+    "currentReviewFamilyApproved": true,
+    "proceedToNextSpecialFamily": true,
+    "rosterPromotion": false,
+    "runtimeArtPromotion": false,
+    "finalCharacterApproval": false,
+    "fullProductionApproval": false,
+    "combatBalanceFinal": false,
+    "reactionPackApproved": false,
+    "deployable": false
+  }
+}

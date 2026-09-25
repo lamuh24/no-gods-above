@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_visual_review",
+  "subject": "lamuh_legacy_v2.style_checkpoint.standing_heavy_contact.v1",
+  "decision": "APPROVED_WITH_TARGETED_REPAIR",
+  "approvedAt": "2026-08-26",
+  "sourceApplication": "Codex desktop",
+  "userInput": "approved",
+  "approvalScope": "visual_identity_and_new_game_style_direction_only",
+  "approvedAsset": {
+    "path": "../../../../../../tools/nga-forge/review/lamuh-legacy-v2-style-modernization-v1/standing-heavy-contact-style-candidate-v2.png",
+    "sha256": "80A54F33C9AF405ACC42AF0439AD025E950CE769D34A8801FC2725FF455D85AE",
+    "width": 1536,
+    "height": 1024,
+    "genuineTransparency": true,
+    "sampledMagentaPercent": 0
+  },
+  "acceptedDirection": [
+    "Lamuh identity, skin tone, face, locs and celestial martial-artist personality",
+    "white, black, old-gold and cyan costume and power-language family",
+    "high-resolution NGA V2 2.5D anime rendering with dark neutral ink",
+    "body-driven high-kick contact intent and cyan-white impact language",
+    "no purple or magenta outline"
+  ],
+  "targetedRepair": [
+    "add safe transparent padding above the locs and around the contact VFX",
+    "normalize runtime pivot, baseline, body scale and 448-cell packaging",
+    "separate body and impact VFX contracts where required",
+    "prove complete Standing Heavy cross-frame identity, silhouette, striking-limb and contact-count continuity"
+  ],
+  "approvalBoundary": {
+    "styleDirectionApproved": true,
+    "singleImageRuntimeArtApproved": false,
+    "runtimeArtApproved": false,
+    "fullSequenceMotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "nextAuthorizedCandidateWork": "targeted_padding_repair_and_complete_preservation_first_standing_heavy_sequence",
+  "legacySourceRemainsImmutable": true
+}

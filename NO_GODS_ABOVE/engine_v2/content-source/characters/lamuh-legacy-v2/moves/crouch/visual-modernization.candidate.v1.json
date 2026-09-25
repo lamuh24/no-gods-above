@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_crouch_modern_visual_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "sourceMotionPreserved": true,
+  "simulationOwnsTravel": true,
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-crouch-jump-modernization-v1/normalization.report.json",
+    "sha256": "0E4437D835E76DCB12AC3FC029A99EFB80DC809EE8B3AC36B2CD3D69CA0CBFF2"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/crouch-jump-modernization-v1.hash-lock.json",
+    "sha256": "B32B9BB065C610D05BEA9FC1E94D3C9D0EEC44696F2C289C39D38D2E755EAE74"
+  },
+  "state": {
+    "sourceFrameCount": 4,
+    "authoredFrameCount": 6,
+    "selectedLegacyFrames": [
+      0,
+      1,
+      2,
+      3,
+      3,
+      0
+    ],
+    "exposureTicks": [
+      3,
+      3,
+      6,
+      6,
+      4,
+      4
+    ],
+    "durationTicks": 26,
+    "loop": false,
+    "frames": [
+      {
+        "index": 0,
+        "role": "lowering_entry",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-00.png",
+        "sha256": "D74FA203193FDD628788A85A2FB5CA66954F6589BE7CAE8A581CA6470F163456",
+        "sourceSha256": "DF38F02117265929D79B07A37154C09C88C27C7BD608070F6ACD965908D8B852",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "DC3D6607A892A4D8CD2B3C3019B9D8A39AF47D60CD95D0F8EE846F10AF643636",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 564,
+          "minY": 561,
+          "maxX": 973,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 774.753,
+          "y": 973.447
+        }
+      },
+      {
+        "index": 1,
+        "role": "lowering_connector",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-01.png",
+        "sha256": "7955AAC2D26006304029CD73F2A2548274FE4F89B7CC2D491F8FC1F0AE0A283D",
+        "sourceSha256": "9D5353109E526634E9257C9A86EB2B701A479D1233042953C4714F08D5FD1046",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "6EAA1D6FAAC8A39AA4CCF397B913CEB626A422E37B10507DEE005B946A11D25B",
+        "legacyIndex": 1,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 533,
+          "minY": 708,
+          "maxX": 1004,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 792.967,
+          "y": 1048.824
+        }
+      },
+      {
+        "index": 2,
+        "role": "deep_guarded_crouch",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-02.png",
+        "sha256": "80684B5FFA67DAA208A8A13D605D619669F6A51B07456FDA278667EB92823E04",
+        "sourceSha256": "4ABA4CF9917D106ABF8635F9927C311A240B6FA161433D2CCEE733C90CCA54F8",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "323AECCD518505CCB965E7F7F67C6F1F06206DA5F30C9B713ED9FBE0D5A4E632",
+        "legacyIndex": 2,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 536,
+          "minY": 892,
+          "maxX": 1001,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 797.828,
+          "y": 1155.662
+        }
+      },
+      {
+        "index": 3,
+        "role": "crouch_hold_settle",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-03.png",
+        "sha256": "884816B668058EAFDA91D5145C377F2FEA44764770FEC8D62E93D8986627EFDA",
+        "sourceSha256": "D7A2A8445738B48DE319144597DAB2CEA9EC3160886B3B98BF00E95922F9C64D",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "64A1BBB1ABC0C689F7F8B0E35AA55AB4750F9547FCFC5C214D9E07FB6E48A6FC",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 539,
+          "minY": 910,
+          "maxX": 997,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 798.397,
+          "y": 1165.607
+        }
+      },
+      {
+        "index": 4,
+        "role": "rising_connector",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-04.png",
+        "sha256": "4719F396A15DEC97264B1A0ADC85D02C3B73AB557374737019FA787D0F98965E",
+        "sourceSha256": "BFEBE2CED0977DC36783ACF299A81DC35A981767B3FBDB516ABF3A895263F273",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "64A1BBB1ABC0C689F7F8B0E35AA55AB4750F9547FCFC5C214D9E07FB6E48A6FC",
+        "legacyIndex": 3,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 532,
+          "minY": 764,
+          "maxX": 1006,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 795.347,
+          "y": 1091.214
+        }
+      },
+      {
+        "index": 5,
+        "role": "standing_recovery",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/crouch-05.png",
+        "sha256": "71AB25B2834118CEDF47ED4CCAA9F267A330D6A480AAF1C953EDC1D933C513AA",
+        "sourceSha256": "C28012D96802E64DA4925C6BCA9EFBB87C4D857E843BDA30C5A60AABB75AF1BD",
+        "sourceType": "imagegen_reference_edit",
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 1.63934426,
+        "legacySha256": "DC3D6607A892A4D8CD2B3C3019B9D8A39AF47D60CD95D0F8EE846F10AF643636",
+        "legacyIndex": 0,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 558,
+          "minY": 590,
+          "maxX": 980,
+          "maxY": 1362
+        },
+        "bodyCenter": {
+          "x": 774.218,
+          "y": 983.317
+        }
+      }
+    ]
+  },
+  "approvalStatus": "awaiting_human_crouch_jump_standard_grab_forward_throw_back_throw_and_combined_movement_review",
+  "humanApproval": null
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "characterId": "swahili",
+  "status": "local_playtest_scale_correction",
+  "referenceSource": "tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png",
+  "referenceCanvas": { "width": 1536, "height": 1536 },
+  "referenceBodyHeightPx": 1035,
+  "targetBodyUnits": 182,
+  "policy": "Normalize export resolution uniformly; never fit individual weapon/pose bounds. Each clip keeps one body scale and authored floor anchor.",
+  "clipOverrides": {
+    "special_forward_light": { "bodyScale": 1, "root": { "x": 768, "y": 1440 } },
+    "special_forward_medium": { "bodyScale": 1, "root": { "x": 768, "y": 1446 } },
+    "special_forward_heavy": { "bodyScale": 1, "root": { "x": 768, "y": 1440 } },
+    "special_air_heavy": { "bodyScale": 1, "root": { "x": 768, "y": 1440 } },
+    "air_special_ender": { "bodyScale": 1, "root": { "x": 768, "y": 1440 } },
+    "special_down_light": { "bodyScale": 0.81, "root": { "x": 768, "y": 1464 } }
+  },
+  "calibrationNotes": {
+    "forwardFloor": "512px exports use approximately y480 for light/heavy and y482 for medium; convert these to reference coordinates once, preserving motion within each clip.",
+    "downLight": "Upright source and head/torso comparison showed the entire 16-frame export approximately 23 percent oversized after resolution normalization. A single 0.81 correction keeps its measured head scale within 7 percent of idle; its authored floor is y488 of 512.",
+    "poseShape": "Crouches, lunges, jumps, and ball spins retain their natural silhouette changes. Skin measurements are diagnostics, not per-frame auto-scaling or motion approval."
+  }
+}

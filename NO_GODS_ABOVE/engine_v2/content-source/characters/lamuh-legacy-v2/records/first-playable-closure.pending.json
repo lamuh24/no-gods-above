@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "1.0.0",
+  "goal": "LAMUH LEGACY V2 — STANDING HEAVY COMPLETION + FIRST PLAYABLE HUMAN CLOSURE",
+  "branch": "codex/lamuh-legacy-v2-rebuild-v1",
+  "status": "candidate-only",
+  "deployable": false,
+  "productionApproved": false,
+  "humanReviewStatus": "awaiting_human_radiant_dive_family_review",
+  "standingHeavy": {
+    "motion": null,
+    "timing": null
+  },
+  "firstPlayable": {
+    "overall": null,
+    "standardGrab": "APPROVED_STANDARD_GRAB",
+    "forwardThrow": "APPROVED_FORWARD_THROW",
+    "backThrow": "APPROVED_BACK_THROW"
+  },
+  "decisionQueue": [
+    {
+      "section": "A",
+      "subject": "Standing Heavy visual/motion reconstruction",
+      "requestedEnum": [
+        "APPROVED_V1_MOTION_PRESERVED",
+        "APPROVED_WITH_TARGETED_REPAIR",
+        "REJECTED_V2_LOST_V1_FLOW",
+        "REJECTED_FOR_MOTION_REVISION"
+      ]
+    },
+    {
+      "section": "B",
+      "subject": "Standing Heavy timing",
+      "requestedEnum": [
+        "TIMING_A_V1_RHYTHM",
+        "TIMING_B_RECOMMENDED_READABILITY",
+        "TIMING_C_HEAVIER_ALTERNATE"
+      ],
+      "targetedAdjustmentAllowed": true
+    },
+    {
+      "section": "C",
+      "subject": "Overall Lamuh first playable",
+      "requestedEnum": [
+        "APPROVED_FIRST_PLAYABLE_V1",
+        "APPROVED_FIRST_PLAYABLE_WITH_POLISH_DEBT",
+        "APPROVED_WITH_TARGETED_REPAIR",
+        "REJECTED_FOR_TIMING",
+        "REJECTED_FOR_MOTION_REVISION"
+      ]
+    },
+    {
+      "section": "D",
+      "subject": "Standard grab / throws",
+      "independentDecisions": {
+        "standardGrab": "APPROVED_STANDARD_GRAB",
+        "forwardThrow": "APPROVED_FORWARD_THROW",
+        "backThrow": "APPROVED_BACK_THROW"
+      },
+      "exactTargetedRejectionReasonAllowed": true
+    },
+    {
+      "section": "E",
+      "subject": "Ascend Step Medium targeted slide-to-handspring motion repair",
+      "independentDecisions": {
+        "motion": [
+          "APPROVED_WITH_TARGETED_REPAIR",
+          "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+          "REJECTED_FOR_MOTION_REVISION"
+        ],
+        "timing": [
+          "TIMING_A_V1_RHYTHM",
+          "TIMING_B_RECOMMENDED_READABILITY",
+          "TIMING_C_HEAVIER_ALTERNATE"
+        ],
+        "transitions": [
+          "APPROVED_V1_MOTION_PRESERVED",
+          "APPROVED_WITH_TARGETED_REPAIR",
+          "REJECTED_FOR_MOTION_REVISION"
+        ],
+        "combatProfile": [
+          "APPROVED_V2_COMBAT_PROFILE",
+          "APPROVED_WITH_TARGETED_REPAIR",
+          "REJECTED_FOR_COMBAT_REDESIGN"
+        ]
+      },
+      "actionContract": "medium_one_traveling_low_slide_kick_contact_then_slide_retraction_to_handspring_coil_then_full_two_hand_floor_plant_and_hips_over_shoulders_rotation_into_one_asymmetric_single_rising_heel_launcher_contact_with_bent_counterbalance_leg_then_authored_post_contact_tuck_and_controlled_landing; simulation_owned_root_travels_forward_then_redirects_backward; light_and_heavy_unchanged",
+      "rejectedPriorCandidate": {
+        "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-two-beat-v1.rejection.json",
+        "sha256": "422CC099A7C1DEA07472CF1B57CB927C7E788D5B4EF9D677699F103BA24A1D66",
+        "decision": "REJECTED_FOR_MOTION_REVISION"
+      }
+    }
+  ],
+  "stopBoundary": "Do not start the next special family or promote this candidate until the targeted Ascend Step Medium motion-repair human review is resolved at 1x speed.",
+  "currentReviewFocus": {
+    "status": "awaiting_human_radiant_dive_family_review",
+    "requiredDecisions": [
+      "dash_forward_motion_and_transition",
+      "walk_backward_directional_motion_and_transition",
+      "dash_backward_motion_and_transition",
+      "air_dash_forward_motion_and_transition",
+      "air_dash_backward_motion_and_transition",
+      "standing_block_motion_and_transition",
+      "crouch_motion_and_transition",
+      "jump_motion_and_transition",
+      "combined_movement_scale_and_flow",
+      "crouching_block_motion_identity_and_transition",
+      "jump_adult_proportion_and_transition",
+      "all_normals_idle_and_transition_combined_flow"
+    ],
+    "comparisonRoute": "/lamuh-v1-v2-review.html",
+    "sandboxRoute": "/lamuh-legacy-sandbox.html",
+    "stopBoundary": "human_review_radiant_dive_before_later_family_or_promotion",
+    "backwardMotionRepair": {
+      "status": "awaiting_human_walk_backward_and_dash_backward_directional_review",
+      "walkBackward": null,
+      "dashBackward": null,
+      "timingChanged": false,
+      "simulationTravelChanged": false
+    },
+    "walkBackVideoRebuild": {
+      "status": "awaiting_human_video_derived_walk_backward_review",
+      "motion": null,
+      "transitions": null,
+      "generatedArtwork": false,
+      "timingChanged": false,
+      "simulationTravelChanged": false
+    },
+    "focusDecisions": [
+      "radiant_dive_airborne_entry_and_angle",
+      "radiant_dive_one_hit_and_landing",
+      "radiant_dive_adult_identity_and_scale",
+      "radiant_dive_counterplay"
+    ],
+    "starredForRevisit": [
+      {
+        "subject": "turn_facing_motion_mirrored_parity_and_transition",
+        "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+        "reason": "user_requested_may_come_back_to_it"
+      },
+      {
+        "subject": "fighter_pushbox_separation",
+        "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+        "reason": "user_requested_pass_for_now_and_mark_for_revisit",
+        "approvalReceipt": {
+          "path": "records/fighter-pushbox-separation-v1.approval.json",
+          "sha256": "A7E529AA9534B0E83A23833DD5256325658D0B630D67451C2853A97AA0944889"
+        }
+      },
+      {
+        "subject": "forward_special_family_light_medium_heavy",
+        "decision": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT",
+        "reason": "user_requested_mark_forward_specials_and_proceed",
+        "approvalReceipt": {
+          "path": "records/forward-special-family-v1.approval.json",
+          "sha256": "3FA255F97DA9B05F576580ACCF7A93722E8883E649D50FB19FC37EFDFB9AF5A1"
+        }
+      }
+    ],
+    "rejectedCandidate": {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/ascend-step-two-beat-v1.rejection.json",
+      "sha256": "422CC099A7C1DEA07472CF1B57CB927C7E788D5B4EF9D677699F103BA24A1D66",
+      "decision": "REJECTED_FOR_MOTION_REVISION"
+    },
+    "activeMotionContract": "radiant_dive_single_descending_near_arm_strike_connected_landing"
+  },
+  "forwardSpecialsProvisionalReceipt": {
+    "path": "records/forward-special-family-v1.approval.json",
+    "sha256": "3FA255F97DA9B05F576580ACCF7A93722E8883E649D50FB19FC37EFDFB9AF5A1"
+  },
+  "activeFamilyReview": "radiant_dive_light_medium_heavy",
+  "celestialPalmApproval": {
+    "path": "records/celestial-palm-v1.approval.json",
+    "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+  },
+  "completedFamilyReviews": {
+    "celestialPalm": {
+      "path": "records/celestial-palm-v1.approval.json",
+      "sha256": "6F7DF532A4B70D34431CF710642A69EC9BAD2DAEB62E8A408C6DAC4E3A3CD569"
+    },
+    "heavenSplitter": {
+      "path": "records/heaven-splitter-v4.approval.json",
+      "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+    }
+  },
+  "heavenSplitterApproval": {
+    "path": "records/heaven-splitter-v4.approval.json",
+    "sha256": "E318A6F291EE386D96D68F07A8898538EE7FB928B69F92D74FDBB72885627632"
+  }
+}

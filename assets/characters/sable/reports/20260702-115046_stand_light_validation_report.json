@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-02T15:50:46.677Z",
+  "characterId": "sable",
+  "clipId": "stand_light",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2/generated/inbox/stand_light/v20260702-114057-codex-rebuild-v2-stand-light-1-components-spread-stand_light/sable_stand_light_codex-rebuild-v2-stand-light-1-components-spread_raw_chroma.png",
+  "expected": {
+    "clipId": "stand_light",
+    "category": "normal",
+    "frameCount": 8,
+    "fps": 14,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2/generated/inbox/stand_light/v20260702-114057-codex-rebuild-v2-stand-light-1-components-spread-stand_light/sable_stand_light_codex-rebuild-v2-stand-light-1-components-spread_raw_chroma.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hitFrames": [
+      3
+    ],
+    "cancelFrames": [
+      6
+    ],
+    "notes": []
+  },
+  "overallStatus": "rejected",
+  "technicalStatus": "fail",
+  "visualStatus": "not_run",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "fail",
+      "code": "NO_ALPHA_TRANSPARENCY",
+      "message": "Image has no meaningful transparency."
+    },
+    {
+      "severity": "fail",
+      "code": "OPAQUE_FULL_BACKGROUND",
+      "message": "Opaque pixel ratio 1.000 suggests a full baked background."
+    },
+    {
+      "severity": "fail",
+      "code": "DIMENSIONS_NOT_FRAME_MULTIPLE",
+      "message": "Sheet 2201x714 is not an exact multiple of 448x448."
+    }
+  ],
+  "frameMeasurements": [],
+  "duplicateFrames": [],
+  "autoFixRecommended": true,
+  "retryPrompt": "assets/characters/sable/prompts/outbox/retry/stand_light/20260702-115046_stand_light_retry.md"
+}

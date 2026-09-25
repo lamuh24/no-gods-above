@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "1.0.0",
+  "subject": "lamuh_legacy_v2.ascend_step.medium.targeted_motion_repair.candidate.v3",
+  "status": "HASH_LOCKED_CANDIDATE_ONLY",
+  "candidateOnly": true,
+  "deployable": false,
+  "protectedV1SourcesModified": false,
+  "generationMode": "Approved Lamuh V2 slide/recovery reuse plus six bounded missing-state key poses at one locked scale: coil, backward two-hand reach, plant, asymmetric rising heel, post-contact tuck, and landing; rigid transforms are limited to in-betweens",
+  "generationPromptSummary": "Sixteen-frame targeted motion repair: aura-led traveling low slide kick, distinct slide-retraction coil, backward two-hand floor reach, two-hand plant, hips-over-shoulders transition, asymmetric single rising-heel launcher with bent counterbalance leg, authored post-contact tuck, controlled landing compression, and exact approved Idle recovery.",
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalization.report.json",
+    "sha256": "2472BAB6CB934955F3A1CBE0C840EC987CBFE75DC90310D71355D4D1E56F67F5"
+  },
+  "contactSheet": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/ascend-step-medium-slide-flip-numbered-contact-sheet.png",
+    "sha256": "EFDD7C2409446ADB6CBD70810ED30986DC5516FE37C6C33DEF167AD4349E7052"
+  },
+  "approvedBodySources": [
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+      "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-00.png",
+      "sha256": "F339AF924AF4FAA1442EB47427353E036AABA1DC5EC5B12257693D200FD1ABB9"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-02.png",
+      "sha256": "DD04F61170E028C3854B29B25E3904B99703E8C3B1ACE9E9620AADFB0371B848"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-03.png",
+      "sha256": "C1D0E4237A30503C81B4EC0094CFC67D8A7D71950948D05ED3B0A1D4CFC6A440"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-04.png",
+      "sha256": "F66E5FF2C9451161833FB931EBAF7089D4869977E91203EE432B017F162BD73A"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-slide-retraction-coil-normalized-v3.png",
+      "sha256": "FC7717A3C3F776B907AF8FCD121CFAFA729B8F0ADB41964CA849E29FBCDBD777"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-hands-reach-normalized-v3.png",
+      "sha256": "122DE6156B651479850A1A5720C8DCB62A1691F3BA7DBA0053D3142ADA574303"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-plant-normalized-v2.png",
+      "sha256": "DCFE06AD90CF042BE5D4605411E525B7FFC4BDD5C5F079FD4BE9BA85A7A6CA4C"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-asymmetric-rising-kick-normalized-v3.png",
+      "sha256": "4F255575D37D4D4E6B4108B68E473E2389D638CD0B2E96916E6D8F6F83C97433"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-post-contact-tuck-normalized-v3.png",
+      "sha256": "B9A672536D244233927A3FB731370392C146B4E77E4EF0A58747BAC3EE31218B"
+    },
+    {
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/raw/ascend-step-medium-backspring-landing-normalized-v2.png",
+      "sha256": "7F970005998A3E5A455335712D68B689CB6EF03D367F36434DF644C8D43E7E9E"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/jump-05.png",
+      "sha256": "831895FF6E3F83E8FA676A59AA6883C0EA71F94F9B703012C25C9866B13A6B80"
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-01.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88"
+    }
+  ],
+  "normalizedFrames": [
+    {
+      "index": 0,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-00.png",
+      "sha256": "54C06E9DCCCABF582FB9C080CF10D5C5110EA8FADDC8FA7BDF1631A605088706",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "targetCentroid": {
+          "x": 772.15,
+          "y": 969.04
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 1,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-01.png",
+      "sha256": "24846774AC58D93F732A9061158F0073FD123232BF0EB3E0525E31B913455674",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 689.26,
+          "y": 1073.17
+        },
+        "targetCentroid": {
+          "x": 689.26,
+          "y": 1073.17
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 2,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-02.png",
+      "sha256": "CEA87B08CE0765E531191D1984DEB554E52F535825177F77D972C578084EEAAA",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 751,
+          "y": 1111.34
+        },
+        "targetCentroid": {
+          "x": 751,
+          "y": 1111.34
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 3,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-03.png",
+      "sha256": "FAB66E4D19DA0BC73C955C59DACE6E9AEF49CB91C291ECEFE00D3D96719332CF",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 774.85,
+          "y": 1120.49
+        },
+        "targetCentroid": {
+          "x": 774.85,
+          "y": 1120.49
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 4,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-04.png",
+      "sha256": "03BEF9D0F402D60647F2877DE6811A682CE7F80A954644C034B47007E2B6885E",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 740.76,
+          "y": 1096.55
+        },
+        "targetCentroid": {
+          "x": 740.76,
+          "y": 1096.55
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 5,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-05.png",
+      "sha256": "24E08BBB32429A68712D0CE75A03CF1F3D40FCB8CC94D40A14BD6EE07F58527C",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 757.54,
+          "y": 1066.44
+        },
+        "targetCentroid": {
+          "x": 757.54,
+          "y": 1066.44
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 6,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-06.png",
+      "sha256": "AB1E45B498D7FD3C9D20169423E5A9D335CF0F28DB843E23450D2B229007D7A1",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 773.94,
+          "y": 1060.78
+        },
+        "targetCentroid": {
+          "x": 773.94,
+          "y": 1060.78
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 7,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-07.png",
+      "sha256": "856F08BDB4886414F0AD866548A747A7567546D323BF8C1A3DF0ED9073FA5C59",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "targetCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 8,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-08.png",
+      "sha256": "E9E643F8A773FBB99EE169DEC57E623107D5CFF6CE9E642E467B7206935D6A56",
+      "rigidBodyTransform": {
+        "rotationDegrees": -12,
+        "sourceCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "targetCentroid": {
+          "x": 852.32,
+          "y": 1047.93
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 9,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-09.png",
+      "sha256": "78BDF223FC391F7775F7DA05342349D6EBA5E0A286656392AACE99CFBABD2D59",
+      "rigidBodyTransform": {
+        "rotationDegrees": -10,
+        "sourceCentroid": {
+          "x": 786.85,
+          "y": 1040.05
+        },
+        "targetCentroid": {
+          "x": 786.85,
+          "y": 1040.05
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 10,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-10.png",
+      "sha256": "CE63AC7CA7F7EF9B87C3030CF1BD550A62A9C865E25680C15BD7AE5110609C9D",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 786.85,
+          "y": 1040.05
+        },
+        "targetCentroid": {
+          "x": 786.85,
+          "y": 1040.05
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 11,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-11.png",
+      "sha256": "6BE673016D51622EBF9E1958D71DA7C76110539E97B2F54AADF485D7534FB7C5",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 727.2,
+          "y": 918.13
+        },
+        "targetCentroid": {
+          "x": 727.2,
+          "y": 918.13
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 12,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-12.png",
+      "sha256": "ED0AA90EE0DF3AC3B239DE031A6272C5BF518FC54E2998A4E66E2B5E69111BBF",
+      "rigidBodyTransform": {
+        "rotationDegrees": -24,
+        "sourceCentroid": {
+          "x": 727.2,
+          "y": 918.13
+        },
+        "targetCentroid": {
+          "x": 727.2,
+          "y": 918.13
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 13,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-13.png",
+      "sha256": "478D4B87FBCD3AD90A84DBAB63E7766992E49A7CF44AFFB1135CB917DE16AAEA",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 730.92,
+          "y": 1099.42
+        },
+        "targetCentroid": {
+          "x": 730.92,
+          "y": 1099.42
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 14,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-14.png",
+      "sha256": "7C1BCE1764A0AA38E783A538457A9989D0431CA64ABE244345B09E3501C92F2A",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 783.4,
+          "y": 1117.2
+        },
+        "targetCentroid": {
+          "x": 783.4,
+          "y": 1117.2
+        },
+        "scale": 1
+      }
+    },
+    {
+      "index": 15,
+      "path": "tools/nga-forge/review/lamuh-legacy-v2-ascend-step-medium-slide-flip-v1/normalized/ascend-step-medium-15.png",
+      "sha256": "854DB2E30FFC6D22C30888B8123B208FE744DC4DB0BC313BD7192AFE1989DB88",
+      "rigidBodyTransform": {
+        "rotationDegrees": 0,
+        "sourceCentroid": {
+          "x": 768.24,
+          "y": 968.04
+        },
+        "targetCentroid": {
+          "x": 768.24,
+          "y": 968.04
+        },
+        "scale": 1
+      }
+    }
+  ],
+  "approvalBoundary": {
+    "mediumSpecialMotionApproved": false,
+    "mediumSpecialTimingApproved": false,
+    "mediumSpecialCombatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

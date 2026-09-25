@@ -1,0 +1,934 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_CANDIDATE_FAMILY_ATLAS",
+  "family": "universal_movement",
+  "candidateOnly": true,
+  "deployable": false,
+  "finalShippingAtlas": false,
+  "packing": {
+    "algorithm": "deterministic_variable_trim_shelf_pages",
+    "maxPageSize": [
+      4096,
+      4096
+    ],
+    "extrudePixels": 1,
+    "gapPixels": 2,
+    "explicitSourceBounds": true,
+    "anchorOffsetsPreserved": true
+  },
+  "pageCount": 3,
+  "sourceAssetCount": 27,
+  "pages": [
+    {
+      "pageIndex": 0,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/universal_movement/universal_movement.candidate.page-01.png",
+      "width": 3601,
+      "height": 3207,
+      "sha256": "E8A3DFC6916C27E22A9B04594E1891A67B87A0EA6AD2D0CB6EA059D649BFAA82"
+    },
+    {
+      "pageIndex": 1,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/universal_movement/universal_movement.candidate.page-02.png",
+      "width": 3905,
+      "height": 3235,
+      "sha256": "12081D8E9CCBF266ABD482AE7B398705E5C5B94996B32187D41B73B887F68C4C"
+    },
+    {
+      "pageIndex": 2,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/universal_movement/universal_movement.candidate.page-03.png",
+      "width": 2596,
+      "height": 1073,
+      "sha256": "4A9A4F4F8A4DB91340510FB795800BE49554ADBFFB8357345DFA0F5E3FD66D73"
+    }
+  ],
+  "frames": {
+    "asset_067216e931fadedc": {
+      "pageIndex": 1,
+      "region": {
+        "x": 888,
+        "y": 3,
+        "width": 910,
+        "height": 1006
+      },
+      "sourceBounds": {
+        "x": 295,
+        "y": 409,
+        "width": 910,
+        "height": 1006
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/01_dash_forward_v2_startup_load.png",
+      "sourceSha256": "067216E931FADEDCEBA423585C814785B63C0C33608E6B4E2360062D439D10A9",
+      "sourcePixelSha256": "9084DC2B10E703BE6CA3E83C5BFFA4E3C3D7854A53E68A124826413747FE6910",
+      "anchorOffset": {
+        "rootX": 473,
+        "rootY": 999
+      },
+      "aliases": [
+        {
+          "packageId": "dash_forward",
+          "sourceFrameId": "dash_forward_v2_startup_load"
+        }
+      ]
+    },
+    "asset_09827943771230f6": {
+      "pageIndex": 1,
+      "region": {
+        "x": 1227,
+        "y": 1094,
+        "width": 942,
+        "height": 975
+      },
+      "sourceBounds": {
+        "x": 356,
+        "y": 440,
+        "width": 942,
+        "height": 975
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/05_dash_forward_v2_deceleration_catch.png",
+      "sourceSha256": "09827943771230F6482B0E8FD340CB21AC4B85836F7FF46F946C2106686937D1",
+      "sourcePixelSha256": "A2D68B3E4923D52819309143E279215C7940ADFE0CD2AB8DFD4E40A00C01CDD1",
+      "anchorOffset": {
+        "rootX": 412,
+        "rootY": 968
+      },
+      "aliases": [
+        {
+          "packageId": "dash_forward",
+          "sourceFrameId": "dash_forward_v2_deceleration_catch"
+        }
+      ]
+    },
+    "asset_1557f85ecd1e10b2": {
+      "pageIndex": 0,
+      "region": {
+        "x": 873,
+        "y": 1079,
+        "width": 868,
+        "height": 1072
+      },
+      "sourceBounds": {
+        "x": 285,
+        "y": 338,
+        "width": 868,
+        "height": 1072
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_03.png",
+      "sourceSha256": "1557F85ECD1E10B2B7D12556A6948B9410A6FB3B77B70FD50B4544CC62FE2D08",
+      "sourcePixelSha256": "BAA8C7EE9FCCED58E50A4E70E0276A740AA398C5DB9A3BBA627D8D10FBD20D7A",
+      "anchorOffset": {
+        "rootX": 483,
+        "rootY": 1070
+      },
+      "aliases": [
+        {
+          "packageId": "idle",
+          "sourceFrameId": "idle_03"
+        }
+      ]
+    },
+    "asset_1995d4f21aba5e65": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1812,
+        "y": 3,
+        "width": 912,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 341,
+        "width": 912,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_release.png",
+      "sourceSha256": "1995D4F21ABA5E6568DFCD05F92AE3F88D9FE83975DD9DE8293A81DE32718DF6",
+      "sourcePixelSha256": "1B4B02C855D624EA84FE29899AF60BA6A39B13E8422B63F4D5669DDF37B980FF",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "crouch_to_standing",
+          "sourceFrameId": "crouching_block_release"
+        },
+        {
+          "packageId": "standing_to_crouch",
+          "sourceFrameId": "crouching_block_release"
+        }
+      ]
+    },
+    "asset_2cdc0ecf24c9595c": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2728,
+        "y": 3,
+        "width": 870,
+        "height": 1072
+      },
+      "sourceBounds": {
+        "x": 289,
+        "y": 339,
+        "width": 870,
+        "height": 1072
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_01.png",
+      "sourceSha256": "2CDC0ECF24C9595CCA414541DEF6ADDC881E750A45674564168117E2B17487E8",
+      "sourcePixelSha256": "70C637876020D2A45563DEF462C697F8123D960E9CF064336AF437A4F020AD56",
+      "anchorOffset": {
+        "rootX": 479,
+        "rootY": 1069
+      },
+      "aliases": [
+        {
+          "packageId": "idle",
+          "sourceFrameId": "idle_01"
+        }
+      ]
+    },
+    "asset_37c24dbe00f0822e": {
+      "pageIndex": 1,
+      "region": {
+        "x": 1837,
+        "y": 2165,
+        "width": 828,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 341,
+        "width": 828,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/04_walk_forward_opposite_contact.png",
+      "sourceSha256": "37C24DBE00F0822E74100D1249B243A72127DB69357166D094B42FDEFC81F790",
+      "sourcePixelSha256": "B506D5E76ABCB9DAD03DB43F2457BBCE2E17A513A0DD623D9BBAB1EC95B6CCC2",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_opposite_contact"
+        }
+      ]
+    },
+    "asset_3d635f9490bf91b6": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2564,
+        "y": 2155,
+        "width": 926,
+        "height": 1039
+      },
+      "sourceBounds": {
+        "x": 316,
+        "y": 376,
+        "width": 926,
+        "height": 1039
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/05_dash_backward_v3_controlled_landing.png",
+      "sourceSha256": "3D635F9490BF91B6F8017EAC0AAD2820B332742C8C78B0C4C9C854CD423DE400",
+      "sourcePixelSha256": "68EB05E3126BEFDA4E5C05F9DC0DF2D0BEC2E1326A9DED781E7F067B1C50C0C9",
+      "anchorOffset": {
+        "rootX": 452,
+        "rootY": 1032
+      },
+      "aliases": [
+        {
+          "packageId": "dash_backward",
+          "sourceFrameId": "dash_backward_v3_controlled_landing"
+        }
+      ]
+    },
+    "asset_3e93ab973437b3db": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1745,
+        "y": 1079,
+        "width": 525,
+        "height": 1068
+      },
+      "sourceBounds": {
+        "x": 458,
+        "y": 343,
+        "width": 525,
+        "height": 1068
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/turn-side-switch-compatibility-v1/01_turn_pivot_bridge.png",
+      "sourceSha256": "3E93AB973437B3DB70F1A488E561795B10E7331B0C301E0682CC238CAA6D8CDE",
+      "sourcePixelSha256": "3759D8BA0B6B008D38EF71240EEDB416452636976C1C6A0E5235F3D8BE68B39C",
+      "anchorOffset": {
+        "rootX": 310,
+        "rootY": 1065
+      },
+      "aliases": [
+        {
+          "packageId": "turn_side_switch",
+          "sourceFrameId": "turn_pivot_bridge_v1"
+        }
+      ]
+    },
+    "asset_52f955c2b7f38862": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 881,
+        "height": 1087
+      },
+      "sourceBounds": {
+        "x": 335,
+        "y": 328,
+        "width": 881,
+        "height": 1087
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/06_dash_backward_v3_guarded_recovery.png",
+      "sourceSha256": "52F955C2B7F388625690C75BDE9A9C9F6550AE63108CADD0ADB059B9418AD4A7",
+      "sourcePixelSha256": "06C70E3A58B0637C24F4BC56ECBB4391BB95EC063C42617DF637F96439420FE1",
+      "anchorOffset": {
+        "rootX": 433,
+        "rootY": 1080
+      },
+      "aliases": [
+        {
+          "packageId": "dash_backward",
+          "sourceFrameId": "dash_backward_v3_guarded_recovery"
+        }
+      ]
+    },
+    "asset_702280e3eea290e1": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2274,
+        "y": 1079,
+        "width": 911,
+        "height": 1040
+      },
+      "sourceBounds": {
+        "x": 302,
+        "y": 375,
+        "width": 911,
+        "height": 1040
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/01_dash_backward_v3_load_low.png",
+      "sourceSha256": "702280E3EEA290E1DAFC52D4E1B19FE28A6617271006628730BD0F0169891C74",
+      "sourcePixelSha256": "F32FCD5CFE7FCA37ECCCB3C2C14FD7808FC4B75A28DC9E05269BE273F9D3ED72",
+      "anchorOffset": {
+        "rootX": 466,
+        "rootY": 1033
+      },
+      "aliases": [
+        {
+          "packageId": "dash_backward",
+          "sourceFrameId": "dash_backward_v3_load_low"
+        }
+      ]
+    },
+    "asset_7128ca1c1a0a8328": {
+      "pageIndex": 0,
+      "region": {
+        "x": 920,
+        "y": 2155,
+        "width": 821,
+        "height": 1036
+      },
+      "sourceBounds": {
+        "x": 357,
+        "y": 351,
+        "width": 821,
+        "height": 1036
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/03_dash_backward_v3_compact_retreat_hop_slide.png",
+      "sourceSha256": "7128CA1C1A0A83284DF149F8F8A1D2B068269D9893C55374606C08BD2086BBF7",
+      "sourcePixelSha256": "F6824E61C5551C7E4330DBFD95479BDB815CFBA9D312234B5AB6F26FDC90AE16",
+      "anchorOffset": {
+        "rootX": 411,
+        "rootY": 1057
+      },
+      "aliases": [
+        {
+          "packageId": "dash_backward",
+          "sourceFrameId": "dash_backward_v3_compact_retreat_hop_slide"
+        }
+      ]
+    },
+    "asset_88aa55d699f9cf31": {
+      "pageIndex": 1,
+      "region": {
+        "x": 2771,
+        "y": 3,
+        "width": 1060,
+        "height": 893
+      },
+      "sourceBounds": {
+        "x": 238,
+        "y": 522,
+        "width": 1060,
+        "height": 893
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/03_dash_forward_v2_committed_launch.png",
+      "sourceSha256": "88AA55D699F9CF3157DE288B01F7A1807606C71EE4DFEB754D819E136D51AD6A",
+      "sourcePixelSha256": "61704AF911B26C83A266EC3B7046569DEE12CAA5C6728E82986F06B412310E18",
+      "anchorOffset": {
+        "rootX": 530,
+        "rootY": 886
+      },
+      "aliases": [
+        {
+          "packageId": "dash_forward",
+          "sourceFrameId": "dash_forward_v2_committed_launch"
+        }
+      ]
+    },
+    "asset_938efde85655be57": {
+      "pageIndex": 2,
+      "region": {
+        "x": 903,
+        "y": 3,
+        "width": 841,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 288,
+        "y": 340,
+        "width": 841,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/07_walk_forward_opposite_passing.png",
+      "sourceSha256": "938EFDE85655BE57EA8197980F7FD4260159BAC51B41086E77F3B0C0BE4E487F",
+      "sourcePixelSha256": "2948DE0F40F3872FC93EFB092CDF165F3AFA422EC4FB7E3A706217E1FC28869D",
+      "anchorOffset": {
+        "rootX": 480,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_opposite_passing"
+        }
+      ]
+    },
+    "asset_97499bf7bef88a66": {
+      "pageIndex": 2,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 896,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 216,
+        "y": 341,
+        "width": 896,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/06_walk_forward_opposite_down.png",
+      "sourceSha256": "97499BF7BEF88A66B1A185974D29DCF11295B4741AD62F17C947AE40CCE80B00",
+      "sourcePixelSha256": "BF9E8BE6290BC8D91562D0D3C3BBC966B0F75FDA76D37DCEEA36B8592F2C3667",
+      "anchorOffset": {
+        "rootX": 552,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_opposite_down"
+        }
+      ]
+    },
+    "asset_a1844c8a86ee2b70": {
+      "pageIndex": 1,
+      "region": {
+        "x": 2669,
+        "y": 2165,
+        "width": 845,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 314,
+        "y": 340,
+        "width": 845,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/05_walk_forward_return.png",
+      "sourceSha256": "A1844C8A86EE2B709161C5BE73EDC450655CE6DB4262AFBED7A7CA786EBDDB1E",
+      "sourcePixelSha256": "D894E06DEB130709B1891CBB35B4912ACD36B5657D5BF7E7ADAC069074470697",
+      "anchorOffset": {
+        "rootX": 454,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_return"
+        }
+      ]
+    },
+    "asset_a33a3c81f8c554a9": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 865,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 289,
+        "y": 342,
+        "width": 865,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png",
+      "sourceSha256": "A33A3C81F8C554A9E0A750B91EB875A17F7513A70DE646D8E2DBC2956BF2E077",
+      "sourcePixelSha256": "E0CD031A0D75902B8637CF1EFB5C91D090777495D3FE809CBAF688AB1094718B",
+      "anchorOffset": {
+        "rootX": 479,
+        "rootY": 1066
+      },
+      "aliases": [
+        {
+          "packageId": "crouch_to_standing",
+          "sourceFrameId": "idle_00"
+        },
+        {
+          "packageId": "idle",
+          "sourceFrameId": "idle_00"
+        },
+        {
+          "packageId": "standing_to_crouch",
+          "sourceFrameId": "idle_00"
+        },
+        {
+          "packageId": "turn_side_switch",
+          "sourceFrameId": "idle_00"
+        }
+      ]
+    },
+    "asset_ad74794522c34c31": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 2165,
+        "width": 913,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 298,
+        "y": 341,
+        "width": 913,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/02_walk_forward_neutral_departure.png",
+      "sourceSha256": "AD74794522C34C31D9FD1980A52AEEEF21CB26F7C9EA23B19E368844A96954CB",
+      "sourcePixelSha256": "6F512671C7FCDDB0FEBDE88EC0F89655E97FC1C6DD19B4BEAD03E21AB98BCE4A",
+      "anchorOffset": {
+        "rootX": 470,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_neutral_departure"
+        }
+      ]
+    },
+    "asset_b109a3a3d6e402ea": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 1079,
+        "width": 866,
+        "height": 1070
+      },
+      "sourceBounds": {
+        "x": 288,
+        "y": 339,
+        "width": 866,
+        "height": 1070
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_02.png",
+      "sourceSha256": "B109A3A3D6E402EA4E52DFAEBBFF155CCA26099A6FE8810A82E1EAB99C5BC3ED",
+      "sourcePixelSha256": "CBAD86B1C0B0D427028976EC732A22A23C03D5D8A52D27D553A12EC467B6A7CE",
+      "anchorOffset": {
+        "rootX": 480,
+        "rootY": 1069
+      },
+      "aliases": [
+        {
+          "packageId": "idle",
+          "sourceFrameId": "idle_02"
+        }
+      ]
+    },
+    "asset_b8195f0b3c6e5102": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 2155,
+        "width": 913,
+        "height": 1049
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 366,
+        "width": 913,
+        "height": 1049
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/02_dash_backward_v3_push_away.png",
+      "sourceSha256": "B8195F0B3C6E510255BEA5EDA6E1A5F079EFB0FAB3CCEDB65D0B673DA383DA23",
+      "sourcePixelSha256": "EEEA01F9860ED9EA8E3DAE9FE0D412287DB9D75FA326F05C5821B444481EDB98",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1042
+      },
+      "aliases": [
+        {
+          "packageId": "dash_backward",
+          "sourceFrameId": "dash_backward_v3_push_away"
+        }
+      ]
+    },
+    "asset_c131729bb0a15e1f": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3073,
+        "y": 1094,
+        "width": 829,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 299,
+        "y": 340,
+        "width": 829,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/01_walk_forward_contact.png",
+      "sourceSha256": "C131729BB0A15E1FC578C34E0EE9DAF617FDF9C935AE13B5516C2356B4E6707F",
+      "sourcePixelSha256": "DA00FB744892FDE43158ABAA9341326DEDC6D5063D4471A0A7782DF0392C96CA",
+      "anchorOffset": {
+        "rootX": 469,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_contact"
+        }
+      ]
+    },
+    "asset_c6da56d6273ec229": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1745,
+        "y": 2155,
+        "width": 815,
+        "height": 1024
+      },
+      "sourceBounds": {
+        "x": 359,
+        "y": 355,
+        "width": 815,
+        "height": 1024
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/04_dash_backward_v3_max_retreat.png",
+      "sourceSha256": "C6DA56D6273EC2296E6B8868149B54B570814B76FAE0E26AAC14E0DCA28CEA4E",
+      "sourcePixelSha256": "D1AE40A8484455A4D4613BFCFB74B638F8E8F5A01DB4F2B5B3FD94627F607552",
+      "anchorOffset": {
+        "rootX": 409,
+        "rootY": 1053
+      },
+      "aliases": [
+        {
+          "packageId": "dash_backward",
+          "sourceFrameId": "dash_backward_v3_max_retreat"
+        }
+      ]
+    },
+    "asset_d2ed4be2be6d2b28": {
+      "pageIndex": 1,
+      "region": {
+        "x": 1802,
+        "y": 3,
+        "width": 965,
+        "height": 981
+      },
+      "sourceBounds": {
+        "x": 73,
+        "y": 434,
+        "width": 965,
+        "height": 981
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/02_dash_forward_v2_grounded_push_connector.png",
+      "sourceSha256": "D2ED4BE2BE6D2B28D9E6B5BD480555AE7FAB8BD533E86FD96F4A6557A755FF93",
+      "sourcePixelSha256": "F527208BED363FA0C8542432E38ED5D482A920E7790B057573B11391DC0A51A6",
+      "anchorOffset": {
+        "rootX": 695,
+        "rootY": 974
+      },
+      "aliases": [
+        {
+          "packageId": "dash_forward",
+          "sourceFrameId": "dash_forward_v2_grounded_push_connector"
+        }
+      ]
+    },
+    "asset_d4e7dbb81a503f6f": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 1094,
+        "width": 1220,
+        "height": 688
+      },
+      "sourceBounds": {
+        "x": 160,
+        "y": 727,
+        "width": 1220,
+        "height": 688
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/04_dash_forward_v2_low_travel_carry.png",
+      "sourceSha256": "D4E7DBB81A503F6FD44238EB856C7E7C2108807F013A63950220C1CE73FA310B",
+      "sourcePixelSha256": "7C5334126498EF00A0D3B83F0ADEEB3CA4071C06120DA1EA352F9D4F9C976AE9",
+      "anchorOffset": {
+        "rootX": 608,
+        "rootY": 681
+      },
+      "aliases": [
+        {
+          "packageId": "dash_forward",
+          "sourceFrameId": "dash_forward_v2_low_travel_carry"
+        }
+      ]
+    },
+    "asset_e0795f4bbf2fe70a": {
+      "pageIndex": 0,
+      "region": {
+        "x": 872,
+        "y": 3,
+        "width": 936,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 308,
+        "y": 340,
+        "width": 936,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouch.png",
+      "sourceSha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "sourcePixelSha256": "2434E27FA5E02C4278CC4E5DF48F064881A8EA83A79C6D44D3095383EDF73D12",
+      "anchorOffset": {
+        "rootX": 460,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "crouch_to_standing",
+          "sourceFrameId": "crouch"
+        },
+        {
+          "packageId": "standing_to_crouch",
+          "sourceFrameId": "crouch"
+        }
+      ]
+    },
+    "asset_e33cda0f93ada445": {
+      "pageIndex": 1,
+      "region": {
+        "x": 920,
+        "y": 2165,
+        "width": 913,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 347,
+        "y": 340,
+        "width": 913,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/03_walk_forward_passing.png",
+      "sourceSha256": "E33CDA0F93ADA445AFC303EE42AF7FF1E40545B49620BDB9263945AED08A2EBB",
+      "sourcePixelSha256": "AF681F5AFFE53ED5F51C12DDB94964FBC9AE8A4DDB0148B58B98C1C246892723",
+      "anchorOffset": {
+        "rootX": 421,
+        "rootY": 1068
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_passing"
+        }
+      ]
+    },
+    "asset_ec3c5b2b778ddc35": {
+      "pageIndex": 1,
+      "region": {
+        "x": 2173,
+        "y": 1094,
+        "width": 896,
+        "height": 1017
+      },
+      "sourceBounds": {
+        "x": 302,
+        "y": 398,
+        "width": 896,
+        "height": 1017
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/06_dash_forward_v2_brake_recovery.png",
+      "sourceSha256": "EC3C5B2B778DDC35441417F54A8F9F7EBEF7DCA62B618F0006AD3AD2CBF5C5AC",
+      "sourcePixelSha256": "50E5695B9D1FD57B98B80BD7B4CCAEC3666C8CC2CC02C49433C521E724F494A7",
+      "anchorOffset": {
+        "rootX": 466,
+        "rootY": 1010
+      },
+      "aliases": [
+        {
+          "packageId": "dash_forward",
+          "sourceFrameId": "dash_forward_v2_brake_recovery"
+        }
+      ]
+    },
+    "asset_ff4bab60315d9ad0": {
+      "pageIndex": 2,
+      "region": {
+        "x": 1748,
+        "y": 3,
+        "width": 845,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 298,
+        "y": 341,
+        "width": 845,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/08_walk_forward_opposite_up_return.png",
+      "sourceSha256": "FF4BAB60315D9AD085B1B4854148344AB83B012D0CFC16B4D90920F7EF1B38FD",
+      "sourcePixelSha256": "76FB316A429565F5AA838BE64669265F458464AB1D8E47B6D42A248F8293CECB",
+      "anchorOffset": {
+        "rootX": 470,
+        "rootY": 1067
+      },
+      "aliases": [
+        {
+          "packageId": "walk_forward",
+          "sourceFrameId": "walk_forward_opposite_up_return"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "pixelExactReconstruction": true,
+    "reconstructionMismatches": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "characterId": "sable",
+  "clipId": "jump",
+  "sheetPath": "assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2/normalized/jump/v20260701-101229/sable_jump_normalized_strip.png",
+  "generatedAt": "2026-07-01T14:12:30.900Z",
+  "adapter": "heuristic-validation-score",
+  "score": 8,
+  "status": "fail",
+  "humanReviewNeeded": true,
+  "identityDriftDetected": false,
+  "suspiciousOutput": true,
+  "summary": "Heuristic visual QA found risk that should block auto preview approval.",
+  "factors": [
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "DETACHED_COMPONENTS: detached body/VFX fragments require human review.",
+    "POSSIBLE_DUPLICATE_FRAMES: subtle or repeated motion; acceptable only with review."
+  ],
+  "notes": [
+    "This is a heuristic score derived from technical measurements and artifact flags.",
+    "No multimodal identity-drift adapter is connected yet; live roster promotion still requires human approval.",
+    "SpriteForge remains the approval gatekeeper even when SpriteBuilder or another provider generates the image."
+  ]
+}

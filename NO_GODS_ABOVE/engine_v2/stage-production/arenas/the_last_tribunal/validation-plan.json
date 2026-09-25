@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0-stage-validation-plan",
+  "arenaId": "the_last_tribunal",
+  "status": "production_arena_graybox_candidate",
+  "deployable": false,
+  "approvalState": "awaiting_human_graybox_and_concept_approval",
+  "globalAssertions": [
+    "The deterministic 2D combat plane remains the only authority for fighter roots, floor, walls, collision, spacing, and match outcome.",
+    "The approved Stage Vertical Slice V1 camera, scale mapping, sprite presentation, grounding, and 12-tick return remain unchanged.",
+    "Both fighters remain readable against the arena at gameplay distance and through the approved jump range.",
+    "Foreground, architecture, atmosphere, and environmental motion never occlude fighter silhouettes or required VFX.",
+    "Visual wall pylons correspond to world X -8.4 and 8.4 without defining those walls.",
+    "Fighter contact shadows align to serialized roots on the flat Y 0 receiver and never influence grounding.",
+    "All camera and environmental presentation events are deterministic, deduplicated, abortable, mirrored, and rollback-replay safe.",
+    "Clean and diagnostic-overlay captures reproduce from the same simulation fixture and presentation seed.",
+    "WebGL2 remains the baseline and the approved browser/GPU budgets are met.",
+    "No stage-specific hazard, moving collision, render-to-simulation query, or gameplay dependency exists."
+  ],
+  "scenarios": [
+    {
+      "id": "center_stage",
+      "setup": ["Place P1 at simulation X -76 and P2 at 76 on floor Y 0 with approved idle assets."],
+      "assertions": ["Both roots and full silhouettes are contained with approved scale.", "The central contrast mask, floor inlay, shadows, and eclipse hierarchy remain readable without visual competition."],
+      "captures": ["center_stage_clean", "center_stage_contract_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "left_corner",
+      "setup": ["Place the defender at simulation X -420 and attacker at -310 on floor Y 0."],
+      "assertions": ["The left wall pylon visually corresponds to world X -8.4.", "Both fighters remain visible against the calm corner backing with no foreground or column occlusion."],
+      "captures": ["left_corner_clean", "left_corner_wall_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "right_corner",
+      "setup": ["Place the defender at simulation X 420 and attacker at 310 on floor Y 0."],
+      "assertions": ["The right wall pylon visually corresponds to world X 8.4.", "Framing, contrast, scale, and occlusion are symmetric with the left-corner case."],
+      "captures": ["right_corner_clean", "right_corner_wall_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "p1_p2_side_switch",
+      "setup": ["Move the unordered fighter pair through a deterministic center crossover and swap their left/right positions."],
+      "assertions": ["The gameplay camera does not cut, orbit, flip, or alter facing.", "P1/P2 presentation mirroring and shadows remain attached to the correct serialized roots."],
+      "captures": ["side_switch_before", "side_switch_cross", "side_switch_after"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "high_jump",
+      "setup": ["Set one serialized fighter root to world Y 3.6 and the other to floor Y 0 at combat distance."],
+      "assertions": ["Both fighters remain contained within the approved jump target and distance range.", "The airborne silhouette stays below the oculus rim and is not lost in haze or architecture."],
+      "captures": ["high_jump_clean", "high_jump_camera_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "crouch",
+      "setup": ["Display an approved crouch presentation pose for one fighter at center while the other remains idle."],
+      "assertions": ["Low silhouette and feet remain distinct from the floor inlay and contact shadow.", "Sprite scale and root alignment do not change with the shorter pose."],
+      "captures": ["crouch_clean", "crouch_root_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "knockdown",
+      "setup": ["Display an approved knockdown presentation pose near center and near one wall using the same serialized root."],
+      "assertions": ["The prone silhouette is readable against floor value and brass lines.", "Shadow footprint changes visually but remains rooted to the authoritative contact plane."],
+      "captures": ["knockdown_center", "knockdown_corner", "knockdown_shadow_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "command_grab",
+      "setup": ["Replay the deterministic command_grab_camera event at center and each corner for its full 32 ticks."],
+      "assertions": ["Both fighters and floor contact remain visible throughout the constrained close_combat track.", "Rollback invalidation removes the event and the camera reaches approved gameplay framing without duplicate reactions."],
+      "captures": ["command_grab_entry", "command_grab_impact", "command_grab_return"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "super",
+      "setup": ["Replay the deterministic super_camera event with an approved validation VFX proxy and a confirmed defender."],
+      "assertions": ["Both fighters and the complete attack line fit the wide_super volume.", "Background emission remains below safety caps and the 12-tick return is identical after rollback replay."],
+      "captures": ["super_entry", "super_peak", "super_return"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "ultimate",
+      "setup": ["Replay the deterministic ultimate_camera event at center and mirrored direction for its full 60 ticks."],
+      "assertions": ["Attacker and defender remain visible through setup and impact without a free orbit.", "Mirrored replay uses symmetric lateral camera values and identical timing, abort, and return behavior."],
+      "captures": ["ultimate_entry", "ultimate_impact", "ultimate_mirrored", "ultimate_return"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "large_beam",
+      "setup": ["Render an approved full-width validation beam proxy through world X -9.2 to 9.2 and Y 0.4 to 4.8."],
+      "assertions": ["The beam edge, attacker, and defender remain separable from background emission.", "No stage light, haze, decal, or eclipse feature clips or masks the beam corridor."],
+      "captures": ["large_beam_clean", "large_beam_safety_overlay"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "projectile",
+      "setup": ["Move an approved validation projectile proxy across the Y 0.45 to 3.8 projectile lane in both directions."],
+      "assertions": ["Projectile silhouette and trail remain readable at center and corners.", "Parallax planes and atmospheric effects cannot appear in front of the projectile or change its gameplay path."],
+      "captures": ["projectile_left_to_right", "projectile_right_to_left", "projectile_lane_overlay"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "hit_sparks",
+      "setup": ["Render approved bright and dark validation hit-spark proxies within 2.2 world units of each fighter root."],
+      "assertions": ["Spark cores, edges, and impacted limbs remain identifiable against every contrast zone.", "Stage emission and light response do not create a false impact or obscure the real one."],
+      "captures": ["hit_spark_center", "hit_spark_left_corner", "hit_spark_right_corner"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "dark_costume",
+      "setup": ["Use the approved dark-costume validation proxy at center, both corners, and high jump."],
+      "assertions": ["Silhouette, face, limbs, and authored edge treatment remain readable against ink and ash values.", "Stage rim response stays optional and never changes sprite identity or gameplay state."],
+      "captures": ["dark_costume_center", "dark_costume_corners", "dark_costume_jump"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "bright_costume",
+      "setup": ["Use the approved bright-costume validation proxy at center, both corners, and in front of the eclipse."],
+      "assertions": ["Bright costume values do not merge with brass, sky, or corona highlights.", "Color grading preserves sprite palette and avoids clipping or stage-colored contamination."],
+      "captures": ["bright_costume_center", "bright_costume_corners", "bright_costume_eclipse"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "mirrored_fighter",
+      "setup": ["Render the same approved fighter asset authored-facing and runtime-mirrored at equal roots and scale."],
+      "assertions": ["Root, baseline, body scale, sampling, and shadow remain identical after mirroring.", "No source frames are spliced, limb identity is preserved, and camera-facing does not alter gameplay-facing."],
+      "captures": ["mirrored_fighter_pair", "mirrored_root_overlay"],
+      "rollbackRequired": false
+    },
+    {
+      "id": "rollback_replay",
+      "setup": ["Record a sequence containing side switch, command grab, environmental reaction, super, and camera abort; rollback and replay from before every trigger."],
+      "assertions": ["Every event ID, camera pose, reaction phase, sprite root, and capture hash matches the original replay at the same tick.", "Invalidated events disappear and no camera, particle, light, audio marker, or reaction duplicates."],
+      "captures": ["rollback_original_sequence", "rollback_replayed_sequence", "rollback_hash_report"],
+      "rollbackRequired": true
+    },
+    {
+      "id": "browser_gpu_performance",
+      "setup": ["Run the complete scenario loop on each approved browser/GPU matrix entry with performance instrumentation enabled."],
+      "assertions": ["The arena remains within draw-call, triangle, texture, material, light, and memory budgets.", "Frame rate meets each matrix target without changing deterministic simulation or presentation-event output."],
+      "captures": ["performance_hud_clean", "performance_budget_report", "browser_gpu_matrix_report"],
+      "rollbackRequired": true
+    }
+  ],
+  "deviceMatrix": [
+    { "browser": "Chromium WebGL2 current shipping", "gpuClass": "desktop_discrete_D3D11", "resolution": "1920x1080", "targetFps": 60 },
+    { "browser": "Firefox WebGL2 current shipping", "gpuClass": "desktop_discrete", "resolution": "1920x1080", "targetFps": 60 },
+    { "browser": "Chromium WebGL2 current shipping", "gpuClass": "integrated_GPU", "resolution": "1280x720", "targetFps": 55 },
+    { "browser": "Safari WebGL2 current shipping", "gpuClass": "Apple_integrated_GPU", "resolution": "1920x1080", "targetFps": 60 }
+  ],
+  "capturePolicy": {
+    "deterministicEnvironmentMotion": "Freeze to simulation tick for stills; for sequences seed every permitted motion channel from matchId plus arenaId and record the seed.",
+    "overlayPair": "Every visual scenario requires a clean capture and a paired diagnostic overlay showing roots, floor, bounds, camera safe frame, contrast masks, VFX regions, and occlusion limits as applicable.",
+    "naming": "{arenaId}_{scenarioId}_{simulationTick}_{browser}_{gpuClass}_{clean|overlay}.png",
+    "report": "Record contract version, asset hashes, browser/GPU, resolution, performance counters, event IDs, simulation fixture hash, capture hash, and pass/fail assertions in JSON and Markdown."
+  },
+  "approvalGate": "human_graybox_and_concept_approval_required_before_final_art_production"
+}

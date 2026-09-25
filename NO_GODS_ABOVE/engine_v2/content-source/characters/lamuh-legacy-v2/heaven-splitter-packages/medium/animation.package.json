@@ -1,0 +1,971 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "heaven_splitter_medium",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 43,
+  "sourceFrames": [
+    {
+      "id": "heaven_splitter_medium_frame_0",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_1",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-01.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "5967DACEF6C564D634C55FAE6243ED71134F3495DAEF610768EE7DDA012B1689",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_2",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-02.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "7229F2E5FDD5EFBA206298A09EEB1EBD38F39709692243C92CA8FEE19C4B6296",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_3",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-03.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "16525FC28CD4CFB934CDCC3172F4AA991C2C785702B73F7D8352650299363669",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_4",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-05.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "D2FCF91C9E46F51DC929F129B6560C6F71FE9938F918C261D94AF93576BF04D9",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_5",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-06.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "3897F08B2476EBB702E8D6F8C509D27E1E7535BD03308C90A054160DB5A11ABC",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_6",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-07.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "E4A5FD26D768D1F64ACE1B0A8C307A9F337B3CABA5D3ED9F20546216E092E856",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_7",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-08.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "6FB23400AF3C55364CE939186694E234DE8EE52E9C2FE551D3A687DA455AA0E3",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_8",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-09.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "404E7D5D29F55930E12E16DFDC89A0B1DD35D47CC857E6387F9825BAC820A5D5",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_9",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-frames-v1/heaven-10.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "9A322F8DF5B6320F5E9F1447FB4318475230DAB7A2D7A06805E69256090FA461",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    },
+    {
+      "id": "heaven_splitter_medium_frame_10",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "661A1BFF15DE6AE4082ABF1691CA0220F31219FA3BE46E89C6933269453225BD",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/provenance.json",
+      "metadataUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/registration.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_0",
+      "start": 0,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_1",
+      "start": 3,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_2",
+      "start": 8,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_3",
+      "start": 10,
+      "duration": 5
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_4",
+      "start": 15,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_5",
+      "start": 21,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_6",
+      "start": 25,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_7",
+      "start": 29,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_8",
+      "start": 33,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_9",
+      "start": 37,
+      "duration": 3
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_10",
+      "start": 40,
+      "duration": 3
+    }
+  ],
+  "phases": {
+    "anticipation": [],
+    "startup": [
+      {
+        "start": 0,
+        "end": 9
+      }
+    ],
+    "active": [
+      {
+        "start": 10,
+        "end": 14
+      }
+    ],
+    "impact": [],
+    "followThrough": [],
+    "recovery": [
+      {
+        "start": 15,
+        "end": 42
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [
+    {
+      "start": 33,
+      "end": 42,
+      "result": "special_landing"
+    }
+  ],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "heaven_splitter_medium_frame_0",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 3,
+      "sourceFrameId": "heaven_splitter_medium_frame_1",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 8,
+      "sourceFrameId": "heaven_splitter_medium_frame_2",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 10,
+      "sourceFrameId": "heaven_splitter_medium_frame_3",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 15,
+      "sourceFrameId": "heaven_splitter_medium_frame_4",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 21,
+      "sourceFrameId": "heaven_splitter_medium_frame_5",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 25,
+      "sourceFrameId": "heaven_splitter_medium_frame_6",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 29,
+      "sourceFrameId": "heaven_splitter_medium_frame_7",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 33,
+      "sourceFrameId": "heaven_splitter_medium_frame_8",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 37,
+      "sourceFrameId": "heaven_splitter_medium_frame_9",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    },
+    {
+      "frame": 40,
+      "sourceFrameId": "heaven_splitter_medium_frame_10",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "feet": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "effect": {
+        "x": 865,
+        "y": 390
+      },
+      "groundingContract": "pelvis_registered_virtual_ground_no_airborne_foot_plant_claim"
+    }
+  ],
+  "combatTrack": {
+    "startup": 10,
+    "active": 5,
+    "recovery": 28,
+    "damage": 62,
+    "hitstop": 7,
+    "hitstun": 28,
+    "blockstun": 16,
+    "boxes": [
+      {
+        "frame": 10,
+        "kind": "hit",
+        "x": 6,
+        "y": -236,
+        "width": 54,
+        "height": 102
+      },
+      {
+        "frame": 11,
+        "kind": "hit",
+        "x": 6,
+        "y": -236,
+        "width": 54,
+        "height": 102
+      },
+      {
+        "frame": 12,
+        "kind": "hit",
+        "x": 6,
+        "y": -236,
+        "width": 54,
+        "height": 102
+      },
+      {
+        "frame": 13,
+        "kind": "hit",
+        "x": 6,
+        "y": -236,
+        "width": 54,
+        "height": 102
+      },
+      {
+        "frame": 14,
+        "kind": "hit",
+        "x": 6,
+        "y": -236,
+        "width": 54,
+        "height": 102
+      }
+    ],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 43,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    },
+    "selfMotionTrack": {
+      "owner": "deterministic_simulation",
+      "attackId": "legacy_heaven_splitter_medium",
+      "hop": {
+        "takeoffTick": 10,
+        "apexTick": 20,
+        "landTick": 33,
+        "height": 40
+      },
+      "rootMotion": {
+        "start": 10,
+        "end": 16,
+        "velocity": 2
+      },
+      "interruption": "handoff_current_position_and_velocity_to_physics",
+      "hitstopFreezes": true
+    }
+  },
+  "presentationTrack": [
+    {
+      "index": 0,
+      "frame": 10,
+      "type": "spawn_vfx",
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "payload": {
+        "socket": "uppercut_fist",
+        "candidateOnly": true,
+        "visualRole": "single_uppercut_motion_arc_not_additional_hit"
+      }
+    }
+  ],
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state"
+    ],
+    "onInterrupt": "simulation_selects_target_state",
+    "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+  },
+  "groundingTrack": [
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_0",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_1",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_2",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_3",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_4",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_5",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_6",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_7",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_8",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_9",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    },
+    {
+      "sourceFrameId": "heaven_splitter_medium_frame_10",
+      "root": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "farFoot": {
+        "y": 1360,
+        "x": 768
+      },
+      "nearFootRole": "virtual_ground_reference_not_measured_foot",
+      "farFootRole": "virtual_ground_reference_not_measured_foot",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "pelvis_virtual_ground_v1"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch"
+      ],
+      "toState": "heaven_splitter_medium",
+      "condition": "grounded_up_special_input",
+      "addsGameplayFrames": false
+    }
+  ],
+  "presentationSockets": [
+    {
+      "id": "uppercut_fist",
+      "x": 865,
+      "y": 390,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "spawn_vfx"
+      ]
+    }
+  ],
+  "gameplayTimingStatus": {
+    "owner": "simulation",
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "candidateValues": {
+      "startup": 10,
+      "active": 5,
+      "recovery": 28,
+      "damage": 62
+    },
+    "notes": [
+      "One near-arm uppercut throughout; modernized from legacy far-arm uppercut, not exact striking-arm preservation.",
+      "Original seven-pose rising arc remains protected; legacy airborne scale shrink and detached sandal were not reproduced.",
+      "Authored hop and vulnerable recovery belong to simulation; no invulnerability, extra hit or renderer-driven height.",
+      "Adult identity, alpha, physical contact and landing require human playback judgment.",
+      "B is gameplay-aligned. A/C retime anticipation/recovery for visual comparison only."
+    ]
+  },
+  "approvalRecords": [
+    "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/heaven-splitter-packages/records/human-review.pending.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "rollback_event_identity",
+      "simulation_owns_cursor",
+      "grounding_track"
+    ],
+    "creativeWarnings": [
+      "One near-arm uppercut throughout; modernized from legacy far-arm uppercut, not exact striking-arm preservation.",
+      "Original seven-pose rising arc remains protected; legacy airborne scale shrink and detached sandal were not reproduced.",
+      "Authored hop and vulnerable recovery belong to simulation; no invulnerability, extra hit or renderer-driven height.",
+      "Adult identity, alpha, physical contact and landing require human playback judgment.",
+      "B is gameplay-aligned. A/C retime anticipation/recovery for visual comparison only."
+    ],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "ai_assisted",
+    "tool": "Built-in imagegen and source-preserving normalization",
+    "createdAt": "2026-09-05T18:10:56.881Z",
+    "model": null,
+    "seed": null,
+    "promptHash": null,
+    "references": [
+      "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png",
+      "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/atlases/lamuh_sheet_5_specials_atlas.png",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/raw/heavy-windup-landing.png",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/raw/heavy-release.png",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-splitter-v1/heavy-authored-aura-v3.report.json",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/normalization.report.json",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/raw-aura-redraw.png",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/raw-aura-magenta.png",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-heaven-heavy-aura-redraw-v4/prompt.md"
+    ],
+    "cleanupOperations": [
+      "edge_connected_checker_cutout",
+      "exterior_matte_unmix",
+      "constant_anatomical_scale",
+      "manual_pelvis_registration",
+      "virtual_ground_for_air_poses",
+      "approved_idle_endpoints",
+      "native_aura_export_pose_aligned_preserved_opaque_body",
+      "generated_surrounding_aura_identity_edit",
+      "magenta_matte_unmix",
+      "audited_whitespace_slicing_preserved_absolute_root"
+    ],
+    "revisionChain": [
+      "V1_HEAVEN_SPLITTER",
+      "V2_NEAR_ARM_UPPERCUT_CANDIDATE",
+      "H_V2_DISTINCT_CINEMATIC_BODY",
+      "H_V3_AURA_IN_INDIVIDUAL_SOURCE_FRAMES",
+      "H_V4_REDRAWN_SURROUNDING_AURA"
+    ],
+    "humanApproval": {
+      "state": "pending",
+      "approvedAt": null,
+      "approvedBy": null
+    },
+    "licensingNotes": [
+      "Local Lamuh candidate only."
+    ]
+  }
+}

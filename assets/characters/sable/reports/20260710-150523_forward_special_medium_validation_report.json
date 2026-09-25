@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-10T19:05:23.900Z",
+  "characterId": "sable",
+  "clipId": "forward_special_medium",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_special_medium/v20260710-150521/sable_forward_special_medium_normalized_strip.png",
+  "expected": {
+    "clipId": "forward_special_medium",
+    "category": "special",
+    "frameCount": 9,
+    "fps": 12,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_special_medium/v20260710-150521/sable_forward_special_medium_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "hitFrames": [
+      5
+    ],
+    "cancelFrames": [
+      8
+    ],
+    "notes": [
+      "full-rebuild-v3 special family: Phase Lunge MEDIUM. Deeper phase dash with readable lunge strike, moderate range and recovery. Frame target lowered from 14 to 9 for text-only generation; one deeper right-arm phase dash, contact on visual frame 6/index 5, attached void trail, and recovery toward guard."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 9,
+    "rows": 1,
+    "frameCount": 9
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "SCALE_DRIFT",
+      "message": "Frame height drift is 80px (272px..352px); max is 34px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 26684,
+      "bbox": {
+        "x": 137,
+        "y": 30,
+        "width": 175,
+        "height": 352,
+        "right": 311,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000001111111111100000111111111110001111111111111000011111111111100000111111111110010011111111110001001111111111001100111111111101110011111111110111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 25764,
+      "bbox": {
+        "x": 132,
+        "y": 67,
+        "width": 184,
+        "height": 315,
+        "right": 315,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111100111111111111100011111111111100001111111111100000111111111110000011111111111100001111111111100000111111111111000001111111111000001111111111000100111111111100110011111111110011000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 26251,
+      "bbox": {
+        "x": 130,
+        "y": 107,
+        "width": 188,
+        "height": 275,
+        "right": 317,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111001111111111100000111111111110000001111111111000000111111111100000111111111110000001111111110001001111111111001100111111111001100011111111100110001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 27878,
+      "bbox": {
+        "x": 105,
+        "y": 107,
+        "width": 239,
+        "height": 275,
+        "right": 343,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111001111111111100000011111111110000000111111111000011111111111000000111111111100000001111111100000001111111100011001111111110011110111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 29247,
+      "bbox": {
+        "x": 89,
+        "y": 108,
+        "width": 270,
+        "height": 274,
+        "right": 358,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111000111111111110000011111111110000000111111111000001111111111000000011111111100000001111111100000001111111100011001111111110111110111111111011111111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 28308,
+      "bbox": {
+        "x": 90,
+        "y": 104,
+        "width": 268,
+        "height": 278,
+        "right": 357,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111101111111111111100111111111110000001111111111000000111111111100000111111111100000011111111110000000111111110000100111111110001100111111110011110011111111001111111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 24678,
+      "bbox": {
+        "x": 110,
+        "y": 106,
+        "width": 229,
+        "height": 276,
+        "right": 338,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111011111111111111000111111111111000011111111111000001111111111100000011111111110000011111111111000000111111111000100111111111000110011111111000111001111111100111100111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 20861,
+      "bbox": {
+        "x": 131,
+        "y": 110,
+        "width": 187,
+        "height": 272,
+        "right": 317,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111110001111111111110000111111111111000011111111111000001111111111110000111111111111000001111111111000000111111111000100111111111000110011111111100111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 8,
+      "empty": false,
+      "opaquePixels": 25415,
+      "bbox": {
+        "x": 138,
+        "y": 46,
+        "width": 172,
+        "height": 336,
+        "right": 309,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111110011111111111110001111111111111000111111111111000001111111111100000111111111110000011111111111000011111111111100000111111111110010011111111110001001111111111001100111111111100110011111111110111001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

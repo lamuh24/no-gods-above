@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "moveId": "standing_heavy",
+  "status": "V1_MOTION_LOCKED_FOR_V2_CANDIDATE_AUTHORING",
+  "candidateOnly": true,
+  "deployable": false,
+  "simulationHz": 60,
+  "sourceFrameCount": 7,
+  "sourceMotionReusable": true,
+  "sourceArtworkReusableAsLegacyEvidence": true,
+  "legacyGameplayEvidence": {
+    "durationTicks": 31,
+    "damage": 88,
+    "contactSourceFrame": 3,
+    "contactTick": null,
+    "note": "The total V1 duration is recovered. Per-pose V1 exposure and frame-indexed contact were not stored."
+  },
+  "authoredRootContract": {
+    "kind": "in_place_bottom_center",
+    "root": { "x": 224, "y": 382 },
+    "runtimeRootTranslation": false,
+    "perFrameRecenterProhibited": true,
+    "perFrameRescaleProhibited": true,
+    "note": "The silhouette changes around a fixed gameplay root. Body-center travel is secondary evidence and must not be converted into root translation."
+  },
+  "strikingLimb": "right_leg",
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1,
+    "impactFrame": 3,
+    "rule": "Frames 01-02 may gather cyan energy but must not show opponent contact, a hit burst, or a second strike."
+  },
+  "frames": [
+    {
+      "index": 0,
+      "id": "standing_heavy_frame_00",
+      "sha256": "282CE8F21423D5B4CCA9C41A3F34D9EE8133DDBDC54FBA9086EFD55107B23DCA",
+      "role": "loaded_anticipation",
+      "motionTruth": "Wide low base, torso pitched forward, both feet grounded, coat and hair already carrying rearward lag.",
+      "v2AuthoringConstraint": "Preserve the low ready silhouette and forward intent; no contact VFX."
+    },
+    {
+      "index": 1,
+      "id": "standing_heavy_frame_01",
+      "sha256": "2289EC99BC81B401C9B18BDF19A9D1D73C2C4430FA55837CB6472AC496EEB3BB",
+      "role": "weight_gather_and_torso_turn",
+      "motionTruth": "Weight gathers over the support side while the lead hand and shoulders begin the rotational arc.",
+      "v2AuthoringConstraint": "Cyan energy may gather at the hand, but it must read as anticipation rather than an impact."
+    },
+    {
+      "index": 2,
+      "id": "standing_heavy_frame_02",
+      "sha256": "4B147A72960FD835AB09EE67EBD9BDD13073A69991A382B2C6EEFE6586A9AC2E",
+      "role": "compressed_pre_strike_acceleration",
+      "motionTruth": "The upper-body line extends while the hips load the kick; this is the final compressed pre-contact silhouette.",
+      "v2AuthoringConstraint": "Keep the hand reach and body coil, remove any contact-looking burst, and do not slow the transition into frame 03."
+    },
+    {
+      "index": 3,
+      "id": "standing_heavy_frame_03",
+      "sha256": "95A0B72008042CBBB7EF6DBEE8410FC89330108DA1BFEE86EDB3351933E5C2D7",
+      "role": "high_side_kick_contact",
+      "motionTruth": "The right leg extends horizontally into the single contact while the left leg supports the body and the guard counterbalances the line.",
+      "v2AuthoringConstraint": "Use the hash-approved high-resolution style checkpoint as the visual source; preserve contact silhouette, skin tone, costume, cyan/gold language, and dark neutral edge treatment."
+    },
+    {
+      "index": 4,
+      "id": "standing_heavy_frame_04",
+      "sha256": "95A0B72008042CBBB7EF6DBEE8410FC89330108DA1BFEE86EDB3351933E5C2D7",
+      "role": "post_contact_overshoot",
+      "motionTruth": "The V1 cell is byte-identical to frame 03, so V2 must preserve the intended impact exposure while resolving the duplicate-art gap with a distinct no-hit follow-through.",
+      "v2AuthoringConstraint": "Continue the same leg and hip momentum slightly past contact, begin recoil, and remove the impact spark. Do not create a second hit."
+    },
+    {
+      "index": 5,
+      "id": "standing_heavy_frame_05",
+      "sha256": "6D2C272E3D0D083AAAA99E48CFF0625A63457147B377B6E315F9F2AAA7F67803",
+      "role": "leg_recoil_and_follow_through",
+      "motionTruth": "The striking knee retracts, the torso rises, and coat/hair lag continues the completed kick arc.",
+      "v2AuthoringConstraint": "Preserve the raised-knee recoil and secondary lag; do not snap directly to neutral."
+    },
+    {
+      "index": 6,
+      "id": "standing_heavy_frame_06",
+      "sha256": "905BAE836C3A019109ECE634E873B8C7CDB83B6B272BCB2A448FEDF3830B890E",
+      "role": "low_rotational_recovery",
+      "motionTruth": "Lamuh absorbs the rotation through a low settling shape while coat movement resolves toward the neutral recovery direction.",
+      "v2AuthoringConstraint": "Keep the low recovery silhouette long enough to read, then transition naturally to idle or walk without adding gameplay frames."
+    }
+  ],
+  "timingCandidates": {
+    "A": { "label": "ORIGINAL_CURRENT_LEGACY_RHYTHM", "durationTicks": 32, "exposureTicks": [4, 3, 2, 5, 4, 6, 8], "phaseTicks": { "startup": 9, "active": 5, "recovery": 18 } },
+    "B": { "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED", "durationTicks": 37, "exposureTicks": [5, 4, 2, 5, 5, 7, 9], "phaseTicks": { "startup": 11, "active": 5, "recovery": 21 } },
+    "C": { "label": "HEAVIER_ALTERNATE", "durationTicks": 42, "exposureTicks": [6, 4, 3, 6, 6, 8, 9], "phaseTicks": { "startup": 13, "active": 6, "recovery": 23 } }
+  },
+  "recommendedTimingCandidate": "B",
+  "benchmarkQuestions": [
+    "Does frame 00 expose intent without making Lamuh feel heavy?",
+    "Do frames 01-03 accelerate as one continuous body-driven arc?",
+    "Does frame 03 remain the only visible contact?",
+    "Does the duplicate contact exposure read as impact rather than dead time?",
+    "Do frames 05-06 carry momentum back into neutral without teleporting?"
+  ],
+  "approvalBoundary": {
+    "approvedStyleDirectionOnly": true,
+    "motionApproved": false,
+    "timingApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtApproved": false,
+    "productionApproved": false,
+    "deployable": false
+  }
+}

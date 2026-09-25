@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-08T17:50:00.000Z",
+  "character": "sable",
+  "animationStatus": "archived_failed_quality_candidate",
+  "approvedForLiveRoster": false,
+  "productionCandidate": false,
+  "releaseStatus": "wip_delayed",
+  "previewStatus": "animation_rebuild_required",
+  "reason": "Current Sable animation attempts are missing, choppy, inconsistent, and do not yet meet fighting-game readability standards.",
+  "preservedRoots": [
+    "assets/characters/sable/preview_pack/sable_style4_mvp_preview_pack",
+    "assets/characters/sable/preview_pack/sable_style4_animator-rebuild-v2_preview_pack",
+    "assets/characters/sable/rebuilds/sable_style4_animator_rebuild_v2",
+    "assets/characters/sable/generated",
+    "assets/characters/sable/generated/quarantine",
+    "assets/characters/sable/manifests/preview_animation_clips.json",
+    "assets/characters/sable/manifests/preview_animation_clips_rebuild_v2.json"
+  ],
+  "notProductionCandidates": [
+    "old Sable MVP preview pack",
+    "animator-rebuild-v2 candidate",
+    "previous generated sheets",
+    "quarantined outputs"
+  ],
+  "newRestart": {
+    "stageFolder": "assets/characters/sable/rebuilds/sable_style4_specials_rebuild_v3",
+    "spriteForgeStage": "specials-rebuild-v3",
+    "target": "15 specials only",
+    "pipeline": "key poses -> in-betweens -> assembled spritesheet -> SpriteForge validation -> preview approval",
+    "noLivePromotionUntil": "GAME_READY"
+  }
+}

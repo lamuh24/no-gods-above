@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/vfx-effect-v1.schema.json",
+  "title": "NGA VFX Engine V1 Effect Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "label",
+    "category",
+    "description",
+    "durationTicks",
+    "tags",
+    "layers",
+    "candidateOnly",
+    "deployable",
+    "fighterArtworkBakedIn"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)+$" },
+    "label": { "type": "string", "minLength": 1 },
+    "category": { "enum": ["weapon", "impact", "movement", "projectile", "system", "environment"] },
+    "description": { "type": "string", "minLength": 1 },
+    "durationTicks": { "type": "integer", "minimum": 1 },
+    "tags": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "candidateOnly": { "const": true },
+    "deployable": { "const": false },
+    "fighterArtworkBakedIn": { "const": false },
+    "cameraShake": { "$ref": "#/$defs/cameraShake" },
+    "layers": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/layer" } }
+  },
+  "$defs": {
+    "point": {
+      "type": "array",
+      "prefixItems": [{ "type": "number" }, { "type": "number" }],
+      "items": false
+    },
+    "cameraShake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startTick", "durationTicks", "amplitude", "frequency"],
+      "properties": {
+        "startTick": { "type": "integer", "minimum": 0 },
+        "durationTicks": { "type": "integer", "minimum": 1 },
+        "amplitude": { "$ref": "#/$defs/point" },
+        "frequency": { "type": "number", "exclusiveMinimum": 0 },
+        "visibility": { "enum": ["always", "on_hit", "on_block", "on_whiff"] }
+      }
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "kind", "startTick", "durationTicks", "count", "visibility", "anchorMode",
+        "followAnchor", "mirrorWithFacing", "offset", "velocity", "gravity", "spread", "size",
+        "length", "width", "rotationDegrees", "color", "secondaryColor", "blend", "opacity"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["flash", "smoke", "spark", "ring", "beam", "projectile", "trail", "debris"] },
+        "startTick": { "type": "integer", "minimum": 0 },
+        "durationTicks": { "type": "integer", "minimum": 1 },
+        "count": { "type": "integer", "minimum": 1 },
+        "visibility": { "enum": ["always", "on_hit", "on_block", "on_whiff"] },
+        "anchorMode": { "enum": ["owner_socket", "impact_point", "world", "previous_position"] },
+        "followAnchor": { "type": "boolean" },
+        "mirrorWithFacing": { "type": "boolean" },
+        "offset": { "$ref": "#/$defs/point" },
+        "velocity": { "$ref": "#/$defs/point" },
+        "gravity": { "type": "number" },
+        "spread": { "type": "number", "minimum": 0 },
+        "size": { "type": "number", "exclusiveMinimum": 0 },
+        "length": { "type": "number", "exclusiveMinimum": 0 },
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "rotationDegrees": { "type": "number" },
+        "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "secondaryColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "blend": { "enum": ["source-over", "lighter", "screen"] },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

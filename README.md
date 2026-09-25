@@ -24,6 +24,23 @@ The result: balance changes are validated the way a player would experience them
 
 Open `NO_GODS_ABOVE/index.html` in a browser. No build step — vanilla JS by design.
 
+## Work From The Cloud
+
+This repo is ready for GitHub Codespaces.
+
+1. Open the repo on GitHub.
+2. Choose **Code > Codespaces > Create codespace**.
+3. Wait for the container setup to finish.
+4. Run `npm run dev:game`.
+5. Open the forwarded `5173` port to play and edit from any browser.
+
+Useful cloud commands:
+
+- `npm run dev:game` starts the browser game.
+- `npm run check:game` runs syntax checks for the game and service worker.
+- `npm run dev:forge:backend` starts the Forge API on port `8765`.
+- `npm run dev:forge:frontend` starts the Forge UI on port `5175`.
+
 ---
 
 A [LAMUH](https://github.com/lamuh24) experiment in what solo developers can ship when they orchestrate AI agents instead of just prompting them.

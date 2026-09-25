@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-10T23:47:24.682Z",
+  "character": "sable",
+  "stage": "full-rebuild-v3",
+  "approvalPolicy": "previewAuto",
+  "provider": "manual",
+  "autoApprovePreview": true,
+  "autoApproveLive": false,
+  "clipsAttempted": [
+    "back_special_heavy"
+  ],
+  "clipsSkippedApproved": [],
+  "clipsApprovedForPreview": [],
+  "clipsFailed": [],
+  "clipsWaitingForGeneration": [
+    "back_special_heavy"
+  ],
+  "clipsMissingOutput": [
+    "back_special_heavy"
+  ],
+  "clipsRetried": [],
+  "quarantinedOutputs": [],
+  "retryCountByClip": {},
+  "validationSummary": {
+    "back_special_heavy": "waiting_for_generation"
+  },
+  "visualQaSummary": {
+    "back_special_heavy": {
+      "score": 0,
+      "status": "not_run",
+      "summary": "No generated sheet was available for this clip."
+    }
+  },
+  "smokeTestSummary": {
+    "back_special_heavy": "not run (waiting for generation)"
+  },
+  "remainingClips": [
+    "back_special_heavy"
+  ],
+  "humanReviewNeeded": false,
+  "nextAction": "Batch prepared prompts and is waiting for generated output for 1 clip(s). Drop sheets into their rebuild inbox folders, then resume.",
+  "notes": [
+    "Preview queue is isolated from live roster wiring.",
+    "AUTO_APPROVE_LIVE is always false.",
+    "Dry run disabled: queue may call the configured provider.",
+    "Character spec and latest brief were loaded before queue execution."
+  ]
+}

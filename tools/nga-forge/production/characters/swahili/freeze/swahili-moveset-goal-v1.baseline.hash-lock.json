@@ -1,0 +1,3479 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_MILESTONE_0_HASH_LOCK",
+  "createdAt": "2026-07-25",
+  "branch": "codex/swahili-moveset-goal-v1",
+  "baselineCommit": "81412231aa5fdfbd907d27bc6591b39dce7b43ca",
+  "rule": "Hash-reference only. No protected source is copied, rewritten, normalized, repainted, resized, recentered, staged, or promoted by this operation.",
+  "fileCount": 263,
+  "categoryCounts": {
+    "approval_evidence": 50,
+    "approved_source": 105,
+    "approved_vfx": 12,
+    "candidate_packages": 10,
+    "protected_architecture": 23,
+    "protected_legacy_runtime": 1,
+    "recorded_approved_artifact": 158
+  },
+  "protectedDigestSha256": "1026F275B478F1505FDD5A992C5FC6923CE4567007B9439FDA19840DE4313E10",
+  "legacyGameJsSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+  "recordedHashMismatchCount": 0,
+  "recordedHashMismatches": [],
+  "unresolvedRecordedPathCount": 0,
+  "unresolvedRecordedPaths": [],
+  "files": [
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/README.md",
+      "bytes": 727,
+      "sha256": "FE291DDAD0C4CFC366AADF3EFB810F40F831799B68CD76BCDC0440FD6702F896",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/character.bundle.json",
+      "bytes": 3675,
+      "sha256": "452C4A819BE41E81A6CE8C54EBEB28716BE7981BCCFA3ADC0C30F587A15FD1BE",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/command-grab/animation.package.json",
+      "bytes": 40906,
+      "sha256": "987C88EF4100611377A96AFD92211CA5E5DBD99E76AF4C3C20574A2A87B2AD3D",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/crouching-block/animation.package.json",
+      "bytes": 13376,
+      "sha256": "AAB762428284FE4803849452AF0EEB48AD8789BE637C52B6679BD5401F8CBF4F",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/heavy-hit-reaction/animation.package.json",
+      "bytes": 13810,
+      "sha256": "E5EA754228AB4897A0769A9C09FD3BEFEC9F976FCBF01488A7EC040FE92EDC9A",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/light-hit-reaction/animation.package.json",
+      "bytes": 13788,
+      "sha256": "EB3EC97724C7A3A916BAD76E502B26234C458F1DEC65A574F99BCFB79ADE5B44",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/standing-block/animation.package.json",
+      "bytes": 13360,
+      "sha256": "14C107187B250D5C1C00B810EECBCC8214147A4F7B316E9FFFB9B9A0A7A08BBA",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/universal-backward-throw/animation.package.json",
+      "bytes": 33444,
+      "sha256": "B11C07C70495EE0F5BE319460A2EF552ECD126BF4045A8FD0FFC61A6A690FD02",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/universal-forward-throw/animation.package.json",
+      "bytes": 33120,
+      "sha256": "4BA4DDFC31F1CF18CDA50BECA1C419BBF83A9E2E4F930D7FA434A0E48A7AF9CC",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/swahili/moves/universal-grab-attempt/animation.package.json",
+      "bytes": 17245,
+      "sha256": "C0E20D7BC7645A8C2AECD2575C1C6787A01107EFDD646F8F52B2CB382519A40D",
+      "categories": [
+        "candidate_packages"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/docs/production_ecosystem_architecture.md",
+      "bytes": 7017,
+      "sha256": "9E673A356509A977134F4F581D6B507D10777918B5F8DF33F30A8BF6AC5D7DBE",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/animation-package.schema.json",
+      "bytes": 9735,
+      "sha256": "CA72956C97B93806BBB240560CF03A1CEC5C8AF24F2F7FA9C1DE792DDDFA01F9",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/character-bundle.schema.json",
+      "bytes": 2086,
+      "sha256": "8BEB3BACEABD0987B160DE48BF9BCD97B81935808AB835DB218B9DEB786C3502",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/combat-track.schema.json",
+      "bytes": 3859,
+      "sha256": "FC22E3B23E9838FF05491866D0037EB276521495B46A7C6C2EB646FB8D343ECF",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/compiled-runtime-manifest.schema.json",
+      "bytes": 2466,
+      "sha256": "FDF15E92799748B9FC9A3E1EC394FA33C1ED8B48C9AAE45DB8E39F9F42A31AAD",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/pose-token.schema.json",
+      "bytes": 1195,
+      "sha256": "CE01BA63A080FFE8B55BC50771552944A757F08F614845EF003296D7D0B34F29",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/presentation-event.schema.json",
+      "bytes": 753,
+      "sha256": "CAF90A09295B451B64F476DEE9B0277ED94F5D7C6BF203A243BAE404AD0D374B",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/production-arena-brief.schema.json",
+      "bytes": 3057,
+      "sha256": "BC65AFFF64BBAB043EB09C8AD7EF9A62CFB08CB6CC6FFBB3D9F33202CE08847D",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/provenance.schema.json",
+      "bytes": 1497,
+      "sha256": "390C4F3B2BA4058808755D4ADF4F696358D8C3ED75D5E7B3909623BB0C539621",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/stage-art-pack.schema.json",
+      "bytes": 1801,
+      "sha256": "78032CA47087F6824E22FF3A0B3E4EC37C86E62BE62729835ABBFBB43D29EF36",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/stage-presentation-events.schema.json",
+      "bytes": 2696,
+      "sha256": "6678E332B4FDFAD74E07C308D0F6C8CA2A4F7526C7C653F9D4F1731B8AB7CE02",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/stage-production.schema.json",
+      "bytes": 8829,
+      "sha256": "437E2C208ADB7F09DECAF99CA9DEF6EAC7795F4531C651A8A317712A6EE22ABC",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/stage-validation-plan.schema.json",
+      "bytes": 2080,
+      "sha256": "C2312BDB0023E3A2F2B241A14F25E9BF043BCD585629E75609549791F0DCEEC6",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/schemas/production/transition.schema.json",
+      "bytes": 1118,
+      "sha256": "EE4A58BBF55A63E4FD6D0508CC38DDEB76A6E59DC2A7DFAAD678FFE5E0F51899",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/scripts/compile_content.js",
+      "bytes": 1425,
+      "sha256": "324CCD3A575ECBBD0DEC913A798BD6E463EC450ECE1E54EE440A0620A06C2387",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/scripts/validate_production_contracts.js",
+      "bytes": 925,
+      "sha256": "A11DE7CA762638EAE6C60E812958FE117BAB2D871A6627BB3DF84A3E3FABCD82",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/core/checksum.ts",
+      "bytes": 940,
+      "sha256": "3B24C2C4970B25106D971E498BD04CF78AAF7977F054ADE2D28D4E59A2D4255A",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/core/engine.ts",
+      "bytes": 19154,
+      "sha256": "6DC273BA80CD01C45065FD86DA1E06BF8E0F3F0014AE7CB278A6FFC90046F8AF",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/core/input.ts",
+      "bytes": 2588,
+      "sha256": "DFFB8383E34A39778E7C6436C60D6B2C0622353CDA2B0AEE155D17AA188EBED5",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/core/replay.ts",
+      "bytes": 712,
+      "sha256": "CC91B57D617D5D7A1BB907B3120ADCF96DD845D175522B9BBBC5AB6EE872033F",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/core/rng.ts",
+      "bytes": 396,
+      "sha256": "3F63833A409CFC2C0CD3769E5FEBB6531EC99873702734C73CFB2CFE247DEEF7",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/core/types.ts",
+      "bytes": 4064,
+      "sha256": "BBC50C4D088B6650AAB4FCB5CF411873EE4B26F82802FA198B1863C09D9BBC59",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/engine_v2/src/data/fighters.ts",
+      "bytes": 3941,
+      "sha256": "0EF6BF8BDE6774F9CA6D4191B5AB59A42412E5ABE665C3EBF3F8DFB36251EF11",
+      "categories": [
+        "protected_architecture"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "NO_GODS_ABOVE/game.js",
+      "bytes": 665749,
+      "sha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B",
+      "categories": [
+        "protected_legacy_runtime",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/air-mobility-v1.approval.json",
+      "bytes": 655,
+      "sha256": "7B7D96EA757210779CEF688214095F7FD181A93863FE56F2A2745B21346ABDC1",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/command-grab-key-poses-v2.approval.json",
+      "bytes": 2283,
+      "sha256": "8CBB03B4473F622F1F09B6CF6F18ACC06A6DC1CBAF51D216BF5707A2E1B809C7",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.approval.json",
+      "bytes": 4823,
+      "sha256": "4CDBFC0003F0541BC739C0CB3144052E127A181EAD0B3FCB0818C50AE12B62BC",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/command-grab-motion-v1.rejection.json",
+      "bytes": 1388,
+      "sha256": "4B31E66FB69A3250E5C141E8F612EAAF66731D5EEC9672ED5D4881C94A5A0F58",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-block-v2.approval.json",
+      "bytes": 1537,
+      "sha256": "023A1C1592C79BCF7B0D4FB0354FCF1F34F0F022B3C3F4A03BD6C203CD6F620A",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-light-motion-v1.approval.json",
+      "bytes": 943,
+      "sha256": "2D7F07D5E414AAD82A4B1905A8DCBBEDD0FDE1FA0D05BA320F73A4090787B468",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v2.rejection.json",
+      "bytes": 319,
+      "sha256": "4A2466C16C5BB0FF9CA514ABC33DF3414BE4C7DBB8A09AB23C46E59EA5CF856A",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v3.rejection.json",
+      "bytes": 446,
+      "sha256": "9EF985CB35A2DEE8887DE934888B9FC5A958C722DC11BCDE1D1B39FB7ED0AF15",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v4-base-artwork.approval.json",
+      "bytes": 3925,
+      "sha256": "F619CFBE844CA4A2E66C71037844AC8EDD9CF52AF40D65132C7187E23E640EE7",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-normals-key-poses-v1.targeted-repair.json",
+      "bytes": 779,
+      "sha256": "2A675BB74B43403C43351BDBB9BFB4FB292DC5DF577A82E5D3E09D0C2BC14950",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/crouching-normals-key-poses-v2.approval.json",
+      "bytes": 637,
+      "sha256": "14DAC97A52A45392CB3FB03D011EEEA8EEF85CA9FBA02F66E0A5EE2EB9B04F71",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/dash-motion-v2.approval.json",
+      "bytes": 549,
+      "sha256": "F08AA67024FD254C239E0DF05772BF569B60ADBEDCD2E41B4DC8C8A6F73B936B",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+      "bytes": 1947,
+      "sha256": "28D7ECCE61575F74419E2CF27E7B27D4D8B06BA23CE16E0E025B1A040EF22395",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.targeted-repair.json",
+      "bytes": 2422,
+      "sha256": "16AA3BB53A8498CBE30D382C62492FFE5130BCD02C3F48A43E0F1CC09DA15D94",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-motion-v1.approval.json",
+      "bytes": 2474,
+      "sha256": "00015349D5A51CCA500800F895DF076E6062AF0E85985B5333DD9AC6C4FA5721",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-pose-library-v1.approval.json",
+      "bytes": 672,
+      "sha256": "F55C5D9C086850EDFD4EEF269CAEB3BEB6AB37CA9C10F3B5A8728E8A38933CC4",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-v1.in-game.approval.json",
+      "bytes": 1279,
+      "sha256": "C0C9E7D3A437C15AFB701BD01504D5A59E17307BE2FEF50FB6E367F41BF4EB4B",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json",
+      "bytes": 4894,
+      "sha256": "30F63BAA79DE2073B7C38B3680D09A196997516218D7BE4096071EF3BC8683E8",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json",
+      "bytes": 7355,
+      "sha256": "D1F784925786080FC0959388789680604A215C7DF568582531AA67C7EEDE73D8",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/grab-throw-targeted-repair-v1.approval.json",
+      "bytes": 6775,
+      "sha256": "8FE6E04AAB0A8C2EC0C513D44D1C323F99067B0B46E42B627681694803F9C839",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/idle-foundation-v1.approval.json",
+      "bytes": 2138,
+      "sha256": "65607BD88EF9093F7422CFAEA2B3A0B8F2B9E1C3A55D7D4A328F826E98590A37",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-connectors-v1.approval.json",
+      "bytes": 751,
+      "sha256": "D9ED7877D6E12625F52CED31F6D59C2219CD5360CEF5B7C3E5E7BAB409DAE440",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/jump-fall-landing-key-poses-v1.approval.json",
+      "bytes": 599,
+      "sha256": "E3BCEFE3AC5670886811B4AA6CFAF5BDB7CE66CDA86435DE2DFEA537C1EE5E5C",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-key-poses-v1.approval.json",
+      "bytes": 2813,
+      "sha256": "40BFF88C425E4899343E2E09302F75F1DB0593E3981F2EBC33013187397A888A",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-motion-v1.approval.json",
+      "bytes": 741,
+      "sha256": "D141DD0DA27A08B82266CF05412E1B458A3C8C949E9879D1F3323F11E9F3CF8C",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-anticipation-v2.approval.json",
+      "bytes": 1585,
+      "sha256": "71D2FFD164D266D47719A112350633282C53D4FE511C4DEAB1E3AB289E3270EE",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-combat-profile-v1.approval.json",
+      "bytes": 1821,
+      "sha256": "60B0A5CB8B9DCFD6C6042BF0BD0A05EC1B3553CD253926D5AA5ABEA743BEF1B1",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v1.targeted-repair.json",
+      "bytes": 2333,
+      "sha256": "65AB91395B01E502DE6F217906AE984AD419A66A66BA0699F66CFF017E53A256",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v2.approval.json",
+      "bytes": 2034,
+      "sha256": "7FB65078E437BD0C830AA138E2E622D8BE310A51857C0615546DBB34EF76F3AF",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-motion-v1.approval.json",
+      "bytes": 2297,
+      "sha256": "6F574E82644CEA73AD320CACF73952BBE10CC536867851E8D2C45D7585A0DC41",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-light-motion-v1.baseline-with-polish-debt.approval.json",
+      "bytes": 898,
+      "sha256": "F0225171805DC336B1140C64763DC341768EA56BFBD1302975A00E604C06AAE0",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v1.targeted-repair.json",
+      "bytes": 1207,
+      "sha256": "46A93EB71105C9602E43F5B0B837F3B566848EA84953DA6CF9DAB3E75B897A9F",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+      "bytes": 8300,
+      "sha256": "31375E49123C1756EED6D4BFF8B1E5FE48AC7D509038D3BDF1FDF7454058F390",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/walk-backward-motion-v2.manual-paintovers-block.json",
+      "bytes": 677,
+      "sha256": "7B6A8C115DFE989E5C3084347550AC3E8FC63BCC85EA55245254D0425B75EF30",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/walk-key-poses-v1.connecting-frame-pass-required.json",
+      "bytes": 610,
+      "sha256": "AF8C8247E5E5EF38CB77F7FBAD6DDC74A29206A4092D0576287A78176D3130B0",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/approvals/walk-key-poses-v1.targeted-repair.json",
+      "bytes": 1103,
+      "sha256": "DCE1F8D724EB6325DE5CD91C09F82381D65C4AB79498882C39EB4674EE03B05F",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/character.lock.json",
+      "bytes": 8946,
+      "sha256": "F678A4CE8F5FE638BDC5D70B45057A19EBDEFDBE004606CBB965F7893497DAAA",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+      "bytes": 21456,
+      "sha256": "FC753523C88766D779E35ACB1C016B60A425DF4F7F1D08F88477887E1212B4D3",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json",
+      "bytes": 3038,
+      "sha256": "B64476B7181D505784C7D8EF21B524506091767034D5157D99AC3780B47F07EC",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json",
+      "bytes": 6252,
+      "sha256": "B5F46143CB817EF300FC45E436A2C9350FDA9DD2668B00E121A4E406C82019BF",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v3.rejected.freeze.json",
+      "bytes": 1511,
+      "sha256": "D9AF29026323AA4DC70103CC2A976ABF3F2AB8CD948814809A417BD4BB967DDE",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v4-base-artwork.freeze.json",
+      "bytes": 3872,
+      "sha256": "38B0951BF170481320A3CF9985DC52CEC12B68AE38F8F889B957FB5BCC575844",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json",
+      "bytes": 4387,
+      "sha256": "A4259364D91C333A961D421213C8413FB0974587954826ABDC8C50AA29250056",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json",
+      "bytes": 2660,
+      "sha256": "C6FA597BA32948D1BD13264847D98E2C52BC346DD09881F7F064B9B3174831A2",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json",
+      "bytes": 2863,
+      "sha256": "B5210D7A8788F842FFA5C8A794EF3992156F19B9222CC37F12403AFF4D03027A",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json",
+      "bytes": 2209,
+      "sha256": "3536A7A4126F3808778FFD45B390DBDD28841ABB8D021E84897F7A45E11B5897",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json",
+      "bytes": 2515,
+      "sha256": "AD40BB80C9783758287E473A3BB460F5B8EF87AB1B68424C37BF22494D4DF14A",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json",
+      "bytes": 2473,
+      "sha256": "80BC15F42F7DC0163BDE621B894479190F39DA6E4B69F7E0DCC0E4F0129A3862",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/generation/attack-animation-cleanup-v1/standing-neutral-normals-key-poses-repair-v2/generation-provenance.json",
+      "bytes": 8720,
+      "sha256": "4317B2F7CAEE8474A5BECAB27893405E307D057A76C4A5B787524D08219B0BBF",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "4317B2F7CAEE8474A5BECAB27893405E307D057A76C4A5B787524D08219B0BBF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/production-entry.json",
+      "bytes": 24549,
+      "sha256": "2A38D512AC3F85ABCE79C4B7712A70EF3B4FF1B50735A39162B5078DD28894DB",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/reference.manifest.json",
+      "bytes": 962,
+      "sha256": "4B8EC723585B7C82898BD5CD3BAD46DE89D7EC6C40253B4636BC05BCCF932192",
+      "categories": [
+        "approval_evidence"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png",
+      "bytes": 939262,
+      "sha256": "A33A3C81F8C554A9E0A750B91EB875A17F7513A70DE646D8E2DBC2956BF2E077",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "A33A3C81F8C554A9E0A750B91EB875A17F7513A70DE646D8E2DBC2956BF2E077"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/idle-foundation-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/01_01_mounted_startup.png",
+      "bytes": 1009640,
+      "sha256": "C6B32C5D134D38A8C67981E84ABDFD939639417924EADC5CB2C4E824564F6450",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C6B32C5D134D38A8C67981E84ABDFD939639417924EADC5CB2C4E824564F6450"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/02_02_hand_reaches_scythe.png",
+      "bytes": 945903,
+      "sha256": "3CDD3C33568D01A41DFF8B13BB7CF11DCB6EF28370DC780A6F4AB61CF4AF4A74",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3CDD3C33568D01A41DFF8B13BB7CF11DCB6EF28370DC780A6F4AB61CF4AF4A74"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/03_03_scythe_clears_back.png",
+      "bytes": 1014573,
+      "sha256": "B9C69D558602E41A74E1B76F7509254017DD19C72E20AEE2E36C79ECD386FE51",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "B9C69D558602E41A74E1B76F7509254017DD19C72E20AEE2E36C79ECD386FE51"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/04_04_blade_flip_transition.png",
+      "bytes": 836131,
+      "sha256": "822F2834B17B2DEAC7F773B502BB9D058F2B7FA0FB604E894B54B26068C90DA6",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "822F2834B17B2DEAC7F773B502BB9D058F2B7FA0FB604E894B54B26068C90DA6"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/05_05_hook_ready_maximum_coil.png",
+      "bytes": 1027646,
+      "sha256": "BA1BF4AC84A91FDAAC4F25AFFCC9D99C20D6E76371E931A4B2A7916F0A7560A6",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "BA1BF4AC84A91FDAAC4F25AFFCC9D99C20D6E76371E931A4B2A7916F0A7560A6"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/06_06_lead_foot_plant_weapon_lag.png",
+      "bytes": 973084,
+      "sha256": "40A2AA7282125FE784A172539313CDB3BC915F7D5D5DFD9253C19E157C60E4EF",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "40A2AA7282125FE784A172539313CDB3BC915F7D5D5DFD9253C19E157C60E4EF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/07_07_acceleration_begins_scoop_curve.png",
+      "bytes": 769607,
+      "sha256": "BD990AAA57F778E0295F23DE5603B0AA86ED43CBB9AE65A5840F72516E297519",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "BD990AAA57F778E0295F23DE5603B0AA86ED43CBB9AE65A5840F72516E297519"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/08_07_scoop_acceleration_entry.png",
+      "bytes": 1113534,
+      "sha256": "0919982638284F2F5B0A751BCBDD9910AFC43966FDA09357695900CE8AA254E4",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "0919982638284F2F5B0A751BCBDD9910AFC43966FDA09357695900CE8AA254E4"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/09_08_maximum_speed_scoop.png",
+      "bytes": 817569,
+      "sha256": "5EB4ED48849D86448EA0F9FE954F3306A9336F34F662F68540ECC88EEA400E3C",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5EB4ED48849D86448EA0F9FE954F3306A9336F34F662F68540ECC88EEA400E3C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/10_09_first_low_hook_contact.png",
+      "bytes": 746827,
+      "sha256": "3C245A7A41A256BB7B5BDD7D876D87480998C03DC0A7B1F8847F0FF2195A7890",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3C245A7A41A256BB7B5BDD7D876D87480998C03DC0A7B1F8847F0FF2195A7890"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/11_10_impact_compression_secure_scoop_catch.png",
+      "bytes": 904742,
+      "sha256": "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/12_12_feet_swept_out_locked.png",
+      "bytes": 904742,
+      "sha256": "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E4BAAAFCBE7B80EE755D47BDB95D32059D532334A0F1BAA2BFF6A8B12F8762AF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/13_13_pelvis_leading_rotation_v2.png",
+      "bytes": 990777,
+      "sha256": "01E59477C58F65E8BE382D7C8506F33DCCD1307216F274FBADC8F042BDEF9490",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "01E59477C58F65E8BE382D7C8506F33DCCD1307216F274FBADC8F042BDEF9490"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/14_14_locked_low_carry.png",
+      "bytes": 726508,
+      "sha256": "7D0A60F1CBE886F141F2601A907BB975BD4CC8CAD4393DF14D85E71E890D81DB",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "7D0A60F1CBE886F141F2601A907BB975BD4CC8CAD4393DF14D85E71E890D81DB"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/15_15_continued_carry_head_direction_v2.png",
+      "bytes": 889040,
+      "sha256": "E00B55DEB99423033E2DA359AD3E9563B9972764085E3CD8F8DB4E9A8CAACF27",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E00B55DEB99423033E2DA359AD3E9563B9972764085E3CD8F8DB4E9A8CAACF27"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/16_16_airborne_release_head_direction_v2.png",
+      "bytes": 1051853,
+      "sha256": "1B52D8F7D5CF2A4CD1AF12DE52FC9B6DA1BDB3D76A5E8F578CD822BECE285754",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1B52D8F7D5CF2A4CD1AF12DE52FC9B6DA1BDB3D76A5E8F578CD822BECE285754"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/17_16_to_17_head_reorientation_connector_v2.png",
+      "bytes": 1063891,
+      "sha256": "081CC7EFFD4F8DB8B24092879F0A669CB700614BAF31531E02C6BB2DFC692B4B",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "081CC7EFFD4F8DB8B24092879F0A669CB700614BAF31531E02C6BB2DFC692B4B"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/18_16_airborne_hang.png",
+      "bytes": 1019979,
+      "sha256": "F5B6E6B03F0989573E3CFD3387677CECF5AAD303E0E11D0C33BA84D91C8629F8",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F5B6E6B03F0989573E3CFD3387677CECF5AAD303E0E11D0C33BA84D91C8629F8"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/19_17_aim_at_midair.png",
+      "bytes": 936355,
+      "sha256": "4C4F0C389AFCF51FA822C5D2E477261019093E31FF9F0CF47082FF14E42BA441",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "4C4F0C389AFCF51FA822C5D2E477261019093E31FF9F0CF47082FF14E42BA441"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/20_18_midair_shot.png",
+      "bytes": 942871,
+      "sha256": "C1AFA8C3F191B38B2E8C5DD20105349F934BD7FD8AE268A982CE59110FE9B5A3",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C1AFA8C3F191B38B2E8C5DD20105349F934BD7FD8AE268A982CE59110FE9B5A3"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/21_19_post_shot_fall.png",
+      "bytes": 953897,
+      "sha256": "96851C8504ABE9EC78AD075BD3C5191189F73094137782088B6BDD7706579C36",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "96851C8504ABE9EC78AD075BD3C5191189F73094137782088B6BDD7706579C36"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/22_20_fall_toward_floor.png",
+      "bytes": 936561,
+      "sha256": "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/23_21_landing_after_shot.png",
+      "bytes": 936561,
+      "sha256": "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "64742F3EA8D19CE66AA8BE233A024F68CE6AF536A4082BE2139913B5E0A17F7D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/24_22_recovery.png",
+      "bytes": 881602,
+      "sha256": "6FCAE963E610ABFD49E4BD96DEE3EFB7F7C40DB190D1B40358B7011DF0995A7C",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "6FCAE963E610ABFD49E4BD96DEE3EFB7F7C40DB190D1B40358B7011DF0995A7C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/command-grab-motion-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/01_guarded_crouch.png",
+      "bytes": 1035645,
+      "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v4-base-artwork.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v4-base-artwork.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/02_rapid_low_aim.png",
+      "bytes": 1157055,
+      "sha256": "270183D773F92922B2EF539F6893BED48F0296A6F1A982629C7535245ED7505C",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "270183D773F92922B2EF539F6893BED48F0296A6F1A982629C7535245ED7505C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v4-base-artwork.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v4-base-artwork.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/03_point_blank_shot.png",
+      "bytes": 1126512,
+      "sha256": "3502151BB83799465BF2F67A14E9682CFB80D3EDEAC3F5C58AFFA202692EA9B4",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3502151BB83799465BF2F67A14E9682CFB80D3EDEAC3F5C58AFFA202692EA9B4"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v4-base-artwork.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v4-base-artwork.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/04_compact_recoil.png",
+      "bytes": 1087818,
+      "sha256": "D0EB4D79D25693297B25255A2497A4C640098B2DA830A8F5D4F52BAE9BE719E3",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D0EB4D79D25693297B25255A2497A4C640098B2DA830A8F5D4F52BAE9BE719E3"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v4-base-artwork.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v4-base-artwork.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/05_crouched_recovery.png",
+      "bytes": 1035645,
+      "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-light-v4-base-artwork.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v4-base-artwork.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/approved-manifest.json",
+      "bytes": 3938,
+      "sha256": "BEC99B670C4CF98E0D1F6180246073BE9FAACCA0ACD66C2BBBF60FD7B81B5F85",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_heavy/01_deep_rotational_anticipation.png",
+      "bytes": 940860,
+      "sha256": "2F43567B1874C5DC563AC5624C544F2829621EF041A2C5C485DC0E15DFB47D51",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "2F43567B1874C5DC563AC5624C544F2829621EF041A2C5C485DC0E15DFB47D51"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_heavy/02_sweep_acceleration.png",
+      "bytes": 1181679,
+      "sha256": "52A13CA10CA352AC4C6C8B0541CABEBABA5638317DAB42BA82289F8CFB6F3968",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "52A13CA10CA352AC4C6C8B0541CABEBABA5638317DAB42BA82289F8CFB6F3968"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_heavy/03_low_ground_contact.png",
+      "bytes": 935337,
+      "sha256": "C6BA499B928355BC15F79E4ED4D2893262041DFA59BDBA9A5B431A5842F4255A",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C6BA499B928355BC15F79E4ED4D2893262041DFA59BDBA9A5B431A5842F4255A"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_heavy/04_committed_follow_through.png",
+      "bytes": 934314,
+      "sha256": "DE3228A682B0177434821CFD6F070EB132A57F11419AD7F62D01BE34CE7FA35E",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "DE3228A682B0177434821CFD6F070EB132A57F11419AD7F62D01BE34CE7FA35E"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_heavy/05_planted_recovery.png",
+      "bytes": 1035557,
+      "sha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_medium/01_anticipation.png",
+      "bytes": 1027880,
+      "sha256": "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_medium/02_low_side_kick_contact.png",
+      "bytes": 1071985,
+      "sha256": "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_medium/03_leg_retraction.png",
+      "bytes": 1011345,
+      "sha256": "EE109DE74710BA3A3E2DAD19EE432024618995CEC99EB5F8F04D83F8D5197B90",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "EE109DE74710BA3A3E2DAD19EE432024618995CEC99EB5F8F04D83F8D5197B90"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-normals-key-poses-v2/crouching_medium/04_planted_crouch_recovery.png",
+      "bytes": 1035557,
+      "sha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v2.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/approved-metadata.json",
+      "bytes": 3028,
+      "sha256": "B8BDAF60AB9D1ED3962A970CF529ED42D1A67E57E636EF75C4A220AE2C5662CC",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouch.png",
+      "bytes": 1035645,
+      "sha256": "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E0795F4BBF2FE70A35F68D52D0E8854B0E28F1D017737EE387FCA4BC38AFDDD5"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.targeted-repair.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouching_block_v2.png",
+      "bytes": 980347,
+      "sha256": "3C73EEE7725E881064723C23CF82A50A5AB174B2EDB98F4BA6C9CF2DA5315018",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3C73EEE7725E881064723C23CF82A50A5AB174B2EDB98F4BA6C9CF2DA5315018"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-block-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png",
+      "bytes": 1033137,
+      "sha256": "2EBA6C233687CE3426B9439DFF334F82811292952E9276DF9F26140CDBAC9096",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "2EBA6C233687CE3426B9439DFF334F82811292952E9276DF9F26140CDBAC9096"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.targeted-repair.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/light_hit_reaction.png",
+      "bytes": 981270,
+      "sha256": "50D7F88C80C71414CA0474E7DECF8EC7612924149F5FEC5381B95370CFFCB6F7",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "50D7F88C80C71414CA0474E7DECF8EC7612924149F5FEC5381B95370CFFCB6F7"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.targeted-repair.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/standing_block.png",
+      "bytes": 899207,
+      "sha256": "797B81C73BDB75A68C1471E25D5551DB30A2009594481CDAD8CA5EDB66EBB9F8",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "797B81C73BDB75A68C1471E25D5551DB30A2009594481CDAD8CA5EDB66EBB9F8"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/defense-reaction-key-poses-v1.targeted-repair.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/approved-metadata.json",
+      "bytes": 3161,
+      "sha256": "00245103DE4CF36AD1E2D0C5933267435D8F4F2BEA0CF8DB98C945F400A6D652",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_entry.png",
+      "bytes": 963983,
+      "sha256": "AF54A25A0B991413E9EFB3EA7F046A04841D228CB9720D491041AE5E1B1521A8",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "AF54A25A0B991413E9EFB3EA7F046A04841D228CB9720D491041AE5E1B1521A8"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/crouching_block_release.png",
+      "bytes": 1028861,
+      "sha256": "1995D4F21ABA5E6568DFCD05F92AE3F88D9FE83975DD9DE8293A81DE32718DF6",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1995D4F21ABA5E6568DFCD05F92AE3F88D9FE83975DD9DE8293A81DE32718DF6"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_entry.png",
+      "bytes": 1028930,
+      "sha256": "C4048FB7106AAB0A6E365367CEB6C1B6B64B922DF56EB4F628531272A10662A7",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C4048FB7106AAB0A6E365367CEB6C1B6B64B922DF56EB4F628531272A10662A7"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_recovery.png",
+      "bytes": 1058888,
+      "sha256": "F612EE1A43B87D6A6F2C321EF77BA2B82E6031C5E4A22652FDB1A82330AF79EB",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F612EE1A43B87D6A6F2C321EF77BA2B82E6031C5E4A22652FDB1A82330AF79EB"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_entry.png",
+      "bytes": 946960,
+      "sha256": "1728C8728D43929080A0D08DB38DF56CAE0B86F5C9AFB82F8E98D428C8808ED3",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1728C8728D43929080A0D08DB38DF56CAE0B86F5C9AFB82F8E98D428C8808ED3"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_recovery.png",
+      "bytes": 941368,
+      "sha256": "FF44928AB1F4BE560769D1BA76DD671876DBF2F07128506C799C61732B65DEC7",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "FF44928AB1F4BE560769D1BA76DD671876DBF2F07128506C799C61732B65DEC7"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/standing_block_entry.png",
+      "bytes": 902484,
+      "sha256": "C10B7C39D0B9605849CD0A07F7BC6154DFC38A9CC39D5C48969EDB8CE79EE32A",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C10B7C39D0B9605849CD0A07F7BC6154DFC38A9CC39D5C48969EDB8CE79EE32A"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/standing_block_release.png",
+      "bytes": 914576,
+      "sha256": "17DEC08DE0281FC74837B212CFCAB781AEB7CF6AE6F782D985211C1870119218",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "17DEC08DE0281FC74837B212CFCAB781AEB7CF6AE6F782D985211C1870119218"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/approved-metadata.json",
+      "bytes": 5752,
+      "sha256": "CF718B23B9BF9A6CBD07645F3A4A1AB8F762983DF160BBE55CAF29BBE14DD0B1",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_pistol_intimidation_beat.png",
+      "bytes": 979259,
+      "sha256": "F99AD051EB9E2BFBCC856BDF438AF4EA0B9C3938FD562B6E557AF154B703EF93",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F99AD051EB9E2BFBCC856BDF438AF4EA0B9C3938FD562B6E557AF154B703EF93"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_pull_in.png",
+      "bytes": 968862,
+      "sha256": "13A1BC7D8E61ECB3DE60609A17A3A063E7D867CD80C0A15115D2AD84699F21F5",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "13A1BC7D8E61ECB3DE60609A17A3A063E7D867CD80C0A15115D2AD84699F21F5"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_recovery.png",
+      "bytes": 800295,
+      "sha256": "2F51D8A6BA157ECB32225BDF9681118188FD5777C47A5AB5C3142A17AC80EBBE",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "2F51D8A6BA157ECB32225BDF9681118188FD5777C47A5AB5C3142A17AC80EBBE"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_release_v2.png",
+      "bytes": 935843,
+      "sha256": "4D07CA6BD00E37221BD2FF66A29BC78B54C5B4896882C7BE53578E4FE78390DF",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "4D07CA6BD00E37221BD2FF66A29BC78B54C5B4896882C7BE53578E4FE78390DF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-targeted-repair-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_scythe_capture_v2.png",
+      "bytes": 974295,
+      "sha256": "A29F7B11FE8A315E21EBF84A0697CB4FAE38316DB91A3BBB9D64B921039413D9",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "A29F7B11FE8A315E21EBF84A0697CB4FAE38316DB91A3BBB9D64B921039413D9"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-targeted-repair-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/command_grab_threatening_startup.png",
+      "bytes": 888622,
+      "sha256": "7F1B3C77B690110F288427C11354ACDFC1802C6313CE22F1987981717EAA9A92",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "7F1B3C77B690110F288427C11354ACDFC1802C6313CE22F1987981717EAA9A92"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_backward_throw_commitment.png",
+      "bytes": 948569,
+      "sha256": "1648AF0B46F3E3244B9D30CE8CD39339172BA5F75999F36D09FB1BEB50886A55",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1648AF0B46F3E3244B9D30CE8CD39339172BA5F75999F36D09FB1BEB50886A55"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-targeted-repair-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_forward_throw_commitment.png",
+      "bytes": 920814,
+      "sha256": "F91C27DCE650BE60D923303FD581B90DE51471418E89FCCBF3783F3BC35883D4",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F91C27DCE650BE60D923303FD581B90DE51471418E89FCCBF3783F3BC35883D4"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_capture_v2.png",
+      "bytes": 944822,
+      "sha256": "66DF5B7A86916430AC9E61AF0F6F183F2D7F325E079CB0F2856D5475118320C2",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "66DF5B7A86916430AC9E61AF0F6F183F2D7F325E079CB0F2856D5475118320C2"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-targeted-repair-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_reach.png",
+      "bytes": 1012660,
+      "sha256": "A94979B4FB4F833AD5E77FF69A41A5A886CBDE720ECB2DE4900007C83D568E34",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "A94979B4FB4F833AD5E77FF69A41A5A886CBDE720ECB2DE4900007C83D568E34"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_recovery.png",
+      "bytes": 923279,
+      "sha256": "DF16162F0D62686CE890371EE09EE083F1977F6BE059CF3AEAD4AE2FBD8CDB54",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "DF16162F0D62686CE890371EE09EE083F1977F6BE059CF3AEAD4AE2FBD8CDB54"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-pose-library-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/approved-metadata.json",
+      "bytes": 4788,
+      "sha256": "276DCCEB60D73669FB970C114FC83781C8C660288B5E5631A64E482DEEFA9011",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/command_grab_scythe_draw_control_bridge.png",
+      "bytes": 1013497,
+      "sha256": "C1215C190B0635B719D4FF6464E2FEF37A99295DF126B552085244A18A7768EC",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C1215C190B0635B719D4FF6464E2FEF37A99295DF126B552085244A18A7768EC"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/universal_backward_throw_preparation.png",
+      "bytes": 915845,
+      "sha256": "2DFFE532A1E0F824D97736475D56551EAA09AB3A2EF869BD4B7CFBF31C2D9F0D",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "2DFFE532A1E0F824D97736475D56551EAA09AB3A2EF869BD4B7CFBF31C2D9F0D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-motion-v1/universal_forward_throw_preparation.png",
+      "bytes": 910873,
+      "sha256": "5DB84F90BEFD886927C15C6AFB8EC185F6B800048CF90900B3CC34C2D8843ECC",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5DB84F90BEFD886927C15C6AFB8EC185F6B800048CF90900B3CC34C2D8843ECC"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/grab-throw-motion-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_01.png",
+      "bytes": 910209,
+      "sha256": "2CDC0ECF24C9595CCA414541DEF6ADDC881E750A45674564168117E2B17487E8",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "2CDC0ECF24C9595CCA414541DEF6ADDC881E750A45674564168117E2B17487E8"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/idle-foundation-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_02.png",
+      "bytes": 902697,
+      "sha256": "B109A3A3D6E402EA4E52DFAEBBFF155CCA26099A6FE8810A82E1EAB99C5BC3ED",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "B109A3A3D6E402EA4E52DFAEBBFF155CCA26099A6FE8810A82E1EAB99C5BC3ED"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/idle-foundation-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_03.png",
+      "bytes": 889279,
+      "sha256": "1557F85ECD1E10B2B7D12556A6948B9410A6FB3B77B70FD50B4544CC62FE2D08",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1557F85ECD1E10B2B7D12556A6948B9410A6FB3B77B70FD50B4544CC62FE2D08"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/idle-foundation-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/01_launch_reaction.png",
+      "bytes": 733746,
+      "sha256": "7B0212226FD30A878901FC15F5586EF809E07BBA0BFFD6E88DFED369DF4A7C73",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png",
+      "bytes": 476741,
+      "sha256": "1574E722E395A86A9508713786E55FC8DA048E7514AF80585D1E8D94842F40A1",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png",
+      "bytes": 692870,
+      "sha256": "DBE082B7386C35AE7EA60387F6B97CE34F0095340D6174B1926C4678E6AA2874",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png",
+      "bytes": 610145,
+      "sha256": "FC73B12790CC069B4645A8D43620BCF34787A3EEAD4EDE06DEE09FCC9FC1EBB9",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png",
+      "bytes": 516194,
+      "sha256": "5C3F8993BC3D8C2588E75ABDA754B45313134857CE8D9426861AE283E3D31A31",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/06_shoulder_roll_knee_draw.png",
+      "bytes": 576150,
+      "sha256": "E5B0B19C233D7599BF91CF2478D22425B759150ECB25A0332551A4C24FA1E8F2",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/07_face_up_roll_brace.png",
+      "bytes": 650912,
+      "sha256": "E12DCE0E7CAB12F4B0E03C4F686DC11A2C2CB3BC59499CEACDF44B58F4E164DD",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png",
+      "bytes": 617495,
+      "sha256": "C5A6C7F05BD01CCCE0B275F35C3BC5F971C9FDF56B75A61BD745F45FD082AC20",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png",
+      "bytes": 551002,
+      "sha256": "01E5A9544C3CEAA47F137608AE66DCD8B96DB96C7643C69C28CC75A9D3A866A6",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png",
+      "bytes": 694761,
+      "sha256": "8C81C0B7423733B42FBE5B5812A052C460F279165FA6056DE35D0440D46A060D",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_anticipation_v2.metadata.json",
+      "bytes": 2444,
+      "sha256": "3BC660A2A6BD4148D2F90DF25926653BC0A205DB93E6FD56B0307F0BFBEFEE1F",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_anticipation_v2.png",
+      "bytes": 926948,
+      "sha256": "5466FAA362910A0619CE364FAF9CBA9CC42EE32A82233AB55E87FC9C2EF841EE",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5466FAA362910A0619CE364FAF9CBA9CC42EE32A82233AB55E87FC9C2EF841EE"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-anticipation-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.metadata.json",
+      "bytes": 2457,
+      "sha256": "56B44922E5A30E41F5F55234C5A0466A76243374888AC16DA111F091C1D19937",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.png",
+      "bytes": 918905,
+      "sha256": "D3FDFFDE485A1681812F6BFFC30E5886BE881A70DB4E914BFB5F071EF4D63BAE",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D3FDFFDE485A1681812F6BFFC30E5886BE881A70DB4E914BFB5F071EF4D63BAE"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_recoil_v2.metadata.json",
+      "bytes": 2489,
+      "sha256": "98B149D0E7F9ACD0854540C918B3F10121C07C35240CCA39D1DC74A42F88FFCB",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_recoil_v2.png",
+      "bytes": 897475,
+      "sha256": "922CD08175AE59F47E7BE74E2638B5D1CC3F9ABC250F2F3D37A54C501FABB305",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "922CD08175AE59F47E7BE74E2638B5D1CC3F9ABC250F2F3D37A54C501FABB305"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_extension.metadata.json",
+      "bytes": 2681,
+      "sha256": "4F14270408A63B71257A8A4FF7FCE9A3DEFDB81E2DF15D9447B381C158C8E8B0",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_extension.png",
+      "bytes": 971029,
+      "sha256": "F04CC609F8ED4F46748868953A324F3D9893F2C32E4C01D86A813FB403DDD4B5",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F04CC609F8ED4F46748868953A324F3D9893F2C32E4C01D86A813FB403DDD4B5"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_preparation.metadata.json",
+      "bytes": 2683,
+      "sha256": "33A743A3A68F32C9798FEF05E06953ECC926BBA708D086125A4AF9A44BDAC2AC",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_preparation.png",
+      "bytes": 910727,
+      "sha256": "1966B687DAD286DE633653191D84C6B194A7655DE1716B81887E0C9E64636088",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1966B687DAD286DE633653191D84C6B194A7655DE1716B81887E0C9E64636088"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_recovery.metadata.json",
+      "bytes": 2671,
+      "sha256": "27828B5AF5D9CD84038B6BF5947C33B446743D57F93784B3F4C3246940600F61",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_recovery.png",
+      "bytes": 893197,
+      "sha256": "CCE5862A1AE61E8286ED75CB5328EABB3AF0DF0C1E7123D0BE3D61725B78A280",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "CCE5862A1AE61E8286ED75CB5328EABB3AF0DF0C1E7123D0BE3D61725B78A280"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-motion-v1.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/attack-animation-cleanup-v1.protected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing-normal-key-poses-v2.manifest.json",
+      "bytes": 8388,
+      "sha256": "547326F7F9A919298285AE8D218A62DF69FE418531AB1648E1E8BA3B5D395BF9",
+      "categories": [
+        "approved_source"
+      ],
+      "recordedSha256": [],
+      "sourceRecords": []
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/01_compact_chamber.png",
+      "bytes": 750224,
+      "sha256": "78BC144277AC7069E7A586461A705FE52B5594D7ED3B8AA567E6F6F6134DEC24",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "78BC144277AC7069E7A586461A705FE52B5594D7ED3B8AA567E6F6F6134DEC24"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/02_low_kick_contact.png",
+      "bytes": 869919,
+      "sha256": "A06D78B94003E986440759825E62196096179F782062904E57F1EE19BC83B4C1",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "A06D78B94003E986440759825E62196096179F782062904E57F1EE19BC83B4C1"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/03_leg_retraction.png",
+      "bytes": 901714,
+      "sha256": "5FDF2EE53AE55F4B962A2E6AA6B350545B9B862EB860FC7E91AA54C67703EBAF",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5FDF2EE53AE55F4B962A2E6AA6B350545B9B862EB860FC7E91AA54C67703EBAF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/04_planted_recovery.png",
+      "bytes": 826834,
+      "sha256": "00B627387A6E44118991E0940138D64187D527C88FCCF96E3164E36099206D03",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "00B627387A6E44118991E0940138D64187D527C88FCCF96E3164E36099206D03"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/01_anticipation.png",
+      "bytes": 843140,
+      "sha256": "71AAA477E40EAC997FF5D0E8106A98BF10FD6949AA00D2A73C0BE825CD96F61E",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "71AAA477E40EAC997FF5D0E8106A98BF10FD6949AA00D2A73C0BE825CD96F61E"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/02_rising_knee_contact.png",
+      "bytes": 855127,
+      "sha256": "F50847146402F40F8437104D2E1F0F67D89F75BE1F2DB1736463DAD2283CBB03",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F50847146402F40F8437104D2E1F0F67D89F75BE1F2DB1736463DAD2283CBB03"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/03_knee_descent.png",
+      "bytes": 849866,
+      "sha256": "5EAA097F30AA1E66FD58CDDE8B2B2885CF4B0B012D1876C11A31F68D90D25399",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5EAA097F30AA1E66FD58CDDE8B2B2885CF4B0B012D1876C11A31F68D90D25399"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/04_torso_settling.png",
+      "bytes": 902127,
+      "sha256": "55FA7534DC06C53C537AF856F6B728EA1E6EFCF49BD16F8336AD5498935999F0",
+      "categories": [
+        "approved_source",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "55FA7534DC06C53C537AF856F6B728EA1E6EFCF49BD16F8336AD5498935999F0"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-normals-key-poses-v2.approval.json",
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v2.approved.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/01_anticipation_to_takeoff.png",
+      "bytes": 913799,
+      "sha256": "768EE51E000548295B44F2E969F5FD67EA2A290718934C13BF9B3A4976955DDC",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "768EE51E000548295B44F2E969F5FD67EA2A290718934C13BF9B3A4976955DDC"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/02_takeoff_to_rising.png",
+      "bytes": 983076,
+      "sha256": "C834380E853A7691888809C3D17429264322D8CD1A3E9F37D4BCF72FCC4AD164",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C834380E853A7691888809C3D17429264322D8CD1A3E9F37D4BCF72FCC4AD164"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/03_rising_to_apex.png",
+      "bytes": 922952,
+      "sha256": "49C3A91916E7F5CDD1F288C0A02AF13DA36552B67650D865BEE1675D118CDD34",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "49C3A91916E7F5CDD1F288C0A02AF13DA36552B67650D865BEE1675D118CDD34"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/04_apex_to_falling.png",
+      "bytes": 917194,
+      "sha256": "39430A235F591F6A52274C32713D2402F019CEF37955F998C2CD00C07695F6F0",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "39430A235F591F6A52274C32713D2402F019CEF37955F998C2CD00C07695F6F0"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/05_falling_to_soft_landing.png",
+      "bytes": 907134,
+      "sha256": "8B7E984EC9D52D5816E321AE491402601D904DAF861A89210069A1374A676C9B",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "8B7E984EC9D52D5816E321AE491402601D904DAF861A89210069A1374A676C9B"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/06_falling_to_attack_landing.png",
+      "bytes": 804775,
+      "sha256": "64F202B59BA78CFAE9C5E65B8F291ED35DB5B96019665CE14FD6E706BAF08E97",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "64F202B59BA78CFAE9C5E65B8F291ED35DB5B96019665CE14FD6E706BAF08E97"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-connectors-v1/07_falling_to_hard_landing.png",
+      "bytes": 923180,
+      "sha256": "C158EB87E2000F1E7D0A94FF9963DFFC536EE7EFF44F0B5A8E6221E0621E47FC",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C158EB87E2000F1E7D0A94FF9963DFFC536EE7EFF44F0B5A8E6221E0621E47FC"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/motion/jump-fall-landing-connectors-v1.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/knockdown-recovery-key-poses-v1/01_launch_reaction.png",
+      "bytes": 733746,
+      "sha256": "7B0212226FD30A878901FC15F5586EF809E07BBA0BFFD6E88DFED369DF4A7C73",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "7B0212226FD30A878901FC15F5586EF809E07BBA0BFFD6E88DFED369DF4A7C73"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-key-poses-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/knockdown-recovery-key-poses-v1/02_airborne_tumble.png",
+      "bytes": 476741,
+      "sha256": "1574E722E395A86A9508713786E55FC8DA048E7514AF80585D1E8D94842F40A1",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "1574E722E395A86A9508713786E55FC8DA048E7514AF80585D1E8D94842F40A1"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-key-poses-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/knockdown-recovery-key-poses-v1/03_ground_impact.png",
+      "bytes": 692870,
+      "sha256": "DBE082B7386C35AE7EA60387F6B97CE34F0095340D6174B1926C4678E6AA2874",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "DBE082B7386C35AE7EA60387F6B97CE34F0095340D6174B1926C4678E6AA2874"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-key-poses-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/knockdown-recovery-key-poses-v1/04_face_up_knockdown.png",
+      "bytes": 516194,
+      "sha256": "5C3F8993BC3D8C2588E75ABDA754B45313134857CE8D9426861AE283E3D31A31",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5C3F8993BC3D8C2588E75ABDA754B45313134857CE8D9426861AE283E3D31A31"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-key-poses-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/knockdown-recovery-key-poses-v1/05_neutral_get_up.png",
+      "bytes": 551002,
+      "sha256": "01E5A9544C3CEAA47F137608AE66DCD8B96DB96C7643C69C28CC75A9D3A866A6",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "01E5A9544C3CEAA47F137608AE66DCD8B96DB96C7643C69C28CC75A9D3A866A6"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/knockdown-recovery-key-poses-v1.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-light-key-poses-v3/crouching_light/01_guarded_crouch_anticipation.png",
+      "bytes": 1011385,
+      "sha256": "3F9675450C2A45A6F86E1591B32632D34882291B8F512EE80CA843760CD6172B",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3F9675450C2A45A6F86E1591B32632D34882291B8F512EE80CA843760CD6172B"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v3.rejected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-light-key-poses-v3/crouching_light/02_quick_shot_contact.png",
+      "bytes": 1138555,
+      "sha256": "02F193C90FC9C2757351C71230EB42457438FE0AF664DEFB62F660EF9EB08816",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "02F193C90FC9C2757351C71230EB42457438FE0AF664DEFB62F660EF9EB08816"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v3.rejected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-light-key-poses-v3/crouching_light/03_recoil.png",
+      "bytes": 1152514,
+      "sha256": "F96E460E931DFDC318861905FCFD48A52EC5BBF08F593E2B21F1C6798063AD03",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F96E460E931DFDC318861905FCFD48A52EC5BBF08F593E2B21F1C6798063AD03"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v3.rejected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-light-key-poses-v3/crouching_light/04_crouched_recovery.png",
+      "bytes": 1035557,
+      "sha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-v3.rejected.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_heavy/01_deep_rotational_anticipation.png",
+      "bytes": 940860,
+      "sha256": "2F43567B1874C5DC563AC5624C544F2829621EF041A2C5C485DC0E15DFB47D51",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "2F43567B1874C5DC563AC5624C544F2829621EF041A2C5C485DC0E15DFB47D51"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_heavy/02_sweep_acceleration.png",
+      "bytes": 1181679,
+      "sha256": "52A13CA10CA352AC4C6C8B0541CABEBABA5638317DAB42BA82289F8CFB6F3968",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "52A13CA10CA352AC4C6C8B0541CABEBABA5638317DAB42BA82289F8CFB6F3968"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_heavy/03_low_ground_contact.png",
+      "bytes": 935337,
+      "sha256": "C6BA499B928355BC15F79E4ED4D2893262041DFA59BDBA9A5B431A5842F4255A",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C6BA499B928355BC15F79E4ED4D2893262041DFA59BDBA9A5B431A5842F4255A"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_heavy/04_committed_follow_through.png",
+      "bytes": 934314,
+      "sha256": "DE3228A682B0177434821CFD6F070EB132A57F11419AD7F62D01BE34CE7FA35E",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "DE3228A682B0177434821CFD6F070EB132A57F11419AD7F62D01BE34CE7FA35E"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_heavy/05_planted_recovery.png",
+      "bytes": 1035557,
+      "sha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_medium/01_anticipation.png",
+      "bytes": 1027880,
+      "sha256": "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_medium/02_low_side_kick_contact.png",
+      "bytes": 1071985,
+      "sha256": "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_medium/03_leg_retraction.png",
+      "bytes": 1011345,
+      "sha256": "EE109DE74710BA3A3E2DAD19EE432024618995CEC99EB5F8F04D83F8D5197B90",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "EE109DE74710BA3A3E2DAD19EE432024618995CEC99EB5F8F04D83F8D5197B90"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-repair-v2/crouching_medium/04_planted_crouch_recovery.png",
+      "bytes": 1035557,
+      "sha256": "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D07751082C466F1F3C5F5404AF58E0C32FC54E2C5D510F0C57161DD2A951861D"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-v2-medium-heavy-preservation-v3.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_heavy/01_anticipation.png",
+      "bytes": 1156770,
+      "sha256": "4D90A5E2C43D8D82F16D868CCED15D8842468903833A4E2096391A2AF4344255",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "4D90A5E2C43D8D82F16D868CCED15D8842468903833A4E2096391A2AF4344255"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_heavy/02_contact.png",
+      "bytes": 1158328,
+      "sha256": "22B268A7E254530C9B4FDBF6853E2CA2F18A4A6B13FF54D4AB498CF5838DE6B6",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "22B268A7E254530C9B4FDBF6853E2CA2F18A4A6B13FF54D4AB498CF5838DE6B6"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_heavy/03_follow_through.png",
+      "bytes": 1186279,
+      "sha256": "90DFB80DCDBAEE5167805D6740626FBF4BAECDAD454E33278DE32D9EE268A945",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "90DFB80DCDBAEE5167805D6740626FBF4BAECDAD454E33278DE32D9EE268A945"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_heavy/04_recovery.png",
+      "bytes": 1124436,
+      "sha256": "4A5D4DE5602D45C28F7773555E4864E5754A5D7FB3DE30FAA97AAE17A2866FEB",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "4A5D4DE5602D45C28F7773555E4864E5754A5D7FB3DE30FAA97AAE17A2866FEB"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_light/01_anticipation.png",
+      "bytes": 1201020,
+      "sha256": "77EB83D6BB6609098E2AEA76D6FD400FF911784AAC7F9CE884F1C03BF498768C",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "77EB83D6BB6609098E2AEA76D6FD400FF911784AAC7F9CE884F1C03BF498768C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_light/02_contact.png",
+      "bytes": 1219490,
+      "sha256": "76DA8E9ED133FB6E09D26B5C7F5DB67EC76DCBE358960DC293A9E73668062922",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "76DA8E9ED133FB6E09D26B5C7F5DB67EC76DCBE358960DC293A9E73668062922"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_light/03_follow_through.png",
+      "bytes": 1124409,
+      "sha256": "C782726FAF039CDF2F3E8CE3B656147107AB27E52176E658F096EA3B655CBE6C",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C782726FAF039CDF2F3E8CE3B656147107AB27E52176E658F096EA3B655CBE6C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_light/04_recovery.png",
+      "bytes": 1011562,
+      "sha256": "FF1EA33D912D7D64A1D9B25ECCDE8C1B0073C03F6CAFC552936C1BA45384212F",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "FF1EA33D912D7D64A1D9B25ECCDE8C1B0073C03F6CAFC552936C1BA45384212F"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_medium/01_anticipation.png",
+      "bytes": 1027880,
+      "sha256": "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5E452F91F34D21A8FFF404961A3EF8317888A3D5C354B2BD18FD4C691BCDF2C0"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_medium/02_contact.png",
+      "bytes": 1071985,
+      "sha256": "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "FF35213CD2F404855C33753DBE03A475ADCE2DF7BA9DB4B694EC0433D014BF13"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_medium/03_follow_through.png",
+      "bytes": 1043535,
+      "sha256": "330F205BBAEAFB57C7D3576CC53D3F3800FB08EADB49C6338CFE663848402408",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "330F205BBAEAFB57C7D3576CC53D3F3800FB08EADB49C6338CFE663848402408"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-key-poses-v1/crouching_medium/04_recovery.png",
+      "bytes": 1115211,
+      "sha256": "0A0CCA9D6C89F708D540EAA2F386C9599C62AE45F6DA4E17B58CF0785ECD714C",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "0A0CCA9D6C89F708D540EAA2F386C9599C62AE45F6DA4E17B58CF0785ECD714C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-key-poses-v1/standing_light/02_contact.png",
+      "bytes": 869919,
+      "sha256": "A06D78B94003E986440759825E62196096179F782062904E57F1EE19BC83B4C1",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "A06D78B94003E986440759825E62196096179F782062904E57F1EE19BC83B4C1"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-key-poses-v1/standing_medium/01_anticipation.png",
+      "bytes": 843140,
+      "sha256": "71AAA477E40EAC997FF5D0E8106A98BF10FD6949AA00D2A73C0BE825CD96F61E",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "71AAA477E40EAC997FF5D0E8106A98BF10FD6949AA00D2A73C0BE825CD96F61E"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-key-poses-v1/standing_medium/02_contact.png",
+      "bytes": 855127,
+      "sha256": "F50847146402F40F8437104D2E1F0F67D89F75BE1F2DB1736463DAD2283CBB03",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F50847146402F40F8437104D2E1F0F67D89F75BE1F2DB1736463DAD2283CBB03"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/standing-normals-key-poses-v1.targeted-repair.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/02_fast_low_extension_connector.png",
+      "bytes": 897803,
+      "sha256": "9855161B80638E36CCB2F32D0EF0CED0836461D25D11B338917ECDC188B5C1A7",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "9855161B80638E36CCB2F32D0EF0CED0836461D25D11B338917ECDC188B5C1A7"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/04_post_contact_recoil_connector.png",
+      "bytes": 963586,
+      "sha256": "8028A6CD81D4A49DE433FECAC9F5176A05770C3BA459E11D6B0CE9A714ED7CA1",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "8028A6CD81D4A49DE433FECAC9F5176A05770C3BA459E11D6B0CE9A714ED7CA1"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/standing-light-motion-v1.current-production-baseline.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/crouching-block-v2/crouching_block_v2.png",
+      "bytes": 980347,
+      "sha256": "3C73EEE7725E881064723C23CF82A50A5AB174B2EDB98F4BA6C9CF2DA5315018",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3C73EEE7725E881064723C23CF82A50A5AB174B2EDB98F4BA6C9CF2DA5315018"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/crouching-block-v2.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/01_dash_backward_v3_load_low.png",
+      "bytes": 752872,
+      "sha256": "702280E3EEA290E1DAFC52D4E1B19FE28A6617271006628730BD0F0169891C74",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "702280E3EEA290E1DAFC52D4E1B19FE28A6617271006628730BD0F0169891C74"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/02_dash_backward_v3_push_away.png",
+      "bytes": 740324,
+      "sha256": "B8195F0B3C6E510255BEA5EDA6E1A5F079EFB0FAB3CCEDB65D0B673DA383DA23",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "B8195F0B3C6E510255BEA5EDA6E1A5F079EFB0FAB3CCEDB65D0B673DA383DA23"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/03_dash_backward_v3_compact_retreat_hop_slide.png",
+      "bytes": 653963,
+      "sha256": "7128CA1C1A0A83284DF149F8F8A1D2B068269D9893C55374606C08BD2086BBF7",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "7128CA1C1A0A83284DF149F8F8A1D2B068269D9893C55374606C08BD2086BBF7"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/04_dash_backward_v3_max_retreat.png",
+      "bytes": 682678,
+      "sha256": "C6DA56D6273EC2296E6B8868149B54B570814B76FAE0E26AAC14E0DCA28CEA4E",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C6DA56D6273EC2296E6B8868149B54B570814B76FAE0E26AAC14E0DCA28CEA4E"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/05_dash_backward_v3_controlled_landing.png",
+      "bytes": 745080,
+      "sha256": "3D635F9490BF91B6F8017EAC0AAD2820B332742C8C78B0C4C9C854CD423DE400",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "3D635F9490BF91B6F8017EAC0AAD2820B332742C8C78B0C4C9C854CD423DE400"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/06_dash_backward_v3_guarded_recovery.png",
+      "bytes": 795823,
+      "sha256": "52F955C2B7F388625690C75BDE9A9C9F6550AE63108CADD0ADB059B9418AD4A7",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "52F955C2B7F388625690C75BDE9A9C9F6550AE63108CADD0ADB059B9418AD4A7"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/01_dash_forward_v2_startup_load.png",
+      "bytes": 789173,
+      "sha256": "067216E931FADEDCEBA423585C814785B63C0C33608E6B4E2360062D439D10A9",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "067216E931FADEDCEBA423585C814785B63C0C33608E6B4E2360062D439D10A9"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/02_dash_forward_v2_grounded_push_connector.png",
+      "bytes": 777779,
+      "sha256": "D2ED4BE2BE6D2B28D9E6B5BD480555AE7FAB8BD533E86FD96F4A6557A755FF93",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D2ED4BE2BE6D2B28D9E6B5BD480555AE7FAB8BD533E86FD96F4A6557A755FF93"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/03_dash_forward_v2_committed_launch.png",
+      "bytes": 767041,
+      "sha256": "88AA55D699F9CF3157DE288B01F7A1807606C71EE4DFEB754D819E136D51AD6A",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "88AA55D699F9CF3157DE288B01F7A1807606C71EE4DFEB754D819E136D51AD6A"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/04_dash_forward_v2_low_travel_carry.png",
+      "bytes": 722659,
+      "sha256": "D4E7DBB81A503F6FD44238EB856C7E7C2108807F013A63950220C1CE73FA310B",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "D4E7DBB81A503F6FD44238EB856C7E7C2108807F013A63950220C1CE73FA310B"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/05_dash_forward_v2_deceleration_catch.png",
+      "bytes": 783258,
+      "sha256": "09827943771230F6482B0E8FD340CB21AC4B85836F7FF46F946C2106686937D1",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "09827943771230F6482B0E8FD340CB21AC4B85836F7FF46F946C2106686937D1"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/06_dash_forward_v2_brake_recovery.png",
+      "bytes": 802438,
+      "sha256": "EC3C5B2B778DDC35441417F54A8F9F7EBEF7DCA62B618F0006AD3AD2CBF5C5AC",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "EC3C5B2B778DDC35441417F54A8F9F7EBEF7DCA62B618F0006AD3AD2CBF5C5AC"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-smoothing-v3/dash-backward/03_dash_backward_v4_push_to_retreat_connector.png",
+      "bytes": 961602,
+      "sha256": "794459CA60ACB6407E74550B39ADF337E43D1B00EFEB351FF493BC6E81A46D36",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "794459CA60ACB6407E74550B39ADF337E43D1B00EFEB351FF493BC6E81A46D36"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-smoothing-v3/dash-forward/03_dash_forward_v3_push_to_launch_connector.png",
+      "bytes": 940716,
+      "sha256": "23C50EBA2913BB51BB73E9E2CB965F0EA3C4098CABB61FAA28623FA21AE40B6C",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "23C50EBA2913BB51BB73E9E2CB965F0EA3C4098CABB61FAA28623FA21AE40B6C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/approved-animation-families-v1.freeze.json",
+        "tools/nga-forge/production/characters/swahili/motion/dash-motion-v2.approved.synchronization.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/standing-heavy-key-poses-repair-v2/standing_heavy_anticipation.png",
+      "bytes": 926948,
+      "sha256": "5466FAA362910A0619CE364FAF9CBA9CC42EE32A82233AB55E87FC9C2EF841EE",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5466FAA362910A0619CE364FAF9CBA9CC42EE32A82233AB55E87FC9C2EF841EE"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-anticipation-v2.approval.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/standing-heavy-key-poses/standing_heavy_anticipation.png",
+      "bytes": 907147,
+      "sha256": "E91B0F4B0D18B0CAA1C55F2206B1F3F743D7BEF3DC8B832E60EA606B2119AAFE",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "E91B0F4B0D18B0CAA1C55F2206B1F3F743D7BEF3DC8B832E60EA606B2119AAFE"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/standing-heavy-key-poses/standing_heavy_impact.png",
+      "bytes": 973435,
+      "sha256": "EA36CF0A105D41569E5887CD89773E50688182A67C21C414E0EDC64CE4C8237F",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "EA36CF0A105D41569E5887CD89773E50688182A67C21C414E0EDC64CE4C8237F"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/standing-heavy-key-poses/standing_heavy_recoil.png",
+      "bytes": 916073,
+      "sha256": "C9BFC68989742D886AAC6F3DC7A6D6B92ECEB0BE36F0610D043BCAED7A3A2961",
+      "categories": [
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "C9BFC68989742D886AAC6F3DC7A6D6B92ECEB0BE36F0610D043BCAED7A3A2961"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/approvals/standing-heavy-key-poses-v1.targeted-repair.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/impact_spark/impact_spark_01.png",
+      "bytes": 18239,
+      "sha256": "120F03D3944C613856D76A41A6058B12FA8ED12E79197F39629810FF6DB5CDC6",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "120F03D3944C613856D76A41A6058B12FA8ED12E79197F39629810FF6DB5CDC6"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/impact_spark/impact_spark_02.png",
+      "bytes": 13875,
+      "sha256": "133B66D3E6B41621C3F4EACAC2B2AD190A00C79D8471324EF7290F584BE2D189",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "133B66D3E6B41621C3F4EACAC2B2AD190A00C79D8471324EF7290F584BE2D189"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/impact_spark/impact_spark_03.png",
+      "bytes": 9905,
+      "sha256": "171AFD88E4329916E24476B187A3BACE7D2D9CD547AE44A3AE8F9D3BC6E7B075",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "171AFD88E4329916E24476B187A3BACE7D2D9CD547AE44A3AE8F9D3BC6E7B075"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/muzzle_flash/muzzle_flash_01.png",
+      "bytes": 6553,
+      "sha256": "F1979677637770E542995D25D81688A22340F5C22F0292BF5340822AEF942EE2",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F1979677637770E542995D25D81688A22340F5C22F0292BF5340822AEF942EE2"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/muzzle_flash/muzzle_flash_02.png",
+      "bytes": 5328,
+      "sha256": "B38A50990C280904BA1DB2F3EA47B6AB61F2CD500530AD45AC8C6F301837FAEF",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "B38A50990C280904BA1DB2F3EA47B6AB61F2CD500530AD45AC8C6F301837FAEF"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/shell_ejection/shell_ejection_01.png",
+      "bytes": 1905,
+      "sha256": "341D269119C62B0ECF388244110B13AA4A2E765FC78FC1C3A578E6A4436CD369",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "341D269119C62B0ECF388244110B13AA4A2E765FC78FC1C3A578E6A4436CD369"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/shell_ejection/shell_ejection_02.png",
+      "bytes": 1962,
+      "sha256": "930BA96336095F887CF38EB3E305080E7C2332F28EC30D39B9C0D074C07876C2",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "930BA96336095F887CF38EB3E305080E7C2332F28EC30D39B9C0D074C07876C2"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/shell_ejection/shell_ejection_03.png",
+      "bytes": 1917,
+      "sha256": "4A66D63D4C9AC70981A660B926754BD179DF134C437ED3B3023B0939170E50A0",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "4A66D63D4C9AC70981A660B926754BD179DF134C437ED3B3023B0939170E50A0"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/shell_ejection/shell_ejection_04.png",
+      "bytes": 2012,
+      "sha256": "F3E926C6ECB1F8B25BFC29FD365C6FD0174922099EEDA7099B72AB256F01B234",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "F3E926C6ECB1F8B25BFC29FD365C6FD0174922099EEDA7099B72AB256F01B234"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/smoke_puff/smoke_puff_01.png",
+      "bytes": 6406,
+      "sha256": "5775EC261E49B4D2623042AA595B8A842DCA230A0B35E05218F87B4B33ADF8D3",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "5775EC261E49B4D2623042AA595B8A842DCA230A0B35E05218F87B4B33ADF8D3"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/smoke_puff/smoke_puff_02.png",
+      "bytes": 6566,
+      "sha256": "8B29A88AE6A07A0BF35BA3D145D0D711A34433553FE816EA51972A7BB3B1612C",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "8B29A88AE6A07A0BF35BA3D145D0D711A34433553FE816EA51972A7BB3B1612C"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    },
+    {
+      "path": "tools/nga-forge/production/characters/swahili/vfx/candidates/attack-animation-cleanup-v1/crouching-light-presentation-v1/smoke_puff/smoke_puff_03.png",
+      "bytes": 6068,
+      "sha256": "050579A1CAB29151DF1CA27FBE80F587FABDA4E1DEA455140650EB9E8D5A08A5",
+      "categories": [
+        "approved_vfx",
+        "recorded_approved_artifact"
+      ],
+      "recordedSha256": [
+        "050579A1CAB29151DF1CA27FBE80F587FABDA4E1DEA455140650EB9E8D5A08A5"
+      ],
+      "sourceRecords": [
+        "tools/nga-forge/production/characters/swahili/freeze/crouching-light-motion-v1.freeze.json"
+      ]
+    }
+  ]
+}

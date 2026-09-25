@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordType": "human_animation_review",
+  "subject": "lamuh_legacy_v2.turn_facing.transition.candidate.v1",
+  "approvedAt": "2026-09-02",
+  "sourceApplication": "Codex desktop",
+  "userInput": "passes but star this one because we may come back to it",
+  "decisions": {
+    "motionAndTransition": "APPROVED_FOR_CURRENT_PRODUCTION_BASELINE_WITH_POLISH_DEBT"
+  },
+  "approvalScope": "turn_facing_motion_mirrored_parity_and_transition_only",
+  "starredForRevisit": true,
+  "revisitReason": "user_requested_may_come_back_to_it",
+  "accepted": [
+    "four-pose body-driven turn and facing transition",
+    "authored right-to-left motion and whole-sequence mirrored parity",
+    "fixed root and Idle-aligned adult body scale",
+    "outline-free NGA V2 identity, beard, locs, costume, and silhouette continuity",
+    "immediate simulation-owned facing with interruptible visual presentation"
+  ],
+  "approvedCandidate": {
+    "normalizationReport": "tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/normalization.report.json",
+    "normalizationReportSha256": "83174DFC1AA7F8C5E7FD31CA0D519B1E09CD61744BA63FE6E641054B1E43F700",
+    "contactSheet": "tools/nga-forge/review/lamuh-legacy-v2-turn-facing-modernization-v1/turn-facing-numbered-contact-sheet.png",
+    "contactSheetSha256": "D30024A2592F6F1FB782A32FA299FBE04696623AE4FA86183DEB8EBC541626B2",
+    "exposureTicks": [
+      2,
+      3,
+      3,
+      4
+    ],
+    "durationTicks": 12
+  },
+  "approvalBoundary": {
+    "turnFacingMotionApprovedForCurrentBaseline": true,
+    "turnFacingTransitionApprovedForCurrentBaseline": true,
+    "starredForRevisit": true,
+    "combinedMovementSetApproved": false,
+    "combatProfileApproved": false,
+    "runtimeArtPromotionApproved": false,
+    "firstPlayableApproved": false,
+    "productionApproved": false,
+    "deployable": false,
+    "rosterPromotionAuthorized": false
+  },
+  "nextAuthorizedCandidateWork": "standard_grab_forward_throw_back_throw_human_review",
+  "legacySourceRemainsImmutable": true
+}

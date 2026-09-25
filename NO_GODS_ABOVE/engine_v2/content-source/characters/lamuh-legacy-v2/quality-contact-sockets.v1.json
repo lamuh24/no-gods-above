@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidateOnly": true,
+  "deployable": false,
+  "subject": "lamuh_quality_contact_sockets_v1",
+  "placement": "collision_triggered_authored_source_pixel_socket",
+  "notes": [
+    "No body recoloring, redraw or scale at impact.",
+    "Crouching Heavy decorative VFX remains disabled.",
+    "Sockets are candidate presentation data, not modified collision boxes."
+  ],
+  "attacks": {
+    "standing_light": [
+      {
+        "frame": 2,
+        "sourcePath": "/lamuh-legacy-v2/standing-light-v2/standing-light-02.png",
+        "sha256": "8E2326F54B73ADD8F0CC1B956DD3A1C89A7A2EFA685ECA275AC3A787445C15F8",
+        "x": 1088,
+        "y": 840,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "standing_medium": [
+      {
+        "frame": 4,
+        "sourcePath": "/lamuh-legacy-v2/standing-medium-v2/standing-medium-04.png",
+        "sha256": "D0A006D320BD4B49C9BF2AD90E48FAF4A468180B23E07D527BFE28AC8DA04511",
+        "x": 1100,
+        "y": 825,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "standing_heavy": [
+      {
+        "frame": 3,
+        "sourcePath": "/lamuh-legacy-v2/standing-heavy-v2/standing-heavy-03.png",
+        "sha256": "AC376111D67F55C0C0BA336390FF0A95ED20F670D4A5AC2A0C71AADE0BE2103C",
+        "x": 1354,
+        "y": 800,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "crouching_light": [
+      {
+        "frame": 3,
+        "sourcePath": "/lamuh-legacy-v2/crouching-light-v2/crouching-light-03.png",
+        "sha256": "B276688EA7B99F4ACB12797FE2A943703D4A27D713DC4C802EFD9C44739EDEA5",
+        "x": 1130,
+        "y": 1030,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "crouching_medium": [
+      {
+        "frame": 3,
+        "sourcePath": "/lamuh-legacy-v2/crouching-medium-v2/crouching-medium-03.png",
+        "sha256": "C1D0E4237A30503C81B4EC0094CFC67D8A7D71950948D05ED3B0A1D4CFC6A440",
+        "x": 1238,
+        "y": 1235,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "air_light": [
+      {
+        "frame": 2,
+        "sourcePath": "/lamuh-legacy-v2/air-normals-v2/air-light/air-light-02.png",
+        "sha256": "6AFA0F6F85E96C34BF98EDC59458D3C7BB00A17EEFFA10D96920E5A163AC118A",
+        "x": 1200,
+        "y": 665,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "air_medium": [
+      {
+        "frame": 2,
+        "sourcePath": "/lamuh-legacy-v2/air-normals-v2/air-medium/air-medium-02.png",
+        "sha256": "2C36B7C10D07F3E5DB9655725E3C37A3E5B41875EFD05D09288A3163CBC996AF",
+        "x": 1230,
+        "y": 725,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "air_heavy": [
+      {
+        "frame": 3,
+        "sourcePath": "/lamuh-legacy-v2/air-normals-v2/air-heavy/air-heavy-03.png",
+        "sha256": "770BFB1D57ED5C44F5CEA55A41C885D5A95555453DACB6A79F72661CFBD81452",
+        "x": 795,
+        "y": 1160,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "legacy_ascend_step_light": [
+      {
+        "frame": 3,
+        "sourcePath": "/lamuh-legacy-v2/ascend-step-v2/ascend-step-dash-punch-03.png",
+        "sha256": "4102A2B254B0DAC32775E2A46D0386600B65680E1969EAECC51547F18A19F05D",
+        "x": 1088,
+        "y": 840,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "legacy_ascend_step": [
+      {
+        "frame": 3,
+        "sourcePath": "/lamuh-legacy-v2/ascend-step-medium-slide-flip-v1/ascend-step-medium-03.png",
+        "sha256": "FAB66E4D19DA0BC73C955C59DACE6E9AEF49CB91C291ECEFE00D3D96719332CF",
+        "x": 1238,
+        "y": 1260,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      },
+      {
+        "frame": 10,
+        "sourcePath": "/lamuh-legacy-v2/ascend-step-medium-slide-flip-v1/ascend-step-medium-10.png",
+        "sha256": "CE63AC7CA7F7EF9B87C3030CF1BD550A62A9C865E25680C15BD7AE5110609C9D",
+        "x": 1030,
+        "y": 610,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ],
+    "legacy_ascend_step_heavy": [
+      {
+        "frame": 7,
+        "sourcePath": "/lamuh-legacy-v2/ascend-step-heavy-v1/ascend-step-heavy-07.png",
+        "sha256": "DE65B3B3AC2C036227B6D4BBFFF09B5FB0F73E1548F6FC80478D2FD409ED4717",
+        "x": 1270,
+        "y": 825,
+        "root": {
+          "x": 768,
+          "y": 1360
+        }
+      }
+    ]
+  }
+}

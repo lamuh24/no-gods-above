@@ -1,0 +1,618 @@
+{
+  "characterId": "sable",
+  "stage": "specials-rebuild-v3",
+  "generatedAt": "2026-07-08T17:47:56.694Z",
+  "clips": [
+    {
+      "clipId": "neutral_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: neutral Void Shard. Variant: LIGHT, fastest/smallest/safest. A quick one-hand shard flick from ready stance with short range and tiny attached black-violet-silver fracture VFX.",
+        "Motion beats across 12 frames: startup draw-in, active hit pose on frame index 5, compact shard impact, follow-through, recovery, return-to-ready.",
+        "Must read as different from medium/heavy: minimal body commitment, smallest VFX, shortest recovery, crisp fighting-game silhouette.",
+        "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "neutral_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: neutral Void Shard. Variant: MEDIUM, clearer range and body turn than light. Sable forms a two-hand shard fan or crossing shard thrust from center stance.",
+        "Motion beats across 14 frames: startup gather, active hit pose on frame index 6, readable shard impact, follow-through, recovery, return-to-ready.",
+        "Must share Void Shard identity but differ from light/heavy through moderate range, shoulder rotation, larger VFX, and moderate recovery.",
+        "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "neutral_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: neutral Void Shard. Variant: HEAVY, strongest commitment and largest silhouette. Sable plants her stance and releases a charged shard burst from both forearms.",
+        "Motion beats across 16 frames: visible charge startup, active hit pose on frame index 7, strong shard impact/VFX frame, follow-through, heavier recovery, return-to-ready.",
+        "Must share Void Shard identity but differ from light/medium through slower startup, largest body commitment, biggest attached VFX, and highest risk/read.",
+        "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "forward_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: forward Phase Lunge. Variant: LIGHT, fastest/safest. A short phase step into a compact palm, elbow, or forearm strike with a thin void trail.",
+        "Motion beats across 12 frames: quick forward startup, active hit pose on frame index 5, small phase impact, follow-through, quick recovery, return-to-ready.",
+        "Must read as different from medium/heavy: shortest travel, least commitment, small VFX, body remains clearly visible and not smeared.",
+        "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "forward_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: forward Phase Lunge. Variant: MEDIUM, more range and body movement than light. Sable performs a deeper phase dash with a clear lunging strike.",
+        "Motion beats across 14 frames: forward load, phase displacement, active hit pose on frame index 6, impact/VFX frame, follow-through, recovery, return-to-ready.",
+        "Must share Phase Lunge identity but differ from light/heavy through mid travel, stronger lean, moderate VFX trail, and readable recovery.",
+        "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "forward_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: forward Phase Lunge. Variant: HEAVY, most commitment and range. Sable coils, phases forward hard, and lands a broad body-first strike with a larger void trail.",
+        "Motion beats across 16 frames: slower startup coil, long phase lunge, active hit pose on frame index 7, strong impact/VFX frame, follow-through, long recovery, return-to-ready.",
+        "Must share Phase Lunge identity but differ from light/medium through widest travel, strongest silhouette intensity, largest attached VFX, and longest recovery.",
+        "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "back_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: back Void Anchor. Variant: LIGHT, fastest/safest. Sable slips backward and tags the space with a small anchor sigil or crystal hook from her forearm.",
+        "Motion beats across 12 frames: defensive startup, active hit/trap pose on frame index 5, compact anchor flash, follow-through, quick recovery, return-to-ready.",
+        "Must read as different from medium/heavy: smallest anchor, least retreat, safest posture, restrained VFX close to Sable.",
+        "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "back_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: back Void Anchor. Variant: MEDIUM, stronger trap read. Sable backsteps and plants a mid-sized void anchor crystal with a clear defensive counter-pose.",
+        "Motion beats across 14 frames: backward load, anchor placement, active hit/trap pose on frame index 6, impact/VFX frame, follow-through, recovery, return-to-ready.",
+        "Must share Void Anchor identity but differ from light/heavy through moderate retreat, mid-sized anchor geometry, and clearer risk/read.",
+        "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "back_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: back Void Anchor. Variant: HEAVY, highest commitment. Sable plants hard, summons a larger anchor fracture, and visibly commits her body before recovery.",
+        "Motion beats across 16 frames: slow defensive startup, anchor formation, active hit/trap pose on frame index 7, strong fracture impact, follow-through, long recovery, return-to-ready.",
+        "Must share Void Anchor identity but differ from light/medium through biggest anchor silhouette, heaviest posture, largest attached VFX, and longest recovery.",
+        "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "down_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: down Ground Rift. Variant: LIGHT, fastest/smallest. Sable taps or sweeps the ground to open a tiny rift at her feet with a quick low hit read.",
+        "Motion beats across 12 frames: low startup, active hit pose on frame index 5, small ground fracture impact, follow-through, quick recovery, return-to-ready.",
+        "Must read as different from medium/heavy: smallest rift, shortest range, minimal crouch commitment, compact VFX below the waist.",
+        "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "down_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: down Ground Rift. Variant: MEDIUM, more range and body motion. Sable drops into a clear low stance and sends a crawling fracture forward.",
+        "Motion beats across 14 frames: low gather, rift extension, active hit pose on frame index 6, impact/VFX frame, follow-through, recovery, return-to-ready.",
+        "Must share Ground Rift identity but differ from light/heavy through moderate rift length, stronger crouch silhouette, and readable recovery.",
+        "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "down_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: down Ground Rift. Variant: HEAVY, largest commitment. Sable kneels or stomps into a heavy ground rupture with a wide fracture burst below her.",
+        "Motion beats across 16 frames: slower low startup, heavy plant, active hit pose on frame index 7, large rift impact/VFX frame, follow-through, long recovery, return-to-ready.",
+        "Must share Ground Rift identity but differ from light/medium through widest low VFX, most committed lower-body pose, and clear risk/reward read.",
+        "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "up_special_light",
+      "category": "special",
+      "frameCount": 12,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hitFrames": [
+        5
+      ],
+      "cancelFrames": [
+        10
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: up Vertical Phase. Variant: LIGHT, fastest/safest. Sable pops upward with a compact knee, palm, or forearm anti-air strike and a thin vertical phase shimmer.",
+        "Motion beats across 12 frames: quick upward startup, active hit pose on frame index 5, small vertical impact, follow-through, fast recovery, return-to-ready or landing-ready pose.",
+        "Must read as different from medium/heavy: shortest rise, smallest VFX, least air time, stable body scale and visible feet/hair.",
+        "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382 except intentional airborne frames, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "up_special_medium",
+      "category": "special",
+      "frameCount": 14,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hitFrames": [
+        6
+      ],
+      "cancelFrames": [
+        12
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: up Vertical Phase. Variant: MEDIUM, clearer anti-air range. Sable rises through a mid-height vertical phase arc with a stronger upward strike.",
+        "Motion beats across 14 frames: upward load, rise, active hit pose on frame index 6, vertical fracture impact, follow-through, recovery, return-to-ready or landing-ready pose.",
+        "Must share Vertical Phase identity but differ from light/heavy through moderate height, clearer body arc, medium VFX pillar, and readable recovery.",
+        "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382 except intentional airborne frames, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    },
+    {
+      "clipId": "up_special_heavy",
+      "category": "special",
+      "frameCount": 16,
+      "fps": 12,
+      "loop": false,
+      "frameWidth": 448,
+      "frameHeight": 448,
+      "baselineY": 382,
+      "facing": "right",
+      "frameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "hitFrames": [
+        7
+      ],
+      "cancelFrames": [
+        14
+      ],
+      "notes": [
+        "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+        "Family: up Vertical Phase. Variant: HEAVY, most commitment and height. Sable charges, phases vertically, and finishes with a strong rising fracture strike.",
+        "Motion beats across 16 frames: visible charge startup, high vertical phase rise, active hit pose on frame index 7, large vertical impact/VFX frame, follow-through, long recovery, return-to-ready or landing-ready pose.",
+        "Must share Vertical Phase identity but differ from light/medium through tallest silhouette, largest vertical VFX, strongest body commitment, and highest risk/read.",
+        "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382 except intentional airborne frames, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+      ]
+    }
+  ],
+  "manualLoop": [
+    "Generate prompts into prompts/outbox.",
+    "Use a manual image provider.",
+    "Drop generated PNG/WEBP sheets into generated/inbox/<clip>/.",
+    "Run validate, normalize, export, and test.",
+    "Keep results preview-only until explicitly approved."
+  ],
+  "safety": {
+    "previewOnly": true,
+    "liveRosterWiring": "disabled"
+  }
+}

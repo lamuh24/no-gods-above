@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/pose-token.schema.json",
+  "title": "NGA Pose Token",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "facing", "elevation", "plantedFoot", "weight", "weaponState", "handOccupancy", "silhouette", "verticalMotion"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "facing": { "enum": ["forward", "backward", "either"] },
+    "elevation": { "enum": ["grounded", "airborne", "either"] },
+    "plantedFoot": { "enum": ["left", "right", "both", "none", "either"] },
+    "weight": { "enum": ["neutral", "forward", "backward", "low", "airborne"] },
+    "weaponState": { "type": "string", "minLength": 1 },
+    "handOccupancy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "right"],
+      "properties": {
+        "left": { "type": "string", "minLength": 1 },
+        "right": { "type": "string", "minLength": 1 }
+      }
+    },
+    "silhouette": { "type": "string", "minLength": 1 },
+    "verticalMotion": { "enum": ["stationary", "rising", "apex", "falling", "landing"] }
+  }
+}

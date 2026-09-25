@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestKind": "preview",
+  "generatedAt": "2026-06-29T17:24:32.952Z",
+  "characterId": "sable",
+  "stage": "mvp",
+  "approvedForLiveRoster": false,
+  "liveRosterWiring": "disabled",
+  "spriteStandard": {
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right"
+  },
+  "clips": [],
+  "missingClips": [
+    "idle",
+    "crouch",
+    "block",
+    "hit_stun",
+    "walk_forward",
+    "jump",
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "neutral_special_light",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "down_special_light",
+    "up_special_light"
+  ],
+  "reports": {
+    "latestValidationReport": "assets/characters/sable/reports/latest_validation_report.json",
+    "latestNormalizationReport": "assets/characters/sable/reports/latest_normalization_report.json"
+  },
+  "notes": [
+    "This manifest is preview-only and is not consumed by the live roster automatically.",
+    "Do not wire these clips into NO_GODS_ABOVE/game.js until validation is approved and a separate runtime adapter/integration pass is requested.",
+    "Existing production assets remain untouched."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "cleanupOperations": [
+    "existing_normalized_frames_reused_without_pixel_changes",
+    "source_public_sha256_parity_checked"
+  ],
+  "createdAt": "2026-09-05T15:27:17.380Z",
+  "humanApproval": {
+    "approvedAt": null,
+    "approvedBy": null,
+    "state": "pending"
+  },
+  "licensingNotes": [
+    "Local generated Lamuh candidate. No promotion or deployment approval. createdAt records the source-manifest snapshot time."
+  ],
+  "model": null,
+  "promptHash": null,
+  "references": [
+    "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/reactions-quality.v1.json",
+    "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/movement-v2/idle-00.png"
+  ],
+  "revisionChain": [
+    "REACTION_QUALITY_V1_SOURCE",
+    "ADDITIVE_FORGE_REACTION_CANDIDATE"
+  ],
+  "seed": null,
+  "sourceType": "ai_assisted",
+  "tool": "Built-in image generation; existing Lamuh quality normalizer; additive Forge contract packaging"
+}

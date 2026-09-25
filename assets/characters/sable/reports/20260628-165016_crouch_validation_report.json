@@ -1,0 +1,386 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-06-28T20:50:16.277Z",
+  "characterId": "sable",
+  "clipId": "crouch",
+  "sourceSheet": "assets/characters/sable/generated/provider_review/spritebuilder/crouch/20260628-165012/sable_crouch_20260628-165012_DEV_NOT_FINAL.png",
+  "expected": {
+    "clipId": "crouch",
+    "category": "movement",
+    "frameCount": 8,
+    "fps": 8,
+    "loop": true,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/generated/provider_review/spritebuilder/crouch/20260628-165012/sable_crouch_20260628-165012_DEV_NOT_FINAL.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hitFrames": [],
+    "cancelFrames": [],
+    "notes": [
+      "Generate Sable only as a loopable crouch idle / crouching guard.",
+      "Use a readable lower fighting stance with subtle breathing motion.",
+      "Keep character scale stable and full body visible in every 448x448 frame.",
+      "Use restrained silver/black void fracture energy around the forearms only.",
+      "Use transparent alpha only; no green screen, no chroma background, no flat-color background."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 8,
+    "rows": 1,
+    "frameCount": 8
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 0,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 0,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 1,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 1,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 2,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 2,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 3,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 3,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 4,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 4,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 5,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 5,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 6,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 6,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "BODY_TOO_SMALL",
+      "frameIndex": 7,
+      "message": "Body height 164px is below configured minimum 180px."
+    },
+    {
+      "severity": "warn",
+      "code": "BASELINE_DRIFT",
+      "frameIndex": 7,
+      "message": "Frame baseline delta is 9px; max is 8px."
+    },
+    {
+      "severity": "warn",
+      "code": "POSSIBLE_DUPLICATE_FRAMES",
+      "message": "9 near-duplicate frame pair(s) detected. Held frames can be okay, but review the motion."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 8815,
+      "bbox": {
+        "x": 163,
+        "y": 228,
+        "width": 121,
+        "height": 164,
+        "right": 283,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110011111111111111001111111111111000011111111111100001111111111110000111111111111000011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 8900,
+      "bbox": {
+        "x": 174,
+        "y": 228,
+        "width": 123,
+        "height": 164,
+        "right": 296,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": 12,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110001111111111111000111111111111100011111111111100000111111111110000011111111111001001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 8897,
+      "bbox": {
+        "x": 176,
+        "y": 228,
+        "width": 125,
+        "height": 164,
+        "right": 300,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": 15,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110001111111111111000111111111111100011111111111100000111111111110000011111111111001001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 8851,
+      "bbox": {
+        "x": 170,
+        "y": 228,
+        "width": 121,
+        "height": 164,
+        "right": 290,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": 7,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110011111111111111000111111111111100011111111111100001111111111110000011111111111001001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 8863,
+      "bbox": {
+        "x": 155,
+        "y": 228,
+        "width": 122,
+        "height": 164,
+        "right": 276,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": -8,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110011111111111111001111111111111000111111111111100001111111111110000111111111110010011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 8822,
+      "bbox": {
+        "x": 146,
+        "y": 228,
+        "width": 123,
+        "height": 164,
+        "right": 268,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": -16,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100011111111111110001111111111111000111111111111000001111111111100000111111111110010011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 8779,
+      "bbox": {
+        "x": 151,
+        "y": 228,
+        "width": 121,
+        "height": 164,
+        "right": 271,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": -12,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100011111111111110001111111111111000111111111111100001111111111100000111111111110010011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 8830,
+      "bbox": {
+        "x": 162,
+        "y": 228,
+        "width": 122,
+        "height": 164,
+        "right": 283,
+        "bottom": 391
+      },
+      "baselineDeltaPx": 9,
+      "centerDeltaPx": -1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110011111111111111001111111111111000011111111111100001111111111110000111111111111000011111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [
+    {
+      "frameA": 0,
+      "frameB": 4,
+      "hammingDistance": 3
+    },
+    {
+      "frameA": 0,
+      "frameB": 7,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 1,
+      "frameB": 2,
+      "hammingDistance": 0
+    },
+    {
+      "frameA": 1,
+      "frameB": 3,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 2,
+      "frameB": 3,
+      "hammingDistance": 2
+    },
+    {
+      "frameA": 4,
+      "frameB": 5,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 4,
+      "frameB": 6,
+      "hammingDistance": 3
+    },
+    {
+      "frameA": 4,
+      "frameB": 7,
+      "hammingDistance": 3
+    },
+    {
+      "frameA": 5,
+      "frameB": 6,
+      "hammingDistance": 1
+    }
+  ],
+  "autoFixRecommended": true
+}

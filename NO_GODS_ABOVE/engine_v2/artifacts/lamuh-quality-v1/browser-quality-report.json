@@ -1,0 +1,136 @@
+{
+  "candidateOnly": true,
+  "deployable": false,
+  "testedAt": "2026-09-05T15:59:58.215Z",
+  "tests": [
+    {
+      "label": "idle → 5L",
+      "contacts": 1,
+      "phases": [
+        "idle",
+        "hit_reaction"
+      ],
+      "reactionFrames": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "label": "idle → 5M",
+      "contacts": 1,
+      "phases": [
+        "idle",
+        "hit_reaction"
+      ],
+      "reactionFrames": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "label": "crouch → 2L",
+      "contacts": 1,
+      "phases": [
+        "idle",
+        "hit_reaction"
+      ],
+      "reactionFrames": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "label": "crouch → 2M",
+      "contacts": 1,
+      "phases": [
+        "idle",
+        "hit_reaction"
+      ],
+      "reactionFrames": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "label": "5L → 5M cancel",
+      "contacts": 2,
+      "phases": [
+        "idle",
+        "hit_reaction"
+      ],
+      "reactionFrames": [
+        0,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "label": "Ascend Step Medium",
+      "contacts": 2,
+      "phases": [
+        "idle",
+        "hit_reaction",
+        "knockdown",
+        "getup"
+      ],
+      "reactionFrames": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "label": "Ascend Step Heavy",
+      "contacts": 1,
+      "phases": [
+        "idle",
+        "turn",
+        "knockdown",
+        "getup"
+      ],
+      "reactionFrames": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "checks": [
+    "12 new hash-locked reaction frames",
+    "hit/block/whiff/mirror contact routing",
+    "no unexpected pushbox overlap",
+    "fresh-start cancel displays full attack",
+    "one-shot reaction states",
+    "real-time 1x sampled"
+  ],
+  "screenshots": [
+    "light-contact-1.png",
+    "medium-contact-1.png",
+    "crouch-light-contact-1.png",
+    "crouch-medium-contact-1.png",
+    "cancel-contact-1.png",
+    "cancel-contact-2.png",
+    "slide-launch-contact-1.png",
+    "slide-launch-contact-2.png",
+    "slide-launch-recovery.png",
+    "rear-blast-contact-1.png",
+    "medium-block.png",
+    "medium-mirrored.png"
+  ],
+  "errors": []
+}

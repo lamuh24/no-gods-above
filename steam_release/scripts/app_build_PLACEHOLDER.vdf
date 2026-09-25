@@ -1,0 +1,16 @@
+// SteamPipe app build template for No Gods Above.
+// Replace every PLACEHOLDER value before upload.
+// Do not commit real Steam account names, passwords, or Steam Guard tokens.
+"appbuild"
+{
+    "appid" "STEAM_APP_ID_PLACEHOLDER"
+    "desc" "No Gods Above 0.1.0-steam-demo Windows playtest PLACEHOLDER"
+    "buildoutput" "scripts/output"
+    "contentroot" "content"
+    "setlive" ""
+    "preview" "0"
+    "depots"
+    {
+        "STEAM_DEPOT_ID_PLACEHOLDER" "depot_build_PLACEHOLDER.vdf"
+    }
+}

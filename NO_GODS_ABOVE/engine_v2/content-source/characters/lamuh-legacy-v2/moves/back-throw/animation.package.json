@@ -1,0 +1,614 @@
+{
+  "schemaVersion": "2.1.0-contract",
+  "id": "back_throw",
+  "version": 1,
+  "promotionState": "candidate",
+  "simulationLength": 36,
+  "sourceFrames": [
+    {
+      "id": "back_throw_frame_00",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-00.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "B6C021C00CF1424D97E8D941D3E1DE21E84BBC7B249E46370B2EC913C7EA2565",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "metadataUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    },
+    {
+      "id": "back_throw_frame_01",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-01.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "79F508EF1E507E39CCE18FFC6A348F02EFBFEFFC53FD8405D6167CA171E6A4F3",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "metadataUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    },
+    {
+      "id": "back_throw_frame_02",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-02.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "A81EC7D7A39152C5A4C2A1FAD7B346D6CC813ECA9143EC44C370AB23B2C57423",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "metadataUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    },
+    {
+      "id": "back_throw_frame_03",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-03.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "CA68F93CC27386517EB8DF207DCD7323AFDD89BF32A335536F8A099AA661F3AE",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "metadataUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    },
+    {
+      "id": "back_throw_frame_04",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-04.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "05941038AB361F147034A45ECBB918D8F88668C456F5D154C39BD3E7A80F06CB",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "metadataUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    },
+    {
+      "id": "back_throw_frame_05",
+      "sourceUri": "repo://NO_GODS_ABOVE/engine_v2/public/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-05.png",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "F686D99EAB07B7CF2B70D84617A0D0EB2BC7A2AFD17B3F4475D5F40A0C21A3A4",
+      "approvalUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json",
+      "provenanceUri": "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "metadataUri": "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    }
+  ],
+  "exposures": [
+    {
+      "sourceFrameId": "back_throw_frame_00",
+      "start": 0,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "back_throw_frame_01",
+      "start": 6,
+      "duration": 2
+    },
+    {
+      "sourceFrameId": "back_throw_frame_02",
+      "start": 8,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "back_throw_frame_03",
+      "start": 12,
+      "duration": 4
+    },
+    {
+      "sourceFrameId": "back_throw_frame_04",
+      "start": 16,
+      "duration": 6
+    },
+    {
+      "sourceFrameId": "back_throw_frame_05",
+      "start": 22,
+      "duration": 14
+    }
+  ],
+  "phases": {
+    "anticipation": [
+      {
+        "start": 0,
+        "end": 3
+      }
+    ],
+    "startup": [
+      {
+        "start": 0,
+        "end": 3
+      }
+    ],
+    "active": [
+      {
+        "start": 4,
+        "end": 16
+      }
+    ],
+    "impact": [
+      {
+        "start": 4,
+        "end": 4
+      }
+    ],
+    "followThrough": [
+      {
+        "start": 17,
+        "end": 25
+      }
+    ],
+    "recovery": [
+      {
+        "start": 17,
+        "end": 35
+      }
+    ]
+  },
+  "entryPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "exitPose": {
+    "id": "neutral_stand",
+    "facing": "forward",
+    "elevation": "grounded",
+    "plantedFoot": "both",
+    "weight": "neutral",
+    "weaponState": "legacy_lamuh_body",
+    "handOccupancy": {
+      "left": "free",
+      "right": "free"
+    },
+    "silhouette": "upright_lamuh_ready",
+    "verticalMotion": "stationary"
+  },
+  "interruptPoses": [
+    {
+      "id": "neutral_stand",
+      "facing": "forward",
+      "elevation": "grounded",
+      "plantedFoot": "both",
+      "weight": "neutral",
+      "weaponState": "legacy_lamuh_body",
+      "handOccupancy": {
+        "left": "free",
+        "right": "free"
+      },
+      "silhouette": "upright_lamuh_ready",
+      "verticalMotion": "stationary"
+    }
+  ],
+  "transitions": [],
+  "landing": [],
+  "anchors": [
+    {
+      "frame": 0,
+      "sourceFrameId": "back_throw_frame_00",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 1088,
+        "y": 940
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "groundingContract": "lamuh_legacy_v2_fixed_root_candidate_v1"
+    },
+    {
+      "frame": 6,
+      "sourceFrameId": "back_throw_frame_01",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 1088,
+        "y": 940
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "groundingContract": "lamuh_legacy_v2_fixed_root_candidate_v1"
+    },
+    {
+      "frame": 8,
+      "sourceFrameId": "back_throw_frame_02",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 1088,
+        "y": 940
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "groundingContract": "lamuh_legacy_v2_fixed_root_candidate_v1"
+    },
+    {
+      "frame": 12,
+      "sourceFrameId": "back_throw_frame_03",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 1088,
+        "y": 940
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "groundingContract": "lamuh_legacy_v2_fixed_root_candidate_v1"
+    },
+    {
+      "frame": 16,
+      "sourceFrameId": "back_throw_frame_04",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 1088,
+        "y": 940
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "groundingContract": "lamuh_legacy_v2_fixed_root_candidate_v1"
+    },
+    {
+      "frame": 22,
+      "sourceFrameId": "back_throw_frame_05",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "feet": {
+        "x": 768,
+        "y": 1360
+      },
+      "effect": {
+        "x": 1088,
+        "y": 940
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "groundingContract": "lamuh_legacy_v2_fixed_root_candidate_v1"
+    }
+  ],
+  "combatTrack": {
+    "startup": 4,
+    "active": 13,
+    "recovery": 19,
+    "damage": 75,
+    "hitstop": 7,
+    "hitstun": 0,
+    "blockstun": 0,
+    "boxes": [
+      {
+        "frame": 4,
+        "endFrame": 16,
+        "id": "back_throw",
+        "kind": "throw",
+        "x": 224,
+        "y": 210,
+        "width": 96,
+        "height": 120
+      }
+    ],
+    "cancelWindows": [],
+    "timingAuthorship": {
+      "simulationTickRateHz": 60,
+      "authoredTotalDuration": 36,
+      "durationModel": "independently_authored_per_move",
+      "durationBasis": [
+        "move_weight",
+        "readability",
+        "combat_role",
+        "risk_reward",
+        "character_identity",
+        "animation_quality",
+        "balance"
+      ],
+      "uniformDurationNormalizationProhibited": true,
+      "visualGameplayAlignment": "aligned_by_default",
+      "timingExceptions": []
+    }
+  },
+  "presentationTrack": [
+    {
+      "index": 0,
+      "frame": 4,
+      "type": "spawn_vfx",
+      "eventIdTemplate": "{matchId}:{simulationFrame}:{fighterId}:{moveInstance}:{eventIndex}",
+      "payload": {
+        "profile": "lamuh_standard_throw_contact_candidate",
+        "socket": "contact",
+        "candidateOnly": true
+      }
+    }
+  ],
+  "playbackPolicy": {
+    "mode": "fixed_timeline",
+    "cursorOwner": "simulation",
+    "hitstopFreezesCursor": true,
+    "holdBehavior": "none"
+  },
+  "interruptionBehavior": {
+    "owner": "simulation",
+    "allowedSources": [
+      "incoming_hit",
+      "incoming_throw",
+      "round_end",
+      "forced_state"
+    ],
+    "onInterrupt": "simulation_selects_target_state",
+    "returnStatePolicy": "return_only_after_authored_recovery_or_forced_state"
+  },
+  "groundingTrack": [
+    {
+      "sourceFrameId": "back_throw_frame_00",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "principal_support",
+      "farFootRole": "secondary_support",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_legacy_v1_bottom_center_v1"
+    },
+    {
+      "sourceFrameId": "back_throw_frame_01",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "principal_support",
+      "farFootRole": "secondary_support",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_legacy_v1_bottom_center_v1"
+    },
+    {
+      "sourceFrameId": "back_throw_frame_02",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "principal_support",
+      "farFootRole": "secondary_support",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_legacy_v1_bottom_center_v1"
+    },
+    {
+      "sourceFrameId": "back_throw_frame_03",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "principal_support",
+      "farFootRole": "secondary_support",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_legacy_v1_bottom_center_v1"
+    },
+    {
+      "sourceFrameId": "back_throw_frame_04",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "principal_support",
+      "farFootRole": "secondary_support",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_legacy_v1_bottom_center_v1"
+    },
+    {
+      "sourceFrameId": "back_throw_frame_05",
+      "root": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "farFoot": {
+        "x": 768,
+        "y": 1360
+      },
+      "nearFootRole": "principal_support",
+      "farFootRole": "secondary_support",
+      "projectedGroundPlaneY": 1360,
+      "contractVersion": "lamuh_legacy_v1_bottom_center_v1"
+    }
+  ],
+  "facingBehavior": {
+    "authoredFacing": "P1_screen_right",
+    "runtimeP2": "horizontal_mirror_screen_left",
+    "mirrorAxisX": 768,
+    "losslessMirrorRequired": true
+  },
+  "transitionCompatibility": [
+    {
+      "fromStates": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "crouch"
+      ],
+      "toState": "back_throw",
+      "condition": "simulation_command_or_state_entry",
+      "addsGameplayFrames": false
+    }
+  ],
+  "presentationSockets": [
+    {
+      "id": "contact",
+      "x": 320,
+      "y": 220,
+      "mirrorRule": "x_prime_equals_canvas_width_minus_x",
+      "eventTypes": [
+        "spawn_vfx",
+        "play_sound"
+      ]
+    }
+  ],
+  "gameplayTimingStatus": {
+    "owner": "simulation",
+    "state": "sandbox_candidate_awaiting_combat_approval",
+    "authoritative": false,
+    "candidateValues": {
+      "runtimeProfile": "B",
+      "throwPlaceholder": false,
+      "dedicatedThrowArt": true
+    },
+    "notes": [
+      "Candidate timing only; human review is required.",
+      "Dedicated modern Lamuh attacker art is hash-locked for standard-grab/throw review; the existing deterministic victim track and combat values are unchanged."
+    ]
+  },
+  "approvalRecords": [
+    "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/first-playable-human-review.pending.json"
+  ],
+  "validation": {
+    "hardGates": [
+      "contract_shape",
+      "source_sha256",
+      "exposure_coverage",
+      "phase_bounds",
+      "rollback_event_identity",
+      "simulation_owns_cursor",
+      "grounding_track"
+    ],
+    "creativeWarnings": [],
+    "humanApprovalRequired": true
+  },
+  "provenance": {
+    "sourceType": "new_v2_missing_state_authoring",
+    "tool": "NGA Forge contract compiler and Codex",
+    "model": "OpenAI built-in image generation edit mode",
+    "createdAt": "2026-08-31T00:00:00.000Z",
+    "promptHash": null,
+    "seed": null,
+    "references": [
+      "repo://NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+      "repo://tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json"
+    ],
+    "revisionChain": [
+      "V2_MISSING_STATE_AUTHORING",
+      "V2_FIXED_ROOT_NORMALIZATION",
+      "V2_STANDARD_HUMANOID_THROW_BINDING"
+    ],
+    "cleanupOperations": [
+      "targeted_connector_authoring",
+      "chroma_background_removal",
+      "fixed_root_normalization",
+      "single_sequence_scale"
+    ],
+    "humanApproval": {
+      "state": "pending",
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    "licensingNotes": [
+      "Local candidate-only legacy game asset; not approved for deployment."
+    ]
+  }
+}

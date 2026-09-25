@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_MILESTONE_0_BASELINE_REPORT",
+  "generatedAt": "2026-07-25",
+  "goal": "Complete Swahili Moveset V1",
+  "milestone": 0,
+  "result": "PASS_WITH_RECORDED_BASELINE_TEST_REPAIR",
+  "git": {
+    "branch": "codex/swahili-moveset-goal-v1",
+    "baselineCommit": "81412231aa5fdfbd907d27bc6591b39dce7b43ca",
+    "baselineStagedFileCount": 0,
+    "baselineTrackedModifiedFileCount": 68,
+    "baselineUntrackedFileCount": 3061,
+    "unrelatedWorkPreserved": true,
+    "filesCleanedOrReverted": 0
+  },
+  "coverage": {
+    "entryCount": 84,
+    "statusCounts": {
+      "approved_key_poses": 1,
+      "approved_motion": 32,
+      "blocked_combat_design": 32,
+      "blocked_manual_art": 2,
+      "candidate_key_poses": 1,
+      "candidate_motion": 9,
+      "missing": 1,
+      "not_applicable": 6
+    },
+    "humanReviewReadyCandidates": [
+      "walk_forward",
+      "standing_to_crouch",
+      "crouch_to_standing",
+      "turn_side_switch_compatibility",
+      "throw_result_knockdown_compatibility",
+      "standing_medium",
+      "crouching_medium",
+      "crouching_heavy",
+      "throw_whiff",
+      "command_grab_victim_fall"
+    ],
+    "blockedManualArt": [
+      "walk_backward",
+      "backward_to_forward_reversal"
+    ],
+    "blockedCombatDesign": [
+      "wall_bounce_reaction",
+      "ground_bounce_reaction",
+      "soft_knockdown",
+      "quick_recovery",
+      "delayed_recovery",
+      "forward_normal_light",
+      "forward_normal_medium",
+      "forward_normal_heavy",
+      "backward_normal_light",
+      "backward_normal_medium",
+      "backward_normal_heavy",
+      "air_light",
+      "air_medium",
+      "air_heavy",
+      "special_neutral_light",
+      "special_neutral_medium",
+      "special_neutral_heavy",
+      "special_backward_light",
+      "special_backward_medium",
+      "special_backward_heavy",
+      "special_forward_light",
+      "special_forward_medium",
+      "special_forward_heavy",
+      "special_up_light",
+      "special_up_medium",
+      "special_up_heavy",
+      "special_down_light",
+      "special_down_medium",
+      "special_down_heavy",
+      "throw_tech",
+      "throw_corner_behavior",
+      "unsupported_victim_variants"
+    ],
+    "explicitMissing": [
+      "forward_to_backward_reversal"
+    ],
+    "silentMissingCount": 0,
+    "outOfScopeStatesClassifiedNotApplicable": [
+      "face_down_knockdown_if_required",
+      "super",
+      "ultimate",
+      "intro",
+      "victory",
+      "round_finisher"
+    ]
+  },
+  "hashLock": {
+    "path": "tools/nga-forge/production/characters/swahili/freeze/swahili-moveset-goal-v1.baseline.hash-lock.json",
+    "fileCount": 263,
+    "protectedDigestSha256": "1026F275B478F1505FDD5A992C5FC6923CE4567007B9439FDA19840DE4313E10",
+    "recordedHashMismatchCount": 0,
+    "unresolvedRecordedPathCount": 0,
+    "legacyGameJsSha256": "D081DA2D907CF6ABD978301C1637008B26CCB30B47E2CCAFCA3FEA3331910C6B"
+  },
+  "validation": [
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "cwd": "tools/nga-forge/backend",
+      "initialResult": "FAIL_79_OF_83",
+      "cause": "stale_global_gif_allowlist_rejected_235_later_review_gifs",
+      "repair": "preserve_exact_original_review_counts_and_restrict_all_gifs_to_reports_review_or_reviews_roots",
+      "finalResult": "PASS_83_OF_83"
+    },
+    {
+      "command": "python -m unittest discover -s tools/nga-forge/tests -v",
+      "cwd": ".",
+      "finalResult": "PASS_36_OF_36"
+    },
+    {
+      "command": "npm.cmd run validate",
+      "cwd": "NO_GODS_ABOVE/engine_v2",
+      "finalResult": "PASS"
+    },
+    {
+      "command": "npm.cmd run build",
+      "cwd": "NO_GODS_ABOVE/engine_v2",
+      "finalResult": "PASS"
+    },
+    {
+      "command": "npm.cmd run build",
+      "cwd": "tools/nga-forge/frontend",
+      "finalResult": "PASS"
+    },
+    {
+      "command": "focused Swahili walk, dash, jump, turn, air, command-grab, and ground-normal suites",
+      "cwd": "NO_GODS_ABOVE/engine_v2",
+      "finalResult": "PASS"
+    }
+  ],
+  "invariants": {
+    "legacyGameJsByteIdentical": true,
+    "approvedRecordedHashMismatches": 0,
+    "swahiliOutsideProductionRoster": true,
+    "candidateOnly": true,
+    "deployable": false,
+    "generationPerformed": false,
+    "approvedPixelsModified": false,
+    "packagesPromoted": false,
+    "atlasBuilt": false,
+    "pushPrMergeDeployPublishPerformed": false
+  },
+  "nextAction": "Begin Milestone 1 with the candidate review queue and manual backward-walk blocker preserved; do not generate new art until the user-facing review gates are respected."
+}

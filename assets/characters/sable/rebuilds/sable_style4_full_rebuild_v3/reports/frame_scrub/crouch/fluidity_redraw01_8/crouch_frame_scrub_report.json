@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "animation-fluidity-frame-scrub",
+  "generatedAt": "2026-07-09T17:57:09.934Z",
+  "clip": "crouch",
+  "sourceStrip": "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\generated\\inbox\\crouch\\vzzzz-crouch01\\sable_crouch_8.png",
+  "numberedContactSheet": "assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\reports\\frame_scrub\\crouch\\fluidity_redraw01_8\\crouch_numbered_contact_sheet.png",
+  "frameCount": 8,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "duplicatePairs": [
+    {
+      "frameA": 2,
+      "frameB": 3,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 2,
+      "frameB": 4,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 3,
+      "frameB": 4,
+      "hammingDistance": 4
+    },
+    {
+      "frameA": 3,
+      "frameB": 5,
+      "hammingDistance": 3
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 39146,
+      "bbox": {
+        "x": 118,
+        "y": 30,
+        "width": 213,
+        "height": 352,
+        "right": 330,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 35743,
+      "bbox": {
+        "x": 120,
+        "y": 94,
+        "width": 208,
+        "height": 288,
+        "right": 327,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 32880,
+      "bbox": {
+        "x": 120,
+        "y": 118,
+        "width": 208,
+        "height": 264,
+        "right": 327,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 32448,
+      "bbox": {
+        "x": 121,
+        "y": 129,
+        "width": 207,
+        "height": 253,
+        "right": 327,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 32357,
+      "bbox": {
+        "x": 116,
+        "y": 131,
+        "width": 217,
+        "height": 251,
+        "right": 332,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 31099,
+      "bbox": {
+        "x": 124,
+        "y": 124,
+        "width": 200,
+        "height": 258,
+        "right": 323,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 36456,
+      "bbox": {
+        "x": 122,
+        "y": 61,
+        "width": 205,
+        "height": 321,
+        "right": 326,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 36224,
+      "bbox": {
+        "x": 121,
+        "y": 62,
+        "width": 207,
+        "height": 320,
+        "right": 327,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    }
+  ],
+  "fluidityChecklist": {
+    "oneContinuousAction": "manual_check_required",
+    "anticipationContactFollowThroughRecovery": "manual_check_required",
+    "lockedStrikingLimb": "manual_check_required",
+    "noMirroredFrames": "manual_check_required",
+    "recoveryTowardIdleWithoutDuplicateFrame0": "manual_check_required",
+    "visibleImpactCountMatchesMoveData": "manual_check_required",
+    "notes": [
+      "This script is audit-only. It does not alter, offset, synthesize, or repair frames.",
+      "Manual scrub must verify adjacent-frame continuity, striking-limb lock, phase readability, and hit-count parity before SpriteForge validation."
+    ]
+  }
+}

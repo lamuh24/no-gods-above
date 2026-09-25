@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "2.2.0-stage-contract",
+  "id": "stage_vertical_slice_v1",
+  "displayName": "NGA Stage Integration Test",
+  "status": "approved",
+  "authority": {
+    "gameplayPlane": "deterministic_2d",
+    "renderingMayAffectGameplay": false,
+    "prohibitedDependencies": [
+      "fighter_collision",
+      "hit_detection",
+      "movement_distance",
+      "jump_arcs",
+      "wall_position",
+      "gameplay_spacing",
+      "match_outcome"
+    ]
+  },
+  "combatPlane": {
+    "origin": [0, 0, 0],
+    "floorY": 0,
+    "baselineY": 0,
+    "simulationBounds": { "left": -420, "right": 420 },
+    "worldBounds": { "left": -8.4, "right": 8.4 },
+    "wallAnchors": { "left": -8.4, "right": 8.4 },
+    "cameraSafeRegion": { "left": -7.8, "right": 7.8, "bottom": 0, "top": 5.4 },
+    "fighterWorldScale": 1,
+    "simulationPixelsToWorldUnits": 0.02,
+    "spritePixelsToWorldUnits": 0.0033
+  },
+  "camera": {
+    "strategy": "constrained_perspective",
+    "fovDegrees": 28,
+    "near": 0.1,
+    "far": 100,
+    "defaultPosition": [0, 5.3, 20],
+    "defaultTarget": [0, 3, 0],
+    "zoom": { "minDistance": 20, "maxDistance": 32 },
+    "framing": {
+      "fighterPaddingWorld": 2.2,
+      "verticalRootBiasWorld": 2.8,
+      "fixedTickSmoothingAlpha": 0.18,
+      "safeHorizontalMarginWorld": 0.6
+    },
+    "stageEdgeBehavior": "Clamp the fighter-pair midpoint to the camera-safe center range and provide environment overscan beyond walls; never clip a fighter merely to keep the projected viewport inside stage bounds, and never move a fighter or wall to satisfy framing.",
+    "jumpFraming": "Raise target from serialized fighter root height and widen only when needed; rendered geometry is ignored.",
+    "sideSwitchBehavior": "Track the unordered fighter pair; do not cut, orbit, flip, or change gameplay facing when sides cross.",
+    "deterministicInputs": ["simulation_tick", "p1_serialized_root", "p2_serialized_root", "stage_contract", "presentation_camera_event"],
+    "cinematicOverrideRule": "Only a rollback-safe presentation event may start a named constrained shot; the shot cannot write to match state.",
+    "returnToGameplay": { "ticks": 12, "easing": "smoothstep_fixed_tick", "mustContainBothFighters": true }
+  },
+  "spriteIntegration": {
+    "sourceCanvas": { "width": 1536, "height": 1536 },
+    "sourceRoot": { "x": 768, "y": 1408 },
+    "billboard": "vertical_axis_locked_yaw_only",
+    "pivot": "source_root_maps_to_authoritative_combat_plane_root",
+    "canonicalFacing": "authored_screen_right",
+    "runtimeMirroring": "lossless_horizontal_transform_about_root; never splice mirrored source frames",
+    "depthPolicy": "fighters_share_z0_combat_plane; deterministic renderOrder only breaks transparent overlap ties",
+    "sampling": { "colorSpace": "srgb", "minFilter": "linear_mipmap_linear", "magFilter": "linear", "maxAnisotropy": 4, "premultipliedAlpha": false },
+    "edgeTreatment": { "alphaTest": 0.035, "transparent": true, "depthWrite": true, "toneMapped": true, "haloCleanupRequiredAtSource": true },
+    "shadow": { "type": "dynamic_elliptical_contact_shadow", "planeY": 0.018, "maxOpacity": 0.34, "airborneFade": true, "renderOnly": true },
+    "optionalMasks": { "rim": "optional_not_present_in_slice", "emission": "optional_not_present_in_slice", "mustShareSourceRoot": true },
+    "antiCardboard": [
+      "axis_locked_billboard_preserves_feet",
+      "shared_key_light_and_color_grade",
+      "dynamic_contact_shadow",
+      "atmospheric_depth_behind_fighter",
+      "subtle_material_roughness_and_emissive_floor",
+      "no_camera_pitch_applied_to_sprite_root"
+    ]
+  },
+  "artDirection": {
+    "geometry": ["flat combat floor", "side boundary pylons", "midground buttresses", "foreground framing columns outside camera-safe combat region"],
+    "paintedPlanes": ["far eclipse gradient", "distant skyline silhouettes", "midground haze bands"],
+    "primaryLight": { "direction": [6, 10, 8], "color": "#ffd7aa", "intensity": 2.2 },
+    "fillLight": { "color": "#3a5a8f", "intensity": 0.72 },
+    "colorGrade": "dark ink blue-black, cathedral red accents, muted brass, warm fighter key light",
+    "atmosphericPerspective": "fog and lower contrast increase with negative Z depth only",
+    "parallaxLayers": [
+      { "id": "foreground_frame", "z": 3.2, "motionScale": 1.08, "mayOccludeCombatRegion": false },
+      { "id": "fighters_and_floor", "z": 0, "motionScale": 1, "mayOccludeCombatRegion": false },
+      { "id": "midground_geometry", "z": -7, "motionScale": 0.72, "mayOccludeCombatRegion": false },
+      { "id": "painted_background", "z": -15, "motionScale": 0.38, "mayOccludeCombatRegion": false }
+    ],
+    "motion": "environment motion is presentation-time only, low amplitude, and disabled in deterministic captures",
+    "silhouetteRule": "Maintain a low-detail value band behind fighter roots and avoid high-frequency edges inside the combat-safe region.",
+    "vfxContrastZones": ["neutral dark band from world Y 0.4 to 5.8", "no emissive white behind fighter torsos", "warm highlights remain outside the center combat lane"],
+    "visualNoiseRule": "No moving foreground occluders, particles, signs, or strobing lights behind fighters in the vertical slice."
+  },
+  "grounding": {
+    "footAlignment": "source root maps to serialized fighter root; grounded root maps exactly to floorY",
+    "projectedContactPlane": 0,
+    "dynamicShadowFootprint": "centered on serialized root X; width follows sprite scale; opacity and size fall with jump height",
+    "slopeRestriction": "competitive combat surface must be flat; rendered ramps may exist only outside the combat region and are non-authoritative",
+    "penetrationToleranceWorld": 0.02,
+    "floatingToleranceWorld": 0.02,
+    "renderGeometryMayMoveRoot": false
+  },
+  "collision": {
+    "source": "serialized_match_state",
+    "floor": 0,
+    "leftWall": -420,
+    "rightWall": 420,
+    "cornerDetection": "fighter pushbox against deterministic simulation boundary",
+    "wallBounceAnchors": [-420, 420],
+    "renderGeometryAuthoritative": false,
+    "hazards": "prohibited"
+  },
+  "cinematicCameras": {
+    "allowedContexts": ["throw", "command_grab", "super", "ultimate", "round_finisher", "intro", "victory"],
+    "shots": {
+      "throw": { "durationTicks": 24, "positionOffset": [-1.1, 1.3, -4.5], "targetOffset": [0, 2.1, 0], "minDistance": 15 },
+      "command_grab": { "durationTicks": 32, "positionOffset": [-1.6, 1.8, -5.5], "targetOffset": [0, 2.3, 0], "minDistance": 15.5 },
+      "super": { "durationTicks": 42, "positionOffset": [-2.2, 2.4, -4], "targetOffset": [0, 2.8, 0], "minDistance": 17 },
+      "ultimate": { "durationTicks": 60, "positionOffset": [-2.8, 2.8, -7], "targetOffset": [0, 3, 0], "minDistance": 13.5 },
+      "round_finisher": { "durationTicks": 48, "positionOffset": [-2.4, 2.2, -6], "targetOffset": [0, 2.6, 0], "minDistance": 14.5 },
+      "intro": { "durationTicks": 72, "positionOffset": [-3, 2.4, -5], "targetOffset": [0, 2.7, 0], "minDistance": 16 },
+      "victory": { "durationTicks": 90, "positionOffset": [-2.5, 2.6, -5], "targetOffset": [0, 2.8, 0], "minDistance": 15 }
+    },
+    "visibilityRule": "Throws, grabs, supers, ultimates, and finishers must contain attacker and defender roots plus a 0.8 world-unit safety margin unless an approved cutaway explicitly freezes hidden gameplay.",
+    "mirroringRule": "Multiply lateral camera offset by attacker authored facing; never mirror source frames inside an authored clip.",
+    "abortRule": "Normal abort enters the same 12-tick fixed-tick return blend; interruption never changes simulation state.",
+    "rollbackRule": "Rollback invalidation immediately discards the presentation event and recomputes gameplay framing from restored serialized state."
+  },
+  "assets": {
+    "environment": [
+      { "id": "procedural_floor", "kind": "3d_geometry", "approval": "vertical_slice_only" },
+      { "id": "procedural_midground", "kind": "3d_geometry", "approval": "vertical_slice_only" },
+      { "id": "procedural_painted_planes", "kind": "canvas_texture", "approval": "vertical_slice_only" }
+    ],
+    "fighters": [
+      { "id": "idle_00", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png", "approval": "approved_idle_foundation_v1", "usage": "runtime_vertical_slice_preview" },
+      { "id": "idle_01", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_01.png", "approval": "approved_idle_foundation_v1", "usage": "runtime_vertical_slice_preview" },
+      { "id": "idle_02", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_02.png", "approval": "approved_idle_foundation_v1", "usage": "runtime_vertical_slice_preview" },
+      { "id": "idle_03", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_03.png", "approval": "approved_idle_foundation_v1", "usage": "runtime_vertical_slice_preview" },
+      { "id": "walk_forward_contact", "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-video-repair-v2/01_first_foot_contact.png", "approval": "candidate_video_repair_v2_awaiting_human_review", "usage": "runtime_video_repair_v2_eight_pose_cycle_first_contact" },
+      { "id": "walk_backward_rearward_contact", "path": "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_rearward_contact.png", "approval": "candidate_acceptable_preview_only", "usage": "single_pose_scale_grounding_check_not_cycle_approval" },
+      { "id": "light_hit_entry", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_entry.png", "approval": "approved_defense_reaction_motion_v1", "usage": "combat_systems_hitstun_presentation" },
+      { "id": "light_hit_reaction", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/light_hit_reaction.png", "approval": "approved_defense_reaction_motion_v1", "usage": "combat_systems_hitstun_presentation" },
+      { "id": "light_hit_recovery", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/light_hit_recovery.png", "approval": "approved_defense_reaction_motion_v1", "usage": "combat_systems_hitstun_presentation" },
+      { "id": "heavy_hit_entry", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_entry.png", "approval": "approved_defense_reaction_motion_v1", "usage": "combat_systems_hitstun_presentation" },
+      { "id": "heavy_hit_reaction", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png", "approval": "approved_defense_reaction_motion_v1", "usage": "combat_systems_hitstun_presentation" },
+      { "id": "heavy_hit_recovery", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-motion-v1/heavy_hit_recovery.png", "approval": "approved_defense_reaction_motion_v1", "usage": "combat_systems_hitstun_presentation" },
+      { "id": "airborne_launch_reaction", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/01_launch_reaction.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_airborne_hitstun_presentation" },
+      { "id": "airborne_tumble", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_airborne_hitstun_presentation" },
+      { "id": "knockdown_ground_impact", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_knockdown_presentation" },
+      { "id": "knockdown_impact_settle", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_knockdown_presentation" },
+      { "id": "knockdown_face_up", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_knockdown_presentation" },
+      { "id": "getup_shoulder_roll", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/06_shoulder_roll_knee_draw.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_getup_presentation" },
+      { "id": "getup_roll_brace", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/07_face_up_roll_brace.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_getup_presentation" },
+      { "id": "getup_push_to_kneel", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_getup_presentation" },
+      { "id": "getup_neutral", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_getup_presentation" },
+      { "id": "getup_rise_to_stand", "path": "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png", "approval": "approved_knockdown_recovery_motion_v1", "usage": "combat_systems_getup_presentation" }
+    ]
+  },
+  "validation": {
+    "checks": [
+      "combat_plane_authority",
+      "fighter_baseline",
+      "sprite_scale",
+      "authored_facing",
+      "mirrored_facing",
+      "camera_center_framing",
+      "camera_corner_framing",
+      "jump_height_framing",
+      "foot_grounding",
+      "shadow_alignment",
+      "stage_boundary_correspondence",
+      "combat_distance_readability",
+      "vfx_contrast_zone",
+      "webgl2_context",
+      "performance_budget",
+      "deterministic_camera_replay",
+      "visual_regression_captures"
+    ],
+    "performanceBudget": { "targetFps": 60, "maxDrawCalls": 80, "maxTriangles": 60000, "maxTextures": 24, "maxTextureMemoryMb": 256 },
+    "captureIds": ["p1_authored", "p2_mirrored", "center_stage", "left_corner", "right_corner", "jump_framing", "hit_reaction_light_entry", "hit_reaction_light_recoil", "hit_reaction_heavy_recovery", "hit_reaction_airborne_tumble", "knockdown_ground_impact", "knockdown_face_up", "getup_roll_brace", "getup_rise_to_stand", "cinematic_throw", "cinematic_ultimate", "cinematic_return"],
+    "deterministicReplayRequired": true
+  }
+}

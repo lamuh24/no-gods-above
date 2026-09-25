@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "origin": "http://127.0.0.1:63359",
+  "reviewedAt": "2026-08-26T00:00:00.000Z",
+  "movementReviewState": {
+    "entryKey": "state:idle",
+    "moveId": "idle",
+    "candidate": "B",
+    "cursor": 1,
+    "playing": false,
+    "speed": 1,
+    "facing": -1
+  },
+  "reviewState": {
+    "entryKey": "attack:standing_heavy",
+    "moveId": "standing_heavy",
+    "candidate": "B",
+    "cursor": 11,
+    "playing": false,
+    "speed": 1,
+    "facing": -1
+  },
+  "styleCheckpoint": {
+    "width": 1536,
+    "height": 1024,
+    "facts": "statusBLOCKED_MANUAL_ARThuman reviewAPPROVED_WITH_TARGETED_REPAIRlegacy magenta fringe3.7161%style candidate magenta0.0000%transparencygenuine alpharuntime promotionblocked"
+  },
+  "purplePixelAudit": {
+    "v1PurplePixels": 3398,
+    "v2PurplePixels": 16
+  },
+  "forwardThrow": {
+    "connectedAtCapture": true,
+    "finalHealth": 930,
+    "finalPhase": "getup"
+  },
+  "backThrow": {
+    "finalHealth": 925,
+    "sideSwitched": true
+  },
+  "whiff": {
+    "victimHealth": 1000
+  },
+  "errors": [],
+  "failedRequests": [],
+  "screenshots": [
+    "v1-v2-standing-heavy-contact-v2.png",
+    "standing-heavy-style-checkpoint-v2.png",
+    "forward-throw-mid-track-v2.png"
+  ]
+}

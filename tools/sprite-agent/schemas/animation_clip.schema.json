@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/sprite-agent/animation_clip.schema.json",
+  "title": "SpriteForge Animation Clip",
+  "type": "object",
+  "required": [
+    "clipId",
+    "category",
+    "frameCount",
+    "fps",
+    "loop",
+    "frameWidth",
+    "frameHeight",
+    "baselineY",
+    "facing",
+    "frameOrder",
+    "hitFrames",
+    "cancelFrames"
+  ],
+  "properties": {
+    "clipId": { "type": "string" },
+    "category": { "type": "string" },
+    "frameCount": { "type": "integer", "minimum": 1 },
+    "fps": { "type": "number", "minimum": 1 },
+    "loop": { "type": "boolean" },
+    "frameWidth": { "type": "integer", "const": 448 },
+    "frameHeight": { "type": "integer", "const": 448 },
+    "baselineY": { "type": "integer", "const": 382 },
+    "facing": { "type": "string", "enum": ["right", "left"] },
+    "sourceSheet": { "type": "string" },
+    "normalizedSheet": { "type": "string" },
+    "frameOrder": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+    "hitFrames": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+    "cancelFrames": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

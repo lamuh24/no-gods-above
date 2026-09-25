@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/schemas/production/stage-presentation-events.schema.json",
+  "title": "NGA Rollback-Safe Stage Presentation Events",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "arenaId", "status", "deployable", "approvalState", "eventIdTemplate", "dedupeKeyFields", "durationPolicy", "events"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0-stage-presentation-events" },
+    "arenaId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "status": { "enum": ["production_arena_brief_candidate", "production_arena_graybox_candidate"] },
+    "deployable": { "const": false },
+    "approvalState": { "enum": ["awaiting_human_stage_brief_approval", "awaiting_human_graybox_and_concept_approval"] },
+    "eventIdTemplate": { "const": "{matchId}:{simulationFrame}:{arenaId}:{sourceEntityId}:{moveInstance}:{eventIndex}" },
+    "dedupeKeyFields": { "type": "array", "minItems": 6, "items": { "type": "string" }, "uniqueItems": true },
+    "durationPolicy": { "type": "object", "required": ["arenaDefaultDurationsAre", "moveAuthoredDurationSupport", "identityAndReconstructionIndependentOfDuration"] },
+    "events": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "deterministicEventId", "triggerConditions", "durationTicks", "durationSource", "cameraTrack", "abortRules", "rollbackReplayRules", "mirroredFacingBehavior", "returnToGameplayFraming", "visibilityRequirements"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "deterministicEventId": { "type": "object", "required": ["template", "sourceEntityRule", "eventIndexRule"] },
+          "triggerConditions": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+          "durationTicks": { "type": "integer", "minimum": 1 },
+          "durationSource": { "const": "arena_default_test_value_overridden_by_deterministic_move_authorship" },
+          "cameraTrack": { "type": "object", "required": ["shotId", "entryTicks", "holdTicks", "returnTicks", "volumeId"] },
+          "abortRules": { "type": "array", "minItems": 3, "items": { "type": "string" } },
+          "rollbackReplayRules": { "type": "array", "minItems": 3, "items": { "type": "string" } },
+          "mirroredFacingBehavior": { "type": "string", "minLength": 1 },
+          "returnToGameplayFraming": { "type": "string", "minLength": 1 },
+          "visibilityRequirements": { "type": "array", "minItems": 2, "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

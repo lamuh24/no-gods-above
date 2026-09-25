@@ -1,0 +1,593 @@
+{
+  "status": "PASS",
+  "candidateOnly": true,
+  "deployable": false,
+  "humanReviewStatus": "awaiting_human_heaven_splitter_family_review",
+  "reviewedAt": "2026-09-05T18:28:49.851Z",
+  "origin": "http://127.0.0.1:52809",
+  "currentGateAudit": {
+    "state": {
+      "moveId": "heaven_splitter_medium",
+      "kind": "attack",
+      "candidate": "B",
+      "impact": "I2",
+      "cursor": 4,
+      "playing": false,
+      "speed": 1,
+      "facing": 1,
+      "silhouette": false,
+      "vfx": true
+    },
+    "selectedValue": "attack:heaven_splitter_medium",
+    "selectedLabel": "heaven splitter medium",
+    "optionGroups": [
+      "PRESERVED MOVEMENT / DEFENSE",
+      "NEW V2 STANDARD GRAB / THROWS",
+      "ATTACK TIMING CANDIDATES"
+    ],
+    "gate": "CURRENT GATE: HEAVEN SPLITTER L / M / H · CANDIDATE ONLY · NO PRODUCTION PROMOTION · ★ FORWARD SPECIALS / TURN / PUSHBOX REVISIT",
+    "questions": [
+      "A. Motion — does Heaven Splitter read as coil → one uppercut → guarded descent → connected landing at 1× and 0.5×?",
+      "B. Hit clarity — one near-arm uppercut only. Later raised-fist poses are carry-through, not repeated hits. The modernized arm differs from legacy; no mid-clip switch.",
+      "C. Timing — compare per-move A/B/C; B is the playable 36/43/53-tick Light/Medium/Heavy profile, with independent rise heights and landing commitment.",
+      "D. Scale/style — does Lamuh stay adult-proportioned with beard, locs, white/gold coat, cyan/gold aura, and no purple outline through every pose?",
+      "E. Gameplay — test anti-air, close hit, standing block, crouch duck, far whiff, landing punishment, and mirrored facing. No invulnerable reversal is implied.",
+      "F. Scope — Celestial Palm passed; Heaven Splitter awaits review. Forward L/M/H, Turn/Facing, and Pushbox remain starred; nothing is production-promoted."
+    ],
+    "sandboxHref": "/lamuh-legacy-sandbox.html",
+    "controls": [
+      "speed1",
+      "speedHalf",
+      "step",
+      "facing",
+      "restart"
+    ],
+    "v1Data": "duration36 ticks · 0.600 ssource frame1 / 7contact / releasenot exactly recoverablerecovery endpointtick 35exposures5 · 5 · 5 · 5 · 5 · 5 · 6frame rolen/aroot / path224, 382 · reconstructed pathhitstop / selected contact holdn/aart sourceheaven_splitter atlasevidenceRECONSTRUCTION: exact original exposures not recoverable",
+    "v2Data": "duration43 ticks · 0.717 ssource frame2 / 11contact / releasetick 10recovery endpointtick 42exposures3 · 5 · 2 · 5 · 6 · 4 · 4 · 4 · 4 · 3 · 3frame rolen/aroot / pathworld Δx 0 → 14 → 14 · simulation-ownedhitstop / selected contact hold7 / 12 ticksart source5967DACEF6C5evidencesimulation timing · candidate presentation",
+    "facts": "style statusAPPROVED_WITH_TARGETED_REPAIRselected sequence11 distinct framessingle runtime scaleyesvisible impacts / hits1 / 1promotionblocked",
+    "caption": "SOURCE AUDIT: generated0/11 and redundant4 excluded; approved idle starts/ends active11-frame clips. Body-only frames; ki arc lives separately in the sandbox.",
+    "imageSource": "/lamuh-legacy-v2/heaven-splitter-v1/heaven-numbered-contact-sheet.png"
+  },
+  "ascendStepComparison": {
+    "state": {
+      "moveId": "ascend_step",
+      "kind": "attack",
+      "candidate": "B",
+      "impact": "I2",
+      "cursor": 7,
+      "playing": false,
+      "speed": 1,
+      "facing": 1,
+      "silhouette": false,
+      "vfx": true
+    },
+    "differentPixels": true,
+    "purplePixels": 0,
+    "v1Data": "duration30 ticks · 0.500 ssource frame2 / 7contact / releasenot exactly recoverablerecovery endpointtick 29exposures5 · 4 · 4 · 5 · 4 · 4 · 4frame rolen/aroot / path224, 382 · reconstructed pathhitstop / selected contact holdn/aart sourceascend_step atlasevidenceDETERMINISTIC_RECONSTRUCTION_FROM_RECOVERED_DURATION_AND_SOURCE_FRAME_COUNT",
+    "v2Data": "duration48 ticks · 0.800 ssource frame4 / 16contact / releasetick 7 · tick 26recovery endpointtick 47exposures3 · 2 · 2 · 3 · 2 · 3 · 3 · 3 · 2 · 3 · 3 · 3 · 3 · 3 · 4 · 6frame rolen/aroot / pathworld Δx 0 → 90 → 59 · simulation-ownedhitstop / selected contact hold8 / 11 ticksart sourceFAB66E4D19DAevidencesimulation timing · candidate presentation",
+    "facts": "style statusAPPROVED_WITH_TARGETED_REPAIRselected sequence16 distinct framessingle runtime scaleyesaction contracttraveling slide + coil + one rising-heel handspring launcheradult / chibi gateadult locked / chibi rejectedvisible impacts / hits2 / 2promotionblocked",
+    "caption": "16 FRAMES · TRAVELING SLIDE → COIL → HAND PLANT → ONE RISING-HEEL CONTACT → AUTHORED TUCK → CONTROLLED LANDING",
+    "debt": "★ PASSED FOR NOW · STARRED FOR POLISH. Medium rising-heel contact height and support/landing registration remain noted. No final balance or production approval.",
+    "imageSource": "/lamuh-legacy-v2/ascend-step-medium-slide-flip-v1/ascend-step-medium-slide-flip-numbered-contact-sheet.png"
+  },
+  "reviewState": {
+    "moveId": "standing_heavy",
+    "kind": "attack",
+    "candidate": "B",
+    "impact": "I2",
+    "cursor": 11,
+    "playing": false,
+    "speed": 1,
+    "facing": 1,
+    "silhouette": false,
+    "vfx": true
+  },
+  "overlayState": {
+    "moveId": "standing_heavy",
+    "kind": "attack",
+    "candidate": "B",
+    "impact": "I2",
+    "cursor": 11,
+    "playing": false,
+    "speed": 0.5,
+    "facing": -1,
+    "silhouette": true,
+    "vfx": true
+  },
+  "comparisonAudit": {
+    "differentPixels": true,
+    "v1PurplePixels": 3370,
+    "v2PurplePixels": 0,
+    "gate": "CURRENT GATE: HEAVEN SPLITTER L / M / H · CANDIDATE ONLY · NO PRODUCTION PROMOTION · ★ FORWARD SPECIALS / TURN / PUSHBOX REVISIT",
+    "facts": "style statusAPPROVED_WITH_TARGETED_REPAIRselected sequence7 distinct framessingle runtime scaleyesvisible impacts / hits1 / 1promotionblocked"
+  },
+  "airLightComparison": {
+    "state": {
+      "moveId": "air_light",
+      "kind": "attack",
+      "candidate": "B",
+      "impact": "I2",
+      "cursor": 3,
+      "playing": false,
+      "speed": 0.5,
+      "facing": -1,
+      "silhouette": false,
+      "vfx": true
+    },
+    "purplePixels": 0,
+    "facts": "style statusAPPROVED_WITH_TARGETED_REPAIRselected sequence5 distinct framessingle runtime scaleyesvisible impacts / hits1 / 1promotionblocked",
+    "debt": "Contact presentation: BODY_ONLY_ALL_OUTCOMES_AIR_NORMAL_REVIEW_BATCH. approved original remains an immutable style-direction checkpoint, not runtime art · original carries partial-alpha backdrop residue and six top-edge pixels; the closure sequence uses a separate hash-bound isolation and padding repair · manual cross-frame identity, motion and silhouette review remains required"
+  },
+  "airMediumComparison": {
+    "state": {
+      "moveId": "air_medium",
+      "kind": "attack",
+      "candidate": "B",
+      "impact": "I2",
+      "cursor": 6,
+      "playing": false,
+      "speed": 0.5,
+      "facing": -1,
+      "silhouette": false,
+      "vfx": true
+    },
+    "purplePixels": 0,
+    "facts": "style statusAPPROVED_WITH_TARGETED_REPAIRselected sequence6 distinct framessingle runtime scaleyesvisible impacts / hits1 / 1promotionblocked",
+    "debt": "Contact presentation: BODY_ONLY_ALL_OUTCOMES_AIR_NORMAL_REVIEW_BATCH. approved original remains an immutable style-direction checkpoint, not runtime art · original carries partial-alpha backdrop residue and six top-edge pixels; the closure sequence uses a separate hash-bound isolation and padding repair · manual cross-frame identity, motion and silhouette review remains required"
+  },
+  "movementComparison": {
+    "walkBackward": {
+      "state": {
+        "moveId": "walk_backward",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 7,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration18 ticks · 0.300 ssource frame3 / 7contact / releaserecovery endpointtick 17exposures3 · 3 · 2 · 3 · 2 · 2 · 3frame rolerearward weight transferroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source7C43B92F1E47evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence7 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "7 USER-VIDEO WALK BACK FRAMES · REVERSED SOURCE CYCLE · 18 TICKS"
+    },
+    "dashForward": {
+      "state": {
+        "moveId": "dash_forward",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 7,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration18 ticks · 0.300 ssource frame3 / 6contact / releaserecovery endpointtick 17exposures3 · 3 · 3 · 3 · 3 · 3frame rolestride extensionroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source3A17C982A460evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence6 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "26 DISTINCT DASH / AIR-DASH / BLOCK FRAMES · FIXED ROOT · CANDIDATE ONLY"
+    },
+    "dashBackward": {
+      "state": {
+        "moveId": "dash_backward",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 9,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 1,
+      "v2Data": "duration20 ticks · 0.333 ssource frame3 / 5contact / releaserecovery endpointtick 19exposures4 · 4 · 4 · 4 · 4frame roleairborne maximum retreatroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart sourceAF534469E5D3evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence5 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "5 DISTINCT BACK DASH FRAMES · FIXED ROOT · TIMING UNCHANGED"
+    },
+    "airDashForward": {
+      "state": {
+        "moveId": "air_dash_forward",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 5,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration14 ticks · 0.233 ssource frame3 / 6contact / releaserecovery endpointtick 13exposures2 · 2 · 2 · 3 · 3 · 2frame roleforward burstroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart sourceC84BD7E29BD6evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence6 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "26 DISTINCT DASH / AIR-DASH / BLOCK FRAMES · FIXED ROOT · CANDIDATE ONLY"
+    },
+    "airDashBackward": {
+      "state": {
+        "moveId": "air_dash_backward",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 5,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration14 ticks · 0.233 ssource frame3 / 5contact / releaserecovery endpointtick 13exposures2 · 2 · 3 · 3 · 4frame rolebackward burstroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart sourceD4BA1FFC4091evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence5 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "26 DISTINCT DASH / AIR-DASH / BLOCK FRAMES · FIXED ROOT · CANDIDATE ONLY"
+    },
+    "standingBlock": {
+      "state": {
+        "moveId": "standing_block",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 8,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration16 ticks · 0.267 ssource frame3 / 4contact / releaserecovery endpointtick 15exposures4 · 4 · 4 · 4frame rolebraced recoilroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart sourceE3ECFF65336Aevidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence4 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "26 DISTINCT DASH / AIR-DASH / BLOCK FRAMES · FIXED ROOT · CANDIDATE ONLY"
+    },
+    "crouchingBlock": {
+      "state": {
+        "moveId": "crouching_block",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 10,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration16 ticks · 0.267 ssource frame4 / 4contact / releaserecovery endpointtick 15exposures3 · 3 · 4 · 6frame rolestable low guard holdroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source780C88F8C1E5evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence4 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "4 ADULT-PROPORTION CROUCH BLOCK FRAMES · 16 TICKS · CANDIDATE ONLY"
+    },
+    "crouch": {
+      "state": {
+        "moveId": "crouch",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 8,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration26 ticks · 0.433 ssource frame3 / 6contact / releaserecovery endpointtick 25exposures3 · 3 · 6 · 6 · 4 · 4frame roledeep guarded crouchroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source80684B5FFA67evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence6 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "13 DISTINCT CROUCH/JUMP FRAMES · FIXED ROOT · CANDIDATE ONLY"
+    },
+    "jump": {
+      "state": {
+        "moveId": "jump",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 12,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration28 ticks · 0.467 ssource frame4 / 7contact / releaserecovery endpointtick 27exposures4 · 3 · 5 · 4 · 5 · 4 · 3frame roleapex knee tuckroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source5191667C1033evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence7 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "7 ADULT-PROPORTION JUMP FRAMES · TIMING / PHYSICS UNCHANGED"
+    },
+    "crouchRelease": {
+      "state": {
+        "moveId": "crouch_to_stand",
+        "kind": "state",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 5,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v2Data": "duration8 ticks · 0.133 ssource frame2 / 2contact / releaserecovery endpointtick 7exposures4 · 4frame rolecrouch release standing recoveryroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source71AB25B28341evidencesimulation timing · candidate presentation",
+      "facts": "movement statusturn facing approved for current baseline with polish debt remaining movement gates pendingselected sequence2 distinct framesfixed root768, 1360runtime rescaledisabledpromotionblocked",
+      "caption": "2 REUSED MODERN CROUCH FRAMES · 8 INTERRUPTIBLE TICKS · CANDIDATE ONLY"
+    }
+  },
+  "throwComparison": {
+    "universalGrab": {
+      "state": {
+        "moveId": "universal_grab_attempt",
+        "kind": "throw",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 5,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v1Title": "LAMUH V1 LEGACY · required state was missing",
+      "v1Data": "durationnot authored in V1source frame0 / 0contact / releaseno V1 event datarecovery endpointnot applicableexposuresnoneframe rolerequired state absentroot / pathnot authoredhitstop / selected contact holdn/aart sourcemissing-state source auditevidenceNO RECOVERABLE V1 UNIVERSAL THROW SOURCE",
+      "v2Data": "duration20 ticks · 0.333 ssource frame3 / 6contact / releaseconnect tick 4 · no releaserecovery endpointtick 19exposures3 · 2 · 3 · 3 · 4 · 5frame rolemaximum reachroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart sourceB3D39C925A8Cevidencededicated V2 missing-state art · deterministic simulation timing",
+      "facts": "throw decisionAPPROVED_STANDARD_GRABselected sequence6 distinct framesfixed root768, 1360connect / releasetick 4 / n/apromotionblocked",
+      "caption": "18 DEDICATED FRAMES · FIXED ROOT · CANDIDATE ONLY · NOT DEPLOYABLE",
+      "imageSource": "/lamuh-legacy-v2/throw-family-v2/throw-family-numbered-contact-sheet.png"
+    },
+    "forwardThrow": {
+      "state": {
+        "moveId": "forward_throw",
+        "kind": "throw",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 14,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v1Title": "LAMUH V1 LEGACY · required state was missing",
+      "v1Data": "durationnot authored in V1source frame0 / 0contact / releaseno V1 event datarecovery endpointnot applicableexposuresnoneframe rolerequired state absentroot / pathnot authoredhitstop / selected contact holdn/aart sourcemissing-state source auditevidenceNO RECOVERABLE V1 UNIVERSAL THROW SOURCE",
+      "v2Data": "duration32 ticks · 0.533 ssource frame4 / 6contact / releaseconnect tick 4 · release tick 14recovery endpointtick 31exposures6 · 2 · 3 · 4 · 5 · 12frame roledecisive forward releaseroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source5D68A8043BCCevidencededicated V2 missing-state art · deterministic simulation timing",
+      "facts": "throw decisionAPPROVED_FORWARD_THROWselected sequence6 distinct framesfixed root768, 1360connect / releasetick 4 / tick 14promotionblocked",
+      "caption": "18 DEDICATED FRAMES · FIXED ROOT · CANDIDATE ONLY · NOT DEPLOYABLE",
+      "imageSource": "/lamuh-legacy-v2/throw-family-v2/throw-family-numbered-contact-sheet.png"
+    },
+    "backThrow": {
+      "state": {
+        "moveId": "back_throw",
+        "kind": "throw",
+        "candidate": "B",
+        "impact": "I2",
+        "cursor": 16,
+        "playing": false,
+        "speed": 0.5,
+        "facing": -1,
+        "silhouette": false,
+        "vfx": true
+      },
+      "differentPixels": true,
+      "purplePixels": 0,
+      "v1Title": "LAMUH V1 LEGACY · required state was missing",
+      "v1Data": "durationnot authored in V1source frame0 / 0contact / releaseno V1 event datarecovery endpointnot applicableexposuresnoneframe rolerequired state absentroot / pathnot authoredhitstop / selected contact holdn/aart sourcemissing-state source auditevidenceNO RECOVERABLE V1 UNIVERSAL THROW SOURCE",
+      "v2Data": "duration36 ticks · 0.600 ssource frame5 / 6contact / releaseconnect tick 4 · release tick 16recovery endpointtick 35exposures6 · 2 · 4 · 4 · 6 · 14frame rolerelease behind side switchroot / pathfixed 768, 1360 · body path overlayhitstop / selected contact holdn/aart source05941038AB36evidencededicated V2 missing-state art · deterministic simulation timing",
+      "facts": "throw decisionAPPROVED_BACK_THROWselected sequence6 distinct framesfixed root768, 1360connect / releasetick 4 / tick 16promotionblocked",
+      "caption": "18 DEDICATED FRAMES · FIXED ROOT · CANDIDATE ONLY · NOT DEPLOYABLE",
+      "imageSource": "/lamuh-legacy-v2/throw-family-v2/throw-family-numbered-contact-sheet.png"
+    }
+  },
+  "gameplay": {
+    "ascendStep": {
+      "attack": "legacy_ascend_step",
+      "timing": [
+        7,
+        24,
+        17
+      ],
+      "visualPackage": "ascend_step_medium_targeted_motion_repair_candidate",
+      "firstContactDamage": 26,
+      "finalDamage": 66,
+      "finalHits": 2,
+      "launched": true,
+      "postContactRole": "post_contact_leg_gather",
+      "opponentKind": "lamuh_legacy_v2",
+      "visibleArenaBounds": [
+        -280,
+        280
+      ],
+      "purplePixels": 1
+    },
+    "ascendStepHeavy": {
+      "attack": "legacy_ascend_step_heavy",
+      "timing": [
+        24,
+        5,
+        13
+      ],
+      "visualPackage": "ascend_step_heavy_pause_growing_ball_single_blast_candidate",
+      "damage": 84,
+      "hits": 1,
+      "purplePixels": 18
+    },
+    "boundedMovement": {
+      "p1X": 211.9999,
+      "p1Bounds": [
+        -280,
+        280
+      ],
+      "p2X": -211.9999,
+      "p2Bounds": [
+        -280,
+        280
+      ]
+    },
+    "standingMediumEntry": "standing_medium",
+    "walkBackward": {
+      "phase": "walk_backward",
+      "x": -63.60000000000002,
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "dashForward": {
+      "phase": "dash",
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "dashBackward": {
+      "phase": "backdash",
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "airDashForward": {
+      "phase": "air_dash_forward",
+      "remaining": 0,
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "airDashBackward": {
+      "phase": "air_dash_backward",
+      "remaining": 0,
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "standingBlock": {
+      "phase": "block",
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "crouchingBlock": {
+      "phase": "block",
+      "crouchBlocking": true,
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "crouchMovement": {
+      "phase": "crouch",
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    },
+    "jumpMovement": {
+      "risePhase": "jump",
+      "apexPhase": "jump",
+      "landingPhase": "landing",
+      "visualPackage": "modern_movement"
+    },
+    "airMediumEntry": "air_medium",
+    "airLightHitParity": {
+      "hits": 1,
+      "damage": 22
+    },
+    "airMediumHitParity": {
+      "hits": 1,
+      "damage": 44
+    },
+    "airHeavyEntry": "air_heavy",
+    "shiftDashForward": "dash",
+    "shiftDashBackward": "backdash",
+    "crouchingHeavySequenceScale": 0.95,
+    "crouchingHeavyContactPresentation": "body_only_vfx_disabled",
+    "crouchingHeavyVfxToggleChangesContactFrame": false,
+    "hitProfile": {
+      "timing": "C",
+      "impact": "I3",
+      "side": "p1",
+      "space": "center",
+      "outcome": "hit",
+      "halfSpeed": false,
+      "vfx": true
+    },
+    "hitOutcome": "hit",
+    "blockOutcome": "block",
+    "whiffOutcome": null,
+    "mirroredCorner": {
+      "timing": "A",
+      "impact": "I1",
+      "side": "p2",
+      "space": "right_corner",
+      "outcome": "hit",
+      "halfSpeed": false,
+      "vfx": true
+    },
+    "crouchRelease": {
+      "phase": "crouch_release",
+      "phaseTick": 2,
+      "visualPackage": "modern_movement",
+      "purplePixels": 0
+    }
+  },
+  "throws": {
+    "visualPackage": "dedicated_standard_grab_throw_candidate",
+    "forwardHealth": 930,
+    "backHealth": 925,
+    "backSideSwitched": true,
+    "whiffVictimHealth": 1000
+  },
+  "errors": [],
+  "failedRequests": [],
+  "screenshots": [
+    "current-review-gate-default.png",
+    "v1-v2-ascend-step-medium-slide-contact.png",
+    "ascend-step-medium-slide-contact-playtest.png",
+    "ascend-step-medium-launcher-contact-playtest.png",
+    "ascend-step-medium-post-contact-tuck-playtest.png",
+    "ascend-step-heavy-rear-blast-contact-playtest.png",
+    "v1-v2-standing-heavy-closure.png",
+    "v1-v2-air-light-b-contact.png",
+    "v1-v2-air-medium-b-contact.png",
+    "v1-v2-universal-grab-connect-review.png",
+    "v1-v2-forward-throw-release-review.png",
+    "v1-v2-back-throw-release-review.png",
+    "v1-v2-walk-backward-directional-repair.png",
+    "v1-v2-dash-forward-modern-style-review.png",
+    "v1-v2-dash-backward-modern-style-review.png",
+    "v1-v2-air-dash-forward-modern-style-review.png",
+    "v1-v2-air-dash-backward-modern-style-review.png",
+    "v1-v2-standing-block-modern-hold.png",
+    "v1-v2-crouching-block-adult-identity-review.png",
+    "v1-v2-crouch-modern-style-review.png",
+    "v1-v2-jump-adult-proportion-review.png",
+    "standing-medium-fixed-scale-entry.png",
+    "walk-backward-directional-repair.png",
+    "dash-forward-modern-entry.png",
+    "dash-backward-modern-entry.png",
+    "air-dash-forward-entry.png",
+    "air-dash-backward-entry.png",
+    "standing-block-modern-hold.png",
+    "crouching-block-adult-identity-hold.png",
+    "crouch-modern-style-hold.png",
+    "jump-modern-style-rise.png",
+    "jump-modern-style-apex.png",
+    "jump-modern-style-landing.png",
+    "air-medium-modern-entry.png",
+    "air-light-one-hit-check.png",
+    "air-medium-one-hit-check.png",
+    "air-heavy-modern-entry.png",
+    "crouching-heavy-sequence-scale-095.png",
+    "standing-heavy-candidate-c-hit.png",
+    "forward-throw-dedicated-mid-track.png",
+    "back-throw-dedicated-mid-track.png",
+    "grab-whiff-dedicated-recoil.png",
+    "first-playable-closure-sandbox.png",
+    "v1-v2-crouch-release-live-transition-review.png",
+    "crouch-release-live-transition.png"
+  ]
+}

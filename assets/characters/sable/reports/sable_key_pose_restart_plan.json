@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "sable_key_pose_restart_plan",
+  "characterId": "sable",
+  "characterName": "Sable",
+  "createdAt": "2026-07-03",
+  "updatedAt": "2026-07-08",
+  "status": "active_full_rebuild_v3_queued_preview_only",
+  "activeSpriteForgeStage": "full-rebuild-v3",
+  "doNotGenerateArtNow": false,
+  "releaseStatus": "wip_delayed",
+  "previewStatus": "animation_rebuild_required",
+  "approvedForLiveRoster": false,
+  "futurePromotionGate": "GAME_READY",
+  "workflow": [
+    "key poses",
+    "in-betweens",
+    "assembled spritesheet",
+    "SpriteForge validation",
+    "preview approval"
+  ],
+  "coverageTarget": {
+    "totalCoreClips": 39,
+    "baseMovementReactionClipCount": 9,
+    "normalAttackClipCount": 15,
+    "specialAttackClipCount": 15,
+    "ultimateCinematicRequiredIfSupported": true,
+    "baseMovementReactionClips": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "jump",
+      "crouch",
+      "block",
+      "hit_stun",
+      "knockdown",
+      "getup"
+    ],
+    "normalAttackClips": [
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "crouch_light",
+      "crouch_medium",
+      "crouch_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "forward_light",
+      "forward_medium",
+      "forward_heavy",
+      "back_light",
+      "back_medium",
+      "back_heavy"
+    ],
+    "specialAttackClips": [
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "back_special_medium",
+      "back_special_heavy",
+      "down_special_light",
+      "down_special_medium",
+      "down_special_heavy",
+      "up_special_light",
+      "up_special_medium",
+      "up_special_heavy"
+    ]
+  },
+  "keyPoseFirstWorkflow": {
+    "summary": "Lock readable fighting-game key poses before generating in-betweens or assembling runtime strips.",
+    "identityAnchor": "approved Sable visual design and side-view style lock",
+    "stopLine": "Do not create in-betweens until key poses pass visual identity and fighting-readability review."
+  },
+  "baseMovementKeyPoseSheets": [
+    "idle",
+    "walk_forward",
+    "walk_backward",
+    "dash_or_phase_dash",
+    "crouch_or_low_stance",
+    "jump",
+    "fall",
+    "landing",
+    "air_drift",
+    "block_or_guard",
+    "hit_stun",
+    "knockdown",
+    "getup",
+    "air_recovery"
+  ],
+  "normalAttackKeyPoseSheets": [
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "crouch_light",
+    "crouch_medium",
+    "crouch_heavy",
+    "forward_light",
+    "forward_medium",
+    "forward_heavy",
+    "back_light",
+    "back_medium",
+    "back_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy"
+  ],
+  "specialFamilyKeyPoseSheets": [
+    {
+      "family": "neutral_special",
+      "familyName": "Void Shard",
+      "clips": ["neutral_special_light", "neutral_special_medium", "neutral_special_heavy"],
+      "readabilityGoal": "Void Shard L/M/H read from Sable's body pose before VFX and differ by startup, size, commitment, recovery, and gameplay read."
+    },
+    {
+      "family": "forward_special",
+      "familyName": "Phase Lunge",
+      "clips": ["forward_special_light", "forward_special_medium", "forward_special_heavy"],
+      "readabilityGoal": "Phase Lunge L/M/H share anticipation/travel/strike/recovery identity while differing by distance, speed, commitment, trail size, and risk."
+    },
+    {
+      "family": "back_special",
+      "familyName": "Void Anchor",
+      "clips": ["back_special_light", "back_special_medium", "back_special_heavy"],
+      "readabilityGoal": "Void Anchor L/M/H read as deliberate planted/control poses, not idle with VFX."
+    },
+    {
+      "family": "down_special",
+      "familyName": "Ground Rift",
+      "clips": ["down_special_light", "down_special_medium", "down_special_heavy"],
+      "readabilityGoal": "Ground Rift L/M/H use low grounded body action with distinct width, startup, VFX size, recovery, and risk."
+    },
+    {
+      "family": "up_special",
+      "familyName": "Vertical Phase",
+      "clips": ["up_special_light", "up_special_medium", "up_special_heavy"],
+      "readabilityGoal": "Vertical Phase L/M/H have readable launch/reach poses and distinct vertical action/recovery profiles."
+    },
+    {
+      "family": "ultimate_or_super",
+      "readabilityGoal": "only begin after movement, normals, and specials are readable."
+    }
+  ],
+  "inBetweenGenerationStep": {
+    "input": "approved key poses only",
+    "requirements": [
+      "preserve Sable face, skin tone, hair, outfit, palette, silhouette, and body scale",
+      "keep anticipation, hit frame, follow-through, and recovery readable",
+      "keep large VFX separate when it would hide the body"
+    ]
+  },
+  "assembledSpritesheetStep": {
+    "cellSize": 448,
+    "facing": "right",
+    "requirements": [
+      "real alpha",
+      "transparent background",
+      "baseline checked",
+      "no labels",
+      "no watermarks",
+      "no frame grids",
+      "no idle-only placeholders for attacks"
+    ]
+  },
+  "spriteForgeValidationStep": [
+    "technical validation for dimensions, alpha, frame counts, baseline, and metadata",
+    "visual consistency review against approved Sable design lock",
+    "row classification before runtime integration",
+    "reject missing, choppy, unreadable, identity-drifted, VFX-only, or near-duplicate L/M/H rows"
+  ],
+  "previewHarnessCheck": [
+    "test in the Sable preview harness first",
+    "verify every movement, normal, special, reaction, knockdown, and getup visually differs from idle or walk",
+    "preserve dev preview access",
+    "do not public-promote the pack"
+  ],
+  "livePromotionRules": {
+    "noLivePromotionUntil": "GAME_READY",
+    "requiresExplicitUserOverrideForPublicRoster": true,
+    "doNotTouchGameplayBalance": true,
+    "doNotRemoveExistingPlayableMvpData": true
+  }
+}

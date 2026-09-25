@@ -1,0 +1,33 @@
+{
+  "clipId": "crouch",
+  "category": "movement",
+  "frameCount": 8,
+  "fps": 8,
+  "loop": true,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "facing": "right",
+  "sourceSheet": "assets/characters/sable/generated/provider_review/spritebuilder/crouch/20260628-165005/sable_crouch_20260628-165005_DEV_NOT_FINAL.png",
+  "normalizedSheet": "assets/characters/sable/normalized/crouch/v20260628-165009/sable_crouch_normalized_strip.png",
+  "frameOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hitFrames": [],
+  "cancelFrames": [],
+  "notes": [
+    "Generate Sable only as a loopable crouch idle / crouching guard.",
+    "Use a readable lower fighting stance with subtle breathing motion.",
+    "Keep character scale stable and full body visible in every 448x448 frame.",
+    "Use restrained silver/black void fracture energy around the forearms only.",
+    "Use transparent alpha only; no green screen, no chroma background, no flat-color background."
+  ],
+  "validationStatus": "manual_review_required"
+}

@@ -1,0 +1,2014 @@
+{
+  "toolName": "SpriteForge Agent",
+  "schemaVersion": "1.0.0",
+  "assetRoot": "../../assets/characters",
+  "approvalPolicies": {
+    "conservative": {
+      "autoApprovePreview": false,
+      "autoApproveLive": false,
+      "requireHumanReviewEveryClip": true
+    },
+    "previewAuto": {
+      "autoApprovePreview": true,
+      "autoApproveLive": false,
+      "requireHumanReviewEveryClip": false,
+      "maxRetriesPerClip": 3,
+      "minTechnicalStatus": "pass",
+      "minVisualScore": 85,
+      "requireSmokeTestPass": true,
+      "quarantineSuspiciousOutputs": true
+    },
+    "fullAutoPreview": {
+      "autoApprovePreview": true,
+      "autoApproveLive": false,
+      "requireHumanReviewEveryClip": false,
+      "maxRetriesPerClip": 5,
+      "minTechnicalStatus": "pass",
+      "minVisualScore": 90,
+      "requireSmokeTestPass": true,
+      "quarantineSuspiciousOutputs": true
+    }
+  },
+  "providers": {
+    "active": "manual",
+    "manual": {
+      "mode": "outbox",
+      "promptOutbox": "prompts/outbox",
+      "generatedInbox": "generated/inbox"
+    },
+    "spritebuilder": {
+      "mode": "local",
+      "command": "<configure command here>",
+      "executable": "npm.cmd",
+      "args": [
+        "--prefix",
+        "tools/spritebuilder",
+        "run",
+        "generate",
+        "--",
+        "--request",
+        "<requestPath>",
+        "--write-dev-png"
+      ],
+      "inputPromptPath": true,
+      "outputDirectory": "assets/characters/<character>/generated/provider_review/spritebuilder/<clip>/<timestamp>/",
+      "requestPath": "assets/characters/<character>/generated/provider_review/spritebuilder/<clip>/<timestamp>/spritebuilder_request.json",
+      "timeoutMs": 600000
+    }
+  },
+  "provider": {
+    "active": "manual",
+    "manual": {
+      "promptOutbox": "prompts/outbox",
+      "generatedInbox": "generated/inbox"
+    }
+  },
+  "sprite": {
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "anchorX": 224,
+    "safeBox": {
+      "maxWidth": 336,
+      "maxHeight": 352,
+      "minHeight": 180
+    },
+    "allowScaleUp": false
+  },
+  "validation": {
+    "maxBaselineDriftPx": 8,
+    "maxCenterDriftPx": 24,
+    "maxScaleDriftPx": 34,
+    "cropMarginPx": 4,
+    "minOpaquePixels": 1200,
+    "alphaOpaqueThreshold": 24,
+    "opaqueBackgroundRatio": 0.96,
+    "edgeBorderOpaqueRatio": 0.78,
+    "solidBackgroundColorDistance": 28,
+    "duplicateHashMaxDistance": 4
+  },
+  "clipDefaults": {
+    "frameCount": 6,
+    "fps": 12,
+    "loop": false,
+    "category": "movement"
+  },
+  "clips": {
+    "idle": {
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true
+    },
+    "neutral_light": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14
+    },
+    "hit_stun": {
+      "category": "damage",
+      "frameCount": 4,
+      "fps": 10
+    },
+    "block": {
+      "category": "defense",
+      "frameCount": 4,
+      "fps": 10
+    },
+    "jump": {
+      "category": "movement",
+      "frameCount": 6,
+      "fps": 12
+    },
+    "crouch": {
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 8,
+      "loop": true,
+      "notes": [
+        "Generate Sable only as a loopable crouch idle / crouching guard.",
+        "Use a readable lower fighting stance with subtle breathing motion.",
+        "Keep character scale stable and full body visible in every 448x448 frame.",
+        "Use restrained silver/black void fracture energy around the forearms only.",
+        "Use transparent alpha only; no green screen, no chroma background, no flat-color background."
+      ]
+    },
+    "walk_forward": {
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": true
+    },
+    "walk_backward": {
+      "category": "movement",
+      "frameCount": 8,
+      "fps": 10,
+      "loop": true
+    },
+    "dash_forward": {
+      "category": "movement",
+      "frameCount": 6,
+      "fps": 16
+    },
+    "dash_backward": {
+      "category": "movement",
+      "frameCount": 6,
+      "fps": 16
+    },
+    "jump_start": {
+      "category": "movement",
+      "frameCount": 4,
+      "fps": 14
+    },
+    "jump_loop": {
+      "category": "movement",
+      "frameCount": 4,
+      "fps": 10,
+      "loop": true
+    },
+    "fall": {
+      "category": "movement",
+      "frameCount": 4,
+      "fps": 10,
+      "loop": true
+    },
+    "land": {
+      "category": "movement",
+      "frameCount": 4,
+      "fps": 12
+    },
+    "knockdown": {
+      "category": "damage",
+      "frameCount": 6,
+      "fps": 10
+    },
+    "getup": {
+      "category": "damage",
+      "frameCount": 6,
+      "fps": 10
+    },
+    "stand_light": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14,
+      "hitFrames": [
+        2
+      ]
+    },
+    "stand_medium": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 13,
+      "hitFrames": [
+        3
+      ]
+    },
+    "stand_heavy": {
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "crouch_light": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14,
+      "hitFrames": [
+        2
+      ],
+      "notes": [
+        "Low crouching light poke from Sable's crouch stance.",
+        "Keep the strike compact and body-first, with only tiny attached void-crystal accents.",
+        "Do not turn this into Ground Rift or any large ground VFX."
+      ]
+    },
+    "crouch_medium": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 13,
+      "hitFrames": [
+        3
+      ],
+      "notes": [
+        "Low crouching medium strike with a longer arm or leg reach than crouch_light.",
+        "Keep Sable grounded, low, and readable in every frame.",
+        "Do not add detached shard debris or a full special-effect burst."
+      ]
+    },
+    "crouch_heavy": {
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ],
+      "notes": [
+        "Heavy crouching normal / low sweep-like body attack.",
+        "This is a normal attack, not Ground Rift; use compact impact accents only.",
+        "Keep the body scale stable and avoid clipping feet, hands, hair, or crystal wraps."
+      ]
+    },
+    "jump_light": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14,
+      "hitFrames": [
+        2
+      ]
+    },
+    "jump_medium": {
+      "category": "normal",
+      "frameCount": 5,
+      "fps": 12,
+      "hitFrames": [
+        2
+      ]
+    },
+    "jump_heavy": {
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "forward_light": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14,
+      "hitFrames": [
+        2
+      ],
+      "notes": [
+        "Forward-moving light normal, a compact advancing palm or forearm check.",
+        "This is not Phase Lunge; keep travel implied by pose only and avoid special VFX.",
+        "Maintain Sable's locked pixel style and in-frame body silhouette."
+      ]
+    },
+    "forward_medium": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 13,
+      "hitFrames": [
+        3
+      ],
+      "notes": [
+        "Forward-moving medium normal with more commitment than forward_light.",
+        "Use compact crystal accents attached to the attacking arm only.",
+        "Do not make this a special lunge, projectile, or teleport."
+      ]
+    },
+    "forward_heavy": {
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ],
+      "notes": [
+        "Forward-moving heavy normal, broad body-first strike with strong silhouette.",
+        "This is not Forward Heavy Phase Lunge; avoid long travel, portals, or big detached VFX.",
+        "Keep all frames contained inside the 448x448 cells."
+      ]
+    },
+    "back_light": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 14,
+      "hitFrames": [
+        2
+      ],
+      "notes": [
+        "Retreating defensive light normal / quick back-step guard check.",
+        "This is not Void Anchor; do not create a trap, anchor crystal, or ground portal.",
+        "Keep the effect compact and attached to Sable's forearm."
+      ]
+    },
+    "back_medium": {
+      "category": "normal",
+      "frameCount": 6,
+      "fps": 13,
+      "hitFrames": [
+        3
+      ],
+      "notes": [
+        "Retreating medium normal with a defensive counter-poke feel.",
+        "Keep Sable facing the opponent while shifting weight backward.",
+        "No trap placement, no detached anchor, and no large VFX."
+      ]
+    },
+    "back_heavy": {
+      "category": "normal",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ],
+      "notes": [
+        "Heavy back normal / defensive launcher-like body strike.",
+        "This is a normal attack, not Void Anchor; no trap or special object.",
+        "Keep Sable's body readable, grounded, and consistently scaled."
+      ]
+    },
+    "neutral_special_light": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "neutral_special_medium": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "neutral_special_heavy": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        5
+      ]
+    },
+    "forward_special_light": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "forward_special_medium": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "forward_special_heavy": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        5
+      ]
+    },
+    "back_special_light": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "back_special_medium": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "back_special_heavy": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        5
+      ]
+    },
+    "up_special_light": {
+      "category": "special",
+      "frameCount": 6,
+      "fps": 12,
+      "hitFrames": [
+        3
+      ]
+    },
+    "up_special_medium": {
+      "category": "special",
+      "frameCount": 7,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "up_special_heavy": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 11,
+      "hitFrames": [
+        5
+      ]
+    },
+    "down_special_light": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "down_special_medium": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        4
+      ]
+    },
+    "down_special_heavy": {
+      "category": "special",
+      "frameCount": 8,
+      "fps": 12,
+      "hitFrames": [
+        5
+      ]
+    },
+    "ultimate_start": {
+      "category": "ultimate",
+      "frameCount": 8,
+      "fps": 10
+    },
+    "ultimate_fire": {
+      "category": "ultimate",
+      "frameCount": 8,
+      "fps": 10,
+      "hitFrames": [
+        5
+      ]
+    },
+    "taunt": {
+      "category": "cinematic",
+      "frameCount": 8,
+      "fps": 8
+    }
+  },
+  "clipAliases": {
+    "walk": "walk_forward",
+    "hitstun": "hit_stun",
+    "hit_stun": "hit_stun",
+    "ground_light": "stand_light",
+    "ground light": "stand_light",
+    "ground_medium": "stand_medium",
+    "ground medium": "stand_medium",
+    "ground_heavy": "stand_heavy",
+    "ground heavy": "stand_heavy",
+    "air_light": "jump_light",
+    "air light": "jump_light",
+    "air_medium": "jump_medium",
+    "air medium": "jump_medium",
+    "air_heavy": "jump_heavy",
+    "air heavy": "jump_heavy",
+    "crouch_light": "crouch_light",
+    "crouch light": "crouch_light",
+    "crouch_medium": "crouch_medium",
+    "crouch medium": "crouch_medium",
+    "crouch_heavy": "crouch_heavy",
+    "crouch heavy": "crouch_heavy",
+    "forward_light": "forward_light",
+    "forward light": "forward_light",
+    "forward_medium": "forward_medium",
+    "forward medium": "forward_medium",
+    "forward_heavy": "forward_heavy",
+    "forward heavy": "forward_heavy",
+    "back_light": "back_light",
+    "back light": "back_light",
+    "back_medium": "back_medium",
+    "back medium": "back_medium",
+    "back_heavy": "back_heavy",
+    "back heavy": "back_heavy",
+    "void_shard": "neutral_special_light",
+    "void shard": "neutral_special_light",
+    "forward_light_phase_lunge": "forward_special_light",
+    "forward light phase lunge": "forward_special_light",
+    "forward_medium_phase_lunge": "forward_special_medium",
+    "forward medium phase lunge": "forward_special_medium",
+    "forward_heavy_phase_lunge": "forward_special_heavy",
+    "forward heavy phase lunge": "forward_special_heavy",
+    "void_anchor": "back_special_light",
+    "void anchor": "back_special_light",
+    "ground_rift": "down_special_light",
+    "ground rift": "down_special_light",
+    "vertical_phase": "up_special_light",
+    "vertical phase": "up_special_light"
+  },
+  "characterQueues": {
+    "sable": {
+      "mvp": [
+        "idle",
+        "crouch",
+        "block",
+        "hit_stun",
+        "walk_forward",
+        "jump",
+        "stand_light",
+        "stand_medium",
+        "stand_heavy",
+        "crouch_light",
+        "crouch_medium",
+        "crouch_heavy",
+        "jump_light",
+        "jump_medium",
+        "jump_heavy",
+        "forward_light",
+        "forward_medium",
+        "forward_heavy",
+        "back_light",
+        "back_medium",
+        "back_heavy",
+        "neutral_special_light",
+        "forward_special_light",
+        "forward_special_medium",
+        "forward_special_heavy",
+        "back_special_light",
+        "down_special_light",
+        "up_special_light"
+      ],
+      "animator-rebuild-v2": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "jump",
+        "crouch",
+        "block",
+        "hit_stun",
+        "knockdown",
+        "getup",
+        "stand_light",
+        "stand_medium",
+        "stand_heavy",
+        "crouch_light",
+        "crouch_medium",
+        "crouch_heavy",
+        "jump_light",
+        "jump_medium",
+        "jump_heavy",
+        "forward_light",
+        "forward_medium",
+        "forward_heavy",
+        "back_light",
+        "back_medium",
+        "back_heavy",
+        "neutral_special_light",
+        "neutral_special_medium",
+        "neutral_special_heavy",
+        "forward_special_light",
+        "forward_special_medium",
+        "forward_special_heavy",
+        "back_special_light",
+        "back_special_medium",
+        "back_special_heavy",
+        "down_special_light",
+        "down_special_medium",
+        "down_special_heavy",
+        "up_special_light",
+        "up_special_medium",
+        "up_special_heavy"
+      ],
+      "specials-rebuild-v3": [
+        "neutral_special_light",
+        "neutral_special_medium",
+        "neutral_special_heavy",
+        "forward_special_light",
+        "forward_special_medium",
+        "forward_special_heavy",
+        "back_special_light",
+        "back_special_medium",
+        "back_special_heavy",
+        "down_special_light",
+        "down_special_medium",
+        "down_special_heavy",
+        "up_special_light",
+        "up_special_medium",
+        "up_special_heavy"
+      ],
+      "full-rebuild-v3": [
+        "idle",
+        "walk_forward",
+        "walk_backward",
+        "jump",
+        "crouch",
+        "block",
+        "hit_stun",
+        "knockdown",
+        "getup",
+        "stand_light",
+        "stand_medium",
+        "stand_heavy",
+        "crouch_light",
+        "crouch_medium",
+        "crouch_heavy",
+        "jump_light",
+        "jump_medium",
+        "jump_heavy",
+        "forward_light",
+        "forward_medium",
+        "forward_heavy",
+        "back_light",
+        "back_medium",
+        "back_heavy",
+        "neutral_special_light",
+        "neutral_special_medium",
+        "neutral_special_heavy",
+        "forward_special_light",
+        "forward_special_medium",
+        "forward_special_heavy",
+        "back_special_light",
+        "back_special_medium",
+        "back_special_heavy",
+        "down_special_light",
+        "down_special_medium",
+        "down_special_heavy",
+        "up_special_light",
+        "up_special_medium",
+        "up_special_heavy"
+      ]
+    }
+  },
+  "stageManualPaths": {
+    "animator-rebuild-v2": {
+      "promptOutbox": "rebuilds/sable_style4_animator_rebuild_v2/prompts",
+      "generatedInbox": "rebuilds/sable_style4_animator_rebuild_v2/generated/inbox"
+    },
+    "specials-rebuild-v3": {
+      "promptOutbox": "rebuilds/sable_style4_specials_rebuild_v3/prompts",
+      "generatedInbox": "rebuilds/sable_style4_specials_rebuild_v3/generated/inbox"
+    },
+    "full-rebuild-v3": {
+      "promptOutbox": "rebuilds/sable_style4_full_rebuild_v3/prompts",
+      "generatedInbox": "rebuilds/sable_style4_full_rebuild_v3/generated/inbox"
+    }
+  },
+  "stageManifestFiles": {
+    "animator-rebuild-v2": "preview_animation_clips_rebuild_v2.json",
+    "specials-rebuild-v3": "preview_animation_clips_specials_rebuild_v3.json",
+    "full-rebuild-v3": "preview_animation_clips_full_rebuild_v3.json"
+  },
+  "stageNormalizedDirs": {
+    "animator-rebuild-v2": "rebuilds/sable_style4_animator_rebuild_v2/normalized",
+    "specials-rebuild-v3": "rebuilds/sable_style4_specials_rebuild_v3/normalized",
+    "full-rebuild-v3": "rebuilds/sable_style4_full_rebuild_v3/normalized"
+  },
+  "stageApprovalDirs": {
+    "animator-rebuild-v2": "rebuilds/sable_style4_animator_rebuild_v2/approvals/preview",
+    "specials-rebuild-v3": "rebuilds/sable_style4_specials_rebuild_v3/approvals/preview",
+    "full-rebuild-v3": "rebuilds/sable_style4_full_rebuild_v3/approvals/preview"
+  },
+  "stageReportDirs": {
+    "animator-rebuild-v2": "rebuilds/sable_style4_animator_rebuild_v2/reports",
+    "specials-rebuild-v3": "rebuilds/sable_style4_specials_rebuild_v3/reports",
+    "full-rebuild-v3": "rebuilds/sable_style4_full_rebuild_v3/reports"
+  },
+  "stages": {
+    "style-test": [
+      "idle",
+      "neutral_light",
+      "hit_stun",
+      "block",
+      "jump",
+      "crouch"
+    ],
+    "mvp": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "dash_forward",
+      "dash_backward",
+      "jump_start",
+      "jump_loop",
+      "fall",
+      "land",
+      "crouch",
+      "block",
+      "hit_stun",
+      "knockdown",
+      "getup",
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "crouch_light",
+      "crouch_medium",
+      "crouch_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "ultimate_start",
+      "ultimate_fire"
+    ],
+    "animator-rebuild-v2": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "jump",
+      "crouch",
+      "block",
+      "hit_stun",
+      "knockdown",
+      "getup",
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "crouch_light",
+      "crouch_medium",
+      "crouch_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "forward_light",
+      "forward_medium",
+      "forward_heavy",
+      "back_light",
+      "back_medium",
+      "back_heavy",
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "back_special_medium",
+      "back_special_heavy",
+      "down_special_light",
+      "down_special_medium",
+      "down_special_heavy",
+      "up_special_light",
+      "up_special_medium",
+      "up_special_heavy"
+    ],
+    "specials-rebuild-v3": [
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "back_special_medium",
+      "back_special_heavy",
+      "down_special_light",
+      "down_special_medium",
+      "down_special_heavy",
+      "up_special_light",
+      "up_special_medium",
+      "up_special_heavy"
+    ],
+    "full-rebuild-v3": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "jump",
+      "crouch",
+      "block",
+      "hit_stun",
+      "knockdown",
+      "getup",
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "crouch_light",
+      "crouch_medium",
+      "crouch_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "forward_light",
+      "forward_medium",
+      "forward_heavy",
+      "back_light",
+      "back_medium",
+      "back_heavy",
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "back_special_medium",
+      "back_special_heavy",
+      "down_special_light",
+      "down_special_medium",
+      "down_special_heavy",
+      "up_special_light",
+      "up_special_medium",
+      "up_special_heavy"
+    ],
+    "full": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "dash_forward",
+      "dash_backward",
+      "jump_start",
+      "jump_loop",
+      "fall",
+      "land",
+      "crouch",
+      "block",
+      "hit_stun",
+      "knockdown",
+      "getup",
+      "stand_light",
+      "stand_medium",
+      "stand_heavy",
+      "crouch_light",
+      "crouch_medium",
+      "crouch_heavy",
+      "jump_light",
+      "jump_medium",
+      "jump_heavy",
+      "forward_light",
+      "forward_medium",
+      "forward_heavy",
+      "back_light",
+      "back_medium",
+      "back_heavy",
+      "neutral_special_light",
+      "neutral_special_medium",
+      "neutral_special_heavy",
+      "forward_special_light",
+      "forward_special_medium",
+      "forward_special_heavy",
+      "back_special_light",
+      "back_special_medium",
+      "back_special_heavy",
+      "up_special_light",
+      "up_special_medium",
+      "up_special_heavy",
+      "down_special_light",
+      "down_special_medium",
+      "down_special_heavy",
+      "ultimate_start",
+      "ultimate_fire",
+      "taunt"
+    ]
+  },
+  "stageClipOverrides": {
+    "animator-rebuild-v2": {
+      "idle": {
+        "frameCount": 8,
+        "fps": 8,
+        "loop": true
+      },
+      "walk_forward": {
+        "frameCount": 12,
+        "fps": 10,
+        "loop": true
+      },
+      "walk_backward": {
+        "frameCount": 12,
+        "fps": 10,
+        "loop": true
+      },
+      "jump": {
+        "frameCount": 12,
+        "fps": 12,
+        "loop": false
+      },
+      "crouch": {
+        "frameCount": 8,
+        "fps": 8,
+        "loop": true
+      },
+      "block": {
+        "frameCount": 8,
+        "fps": 10,
+        "loop": true
+      },
+      "hit_stun": {
+        "frameCount": 8,
+        "fps": 10,
+        "loop": false
+      },
+      "knockdown": {
+        "frameCount": 8,
+        "fps": 10,
+        "loop": false
+      },
+      "getup": {
+        "frameCount": 5,
+        "fps": 10,
+        "loop": false
+      },
+      "stand_light": {
+        "frameCount": 8,
+        "fps": 14,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ]
+      },
+      "stand_medium": {
+        "frameCount": 10,
+        "fps": 13,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          8
+        ]
+      },
+      "stand_heavy": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          10
+        ]
+      },
+      "crouch_light": {
+        "frameCount": 8,
+        "fps": 14,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ]
+      },
+      "crouch_medium": {
+        "frameCount": 10,
+        "fps": 13,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          8
+        ]
+      },
+      "crouch_heavy": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          10
+        ]
+      },
+      "jump_light": {
+        "frameCount": 8,
+        "fps": 14,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ]
+      },
+      "jump_medium": {
+        "frameCount": 10,
+        "fps": 13,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          8
+        ]
+      },
+      "jump_heavy": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          10
+        ]
+      },
+      "forward_light": {
+        "frameCount": 8,
+        "fps": 14,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ]
+      },
+      "forward_medium": {
+        "frameCount": 10,
+        "fps": 13,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          8
+        ]
+      },
+      "forward_heavy": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          10
+        ]
+      },
+      "back_light": {
+        "frameCount": 8,
+        "fps": 14,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ]
+      },
+      "back_medium": {
+        "frameCount": 10,
+        "fps": 13,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          8
+        ]
+      },
+      "back_heavy": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          10
+        ]
+      },
+      "neutral_special_light": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ]
+      },
+      "neutral_special_medium": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ]
+      },
+      "neutral_special_heavy": {
+        "frameCount": 18,
+        "fps": 12,
+        "hitFrames": [
+          8
+        ],
+        "cancelFrames": [
+          16
+        ]
+      },
+      "forward_special_light": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ]
+      },
+      "forward_special_medium": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ]
+      },
+      "forward_special_heavy": {
+        "frameCount": 18,
+        "fps": 12,
+        "hitFrames": [
+          8
+        ],
+        "cancelFrames": [
+          16
+        ]
+      },
+      "back_special_light": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ]
+      },
+      "back_special_medium": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ]
+      },
+      "back_special_heavy": {
+        "frameCount": 18,
+        "fps": 12,
+        "hitFrames": [
+          8
+        ],
+        "cancelFrames": [
+          16
+        ]
+      },
+      "down_special_light": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ]
+      },
+      "down_special_medium": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ]
+      },
+      "down_special_heavy": {
+        "frameCount": 18,
+        "fps": 12,
+        "hitFrames": [
+          8
+        ],
+        "cancelFrames": [
+          16
+        ]
+      },
+      "up_special_light": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ]
+      },
+      "up_special_medium": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ]
+      },
+      "up_special_heavy": {
+        "frameCount": 18,
+        "fps": 12,
+        "hitFrames": [
+          8
+        ],
+        "cancelFrames": [
+          16
+        ]
+      }
+    },
+    "specials-rebuild-v3": {
+      "neutral_special_light": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          10
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: neutral Void Shard. Variant: LIGHT, fastest/smallest/safest. A quick one-hand shard flick from ready stance with short range and tiny attached black-violet-silver fracture VFX.",
+          "Motion beats across 12 frames: startup draw-in, active hit pose on frame index 5, compact shard impact, follow-through, recovery, return-to-ready.",
+          "Must read as different from medium/heavy: minimal body commitment, smallest VFX, shortest recovery, crisp fighting-game silhouette.",
+          "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "neutral_special_medium": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: neutral Void Shard. Variant: MEDIUM, clearer range and body turn than light. Sable forms a two-hand shard fan or crossing shard thrust from center stance.",
+          "Motion beats across 14 frames: startup gather, active hit pose on frame index 6, readable shard impact, follow-through, recovery, return-to-ready.",
+          "Must share Void Shard identity but differ from light/heavy through moderate range, shoulder rotation, larger VFX, and moderate recovery.",
+          "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "neutral_special_heavy": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: neutral Void Shard. Variant: HEAVY, strongest commitment and largest silhouette. Sable plants her stance and releases a charged shard burst from both forearms.",
+          "Motion beats across 16 frames: visible charge startup, active hit pose on frame index 7, strong shard impact/VFX frame, follow-through, heavier recovery, return-to-ready.",
+          "Must share Void Shard identity but differ from light/medium through slower startup, largest body commitment, biggest attached VFX, and highest risk/read.",
+          "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "forward_special_light": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          10
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: forward Phase Lunge. Variant: LIGHT, fastest/safest. A short phase step into a compact palm, elbow, or forearm strike with a thin void trail.",
+          "Motion beats across 12 frames: quick forward startup, active hit pose on frame index 5, small phase impact, follow-through, quick recovery, return-to-ready.",
+          "Must read as different from medium/heavy: shortest travel, least commitment, small VFX, body remains clearly visible and not smeared.",
+          "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "forward_special_medium": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: forward Phase Lunge. Variant: MEDIUM, more range and body movement than light. Sable performs a deeper phase dash with a clear lunging strike.",
+          "Motion beats across 14 frames: forward load, phase displacement, active hit pose on frame index 6, impact/VFX frame, follow-through, recovery, return-to-ready.",
+          "Must share Phase Lunge identity but differ from light/heavy through mid travel, stronger lean, moderate VFX trail, and readable recovery.",
+          "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "forward_special_heavy": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: forward Phase Lunge. Variant: HEAVY, most commitment and range. Sable coils, phases forward hard, and lands a broad body-first strike with a larger void trail.",
+          "Motion beats across 16 frames: slower startup coil, long phase lunge, active hit pose on frame index 7, strong impact/VFX frame, follow-through, long recovery, return-to-ready.",
+          "Must share Phase Lunge identity but differ from light/medium through widest travel, strongest silhouette intensity, largest attached VFX, and longest recovery.",
+          "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "back_special_light": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          10
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: back Void Anchor. Variant: LIGHT, fastest/safest. Sable slips backward and tags the space with a small anchor sigil or crystal hook from her forearm.",
+          "Motion beats across 12 frames: defensive startup, active hit/trap pose on frame index 5, compact anchor flash, follow-through, quick recovery, return-to-ready.",
+          "Must read as different from medium/heavy: smallest anchor, least retreat, safest posture, restrained VFX close to Sable.",
+          "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "back_special_medium": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: back Void Anchor. Variant: MEDIUM, stronger trap read. Sable backsteps and plants a mid-sized void anchor crystal with a clear defensive counter-pose.",
+          "Motion beats across 14 frames: backward load, anchor placement, active hit/trap pose on frame index 6, impact/VFX frame, follow-through, recovery, return-to-ready.",
+          "Must share Void Anchor identity but differ from light/heavy through moderate retreat, mid-sized anchor geometry, and clearer risk/read.",
+          "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "back_special_heavy": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: back Void Anchor. Variant: HEAVY, highest commitment. Sable plants hard, summons a larger anchor fracture, and visibly commits her body before recovery.",
+          "Motion beats across 16 frames: slow defensive startup, anchor formation, active hit/trap pose on frame index 7, strong fracture impact, follow-through, long recovery, return-to-ready.",
+          "Must share Void Anchor identity but differ from light/medium through biggest anchor silhouette, heaviest posture, largest attached VFX, and longest recovery.",
+          "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "down_special_light": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          10
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: down Ground Rift. Variant: LIGHT, fastest/smallest. Sable taps or sweeps the ground to open a tiny rift at her feet with a quick low hit read.",
+          "Motion beats across 12 frames: low startup, active hit pose on frame index 5, small ground fracture impact, follow-through, quick recovery, return-to-ready.",
+          "Must read as different from medium/heavy: smallest rift, shortest range, minimal crouch commitment, compact VFX below the waist.",
+          "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "down_special_medium": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: down Ground Rift. Variant: MEDIUM, more range and body motion. Sable drops into a clear low stance and sends a crawling fracture forward.",
+          "Motion beats across 14 frames: low gather, rift extension, active hit pose on frame index 6, impact/VFX frame, follow-through, recovery, return-to-ready.",
+          "Must share Ground Rift identity but differ from light/heavy through moderate rift length, stronger crouch silhouette, and readable recovery.",
+          "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "down_special_heavy": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: down Ground Rift. Variant: HEAVY, largest commitment. Sable kneels or stomps into a heavy ground rupture with a wide fracture burst below her.",
+          "Motion beats across 16 frames: slower low startup, heavy plant, active hit pose on frame index 7, large rift impact/VFX frame, follow-through, long recovery, return-to-ready.",
+          "Must share Ground Rift identity but differ from light/medium through widest low VFX, most committed lower-body pose, and clear risk/reward read.",
+          "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "up_special_light": {
+        "frameCount": 12,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          10
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: up Vertical Phase. Variant: LIGHT, fastest/safest. Sable pops upward with a compact knee, palm, or forearm anti-air strike and a thin vertical phase shimmer.",
+          "Motion beats across 12 frames: quick upward startup, active hit pose on frame index 5, small vertical impact, follow-through, fast recovery, return-to-ready or landing-ready pose.",
+          "Must read as different from medium/heavy: shortest rise, smallest VFX, least air time, stable body scale and visible feet/hair.",
+          "Output one transparent horizontal strip, 12 cells of 448x448, baselineY 382 except intentional airborne frames, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "up_special_medium": {
+        "frameCount": 14,
+        "fps": 12,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          12
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: up Vertical Phase. Variant: MEDIUM, clearer anti-air range. Sable rises through a mid-height vertical phase arc with a stronger upward strike.",
+          "Motion beats across 14 frames: upward load, rise, active hit pose on frame index 6, vertical fracture impact, follow-through, recovery, return-to-ready or landing-ready pose.",
+          "Must share Vertical Phase identity but differ from light/heavy through moderate height, clearer body arc, medium VFX pillar, and readable recovery.",
+          "Output one transparent horizontal strip, 14 cells of 448x448, baselineY 382 except intentional airborne frames, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      },
+      "up_special_heavy": {
+        "frameCount": 16,
+        "fps": 12,
+        "hitFrames": [
+          7
+        ],
+        "cancelFrames": [
+          14
+        ],
+        "notes": [
+          "specials-rebuild-v3 preview-only. Primary reference: assets/characters/sable/references/sable_pixel_reference_style.png. Preserve dark skin, silver eyes, short curled hair with pale highlights, navy-black bodysuit, and obsidian void-crystal forearm wraps.",
+          "Family: up Vertical Phase. Variant: HEAVY, most commitment and height. Sable charges, phases vertically, and finishes with a strong rising fracture strike.",
+          "Motion beats across 16 frames: visible charge startup, high vertical phase rise, active hit pose on frame index 7, large vertical impact/VFX frame, follow-through, long recovery, return-to-ready or landing-ready pose.",
+          "Must share Vertical Phase identity but differ from light/medium through tallest silhouette, largest vertical VFX, strongest body commitment, and highest risk/read.",
+          "Output one transparent horizontal strip, 16 cells of 448x448, baselineY 382 except intentional airborne frames, full body visible, no text, labels, borders, background, weapons, white coat, Lamuh pendant, or redesign."
+        ]
+      }
+    },
+    "full-rebuild-v3": {
+      "idle": {
+        "frameCount": 3,
+        "fps": 8,
+        "loop": true,
+        "notes": [
+          "full-rebuild-v3 movement pass. Rebuild Sable idle from the approved pixel reference: side-on fists-up shared attack-start guard, subtle breathing, compact void-crystal forearm shimmer, no old placeholder arms-down stance. Frame target is 3 after trimming only the exact duplicate loop-closer from the approved 4-frame source; no padding or fabricated in-betweens are allowed."
+        ]
+      },
+      "walk_forward": {
+        "frameCount": 6,
+        "fps": 10,
+        "loop": true,
+        "notes": [
+          "full-rebuild-v3 movement pass. Full forward walk cycle with stable feet, readable hips/shoulders, short curls and bodysuit seam detail preserved, no skating or scale drift. Frame target lowered from 12 to 6 for the 2026-07-09 fluidity redraw because only 6 source silhouettes passed the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+        ]
+      },
+      "walk_backward": {
+        "frameCount": 8,
+        "fps": 10,
+        "loop": true,
+        "notes": [
+          "full-rebuild-v3 movement pass. Defensive backward walk cycle, body still facing right, guard-ready posture, stable baseline and no reused forward-walk frames flipped into mush. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding."
+        ]
+      },
+      "jump": {
+        "frameCount": 8,
+        "fps": 12,
+        "validation": {
+          "maxScaleDriftPx": 70,
+          "scaleDriftRationale": "Jump movement intentionally includes slight knee bend and airborne pose-height variation; baseline, center, facing, and global normalization must still remain stable."
+        },
+        "notes": [
+          "full-rebuild-v3 movement pass. Clear takeoff, airborne pose, apex, and landing-ready recovery; intentional vertical motion is allowed but Sable scale, face, hair, boots, and forearm wraps must remain visible. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because the 8-pose source passed the no-duplicate frame-scrub gate without padding."
+        ]
+      },
+      "crouch": {
+        "frameCount": 8,
+        "fps": 8,
+        "loop": true,
+        "validation": {
+          "maxScaleDriftPx": 110,
+          "scaleDriftRationale": "Crouch movement intentionally includes a standing-to-low silhouette height change; baseline, center, facing, and global normalization must still remain stable."
+        },
+        "notes": [
+          "full-rebuild-v3 movement pass. Low guarded crouch loop with readable knees, boots, torso, and forearm crystals; not a Ground Rift special and not idle with lowered opacity."
+        ]
+      },
+      "block": {
+        "frameCount": 8,
+        "fps": 10,
+        "loop": true,
+        "notes": [
+          "full-rebuild-v3 reaction pass. Guard/block animation with crossed forearm crystals and compact defensive VFX that supports the silhouette without hiding the body."
+        ]
+      },
+      "hit_stun": {
+        "frameCount": 8,
+        "fps": 10,
+        "validation": {
+          "maxScaleDriftPx": 70,
+          "scaleDriftRationale": "Hit-stun movement intentionally includes recoil, bracing, and stagger-height variation; baseline, center, facing, and global normalization must still remain stable."
+        },
+        "notes": [
+          "full-rebuild-v3 reaction pass. Clear impact recoil and recovery readability; no attack VFX, no duplicate held idle frames, and no body scale collapse."
+        ]
+      },
+      "knockdown": {
+        "frameCount": 8,
+        "fps": 10,
+        "validation": {
+          "maxScaleDriftPx": 300,
+          "minHeightPx": 70,
+          "scaleDriftRationale": "Knockdown intentionally transitions from standing recoil to low/grounded body poses; baseline, center, facing, and global normalization must still remain stable."
+        },
+        "notes": [
+          "full-rebuild-v3 reaction pass. Readable fall/grounded knockdown sequence with full body visible, consistent costume details, and no cropping of hair, hands, feet, or boots."
+        ]
+      },
+      "getup": {
+        "frameCount": 5,
+        "fps": 10,
+        "validation": {
+          "maxScaleDriftPx": 300,
+          "minHeightPx": 70,
+          "scaleDriftRationale": "Getup intentionally transitions from grounded low poses back to standing height; baseline, center, facing, and global normalization must still remain stable."
+        },
+        "notes": [
+          "full-rebuild-v3 reaction pass. Five-frame ground-to-standing recovery returning to the shared side-on fists-up guard; no teleport pop, no missing in-betweens, no scale jump, and no padding/fabricated frames."
+        ]
+      },
+      "stand_light": {
+        "frameCount": 8,
+        "fps": 14,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Fast standing light body-first poke with compact forearm crystal accent; clear startup, active frame, and recovery."
+        ]
+      },
+      "stand_medium": {
+        "frameCount": 10,
+        "fps": 13,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          8
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Standing medium with more reach and shoulder rotation than light, still smaller and faster than heavy."
+        ]
+      },
+      "stand_heavy": {
+        "frameCount": 8,
+        "fps": 12,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Standing heavy with strong silhouette commitment, clear active hit pose, and readable recovery; no special-family VFX. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because only 8 source silhouettes pass the no-duplicate frame-scrub gate; no padding/fabricated in-betweens are allowed."
+        ]
+      },
+      "crouch_light": {
+        "frameCount": 7,
+        "fps": 14,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Quick low crouching poke, compact and readable, not a Ground Rift special. Frame target lowered from 8 to 7 for the 2026-07-09 fluidity redraw because the final return pose was too close to frame 0; no padding/fabricated in-betweens are allowed."
+        ]
+      },
+      "crouch_medium": {
+        "frameCount": 8,
+        "fps": 13,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Crouching medium with longer low reach and stronger body motion than light, with only attached crystal accents. Frame target lowered from 10 to 8 for the 2026-07-09 fluidity redraw because duplicate/outlier silhouettes were removed instead of padded; hit frame aligned to the visible contact pose."
+        ]
+      },
+      "crouch_heavy": {
+        "frameCount": 8,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          7
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Heavy low sweep or crouched body strike with clear startup/active/recovery; no wide rift or trap effect. Frame target lowered from 12 to 8 for the 2026-07-09 fluidity redraw because duplicate return silhouettes were removed instead of padded."
+        ]
+      },
+      "jump_light": {
+        "frameCount": 7,
+        "fps": 14,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Fast aerial light with compact body pose and visible face/hair/suit detail in every airborne frame. Frame target lowered from 8 to 7 for the 2026-07-09 fluidity redraw because the final duplicate return pose was removed; hit frame aligned to the visible contact pose."
+        ]
+      },
+      "jump_medium": {
+        "frameCount": 5,
+        "fps": 12,
+        "hitFrames": [
+          2
+        ],
+        "cancelFrames": [
+          4
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Aerial medium with a clearer arc and longer reach than light, preserving stable airborne scale. Frame target lowered from 10 to 5 after Claude rejected 10-frame text-only attempts for pose-pumping/multi-hit read and approved trimming the duplicate sixth frame from attempt 1; contact is visual frame 3/index 2, recovery/cancel is visual frame 5/index 4, and the clip must avoid a second reach peak."
+        ]
+      },
+      "jump_heavy": {
+        "frameCount": 6,
+        "fps": 11,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 normal attack. Heavy aerial strike with committed silhouette and strong active pose; not Vertical Phase. Frame target lowered from 12 to 6 after Claude approved dropping isolated broken frame 6 from the 7-frame attempt; uses original frames 1,2,3,4,5,7, one right-leg strike, contact on visual frame 4/index 3, follow-through/retract, and recovery toward airborne guard."
+        ]
+      },
+      "forward_light": {
+        "frameCount": 5,
+        "fps": 14,
+        "hitFrames": [
+          2
+        ],
+        "cancelFrames": [
+          4
+        ],
+        "notes": [
+          "full-rebuild-v3 directional normal. Compact advancing light normal, not Phase Lunge; keep travel implied by pose and preserve baseline. Use five frames: one quick right-arm forward check, contact on visual frame 3/index 2, follow-through, and recovery toward guard. Claude confirmed retry2 attempt 1 has the correct motion storyboard; component cleanup removed only the disconnected 92-pixel boot sliver in visual frame 2 and 227-pixel floating crystal-fist chunk in visual frame 4. Both hands and both boots remain complete; rescrub contact sheet is ready for review."
+        ]
+      },
+      "forward_medium": {
+        "frameCount": 6,
+        "fps": 13,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 directional normal. Forward medium with more commitment than light and restrained attached VFX, not a teleport or special dash. Frame target lowered from 10 to 6 after component-isolating a loose shard and trimming a redundant final guard from the 7-frame attempt; one committed right-forearm forward strike, contact on visual frame 4/index 3, follow-through, and recovery toward guard."
+        ]
+      },
+      "forward_heavy": {
+        "frameCount": 6,
+        "fps": 11,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 directional normal. Heavy advancing body-first strike with large but readable silhouette, no Phase Lunge trail. Frame target lowered from 12 to 6 after component-isolating loose fragments and trimming duplicate guard padding from the 8-frame attempt; one committed right-arm/body strike, contact on visual frame 5/index 4, and overextended recovery on visual frame 6/index 5."
+        ]
+      },
+      "back_light": {
+        "frameCount": 5,
+        "fps": 14,
+        "hitFrames": [
+          2
+        ],
+        "cancelFrames": [
+          4
+        ],
+        "notes": [
+          "full-rebuild-v3 directional normal. Defensive retreating light check, not Void Anchor; no trap object or detached anchor crystal. Frame target lowered from 8 to 5 after trimming a redundant final guard from the 6-frame attempt; one quick right-arm retreating check, contact on visual frame 3/index 2, follow-through, and recovery toward guard."
+        ]
+      },
+      "back_medium": {
+        "frameCount": 5,
+        "fps": 13,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          4
+        ],
+        "notes": [
+          "full-rebuild-v3 directional normal. Back medium counter-poke with clear guarded body turn and compact forearm accents only. Frame target lowered from 10 to 5 after text-only generation produced a valid 6-frame sequence with a duplicate final loop-closer; one right-arm retreating counter-poke, contact on visual frame 4/index 3, and recovery/follow-through on visual frame 5/index 4."
+        ]
+      },
+      "back_heavy": {
+        "frameCount": 6,
+        "fps": 11,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 directional normal. Heavy defensive/back normal with stronger commitment and recovery, not a Void Anchor placement. Frame target lowered from 12 to 6 after the first 7-frame text-only attempt failed the pre-contact reach gate; one committed right-arm retreating counter-strike, contact on visual frame 4/index 3, follow-through, and recovery toward guard."
+        ]
+      },
+      "neutral_special_light": {
+        "frameCount": 7,
+        "fps": 12,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Void Shard LIGHT. Fastest/smallest/safest one-hand shard flick with compact black-violet-silver fracture VFX and a clear active hit frame. Frame target lowered from 12 to 7 after text-only generation produced a redundant final recovery pad; one right-hand attached shard flick, contact/active on visual frame 5/index 4, dissipating follow-through, and recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "neutral_special_medium": {
+        "frameCount": 8,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          7
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Void Shard MEDIUM. Two-hand shard fan or crossing thrust with more range/body turn than light and less commitment than heavy. Frame target lowered from 14 to 8 after text-only generation produced a redundant final guard; one two-hand attached shard fan, contact/active on visual frame 6/index 5, dissipating follow-through, and recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "neutral_special_heavy": {
+        "frameCount": 9,
+        "fps": 11,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          8
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Void Shard HEAVY. Planted charged shard burst from both forearms, largest startup/read/recovery in the family. Frame target lowered from 16 to 9 after main-body cleanup and trimming an exact duplicate final guard from the 10-frame text-only attempt; one planted two-forearm charged burst, contact/active on visual frame 7/index 6, dissipating follow-through, and committed recovery.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "forward_special_light": {
+        "frameCount": 7,
+        "fps": 12,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Phase Lunge LIGHT. Short phase step into compact strike, fastest travel and smallest trail. Frame target lowered from 12 to 7 after main-body cleanup removed cross-cell trail artifacts and a redundant final guard was trimmed; one short right-arm phase lunge, contact on visual frame 5/index 4, small attached void trail, and recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "forward_special_medium": {
+        "frameCount": 9,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          8
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Phase Lunge MEDIUM. Deeper phase dash with readable lunge strike, moderate range and recovery. Frame target lowered from 14 to 9 for text-only generation; one deeper right-arm phase dash, contact on visual frame 6/index 5, attached void trail, and recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "forward_special_heavy": {
+        "frameCount": 9,
+        "fps": 11,
+        "hitFrames": [
+          6
+        ],
+        "cancelFrames": [
+          8
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Phase Lunge HEAVY. Slow coil into longest committed phase lunge with the largest attached void trail. Frame target lowered from 16 to 9 after main-body cleanup removed cross-cell trail artifacts and a redundant final guard was trimmed; one longest right-arm phase lunge, contact on visual frame 7/index 6, attached void trail, and committed recovery.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+          "Post-processing greenfix 2026-07-10: mint-green chroma residue in the Phase Lunge heavy dash trail was hue-shifted to approved violet/silver; detector reports zero green-dominant/chroma pixels after cleanup. Contact sheet: assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/reports/frame_scrub/forward_special_heavy/fluidity_redraw01_9f_mainbody_trim10_greenfix/forward_special_heavy_numbered_contact_sheet.png."
+        ]
+      },
+      "back_special_light": {
+        "frameCount": 6,
+        "fps": 12,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Void Anchor LIGHT. Small quick space-lock trap while slipping back, using one compact faceted obsidian shard over one shallow silver-violet rift; active on visual frame 4/index 3 with recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+          "DEFERRED 2026-07-10: two reference-input canonical redraws failed equal-cell containment; attempt 1 left frame-3 boot bleed in frame 2 and attempt 2 placed frame 3 across the frame-2 boundary. No repack/body rescue allowed."
+        ]
+      },
+      "back_special_medium": {
+        "frameCount": 6,
+        "fps": 12,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Void Anchor MEDIUM. Six-frame canonical space-lock trap with clearer retreat and a stronger crouched placement silhouette; one medium faceted obsidian shard over one medium silver-violet rift, active on visual frame 4/index 3, followed by settle and committed recovery.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+          "APPROVED/PROMOTED PREVIEW-ONLY 2026-07-10: reference-input attempt 2 used a valid 3x2 source grid, deterministically reordered into a six-frame horizontal strip without body repair or component isolation. Claude approved the canonical trap action. A 16-pixel frame-6 ground speck plus three tiny pixels were removed after component check; frames 4-5 have no near-duplicate pair and are an intentional eruption-growth/trap-hold. Normalized and preview smoke passed."
+        ]
+      },
+      "back_special_heavy": {
+        "frameCount": 7,
+        "fps": 11,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Void Anchor HEAVY. Highest-commitment planted anchor fracture, largest anchor geometry and recovery. Frame target lowered from 16 to 7 after dropping isolated broken leftover-anchor frame 7 and redundant final guard from the 9-frame attempt; one large forearm-connected anchor fracture, active on visual frame 6/index 5, compact intentional anchor VFX, and committed recovery.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing.",
+          "DEFERRED 2026-07-10: Claude/user rejected queued clip for physical nautical anchor projectile in frames 5-6; body motion passed, but VFX must be redone as canonical obsidian shard plus silver-violet fracture lines over a small void pool/rift trap after generator health returns."
+        ]
+      },
+      "down_special_light": {
+        "frameCount": 7,
+        "fps": 12,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Ground Rift LIGHT. Fast tiny rift at Sable's feet, smallest low VFX and least crouch commitment. Frame target lowered from 12 to 7 after trimming a redundant final guard from the text-only attempt; one small grounded rift at Sable's feet, active on visual frame 5/index 4, compact intentional low VFX, and recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "down_special_medium": {
+        "frameCount": 8,
+        "fps": 12,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          7
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Ground Rift MEDIUM. Clear low stance sending a crawling fracture forward, moderate range and recovery. Frame target lowered from 14 to 8 after main-body cleanup removed cross-cell rift debris and a redundant final guard was trimmed; one moderate grounded rift, active on visual frame 6/index 5, intentional low VFX, and recovery toward guard.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "down_special_heavy": {
+        "frameCount": 8,
+        "fps": 11,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          7
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Ground Rift HEAVY. Eight-frame reference-input heavy ground placement with slow load, committed kneel, one wide fissure crest active on visual frame 5/index 4, dim aftermath, and a clearly distinct half-rise recovery.",
+          "BATCH PREVIEW CANDIDATE 2026-07-10: attempt 2 passed identity, iconography, 4x2 containment, no-duplicate scrub, one-impact parity, and component audit. Two isolated 1-pixel body-frame specks were removed; all intentional Ground Rift components in frames 4-7 were preserved.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "up_special_light": {
+        "frameCount": 6,
+        "fps": 12,
+        "hitFrames": [
+          3
+        ],
+        "cancelFrames": [
+          5
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Vertical Phase LIGHT. Six-frame reference-input quick anti-air rise with a compact right-arm strike, one held contact on visual frame 4/index 3, bent-arm follow-through, and landing recovery distinct from guard.",
+          "BATCH PREVIEW CANDIDATE 2026-07-11: second generation passed identity and iconography gates. A non-centered generated row divider was corrected during deterministic grid slicing; one isolated 2-pixel speck in frame 3 and one isolated 1-pixel speck in frame 4 were removed after confirming complete anatomy. Hash warnings for anticipation/recovery silhouettes were manually cleared because the arm and leg states are visibly distinct.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "up_special_medium": {
+        "frameCount": 7,
+        "fps": 12,
+        "hitFrames": [
+          4
+        ],
+        "cancelFrames": [
+          6
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Vertical Phase MEDIUM. Seven-frame reference-input mid-height rise with one right-arm contact on visual frame 5/index 4, bent-arm follow-through, and a distinct landing brace on frame 7.",
+          "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic row-boundary correction. The exact duplicate final guard was trimmed under the duplicate-loop policy; disconnected fracture flecks were removed from the contact frame while preserving the complete body and attached main shimmer.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      },
+      "up_special_heavy": {
+        "frameCount": 8,
+        "fps": 11,
+        "hitFrames": [
+          5
+        ],
+        "cancelFrames": [
+          7
+        ],
+        "notes": [
+          "full-rebuild-v3 special family: Vertical Phase HEAVY. Eight-frame reference-input committed rise with a long coil, one powerful right-arm contact on visual frame 6/index 5, bent-arm descent, and low landing recovery.",
+          "BATCH PREVIEW CANDIDATE 2026-07-11: attempt 1 passed identity and iconography gates after deterministic empty-band row slicing. Three disconnected fracture flecks were removed from the contact frame while preserving complete anatomy and the attached central flare; the startup/recovery hash warning was manually cleared because arm and weight direction differ visibly.",
+          "STANDING RULE 2026-07-10: special family names are gameplay metaphors, never literal real-world objects. Void Shard = crystal fragments; Phase Lunge = dash with fracture trail; Void Anchor = obsidian crystal shard over a small void pool/rift trap; Ground Rift = cracked void fissure; Vertical Phase = rising fracture. Iconography gate: any recognizable real-world object in VFX (anchors, blades, drills, arrows, etc.) fails before packing."
+        ]
+      }
+    }
+  },
+  "game": {
+    "gameRoot": "../../NO_GODS_ABOVE",
+    "previewHarnessFile": "test/sprite_agent_preview.html"
+  }
+}

@@ -1,0 +1,4949 @@
+{
+  "method": "largest pink skin component, rotation-invariant PCA; manual review required",
+  "groups": {
+    "standing_light": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/01_compact_chamber.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/02_fast_low_extension_connector.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/02_low_kick_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/04_post_contact_recoil_connector.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/03_leg_retraction.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/04_planted_recovery.png"
+      ],
+      "ticksPerFrame": 2,
+      "loop": false
+    },
+    "standing_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/01_anticipation.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_medium/02_hip_drive_rise_connector.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/02_rising_knee_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/03_knee_descent.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/04_torso_settling.png"
+      ],
+      "ticksPerFrame": 4,
+      "loop": false
+    },
+    "standing_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_anticipation_v2.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_preparation.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_extension.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_recoil_v2.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_recovery.png"
+      ],
+      "ticksPerFrame": 5,
+      "loop": false
+    },
+    "crouching_light": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/01_guarded_crouch.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/02_rapid_low_aim.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/03_point_blank_shot.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/04_compact_recoil.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/05_crouched_recovery.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "crouching_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/01_guarded_crouch_preparation.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/02_opposed_split_alignment.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/03_opposed_simultaneous_double_shot_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/04_opposed_dual_recoil.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/05_controlled_pistol_lowering.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/06_crouched_recovery.png"
+      ],
+      "ticksPerFrame": 4,
+      "loop": false
+    },
+    "crouching_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/01_deep_rotational_anticipation.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/02_sweep_acceleration.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/03_low_ground_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/04_rotational_carry_past_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/05_committed_follow_through.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/06_recovery_unwind.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/07_planted_recovery.png"
+      ],
+      "ticksPerFrame": 5,
+      "loop": false
+    },
+    "air_light": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1/air-light-pistol-frame-v1/neighbors/01_incoming_approved_jump_apex.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-light-compact-boot-v2/air_light/02_compact_boot_contact.png",
+        "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1/air-light-pistol-frame-v1/neighbors/03_outgoing_approved_apex_to_fall.png",
+        "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1/air-light-pistol-frame-v1/neighbors/04_recovery_approved_falling.png"
+      ],
+      "ticksPerFrame": 4,
+      "loop": false
+    },
+    "air_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-medium-scythe-shaft-v1/air_medium/01_cross_body_load.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-medium-scythe-shaft-v1/air_medium/02_shaft_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-medium-scythe-shaft-v1/air_medium/03_fall_compatible_unwind.png"
+      ],
+      "ticksPerFrame": 5,
+      "loop": false
+    },
+    "air_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/01_committed_airborne_load.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/02_descending_hook_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/03_post_contact_landing_carry.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/04_held_scythe_attack_landing_recovery.png"
+      ],
+      "ticksPerFrame": 6,
+      "loop": false
+    },
+    "special_up_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/01_grounded_ready.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/02_blade_ground_plant.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/03_ground_drag_connector.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/04_maximum_furrow_resistance.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/05_release_acceleration.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/06_single_rising_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/07_launcher_follow_through.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/08_controlled_recovery.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/09_controlled_remount.png"
+      ],
+      "ticksPerFrame": 7,
+      "loop": false
+    },
+    "special_neutral_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/01_low_ready_anticipation.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/02_scythe_draw_short_load.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/03_control_strike_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/04_follow_through_recoil.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/05_recovery_remount_start.png"
+      ],
+      "ticksPerFrame": 4,
+      "loop": false
+    },
+    "special_forward_light": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/01_warning_ground_drag.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/02_drag_stride_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/03_rising_pickup_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/04_compact_planted_brace.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/05_low_drive_load.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/06_shaft_line_commitment.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/07_forward_acceleration.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/08_full_stride_acceleration.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/09_final_drive_extension.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/10_shaft_drive_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/11_carried_impact_line.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/12_arrested_held_line.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/13_overextended_brake_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/14_planted_hard_brake.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/15_scythe_lowering_recovery.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/16_low_guard_recovery.png"
+      ],
+      "ticksPerFrame": 2,
+      "loop": false
+    },
+    "special_forward_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/01_warning_ground_drag.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/02_forward_drag_step_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/03_shoulder_load_transition.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/04_deep_shoulder_load.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/05_committed_forward_launch.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/06_shoulder_drive_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/07_carried_first_hit_followthrough.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/08_inactive_reversal_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/09_inactive_reversal_midpoint.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/10_cross_body_rip_chamber.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/11_cross_body_rip_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/12_rip_followthrough.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/13_over_rotation_continuation.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/14_planted_braking_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/15_scythe_lowering_settle.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/16_spent_guarded_recovery.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "special_forward_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/01_low_advancing_ready.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/02_running_drive_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/03_ground_grind_stride.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/04_deepest_ground_grind.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/05_lead_foot_plant.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/06_low_coil_entry.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/07_maximum_planted_coil.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/08_explosive_release_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/09_rising_crescent_transition.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/10_execution_crescent_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/11_overhead_carry_through.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/12_forward_over_rotation.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/13_exhausted_brake_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/14_strained_torso_lift.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/15_controlled_scythe_lowering.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/16_low_ready_settle.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "special_down_light": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/01_low_neutral_transition.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/02_lifted_lead_foot.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/03_weighted_stamp.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/04_compact_ankle_line_brace.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/05_hands_settle_on_scythe.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/06_low_shaft_load.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/07_short_check_acceleration.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/08_near_extension.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/09_final_acceleration.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/10_shaft_check_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/11_contact_carry.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/12_arrested_held_line.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/13_weighted_recoil_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/14_recoil_under_weapon.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/15_low_guard_recovery.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/16_neutral_return.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "special_down_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/01_ready.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/02_crossdraw_coil.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/03_low_unfold.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/04_low_aim.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/05_low_shot.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/06_first_recoil.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/07_rising_aim.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/08_mid_shot.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/09_second_recoil.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/10_lowering.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/11_rise.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/12_ready_return.png"
+      ],
+      "ticksPerFrame": 4,
+      "loop": false
+    },
+    "special_down_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/01_low_ready.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/02_scythe_take.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/03_blade_flip_load.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/04_deep_grounded_coil.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/05_vertical_alignment.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/06_staff_plant_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/07_post_plant_release.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/08_gun_draw_turn.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/09_spin_midpoint.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/10_spin_brake_alignment.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/11_dual_pistol_aim_hold.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/12_contract_blast_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/13_contract_blast_recoil.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/14_controlled_lower.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/15_holster_turn.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/16_scythe_reclaim.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/17_ferrule_lift_remount.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/18_ferrule_lift_hold.png"
+      ],
+      "ticksPerFrame": 5,
+      "loop": false
+    },
+    "special_up_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/01_grounded_ready.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/02_low_loaded_anticipation.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/03_rising_hook_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/04_upward_recoil_settle.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/05_controlled_remount_connector.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/06_controlled_remount_start.png"
+      ],
+      "ticksPerFrame": 5,
+      "loop": false
+    },
+    "special_air_light": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/01_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/02_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/03_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/04_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/05_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/06_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/07_air_light_contract_bullet_runtime.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/08_air_light_contract_bullet_runtime.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "special_air_medium": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/01_air_medium_special_scythe_grab_reach.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/02_air_medium_special_scythe_grab_clamp.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/03_air_medium_special_scythe_grab_lock.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/04_air_medium_special_tuck_into_held_ball.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/05_air_medium_special_chakram_spin_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/06_air_medium_special_chakram_spin_followthrough.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/07_air_medium_special_chakram_spin_followthrough.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/08_air_medium_special_chakram_spin_followthrough.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/09_air_medium_special_chakram_spin_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/10_air_medium_special_chakram_spin_recovery.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/11_air_medium_special_chakram_spin_recovery.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/12_air_medium_special_chakram_spin_recovery.png",
+        "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/13_air_medium_special_chakram_spin_recovery.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "special_air_heavy": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/01_low_advancing_ready.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/02_running_drive_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/03_ground_grind_stride.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/04_deepest_ground_grind.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/05_lead_foot_plant.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/06_low_coil_entry.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/07_maximum_planted_coil.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/08_explosive_release_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/09_rising_crescent_transition.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/10_execution_crescent_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/11_overhead_carry_through.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/12_forward_over_rotation.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/13_exhausted_brake_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/14_strained_torso_lift.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/15_controlled_scythe_lowering.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/16_low_ready_settle.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "air_special_ender": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/01_low_advancing_ready.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/02_running_drive_connector.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/03_ground_grind_stride.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/04_deepest_ground_grind.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/05_lead_foot_plant.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/06_low_coil_entry.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/07_maximum_planted_coil.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/08_explosive_release_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/09_rising_crescent_transition.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/10_execution_crescent_contact.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/11_overhead_carry_through.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/12_forward_over_rotation.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/13_exhausted_brake_start.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/14_strained_torso_lift.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/15_controlled_scythe_lowering.png",
+        "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/16_low_ready_settle.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "idle": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_01.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_02.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_03.png"
+      ],
+      "ticksPerFrame": 11,
+      "loop": true
+    },
+    "walk_forward": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/01_walk_forward_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/02_walk_forward_neutral_departure.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/03_walk_forward_passing.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/04_walk_forward_opposite_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/05_walk_forward_return.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/06_walk_forward_opposite_down.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/07_walk_forward_opposite_passing.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/08_walk_forward_opposite_up_return.png"
+      ],
+      "ticksPerFrame": 6,
+      "loop": true
+    },
+    "walk_backward": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_rearward_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_neutral_departure.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_passing.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_opposite_contact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_return.png"
+      ],
+      "ticksPerFrame": 7,
+      "loop": true
+    },
+    "dash": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/01_dash_forward_v2_startup_load.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/02_dash_forward_v2_grounded_push_connector.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/03_dash_forward_v2_committed_launch.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/04_dash_forward_v2_low_travel_carry.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/05_dash_forward_v2_deceleration_catch.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/06_dash_forward_v2_brake_recovery.png"
+      ],
+      "ticksPerFrame": 3,
+      "loop": false
+    },
+    "backdash": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/01_dash_backward_v3_load_low.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/02_dash_backward_v3_push_away.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/03_dash_backward_v3_compact_retreat_hop_slide.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/04_dash_backward_v3_max_retreat.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/05_dash_backward_v3_controlled_landing.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/06_dash_backward_v3_guarded_recovery.png"
+      ],
+      "ticksPerFrame": 4,
+      "loop": false
+    },
+    "knockdown": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png"
+      ],
+      "ticksPerFrame": 8,
+      "loop": false
+    },
+    "getup": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png",
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png"
+      ],
+      "ticksPerFrame": 6,
+      "loop": false
+    },
+    "crouch": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouch.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "standing_block": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/standing_block.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "crouching_block_v2": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouching_block_v2.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "light_hit_reaction": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/light_hit_reaction.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "heavy_hit_reaction": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "jump_v1_anticipation": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/01_jump_anticipation.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "jump_v1_rising": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/03_rising_jump.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "jump_v1_apex": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/04_jump_apex.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "jump_v1_falling": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/05_falling.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "jump_v1_soft_landing": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/06_soft_landing.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "turn_pivot_bridge_v1": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/turn-side-switch-compatibility-v1/01_turn_pivot_bridge.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "universal_grab_reach": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_reach.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "air_dash_forward_02_forward_burst": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/02_air_dash_forward_forward_burst.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "air_dash_backward_02_backward_burst": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/02_air_dash_backward_backward_burst.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "command_grab_11_secure_scoop_catch": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/11_10_impact_compression_secure_scoop_catch.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    },
+    "knockdown_recovery_02_airborne_tumble": {
+      "urls": [
+        "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png"
+      ],
+      "ticksPerFrame": 1,
+      "loop": false
+    }
+  },
+  "frames": {
+    "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1/air-light-pistol-frame-v1/neighbors/01_incoming_approved_jump_apex.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        290,
+        345,
+        1153,
+        1408
+      ],
+      "headBounds": [
+        692,
+        421,
+        872,
+        618
+      ],
+      "headArea": 19807,
+      "headMajor": 191.795,
+      "headMinor": 147.376
+    },
+    "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1/air-light-pistol-frame-v1/neighbors/03_outgoing_approved_apex_to_fall.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        303,
+        344,
+        1140,
+        1408
+      ],
+      "headBounds": [
+        775,
+        463,
+        942,
+        675
+      ],
+      "headArea": 18906,
+      "headMajor": 183.787,
+      "headMinor": 147.937
+    },
+    "tools/nga-forge/production/characters/swahili/manual-paintover-kits/moveset-goal-v1/air-light-pistol-frame-v1/neighbors/04_recovery_approved_falling.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        286,
+        344,
+        1156,
+        1408
+      ],
+      "headBounds": [
+        765,
+        546,
+        925,
+        757
+      ],
+      "headArea": 17990,
+      "headMajor": 176.68,
+      "headMinor": 146.068
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/01_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        430,
+        317,
+        1191,
+        1406
+      ],
+      "headBounds": [
+        847,
+        421,
+        992,
+        613
+      ],
+      "headArea": 5551,
+      "headMajor": 232.487,
+      "headMinor": 94.943
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/02_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        354,
+        326,
+        1191,
+        1406
+      ],
+      "headBounds": [
+        842,
+        450,
+        999,
+        630
+      ],
+      "headArea": 12293,
+      "headMajor": 171.418,
+      "headMinor": 149.499
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/03_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        354,
+        324,
+        1191,
+        1406
+      ],
+      "headBounds": [
+        779,
+        430,
+        953,
+        628
+      ],
+      "headArea": 12801,
+      "headMajor": 190.275,
+      "headMinor": 158.319
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/04_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        354,
+        322,
+        1179,
+        1406
+      ],
+      "headBounds": [
+        773,
+        471,
+        947,
+        628
+      ],
+      "headArea": 12272,
+      "headMajor": 165.595,
+      "headMinor": 151.651
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/05_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        386,
+        452,
+        1165,
+        1408
+      ],
+      "headBounds": [
+        779,
+        515,
+        960,
+        706
+      ],
+      "headArea": 12006,
+      "headMajor": 198.505,
+      "headMinor": 139.968
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/06_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        378,
+        430,
+        1191,
+        1407
+      ],
+      "headBounds": [
+        802,
+        546,
+        980,
+        710
+      ],
+      "headArea": 11770,
+      "headMajor": 170.197,
+      "headMinor": 161.104
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/07_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        354,
+        415,
+        1135,
+        1408
+      ],
+      "headBounds": [
+        773,
+        526,
+        956,
+        679
+      ],
+      "headArea": 11688,
+      "headMajor": 165.702,
+      "headMinor": 151.212
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/08_air_light_contract_bullet_runtime.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        354,
+        449,
+        1135,
+        1407
+      ],
+      "headBounds": [
+        782,
+        560,
+        965,
+        742
+      ],
+      "headArea": 11832,
+      "headMajor": 162.238,
+      "headMinor": 156.804
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/01_air_medium_special_scythe_grab_reach.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        218,
+        122,
+        1327,
+        1204
+      ],
+      "headBounds": [
+        647,
+        355,
+        787,
+        548
+      ],
+      "headArea": 14826,
+      "headMajor": 158.657,
+      "headMinor": 136.7
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/02_air_medium_special_scythe_grab_clamp.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        203,
+        163,
+        1342,
+        1204
+      ],
+      "headBounds": [
+        654,
+        323,
+        794,
+        515
+      ],
+      "headArea": 14752,
+      "headMajor": 158.098,
+      "headMinor": 137.035
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/03_air_medium_special_scythe_grab_lock.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        193,
+        224,
+        1352,
+        1204
+      ],
+      "headBounds": [
+        659,
+        306,
+        811,
+        495
+      ],
+      "headArea": 14736,
+      "headMajor": 158.259,
+      "headMinor": 136.671
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/04_air_medium_special_tuck_into_held_ball.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        417,
+        399,
+        1129,
+        1204
+      ],
+      "headBounds": [
+        733,
+        534,
+        886,
+        729
+      ],
+      "headArea": 15695,
+      "headMajor": 172.455,
+      "headMinor": 136.071
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/05_air_medium_special_chakram_spin_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        358,
+        585,
+        1188,
+        1204
+      ],
+      "headBounds": [
+        602,
+        629,
+        778,
+        794
+      ],
+      "headArea": 15666,
+      "headMajor": 172.115,
+      "headMinor": 136.422
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/06_air_medium_special_chakram_spin_followthrough.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        346,
+        597,
+        1200,
+        1204
+      ],
+      "headBounds": [
+        513,
+        715,
+        715,
+        870
+      ],
+      "headArea": 15735,
+      "headMajor": 172.556,
+      "headMinor": 136.593
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/07_air_medium_special_chakram_spin_followthrough.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        463,
+        375,
+        1082,
+        1205
+      ],
+      "headBounds": [
+        507,
+        785,
+        672,
+        961
+      ],
+      "headArea": 15666,
+      "headMajor": 172.115,
+      "headMinor": 136.422
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/08_air_medium_special_chakram_spin_followthrough.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        470,
+        351,
+        1077,
+        1205
+      ],
+      "headBounds": [
+        588,
+        836,
+        743,
+        1038
+      ],
+      "headArea": 15735,
+      "headMajor": 172.556,
+      "headMinor": 136.593
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/09_air_medium_special_chakram_spin_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        358,
+        585,
+        1188,
+        1204
+      ],
+      "headBounds": [
+        768,
+        995,
+        944,
+        1160
+      ],
+      "headArea": 15666,
+      "headMajor": 172.115,
+      "headMinor": 136.422
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/10_air_medium_special_chakram_spin_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        346,
+        597,
+        1200,
+        1204
+      ],
+      "headBounds": [
+        831,
+        931,
+        1033,
+        1086
+      ],
+      "headArea": 15735,
+      "headMajor": 172.556,
+      "headMinor": 136.593
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/11_air_medium_special_chakram_spin_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        464,
+        374,
+        1083,
+        1204
+      ],
+      "headBounds": [
+        874,
+        618,
+        1039,
+        794
+      ],
+      "headArea": 15666,
+      "headMajor": 172.115,
+      "headMinor": 136.422
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/12_air_medium_special_chakram_spin_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        469,
+        350,
+        1076,
+        1204
+      ],
+      "headBounds": [
+        803,
+        517,
+        958,
+        719
+      ],
+      "headArea": 15735,
+      "headMajor": 172.556,
+      "headMinor": 136.593
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/13_air_medium_special_chakram_spin_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        358,
+        585,
+        1188,
+        1204
+      ],
+      "headBounds": [
+        602,
+        629,
+        778,
+        794
+      ],
+      "headArea": 15666,
+      "headMajor": 172.115,
+      "headMinor": 136.422
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/01_low_neutral_transition.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        108,
+        34,
+        403,
+        487
+      ],
+      "headBounds": [
+        274,
+        59,
+        345,
+        136
+      ],
+      "headArea": 3196,
+      "headMajor": 75.143,
+      "headMinor": 62.255
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/02_lifted_lead_foot.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        87,
+        26,
+        424,
+        488
+      ],
+      "headBounds": [
+        248,
+        57,
+        316,
+        132
+      ],
+      "headArea": 2975,
+      "headMajor": 73.339,
+      "headMinor": 60.172
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/03_weighted_stamp.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        70,
+        50,
+        440,
+        487
+      ],
+      "headBounds": [
+        236,
+        85,
+        303,
+        166
+      ],
+      "headArea": 3022,
+      "headMajor": 73.833,
+      "headMinor": 61.033
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/04_compact_ankle_line_brace.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        78,
+        108,
+        437,
+        488
+      ],
+      "headBounds": [
+        233,
+        138,
+        297,
+        210
+      ],
+      "headArea": 2881,
+      "headMajor": 71.047,
+      "headMinor": 59.087
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/05_hands_settle_on_scythe.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        75,
+        115,
+        435,
+        488
+      ],
+      "headBounds": [
+        239,
+        150,
+        305,
+        229
+      ],
+      "headArea": 2934,
+      "headMajor": 70.533,
+      "headMinor": 61.523
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/06_low_shaft_load.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        82,
+        123,
+        431,
+        488
+      ],
+      "headBounds": [
+        264,
+        173,
+        331,
+        247
+      ],
+      "headArea": 2988,
+      "headMajor": 72.046,
+      "headMinor": 60.341
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/07_short_check_acceleration.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        61,
+        137,
+        451,
+        488
+      ],
+      "headBounds": [
+        300,
+        176,
+        368,
+        253
+      ],
+      "headArea": 3009,
+      "headMajor": 72.164,
+      "headMinor": 60.548
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/08_near_extension.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        69,
+        173,
+        446,
+        488
+      ],
+      "headBounds": [
+        275,
+        191,
+        346,
+        270
+      ],
+      "headArea": 3136,
+      "headMajor": 72.129,
+      "headMinor": 63.326
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/09_final_acceleration.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        60,
+        191,
+        453,
+        487
+      ],
+      "headBounds": [
+        280,
+        193,
+        349,
+        285
+      ],
+      "headArea": 3059,
+      "headMajor": 69.94,
+      "headMinor": 64.898
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/10_shaft_check_contact.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        70,
+        176,
+        444,
+        489
+      ],
+      "headBounds": [
+        286,
+        214,
+        352,
+        303
+      ],
+      "headArea": 2999,
+      "headMajor": 67.889,
+      "headMinor": 65.953
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/11_contact_carry.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        53,
+        215,
+        461,
+        489
+      ],
+      "headBounds": [
+        287,
+        247,
+        352,
+        318
+      ],
+      "headArea": 2805,
+      "headMajor": 69.004,
+      "headMinor": 58.353
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/12_arrested_held_line.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        49,
+        237,
+        467,
+        488
+      ],
+      "headBounds": [
+        285,
+        249,
+        354,
+        320
+      ],
+      "headArea": 2951,
+      "headMajor": 70.659,
+      "headMinor": 59.948
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/13_weighted_recoil_start.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        45,
+        220,
+        469,
+        488
+      ],
+      "headBounds": [
+        286,
+        221,
+        355,
+        293
+      ],
+      "headArea": 2978,
+      "headMajor": 71.59,
+      "headMinor": 59.379
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/14_recoil_under_weapon.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        56,
+        150,
+        458,
+        489
+      ],
+      "headBounds": [
+        279,
+        193,
+        350,
+        282
+      ],
+      "headArea": 3317,
+      "headMajor": 71.267,
+      "headMinor": 69.131
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/15_low_guard_recovery.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        79,
+        109,
+        433,
+        488
+      ],
+      "headBounds": [
+        262,
+        118,
+        329,
+        196
+      ],
+      "headArea": 2956,
+      "headMajor": 73.007,
+      "headMinor": 58.881
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-light-stamped-shaft-check-motion-v3/runtime_frames_alpha_clean_v1/16_neutral_return.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        109,
+        32,
+        402,
+        488
+      ],
+      "headBounds": [
+        273,
+        58,
+        343,
+        142
+      ],
+      "headArea": 3178,
+      "headMajor": 74.909,
+      "headMinor": 61.556
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/01_ready.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        93,
+        91,
+        366,
+        468
+      ],
+      "headBounds": [
+        219,
+        119,
+        273,
+        182
+      ],
+      "headArea": 1964,
+      "headMajor": 57.516,
+      "headMinor": 49.576
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/02_crossdraw_coil.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        129,
+        132,
+        355,
+        468
+      ],
+      "headBounds": [
+        242,
+        165,
+        300,
+        233
+      ],
+      "headArea": 2158,
+      "headMajor": 59.409,
+      "headMinor": 51.816
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/03_low_unfold.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        135,
+        198,
+        441,
+        468
+      ],
+      "headBounds": [
+        268,
+        232,
+        324,
+        305
+      ],
+      "headArea": 2050,
+      "headMajor": 58.342,
+      "headMinor": 50.468
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/04_low_aim.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        138,
+        193,
+        469,
+        468
+      ],
+      "headBounds": [
+        274,
+        229,
+        331,
+        294
+      ],
+      "headArea": 1934,
+      "headMajor": 56.062,
+      "headMinor": 49.376
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/05_low_shot.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        140,
+        199,
+        490,
+        468
+      ],
+      "headBounds": [
+        273,
+        234,
+        330,
+        299
+      ],
+      "headArea": 1970,
+      "headMajor": 57.793,
+      "headMinor": 48.787
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/06_first_recoil.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        140,
+        190,
+        447,
+        467
+      ],
+      "headBounds": [
+        266,
+        223,
+        319,
+        286
+      ],
+      "headArea": 1776,
+      "headMajor": 55.521,
+      "headMinor": 46.678
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/07_rising_aim.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        131,
+        150,
+        422,
+        468
+      ],
+      "headBounds": [
+        248,
+        175,
+        298,
+        235
+      ],
+      "headArea": 1808,
+      "headMajor": 52.65,
+      "headMinor": 50.236
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/08_mid_shot.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        136,
+        159,
+        463,
+        467
+      ],
+      "headBounds": [
+        248,
+        184,
+        298,
+        242
+      ],
+      "headArea": 1738,
+      "headMajor": 52.414,
+      "headMinor": 48.073
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/09_second_recoil.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        137,
+        164,
+        382,
+        467
+      ],
+      "headBounds": [
+        249,
+        190,
+        300,
+        254
+      ],
+      "headArea": 1727,
+      "headMajor": 53.849,
+      "headMinor": 46.28
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/10_lowering.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        128,
+        146,
+        392,
+        467
+      ],
+      "headBounds": [
+        248,
+        180,
+        299,
+        245
+      ],
+      "headArea": 1747,
+      "headMajor": 53.633,
+      "headMinor": 46.257
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/11_rise.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        110,
+        122,
+        361,
+        468
+      ],
+      "headBounds": [
+        221,
+        144,
+        270,
+        204
+      ],
+      "headArea": 1625,
+      "headMajor": 53.248,
+      "headMinor": 44.573
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-down-medium-crossdraw-reprisal-v6/runtime_frames_alpha_clean_v1/12_ready_return.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        105,
+        123,
+        363,
+        468
+      ],
+      "headBounds": [
+        219,
+        148,
+        270,
+        204
+      ],
+      "headArea": 1624,
+      "headMajor": 52.235,
+      "headMinor": 45.096
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/01_low_advancing_ready.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        99,
+        230,
+        420,
+        477
+      ],
+      "headBounds": [
+        345,
+        230,
+        405,
+        292
+      ],
+      "headArea": 2144,
+      "headMajor": 61.62,
+      "headMinor": 50.788
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/02_running_drive_connector.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        38,
+        198,
+        372,
+        471
+      ],
+      "headBounds": [
+        284,
+        198,
+        344,
+        258
+      ],
+      "headArea": 2174,
+      "headMajor": 61.973,
+      "headMinor": 50.366
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/03_ground_grind_stride.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        14,
+        188,
+        376,
+        478
+      ],
+      "headBounds": [
+        304,
+        189,
+        361,
+        257
+      ],
+      "headArea": 2142,
+      "headMajor": 59.549,
+      "headMinor": 51.764
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/04_deepest_ground_grind.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        53,
+        228,
+        458,
+        481
+      ],
+      "headBounds": [
+        396,
+        229,
+        457,
+        295
+      ],
+      "headArea": 2419,
+      "headMajor": 63.306,
+      "headMinor": 56.144
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/05_lead_foot_plant.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        68,
+        131,
+        443,
+        480
+      ],
+      "headBounds": [
+        273,
+        210,
+        336,
+        269
+      ],
+      "headArea": 2158,
+      "headMajor": 60.946,
+      "headMinor": 50.814
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/06_low_coil_entry.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        118,
+        191,
+        394,
+        480
+      ],
+      "headBounds": [
+        287,
+        191,
+        350,
+        255
+      ],
+      "headArea": 2314,
+      "headMajor": 61.765,
+      "headMinor": 55.549
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/07_maximum_planted_coil.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        119,
+        101,
+        443,
+        479
+      ],
+      "headBounds": [
+        269,
+        190,
+        335,
+        253
+      ],
+      "headArea": 2237,
+      "headMajor": 62.127,
+      "headMinor": 53.35
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/08_explosive_release_start.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        59,
+        66,
+        415,
+        482
+      ],
+      "headBounds": [
+        252,
+        162,
+        312,
+        223
+      ],
+      "headArea": 2008,
+      "headMajor": 59.927,
+      "headMinor": 49.77
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/09_rising_crescent_transition.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        91,
+        62,
+        479,
+        445
+      ],
+      "headBounds": [
+        321,
+        163,
+        379,
+        224
+      ],
+      "headArea": 1584,
+      "headMajor": 59.381,
+      "headMinor": 39.862
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/10_execution_crescent_contact.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        61,
+        57,
+        479,
+        438
+      ],
+      "headBounds": [
+        374,
+        101,
+        450,
+        305
+      ],
+      "headArea": 3345,
+      "headMajor": 194.805,
+      "headMinor": 37.041
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/11_overhead_carry_through.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        84,
+        102,
+        430,
+        480
+      ],
+      "headBounds": [
+        232,
+        165,
+        291,
+        223
+      ],
+      "headArea": 1841,
+      "headMajor": 58.567,
+      "headMinor": 48.316
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/12_forward_over_rotation.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        57,
+        189,
+        458,
+        480
+      ],
+      "headBounds": [
+        280,
+        189,
+        335,
+        250
+      ],
+      "headArea": 1772,
+      "headMajor": 57.683,
+      "headMinor": 44.012
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/13_exhausted_brake_start.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        55,
+        229,
+        458,
+        482
+      ],
+      "headBounds": [
+        269,
+        229,
+        322,
+        291
+      ],
+      "headArea": 1827,
+      "headMajor": 59.101,
+      "headMinor": 45.147
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/14_strained_torso_lift.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        56,
+        218,
+        454,
+        482
+      ],
+      "headBounds": [
+        216,
+        219,
+        267,
+        274
+      ],
+      "headArea": 1549,
+      "headMajor": 52.056,
+      "headMinor": 42.988
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/15_controlled_scythe_lowering.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        54,
+        190,
+        457,
+        481
+      ],
+      "headBounds": [
+        228,
+        191,
+        280,
+        246
+      ],
+      "headArea": 1549,
+      "headMajor": 51.727,
+      "headMinor": 43.519
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-heavy-execution-crescent-motion-v3/runtime_frames_alpha_clean_v1/16_low_ready_settle.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        49,
+        213,
+        461,
+        482
+      ],
+      "headBounds": [
+        214,
+        214,
+        267,
+        278
+      ],
+      "headArea": 1705,
+      "headMajor": 53.719,
+      "headMinor": 46.922
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/01_warning_ground_drag.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        53,
+        207,
+        458,
+        480
+      ],
+      "headBounds": [
+        262,
+        207,
+        322,
+        275
+      ],
+      "headArea": 1983,
+      "headMajor": 59.778,
+      "headMinor": 50.403
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/02_drag_stride_connector.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        49,
+        221,
+        462,
+        480
+      ],
+      "headBounds": [
+        250,
+        221,
+        309,
+        286
+      ],
+      "headArea": 1829,
+      "headMajor": 58.592,
+      "headMinor": 50.047
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/03_rising_pickup_connector.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        52,
+        207,
+        460,
+        480
+      ],
+      "headBounds": [
+        244,
+        207,
+        304,
+        273
+      ],
+      "headArea": 2001,
+      "headMajor": 59.059,
+      "headMinor": 50.673
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/04_compact_planted_brace.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        39,
+        197,
+        474,
+        480
+      ],
+      "headBounds": [
+        225,
+        197,
+        285,
+        255
+      ],
+      "headArea": 1912,
+      "headMajor": 59.088,
+      "headMinor": 48.975
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/05_low_drive_load.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        68,
+        186,
+        443,
+        481
+      ],
+      "headBounds": [
+        250,
+        187,
+        309,
+        244
+      ],
+      "headArea": 1851,
+      "headMajor": 58.367,
+      "headMinor": 48.411
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/06_shaft_line_commitment.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        52,
+        195,
+        462,
+        481
+      ],
+      "headBounds": [
+        249,
+        195,
+        307,
+        256
+      ],
+      "headArea": 1937,
+      "headMajor": 58.439,
+      "headMinor": 48.513
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/07_forward_acceleration.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        38,
+        202,
+        420,
+        480
+      ],
+      "headBounds": [
+        238,
+        202,
+        298,
+        265
+      ],
+      "headArea": 1863,
+      "headMajor": 60.571,
+      "headMinor": 46.335
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/08_full_stride_acceleration.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        24,
+        196,
+        487,
+        480
+      ],
+      "headBounds": [
+        221,
+        196,
+        279,
+        258
+      ],
+      "headArea": 1833,
+      "headMajor": 60.249,
+      "headMinor": 46.883
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/09_final_drive_extension.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        29,
+        241,
+        483,
+        480
+      ],
+      "headBounds": [
+        259,
+        242,
+        308,
+        296
+      ],
+      "headArea": 1528,
+      "headMajor": 51.969,
+      "headMinor": 42.106
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/10_shaft_drive_contact.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        21,
+        246,
+        492,
+        482
+      ],
+      "headBounds": [
+        205,
+        247,
+        253,
+        295
+      ],
+      "headArea": 1192,
+      "headMajor": 49.677,
+      "headMinor": 35.343
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/11_carried_impact_line.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        34,
+        243,
+        479,
+        482
+      ],
+      "headBounds": [
+        255,
+        243,
+        302,
+        291
+      ],
+      "headArea": 1246,
+      "headMajor": 49.582,
+      "headMinor": 36.161
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/12_arrested_held_line.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        82,
+        242,
+        498,
+        482
+      ],
+      "headBounds": [
+        252,
+        243,
+        300,
+        293
+      ],
+      "headArea": 1399,
+      "headMajor": 50.34,
+      "headMinor": 40.606
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/13_overextended_brake_start.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        37,
+        195,
+        477,
+        480
+      ],
+      "headBounds": [
+        207,
+        195,
+        262,
+        253
+      ],
+      "headArea": 1622,
+      "headMajor": 58.234,
+      "headMinor": 42.239
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/14_planted_hard_brake.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        56,
+        194,
+        459,
+        480
+      ],
+      "headBounds": [
+        225,
+        195,
+        282,
+        257
+      ],
+      "headArea": 1835,
+      "headMajor": 58.826,
+      "headMinor": 47.109
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/15_scythe_lowering_recovery.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        50,
+        199,
+        462,
+        480
+      ],
+      "headBounds": [
+        241,
+        199,
+        296,
+        260
+      ],
+      "headArea": 1821,
+      "headMajor": 56.524,
+      "headMinor": 47.384
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-light-warning-drag-shaft-drive-motion-v3/runtime_frames_alpha_clean_v1/16_low_guard_recovery.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        66,
+        212,
+        446,
+        480
+      ],
+      "headBounds": [
+        268,
+        213,
+        326,
+        274
+      ],
+      "headArea": 1798,
+      "headMajor": 58.578,
+      "headMinor": 47.721
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/01_warning_ground_drag.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        40,
+        236,
+        471,
+        483
+      ],
+      "headBounds": [
+        239,
+        236,
+        289,
+        292
+      ],
+      "headArea": 1571,
+      "headMajor": 53.242,
+      "headMinor": 44.714
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/02_forward_drag_step_connector.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        99,
+        242,
+        412,
+        482
+      ],
+      "headBounds": [
+        352,
+        242,
+        406,
+        300
+      ],
+      "headArea": 1676,
+      "headMajor": 55.591,
+      "headMinor": 46.471
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/03_shoulder_load_transition.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        54,
+        180,
+        458,
+        482
+      ],
+      "headBounds": [
+        239,
+        217,
+        303,
+        285
+      ],
+      "headArea": 2049,
+      "headMajor": 71.972,
+      "headMinor": 42.866
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/04_deep_shoulder_load.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        52,
+        177,
+        460,
+        483
+      ],
+      "headBounds": [
+        214,
+        206,
+        267,
+        264
+      ],
+      "headArea": 1575,
+      "headMajor": 52.926,
+      "headMinor": 44.257
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/05_committed_forward_launch.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        25,
+        220,
+        488,
+        483
+      ],
+      "headBounds": [
+        224,
+        220,
+        275,
+        272
+      ],
+      "headArea": 1353,
+      "headMajor": 53.822,
+      "headMinor": 37.226
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/06_shoulder_drive_contact.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        15,
+        214,
+        489,
+        483
+      ],
+      "headBounds": [
+        198,
+        214,
+        249,
+        270
+      ],
+      "headArea": 1519,
+      "headMajor": 53.865,
+      "headMinor": 41.509
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/07_carried_first_hit_followthrough.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        40,
+        217,
+        472,
+        482
+      ],
+      "headBounds": [
+        213,
+        218,
+        267,
+        272
+      ],
+      "headArea": 1542,
+      "headMajor": 56.465,
+      "headMinor": 40.139
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/08_inactive_reversal_start.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        66,
+        218,
+        446,
+        482
+      ],
+      "headBounds": [
+        222,
+        218,
+        273,
+        274
+      ],
+      "headArea": 1458,
+      "headMajor": 57.537,
+      "headMinor": 38.074
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/09_inactive_reversal_midpoint.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        82,
+        215,
+        429,
+        482
+      ],
+      "headBounds": [
+        223,
+        215,
+        276,
+        271
+      ],
+      "headArea": 1393,
+      "headMajor": 57.009,
+      "headMinor": 37.519
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/10_cross_body_rip_chamber.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        70,
+        210,
+        442,
+        483
+      ],
+      "headBounds": [
+        195,
+        211,
+        247,
+        267
+      ],
+      "headArea": 1611,
+      "headMajor": 55.047,
+      "headMinor": 43.196
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/11_cross_body_rip_contact.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        45,
+        210,
+        460,
+        482
+      ],
+      "headBounds": [
+        190,
+        211,
+        242,
+        267
+      ],
+      "headArea": 1557,
+      "headMajor": 54.916,
+      "headMinor": 42.425
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/12_rip_followthrough.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        44,
+        213,
+        469,
+        482
+      ],
+      "headBounds": [
+        194,
+        213,
+        255,
+        268
+      ],
+      "headArea": 1598,
+      "headMajor": 60.724,
+      "headMinor": 39.946
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/13_over_rotation_continuation.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        85,
+        185,
+        426,
+        483
+      ],
+      "headBounds": [
+        290,
+        185,
+        353,
+        235
+      ],
+      "headArea": 1559,
+      "headMajor": 63.565,
+      "headMinor": 36.741
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/14_planted_braking_connector.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        76,
+        196,
+        439,
+        482
+      ],
+      "headBounds": [
+        207,
+        196,
+        261,
+        255
+      ],
+      "headArea": 1735,
+      "headMajor": 56.3,
+      "headMinor": 45.703
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/15_scythe_lowering_settle.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        67,
+        178,
+        445,
+        483
+      ],
+      "headBounds": [
+        210,
+        178,
+        264,
+        235
+      ],
+      "headArea": 1736,
+      "headMajor": 56.411,
+      "headMinor": 46.246
+    },
+    "tools/nga-forge/production/characters/swahili/reviews/special-forward-medium-shoulder-rip-combination-motion-v3/runtime_frames_alpha_clean_v1/16_spent_guarded_recovery.png": {
+      "width": 512,
+      "height": 512,
+      "alphaBounds": [
+        148,
+        154,
+        365,
+        482
+      ],
+      "headBounds": [
+        270,
+        164,
+        322,
+        216
+      ],
+      "headArea": 1651,
+      "headMajor": 55.561,
+      "headMinor": 43.32
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/anchors/neutral_idle_anchor_v3.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        290,
+        344,
+        1152,
+        1407
+      ],
+      "headBounds": [
+        657,
+        410,
+        820,
+        582
+      ],
+      "headArea": 16680,
+      "headMajor": 176.714,
+      "headMinor": 137.961
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/command-grab-motion-v1/11_10_impact_compression_secure_scoop_catch.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        179,
+        711,
+        1366,
+        1488
+      ],
+      "headBounds": [
+        797,
+        734,
+        984,
+        911
+      ],
+      "headArea": 13360,
+      "headMajor": 153.16,
+      "headMinor": 137.124
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/01_guarded_crouch.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        340,
+        1244,
+        1407
+      ],
+      "headBounds": [
+        743,
+        492,
+        926,
+        700
+      ],
+      "headArea": 22329,
+      "headMajor": 199.984,
+      "headMinor": 160.568
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/02_rapid_low_aim.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        232,
+        338,
+        1285,
+        1405
+      ],
+      "headBounds": [
+        706,
+        563,
+        914,
+        801
+      ],
+      "headArea": 27811,
+      "headMajor": 222.382,
+      "headMinor": 180.403
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/03_point_blank_shot.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        218,
+        337,
+        1350,
+        1405
+      ],
+      "headBounds": [
+        723,
+        577,
+        927,
+        828
+      ],
+      "headArea": 27347,
+      "headMajor": 214.665,
+      "headMinor": 183.947
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/04_compact_recoil.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        252,
+        340,
+        1286,
+        1406
+      ],
+      "headBounds": [
+        770,
+        554,
+        965,
+        776
+      ],
+      "headArea": 25042,
+      "headMajor": 209.155,
+      "headMinor": 173.883
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/crouching-light-key-poses-v4/05_crouched_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        340,
+        1244,
+        1407
+      ],
+      "headBounds": [
+        743,
+        492,
+        926,
+        700
+      ],
+      "headArea": 22329,
+      "headMajor": 199.984,
+      "headMinor": 160.568
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouch.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        340,
+        1244,
+        1407
+      ],
+      "headBounds": [
+        743,
+        492,
+        926,
+        700
+      ],
+      "headArea": 22329,
+      "headMajor": 199.984,
+      "headMinor": 160.568
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/crouching_block_v2.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        334,
+        340,
+        1110,
+        1407
+      ],
+      "headBounds": [
+        755,
+        590,
+        978,
+        807
+      ],
+      "headArea": 24250,
+      "headMajor": 254.387,
+      "headMinor": 159.145
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/heavy_hit_reaction.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        166,
+        341,
+        1086,
+        1408
+      ],
+      "headBounds": [
+        414,
+        413,
+        629,
+        601
+      ],
+      "headArea": 17983,
+      "headMajor": 184.783,
+      "headMinor": 148.702
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/light_hit_reaction.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        294,
+        340,
+        1193,
+        1407
+      ],
+      "headBounds": [
+        616,
+        424,
+        791,
+        608
+      ],
+      "headArea": 16237,
+      "headMajor": 172.155,
+      "headMinor": 135.585
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/defense-reaction-key-poses-v1/standing_block.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        322,
+        340,
+        1061,
+        1407
+      ],
+      "headBounds": [
+        648,
+        406,
+        804,
+        574
+      ],
+      "headArea": 14925,
+      "headMajor": 168.113,
+      "headMinor": 129.994
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/grab-throw-key-poses-v1/universal_grab_reach.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        321,
+        340,
+        1265,
+        1407
+      ],
+      "headBounds": [
+        736,
+        410,
+        905,
+        597
+      ],
+      "headArea": 18222,
+      "headMajor": 178.316,
+      "headMinor": 150.352
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_01.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        291,
+        342,
+        1156,
+        1408
+      ],
+      "headBounds": [
+        661,
+        408,
+        824,
+        581
+      ],
+      "headArea": 17026,
+      "headMajor": 178.774,
+      "headMinor": 138.737
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_02.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        289,
+        341,
+        1152,
+        1408
+      ],
+      "headBounds": [
+        656,
+        411,
+        819,
+        584
+      ],
+      "headArea": 16764,
+      "headMajor": 177.918,
+      "headMinor": 138.419
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/idle/idle_03.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        287,
+        341,
+        1151,
+        1408
+      ],
+      "headBounds": [
+        657,
+        410,
+        819,
+        580
+      ],
+      "headArea": 16452,
+      "headMajor": 176.148,
+      "headMinor": 137.784
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/02_airborne_tumble.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        488,
+        642,
+        1049,
+        1408
+      ],
+      "headBounds": [
+        729,
+        777,
+        882,
+        972
+      ],
+      "headArea": 15695,
+      "headMajor": 172.455,
+      "headMinor": 136.071
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/03_ground_impact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        338,
+        739,
+        1197,
+        1408
+      ],
+      "headBounds": [
+        446,
+        933,
+        629,
+        1057
+      ],
+      "headArea": 12548,
+      "headMajor": 176.645,
+      "headMinor": 108.029
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/04_impact_settle.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        216,
+        848,
+        1320,
+        1408
+      ],
+      "headBounds": [
+        377,
+        1067,
+        583,
+        1206
+      ],
+      "headArea": 14410,
+      "headMajor": 202.071,
+      "headMinor": 107.037
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/05_face_up_knockdown.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        246,
+        933,
+        1289,
+        1408
+      ],
+      "headBounds": [
+        399,
+        1056,
+        591,
+        1181
+      ],
+      "headArea": 11670,
+      "headMajor": 181.734,
+      "headMinor": 94.319
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/08_push_to_kneel.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        443,
+        738,
+        1093,
+        1408
+      ],
+      "headBounds": [
+        901,
+        937,
+        1058,
+        1125
+      ],
+      "headArea": 15908,
+      "headMajor": 167.249,
+      "headMinor": 141.267
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/09_neutral_get_up.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        429,
+        726,
+        1107,
+        1408
+      ],
+      "headBounds": [
+        896,
+        933,
+        1057,
+        1118
+      ],
+      "headArea": 18061,
+      "headMajor": 180.27,
+      "headMinor": 150.524
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/knockdown-recovery-motion-v1/10_rise_to_stand.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        414,
+        508,
+        1123,
+        1408
+      ],
+      "headBounds": [
+        820,
+        647,
+        959,
+        822
+      ],
+      "headArea": 14017,
+      "headMajor": 154.872,
+      "headMinor": 129.918
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_anticipation_v2.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        270,
+        340,
+        1130,
+        1407
+      ],
+      "headBounds": [
+        651,
+        448,
+        809,
+        619
+      ],
+      "headArea": 15308,
+      "headMajor": 165.68,
+      "headMinor": 138.512
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        310,
+        356,
+        1437,
+        1406
+      ],
+      "headBounds": [
+        821,
+        466,
+        998,
+        643
+      ],
+      "headArea": 18096,
+      "headMajor": 182.224,
+      "headMinor": 143.653
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_recoil_v2.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        245,
+        341,
+        1140,
+        1408
+      ],
+      "headBounds": [
+        522,
+        430,
+        688,
+        578
+      ],
+      "headArea": 13951,
+      "headMajor": 169.48,
+      "headMinor": 121.253
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_extension.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        221,
+        355,
+        1438,
+        1407
+      ],
+      "headBounds": [
+        825,
+        459,
+        999,
+        625
+      ],
+      "headArea": 16449,
+      "headMajor": 175.529,
+      "headMinor": 138.459
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_preparation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        297,
+        340,
+        1308,
+        1407
+      ],
+      "headBounds": [
+        733,
+        458,
+        899,
+        626
+      ],
+      "headArea": 16803,
+      "headMajor": 171.329,
+      "headMinor": 143.893
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-motion-v1/standing_heavy_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        296,
+        340,
+        1082,
+        1408
+      ],
+      "headBounds": [
+        647,
+        401,
+        808,
+        574
+      ],
+      "headArea": 16138,
+      "headMajor": 172.528,
+      "headMinor": 137.907
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/01_compact_chamber.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        285,
+        336,
+        817,
+        1410
+      ],
+      "headBounds": [
+        657,
+        438,
+        817,
+        627
+      ],
+      "headArea": 17463,
+      "headMajor": 173.807,
+      "headMinor": 149.915
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/02_low_kick_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        446,
+        340,
+        1380,
+        1405
+      ],
+      "headBounds": [
+        780,
+        413,
+        943,
+        573
+      ],
+      "headArea": 15337,
+      "headMajor": 165.631,
+      "headMinor": 136.545
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/03_leg_retraction.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        420,
+        336,
+        1288,
+        1409
+      ],
+      "headBounds": [
+        763,
+        383,
+        925,
+        553
+      ],
+      "headArea": 16081,
+      "headMajor": 172.745,
+      "headMinor": 138.614
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_light/04_planted_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        483,
+        336,
+        1122,
+        1409
+      ],
+      "headBounds": [
+        683,
+        408,
+        843,
+        580
+      ],
+      "headArea": 16089,
+      "headMajor": 170.858,
+      "headMinor": 141.529
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/01_anticipation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        334,
+        316,
+        1074,
+        1406
+      ],
+      "headBounds": [
+        736,
+        464,
+        908,
+        642
+      ],
+      "headArea": 16841,
+      "headMajor": 169.883,
+      "headMinor": 145.344
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/02_rising_knee_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        442,
+        328,
+        1282,
+        1405
+      ],
+      "headBounds": [
+        687,
+        376,
+        863,
+        533
+      ],
+      "headArea": 13225,
+      "headMajor": 165.823,
+      "headMinor": 121.065
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/03_knee_descent.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        398,
+        317,
+        1242,
+        1409
+      ],
+      "headBounds": [
+        743,
+        398,
+        913,
+        566
+      ],
+      "headArea": 16422,
+      "headMajor": 172.465,
+      "headMinor": 141.929
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-normal-key-poses-v2/standing_medium/04_torso_settling.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        330,
+        318,
+        1127,
+        1409
+      ],
+      "headBounds": [
+        690,
+        390,
+        855,
+        575
+      ],
+      "headArea": 15914,
+      "headMajor": 169.833,
+      "headMinor": 143.628
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/02_air_dash_backward_backward_burst.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        372,
+        657,
+        1164,
+        1408
+      ],
+      "headBounds": [
+        641,
+        789,
+        780,
+        914
+      ],
+      "headArea": 9923,
+      "headMajor": 141.993,
+      "headMinor": 104.029
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/02_air_dash_forward_forward_burst.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        254,
+        712,
+        1283,
+        1408
+      ],
+      "headBounds": [
+        1093,
+        891,
+        1242,
+        1064
+      ],
+      "headArea": 15276,
+      "headMajor": 163.351,
+      "headMinor": 133.412
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/01_jump_anticipation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        277,
+        345,
+        1165,
+        1408
+      ],
+      "headBounds": [
+        789,
+        606,
+        969,
+        831
+      ],
+      "headArea": 21949,
+      "headMajor": 200.125,
+      "headMinor": 160.322
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/03_rising_jump.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        329,
+        344,
+        1112,
+        1408
+      ],
+      "headBounds": [
+        732,
+        455,
+        906,
+        634
+      ],
+      "headArea": 18206,
+      "headMajor": 183.379,
+      "headMinor": 140.101
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/04_jump_apex.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        290,
+        345,
+        1153,
+        1408
+      ],
+      "headBounds": [
+        692,
+        421,
+        872,
+        618
+      ],
+      "headArea": 19807,
+      "headMajor": 191.795,
+      "headMinor": 147.376
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/05_falling.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        286,
+        344,
+        1156,
+        1408
+      ],
+      "headBounds": [
+        765,
+        546,
+        925,
+        757
+      ],
+      "headArea": 17990,
+      "headMajor": 176.68,
+      "headMinor": 146.068
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/06_soft_landing.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        296,
+        345,
+        1145,
+        1408
+      ],
+      "headBounds": [
+        756,
+        526,
+        944,
+        718
+      ],
+      "headArea": 22401,
+      "headMajor": 197.479,
+      "headMinor": 160.456
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/turn-side-switch-compatibility-v1/01_turn_pivot_bridge.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        461,
+        346,
+        981,
+        1408
+      ],
+      "headBounds": [
+        726,
+        470,
+        889,
+        674
+      ],
+      "headArea": 18736,
+      "headMajor": 175.694,
+      "headMinor": 152.565
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/01_guarded_crouch_preparation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        340,
+        1244,
+        1407
+      ],
+      "headBounds": [
+        743,
+        492,
+        926,
+        700
+      ],
+      "headArea": 22329,
+      "headMajor": 199.984,
+      "headMinor": 160.568
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/02_opposed_split_alignment.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        378,
+        341,
+        1158,
+        1408
+      ],
+      "headBounds": [
+        786,
+        576,
+        960,
+        812
+      ],
+      "headArea": 20425,
+      "headMajor": 194.905,
+      "headMinor": 155.666
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/03_opposed_simultaneous_double_shot_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        153,
+        341,
+        1384,
+        1408
+      ],
+      "headBounds": [
+        738,
+        575,
+        911,
+        793
+      ],
+      "headArea": 20389,
+      "headMajor": 192.088,
+      "headMinor": 154.114
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/04_opposed_dual_recoil.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        263,
+        341,
+        1273,
+        1408
+      ],
+      "headBounds": [
+        738,
+        496,
+        902,
+        687
+      ],
+      "headArea": 17231,
+      "headMajor": 179.639,
+      "headMinor": 141.669
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/05_controlled_pistol_lowering.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        297,
+        342,
+        1239,
+        1407
+      ],
+      "headBounds": [
+        734,
+        492,
+        920,
+        699
+      ],
+      "headArea": 22185,
+      "headMajor": 199.125,
+      "headMinor": 162.931
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-medium-opposed-double-shot-v2-vfx-v6/crouching_medium/06_crouched_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        340,
+        1244,
+        1407
+      ],
+      "headBounds": [
+        743,
+        492,
+        926,
+        700
+      ],
+      "headArea": 22329,
+      "headMajor": 199.984,
+      "headMinor": 160.568
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/01_deep_rotational_anticipation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        290,
+        337,
+        1123,
+        1406
+      ],
+      "headBounds": [
+        751,
+        610,
+        941,
+        822
+      ],
+      "headArea": 25253,
+      "headMajor": 200.075,
+      "headMinor": 180.823
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/02_sweep_acceleration.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        136,
+        331,
+        1308,
+        1406
+      ],
+      "headBounds": [
+        587,
+        542,
+        797,
+        774
+      ],
+      "headArea": 30093,
+      "headMajor": 212.516,
+      "headMinor": 204.131
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/03_low_ground_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        291,
+        441,
+        1334,
+        1406
+      ],
+      "headBounds": [
+        689,
+        623,
+        865,
+        824
+      ],
+      "headArea": 22343,
+      "headMajor": 189.783,
+      "headMinor": 168.442
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/04_rotational_carry_past_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        243,
+        422,
+        1335,
+        1406
+      ],
+      "headBounds": [
+        702,
+        656,
+        879,
+        863
+      ],
+      "headArea": 22445,
+      "headMajor": 188.907,
+      "headMinor": 171.619
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/05_committed_follow_through.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        232,
+        389,
+        1193,
+        1405
+      ],
+      "headBounds": [
+        773,
+        685,
+        972,
+        901
+      ],
+      "headArea": 23692,
+      "headMajor": 193.069,
+      "headMinor": 173.257
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/06_recovery_unwind.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        300,
+        308,
+        1249,
+        1405
+      ],
+      "headBounds": [
+        822,
+        527,
+        1009,
+        746
+      ],
+      "headArea": 24488,
+      "headMajor": 192.185,
+      "headMinor": 178.77
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/crouching-normals-motion-v1/crouching_heavy/07_planted_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        341,
+        1244,
+        1408
+      ],
+      "headBounds": [
+        743,
+        493,
+        926,
+        701
+      ],
+      "headArea": 22329,
+      "headMajor": 199.984,
+      "headMinor": 160.568
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/02_fast_low_extension_connector.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        403,
+        336,
+        1336,
+        1409
+      ],
+      "headBounds": [
+        734,
+        410,
+        889,
+        592
+      ],
+      "headArea": 15685,
+      "headMajor": 167.689,
+      "headMinor": 135.722
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_light/04_post_contact_recoil_connector.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        418,
+        331,
+        1334,
+        1409
+      ],
+      "headBounds": [
+        759,
+        397,
+        921,
+        567
+      ],
+      "headArea": 16147,
+      "headMajor": 171.881,
+      "headMinor": 140.318
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/attack-animation-cleanup-v1/standing-neutral-normals-motion-v1/standing_medium/02_hip_drive_rise_connector.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        452,
+        318,
+        1338,
+        1410
+      ],
+      "headBounds": [
+        789,
+        401,
+        956,
+        568
+      ],
+      "headArea": 15514,
+      "headMajor": 169.308,
+      "headMinor": 136.838
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/01_dash_backward_v3_load_low.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        381,
+        1207,
+        1409
+      ],
+      "headBounds": [
+        760,
+        536,
+        943,
+        728
+      ],
+      "headArea": 18514,
+      "headMajor": 191.661,
+      "headMinor": 146.396
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/02_dash_backward_v3_push_away.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        314,
+        373,
+        1214,
+        1409
+      ],
+      "headBounds": [
+        786,
+        500,
+        963,
+        684
+      ],
+      "headArea": 17425,
+      "headMajor": 182.389,
+      "headMinor": 142.183
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/03_dash_backward_v3_compact_retreat_hop_slide.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        363,
+        358,
+        1172,
+        1381
+      ],
+      "headBounds": [
+        765,
+        471,
+        941,
+        660
+      ],
+      "headArea": 17706,
+      "headMajor": 185.935,
+      "headMinor": 144.418
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/04_dash_backward_v3_max_retreat.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        366,
+        362,
+        1169,
+        1373
+      ],
+      "headBounds": [
+        756,
+        517,
+        934,
+        700
+      ],
+      "headArea": 18177,
+      "headMajor": 186.807,
+      "headMinor": 146.517
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/05_dash_backward_v3_controlled_landing.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        323,
+        383,
+        1236,
+        1409
+      ],
+      "headBounds": [
+        788,
+        501,
+        968,
+        688
+      ],
+      "headArea": 18244,
+      "headMajor": 186.173,
+      "headMinor": 147.236
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-backward-recoil-v3/06_dash_backward_v3_guarded_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        341,
+        335,
+        1210,
+        1409
+      ],
+      "headBounds": [
+        769,
+        463,
+        945,
+        653
+      ],
+      "headArea": 17592,
+      "headMajor": 185.959,
+      "headMinor": 145.192
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/01_dash_forward_v2_startup_load.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        301,
+        413,
+        1199,
+        1409
+      ],
+      "headBounds": [
+        875,
+        611,
+        1053,
+        802
+      ],
+      "headArea": 18285,
+      "headMajor": 179.457,
+      "headMinor": 150.236
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/02_dash_forward_v2_grounded_push_connector.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        79,
+        442,
+        1033,
+        1409
+      ],
+      "headBounds": [
+        709,
+        568,
+        876,
+        756
+      ],
+      "headArea": 16605,
+      "headMajor": 178.171,
+      "headMinor": 139.412
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/03_dash_forward_v2_committed_launch.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        244,
+        528,
+        1292,
+        1409
+      ],
+      "headBounds": [
+        1051,
+        699,
+        1216,
+        889
+      ],
+      "headArea": 18109,
+      "headMajor": 174.93,
+      "headMinor": 152.115
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/04_dash_forward_v2_low_travel_carry.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        166,
+        733,
+        1374,
+        1409
+      ],
+      "headBounds": [
+        1125,
+        848,
+        1287,
+        1041
+      ],
+      "headArea": 16816,
+      "headMajor": 169.598,
+      "headMinor": 146.942
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/05_dash_forward_v2_deceleration_catch.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        362,
+        446,
+        1292,
+        1409
+      ],
+      "headBounds": [
+        970,
+        590,
+        1142,
+        786
+      ],
+      "headArea": 17151,
+      "headMajor": 181.055,
+      "headMinor": 141.054
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/dash-repair-v2/dash-forward/06_dash_forward_v2_brake_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        404,
+        1192,
+        1409
+      ],
+      "headBounds": [
+        829,
+        539,
+        1002,
+        728
+      ],
+      "headArea": 16908,
+      "headMajor": 180.657,
+      "headMinor": 139.948
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/01_walk_forward_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        299,
+        340,
+        1128,
+        1407
+      ],
+      "headBounds": [
+        671,
+        417,
+        838,
+        594
+      ],
+      "headArea": 17948,
+      "headMajor": 180.385,
+      "headMinor": 145.668
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/02_walk_forward_neutral_departure.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        298,
+        341,
+        1211,
+        1408
+      ],
+      "headBounds": [
+        701,
+        413,
+        872,
+        598
+      ],
+      "headArea": 18467,
+      "headMajor": 186.135,
+      "headMinor": 147.163
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/03_walk_forward_passing.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        347,
+        340,
+        1260,
+        1407
+      ],
+      "headBounds": [
+        742,
+        395,
+        912,
+        572
+      ],
+      "headArea": 18272,
+      "headMajor": 186.14,
+      "headMinor": 141.965
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/04_walk_forward_opposite_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        341,
+        1136,
+        1407
+      ],
+      "headBounds": [
+        691,
+        415,
+        852,
+        585
+      ],
+      "headArea": 16193,
+      "headMajor": 173.996,
+      "headMinor": 136.561
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/05_walk_forward_return.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        314,
+        340,
+        1159,
+        1407
+      ],
+      "headBounds": [
+        673,
+        409,
+        833,
+        579
+      ],
+      "headArea": 16024,
+      "headMajor": 173.231,
+      "headMinor": 135.089
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/06_walk_forward_opposite_down.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        216,
+        341,
+        1112,
+        1407
+      ],
+      "headBounds": [
+        605,
+        438,
+        783,
+        634
+      ],
+      "headArea": 19932,
+      "headMajor": 191.515,
+      "headMinor": 154.906
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/07_walk_forward_opposite_passing.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        288,
+        340,
+        1129,
+        1407
+      ],
+      "headBounds": [
+        666,
+        411,
+        837,
+        599
+      ],
+      "headArea": 18261,
+      "headMajor": 183.295,
+      "headMinor": 148.236
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/locomotion-completion-v1/walk-forward-v2/08_walk_forward_opposite_up_return.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        298,
+        341,
+        1143,
+        1408
+      ],
+      "headBounds": [
+        673,
+        413,
+        847,
+        603
+      ],
+      "headArea": 18542,
+      "headMajor": 181.93,
+      "headMinor": 151.081
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/01_committed_airborne_load.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        220,
+        339,
+        1316,
+        1408
+      ],
+      "headBounds": [
+        642,
+        570,
+        783,
+        800
+      ],
+      "headArea": 14719,
+      "headMajor": 164.898,
+      "headMinor": 139.898
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/02_descending_hook_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        223,
+        380,
+        1313,
+        1408
+      ],
+      "headBounds": [
+        766,
+        559,
+        916,
+        760
+      ],
+      "headArea": 16462,
+      "headMajor": 166.608,
+      "headMinor": 142.348
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/03_post_contact_landing_carry.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        200,
+        391,
+        1336,
+        1408
+      ],
+      "headBounds": [
+        741,
+        481,
+        893,
+        680
+      ],
+      "headArea": 16860,
+      "headMajor": 168.007,
+      "headMinor": 146.699
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-heavy-descending-hook-v1/air_heavy/04_held_scythe_attack_landing_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        210,
+        520,
+        1327,
+        1408
+      ],
+      "headBounds": [
+        751,
+        613,
+        897,
+        804
+      ],
+      "headArea": 15729,
+      "headMajor": 161.746,
+      "headMinor": 140.364
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-light-compact-boot-v2/air_light/02_compact_boot_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        172,
+        359,
+        1365,
+        1408
+      ],
+      "headBounds": [
+        599,
+        478,
+        797,
+        705
+      ],
+      "headArea": 25041,
+      "headMajor": 212.743,
+      "headMinor": 169.859
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-medium-scythe-shaft-v1/air_medium/01_cross_body_load.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        255,
+        352,
+        1282,
+        1408
+      ],
+      "headBounds": [
+        786,
+        519,
+        935,
+        719
+      ],
+      "headArea": 17189,
+      "headMajor": 170.064,
+      "headMinor": 146.6
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-medium-scythe-shaft-v1/air_medium/02_shaft_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        136,
+        449,
+        1400,
+        1408
+      ],
+      "headBounds": [
+        691,
+        521,
+        844,
+        713
+      ],
+      "headArea": 16913,
+      "headMajor": 165.633,
+      "headMinor": 147.843
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/air-medium-scythe-shaft-v1/air_medium/03_fall_compatible_unwind.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        235,
+        288,
+        1301,
+        1408
+      ],
+      "headBounds": [
+        783,
+        403,
+        937,
+        629
+      ],
+      "headArea": 17725,
+      "headMajor": 175.881,
+      "headMinor": 149.326
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/01_low_ready.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        290,
+        344,
+        1152,
+        1407
+      ],
+      "headBounds": [
+        657,
+        410,
+        820,
+        582
+      ],
+      "headArea": 16680,
+      "headMajor": 176.714,
+      "headMinor": 137.961
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/02_scythe_take.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        232,
+        340,
+        1126,
+        1407
+      ],
+      "headBounds": [
+        729,
+        510,
+        892,
+        694
+      ],
+      "headArea": 16947,
+      "headMajor": 170.66,
+      "headMinor": 142.165
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/03_blade_flip_load.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        294,
+        340,
+        1122,
+        1407
+      ],
+      "headBounds": [
+        773,
+        604,
+        938,
+        803
+      ],
+      "headArea": 16820,
+      "headMajor": 161.893,
+      "headMinor": 150.903
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/04_deep_grounded_coil.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        98,
+        372,
+        1360,
+        1407
+      ],
+      "headBounds": [
+        597,
+        562,
+        776,
+        776
+      ],
+      "headArea": 19897,
+      "headMajor": 182.637,
+      "headMinor": 155.104
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/05_vertical_alignment.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        312,
+        410,
+        1250,
+        1408
+      ],
+      "headBounds": [
+        753,
+        741,
+        901,
+        918
+      ],
+      "headArea": 12806,
+      "headMajor": 142.576,
+      "headMinor": 131.614
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/06_staff_plant_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        66,
+        310,
+        1030,
+        1408
+      ],
+      "headBounds": [
+        590,
+        791,
+        727,
+        968
+      ],
+      "headArea": 13773,
+      "headMajor": 161.913,
+      "headMinor": 123.762
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/07_post_plant_release.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        141,
+        445,
+        1047,
+        1403
+      ],
+      "headBounds": [
+        615,
+        765,
+        809,
+        949
+      ],
+      "headArea": 17820,
+      "headMajor": 206.826,
+      "headMinor": 149.345
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/08_gun_draw_turn.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        298,
+        350,
+        1070,
+        1403
+      ],
+      "headBounds": [
+        833,
+        713,
+        974,
+        880
+      ],
+      "headArea": 13731,
+      "headMajor": 158.377,
+      "headMinor": 130.573
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/09_spin_midpoint.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        264,
+        350,
+        1028,
+        1403
+      ],
+      "headBounds": [
+        702,
+        634,
+        857,
+        808
+      ],
+      "headArea": 13749,
+      "headMajor": 173.031,
+      "headMinor": 122.224
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/10_spin_brake_alignment.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        310,
+        350,
+        1260,
+        1403
+      ],
+      "headBounds": [
+        733,
+        507,
+        889,
+        670
+      ],
+      "headArea": 14526,
+      "headMajor": 161.782,
+      "headMinor": 136.483
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/11_dual_pistol_aim_hold.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        298,
+        350,
+        1224,
+        1403
+      ],
+      "headBounds": [
+        710,
+        520,
+        862,
+        691
+      ],
+      "headArea": 14253,
+      "headMajor": 164.593,
+      "headMinor": 132.364
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/12_contract_blast_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        224,
+        350,
+        1286,
+        1403
+      ],
+      "headBounds": [
+        637,
+        532,
+        789,
+        691
+      ],
+      "headArea": 14081,
+      "headMajor": 158.739,
+      "headMinor": 133.164
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/13_contract_blast_recoil.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        461,
+        350,
+        1309,
+        1403
+      ],
+      "headBounds": [
+        688,
+        597,
+        854,
+        743
+      ],
+      "headArea": 12715,
+      "headMajor": 153.065,
+      "headMinor": 125.953
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/14_controlled_lower.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        396,
+        350,
+        1141,
+        1407
+      ],
+      "headBounds": [
+        881,
+        674,
+        1020,
+        827
+      ],
+      "headArea": 11607,
+      "headMajor": 136.29,
+      "headMinor": 123.833
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/15_holster_turn.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        383,
+        350,
+        1101,
+        1404
+      ],
+      "headBounds": [
+        862,
+        646,
+        992,
+        793
+      ],
+      "headArea": 10928,
+      "headMajor": 134.294,
+      "headMinor": 118.38
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/16_scythe_reclaim.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        310,
+        395,
+        1173,
+        1403
+      ],
+      "headBounds": [
+        855,
+        685,
+        1007,
+        854
+      ],
+      "headArea": 14267,
+      "headMajor": 148.195,
+      "headMinor": 142.574
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/17_ferrule_lift_remount.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        328,
+        328,
+        1071,
+        1404
+      ],
+      "headBounds": [
+        697,
+        521,
+        849,
+        686
+      ],
+      "headArea": 15445,
+      "headMajor": 156.899,
+      "headMinor": 145.961
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-down-heavy-grounded-verdict-v2-scythe-anchor-repair-v1/18_ferrule_lift_hold.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        328,
+        328,
+        1071,
+        1404
+      ],
+      "headBounds": [
+        697,
+        521,
+        849,
+        686
+      ],
+      "headArea": 15445,
+      "headMajor": 156.899,
+      "headMinor": 145.961
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/01_low_ready_anticipation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        287,
+        341,
+        1151,
+        1408
+      ],
+      "headBounds": [
+        657,
+        410,
+        819,
+        580
+      ],
+      "headArea": 16452,
+      "headMajor": 176.148,
+      "headMinor": 137.784
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/02_scythe_draw_short_load.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        292,
+        340,
+        1334,
+        1407
+      ],
+      "headBounds": [
+        662,
+        394,
+        832,
+        579
+      ],
+      "headArea": 17966,
+      "headMajor": 183.169,
+      "headMinor": 142.983
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/03_control_strike_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        395,
+        513,
+        1528,
+        1408
+      ],
+      "headBounds": [
+        730,
+        515,
+        908,
+        715
+      ],
+      "headArea": 18218,
+      "headMajor": 181.693,
+      "headMinor": 143.944
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/04_follow_through_recoil.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        372,
+        592,
+        1451,
+        1408
+      ],
+      "headBounds": [
+        722,
+        593,
+        870,
+        766
+      ],
+      "headArea": 13914,
+      "headMajor": 157.93,
+      "headMinor": 125.242
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-neutral-medium-control-strike-v2/05_recovery_remount_start.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        270,
+        340,
+        1111,
+        1407
+      ],
+      "headBounds": [
+        707,
+        437,
+        873,
+        613
+      ],
+      "headArea": 17698,
+      "headMajor": 178.174,
+      "headMinor": 142.207
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/01_grounded_ready.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        287,
+        341,
+        1151,
+        1408
+      ],
+      "headBounds": [
+        657,
+        410,
+        819,
+        580
+      ],
+      "headArea": 16452,
+      "headMajor": 176.148,
+      "headMinor": 137.784
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/02_blade_ground_plant.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        8,
+        534,
+        1177,
+        1426
+      ],
+      "headBounds": [
+        731,
+        538,
+        932,
+        731
+      ],
+      "headArea": 19918,
+      "headMajor": 175.171,
+      "headMinor": 161.834
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/03_ground_drag_connector.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        248,
+        598,
+        1154,
+        1482
+      ],
+      "headBounds": [
+        738,
+        607,
+        938,
+        778
+      ],
+      "headArea": 17689,
+      "headMajor": 168.076,
+      "headMinor": 151.981
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/04_maximum_furrow_resistance.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        298,
+        646,
+        1341,
+        1491
+      ],
+      "headBounds": [
+        747,
+        653,
+        942,
+        808
+      ],
+      "headArea": 15441,
+      "headMajor": 159.906,
+      "headMinor": 139.535
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/05_release_acceleration.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        111,
+        749,
+        1303,
+        1422
+      ],
+      "headBounds": [
+        594,
+        750,
+        770,
+        908
+      ],
+      "headArea": 12339,
+      "headMajor": 146.06,
+      "headMinor": 126.34
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/06_single_rising_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        104,
+        644,
+        1521,
+        1408
+      ],
+      "headBounds": [
+        701,
+        788,
+        842,
+        954
+      ],
+      "headArea": 10847,
+      "headMajor": 132.123,
+      "headMinor": 122.016
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/07_launcher_follow_through.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        367,
+        559,
+        1528,
+        1417
+      ],
+      "headBounds": [
+        813,
+        821,
+        936,
+        933
+      ],
+      "headArea": 7807,
+      "headMajor": 120.382,
+      "headMinor": 94.6
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/08_controlled_recovery.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        294,
+        340,
+        1122,
+        1407
+      ],
+      "headBounds": [
+        773,
+        604,
+        938,
+        803
+      ],
+      "headArea": 16820,
+      "headMajor": 161.893,
+      "headMinor": 150.903
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-heavy-grave-furrow-key-poses-v1/09_controlled_remount.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        270,
+        340,
+        1111,
+        1407
+      ],
+      "headBounds": [
+        707,
+        437,
+        873,
+        613
+      ],
+      "headArea": 17698,
+      "headMajor": 178.174,
+      "headMinor": 142.207
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/01_grounded_ready.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        287,
+        341,
+        1151,
+        1408
+      ],
+      "headBounds": [
+        657,
+        410,
+        819,
+        580
+      ],
+      "headArea": 16452,
+      "headMajor": 176.148,
+      "headMinor": 137.784
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/02_low_loaded_anticipation.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        215,
+        668,
+        1322,
+        1408
+      ],
+      "headBounds": [
+        638,
+        669,
+        774,
+        865
+      ],
+      "headArea": 13558,
+      "headMajor": 160.55,
+      "headMinor": 125.09
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/03_rising_hook_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        360,
+        330,
+        1335,
+        1408
+      ],
+      "headBounds": [
+        702,
+        692,
+        836,
+        827
+      ],
+      "headArea": 10548,
+      "headMajor": 143.202,
+      "headMinor": 105.71
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/04_upward_recoil_settle.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        333,
+        367,
+        1356,
+        1408
+      ],
+      "headBounds": [
+        560,
+        637,
+        713,
+        770
+      ],
+      "headArea": 11918,
+      "headMajor": 152.025,
+      "headMinor": 113.99
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/05_controlled_remount_connector.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        289,
+        487,
+        1065,
+        1408
+      ],
+      "headBounds": [
+        713,
+        604,
+        854,
+        782
+      ],
+      "headArea": 12742,
+      "headMajor": 152.366,
+      "headMinor": 120.283
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/moveset-goal-v1/special-up-medium-rising-scythe-hook-v1/06_controlled_remount_start.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        270,
+        340,
+        1111,
+        1407
+      ],
+      "headBounds": [
+        707,
+        437,
+        873,
+        613
+      ],
+      "headArea": 17698,
+      "headMajor": 178.174,
+      "headMinor": 142.207
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_neutral_departure.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        347,
+        340,
+        1226,
+        1407
+      ],
+      "headBounds": [
+        716,
+        406,
+        885,
+        585
+      ],
+      "headArea": 17672,
+      "headMajor": 182.228,
+      "headMinor": 142.672
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_opposite_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        308,
+        340,
+        1156,
+        1407
+      ],
+      "headBounds": [
+        672,
+        407,
+        831,
+        578
+      ],
+      "headArea": 16085,
+      "headMajor": 175.238,
+      "headMinor": 133.843
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_passing.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        296,
+        340,
+        1187,
+        1407
+      ],
+      "headBounds": [
+        684,
+        410,
+        846,
+        582
+      ],
+      "headArea": 16604,
+      "headMajor": 174.235,
+      "headMinor": 139.769
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_rearward_contact.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        327,
+        340,
+        1180,
+        1407
+      ],
+      "headBounds": [
+        711,
+        421,
+        878,
+        599
+      ],
+      "headArea": 17751,
+      "headMajor": 182.195,
+      "headMinor": 141.654
+    },
+    "tools/nga-forge/production/characters/swahili/source-frames/candidates/walk-key-poses-v1/walk_backward_return.png": {
+      "width": 1536,
+      "height": 1536,
+      "alphaBounds": [
+        334,
+        340,
+        1179,
+        1407
+      ],
+      "headBounds": [
+        693,
+        425,
+        858,
+        628
+      ],
+      "headArea": 17442,
+      "headMajor": 181.374,
+      "headMinor": 141.773
+    }
+  }
+}

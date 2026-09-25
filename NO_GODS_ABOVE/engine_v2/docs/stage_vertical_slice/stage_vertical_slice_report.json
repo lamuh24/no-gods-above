@@ -1,0 +1,1199 @@
+{
+  "contractId": "stage_vertical_slice_v1",
+  "url": "http://127.0.0.1:58723/",
+  "platform": "win32",
+  "timestamp": "2026-07-14T16:56:22.581Z",
+  "consoleErrors": [],
+  "authority": {
+    "gameplayPlane": "deterministic_2d",
+    "renderingMayAffectGameplay": false
+  },
+  "assetStatus": {
+    "contractId": "stage_vertical_slice_v1",
+    "webglBaseline": "WebGL2",
+    "loadedTextures": 6,
+    "expectedTextures": 6,
+    "loadError": null,
+    "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+    "walkApproval": "candidate_acceptable_preview_only",
+    "walkCycleComplete": false,
+    "renderingAuthoritative": false
+  },
+  "performance": {
+    "drawCalls": 20,
+    "triangles": 222,
+    "textures": 7,
+    "budgets": {
+      "maxDrawCalls": 80,
+      "maxTriangles": 60000,
+      "maxTextures": 16
+    }
+  },
+  "captures": {
+    "center_stage": {
+      "camera": {
+        "pose": {
+          "position": [
+            0,
+            5.1,
+            20
+          ],
+          "target": [
+            0,
+            2.8,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 15
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_01",
+          "rootPosition": [
+            -1.52,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -1.52,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -1.52,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_01",
+          "rootPosition": [
+            1.52,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            1.52,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            1.52,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "screen": {
+        "p1": {
+          "root": [
+            -0.25700117486125074,
+            -0.5514150143299127,
+            0.9921556835871936
+          ],
+          "spriteTop": [
+            -0.26230717094116884,
+            0.15725101458401128,
+            0.9919523984195722
+          ]
+        },
+        "p2": {
+          "root": [
+            0.2567502767821633,
+            -0.5504264073724661,
+            0.9921652960816801
+          ],
+          "spriteTop": [
+            0.262045811199292,
+            0.15755390539758463,
+            0.9919624117249227
+          ]
+        }
+      },
+      "resources": {
+        "geometries": 15,
+        "textures": 4,
+        "pooledOverlays": 16,
+        "drawCalls": 20,
+        "triangles": 222,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              0,
+              5.1,
+              20
+            ],
+            "target": [
+              0,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 15
+        }
+      }
+    },
+    "p1_authored": {
+      "camera": {
+        "pose": {
+          "position": [
+            0.40000000000000013,
+            5.1,
+            20
+          ],
+          "target": [
+            0.40000000000000013,
+            2.8,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 18
+      },
+      "fighters": {
+        "p1": {
+          "frame": "walk_forward_contact",
+          "rootPosition": [
+            -2.4,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -2.4,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -2.4,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_01",
+          "rootPosition": [
+            3.2,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            3.2,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            3.2,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "screen": {
+        "p1": {
+          "root": [
+            -0.4734232168496725,
+            -0.5514150143299127,
+            0.9921556835871936
+          ],
+          "spriteTop": [
+            -0.48319742015478484,
+            0.15725101458401128,
+            0.9919523984195722
+          ]
+        },
+        "p2": {
+          "root": [
+            0.4729610361776692,
+            -0.5504264073724661,
+            0.9921652960816801
+          ],
+          "spriteTop": [
+            0.48271596799869576,
+            0.15755390539758463,
+            0.9919624117249227
+          ]
+        }
+      },
+      "resources": {
+        "geometries": 15,
+        "textures": 5,
+        "pooledOverlays": 16,
+        "drawCalls": 21,
+        "triangles": 234,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              0.40000000000000013,
+              5.1,
+              20
+            ],
+            "target": [
+              0.40000000000000013,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 18
+        }
+      }
+    },
+    "p2_mirrored": {
+      "camera": {
+        "pose": {
+          "position": [
+            -0.40000000000000013,
+            5.1,
+            20
+          ],
+          "target": [
+            -0.40000000000000013,
+            2.8,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 18
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_01",
+          "rootPosition": [
+            -3.2,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -3.2,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -3.2,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "walk_backward_rearward_contact",
+          "rootPosition": [
+            2.4,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            2.4,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            2.4,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "screen": {
+        "p1": {
+          "root": [
+            -0.47342321684967237,
+            -0.5514150143299127,
+            0.9921556835871936
+          ],
+          "spriteTop": [
+            -0.48319742015478473,
+            0.15725101458401128,
+            0.9919523984195722
+          ]
+        },
+        "p2": {
+          "root": [
+            0.47296103617766927,
+            -0.5504264073724661,
+            0.9921652960816801
+          ],
+          "spriteTop": [
+            0.4827159679986958,
+            0.15755390539758463,
+            0.9919624117249227
+          ]
+        }
+      },
+      "resources": {
+        "geometries": 15,
+        "textures": 6,
+        "pooledOverlays": 16,
+        "drawCalls": 21,
+        "triangles": 234,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              -0.40000000000000013,
+              5.1,
+              20
+            ],
+            "target": [
+              -0.40000000000000013,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 18
+        }
+      }
+    },
+    "left_corner": {
+      "camera": {
+        "pose": {
+          "position": [
+            -6.949999999999999,
+            5.1,
+            20
+          ],
+          "target": [
+            -6.949999999999999,
+            2.8,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 30
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_02",
+          "rootPosition": [
+            -8.2,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -8.2,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -8.2,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_02",
+          "rootPosition": [
+            -5.7,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            -5.7,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -5.7,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "screen": {
+        "p1": {
+          "root": [
+            -0.21134965037931788,
+            -0.5514150143299127,
+            0.9921556835871936
+          ],
+          "spriteTop": [
+            -0.2157131339976716,
+            0.15725101458401128,
+            0.9919523984195722
+          ]
+        },
+        "p2": {
+          "root": [
+            0.21114331972217373,
+            -0.5504264073724661,
+            0.9921652960816801
+          ],
+          "spriteTop": [
+            0.21549819999941774,
+            0.15755390539758463,
+            0.9919624117249227
+          ]
+        }
+      },
+      "resources": {
+        "geometries": 16,
+        "textures": 6,
+        "pooledOverlays": 16,
+        "drawCalls": 19,
+        "triangles": 210,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              -6.949999999999999,
+              5.1,
+              20
+            ],
+            "target": [
+              -6.949999999999999,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 30
+        }
+      }
+    },
+    "right_corner": {
+      "camera": {
+        "pose": {
+          "position": [
+            6.949999999999999,
+            5.1,
+            20
+          ],
+          "target": [
+            6.949999999999999,
+            2.8,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 30
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_02",
+          "rootPosition": [
+            5.7,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            5.7,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            5.7,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_02",
+          "rootPosition": [
+            8.2,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            8.2,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            8.2,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "screen": {
+        "p1": {
+          "root": [
+            -0.21134965037931802,
+            -0.5514150143299127,
+            0.9921556835871936
+          ],
+          "spriteTop": [
+            -0.21571313399767175,
+            0.15725101458401128,
+            0.9919523984195722
+          ]
+        },
+        "p2": {
+          "root": [
+            0.21114331972217362,
+            -0.5504264073724661,
+            0.9921652960816801
+          ],
+          "spriteTop": [
+            0.2154981999994176,
+            0.15755390539758463,
+            0.9919624117249227
+          ]
+        }
+      },
+      "resources": {
+        "geometries": 16,
+        "textures": 6,
+        "pooledOverlays": 16,
+        "drawCalls": 19,
+        "triangles": 210,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              6.949999999999999,
+              5.1,
+              20
+            ],
+            "target": [
+              6.949999999999999,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 30
+        }
+      }
+    },
+    "jump_framing": {
+      "camera": {
+        "pose": {
+          "position": [
+            0,
+            6.611999999999999,
+            21.82
+          ],
+          "target": [
+            0,
+            4.311999999999999,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 44
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_02",
+          "rootPosition": [
+            -3,
+            3.6,
+            0.12
+          ],
+          "spritePosition": [
+            -3,
+            5.712,
+            0.12
+          ],
+          "rootAlignmentError": 4.440892098500626e-16,
+          "shadowPosition": [
+            -3,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_02",
+          "rootPosition": [
+            3,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            3,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            3,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "screen": {
+        "p1": {
+          "root": [
+            -0.47101529190078817,
+            -0.13200452768176818,
+            0.9928588464657151
+          ],
+          "spriteTop": [
+            -0.4792755397097899,
+            0.5329694258989004,
+            0.9926985019253476
+          ]
+        },
+        "p2": {
+          "root": [
+            0.46262183710822663,
+            -0.7733772357990678,
+            0.993021776765378
+          ],
+          "spriteTop": [
+            0.47058782459570964,
+            -0.13150104703088383,
+            0.9928671442856037
+          ]
+        }
+      },
+      "resources": {
+        "geometries": 16,
+        "textures": 6,
+        "pooledOverlays": 16,
+        "drawCalls": 22,
+        "triangles": 246,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              0,
+              6.611999999999999,
+              21.82
+            ],
+            "target": [
+              0,
+              4.311999999999999,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 44
+        }
+      }
+    },
+    "cinematic_throw": {
+      "camera": {
+        "pose": {
+          "position": [
+            -1.1,
+            4.95,
+            15.5
+          ],
+          "target": [
+            0,
+            3.65,
+            0
+          ],
+          "mode": "cinematic",
+          "context": "throw"
+        },
+        "active": {
+          "context": "throw",
+          "attackerId": "p1",
+          "startTick": 0,
+          "durationTicks": 24,
+          "from": {
+            "position": [
+              0,
+              5.1,
+              20
+            ],
+            "target": [
+              0,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          }
+        },
+        "lastTick": 8
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_00",
+          "rootPosition": [
+            -0.88,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -0.88,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -0.88,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_00",
+          "rootPosition": [
+            0.88,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            0.88,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            0.88,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "resources": {
+        "geometries": 16,
+        "textures": 7,
+        "pooledOverlays": 16,
+        "drawCalls": 16,
+        "triangles": 174,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              -1.1,
+              4.95,
+              15.5
+            ],
+            "target": [
+              0,
+              3.65,
+              0
+            ],
+            "mode": "cinematic",
+            "context": "throw"
+          },
+          "active": {
+            "context": "throw",
+            "attackerId": "p1",
+            "startTick": 0,
+            "durationTicks": 24,
+            "from": {
+              "position": [
+                0,
+                5.1,
+                20
+              ],
+              "target": [
+                0,
+                2.8,
+                0
+              ],
+              "mode": "gameplay",
+              "context": null
+            }
+          },
+          "lastTick": 8
+        }
+      }
+    },
+    "cinematic_ultimate": {
+      "camera": {
+        "pose": {
+          "position": [
+            -2.8,
+            6.449999999999999,
+            13.5
+          ],
+          "target": [
+            0,
+            3.65,
+            0
+          ],
+          "mode": "cinematic",
+          "context": "ultimate"
+        },
+        "active": {
+          "context": "ultimate",
+          "attackerId": "p1",
+          "startTick": 0,
+          "durationTicks": 60,
+          "from": {
+            "position": [
+              0,
+              5.1,
+              20
+            ],
+            "target": [
+              0,
+              2.8,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          }
+        },
+        "lastTick": 10
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_00",
+          "rootPosition": [
+            -0.88,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -0.88,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -0.88,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_00",
+          "rootPosition": [
+            0.88,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            0.88,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            0.88,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "resources": {
+        "geometries": 16,
+        "textures": 7,
+        "pooledOverlays": 16,
+        "drawCalls": 16,
+        "triangles": 174,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              -2.8,
+              6.449999999999999,
+              13.5
+            ],
+            "target": [
+              0,
+              3.65,
+              0
+            ],
+            "mode": "cinematic",
+            "context": "ultimate"
+          },
+          "active": {
+            "context": "ultimate",
+            "attackerId": "p1",
+            "startTick": 0,
+            "durationTicks": 60,
+            "from": {
+              "position": [
+                0,
+                5.1,
+                20
+              ],
+              "target": [
+                0,
+                2.8,
+                0
+              ],
+              "mode": "gameplay",
+              "context": null
+            }
+          },
+          "lastTick": 10
+        }
+      }
+    },
+    "cinematic_return": {
+      "camera": {
+        "pose": {
+          "position": [
+            -0.10166206189732996,
+            5.086136991559455,
+            19.58410974678365
+          ],
+          "target": [
+            0,
+            2.8785570478297546,
+            0
+          ],
+          "mode": "gameplay",
+          "context": null
+        },
+        "active": null,
+        "lastTick": 20
+      },
+      "fighters": {
+        "p1": {
+          "frame": "idle_01",
+          "rootPosition": [
+            -0.88,
+            0,
+            0.12
+          ],
+          "spritePosition": [
+            -0.88,
+            2.112,
+            0.12
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            -0.88,
+            0.018,
+            0.09999999999999999
+          ],
+          "shadowXError": 0,
+          "mirrored": false
+        },
+        "p2": {
+          "frame": "idle_01",
+          "rootPosition": [
+            0.88,
+            0,
+            0.1
+          ],
+          "spritePosition": [
+            0.88,
+            2.112,
+            0.1
+          ],
+          "rootAlignmentError": 0,
+          "shadowPosition": [
+            0.88,
+            0.018,
+            0.08
+          ],
+          "shadowXError": 0,
+          "mirrored": true
+        }
+      },
+      "resources": {
+        "geometries": 16,
+        "textures": 7,
+        "pooledOverlays": 16,
+        "drawCalls": 20,
+        "triangles": 222,
+        "webgl2": true,
+        "stage": {
+          "contractId": "stage_vertical_slice_v1",
+          "webglBaseline": "WebGL2",
+          "loadedTextures": 6,
+          "expectedTextures": 6,
+          "loadError": null,
+          "idleApproval": "APPROVED_AS_IDLE_FOUNDATION_V1",
+          "walkApproval": "candidate_acceptable_preview_only",
+          "walkCycleComplete": false,
+          "renderingAuthoritative": false
+        },
+        "camera": {
+          "pose": {
+            "position": [
+              -0.10166206189732996,
+              5.086136991559455,
+              19.58410974678365
+            ],
+            "target": [
+              0,
+              2.8785570478297546,
+              0
+            ],
+            "mode": "gameplay",
+            "context": null
+          },
+          "active": null,
+          "lastTick": 20
+        }
+      }
+    }
+  },
+  "screenshots": [
+    "center_stage.png",
+    "p1_authored.png",
+    "p2_mirrored.png",
+    "left_corner.png",
+    "right_corner.png",
+    "jump_framing.png",
+    "cinematic_throw.png",
+    "cinematic_ultimate.png",
+    "cinematic_return.png"
+  ],
+  "blockers": [
+    "Swahili walk motion V2 is incomplete and blocked on three manual paint-overs; only two candidate-acceptable single poses are shown.",
+    "No approved production-stage art pack exists; environment geometry and painted planes are vertical-slice placeholders.",
+    "Rim and emission masks are optional contract slots but no approved Swahili masks exist.",
+    "Throw, super, ultimate, intro, victory, and finisher presentation events are not yet emitted by the combat kernel; this harness invokes the constrained camera API directly."
+  ],
+  "serverLogs": [
+    "",
+    "  \u001b[32m\u001b[1mVITE\u001b[22m v8.1.4\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m608\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+    "",
+    "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m58723\u001b[22m/\u001b[39m",
+    ""
+  ]
+}

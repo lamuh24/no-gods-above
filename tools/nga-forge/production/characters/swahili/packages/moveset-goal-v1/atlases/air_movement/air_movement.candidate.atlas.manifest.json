@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "record": "SWAHILI_MOVESET_GOAL_V1_CANDIDATE_FAMILY_ATLAS",
+  "family": "air_movement",
+  "candidateOnly": true,
+  "deployable": false,
+  "finalShippingAtlas": false,
+  "packing": {
+    "algorithm": "deterministic_variable_trim_shelf_pages",
+    "maxPageSize": [
+      4096,
+      4096
+    ],
+    "extrudePixels": 1,
+    "gapPixels": 2,
+    "explicitSourceBounds": true,
+    "anchorOffsetsPreserved": true
+  },
+  "pageCount": 2,
+  "sourceAssetCount": 17,
+  "pages": [
+    {
+      "pageIndex": 0,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/air_movement/air_movement.candidate.page-01.png",
+      "width": 3787,
+      "height": 4037,
+      "sha256": "E98A24190F8068C6F72D6FA2FFA28B93E24F99392268C13CEAF86EB1C128356D"
+    },
+    {
+      "pageIndex": 1,
+      "path": "tools/nga-forge/production/characters/swahili/packages/moveset-goal-v1/atlases/air_movement/air_movement.candidate.page-02.png",
+      "width": 1091,
+      "height": 1072,
+      "sha256": "FA688538DF575EEEFA4AA25EDFAC57187ADC193DC3B5C3E806DFD61938DC1633"
+    }
+  ],
+  "frames": {
+    "asset_106222130f6f76f2": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3024,
+        "y": 1081,
+        "width": 760,
+        "height": 804
+      },
+      "sourceBounds": {
+        "x": 388,
+        "y": 604,
+        "width": 760,
+        "height": 804
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/04_air_dash_forward_air_brake.png",
+      "sourceSha256": "106222130F6F76F298F3B867A62A37CA86B3C125CF16F4969CF66B1E5808F6D8",
+      "sourcePixelSha256": "87E12BFC0BBD72DB61D19AED1387FD7673B8AFAE94D43B65B2EA9CCC3C6B45A5",
+      "anchorOffset": {
+        "rootX": 380,
+        "rootY": 804
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_forward",
+          "sourceFrameId": "air_dash_forward_04_air_brake"
+        }
+      ]
+    },
+    "asset_19e89f2b733c7df3": {
+      "pageIndex": 0,
+      "region": {
+        "x": 779,
+        "y": 1081,
+        "width": 1029,
+        "height": 696
+      },
+      "sourceBounds": {
+        "x": 254,
+        "y": 712,
+        "width": 1029,
+        "height": 696
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/02_air_dash_forward_forward_burst.png",
+      "sourceSha256": "19E89F2B733C7DF3CEDB9C2794B7C56670BF26E5F73C0DC6B62EB171BFCE329D",
+      "sourcePixelSha256": "8AB935C73C4ADB307929DC95622CB0CE7CBEF3992ABA1E2559320D437BA6F58D",
+      "anchorOffset": {
+        "rootX": 514,
+        "rootY": 696
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_forward",
+          "sourceFrameId": "air_dash_forward_02_forward_burst"
+        },
+        {
+          "packageId": "air_dash_side_switch",
+          "sourceFrameId": "air_dash_forward_02_forward_burst"
+        }
+      ]
+    },
+    "asset_22d7b448ab5f9eed": {
+      "pageIndex": 0,
+      "region": {
+        "x": 959,
+        "y": 1889,
+        "width": 892,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 275,
+        "y": 343,
+        "width": 892,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/01_jump_anticipation.png",
+      "sourceSha256": "22D7B448AB5F9EED95D85FE5B39BD5C51481BDE4F48080E02B8A410D9B33DD79",
+      "sourcePixelSha256": "C2F4ECE789673D07D3FD2CEB21E381519F3339A935B1A628E68BE4BF8116CF0A",
+      "anchorOffset": {
+        "rootX": 493,
+        "rootY": 1065
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_anticipation"
+        }
+      ]
+    },
+    "asset_3bb12ff9626c293c": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1753,
+        "y": 2966,
+        "width": 855,
+        "height": 1068
+      },
+      "sourceBounds": {
+        "x": 293,
+        "y": 343,
+        "width": 855,
+        "height": 1068
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/06_soft_landing.png",
+      "sourceSha256": "3BB12FF9626C293C90B3014D48FF74C94034C6E25AA71530E091F50A48A44D39",
+      "sourcePixelSha256": "2927C4F7D239B993BC211EC62630BF98F65FFBAA1E52A382B71998B66B7269DA",
+      "anchorOffset": {
+        "rootX": 475,
+        "rootY": 1065
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_soft_landing"
+        }
+      ]
+    },
+    "asset_3bb3c428c0668262": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1812,
+        "y": 1081,
+        "width": 1208,
+        "height": 620
+      },
+      "sourceBounds": {
+        "x": 164,
+        "y": 788,
+        "width": 1208,
+        "height": 620
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/03_air_dash_forward_forward_travel.png",
+      "sourceSha256": "3BB3C428C0668262B1099FB9CFD57F8AE71BE49B7F4633A81674F7A7830D6C53",
+      "sourcePixelSha256": "3AD53F37B6F4F40ECDF5C0FBBF5FE45C5F192CF92D2E8F5F72142C925B6F1CB9",
+      "anchorOffset": {
+        "rootX": 604,
+        "rootY": 620
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_forward",
+          "sourceFrameId": "air_dash_forward_03_forward_travel"
+        },
+        {
+          "packageId": "air_dash_side_switch",
+          "sourceFrameId": "air_dash_forward_03_forward_travel"
+        }
+      ]
+    },
+    "asset_49fa55db968feaaa": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1855,
+        "y": 1889,
+        "width": 798,
+        "height": 1066
+      },
+      "sourceBounds": {
+        "x": 322,
+        "y": 344,
+        "width": 798,
+        "height": 1066
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/02_takeoff.png",
+      "sourceSha256": "49FA55DB968FEAAA263768FE97243313871C9EABEE764CCE9CD6D87F07696CEF",
+      "sourcePixelSha256": "16E5625F18CA7E644123B88E228488933F748491D7B80DD408C491E1C915E464",
+      "anchorOffset": {
+        "rootX": 446,
+        "rootY": 1064
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_takeoff"
+        }
+      ]
+    },
+    "asset_5d0b1f14ea2b6ac0": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 747,
+        "height": 790
+      },
+      "sourceBounds": {
+        "x": 395,
+        "y": 618,
+        "width": 747,
+        "height": 790
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/01_air_dash_backward_guarded_recoil.png",
+      "sourceSha256": "5D0B1F14EA2B6AC03B13B268F6EAE57247FAF6BC439593D285E1836DD9CBCEAF",
+      "sourcePixelSha256": "8DF64AE790C42FD6C589B8C34422CE7531BC901C64A506EE2F652E4084BC3FC1",
+      "anchorOffset": {
+        "rootX": 373,
+        "rootY": 790
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_backward",
+          "sourceFrameId": "air_dash_backward_01_guarded_recoil"
+        }
+      ]
+    },
+    "asset_60752ff72d617b4a": {
+      "pageIndex": 0,
+      "region": {
+        "x": 1550,
+        "y": 3,
+        "width": 911,
+        "height": 739
+      },
+      "sourceBounds": {
+        "x": 313,
+        "y": 669,
+        "width": 911,
+        "height": 739
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/03_air_dash_backward_max_retreat.png",
+      "sourceSha256": "60752FF72D617B4AFBA75C27B57BA9F56664248131BC08C519F67169F083D3AE",
+      "sourcePixelSha256": "4373C8B2EF2B44C2C499669551AAAEA3F22AF2956868FD44D45C99808EA6E378",
+      "anchorOffset": {
+        "rootX": 455,
+        "rootY": 739
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_backward",
+          "sourceFrameId": "air_dash_backward_03_max_retreat"
+        },
+        {
+          "packageId": "air_dash_side_switch",
+          "sourceFrameId": "air_dash_backward_03_max_retreat"
+        }
+      ]
+    },
+    "asset_704d4cf15151a80f": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 1081,
+        "width": 772,
+        "height": 799
+      },
+      "sourceBounds": {
+        "x": 382,
+        "y": 609,
+        "width": 772,
+        "height": 799
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-forward/01_air_dash_forward_air_brace.png",
+      "sourceSha256": "704D4CF15151A80F239892C6CE468D1D1B6FC87F964F027DDFF36CC1266579F9",
+      "sourcePixelSha256": "49471E45E1EE87567E23EEB6A023B4047B721BE88693A0D7E1FB474D254A05B1",
+      "anchorOffset": {
+        "rootX": 386,
+        "rootY": 799
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_forward",
+          "sourceFrameId": "air_dash_forward_01_air_brace"
+        },
+        {
+          "packageId": "air_dash_side_switch",
+          "sourceFrameId": "air_dash_forward_01_air_brace"
+        }
+      ]
+    },
+    "asset_77b10a87b117a38b": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2612,
+        "y": 2966,
+        "width": 853,
+        "height": 1068
+      },
+      "sourceBounds": {
+        "x": 295,
+        "y": 343,
+        "width": 853,
+        "height": 1068
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/07_attack_landing_recovery.png",
+      "sourceSha256": "77B10A87B117A38BCB82C9EC1F0F9423676150A075ABAAE3E46EE6D0B0FEAF32",
+      "sourcePixelSha256": "A4764AB63456FF769C65369BE523E9F50A18B1F2E2A0D1A1C1A7157CFE2E7203",
+      "anchorOffset": {
+        "rootX": 473,
+        "rootY": 1065
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_attack_landing_recovery"
+        }
+      ]
+    },
+    "asset_7b5850c074d6209d": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 2966,
+        "width": 868,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 287,
+        "y": 343,
+        "width": 868,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/04_jump_apex.png",
+      "sourceSha256": "7B5850C074D6209DCE4DF3DA1BF580F3FFE2BC4BFE019272190ECDB46C362A4B",
+      "sourcePixelSha256": "9407862447211763C1F442C2EC314F1793967CCD78C5D5D1E47EDE15B8202813",
+      "anchorOffset": {
+        "rootX": 481,
+        "rootY": 1065
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_apex"
+        }
+      ]
+    },
+    "asset_a159e1be748e1d67": {
+      "pageIndex": 0,
+      "region": {
+        "x": 875,
+        "y": 2966,
+        "width": 874,
+        "height": 1067
+      },
+      "sourceBounds": {
+        "x": 284,
+        "y": 343,
+        "width": 874,
+        "height": 1067
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/05_falling.png",
+      "sourceSha256": "A159E1BE748E1D677D06D99CC64524B02952F3E7E4F08A10E486616E69334018",
+      "sourcePixelSha256": "26533B0F88175817D17F94479A7B3B2B47E8673B650BB0B29AC844C1FE5B8E2B",
+      "anchorOffset": {
+        "rootX": 484,
+        "rootY": 1065
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_falling"
+        }
+      ]
+    },
+    "asset_b302e2676ee8c197": {
+      "pageIndex": 0,
+      "region": {
+        "x": 754,
+        "y": 3,
+        "width": 792,
+        "height": 751
+      },
+      "sourceBounds": {
+        "x": 372,
+        "y": 657,
+        "width": 792,
+        "height": 751
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/02_air_dash_backward_backward_burst.png",
+      "sourceSha256": "B302E2676EE8C1972FAA7EB7D13758E4B3E0C330458AD282B5B9FB8DB4E99B58",
+      "sourcePixelSha256": "D6898BE1EFCA41A13AB6584BDAB73143CFB81DF540DEFFEECBCF83A2BFDF452A",
+      "anchorOffset": {
+        "rootX": 396,
+        "rootY": 751
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_backward",
+          "sourceFrameId": "air_dash_backward_02_backward_burst"
+        }
+      ]
+    },
+    "asset_b718eb0d41bf1a34": {
+      "pageIndex": 0,
+      "region": {
+        "x": 3,
+        "y": 1889,
+        "width": 952,
+        "height": 1073
+      },
+      "sourceBounds": {
+        "x": 292,
+        "y": 335,
+        "width": 952,
+        "height": 1073
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-side-switch/01_air_dash_side_switch_rotation_midpoint.png",
+      "sourceSha256": "B718EB0D41BF1A34E92E4715138C46345B6F14751B1DA4716936731B9F382B45",
+      "sourcePixelSha256": "CC63820C49142821B6F9375774883B3B9DFFA8AA5B6BA580BCFD1AD3E002DDCF",
+      "anchorOffset": {
+        "rootX": 476,
+        "rootY": 1073
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_side_switch",
+          "sourceFrameId": "air_dash_side_switch_01_rotation_midpoint"
+        }
+      ]
+    },
+    "asset_d051a2377d59a3eb": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2657,
+        "y": 1889,
+        "width": 789,
+        "height": 1069
+      },
+      "sourceBounds": {
+        "x": 326,
+        "y": 342,
+        "width": 789,
+        "height": 1069
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/03_rising_jump.png",
+      "sourceSha256": "D051A2377D59A3EBC2B225A00212D5E998AC4F6ED4BED67DBE9EA60E38EB04E8",
+      "sourcePixelSha256": "B8BC3948ADCC6AF87C1D90B32DCD2E233FDD1FBF445B4077EF239DD7A1BB7CA9",
+      "anchorOffset": {
+        "rootX": 442,
+        "rootY": 1066
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_rising"
+        }
+      ]
+    },
+    "asset_d578b0a4a53eab3b": {
+      "pageIndex": 0,
+      "region": {
+        "x": 2465,
+        "y": 3,
+        "width": 949,
+        "height": 1074
+      },
+      "sourceBounds": {
+        "x": 294,
+        "y": 334,
+        "width": 949,
+        "height": 1074
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/air-dash-motion-v1/air-dash-backward/04_air_dash_backward_air_brake.png",
+      "sourceSha256": "D578B0A4A53EAB3BCC862C5D3FA160BA608B7E7AC68F4AC737D2D443C3422941",
+      "sourcePixelSha256": "C2029B23E617A775E6D4DBE5E3713742396B9DB771FD1404E080C8D4E4E53F05",
+      "anchorOffset": {
+        "rootX": 474,
+        "rootY": 1074
+      },
+      "aliases": [
+        {
+          "packageId": "air_dash_backward",
+          "sourceFrameId": "air_dash_backward_04_air_brake"
+        },
+        {
+          "packageId": "air_dash_side_switch",
+          "sourceFrameId": "air_dash_backward_04_air_brake"
+        }
+      ]
+    },
+    "asset_e28294f729e88d51": {
+      "pageIndex": 1,
+      "region": {
+        "x": 3,
+        "y": 3,
+        "width": 1085,
+        "height": 1066
+      },
+      "sourceBounds": {
+        "x": 178,
+        "y": 345,
+        "width": 1085,
+        "height": 1066
+      },
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "sourceUri": "repo://tools/nga-forge/production/characters/swahili/source-frames/candidates/animation-coverage-completion-v1/jump-fall-landing-key-poses-v1/08_hard_landing_compatibility.png",
+      "sourceSha256": "E28294F729E88D511A74870B87F6455183EA6C44E92BBE3371778FBA16361208",
+      "sourcePixelSha256": "7BE8155DF122030FCFBF4772F046F74E3330A73D78A9E8A4BE3349B336A30016",
+      "anchorOffset": {
+        "rootX": 590,
+        "rootY": 1063
+      },
+      "aliases": [
+        {
+          "packageId": "jump_fall_landing",
+          "sourceFrameId": "jump_v1_hard_landing_compatibility"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "pixelExactReconstruction": true,
+    "reconstructionMismatches": []
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "1.0.0",
+  "moveId": "standing_light",
+  "status": "V1_MOTION_LOCKED_FOR_TARGETED_V2_SINGLE_HIT_REBUILD",
+  "candidateOnly": true,
+  "deployable": false,
+  "simulationHz": 60,
+  "sourceFrameCount": 4,
+  "authoredFrameCount": 6,
+  "sourceMotionReusable": true,
+  "sourceArtworkReusableAsLegacyEvidence": true,
+  "sourceArtworkRuntimeReusable": false,
+  "legacyGameplayEvidence": {
+    "durationTicks": 15,
+    "damage": 32,
+    "currentV2CandidateDamage": 24,
+    "historicalContactTick": null,
+    "note": "The V1 total duration and source cells are recovered. Exact V1 per-pose holds and frame-indexed contact were not stored."
+  },
+  "authoredRootContract": {
+    "kind": "in_place_bottom_center",
+    "legacyRoot": {
+      "x": 224,
+      "y": 382
+    },
+    "v2CandidateRoot": {
+      "x": 768,
+      "y": 1360
+    },
+    "runtimeRootTranslation": false,
+    "visualRecenteringProhibited": true,
+    "perFrameRendererScaleProhibited": true,
+    "note": "Generated source-camera differences may be repaired during source normalization, but the review/runtime renderer uses one fixed scale and one fixed root."
+  },
+  "strikingLimb": "lead_arm_authored_screen_right",
+  "hitCountContract": {
+    "visibleImpacts": 1,
+    "gameplayHits": 1,
+    "impactFrame": 2,
+    "rule": "Only authored V2 frame 02 may show contact VFX. Frames 03-05 must remain same-arm follow-through and recovery, never a second extension or impact."
+  },
+  "legacyFrames": [
+    {
+      "index": 0,
+      "id": "standing_light_frame_00",
+      "sha256": "3A6095A6DFB31DD0E2FCA90F1AF48DDE765F2C021E352728F57B8D12AB5C02ED",
+      "motionTruth": "Wide ready stance, both feet grounded, lead fist forward, rear fist low, coat and locs settled behind the body.",
+      "v2Use": "Entry stance and neutral-return direction."
+    },
+    {
+      "index": 1,
+      "id": "standing_light_frame_01",
+      "sha256": "CC53C53C9C7690D023AC3092AC4DAB52EE1F46E91A3BD7F120AF720099332C50",
+      "motionTruth": "Lead arm reaches forward in a compact straight line while the rear hand guards and the planted base stays wide.",
+      "v2Use": "Primary strike trajectory and contact silhouette evidence."
+    },
+    {
+      "index": 2,
+      "id": "standing_light_frame_02",
+      "sha256": "8BBA05D4CA0FC65D5D49BE03E21022CE8BDDC9CF4A32841B43EBEE100AACB1F4",
+      "motionTruth": "Compact guarded compression with both hands near the torso and weight settled through the legs.",
+      "v2Use": "Anticipation chamber and recoil direction evidence."
+    },
+    {
+      "index": 3,
+      "id": "standing_light_frame_03",
+      "sha256": "D36B1378B5D8B167803C59CA188EE8F2ECC576FAC57ACC56939FD42DE727DFF5",
+      "motionTruth": "A second full lead-arm extension appears after the guarded cell, creating two visible strike silhouettes in a one-hit runtime move.",
+      "v2Use": "Forward-momentum evidence only; V2 must reinterpret this beat as same-arm overshoot and recoil with no second contact."
+    }
+  ],
+  "v2Frames": [
+    {
+      "index": 0,
+      "role": "compact_ready_entry",
+      "constraint": "Reachable from idle and walk; no VFX."
+    },
+    {
+      "index": 1,
+      "role": "lead_fist_chamber",
+      "constraint": "Readable compression without making a Light feel heavy."
+    },
+    {
+      "index": 2,
+      "role": "single_straight_contact_body",
+      "constraint": "Only visible impact; lead arm and planted base remain continuous."
+    },
+    {
+      "index": 3,
+      "role": "same_arm_follow_through",
+      "constraint": "Continue the same shoulder and fist path with no second hit."
+    },
+    {
+      "index": 4,
+      "role": "lead_arm_recoil",
+      "constraint": "Bend and retract the same elbow while coat and locs continue their lag."
+    },
+    {
+      "index": 5,
+      "role": "connected_guard_recovery",
+      "constraint": "Return toward neutral with residual momentum; do not duplicate idle."
+    }
+  ],
+  "timingCandidates": {
+    "A": {
+      "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+      "durationTicks": 12,
+      "exposureTicks": [
+        2,
+        1,
+        4,
+        2,
+        1,
+        2
+      ],
+      "phaseTicks": {
+        "startup": 3,
+        "active": 4,
+        "recovery": 5
+      }
+    },
+    "B": {
+      "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+      "durationTicks": 14,
+      "exposureTicks": [
+        2,
+        1,
+        5,
+        2,
+        1,
+        3
+      ],
+      "phaseTicks": {
+        "startup": 3,
+        "active": 5,
+        "recovery": 6
+      }
+    },
+    "C": {
+      "label": "WEIGHTED_ALTERNATE_NOT_DEFAULT",
+      "durationTicks": 17,
+      "exposureTicks": [
+        3,
+        1,
+        6,
+        3,
+        1,
+        3
+      ],
+      "phaseTicks": {
+        "startup": 4,
+        "active": 6,
+        "recovery": 7
+      }
+    }
+  },
+  "recommendedTimingCandidate": "B",
+  "impactCandidates": {
+    "I1": {
+      "label": "CLEAN_3",
+      "hitstopTicks": 3
+    },
+    "I2": {
+      "label": "READABLE_4",
+      "hitstopTicks": 4
+    },
+    "I3": {
+      "label": "WEIGHTED_5",
+      "hitstopTicks": 5
+    }
+  },
+  "recommendedImpactCandidate": "I2",
+  "benchmarkQuestions": [
+    "Does frame 01 expose intent without making the Light sluggish?",
+    "Does frame 01 to frame 02 snap quickly as one lead-arm straight?",
+    "Is frame 02 the only visible contact?",
+    "Do frames 03-05 read as overshoot, recoil and connected recovery rather than a second punch?",
+    "Does the clip enter from and return toward Lamuh neutral without scale pumping or root drift?"
+  ],
+  "approvalBoundary": {
+    "approvedStyleDirectionOnly": true,
+    "standingHeavyContactScaleRepairApprovedOnly": true,
+    "standingLightMotionApproved": true,
+    "standingLightTimingApproved": false,
+    "standingLightCombatProfileApproved": false,
+    "runtimeArtApproved": false,
+    "humanReviewStatus": [
+      "APPROVED_V1_MOTION_PRESERVED",
+      "PENDING_V2_RETIMING_AFTER_GAMEPLAY_RECONCILIATION"
+    ],
+    "selectedTimingCandidate": "B",
+    "productionApproved": false,
+    "deployable": false
+  },
+  "supersededTimingCandidates": {
+    "reason": "Superseded on 2026-09-03 by a gameplay-reconciliation pass. The approved candidates were authored against a 1-tick active window that does not exist in src/data/fighters.ts, so candidate B was longer than the move it belongs to. The build therefore emitted a truncated runtime timeline that dropped authored frames and placed the contact pose outside the live hitbox window. The replacement candidates keep the same authored frames, roles and impact frame, and only redistribute exposure so that candidate B equals the combat frame data exactly.",
+    "supersededOn": "2026-09-03",
+    "previousCandidates": {
+      "A": {
+        "label": "ORIGINAL_V1_RHYTHM_RECONSTRUCTION",
+        "durationTicks": 15,
+        "exposureTicks": [
+          2,
+          2,
+          1,
+          2,
+          3,
+          5
+        ],
+        "phaseTicks": {
+          "startup": 4,
+          "active": 1,
+          "recovery": 10
+        }
+      },
+      "B": {
+        "label": "SLIGHTLY_SLOWER_READABILITY_RECOMMENDED",
+        "durationTicks": 18,
+        "exposureTicks": [
+          3,
+          2,
+          1,
+          3,
+          4,
+          5
+        ],
+        "phaseTicks": {
+          "startup": 5,
+          "active": 1,
+          "recovery": 12
+        }
+      },
+      "C": {
+        "label": "WEIGHTED_ALTERNATE_NOT_DEFAULT",
+        "durationTicks": 20,
+        "exposureTicks": [
+          3,
+          3,
+          2,
+          3,
+          4,
+          5
+        ],
+        "phaseTicks": {
+          "startup": 6,
+          "active": 2,
+          "recovery": 12
+        }
+      }
+    },
+    "previousApproval": {
+      "approvedStyleDirectionOnly": true,
+      "standingHeavyContactScaleRepairApprovedOnly": true,
+      "standingLightMotionApproved": true,
+      "standingLightTimingApproved": true,
+      "standingLightCombatProfileApproved": false,
+      "runtimeArtApproved": false,
+      "humanReviewStatus": [
+        "APPROVED_V1_MOTION_PRESERVED",
+        "APPROVED_V2_RETIMING"
+      ],
+      "selectedTimingCandidate": "B",
+      "productionApproved": false,
+      "deployable": false
+    }
+  },
+  "gameplayFrameDataReconciliation": {
+    "authority": "repo://NO_GODS_ABOVE/engine_v2/src/data/fighters.ts legacyAttacks",
+    "startup": 3,
+    "active": 5,
+    "recovery": 6,
+    "totalTicks": 14,
+    "recommendedCandidateMatchesCombatData": true,
+    "contactFrameFirstTickEqualsStartup": true,
+    "contactFrameHeldForFullActiveWindow": true,
+    "authoredFramesDroppedAtRuntime": 0
+  }
+}

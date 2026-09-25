@@ -1,0 +1,49 @@
+{
+  "generatedBy": "build_lamuh_legacy_v2_candidate.js",
+  "sourceDigest": "8C81CD73921D882A4D7593D4E63441CB7E92C767F8D8DF0B58E40A6802EF1748",
+  "candidateOnly": true,
+  "deployable": false,
+  "characterId": "lamuh_legacy_v2",
+  "simulationHz": 60,
+  "timingCandidate": "B",
+  "assetNamespace": "/lamuh-legacy-v2/atlases",
+  "coverage": {
+    "movement": [
+      "idle",
+      "walk_forward",
+      "walk_backward",
+      "dash_forward",
+      "dash_backward",
+      "crouch",
+      "jump",
+      "air_dash_forward",
+      "air_dash_backward"
+    ],
+    "defense": [
+      "standing_block",
+      "light_reaction"
+    ],
+    "groundNormals": [
+      "standing_light",
+      "standing_medium",
+      "standing_heavy",
+      "crouching_light",
+      "crouching_medium",
+      "crouching_heavy"
+    ],
+    "airNormals": [
+      "air_light"
+    ],
+    "specials": [
+      "ascend_step"
+    ],
+    "grabs": [
+      "universal_grab_startup",
+      "grab_connect",
+      "grab_whiff",
+      "forward_throw",
+      "back_throw",
+      "throw_recovery"
+    ]
+  }
+}

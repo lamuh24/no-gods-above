@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sable Preview Playtest</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090a0d;
+      --panel: rgba(13, 15, 21, 0.82);
+      --line: rgba(210, 225, 255, 0.22);
+      --text: #f3f7ff;
+      --muted: #aab5c6;
+      --accent: #8ee8ff;
+      --warn: #ffce77;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #07070a;
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      image-rendering: pixelated;
+      background: var(--bg);
+    }
+
+    .hud {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      top: 14px;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      pointer-events: none;
+    }
+
+    .panel {
+      min-width: 220px;
+      max-width: min(520px, calc(100vw - 32px));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
+      padding: 12px 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .tag {
+      color: var(--warn);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .readout {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .readout strong {
+      display: block;
+      margin-top: 2px;
+      color: var(--text);
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .keys {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .keys span {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 5px 8px;
+      background: rgba(255, 255, 255, 0.04);
+      white-space: nowrap;
+    }
+
+    .move-panel {
+      width: min(460px, calc(100vw - 32px));
+      pointer-events: auto;
+    }
+
+    .move-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      max-height: 44vh;
+      overflow: auto;
+      padding-right: 2px;
+    }
+
+    .move-button {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 6px 8px;
+      min-height: 34px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      font: 700 11px/1.1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .move-button.ready {
+      border-color: rgba(142, 232, 255, 0.38);
+    }
+
+    .move-button.missing {
+      border-color: rgba(255, 206, 119, 0.42);
+      color: var(--warn);
+    }
+
+    .move-button small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .status {
+      position: fixed;
+      left: 16px;
+      bottom: 14px;
+      width: min(560px, calc(100vw - 32px));
+      color: var(--muted);
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .error {
+      color: #ff9999;
+      font-weight: 800;
+    }
+
+    @media (max-width: 780px) {
+      .hud {
+        display: block;
+      }
+
+      .panel + .panel {
+        margin-top: 10px;
+      }
+
+      .keys {
+        grid-template-columns: repeat(2, auto);
+      }
+    }
+  </style>
+</head>
+<body>
+<canvas id="game" width="1280" height="720"></canvas>
+<div class="hud">
+  <section class="panel">
+    <div class="title">
+      <span>Sable Preview Playtest</span>
+      <span class="tag">Preview Only</span>
+    </div>
+    <div class="readout">
+      <div>Clip<strong id="clipName">loading</strong></div>
+      <div>Frame<strong id="frameReadout">0 / 0</strong></div>
+      <div>Loaded<strong id="loadedReadout">0 / 0</strong></div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="keys" aria-label="Controls">
+      <span>A/D walk preview</span>
+      <span>Shift + A/D dash</span>
+      <span>W jump</span>
+      <span>S crouch</span>
+      <span>Q block</span>
+      <span>J/K/L attack</span>
+      <span>S + J low attack</span>
+      <span>Back + J back attack</span>
+      <span>U + Dir + J/K/L special</span>
+    </div>
+  </section>
+  <section class="panel move-panel">
+    <div class="title">
+      <span>Move Test</span>
+      <span id="coverageReadout" class="tag">0 / 0 Ready</span>
+    </div>
+    <div id="moveGrid" class="move-grid" aria-label="Sable move test"></div>
+  </section>
+</div>
+<div id="status" class="status">Loading Sable preview manifest...</div>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const clipName = document.getElementById("clipName");
+const frameReadout = document.getElementById("frameReadout");
+const loadedReadout = document.getElementById("loadedReadout");
+const coverageReadout = document.getElementById("coverageReadout");
+const moveGrid = document.getElementById("moveGrid");
+const statusLine = document.getElementById("status");
+
+const manifestUrl = "/assets/characters/sable/manifests/preview_animation_clips.json";
+const stageUrls = [
+  "/NO_GODS_ABOVE/assets/stages/eclipse_rooftop/01_far_background_16x9.png",
+  "/NO_GODS_ABOVE/assets/stages/eclipse_rooftop/02_midground_layer_transparent.png",
+  "/NO_GODS_ABOVE/assets/stages/eclipse_rooftop/03_main_platform_transparent.png"
+];
+const displayNames = new Map([
+  ["idle", "idle"],
+  ["crouch", "crouch"],
+  ["block", "block"],
+  ["hit_stun", "hitstun"],
+  ["walk_forward", "walk"],
+  ["jump", "jump"],
+  ["stand_light", "ground light"],
+  ["stand_medium", "ground medium"],
+  ["stand_heavy", "ground heavy"],
+  ["crouch_light", "crouch light"],
+  ["crouch_medium", "crouch medium"],
+  ["crouch_heavy", "crouch heavy"],
+  ["forward_light", "forward light"],
+  ["forward_medium", "forward medium"],
+  ["forward_heavy", "forward heavy"],
+  ["back_light", "back light"],
+  ["back_medium", "back medium"],
+  ["back_heavy", "back heavy"],
+  ["jump_light", "air light"],
+  ["jump_medium", "air medium"],
+  ["jump_heavy", "air heavy"],
+  ["neutral_special_light", "Void Shard"],
+  ["forward_special_light", "Forward Light Phase Lunge"],
+  ["forward_special_medium", "Forward Medium Phase Lunge"],
+  ["forward_special_heavy", "Forward Heavy Phase Lunge"],
+  ["back_special_light", "Void Anchor"],
+  ["down_special_light", "Ground Rift"],
+  ["up_special_light", "Vertical Phase"]
+]);
+const requiredMoves = [
+  { clipId: "idle", label: "idle" },
+  { clipId: "walk_forward", label: "walk" },
+  { clipId: "dash_forward", label: "dash forward", virtual: "dash", direction: 1 },
+  { clipId: "dash_back", label: "dash back", virtual: "dash", direction: -1 },
+  { clipId: "jump", label: "jump" },
+  { clipId: "crouch", label: "crouch" },
+  { clipId: "block", label: "block" },
+  { clipId: "hit_stun", label: "hitstun" },
+  { clipId: "stand_light", label: "stand light" },
+  { clipId: "stand_medium", label: "stand medium" },
+  { clipId: "stand_heavy", label: "stand heavy" },
+  { clipId: "crouch_light", label: "crouch light" },
+  { clipId: "crouch_medium", label: "crouch medium" },
+  { clipId: "crouch_heavy", label: "crouch heavy" },
+  { clipId: "jump_light", label: "jump light" },
+  { clipId: "jump_medium", label: "jump medium" },
+  { clipId: "jump_heavy", label: "jump heavy" },
+  { clipId: "forward_light", label: "forward light" },
+  { clipId: "forward_medium", label: "forward medium" },
+  { clipId: "forward_heavy", label: "forward heavy" },
+  { clipId: "back_light", label: "back light" },
+  { clipId: "back_medium", label: "back medium" },
+  { clipId: "back_heavy", label: "back heavy" },
+  { clipId: "neutral_special_light", label: "Void Shard" },
+  { clipId: "forward_special_light", label: "Forward Light Phase Lunge" },
+  { clipId: "forward_special_medium", label: "Forward Medium Phase Lunge" },
+  { clipId: "forward_special_heavy", label: "Forward Heavy Phase Lunge" },
+  { clipId: "back_special_light", label: "Void Anchor" },
+  { clipId: "down_special_light", label: "Ground Rift" },
+  { clipId: "up_special_light", label: "Vertical Phase" }
+];
+
+const keys = new Set();
+const clips = new Map();
+const stageImages = [];
+const FRAME_ALPHA_THRESHOLD = 24;
+const MAX_ANCHOR_X_OFFSET = 24;
+const MAX_ANCHOR_Y_OFFSET = 10;
+const WALK_PREVIEW_OFFSET = 34;
+const WALK_PREVIEW_EASE = 9;
+const WALK_PREVIEW_RETURN = 180;
+const TRAVEL_SPEED = 230;
+const DASH_SPEED = 520;
+const DASH_DURATION = 0.22;
+const DASH_AFTERIMAGE_LIFETIME = 0.22;
+const DASH_AFTERIMAGE_INTERVAL = 0.045;
+const anchorableCategories = new Set(["movement", "state", "reaction"]);
+const player = {
+  x: 440,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  facing: 1,
+  grounded: true,
+  clipId: "idle",
+  frame: 0,
+  frameTime: 0,
+  action: null,
+  dashTime: 0,
+  dashDir: 0,
+  afterimageCooldown: 0,
+  afterimages: [],
+  walkPreviewOffset: 0,
+  lastIntent: null
+};
+const dummy = { x: 855, hitFlash: 0, health: 1 };
+const baseStatus = "Sable preview pack loaded from preview_animation_clips.json. Live roster wiring remains disabled.";
+
+let floorY = 616;
+let scale = 1.08;
+let lastNow = performance.now();
+let ready = false;
+let loadError = null;
+let noticeText = "";
+let noticeTime = 0;
+
+function isDown(code) {
+  return keys.has(code);
+}
+
+function clipUrl(clip) {
+  return `/${clip.normalizedSheet.replace(/\\/g, "/")}`;
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error(`Could not load ${src}`));
+    image.src = src;
+  });
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function approach(value, target, amount) {
+  if (value < target) return Math.min(target, value + amount);
+  if (value > target) return Math.max(target, value - amount);
+  return target;
+}
+
+function renderPlayerX() {
+  return player.x + player.walkPreviewOffset;
+}
+
+function movementInput() {
+  return (isDown("KeyD") ? 1 : 0) - (isDown("KeyA") ? 1 : 0);
+}
+
+function displayName(clipId) {
+  return displayNames.get(clipId) || clipId;
+}
+
+function setNotice(text, seconds = 1.4) {
+  noticeText = text;
+  noticeTime = seconds;
+}
+
+function selection(clipId, requestedClipId = clipId, missing = false) {
+  return { clipId, requestedClipId, missing };
+}
+
+function resolveClip(requestedClipId, fallbackClipId) {
+  if (clips.has(requestedClipId)) {
+    return selection(requestedClipId);
+  }
+  setNotice(`Missing preview strip: ${displayName(requestedClipId)}. Showing ${displayName(fallbackClipId)} fallback.`);
+  return selection(fallbackClipId, requestedClipId, true);
+}
+
+function fallbackFor(clipId) {
+  if (clipId.endsWith("_heavy")) return "stand_heavy";
+  if (clipId.endsWith("_medium")) return "stand_medium";
+  if (clipId.endsWith("_light")) return "stand_light";
+  return "idle";
+}
+
+function isMoveReady(move) {
+  if (move.virtual === "dash") {
+    return clips.has("walk_forward");
+  }
+  return clips.has(move.clipId);
+}
+
+function renderMoveGrid() {
+  const readyCount = requiredMoves.filter(isMoveReady).length;
+  coverageReadout.textContent = `${readyCount} / ${requiredMoves.length} Ready`;
+  moveGrid.replaceChildren();
+
+  for (const move of requiredMoves) {
+    const readyForMove = isMoveReady(move);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `move-button ${readyForMove ? "ready" : "missing"}`;
+    button.dataset.clipId = move.clipId;
+    button.textContent = move.label;
+    const status = document.createElement("small");
+    status.textContent = readyForMove ? "ready" : "missing";
+    button.appendChild(status);
+    button.addEventListener("click", () => playCatalogMove(move));
+    moveGrid.appendChild(button);
+  }
+}
+
+function measureFrameAnchors(clip) {
+  if (!clip?.image || !anchorableCategories.has(clip.category)) {
+    return [];
+  }
+
+  const sourceWidth = clip.image.naturalWidth || clip.image.width;
+  const sourceHeight = clip.image.naturalHeight || clip.image.height;
+  const offscreen = document.createElement("canvas");
+  offscreen.width = sourceWidth;
+  offscreen.height = sourceHeight;
+  const offscreenCtx = offscreen.getContext("2d", { willReadFrequently: true });
+  if (!offscreenCtx) {
+    return [];
+  }
+
+  offscreenCtx.drawImage(clip.image, 0, 0);
+  const pixels = offscreenCtx.getImageData(0, 0, sourceWidth, sourceHeight).data;
+  const anchors = [];
+  for (let frame = 0; frame < clip.frameCount; frame += 1) {
+    let minX = clip.frameWidth;
+    let minY = clip.frameHeight;
+    let maxX = -1;
+    let maxY = -1;
+    const frameX = frame * clip.frameWidth;
+
+    for (let y = 0; y < clip.frameHeight; y += 1) {
+      for (let x = 0; x < clip.frameWidth; x += 1) {
+        const sourceX = frameX + x;
+        if (sourceX >= sourceWidth || y >= sourceHeight) continue;
+        const offset = (y * sourceWidth + sourceX) * 4;
+        if (pixels[offset + 3] <= FRAME_ALPHA_THRESHOLD) continue;
+        minX = Math.min(minX, x);
+        minY = Math.min(minY, y);
+        maxX = Math.max(maxX, x);
+        maxY = Math.max(maxY, y);
+      }
+    }
+
+    if (maxX < minX || maxY < minY) {
+      anchors.push({ offsetX: 0, offsetY: 0 });
+      continue;
+    }
+
+    const visibleCenterX = (minX + maxX) / 2;
+    anchors.push({
+      offsetX: clamp(clip.frameWidth / 2 - visibleCenterX, -MAX_ANCHOR_X_OFFSET, MAX_ANCHOR_X_OFFSET),
+      offsetY: clamp(clip.baselineY - maxY, -MAX_ANCHOR_Y_OFFSET, MAX_ANCHOR_Y_OFFSET)
+    });
+  }
+  return anchors;
+}
+
+async function init() {
+  const manifestResponse = await fetch(`${manifestUrl}?t=${Date.now()}`, { cache: "no-store" });
+  if (!manifestResponse.ok) {
+    throw new Error(`Could not load ${manifestUrl}`);
+  }
+  const manifest = await manifestResponse.json();
+  const approved = manifest.clips.filter((clip) => clip.approvedForPreview || clip.clipId === "idle");
+  loadedReadout.textContent = `0 / ${approved.length}`;
+
+  for (const [index, clip] of approved.entries()) {
+    clip.image = await loadImage(clipUrl(clip));
+    clip.frameAnchors = measureFrameAnchors(clip);
+    clips.set(clip.clipId, clip);
+    loadedReadout.textContent = `${index + 1} / ${approved.length}`;
+  }
+
+  for (const url of stageUrls) {
+    try {
+      stageImages.push(await loadImage(url));
+    } catch {
+      stageImages.push(null);
+    }
+  }
+
+  player.y = floorY;
+  renderMoveGrid();
+  ready = true;
+  statusLine.textContent = baseStatus;
+}
+
+function startAction(actionSelection) {
+  const selected = typeof actionSelection === "string" ? selection(actionSelection) : actionSelection;
+  if (!clips.has(selected.clipId)) {
+    setNotice(`Missing preview strip: ${displayName(selected.requestedClipId)}.`);
+    return;
+  }
+  const clip = clips.get(selected.clipId);
+  player.action = {
+    clipId: selected.clipId,
+    requestedClipId: selected.requestedClipId,
+    missing: selected.missing,
+    lock: Math.max(0.18, clip.frameCount / Math.max(1, clip.fps)),
+    elapsed: 0
+  };
+  player.lastIntent = selected;
+  player.clipId = selected.clipId;
+  player.frame = 0;
+  player.frameTime = 0;
+}
+
+function captureAfterimage() {
+  const clipId = player.clipId === "idle" ? "walk_forward" : player.clipId;
+  player.afterimages.unshift({
+    clipId,
+    frame: player.frame,
+    x: renderPlayerX(),
+    y: player.y,
+    facing: player.facing,
+    age: 0
+  });
+  player.afterimages = player.afterimages.slice(0, 5);
+}
+
+function startDash(direction) {
+  if (!direction || !player.grounded || player.action) {
+    return;
+  }
+  player.dashTime = DASH_DURATION;
+  player.dashDir = direction;
+  player.afterimageCooldown = 0;
+  player.walkPreviewOffset = 0;
+  player.vx = direction * DASH_SPEED;
+  player.clipId = "walk_forward";
+  player.frameTime = 0;
+  captureAfterimage();
+  setNotice(direction === opponentDirection() ? "Forward dash preview." : "Back dash preview.", 0.75);
+}
+
+function playCatalogMove(move) {
+  if (!ready) return;
+  keys.clear();
+  player.action = null;
+  player.dashTime = 0;
+  player.dashDir = 0;
+  player.afterimages = [];
+  player.walkPreviewOffset = 0;
+  player.frame = 0;
+  player.frameTime = 0;
+
+  if (move.virtual === "dash") {
+    startDash(move.direction === 1 ? opponentDirection() : -opponentDirection());
+    return;
+  }
+
+  const selected = clips.has(move.clipId)
+    ? selection(move.clipId)
+    : resolveClip(move.clipId, fallbackFor(move.clipId));
+  startAction(selected);
+}
+
+function opponentDirection() {
+  return player.x <= dummy.x ? 1 : -1;
+}
+
+function isHoldingForward() {
+  return opponentDirection() === 1 ? isDown("KeyD") : isDown("KeyA");
+}
+
+function isHoldingBack() {
+  return opponentDirection() === 1 ? isDown("KeyA") : isDown("KeyD");
+}
+
+function chooseGroundAttack(strength) {
+  if (isDown("KeyS")) {
+    if (strength === "heavy") return resolveClip("crouch_heavy", "stand_heavy");
+    if (strength === "medium") return resolveClip("crouch_medium", "stand_medium");
+    return resolveClip("crouch_light", "stand_light");
+  }
+  if (isHoldingBack()) {
+    if (strength === "heavy") return resolveClip("back_heavy", "stand_heavy");
+    if (strength === "medium") return resolveClip("back_medium", "stand_medium");
+    return resolveClip("back_light", "stand_light");
+  }
+  if (isHoldingForward()) {
+    if (strength === "heavy") return resolveClip("forward_heavy", "stand_heavy");
+    if (strength === "medium") return resolveClip("forward_medium", "stand_medium");
+    return resolveClip("forward_light", "stand_light");
+  }
+  if (strength === "heavy") return selection("stand_heavy");
+  if (strength === "medium") return selection("stand_medium");
+  return selection("stand_light");
+}
+
+function chooseSpecial(strength) {
+  if (!player.grounded) {
+    return "neutral_special_light";
+  }
+  if (isDown("KeyS")) return "down_special_light";
+  if (isDown("KeyW")) return "up_special_light";
+  const forwardHeld = isHoldingForward();
+  const backHeld = isHoldingBack();
+  if (backHeld) return "back_special_light";
+  if (forwardHeld && strength === "heavy") return "forward_special_heavy";
+  if (forwardHeld && strength === "medium") return "forward_special_medium";
+  if (forwardHeld) return "forward_special_light";
+  return "neutral_special_light";
+}
+
+function handleAttack(code) {
+  const special = isDown("KeyU");
+  if (code === "KeyJ") {
+    startAction(special ? selection(chooseSpecial("light")) : player.grounded ? chooseGroundAttack("light") : selection("jump_light"));
+  }
+  if (code === "KeyK") {
+    startAction(special ? selection(chooseSpecial("medium")) : player.grounded ? chooseGroundAttack("medium") : selection("jump_medium"));
+  }
+  if (code === "KeyL") {
+    startAction(special ? selection(chooseSpecial("heavy")) : player.grounded ? chooseGroundAttack("heavy") : selection("jump_heavy"));
+  }
+}
+
+window.addEventListener("keydown", (event) => {
+  if (["KeyA", "KeyD", "KeyW", "KeyS", "KeyQ", "KeyU", "KeyJ", "KeyK", "KeyL", "ShiftLeft", "ShiftRight"].includes(event.code)) {
+    event.preventDefault();
+  }
+  const firstPress = !keys.has(event.code);
+  keys.add(event.code);
+
+  if (!ready || !firstPress) {
+    return;
+  }
+  if (event.code === "KeyW" && player.grounded && !player.action && !isDown("KeyU")) {
+    player.grounded = false;
+    player.vy = -930;
+    startAction("jump");
+  }
+  if (event.code === "ShiftLeft" || event.code === "ShiftRight" || event.code === "KeyA" || event.code === "KeyD") {
+    if ((isDown("ShiftLeft") || isDown("ShiftRight")) && movementInput() !== 0) {
+      startDash(movementInput());
+    }
+  }
+  handleAttack(event.code);
+});
+
+window.addEventListener("keyup", (event) => {
+  keys.delete(event.code);
+});
+
+function update(dt) {
+  if (!ready) return;
+
+  const move = movementInput();
+  const travelHeld = isDown("ShiftLeft") || isDown("ShiftRight");
+  player.facing = opponentDirection();
+
+  if (player.dashTime > 0 && player.dashDir !== 0) {
+    player.vx = player.dashDir * DASH_SPEED;
+    player.x = clamp(player.x + player.vx * dt, 150, 1130);
+    player.walkPreviewOffset = 0;
+    player.afterimageCooldown -= dt;
+    if (player.afterimageCooldown <= 0) {
+      captureAfterimage();
+      player.afterimageCooldown = DASH_AFTERIMAGE_INTERVAL;
+    }
+  } else if (move !== 0 && travelHeld) {
+    const speed = TRAVEL_SPEED;
+    player.vx = move * speed;
+    player.x = clamp(player.x + player.vx * dt, 150, 1130);
+    player.walkPreviewOffset = approach(player.walkPreviewOffset, 0, WALK_PREVIEW_RETURN * dt);
+  } else if (move !== 0) {
+    player.vx = 0;
+    const targetOffset = move * WALK_PREVIEW_OFFSET;
+    player.walkPreviewOffset += (targetOffset - player.walkPreviewOffset) * Math.min(1, dt * WALK_PREVIEW_EASE);
+  } else {
+    player.vx = 0;
+    player.walkPreviewOffset = approach(player.walkPreviewOffset, 0, WALK_PREVIEW_RETURN * dt);
+  }
+  if (player.dashTime > 0) {
+    player.dashTime = Math.max(0, player.dashTime - dt);
+    if (player.dashTime === 0) {
+      player.dashDir = 0;
+    }
+  }
+  player.afterimages = player.afterimages
+    .map((afterimage) => ({ ...afterimage, age: afterimage.age + dt }))
+    .filter((afterimage) => afterimage.age < DASH_AFTERIMAGE_LIFETIME);
+
+  if (!player.grounded) {
+    player.vy += 2450 * dt;
+    player.y += player.vy * dt;
+    if (player.y >= floorY) {
+      player.y = floorY;
+      player.vy = 0;
+      player.grounded = true;
+      if (player.action?.clipId === "jump") {
+        player.action = null;
+      }
+    }
+  }
+
+  if (player.action) {
+    player.action.elapsed += dt;
+    if (player.action.elapsed >= player.action.lock) {
+      player.action = null;
+    }
+  }
+
+  if (!player.action) {
+    if (isDown("KeyQ")) player.clipId = "block";
+    else if (player.grounded && isDown("KeyS")) player.clipId = "crouch";
+    else if (!player.grounded) player.clipId = "jump";
+    else if (player.dashTime > 0 || move !== 0) player.clipId = "walk_forward";
+    else player.clipId = "idle";
+  }
+
+  const clip = clips.get(player.clipId) || clips.get("idle");
+  if (clip) {
+    player.frameTime += dt;
+    if (player.frameTime >= 1 / Math.max(1, clip.fps)) {
+      player.frameTime = 0;
+      if (player.action) {
+        player.frame = Math.min(clip.frameCount - 1, player.frame + 1);
+      } else {
+        player.frame = (player.frame + 1) % clip.frameCount;
+      }
+    }
+    player.frame = Math.min(player.frame, clip.frameCount - 1);
+    const requestedClipId = player.action?.requestedClipId || (player.dashTime > 0 ? "dash" : clip.clipId);
+    clipName.textContent = player.action?.missing ? `${displayName(requestedClipId)} missing` : displayName(requestedClipId);
+    frameReadout.textContent = `${player.frame + 1} / ${clip.frameCount}`;
+    if (clip.hitFrames?.includes(player.frame) && Math.abs(player.x - dummy.x) < 210) {
+      dummy.hitFlash = 0.12;
+      dummy.health = Math.max(0, dummy.health - 0.012);
+    }
+  }
+
+  dummy.hitFlash = Math.max(0, dummy.hitFlash - dt);
+  if (noticeTime > 0) {
+    noticeTime = Math.max(0, noticeTime - dt);
+  }
+  statusLine.textContent = noticeTime > 0 ? noticeText : baseStatus;
+}
+
+function drawStage() {
+  const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  gradient.addColorStop(0, "#160711");
+  gradient.addColorStop(0.55, "#281018");
+  gradient.addColorStop(1, "#050507");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (const image of stageImages) {
+    if (!image) continue;
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  }
+
+  ctx.save();
+  ctx.globalAlpha = 0.86;
+  ctx.fillStyle = "#0b090b";
+  ctx.fillRect(0, floorY + 4, canvas.width, canvas.height - floorY - 4);
+  ctx.strokeStyle = "rgba(180, 220, 255, 0.22)";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(0, floorY + 0.5);
+  ctx.lineTo(canvas.width, floorY + 0.5);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawDummy() {
+  const h = 235;
+  const w = 86;
+  const x = dummy.x;
+  const y = floorY;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.fillStyle = dummy.hitFlash > 0 ? "rgba(255, 225, 175, 0.48)" : "rgba(180, 170, 220, 0.22)";
+  ctx.strokeStyle = "rgba(220, 230, 255, 0.28)";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.ellipse(0, -h + 52, 34, 38, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.roundRect(-w / 2, -h + 92, w, 150, 14);
+  ctx.fill();
+  ctx.stroke();
+  ctx.restore();
+
+  ctx.save();
+  ctx.fillStyle = "rgba(20, 25, 32, 0.72)";
+  ctx.fillRect(x - 58, y - h - 14, 116, 8);
+  ctx.fillStyle = "rgba(142, 232, 255, 0.86)";
+  ctx.fillRect(x - 58, y - h - 14, 116 * dummy.health, 8);
+  ctx.restore();
+}
+
+function drawClipFrame(clip, frame, x, y, facing, alpha = 1) {
+  if (!clip?.image) return;
+
+  const drawW = clip.frameWidth * scale;
+  const drawH = clip.frameHeight * scale;
+  const anchor = clip.frameAnchors?.[frame] || { offsetX: 0, offsetY: 0 };
+  const localDx = -(clip.frameWidth / 2) * scale + anchor.offsetX * scale;
+  const dy = y - clip.baselineY * scale + anchor.offsetY * scale;
+
+  ctx.save();
+  ctx.globalAlpha *= alpha;
+  if (facing < 0) {
+    ctx.translate(x, 0);
+    ctx.scale(-1, 1);
+    ctx.drawImage(
+      clip.image,
+      frame * clip.frameWidth,
+      0,
+      clip.frameWidth,
+      clip.frameHeight,
+      localDx,
+      dy,
+      drawW,
+      drawH
+    );
+  } else {
+    ctx.drawImage(
+      clip.image,
+      frame * clip.frameWidth,
+      0,
+      clip.frameWidth,
+      clip.frameHeight,
+      x + localDx,
+      dy,
+      drawW,
+      drawH
+    );
+  }
+  ctx.restore();
+}
+
+function drawAfterimages() {
+  for (const afterimage of [...player.afterimages].reverse()) {
+    const clip = clips.get(afterimage.clipId) || clips.get("walk_forward") || clips.get("idle");
+    const alpha = 0.25 * (1 - afterimage.age / DASH_AFTERIMAGE_LIFETIME);
+    drawClipFrame(clip, afterimage.frame, afterimage.x, afterimage.y, afterimage.facing, alpha);
+  }
+}
+
+function drawPlayer() {
+  const clip = clips.get(player.clipId) || clips.get("idle");
+  drawClipFrame(clip, player.frame, renderPlayerX(), player.y, player.facing);
+}
+
+function drawError() {
+  ctx.fillStyle = "#090a0d";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#ff9999";
+  ctx.font = "700 24px system-ui, sans-serif";
+  ctx.fillText(loadError || "Could not load playtest harness.", 48, 96);
+}
+
+function frame(now) {
+  const dt = Math.min(0.033, (now - lastNow) / 1000);
+  lastNow = now;
+
+  if (loadError) {
+    drawError();
+  } else {
+    update(dt);
+    drawStage();
+    drawDummy();
+    drawAfterimages();
+    drawPlayer();
+  }
+  requestAnimationFrame(frame);
+}
+
+init().catch((error) => {
+  loadError = error.message;
+  statusLine.innerHTML = `<span class="error">${error.message}</span>`;
+});
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

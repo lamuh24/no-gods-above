@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "dev:game": "python -m http.server 5173 --directory NO_GODS_ABOVE",
+    "check:game": "node --check NO_GODS_ABOVE/game.js && node --check NO_GODS_ABOVE/sw.js",
+    "dev:forge:backend": "python -m uvicorn app.main:app --app-dir tools/nga-forge/backend --host 127.0.0.1 --port 8765",
+    "dev:forge:frontend": "npm --prefix tools/nga-forge/frontend run dev",
+    "sprite-agent": "npm --prefix tools/sprite-agent run sprite-agent --"
+  }
+}

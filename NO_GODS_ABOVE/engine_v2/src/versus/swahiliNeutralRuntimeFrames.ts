@@ -1,0 +1,22 @@
+// Existing art, normalized for the user-approved local neutral special mapping.
+import light1 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/01.png?url';
+import light2 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/02.png?url';
+import light3 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/03.png?url';
+import light4 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/04.png?url';
+import light5 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/05.png?url';
+import light6 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/06.png?url';
+import light7 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/07.png?url';
+import light8 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/08.png?url';
+import light9 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/09.png?url';
+import light10 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/10.png?url';
+import light11 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/11.png?url';
+import light12 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_light/12.png?url';
+export const neutralLightFrames = [light1,light2,light3,light4,light5,light6,light7,light8,light9,light10,light11,light12];
+import medium1 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/01.png?url';
+import medium2 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/02.png?url';
+import medium3 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/03.png?url';
+import medium4 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/04.png?url';
+import medium5 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/05.png?url';
+import medium6 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/06.png?url';
+import medium7 from '../../../../tools/nga-forge/production/characters/swahili/reviews/neutral-light-medium-runtime-v1/special_neutral_medium/07.png?url';
+export const neutralMediumFrames = [medium1,medium2,medium3,medium4,medium5,medium6,medium7];

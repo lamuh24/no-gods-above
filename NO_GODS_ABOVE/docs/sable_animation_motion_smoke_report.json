@@ -1,0 +1,111 @@
+{
+  "ok": true,
+  "url": "http://127.0.0.1:5199/index.html?platformTest=1",
+  "checks": {
+    "selectable": true,
+    "p1": "sable",
+    "duplicateChecks": [
+      {
+        "key": "stand_light",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 6,
+        "frames": 8
+      },
+      {
+        "key": "stand_medium",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 8,
+        "frames": 10
+      },
+      {
+        "key": "stand_heavy",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 9,
+        "frames": 12
+      },
+      {
+        "key": "crouch",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 8,
+        "frames": 8
+      },
+      {
+        "key": "block",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 8,
+        "frames": 8
+      },
+      {
+        "key": "crouch_light",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 8,
+        "frames": 8
+      },
+      {
+        "key": "forward_special_light",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 8,
+        "frames": 14
+      },
+      {
+        "key": "back_special_light",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 14,
+        "frames": 14
+      },
+      {
+        "key": "down_special_light",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 14,
+        "frames": 14
+      },
+      {
+        "key": "up_special_light",
+        "sameAsIdlePrefix": false,
+        "sameAsWalkPrefix": false,
+        "uniqueFrames": 8,
+        "frames": 14
+      }
+    ],
+    "actionStates": {
+      "light": {
+        "move": "neutral_light",
+        "anim": "neutral_light",
+        "actionTime": 0.098,
+        "duration": 0.23333333333333334
+      },
+      "forwardSpecial": {
+        "move": "neutral_light",
+        "anim": "neutral_light",
+        "actionTime": 0.112,
+        "duration": 0.23333333333333334
+      },
+      "downSpecial": {
+        "move": "neutral_light",
+        "anim": "neutral_light",
+        "actionTime": 0.11666666666666667,
+        "duration": 0.23333333333333334
+      }
+    },
+    "relevantHttpErrors": [],
+    "duplicateFailures": []
+  },
+  "screenshots": [
+    "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\docs\\sable_animation_motion_probe\\01_walk_forward.png",
+    "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\docs\\sable_animation_motion_probe\\02_neutral_light.png",
+    "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\docs\\sable_animation_motion_probe\\03_forward_special.png",
+    "C:\\Users\\qchee\\OneDrive\\Documents\\no gods above\\NO_GODS_ABOVE\\docs\\sable_animation_motion_probe\\04_down_special.png"
+  ],
+  "browserEvents": [],
+  "relevantHttpErrors": [],
+  "failures": []
+}

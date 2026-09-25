@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-10T19:50:44.621Z",
+  "characterId": "sable",
+  "clipId": "back_special_heavy",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-155043/sable_back_special_heavy_normalized_strip.png",
+  "expected": {
+    "clipId": "back_special_heavy",
+    "category": "special",
+    "frameCount": 7,
+    "fps": 11,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/back_special_heavy/v20260710-155043/sable_back_special_heavy_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hitFrames": [
+      5
+    ],
+    "cancelFrames": [
+      6
+    ],
+    "notes": [
+      "full-rebuild-v3 special family: Void Anchor HEAVY. Highest-commitment planted anchor fracture, largest anchor geometry and recovery. Frame target lowered from 16 to 7 after dropping isolated broken leftover-anchor frame 7 and redundant final guard from the 9-frame attempt; one large forearm-connected anchor fracture, active on visual frame 6/index 5, compact intentional anchor VFX, and committed recovery."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 7,
+    "rows": 1,
+    "frameCount": 7
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "SCALE_DRIFT",
+      "message": "Frame height drift is 43px (309px..352px); max is 34px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 27261,
+      "bbox": {
+        "x": 127,
+        "y": 30,
+        "width": 194,
+        "height": 352,
+        "right": 320,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000001111111111100000111111111110001111111111111000011111111111100000111111111110010011111111110011001111111111001100111111111001110011111111100111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 28006,
+      "bbox": {
+        "x": 137,
+        "y": 70,
+        "width": 175,
+        "height": 312,
+        "right": 311,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111001111111111111100011111111111100001111111111100000111111111100000011111111110000001111111111000000111111111111000011111111111000001111111111000100111111111100110011111111110011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 24180,
+      "bbox": {
+        "x": 143,
+        "y": 55,
+        "width": 163,
+        "height": 327,
+        "right": 305,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111110001111111111111000111111111111000011111111111100001111111111110000111111111111000011111111111100000111111111110000011111111111001001111111111001100111111111100100011111111110011001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 26981,
+      "bbox": {
+        "x": 125,
+        "y": 56,
+        "width": 199,
+        "height": 326,
+        "right": 323,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111000111111111111100011111111111100000000111111110000000011111111100111011111111100001111111111110000011111111111100000111111111100100111111111110010011111111111111001111111111111100011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 30219,
+      "bbox": {
+        "x": 102,
+        "y": 55,
+        "width": 245,
+        "height": 327,
+        "right": 346,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111100111111111111100011101111111100000000011111111000000001111111100011000111111100001111111111110000011111111111001000111111111000100011111111100110011111111111111001111111111111100011111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 35800,
+      "bbox": {
+        "x": 101,
+        "y": 49,
+        "width": 246,
+        "height": 333,
+        "right": 346,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111110001111111111111000100111111101000000011111100100000001111111110000000111111111000000011111111100000111111111100010011111111110011001111111110011100111111110011110011111111001111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 25759,
+      "bbox": {
+        "x": 126,
+        "y": 73,
+        "width": 196,
+        "height": 309,
+        "right": 321,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111011111111111111000111111111111000011111111111100000111111111110000011111111110000111111111111000001111111111110000011111111111000001111111111001001111111111001100111111111100110001111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

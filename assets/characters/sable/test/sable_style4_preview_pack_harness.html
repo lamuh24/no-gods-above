@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sable Style 4 Preview Harness</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111317;
+      --panel: #191d24;
+      --line: #4e5969;
+      --text: #f1f5f9;
+      --muted: #aeb7c7;
+      --accent: #90e7ff;
+      --warn: #f7c46c;
+      --fail: #ff8a8a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0 32px;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 { font-size: 22px; }
+    h2 { font-size: 15px; margin-bottom: 10px; }
+
+    .badge {
+      color: var(--warn);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 448px) minmax(300px, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .viewport {
+      width: 448px;
+      max-width: 100%;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      background: repeating-conic-gradient(#29303a 0 25%, #20262f 0 50%) 50% / 28px 28px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    select, button {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #10141b;
+      color: var(--text);
+      font: inherit;
+    }
+
+    select {
+      width: 100%;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .readout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .readout strong {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .clip-grid, .rejected-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .clip-grid button {
+      width: 100%;
+      overflow-wrap: anywhere;
+      text-align: left;
+    }
+
+    .clip-grid button[data-active="true"] {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .chip {
+      border: 1px solid rgba(247, 196, 108, 0.45);
+      border-radius: 6px;
+      padding: 8px;
+      color: var(--warn);
+      background: rgba(247, 196, 108, 0.08);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .empty {
+      color: var(--fail);
+      font-weight: 700;
+      padding: 16px;
+    }
+
+    @media (max-width: 860px) {
+      header, .layout { display: block; }
+      .panel { margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Sable Style 4 Preview Harness</h1>
+    <div class="badge">Preview only - not live roster</div>
+  </header>
+
+  <div class="layout">
+    <div class="viewport">
+      <canvas id="canvas" width="448" height="448"></canvas>
+    </div>
+
+    <div>
+      <section class="panel" aria-label="Preview controls">
+        <label for="clip">Approved Preview Clip</label>
+        <select id="clip"></select>
+
+        <div class="controls">
+          <button id="prev" type="button">Prev</button>
+          <button id="play" type="button">Pause</button>
+          <button id="next" type="button">Next</button>
+        </div>
+
+        <div class="readout">
+          <div>Frame<strong id="frame">0 / 0</strong></div>
+          <div>FPS<strong id="fps">0</strong></div>
+          <div>Baseline<strong id="baseline">0</strong></div>
+          <div>Approved<strong id="approvedCount">0</strong></div>
+        </div>
+
+        <div id="clipGrid" class="clip-grid"></div>
+      </section>
+
+      <section class="panel" aria-label="Rejected clips">
+        <h2>Rejected For Redo</h2>
+        <div id="rejectedGrid" class="rejected-grid"></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script>
+const manifestUrl = "/assets/characters/sable/manifests/preview_animation_clips.json";
+const rejectedForRedo = [
+  ["crouch", "correct style anchor, but redo to remove placeholder-like effects"],
+  ["walk_forward", "correct style anchor, but redo motion because it reads like a skip"],
+  ["jump", "broken fragments and style reset required"],
+  ["stand_light", "style drift / VFX does not match anchor"],
+  ["stand_medium", "style drift / VFX does not match anchor"],
+  ["stand_heavy", "style drift / VFX does not match anchor"],
+  ["jump_light", "style drift; air light does not pass"],
+  ["jump_medium", "style drift; air medium does not pass"],
+  ["jump_heavy", "style drift; air heavy does not pass"],
+  ["neutral_special_light", "Void Shard VFX does not match anchor"],
+  ["forward_special_light", "style drift from Sable anchor"],
+  ["forward_special_medium", "style drift from Sable anchor"],
+  ["forward_special_heavy", "style drift from Sable anchor"],
+  ["back_special_light", "style drift from Sable anchor"],
+  ["down_special_light", "style drift from Sable anchor"],
+  ["up_special_light", "style drift from Sable anchor"]
+];
+const displayNames = new Map([
+  ["idle", "idle"],
+  ["crouch", "crouch"],
+  ["block", "block"],
+  ["hit_stun", "hitstun"],
+  ["walk_forward", "walk"],
+  ["jump", "jump"],
+  ["stand_light", "ground light"],
+  ["stand_medium", "ground medium"],
+  ["stand_heavy", "ground heavy"],
+  ["jump_light", "air light"],
+  ["jump_medium", "air medium"],
+  ["jump_heavy", "air heavy"],
+  ["neutral_special_light", "Void Shard"],
+  ["forward_special_light", "Forward Light Phase Lunge"],
+  ["forward_special_medium", "Forward Medium Phase Lunge"],
+  ["forward_special_heavy", "Forward Heavy Phase Lunge"],
+  ["back_special_light", "Void Anchor"],
+  ["down_special_light", "Ground Rift"],
+  ["up_special_light", "Vertical Phase"]
+]);
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const select = document.getElementById("clip");
+const grid = document.getElementById("clipGrid");
+const rejectedGrid = document.getElementById("rejectedGrid");
+const frameReadout = document.getElementById("frame");
+const fpsReadout = document.getElementById("fps");
+const baselineReadout = document.getElementById("baseline");
+const approvedCount = document.getElementById("approvedCount");
+const playButton = document.getElementById("play");
+let clips = [];
+let activeIndex = 0;
+let frame = 0;
+let playing = true;
+let image = new Image();
+let lastStep = performance.now();
+
+function sourceUrl(clip) {
+  return `/${clip.normalizedSheet.replace(/\\/g, "/")}`;
+}
+
+function setActive(index) {
+  if (!clips.length) return;
+  activeIndex = (index + clips.length) % clips.length;
+  const clip = clips[activeIndex];
+  frame = 0;
+  image = new Image();
+  image.src = sourceUrl(clip);
+  select.value = clip.clipId;
+  fpsReadout.textContent = String(clip.fps);
+  baselineReadout.textContent = `${clip.baselineY}px`;
+  document.querySelectorAll(".clip-grid button").forEach((button) => {
+    button.dataset.active = String(button.dataset.clipId === clip.clipId);
+  });
+}
+
+function drawBaseline(clip) {
+  ctx.save();
+  ctx.strokeStyle = "rgba(144, 231, 255, 0.95)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, clip.baselineY + 0.5);
+  ctx.lineTo(canvas.width, clip.baselineY + 0.5);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function renderRejectedList() {
+  rejectedGrid.innerHTML = "";
+  for (const [clipId, reason] of rejectedForRedo) {
+    const chip = document.createElement("div");
+    chip.className = "chip";
+    chip.textContent = `${displayNames.get(clipId) || clipId}: ${reason}`;
+    rejectedGrid.appendChild(chip);
+  }
+}
+
+function renderClipControls() {
+  select.innerHTML = "";
+  grid.innerHTML = "";
+  approvedCount.textContent = String(clips.length);
+  for (const [index, clip] of clips.entries()) {
+    const label = displayNames.get(clip.clipId) || clip.clipId;
+    const option = document.createElement("option");
+    option.value = clip.clipId;
+    option.textContent = label;
+    select.appendChild(option);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = label;
+    button.dataset.clipId = clip.clipId;
+    button.addEventListener("click", () => setActive(index));
+    grid.appendChild(button);
+  }
+  if (!clips.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "No approved preview clips are currently available.";
+    grid.appendChild(empty);
+  }
+}
+
+select.addEventListener("change", () => {
+  const index = clips.findIndex((clip) => clip.clipId === select.value);
+  setActive(index < 0 ? 0 : index);
+});
+document.getElementById("prev").addEventListener("click", () => setActive(activeIndex - 1));
+document.getElementById("next").addEventListener("click", () => setActive(activeIndex + 1));
+playButton.addEventListener("click", () => {
+  playing = !playing;
+  playButton.textContent = playing ? "Pause" : "Play";
+});
+
+function draw(now) {
+  const clip = clips[activeIndex];
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (clip) {
+    if (playing && now - lastStep >= 1000 / clip.fps) {
+      frame = (frame + 1) % clip.frameCount;
+      lastStep = now;
+    }
+    if (image.complete && image.naturalWidth > 0) {
+      ctx.drawImage(image, frame * clip.frameWidth, 0, clip.frameWidth, clip.frameHeight, 0, 0, clip.frameWidth, clip.frameHeight);
+    }
+    drawBaseline(clip);
+    frameReadout.textContent = `${frame + 1} / ${clip.frameCount}`;
+  }
+  requestAnimationFrame(draw);
+}
+
+async function init() {
+  renderRejectedList();
+  const response = await fetch(`${manifestUrl}?t=${Date.now()}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(`Could not load ${manifestUrl}`);
+  const manifest = await response.json();
+  clips = manifest.clips.filter((clip) => clip.approvedForPreview || clip.clipId === "idle");
+  renderClipControls();
+  setActive(0);
+  requestAnimationFrame(draw);
+}
+
+init().catch((error) => {
+  const empty = document.createElement("div");
+  empty.className = "empty";
+  empty.textContent = error.message;
+  grid.appendChild(empty);
+});
+</script>
+</body>
+</html>

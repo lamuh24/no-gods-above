@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Standing Heavy contact · new-game style checkpoint",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "humanReviewStatus": "APPROVED_WITH_TARGETED_REPAIR",
+  "approvedAt": "2026-08-26",
+  "approvalScope": "visual_identity_and_new_game_style_direction_only",
+  "approvalReceipt": "records/style-checkpoint-v1.approval.json",
+  "artStatus": "APPROVED_WITH_TARGETED_REPAIR",
+  "sourceMove": "standing_heavy",
+  "sourceFrame": 3,
+  "sourcePath": "engine_v2/content-source/characters/lamuh-legacy-v2/source-frames/standing_heavy/standing_heavy_03.png",
+  "styleReferencePath": "tools/nga-forge/production/characters/swahili/source-frames/approved/standing-heavy-key-poses/standing_heavy_impact_v2.png",
+  "reviewAssetPath": "../tools/nga-forge/review/lamuh-legacy-v2-style-modernization-v1/standing-heavy-contact-style-candidate-v2.png",
+  "publicPath": "/lamuh-legacy-v2/style/standing-heavy-contact-style-candidate-v2.png",
+  "generatedWith": "OpenAI image generation · edit/style transfer with protected Lamuh identity and pose references",
+  "sourceDimensions": {
+    "width": 448,
+    "height": 448
+  },
+  "candidateDimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "alphaAudit": {
+    "genuineTransparency": true,
+    "cornerAlpha": 0,
+    "fullyOpaquePixels": 0,
+    "partialAlphaPixels": 580384,
+    "alphaZeroRgbResiduePixels": 773832,
+    "topEdgeVisiblePixels": 6,
+    "backgroundResidueRequiresIsolation": true
+  },
+  "purpleFringeAudit": {
+    "sourceMagentaPercent": 3.7161,
+    "candidateMagentaPercent": 0.000544,
+    "candidateMagentaPixels": 3,
+    "normalizedSequencePolicy": "zero_meaningful_magenta_after_dark_ink_neutralization"
+  },
+  "preservationIntent": [
+    "same high-kick contact idea",
+    "same body-driven momentum",
+    "same skin tone, facial identity, hair, tunic, pants, wraps, shoes and gold accents",
+    "no purple outline"
+  ],
+  "knownDebt": [
+    "approved original remains an immutable style-direction checkpoint, not runtime art",
+    "original carries partial-alpha backdrop residue and six top-edge pixels; the closure sequence uses a separate hash-bound isolation and padding repair",
+    "manual cross-frame identity, motion and silhouette review remains required"
+  ]
+}

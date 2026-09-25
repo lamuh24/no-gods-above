@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://no-gods-above.local/sprite-agent/character_spec.schema.json",
+  "title": "SpriteForge Character Spec",
+  "type": "object",
+  "required": [
+    "id",
+    "displayName",
+    "role",
+    "bodyType",
+    "skinTone",
+    "hair",
+    "face",
+    "outfit",
+    "accessories",
+    "vfx",
+    "forbidden",
+    "palette",
+    "spriteRules",
+    "styleNotes"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+    "displayName": { "type": "string" },
+    "role": { "type": "string" },
+    "bodyType": { "type": "string" },
+    "skinTone": { "type": "string" },
+    "hair": { "type": "string" },
+    "face": { "type": "string" },
+    "outfit": { "type": "string" },
+    "accessories": { "type": "array", "items": { "type": "string" } },
+    "vfx": { "type": "string" },
+    "forbidden": { "type": "array", "items": { "type": "string" } },
+    "palette": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "spriteRules": {
+      "type": "object",
+      "required": ["frameWidth", "frameHeight", "baselineY", "facing", "style"],
+      "properties": {
+        "frameWidth": { "type": "integer", "const": 448 },
+        "frameHeight": { "type": "integer", "const": 448 },
+        "baselineY": { "type": "integer", "const": 382 },
+        "facing": { "type": "string", "const": "right" },
+        "style": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "styleNotes": { "type": "array", "items": { "type": "string" } },
+    "lock": {
+      "type": "object",
+      "properties": {
+        "status": { "enum": ["draft_locked", "approved_locked"] },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "requiresHumanApproval": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

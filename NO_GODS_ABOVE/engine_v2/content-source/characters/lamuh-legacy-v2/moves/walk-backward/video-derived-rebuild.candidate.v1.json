@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_walk_backward_video_derived_rebuild_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "generatedArtwork": false,
+  "simulationOwnsTravel": true,
+  "timingChanged": false,
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-walk-back-video-rebuild-v1/normalization.report.json",
+    "sha256": "0204529FD498ADE711BA725561254CB1972185C70B24D7E174F1FDCF27029EAF"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/walk-back-video-rebuild-v1.hash-lock.json",
+    "sha256": "EBB6E34AAF4AC1FF314B8A638C41208E22DF1B6A318BBC00CCB4469F2FBD02D0"
+  },
+  "state": {
+    "sourceFrameCount": 192,
+    "authoredFrameCount": 7,
+    "selectedLegacyFrames": [],
+    "selectedSourceFrames": [
+      72,
+      60,
+      48,
+      36,
+      24,
+      12,
+      0
+    ],
+    "exposureTicks": [
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3
+    ],
+    "durationTicks": 18,
+    "loop": true,
+    "frames": [
+      {
+        "index": 0,
+        "role": "reverse_cycle_entry",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-00.png",
+        "sha256": "710F7EB913B0C521F78C58F32D01D075FFBEB595E1D271621D36C0B9E2FDC16B",
+        "sourceSha256": "58D8732BEF09EEC303E2A796F0F4C1494E333C7862D554E1CAEC7CC300EB6022",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 72,
+        "sourceForwardIndex": 6,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 524,
+          "minY": 570,
+          "maxX": 1006,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 768.59,
+          "y": 982.74
+        }
+      },
+      {
+        "index": 1,
+        "role": "rearward_step_commit",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-01.png",
+        "sha256": "44F6F256008346698C284E397BDF53BB8803595396234B45049CC472E3086191",
+        "sourceSha256": "D71B75D5C13B07B28F20979906AFDC272827ED086BE3156BA50734020675E84E",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 60,
+        "sourceForwardIndex": 5,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 572,
+          "minY": 554,
+          "maxX": 982,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 768.34,
+          "y": 948.95
+        }
+      },
+      {
+        "index": 2,
+        "role": "rearward_weight_transfer",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-02.png",
+        "sha256": "7C43B92F1E47C40AE393619F7C31E2DA9FDB866E166400C616CB9703512FD840",
+        "sourceSha256": "182B86E910286B88407CB317CFE902B0AFE1311E84D23563E4D40D69D53A6C19",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 48,
+        "sourceForwardIndex": 4,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 575,
+          "minY": 547,
+          "maxX": 977,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 775.49,
+          "y": 929.91
+        }
+      },
+      {
+        "index": 3,
+        "role": "rear_foot_contact",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-03.png",
+        "sha256": "85C41A9F6CD6DBDE80EA95E74B519D48E13CF9327B6699C12BE7340C656065DE",
+        "sourceSha256": "32125B36084CCEC2CB178AD987138912335C4703223F168F0B4EBD9784050FC4",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 36,
+        "sourceForwardIndex": 3,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 560,
+          "minY": 562,
+          "maxX": 994,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 779.13,
+          "y": 943.48
+        }
+      },
+      {
+        "index": 4,
+        "role": "opposite_passing",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-04.png",
+        "sha256": "3AE7E9902C2E92CA4BD0B577E2A0A577001B750B95BFCAD3BD2641833743854F",
+        "sourceSha256": "E21E0C6317495B696A807B97D6B0345EE97739C72C1ABA3DDD6BEA886A951367",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 24,
+        "sourceForwardIndex": 2,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 575,
+          "minY": 566,
+          "maxX": 1003,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 787.74,
+          "y": 965.87
+        }
+      },
+      {
+        "index": 5,
+        "role": "opposite_departure",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-05.png",
+        "sha256": "348FDFB52F48FC7B2030EF975E7178F4C9CC14AF2ABBFDB2492BB960B9D2539F",
+        "sourceSha256": "4FC5299E4AF0A5796D051D929FF0E60F679CB996BC4C579DE64FDA4761592396",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 12,
+        "sourceForwardIndex": 1,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 539,
+          "minY": 563,
+          "maxX": 990,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 776.11,
+          "y": 972.41
+        }
+      },
+      {
+        "index": 6,
+        "role": "loop_close_grounded",
+        "publicPath": "/lamuh-legacy-v2/movement-v2/walk-backward-06.png",
+        "sha256": "29EF9211F71572C39646BD18DE1578BF92D9DEBAF57D5A7FCFC779B5135FF291",
+        "sourceSha256": "A6AFB0251CED8D03AD02031BBC56A2E779E3426D66CE8DE12999C17C96B7EDC2",
+        "sourceType": "user_video_reversed_cycle",
+        "sourceFrameIndex": 0,
+        "sourceForwardIndex": 0,
+        "bodyScaleCorrection": 1,
+        "sourceScaleCorrection": 0.8658,
+        "legacySha256": null,
+        "legacyIndex": null,
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 536,
+          "minY": 561,
+          "maxX": 990,
+          "maxY": 1360
+        },
+        "bodyCenter": {
+          "x": 775.03,
+          "y": 972.34
+        }
+      }
+    ]
+  },
+  "approvalStatus": "awaiting_human_video_derived_walk_backward_review",
+  "humanApproval": null
+}

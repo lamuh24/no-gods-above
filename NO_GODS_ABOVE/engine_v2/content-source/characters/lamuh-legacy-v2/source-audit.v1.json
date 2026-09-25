@@ -1,0 +1,1765 @@
+{
+  "schemaVersion": "1.0.0",
+  "characterId": "lamuh_legacy_v2",
+  "technicalStatus": "AUDIT_COMPLETE_CANDIDATE_ONLY",
+  "humanReviewStatus": null,
+  "auditBasis": {
+    "historicalOriginal": "Git-introduced playable Lamuh inherited Sol/baseline combat; retained only as recoverable V1 evidence.",
+    "currentLegacyRuntime": "Current lamuh_legacy clones modern Lamuh attacks, remaps five legacy specials, then filters the move set.",
+    "v2BalanceAuthority": "Neither legacy column is V2 balance truth; candidate values are independently authored."
+  },
+  "fixedSimulationHz": 60,
+  "sourceAtlasContract": {
+    "cellWidth": 448,
+    "cellHeight": 448,
+    "baselineY": 382,
+    "sourceFacing": "right",
+    "anchor": "bottom_center"
+  },
+  "sheets": [
+    {
+      "id": "core_movement",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_1_core_movement_source_chroma.png",
+      "grid": {
+        "columns": 8,
+        "rows": 6
+      },
+      "frameCounts": [
+        8,
+        6,
+        6,
+        6,
+        6,
+        4
+      ],
+      "runtimeFrameCounts": [
+        8,
+        6,
+        6,
+        6,
+        6,
+        4
+      ],
+      "note": null
+    },
+    {
+      "id": "air_movement",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_2_air_movement_source_chroma.png",
+      "grid": {
+        "columns": 6,
+        "rows": 6
+      },
+      "frameCounts": [
+        4,
+        4,
+        4,
+        4,
+        6,
+        6
+      ],
+      "runtimeFrameCounts": [
+        4,
+        4,
+        4,
+        4,
+        6,
+        6
+      ],
+      "note": null
+    },
+    {
+      "id": "ground_normals",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_3_ground_normals_source_chroma.png",
+      "grid": {
+        "columns": 8,
+        "rows": 4
+      },
+      "frameCounts": [
+        4,
+        8,
+        7,
+        7
+      ],
+      "runtimeFrameCounts": [
+        4,
+        8,
+        7,
+        7
+      ],
+      "note": null
+    },
+    {
+      "id": "air_normals",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_4_air_normals_source_chroma.png",
+      "grid": {
+        "columns": 7,
+        "rows": 4
+      },
+      "frameCounts": [
+        4,
+        6,
+        7,
+        4
+      ],
+      "runtimeFrameCounts": [
+        4,
+        6,
+        7,
+        4
+      ],
+      "note": "Legacy runtime scale 1.55 is an atlas correction and is not portable physical metadata."
+    },
+    {
+      "id": "specials",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_5_specials_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_5_specials_source_chroma.png",
+      "grid": {
+        "columns": 8,
+        "rows": 6
+      },
+      "frameCounts": [
+        6,
+        7,
+        7,
+        6,
+        7,
+        4
+      ],
+      "runtimeFrameCounts": [
+        6,
+        7,
+        7,
+        6,
+        7,
+        4
+      ],
+      "note": null
+    },
+    {
+      "id": "defense_reactions",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_6_defense_hit_reactions_source_chroma.png",
+      "grid": {
+        "columns": 8,
+        "rows": 6
+      },
+      "frameCounts": [
+        4,
+        4,
+        4,
+        5,
+        6,
+        6
+      ],
+      "runtimeFrameCounts": [
+        4,
+        4,
+        4,
+        5,
+        6,
+        6
+      ],
+      "note": null
+    },
+    {
+      "id": "end_states",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_7_knockdown_recovery_flavor_source_chroma.png",
+      "grid": {
+        "columns": 8,
+        "rows": 7
+      },
+      "frameCounts": [
+        6,
+        3,
+        6,
+        8,
+        8,
+        8,
+        8
+      ],
+      "runtimeFrameCounts": [
+        6,
+        1,
+        6,
+        8,
+        8,
+        8,
+        8
+      ],
+      "note": "Ground-state atlas count reconciled as three; runtime exposes one."
+    },
+    {
+      "id": "crown_body",
+      "atlas": "assets/sprites/lamuh_final/lamuh_sheet_8_crown_of_no_gods_body_atlas.png",
+      "source": "assets/sprites/lamuh_final/lamuh_sheet_8_crown_of_no_gods_body_source_chroma.png",
+      "grid": {
+        "columns": 8,
+        "rows": 8
+      },
+      "frameCounts": [
+        6,
+        7,
+        8,
+        8,
+        7,
+        8,
+        8,
+        6
+      ],
+      "runtimeFrameCounts": [
+        6,
+        7,
+        8,
+        8,
+        7,
+        8,
+        8,
+        6
+      ],
+      "note": null
+    }
+  ],
+  "animations": [
+    {
+      "animationName": "idle",
+      "sheetId": "core_movement",
+      "row": 0,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 60-tick breathing cadence using four unique modern key poses and authored exposure holds; reconstruct only the obsolete purple-outlined artwork."
+    },
+    {
+      "animationName": "walk_forward",
+      "sheetId": "core_movement",
+      "row": 1,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Use the user-supplied 192-frame modern-style motion clip as the forward-walk source. Preserve sixteen evenly spaced gait poses in a responsive 32-tick loop with one baked source-camera scale and no runtime rescaling."
+    },
+    {
+      "animationName": "walk_backward",
+      "sheetId": "core_movement",
+      "row": 2,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Use the exact user-supplied forward-walk video frames 72, 60, 48, 36, 24, 12, and 0 as a reversed seven-pose Walk Back loop. No generated Walk Back art remains active; 18-tick simulation timing and code-owned retreat travel remain unchanged."
+    },
+    {
+      "animationName": "dash_forward",
+      "sheetId": "core_movement",
+      "row": 3,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 dash forward pose progression, momentum, loc drag, and coat follow-through; rebuild obsolete artwork in modern style at one fixed anatomy scale and keep all world travel simulation-authored."
+    },
+    {
+      "animationName": "dash_backward",
+      "sheetId": "core_movement",
+      "row": 4,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the five-pose and 20-tick backdash contract, but replace the forward-sprint silhouette with guarded recoil, backward takeoff, airborne retreat, landing catch, and planted brake."
+    },
+    {
+      "animationName": "crouch",
+      "sheetId": "core_movement",
+      "row": 5,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 deep low guarded silhouette; rebuild obsolete purple-outlined art in the modern style and add lowering/rising connectors at one fixed anatomy scale."
+    },
+    {
+      "animationName": "jump",
+      "sheetId": "air_movement",
+      "row": 0,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the seven-pose modern Jump arc and unchanged simulation travel while repairing the user-rejected chibi head-to-body ratio and beard continuity."
+    },
+    {
+      "animationName": "forward_jump",
+      "sheetId": "air_movement",
+      "row": 1,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "backward_jump",
+      "sheetId": "air_movement",
+      "row": 2,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "fall",
+      "sheetId": "air_movement",
+      "row": 3,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "air_dash_forward",
+      "sheetId": "air_movement",
+      "row": 4,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 air dash forward pose progression, momentum, loc drag, and coat follow-through; rebuild obsolete artwork in modern style at one fixed anatomy scale and keep all world travel simulation-authored."
+    },
+    {
+      "animationName": "air_dash_backward",
+      "sheetId": "air_movement",
+      "row": 5,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven travel; sprite cells are bottom-center anchored and contain no gameplay root curve.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 air dash backward pose progression, momentum, loc drag, and coat follow-through; rebuild obsolete artwork in modern style at one fixed anatomy scale and keep all world travel simulation-authored."
+    },
+    {
+      "animationName": "standing_light",
+      "sheetId": "ground_normals",
+      "row": 0,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 15,
+        "meanTicksPerSourceFrame": 3.75
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 15,
+        "damage": 32
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          2,
+          5,
+          5
+        ],
+        "damage": 24
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": true,
+      "reviewNotes": "Preserve the V1 stance, lead-arm arc, planted base, momentum and recovery direction. Runtime art is rebuilt in the approved outline-free NGA V2 style because the legacy row has a purple extraction fringe and two full-extension silhouettes despite one gameplay hit."
+    },
+    {
+      "animationName": "crouching_light",
+      "sheetId": "ground_normals",
+      "row": 0,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 14,
+        "meanTicksPerSourceFrame": 3.5
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 14,
+        "damage": 32
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          2,
+          4,
+          6
+        ],
+        "damage": 22
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "V1 Crouching Light aliases Standing Light artwork. Preserve the compact lead-arm rhythm, planted base, fast acceleration, body momentum, coat/loc lag and guard-return direction while authoring a distinct low palm check in the approved outline-free NGA V2 style.",
+      "legacyAliasOf": "standing_light"
+    },
+    {
+      "animationName": "standing_medium",
+      "sheetId": "ground_normals",
+      "row": 1,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 21,
+        "meanTicksPerSourceFrame": 2.63
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 21,
+        "damage": 58
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          5,
+          6,
+          9
+        ],
+        "damage": 48
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "Preserve the V1 wide base, cross-body rear-hand coil, hip and shoulder drive, coat/loc lag, and recovery direction. Rebuild the runtime art in the approved outline-free NGA V2 style and retire the legacy knee/high-kick tail because it creates a second physical attack in a one-hit move."
+    },
+    {
+      "animationName": "crouching_medium",
+      "sheetId": "ground_normals",
+      "row": 1,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 19,
+        "meanTicksPerSourceFrame": 2.38
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 19,
+        "damage": 54
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          5,
+          5,
+          9
+        ],
+        "damage": 44
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "V1 Crouching Medium aliases all eight Standing Medium frames. Preserve medium-weight load, hip-led torque, fast acceleration, coat/loc lag and guarded recovery while authoring the distinct one-hit Sweep Line low-sweep silhouette in the approved outline-free NGA V2 style.",
+      "legacyAliasOf": "standing_medium"
+    },
+    {
+      "animationName": "standing_heavy",
+      "sheetId": "ground_normals",
+      "row": 2,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 31,
+        "meanTicksPerSourceFrame": 4.43
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 31,
+        "damage": 88
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          9,
+          5,
+          18
+        ],
+        "damage": 82
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "Multiple impact-like moments and duplicated fill require frame scrub."
+    },
+    {
+      "animationName": "launcher_crouching_heavy",
+      "sheetId": "ground_normals",
+      "row": 3,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 31,
+        "meanTicksPerSourceFrame": 4.43
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 31,
+        "damage": 78
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          8,
+          5,
+          19
+        ],
+        "damage": 70
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 low-to-high same-arm launcher arc. Reconstruct the purple-outlined artwork in modern NGA V2 style, retain the duplicate follow-through as timing exposure, and use one authored recovery connector plus modern deterministic launcher metadata."
+    },
+    {
+      "animationName": "air_light",
+      "sheetId": "air_normals",
+      "row": 0,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 12,
+        "meanTicksPerSourceFrame": 3
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 12,
+        "damage": 30
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          2,
+          5,
+          4
+        ],
+        "damage": 22
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "Rebuilds Jump Light as one continuous same-arm open-palm action: compact chamber, extension connector, one contact, held same-arm follow-through, and guarded recovery. The ambiguous fist strike remains excluded and the new connector spacing smooths body, coat, and loc travel without adding another hit."
+    },
+    {
+      "animationName": "air_medium",
+      "sheetId": "air_normals",
+      "row": 1,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 19,
+        "meanTicksPerSourceFrame": 3.17
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 19,
+        "damage": 56
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          5,
+          6,
+          8
+        ],
+        "damage": 44
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "Rebuilds Jump Medium as one continuous same-leg side kick: compact chamber, extension connector, one contact, retraction connector, knee recoil, and guarded recovery. The duplicated third foot was removed from extension and contact without changing timing, scale, or the one-hit combat profile."
+    },
+    {
+      "animationName": "air_heavy",
+      "sheetId": "air_normals",
+      "row": 2,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 26,
+        "meanTicksPerSourceFrame": 3.71
+      },
+      "gameplayRole": "normal_attack",
+      "historicalV1Combat": {
+        "durationTicks": 26,
+        "damage": 82
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          7,
+          5,
+          15
+        ],
+        "damage": 72
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "Preserves the strongest V1 descending two-hand slam arc and squash/stretch while removing contradictory later kick/palm impacts; frame 03 is the only contact."
+    },
+    {
+      "animationName": "air_recovery",
+      "sheetId": "air_normals",
+      "row": 3,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "movement",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "celestial_palm",
+      "sheetId": "specials",
+      "row": 0,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 29,
+        "meanTicksPerSourceFrame": 4.83
+      },
+      "gameplayRole": "special",
+      "historicalV1Combat": {
+        "durationTicks": 29,
+        "damage": 102
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          3,
+          5,
+          9
+        ],
+        "damage": 38,
+        "projectile": true
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_vfx_celestial_palm_projectile"
+      ],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "ascend_step",
+      "sheetId": "specials",
+      "row": 1,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 30,
+        "meanTicksPerSourceFrame": 4.29
+      },
+      "gameplayRole": "special",
+      "historicalV1Combat": {
+        "durationTicks": 30,
+        "damage": 78
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          5,
+          6,
+          15
+        ],
+        "damage": 62
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "V1 code-driven special travel; re-author an explicit deterministic V2 root path.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_vfx_ascend_radiant_trail"
+      ],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": "All seven V1 poses remain hash-locked and unmodified. Ascend Step Light keeps the short one-hit dash-punch. The targeted Medium repair preserves the approved slide-to-handspring concept while replacing its fixed-root and symmetrical-gymnastics read: the slide now has deliberate simulation-owned travel, a distinct retraction/coil, a two-hand floor plant, hips-over-shoulders rotation, one asymmetric rising-heel launcher contact with the other leg bent for counterbalance, authored post-contact leg gathering, and a controlled landing. Heavy keeps its approach, deterministic behind-side switch, pause, growing energy ball, and one rear blast. Motion, timing, transitions, and combat profile still await human review."
+    },
+    {
+      "animationName": "heaven_splitter",
+      "sheetId": "specials",
+      "row": 2,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 36,
+        "meanTicksPerSourceFrame": 5.14
+      },
+      "gameplayRole": "special",
+      "historicalV1Combat": {
+        "durationTicks": 36,
+        "damage": 116
+      },
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          7,
+          6,
+          22
+        ],
+        "damage": 72,
+        "launcher": true
+      },
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_vfx_heaven_splitter_vertical"
+      ],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_RETIMING",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "divine_vanish",
+      "sheetId": "specials",
+      "row": 3,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "special",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          2,
+          0,
+          13
+        ],
+        "damage": 0
+      },
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven special travel; re-author an explicit deterministic V2 root path.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": true,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "radiant_dive",
+      "sheetId": "specials",
+      "row": 4,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "special",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": {
+        "phases": [
+          5,
+          6,
+          18
+        ],
+        "damage": 58
+      },
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven special travel; re-author an explicit deterministic V2 root path.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "special_recovery",
+      "sheetId": "specials",
+      "row": 5,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "special",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "Move-level generic/modern Lamuh box only; no frame-indexed collision data.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [
+        "legacy_generic_attack_audio_routing"
+      ],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "standing_block",
+      "sheetId": "defense_reactions",
+      "row": 0,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the V1 raised-knee defensive rhythm; rebuild the obsolete purple-outlined art in modern style at one fixed anatomy scale while leaving block rules simulation-authored."
+    },
+    {
+      "animationName": "crouching_block",
+      "sheetId": "defense_reactions",
+      "row": 1,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": false,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Preserve the four V1 low-guard beats while replacing obsolete purple-outlined art with mature adult Lamuh anatomy, boxed beard continuity, and a stable final guard hold."
+    },
+    {
+      "animationName": "air_block",
+      "sheetId": "defense_reactions",
+      "row": 2,
+      "sourceFrameCount": 4,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "light_reaction",
+      "sheetId": "defense_reactions",
+      "row": 3,
+      "sourceFrameCount": 5,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "medium_reaction",
+      "sheetId": "defense_reactions",
+      "row": 4,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "heavy_launch_reaction",
+      "sheetId": "defense_reactions",
+      "row": 5,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "knockdown_fall",
+      "sheetId": "end_states",
+      "row": 0,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "ground_state",
+      "sheetId": "end_states",
+      "row": 1,
+      "sourceFrameCount": 3,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Atlas has three visible frames while current runtime exposes one."
+    },
+    {
+      "animationName": "get_up",
+      "sheetId": "end_states",
+      "row": 2,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "defense",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "ko",
+      "sheetId": "end_states",
+      "row": 3,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "flavor",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "intro",
+      "sheetId": "end_states",
+      "row": 4,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "flavor",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "victory",
+      "sheetId": "end_states",
+      "row": 5,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "flavor",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "taunt",
+      "sheetId": "end_states",
+      "row": 6,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "flavor",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": true,
+      "visualArtworkReusable": true,
+      "v2Disposition": "PRESERVE_WITH_V2_COMBAT_UPDATE",
+      "needsV2Redesign": false,
+      "reviewNotes": null
+    },
+    {
+      "animationName": "crown_startup",
+      "sheetId": "crown_body",
+      "row": 0,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "historical_v1_c032",
+        "durationTicks": 62,
+        "meanTicksPerSourceFrame": 10.33
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": {
+        "durationTicks": 62,
+        "damage": null
+      },
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": "Move-level V1 hit/block behavior only; no per-frame combat track.",
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_crown_of_no_gods_beam_vfx"
+      ],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "crown_rush",
+      "sheetId": "crown_body",
+      "row": 1,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V1 code-driven special travel; re-author an explicit deterministic V2 root path.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_crown_of_no_gods_beam_vfx"
+      ],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "cinematic_string_a",
+      "sheetId": "crown_body",
+      "row": 2,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "cinematic_string_b",
+      "sheetId": "crown_body",
+      "row": 3,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "launch_setup",
+      "sheetId": "crown_body",
+      "row": 4,
+      "sourceFrameCount": 7,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "transformation_charge",
+      "sheetId": "crown_body",
+      "row": 5,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_crown_of_no_gods_beam_vfx"
+      ],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "ascended_beam_pose",
+      "sheetId": "crown_body",
+      "row": 6,
+      "sourceFrameCount": 8,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_crown_of_no_gods_beam_vfx"
+      ],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "ascended_recovery",
+      "sheetId": "crown_body",
+      "row": 7,
+      "sourceFrameCount": 6,
+      "originalExposureTiming": {
+        "source": "legacy_global_loop",
+        "framesPerSecond": 8,
+        "ticksPerSourceFrame": 7.5,
+        "note": "Movement/reaction loops did not consistently reset on state entry."
+      },
+      "gameplayRole": "ultimate_source",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "In-place bottom-center visual root; no recoverable per-frame gameplay root track.",
+      "existingCollisionData": "No animation-local collision track recovered.",
+      "transitionBehavior": "Legacy runtime enters/exits through generic action/state logic; no authored transition package.",
+      "vfxDependencies": [
+        "lamuh_crown_of_no_gods_beam_vfx"
+      ],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "DEFERRED_NOT_BLOCKING",
+      "needsV2Redesign": false,
+      "reviewNotes": "Mixed provenance; rows 5-7 were rebuilt later and are not untouched V1 source."
+    },
+    {
+      "animationName": "crouch_to_stand",
+      "sheetId": "v2_movement_transition_candidate",
+      "row": null,
+      "sourceFrameCount": 0,
+      "originalExposureTiming": {
+        "source": "NO_DEDICATED_V1_TRANSITION",
+        "note": "V1 returned through generic state logic without a dedicated crouch-release clip."
+      },
+      "gameplayRole": "movement_transition",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": null,
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "V2 reuses the fixed authored root from the approved modern Crouch package.",
+      "existingCollisionData": "No animation-local collision track; standing gameplay boxes apply immediately on release.",
+      "transitionBehavior": "Eight simulation-owned presentation ticks; attack, jump, dash, crouch, walk, or block input interrupts immediately.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": false,
+      "reviewNotes": "Reuse the existing modern Crouch rising connector and standing recovery frames without regeneration or per-frame scaling."
+    },
+    {
+      "animationName": "turn_facing",
+      "sheetId": "v2_missing_state_turn_facing_candidate",
+      "row": null,
+      "sourceFrameCount": 0,
+      "originalExposureTiming": {
+        "source": "NO_DEDICATED_V1_TURN_CLIP",
+        "note": "V1 changed facing through generic state logic and horizontal mirroring without a dedicated physical pivot animation."
+      },
+      "gameplayRole": "grounded_facing_transition",
+      "historicalV1Combat": null,
+      "currentLamuhLegacyCombat": {
+        "durationTicks": 12,
+        "gameplayFacingSwapTick": 0,
+        "fighterRootDisplacement": 0,
+        "immediatelyInterruptible": true
+      },
+      "originalHitBlockBehavior": null,
+      "rootBehavior": "Fixed authored root (768, 1360); zero simulation displacement.",
+      "existingCollisionData": "Standing gameplay pushbox and hurtboxes remain active; artwork has no local collision authority.",
+      "transitionBehavior": "Simulation changes gameplay facing immediately, records turnStartingFacing, plays twelve non-blocking presentation ticks, and lets every legal attack/movement/defense action preempt on input.",
+      "vfxDependencies": [],
+      "audioDependencies": [],
+      "sourceMotionReusable": false,
+      "visualArtworkReusable": false,
+      "v2Disposition": "MODERNIZE",
+      "needsV2Redesign": false,
+      "reviewNotes": "No dedicated Lamuh V1 turn clip was recoverable. Author four adult-proportion, outline-free bridge poses around a planted root while preserving the approved V2 Idle identity and leaving the facing swap, collision, input response, replay and rollback state simulation-owned."
+    }
+  ],
+  "missingV2Coverage": [
+    "launch_reaction_dedicated",
+    "victim_throw_rows"
+  ],
+  "globalFindings": [
+    "No per-frame V1 root or collision tracks were recovered.",
+    "Legacy movement/reactions use a global 8 fps loop and do not consistently reset on state entry.",
+    "Legacy grab snaps the victim and is not reusable as the V2 universal throw.",
+    "Current retired Lamuh Engine V2 fixture is excluded from art, timing, and combat authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "Modern crouch entry/hold/exit and jump/fall/landing connector art is now authored and hash-locked as a candidate; simulation remains authoritative for travel and landing recovery. Human motion and transition approval remain unset.",
+    "Modern crouch entry/hold/exit and jump/fall/landing connector art is now authored and hash-locked as a candidate; simulation remains authoritative for travel and landing recovery. Human motion and transition approval remain unset.",
+    "Modern crouch entry/hold/exit and jump/fall/landing connector art is now authored and hash-locked as a candidate; simulation remains authoritative for travel and landing recovery. Human motion and transition approval remain unset.",
+    "Modern crouch entry/hold/exit and jump/fall/landing connector art is now authored and hash-locked as a candidate; simulation remains authoritative for travel and landing recovery. The crouch rising connector is comparison-ready but its live crouch-to-stand presentation integration remains targeted debt so neutral responsiveness and checksum state are not silently changed.",
+    "Modern crouch entry/hold/exit and jump/fall/landing connector art is now authored and hash-locked as a candidate; simulation remains authoritative for travel and landing recovery. The crouch rising connector is comparison-ready but its live crouch-to-stand presentation integration remains targeted debt so neutral responsiveness and checksum state are not silently changed.",
+    "Modern ground dashes, air dashes, and standing block are now rebuilt in the outline-free Lamuh V2 style and hash-locked as fixed-scale candidates; simulation remains authoritative for dash travel, air-dash travel, collision, and defense state.",
+    "Dedicated Turn / Facing is now authored as a four-pose, twelve-tick, fixed-root modern candidate. The deterministic simulation swaps gameplay facing immediately, preserves mirrored parity, and allows every legal action to interrupt without delay.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "Ascend Step is the first special-family review gate: Light and Medium are movement-first cyan/gold dash-punch variants with different deterministic travel and reward; Heavy approaches, performs one deterministic target-relative side switch without moving the victim, then fires one rear blast. The rejected two-beat rising/airborne sequence remains protected history.",
+    "Walk Back and Back Dash now use directionally explicit outline-free V2 candidate art: right-facing guard with leftward retreat, rearward weight transfer, backward takeoff, airborne recoil, landing catch, and planted brake. Their 18-tick and 20-tick gameplay timelines and simulation-owned travel are unchanged.",
+    "Walk Back now reuses seven frames from the exact user-supplied forward-walk video hash in reverse chronological order. Generated Walk Back artwork is superseded; scale/root normalization, 18-tick duration, simulation travel, inputs, and collision remain unchanged.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "Ascend Step is the first special-family review gate: Light and Medium are movement-first cyan/gold dash-punch variants with complete opaque limbs and different deterministic travel/reward; Heavy approaches, performs one deterministic target-relative side switch without moving the victim, pauses while a palm energy ball visibly grows, then fires one complete rear blast. The rejected two-beat rising/airborne sequence remains protected history.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "No legacy grab/throw source art exists; dedicated modern V2 attacker animation is now authored and hash-locked as a candidate while the deterministic standard-humanoid victim track remains gameplay authority.",
+    "Ascend Step is the first special-family review gate: Light is the short cyan/gold one-hit dash-punch; Medium is a two-contact traveling low slide kick into one connected same-leg backflip launcher; Heavy approaches, performs one deterministic target-relative side switch without moving the victim, pauses while a palm energy ball visibly grows, then fires one complete rear blast. The V1 source and superseded Medium dash-punch remain protected history.",
+    "Ascend Step is the first special-family review gate: Light is the short cyan/gold one-hit dash-punch; Medium is a two-contact traveling low slide kick into a two-hand floor-planted back-handspring launcher; Heavy approaches, performs one deterministic target-relative side switch without moving the victim, pauses while a palm energy ball visibly grows, then fires one complete rear blast. The V1 source and superseded Medium variants remain protected history.",
+    "Ascend Step is the first special-family review gate: Light is the short cyan/gold one-hit dash-punch; Medium is a two-contact traveling low slide kick whose root redirects backward through a readable coil into a two-hand floor-planted back-handspring and one asymmetric rising-heel launcher, then a distinct tuck and controlled landing; Heavy approaches, performs one deterministic target-relative side switch without moving the victim, pauses while a palm energy ball visibly grows, then fires one complete rear blast. The V1 source and superseded Medium variants remain protected history."
+  ]
+}

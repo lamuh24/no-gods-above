@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "Sable Style 4 redo next step",
+  "generatedAt": "2026-06-29T03:02:39.000Z",
+  "character": "sable",
+  "stage": "mvp",
+  "scope": "preview-only art pipeline checkpoint",
+  "decision": "Redo the non-anchor Sable preview pack in the correct approved anchor style instead of switching the anchors to the mismatched majority style.",
+  "approvedPreviewAnchors": [
+    "idle",
+    "crouch",
+    "block",
+    "hit_stun"
+  ],
+  "approvedLiveClips": [],
+  "livePromotion": false,
+  "currentQueue": {
+    "status": "waiting_for_generation",
+    "currentClip": "walk_forward",
+    "approvedPreviewClips": [
+      "idle",
+      "crouch",
+      "block",
+      "hit_stun"
+    ]
+  },
+  "completedThisPass": {
+    "clip": "crouch",
+    "sourceSheet": "assets/characters/sable/generated/inbox/crouch/v20260629-084954-style-reset-cleaned-crouch/zz_sable_crouch_style-reset-cleaned_prepared_8x1_448.png",
+    "normalizedSheet": "assets/characters/sable/normalized/crouch/v20260629-085046/sable_crouch_normalized_strip.png",
+    "approvedForPreview": true,
+    "approvedForLiveRoster": false,
+    "approvalPolicy": "previewAuto"
+  },
+  "redoTargets": [
+    "walk_forward",
+    "jump",
+    "stand_light",
+    "stand_medium",
+    "stand_heavy",
+    "jump_light",
+    "jump_medium",
+    "jump_heavy",
+    "neutral_special_light",
+    "forward_special_light",
+    "forward_special_medium",
+    "forward_special_heavy",
+    "back_special_light",
+    "down_special_light",
+    "up_special_light"
+  ],
+  "nextClip": "walk_forward",
+  "promptPaths": {
+    "latest": "assets/characters/sable/prompts/outbox/crouch/latest_crouch_prompt.md",
+    "traceCopy": "assets/characters/sable/prompts/outbox/crouch/20260628-230239_style_reset_crouch_prompt.md"
+  },
+  "expectedOutput": {
+    "directory": "assets/characters/sable/generated/inbox/walk_forward/<new-run-folder>/",
+    "frameCount": 8,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "expectedStripWidth": 3584,
+    "expectedStripHeight": 448,
+    "baselineY": 382,
+    "transparentBackground": true
+  },
+  "runCommands": [
+    "npm.cmd run sprite-agent -- resume-pack --character sable",
+    "npm.cmd run sprite-agent -- run-queue --character sable --clips \"walk_forward\" --approval-policy previewAuto"
+  ],
+  "hardRejectConditions": [
+    "placeholder-like flat effects",
+    "detached debris or duplicate body fragments",
+    "neighbor-frame artifacts",
+    "Sable leaving the frame",
+    "style drift from approved idle/block/hit_stun anchors",
+    "backgrounds, text, labels, borders, or grid lines"
+  ],
+  "safety": {
+    "touchGameplay": false,
+    "touchMovesets": false,
+    "touchBalance": false,
+    "touchRuntime": false,
+    "touchLiveRosterAssets": false,
+    "promoteLive": false
+  }
+}

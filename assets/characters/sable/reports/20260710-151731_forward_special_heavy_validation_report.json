@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": "SpriteForge Agent",
+  "generatedAt": "2026-07-10T19:17:31.655Z",
+  "characterId": "sable",
+  "clipId": "forward_special_heavy",
+  "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_special_heavy/v20260710-151730/sable_forward_special_heavy_normalized_strip.png",
+  "expected": {
+    "clipId": "forward_special_heavy",
+    "category": "special",
+    "frameCount": 9,
+    "fps": 11,
+    "loop": false,
+    "frameWidth": 448,
+    "frameHeight": 448,
+    "baselineY": 382,
+    "facing": "right",
+    "sourceSheet": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/normalized/forward_special_heavy/v20260710-151730/sable_forward_special_heavy_normalized_strip.png",
+    "frameOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "hitFrames": [
+      6
+    ],
+    "cancelFrames": [
+      8
+    ],
+    "notes": [
+      "full-rebuild-v3 special family: Phase Lunge HEAVY. Slow coil into longest committed phase lunge with the largest attached void trail. Frame target lowered from 16 to 9 after main-body cleanup removed cross-cell trail artifacts and a redundant final guard was trimmed; one longest right-arm phase lunge, contact on visual frame 7/index 6, attached void trail, and committed recovery."
+    ]
+  },
+  "layout": {
+    "mode": "horizontal-strip",
+    "columns": 9,
+    "rows": 1,
+    "frameCount": 9
+  },
+  "overallStatus": "manual_review_required",
+  "technicalStatus": "warn",
+  "visualStatus": "manual_review_required",
+  "approvedForLiveRoster": false,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "SCALE_DRIFT",
+      "message": "Frame height drift is 103px (249px..352px); max is 34px."
+    }
+  ],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 28559,
+      "bbox": {
+        "x": 130,
+        "y": 30,
+        "width": 189,
+        "height": 352,
+        "right": 318,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111100011111111111110001111111111110000011111111111000001111111111000000111111111110001111111111111000011111111111100000111111111110010011111111110011001111111111001100111111111001110011111111100111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 34844,
+      "bbox": {
+        "x": 121,
+        "y": 68,
+        "width": 207,
+        "height": 314,
+        "right": 327,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111100111111111111100011111111111000001111111111100000011111111100000001111111111000001111111111100000011111111110000001111111110000100111111111000100111111111001110011111111100111000111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 30207,
+      "bbox": {
+        "x": 135,
+        "y": 87,
+        "width": 179,
+        "height": 295,
+        "right": 313,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111100011111111111000001111111111100000111111111110000011111111111000001111111111000000111111111110000001111111110001001111111111001000111111111001100011111111100111001111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 32064,
+      "bbox": {
+        "x": 109,
+        "y": 133,
+        "width": 230,
+        "height": 249,
+        "right": 338,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111001111111111111000111111111100000001111111110000000111111111000001111111111000000011111111100000000111111110000000111111110001000111111111111100111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 38468,
+      "bbox": {
+        "x": 76,
+        "y": 112,
+        "width": 296,
+        "height": 270,
+        "right": 371,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111111111111111111100011111111100000001111111100000000111111110000000011111111000000111111111000000001111111000000000111111100000000111111100011000111111110111111111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 36685,
+      "bbox": {
+        "x": 77,
+        "y": 90,
+        "width": 295,
+        "height": 292,
+        "right": 371,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111001111111111110000011111111000000000111111110000000111111111000001111111111000000011111111000000001111111000000001111111100011001111111100111110111111110011111111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 35617,
+      "bbox": {
+        "x": 75,
+        "y": 80,
+        "width": 298,
+        "height": 302,
+        "right": 372,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111000111111111110000011111111100000000111111110000001111111111000001111111111100000001111111100000000111111100001000111111100001100111111110011111111111111001111111111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 29770,
+      "bbox": {
+        "x": 102,
+        "y": 97,
+        "width": 245,
+        "height": 285,
+        "right": 346,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111001111111111111000111111111110000011111111111000000111111111000011011111111100000011111111100000001111111110001100111111110001100111111111001110011111111100111100111111111111111111111111111111111111"
+    },
+    {
+      "frameIndex": 8,
+      "empty": false,
+      "opaquePixels": 23705,
+      "bbox": {
+        "x": 119,
+        "y": 105,
+        "width": 210,
+        "height": 277,
+        "right": 328,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0,
+      "edgeContact": false,
+      "edgeOpaqueRatio": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "averageHash": "1111111111111111111111111111111111111111111111111111111111011111111111111000111111111111000011111111111100001111111111100000111111111100000111111111110000001111111111001100111111111001110111111111001110001111111100111000111111111111111111111111111111111111"
+    }
+  ],
+  "duplicateFrames": [],
+  "autoFixRecommended": false
+}

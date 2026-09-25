@@ -1,0 +1,10 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),source=path.join(root,'content-source/characters/lamuh-legacy-v2');
+const manifestPath=path.join(root,'public/lamuh-legacy-v2/down-specials-v1/manifest.json');
+const bytes=fs.readFileSync(manifestPath),m=JSON.parse(bytes);
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex').toUpperCase();
+const receipt={decision:'APPROVED_AS_PRODUCTION_BASELINE',userInput:'it looks fine now lets do the ultimate move',reviewedAt:new Date().toISOString(),approvalScope:['legacy_aura_sweep_light','legacy_aura_sweep_medium','legacy_aura_sweep_heavy'],scopeNote:'Shown down-special family current review baseline only; not whole character, ultimate design, release or final balance.',manifestSha256:sha(bytes),snapshot:m,sourceFrames:[...new Map([...Object.values(m.variants).flatMap(v=>v.frames),...m.projectileFrames].map(f=>[f.publicPath,{path:f.publicPath,sha256:sha(fs.readFileSync(path.join(root,'public',f.publicPath)))}])).values()],ultimateConceptApproved:false,candidatePackagingRetained:true,deployable:false};
+const out=path.join(source,'records/down-specials-v1.review-pass.json');
+if(fs.existsSync(out))throw Error('Preserve existing receipt; create a new revision for another decision');
+fs.writeFileSync(out,JSON.stringify(receipt,null,2)+'\n');
+console.log('Recorded scoped down-special review pass with exact manifest and source hashes; no production promotion.');

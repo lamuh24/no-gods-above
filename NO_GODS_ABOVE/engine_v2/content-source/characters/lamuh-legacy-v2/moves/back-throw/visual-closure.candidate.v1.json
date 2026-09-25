@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "lamuh_legacy_v2_back_throw_visual_candidate_v1",
+  "promotionState": "candidate",
+  "candidateOnly": true,
+  "deployable": false,
+  "productionApproved": false,
+  "standardVictimClass": "standard_humanoid",
+  "timingAndCombatChanged": false,
+  "normalizationReport": {
+    "path": "tools/nga-forge/review/lamuh-legacy-v2-throws-v1/normalization.report.json",
+    "sha256": "02D919FD75C9DEECC84B7D329D043227AA6FE6EE327F80875DA7C471BF977C33"
+  },
+  "hashLock": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/throw-animation-family-v1.hash-lock.json",
+    "sha256": "532DD6D2B211301CAC1B0F45BE4101B8F94B3BEA473B99A81F33E92FA3A8C0AD"
+  },
+  "sequence": {
+    "id": "back_throw",
+    "authoredFrameCount": 6,
+    "totalTicks": 36,
+    "exposureTicks": [
+      6,
+      2,
+      4,
+      4,
+      6,
+      14
+    ],
+    "connectTick": 4,
+    "releaseTick": 16,
+    "frames": [
+      {
+        "index": 0,
+        "role": "secure_ready",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-00.png",
+        "sha256": "B6C021C00CF1424D97E8D941D3E1DE21E84BBC7B249E46370B2EC913C7EA2565",
+        "sourceSha256": "A03F83B92E9639F4E2D0CAC6148CC21A7AF6BEB597F31FB8737EB6CA7877B6C5",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 459,
+          "minY": 559,
+          "maxX": 1062,
+          "maxY": 1370
+        },
+        "bodyCenter": {
+          "x": 770.32,
+          "y": 986.83
+        }
+      },
+      {
+        "index": 1,
+        "role": "draw_close_and_plant",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-01.png",
+        "sha256": "79F508EF1E507E39CCE18FFC6A348F02EFBFEFFC53FD8405D6167CA171E6A4F3",
+        "sourceSha256": "A03F83B92E9639F4E2D0CAC6148CC21A7AF6BEB597F31FB8737EB6CA7877B6C5",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 487,
+          "minY": 577,
+          "maxX": 1044,
+          "maxY": 1374
+        },
+        "bodyCenter": {
+          "x": 760.54,
+          "y": 994.43
+        }
+      },
+      {
+        "index": 2,
+        "role": "pivot_load",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-02.png",
+        "sha256": "A81EC7D7A39152C5A4C2A1FAD7B346D6CC813ECA9143EC44C370AB23B2C57423",
+        "sourceSha256": "A03F83B92E9639F4E2D0CAC6148CC21A7AF6BEB597F31FB8737EB6CA7877B6C5",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 441,
+          "minY": 583,
+          "maxX": 1046,
+          "maxY": 1376
+        },
+        "bodyCenter": {
+          "x": 717.74,
+          "y": 995.26
+        }
+      },
+      {
+        "index": 3,
+        "role": "controlled_redirect",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-03.png",
+        "sha256": "CA68F93CC27386517EB8DF207DCD7323AFDD89BF32A335536F8A099AA661F3AE",
+        "sourceSha256": "A03F83B92E9639F4E2D0CAC6148CC21A7AF6BEB597F31FB8737EB6CA7877B6C5",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 451,
+          "minY": 561,
+          "maxX": 1004,
+          "maxY": 1376
+        },
+        "bodyCenter": {
+          "x": 732.59,
+          "y": 990.33
+        }
+      },
+      {
+        "index": 4,
+        "role": "release_behind_side_switch",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-04.png",
+        "sha256": "05941038AB361F147034A45ECBB918D8F88668C456F5D154C39BD3E7A80F06CB",
+        "sourceSha256": "A03F83B92E9639F4E2D0CAC6148CC21A7AF6BEB597F31FB8737EB6CA7877B6C5",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 465,
+          "minY": 587,
+          "maxX": 1070,
+          "maxY": 1378
+        },
+        "bodyCenter": {
+          "x": 740.1,
+          "y": 984.96
+        }
+      },
+      {
+        "index": 5,
+        "role": "unwind_guarded_recovery",
+        "publicPath": "/lamuh-legacy-v2/throw-family-v2/back-throw/back-throw-05.png",
+        "sha256": "F686D99EAB07B7CF2B70D84617A0D0EB2BC7A2AFD17B3F4475D5F40A0C21A3A4",
+        "sourceSha256": "A03F83B92E9639F4E2D0CAC6148CC21A7AF6BEB597F31FB8737EB6CA7877B6C5",
+        "root": {
+          "x": 768,
+          "y": 1360
+        },
+        "visibleBounds": {
+          "minX": 475,
+          "minY": 597,
+          "maxX": 1034,
+          "maxY": 1370
+        },
+        "bodyCenter": {
+          "x": 755.23,
+          "y": 1005.86
+        }
+      }
+    ]
+  },
+  "approvalStatus": "APPROVED_BACK_THROW",
+  "humanApproval": "APPROVED_BACK_THROW",
+  "approvalReceipt": {
+    "path": "NO_GODS_ABOVE/engine_v2/content-source/characters/lamuh-legacy-v2/records/standard-grab-throw-family-v1.approval.json",
+    "sha256": "68A394EF16F12FB35C1C1D760A88E74989C9AC498616DE64085F5F29DB487A3A"
+  }
+}

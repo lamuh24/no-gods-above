@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "2.0.0-alpha",
+  "id": "fallen_capital",
+  "displayName": "The Fallen Capital",
+  "status": "native-v2",
+  "runtime": {
+    "worldWidth": 840,
+    "bounds": { "left": -420, "right": 420 },
+    "spawns": { "p1X": -110, "p2X": 110 },
+    "groundY": 0
+  },
+  "camera": {
+    "projection": "constrained_perspective",
+    "fovDegrees": 28,
+    "worldPerSimulationUnit": 0.02,
+    "canvasPixelsPerSimulationUnit": 1.3,
+    "sourceWidth": 1600,
+    "sourceHeight": 900,
+    "cinematicMaxOrbitDegrees": 4,
+    "controller": "src/stage/fallenCapital/camera.ts",
+    "stateMutationAllowed": false
+  },
+  "collision": {
+    "platforms": [],
+    "policy": "Existing deterministic simulation owns floor, bounds, pushes, jumps and hits. One flat ground at zero; no hazards, slopes, platforms or stage-created mechanics."
+  },
+  "render": {
+    "layerPolicy": "Far painted capital and halo; independently placed fallen crowned head; real textured 3D floor and brass inlay; real recessed pier cores with transparent painted facades; ground contact shadows; fixed world-space combat canvas. Tick-driven presentation only.",
+    "foregroundPolicy": "All upright architecture and rubble remain behind or outside the combat plane; fascia remains below the floor. Scenery cannot occlude active bodies or effects. Far backdrop tracks only enough to maintain camera overscan."
+  },
+  "assets": {
+    "stageCard": "stages/fallen-capital/stage-card.png",
+    "layers": ["stages/fallen-capital/background.png", "stages/fallen-capital/head.png", "stages/fallen-capital/stone.png", "stages/fallen-capital/pier.png", "stages/fallen-capital/fascia.png"]
+  },
+  "validation": {
+    "requiredChecks": ["typescript_build", "camera_containment", "simulation_purity", "actual_input_combat", "aerial_framing", "ultimate_framing", "corners", "asset_loading", "disposal_reentry", "asset_failure_fallback", "visual_review"],
+    "lastKnownReports": ["docs/fallen-capital-v1/BUILD_REVIEW.md", "docs/fallen-capital-v1/captures/smoke-report.json"],
+    "gotchas": ["Local V2 implementation, not deployed.", "This arena does not implement missing fighter mechanics or approve unfinished character animations.", "Celeste is not yet selectable in the current V2 versus roster; Celeste-specific runtime checks await her integration.", "Far city, statue and halo share one painted layer; floor, piers and near crowned head provide scene depth. This is a hybrid 2.5D arena, not a fully sculpted city."]
+  }
+}

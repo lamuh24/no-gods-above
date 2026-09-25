@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0-production-arena-brief",
+  "id": "the_last_tribunal",
+  "status": "approved",
+  "deployable": false,
+  "approvalState": "APPROVED_AS_PRODUCTION_ARENA_BRIEF_V1",
+  "identity": {
+    "arenaName": "The Last Tribunal",
+    "lore": "An abandoned celestial courthouse where mortals once petitioned absent gods. Its empty seats and eclipsed judgment oculus now frame sanctioned duels over who has the right to judge divine power.",
+    "narrativePurpose": "Establish the NGA thesis that gods can be judged while remaining faction-neutral and competitively legible enough to become a foundational arena.",
+    "timeOfDay": "Eclipse dusk at the last edge of daylight",
+    "primaryMood": "Solemn, oppressive, ceremonial, and controlled",
+    "dominantColorFamilies": ["ink_blue_black", "cathedral_red", "aged_brass", "ash_gray", "cool_violet_haze"]
+  },
+  "composition": {
+    "foreground": "Sparse broken brass rail fragments and stone edge markers outside the gameplay-safe center; no moving foreground form may cross a fighter silhouette.",
+    "midground": "A flat tribunal dais, restrained columns, and empty witness balconies with broad value blocks and deliberately reduced detail behind the combat lane.",
+    "background": "A deep ruined nave, distant city silhouettes, and a central eclipsed judgment oculus placed above normal fighter and jump silhouettes.",
+    "gameplayFloor": "Perfectly flat matte basalt with a low-contrast aged-brass judgment circle and boundary inlays; no slope, mirror reflection, raised seam, or rendered height may imply gameplay collision.",
+    "stageSilhouette": "A central eclipse and apse framed by tall side columns beyond the walls, with a low-frequency open center and unmistakable boundary pylons at both corners."
+  },
+  "readability": {
+    "contrastZonesBehindFighters": "Maintain a dark neutral low-detail mask from world X -8.2 to 8.2 and Y 0.35 to 5.8; suppress local saturation and highlights behind the torso and head bands.",
+    "vfxVisibilityZones": "Reserve a neutral beam corridor across X -9.2 to 9.2, Y 0.4 to 4.8; keep the projectile lane Y 0.45 to 3.8 and a 2.2-unit hit-spark radius around each fighter root free of competing emission.",
+    "jumpHeight": "The oculus rim begins above world Y 6.1 and atmospheric detail is softened through the approved root-height range 0 to 3.6 so airborne silhouettes remain separated.",
+    "corners": "Each wall is marked by a dark brass pylon centered at world X -8.4 or 8.4, with a calm ash-value backing panel and no animated banner, lamp, or bright window behind the trapped fighter."
+  },
+  "cameraRequirements": {
+    "commandGrab": "Use close_combat volume for 32 ticks, preserve both roots plus 0.8 world-unit margin, keep the floor contact region visible, and return through the approved 12-tick gameplay blend.",
+    "super": "Use wide_super volume for 42 ticks; show both fighters and the attack line, forbid occluding columns, and retain projectile or beam travel room when applicable.",
+    "ultimate": "Use ultimate volume for 60 ticks with constrained lateral mirroring, both fighters present through impact, no free orbit, and an approved 12-tick return.",
+    "roundFinisher": "Use finisher volume for 48 ticks only after the authoritative round result; retain winner, defeated fighter, floor contact, and the arena oculus without hiding the corner relationship."
+  },
+  "ambientMotion": {
+    "permitted": [
+      "slow banner drift outside the contrast mask",
+      "sparse dust motes outside the projectile and beam corridors",
+      "eclipse-corona luminance pulse capped at two percent",
+      "distant city silhouettes moving below fighter-readable frequency",
+      "deterministic environmental reaction markers emitted by the simulation presentation stream"
+    ],
+    "deterministicCapturePolicy": "Freeze ambient timelines at the requested simulation tick or seed them from matchId plus arenaId; visual-regression and rollback captures must reproduce identical frames."
+  },
+  "prohibitedVisualNoise": [
+    "strobing or rapidly color-cycling lights",
+    "moving foreground occluders over the combat lane",
+    "high-frequency banners or masonry detail behind fighters",
+    "bright oculus or windows behind head and torso height",
+    "unseeded random environmental reactions",
+    "debris or particles crossing the combat lane",
+    "lens flares intersecting fighter silhouettes",
+    "mirror-like floor reflections",
+    "camera shake originating from ambient stage motion",
+    "animated hazards or implied gameplay hazards"
+  ],
+  "performanceBudget": {
+    "targetFps": 60,
+    "maxTotalDrawCalls": 80,
+    "maxStageDrawCalls": 48,
+    "maxVisibleTriangles": 35000,
+    "maxLoadedTriangles": 60000,
+    "maxStageTextures": 12,
+    "maxTotalTextureMemoryMb": 96,
+    "maxMaterialVariants": 8,
+    "maxDynamicLights": 2
+  },
+  "artAssetList": [
+    { "id": "tribunal_floor_dais", "category": "3d_geometry", "required": true, "purpose": "Flat presentation floor and non-authoritative dais silhouette." },
+    { "id": "tribunal_architecture", "category": "3d_geometry", "required": true, "purpose": "Columns, apse, balconies, and boundary pylons outside the combat lane." },
+    { "id": "eclipse_sky_plane", "category": "painted_plane", "required": true, "purpose": "Painted eclipse, clouds, and distant light structure." },
+    { "id": "distant_city_layer", "category": "background_layer", "required": true, "purpose": "Deep city silhouette with low-frequency motion." },
+    { "id": "foreground_edge_decals", "category": "foreground_decal", "required": true, "purpose": "Sparse brass rail fragments outside the occlusion limit." },
+    { "id": "tribunal_materials", "category": "material_definition", "required": true, "purpose": "Matte basalt, aged brass, ash stone, and cloth materials." },
+    { "id": "tribunal_lightmaps", "category": "light_map", "required": true, "purpose": "Baked architectural light and value control." },
+    { "id": "fighter_shadow_receiver", "category": "shadow_receiver", "required": true, "purpose": "Flat receiver for approved contact-shadow projection." },
+    { "id": "tribunal_haze", "category": "atmospheric_effect", "required": true, "purpose": "Depth haze outside fighter and VFX safety corridors." },
+    { "id": "corona_emission_mask", "category": "optional_mask", "required": false, "purpose": "Capped eclipse emission and optional rim response." },
+    { "id": "non_authoritative_set_dressing", "category": "presentation_mesh", "required": true, "purpose": "Collision-independent witness seats, rubble, and rails." },
+    { "id": "stage_select_thumbnail", "category": "preview_thumbnail", "required": true, "purpose": "Approved stage-select and package preview image." },
+    { "id": "arena_validation_captures", "category": "validation_capture", "required": true, "purpose": "Scenario matrix, overlays, and visual-regression baselines." }
+  ],
+  "productionContract": {
+    "combatPlaneOrigin": [0, 0, 0],
+    "floorY": 0,
+    "worldScale": { "simulationPixelsToWorldUnits": 0.02, "spritePixelsToWorldUnits": 0.0033, "fighterWorldScale": 1 },
+    "gameplayBounds": { "simulation": { "left": -420, "right": 420 }, "world": { "left": -8.4, "right": 8.4 } },
+    "spawnPositions": { "p1": { "simulationX": -76, "worldX": -1.52 }, "p2": { "simulationX": 76, "worldX": 1.52 } },
+    "wallBounceAnchors": { "simulation": { "left": -420, "right": 420 }, "world": { "left": -8.4, "right": 8.4 } },
+    "defaultCameraPosition": [0, 5.3, 20],
+    "cameraZoomRange": { "minDistance": 20, "maxDistance": 32 },
+    "jumpCameraRange": { "rootY": [0, 3.6], "targetY": [2.8, 4.32], "distance": [20, 21.82] },
+    "stageEdgeBehavior": "Clamp the unordered fighter-pair midpoint to world X -7.8 through 7.8, preserve environment overscan beyond walls, and never move fighters or wall anchors to satisfy framing.",
+    "cinematicSafeZones": [
+      { "id": "close_combat", "centerClampX": [-7.4, 7.4], "rootMargin": 0.8, "use": "throw_and_command_grab" },
+      { "id": "wide_super", "centerClampX": [-6.8, 6.8], "rootMargin": 1.2, "use": "super_and_large_vfx" },
+      { "id": "ultimate", "centerClampX": [-6.2, 6.2], "rootMargin": 1.4, "use": "ultimate" },
+      { "id": "finisher", "centerClampX": [-7, 7], "rootMargin": 1, "use": "round_finisher" },
+      { "id": "intro_victory", "centerClampX": [-6.5, 6.5], "rootMargin": 1.2, "use": "intro_and_victory" }
+    ],
+    "foregroundOcclusionLimits": { "centralCombatRegionPercent": 0, "edgeGameplayPercent": 4, "introVictoryPercent": 6, "fighterSilhouetteOcclusionAllowed": false },
+    "parallaxDepthValues": { "foregroundZ": 3.2, "fighterPlaneZ": 0, "midgroundZ": -7, "backgroundZ": -15 },
+    "lightDirection": [6, 10, 8],
+    "shadowDirection": [-0.45, 0, -0.75],
+    "contrastZoneMasks": [
+      { "id": "fighter_body_band", "bounds": { "left": -8.2, "right": 8.2, "bottom": 0.35, "top": 5.8 }, "rule": "dark_neutral_low_detail" },
+      { "id": "left_corner_backing", "bounds": { "left": -9.2, "right": -7.2, "bottom": 0, "top": 5.8 }, "rule": "calm_ash_value" },
+      { "id": "right_corner_backing", "bounds": { "left": 7.2, "right": 9.2, "bottom": 0, "top": 5.8 }, "rule": "calm_ash_value" }
+    ],
+    "vfxSafetyRegions": [
+      { "id": "beam_corridor", "bounds": { "left": -9.2, "right": 9.2, "bottom": 0.4, "top": 4.8 }, "maxBackgroundEmission": 0.12 },
+      { "id": "projectile_lane", "bounds": { "left": -9.2, "right": 9.2, "bottom": 0.45, "top": 3.8 }, "maxBackgroundEmission": 0.1 },
+      { "id": "hit_spark_local", "radiusFromFighterRoot": 2.2, "maxBackgroundEmission": 0.1 }
+    ]
+  },
+  "humanDecisions": [
+    "Approve or rename The Last Tribunal and its celestial-courthouse lore.",
+    "Approve eclipse dusk as the time-of-day lock.",
+    "Approve ink blue-black, cathedral red, aged brass, ash gray, and cool violet as the palette family.",
+    "Choose how prominent the eclipsed judgment oculus may be without competing with fighters.",
+    "Approve the flat basalt and brass gameplay-floor motif.",
+    "Approve the one-primary-light plus ambient-fill lighting model.",
+    "Approve the draw-call, triangle, texture-memory, and dynamic-light budgets.",
+    "Approve the five cinematic safe volumes and event durations.",
+    "Approve ambient banners, dust, corona pulse, and distant silhouettes as the permitted motion set.",
+    "Authorize concept art and blockout production while keeping final art, runtime integration, and deployment gated."
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportKind": "animation-fluidity-frame-scrub",
+  "generatedAt": "2026-07-11T17:47:23.189Z",
+  "clip": "down_special_heavy",
+  "sourceStrip": "assets/characters/sable/rebuilds/sable_style4_full_rebuild_v3/generated/consistency_352_v2/down_special_heavy/down_special_heavy_352_final.png",
+  "numberedContactSheet": "assets\\characters\\sable\\rebuilds\\sable_style4_full_rebuild_v3\\reports\\frame_scrub\\down_special_heavy\\consistency_352_v2_final\\down_special_heavy_numbered_contact_sheet.png",
+  "frameCount": 8,
+  "frameWidth": 448,
+  "frameHeight": 448,
+  "baselineY": 382,
+  "duplicatePairs": [],
+  "frameMeasurements": [
+    {
+      "frameIndex": 0,
+      "empty": false,
+      "opaquePixels": 21071,
+      "bbox": {
+        "x": 142,
+        "y": 29,
+        "width": 155,
+        "height": 353,
+        "right": 296,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": -4
+    },
+    {
+      "frameIndex": 1,
+      "empty": false,
+      "opaquePixels": 19863,
+      "bbox": {
+        "x": 129,
+        "y": 72,
+        "width": 169,
+        "height": 310,
+        "right": 297,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": -10
+    },
+    {
+      "frameIndex": 2,
+      "empty": false,
+      "opaquePixels": 22991,
+      "bbox": {
+        "x": 129,
+        "y": 59,
+        "width": 169,
+        "height": 323,
+        "right": 297,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": -10
+    },
+    {
+      "frameIndex": 3,
+      "empty": false,
+      "opaquePixels": 20470,
+      "bbox": {
+        "x": 129,
+        "y": 31,
+        "width": 157,
+        "height": 347,
+        "right": 285,
+        "bottom": 377
+      },
+      "baselineDeltaPx": -5,
+      "centerDeltaPx": -16
+    },
+    {
+      "frameIndex": 4,
+      "empty": false,
+      "opaquePixels": 22635,
+      "bbox": {
+        "x": 129,
+        "y": 140,
+        "width": 191,
+        "height": 242,
+        "right": 319,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 5,
+      "empty": false,
+      "opaquePixels": 24415,
+      "bbox": {
+        "x": 129,
+        "y": 64,
+        "width": 191,
+        "height": 318,
+        "right": 319,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 1
+    },
+    {
+      "frameIndex": 6,
+      "empty": false,
+      "opaquePixels": 24274,
+      "bbox": {
+        "x": 156,
+        "y": 0,
+        "width": 160,
+        "height": 369,
+        "right": 315,
+        "bottom": 368
+      },
+      "baselineDeltaPx": -14,
+      "centerDeltaPx": 12
+    },
+    {
+      "frameIndex": 7,
+      "empty": false,
+      "opaquePixels": 21150,
+      "bbox": {
+        "x": 145,
+        "y": 29,
+        "width": 157,
+        "height": 353,
+        "right": 301,
+        "bottom": 381
+      },
+      "baselineDeltaPx": -1,
+      "centerDeltaPx": 0
+    }
+  ],
+  "fluidityChecklist": {
+    "oneContinuousAction": "manual_check_required",
+    "anticipationContactFollowThroughRecovery": "manual_check_required",
+    "lockedStrikingLimb": "manual_check_required",
+    "noMirroredFrames": "manual_check_required",
+    "recoveryTowardIdleWithoutDuplicateFrame0": "manual_check_required",
+    "visibleImpactCountMatchesMoveData": "manual_check_required",
+    "notes": [
+      "This script is audit-only. It does not alter, offset, synthesize, or repair frames.",
+      "Manual scrub must verify adjacent-frame continuity, striking-limb lock, phase readability, and hit-count parity before SpriteForge validation."
+    ]
+  }
+}
