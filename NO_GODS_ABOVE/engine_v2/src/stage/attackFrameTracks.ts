@@ -18,6 +18,34 @@ export interface AttackFrameTrack {
 }
 
 export const attackFrameTracks: Record<AttackId, AttackFrameTrack> = {
+  // Celeste owns character-local manifest tracks in the versus presenter.
+  ovation_procession: { startup: [], active: [], recovery: [] },
+  quickstep_beat: { startup: [], active: [], recovery: [] },
+  crescendo_slash: { startup: [], active: [], recovery: [] },
+  curtain_call: { startup: [], active: [], recovery: [] },
+  waltz_retreat: { startup: [], active: [], recovery: [] },
+  reversal_measure: { startup: [], active: [], recovery: [] },
+  broken_tempo: { startup: [], active: [], recovery: [] },
+  encore_near: { startup: [], active: [], recovery: [] },
+  encore_reach: { startup: [], active: [], recovery: [] },
+  encore_balcony: { startup: [], active: [], recovery: [] },
+  rising_note: { startup: [], active: [], recovery: [] },
+  ascending_aria: { startup: [], active: [], recovery: [] },
+  grand_crescendo: { startup: [], active: [], recovery: [] },
+  ovation_staccato: { startup: [], active: [], recovery: [] },
+  ovation_fortissimo: { startup: [], active: [], recovery: [] },
+  strobe_air_waltz: { startup: [], active: [], recovery: [] },
+  ovation_descant: { startup: [], active: [], recovery: [] },
+  finale_reprise: { startup: [], active: [], recovery: [] },
+  octava: { startup: [], active: [], recovery: [] },
+  swahili_paid_seal: { startup: [], active: [], recovery: [] },
+  special_neutral_light: { startup: [], active: [], recovery: [] },
+  // Gated versus Swahili owns these normalized clips; unchanged default stage.
+  special_up_light: { startup: [], active: [], recovery: [] },
+  special_neutral_heavy: { startup: [], active: [], recovery: [] },
+  special_back_light: { startup: [], active: [], recovery: [] },
+  special_back_medium: { startup: [], active: [], recovery: [] },
+  special_back_heavy: { startup: [], active: [], recovery: [] },
   legacy_crown_of_no_gods: { startup: [], active: [], recovery: [] },
   // Opt-in air-special laboratory owns its dedicated sprite tracks; default arena unchanged.
   special_air_light: { startup: [], active: [], recovery: [] },

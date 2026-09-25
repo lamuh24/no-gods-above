@@ -1,0 +1,73 @@
+{
+  "checks": [
+    "Rounds mode card is playable",
+    "Stocks stays truthfully gated",
+    "Select screen is in Rounds mode",
+    "P1 can be switched to CPU",
+    "Round timer option applies",
+    "Rounds select has no horizontal overflow",
+    "HUD tags the CPU side",
+    "Round opens on a locked intro",
+    "Round intro locks player input ",
+    "Player walks with the keyboard once FIGHT is called",
+    "Player attack input reaches the simulation",
+    "CPU opponent acts on its own",
+    "Watch CPU vs CPU starts a CPU match",
+    "CPUs trade real hits at close range",
+    "CPU match reaches a result ({\"p1\":1,\"p2\":2})",
+    "Rounds resolve by knockout or time with an announcement",
+    "A best-of-three plays at least two rounds",
+    "Match results panel is shown",
+    "Announcer is hidden behind results",
+    "Rematch restarts the match"
+  ],
+  "errors": [],
+  "closeRangeHit": {
+    "tick": 613,
+    "attacker": "p2",
+    "move": "crouching_medium",
+    "gap": 86,
+    "minGap": 86
+  },
+  "rounds": {
+    "log": [
+      "1:fight:",
+      "1:ko:K.O.",
+      "1:outro:SWAHILI WINS",
+      "2:intro:ROUND 2",
+      "2:fight:",
+      "2:ko:K.O.",
+      "2:outro:LAMUH WINS",
+      "3:intro:FINAL ROUND",
+      "3:fight:",
+      "3:ko:K.O.",
+      "3:outro:SWAHILI WINS",
+      "3:match_end:"
+    ],
+    "phase": "match_end",
+    "wins": {
+      "p1": 1,
+      "p2": 2
+    },
+    "history": [
+      {
+        "round": 1,
+        "winner": "p2",
+        "method": "ko",
+        "seconds": 46
+      },
+      {
+        "round": 2,
+        "winner": "p1",
+        "method": "ko",
+        "seconds": 27
+      },
+      {
+        "round": 3,
+        "winner": "p2",
+        "method": "ko",
+        "seconds": 29
+      }
+    ]
+  }
+}

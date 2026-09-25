@@ -90,10 +90,22 @@ function envelope(headW: number, torsoW: number, legW: number, crouchW: number, 
   };
 }
 
-export const LAMUH_ENVELOPE = envelope(42, 54, 48, 56, 68);
-export const SWAHILI_ENVELOPE = envelope(46, 58, 52, 60, 60);
+// Pushbox width is the versus close-range spacing. At the old 68/60 the drawn bodies stood half
+// inside each other (64u apart); bodies just touch near 100u. 84/88 is the widest spacing at which
+// Lamuh's approved Heaven Splitter uppercut (reach 60u) still connects point-blank in every pairing.
+export const LAMUH_ENVELOPE = envelope(42, 54, 48, 56, 84);
+export const SWAHILI_ENVELOPE = envelope(46, 58, 52, 60, 88);
 
-export type CharacterId = "lamuh" | "swahili";
+export const CELESTE_METRICS:BodyMetrics={canvas:{width:1086,height:1448},feetY:374,headTopY:40,footCentreX:174};
+export const CELESTE_BODY_UNITS=TARGET_BODY_UNITS;
+const celesteSpatialScale=CELESTE_BODY_UNITS/110;
+const celesteRect=(r:Rect):Rect=>({x:r.x*celesteSpatialScale,y:r.y*celesteSpatialScale,w:r.w*celesteSpatialScale,h:r.h*celesteSpatialScale});
+export const CELESTE_ENVELOPE:BodyEnvelope={
+ pushbox:celesteRect({x:-22,y:-110,w:44,h:110}),
+ standing:[{x:-20,y:-110,w:40,h:24},{x:-24,y:-86,w:48,h:42},{x:-20,y:-44,w:40,h:44}].map(celesteRect),
+ crouching:[celesteRect({x:-25,y:-66,w:50,h:66})]
+};
+export type CharacterId = "lamuh" | "swahili" | "celeste";
 
 export interface VersusCharacter {
   id: CharacterId;
@@ -115,6 +127,7 @@ export interface VersusCharacter {
 }
 
 export const ROSTER: Record<CharacterId, VersusCharacter> = {
+  celeste:{id:"celeste",name:"CELESTE",tagline:"Seven spirits · conductor and trickster",kind:"celeste_proto",swahiliAirSpecialsV1:false,metrics:CELESTE_METRICS,envelope:CELESTE_ENVELOPE,animationStatus:"Authored movement, nine normals, eighteen specials, throws, reactions, and Octava. Balance remains a playtest candidate.",accent:"#dec184"},
   lamuh: {
     id: "lamuh",
     name: "LAMUH",
@@ -139,4 +152,4 @@ export const ROSTER: Record<CharacterId, VersusCharacter> = {
   }
 };
 
-export const ROSTER_ORDER: CharacterId[] = ["lamuh", "swahili"];
+export const ROSTER_ORDER: CharacterId[] = ["lamuh", "swahili", "celeste"];

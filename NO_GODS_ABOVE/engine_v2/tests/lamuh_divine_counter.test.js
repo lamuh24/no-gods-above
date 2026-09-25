@@ -53,6 +53,27 @@ function testKickBallAndExactResponse(){
   assert.ok((victim.x-startX)*(id==='p1'?1:-1)>74,'Blast knocks victim away');
  }
 }
+function testStandardHumanoidVictimLaunches(){
+ const s=createMatch(911,{matchId:'counter-proto-victim',p1Kind:'lamuh_legacy_v2',p2Kind:'lamuh_proto',p1X:-34,p2X:34});
+ start(s,'p1');enemyHitAt(s,'p1',8);
+ const f=s.fighters.p1,victim=s.fighters.p2;assert.ok(f.divineCounterResponse);
+ let kickObserved=false,ballObserved=false,airborneBeforeBall=false;
+ for(let i=0;i<90;i++){
+  tick(s,{});
+  if(victim.hitCountTaken===1&&!kickObserved){
+   kickObserved=true;
+   assert.strictEqual(victim.grounded,false,'counter kick must release the standard humanoid from the floor');
+   assert.ok(victim.vy<0,'counter kick must assign upward velocity');
+  }
+  if(s.lastProjectileEvent?.attackId===H&&s.lastProjectileEvent.type==='hit'&&!ballObserved){
+   ballObserved=true;airborneBeforeBall=true;
+   assert.ok(victim.y<0&&!victim.grounded,'aura ball must connect while the victim is airborne');
+  }
+ }
+ assert.ok(kickObserved,'standard humanoid must be hit by the rising kick');
+ assert.ok(ballObserved&&airborneBeforeBall,'standard humanoid must receive the follow-up aura ball in the air');
+ assert.strictEqual(victim.hitCountTaken,2);
+}
 function injectStrike(s,id,responseTick){
  const f=s.fighters[id],enemy=s.fighters[other(id)];
  while(f.phaseTick<responseTick-1)tick(s,{});
@@ -123,5 +144,5 @@ function testOnlyFreshRealCollisionTriggers(){
   assert.strictEqual(f.currentAttack,H);assert.strictEqual(currentDivineCounter(f).stage,'counter_window');
  }
 }
-const tests=[testWindowAndTrigger,testStartupRecoveryWhiffAndNoAutoFire,testKickBallAndExactResponse,testBriefBodyImmunityThenVulnerability,testThrowsBeatStanceAndResponse,testProjectilesBypassCounter,testHitstopSnapshotChecksumAndOrder,testWallAndWhiffResponse,testOnlyFreshRealCollisionTriggers];
+const tests=[testWindowAndTrigger,testStartupRecoveryWhiffAndNoAutoFire,testKickBallAndExactResponse,testStandardHumanoidVictimLaunches,testBriefBodyImmunityThenVulnerability,testThrowsBeatStanceAndResponse,testProjectilesBypassCounter,testHitstopSnapshotChecksumAndOrder,testWallAndWhiffResponse,testOnlyFreshRealCollisionTriggers];
 for(const test of tests){test();console.log(`PASS ${test.name}`);}console.log(`Counter ${tests.length} groups passed`);

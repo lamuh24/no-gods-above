@@ -1,4 +1,6 @@
-import type { FighterState, MatchState } from "../core/types";
+import { CelestePresenter } from './celestePresenter';
+import type { FighterId, FighterState, MatchState } from "../core/types";
+import { drawSwahiliGunfire } from "./swahiliGunVfx";
 import { currentAscendHeavyChain, currentDivineCounter } from "../core/engine";
 import { exposureFrame, fetchReviewData, loopFrame } from "../lamuhlegacy/common";
 import { PreparedFrames, reactionFrameIndex, type ReactionPack } from "../lamuhlegacy/quality";
@@ -6,8 +8,36 @@ import { radiantDiveFrame } from "../lamuhlegacy/radiantDive";
 import { crownVisual, loadCrown, crownPaths, drawCrownAura, drawCrownBeam, drawCrownChargeBall, drawCrownContacts, type CrownManifest } from "../lamuhlegacy/ultimate";
 import { drawKiOrb } from "../lamuhlegacy/celestialPalm";
 import { swahiliSandboxSpriteSources } from "../sandbox/swahiliSandboxSpriteSources";
+import { swahiliSpriteGeometry, swahiliSpriteScale, type SwahiliClipGeometry } from "./swahiliSpriteGeometry";
 import { swahiliStageSpriteSources } from "../stage/spriteSources";
+import { newSpecialFrames, NEW_SPECIAL_GEOMETRY, NEW_SPECIAL_BODY_SCALES } from './swahiliNewSpecialFrames';
+import { upRedoFrames } from './swahiliUpRedoFrames';
+import { airMediumV10Frames } from './swahiliAirMediumV10Frames';
+import { neutralLightFrames, neutralMediumFrames } from './swahiliNeutralRuntimeFrames';
+import { hookFlowFrames as hookHeadbuttFrames } from './swahiliHookFlowFrames';
+import groundSealUrl from '../../../../tools/nga-forge/production/characters/swahili/reviews/new-specials-runtime-v1/ground-seal.png?url';
 import { ROSTER, drawScaleFor, rootFor, type CharacterId, type VersusCharacter } from "./roster";
+import airLightRuntime01 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/01_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime02 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/02_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime03 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/03_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime04 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/04_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime05 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/05_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime06 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/06_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime07 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/07_air_light_contract_bullet_runtime.png?url";
+import airLightRuntime08 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-light-v1/frames_1536/08_air_light_contract_bullet_runtime.png?url";
+import airMediumSpecialChakramRuntime01 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/01_air_medium_special_scythe_grab_reach.png?url";
+import airMediumSpecialChakramRuntime02 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/02_air_medium_special_scythe_grab_clamp.png?url";
+import airMediumSpecialChakramRuntime03 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/03_air_medium_special_scythe_grab_lock.png?url";
+import airMediumSpecialChakramRuntime04 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/04_air_medium_special_tuck_into_held_ball.png?url";
+import airMediumSpecialChakramRuntime05 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/05_air_medium_special_chakram_spin_contact.png?url";
+import airMediumSpecialChakramRuntime06 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/06_air_medium_special_chakram_spin_followthrough.png?url";
+import airMediumSpecialChakramRuntime07 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/07_air_medium_special_chakram_spin_followthrough.png?url";
+import airMediumSpecialChakramRuntime08 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/08_air_medium_special_chakram_spin_followthrough.png?url";
+import airMediumSpecialChakramRuntime09 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/09_air_medium_special_chakram_spin_contact.png?url";
+import airMediumSpecialChakramRuntime10 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/10_air_medium_special_chakram_spin_recovery.png?url";
+import airMediumSpecialChakramRuntime11 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/11_air_medium_special_chakram_spin_recovery.png?url";
+import airMediumSpecialChakramRuntime12 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/12_air_medium_special_chakram_spin_recovery.png?url";
+import airMediumSpecialChakramRuntime13 from "../../../../tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/runtime-air-medium-special-chakram-held-mask-ball-v6/frames_1536/13_air_medium_special_chakram_spin_recovery.png?url";
 
 export interface CoverageRow { label: string; status: "animated" | "single_pose" | "placeholder"; detail: string; }
 
@@ -21,7 +51,8 @@ export interface Presenter {
   /** Projectiles owned by this fighter; returns false when it has no art for one. */
   drawProjectile?(context: CanvasRenderingContext2D, projectile: any, world: WorldMap, worldScale: number): boolean;
   /** Character-owned effects drawn over the fighters: ki orbs, ultimate aura and beam. */
-  drawEffects?(context: CanvasRenderingContext2D, state: MatchState, world: WorldMap, worldScale: number): void;
+  /** `side` names the fighter this presenter draws, so mirror matches never double an effect. */
+  drawEffects?(context: CanvasRenderingContext2D, state: MatchState, world: WorldMap, worldScale: number, side?: FighterId): void;
   coverage(): CoverageRow[];
   /** Every command the character can actually perform, for the move list panel. */
   moveList(): Array<{ command: string; name: string; animated: boolean }>;
@@ -137,7 +168,7 @@ class LamuhPresenter implements Presenter {
     const all = [...urls];
     const chunk = 24;
     for (let i = 0; i < all.length; i += chunk) {
-      await this.frames.load(all.slice(i, i + chunk));
+      await this.frames.load(all.slice(i, i + chunk), 12);
       onProgress?.(Math.min(all.length, i + chunk), all.length);
     }
   }
@@ -233,12 +264,22 @@ class LamuhPresenter implements Presenter {
   }
 
   drawProjectile(context: CanvasRenderingContext2D, projectile: any, world: WorldMap, worldScale: number) {
-    // Celestial Palm fires a ki orb. It has no frame art of its own: the sandbox
-    // renders it procedurally, and so does this page. Drawing it as a flat rectangle
-    // is what made the neutral special look like it produced no blast at all.
+    // Match the sandbox's authored counter aura-ball art and strength scaling.
+    // Simulation remains authoritative for travel, collision and release timing.
     if (/^legacy_celestial_palm_(light|medium|heavy)$/.test(projectile.attackId)) {
-      drawKiOrb(context, world.x(projectile.x), world.y(projectile.y),
-        projectile.hitbox.rect.h * 0.5 * worldScale, projectile.facing, projectile.ageTicks);
+      const palmArt = this.projectileArt.get("legacy_divine_vanish_counter_aura_ball");
+      const palmFrame = this.at(palmArt, projectile.ageTicks ?? 0, true);
+      if (palmFrame && this.frames.has(palmFrame.publicPath)) {
+        const size = projectile.hitbox.rect.h / 48;
+        context.save();
+        context.translate(world.x(projectile.x), world.y(projectile.y));
+        context.scale(size, size);
+        this.frames.draw(context, palmFrame.publicPath, palmFrame.root ?? LAMUH_ROOT, 0, 0, projectile.facing as 1 | -1);
+        context.restore();
+      } else {
+        drawKiOrb(context, world.x(projectile.x), world.y(projectile.y),
+          projectile.hitbox.rect.h * 0.5 * worldScale, projectile.facing, projectile.ageTicks);
+      }
       return true;
     }
     const art = this.projectileArt.get(projectile.hitbox?.id);
@@ -324,7 +365,7 @@ type StageFrameKey = keyof typeof swahiliStageSpriteSources;
 const stagePose = (key: StageFrameKey) => swahiliStageSpriteSources[key];
 const stagePoses = (...keys: StageFrameKey[]) => keys.map(stagePose);
 
-interface Clip { urls: string[]; ticksPerFrame: number; loop: boolean }
+interface Clip { urls: string[]; ticksPerFrame: number; loop: boolean; frameStarts?: number[] }
 const clip = (urls: string[], ticksPerFrame: number, loop = false): Clip => ({ urls, ticksPerFrame, loop });
 
 const SWAHILI_ATTACK_CLIPS: Record<string, Clip> = {
@@ -424,18 +465,21 @@ Object.assign(SWAHILI_ATTACK_CLIPS, {
     "special_up_medium_grounded_ready", "special_up_medium_low_loaded_anticipation", "special_up_medium_rising_hook_contact",
     "special_up_medium_upward_recoil_settle", "special_up_medium_controlled_remount_connector",
     "special_up_medium_controlled_remount_start"), 5),
-  // Air normals stay on their own keys above. These are deliberately distinct
-  // candidate motion proxies for the air-special rehearsal: they reuse already
-  // normalized Swahili special motion families, never the regular air-normal
-  // clips. Dedicated air-only sheets remain a later art pass.
-  special_air_light: clip(stagePoses(
-    "special_down_heavy_low_ready", "special_down_heavy_scythe_take", "special_down_heavy_gun_draw_turn",
-    "special_down_heavy_spin_midpoint", "special_down_heavy_dual_pistol_aim_hold", "special_down_heavy_contract_blast_contact",
-    "special_down_heavy_contract_blast_recoil", "special_down_heavy_controlled_lower"), 3),
-  special_air_medium: clip(stagePoses(
-    "special_up_medium_grounded_ready", "special_up_medium_low_loaded_anticipation", "special_up_medium_rising_hook_contact",
-    "special_up_medium_upward_recoil_settle", "special_up_medium_controlled_remount_connector",
-    "special_up_medium_controlled_remount_start"), 4),
+  // Air normals stay on their own keys above. These special slots are separate
+  // moves: Air Light and Air Medium use dedicated candidate runtime sheets,
+  // while Heavy remains a distinct normalized proxy. Regular j.L/j.K/j.H air
+  // normals are never reused for the special commands.
+  special_air_light: clip([
+    airLightRuntime01, airLightRuntime02, airLightRuntime03, airLightRuntime04,
+    airLightRuntime05, airLightRuntime06, airLightRuntime07, airLightRuntime08
+  ], 3),
+  special_air_medium: clip([
+    airMediumSpecialChakramRuntime01, airMediumSpecialChakramRuntime02, airMediumSpecialChakramRuntime03,
+    airMediumSpecialChakramRuntime04, airMediumSpecialChakramRuntime05, airMediumSpecialChakramRuntime06,
+    airMediumSpecialChakramRuntime07, airMediumSpecialChakramRuntime08, airMediumSpecialChakramRuntime09,
+    airMediumSpecialChakramRuntime10, airMediumSpecialChakramRuntime11, airMediumSpecialChakramRuntime12,
+    airMediumSpecialChakramRuntime13
+  ], 3),
   special_air_heavy: clip(stagePoses(
     "special_forward_heavy_motion_01", "special_forward_heavy_motion_02", "special_forward_heavy_motion_03",
     "special_forward_heavy_motion_04", "special_forward_heavy_motion_05", "special_forward_heavy_motion_06",
@@ -451,6 +495,34 @@ Object.assign(SWAHILI_ATTACK_CLIPS, {
     "special_forward_heavy_motion_13", "special_forward_heavy_motion_14", "special_forward_heavy_motion_15",
     "special_forward_heavy_motion_16"), 3)
 });
+
+const NEW_SPECIAL_CLIPS: Record<string, Clip> = {
+  special_up_light: clip(newSpecialFrames('special_up_light', 16), 5),
+  special_neutral_heavy: clip(newSpecialFrames('special_neutral_heavy', 12), 5),
+  special_back_light: clip(newSpecialFrames('special_back_light', 12), 5),
+  special_back_medium: clip(newSpecialFrames('special_back_medium', 12), 5),
+  special_back_heavy: clip(newSpecialFrames('special_back_heavy', 8), 6),
+  special_back_heavy_response: clip(newSpecialFrames('special_back_heavy_response', 12), 5),
+  special_down_light: { ...clip(newSpecialFrames('special_down_light', 8), 4), frameStarts: [0,5,10,14,17,22,27,32] }
+};
+Object.assign(SWAHILI_ATTACK_CLIPS, NEW_SPECIAL_CLIPS);
+
+// User-requested local playtest replacement. Old clips and source assets stay above.
+const UP_REDO_CLIPS: Record<string, Clip> = {
+  special_up_medium: { ...clip(upRedoFrames.special_up_medium, 3), frameStarts: [0,3,7,11,13,15,18,21,24,27,30,33] },
+  special_up_heavy: { ...clip(upRedoFrames.special_up_heavy, 5), frameStarts: [0,8,18,27,34,37,40,44,48,53,58,62] }
+};
+Object.assign(SWAHILI_ATTACK_CLIPS, UP_REDO_CLIPS);
+// Only the marked Air Medium changes; original Air Light and retained Heavy stay intact.
+const AIR_MEDIUM_V10_CLIP: Clip = { ...clip(airMediumV10Frames, 3), frameStarts: [0,3,6,9,10,13,16,19,20,24,29,34] };
+SWAHILI_ATTACK_CLIPS.special_air_medium = AIR_MEDIUM_V10_CLIP;
+const NEUTRAL_RUNTIME_CLIPS: Record<string, Clip> = {
+  swahili_paid_seal: { ...clip(neutralLightFrames, 4), frameStarts: [0,4,8,12,15,18,22,26,30,35,40,45] },
+  special_neutral_light: { ...clip(neutralLightFrames, 1), frameStarts: [0,1,2,3,4,5,6,7,8,9,10,11] },
+  special_neutral_medium: { ...clip(neutralMediumFrames, 3), frameStarts: [0,2,4,6,9,13,19] },
+};
+Object.assign(SWAHILI_ATTACK_CLIPS, NEUTRAL_RUNTIME_CLIPS);
+const HOOK_HEADBUTT_CLIP: Clip = { ...clip(hookHeadbuttFrames, 4), frameStarts: [0,4,7,11,14,18,22,26,30,32,38,45] };
 
 const SWAHILI_MOVEMENT_CLIPS: Record<string, Clip> = {
   idle: clip(poses("idle_00", "idle_01", "idle_02", "idle_03"), 11, true),
@@ -477,10 +549,45 @@ class SwahiliPresenter implements Presenter {
   private readonly scale = drawScaleFor(ROSTER.swahili.metrics);
   private readonly root = rootFor(ROSTER.swahili.metrics);
   private readonly images = new Map<string, HTMLCanvasElement>();
+  private readonly origins = new Map<string, { x: number; y: number }>();
+  private readonly clipGeometry = new Map<string, SwahiliClipGeometry>(
+    Object.entries(swahiliSpriteScale.clipOverrides).flatMap(([key, geometry]) =>
+      SWAHILI_ATTACK_CLIPS[key].urls.map((url) => [url, geometry] as const))
+  );
   private readonly failed = new Set<string>();
+  private seal?: ImageBitmap;
+  private paidToken?: ImageBitmap;
+
+  drawEffects(context: CanvasRenderingContext2D, state: MatchState, world: WorldMap, worldScale: number, side?: FighterId) {
+    for (const id of side ? [side] : (["p1", "p2"] as FighterId[])) {
+      const fighter = state.fighters[id];
+      if (fighter.kind === ROSTER.swahili.kind) drawSwahiliGunfire(context, fighter, state, world, worldScale);
+    }
+  }
+
+  drawProjectile(context: CanvasRenderingContext2D, projectile: any, world: WorldMap, worldScale: number) {
+    if(projectile.attackId==='swahili_paid_seal'){
+      if(this.paidToken){const size=46*worldScale;context.save();context.translate(world.x(projectile.x),world.y(projectile.y));
+        context.rotate(projectile.ageTicks*.16*projectile.facing);context.drawImage(this.paidToken,-size/2,-size/2,size,size);context.restore();}
+      return true;
+    }
+    if (!projectile.stationaryGroundSeal || !this.seal) return false;
+    if (projectile.attackId === 'special_back_light' && projectile.ageTicks < 5) return true;
+    context.save();
+    context.translate(world.x(projectile.x), world.y(projectile.y));
+    context.scale(projectile.facing, 1);
+    // Keep the complete seal above the combat plane's floor: its lower half
+    // was previously under the physical stage. Preserve the source aspect.
+    const width = 60 * worldScale;
+    const height = width * this.seal.height / this.seal.width;
+    context.drawImage(this.seal, -width / 2, -height - 2 * worldScale, width, height);
+    context.restore();
+    return true;
+  }
 
   private urls() {
     const out = new Set<string>();
+    hookHeadbuttFrames.forEach(url => out.add(url));
     for (const c of [...Object.values(SWAHILI_ATTACK_CLIPS), ...Object.values(SWAHILI_MOVEMENT_CLIPS)]) c.urls.forEach((u) => out.add(u));
     for (const key of ["crouch", "standing_block", "crouching_block_v2", "light_hit_reaction", "heavy_hit_reaction",
       "jump_v1_anticipation", "jump_v1_rising", "jump_v1_apex", "jump_v1_falling", "jump_v1_soft_landing",
@@ -490,20 +597,37 @@ class SwahiliPresenter implements Presenter {
   }
 
   async preload(onProgress?: (done: number, total: number) => void) {
+    for (const [key, c] of Object.entries(NEW_SPECIAL_CLIPS)) {
+      for (const url of c.urls) this.clipGeometry.set(url, {
+        ...NEW_SPECIAL_GEOMETRY, bodyScale: NEW_SPECIAL_BODY_SCALES[key]
+      });
+    }
+    for (const c of Object.values(UP_REDO_CLIPS)) {
+      for (const url of c.urls) this.clipGeometry.set(url, { ...NEW_SPECIAL_GEOMETRY, bodyScale: 1 });
+    }
+    for (const url of AIR_MEDIUM_V10_CLIP.urls) this.clipGeometry.set(url, { ...NEW_SPECIAL_GEOMETRY, bodyScale: 1 });
+    for (const c of Object.values(NEUTRAL_RUNTIME_CLIPS)) {
+      for (const url of c.urls) this.clipGeometry.set(url, { ...NEW_SPECIAL_GEOMETRY, bodyScale: 1 });
+    }
+    this.seal = await createImageBitmap(await (await fetch(groundSealUrl)).blob());
+    this.paidToken = await createImageBitmap(await (await fetch('/swahili-paid-review/contract-token-v1.png')).blob());
+    for (const url of hookHeadbuttFrames) this.clipGeometry.set(url, { referenceCanvasWidth: 2560, bodyScale: 1, root: { x: 1024, y: 2300 } });
     const all = [...this.urls()];
     let done = 0;
-    for (let i = 0; i < all.length; i += 4) {
-      await Promise.all(all.slice(i, i + 4).map(async (url) => {
+    for (let i = 0; i < all.length; i += 12) {
+      await Promise.all(all.slice(i, i + 12).map(async (url) => {
         try {
           const bitmap = await createImageBitmap(await (await fetch(url, { cache: "force-cache" })).blob());
           const canvas = document.createElement("canvas");
-          canvas.width = Math.round(bitmap.width * this.scale);
-          canvas.height = Math.round(bitmap.height * this.scale);
+          const geometry = swahiliSpriteGeometry(bitmap.width, bitmap.height, this.clipGeometry.get(url));
+          canvas.width = geometry.width;
+          canvas.height = geometry.height;
           const ctx = canvas.getContext("2d")!;
           ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
           ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
           bitmap.close();
           this.images.set(url, canvas);
+          this.origins.set(url, { x: geometry.rootX, y: geometry.rootY });
         } catch { this.failed.add(url); }
         onProgress?.(++done, all.length);
       }));
@@ -511,27 +635,42 @@ class SwahiliPresenter implements Presenter {
   }
 
   private put(context: CanvasRenderingContext2D, url: string, x: number, y: number, facing: 1 | -1) {
-    const image = this.images.get(url) ?? this.images.get(pose("idle_00"));
+    const resolvedUrl = this.images.has(url) ? url : pose("idle_00");
+    const image = this.images.get(resolvedUrl);
     if (!image) return false;
     context.save();
     context.translate(x, y);
     context.scale(facing, 1);
-    context.drawImage(image, -this.root.x * this.scale, -this.root.y * this.scale);
+    const origin = this.origins.get(resolvedUrl) ?? { x: this.root.x * this.scale, y: this.root.y * this.scale };
+    context.drawImage(image, -origin.x, -origin.y);
     context.restore();
     return true;
   }
 
   private fromClip(context: CanvasRenderingContext2D, c: Clip, tick: number, x: number, y: number, facing: 1 | -1) {
-    const index = c.loop ? Math.floor(tick / c.ticksPerFrame) % c.urls.length : Math.min(c.urls.length - 1, Math.floor(tick / c.ticksPerFrame));
+    const index = c.frameStarts ? Math.max(0, c.frameStarts.filter(start => tick >= start).length - 1)
+      : c.loop ? Math.floor(tick / c.ticksPerFrame) % c.urls.length : Math.min(c.urls.length - 1, Math.floor(tick / c.ticksPerFrame));
     return this.put(context, c.urls[index], x, y, facing);
   }
 
   draw(context: CanvasRenderingContext2D, f: FighterState, _state: MatchState, world: WorldMap) {
     const x = world.x(f.x), y = world.y(f.y);
+    const hook = _state.throwInteraction;
+    if (hook?.throwId === "swahili_hook_headbutt") {
+      if (hook.attacker === f.id) {
+        this.fromClip(context, HOOK_HEADBUTT_CLIP, hook.tick, x, y, hook.startingFacing);
+        return;
+      }
+      if (hook.defender === f.id && hook.result === "connected") {
+        this.put(context, pose(hook.damageApplied ? "heavy_hit_reaction" : "light_hit_reaction"), x, y, f.facing);
+        return;
+      }
+    }
     const facing = (f.phase === "attack" ? f.attackFacing : f.facing) as 1 | -1;
     const ok = (() => {
       if (f.phase === "attack" && f.currentAttack) {
-        const c = SWAHILI_ATTACK_CLIPS[f.currentAttack];
+        const key = f.currentAttack === 'special_back_heavy' && f.divineCounterResponse ? 'special_back_heavy_response' : f.currentAttack;
+        const c = SWAHILI_ATTACK_CLIPS[key];
         return c ? this.fromClip(context, c, f.phaseTick, x, y, facing) : this.put(context, pose("standing_heavy_impact_v2"), x, y, facing);
       }
       switch (f.phase) {
@@ -566,12 +705,16 @@ class SwahiliPresenter implements Presenter {
       { command: "5L / 5M / 5H", name: "Standing normals", animated: animated("standing_light") },
       { command: "2L / 2M / 2H", name: "Crouching normals", animated: animated("crouching_light") },
       { command: "j.L / j.M / j.H", name: "Air normals", animated: animated("air_light") },
-      { command: "↑ + H", name: "Grave Furrow", animated: animated("special_up_heavy") },
-      { command: "U + M", name: "Control Strike", animated: animated("special_neutral_medium") },
+      { command: "↑ + U + H", name: "Death & Interest (new art)", animated: animated("special_up_heavy") },
+      { command: "U + J", name: "Claim Check", animated: animated("special_neutral_light") },
+      { command: "U + K", name: "Scythe hook → pull → headbutt (12-pose flow)", animated: true },
       { command: "→ + U + L/M/H", name: "Warning Drag / Shoulder / Drag Slice", animated: animated("special_forward_light") },
-      { command: "↓ + U + L/M/H", name: "Shaft Check / Crossdraw / Grounded Verdict", animated: animated("special_down_light") },
-      { command: "↑ + U + M", name: "Rising Scythe Hook", animated: animated("special_up_medium") },
-      { command: "W, then U+J/K/L", name: "Air specials (distinct candidate motion proxies)", animated: animated("special_air_light") },
+      { command: "↓ + U + J/K/L", name: "Kneecap Notice / Crossdraw / Grounded Verdict", animated: animated("special_down_light") },
+      { command: "U + W + J", name: "Ceiling Tax — alternating four-shot launcher", animated: animated("special_up_light") },
+      { command: "U + L", name: "Golden Injunction", animated: animated("special_neutral_heavy") },
+      { command: "Back + U + J/K/L", name: "Fine Print / Hidden Clause / Default Judgment", animated: animated("special_back_light") },
+      { command: "↑ + U + M", name: "Vertical Audit (new art)", animated: animated("special_up_medium") },
+      { command: "W, then U+J/K/L", name: "Air specials (Light + Medium runtime / Heavy proxy)", animated: animated("special_air_light") },
       { command: "I  /  ← + I", name: "Forward / back throw", animated: false }
     ];
   }
@@ -587,9 +730,10 @@ class SwahiliPresenter implements Presenter {
       { label: "Standing L / M / H", status: "animated", detail: "6 / 5 / 6 poses" },
       { label: "Crouching L / M / H", status: "animated", detail: "5 / 6 / 7 poses" },
       { label: "Air L / M / H", status: "animated", detail: "4 / 3 / 4 poses" },
-      { label: "Grave Furrow (↑H)", status: "animated", detail: "9 poses" },
+      { label: "NEW Up Medium / Heavy", status: "animated", detail: "Vertical Audit / Death & Interest: 12 transparent frames each. Local playtest art; weapon flow remains flagged. Existing combat preserved." },
+      { label: "NEW specials installed", status: "animated", detail: "Ceiling Tax 16; Golden Injunction 12; Fine Print 12; Hidden Clause 12; Default Judgment 8 + 12 response; Kneecap Notice 8. Transparent runtime frames. Debt stacks and wall splat remain unfinished; Default Judgment scythe polish flagged." },
       { label: "Neutral / forward / down / up specials", status: "animated", detail: "authored motion clips wired to the live presenter" },
-      { label: "Air specials", status: "animated", detail: "distinct Light / Medium / Heavy candidate motion proxies; regular air-normal clips are excluded, dedicated air-only sheets still pending" },
+      { label: "Air specials", status: "animated", detail: "Light unchanged (8 frames); NEW Medium V10 uses the marked 12-pose overhead swing, tuck and outward-blade roll. Two-hit combat unchanged; blade-root seams flagged. Retained Heavy and air normals unchanged." },
       { label: "Throws", status: "single_pose", detail: "grab reach + scoop catch only" }
     ];
     if (this.failed.size) rows.push({ label: "Failed to load", status: "placeholder", detail: `${this.failed.size} frame(s)` });
@@ -598,5 +742,5 @@ class SwahiliPresenter implements Presenter {
 }
 
 export function createPresenter(id: CharacterId): Presenter {
-  return id === "lamuh" ? new LamuhPresenter() : new SwahiliPresenter();
+  return id === "celeste" ? new CelestePresenter() : id === "lamuh" ? new LamuhPresenter() : new SwahiliPresenter();
 }

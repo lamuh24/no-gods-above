@@ -1,4 +1,5 @@
 import { FighterState, MatchState } from "../core/types";
+import { lamuhBodyScale } from "./bodyScale";
 
 export interface TimingCandidate {
   label: string;
@@ -485,6 +486,7 @@ export async function drawStandaloneFrame(
   silhouette = false
 ) {
   const image = await loadImage(source);
+  scale *= lamuhBodyScale(source);
   context.save();
   context.globalAlpha = alpha;
   context.translate(x, groundY);

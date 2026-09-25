@@ -8,7 +8,7 @@ import numpy as np
 from PIL import Image
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 SOURCE = Path(r"C:\Users\qchee\AppData\Local\Temp\codex-clipboard-e8feab9c-841a-4f48-83b7-fc94c8ae3905.png")
 if not SOURCE.exists():
     SOURCE = ROOT / "tools/nga-forge/production/characters/swahili/reviews/air-specials-v1/light-source.png"
@@ -24,14 +24,21 @@ SOURCE_COLS, SOURCE_ROWS = 4, 2
 FRAME_W = FRAME_H = 1536
 ANCHOR_X, BASELINE_Y = 773, 1406
 TARGET_VISIBLE_HEIGHT = 1035
-BG_DISTANCE = 128.0
+BG_DISTANCE = 160.0
 ALPHA_THRESHOLD = 24
 
 
 def connected_background_mask(rgb: np.ndarray) -> np.ndarray:
     bg = rgb[0, 0].astype(np.float32)
     distance = np.sqrt(((rgb.astype(np.float32) - bg) ** 2).sum(axis=2))
-    candidate = distance <= BG_DISTANCE
+    # The hot-pink matte mixes with dark outlines into a purple fringe. Keep
+    # that fringe in the flood-fill candidate too; it is background spill, not
+    # Swahili's black/gold/pink character palette.
+    r = rgb[:, :, 0].astype(np.float32)
+    g = rgb[:, :, 1].astype(np.float32)
+    b = rgb[:, :, 2].astype(np.float32)
+    magenta_spill = (r > g * 1.45 + 18) & (b > g * 1.45 + 18) & (r > 42) & (b > 42)
+    candidate = (distance <= BG_DISTANCE) | magenta_spill
     h, w = candidate.shape
     seen = np.zeros((h, w), dtype=bool)
     queue: deque[tuple[int, int]] = deque()
@@ -127,9 +134,10 @@ def main() -> None:
             "opaquePixels": int((np.array(canvas.getchannel("A")) > ALPHA_THRESHOLD).sum()),
         })
 
-    atlas = Image.new("RGBA", (FRAME_W // 4 * 8, FRAME_H // 4), (0, 0, 0, 0))
+    atlas_cell = 448
+    atlas = Image.new("RGBA", (atlas_cell * 8, atlas_cell), (0, 0, 0, 0))
     for index, frame in enumerate(output_frames):
-        atlas.alpha_composite(frame.resize((FRAME_W // 4, FRAME_H // 4), Image.Resampling.LANCZOS), (index * (FRAME_W // 4), 0))
+        atlas.alpha_composite(frame.resize((atlas_cell, atlas_cell), Image.Resampling.LANCZOS), (index * atlas_cell, 0))
     atlas.save(ATLAS, "PNG")
     atlas.save(CONTACT, "PNG")
     report = {

@@ -1,5 +1,6 @@
 import { AttackDefinition, AttackId, CancelRules, CombatTuning, FighterDefinition, MovementTuning, SwahiliAirSpecialId, ThrowDefinition, ThrowId } from "../core/types";
 import { COMMAND_GRAB_MOTION_V1_FRAMES, COMMAND_GRAB_MOTION_V1_REVIEW } from "../sandbox/commandGrabMotionV1";
+import {celesteRect,scaleCelesteAttack,scaleCelesteThrow,scaleCelesteMovement,scaleCelesteCombat} from './celesteSpatial';
 
 const move: MovementTuning = { walkForward: 5.4, walkBackward: 3.8, dashSpeed: 13, dashDuration: 12, backdashSpeed: -10, backdashDuration: 14, jumpStartup: 4, jumpVelocity: -18, forwardJumpVelocityX: 6.2, backJumpVelocityX: -5.1, airControl: 1.4, airDashCount: 0, airDashForwardSpeed: 0, airDashBackwardSpeed: 0, airDashDuration: 0, gravity: 1.05, landingRecovery: 5, inputBuffer: 18, wakeupInvuln: 18, comboNeutralTimeout: 12 };
 const combat: CombatTuning = {
@@ -103,7 +104,7 @@ function lamuhAirCancels(normals: AttackId[]): CancelRules {
   const targets = [...normals, ...LAMUH_AIR_SPECIAL_CANCELS];
   return { onHit: targets, onBlock: targets };
 }
-const legacyAttacks: Record<Exclude<AttackId, SwahiliAirSpecialId>, AttackDefinition> = {
+const legacyAttacks: Record<Exclude<AttackId, import("../core/types").CelesteSpecialId | SwahiliAirSpecialId | import("./swahiliGroundSpecials").SwahiliGroundSpecialId>, AttackDefinition> = {
   legacy_crown_of_no_gods: attacks.legacy_crown_of_no_gods,
   standing_light: { id: "standing_light", command: "5L", startup: 3, active: 5, recovery: 6, cancel: lamuhCancels(["standing_medium", "crouching_medium"]), groundOnly: true, hitboxes: [hit("legacy_5l", 3, 7, { x: 26, y: -82, w: 62, h: 36 }, 24, 4, 18, 10, 2.3, 0, "mid")] },
   standing_medium: { id: "standing_medium", command: "5M", startup: 6, active: 6, recovery: 11, cancel: lamuhCancels(["standing_heavy", "crouching_heavy"]), groundOnly: true, hitboxes: [hit("legacy_5m", 6, 11, { x: 30, y: -90, w: 82, h: 44 }, 48, 5, 29, 17, 3.1, 0, "mid")] },
@@ -323,10 +324,107 @@ const prototypeThrows: Partial<Record<ThrowId, ThrowDefinition>> = {
   back_throw: prototypeBackThrow,
   command_grab: commandGrab
 };
+// Celeste isolated combat/art candidate. Draft S/A/R and raw damage; contact
+// stun and geometry are provisional tuning, not approved balance.
+const celesteNormals: Record<string, AttackDefinition> = {};
+const celesteSpecs: Array<[AttackId, number, number, number, number]> = [
+  ["standing_light",4,3,8,24], ["standing_medium",7,4,13,46], ["standing_heavy",12,4,23,76],
+  ["crouching_light",5,3,9,22], ["crouching_medium",8,4,15,42], ["crouching_heavy",12,4,24,64],
+  ["air_light",5,3,8,22], ["air_medium",8,4,12,40], ["air_heavy",12,5,18,62]
+];
+for (const [id,startup,active,recovery,damage] of celesteSpecs) {
+  const base = attacks[id];
+  celesteNormals[id] = {...base, startup, active, recovery,
+    hitboxes: base.hitboxes.map(h => ({...h, id:`celeste_${id}`, start:startup, end:startup+active-1, damage,
+      hitstun: id === "crouching_heavy" ? 38 : id.endsWith("medium") ? 26 : id.endsWith("light") ? 18 : 30,
+      blockstun: id.endsWith("light") ? 10 : id.endsWith("medium") ? 15 : 18,
+      juggleCost: id.endsWith("light") ? 1 : id === "crouching_heavy" ? 0 : 2
+    }))};
+}
+celesteNormals.standing_light.cancel = {onHit:["standing_medium","crouching_medium"],onBlock:["standing_medium","crouching_medium"]};
+celesteNormals.crouching_light.cancel = {onHit:["crouching_medium"],onBlock:["crouching_medium"]};
+for (const id of ["standing_medium","crouching_medium"]) celesteNormals[id].cancel = {onHit:["standing_heavy","crouching_heavy"],onBlock:["standing_heavy","crouching_heavy"]};
+celesteNormals.air_light.cancel = {onHit:["air_medium"],onBlock:["air_medium"]};
+celesteNormals.air_medium.cancel = {onHit:["air_light","air_heavy"],onBlock:["air_light","air_heavy"]};
+delete celesteNormals.air_heavy.cancel;
+const celesteForwardThrow:ThrowDefinition={...forwardThrow,track:[
+ {tick:0,attackerOffsetX:0,attackerOffsetY:0,victimOffsetX:58,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:4,attackerOffsetX:0,attackerOffsetY:0,victimOffsetX:58,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:9,attackerOffsetX:2,attackerOffsetY:0,victimOffsetX:38,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:13,attackerOffsetX:2,attackerOffsetY:0,victimOffsetX:38,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:14,attackerOffsetX:2,attackerOffsetY:0,victimOffsetX:42,victimOffsetY:-4,victimRotation:-10,victimFacing:-1},
+ {tick:23,attackerOffsetX:2,attackerOffsetY:0,victimOffsetX:142,victimOffsetY:-18,victimRotation:-70,victimFacing:-1},
+ {tick:31,attackerOffsetX:2,attackerOffsetY:0,victimOffsetX:166,victimOffsetY:0,victimRotation:0,victimFacing:-1}
+]};
+const celesteBackThrow:ThrowDefinition={...backThrow,track:[
+ {tick:0,attackerOffsetX:0,attackerOffsetY:0,victimOffsetX:58,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:4,attackerOffsetX:0,attackerOffsetY:0,victimOffsetX:58,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:8,attackerOffsetX:0,attackerOffsetY:0,victimOffsetX:40,victimOffsetY:0,victimRotation:0,victimFacing:-1},
+ {tick:12,attackerOffsetX:10,attackerOffsetY:0,victimOffsetX:12,victimOffsetY:-8,victimRotation:15,victimFacing:1},
+ {tick:16,attackerOffsetX:14,attackerOffsetY:0,victimOffsetX:-38,victimOffsetY:-8,victimRotation:25,victimFacing:1},
+ {tick:25,attackerOffsetX:14,attackerOffsetY:0,victimOffsetX:-120,victimOffsetY:-14,victimRotation:75,victimFacing:1},
+ {tick:35,attackerOffsetX:14,attackerOffsetY:0,victimOffsetX:-140,victimOffsetY:0,victimRotation:0,victimFacing:1}
+]};
+// Celeste authored special timelines. Contact geometry is local playtest tuning.
+const celesteSpecialSpecs: Array<[AttackId,number,number,number,number,AttackDefinition["celesteFamily"]]> = [
+ ["ovation_staccato",14,0,24,34,"sol"], ["ovation_fortissimo",28,0,36,64,"sol"], ["ovation_descant",18,0,24,38,"sol"],
+ ["strobe_air_waltz",5,8,16,0,"fa"], ["finale_reprise",20,4,26,70,"air"], ["octava",28,18,54,225,"super"],
+ ["ovation_procession",20,0,28,44,"sol"], ["quickstep_beat",4,8,10,0,"fa"],
+ ["crescendo_slash",16,7,22,22,"fa"], ["curtain_call",25,4,30,82,"fa"],
+ ["waltz_retreat",6,8,20,0,"la"], ["reversal_measure",8,10,26,0,"la"], ["broken_tempo",28,3,32,60,"la"],
+ ["encore_near",26,0,22,40,"ti"], ["encore_reach",30,0,26,44,"ti"], ["encore_balcony",34,0,30,48,"ti"],
+ ["rising_note",8,4,18,30,"up"], ["ascending_aria",13,4,24,52,"up"], ["grand_crescendo",23,5,34,84,"up"]
+];
+for(const [id,startup,active,recovery,damage,family] of celesteSpecialSpecs){
+ const hit = {...celesteNormals.standing_medium.hitboxes[0],id:`${id}_contact`,start:startup,end:startup+active-1,damage,
+  rect:{x:18,y:-86,w:86,h:72},level:"mid" as const,hitstun:28,blockstun:16,juggleCost:2,launches:false,jumpCancelOnHit:false,knockdown:"none" as const};
+ const a:AttackDefinition={id,command:id,startup,active,recovery,groundOnly:true,celesteFamily:family,hitboxes:damage && family!=="sol" && family!=="ti"?[hit]:[]};
+ if(family==="sol" || family==="ti"){
+  const trap=family==="ti",offset=id==="encore_near"?85:id==="encore_reach"?190:id==="encore_balcony"?140:64;
+  a.projectile={releaseTick:startup,spawnOffset:{x:offset,y:id==="encore_balcony"?-155:-60},releaseSweepStartX:offset,
+   speed:trap?0:3.6,gravity:0,maxTravel:trap?100000:520,lifeTicks:trap?63:145,
+   hitbox:{...hit,start:0,end:999,rect:trap?{x:-30,y:-28,w:60,h:56}:{x:-18,y:-18,w:36,h:36}},...(trap?{celesteTrap:true as const}: {})};
+ }
+ if(["strobe_air_waltz","ovation_descant","finale_reprise"].includes(id)){delete a.groundOnly;a.airOnly=true;a.airActionCost=1;}
+ if(id==="ovation_staccato"){a.projectile!.speed=5.5;a.projectile!.maxTravel=260;a.projectile!.lifeTicks=48;}
+ if(id==="ovation_fortissimo"){a.projectile!.speed=7;a.projectile!.maxTravel=650;a.projectile!.lifeTicks=95;a.projectile!.hitbox.rect={x:-25,y:-25,w:50,h:50};a.projectile!.hitbox.knockbackX=14;}
+ if(id==="ovation_descant"){a.projectile!.spawnOffset={x:38,y:-45};a.projectile!.releaseSweepStartX=38;a.projectile!.speed=5;a.projectile!.initialVelocityY=5;a.projectile!.maxTravel=500;a.projectile!.lifeTicks=100;}
+ if(id==="strobe_air_waltz")a.rootMotion={start:5,end:12,velocity:7};
+ if(id==="finale_reprise")a.hitboxes[0]={...hit,rect:{x:8,y:-40,w:80,h:100},level:"high",knockbackY:12,knockbackX:3,juggleCost:3,hitstun:34};
+ if(id==="octava")a.hitboxes[0]={...hit,rect:{x:35,y:-140,w:600,h:110},juggleCost:3,knockdown:"hard",knockbackX:12};
+ if(id==="quickstep_beat")a.rootMotion={start:4,end:11,velocity:7};
+ if(id==="crescendo_slash"){
+  a.rootMotion={start:3,end:15,velocity:3.6};
+  a.hitboxes=[{...hit,id:"crescendo_first",end:17,juggleCost:1},{...hit,id:"crescendo_second",start:21,end:22,damage:28,juggleCost:1}];
+  a.cancel={onHit:["ascending_aria"],onBlock:[]};
+ }
+ if(id==="curtain_call"){a.rootMotion={start:11,end:24,velocity:10};a.hitboxes[0]={...hit,knockdown:"soft",knockbackX:15};}
+ if(id==="waltz_retreat"){a.rootMotion={start:6,end:13,velocity:-6};a.celesteGuard={start:6,end:13,projectileOnly:true};}
+ if(id==="reversal_measure")a.celesteGuard={start:8,end:17};
+ if(id==="broken_tempo")a.celesteGuard={start:10,end:17};
+ if(family==="up")a.hitboxes[0]={...hit,rect:{x:8,y:id==="ascending_aria"?-172:-130,w:68,h:id==="ascending_aria"?156:114},launches:true,
+  knockbackY:id==="ascending_aria"?-19:-10,knockbackX:3,juggleCost:1,hitstun:34,jumpCancelOnHit:id==="ascending_aria"};
+ if(id==="grand_crescendo")a.hitboxes[0]={...a.hitboxes[0],rect:{x:0,y:-160,w:82,h:140},knockbackY:-22,jumpCancelOnHit:true};
+ celesteNormals[id]=a;
+}
+for(const id of ["standing_medium","crouching_medium"]){
+ const a=celesteNormals[id];a.cancel!.onHit.push("ovation_procession","rising_note","ascending_aria","grand_crescendo","quickstep_beat","crescendo_slash","curtain_call");
+ a.cancel!.onBlock.push("ovation_procession","rising_note","ascending_aria","grand_crescendo","quickstep_beat","crescendo_slash","curtain_call");
+}
+celesteNormals.standing_heavy.cancel={onHit:["ovation_procession"],onBlock:[]};
+for(const id of ["standing_medium","crouching_medium","standing_heavy"]){celesteNormals[id].cancel!.onHit.push("ovation_staccato","ovation_fortissimo","octava");if(id!=="standing_heavy")celesteNormals[id].cancel!.onBlock.push("ovation_staccato","ovation_fortissimo");}
+celesteNormals.curtain_call.cancel={onHit:["octava"],onBlock:[]};
+celesteNormals.air_medium.cancel!.onHit.push("strobe_air_waltz","ovation_descant","finale_reprise");
+celesteNormals.air_medium.cancel!.onBlock.push("strobe_air_waltz");
+for(const [id,attack] of Object.entries(celesteNormals))celesteNormals[id]=scaleCelesteAttack(attack);
 export const fighterDefinitions: Record<string, FighterDefinition> = {
-  lamuh_proto: { kind: "lamuh_proto", maxHealth: 1000, movement: move, combat, victimClass: "standard_humanoid", pushbox: { x: -22, y: -96, w: 44, h: 96 }, standingHurtboxes: [{ x: -24, y: -96, w: 48, h: 46 }, { x: -20, y: -52, w: 40, h: 52 }], crouchingHurtboxes: [{ x: -25, y: -66, w: 50, h: 66 }], attacks: { ...attacks, legacy_ascend_step_light: legacyAttacks.legacy_ascend_step_light, legacy_ascend_step: legacyAttacks.legacy_ascend_step, legacy_ascend_step_heavy: LAMUH_ASCEND_HEAVY_V1_HISTORICAL } as Record<AttackId, AttackDefinition>, throws: prototypeThrows },
+  celeste_proto: {kind:"celeste_proto",maxHealth:880,movement:scaleCelesteMovement({...move,airDashCount:1,airDashForwardSpeed:5.15,airDashBackwardSpeed:4.45,airDashDuration:14}),combat:scaleCelesteCombat(combat),victimClass:"standard_humanoid",
+    pushbox:celesteRect({x:-22,y:-96,w:44,h:96}),standingHurtboxes:[{x:-24,y:-96,w:48,h:46},{x:-20,y:-52,w:40,h:52}].map(celesteRect),crouchingHurtboxes:[{x:-25,y:-66,w:50,h:66}].map(celesteRect),
+    attacks:celesteNormals as Record<AttackId,AttackDefinition>,throws:{forward_throw:scaleCelesteThrow(celesteForwardThrow),back_throw:scaleCelesteThrow(celesteBackThrow)}},
+
+  lamuh_proto: { kind: "lamuh_proto", maxHealth: 1000, movement: move, combat, victimClass: "standard_humanoid", pushbox: { x: -22, y: -96, w: 44, h: 96 }, standingHurtboxes: [{ x: -24, y: -96, w: 48, h: 46 }, { x: -20, y: -52, w: 40, h: 52 }], crouchingHurtboxes: [{ x: -25, y: -66, w: 50, h: 66 }], projectileHurtboxes: legacyAdultHurtboxes, extendedHurtboxes: legacyAdultHurtboxes, attacks: { ...attacks, legacy_ascend_step_light: legacyAttacks.legacy_ascend_step_light, legacy_ascend_step: legacyAttacks.legacy_ascend_step, legacy_ascend_step_heavy: LAMUH_ASCEND_HEAVY_V1_HISTORICAL } as Record<AttackId, AttackDefinition>, throws: prototypeThrows },
   // Candidate body-aligned defense for new traveling projectiles only. Existing normal collisions are unchanged.
   lamuh_legacy_v2: { kind: "lamuh_legacy_v2", maxHealth: 1000, movement: legacyMove, combat: legacyCombat, victimClass: "standard_humanoid", pushbox: { x: -34, y: -98, w: 68, h: 98 }, standingHurtboxes: [{ x: -25, y: -98, w: 50, h: 48 }, { x: -21, y: -54, w: 42, h: 54 }], crouchingHurtboxes: [{ x: -26, y: -68, w: 52, h: 68 }], projectileHurtboxes: legacyAdultHurtboxes, extendedHurtboxes: legacyAdultHurtboxes, attacks: legacyAttacks as Record<AttackId, AttackDefinition>, throws: lamuhLegacyThrows },
-  training_dummy: { kind: "training_dummy", maxHealth: 1000, movement: { ...move, walkForward: 0, walkBackward: 0 }, combat, victimClass: "standard_humanoid", pushbox: { x: -23, y: -98, w: 46, h: 98 }, standingHurtboxes: [{ x: -25, y: -98, w: 50, h: 48 }, { x: -21, y: -54, w: 42, h: 54 }], crouchingHurtboxes: [{ x: -25, y: -68, w: 50, h: 68 }], attacks: { ...attacks, legacy_ascend_step_light: legacyAttacks.legacy_ascend_step_light, legacy_ascend_step: legacyAttacks.legacy_ascend_step, legacy_ascend_step_heavy: LAMUH_ASCEND_HEAVY_V1_HISTORICAL } as Record<AttackId, AttackDefinition>, throws: {} }
+  training_dummy: { kind: "training_dummy", maxHealth: 1000, movement: { ...move, walkForward: 0, walkBackward: 0 }, combat, victimClass: "standard_humanoid", pushbox: { x: -23, y: -98, w: 46, h: 98 }, standingHurtboxes: [{ x: -25, y: -98, w: 50, h: 48 }, { x: -21, y: -54, w: 42, h: 54 }], crouchingHurtboxes: [{ x: -25, y: -68, w: 50, h: 68 }], projectileHurtboxes: legacyAdultHurtboxes, extendedHurtboxes: legacyAdultHurtboxes, attacks: { ...attacks, legacy_ascend_step_light: legacyAttacks.legacy_ascend_step_light, legacy_ascend_step: legacyAttacks.legacy_ascend_step, legacy_ascend_step_heavy: LAMUH_ASCEND_HEAVY_V1_HISTORICAL } as Record<AttackId, AttackDefinition>, throws: {} }
 };
 export const defaultTuning = { lamuh_proto: move, lamuh_legacy_v2: { movement: legacyMove, combat: legacyCombat, attacks: legacyAttacks, throws: lamuhLegacyThrows }, combat, attacks };

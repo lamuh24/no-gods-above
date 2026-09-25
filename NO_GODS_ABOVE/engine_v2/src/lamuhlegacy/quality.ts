@@ -1,4 +1,5 @@
 import { fighterDefinitions } from "../data/fighters";
+import { lamuhBodyScale } from "./bodyScale";
 import { resolveAttackDefinition, fighterExtendedHurtboxes } from "../core/engine";
 import { FighterState, MatchState, Rect } from "../core/types";
 
@@ -47,7 +48,8 @@ export function contactScreenAnchor(cue:ContactCue,sockets:ContactSocketPack,wor
   const socket=sockets.attacks[cue.attackId]?.[cue.contactSocketIndex ?? cue.hitOrdinal-1];
   // Collision decides WHETHER there is feedback. Explicit source-art sockets decide WHERE.
   // This is a Lamuh sandbox presentation adapter, not a generic fixture-size assumption.
-  return socket?{x:worldX(cue.attackerRoot.x)+(socket.x-socket.root.x)*.3*cue.facing,y:worldY(cue.attackerRoot.y)+(socket.y-socket.root.y)*.3}
+  const scale=socket ? .3*lamuhBodyScale(socket.sourcePath) : .3;
+  return socket?{x:worldX(cue.attackerRoot.x)+(socket.x-socket.root.x)*scale*cue.facing,y:worldY(cue.attackerRoot.y)+(socket.y-socket.root.y)*scale}
     :{x:worldX(cue.x),y:worldY(cue.y)};
 }
 const worldRect = (f: FighterState, r: Rect, facing: 1 | -1): Rect => ({
@@ -139,9 +141,9 @@ export class PreparedFrames {
   // the default; the versus playtest passes its own so every fighter is drawn to one
   // shared body height instead of a per-page constant.
   constructor(private readonly scale=.3) {}
-  async load(sources:Iterable<string>) {
+  async load(sources:Iterable<string>, batchSize=4) {
     const paths=[...new Set(sources)];
-    for(let i=0;i<paths.length;i+=4) await Promise.all(paths.slice(i,i+4).map(async (source) => {
+    for(let i=0;i<paths.length;i+=batchSize) await Promise.all(paths.slice(i,i+batchSize).map(async (source) => {
       if(this.images.has(source))return;
       const image=await decodeFrameSource(source);
       const canvas=document.createElement("canvas");canvas.width=Math.round(image.width*this.scale);canvas.height=Math.round(image.height*this.scale);
@@ -151,7 +153,8 @@ export class PreparedFrames {
   }
   draw(ctx:CanvasRenderingContext2D,source:string,root:{x:number;y:number},x:number,y:number,facing:1|-1,rotation=0) {
     const image=this.images.get(source);if(!image)throw new Error(`Unprepared Lamuh frame: ${source}`);
-    ctx.save();ctx.translate(x,y);ctx.rotate(rotation*Math.PI/180);ctx.scale(facing,1);
+    const bodyScale=lamuhBodyScale(source);
+    ctx.save();ctx.translate(x,y);ctx.rotate(rotation*Math.PI/180);ctx.scale(facing*bodyScale,bodyScale);
     ctx.drawImage(image,-root.x*this.scale,-root.y*this.scale);ctx.restore();
   }
   has(source:string){return this.images.has(source);}

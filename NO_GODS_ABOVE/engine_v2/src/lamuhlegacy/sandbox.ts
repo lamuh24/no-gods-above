@@ -1,4 +1,5 @@
 import "./style.css";
+import { lamuhBodyScale } from "./bodyScale";
 import { createMatch, currentAttackPhase, fighterPushbox, fighterExtendedHurtboxes, fighterProjectileHurtboxes, projectileWorldRect, resolveAttackDefinition, tick } from "../core/engine";
 import { FighterId, FighterState, InputFrame, LamuhReviewHitstop, MatchState, Rect } from "../core/types";
 import { fighterDefinitions } from "../data/fighters";
@@ -182,6 +183,11 @@ async function main() {
     state.stage.right = 280;
     const dummy = state.fighters[side === "p1" ? "p2" : "p1"];
     dummy.dummyMode = selectedOutcome() === "stand_block" ? "stand_block" : selectedOutcome() === "crouch_block" ? "crouch_block" : "auto_recovery";
+    // Keep the review sandbox ultimate-ready without changing the match engine's
+    // meter rules. The in-game contract still requires full tension; this only
+    // saves the human reviewer from having to build meter before pressing P.
+    const lamuh = Object.values(state.fighters).find((fighter) => fighter.kind === "lamuh_legacy_v2");
+    if (lamuh) lamuh.tension = fighterDefinitions[lamuh.kind].combat.maxTension;
     return state;
   }
   let state: MatchState = newState(), playing = !tribunal, halfAccumulator = 0, cameraCenter = 0;
@@ -207,7 +213,10 @@ async function main() {
   }
   function stepSimulation(renderFrame=true) {
     const input=nextInput(), previous=actor().phase, previousMove=actor().currentMoveInstance;
-    const enemyInput=enemyQueued.length?enemyQueued.shift()!:cpuInput();
+    // The CPU is opt-in for review. Keep queued scenario inputs (for the heavy
+    // counter success case) deterministic, but do not let the background AI
+    // attack unless the explicit test toggle is enabled.
+    const enemyInput=enemyQueued.length?enemyQueued.shift()!:(checked('enemyAttack')?cpuInput():{});
     tick(state, actorId()==="p1"?{p1:input,p2:enemyInput}:{p2:input,p1:enemyInput});
     const projectileEvent=state.lastProjectileEvent;
     if(projectileEvent&&projectileEvent.tick===state.tick-1&&!seenProjectileFeedback.has(projectileEvent.eventId)){
@@ -358,7 +367,7 @@ async function main() {
       const source = !checked('vfx')&&record.bodyOnlyPublicPath?record.bodyOnlyPublicPath:!checked('quality') && frame === moveClosure.v2.contactFrame && moveClosure.v2.contactPresentation.vfxEnabled !== false && checked("vfx") && actualContactPresentation(fighter, fighter.currentAttack) ? moveClosure.v2.contactPresentation.publicPath : record.publicPath;
       if(checked('vfx')&&!record.auraBaked)drawHeavenArc(context,fighter,worldX(fighter.x),worldY(fighter.y));
       preparedFrames.draw(context,source,record.root,worldX(fighter.x),worldY(fighter.y),fighter.facing);
-      if (checked("roots")) drawAuthoredOverlay(context, { x: worldX(fighter.x), y: worldY(fighter.y) }, record.root, .30, fighter.facing, record.bodyCenter, record.visibleBounds, { root: true, bodyCenter: true });
+      if (checked("roots")) drawAuthoredOverlay(context, { x: worldX(fighter.x), y: worldY(fighter.y) }, record.root, .30*lamuhBodyScale(source), fighter.facing, record.bodyCenter, record.visibleBounds, { root: true, bodyCenter: true });
       return;
     }
     const movementStateId = fighter.phase === "turn" ? "turn_facing"

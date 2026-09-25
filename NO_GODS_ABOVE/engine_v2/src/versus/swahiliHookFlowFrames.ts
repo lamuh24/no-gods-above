@@ -1,0 +1,13 @@
+import f1 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/01.png?url';
+import f2 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/02.png?url';
+import f3 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/03.png?url';
+import f4 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/04.png?url';
+import f5 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/05.png?url';
+import f6 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/06.png?url';
+import f7 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/07.png?url';
+import f8 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/08.png?url';
+import f9 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/09.png?url';
+import f10 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/10.png?url';
+import f11 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/11.png?url';
+import f12 from '../../../../tools/nga-forge/production/characters/swahili/reviews/special-neutral-medium-hook-headbutt-v2/runtime-flow-v2/12.png?url';
+export const hookFlowFrames = [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12];

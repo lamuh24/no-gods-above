@@ -1,5 +1,6 @@
 export const TICKS_PER_SECOND = 60 as const;
 export interface InputFrame { ultimate?: boolean; }
+export interface FighterState { paidSealStarterTest?: true; }
 export type UltimatePhase = "confirm" | "elbow" | "knee" | "charge" | "beam" | "recovery";
 export interface UltimateInteraction {
   id: string; attacker: FighterId; defender: FighterId; tick: number; phase: UltimatePhase; facing: 1 | -1;
@@ -9,13 +10,16 @@ export interface UltimateInteraction {
 export interface MatchState { ultimateInteraction?: UltimateInteraction; ultimateEventLedger?: string[]; }
 
 export type FighterId = "p1" | "p2";
-export type FighterKind = "lamuh_proto" | "lamuh_legacy_v2" | "training_dummy";
+export type FighterKind = "lamuh_proto" | "lamuh_legacy_v2" | "training_dummy" | "celeste_proto";
 export type FighterPhase = "idle" | "walk_forward" | "walk_backward" | "turn" | "crouch" | "crouch_release" | "jump_startup" | "jump" | "air_dash_forward" | "air_dash_backward" | "air_recovery" | "landing" | "dive_landing" | "dash" | "backdash" | "attack" | "throw_startup" | "throw_active" | "throw_whiff" | "thrown" | "roman_cancel" | "burst" | "block" | "hit_reaction" | "knockdown" | "getup";
-export type AttackId = "legacy_crown_of_no_gods" | "legacy_aura_sweep_light" | "legacy_aura_sweep_medium" | "legacy_aura_sweep_heavy" | SwahiliAirSpecialId | "standing_light" | "standing_medium" | "standing_heavy" | "crouching_light" | "crouching_medium" | "crouching_heavy" | "air_light" | "air_medium" | "air_heavy" | "air_special_ender" | "special_neutral_medium" | "special_forward_light" | "special_forward_medium" | "special_forward_heavy" | "special_down_light" | "special_down_medium" | "special_down_heavy" | "special_up_medium" | "special_up_heavy" | "legacy_ascend_step_light" | "legacy_ascend_step" | "legacy_ascend_step_heavy" | "legacy_celestial_palm_light" | "legacy_celestial_palm_medium" | "legacy_celestial_palm_heavy" | "legacy_heaven_splitter_light" | "legacy_heaven_splitter_medium" | "legacy_heaven_splitter_heavy" | "legacy_radiant_dive_light" | "legacy_radiant_dive_medium" | "legacy_radiant_dive_heavy" | "legacy_divine_vanish_light" | "legacy_divine_vanish_medium" | "legacy_divine_vanish_heavy";
-export type ThrowId = "forward_throw" | "back_throw" | "command_grab";
+export type CelesteSpecialId = "ovation_procession" | "quickstep_beat" | "crescendo_slash" | "curtain_call" | "waltz_retreat" | "reversal_measure" | "broken_tempo" | "encore_near" | "encore_reach" | "encore_balcony" | "rising_note" | "ascending_aria" | "grand_crescendo" | "ovation_staccato" | "ovation_fortissimo" | "strobe_air_waltz" | "ovation_descant" | "finale_reprise" | "octava";
+export type AttackId = CelesteSpecialId | import("../data/swahiliGroundSpecials").SwahiliGroundSpecialId | "legacy_crown_of_no_gods" | "legacy_aura_sweep_light" | "legacy_aura_sweep_medium" | "legacy_aura_sweep_heavy" | SwahiliAirSpecialId | "standing_light" | "standing_medium" | "standing_heavy" | "crouching_light" | "crouching_medium" | "crouching_heavy" | "air_light" | "air_medium" | "air_heavy" | "air_special_ender" | "special_neutral_medium" | "special_forward_light" | "special_forward_medium" | "special_forward_heavy" | "special_down_light" | "special_down_medium" | "special_down_heavy" | "special_up_medium" | "special_up_heavy" | "legacy_ascend_step_light" | "legacy_ascend_step" | "legacy_ascend_step_heavy" | "legacy_celestial_palm_light" | "legacy_celestial_palm_medium" | "legacy_celestial_palm_heavy" | "legacy_heaven_splitter_light" | "legacy_heaven_splitter_medium" | "legacy_heaven_splitter_heavy" | "legacy_radiant_dive_light" | "legacy_radiant_dive_medium" | "legacy_radiant_dive_heavy" | "legacy_divine_vanish_light" | "legacy_divine_vanish_medium" | "legacy_divine_vanish_heavy";
+export type ThrowId = "forward_throw" | "back_throw" | "command_grab" | "swahili_hook_headbutt";
 export type SwahiliAirSpecialId = "special_air_light" | "special_air_medium" | "special_air_heavy";
+export interface ProjectileDefinition { stationaryGroundSeal?: true; }
+export interface ProjectileState { stationaryGroundSeal?: true; }
 export type VictimClass = "standard_humanoid" | "small" | "large" | "non_humanoid" | "extreme_proportion";
-export type HitLevel = "mid" | "low" | "launcher";
+export type HitLevel = "mid" | "low" | "high" | "launcher";
 export type KnockdownKind = "none" | "soft" | "hard";
 export type AirTechDirection = "neutral" | "forward" | "backward";
 export type HitReactionWeight = "light" | "heavy";
@@ -78,7 +82,7 @@ export interface ProjectileState {
 export interface ProjectileEvent {
   tick: number; eventId: string; projectileId: string; owner: FighterId; attackId: AttackId;
   type: "spawn" | "hit" | "block" | "expired"; x: number; y: number; defender?: FighterId;
-  reason?: "range" | "lifetime" | "stage_boundary" | "ground" | "juggle_limit";
+  reason?: "clash" | "absorbed" | "range" | "lifetime" | "stage_boundary" | "ground" | "juggle_limit";
 }
 // Optional until the first projectile keeps legacy/prototype snapshot projections unchanged.
 export interface MatchState { projectiles?: ProjectileState[]; projectileSpawnLedger?: string[]; projectileEventLedger?: string[]; lastProjectileEvent?: ProjectileEvent; }
@@ -95,7 +99,7 @@ export interface CombatSystemEvent { tick: number; system: "roman_cancel" | "bur
 export interface ThrowEvent { tick: number; eventId: string; type: "startup" | "connect" | "whiff" | "release" | "complete"; throwId: ThrowId; attacker: FighterId; defender: FighterId; damage: number; }
 export interface ThrowInteractionState { instanceId: number; throwId: ThrowId; attacker: FighterId; defender: FighterId; tick: number; result: "pending" | "connected" | "whiff"; attackerStartX: number; attackerStartY: number; startingFacing: 1 | -1; defenderStartX: number; defenderStartY: number; victimTrackAnchorX: number; victimTrackAnchorY: number; damageApplied: boolean; released: boolean; }
 export interface MatchConfig { matchId?: string; p1Kind?: FighterKind; p2Kind?: FighterKind; p1X?: number; p2X?: number; p1LamuhReview?: LamuhReviewAttackProfile; p2LamuhReview?: LamuhReviewAttackProfile; }
-export interface MatchState { schemaVersion: "2.0.0-alpha"; matchId: string; matchConfig: Required<Pick<MatchConfig, "p1Kind" | "p2Kind" | "p1X" | "p2X">> & Pick<MatchConfig, "p1LamuhReview" | "p2LamuhReview" | "swahiliAirSpecialsV1">; seed: number; rngState: number; tick: number; stage: { left: number; right: number; groundY: number; ceilingY: number }; fighters: Record<FighterId, FighterState>; inputLog: InputLogFrame[]; checksums: string[]; debugWarnings: string[]; lastCombatEvent: CombatEvent | null; lastSystemEvent: CombatSystemEvent | null; throwInteraction: ThrowInteractionState | null; lastThrowEvent: ThrowEvent | null; presentationEventLedger: string[]; }
+export interface MatchState { schemaVersion: "2.0.0-alpha"; matchId: string; matchConfig: Required<Pick<MatchConfig, "p1Kind" | "p2Kind" | "p1X" | "p2X">> & Pick<MatchConfig, "p1LamuhReview" | "p2LamuhReview" | "swahiliAirSpecialsV1" | "versusRules">; seed: number; rngState: number; tick: number; stage: { left: number; right: number; groundY: number; ceilingY: number }; fighters: Record<FighterId, FighterState>; inputLog: InputLogFrame[]; checksums: string[]; debugWarnings: string[]; lastCombatEvent: CombatEvent | null; lastSystemEvent: CombatSystemEvent | null; throwInteraction: ThrowInteractionState | null; lastThrowEvent: ThrowEvent | null; presentationEventLedger: string[]; }
 export interface TickResult { tick: number; checksum: string; state: MatchState; }
 
 // Versus playtest body envelope (additive, opt-in, default absent).
@@ -106,3 +110,69 @@ export interface TickResult { tick: number; checksum: string; state: MatchState;
 export interface BodyEnvelope { pushbox: Rect; standing: Rect[]; crouching: Rect[]; }
 export interface FighterState { bodyEnvelope?: BodyEnvelope; }
 export interface MatchConfig { p1BodyEnvelope?: BodyEnvelope; p2BodyEnvelope?: BodyEnvelope; }
+
+// Versus match rules (additive, opt-in, default absent). Every field is consumed only when a
+// match supplies `versusRules`; fixtures without it keep their exact simulation and checksums.
+export interface WallBounceRule { minSpeed: number; restitution: number; popVelocity: number; hitstun: number; juggleCost: number; }
+export interface VersusRules {
+  /** Stock-only platform: the floor ends here and crossing the blast boundary loses a life. */
+  openPlatform?: { left: number; right: number; blastX: number; blastY: number; upperPlatforms?: { left: number; right: number; y: number }[] };
+  /** Grounded hit/block reactions slide with this per-tick decay instead of a constant velocity. */
+  groundPushbackFriction?: number;
+  /** Blocked pushback velocity relative to hit pushback. */
+  blockPushbackScale?: number;
+  /** Share of a wall-pinned defender's pushback that returns to the attacker. */
+  cornerPushback?: number;
+  /** One airborne wall bounce per combo for a fast-travelling juggled or knocked-down body. */
+  wallBounce?: WallBounceRule;
+  /** Throw capture range is measured from body contact, so wider bodies keep authored throw reach. */
+  throwRangeFromContact?: boolean;
+  /** A fighter reduced to zero health is knocked out: launched, downed, and never gets up. */
+  knockout?: boolean;
+  /** Presses made during hitstop stay buffered until it ends, so natural on-contact timing links. */
+  hitstopInputBuffer?: boolean;
+  /** Counter hits (contact on a committed defender) apply to every fighter, not only Lamuh Legacy. */
+  universalCounterHits?: boolean;
+  /** Launchers that open a jump-cancel follow-up on hit, including from an airborne hop. */
+  launcherFollowUps?: LauncherFollowUp[];
+  /** Air strikes that, on hitting an airborne victim, rebound the attacker upward to keep the juggle going. */
+  airExtenders?: AirExtender[];
+}
+/**
+ * Combo extender, once per combo: the strike re-lifts an airborne victim, refunds part of the juggle
+ * budget, and `reboundAfterMoveTicks` later cancels the attacker into a fresh airborne jump.
+ */
+export interface AirExtender {
+  attack: AttackId; hitbox: string; reboundAfterMoveTicks: number;
+  attackerReboundVelocity: { x: number; y: number }; airActions: number;
+  victimVelocity: { x: number; y: number }; minimumHitstun: number; juggleRefund: number;
+}
+export interface FighterState { airExtender?: { instance: number; reboundAtMoveTick: number; vx: number; vy: number; airActions: number }; airExtenderUsed?: true; }
+/**
+ * A launcher hitbox that, once it connects, lets the attacker jump-cancel from `fromMoveTick`
+ * (after the strike has visibly finished). Optional launch shaping keeps the victim reachable.
+ */
+export interface LauncherFollowUp {
+  attack: AttackId; hitbox: string; fromMoveTick: number; launchVelocityY?: number; minimumHitstun?: number;
+  /** Air jump velocity when the cancel happens mid-hop (defaults to the fighter's jump velocity). */
+  airJumpVelocityY?: number;
+  /** When the launcher is cancelled from a normal that hit, step forward during its windup so it reaches. */
+  comboApproach?: { velocity: number; untilMoveTick: number };
+}
+export interface FighterState { launcherFollowUp?: { instance: number; fromMoveTick: number; airJumpVelocityY?: number }; comboApproach?: { instance: number; velocity: number; untilMoveTick: number }; }
+export interface FighterState { bufferedHitstop?: number; }
+export interface MatchConfig { versusRules?: VersusRules; }
+export interface MatchState { lastWallBounce?: { tick: number; fighter: FighterId; x: number; y: number }; }
+// Pushback is a decaying slide shared by attacker and defender; deleted once spent.
+export interface FighterState { pushback?: number; wallBounced?: true; knockedOut?: true; }
+export interface FighterState { authoredHopOrigin?: { moveInstance: number; y: number }; }
+
+export interface CelesteState { solCooldown:number; tiCooldown:number; faCooldown:number; laCooldown:number; faSpent:boolean; neutralTicks:number; guardSpent:boolean; launcherSpent:boolean; bounceSpent?:boolean; }
+export interface FighterState { celeste?:CelesteState; }
+export interface ProjectileDefinition { celesteTrap?:true; }
+export interface ProjectileState { celesteTrap?:true; }
+export interface AttackDefinition { celesteFamily?:"sol"|"fa"|"la"|"ti"|"up"|"air"|"super"; celesteGuard?:{start:number;end:number;projectileOnly?:boolean}; }
+
+export interface ProjectileState { celesteAbsorbed?:true; }
+
+export interface FighterState { celesteBounce?:{owner:FighterId}; celesteLandingRecovery?:number; celesteLandedAttackTick?:number; }

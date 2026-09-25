@@ -1,0 +1,21 @@
+{
+  "url": "https://nogodsabove.netlify.app/",
+  "date": "2026-09-23",
+  "site_id": "4bc048d7-e9cc-4eba-96f5-59ce01bb5f90",
+  "deploy_id": "6ab407653e9b19603be36912",
+  "result": "pass_with_appearance_issue",
+  "checks": {
+    "root_html_http": 200,
+    "lamuh_ui_png_http": 200,
+    "lamuh_runtime_webp_http": 200,
+    "select_art_http": 200,
+    "lamuh_select_hero_visible": true,
+    "lamuh_select_roster_icons_visible": true,
+    "lamuh_match_hud_portrait_visible": true,
+    "fallen_capital_and_two_fighters_visible": true,
+    "browser_warnings_or_errors": [],
+    "full_network_request_audit": "not performed"
+  },
+  "known_issue": "Powered by Netlify badge overlaps the lower-right HUD at 1280x720; dashboard browser login is required to disable the per-project badge setting.",
+  "scope": "Online-hosted local play; Stocks and network multiplayer are not available. Older no-gods-above production site is unchanged."
+}

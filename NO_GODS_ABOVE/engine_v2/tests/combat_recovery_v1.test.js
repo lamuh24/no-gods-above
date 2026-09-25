@@ -171,6 +171,62 @@ function testSoftKnockdownCompletesGetupAndClearsItsKind() {
   for (let index = 0; index < defaultTuning.combat.getupTicks; index++) tick(state, {});
   assert.strictEqual(state.fighters.p2.phase, 'idle');
   assert.strictEqual(state.fighters.p2.knockdownKind, 'none');
+  assert.strictEqual(state.fighters.p2.wakeupInvuln, defaultTuning.lamuh_proto.wakeupInvuln + 1,
+    'the release tick is protected without consuming an actionable tick');
+}
+
+function makeWokenPair(seed, kind = 'soft') {
+  const state = createMatch(seed, { p2Kind: 'lamuh_proto' });
+  const knockdownTicks = kind === 'hard' ? defaultTuning.combat.hardKnockdownTicks : defaultTuning.combat.softKnockdownTicks;
+  Object.assign(state.fighters.p2, { phase: 'knockdown', knockdownKind: kind, knockdownTicks });
+  for (let index = 0; index < knockdownTicks; index++) tick(state, {});
+  assert.strictEqual(state.fighters.p2.phase, 'getup');
+  for (let index = 0; index < defaultTuning.combat.getupTicks; index++) tick(state, {});
+  assert.strictEqual(state.fighters.p2.phase, 'idle');
+  return state;
+}
+
+function testActionableWakeupRejectsStrikeThenExpires() {
+  const state = makeWokenPair(1210);
+  const attacker = state.fighters.p1, defender = state.fighters.p2;
+  Object.assign(attacker, { x: -35, facing: 1, attackFacing: 1, phase: 'attack', phaseTick: 2,
+    currentAttack: 'standing_light', hitLedger: {} });
+  Object.assign(defender, { x: 35, facing: -1 });
+  const health = defender.health;
+  tick(state, { p2: { right: true } });
+  assert.ok(defender.x > 35, 'the defender can retreat during wake-up protection');
+  assert.strictEqual(defender.health, health, 'a meaty strike cannot restart the combo on the first actionable tick');
+  assert.strictEqual(defender.wakeupInvuln, defaultTuning.lamuh_proto.wakeupInvuln);
+
+  for (let index = 0; index < defaultTuning.lamuh_proto.wakeupInvuln; index++) tick(state, {});
+  assert.strictEqual(defender.wakeupInvuln, 0);
+  Object.assign(attacker, { x: -35, facing: 1, attackFacing: 1, phase: 'attack', phaseTick: 2,
+    currentAttack: 'standing_light', hitLedger: {} });
+  Object.assign(defender, { x: 35, phase: 'idle' });
+  tick(state, {});
+  assert.ok(defender.health < health, 'ordinary strikes connect again after protection expires');
+}
+
+function testActionableWakeupRejectsThrowAndAllowsAttack() {
+  const throwState = makeWokenPair(1211);
+  Object.assign(throwState.fighters.p1, { x: -31, facing: 1 });
+  Object.assign(throwState.fighters.p2, { x: 31, facing: -1 });
+  const health = throwState.fighters.p2.health;
+  tick(throwState, { p1: { throw: true }, p2: { right: true } });
+  assert.ok(throwState.fighters.p2.x > 31, 'a pending throw cannot pin a protected defender');
+  for (let index = 0; index < 5; index++) tick(throwState, {});
+  assert.strictEqual(throwState.lastThrowEvent.type, 'whiff', 'a wake-up throw must miss');
+  assert.strictEqual(throwState.fighters.p2.health, health);
+
+  const attackState = makeWokenPair(1212);
+  tick(attackState, { p1: { throw: true }, p2: { light: true } });
+  assert.strictEqual(attackState.fighters.p2.currentAttack, 'standing_light',
+    'the defender can start an attack into a pending throw');
+  assert.ok(attackState.fighters.p2.wakeupInvuln > 0);
+
+  const hardState = makeWokenPair(1213, 'hard');
+  assert.strictEqual(hardState.fighters.p2.wakeupInvuln, defaultTuning.lamuh_proto.wakeupInvuln + 1,
+    'hard knockdown grants the same actionable wake-up window');
 }
 
 function testSimultaneousTechIsOrderIndependentAndSerializable() {
@@ -207,6 +263,8 @@ const tests = [
   testMissedTechAndAirborneHitstunLandInSoftKnockdown,
   testLandingRecoveryCannotBeInputCanceled,
   testSoftKnockdownCompletesGetupAndClearsItsKind,
+  testActionableWakeupRejectsStrikeThenExpires,
+  testActionableWakeupRejectsThrowAndAllowsAttack,
   testSimultaneousTechIsOrderIndependentAndSerializable,
   testPlaytestExposesReadableComboAndTechStatus,
   testLegacyGameRemainsUntouched

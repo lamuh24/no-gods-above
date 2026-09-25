@@ -1,4 +1,5 @@
 import "./style.css";
+import { lamuhBodyScale } from "./bodyScale";
 import { drawHeavenArc } from './heavenSplitter';
 import { AttackId, FighterState } from '../core/types';
 import {
@@ -292,8 +293,8 @@ async function main() {
       await drawStandaloneFrame(context, source, record.root, closure.v2.canvas, presentationRoot.x, presentationRoot.y, .30, facing, 1, silhouette);
       if (serial !== renderSerial) return;
       if (closure.v2.authoredWorldRootPath) drawWorldRootPath(context, closure.v2.authoredWorldRootPath, screenRoot);
-      else drawBodyPath(context, closure.v2.frames.map((item) => item.bodyCenter), closure.v2.root, screenRoot, .30);
-      drawAuthoredOverlay(context, presentationRoot, record.root, .30, facing, record.bodyCenter, record.visibleBounds, { root: checked("rootOverlay"), bodyCenter: checked("centerOverlay"), bounds: checked("boundsOverlay") });
+      else drawBodyPath(context, closure.v2.frames.map((item) => item.bodyCenter), closure.v2.root, screenRoot, .30*lamuhBodyScale(source));
+      drawAuthoredOverlay(context, presentationRoot, record.root, .30*lamuhBodyScale(source), facing, record.bodyCenter, record.visibleBounds, { root: checked("rootOverlay"), bodyCenter: checked("centerOverlay"), bounds: checked("boundsOverlay") });
     } else if (movementState) {
       const record = movementState.frames[Math.min(frame, movementState.frames.length - 1)];
       await drawStandaloneFrame(context, record.publicPath, record.root, data.movementModernization.canvas, screenRoot.x, screenRoot.y, .30, facing, 1, silhouette);

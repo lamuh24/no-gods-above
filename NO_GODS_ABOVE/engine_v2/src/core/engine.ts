@@ -2,7 +2,10 @@ import { checksumState } from "./checksum";
 import { normalizeSeed } from "./rng";
 import { backHeld, forwardHeld, held, makeInputBuffer, pushInput, recentDoubleTap, wasPressed, wasPressedWithHeld } from "./input";
 import { fighterDefinitions } from "../data/fighters";
+import {CELESTE_SPATIAL_SCALE} from '../data/celesteSpatial';
 import { isSwahiliAirSpecialId, SWAHILI_AIR_SPECIAL_IDS, SWAHILI_AIR_SPECIALS_V1 } from "../data/swahiliAirSpecials";
+import { isSwahiliGroundSpecialId, SWAHILI_GROUND_SPECIALS_V1 } from "../data/swahiliGroundSpecials";
+import { SWAHILI_HOOK_HEADBUTT } from "../data/swahiliHookHeadbutt";
 import { AirTechDirection, AttackDefinition, AttackId, AuthoredHopTrack, BodyEnvelope, FighterId, FighterKind, FighterPhase, FighterState, HitReactionWeight, InputFrame, LamuhReviewAttackProfile, KnockdownKind, MatchConfig, MatchState, ProjectileEvent, ProjectileState, Rect, StrikeHitbox, ThrowDefinition, ThrowId, ThrowTrackPoint, TickResult } from "./types";
 
 const EPSILON = 0.0001;
@@ -32,6 +35,10 @@ const lamuhStandingHeavyReviewTiming = {
 } as const;
 export function resolveAttackDefinition(fighter: FighterState, attackId: AttackId = fighter.currentAttack as AttackId): AttackDefinition {
   if (fighter.kind === "lamuh_proto" && fighter.swahiliAirSpecialsV1) {
+    if (isSwahiliGroundSpecialId(attackId)) {
+      const special = SWAHILI_GROUND_SPECIALS_V1[attackId];
+      return fighter.divineCounterResponse && fighter.currentAttack === attackId && special.strikeCounter ? special.strikeCounter.response : special;
+    }
     if (isSwahiliAirSpecialId(attackId)) return SWAHILI_AIR_SPECIALS_V1[attackId];
     if (["air_light", "air_medium", "air_heavy"].includes(attackId)) {
       const normal = def(fighter.kind).attacks[attackId];
@@ -83,7 +90,23 @@ function enterPhase(f: FighterState, phase: FighterPhase) { if (f.phase !== phas
 function restartHitReaction(f: FighterState, weight: HitReactionWeight) { f.hitReactionWeight = weight; f.phase = "hit_reaction"; f.phaseTick = 0; }
 function neutralPhase(f: FighterState) { return f.grounded ? "idle" : "jump"; }
 function canUpdateFacing(f: FighterState) { return f.grounded && ["idle", "walk_forward", "walk_backward", "turn", "crouch", "crouch_release", "block"].includes(f.phase); }
-function recordWarning(state: MatchState, warning: string) { if (!state.debugWarnings.includes(warning)) state.debugWarnings.push(warning); }
+function recordWarning(state: MatchState, warning: string) { if (!state.debugWarnings.includes(warning)) { state.debugWarnings.push(warning); if(Object.values(state.fighters).some(f=>f.kind==="celeste_proto"))state.debugWarnings.sort(); } }
+function versusRules(state: MatchState) { return state.matchConfig.versusRules; }
+function opponentOf(state: MatchState, f: FighterState) { return state.fighters[f.id === "p1" ? "p2" : "p1"]; }
+// Knockout (versus rules only): the body is launched away, then stays down for the round.
+function knockOut(defender: FighterState, state: MatchState, awayFacing: 1 | -1) {
+  if (defender.knockedOut) return;
+  defender.knockedOut = true;
+  clearAttack(defender);
+  defender.blocking = false; defender.crouchBlocking = false; defender.blockstun = 0; defender.hitstun = 0;
+  delete defender.pushback;
+  if (state.throwInteraction?.defender === defender.id) return; // Throw completion downs the victim.
+  defender.grounded = false;
+  defender.vy = Math.min(defender.vy, -9.5);
+  defender.vx = awayFacing * Math.max(4.5, Math.abs(defender.vx));
+  if (defender.y >= state.stage.groundY) defender.y = state.stage.groundY - EPSILON;
+  beginKnockdown(defender, state, "hard");
+}
 
 export function makeFighter(id: FighterId, kind: FighterKind, x: number, facing: 1 | -1, reviewAttackProfile?: LamuhReviewAttackProfile, swahiliAirSpecialsV1 = false, bodyEnvelope?: BodyEnvelope): FighterState {
   return {
@@ -111,8 +134,8 @@ export function createMatch(seed = 1, config: MatchConfig = {}): MatchState {
   const normalizedSeed = normalizeSeed(seed);
   return {
     schemaVersion: "2.0.0-alpha", matchId: config.matchId ?? `local-${normalizedSeed}`,
-    matchConfig: { p1Kind, p2Kind, p1X, p2X, ...(config.p1LamuhReview ? { p1LamuhReview: clone(config.p1LamuhReview) } : {}), ...(config.p2LamuhReview ? { p2LamuhReview: clone(config.p2LamuhReview) } : {}), ...(config.swahiliAirSpecialsV1 ? { swahiliAirSpecialsV1: true } : {}) }, seed: normalizedSeed, rngState: normalizedSeed, tick: 0,
-    stage: { left: -420, right: 420, groundY: 0, ceilingY: -180 },
+    matchConfig: { p1Kind, p2Kind, p1X, p2X, ...(config.p1LamuhReview ? { p1LamuhReview: clone(config.p1LamuhReview) } : {}), ...(config.p2LamuhReview ? { p2LamuhReview: clone(config.p2LamuhReview) } : {}), ...(config.swahiliAirSpecialsV1 ? { swahiliAirSpecialsV1: true } : {}), ...(config.versusRules ? { versusRules: clone(config.versusRules) } : {}) }, seed: normalizedSeed, rngState: normalizedSeed, tick: 0,
+    stage: { left: config.versusRules?.openPlatform?.left ?? -420, right: config.versusRules?.openPlatform?.right ?? 420, groundY: 0, ceilingY: -180 },
     fighters: { p1: makeFighter("p1", p1Kind, p1X, 1, config.p1LamuhReview, config.swahiliAirSpecialsV1, config.p1BodyEnvelope), p2: makeFighter("p2", p2Kind, p2X, -1, config.p2LamuhReview, config.swahiliAirSpecialsV1, config.p2BodyEnvelope) },
     inputLog: [], checksums: [], debugWarnings: [], lastCombatEvent: null, lastSystemEvent: null,
     throwInteraction: null, lastThrowEvent: null, presentationEventLedger: []
@@ -122,7 +145,7 @@ export function createMatch(seed = 1, config: MatchConfig = {}): MatchState {
 export function saveSnapshot(state: MatchState): MatchState { return clone(state); }
 export function restoreSnapshot(snapshot: MatchState): MatchState { return clone(snapshot); }
 
-function clearAttack(f: FighterState) { f.currentAttack = null; f.currentMoveInstance = 0; f.hitLedger = {}; f.cancelOptions = []; f.attackConnected = false; f.attackBlocked = false; delete f.airDiveGatherStartTick; delete f.divineCounterResponse; delete f.ascendHeavyResponse; }
+function clearAttack(f: FighterState) { delete f.celesteLandingRecovery;delete f.celesteLandedAttackTick; f.currentAttack = null; f.currentMoveInstance = 0; f.hitLedger = {}; f.cancelOptions = []; f.attackConnected = false; f.attackBlocked = false; delete f.airDiveGatherStartTick; delete f.divineCounterResponse; delete f.ascendHeavyResponse; delete f.launcherFollowUp; delete f.comboApproach; delete f.airExtender; }
 export function currentDivineCounter(f: FighterState) {
   if (f.phase !== "attack" || f.currentAttack !== "legacy_divine_vanish_heavy") return null;
   if (f.divineCounterResponse) {
@@ -133,13 +156,42 @@ export function currentDivineCounter(f: FighterState) {
   return { stage: f.phaseTick < counterWindow.start ? "startup" : f.phaseTick <= counterWindow.end ? "counter_window" : "whiff_recovery", responseTick: null, stanceTick: f.phaseTick, trigger: null };
 }
 function airActionCost(attack: AttackDefinition) { return attack.airOnly ? attack.airActionCost ?? 1 : 0; }
+function celesteState(f:FighterState) {
+ return f.celeste ??= {solCooldown:0,tiCooldown:0,faCooldown:0,laCooldown:0,faSpent:false,neutralTicks:0,guardSpent:false,launcherSpent:false};
+}
+function clearCelesteTrap(state:MatchState,owner:FighterId){if(state.projectiles)state.projectiles=state.projectiles.filter(p=>!(p.owner===owner&&p.celesteTrap));}
+function progressCeleste(state:MatchState){
+ for(const f of Object.values(state.fighters))if(f.kind==="celeste_proto"){
+  const c=celesteState(f),other=state.fighters[f.id==="p1"?"p2":"p1"];
+  for(const k of ["solCooldown","tiCooldown","faCooldown","laCooldown"] as const)c[k]=Math.max(0,c[k]-1);
+  if(f.health<=0||f.hitstun>0||f.phase==="thrown"||f.phase==="burst")clearCelesteTrap(state,f.id);
+  const neutral=["idle","walk_forward","walk_backward"].includes(f.phase)&&!f.hitstun&&!f.blockstun&&!other.hitstun&&!other.blockstun&&!state.projectiles?.some(p=>p.owner===f.id);
+  c.neutralTicks=neutral?c.neutralTicks+1:0;if(c.neutralTicks>=30)c.faSpent=false;
+ }
+}
 function canStartAttack(f: FighterState, attackId: AttackId, state: MatchState) {
+  if (f.kind === "celeste_proto" && attackId === "crouching_heavy" && f.comboRoute.includes("crouching_heavy")) return false;
+  if(f.kind==="celeste_proto"){
+    const c=celesteState(f),a=resolveAttackDefinition(f,attackId),family=a?.celesteFamily;
+    if((attackId==="crouching_heavy"||family==="up")&&c.launcherSpent)return false;
+    if(family==="sol"&&(c.solCooldown>0||state.projectiles?.some(p=>p.owner===f.id&&!p.celesteTrap)))return false;
+    if(family==="ti"&&(c.tiCooldown>0||state.projectiles?.some(p=>p.owner===f.id&&p.celesteTrap)))return false;
+    if((family==="ti"||family==="la")&&!["idle","walk_forward","walk_backward","crouch","block","turn"].includes(f.phase))return false;
+    if(family==="la"&&c.laCooldown>0)return false;
+    if(attackId==="strobe_air_waltz"&&(f.airDashesRemaining??0)<1)return false;
+    if(attackId==="finale_reprise"&&c.bounceSpent)return false;
+    if(attackId==="octava"&&(f.tension<100||!f.grounded))return false;
+    if(family==="fa"&&(c.faCooldown>0||c.faSpent||(f.phase==="attack"&&(!["standing_medium","crouching_medium","air_medium"].includes(f.currentAttack!)||f.tension<25))))return false;
+  }
+
+  if(attackId==='swahili_paid_seal'&&(!f.paidSealStarterTest||f.kind!=='lamuh_proto'))return false;
   // The ultimate still cannot interrupt an arbitrary move; it may only be taken as an
   // authored cancel from a move that lists it, which is how ASW-style super cancels work.
   if (attackId === "legacy_crown_of_no_gods" && (f.kind !== "lamuh_legacy_v2" || f.tension < def(f.kind).combat.maxTension
     || !f.grounded || (f.phase === "attack" && !f.cancelOptions.includes("legacy_crown_of_no_gods"))
     || state.fighters[f.id === "p1" ? "p2" : "p1"].victimClass !== "standard_humanoid")) return false;
   if (isSwahiliAirSpecialId(attackId) && (f.kind !== "lamuh_proto" || !f.swahiliAirSpecialsV1)) return false;
+  if (isSwahiliGroundSpecialId(attackId) && (f.kind !== "lamuh_proto" || !f.swahiliAirSpecialsV1)) return false;
   const attack = resolveAttackDefinition(f, attackId);
   if (attack.authoredDive) {
     const height = state.stage.groundY - f.y, dive = attack.authoredDive;
@@ -153,12 +205,21 @@ function beginAttack(f: FighterState, attackId: AttackId, state: MatchState) {
   const attack = resolveAttackDefinition(f, attackId);
   if (!canStartAttack(f, attackId, state)) return false;
   if (attackId === "legacy_crown_of_no_gods") { const cost = def(f.kind).combat.maxTension; f.tension -= cost; f.tensionSpent += cost; }
+  if(f.kind==="celeste_proto"){
+    const c=celesteState(f);c.guardSpent=false;
+    if(attackId==="strobe_air_waltz")f.airDashesRemaining=(f.airDashesRemaining??0)-1;
+    if(attackId==="octava"){f.tension-=100;f.tensionSpent+=100;if(state.projectiles)state.projectiles=state.projectiles.filter(p=>p.owner!==f.id);}
+    if(attack.celesteFamily==="fa"){if(f.phase==="attack"){f.tension-=25;f.tensionSpent+=25;}c.faCooldown=60;c.faSpent=true;c.neutralTicks=0;}
+    if(attack.celesteFamily==="la")c.laCooldown=180;
+    f.blocking=false;f.crouchBlocking=false;
+  }
   const enteringAttack = f.phase !== "attack";
+  const cancelledFromHit = !enteringAttack && f.attackConnected;
   if (f.phase === "turn") delete f.turnStartingFacing;
   f.phase = "attack";
   // Playable Swahili and Lamuh timelines begin at zero for every new move, including
   // grounded cancels. Carrying the outgoing clock skips the next move's anticipation.
-  if (enteringAttack || attack.airOnly || f.kind === "lamuh_legacy_v2" || f.kind === "lamuh_proto") f.phaseTick = 0;
+  if (enteringAttack || attack.airOnly || f.kind === "lamuh_legacy_v2" || f.kind === "lamuh_proto" || f.kind === "celeste_proto") f.phaseTick = 0;
   f.currentAttack = attackId; f.attackFacing = f.facing; f.moveInstanceCounter++; f.currentMoveInstance = f.moveInstanceCounter;
   if (f.kind === "lamuh_legacy_v2" && attackId.startsWith("legacy_divine_vanish_")) {
     // Back selected guard earlier in this input tick. The committed retreat must
@@ -174,6 +235,9 @@ function beginAttack(f: FighterState, attackId: AttackId, state: MatchState) {
     f.airTechInvuln = 0;
   }
   f.hitLedger = {}; f.attackConnected = false; f.attackBlocked = false; f.cancelOptions = [];
+  delete f.launcherFollowUp; delete f.comboApproach;
+  const approach = cancelledFromHit ? versusRules(state)?.launcherFollowUps?.find((entry) => entry.attack === attackId && entry.comboApproach)?.comboApproach : undefined;
+  if (approach) f.comboApproach = { instance: f.currentMoveInstance, velocity: approach.velocity, untilMoveTick: approach.untilMoveTick };
   return true;
 }
 function attackPhase(f: FighterState) { if (!f.currentAttack) return "none"; if (f.phase === "dive_landing" || f.airDiveGatherStartTick !== undefined) return "recovery"; const a = resolveAttackDefinition(f); if (f.phaseTick < a.startup) return "startup"; if (f.phaseTick < a.startup + a.active) return "active"; return "recovery"; }
@@ -192,7 +256,7 @@ export function currentAuthoredDive(f: FighterState, state: MatchState) {
   };
 }
 
-function resetCombo(f: FighterState) { f.comboCount = 0; f.comboDamage = 0; f.comboRoute = []; f.damageScaling = 1; f.comboTarget = null; f.comboNeutralTicks = 0; f.juggleSpent = 0; f.peakJuggleSpent = 0; }
+function resetCombo(f: FighterState) { if(f.celeste){f.celeste.launcherSpent=false;f.celeste.bounceSpent=false;} f.comboCount = 0; f.comboDamage = 0; f.comboRoute = []; f.damageScaling = 1; f.comboTarget = null; f.comboNeutralTicks = 0; f.juggleSpent = 0; f.peakJuggleSpent = 0; delete f.airExtenderUsed; }
 function addTension(f: FighterState, amount: number) {
   if (amount <= 0) return;
   const before = f.tension;
@@ -213,7 +277,7 @@ function applyRomanCancel(state: MatchState, attempt: SystemAttempt) {
   const { actor, target } = attempt;
   const combat = def(actor.kind).combat;
   const before = actor.tension;
-  const validState = actor.hitstun === 0 && actor.blockstun === 0 && actor.knockdownTicks === 0 && actor.getupTicks === 0
+  const validState = actor.currentAttack!=="octava" && actor.hitstun === 0 && actor.blockstun === 0 && actor.knockdownTicks === 0 && actor.getupTicks === 0
     && actor.phase === "attack" && !!actor.currentAttack && (actor.attackConnected || actor.attackBlocked);
   if (!validState) { rejectSystem(state, attempt, before, "invalid_state"); return; }
   if (before < combat.romanCancelCost) { rejectSystem(state, attempt, before, "insufficient_resource"); return; }
@@ -235,6 +299,7 @@ function applyBurst(state: MatchState, attempt: SystemAttempt) {
   const validState = (actor.hitstun > 0 || actor.blockstun > 0) && actor.knockdownTicks === 0 && actor.getupTicks === 0;
   if (!validState) { rejectSystem(state, attempt, before, "invalid_state"); return; }
   if (before < combat.burstCost) { rejectSystem(state, attempt, before, "insufficient_resource"); return; }
+  delete actor.celesteBounce;delete target.celesteBounce;
   actor.burst -= combat.burstCost;
   actor.burstCount++;
   actor.burstTicks = combat.burstRecoveryTicks;
@@ -256,7 +321,7 @@ function resolveSystemActions(state: MatchState) {
   const attempts: SystemAttempt[] = [];
   for (const id of ids) {
     const actor = state.fighters[id], target = state.fighters[id === "p1" ? "p2" : "p1"];
-    if (actor.hitstop > 0) continue;
+    if (actor.hitstop > 0 || actor.knockedOut) continue;
     const burstTick = recentSystemPress(actor, "burst");
     if (burstTick !== null) attempts.push({ system: "burst", actor, target, input: "burst", inputTick: burstTick });
     const romanTick = recentSystemPress(actor, "romanCancel");
@@ -268,100 +333,134 @@ function resolveSystemActions(state: MatchState) {
     if (attempt.system === "burst") applyBurst(state, attempt); else applyRomanCancel(state, attempt);
   }
 }
-function requestAttack(f: FighterState): AttackId | null {
-  if (f.kind === "lamuh_legacy_v2" && wasPressed(f.deterministicBuffer, "ultimate", 1)) return "legacy_crown_of_no_gods";
+function requestAttack(f: FighterState, bufferedHitstop = 0): AttackId | null {
+  if(f.kind==='lamuh_proto'&&f.paidSealStarterTest&&wasPressed(f.deterministicBuffer,'ultimate',1+bufferedHitstop))return 'swahili_paid_seal';
+  const n = 6 + bufferedHitstop;
+  if (f.kind === "lamuh_legacy_v2" && wasPressed(f.deterministicBuffer, "ultimate", 1 + bufferedHitstop)) return "legacy_crown_of_no_gods";
   const b = f.deterministicBuffer;
+  // Isolated Celeste slice: unsupported specials must not fall through to
+  // the prototype's unrelated special families or ordinary attacks.
+  if (f.kind === "celeste_proto") {
+    if(wasPressed(b,"ultimate",1 + bufferedHitstop))return "octava";
+    const buttons = ["heavy", "medium", "light"] as const;
+    const chord=(button:"light"|"medium"|"heavy")=>wasPressedWithHeld(b,button,"special",n)||wasPressedWithHeld(b,"special",button,n);
+    if(held(b,"special")||buttons.some(chord)){
+      const button=buttons.find(chord);if(!button)return null;
+      if(!f.grounded)return button==="light"?"strobe_air_waltz":button==="medium"?"ovation_descant":"finale_reprise";
+      const index=button==="light"?0:button==="medium"?1:2;
+      const down=held(b,"down")&&!held(b,"up"),up=held(b,"up")&&!held(b,"down");
+      if(down)return (["encore_near","encore_reach","encore_balcony"] as AttackId[])[index];
+      if(up)return (["rising_note","ascending_aria","grand_crescendo"] as const)[index];
+      if(held(b,"left")!==held(b,"right"))return ((held(b,"right")?1:-1)===f.facing?["quickstep_beat","crescendo_slash","curtain_call"]:["waltz_retreat","reversal_measure","broken_tempo"] as AttackId[])[index] as AttackId;
+      return button==="medium"?"ovation_procession":button==="light"?"ovation_staccato":"ovation_fortissimo";
+    }
+    for (const button of buttons) {
+      if (wasPressed(b, button, n)) return `${!f.grounded ? "air" : held(b, "down") ? "crouching" : "standing"}_${button}` as AttackId;
+    }
+    return null;
+  }
+  if (f.kind === "lamuh_proto" && f.swahiliAirSpecialsV1 && f.grounded && held(b, "special")) {
+    const chord = (button: "light" | "medium" | "heavy") => wasPressedWithHeld(b, button, "special", n) || wasPressedWithHeld(b, "special", button, n);
+    if (held(b, "up") && !held(b, "down") && chord("light")) return "special_up_light";
+    if (!held(b, "up") && !held(b, "down") && backHeld(b)) {
+      if (chord("heavy")) return "special_back_heavy";
+      if (chord("medium")) return "special_back_medium";
+      if (chord("light")) return "special_back_light";
+    }
+    if (!held(b, "up") && !held(b, "down") && !held(b, "left") && !held(b, "right") && chord("heavy")) return "special_neutral_heavy";
+    if (!held(b, "up") && !held(b, "down") && !held(b, "left") && !held(b, "right") && chord("light")) return "special_neutral_light";
+  }
   if (f.kind === "lamuh_proto" && f.swahiliAirSpecialsV1 && !f.grounded) {
     // Chord history retains its special identity even when U is released. An
     // exhausted/illegal buffered special may not become a cheaper plain normal.
-    if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "special_air_heavy";
-    if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "special_air_medium";
-    if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "special_air_light";
+    if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "special_air_heavy";
+    if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "special_air_medium";
+    if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "special_air_light";
     if (held(b, "special")) return null;
   }
   if (f.kind === "lamuh_legacy_v2" && !f.grounded && held(b, "special")) {
     // One aerial family independent of held direction. Rejected entry cannot fall
     // through into a plain air normal or the generic cancel-only fixture ender.
-    if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "legacy_radiant_dive_heavy";
-    if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "legacy_radiant_dive_medium";
-    if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "legacy_radiant_dive_light";
+    if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "legacy_radiant_dive_heavy";
+    if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "legacy_radiant_dive_medium";
+    if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "legacy_radiant_dive_light";
     return null;
   }
   if (f.kind === "lamuh_legacy_v2" && f.grounded && held(b, "special")) {
     // Authored Down takes precedence over horizontal diagonals, never Up+Down SOCD.
     if (held(b, "down") && !held(b, "up")) {
-      if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "legacy_aura_sweep_heavy";
-      if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "legacy_aura_sweep_medium";
-      if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "legacy_aura_sweep_light";
+      if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "legacy_aura_sweep_heavy";
+      if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "legacy_aura_sweep_medium";
+      if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "legacy_aura_sweep_light";
       return null;
     }
     // Authored Up has priority over both horizontal diagonals and ordinary jump.
     // SOCD Up+Down does not select this family; forward-only routing stays unchanged.
     if (held(b, "up") && !held(b, "down")) {
-      if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "legacy_heaven_splitter_heavy";
-      if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "legacy_heaven_splitter_medium";
-      if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "legacy_heaven_splitter_light";
+      if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "legacy_heaven_splitter_heavy";
+      if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "legacy_heaven_splitter_medium";
+      if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "legacy_heaven_splitter_light";
     }
     if (forwardHeld(b)) {
-      if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "legacy_ascend_step_heavy";
-      if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "legacy_ascend_step";
-      if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "legacy_ascend_step_light";
+      if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "legacy_ascend_step_heavy";
+      if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "legacy_ascend_step";
+      if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "legacy_ascend_step_light";
     }
     if (backHeld(b)) {
-      if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "legacy_divine_vanish_heavy";
-      if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "legacy_divine_vanish_medium";
-      if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "legacy_divine_vanish_light";
+      if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "legacy_divine_vanish_heavy";
+      if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "legacy_divine_vanish_medium";
+      if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "legacy_divine_vanish_light";
     }
     if (!held(b, "left") && !held(b, "right") && !held(b, "up") && !held(b, "down")) {
-      if (wasPressedWithHeld(b, "heavy", "special", 6) || wasPressedWithHeld(b, "special", "heavy", 6)) return "legacy_celestial_palm_heavy";
-      if (wasPressedWithHeld(b, "medium", "special", 6) || wasPressedWithHeld(b, "special", "medium", 6)) return "legacy_celestial_palm_medium";
-      if (wasPressedWithHeld(b, "light", "special", 6) || wasPressedWithHeld(b, "special", "light", 6)) return "legacy_celestial_palm_light";
+      if (wasPressedWithHeld(b, "heavy", "special", n) || wasPressedWithHeld(b, "special", "heavy", n)) return "legacy_celestial_palm_heavy";
+      if (wasPressedWithHeld(b, "medium", "special", n) || wasPressedWithHeld(b, "special", "medium", n)) return "legacy_celestial_palm_medium";
+      if (wasPressedWithHeld(b, "light", "special", n) || wasPressedWithHeld(b, "special", "light", n)) return "legacy_celestial_palm_light";
     }
     return null;
   }
   const airSpecialEnder = !f.grounded && (
-    wasPressedWithHeld(b, "heavy", "special", 6)
-    || wasPressedWithHeld(b, "special", "heavy", 6)
+    wasPressedWithHeld(b, "heavy", "special", n)
+    || wasPressedWithHeld(b, "special", "heavy", n)
   );
   if (airSpecialEnder) return "air_special_ender";
-  if (!f.grounded && wasPressed(b, "light", 6)) return "air_light";
-  if (!f.grounded && wasPressed(b, "medium", 6)) return "air_medium";
-  if (!f.grounded && wasPressed(b, "heavy", 6)) return "air_heavy";
+  if (!f.grounded && wasPressed(b, "light", n)) return "air_light";
+  if (!f.grounded && wasPressed(b, "medium", n)) return "air_medium";
+  if (!f.grounded && wasPressed(b, "heavy", n)) return "air_heavy";
   const forwardHeavySpecial = forwardHeld(b) && (
-    wasPressedWithHeld(b, "heavy", "special", 6)
-    || wasPressedWithHeld(b, "special", "heavy", 6)
+    wasPressedWithHeld(b, "heavy", "special", n)
+    || wasPressedWithHeld(b, "special", "heavy", n)
   );
   const forwardMediumSpecial = forwardHeld(b) && (
-    wasPressedWithHeld(b, "medium", "special", 6)
-    || wasPressedWithHeld(b, "special", "medium", 6)
+    wasPressedWithHeld(b, "medium", "special", n)
+    || wasPressedWithHeld(b, "special", "medium", n)
   );
   const forwardLightSpecial = forwardHeld(b) && (
-    wasPressedWithHeld(b, "light", "special", 6)
-    || wasPressedWithHeld(b, "special", "light", 6)
+    wasPressedWithHeld(b, "light", "special", n)
+    || wasPressedWithHeld(b, "special", "light", n)
   );
   const upMediumSpecial = held(b, "up") && (
-    wasPressedWithHeld(b, "medium", "special", 6)
-    || wasPressedWithHeld(b, "special", "medium", 6)
+    wasPressedWithHeld(b, "medium", "special", n)
+    || wasPressedWithHeld(b, "special", "medium", n)
   );
   const downHeavySpecial = held(b, "down") && (
-    wasPressedWithHeld(b, "heavy", "special", 6)
-    || wasPressedWithHeld(b, "special", "heavy", 6)
+    wasPressedWithHeld(b, "heavy", "special", n)
+    || wasPressedWithHeld(b, "special", "heavy", n)
   );
   const downLightSpecial = held(b, "down") && (
-    wasPressedWithHeld(b, "light", "special", 6)
-    || wasPressedWithHeld(b, "special", "light", 6)
+    wasPressedWithHeld(b, "light", "special", n)
+    || wasPressedWithHeld(b, "special", "light", n)
   );
   const downMediumSpecial = held(b, "down") && (
-    wasPressedWithHeld(b, "medium", "special", 6)
-    || wasPressedWithHeld(b, "special", "medium", 6)
+    wasPressedWithHeld(b, "medium", "special", n)
+    || wasPressedWithHeld(b, "special", "medium", n)
   );
   const neutralMediumSpecial = !held(b, "left") && !held(b, "right") && !held(b, "up") && !held(b, "down") && (
-    wasPressedWithHeld(b, "medium", "special", 6)
-    || wasPressedWithHeld(b, "special", "medium", 6)
+    wasPressedWithHeld(b, "medium", "special", n)
+    || wasPressedWithHeld(b, "special", "medium", n)
   );
   const upHeavySpecial = held(b, "up") && (
-    wasPressedWithHeld(b, "heavy", "up", 6)
-    || wasPressedWithHeld(b, "up", "heavy", 6)
+    wasPressedWithHeld(b, "heavy", "up", n)
+    || wasPressedWithHeld(b, "up", "heavy", n)
   );
   if (f.grounded && forwardHeavySpecial) return "special_forward_heavy";
   if (f.grounded && forwardMediumSpecial) return "special_forward_medium";
@@ -372,21 +471,25 @@ function requestAttack(f: FighterState): AttackId | null {
   if (f.grounded && downMediumSpecial) return "special_down_medium";
   if (f.grounded && neutralMediumSpecial) return "special_neutral_medium";
   if (f.kind !== "lamuh_legacy_v2" && f.grounded && upHeavySpecial) return "special_up_heavy";
-  if (wasPressedWithHeld(b, "light", "down", 6)) return "crouching_light";
-  if (wasPressedWithHeld(b, "medium", "down", 6)) return "crouching_medium";
-  if (wasPressedWithHeld(b, "heavy", "down", 6)) return "crouching_heavy";
-  if (wasPressed(b, "light", 6)) return "standing_light";
-  if (wasPressed(b, "medium", 6)) return "standing_medium";
-  if (wasPressed(b, "heavy", 6)) return "standing_heavy";
+  if (wasPressedWithHeld(b, "light", "down", n)) return "crouching_light";
+  if (wasPressedWithHeld(b, "medium", "down", n)) return "crouching_medium";
+  if (wasPressedWithHeld(b, "heavy", "down", n)) return "crouching_heavy";
+  if (wasPressed(b, "light", n)) return "standing_light";
+  if (wasPressed(b, "medium", n)) return "standing_medium";
+  if (wasPressed(b, "heavy", n)) return "standing_heavy";
   return null;
 }
 
 function canStartThrow(f: FighterState) {
-  return f.grounded && f.hitstop === 0 && f.hitstun === 0 && f.blockstun === 0 && f.knockdownTicks === 0 && f.getupTicks === 0
+  return !f.knockedOut && f.grounded && f.hitstop === 0 && f.hitstun === 0 && f.blockstun === 0 && f.knockdownTicks === 0 && f.getupTicks === 0
     && ["idle", "walk_forward", "walk_backward", "crouch", "block"].includes(f.phase);
 }
 
-function supportsThrow(f: FighterState, throwId: ThrowId) { return !!def(f.kind).throws[throwId]; }
+function throwDefinition(f: FighterState, throwId: ThrowId) {
+  if (throwId === "swahili_hook_headbutt") return f.kind === "lamuh_proto" && f.swahiliAirSpecialsV1 ? SWAHILI_HOOK_HEADBUTT : undefined;
+  return def(f.kind).throws[throwId];
+}
+function supportsThrow(f: FighterState, throwId: ThrowId) { return !!throwDefinition(f, throwId); }
 
 function throwEventId(state: MatchState, attacker: FighterState, instanceId: number, type: "startup" | "connect" | "whiff" | "release" | "complete") {
   const eventIndex = type === "startup" ? 0 : type === "connect" || type === "whiff" ? 1 : type === "release" ? 2 : 3;
@@ -446,7 +549,7 @@ function applyTargetSideSwitch(state: MatchState, fighter: FighterState, attack:
 }
 
 function beginThrow(state: MatchState, attacker: FighterState, defender: FighterState, throwId: ThrowId) {
-  const definition = def(attacker.kind).throws[throwId];
+  const definition = throwDefinition(attacker, throwId);
   if (!definition) return;
   attacker.throwInstanceCounter++;
   attacker.vx = 0; attacker.vy = 0; attacker.attackFacing = attacker.facing;
@@ -461,6 +564,15 @@ function beginThrow(state: MatchState, attacker: FighterState, defender: Fighter
 
 function resolveThrowRequests(state: MatchState) {
   if (state.throwInteraction) return;
+  for (const id of ["p1", "p2"] as FighterId[]) {
+    const f = state.fighters[id], b = f.deterministicBuffer;
+    const neutral = !held(b,"left") && !held(b,"right") && !held(b,"up") && !held(b,"down");
+    const chord = wasPressedWithHeld(b,"medium","special",6) || wasPressedWithHeld(b,"special","medium",6);
+    if (f.kind === "lamuh_proto" && f.swahiliAirSpecialsV1 && neutral && chord && canStartThrow(f)) {
+      beginThrow(state, f, state.fighters[id === "p1" ? "p2" : "p1"], "swahili_hook_headbutt");
+      return;
+    }
+  }
   const attempts = (["p1", "p2"] as FighterId[])
     .map((id) => {
       const fighter = state.fighters[id];
@@ -496,8 +608,11 @@ function finishThrow(state: MatchState, definition: ThrowDefinition, attacker: F
   attacker.vx = 0; attacker.vy = 0; attacker.throwRotation = 0; enterPhase(attacker, "idle");
   if (connected) {
     defender.vx = 0; defender.vy = 0; defender.y = state.stage.groundY; defender.grounded = true; defender.throwRotation = 0;
-    defender.knockdownKind = "hard"; defender.knockdownTicks = definition.knockdownTicks; defender.hitstun = 0; defender.blockstun = 0;
-    enterPhase(defender, "knockdown");
+    defender.knockdownKind = definition.id === "swahili_hook_headbutt" ? "none" : "hard";
+    defender.knockdownTicks = definition.knockdownTicks; defender.hitstun = 0; defender.blockstun = 0;
+    if (defender.knockedOut) beginKnockdown(defender, state, "hard");
+    else if (definition.id === "swahili_hook_headbutt") { defender.hitstun = 16; restartHitReaction(defender, "heavy"); }
+    else enterPhase(defender, "knockdown");
   } else {
     defender.throwRotation = 0;
   }
@@ -509,7 +624,7 @@ function progressThrowInteraction(state: MatchState) {
   const interaction = state.throwInteraction;
   if (!interaction) return;
   const attacker = state.fighters[interaction.attacker], defender = state.fighters[interaction.defender];
-  const definition = def(attacker.kind).throws[interaction.throwId];
+  const definition = throwDefinition(attacker, interaction.throwId);
   if (!definition) throw new Error(`${attacker.kind} cannot progress unsupported throw ${interaction.throwId}`);
   if (attacker.hitstop > 0 || defender.hitstop > 0) {
     if (attacker.hitstop > 0) attacker.hitstop--;
@@ -521,8 +636,12 @@ function progressThrowInteraction(state: MatchState) {
     const signedSeparation = (defender.x - attacker.x) * interaction.startingFacing;
     const validVictim = defender.victimClass === definition.victimClass && defender.grounded && defender.hitstun === 0 && defender.blockstun === 0
       && defender.knockdownTicks === 0 && defender.getupTicks === 0 && defender.phase !== "thrown" && !ignoresThrows(defender);
-    if (validVictim && signedSeparation >= 0 && signedSeparation <= definition.range && Math.abs(defender.y - attacker.y) <= definition.heightTolerance) {
+    // Versus bodies are wider than the authored pushboxes; capture keeps its authored reach from contact.
+    const contactAllowance = versusRules(state)?.throwRangeFromContact
+      ? Math.max(0, (fighterPushbox(attacker).w + fighterPushbox(defender).w - def(attacker.kind).pushbox.w - def(defender.kind).pushbox.w) / 2) : 0;
+    if (validVictim && !defender.knockedOut && signedSeparation >= 0 && signedSeparation <= definition.range + contactAllowance && Math.abs(defender.y - attacker.y) <= definition.heightTolerance) {
       interaction.result = "connected"; attacker.phase = "throw_active"; defender.phase = "thrown"; defender.phaseTick = 0;
+      clearCelesteTrap(state,defender.id);
       defender.blocking = false; defender.crouchBlocking = false; defender.vx = 0; defender.vy = 0; clearAttack(defender);
       const connectSample = sampleThrowTrack(definition.track, interaction.tick);
       const trackVictimX = interaction.attackerStartX + interaction.startingFacing * connectSample.victimOffsetX;
@@ -539,13 +658,15 @@ function progressThrowInteraction(state: MatchState) {
   attacker.x = Math.max(state.stage.left, Math.min(state.stage.right, interaction.attackerStartX + interaction.startingFacing * sample.attackerOffsetX));
   attacker.y = interaction.attackerStartY + sample.attackerOffsetY; attacker.grounded = true; attacker.throwRotation = 0;
   if (interaction.result === "connected") {
-    defender.x = Math.max(state.stage.left, Math.min(state.stage.right, interaction.attackerStartX + interaction.startingFacing * sample.victimOffsetX + interaction.victimTrackAnchorX));
+    const anchorWeight = interaction.throwId === "swahili_hook_headbutt" ? Math.max(0, 1 - (interaction.tick - definition.connectTick) / 16) : 1;
+    defender.x = Math.max(state.stage.left, Math.min(state.stage.right, interaction.attackerStartX + interaction.startingFacing * sample.victimOffsetX + interaction.victimTrackAnchorX * anchorWeight));
     defender.y = Math.min(state.stage.groundY, interaction.defenderStartY + sample.victimOffsetY + interaction.victimTrackAnchorY);
     defender.grounded = sample.victimOffsetY >= 0; defender.throwRotation = interaction.startingFacing * sample.victimRotation;
     defender.facing = (interaction.startingFacing * sample.victimFacing) as 1 | -1; defender.phaseTick = interaction.tick;
     if (!interaction.damageApplied && interaction.tick >= definition.releaseTick) {
       interaction.damageApplied = true; interaction.released = true;
       defender.health = Math.max(0, defender.health - definition.damage); defender.hitCountTaken++;
+      if (versusRules(state)?.knockout && defender.health <= 0) defender.knockedOut = true;
       attacker.hitstop = definition.hitstop; defender.hitstop = definition.hitstop;
       emitThrowEvent(state, "release", definition, attacker, defender, definition.damage);
       // The authored release cursor is consumed before hitstop freezes subsequent simulation
@@ -571,9 +692,11 @@ function requestedAirTechDirection(f: FighterState): AirTechDirection | null {
     ? "neutral" : null;
 }
 function finishAirRecovery(f: FighterState, state: MatchState, direction: AirTechDirection, automatic: boolean) {
+  delete f.celesteBounce;
   const combat = def(f.kind).combat;
   f.airRecoveryTicks = 0;
   f.airRecoveryCount++;
+  delete f.wallBounced;
   f.airTechInvuln = combat.airTechInvuln;
   f.lastAirTechDirection = direction;
   f.vy = Math.min(f.vy, combat.airTechVerticalSpeed);
@@ -606,6 +729,25 @@ function beginJump(f: FighterState) {
   f.pendingJumpVx = forwardHeld(f.deterministicBuffer) ? f.facing * m.forwardJumpVelocityX : backHeld(f.deterministicBuffer) ? -f.facing * Math.abs(m.backJumpVelocityX) : 0;
   f.vx = 0; clearAttack(f); enterPhase(f, "jump_startup");
 }
+// Versus launcher follow-up: grounded fighters take an ordinary jump cancel; a fighter still in a
+// launcher's hop takes a fresh air jump with a full air-action budget, so the chase matches 2H > jc.
+function beginLauncherJump(f: FighterState, opponent: FighterState) {
+  if (f.grounded) { beginJump(f); return; }
+  // The softer mid-hop jump keeps a low victim level with Lamuh; a victim already high above him
+  // (an anti-air) gets just enough extra rise to be met, capped at his ordinary jump.
+  const soft = f.launcherFollowUp?.airJumpVelocityY;
+  const rise = Math.max(0, f.y - opponent.y + 30);
+  const airJumpVelocityY = soft === undefined ? undefined
+    : -Math.min(Math.abs(def(f.kind).movement.jumpVelocity), Math.max(Math.abs(soft), Math.sqrt(2 * def(f.kind).movement.gravity * rise)));
+  const m = def(f.kind).movement;
+  const vx = forwardHeld(f.deterministicBuffer) ? f.facing * m.forwardJumpVelocityX : backHeld(f.deterministicBuffer) ? -f.facing * Math.abs(m.backJumpVelocityX) : 0;
+  clearAttack(f);
+  delete f.airDiveUsed;
+  f.vx = vx; f.vy = airJumpVelocityY ?? m.jumpVelocity;
+  f.airActionsRemaining = def(f.kind).combat.airActionBudget;
+  if (m.airDashCount > 0) f.airDashesRemaining = m.airDashCount;
+  enterPhase(f, "jump");
+}
 
 function collectInput(f: FighterState, input: InputFrame, tickNo: number) {
   // Input edges/history continue during hitstop. State consumption pauses, so presses remain bufferable within authored leniency.
@@ -622,9 +764,24 @@ function applyDummyMode(f: FighterState) {
   if (f.dummyMode === "block_after_first_hit" && f.hitCountTaken > 0) { f.blocking = true; f.crouchBlocking = false; }
 }
 
+function throwHoldsDefender(state: MatchState) {
+  const interaction = state.throwInteraction;
+  return !!interaction && (interaction.result === "connected" || (interaction.result === "pending"
+    && interaction.throwId !== "swahili_hook_headbutt"
+    && state.fighters[interaction.defender].wakeupInvuln === 0));
+}
+
 function processInput(f: FighterState, opponent: FighterState, state: MatchState) {
-  if (f.hitstop > 0) return;
-  if (state.throwInteraction && (state.throwInteraction.attacker === f.id || state.throwInteraction.defender === f.id)) return;
+  if (f.hitstop > 0) {
+    if (versusRules(state)?.hitstopInputBuffer) f.bufferedHitstop = Math.min(12, (f.bufferedHitstop ?? 0) + 1);
+    return;
+  }
+  // Leniency for this tick's command reads: the authored window plus any hitstop just served.
+  const bufferedHitstop = f.bufferedHitstop ?? 0;
+  if (f.bufferedHitstop !== undefined) delete f.bufferedHitstop;
+  if (f.knockedOut) { f.blocking = false; f.crouchBlocking = false; return; }
+  if (state.throwInteraction && (state.throwInteraction.attacker === f.id ||
+    (state.throwInteraction.defender === f.id && throwHoldsDefender(state)))) return;
   const wasCrouchingPresentation = f.kind === "lamuh_legacy_v2" && (f.phase === "crouch" || f.crouchBlocking);
   if (canUpdateFacing(f)) {
     const desiredFacing = signed(opponent.x - f.x);
@@ -642,7 +799,7 @@ function processInput(f: FighterState, opponent: FighterState, state: MatchState
   if (f.hitstun > 0) { f.blocking = false; f.crouchBlocking = false; return; }
   if (f.phase === "air_recovery") { const direction = requestedAirTechDirection(f); if (direction) finishAirRecovery(f, state, direction, false); return; }
   if (f.phase === "roman_cancel" || f.phase === "burst") return;
-  const mayBlock = f.grounded && f.phase !== "attack" && f.phase !== "dive_landing" && f.knockdownTicks === 0 && f.getupTicks === 0;
+  const mayBlock = f.celesteLandingRecovery===undefined && f.grounded && f.phase !== "attack" && f.phase !== "dive_landing" && f.knockdownTicks === 0 && f.getupTicks === 0;
   f.blocking = mayBlock && (held(f.deterministicBuffer, "block") || backHeld(f.deterministicBuffer));
   f.crouchBlocking = f.blocking && held(f.deterministicBuffer, "down");
   applyDummyMode(f);
@@ -655,17 +812,20 @@ function processInput(f: FighterState, opponent: FighterState, state: MatchState
   const inCancelableDash = f.phase === "dash" && dashCancelTick !== undefined && f.phaseTick >= dashCancelTick;
   if (!inCancelableDash && ["jump_startup", "dash", "backdash", "air_dash_forward", "air_dash_backward", "landing", "dive_landing"].includes(f.phase)) return;
 
-  const next = requestAttack(f);
+  const next = requestAttack(f, bufferedHitstop);
   if (inCancelableDash) {
     if (next && beginAttack(f, next, state)) return;
     if (wasPressed(f.deterministicBuffer, "up", 4)) { beginJump(f); return; }
     return;
   }
   if (f.phase === "attack") {
+    const followUp = f.launcherFollowUp;
+    if (followUp && followUp.instance === f.currentMoveInstance && f.phaseTick >= followUp.fromMoveTick
+      && wasPressed(f.deterministicBuffer, "up", 6 + bufferedHitstop) && !held(f.deterministicBuffer, "special")) { beginLauncherJump(f, opponent); return; }
     const cancelling = next && canCancel(f, next) ? next : null;
     // A special/super cancel the player actually chorded outranks the generic jump cancel,
     // so 2H can still be routed into an Up special. Plain Up keeps jump-cancelling.
-    if (f.grounded && hasJumpCancelOnHit(f) && wasPressed(f.deterministicBuffer, "up", 6)
+    if (f.grounded && hasJumpCancelOnHit(f) && wasPressed(f.deterministicBuffer, "up", 6 + bufferedHitstop)
       && !(cancelling && held(f.deterministicBuffer, "special"))) { beginJump(f); return; }
     if (cancelling) beginAttack(f, cancelling, state);
     return;
@@ -686,7 +846,7 @@ function processInput(f: FighterState, opponent: FighterState, state: MatchState
   if (next) { beginAttack(f, next, state); return; }
 
   const m = def(f.kind).movement;
-  if (f.grounded && wasPressed(f.deterministicBuffer, "up", 4)) {
+  if (f.grounded && !(f.kind==="celeste_proto"&&held(f.deterministicBuffer,"special")) && wasPressed(f.deterministicBuffer, "up", 4)) {
     beginJump(f);
     return;
   }
@@ -711,6 +871,7 @@ function processInput(f: FighterState, opponent: FighterState, state: MatchState
 function progress(f: FighterState, state: MatchState) {
   const m = def(f.kind).movement;
   if (f.hitstop > 0) { f.hitstop--; return; }
+  if(f.phase==="landing"&&f.celesteLandingRecovery!==undefined){f.celesteLandingRecovery--;f.celesteLandedAttackTick=(f.celesteLandedAttackTick??0)+1;if(f.celesteLandingRecovery<=0){clearAttack(f);enterPhase(f,"idle");}return;}
   if (f.wakeupInvuln > 0) f.wakeupInvuln--;
   if (f.backdashInvuln !== undefined) { f.backdashInvuln--; if (f.backdashInvuln <= 0) delete f.backdashInvuln; }
   const airTechStartedThisTick = f.recoveryEvent?.type === "air_tech" && f.recoveryEvent.tick === state.tick;
@@ -719,13 +880,15 @@ function progress(f: FighterState, state: MatchState) {
   if (f.burstTicks > 0) { f.burstTicks--; enterPhase(f, "burst"); if (f.burstTicks === 0) enterPhase(f, neutralPhase(f)); return; }
   if (f.knockdownTicks > 0) {
     if (!f.grounded) return;
+    if (f.knockedOut) { enterPhase(f, "knockdown"); f.phaseTick++; return; }
     f.knockdownTicks--;
     enterPhase(f, "knockdown");
     f.phaseTick++;
-    if (f.knockdownTicks === 0) { enterPhase(f, "getup"); f.getupTicks = def(f.kind).combat.getupTicks; f.wakeupInvuln = m.wakeupInvuln; }
+    if (f.knockdownTicks === 0) { enterPhase(f, "getup"); f.getupTicks = def(f.kind).combat.getupTicks; }
     return;
   }
-  if (f.getupTicks > 0) { f.getupTicks--; enterPhase(f, "getup"); f.phaseTick++; if (f.getupTicks === 0) { f.knockdownKind = "none"; enterPhase(f, "idle"); } return; }
+  // The release tick still has no input; progress consumes one count before contact on the next tick.
+  if (f.getupTicks > 0) { f.getupTicks--; enterPhase(f, "getup"); f.phaseTick++; if (f.getupTicks === 0) { f.knockdownKind = "none"; enterPhase(f, "idle"); f.wakeupInvuln = m.wakeupInvuln + 1; } return; }
   if (f.hitstun > 0) {
     f.hitstun--;
     enterPhase(f, "hit_reaction");
@@ -758,6 +921,16 @@ function progress(f: FighterState, state: MatchState) {
   if (f.phase === "attack" && f.currentAttack) {
     const a = resolveAttackDefinition(f);
     f.phaseTick++;
+    const extender = f.airExtender;
+    if (extender && extender.instance === f.currentMoveInstance && f.phaseTick >= extender.reboundAtMoveTick && !f.grounded) {
+      // Rebound off the strike into a fresh airborne jump; the victim is already re-lifted.
+      clearAttack(f);
+      delete f.airDiveUsed;
+      f.vx = extender.vx; f.vy = extender.vy;
+      f.airActionsRemaining = Math.max(f.airActionsRemaining, extender.airActions);
+      enterPhase(f, "jump");
+      return;
+    }
     if (a.authoredDive && f.airDiveGatherStartTick === undefined && f.phaseTick >= a.startup
       && (f.phaseTick >= a.startup + a.active || state.stage.groundY - f.y - a.authoredDive.strikeVelocity.y <= a.authoredDive.landingApproachHeight)) {
       // Predict this tick's landing approach before movement/collision. Retire the
@@ -773,6 +946,10 @@ function progress(f: FighterState, state: MatchState) {
     const root = segmentedRoot || a.rootMotion;
     if (root) f.vx = f.phaseTick >= root.start && f.phaseTick <= root.end ? f.attackFacing * root.velocity : 0;
     else if (f.grounded) f.vx = 0;
+    const approach = f.comboApproach;
+    if (approach && approach.instance === f.currentMoveInstance && f.phaseTick <= approach.untilMoveTick) {
+      f.vx = f.attackFacing * Math.max(f.vx * f.attackFacing, approach.velocity);
+    }
     if (f.phaseTick >= total(a)) { clearAttack(f); f.vx = 0; enterPhase(f, neutralPhase(f)); }
     return;
   }
@@ -796,15 +973,29 @@ export function sampleAuthoredHop(track: AuthoredHopTrack, moveTick: number): { 
 function integrate(f: FighterState, state: MatchState, frozenAtStart: boolean) {
   if (frozenAtStart || heldByAscendHeavy(f, state)) return;
   const { stage } = state;
+  const platform = versusRules(state)?.openPlatform;
+  if (platform && f.knockedOut && (Math.abs(f.x) >= platform.blastX || f.y >= platform.blastY)) return;
+  const surfaces = platform
+    ? [...(platform.upperPlatforms ?? []), { left: platform.left, right: platform.right, y: stage.groundY }]
+    : [{ left: stage.left, right: stage.right, y: stage.groundY }];
+  const supports = (y: number) => !platform || surfaces.some(surface => Math.abs(y - surface.y) <= EPSILON && f.x >= surface.left && f.x <= surface.right);
+  const landing = (previousY: number) => !platform && f.y >= stage.groundY
+    ? surfaces[0]
+    : f.vy >= 0
+    ? surfaces.filter(surface => f.x >= surface.left && f.x <= surface.right
+      && previousY <= surface.y + EPSILON && f.y >= surface.y).sort((a, b) => a.y - b.y)[0]
+    : undefined;
   const activeAttack = f.phase === "attack" && f.currentAttack ? resolveAttackDefinition(f) : undefined;
   const hop = activeAttack?.authoredHop;
   const dive = activeAttack?.authoredDive;
   if (dive) {
     const velocity = f.airDiveGatherStartTick !== undefined ? dive.gatherVelocity : f.phaseTick < activeAttack!.startup ? dive.windupVelocity : dive.strikeVelocity;
     f.vx = f.attackFacing * velocity.x; f.vy = velocity.y;
+    const previousY = f.y;
     f.x += f.vx; f.y += f.vy;
-    if (f.y >= stage.groundY) {
-      f.y = stage.groundY; f.vx = 0; f.vy = 0; f.grounded = true;
+    const landed = landing(previousY);
+    if (landed) {
+      f.y = landed.y; f.vx = 0; f.vy = 0; f.grounded = true;
       f.airActionsRemaining = 0; delete f.airDiveUsed; delete f.airDiveGatherStartTick;
       if (f.airDashesRemaining !== undefined) f.airDashesRemaining = 0;
       f.airRecoveryTicks = 0; f.blocking = false; f.crouchBlocking = false;
@@ -816,11 +1007,13 @@ function integrate(f: FighterState, state: MatchState, frozenAtStart: boolean) {
   }
   else if (hop) {
     const sample = sampleAuthoredHop(hop, f.phaseTick), wasAirborne = !f.grounded;
+    if (platform && f.authoredHopOrigin?.moveInstance !== f.currentMoveInstance)
+      f.authoredHopOrigin = { moveInstance: f.currentMoveInstance, y: f.y };
     f.x += f.vx;
-    f.y = Math.max(stage.ceilingY, stage.groundY + sample.y);
+    f.y = Math.max(stage.ceilingY, (platform ? f.authoredHopOrigin!.y : stage.groundY) + sample.y);
     f.vy = sample.vy;
     if (f.y === stage.ceilingY && f.vy < 0) f.vy = 0;
-    f.grounded = !sample.airborne;
+    f.grounded = !sample.airborne && supports(f.y);
     // A special hop is commitment, not a new jump or an air-action refund.
     f.airActionsRemaining = 0;
     if (f.airDashesRemaining !== undefined) f.airDashesRemaining = 0;
@@ -830,8 +1023,20 @@ function integrate(f: FighterState, state: MatchState, frozenAtStart: boolean) {
       f.recoveryEvent = { tick: state.tick, type: "landing_recovery", durationTicks: total(activeAttack!) - f.phaseTick };
     }
   }
-  else if (f.grounded) { f.y = stage.groundY; f.vy = 0; f.x += f.vx; }
+  else if (f.grounded) {
+    if (!platform) f.y = stage.groundY;
+    f.vy = 0; f.x += f.vx;
+    if (!supports(f.y)) {
+      f.grounded = false;
+      if (["idle", "walk_forward", "walk_backward", "crouch", "block", "turn", "dash", "backdash"].includes(f.phase)) {
+        f.airActionsRemaining = def(f.kind).combat.airActionBudget;
+        if (def(f.kind).movement.airDashCount > 0) f.airDashesRemaining = def(f.kind).movement.airDashCount;
+        enterPhase(f, "jump");
+      }
+    }
+  }
   else {
+    if (f.pushback !== undefined) delete f.pushback;
     if (f.phase === "air_dash_forward" || f.phase === "air_dash_backward") f.vy = 0;
     else f.vy += def(f.kind).movement.gravity;
     const descent = activeAttack?.airDescent;
@@ -839,13 +1044,23 @@ function integrate(f: FighterState, state: MatchState, frozenAtStart: boolean) {
       f.vy = Math.max(descent.minimumVelocityY, Math.min(descent.maximumVelocityY, f.vy));
     }
     f.x += f.vx;
+    const previousY = f.y;
     f.y += f.vy;
-    if (f.y < stage.ceilingY) { recordWarning(state, `${f.id}: vertical combat bound clamped`); f.y = stage.ceilingY; if (f.vy < 0) f.vy = 0; }
-    if (f.y >= stage.groundY) {
+    const ceilingY=stage.groundY+(stage.ceilingY-stage.groundY)*(f.kind==="celeste_proto"?CELESTE_SPATIAL_SCALE:1);
+    if (f.y < ceilingY) { recordWarning(state, `${f.id}: vertical combat bound clamped`); f.y = ceilingY; if (f.vy < 0) f.vy = 0; }
+    const landed = landing(previousY);
+    if (landed) {
+      if(f.celesteBounce&&f.health>0&&state.fighters[f.celesteBounce.owner].comboTarget===f.id){
+        delete f.celesteBounce;f.y=landed.y-EPSILON;f.vy=-12*CELESTE_SPATIAL_SCALE;f.grounded=false;f.x=Math.max(stage.left,Math.min(stage.right,f.x));return;
+      }
       const unrecoveredAirHit = f.hitstun > 0 || f.phase === "hit_reaction" || f.phase === "air_recovery";
-      f.y = stage.groundY; f.vy = 0; f.grounded = true;
-      delete f.airDiveUsed;
-      if (f.currentAttack && resolveAttackDefinition(f).airOnly) clearAttack(f);
+      f.y = landed.y; f.vy = 0; f.grounded = true;
+      delete f.airDiveUsed; delete f.wallBounced;
+      const landingAttack=f.currentAttack?resolveAttackDefinition(f):undefined;
+      const preserveCeleste=f.kind==="celeste_proto"&&["strobe_air_waltz","ovation_descant","finale_reprise"].includes(f.currentAttack??"");
+      if(preserveCeleste){f.vx=0;f.celesteLandingRecovery=Math.max(def(f.kind).movement.landingRecovery,total(landingAttack!)-f.phaseTick);f.celesteLandedAttackTick=f.phaseTick;}
+      else if (f.currentAttack && resolveAttackDefinition(f).airOnly) clearAttack(f);
+
       f.airActionsRemaining = 0;
       if (f.airDashesRemaining !== undefined) f.airDashesRemaining = 0;
       f.airRecoveryTicks = 0;
@@ -857,8 +1072,40 @@ function integrate(f: FighterState, state: MatchState, frozenAtStart: boolean) {
       }
     }
   }
-  if (f.x < stage.left || f.x > stage.right) recordWarning(state, `${f.id}: horizontal stage bound clamped`);
-  f.x = Math.max(stage.left, Math.min(stage.right, f.x));
+  const rules = versusRules(state);
+  if (rules?.groundPushbackFriction !== undefined && f.pushback !== undefined && f.grounded) {
+    f.x += f.pushback;
+    f.pushback *= rules.groundPushbackFriction;
+    if (Math.abs(f.pushback) < 0.05) delete f.pushback;
+  }
+  const wall = rules?.wallBounce, pastWall = f.x < stage.left ? -1 : f.x > stage.right ? 1 : 0;
+  if (wall && pastWall && !f.grounded && !f.wallBounced && !f.knockedOut && f.vx * pastWall >= wall.minSpeed
+    && (f.hitstun > 0 || f.knockdownTicks > 0)) {
+    // A juggled body carried into the wall rebounds once, back into play and still in hitstun.
+    f.x = pastWall < 0 ? stage.left : stage.right;
+    f.vx = -f.vx * wall.restitution;
+    f.vy = Math.min(f.vy, wall.popVelocity);
+    f.wallBounced = true;
+    f.knockdownTicks = 0; f.knockdownKind = "none"; f.airRecoveryTicks = 0;
+    f.hitstun = Math.max(f.hitstun, wall.hitstun);
+    restartHitReaction(f, "heavy");
+    const attacker = opponentOf(state, f), limit = def(attacker.kind).combat.juggleLimit;
+    if (attacker.comboTarget === f.id) {
+      attacker.juggleSpent = Math.min(limit, attacker.juggleSpent + wall.juggleCost);
+      attacker.peakJuggleSpent = Math.max(attacker.peakJuggleSpent, attacker.juggleSpent);
+    }
+    state.lastWallBounce = { tick: state.tick, fighter: f.id, x: f.x, y: f.y };
+  }
+  if (platform) {
+    if (Math.abs(f.x) >= platform.blastX || f.y >= platform.blastY) {
+      f.knockedOut = true;
+      f.health = 0;
+      f.vx = 0; f.vy = 0;
+    }
+  } else {
+    if (f.x < stage.left || f.x > stage.right) recordWarning(state, `${f.id}: horizontal stage bound clamped`);
+    f.x = Math.max(stage.left, Math.min(stage.right, f.x));
+  }
 }
 
 export function fighterPushbox(f: FighterState) { return rectWorld(f, f.bodyEnvelope?.pushbox ?? def(f.kind).pushbox); }
@@ -887,6 +1134,11 @@ function resolvePush(a: FighterState, b: FighterState, state: MatchState) {
   const right = left === a ? b : a;
   const leftBox = fighterPushbox(left), rightBox = fighterPushbox(right);
   const depth = Math.max(0, leftBox.x + leftBox.w - rightBox.x) + EPSILON;
+  if (versusRules(state)?.openPlatform) {
+    left.x -= depth / 2;
+    right.x += depth / 2;
+    return;
+  }
   const leftRoom = Math.max(0, left.x - state.stage.left);
   const rightRoom = Math.max(0, state.stage.right - right.x);
   let leftShift = Math.min(depth / 2, leftRoom);
@@ -951,7 +1203,7 @@ function spawnProjectiles(state: MatchState, frozen: Record<FighterId, boolean>)
   // Canonical owner order keeps simultaneous release/event order independent of fighter iteration.
   for (const owner of ["p1", "p2"] as const) {
     const fighter = state.fighters[owner];
-    if (fighter.kind !== "lamuh_legacy_v2" || frozen[owner] || fighter.phase !== "attack" || !fighter.currentAttack) continue;
+    if ((fighter.kind !== "celeste_proto" && fighter.kind !== "lamuh_legacy_v2" && !(fighter.kind === "lamuh_proto" && fighter.swahiliAirSpecialsV1)) || frozen[owner] || fighter.phase !== "attack" || !fighter.currentAttack) continue;
     const attack = resolveAttackDefinition(fighter), definition = attack.projectile;
     if (!definition || fighter.phaseTick !== definition.releaseTick) continue;
     const id = `${state.matchId}:${owner}:${fighter.currentMoveInstance}:projectile_0`;
@@ -966,9 +1218,10 @@ function spawnProjectiles(state: MatchState, frozen: Record<FighterId, boolean>)
       previousY: fighter.y + definition.spawnOffset.y, velocityX: fighter.attackFacing * definition.speed,
       velocityY: definition.initialVelocityY ?? 0, gravity: definition.gravity, ageTicks: 0, travelled: 0,
       maxTravel: definition.maxTravel, lifeTicks: definition.lifeTicks, spawnTick: state.tick,
-      hitbox: clone(definition.hitbox), hitLedger: [] };
+      hitbox: clone(definition.hitbox), hitLedger: [], ...(definition.stationaryGroundSeal ? { stationaryGroundSeal: true as const } : {}), ...(definition.celesteTrap?{celesteTrap:true as const}:{}) };
     state.projectiles ??= [];
     state.projectiles.push(projectile);
+    if(fighter.kind==="celeste_proto"){const c=celesteState(fighter);if(definition.celesteTrap)c.tiCooldown=90;else c.solCooldown=45;}
     state.projectileSpawnLedger.push(id);
     emitProjectileEvent(state, projectile, "spawn");
   }
@@ -993,17 +1246,18 @@ function progressProjectiles(state: MatchState): { candidates: HitCandidate[]; e
       projectile.velocityY += projectile.gravity;
       const groundCenterY = state.stage.groundY - projectile.hitbox.rect.y - projectile.hitbox.rect.h;
       projectile.y += projectile.velocityY;
-      if (projectile.y >= groundCenterY) { projectile.y = groundCenterY; expires.set(projectile.id, "ground"); }
+      if (!projectile.stationaryGroundSeal && projectile.y >= groundCenterY) { projectile.y = groundCenterY; expires.set(projectile.id, "ground"); }
     }
     const attacker = state.fighters[projectile.owner], defender = state.fighters[projectile.owner === "p1" ? "p2" : "p1"];
     // A connected authored throw remains a locked interaction; flight/lifetime continue normally.
-    if (state.throwInteraction?.result === "connected" || defender.phase === "thrown" || defender.phase === "getup"
+    if (state.throwInteraction?.result === "connected" || defender.knockedOut || defender.phase === "thrown" || defender.phase === "getup"
       || defender.wakeupInvuln > 0 || defender.airTechInvuln > 0 || ignoresStrikes(defender)
       || (defender.grounded && defender.phase === "knockdown")) continue;
+    if(projectile.celesteTrap&&projectile.ageTicks<60)continue;
     if (projectile.hitLedger.includes(defender.id)) continue;
     if (!fighterProjectileHurtboxes(defender).some((hurtbox) => sweptProjectileOverlap(projectile, hurtbox))) continue;
     const blocked = defender.hitstun === 0 && defender.blocking && (projectile.hitbox.level !== "low" || defender.crouchBlocking);
-    candidates.push({ attacker, defender, attack: def(attacker.kind).attacks[projectile.attackId], hitbox: projectile.hitbox,
+    candidates.push({ attacker, defender, attack: resolveAttackDefinition(attacker, projectile.attackId), hitbox: projectile.hitbox,
       ledgerKey: projectile.id, blocked, projectile });
   }
   return { candidates, expires };
@@ -1021,19 +1275,19 @@ function activeInvulnKind(f: FighterState): "strike" | "full" | null {
   return authored.kind;
 }
 function ignoresStrikes(f: FighterState) { return activeInvulnKind(f) !== null; }
-function ignoresThrows(f: FighterState) { return activeInvulnKind(f) === "full"; }
+function ignoresThrows(f: FighterState) { return f.wakeupInvuln > 0 || activeInvulnKind(f) === "full"; }
 // Counter hit: contact that lands while the defender is committed to their own action.
 // Scoped to the Lamuh Legacy candidate so every existing fixture keeps its exact numbers.
 const COUNTER_HIT_DAMAGE_MULTIPLIER = 1.2, COUNTER_HIT_HITSTUN_BONUS = 6, COUNTER_HIT_HITSTOP_BONUS = 3;
 // The cinematic ultimate keeps its authored damage ledger on both sides of a trade.
-function isCounterHitContact(attacker: FighterState, defender: FighterState) {
+function isCounterHitContact(attacker: FighterState, defender: FighterState, state: MatchState) {
   if (attacker.currentAttack === "legacy_crown_of_no_gods" || defender.currentAttack === "legacy_crown_of_no_gods") return false;
-  return attacker.kind === "lamuh_legacy_v2" && defender.hitstun === 0 && defender.blockstun === 0
+  return (attacker.kind === "lamuh_legacy_v2" || !!versusRules(state)?.universalCounterHits) && defender.hitstun === 0 && defender.blockstun === 0
     && (defender.phase === "attack" || defender.phase === "throw_startup" || defender.phase === "throw_whiff");
 }
 
 function collectHitCandidate(attacker: FighterState, defender: FighterState, frozenAtStart: boolean): HitCandidate | null {
-  if (frozenAtStart || attacker.phase !== "attack" || !attacker.currentAttack || defender.wakeupInvuln > 0 || defender.airTechInvuln > 0 || defender.phase === "getup") return null;
+  if (frozenAtStart || attacker.phase !== "attack" || !attacker.currentAttack || defender.knockedOut || defender.wakeupInvuln > 0 || defender.airTechInvuln > 0 || defender.phase === "getup") return null;
   if (ignoresStrikes(defender)) return null;
   if (attacker.airDiveGatherStartTick !== undefined) return null;
   // Only the triggered body's brief disappearance avoids body strikes. Throws
@@ -1048,14 +1302,35 @@ function collectHitCandidate(attacker: FighterState, defender: FighterState, fro
     const ids = attacker.hitLedger[ledgerKey] || [];
     if (ids.includes(defender.id) || ids.length >= hitbox.maxHits) continue;
     if (!hurtboxes(defender, attack.targetHurtboxProfile).some((hurt) => overlap(rectWorld(attacker, hitbox.rect, attacker.attackFacing), hurt))) continue;
-    const blocked = defender.hitstun === 0 && defender.blocking && (hitbox.level !== "low" || defender.crouchBlocking);
+    const blocked = defender.hitstun === 0 && defender.blocking && (hitbox.level !== "low" || defender.crouchBlocking) && (hitbox.level!=="high"||!defender.crouchBlocking);
     return { attacker, defender, attack, hitbox, ledgerKey, blocked };
   }
   return null;
 }
 
+// Versus rules: grounded contact slides both bodies with a decaying velocity. A defender pinned
+// against a wall cannot absorb the slide, so the unabsorbed share pushes the striker back instead.
+function applyVersusPushback(state: MatchState, attacker: FighterState, defender: FighterState, velocity: number, projectile: boolean) {
+  const rules = versusRules(state)!, friction = rules.groundPushbackFriction!;
+  defender.pushback = velocity;
+  if (projectile || !attacker.grounded || !rules.cornerPushback || Math.abs(velocity) < EPSILON) return;
+  const room = velocity > 0 ? state.stage.right - defender.x : defender.x - state.stage.left;
+  const expected = Math.abs(velocity) / (1 - friction);
+  if (room >= expected) return;
+  attacker.pushback = -velocity * rules.cornerPushback * (1 - Math.max(0, room) / expected);
+}
 function applyHit(candidate: HitCandidate, state: MatchState) {
   const { attacker, defender, attack, hitbox, ledgerKey, blocked, projectile } = candidate;
+  if(projectile?.celesteTrap&&!state.projectiles?.includes(projectile))return false;
+  const guard=defender.kind==="celeste_proto"&&defender.phase==="attack"&&defender.currentAttack?resolveAttackDefinition(defender).celesteGuard:undefined;
+  if(guard&&!celesteState(defender).guardSpent&&defender.phaseTick>=guard.start&&defender.phaseTick<=guard.end
+    &&(!guard.projectileOnly||!!projectile)&&attack.id!=="legacy_crown_of_no_gods"&&attack.id!=="octava"
+    &&((projectile?.x??attacker.x)-defender.x)*defender.attackFacing>=0){
+    celesteState(defender).guardSpent=true;
+    if(projectile){projectile.hitLedger.push(defender.id);projectile.celesteAbsorbed=true;}else (attacker.hitLedger[ledgerKey]??=[]).push(defender.id);
+    return false;
+  }
+
   const counter = defender.phase === "attack" && defender.currentAttack && !defender.divineCounterResponse
     ? resolveAttackDefinition(defender).strikeCounter : undefined;
   if (!projectile && counter && defender.grounded && defender.hitstun === 0 && defender.blockstun === 0
@@ -1065,17 +1340,21 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
     const ids = attacker.hitLedger[ledgerKey] || []; ids.push(defender.id); attacker.hitLedger[ledgerKey] = ids;
     const trigger = { triggerTick: state.tick, stanceTick: defender.phaseTick, incomingAttacker: attacker.id,
       incomingAttackId: attack.id, incomingHitboxId: hitbox.id, incomingMoveInstance: attacker.currentMoveInstance };
-    beginAttack(defender, "legacy_divine_vanish_heavy", state);
+    beginAttack(defender, defender.currentAttack!, state);
     defender.divineCounterResponse = trigger;
     return false;
   }
   const contactFacing = projectile?.facing ?? attacker.attackFacing;
-  const currentMoveOwnsContact = !projectile || (attacker.currentAttack === projectile.attackId && attacker.currentMoveInstance === projectile.moveInstanceId);
+  const pendingHook = state.throwInteraction;
+  if (!blocked && pendingHook?.throwId === "swahili_hook_headbutt" && pendingHook.result !== "connected" && pendingHook.attacker === defender.id) {
+    finishThrow(state, SWAHILI_HOOK_HEADBUTT, defender, state.fighters[pendingHook.defender]);
+  }
+  const currentMoveOwnsContact = !projectile || attacker.kind!=="celeste_proto" && (attacker.currentAttack === projectile.attackId && attacker.currentMoveInstance === projectile.moveInstanceId);
   if (projectile) {
     projectile.hitLedger.push(defender.id);
     if (!blocked && state.throwInteraction && state.throwInteraction.result !== "connected") {
       const interaction = state.throwInteraction, thrower = state.fighters[interaction.attacker], victim = state.fighters[interaction.defender];
-      finishThrow(state, def(thrower.kind).throws[interaction.throwId]!, thrower, victim);
+      finishThrow(state, throwDefinition(thrower, interaction.throwId)!, thrower, victim);
     }
   } else {
     const ids = attacker.hitLedger[ledgerKey] || [];
@@ -1090,7 +1369,11 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
     defender.hitstop = Math.max(defender.hitstop, blockHitstop);
     defender.hitstun = 0;
     defender.blockstun = hitbox.blockstun;
-    defender.vx = contactFacing * hitbox.knockbackX * 0.25;
+    const blockRules = versusRules(state);
+    if (blockRules?.groundPushbackFriction !== undefined) {
+      defender.vx = 0;
+      applyVersusPushback(state, attacker, defender, contactFacing * hitbox.knockbackX * (blockRules.blockPushbackScale ?? 1), !!projectile);
+    } else defender.vx = contactFacing * hitbox.knockbackX * 0.25;
     enterPhase(defender, "block");
     if (currentMoveOwnsContact) {
       attacker.attackBlocked = true;
@@ -1106,11 +1389,13 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
   }
 
   // Counter hit is decided from the defender's pre-contact commitment, before any mutation.
-  const counterHit = isCounterHitContact(attacker, defender);
+  const counterHit = isCounterHitContact(attacker, defender, state);
   if (attacker.comboCount === 0 || attacker.comboTarget !== defender.id) { resetCombo(attacker); attacker.comboTarget = defender.id; }
   const hitOrdinal = attacker.comboCount + 1;
   const juggleBefore = attacker.juggleSpent;
-  const juggleCost = (!defender.grounded || hitbox.launches) ? Math.max(0, hitbox.juggleCost ?? 1) : 0;
+  const juggleCost = attacker.kind === "celeste_proto" && (attack.id === "crouching_heavy" || attack.celesteFamily==="up")
+    ? (defender.grounded ? 0 : 1)
+    : (!defender.grounded || hitbox.launches) ? Math.max(0, hitbox.juggleCost ?? 1) : 0;
   const juggleAfter = juggleBefore + juggleCost;
   const hitstunDecaySteps = Math.max(0, hitOrdinal - combat.hitstunDecayStartsAtHit + 1);
   const hitstunDecay = hitstunDecaySteps * combat.hitstunDecayPerHit;
@@ -1120,7 +1405,7 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
   const effectiveHitstun = hitbox.knockdown && hitbox.knockdown !== "none" ? 0
     : Math.max(minimumHitstun, hitbox.hitstun + airborneHitstunBonus - hitstunDecay) + (counterHit ? COUNTER_HIT_HITSTUN_BONUS : 0);
 
-  if ((!hitbox.launches || attack.authoredHop) && !defender.grounded && juggleAfter > combat.juggleLimit) {
+  if ((attacker.kind==="celeste_proto" || !hitbox.launches || attack.authoredHop) && !defender.grounded && juggleAfter > combat.juggleLimit) {
     state.lastCombatEvent = {
       tick: state.tick, outcome: "juggle_rejected", attacker: attacker.id, defender: defender.id, attackId: attack.id,
       hitOrdinal, damage: 0, scaling: attacker.damageScaling, baseHitstun: hitbox.hitstun, effectiveHitstun: 0,
@@ -1135,6 +1420,8 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
   const scalingBefore = attacker.damageScaling;
   const scaledDamage = Math.round(hitbox.damage * scalingBefore * (counterHit ? COUNTER_HIT_DAMAGE_MULTIPLIER : 1));
   defender.health = Math.max(0, defender.health - scaledDamage);
+  clearCelesteTrap(state,defender.id);
+  if(attacker.kind==="celeste_proto"&&hitbox.launches&&defender.grounded)celesteState(attacker).launcherSpent=true;
   defender.hitCountTaken++;
   // Lamuh's long light-hit confirm windows do not make those contacts heavy blows.
   // Keep this presentation choice local to the Lamuh mirror review; stun and damage stay authored.
@@ -1149,10 +1436,19 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
   defender.crouchBlocking = false;
   defender.airRecoveryTicks = 0;
   defender.vx = contactFacing * hitbox.knockbackX;
+  if (versusRules(state)?.groundPushbackFriction !== undefined && defender.grounded && !hitbox.launches) {
+    defender.vx = 0;
+    applyVersusPushback(state, attacker, defender, contactFacing * hitbox.knockbackX, !!projectile);
+  }
+  const victimWasAirborne = !defender.grounded;
+  const airExtender = !projectile && currentMoveOwnsContact && victimWasAirborne && !attacker.grounded && !attacker.airExtenderUsed
+    ? versusRules(state)?.airExtenders?.find((entry) => entry.attack === attack.id && entry.hitbox === hitbox.id) : undefined;
+  const launcherFollowUp = !projectile && currentMoveOwnsContact
+    ? versusRules(state)?.launcherFollowUps?.find((entry) => entry.attack === attack.id && entry.hitbox === hitbox.id) : undefined;
   if (hitbox.launches) {
     defender.grounded = false;
-    defender.vy = Math.min(-EPSILON, hitbox.knockbackY);
-    defender.hitstun = effectiveHitstun;
+    defender.vy = Math.min(-EPSILON, hitbox.knockbackY, launcherFollowUp?.launchVelocityY ?? 0);
+    defender.hitstun = Math.max(effectiveHitstun, launcherFollowUp?.minimumHitstun ?? 0);
     restartHitReaction(defender, reactionWeight);
   } else if (hitbox.knockdown && hitbox.knockdown !== "none") {
     defender.vy = defender.grounded ? 0 : hitbox.knockbackY;
@@ -1164,6 +1460,21 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
     defender.hitstun = effectiveHitstun;
     restartHitReaction(defender, reactionWeight);
   }
+  if(attack.id==="finale_reprise"){
+    celesteState(attacker).bounceSpent=true;
+    if(defender.health>0){defender.celesteBounce={owner:attacker.id};defender.grounded=false;defender.y=Math.min(defender.y,state.stage.groundY-EPSILON);defender.vy=12*CELESTE_SPATIAL_SCALE;}
+  }
+  if(defender.health<=0){delete defender.celesteBounce;for(const f of Object.values(state.fighters))if(f.celesteBounce?.owner===defender.id)delete f.celesteBounce;}
+
+  if (airExtender && defender.health > 0) {
+    // Re-lift the victim instead of spiking it, so the rebounding attacker can meet it again.
+    defender.vy = airExtender.victimVelocity.y;
+    defender.vx = contactFacing * airExtender.victimVelocity.x;
+    defender.knockdownTicks = 0; defender.knockdownKind = "none";
+    defender.hitstun = Math.max(defender.hitstun, airExtender.minimumHitstun);
+    restartHitReaction(defender, "heavy");
+  }
+  if (versusRules(state)?.knockout && defender.health <= 0) knockOut(defender, state, contactFacing);
 
   attacker.comboCount = hitOrdinal;
   attacker.comboDamage += scaledDamage;
@@ -1172,9 +1483,16 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
   attacker.comboNeutralTicks = 0;
   attacker.juggleSpent = juggleAfter;
   attacker.peakJuggleSpent = Math.max(attacker.peakJuggleSpent, juggleAfter);
+  if (airExtender && defender.health > 0) {
+    attacker.juggleSpent = Math.max(0, juggleAfter - airExtender.juggleRefund);
+    attacker.airExtenderUsed = true;
+    attacker.airExtender = { instance: attacker.currentMoveInstance, reboundAtMoveTick: attacker.phaseTick + airExtender.reboundAfterMoveTicks,
+      vx: attacker.attackFacing * airExtender.attackerReboundVelocity.x, vy: airExtender.attackerReboundVelocity.y, airActions: airExtender.airActions };
+  }
   if (currentMoveOwnsContact) {
     attacker.attackConnected = true;
-    attacker.cancelOptions = [...(attack.cancel?.onHit || [])];
+    attacker.cancelOptions = attack.id==="crescendo_slash"&&hitbox.id!=="crescendo_second"?[]:[...(attack.cancel?.onHit || [])];
+    if (launcherFollowUp && defender.health > 0) attacker.launcherFollowUp = { instance: attacker.currentMoveInstance, fromMoveTick: launcherFollowUp.fromMoveTick, ...(launcherFollowUp.airJumpVelocityY !== undefined ? { airJumpVelocityY: launcherFollowUp.airJumpVelocityY } : {}) };
   }
   addTension(attacker, combat.tensionGainOnHit);
   state.lastCombatEvent = {
@@ -1183,22 +1501,28 @@ function applyHit(candidate: HitCandidate, state: MatchState) {
     baseHitstun: hitbox.hitstun, effectiveHitstun, hitstunDecay, juggleBefore, juggleAfter, juggleLimit: combat.juggleLimit,
     ...(counterHit ? { counterHit: true as const } : {})
   };
-  if (defender.y < state.stage.ceilingY) recordWarning(state, `${defender.id}: hit resolved beyond vertical combat bound`);
+  const defenderCeilingY=state.stage.groundY+(state.stage.ceilingY-state.stage.groundY)*(defender.kind==="celeste_proto"?CELESTE_SPATIAL_SCALE:1);
+  if (defender.y < defenderCeilingY) recordWarning(state, `${defender.id}: hit resolved beyond vertical combat bound`);
   return true;
 }
 
 function updateComboLifecycle(attacker: FighterState, defender: FighterState) {
-  if (attacker.comboCount === 0) return;
-  if (attacker.hitstun > 0 || attacker.phase === "knockdown" || attacker.phase === "getup") { resetCombo(attacker); return; }
+  if (attacker.comboCount === 0) {if(defender.celesteBounce?.owner===attacker.id)delete defender.celesteBounce;return;}
+  if (attacker.hitstun > 0 || attacker.phase === "knockdown" || attacker.phase === "getup") { resetCombo(attacker);if(defender.celesteBounce?.owner===attacker.id)delete defender.celesteBounce; return; }
   const connected = defender.hitstun > 0 || !defender.grounded || defender.phase === "knockdown";
   if (connected) { attacker.comboNeutralTicks = 0; return; }
   attacker.comboNeutralTicks++;
-  if (attacker.comboNeutralTicks >= def(attacker.kind).movement.comboNeutralTimeout) resetCombo(attacker);
+  if (attacker.comboNeutralTicks >= def(attacker.kind).movement.comboNeutralTimeout) {resetCombo(attacker);if(defender.celesteBounce?.owner===attacker.id)delete defender.celesteBounce;}
 }
 
 function assertValidState(f: FighterState, state: MatchState) {
   if (![f.x, f.y, f.vx, f.vy, f.phaseTick].every(Number.isFinite)) throw new Error(`${f.id} has non-finite simulation state`);
-  if (f.grounded && Math.abs(f.y - state.stage.groundY) > EPSILON) throw new Error(`${f.id} grounded outside groundY`);
+  const openPlatform = versusRules(state)?.openPlatform;
+  const groundedSurface = openPlatform
+    ? [...(openPlatform.upperPlatforms ?? []), { left: openPlatform.left, right: openPlatform.right, y: state.stage.groundY }]
+      .some(surface => Math.abs(f.y - surface.y) <= EPSILON && f.x >= surface.left && f.x <= surface.right)
+    : Math.abs(f.y - state.stage.groundY) <= EPSILON;
+  if (f.grounded && !groundedSurface) throw new Error(`${f.id} grounded outside stage surface`);
   if (f.hitstun > 0 && f.blockstun > 0) throw new Error(`${f.id} cannot have hitstun and blockstun simultaneously`);
   if (f.phase === "attack" && !f.currentAttack) throw new Error(`${f.id} attack phase requires currentAttack`);
   if (f.phase === "dive_landing" && (!f.grounded || !f.currentAttack || !resolveAttackDefinition(f).authoredDive)) throw new Error(`${f.id} dive landing requires a grounded authored dive`);
@@ -1208,7 +1532,8 @@ function assertValidState(f: FighterState, state: MatchState) {
   if (f.airRecoveryTicks < 0 || f.airTechInvuln < 0 || f.juggleSpent < 0 || f.juggleSpent > def(f.kind).combat.juggleLimit || f.peakJuggleSpent < f.juggleSpent || f.peakJuggleSpent > def(f.kind).combat.juggleLimit) throw new Error(`${f.id} has invalid combat-spine counters`);
   const combat = def(f.kind).combat;
   if (f.tension < 0 || f.tension > combat.maxTension || f.burst < 0 || f.burst > combat.maxBurst || f.romanCancelTicks < 0 || f.burstTicks < 0 || f.tensionEarned < 0 || f.tensionSpent < 0) throw new Error(`${f.id} has invalid combat-system resources`);
-  if (f.y < state.stage.ceilingY - EPSILON || f.y > state.stage.groundY + EPSILON) throw new Error(`${f.id} outside legal vertical stage bounds`);
+  const ceilingY=state.stage.groundY+(state.stage.ceilingY-state.stage.groundY)*(f.kind==="celeste_proto"?CELESTE_SPATIAL_SCALE:1);
+  if (f.y < ceilingY - EPSILON || (!versusRules(state)?.openPlatform && f.y > state.stage.groundY + EPSILON)) throw new Error(`${f.id} outside legal vertical stage bounds`);
 }
 
 // Confirmed choreography owns both participants, never the renderer. Anchors interpolate
@@ -1248,6 +1573,7 @@ function progressUltimate(state: MatchState) {
   if (t >= 240 || a.health <= 0 || d.health <= 0) {
     clearAttack(a); a.phase = "idle"; a.phaseTick = 0; a.vx = a.vy = 0;
     d.hitstun = 0; beginKnockdown(d, state, "hard"); d.vy = d.grounded ? 0 : 2;
+    if (versusRules(state)?.knockout && d.health <= 0) d.knockedOut = true;
     state.ultimateEventLedger!.push(`${u.id}:complete`); delete state.ultimateInteraction;
     resolvePush(a, d, state);
   }
@@ -1266,9 +1592,14 @@ export function tickWithFighterOrder(state: MatchState, inputs: { p1?: InputFram
     return { tick: state.tick, checksum, state };
   }
 
+  progressCeleste(state);
   resolveSystemActions(state);
+  for(const f of Object.values(state.fighters))if(f.phase==="burst")clearCelesteTrap(state,f.id);
   resolveThrowRequests(state);
-  const throwParticipants = state.throwInteraction ? new Set<FighterId>([state.throwInteraction.attacker, state.throwInteraction.defender]) : new Set<FighterId>();
+  // A protected defender can move or attack during startup, and a missed throw cannot hold them.
+  const throwParticipants = state.throwInteraction ? new Set<FighterId>(
+    throwHoldsDefender(state)
+      ? [state.throwInteraction.attacker, state.throwInteraction.defender] : [state.throwInteraction.attacker]) : new Set<FighterId>();
   const frozen: Record<FighterId, boolean> = { p1: p1.hitstop > 0, p2: p2.hitstop > 0 };
   const xBefore: Record<FighterId, number> = { p1: p1.x, p2: p2.x };
   for (const id of fighterOrder) processInput(state.fighters[id], state.fighters[id === "p1" ? "p2" : "p1"], state);
@@ -1283,17 +1614,27 @@ export function tickWithFighterOrder(state: MatchState, inputs: { p1?: InputFram
     const fighter = state.fighters[id];
     if (!frozen[id] && fighter.phase === "walk_forward" && (fighter.x - xBefore[id]) * fighter.facing > EPSILON) addTension(fighter, def(fighter.kind).combat.tensionGainPerForwardTick);
   }
-  if (!throwParticipants.size) resolvePush(p1, p2, state);
+  // Versus rules also separate the bodies on the tick a throw releases them, instead of
+  // leaving the pushbox assertion to fire against a victim parked inside the thrower.
+  if (!throwParticipants.size || ((versusRules(state) || p1.kind === "celeste_proto" || p2.kind === "celeste_proto") && !state.throwInteraction)) resolvePush(p1, p2, state);
 
   spawnProjectiles(state, frozen);
   const projectileProgress = progressProjectiles(state);
+  const clashed=new Set<string>();
+  for(const a of state.projectiles??[])for(const b of state.projectiles??[]){
+    if(a.id>=b.id||a.owner===b.owner||a.celesteTrap||b.celesteTrap||!a.attackId.startsWith("ovation_")&&!b.attackId.startsWith("ovation_"))continue;
+    if(overlap(projectileWorldRect(a),projectileWorldRect(b))){clashed.add(a.id);clashed.add(b.id);}
+  }
+  for(const p of state.projectiles??[])if(clashed.has(p.id))projectileProgress.expires.set(p.id,"clash");
+  projectileProgress.candidates=projectileProgress.candidates.filter(c=>!clashed.has(c.projectile!.id));
+
 
   // Candidates are collected from one shared snapshot. Applying one result cannot suppress a valid same-tick trade.
   const candidates = fighterOrder
     .map((id) => collectHitCandidate(state.fighters[id], state.fighters[id === "p1" ? "p2" : "p1"], frozen[id]))
     .filter((candidate): candidate is HitCandidate => !!candidate)
     .concat(projectileProgress.candidates)
-    .sort((left, right) => left.attacker.id.localeCompare(right.attacker.id) || left.ledgerKey.localeCompare(right.ledgerKey));
+    .sort((left, right) => Number(!!left.projectile?.celesteTrap)-Number(!!right.projectile?.celesteTrap) || left.attacker.id.localeCompare(right.attacker.id) || left.ledgerKey.localeCompare(right.ledgerKey));
   const resolutions = candidates.map((candidate) => {
     const entryScaling = candidate.attacker.damageScaling;
     return { candidate, entryScaling, connected: applyHit(candidate, state) };
@@ -1334,7 +1675,7 @@ export function tickWithFighterOrder(state: MatchState, inputs: { p1?: InputFram
       const resolution = contacts.get(projectile.id);
       if (resolution) {
         emitProjectileEvent(state, projectile, resolution.connected ? resolution.candidate.blocked ? "block" : "hit" : "expired",
-          resolution.connected ? undefined : "juggle_limit", resolution.candidate.defender.id);
+          resolution.connected ? undefined : projectile.celesteAbsorbed?"absorbed":"juggle_limit", resolution.candidate.defender.id);
         return false;
       }
       const reason = projectileProgress.expires.get(projectile.id);
