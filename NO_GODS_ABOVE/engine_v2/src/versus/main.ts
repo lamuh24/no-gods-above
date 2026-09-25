@@ -342,6 +342,7 @@ function main() {
             receivedSequence = message.sequence;
             if (loadedRetry !== undefined) { window.clearInterval(loadedRetry); loadedRetry = undefined; }
             state = message.state;
+            startPaidSuper();
             if (director && message.director) Object.assign(director, message.director);
             if (stockDirector && message.director) Object.assign(stockDirector, message.director);
           }
@@ -355,7 +356,15 @@ function main() {
         if (strip) { strip.dataset.state = 'disconnected'; strip.textContent = 'RIVAL DISCONNECTED · LEAVE ROOM TO RECONNECT'; }
       };
     }
-    const paidRehearsal = createPaidRehearsal(app, !competitive && query.get('paid-rehearsal') === '1' && (chosen.p1 === 'swahili' || chosen.p2 === 'swahili'), () => { heldKeys.clear(); queued.p1=[]; queued.p2=[]; });
+    const paidRehearsal = createPaidRehearsal(app, chosen.p1 === 'swahili' || chosen.p2 === 'swahili', () => { heldKeys.clear(); queued.p1=[]; queued.p2=[]; }, !competitive && query.get('paid-rehearsal') === '1');
+    let lastPaidSuperEvent = '';
+    function startPaidSuper() {
+      const event = state.lastProjectileEvent;
+      if(event?.attackId !== 'swahili_paid_super' || event.type !== 'hit' || event.eventId === lastPaidSuperEvent) return false;
+      lastPaidSuperEvent = event.eventId;
+      paidRehearsal.start(event.owner, true);
+      return true;
+    }
     if(!competitive&&query.get('paid-rehearsal')==='1'){
       const cast=document.createElement('button');cast.textContent='Cast contract seal · P · hit-confirm test';
       const status=document.createElement('output');status.id='paidSealStatus';status.textContent=' Seal ready';
@@ -390,6 +399,8 @@ function main() {
       impactTick = -1;
     }
     function restartMatch() {
+      paidRehearsal.stop();
+      lastPaidSuperEvent = '';
       if (!director && !stockDirector) return;
       rematches += 1;
       if (director) { director.rematch(); director.pendingReset = false; beginRound(false); }
@@ -409,7 +420,7 @@ function main() {
     }
 
     function onKeyDown(event: KeyboardEvent) {
-      if (paidRehearsal.active) { if(event.code === 'Escape') paidRehearsal.stop(); event.preventDefault(); return; }
+      if (paidRehearsal.active) { if(event.code === 'Escape' && paidRehearsal.canCancel) paidRehearsal.stop(); event.preventDefault(); return; }
       if (event.code === "Escape") { if (room?.role !== 'guest') { playing = !playing; if (room) room.send({ type: 'pause', playing }); syncPause(); } event.preventDefault(); return; }
       if (event.code === P1_DASH && !event.repeat) { queueDash("p1"); event.preventDefault(); return; }
       if (event.code === P2_DASH && !event.repeat) { queueDash("p2"); event.preventDefault(); return; }
@@ -508,6 +519,10 @@ function main() {
         const sealHit=state.lastProjectileEvent;
         if(sealHit?.attackId==='swahili_paid_seal'){const status=app.querySelector('#paidSealStatus');if(status)status.textContent=` Seal: ${sealHit.type}`;}
         if(sealHit?.tick===state.tick-1&&sealHit.attackId==='swahili_paid_seal'&&sealHit.type==='hit')paidRehearsal.start(sealHit.owner);
+        if(startPaidSuper()) {
+          if(room?.role === 'host')room.send({type:'snapshot',state:onlineSnapshot(state),director:null,sequence:state.tick});
+          return;
+        }
       } catch (error) {
         engineFaults += 1;
         lastFault = error instanceof Error ? error.message : String(error);
@@ -727,7 +742,7 @@ function main() {
       // Hook blade passes behind the victim for either facing; do not bake a victim into attacker art.
       const hook = state.throwInteraction?.throwId === "swahili_hook_headbutt" ? state.throwInteraction : null;
       const celesteThrow = state.throwInteraction?.result === "connected" && state.fighters[state.throwInteraction.attacker].kind === "celeste_proto" ? state.throwInteraction : null;
-      const order: FighterId[] = paidRehearsal.active ? [] : celesteThrow ? [celesteThrow.defender, celesteThrow.attacker] : hook ? [hook.attacker, hook.defender] : drawOrder();
+      const order: FighterId[] = paidRehearsal.visible ? [] : celesteThrow ? [celesteThrow.defender, celesteThrow.attacker] : hook ? [hook.attacker, hook.defender] : drawOrder();
       for (const side of order) drawFighter(side);
       const paidCamera = paidRehearsal.draw(context, state, presenters, world, chosen.p1 === 'swahili' ? 'p1' : 'p2');
       for (const projectile of (state as any).projectiles ?? []) {
