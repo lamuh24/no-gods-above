@@ -1,7 +1,7 @@
 import { AttackDefinition, AttackId, StrikeHitbox } from "../core/types";
 
-export type SwahiliGroundSpecialId = "swahili_paid_seal" | "special_neutral_light" | "special_up_light" | "special_neutral_heavy" | "special_back_light" | "special_back_medium" | "special_back_heavy";
-export const SWAHILI_GROUND_SPECIAL_IDS: SwahiliGroundSpecialId[] = ["swahili_paid_seal", "special_neutral_light", "special_up_light", "special_neutral_heavy", "special_back_light", "special_back_medium", "special_back_heavy"];
+export type SwahiliGroundSpecialId = "swahili_paid_seal" | "swahili_paid_super" | "special_neutral_light" | "special_up_light" | "special_neutral_heavy" | "special_back_light" | "special_back_medium" | "special_back_heavy";
+export const SWAHILI_GROUND_SPECIAL_IDS: SwahiliGroundSpecialId[] = ["swahili_paid_seal", "swahili_paid_super", "special_neutral_light", "special_up_light", "special_neutral_heavy", "special_back_light", "special_back_medium", "special_back_heavy"];
 export function isSwahiliGroundSpecialId(id: AttackId): id is SwahiliGroundSpecialId {
   return SWAHILI_GROUND_SPECIAL_IDS.includes(id as SwahiliGroundSpecialId);
 }
@@ -22,6 +22,11 @@ export const SWAHILI_GROUND_SPECIALS_V1: Record<SwahiliGroundSpecialId, AttackDe
   swahili_paid_seal: {id:'swahili_paid_seal',command:'Ultimate starter test',startup:18,active:1,recovery:29,groundOnly:true,hitboxes:[],
     projectile:{releaseTick:18,spawnOffset:{x:38,y:-105},releaseSweepStartX:30,speed:9,gravity:0,maxTravel:310,lifeTicks:36,
       hitbox:hit('paid_contract_confirm',0,{x:-16,y:-20,w:32,h:40},0,{hitstop:8,hitstun:32,blockstun:16,knockbackX:0,knockbackY:0,juggleCost:0})}},
+  // Playable single-hit super while the longer Paid in Full cinematic remains in production.
+  swahili_paid_super: {id:'swahili_paid_super',command:'P · Paid in Full',startup:18,active:1,recovery:29,groundOnly:true,hitboxes:[],
+    projectile:{releaseTick:18,spawnOffset:{x:38,y:-105},releaseSweepStartX:30,speed:9,gravity:0,maxTravel:310,lifeTicks:36,
+      hitbox:hit('paid_contract_collection',0,{x:-16,y:-20,w:32,h:40},180,
+        {hitstop:12,hitstun:0,blockstun:18,knockbackX:8,knockbackY:0,juggleCost:0,knockdown:'hard'})}},
   // Preserve the previous U+Light fallback's single-hit values and phase duration.
   special_neutral_light: { id: "special_neutral_light", command: "5S+L", startup: 3, active: 3, recovery: 7,
     cancel: { onHit: ["standing_medium", "crouching_medium"], onBlock: ["standing_medium", "crouching_medium"] },

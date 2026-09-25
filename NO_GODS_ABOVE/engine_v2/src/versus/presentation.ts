@@ -518,6 +518,7 @@ const AIR_MEDIUM_V10_CLIP: Clip = { ...clip(airMediumV10Frames, 3), frameStarts:
 SWAHILI_ATTACK_CLIPS.special_air_medium = AIR_MEDIUM_V10_CLIP;
 const NEUTRAL_RUNTIME_CLIPS: Record<string, Clip> = {
   swahili_paid_seal: { ...clip(neutralLightFrames, 4), frameStarts: [0,4,8,12,15,18,22,26,30,35,40,45] },
+  swahili_paid_super: { ...clip(neutralLightFrames, 4), frameStarts: [0,4,8,12,15,18,22,26,30,35,40,45] },
   special_neutral_light: { ...clip(neutralLightFrames, 1), frameStarts: [0,1,2,3,4,5,6,7,8,9,10,11] },
   special_neutral_medium: { ...clip(neutralMediumFrames, 3), frameStarts: [0,2,4,6,9,13,19] },
 };
@@ -566,7 +567,7 @@ class SwahiliPresenter implements Presenter {
   }
 
   drawProjectile(context: CanvasRenderingContext2D, projectile: any, world: WorldMap, worldScale: number) {
-    if(projectile.attackId==='swahili_paid_seal'){
+    if(projectile.attackId==='swahili_paid_seal'||projectile.attackId==='swahili_paid_super'){
       if(this.paidToken){const size=46*worldScale;context.save();context.translate(world.x(projectile.x),world.y(projectile.y));
         context.rotate(projectile.ageTicks*.16*projectile.facing);context.drawImage(this.paidToken,-size/2,-size/2,size,size);context.restore();}
       return true;
@@ -715,6 +716,7 @@ class SwahiliPresenter implements Presenter {
       { command: "Back + U + J/K/L", name: "Fine Print / Hidden Clause / Default Judgment", animated: animated("special_back_light") },
       { command: "↑ + U + M", name: "Vertical Audit (new art)", animated: animated("special_up_medium") },
       { command: "W, then U+J/K/L", name: "Air specials (Light + Medium runtime / Heavy proxy)", animated: animated("special_air_light") },
+      { command: "P · 100% SUPER", name: "Paid in Full · contract collection", animated: animated("swahili_paid_super") },
       { command: "I  /  ← + I", name: "Forward / back throw", animated: false }
     ];
   }
