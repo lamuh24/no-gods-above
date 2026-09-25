@@ -15,3 +15,5 @@ Validation:
 Release uses `scripts/patch_swahili_cinematic_release.js` against the prior verified paid-super package. Only entry HTML and a new bundle change; stage, fighter assets, and unrelated local work are preserved. Candidate bundle: `playtest-index-paid-cinematic-3c6ed217b3f5.js`.
 
 Applied NGA guidance: Engine V2 preservation, cinematic ultimate production, VFX audit, character visual consistency, local versus, deployment readiness, git checkpoint safety, sprite pipeline and animation fluidity. No atlases were regenerated or remapped.
+
+Live receipt: Netlify deploy 6ab6cd0691d1123320001cc4 at https://nogodsabove.netlify.app/. Public P1/P2 playback tests passed through all seven phases and natural completion, including lethal stock timing, with no missing assets or page errors. All 928 preceding non-entry files are byte-identical. Source implementation commit eeace4d1 is pushed in draft PR #10.
