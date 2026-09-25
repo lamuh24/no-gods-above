@@ -185,6 +185,8 @@ function canStartAttack(f: FighterState, attackId: AttackId, state: MatchState) 
   }
 
   if(attackId==='swahili_paid_seal'&&(!f.paidSealStarterTest||f.kind!=='lamuh_proto'))return false;
+  if(attackId==='swahili_paid_super'&&(f.kind!=='lamuh_proto'||!f.swahiliAirSpecialsV1
+    ||f.tension<def(f.kind).combat.maxTension||!f.grounded))return false;
   // The ultimate still cannot interrupt an arbitrary move; it may only be taken as an
   // authored cancel from a move that lists it, which is how ASW-style super cancels work.
   if (attackId === "legacy_crown_of_no_gods" && (f.kind !== "lamuh_legacy_v2" || f.tension < def(f.kind).combat.maxTension
@@ -205,6 +207,7 @@ function beginAttack(f: FighterState, attackId: AttackId, state: MatchState) {
   const attack = resolveAttackDefinition(f, attackId);
   if (!canStartAttack(f, attackId, state)) return false;
   if (attackId === "legacy_crown_of_no_gods") { const cost = def(f.kind).combat.maxTension; f.tension -= cost; f.tensionSpent += cost; }
+  if (attackId === "swahili_paid_super") { const cost = def(f.kind).combat.maxTension; f.tension -= cost; f.tensionSpent += cost; }
   if(f.kind==="celeste_proto"){
     const c=celesteState(f);c.guardSpent=false;
     if(attackId==="strobe_air_waltz")f.airDashesRemaining=(f.airDashesRemaining??0)-1;
@@ -335,6 +338,7 @@ function resolveSystemActions(state: MatchState) {
 }
 function requestAttack(f: FighterState, bufferedHitstop = 0): AttackId | null {
   if(f.kind==='lamuh_proto'&&f.paidSealStarterTest&&wasPressed(f.deterministicBuffer,'ultimate',1+bufferedHitstop))return 'swahili_paid_seal';
+  if(f.kind==='lamuh_proto'&&f.swahiliAirSpecialsV1&&wasPressed(f.deterministicBuffer,'ultimate',1+bufferedHitstop))return 'swahili_paid_super';
   const n = 6 + bufferedHitstop;
   if (f.kind === "lamuh_legacy_v2" && wasPressed(f.deterministicBuffer, "ultimate", 1 + bufferedHitstop)) return "legacy_crown_of_no_gods";
   const b = f.deterministicBuffer;

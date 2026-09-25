@@ -39,6 +39,7 @@ export const attackFrameTracks: Record<AttackId, AttackFrameTrack> = {
   finale_reprise: { startup: [], active: [], recovery: [] },
   octava: { startup: [], active: [], recovery: [] },
   swahili_paid_seal: { startup: [], active: [], recovery: [] },
+  swahili_paid_super: { startup: [], active: [], recovery: [] },
   special_neutral_light: { startup: [], active: [], recovery: [] },
   // Gated versus Swahili owns these normalized clips; unchanged default stage.
   special_up_light: { startup: [], active: [], recovery: [] },

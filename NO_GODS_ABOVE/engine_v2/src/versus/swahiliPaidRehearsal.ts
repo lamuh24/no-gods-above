@@ -19,11 +19,13 @@ export function paidBodyPlacement(phase:number,index:number,width:number,height:
  return {x:-200,y:-400,width:400,height:400};
 }
 /** Opt-in presentation rehearsal. No attack, health, meter, or core-state writes. */
-export function createPaidRehearsal(app: HTMLElement, enabled: boolean, clearInputs: () => void) {
+export function createPaidRehearsal(app: HTMLElement, enabled: boolean, clearInputs: () => void, showControls = true) {
+ let gameplay = false;
  let frame: HTMLIFrameElement | null = null;
  let close: HTMLButtonElement | null = null;
  let scrub: HTMLInputElement | null = null;
  let timeout: number | undefined;
+ let lastPlaybackTime: number | undefined;
  let confirmedAttacker: FighterId | undefined;
  const tokenArt=new Image();if(enabled)tokenArt.src='/swahili-paid-review/contract-token-v1.png';
  const sealArt=new Image();if(enabled)sealArt.src='/swahili-paid-review/contract-seal-generated-v1.png';
@@ -32,28 +34,32 @@ export function createPaidRehearsal(app: HTMLElement, enabled: boolean, clearInp
  button.id = 'paidRehearsal';
  button.style.cssText = 'padding:12px;margin:8px;color:#e4d4ad;background:#211815;border:1px solid #a77a36';
  function stop() { frame?.remove(); close?.remove();scrub?.remove(); frame=null;close=null;scrub=null;window.clearTimeout(timeout);clearInputs();button.disabled=false; }
- function start(owner?:FighterId) {
+ function start(owner?:FighterId, combat = false) {
   if(frame)return;
   if(!enabled)return;
+  gameplay = combat;
+  lastPlaybackTime = undefined;
   confirmedAttacker=owner;
   const host=app.querySelector<HTMLElement>('#tribunalStage') ?? app.querySelector<HTMLCanvasElement>('#stage')?.parentElement;
   if(!host)return;
   clearInputs();host.style.position='relative';button.disabled=true;
-  frame=document.createElement('iframe');frame.title='Paid in Full cinematic rehearsal';frame.src='/swahili-paid-review/assembled-verdict-v8.html?embed=1&transparent-stage=2';
+  frame=document.createElement('iframe');frame.title=combat?'Paid in Full ultimate':'Paid in Full cinematic rehearsal';frame.src='/swahili-paid-review/assembled-verdict-v8.html?embed=1&transparent-stage=2';
   frame.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:30;background:transparent;pointer-events:none;opacity:0';
   // Body frames are sampled onto the arena combat plane. Only the final screen cut overlays it.
   close=document.createElement('button');close.textContent='Exit rehearsal · no damage applied';close.style.cssText='position:absolute;right:12px;top:12px;z-index:31;padding:8px;background:#111;color:#eadfcf;border:1px solid #a77a36';close.onclick=stop;
   scrub=document.createElement('input');scrub.type='range';scrub.min='-650';scrub.max='7500';scrub.step='1';scrub.value='-650';scrub.setAttribute('aria-label','Cinematic frame scrub (pauses playback)');scrub.style.cssText='position:absolute;bottom:60px;left:25%;width:50%;z-index:32';
   scrub.oninput=()=>{window.clearTimeout(timeout);frame?.contentWindow?.postMessage({type:'paid-seek',time:Number(scrub!.value)},location.origin);};
-  host.append(frame,close,scrub);timeout=window.setTimeout(stop,20000);
+  host.append(frame);if(!combat)host.append(close,scrub);timeout=window.setTimeout(stop,20000);
  }
  const message=(event:MessageEvent)=>{if(frame&&event.source===frame.contentWindow&&event.origin===location.origin&&event.data?.type==='swahili-paid-review-complete')stop();};
- if(enabled){app.querySelector('.match')?.prepend(button);button.onclick=()=>start();button.title='Press P in the arena to cast the hit-confirm seal. This button previews without a hit.';window.addEventListener('message',message);}
+ if(enabled){if(showControls)app.querySelector('.match')?.prepend(button);button.onclick=()=>start();button.title='Press P in the arena to cast the hit-confirm seal. This button previews without a hit.';window.addEventListener('message',message);}
  function draw(ctx:CanvasRenderingContext2D,state:MatchState,presenters:Record<FighterId,Presenter>,world:{x:(v:number)=>number;y:(v:number)=>number},attacker:FighterId): FallenCapitalShot | undefined {
   if(!frame)return;
   attacker=confirmedAttacker??attacker;
   const data=(frame.contentWindow as unknown as {paidWorldFrame?:{image:HTMLImageElement;time:number;phase:number;index:number}})?.paidWorldFrame;
   if(!data)return;
+  // Recover from a stalled player, but never cut off a sequence that is advancing.
+  if(data.time !== lastPlaybackTime){lastPlaybackTime=data.time;window.clearTimeout(timeout);timeout=window.setTimeout(stop,20000);}
   const {time:t,phase}=data,defender:FighterId=attacker==='p1'?'p2':'p1';
   const enemyPOV=phase===3;
   const direction=state.fighters[attacker].facing,centre=(state.fighters.p1.x+state.fighters.p2.x)/2;
@@ -96,5 +102,5 @@ export function createPaidRehearsal(app: HTMLElement, enabled: boolean, clearInp
    return {targetX:ax*.02,targetY:-ay*.02+2.8,distance:12-approach*3.2,eyeElevation:3.2,orbitDegrees:-turn*12*direction,phase:'paid-enemy-pov'};}
   return {targetX:(ax+(centre-ax)*ease)*.02,targetY:3.15-.5*ease+Math.max(0,-ay-75)*.012,distance:5.2+ease*6.2,eyeElevation:.3+ease*1.45,orbitDegrees:-turn*12*direction,phase:'paid-rehearsal-world'};
  }
- return {get active(){return !!frame;},start,draw,stop,dispose(){stop();button.remove();window.removeEventListener('message',message);}};
+ return {get active(){return !!frame;},get visible(){return !!(frame?.contentWindow as any)?.paidWorldFrame;},get canCancel(){return !gameplay;},start,draw,stop,dispose(){stop();button.remove();window.removeEventListener('message',message);}};
 }
