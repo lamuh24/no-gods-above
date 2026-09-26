@@ -5,6 +5,11 @@ export type TutorialKind = 'basics' | 'combos';
 
 interface LessonStep { title: string; instruction: string; tip: string; }
 
+function controlHints(text: string): string {
+  const buttons: Record<string, string> = { A: 'Left', D: 'Right', W: 'Up / A / Cross', S: 'Down', J: 'X / Square', K: 'Y / Triangle', L: 'B / Circle', U: 'RT / R2', O: 'RB / R1', 'Left Shift': 'LB / L1' };
+  return text.replace(/Left Shift|\b[ADWSJKLUO]\b/g, key => `${key} (${buttons[key]})`);
+}
+
 const basics: LessonStep[] = [
     { title: 'Find your footing', instruction: 'Move with A and D. Try walking toward the other fighter to reach attack range.', tip: 'You can walk in either direction. The move list below the arena has your fighter’s full commands.' },
     { title: 'Leave the ground', instruction: 'Press W to jump. Hold A or D with W to jump toward or away from your rival.', tip: 'S crouches. Hold O to block; hold S and O to defend against low attacks.' },
@@ -71,7 +76,7 @@ export function createTutorial(host: HTMLElement, initial: TutorialKind | null, 
     const item = items[Math.min(step, items.length - 1)];
     progress.textContent = done ? `${items.length} / ${items.length} COMPLETE` : `${step + 1} / ${items.length}`;
     title.textContent = done ? (kind === 'basics' ? 'Basics complete' : 'Combo tutorial complete') : item.title;
-    instruction.textContent = done ? (kind === 'basics' ? 'You can move, jump, dash, and connect a strike. Try the Combo Tutorial next.' : `You completed the ground chain and a real launcher → air Light → air Medium → ${special.name} combo. Keep exploring your fighter’s move list.`) : item.instruction;
+    instruction.textContent = done ? (kind === 'basics' ? 'You can move, jump, dash, and connect a strike. Try the Combo Tutorial next.' : `You completed the ground chain and a real launcher → air Light → air Medium → ${special.name} combo. Keep exploring your fighter’s move list.`) : controlHints(item.instruction);
     tip.textContent = done ? 'Try other directions with the same attack buttons. Your fighter has more moves in the list below.' : item.tip;
     status.textContent = done ? 'Lesson complete' : 'Waiting for your move';
     for (const button of host.querySelectorAll<HTMLButtonElement>('[data-tutorial]')) button.setAttribute('aria-pressed', String(button.dataset.tutorial === kind));

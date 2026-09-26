@@ -1,4 +1,5 @@
 import "./style.css";
+import { initControllers, controllerInput } from './controller';
 import { createFrontEnd } from "./frontEnd";
 import { gameplayHud, updateGameplayHud } from "./gameplayHud";
 import {
@@ -46,6 +47,7 @@ const P1_DASH = "ShiftLeft", P2_DASH = "Numpad7";
 function main() {
   if (!document.querySelector("#app")) throw new Error("Missing #app");
   const app = document.querySelector("#app") as HTMLElement;
+  initControllers(app);
 
   // Review deep links name the character they are meant to exercise.  Honor
   // that contract so `?character=swahili&air-specials-v1=1` never silently
@@ -413,6 +415,8 @@ function main() {
     }
 
     // --- input ---
+    match.addEventListener('controllerdash', event => { if (playing && !paidRehearsal.active && !match.classList.contains('stage-loading')) queueDash((event as CustomEvent<number>).detail === 0 ? 'p1' : 'p2'); });
+    match.addEventListener('controllerinput', () => sendGuestInput());
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("keyup", onKeyUp);
     window.addEventListener("blur", () => { heldKeys.clear(); sendGuestInput(); });
@@ -431,7 +435,7 @@ function main() {
     function onKeyUp(event: KeyboardEvent) { heldKeys.delete(event.code); sendGuestInput(); }
 
     function readKeys(scheme: ControlScheme): InputFrame {
-      const input: InputFrame = {};
+      const input: InputFrame = { ...controllerInput(scheme === P1_KEYS ? 0 : 1) };
       for (const code of heldKeys) { const action = scheme[code]; if (action) (input as any)[action] = true; }
       return input;
     }
