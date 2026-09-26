@@ -41,6 +41,17 @@ h4 { font-size: 12px; letter-spacing: .12em; margin: 0 0 6px; }
 /* ---- match ---- */
 .match { display: grid; gap: 12px; }
 .loading { display: grid; gap: 10px; justify-items: center; padding: 80px 0; }
+.match.stage-loading { position: relative; }
+.match.stage-loading > :not(.stage-loading-screen) { visibility: hidden; }
+.stage-loading-screen {
+  position: absolute; z-index: 10; inset: 0 0 auto; min-height: min(70vh, 700px);
+  display: grid; align-content: center; justify-items: center; gap: 8px;
+  padding: 32px; text-align: center;
+  background: radial-gradient(ellipse at center, #251d1c 0, #0d0e13 58%, #070809 100%);
+  border: 1px solid #78623f; color: #e6d4ae;
+}
+.stage-loading-screen h2 { margin: 0; color: #e8c986; font: 28px Georgia, serif; letter-spacing: .08em; }
+.stage-loading-screen p { margin: 0; color: #bcae94; }
 progress { width: 380px; height: 8px; }
 .hud { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .hud-side { min-width: 0; }
