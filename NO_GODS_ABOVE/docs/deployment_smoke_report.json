@@ -447,5 +447,35 @@
     },
     "screenshots": "NO_GODS_ABOVE/engine_v2/docs/versus_playtest/captures/swahili-paid-super-2026-09-25/",
     "known_limit": "Playable single-hit super; the full Paid in Full cinematic remains in production."
+  },
+  "engine_v2_tutorial_netlify_2026_09_25": {
+    "timestamp": "2026-09-25",
+    "overall": "pass",
+    "site_id": "4bc048d7-e9cc-4eba-96f5-59ce01bb5f90",
+    "url_tested": "https://nogodsabove.netlify.app/versus-playtest.html",
+    "deploy_id": "6ab709bb4348cc43cbe751ec",
+    "source_commit": "d556a847d508683b031de850e40eff67ad6f0d04",
+    "bundle": "playtest-index-B15KYYvF-optimized-4fe36694c38b.js",
+    "build": "npm.cmd run build:online-playtest: pass",
+    "staged_file_count": 928,
+    "public_cards": [
+      "lamuh",
+      "swahili",
+      "celeste"
+    ],
+    "all_public_portraits_loaded": true,
+    "tutorial_basics": "pass on staged package and live site",
+    "tutorial_lamuh_full_air_combo_with_air_special": "pass on staged package and live site",
+    "tutorial_swahili_full_air_combo_with_air_special": "pass on live site",
+    "tutorial_celeste_full_air_combo_with_air_special": "pass on live site",
+    "swahili_paid_cinematic_both_owners_and_lethal_stock": "pass on staged package and live site",
+    "failed_requests": [],
+    "bad_responses": [],
+    "page_errors": [],
+    "forbidden_requests": [],
+    "local_path_requests": [],
+    "hidden_helpers_exposed": false,
+    "known_issue": "Netlify new-site badge overlaps the lower-right HUD at 1280x720",
+    "live_screenshots": "C:/tmp/nga-v2-tutorial-deploy-20260925/qa-live-screenshots"
   }
 }
