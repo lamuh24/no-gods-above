@@ -191,7 +191,8 @@ function main() {
     const combatCanvasWidth = stocks && arenaChoice === "fallen-capital" ? 2700 : STAGE_W;
     const competitive = rounds || stocks;
     app.innerHTML = `
-      <section class="match">
+      <section class="match${arenaChoice === "flat" ? "" : " stage-loading"}"${arenaChoice === "flat" ? "" : ' aria-busy="true"'}>
+        ${arenaChoice === "flat" ? "" : '<div class="stage-loading-screen" id="stageLoading" role="status" aria-live="polite"><h2>Preparing battleground…</h2><p>The match will begin when the stage is ready.</p></div>'}
         <div class="gameplay-viewport">
         <canvas id="stage" width="${combatCanvasWidth}" height="${STAGE_H}"></canvas>
         ${gameplayHud(chosen, { mode: options.mode, roundsToWin: options.roundsToWin, stocks: options.stocks, controllers: options.controllers, onlineRole: room?.role ?? undefined })}
@@ -258,6 +259,7 @@ function main() {
         </details>
       </section>`;
 
+    const match = app.querySelector<HTMLElement>(".match")!;
     const canvas = app.querySelector<HTMLCanvasElement>("#stage")!;
     const context = canvas.getContext("2d")!;
     const checked = (id: string) => app.querySelector<HTMLInputElement>(`#${id}`)!.checked;
@@ -275,7 +277,7 @@ function main() {
       const host = document.createElement("div");
       host.id = "tribunalStage";
       host.style.cssText = "width:100%;aspect-ratio:1600/900;position:relative;overflow:hidden;border-radius:10px;border:1px solid #1e2836";
-      // Keep the flat combat canvas visible until every arena texture is ready.
+      // Keep the match behind its loading screen until the real stage is rendered.
       host.style.display = 'none';
       canvas.before(host);
       try {
@@ -592,6 +594,13 @@ function main() {
     function advance(now: number) {
       const delta = Math.min(250, now - lastFrame);
       lastFrame = now;
+      // Loading can take several seconds on an uncached visit. Do not spend
+      // gameplay ticks or queue a catch-up burst before the first visible frame.
+      if (match.classList.contains("stage-loading")) {
+        accumulator = 0;
+        render();
+        return;
+      }
       if (playing && !paidRehearsal.active) {
         accumulator += delta;
         const stepMs = (checked("half") ? 1000 / 30 : 1000 / 60) / (director?.timeScale ?? 1);
@@ -772,6 +781,12 @@ function main() {
         }
       }
       updateHud();
+      if (!match.dataset.stageReady && (arenaChoice === "flat" || arenaReady || !tribunal)) {
+        match.dataset.stageReady = "true";
+        match.classList.remove("stage-loading");
+        match.removeAttribute("aria-busy");
+        app.querySelector("#stageLoading")?.remove();
+      }
     }
 
     /**
