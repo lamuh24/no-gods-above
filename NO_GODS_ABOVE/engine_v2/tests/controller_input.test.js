@@ -15,4 +15,3 @@ for (const [kind,expected] of [['lamuh_legacy_v2','legacy_radiant_dive_medium'],
   assert.equal(state.fighters.p1.currentAttack,expected,`${kind} controller air special`);
 }
 console.log('Controller deadzone, action mapping, and all three fighter air specials passed.');
-
